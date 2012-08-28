@@ -1,0 +1,44 @@
+#!/bin/zsh
+#
+# Run this to build the site.
+
+markdown() {
+	pandoc -f markdown -t html5
+	#perl Markdown.pl --html4tags
+}
+
+template() {
+	# todo, use sed & only one template
+	# Header
+	cat ../templates/header-a
+	echo -e "\t<title>${title}</title>\n"
+	echo $bits
+	cat ../templates/header-b
+	# Body
+	cat $j | tail -n +6 | markdown
+			# todo: match between +++ rather than cut first 5 lines
+	# Footer
+	cat ../templates/footer-a
+	cat ../templates/footer-b.md | markdown
+	cat ../templates/footer-c
+}
+
+reset() {
+	title=""
+	section=""
+	bits=""
+}
+
+for j in $@; do
+	case $j in
+		README.md) ;;
+		*)
+			reset
+			tmp=`mktemp`
+			cat $j | grep -B50 -m2 "+++" | head -n -1 | tail -n +2 > $tmp
+			source $tmp
+
+			template > ../www/`basename $j .md`.html
+		;;
+	esac
+done

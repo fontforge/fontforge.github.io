@@ -1,0 +1,38 @@
+
+div.button {
+    text-align: center;
+    display: inline-block;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+    overflow: hidden;
+    margin: 0 0 1.3em;
+
+	-webkit-transition: margin .4s ease-in-out;
+	-moz-transition: margin .4s ease-in-out;
+	-o-transition: margin .4s ease-in-out;
+	-ms-transition: margin .4s ease-in-out;
+	transition: margin .4s ease-in-out;
+}
+
+div.button a {
+	display: block;
+	background: #e44d26;
+	color: #fff;
+	height: 36px; 
+	padding: 0 1.5em;
+	font: bold 1em/36px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	text-decoration: none;
+}
+
+/* Secondary Link Styles */
+div.button a:nth-of-type(even) {
+	background: #000;
+	color: white;
+}
+
+/* Hover Slide */
+div.button:hover  {
+	margin-left: 1em;
+}
+
