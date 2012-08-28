@@ -11,6 +11,8 @@
 	<meta name="description" content="Outline font editor">
 	<meta name="author" content="humans.txt">
 
+	{{ bits }}
+
 	<meta name="viewport" content="width=1024">
 
 	<link rel="stylesheet" href="css/style.css">
@@ -33,15 +35,15 @@
 	<li><a href="overview.html">Documentation</a></li>
 	<li><a href="helpout.html">Help Out</a></li>
 </nav>
-</header>
+</header><!-- end main -->
 
 <div id="main">
 {{ main }}
-</div>
+</div><!-- end main -->
 
 <footer>
 {{ footer }}
-</footer>
+</footer><!-- end main -->
 
 </body>
 </html>
