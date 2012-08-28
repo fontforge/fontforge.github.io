@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+for j in $@; do
+	echo -e "+++\ntitle=\"\"\nsection=\"\"\nbits=\"\"\n+++\n\n" > src/${j}.md
+done

@@ -10,6 +10,8 @@ markdown() {
 template() {
 	# todo, use sed & only one template
 	# Header
+	# <../templates/fontforge | sed s/"{{ title }}"/"$title"/g
+	# ^ switch to something like this
 	cat ../templates/header-a
 	echo -e "\t<title>${title}</title>\n"
 	echo $bits
