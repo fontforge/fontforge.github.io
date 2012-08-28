@@ -4,7 +4,6 @@ fontforge.github.com
 FontForge website repository
 
 - `README-HOWTO.md` Instructions for working with site
-
 - `src/` Source files -- edit these
 - `build/` Scripts are stored here
 - `www/` Generated website -- don't mess with this
