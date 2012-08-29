@@ -1,0 +1,160 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head><!--[if IE]><script>document.lastChild.id="ie"+/IE (d+)/.exec(navigator.userAgent)[1]</script><![endif]-->
+<!-- explanation: http://www.eric-shinn.com/css-if-ie-conditional-hack-futureproof/ -->
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>How you can help with FontForge</title>
+	<meta name="description" content="Outline font editor">
+	<meta name="author" content="humans.txt">
+
+	
+
+	<meta name="viewport" content="width=1024">
+
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="favicon.png">
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script>window.html5 || document.write('<script src="js/libs/html5.js"></script>')</script>
+	<![endif]-->
+</head>
+<body>
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+<header>
+<a href="index.html"><h1><img src="img/fontforge.png">Fontforge</h1></a>
+<nav>
+	<li><a href="download.html">Download</a></li>
+	<li><a href="source-build.html">Install</a></li>
+	<!-- <li><a href="index.html">Features</a></li> -->
+	<li><a href="overview.html">Documentation</a></li>
+	<li><a href="helpout.html">Help Out</a></li>
+</nav>
+</header><!-- end main -->
+
+<div id="main">
+<h1 id="how-you-can-help-with-fontforge">How you can help with FontForge</h1>
+<ul>
+<li><em>My writing leaves much to be desired</em>. Anyone who can make my documentation more readable is encouraged to do so. (or who wishes to translate it into other languages, or who wishes to put it into a more flexable format, KANOU has a <a href="ja/index.html">Japanese version</a>)</li>
+<li><em>I also have a brief tutorial in <a href="fontforge-tutorial.pdf">pdf format</a> and in <a href="editexample.html">html</a>.</em> This could also be translated into other languages (and would be a simpler job than trying to translate the entire website). The html has been translated into <a href="de/editexample.html">German</a> and <a href="http://edt1023.sayya.org/fontforge/editexample.html">Chinese</a>.</li>
+<li><em>The UI can be translated into different languages.</em> FontForge now uses gnu gettext. See the section on <a href="uitranslationnotes.html">translation notes</a>for more info.
+<ul>
+<li>English I take care of
+<ul>
+<li>(I've even got an en_GB file for those differences I've noticed between British &amp; US spellings, but if anyone with a sharper eye finds other differences, please let me know)</li>
+</ul></li>
+<li>Russian is provided by <a href="http://www.linuxgraphics.ru/">Alexandre Prokoudine</a>, originally by Valek Filippov.<br> Last Update Aug 2012</li>
+<li>Japanese is provided by KANOU Hiroki. (and has translated the entire website) This needs to be updated!<br> Last Update Jul 2006</li>
+<li>French is provided by Pierre Hanser and Yannis Haralambous.<br> Last update Nov 2007</li>
+<li>Italian was provided by Claudio Beccari, but I can no longer contact him. This needs to be updated!<br> Last update Feb 2003</li>
+<li>Spanish is provided by <script type="text/javascript">
+<!--
+h='&#x79;&#x61;&#104;&#x6f;&#x6f;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#x77;&#x65;&#x63;&#104;&#x61;&#114;&#114;&#x69;';e=n+a+h;
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Walter Echarri'+'</'+'a'+'>');
+// -->
+</script><noscript>&#x57;&#x61;&#108;&#116;&#x65;&#114;&#32;&#x45;&#x63;&#104;&#x61;&#114;&#114;&#x69;&#32;&#40;&#x77;&#x65;&#x63;&#104;&#x61;&#114;&#114;&#x69;&#32;&#x61;&#116;&#32;&#x79;&#x61;&#104;&#x6f;&#x6f;&#32;&#100;&#x6f;&#116;&#32;&#x63;&#x6f;&#x6d;&#x29;</noscript> This needs to be updated!<br> Last update Oct 2004</li>
+<li>Vietnamese is provided by <a href="http://vnoss.net/dokuwiki/doku.php?id=projects:l10n">Clytie Siddall</a>.<br> Last update Apr 2010</li>
+<li>Simplified Chinese is provided by Lee Chenhwa<br> Last update Jun 2012</li>
+<li>Traditional Chinese is provided by Wei-Lun Chao at <a href="http://opendesktop.org.tw/">OSSII</a><br> Last update May 2012</li>
+<li>Wei-ju Wu has translated the tutorial into German</li>
+<li>Philipp Poll is providing a German UI.<br> Last update Apr 2007</li>
+<li>Michal Nowakowski is constantly updating the Polish translation.<br> Last update Jul 2012</li>
+<li><a href="http://obelix.ee.duth.gr/~apostolo/">Apostolos Syropoulos</a>is working on a Greek translation<br> Last update Oct 2008</li>
+<li>Serhij Dubyk has provided a Ukrainian translation, his last update was May-2009.<br> Then Yuri Chornoivan took it further.<br> Last update Jul 2012</li>
+<li>Rafael Ferran i Peralta provided a Catalan translation.<br> Last update Jun 2011</li>
+<li>Any other language additions would be great (the entire UI does not need to be translated, any subset is a help), if you are interested see the <a href="uitranslationnotes.html">translation notes here</a>.</li>
+</ul></li>
+<li>You can take over a chunk of the code:
+<ul>
+<li>Michal Nowakowski and Alexej Kyukov have taken over the auto instructor and auto hinter.</li>
+</ul></li>
+<li><em>Different font formats</em><br> FontForge supports Type1, truetype, opentype, cff, type42, cid-keyed and svg fonts, also bdf and NFNT for bitmaps<br> FontForge will sort-of accept metafont files (essentially it runs metafont and autotraces the result). It won't produce .mf files<br> FontForge will read (but not produce) Ikarus files<br> FontForge will read acorn font files with a helper app.<br> But there are other formats out there that I can't find descriptions of or don't think are worth supporting
+<ul>
+<li>Can you point me at documentation for other standards</li>
+<li>Can you explain why that format is useful?</li>
+</ul></li>
+<li>There are certain c<em>ommands</em><em>which don't work very well</em>and if someone else wanted to they might code them better than I...
+<ul>
+<li>Remove overlap (has problems with coincident splines)</li>
+<li>Expand Stroke (has problems when there are sharp bends near the end of a contour (or near a joint where the slope is discontinuous) -- a sharp bend is one where the radius of curvature is smaller than half the stroke-width)</li>
+<li>Autokern (might be fixed now)</li>
+<li>Change Weight &amp; Condense/Extend make assumptions about glyphs that aren't always true.</li>
+</ul></li>
+<li><em>References</em>
+<ul>
+<li>I'd like to provide a reasonable bibliography, please suggest some good relevant books.</li>
+<li>Are there any other programs or websites that I should be mentioning?</li>
+</ul></li>
+<li><em>Tests</em>
+<ul>
+<li>I've have a very <a href="http://fontforge.git.sourceforge.net/git/gitweb.cgi?p=fontforge/fontforge;a=summary">simplistic testsuite in the &quot;test&quot; subdirectory of the repository</a>-- more to weed out crashes in the underlying engine, than to make sure it produces the right results. If anyone has a better idea for an automated suite, or would like to contribute tests to the current stuff, please let me know.</li>
+</ul></li>
+<li><em>QA</em>
+<ul>
+<li>I don't.<br> I find QA boring, and since no one is paying me for this I don't do very much (I generally run it past my testsuite from time to time). This is obviously a problem. If anyone (or several anyones) wants to undertake to do QA <script type="text/javascript">
+<!--
+h='&#108;&#x69;&#x73;&#116;&#x73;&#46;&#x73;&#x6f;&#x75;&#114;&#x63;&#x65;&#102;&#x6f;&#114;&#x67;&#x65;&#46;&#110;&#x65;&#116;';a='&#64;';n='&#102;&#x6f;&#110;&#116;&#102;&#x6f;&#114;&#x67;&#x65;&#x2d;&#100;&#x65;&#118;&#x65;&#108;';e=n+a+h;
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'for me'+'</'+'a'+'>');
+// -->
+</script><noscript>&#102;&#x6f;&#114;&#32;&#x6d;&#x65;&#32;&#40;&#102;&#x6f;&#110;&#116;&#102;&#x6f;&#114;&#x67;&#x65;&#x2d;&#100;&#x65;&#118;&#x65;&#108;&#32;&#x61;&#116;&#32;&#108;&#x69;&#x73;&#116;&#x73;&#32;&#100;&#x6f;&#116;&#32;&#x73;&#x6f;&#x75;&#114;&#x63;&#x65;&#102;&#x6f;&#114;&#x67;&#x65;&#32;&#100;&#x6f;&#116;&#32;&#110;&#x65;&#116;&#x29;</noscript> I'd be delighted (this is a public mailing list).</li>
+</ul></li>
+<li><em>Printing tests</em>
+<ul>
+<li>I'm always on the look out for short copyright free texts for printing. I'm looking for samples from languages I don't have anything on, or in styles that I don't have.<br> I'm also interested in phrases equivalent to &quot;The quick brown fox jumps over the lazy dog.&quot; (pangrams). These are short sentences which use every letter in the script.</li>
+</ul></li>
+<li><em>Indic information</em>
+<ul>
+<li><p>Indic languages have a series of special ligature features in opentype. I believe that FontForge could probably generate some of these by default but I don't know enough to say which. If you are familiar with Indic scripts could you give me a list of conversions in a format like</p>
+<blockquote>
+<pre><code>U+0066 + U+0069 =&gt; U+FB01 &#39;liga&#39;</code></pre>
+</blockquote></li>
+</ul></li>
+<li><a href="http://sourceforge.net/project/project_donations.php?group_id=103338">Donate to FontForge</a></li>
+</ul>
+</div><!-- end main -->
+
+<footer>
+<section>
+<h3 id="fontforge">Fontforge</h3>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="download.html">Download</a></li>
+<li><a href="changelog.html">Changelog</a></li>
+<li><a href="acknowledgements.html">Acknowledgements</a></li>
+<li><a href="helpout.html">Help Out</a></li>
+<li><a href="http://sourceforge.net/projects/fontforge/">SF Project page</a><br></li>
+<li><a href="http://sourceforge.net/project/project_donations.php?group_id=103338">Donate</a></li>
+</ul>
+</section> <section>
+<h3 id="features">Features</h3>
+<ul>
+<li><a href="features.html">Features</a></li>
+<li><a href="lacks.html">Things missing</a></li>
+<li><a href="bugs.html">Known bugs</a></li>
+</ul>
+</section> <section>
+<h3 id="reference">Reference</h3>
+<ul>
+<li><a href="bibliography.html">Bibliography</a></li>
+<li><a href="related-tools.html">Related tools</a></li>
+<li><a href="librefontdevelopment.html">Libre Font Dev Efforts</a></li>
+</ul>
+</section> <section>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li><a href="overview.html">Table of Contents</a></li>
+<li><a href="install.html">Install</a></li>
+<li><a href="editexampple.html">Get started</a></li>
+<li><a href="glossary.html">Typographic Glossary</a></li>
+<li><a href="faqFS.html">FAQ</a></li>
+</ul>
+</section>
+</footer><!-- end main -->
+
+</body>
+</html>

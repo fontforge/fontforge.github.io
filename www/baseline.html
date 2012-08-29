@@ -1,0 +1,106 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head><!--[if IE]><script>document.lastChild.id="ie"+/IE (d+)/.exec(navigator.userAgent)[1]</script><![endif]-->
+<!-- explanation: http://www.eric-shinn.com/css-if-ie-conditional-hack-futureproof/ -->
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>The baseline dialog, and the OpenType BASE table.</title>
+	<meta name="description" content="Outline font editor">
+	<meta name="author" content="humans.txt">
+
+	
+
+	<meta name="viewport" content="width=1024">
+
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="favicon.png">
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script>window.html5 || document.write('<script src="js/libs/html5.js"></script>')</script>
+	<![endif]-->
+</head>
+<body>
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+<header>
+<a href="index.html"><h1><img src="img/fontforge.png">Fontforge</h1></a>
+<nav>
+	<li><a href="download.html">Download</a></li>
+	<li><a href="source-build.html">Install</a></li>
+	<!-- <li><a href="index.html">Features</a></li> -->
+	<li><a href="overview.html">Documentation</a></li>
+	<li><a href="helpout.html">Help Out</a></li>
+</nav>
+</header><!-- end main -->
+
+<div id="main">
+<p><img src="img/BASEdlg.png">This dialog may be invoked by <code>Element-&gt;Other Info-&gt;Horizontal Baselines</code>(or <code>Vertical Baselines</code>). It allows you to control the baseline (in either horizontal or vertical orientation) on which the glyphs of a particular script line up. You may also control the spacing between baselines, and the interline (or intercolumn) spacing on a per-script, or even per-language basis.</p>
+<p>See the <a href="overview.html#Baseline">Baseline section</a>in the overview for a description of why this is important.</p>
+<p>There are currently seven standard baselines. The distinctions between them are described in the OpenType standard. (See the <a href="http://partners.adobe.com/public/developer/opentype/index_tag4.html">baseline tags section</a>)</p>
+<p>Basically most alphabetic scripts will use the 'romn' baseline, most CJK scripts will use the 'ideo'graphic baseline. Tibetan and other Indic scripts will use the 'hang'ing baseline, and math fonts might use the 'math' baseline.</p>
+<p>Roughly the ideographic baseline will line up with the descenders of a Latin (Greek, Cyrillic) script, and the hanging baseline will line up with the ascenders.</p>
+<p>You need to select which baselines your font will support. You may want to specify baselines that apply to scripts which aren't in your font -- this will mean your font is positioned reasonable when used with glyphs from other fonts. In the example above, the font has no Indic characters, but it still specifies a hanging baseline.</p>
+<p>You select which baselines you will support by turning on the appropriate checkboxes. All scripts will have the same set of baselines. In every script one baseline will be the default baseline. Generally glyphs in that script will be drawn with their vertical origin (If you are working on horizontal baselines, that is) on that baseline. You then should specify how other baselines are offset from this one.<br> <img src="img/BASElang.png">You may also set the minimum and maximum extent of the font for each script (by pressing the <code>[Set Extents]</code>button). This corresponds roughly to a per-script line spacing (or column spacing).</p>
+<p>You may specify a default spacing for the script in general, and then more specific spacings for a given language.</p>
+<p>In the example at left the default spacing for the Latin script allows room for one accent above capital letters. Now English doesn't have any accents (usually), so it might make sense that English could use a tighter line spacing (and, traditionally this has been done). On the other hand Vietnamese stacks multiple accents above one another, so it needs more room than the default.</p>
+<p>But suppose you are typesetting French. Now French sometimes is printed with capital accented letters, but sometimes a &quot;À&quot; will be drawn just as &quot;A&quot; with no accent. So you might create at feature that maps capital accented letters to their unaccented forms:</p>
+<blockquote>
+<pre><code>feature NoAc {
+  sub Agrave by A;
+  sub Aacute by A;
+  ...
+  sub Egrave by E;
+  ...
+} NoAc;</code></pre>
+</blockquote>
+<p>Then it would be convenient to be change the baseline spacing if these feature were active. And, indeed you can. Simply select the line for French (in this case the default language works for French) and press the [Set Feature Extents] button.</p>
+<figure>
+<img src="img/BASEfeat.png"><figcaption></figcaption>
+</figure>
+<p>It is possible to set Extent information even if you do not provide baseline</p>
+</div><!-- end main -->
+
+<footer>
+<section>
+<h3 id="fontforge">Fontforge</h3>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="download.html">Download</a></li>
+<li><a href="changelog.html">Changelog</a></li>
+<li><a href="acknowledgements.html">Acknowledgements</a></li>
+<li><a href="helpout.html">Help Out</a></li>
+<li><a href="http://sourceforge.net/projects/fontforge/">SF Project page</a><br></li>
+<li><a href="http://sourceforge.net/project/project_donations.php?group_id=103338">Donate</a></li>
+</ul>
+</section> <section>
+<h3 id="features">Features</h3>
+<ul>
+<li><a href="features.html">Features</a></li>
+<li><a href="lacks.html">Things missing</a></li>
+<li><a href="bugs.html">Known bugs</a></li>
+</ul>
+</section> <section>
+<h3 id="reference">Reference</h3>
+<ul>
+<li><a href="bibliography.html">Bibliography</a></li>
+<li><a href="related-tools.html">Related tools</a></li>
+<li><a href="librefontdevelopment.html">Libre Font Dev Efforts</a></li>
+</ul>
+</section> <section>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li><a href="overview.html">Table of Contents</a></li>
+<li><a href="install.html">Install</a></li>
+<li><a href="editexampple.html">Get started</a></li>
+<li><a href="glossary.html">Typographic Glossary</a></li>
+<li><a href="faqFS.html">FAQ</a></li>
+</ul>
+</section>
+</footer><!-- end main -->
+
+</body>
+</html>

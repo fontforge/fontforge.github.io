@@ -1,0 +1,180 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head><!--[if IE]><script>document.lastChild.id="ie"+/IE (d+)/.exec(navigator.userAgent)[1]</script><![endif]-->
+<!-- explanation: http://www.eric-shinn.com/css-if-ie-conditional-hack-futureproof/ -->
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>Command Line Arguments</title>
+	<meta name="description" content="Outline font editor">
+	<meta name="author" content="humans.txt">
+
+	
+
+	<meta name="viewport" content="width=1024">
+
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="favicon.png">
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script>window.html5 || document.write('<script src="js/libs/html5.js"></script>')</script>
+	<![endif]-->
+</head>
+<body>
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+<header>
+<a href="index.html"><h1><img src="img/fontforge.png">Fontforge</h1></a>
+<nav>
+	<li><a href="download.html">Download</a></li>
+	<li><a href="source-build.html">Install</a></li>
+	<!-- <li><a href="index.html">Features</a></li> -->
+	<li><a href="overview.html">Documentation</a></li>
+	<li><a href="helpout.html">Help Out</a></li>
+</nav>
+</header><!-- end main -->
+
+<div id="main">
+<h1 id="command-line-arguments">Command Line Arguments</h1>
+<blockquote>
+<pre><code>$ fontforge [-options] [filenames]
+$ fontforge [-script] scriptfile [arguments]
+$ fontforge -c script-string [arguments]</code></pre>
+</blockquote>
+<p>The filenames may specify any number of files in one of the font formats that FontForge recognizes (various postscript formats, truetype, opentype, mac resource, bitmap, svg, etc.).</p>
+<p>Some files (.ttc or mac resource) may contain more than one outline font. You may pick which font you want by following the filename with the fontname in parentheses, thus:<br> &gt; $ fontforge &quot;gulim.ttc(GulimChe)&quot;</p>
+<p>will select the font GulimChe out of the font file gulim.ttc.</p>
+<p>FontForge recognizes the following options:</p>
+<p>-allglyphs</p>
+<p>Load all glyphs from the 'glyf' table of a ttc file, rather than the subset used in the selected font. (Note that if a ttc file contains multiple 'glyf' tables, only one will be loaded, but that one will be completely loaded).</p>
+<p>-c script-string</p>
+<p>If FontForge's first (or second, if the first is -lang) argument is &quot;-c&quot; then the argument that follows will be treated as a string containing scripting commands, and those commands will be executed. All remaining arguments will be passed to the script.</p>
+<blockquote>
+<pre><code>$ fontforge -c &#39;Open($1); Generate($2)&#39; foo.sfd foo.ttf</code></pre>
+</blockquote>
+<p>Will read a font from &quot;foo.sfd&quot; and then generate a truetype font from it called &quot;foo.ttf&quot;</p>
+<p>-cmap type</p>
+<p>Where type may be<br>     Current | Copy | Private<br> Gives the user some control over <a href="xres.html#Colormap">colormap handling</a>on 8bit screens.</p>
+<p>-depth val</p>
+<p>Specifies that FontForge should search for a visual with the given depth</p>
+<p>-display name</p>
+<p>Specifies the name of the display on which FontForge will open its windows</p>
+<p>-dontopenxdevices</p>
+<p>Various people have complained that when FontForge attempts to open the devices of the wacom graphics tablet, the X server gives a BadDevice error. I can't duplicate this, the open works fine on my system, but this argument allows them to tell fontforge not to try to use the tablet.</p>
+<p>-help</p>
+<p>Bring up a <a href="helpmenu.html">browser</a> looking at this documentation.</p>
+<p>-lang={py|ff}<br> -lang {py|ff}</p>
+<p>Specifies whether the script should be interpretted as a python script or a fontforge script.</p>
+<p>-version</p>
+<p>Prints out the source version and exits.</p>
+<p>-keyboard type</p>
+<p>Where type may be<br>     ibm | mac | sun | ppc | 0 | 1 | 2 | 3<br> Allows you to specify the type of keyboard. Currently this is only relevent when generating menus. The modifier keys are in different locations on different keyboards (under different operating systems) and if FontForge knows what keyboard you are using it can make the hot-keys have better labels.</p>
+<ul>
+<li>ibm | 0<br> Uses the Control and Alt keys</li>
+<li>mac | 1<br> Uses the Control and Option keys (Mac OS/X, Mac keyboard)</li>
+<li>ppc | 3<br> Uses the Control and Command keys (Suse ppc linux, Mac keyboard)</li>
+<li>sun | 2<br> Uses the Control and Meta keys</li>
+</ul>
+<p>-last</p>
+<p>Opens the last sfd file closed. If used more than once will open the last several sfd files.</p>
+<p>-library-status</p>
+<p>Writes info about the status of optional libraries to stderr. Including: Whether the library exists on this system, whether ff can use it, and an URL from which the library can be found.</p>
+<p>-new</p>
+<p>Creates a new font.</p>
+<p>-nosplash</p>
+<p>FontForge will not display its splash screen on startup (for slow connections)</p>
+<p>-open</p>
+<p>Bring up an open font dialog</p>
+<p>-quit</p>
+<p>Exit fontforge (only useful if -unique is passed as well, in which case the master fontforge will be asked to exit)</p>
+<p>-recover type</p>
+<p>Where type may be:</p>
+<p>none</p>
+<p>Do not attempt any automatic file recovery</p>
+<p>clean</p>
+<p>Clean out the directory containing files to be recovered</p>
+<p>auto</p>
+<p>recover any files which have been changed but which fontforge crashed on before saving.</p>
+<p>-script script-file</p>
+<p>If FontForge's first argument is &quot;-script&quot; then the argument that follows will be treated as a <a href="scripting.html">script file</a> and all the remaining arguments will be passed as arguments to that file. (The &quot;-script&quot; argument may be omitted, and if the first argument is an executable file which whose first line starts with &quot;#!&quot; and contains &quot;fontforge&quot;. This means that fontforge may be used as an interpreter. Ie. you can create a fontforge script file and type its name to your shell and fontforge will be invoked to process that file as a script file (passing any arguments to it)).</p>
+<p>-sync</p>
+<p>Do synchronous screen drawing. Slows things down, makes some things easier to debug.</p>
+<p>-unique</p>
+<p>If there is already a fontforge running on this screen, then the current version will pass its arguments to the already existing one for it to open, and then the current version will exit. So it looks more like a Mac/Windows app.</p>
+<p>-usage</p>
+<p>Display a brief description of the options</p>
+<p>-vc type</p>
+<p>Where type may be:<br> StaticGray GrayScale StaticColor PsuedoColor TrueColor DirectColor<br> (See the X manuals for a description of what these mean). FontForge will search through the visuals in an attempt to find one with the desired VisualClass (given here) and depth (given with the -depth option).</p>
+<h2 id="environment-variables">Environment Variables</h2>
+<p>FontForge examines the following environment variables:</p>
+<p><code>BROWSER</code></p>
+<p>Specifies the name of a browser program for examining documentation (must be able to read a local or remote html file and display it reasonably). On CygWin systems browsers that work in the windows world (as opposed to the cygwin sub-system) must be specified by a full path spec.</p>
+<p><code>AUTOTRACE</code></p>
+<p>Specifies the name and location of the autotrace program. (if not specified FontForge will try to find it in the user's path)</p>
+<p><code>POTRACE</code></p>
+<p>Specifies the name and location of the potrace program.</p>
+<p><code>MF</code></p>
+<p>Specifies the name and location of the metafont program. (if not specified FontForge will try to find it in the user's path)</p>
+<p><code>FONTFORGE_VERBOSE</code></p>
+<p>Turns on verbose mode in script execution (the script will be printed to stdout as it is executed).</p>
+<p><code>FONTFORGE_LOADPREFS</code></p>
+<p>Controls loading of preference items. If set to &quot;Always&quot; then preferences will be loaded even for scripts. If set to &quot;Never&quot; then preferences will not be loaded unless explicitly requested. If unset (or if set to any other value) then preferences will be loaded when ff starts up with a user interface, and will not be loaded if ff starts up executing a script.</p>
+<p><code>FONTFORGE_LANGUAGE</code></p>
+<p>Provides a default interpreter to use when executing a script. Must be either &quot;py&quot; or &quot;ff&quot;/&quot;pe&quot;.</p>
+<hr>
+<p><code>LANG, LC_ALL,</code>etc.</p>
+<p>To determine the current locale, etc.</p>
+<p><code>PATH</code></p>
+<p>Used when looking for Autotrace or mf programs</p>
+<p><code>TMPDIR</code></p>
+<p>Temporary directory. Used for temporary files for which I need a filename (ie. to pass to autotrace, etc.)</p>
+<p><code>HOME</code></p>
+<p>Used to figure out where to put the .FontForge directory which includes user preferences and the recovery files.</p>
+<p><code>USER</code></p>
+<p>Used to create comments in new fonts about who created the font, or who saved it.</p>
+<p>-- <a href="xres.html">Prev</a> -- <a href="overview.html">TOC</a> -- <a href="files.html">Next</a> --</p>
+</div><!-- end main -->
+
+<footer>
+<section>
+<h3 id="fontforge">Fontforge</h3>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="download.html">Download</a></li>
+<li><a href="changelog.html">Changelog</a></li>
+<li><a href="acknowledgements.html">Acknowledgements</a></li>
+<li><a href="helpout.html">Help Out</a></li>
+<li><a href="http://sourceforge.net/projects/fontforge/">SF Project page</a><br></li>
+<li><a href="http://sourceforge.net/project/project_donations.php?group_id=103338">Donate</a></li>
+</ul>
+</section> <section>
+<h3 id="features">Features</h3>
+<ul>
+<li><a href="features.html">Features</a></li>
+<li><a href="lacks.html">Things missing</a></li>
+<li><a href="bugs.html">Known bugs</a></li>
+</ul>
+</section> <section>
+<h3 id="reference">Reference</h3>
+<ul>
+<li><a href="bibliography.html">Bibliography</a></li>
+<li><a href="related-tools.html">Related tools</a></li>
+<li><a href="librefontdevelopment.html">Libre Font Dev Efforts</a></li>
+</ul>
+</section> <section>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li><a href="overview.html">Table of Contents</a></li>
+<li><a href="install.html">Install</a></li>
+<li><a href="editexampple.html">Get started</a></li>
+<li><a href="glossary.html">Typographic Glossary</a></li>
+<li><a href="faqFS.html">FAQ</a></li>
+</ul>
+</section>
+</footer><!-- end main -->
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head><!--[if IE]><script>document.lastChild.id="ie"+/IE (d+)/.exec(navigator.userAgent)[1]</script><![endif]-->
+<!-- explanation: http://www.eric-shinn.com/css-if-ie-conditional-hack-futureproof/ -->
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>sfddiff -- A program for comparing fonts</title>
+	<meta name="description" content="Outline font editor">
+	<meta name="author" content="humans.txt">
+
+	
+
+	<meta name="viewport" content="width=1024">
+
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="favicon.png">
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script>window.html5 || document.write('<script src="js/libs/html5.js"></script>')</script>
+	<![endif]-->
+</head>
+<body>
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+<header>
+<a href="index.html"><h1><img src="img/fontforge.png">Fontforge</h1></a>
+<nav>
+	<li><a href="download.html">Download</a></li>
+	<li><a href="source-build.html">Install</a></li>
+	<!-- <li><a href="index.html">Features</a></li> -->
+	<li><a href="overview.html">Documentation</a></li>
+	<li><a href="helpout.html">Help Out</a></li>
+</nav>
+</header><!-- end main -->
+
+<div id="main">
+<p>sfddiff<br> A program for comparing fonts ==============================</p>
+<p><code>sfddiff [-merge outfile] [-ignorehints] [-ignorenames] [-ignoregpos]   [-ignoregsub] [-ignorebitmaps] [-exact] [-warn] [-version] [-help] fontfile1   fontfile2</code></p>
+<p><em>Sfddiff</em> compares (or merges) two font files (in any format <a href="overview.html">fontforge</a> can read) and checks for differences.</p>
+<p>It will notice:</p>
+<ol type="1">
+<li>any characters present in one font but not in the other</li>
+<li>any characters present in both fonts but which have different sets of outlines or references. The outlines may be compared so that only exact matches are accepted, or so that a fuzzier match is used (useful in compare that a truetype and postscript font are the same). Similarly references may be matched exactly or may match after an unlink.</li>
+<li>optionally will check if the postscript hints or truetype instructions are different.</li>
+<li>if the truetype 'name' tables match</li>
+<li>if kerning (and other 'GPOS' data) match</li>
+<li>if ligatures (and other 'GSUB' data) match</li>
+<li>Any bitmap strikes present in one font but not the other</li>
+<li>Any bitmap characters present in one font but not the other</li>
+<li>Any bitmap characters which differ</li>
+</ol>
+<p>If the <code>-merge</code> flag is specified the following argument should be the name of an output file into which sfddiff will store a merged version of the two fonts. This will contain everything from fontfile1 as well as any characters present in fontfile2 but not in fontfile1. For any characters with different outlines or references, the background of the character will contain the splines from fontfile2 (sadly references can not be placed in the background).</p>
+<p>If the <code>-ignorehints</code> flag is specified, then no hint differences will be reported.</p>
+<p><code>-help</code> will provide a mini description and will list the available options.</p>
+<p><code>-usage</code> will list the available options.</p>
+<p><code>-version</code> will display the current version of <em>sfddiff</em>.</p>
+<h3 id="see-also">See Also</h3>
+<p><a href="overview.html">FontForge</a></p>
+</div><!-- end main -->
+
+<footer>
+<section>
+<h3 id="fontforge">Fontforge</h3>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="download.html">Download</a></li>
+<li><a href="changelog.html">Changelog</a></li>
+<li><a href="acknowledgements.html">Acknowledgements</a></li>
+<li><a href="helpout.html">Help Out</a></li>
+<li><a href="http://sourceforge.net/projects/fontforge/">SF Project page</a><br></li>
+<li><a href="http://sourceforge.net/project/project_donations.php?group_id=103338">Donate</a></li>
+</ul>
+</section> <section>
+<h3 id="features">Features</h3>
+<ul>
+<li><a href="features.html">Features</a></li>
+<li><a href="lacks.html">Things missing</a></li>
+<li><a href="bugs.html">Known bugs</a></li>
+</ul>
+</section> <section>
+<h3 id="reference">Reference</h3>
+<ul>
+<li><a href="bibliography.html">Bibliography</a></li>
+<li><a href="related-tools.html">Related tools</a></li>
+<li><a href="librefontdevelopment.html">Libre Font Dev Efforts</a></li>
+</ul>
+</section> <section>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li><a href="overview.html">Table of Contents</a></li>
+<li><a href="install.html">Install</a></li>
+<li><a href="editexampple.html">Get started</a></li>
+<li><a href="glossary.html">Typographic Glossary</a></li>
+<li><a href="faqFS.html">FAQ</a></li>
+</ul>
+</section>
+</footer><!-- end main -->
+
+</body>
+</html>

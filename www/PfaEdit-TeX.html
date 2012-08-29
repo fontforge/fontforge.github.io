@@ -1,0 +1,241 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head><!--[if IE]><script>document.lastChild.id="ie"+/IE (d+)/.exec(navigator.userAgent)[1]</script><![endif]-->
+<!-- explanation: http://www.eric-shinn.com/css-if-ie-conditional-hack-futureproof/ -->
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>Using FontForge with TeX</title>
+	<meta name="description" content="Outline font editor">
+	<meta name="author" content="humans.txt">
+
+	
+
+	<meta name="viewport" content="width=1024">
+
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="favicon.png">
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script>window.html5 || document.write('<script src="js/libs/html5.js"></script>')</script>
+	<![endif]-->
+</head>
+<body>
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+<header>
+<a href="index.html"><h1><img src="img/fontforge.png">Fontforge</h1></a>
+<nav>
+	<li><a href="download.html">Download</a></li>
+	<li><a href="source-build.html">Install</a></li>
+	<!-- <li><a href="index.html">Features</a></li> -->
+	<li><a href="overview.html">Documentation</a></li>
+	<li><a href="helpout.html">Help Out</a></li>
+</nav>
+</header><!-- end main -->
+
+<div id="main">
+<h1 id="fontforge-and-tex">FontForge and TeX</h1>
+<p>FontForge has a number of features built in to it to deal with TeX.</p>
+<p>It can read &quot;pk&quot; and &quot;gf&quot; bitmap files and <a href="elementmenu.html#AutoTrace">autotrace</a> them to generate outline fonts. It can even invoke metafont directly on a &quot;.mf&quot; file, generate a &quot;gf&quot; bitmap from that, autotrace it and generate an outline font.</p>
+<p>It can read ligature, kerning information from a &quot;.tfm&quot; file. It can create a tfm file.</p>
+<p>The <a href="Encodings.ps.gz">encodings</a> file has a number of standard TeX encodings built in to it.</p>
+<p>For large CJK truetype fonts it can read a sub-font definition file as defined in the ttf2tfm man page and <a href="generate.html">generate</a> a series of postscript type-1 fonts based on those two.</p>
+<p>In consultation with the lilypond group we have designed a new <a href="non-standard.html">SFNT table 'TeX</a>' for storing TeX specific information in True/OpenType files.</p>
+<h3 id="generating-a-tfm-file-and-an-enc-file.">Generating a tfm file (and an enc file).</h3>
+<p>Before you generate a tfm file you should perform some of the following</p>
+<p>Set the font parameters</p>
+<p>Do this with Element-&gt;Font Info-&gt;TeX.</p>
+<p>Optionally set Italic Correction values for glyphs</p>
+<p>(FontForge will generate default values for italic fonts, so you only need do this if FontForge gets it wrong).</p>
+<ul>
+<li>Select a glyph which should have an Italic Correction</li>
+<li>Element-&gt;Glyph Info-&gt;Alt Pos</li>
+<li>Press [New]</li>
+<li>Set the tag to <code>Italic Correction</code> from the pulldown list</li>
+<li>Set the XAdvance to the italic correction</li>
+</ul>
+<p>Optionally set any glyphlists</p>
+<ul>
+<li>Select the first glyph in the glyphlist (the smallest one)</li>
+<li>Element-&gt;Glyph Info-&gt;Alt Subs</li>
+<li>Press [New]</li>
+<li>Set the tag to <code>TeX Glyphlist</code> from the pulldown list</li>
+<li>Type the names of all the other glyphs in the glyphlist into the Components field<br> So if the charlist is for left parenthesis<br> You would select the lparen glyph and might type in &quot;lparen.big lparen.bigger lparen.biggest&quot;</li>
+</ul>
+<p>Optionally set any extension glyphs.</p>
+<ul>
+<li>If the glyph is in a charlist then Select the last glyph in the glyphlist (the largest one)</li>
+<li>Element-&gt;Glyph Info-&gt;Mult Subs</li>
+<li>Press [New]</li>
+<li>Set the tag to <code>TeX Extension list</code>from the pulldown list</li>
+<li>Type the names of the glyphs that this glyph decomposes into in the order: top middle bottom extension<br> If a field is not present use .notdef<br> So if the extension list is for left parenthesis<br> You would select the lparen.biggest glyph and might type in &quot;lparen.top lparen.mid lparen.bottom lparen.ext&quot;</li>
+</ul>
+<p>Note: When FontForge does a File-&gt;Merge Feature Info on a tfm file, it will set these values appropriately.</p>
+<p>Having done this to your satisfaction you are ready to generate a tfm file. Go to File-&gt;Generate Fonts, select one of the postscript encodings from the pulldown list, press the [Options] button and turn on the [*] Tfm &amp; Enc check box.</p>
+<p>I'm not sure what you <em>do</em> with these files yet, but this should create them.</p>
+<h3 id="installing-a-type1-pfb-postscript-font-for-tex">Installing a type1 (pfb) postscript font for TeX</h3>
+<p>I am a novice TeX/LaTeX user so my comments should be taken with a grain of salt. I did manage to get this process to work on my own system.</p>
+<p>Installing a PostScript font for TeX is more complicated than one would hope (and so far I've only figured out how to install a Latin font). Instead of just moving the font file to some standard directory you must:</p>
+<ul>
+<li>&lt;configure TeX so that it is prepared for local additions&gt;</li>
+<li>Rename the font file so that the filename is in a format TeX understands<br> (I'm told this isn't required, but I couldn't get things to work without doing this. Perhaps I have an old system. Perhaps I didn't try hard enough)</li>
+<li>Create several helper files that TeX will use for its own purposes</li>
+<li>Move each file type into its own special directory</li>
+<li>Optionally: Create a package file to make it easy for LaTeX to find the font</li>
+<li>Optionally: Move the package file into its own directory</li>
+<li>Use the updmap script or manually:
+<ul>
+<li>Update dvips's configuration files so that it knows where to look for the postscript fonts</li>
+<li>Optionally: Update pdftex's configuration files so that it knows where to look too.</li>
+</ul></li>
+</ul>
+<p>I suggest that before you read further you look at the following resources on the web:</p>
+<ul>
+<li>It is possible to add your fonts to the standard TeX directory structure, but the TeX guru's frown on this as it makes updating TeX difficult. They suggest instead that you make all your changes in some parallel directory and provide they instructions on how to go about doing this at: <a href="http://www.ctan.org/installationadvice/">Installation advice for TeX fonts and directories</a>. They also provide an example of a font installation but that is better explained in <a href="http://www.ctan.org/tex-archive/info/Type1fonts/fontinstallationguide.pdf">the LaTeX font-faq</a>.</li>
+<li>Old versions of TeX (ie. mine) are still worried about the old 8 character limitation on DOS filenames. This means that the tools I was using don't accept understandable filenames instead they require a format described in <a href="http://www.tug.org/fontname/html/index.html">TeX font file naming conventions</a>. If you are creating your own fonts this boils down to:
+<ul>
+<li>the first letter of the font should be &quot;f&quot; (which means the font wasn't made by one of the big-name font vendors)</li>
+<li>the next two letters are some abbreviation of the family-name for your font</li>
+<li>the next letter (or two) should be &quot;r&quot; for a roman font, &quot;i&quot; for italic, &quot;o&quot; for oblique, &quot;b&quot; for bold, and &quot;bi&quot; for bold italic</li>
+<li>the last two letters should be &quot;8a&quot; (which means your font is in Adobe Standard Encoding. And your font <em>must be</em> in that encoding or things don't work).<br> (Again I am told that you can use any encoding as long as you register it with TeX. I was unable to get this to work. But my system is out of date)</li>
+</ul></li>
+<li>Finally <a href="http://www.ctan.org/tex-archive/info/Type1fonts/fontinstallationguide.pdf">the LaTeX font-faq</a> describes the gory details of how to go about installing the font. Its only (minor) drawback is that it assumes you are installing a font from Adobe. That is easily glossed over it means that:
+<ul>
+<li>fonts from Adobe should have font names beginning with &quot;p&quot; rather than &quot;f&quot;.</li>
+<li>the translation from adobe's font-families to 2 character abbreviations has already been done, when using an adobe font you look the family up in a table to get the 2 character abbreviation, when creating your own font you make up your own.</li>
+<li>the vendor directory for adobe is &quot;adobe&quot;, but the vendor directory for fonts you make should be &quot;public&quot;</li>
+<li>(I hope these comments will make sense after you've read the above links)</li>
+</ul></li>
+<li>I've not tried to work with truetype fonts, but here's a document that talks about it to some extent. <a href="http://www.radamir.com/tex/ttf-tex.htm">LaTeX and TTF</a></li>
+<li>If you are interested in the basics, here's the documentation on <a href="http://www.ctan.org/tex-archive/fonts/utilities/fontinst/doc/fontinst.ps">fontinst</a> itself.</li>
+<li>I don't know how to deal with cyrillic (except that cyrillic T2 encodings are called 6a), greek or CJK fonts yet.</li>
+<li>Here's some info on how to use fonts once they are installed: <a href="http://www-h.eng.cam.ac.uk/help/tpl/textprocessing/fonts.html">LaTeX and fonts</a></li>
+</ul>
+<p>I did the following:</p>
+<ul>
+<li>I created a directory structure as described in <a href="http://www.ctan.org/installationadvice/">Installation advice</a> (and also in <a href="http://www.ctan.org/tex-archive/info/Type1fonts/fontinstallationguide.pdf">the LaTeX font-faq</a>).</li>
+<li>I made a font (which I will call Cupola), initially I encoded it with the TeX Base Encoding (this was to make sure I had all the characters I needed)</li>
+<li>Then just before generating it I reencoded it into Adobe Standard Encoding (because TeX's fontinst routine expects that)</li>
+<li>I generated the font naming it &quot;fcur8a.pfb&quot; which means:
+<ul>
+<li>f -- made by a small font vendor, public domain, etc.</li>
+<li>cu -- abbreviation for the family name &quot;Cupola&quot;</li>
+<li>r -- roman face</li>
+<li>8a -- Adobe Standard Encoding</li>
+</ul></li>
+<li><p>I applied the following script:</p>
+<blockquote>
+<pre><code>#!/bin/bash
+# You will need to change the next two lines to suit your font.
+# You may need to change the two after that as well.
+BASE=fcu
+PACKAGE=cupola
+VENDOR=public
+LOCALTEXMF=/usr/local/share/texmf
+
+# remove any old files that might be lying around and might confuse us later on
+csh -c &quot;rm fi.tex *.mtx *.pl *.vpl&quot;
+
+# create a little script to get TeX to create various useful files it needs
+echo &quot;\input fontinst.sty&quot; &gt;fi.tex
+echo &quot;\latinfamily{$BASE}{}&quot; &gt;&gt;fi.tex
+echo &quot;\bye&quot; &gt;&gt;fi.tex
+
+#execute that script
+tex fi
+
+# But we need to do a bit more processing on some of those files
+for file in *.pl ; do
+pltotf $file
+done
+for file in *.vpl ; do
+vptovf $file
+done
+
+# Get rid of stuff we don&#39;t need any more
+rm fi.tex *.mtx *.pl *.vpl
+
+# create the directories we need for the various components
+mkdir -p $LOCALTEXMF/fonts/type1/$VENDOR/$PACKAGE 
+    $LOCALTEXMF/fonts/afm/$VENDOR/$PACKAGE 
+    $LOCALTEXMF/fonts/tfm/$VENDOR/$PACKAGE 
+    $LOCALTEXMF/fonts/vf/$VENDOR/$PACKAGE 
+    $LOCALTEXMF/tex/latex/$VENDOR/$PACKAGE
+
+# move everything into its expected directory
+cp $BASE*.pfb $LOCALTEXMF/fonts/type1/$VENDOR/$PACKAGE
+cp $BASE*.afm $LOCALTEXMF/fonts/afm/$VENDOR/$PACKAGE
+mv $BASE*.tfm $LOCALTEXMF/fonts/tfm/$VENDOR/$PACKAGE
+mv $BASE*.vf $LOCALTEXMF/fonts/vf/$VENDOR/$PACKAGE
+mv *$BASE*.fd $LOCALTEXMF/tex/latex/$VENDOR/$PACKAGE
+
+# finally create the LaTeX package for this font (and put it in the right place)
+echo &quot;\ProvidesPackage{$PACKAGE}&quot; &gt; $LOCALTEXMF/tex/latex/$VENDOR/$PACKAGE/$PACKAGE.sty
+echo &quot;\renewcommand{\rmdefault}{$BASE}&quot; &gt;&gt; $LOCALTEXMF/tex/latex/$VENDOR/$PACKAGE/$PACKAGE.sty
+echo &quot;\endinput&quot; &gt;&gt; $LOCALTEXMF/tex/latex/$VENDOR/$PACKAGE/$PACKAGE.sty
+
+# but updating the map files required a bit more knowlege than this script has
+# so I left that to be done by hand
+echo &quot;*********************************************************************&quot;
+echo You need to create your own map files
+echo One should be called $LOCALTEXMF/dvips/config/$BASE.map and should
+echo &quot; contain a line for each file in the family. One might look like this:&quot;
+echo &quot;${BASE}r8a $PACKAGE-Regular &quot;TexBase1Encoding ReEncodeFont&quot; &lt;8r.enc &lt;${BASE}r8a.pfb&quot;
+echo Then change the config.ps file by looking for the location defining the
+echo &quot; standard map file and adding:&quot;
+echo &quot;p +$BASE.map&quot;
+echo &quot; after it.&quot;
+echo Then go to $LOCALTEXMF/pdftex/config/
+echo Make a copy &quot;(or a link)&quot; of $LOCALTEXMF/dvips/config/$BASE.map
+echo and edit pdftex.cfg and insert
+echo &quot;p +$BASE.map&quot;
+echo at the appropriate place in it too.</code></pre>
+</blockquote></li>
+</ul>
+<p>-- <a href="scripting.html">Prev</a> -- <a href="overview.html">TOC</a> -- <a href="errrecovery.html">Next</a> --</p>
+</div><!-- end main -->
+
+<footer>
+<section>
+<h3 id="fontforge">Fontforge</h3>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="download.html">Download</a></li>
+<li><a href="changelog.html">Changelog</a></li>
+<li><a href="acknowledgements.html">Acknowledgements</a></li>
+<li><a href="helpout.html">Help Out</a></li>
+<li><a href="http://sourceforge.net/projects/fontforge/">SF Project page</a><br></li>
+<li><a href="http://sourceforge.net/project/project_donations.php?group_id=103338">Donate</a></li>
+</ul>
+</section> <section>
+<h3 id="features">Features</h3>
+<ul>
+<li><a href="features.html">Features</a></li>
+<li><a href="lacks.html">Things missing</a></li>
+<li><a href="bugs.html">Known bugs</a></li>
+</ul>
+</section> <section>
+<h3 id="reference">Reference</h3>
+<ul>
+<li><a href="bibliography.html">Bibliography</a></li>
+<li><a href="related-tools.html">Related tools</a></li>
+<li><a href="librefontdevelopment.html">Libre Font Dev Efforts</a></li>
+</ul>
+</section> <section>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li><a href="overview.html">Table of Contents</a></li>
+<li><a href="install.html">Install</a></li>
+<li><a href="editexampple.html">Get started</a></li>
+<li><a href="glossary.html">Typographic Glossary</a></li>
+<li><a href="faqFS.html">FAQ</a></li>
+</ul>
+</section>
+</footer><!-- end main -->
+
+</body>
+</html>

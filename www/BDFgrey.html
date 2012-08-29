@@ -1,0 +1,99 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head><!--[if IE]><script>document.lastChild.id="ie"+/IE (d+)/.exec(navigator.userAgent)[1]</script><![endif]-->
+<!-- explanation: http://www.eric-shinn.com/css-if-ie-conditional-hack-futureproof/ -->
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>Extensions to Adobe's Bitmap Distribution Format for greymap (anti-aliased)</title>
+	<meta name="description" content="Outline font editor">
+	<meta name="author" content="humans.txt">
+
+	
+
+	<meta name="viewport" content="width=1024">
+
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="favicon.png">
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script>window.html5 || document.write('<script src="js/libs/html5.js"></script>')</script>
+	<![endif]-->
+</head>
+<body>
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+<header>
+<a href="index.html"><h1><img src="img/fontforge.png">Fontforge</h1></a>
+<nav>
+	<li><a href="download.html">Download</a></li>
+	<li><a href="source-build.html">Install</a></li>
+	<!-- <li><a href="index.html">Features</a></li> -->
+	<li><a href="overview.html">Documentation</a></li>
+	<li><a href="helpout.html">Help Out</a></li>
+</nav>
+</header><!-- end main -->
+
+<div id="main">
+<h1 id="extensions-to-adobes-bdf-for-greymap-fonts">Extensions to <a href="http://partners.adobe.com/asn/developer/PDFS/TN/5005.BDF_Spec.pdf">Adobe's BDF</a> for greymap fonts</h1>
+<p>Adobe has defined a file format for distributing bitmap fonts called BDF. MicroSoft extended this format to support greymap (anti-aliased, each pixel representing various levels of grey rather than just black/white) fonts. Recently others have started using this same format (<a href="http://crl.nmsu.edu/~mleisher/xmbdfed.html">xmbdfed</a>, <a href="http://freetype.sf.net/">freetype</a> and <a href="index.html">fontforge</a>).</p>
+<p>In Section 3.1 of the format description Adobe defines a &quot;SIZE&quot; keyword. MicroSoft has added an optional fourth parameter to this keyword<br> <code>         SIZE PointSize XRes YRes [Bits_Per_Pixel]</code><br> This fourth parameter may take the values 1, 2, 4 and 8. If omitted it is assumed to be 1. (FontForge will also read in fonts with values of 16 and 32, but it will simply ignore any low order data and only retain the high order byte).</p>
+<p>FontForge will also include a font property<br> <code>         BITS_PER_PIXEL Value</code><br> in all greymap fonts it generates.</p>
+<p>FontForge will also mark all such fonts as version 2.3 of the bdf standard <br> <code>         STARTFONT 2.3</code></p>
+<p>The bitmap data are stored with 8, 4, 2 or 1 pixels packed into a byte depending on whether BITS_PER_PIXEL is 1, 2, 4 or 8. As in Adobe's spec all data are presented in hex and an even number of nibbles must be present.</p>
+<p><strong>Example:</strong><br> <code>  BITMAP   C8   ENDCHAR</code><br> Would represent the pixel sequences</p>
+<p>Bits/Pixel</p>
+<p>Pixels</p>
+<p>1</p>
+<p>1,1,0,0,1,0,0,0</p>
+<p>2</p>
+<p>3,0,2,0</p>
+<p>4</p>
+<p>C,8</p>
+<p>8</p>
+<p>C8</p>
+</div><!-- end main -->
+
+<footer>
+<section>
+<h3 id="fontforge">Fontforge</h3>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="download.html">Download</a></li>
+<li><a href="changelog.html">Changelog</a></li>
+<li><a href="acknowledgements.html">Acknowledgements</a></li>
+<li><a href="helpout.html">Help Out</a></li>
+<li><a href="http://sourceforge.net/projects/fontforge/">SF Project page</a><br></li>
+<li><a href="http://sourceforge.net/project/project_donations.php?group_id=103338">Donate</a></li>
+</ul>
+</section> <section>
+<h3 id="features">Features</h3>
+<ul>
+<li><a href="features.html">Features</a></li>
+<li><a href="lacks.html">Things missing</a></li>
+<li><a href="bugs.html">Known bugs</a></li>
+</ul>
+</section> <section>
+<h3 id="reference">Reference</h3>
+<ul>
+<li><a href="bibliography.html">Bibliography</a></li>
+<li><a href="related-tools.html">Related tools</a></li>
+<li><a href="librefontdevelopment.html">Libre Font Dev Efforts</a></li>
+</ul>
+</section> <section>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li><a href="overview.html">Table of Contents</a></li>
+<li><a href="install.html">Install</a></li>
+<li><a href="editexampple.html">Get started</a></li>
+<li><a href="glossary.html">Typographic Glossary</a></li>
+<li><a href="faqFS.html">FAQ</a></li>
+</ul>
+</section>
+</footer><!-- end main -->
+
+</body>
+</html>

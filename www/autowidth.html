@@ -1,0 +1,238 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head><!--[if IE]><script>document.lastChild.id="ie"+/IE (d+)/.exec(navigator.userAgent)[1]</script><![endif]-->
+<!-- explanation: http://www.eric-shinn.com/css-if-ie-conditional-hack-futureproof/ -->
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>Auto Width and Auto Kern</title>
+	<meta name="description" content="Outline font editor">
+	<meta name="author" content="humans.txt">
+
+	
+
+	<meta name="viewport" content="width=1024">
+
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="favicon.png">
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script>window.html5 || document.write('<script src="js/libs/html5.js"></script>')</script>
+	<![endif]-->
+</head>
+<body>
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+<header>
+<a href="index.html"><h1><img src="img/fontforge.png">Fontforge</h1></a>
+<nav>
+	<li><a href="download.html">Download</a></li>
+	<li><a href="source-build.html">Install</a></li>
+	<!-- <li><a href="index.html">Features</a></li> -->
+	<li><a href="overview.html">Documentation</a></li>
+	<li><a href="helpout.html">Help Out</a></li>
+</nav>
+</header><!-- end main -->
+
+<div id="main">
+<h2 id="auto-width">Auto Width<img src="img/autowidth.png"></h2>
+<p>The Auto Width command will attempt to guess reasonable widths (more accurately reasonable left and right side bearings) for your font. The command splits the selection into scripts and looks at all possible combinations of selected glyphs within each script.</p>
+<p>The Separation text box allows you to say how close you want the glyphs to be. If you look at a vertical bar (or sanserif &quot;I&quot;), and you autowidth it the sum of the left and right side bearings will be equal to the spacing. The min and max values will prevent sidebearings from becoming unrealistically large (these rarely matter).</p>
+<p>Adjusting the left and right bearings of a letter will also adjust the left and right bearings of all accented letters based (by reference) on it. You should not try to use AutoWidth on accented letters directly (unless those glyphs do not use references).<br> Auto Kern ---------</p>
+<p>There used to be an Auto Kern dialog. There is no longer, this is now done in the <a href="lookups.html#Pair">kerning subtable</a> dialog and the <a href="metricsview.html#kernclass">kerning class</a>dialog.</p>
+<hr>
+<h3 id="the-python-glyphseparationhook">The python <code>GlyphSeparationHook</code></h3>
+<p>When FontForge does AutoKerning (and in a more complicated fashion, when it does AutoWidthing) it tries to guess the optical separation between two glyphs, and then it applies an appropriate kern value to make the optical separation be the desired spacing.</p>
+<p>FontForge assumes that the optical spacing is linear (so if you increase the separation between two glyphs by 3 em-units, then the optical spacing will also increase by 3 em-units).</p>
+<p>FF guesses the optical separation between two glyphs by figuring a value for the separation of two glyphs when their bounding boxes are adjacent. For two rectangles (where the bounding box is the same as the glyph itself) the separation will be 0 as the two glyphs will be touching. For a combination like &quot;To&quot; the optical separation will be quite large.</p>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">![](img/GlyphSep-rectangles.png</td>
+<td style="text-align: left;">) <img src="img/GlyphSep-To.png"></td>
+</tr>
+</tbody>
+</table>
+<p>The GlyphSeparationHook is a python routine which will be called with a bunch of information about two glyphs, and is expected to return an integer representing the optical separation between the two. It is a low-level routine; the actual calculation of kerning offsets or setting glyph widths is done elsewhere, but this routine provides the information those higher level routines need. Of course, if you don't provide a routine, FontForge has a built-in routine which will provide a default behavior. Here is a python version of that default routine:</p>
+<blockquote>
+<pre><code>import fontforge;
+
+def GlyphSeparation(onLeft,onRight,context) :
+    # the goal is to give a weighted average that expresses the visual 
+    #  separation between two glyphs when they are placed so their bounding 
+    #  boxes are adjacent. The separation between two rectangles would be 0 
+    #  While the separation between &quot;T&quot; and &quot;o&quot; would be fairly large 
+    # The trick is to guess a good weighting function. My guess is that 
+    #  things that look close are more important than those which look far 
+    #  So &quot;T&quot; and &quot;O&quot; should be dominated by the crossbar of the &quot;T&quot;...
+    #
+    # Find the area the two glyphs have in common (so when comparing &quot;o&quot; and
+    #  &quot;l&quot; or &quot;g&quot;, ignore the ascenders and descenders since that&#39;s outside
+    #  the range of &quot;o&quot; and won&#39;t affect its visual proximity.
+    imin_y = max(onRight.iminY,onLeft.iminY);
+    imax_y = min(onRight.imaxY,onLeft.imaxY);
+    #
+    # Some glyph combinations will have no overlap -- the grave accent and the
+    # letter &quot;a&quot; will have none. So they don&#39;t interact visually.
+    if imax_y &lt; imin_y :
+    return( 0 )
+    #
+    # Otherwise compute some sort of weighted average of the separations between
+    # the two glyphs at various heights.
+    tot,cnt = 0,0
+    j = imin_y
+    while j&lt;=imax_y :
+    if onRight.left[j] &lt; 32767 and onLeft.right[j] &gt; -32767 :
+        # beware of gaps such as those in &quot;i&quot; or &quot;aaccute&quot; 
+        # a gap has a left or right value which is huge
+        # so ignore any such, again it doesn&#39;t contribute to the
+        # visual separation.
+        sep = onRight.left[j] - onLeft.right[j]
+        weight = 1.0/(sep + context.denom)
+        weight *= weight
+        tot += weight*sep
+        cnt += weight
+    j += 1
+    if cnt!=0 :
+    tot /= cnt
+    return( int(round( tot )) );
+
+fontforge.registerGlyphSeparationHook(GlyphSeparation)</code></pre>
+</blockquote>
+<p>The hook will be called with three arguments, a structure with information about the glyph on the left, a structure with information about the glyph on the right, and a structure containing general information about the operation as a whole.</p>
+<p>The context argument contains the following fields:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">font</td>
+<td style="text-align: left;">The font being worked on</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">emSize</td>
+<td style="text-align: left;">The emsize of the font</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">layer</td>
+<td style="text-align: left;">The active layer for this operation</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">regionHeight</td>
+<td style="text-align: left;">(explained below) by default emSize/100</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">denom</td>
+<td style="text-align: left;">1/50th of the emSize. A number I found handy.</td>
+</tr>
+</tbody>
+</table>
+<p>FontForge preprocess all the glyphs, extracting pertinant information from each and storing it in a separate per-glyph structure than the normal python Glyph object. The most important information is a representation of the leftmost and rightmost edges of the glyph. Basically, for every value of y, FontForge finds the smallest x coordinate on any of the glyph's contours at that height and stores that information in an array. There is a similar array containing the largest x coordinates. Of course there are an infinite number of y values, so that isn't quite accurate. FontForge divides the vertical axis into many regions, each regionHeight high (this is usually 1/100th of the emsize). It then finds the smallest x coordinate achieved by any contour within that region.</p>
+<p>The value stored in the array representing the leftmost edge of the glyph is not quite the smallest x coordinate. Instead we normalize the numbers so that the x coordinate of the left side bearing of the glyph is 0. None of the numbers in the left array will be negative.</p>
+<p>Similarly the value stored in the rightmost array is normalized so that the glyph's right side bearing is 0. None of the numbers in the right array will be positive.</p>
+<p>There can be gaps in a glyph -- for example in a lower case &quot;i&quot; there is a hole in the body of the glyph between the dot on top and the rest down below. In this case the left array will hold the special value 32767, and the right array will hold -32767.</p>
+<p>So I don't pass a standard glyph object. The underlying glyph object can be obtained through the <code>glyph</code> member. The most important things in this structure are the arrays representing the left and right contours called <code>left</code> and <code>right</code>. The structure also contains the upper and lower bounds of the arrays (both arrays have the same bounds). The glyph structures contain the following members:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">glyph</td>
+<td style="text-align: left;">This is the standard python glyph object. This can (rarely) be None.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">boundingbox</td>
+<td style="text-align: left;">A tuple of 4 values (minx,miny,maxx,maxy) for the glyph</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">iminY</td>
+<td style="text-align: left;">The low bound of the arrays.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">imaxY</td>
+<td style="text-align: left;">The high bound of the arrays</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">left</td>
+<td style="text-align: left;">an array of integers representing the separation between the left edge of the bounding box and the leftmost contour at that height (never negative)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">right</td>
+<td style="text-align: left;">an array of integers representing the separation between the right edge of the bounding box and the rightmost contour at that height (never positive)</td>
+</tr>
+</tbody>
+</table>
+<p><code>iminY</code> and <code>imaxY</code> are scaled by <code>regionHeight</code> from the y units in the glyph itself. The value contain at left[0] would represent minimum separation between boundingbox.minx and any the x location of any contour when the y location was between 0 and regionHeight. Similarly left[1] would be the minimum separation with the y location between regionHeight and 2*regionHeight. And so forth.</p>
+<blockquote>
+<pre><code>    imin_y = max(onRight.iminY,onLeft.iminY);
+    imax_y = min(onRight.imaxY,onLeft.imaxY);
+    if imax_y &lt; imin_y :
+    return( 0 )</code></pre>
+</blockquote>
+<p>Here we figure out the range along the y axis where the glyphs both exist. If the two glyphs don't share any area along the y axis (as, for example, the glyph &quot;a&quot; and the grave accent might not) then we assume they do not interact and return a visual separation of 0.</p>
+<blockquote>
+<pre><code>    tot,cnt = 0,0
+    j = imin_y
+    while j&lt;=imax_y :
+    if onRight.left[j] &lt; 32767 and onLeft.right[j] &gt; -32767 :
+        sep = onRight.left[j] - onLeft.right[j]
+        weight = 1.0/(sep + context.denom)
+        weight *= weight
+        tot += weight*sep
+        cnt += weight
+    j += 1</code></pre>
+</blockquote>
+<p>Otherwise loop over the y range where both glyphs are active. Checking to make sure there are no holes.</p>
+<p>We find the actual separation between the two glyphs at this y value.</p>
+<p>Then we calculate some magic weighting function (this is handwaving. your routine will have a better weighting function)</p>
+<blockquote>
+<pre><code>    if cnt!=0 :
+    tot /= cnt
+    return( int(round( tot )) );</code></pre>
+</blockquote>
+<p>And finally we take the weighted average of those separations, and return that as the optical separation.</p>
+<blockquote>
+<pre><code>fontforge.registerGlyphSeparationHook(GlyphSeparation)</code></pre>
+</blockquote>
+<p>And this routine will tell FontForge to use the hook you provide.</p>
+</div><!-- end main -->
+
+<footer>
+<section>
+<h3 id="fontforge">Fontforge</h3>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="download.html">Download</a></li>
+<li><a href="changelog.html">Changelog</a></li>
+<li><a href="acknowledgements.html">Acknowledgements</a></li>
+<li><a href="helpout.html">Help Out</a></li>
+<li><a href="http://sourceforge.net/projects/fontforge/">SF Project page</a><br></li>
+<li><a href="http://sourceforge.net/project/project_donations.php?group_id=103338">Donate</a></li>
+</ul>
+</section> <section>
+<h3 id="features">Features</h3>
+<ul>
+<li><a href="features.html">Features</a></li>
+<li><a href="lacks.html">Things missing</a></li>
+<li><a href="bugs.html">Known bugs</a></li>
+</ul>
+</section> <section>
+<h3 id="reference">Reference</h3>
+<ul>
+<li><a href="bibliography.html">Bibliography</a></li>
+<li><a href="related-tools.html">Related tools</a></li>
+<li><a href="librefontdevelopment.html">Libre Font Dev Efforts</a></li>
+</ul>
+</section> <section>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li><a href="overview.html">Table of Contents</a></li>
+<li><a href="install.html">Install</a></li>
+<li><a href="editexampple.html">Get started</a></li>
+<li><a href="glossary.html">Typographic Glossary</a></li>
+<li><a href="faqFS.html">FAQ</a></li>
+</ul>
+</section>
+</footer><!-- end main -->
+
+</body>
+</html>

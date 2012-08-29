@@ -1,0 +1,176 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head><!--[if IE]><script>document.lastChild.id="ie"+/IE (d+)/.exec(navigator.userAgent)[1]</script><![endif]-->
+<!-- explanation: http://www.eric-shinn.com/css-if-ie-conditional-hack-futureproof/ -->
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>Examining and controling metrics and kerning</title>
+	<meta name="description" content="Outline font editor">
+	<meta name="author" content="humans.txt">
+
+	
+
+	<meta name="viewport" content="width=1024">
+
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="favicon.png">
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script>window.html5 || document.write('<script src="js/libs/html5.js"></script>')</script>
+	<![endif]-->
+</head>
+<body>
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+<header>
+<a href="index.html"><h1><img src="img/fontforge.png">Fontforge</h1></a>
+<nav>
+	<li><a href="download.html">Download</a></li>
+	<li><a href="source-build.html">Install</a></li>
+	<!-- <li><a href="index.html">Features</a></li> -->
+	<li><a href="overview.html">Documentation</a></li>
+	<li><a href="helpout.html">Help Out</a></li>
+</nav>
+</header><!-- end main -->
+
+<div id="main">
+<h1 id="tutorial-5">Tutorial #5</h1>
+<ul>
+<li><a href="editexample.html#FontCreate">Font Creation</a></li>
+<li><a href="editexample.html#CharCreate">Creating a glyph (tracing outlines)</a></li>
+<li><a href="editspiro.html">Create glyph outlines using spiro points</a></li>
+<li><a href="importexample.html">Importing a glyph from Inkscape (or Illustrator, or some other vector editor)</a></li>
+<li><a href="editexample2.html#Navigating">Navigating to other glyphs</a></li>
+<li><a href="editexample2.html#Creating-o">On to the next glyph (consistent directions)</a></li>
+<li><a href="editexample3.html#consistent-stems">Consistent serifs and stem widths</a></li>
+<li><a href="editexample4.html#accents">Building accented glyphs</a></li>
+<li><a href="editexample4.html#ligature">Building a ligature</a></li>
+<li><a href="editexample4.html#lookups">Lookups and features</a></li>
+<li><a href="editexample5.html#metrics">Examining metrics</a>
+<ul>
+<li><a href="#Vertical">Vertical metrics</a></li>
+<li><a href="editexample5.html#baseline">Setting the baseline to baseline spacing of a font</a></li>
+</ul></li>
+<li><a href="editexample5.html#Kerning">Kerning</a></li>
+<li><a href="editexample6.html#Variants">Glyph variants</a></li>
+<li><a href="editexample6.html#Marks">Anchoring marks</a></li>
+<li><a href="editexample6-5.html#Conditional">Conditional features</a></li>
+<li><a href="editexample7.html#checking">Checking your font</a></li>
+<li><a href="editexample7.html#generating">Generating it</a></li>
+<li><a href="editexample7.html#Families">Font Families</a></li>
+<li><a href="editexample7.html#summary">Final Summary</a></li>
+<li><a href="editexample8.html">Bitmap strikes</a></li>
+<li><a href="scripting-tutorial.html">Scripting Tutorial</a></li>
+<li><a href="scriptnotes.html#Special">Notes on various scripts</a></li>
+<li>Searching the documentation: (Powered by <a href="http://www.google.com/">Google</a>)</li>
+</ul>
+<h2 id="examining-and-controlling-metrics">Examining and controlling metrics</h2>
+<figure>
+<img src="img/sidebearings.png"><figcaption></figcaption>
+</figure>
+<p>After you have created the shapes of your glyphs you must next figure out the spacing between glyphs. The space between any two glyph has two components, the space after the first glyph, and the space before the second glyph. In a left to right world these two are called the right side bearing and the left side bearing respectively.</p>
+<p>The left side bearing may be changed by the simple expedient of <code>Edit-&gt;Select All</code> (in the outline view) and then dragging the selected objects to the appropriate place. The right side bearing may be changed by selecting the advance width line and adjusting it appropriately.</p>
+<p>However it is generally better not to set the metrics of a single glyph in isolation, you should see the glyph in the context of other glyphs and set it from that perspective. Use the <code>Window-&gt;Open Metrics Window</code> command.</p>
+<figure>
+<img src="img/MetricsView.png"><figcaption></figcaption>
+</figure>
+<p>Any glyphs selected in the fontview (when you invoke the metrics view) will be displayed in the metrics view. You may change which glyphs are displayed by either typing new ones in to the text field at the top of the view, or by dragging a glyph from the fontview.</p>
+<p>From here you may adjust any glyph's metrics by typing into the textfields below it, or you may select a glyph (by clicking on its image) and drag it around (to adjust the left side bearing), or drag its width line (to adjust its right side bearing).</p>
+<p>If you want to generate a &quot;typewriter&quot; style font (where all glyphs have the same width) execute an <code>Edit-&gt;Select All</code> from the fontview and then <code>Metrics-&gt;Set Width</code>. This will set the widths of all glyphs to the same value. After doing that you might also want to execute <code>Metrics-&gt;Center in Width</code> to even out the left and right spacing on each glyph.</p>
+<figure>
+<img src="img/autowidth.png"><figcaption></figcaption>
+</figure>
+<p>If all this manual operation seems too complicated, try <code>Metrics-&gt;Auto Width</code>. This will automagically assign widths to glyphs. These widths are not up to professional standards, but they are generally reasonable approximations.</p>
+<h3 id="vertical-metrics">Vertical Metrics</h3>
+<p>FontForge provides some support for the vertical metrics needed for CJK fonts. First you must tell FontForge that this font should contain vertical metrics, do this with <code>Element-&gt;Font Info-&gt;General-&gt;Has Vertical   Metrics</code>. Then in each outline glyph enable VMetrics in the Layers palette.</p>
+<p>You should now see a vertical advance line somewhere underneath your glyph. You may drag this line just as you would the horizontal advance (width) line.</p>
+<h3 id="setting-the-baseline-to-baseline-spacing-of-a-font.">Setting the baseline to baseline spacing of a font.</h3>
+<p>You might imagine that there would be an easy way to set this seemingly important quantity. Unfortunately there is not.</p>
+<h4 id="in-a-postscript-type1-font-or-bare-cff-font">In a PostScript Type1 font (or bare CFF font)</h4>
+<p>There is no way to set this value. At all, ever.</p>
+<p>In traditional typography the inter-line spacing is 1em (which in FontForge is the ascent+descent of a font). Some applications will use this. Other applications will use the font's bounding box (summing the maximum ascender height with the minimum descender depth) -- a very bad, but very common approach.</p>
+<h4 id="in-a-truetype-or-opentype-font">In a TrueType or OpenType font</h4>
+<p>Unfortunately this depends on the platform</p>
+<h5 id="mac">Mac</h5>
+<p>On a mac the baseline to baseline spacing is determined again by the bounding box values of the font, specified in the 'hhea' table, possibly modified by a linegap (Which you can set in FontForge with <a href="fontinfo.html">Element-&gt;FontInfo-&gt;OS/2</a>.</p>
+<h5 id="on-windows">On Windows</h5>
+<p>According to the OpenType spec, the baseline to baseline distance is set by the values of Typographic Ascent and Descent of the 'OS/2' table. These can be set with <a href="fontinfo.html">Element-&gt;FontInfo-&gt;OS/2</a>, but are usually allowed to default to the Ascent and Descent values of FontForge -- they generally sum to 1em and are equivalent to the traditional unleaded default.</p>
+<p>Again this may be modified by a linegap field.</p>
+<p>Unfortunately Windows programs rarely follow the standard (which I expect doesn't supprise anyone), and generally they will use the font's bounding box as specified in the Win Ascent/Descent fields of the 'OS/2' table.</p>
+<h5 id="on-linuxunix">On linux/unix</h5>
+<p>I doubt there is any standard behavior. Unix apps will probably choose one of the above.</p>
+<p>Typographically ept applications will allow users to adjust baseline to baseline spacing, so the default value may not be all that relevant.</p>
+<h2 id="kerning">Kerning</h2>
+<p>If you are careful in setting the left and right side-bearings you can design your font so that the spacing looks nice in almost all cases. But there are always some cases which confound simple solutions.</p>
+<p>Consider &quot;To&quot; or &quot;Av&quot; here the standard choices are inappropriate. The &quot;o&quot; will look better if it can slide more to the left and snuggle under the top bar of the &quot;T&quot;. This is called kerning, and it is used to control inter-glyph spacing on a pair-by-pair basis.</p>
+<table>
+<caption>Kerning</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="img/To-unkerned.png"></td>
+<td style="text-align: left;"><img src="img/To-kerned.png"></td>
+</tr>
+</tbody>
+</table>
+<p>In the above example the left image shows the unkerned text, the right shows the kerned text. To create a kerned pair in the metrics window, simply click on the right glyph of the pair, the line (normally the horizontal advance) between the two should go green (and becomes the kerned advance). Drag this line around until the spacing looks nice.</p>
+<figure>
+<img src="img/addlookup-kern.png"><figcaption></figcaption>
+</figure>
+<p>Sadly that statement is a simplification... Before you can create a kerning pair you must create a kerning lookup (see <a href="editexample4.html#lookups">the section on lookups</a>). Once again you bring up the Element-&gt;Font Info-&gt;Lookups pane and this time you must select the GPOS (Glyph Positioning) tab at the top of the pane. Once again you press <code>[Add Lookup]</code>. This time the lookup type is &quot;Pairwise Positioning&quot;, and the feature is &quot;kern&quot; (or perhaps &quot;vkrn&quot; if you want to do vertical kerning).</p>
+<p>Once you have created your lookup you again select it and press the [Add Subtable] button (which asks you to name the subtable). Then FontForge will ask you whether you want a subtable of kerning pairs or kerning classes.</p>
+<p>If you have many glyphs which have similar kerning features you might wish to create a set of <a href="metricsview.html#kernclass">kerning classes</a> (which might say that A, À, Á, Â, Â, Ã and Ä all kern alike). However for this example you want a kerning pair subtable.</p>
+<p>Then FontForge will popup a dialog allowing you to set the kerning subtable directly. You may set your kerning pairs from here, though I prefer the metrics view myself because you can see more glyphs and so get a better feel for the &quot;color&quot; of the font.</p>
+<figure>
+<img src="img/subtable-to.png"><figcaption></figcaption>
+</figure>
+<p><strong>NOTE</strong>: Some glyph combinations are better treated by <a href="editexample4.html#ligature">creating a ligature</a> than by kerning the letters.</p>
+<h3 id="vertical-kerning">Vertical Kerning</h3>
+<p>FontForge has equivalent support for vertical kerning. It can read and write vertical kerning information from and to truetype, opentype and svg fonts. It allows you to create vertical kerning classes. The metrics window has a vertical mode in which you can set vertical kerning pairs. Finally it has a command which will copy horizontal kerning information to the vertically rotated glyphs (That is, if the combination &quot;A&quot; &quot;V&quot; is horizontally kerned by -200, then &quot;A.vert&quot; &quot;V.vert&quot; should be vertically kerned by -200.</p>
+<p>(Vertical kerning is only available if the font has vertical metrics)</p>
+<p>-- <a href="editexample4.html">Prev</a> -- <a href="overview.html">TOC</a> -- <a href="editexample6.html">Next</a> --</p>
+</div><!-- end main -->
+
+<footer>
+<section>
+<h3 id="fontforge">Fontforge</h3>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="download.html">Download</a></li>
+<li><a href="changelog.html">Changelog</a></li>
+<li><a href="acknowledgements.html">Acknowledgements</a></li>
+<li><a href="helpout.html">Help Out</a></li>
+<li><a href="http://sourceforge.net/projects/fontforge/">SF Project page</a><br></li>
+<li><a href="http://sourceforge.net/project/project_donations.php?group_id=103338">Donate</a></li>
+</ul>
+</section> <section>
+<h3 id="features">Features</h3>
+<ul>
+<li><a href="features.html">Features</a></li>
+<li><a href="lacks.html">Things missing</a></li>
+<li><a href="bugs.html">Known bugs</a></li>
+</ul>
+</section> <section>
+<h3 id="reference">Reference</h3>
+<ul>
+<li><a href="bibliography.html">Bibliography</a></li>
+<li><a href="related-tools.html">Related tools</a></li>
+<li><a href="librefontdevelopment.html">Libre Font Dev Efforts</a></li>
+</ul>
+</section> <section>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li><a href="overview.html">Table of Contents</a></li>
+<li><a href="install.html">Install</a></li>
+<li><a href="editexampple.html">Get started</a></li>
+<li><a href="glossary.html">Typographic Glossary</a></li>
+<li><a href="faqFS.html">FAQ</a></li>
+</ul>
+</section>
+</footer><!-- end main -->
+
+</body>
+</html>

@@ -39,7 +39,7 @@ See [license](license.html).
 Mailing Lists
 -------------
 
-There are currently three mailing lists established for FontForge. 
+There are currently two mailing lists established for FontForge. 
 You can only post to a list when you are subscribed.
 
 -   **fontforge-devel** &mdash;

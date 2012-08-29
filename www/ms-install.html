@@ -1,0 +1,85 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head><!--[if IE]><script>document.lastChild.id="ie"+/IE (d+)/.exec(navigator.userAgent)[1]</script><![endif]-->
+<!-- explanation: http://www.eric-shinn.com/css-if-ie-conditional-hack-futureproof/ -->
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>FontForge install procedures for cygwin (MS/Windows)</title>
+	<meta name="description" content="Outline font editor">
+	<meta name="author" content="humans.txt">
+
+	
+
+	<meta name="viewport" content="width=1024">
+
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="favicon.png">
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script>window.html5 || document.write('<script src="js/libs/html5.js"></script>')</script>
+	<![endif]-->
+</head>
+<body>
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+<header>
+<a href="index.html"><h1><img src="img/fontforge.png">Fontforge</h1></a>
+<nav>
+	<li><a href="download.html">Download</a></li>
+	<li><a href="source-build.html">Install</a></li>
+	<!-- <li><a href="index.html">Features</a></li> -->
+	<li><a href="overview.html">Documentation</a></li>
+	<li><a href="helpout.html">Help Out</a></li>
+</nav>
+</header><!-- end main -->
+
+<div id="main">
+<p>FontForge install procedures<br> for cygwin under MS Windows =============================</p>
+<p><strong>I no longer provide pre-built packages. You may either compile from source or download a package from another site (cygwin has a fontforge package).</strong></p>
+<ul>
+<li><a href="nix-install.html">Installing on a unix/linux system</a></li>
+<li><a href="mac-install.html">Installing on a mac</a></li>
+<li><a href="vms-install.html">Installing on VMS</a></li>
+<li><a href="source-build.html#MS">Building and installing from source</a></li>
+<li><a href="source-build.html#Dependencies">Dependencies (external libraries/helper programs)</a></li>
+<li><a href="source-build.html#Documentation">Installing documentation</a></li>
+<li><a href="running.html#cygwin">Running FontForge</a></li>
+<li><a href="running.html#cygwin-troubles">Troubleshooting</a></li>
+<li><a href="uninstall.html">Uninstalling</a></li>
+</ul>
+<h2 id="installing-from-a-pre-built-cygwin-package">Installing from a pre-built cygwin package</h2>
+<h3 id="before-you-install">Before you install</h3>
+<p>You must insure that you have <a href="http://www.cygwin.com/">cygwin</a> installed on your system. Cygwin is free. (cygwin makes MS Windows look enough like unix to allow fontforge to run there). Getting all the bits of cygwin seems to be the hardest part of installing fontforge -- probably because it is the least expected part.</p>
+<ul>
+<li>First download the setup.exe program from <a href="http://www.cygwin.com/">http://www.cygwin.com/</a></li>
+<li>Run it. It will ask you what components of cygwin you wish to install</li>
+<li>You will need the default stuff, plus the X window system, binutils, libpng, libjpeg, and libxml2. Most of what you need you get by default. But you must explicitly request X11 and the libraries.</li>
+<li>Once you have cygwin installed, start it. This should give you a terminal window running bash (a unix shell)</li>
+</ul>
+<h3 id="alternatives-to-cygwin.">Alternatives to cygwin.</h3>
+<p>There are now alternatives to cygwin.</p>
+<p>Someone has ported fontforge to mingw, which is much simpler to download than cygwin:</p>
+<ul>
+<li><a href="http://www.geocities.jp/meir000/fontforge/">fontforge-mingw</a></li>
+</ul>
+<p>Instead of downloading cygwin you can install one of the virtual machines (or something similar) which run linux, and then install fontforge from a linux package.</p>
+<ul>
+<li><a href="http://www.andlinux.org/">andLinux</a></li>
+</ul>
+<h3 id="obtaining-one-of-my-pre-built-packages">Obtaining one of my pre-built packages</h3>
+<p>I used post a cygwin install package on <a href="http://sourceforge.net/projects/fontforge/files/fontforge-executables/">sourceforge's file release system</a>. <strong>Old versions are still there, but they are out of date now.</strong> There's a certain amount of pother involved in using the file release system, but you get the file eventually.</p>
+<ul>
+<li>If you follow the <a href="http://sourceforge.net/projects/fontforge/files/fontforge-executables/">link above</a>you will end up on a page showing many releases of FontForge for many systems<br> in most cases you will want the most recent release.</li>
+<li>Then click on the executable package you want to download:
+<ul>
+<li>The cygwin release will be called something like &quot;fontforge_cygwin-200xxxxx.tar.bz2</li>
+</ul></li>
+<li>Then you have the joy of choosing a mirror site (pick one that's on the same continent you are) and click on the little icon in the download column</li>
+<li>Then you wait. After a bit you get another copy of this same page. After an even longer time your browser notices that you've started a download.</li>
+</ul>
+<h3 id="installing">Installing</h3>
+<p>I have no idea where your browser put the package you have just downloaded. This is unfortunate as I can't tell you exactly what to do next. But find the package (often it's on the desktop) and then move it into C:

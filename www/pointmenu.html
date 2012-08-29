@@ -1,0 +1,149 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head><!--[if IE]><script>document.lastChild.id="ie"+/IE (d+)/.exec(navigator.userAgent)[1]</script><![endif]-->
+<!-- explanation: http://www.eric-shinn.com/css-if-ie-conditional-hack-futureproof/ -->
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>The Point Menu</title>
+	<meta name="description" content="Outline font editor">
+	<meta name="author" content="humans.txt">
+
+	
+
+	<meta name="viewport" content="width=1024">
+
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="favicon.png">
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script>window.html5 || document.write('<script src="js/libs/html5.js"></script>')</script>
+	<![endif]-->
+</head>
+<body>
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+<header>
+<a href="index.html"><h1><img src="img/fontforge.png">Fontforge</h1></a>
+<nav>
+	<li><a href="download.html">Download</a></li>
+	<li><a href="source-build.html">Install</a></li>
+	<!-- <li><a href="index.html">Features</a></li> -->
+	<li><a href="overview.html">Documentation</a></li>
+	<li><a href="helpout.html">Help Out</a></li>
+</nav>
+</header><!-- end main -->
+
+<div id="main">
+<h1 id="the-point-menu">The Point Menu</h1>
+<p>This menu is only available in the Outline Character View.</p>
+<ul>
+<li><a href="#Curve">Curve</a></li>
+<li><a href="#Corner">Corner</a></li>
+<li><a href="#Tangent">Tangent</a></li>
+<li><a href="#Make-First">Make First</a></li>
+<li><a href="#Interpolated">Can Be Interpolated</a></li>
+<li><a href="#NotInterpolated">Can't Be Interpolated</a></li>
+<li><a href="#AddAnchor">Add Anchor Point...</a></li>
+<li><a href="#Acceptable">Acceptable Extrema</a></li>
+<li><a href="#MkLine">Make Line</a></li>
+<li><a href="#MakeArc">Make Arc</a></li>
+<li><a href="#Insert">Insert Point on Spline at...</a></li>
+<li><a href="#CenterCP">Center Between Control Points</a></li>
+<li><a href="#NameContour">Name Contour</a></li>
+<li><a href="#ClipPath">Make Clip Path</a></li>
+</ul>
+<p>Curve</p>
+<p>If all the selected points are Curve points then this entry will be checked. Selecting it will change all selected points to be Curve points.</p>
+<p>Corner</p>
+<p>If all the selected points are Corner points then this entry will be checked. Selecting it will change all selected points to be Corner points.</p>
+<p>Tangent</p>
+<p>If all the selected points are Tangent points then this entry will be checked. Selecting it will change all selected points to be Tangent points.</p>
+<p>Make First</p>
+<p>If exactly one point is selected and it is on a closed path and it is not the &quot;first point&quot; of that path, then it will become the first point.</p>
+<p>Can Be Interpolated</p>
+<p>Can't Be Interpolated</p>
+<p>When editing truetype curves, an on-curve point can be omitted from the point list that is stored in the output font if it happens to be exactly midway between its two control points. This makes for slightly smaller files and is generally a good thing. However if the point is interpolated then it cannot be referred to in instructions (or reference point matching), so on rare occasions you will need to be able to turn off this interpolation.</p>
+<p>Add Anchor Point...</p>
+<p><img src="img/agetinfo.png">This command adds a new <a href="overview.html#Anchors">anchor point</a> to the glyph. The last click in the window provides a default location for the point.</p>
+<p>See <a href="overview.html#Anchors">the overview</a> and the <a href="getinfo.html#Anchors">Element-&gt;Get Info command</a> for more info.</p>
+<p>Acceptable Extrema</p>
+<p>Tells the validator that it is OK for this spline to have extrema. You select a spline by selecting its two end-points.</p>
+<p>Make Line</p>
+<p>If two adjacent points are selected then make the spline between them into a straight line. If two points are selected and they are the endpoints of their respective (open) contours, then join them with a line. If a point is selected and has no adjacent selected points then make its control points be on top of the point</p>
+<p>Make Arc</p>
+<p>If two adjacent points are selected then make the spline between them into an elliptical arc. If two points are selected and they are the endpoints of their respective (open) contours, then join them with an elliptical arc.</p>
+<p>FontForge chooses an ellipse which runs through the two points and is tangent to the slope at those points. This is not enough information to determine an ellipse (three points and two tangents are needed) so in general there will be an infinite number of solutions, thus FontForge may not pick the one you had your heart set on.</p>
+<p>It is also possible to specify a set of input constraints which cannot be met by any ellipse.</p>
+<p>FontForge will first search for ellipses so that one of the selected points lies one of the axes of the ellipse. If it can't find one like that it will perform a more general search.</p>
+<p>(If you hold down the &lt;Alt&gt; key when you select the menu item, then FontForge will place a copy of the full ellipse into the background layer -- this was for debugging, but I thought it kind of cool so I left it in).</p>
+<p>Insert Point on Spline at...</p>
+<p>Select the two end-points of a spline, then bring up this dialog. You can request that FontForge insert a point on the selected spline with either a given X or a given Y coordinate.</p>
+<p>Center Between Control Points</p>
+<p>In truetype, if an on-curve point is centered between its control points, then that point may be omitted when written to the output file. This command allows you to create such a point more easily.</p>
+<p>Name Contour</p>
+<p>A contour may be named. This is designed for use in the Guide line (and Background) layer. You can attach a mnemonic name to a guide line (like &quot;X-Height&quot; or &quot;Cap-Height&quot; or whatever strikes your fancy).</p>
+<p>Make Clip Path</p>
+<p>Only meaningful in Type3 fonts. For a more complete description see the section on <a href="multilayer.html#ClipPath">Type3 editing</a>. The clipping path will be set to any selected contour(s) in the glyph. If no contour is selected then there will be no clipping path.<br> Other menus -----------</p>
+<ul>
+<li><a href="filemenu.html">File</a></li>
+<li><a href="editmenu.html">Edit</a></li>
+<li><a href="pointmenu.html">Point</a></li>
+<li><a href="elementmenu.html">Element</a></li>
+<li><a href="toolsmenu.html">Tools</a></li>
+<li><a href="hintsmenu.html">Hints</a></li>
+<li><a href="encodingmenu.html">Encoding</a></li>
+<li><a href="viewmenu.html">View</a></li>
+<li><a href="metricsmenu.html">Metrics</a></li>
+<li><a href="cidmenu.html">CID</a></li>
+<li><a href="mmmenu.html">MM</a></li>
+<li><a href="windowmenu.html">Window</a></li>
+<li><a href="helpmenu.html">Help</a></li>
+<li><a href="HotKeys.html">Hot Keys</a></li>
+</ul>
+<p>-- <a href="editmenu.html">Prev</a> -- <a href="overview.html">TOC</a> -- <a href="elementmenu.html">Next</a> --</p>
+</div><!-- end main -->
+
+<footer>
+<section>
+<h3 id="fontforge">Fontforge</h3>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="download.html">Download</a></li>
+<li><a href="changelog.html">Changelog</a></li>
+<li><a href="acknowledgements.html">Acknowledgements</a></li>
+<li><a href="helpout.html">Help Out</a></li>
+<li><a href="http://sourceforge.net/projects/fontforge/">SF Project page</a><br></li>
+<li><a href="http://sourceforge.net/project/project_donations.php?group_id=103338">Donate</a></li>
+</ul>
+</section> <section>
+<h3 id="features">Features</h3>
+<ul>
+<li><a href="features.html">Features</a></li>
+<li><a href="lacks.html">Things missing</a></li>
+<li><a href="bugs.html">Known bugs</a></li>
+</ul>
+</section> <section>
+<h3 id="reference">Reference</h3>
+<ul>
+<li><a href="bibliography.html">Bibliography</a></li>
+<li><a href="related-tools.html">Related tools</a></li>
+<li><a href="librefontdevelopment.html">Libre Font Dev Efforts</a></li>
+</ul>
+</section> <section>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li><a href="overview.html">Table of Contents</a></li>
+<li><a href="install.html">Install</a></li>
+<li><a href="editexampple.html">Get started</a></li>
+<li><a href="glossary.html">Typographic Glossary</a></li>
+<li><a href="faqFS.html">FAQ</a></li>
+</ul>
+</section>
+</footer><!-- end main -->
+
+</body>
+</html>

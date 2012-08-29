@@ -1,0 +1,93 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head><!--[if IE]><script>document.lastChild.id="ie"+/IE (d+)/.exec(navigator.userAgent)[1]</script><![endif]-->
+<!-- explanation: http://www.eric-shinn.com/css-if-ie-conditional-hack-futureproof/ -->
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>The Justify dialog</title>
+	<meta name="description" content="Outline font editor">
+	<meta name="author" content="humans.txt">
+
+	
+
+	<meta name="viewport" content="width=1024">
+
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="favicon.png">
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script>window.html5 || document.write('<script src="js/libs/html5.js"></script>')</script>
+	<![endif]-->
+</head>
+<body>
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+<header>
+<a href="index.html"><h1><img src="img/fontforge.png">Fontforge</h1></a>
+<nav>
+	<li><a href="download.html">Download</a></li>
+	<li><a href="source-build.html">Install</a></li>
+	<!-- <li><a href="index.html">Features</a></li> -->
+	<li><a href="overview.html">Documentation</a></li>
+	<li><a href="helpout.html">Help Out</a></li>
+</nav>
+</header><!-- end main -->
+
+<div id="main">
+<p><img src="img/JustifyDlg.png">Text justification is handled differently in different scripts and in different languages within those scripts.</p>
+<p>In arabic special glyphs (called kashidas) are inserted into the text to fill up space, in latin interword spacing and even the within word letter spacing can be adjusted.</p>
+<p>But more sophisticated behaviors are possible. In some circumstances it might be appropriate to turn off ligatures, something which (in latin at least) will usually add a little more space to the line. In other cases a special kerning lookup might be invoked.</p>
+<p>OpenType allows a fairly general approach to this. Information is organized by script, and then by language within the script.</p>
+<p><img src="img/JustifyExtenderDlg.png">The extender list is specified at the script level. You may either enter a series of glyph names into the space provided in the dialog above, or click on the little box to the right and a dialog will pop up giving a more convenient entry mechanism.</p>
+<p>Several different priority levels may be specified within a language. The first priority level will be invoked to make small adjustments to spacing. If this is not enough to fix the problem then the second level will be invoked (in addition to the first, I believe). If the second level is not enough then third, fourth, fifth... levels will be invoked in turn until the line can be justified.<br> <img src="img/JustifyLangDlg.png"></p>
+<p>Each priority level consists of two parts, a series of behaviors for when the line is too long (and needs to be make smaller) and another series for when the line is too short (and needs to be extended). Each of these, in turn consists of a set of lookups (in either GPOS or GSUB) to turn on, a set of lookups to turn off, and finally a special lookup which specifies the maximum amount the advance width of a glyph can change.</p>
+<p><img src="img/JustifyLookupDlg.png">So if you want to make a line shorter you might turn on ligatures and turn on kerning. Both of which (usually) make text shorter. On the other hand if you want to make a line longer you might want to turn those same lookups off.</p>
+<p>The maximum advance width lookups are a little different from normal lookups. These may be either single positioning GPOS-style lookups or kerning GPOS-style lookups. The lookup does not specify an exact adjustment to a glyph's width, rather it specifies the maximum (in absolute value) amount by which that glyph's width can change. So in latin typesetting you might have a lookup with information solely for the space glyph allowing it to (for instance) double in size when expansion is needed, or half in size when contraction is needed -- or any value between the normative amount and the adjusted maximum. At a higher priority level there might be a set of lookups which adjust the advance width of every glyph.</p>
+<p>In theory you could use a kerning lookup to specify the maximum width adjustment allowed between any two glyphs. (The OpenType spec actually says that <em>any</em> GPOS lookup could be used, except for contextual ones (which makes one wonder if contextual chaining lookups are permitted), no semantics are provided for these other lookup types and it is hard to imagine what they might do, so I'm ignoring them).</p>
+<p>These maximum lookups look like GPOS lookups, but are stored in the JSTF table. FontForge will display them in the GPOS lookup list but will output them the JSTF table when appropriate.</p>
+</div><!-- end main -->
+
+<footer>
+<section>
+<h3 id="fontforge">Fontforge</h3>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="download.html">Download</a></li>
+<li><a href="changelog.html">Changelog</a></li>
+<li><a href="acknowledgements.html">Acknowledgements</a></li>
+<li><a href="helpout.html">Help Out</a></li>
+<li><a href="http://sourceforge.net/projects/fontforge/">SF Project page</a><br></li>
+<li><a href="http://sourceforge.net/project/project_donations.php?group_id=103338">Donate</a></li>
+</ul>
+</section> <section>
+<h3 id="features">Features</h3>
+<ul>
+<li><a href="features.html">Features</a></li>
+<li><a href="lacks.html">Things missing</a></li>
+<li><a href="bugs.html">Known bugs</a></li>
+</ul>
+</section> <section>
+<h3 id="reference">Reference</h3>
+<ul>
+<li><a href="bibliography.html">Bibliography</a></li>
+<li><a href="related-tools.html">Related tools</a></li>
+<li><a href="librefontdevelopment.html">Libre Font Dev Efforts</a></li>
+</ul>
+</section> <section>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li><a href="overview.html">Table of Contents</a></li>
+<li><a href="install.html">Install</a></li>
+<li><a href="editexampple.html">Get started</a></li>
+<li><a href="glossary.html">Typographic Glossary</a></li>
+<li><a href="faqFS.html">FAQ</a></li>
+</ul>
+</section>
+</footer><!-- end main -->
+
+</body>
+</html>

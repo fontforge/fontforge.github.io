@@ -1,0 +1,259 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head><!--[if IE]><script>document.lastChild.id="ie"+/IE (d+)/.exec(navigator.userAgent)[1]</script><![endif]-->
+<!-- explanation: http://www.eric-shinn.com/css-if-ie-conditional-hack-futureproof/ -->
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>Format for X11 pcf bitmap font files</title>
+	<meta name="description" content="Outline font editor">
+	<meta name="author" content="humans.txt">
+
+	
+
+	<meta name="viewport" content="width=1024">
+
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="favicon.png">
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script>window.html5 || document.write('<script src="js/libs/html5.js"></script>')</script>
+	<![endif]-->
+</head>
+<body>
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+<header>
+<a href="index.html"><h1><img src="img/fontforge.png">Fontforge</h1></a>
+<nav>
+	<li><a href="download.html">Download</a></li>
+	<li><a href="source-build.html">Install</a></li>
+	<!-- <li><a href="index.html">Features</a></li> -->
+	<li><a href="overview.html">Documentation</a></li>
+	<li><a href="helpout.html">Help Out</a></li>
+</nav>
+</header><!-- end main -->
+
+<div id="main">
+<h1 id="format-for-x11-pcf-bitmap-font-files">Format for X11 pcf bitmap font files</h1>
+<p>This file is based on the <a href="http://ftp.x.org/pub/R6.4/xc/lib/font/bitmap/">X11 sources</a>. If something here disagrees with what is found in the sources, my statement is incorrect. The sources are definitive.</p>
+<p>The pcf (portable compiled format) file format is a binary representation of a bitmap font used by the XServer. It consists of a file header followed by a series of tables, with the header containing pointers to all the tables.</p>
+<h2 id="file-header">File Header</h2>
+<p>The file header contains 32 bit integers stored with the least significant byte first.</p>
+<blockquote>
+<pre><code>char header[4];          /* always &quot;fcp&quot; */
+lsbint32 table_count;
+struct toc_entry {
+    lsbint32 type;      /* See below, indicates which table */
+    lsbint32 format;        /* See below, indicates how the data are formatted in the table */
+    lsbint32 size;      /* In bytes */
+    lsbint32 offset;        /* from start of file */
+} tables[table_count];</code></pre>
+</blockquote>
+<p>The type field may be one of:</p>
+<blockquote>
+<pre><code>#define PCF_PROPERTIES           (1&lt;&lt;0)
+#define PCF_ACCELERATORS        (1&lt;&lt;1)
+#define PCF_METRICS         (1&lt;&lt;2)
+#define PCF_BITMAPS         (1&lt;&lt;3)
+#define PCF_INK_METRICS         (1&lt;&lt;4)
+#define PCF_BDF_ENCODINGS       (1&lt;&lt;5)
+#define PCF_SWIDTHS         (1&lt;&lt;6)
+#define PCF_GLYPH_NAMES         (1&lt;&lt;7)
+#define PCF_BDF_ACCELERATORS        (1&lt;&lt;8)</code></pre>
+</blockquote>
+<p>The format field may be one of:</p>
+<blockquote>
+<pre><code>#define PCF_DEFAULT_FORMAT   0x00000000
+#define PCF_INKBOUNDS       0x00000200
+#define PCF_ACCEL_W_INKBOUNDS   0x00000100
+#define PCF_COMPRESSED_METRICS  0x00000100</code></pre>
+</blockquote>
+<p>The format field may be modified by:</p>
+<blockquote>
+<pre><code>#define PCF_GLYPH_PAD_MASK   (3&lt;&lt;0)        /* See the bitmap table for explanation */
+#define PCF_BYTE_MASK       (1&lt;&lt;2)        /* If set then Most Sig Byte First */
+#define PCF_BIT_MASK        (1&lt;&lt;3)        /* If set then Most Sig Bit First */
+#define PCF_SCAN_UNIT_MASK  (3&lt;&lt;4)        /* See the bitmap table for explanation */</code></pre>
+</blockquote>
+<p>The format will be repeated as the first word in each table. Most tables only have one format (default), but some have alternates. The high order three bytes of the format describe the gross format. The way integers and bits are stored can be altered by adding one of the mask bits above.</p>
+<p>All tables begin on a 32bit boundary (and will be padded with zeroes).</p>
+<h2 id="properties-table">Properties Table</h2>
+<blockquote>
+<pre><code>lsbint32 format;         /* Always stored with least significant byte first! */
+int32 nprops;           /* Stored in whatever byte order is specified in the format */
+struct props {
+    int32 name_offset;      /* Offset into the following string table */
+    int8 isStringProp;
+    int32 value;        /* The value for integer props, the offset for string props */
+} props[nprops];
+char padding[(nprops&amp;3)==0?0:(4-(nprops&amp;3))];   /* pad to next int32 boundary */
+int string_size;        /* total size of all strings (including their terminating NULs) */
+char strings[string_size];
+char padding2[];</code></pre>
+</blockquote>
+<p>These properties are the Font Atoms that X provides to users. Many are described in <a href="http://ftp.x.org/pub/R6.4/xc/doc/specs/XLFD/xlfd.tbl.ms">xc/doc/specs/XLFD/xlfd.tbl.ms</a> or <a href="http://rpmfind.net/linux/RPM/redhat/6.2/i386/XFree86-doc-3.3.6-20.i386.html">here</a> (the X protocol does not limit these atoms so others could be defined for some fonts).</p>
+<p>To find the name of a property: <code>strings + props[i].name_offset</code></p>
+<h2 id="metrics-data">Metrics Data</h2>
+<p>Several of the tables (PCF_METRICS, PCF_INK_METRICS, and within the accelerator tables) contain metrics data which may be in either compressed (PCF_COMPRESSED_METRICS) or uncompressed (DEFAULT) formats. The compressed format uses bytes to contain values, while the uncompressed uses shorts. The (compressed) bytes are unsigned bytes which are offset by 0x80 (so the actual value will be <code>(getc(pcf_file)-0x80)</code>. The data are stored as:<br> Compressed</p>
+<blockquote>
+<pre><code>uint8 left_sided_bearing;
+uint8 right_side_bearing;
+uint8 character_width;
+uint8 character_ascent;
+uint8 character_descent;
+ /* Implied character attributes field = 0 */</code></pre>
+</blockquote>
+<p>Uncompressed</p>
+<blockquote>
+<pre><code>int16 left_sided_bearing;
+int16 right_side_bearing;
+int16 character_width;
+int16 character_ascent;
+int16 character_descent;
+uint16 character_attributes;</code></pre>
+</blockquote>
+<p>This provides the data needed for an XCharStruct.</p>
+<h2 id="accelerator-tables">Accelerator Tables</h2>
+<p>These data provide various bits of information about the font as a whole. This data structure is used by two tables PCF_ACCELERATORS and PCF_BDF_ACCELERATORS. The tables may either be in DEFAULT format or in PCF_ACCEL_W_INKBOUNDS (in which case they will have some extra metrics data at the end.</p>
+<p>The accelerator tables look like:</p>
+<blockquote>
+<pre><code>lsbint32 format;         /* Always stored with least significant byte first! */
+uint8 noOverlap;        /* if for all i, max(metrics[i].rightSideBearing - metrics[i].characterWidth) */
+                /*  &lt;= minbounds.leftSideBearing */
+uint8 constantMetrics;      /* Means the perchar field of the XFontStruct can be NULL */
+uint8 terminalFont;     /* constantMetrics true and forall characters: */
+                /*  the left side bearing==0 */
+                /*  the right side bearing== the character&#39;s width */
+                /*  the character&#39;s ascent==the font&#39;s ascent */
+                /*  the character&#39;s descent==the font&#39;s descent */
+uint8 constantWidth;        /* monospace font like courier */
+uint8 inkInside;        /* Means that all inked bits are within the rectangle with x between [0,charwidth] */
+                /*  and y between [-descent,ascent]. So no ink overlaps another char when drawing */
+uint8 inkMetrics;       /* true if the ink metrics differ from the metrics somewhere */
+uint8 drawDirection;        /* 0=&gt;left to right, 1=&gt;right to left */
+uint8 padding;
+int32 fontAscent;       /* byte order as specified in format */
+int32 fontDescent;
+int32 maxOverlap;       /* ??? */
+Uncompressed_Metrics minbounds;
+Uncompressed_Metrics maxbounds;
+/* If format is PCF_ACCEL_W_INKBOUNDS then include the following fields */
+    Uncompressed_Metrics ink_minbounds;
+    Uncompressed_Metrics ink_maxbounds;
+/* Otherwise those fields are not in the file and should be filled by duplicating min/maxbounds above */</code></pre>
+</blockquote>
+<p>BDF Accelerators should be preferred to plain Accelerators if both tables are present. BDF Accelerators contain data that refers only to the encoded characters in the font (while the simple Accelerator table includes all glyphs), therefore the BDF Accelerators are more accurate.</p>
+<h2 id="metrics-tables">Metrics Tables</h2>
+<p>There are two different metrics tables, PCF_METRICS and PCF_INK_METRICS, the former contains the size of the stored bitmaps, while the latter contains the minimum bounding box. The two may contain the same data, but many CJK fonts pad the bitmaps so all bitmaps are the same size. The table format may be either DEFAULT or PCF_COMPRESSED_METRICS (see the section on <a href="#MetricsData">Metrics Data</a> for an explanation).</p>
+<blockquote>
+<pre><code>lsbint32 format;         /* Always stored with least significant byte first! */
+/* if the format is compressed */
+    int16 metrics_count;
+    Compressed_Metrics metrics[metrics_count];
+/* else if format is default (uncompressed) */
+    int32 metrics_count;
+    Uncompressed_Metrics metrics[metrics_count];
+/* endif */</code></pre>
+</blockquote>
+<h2 id="the-bitmap-table">The Bitmap Table</h2>
+<p>The bitmap table has type PCF_BITMAPS. Its format must be PCF_DEFAULT.</p>
+<blockquote>
+<pre><code>lsbint32 format;         /* Always stored with least significant byte first! */
+int32 glyph_count;      /* byte ordering depends on format, should be the same as the metrics count */
+int32 offsets[glyph_count]; /* byte offsets to bitmap data */
+int32 bitmapSizes[4];       /* the size the bitmap data will take up depending on various padding options */
+                /*  which one is actually used in the file is given by (format&amp;3) */
+char bitmap_data[bitmapsizes[format&amp;3]];    /* the bitmap data. format contains flags that indicate: */
+                /* the byte order (format&amp;4 =&gt; LSByte first)*/
+                /* the bit order (format&amp;8 =&gt; LSBit first) */
+                /* how each row in each glyph&#39;s bitmap is padded (format&amp;3) */
+                /*  0=&gt;bytes, 1=&gt;shorts, 2=&gt;ints */
+                /* what the bits are stored in (bytes, shorts, ints) (format&gt;&gt;4)&amp;3 */
+                /*  0=&gt;bytes, 1=&gt;shorts, 2=&gt;ints */</code></pre>
+</blockquote>
+<h2 id="the-encoding-table">The Encoding Table</h2>
+<p>The encoding table has type PCF_BDF_ENCODINGS. Its format must be PCF_DEFAULT.</p>
+<blockquote>
+<pre><code>lsbint32 format;         /* Always stored with least significant byte first! */
+int16 min_char_or_byte2;    /* As in XFontStruct */
+int16 max_char_or_byte2;    /* As in XFontStruct */
+int16 min_byte1;        /* As in XFontStruct */
+int16 max_byte1;        /* As in XFontStruct */
+int16 default_char;     /* As in XFontStruct */
+int16 glyphindeces[(max_char_or_byte2-min_char_or_byte2+1)*(max_byte1-min_byte1+1)];
+                /* Gives the glyph index that corresponds to each encoding value */
+                /* a value of 0xffff means no glyph for that encoding */</code></pre>
+</blockquote>
+<p>For single byte encodings min_byte1==max_byte1==0, and encoded values are between [min_char_or_byte2,max_char_or_byte2]. The glyph index corresponding to an encoding is glyphindex[encoding-min_char_or_byte2].</p>
+<p>Otherwise [min_byte1,max_byte1] specifies the range allowed for the first (high order) byte of a two byte encoding, while [min_char_or_byte2,max_char_or_byte2] is the range of the second byte. The glyph index corresponding to a double byte encoding (enc1,enc2) is glyph_index[(enc1-min_byte1)*(max_char_or_byte2-min_char_or_byte2+1)+ enc2-min_char_or_byte2].</p>
+<p>Not all glyphs need to be encoded. Not all encodings need to be associated with glyphs.</p>
+<h2 id="the-scalable-widths-table">The Scalable Widths Table</h2>
+<p>The encoding table has type PCF_SWIDTHS. Its format must be PCF_DEFAULT.</p>
+<blockquote>
+<pre><code>lsbint32 format;         /* Always stored with least significant byte first! */
+int32 glyph_count;      /* byte ordering depends on format, should be the same as the metrics count */
+int32 swidths[glyph_count]; /* byte offsets to bitmap data */</code></pre>
+</blockquote>
+<p>The scalable width of a character is the width of the corresponding postscript character in em-units (1/1000ths of an em).</p>
+<h2 id="the-glyph-names-table">The Glyph Names Table</h2>
+<p>The encoding table has type PCF_GLYPH_NAMES. Its format must be PCF_DEFAULT.</p>
+<blockquote>
+<pre><code>lsbint32 format;         /* Always stored with least significant byte first! */
+int32 glyph_count;      /* byte ordering depends on format, should be the same as the metrics count */
+int32 offsets[glyph_count]; /* byte offsets to string data */
+int32 string_size;
+char string[string_size];</code></pre>
+</blockquote>
+<p>The postscript name associated with each character.</p>
+<hr>
+<p>Other sources of info:</p>
+<ul>
+<li><a href="http://www.tsg.ne.jp/GANA/S/pcf2bdf/pcf.pdf">http://www.tsg.ne.jp/GANA/S/pcf2bdf/pcf.pdf</a></li>
+<li><a href="">http://myhome.hananet.net/~bumchul/xfont/pcf.txt</a></li>
+</ul>
+</div><!-- end main -->
+
+<footer>
+<section>
+<h3 id="fontforge">Fontforge</h3>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="download.html">Download</a></li>
+<li><a href="changelog.html">Changelog</a></li>
+<li><a href="acknowledgements.html">Acknowledgements</a></li>
+<li><a href="helpout.html">Help Out</a></li>
+<li><a href="http://sourceforge.net/projects/fontforge/">SF Project page</a><br></li>
+<li><a href="http://sourceforge.net/project/project_donations.php?group_id=103338">Donate</a></li>
+</ul>
+</section> <section>
+<h3 id="features">Features</h3>
+<ul>
+<li><a href="features.html">Features</a></li>
+<li><a href="lacks.html">Things missing</a></li>
+<li><a href="bugs.html">Known bugs</a></li>
+</ul>
+</section> <section>
+<h3 id="reference">Reference</h3>
+<ul>
+<li><a href="bibliography.html">Bibliography</a></li>
+<li><a href="related-tools.html">Related tools</a></li>
+<li><a href="librefontdevelopment.html">Libre Font Dev Efforts</a></li>
+</ul>
+</section> <section>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li><a href="overview.html">Table of Contents</a></li>
+<li><a href="install.html">Install</a></li>
+<li><a href="editexampple.html">Get started</a></li>
+<li><a href="glossary.html">Typographic Glossary</a></li>
+<li><a href="faqFS.html">FAQ</a></li>
+</ul>
+</section>
+</footer><!-- end main -->
+
+</body>
+</html>

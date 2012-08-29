@@ -1,0 +1,98 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head><!--[if IE]><script>document.lastChild.id="ie"+/IE (d+)/.exec(navigator.userAgent)[1]</script><![endif]-->
+<!-- explanation: http://www.eric-shinn.com/css-if-ie-conditional-hack-futureproof/ -->
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>The histogram dialog</title>
+	<meta name="description" content="Outline font editor">
+	<meta name="author" content="humans.txt">
+
+	
+
+	<meta name="viewport" content="width=1024">
+
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="favicon.png">
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script>window.html5 || document.write('<script src="js/libs/html5.js"></script>')</script>
+	<![endif]-->
+</head>
+<body>
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+<header>
+<a href="index.html"><h1><img src="img/fontforge.png">Fontforge</h1></a>
+<nav>
+	<li><a href="download.html">Download</a></li>
+	<li><a href="source-build.html">Install</a></li>
+	<!-- <li><a href="index.html">Features</a></li> -->
+	<li><a href="overview.html">Documentation</a></li>
+	<li><a href="helpout.html">Help Out</a></li>
+</nav>
+</header><!-- end main -->
+
+<div id="main">
+<h1 id="the-histogram-dialog"><img src="img/histogram.png">The histogram dialog</h1>
+<p>The histogram dialog is used to display three things which are useful for setting the some of the global hinting values that live in the PostScript <a href="fontinfo.html#Private">Private dictionary</a>. The dialog can display</p>
+<ul>
+<li>the distribution of horizontal stem widths<br> which is helpful in setting [StdHW] and [StemSnapH]</li>
+<li>the distribution of vertical stem widths<br> which is helpful in setting [StdVW] and [StemSnapV]</li>
+<li>and the distribution of the minimal and maximal vertical positions of each glyph<br> which is helpful in setting [BlueValues] and [OtherBlues]</li>
+</ul>
+<p>Moving the mouse around the histogram at the top of the dialog will cause little popups to appear showing how many stems there are with a given width, how that compares to the maximum count, and what glyphs have that width.</p>
+<p>For both HStem and VStem, if you click on a histogram bar then that width will become the new value for Std[H/V]W, and will be the sole value for StemSnap[H/V]. Shift-clicking on a bar will add that width to StemSnap[H/V].</p>
+<p>For BlueValues, entries must be made in pairs, and FontForge can't tell until the second value is selected where the pair should be placed. So for BlueValues you must click on two histogram bars (click on the leftmost one first). Then if the second value is negative both will be added to OtherBlues, otherwise both will be added to BlueValues.</p>
+<p>The BarWidth textfield allows you to change the width of the histogram bars. The default value is 6 pixels wide.</p>
+<p>The SumAround textfield is an attempt to give you a feel for the distribution if it has been smeared out. If SumAround is 0 then the count displayed for a given width is the number of stems with that width, if SumAround is 1 the count also includes the number of stems that are one unit wider or less wide than the given value, and higher values of SumAround give wider smearing. Just because a given width is at a local maxima does not mean that it is the appropriate value to be entered in the StemSnap array, you may find that if you smear things out a bit that a near-by value would be a slightly better choice.</p>
+<p>Pressing [OK] will set the indicated values in the font's private dictionary.</p>
+<p>When invoked from the <a href="fontinfo.html#Private">font info dialog</a> these dialogs will display information on all glyphs. When invoked from the Hint-&gt;Histograms menu of the font view then only information on selected glyphs will be shown (if no glyphs are selected, then again information will come from all glyphs). Characters containing references will not be counted.</p>
+<p>FontForge can automatically generate these values for you (this dialog gives you the information you need to make your own choices which may be better than what FontForge will do on its own -- it uses essentially these data itself). This will happen when you generate a postscript font and the font has no BlueValues or StemSnap information associated with it, or when you use the <a href="fontinfo.html#Private">Element-&gt;Font Info-&gt;Private</a> dialog.</p>
+<p>-- <a href="hintsmenu.html">Prev</a> -- <a href="overview.html">TOC</a> -- <a href="hintsmenu.html">Next</a> --</p>
+</div><!-- end main -->
+
+<footer>
+<section>
+<h3 id="fontforge">Fontforge</h3>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="download.html">Download</a></li>
+<li><a href="changelog.html">Changelog</a></li>
+<li><a href="acknowledgements.html">Acknowledgements</a></li>
+<li><a href="helpout.html">Help Out</a></li>
+<li><a href="http://sourceforge.net/projects/fontforge/">SF Project page</a><br></li>
+<li><a href="http://sourceforge.net/project/project_donations.php?group_id=103338">Donate</a></li>
+</ul>
+</section> <section>
+<h3 id="features">Features</h3>
+<ul>
+<li><a href="features.html">Features</a></li>
+<li><a href="lacks.html">Things missing</a></li>
+<li><a href="bugs.html">Known bugs</a></li>
+</ul>
+</section> <section>
+<h3 id="reference">Reference</h3>
+<ul>
+<li><a href="bibliography.html">Bibliography</a></li>
+<li><a href="related-tools.html">Related tools</a></li>
+<li><a href="librefontdevelopment.html">Libre Font Dev Efforts</a></li>
+</ul>
+</section> <section>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li><a href="overview.html">Table of Contents</a></li>
+<li><a href="install.html">Install</a></li>
+<li><a href="editexampple.html">Get started</a></li>
+<li><a href="glossary.html">Typographic Glossary</a></li>
+<li><a href="faqFS.html">FAQ</a></li>
+</ul>
+</section>
+</footer><!-- end main -->
+
+</body>
+</html>

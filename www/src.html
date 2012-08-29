@@ -1,0 +1,226 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head><!--[if IE]><script>document.lastChild.id="ie"+/IE (d+)/.exec(navigator.userAgent)[1]</script><![endif]-->
+<!-- explanation: http://www.eric-shinn.com/css-if-ie-conditional-hack-futureproof/ -->
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>High level description of what each source file contains...</title>
+	<meta name="description" content="Outline font editor">
+	<meta name="author" content="humans.txt">
+
+	
+
+	<meta name="viewport" content="width=1024">
+
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="favicon.png">
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script>window.html5 || document.write('<script src="js/libs/html5.js"></script>')</script>
+	<![endif]-->
+</head>
+<body>
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+<header>
+<a href="index.html"><h1><img src="img/fontforge.png">Fontforge</h1></a>
+<nav>
+	<li><a href="download.html">Download</a></li>
+	<li><a href="source-build.html">Install</a></li>
+	<!-- <li><a href="index.html">Features</a></li> -->
+	<li><a href="overview.html">Documentation</a></li>
+	<li><a href="helpout.html">Help Out</a></li>
+</nav>
+</header><!-- end main -->
+
+<div id="main">
+<p>High level description of what each source file contains...<br> <strong>This page is grievously out of date</strong> ============================================================</p>
+<ul>
+<li><a href="#Header">Header files</a></li>
+<li><a href="#Source">Source files</a></li>
+<li><a href="http://bibliofile.duhs.duke.edu/gww/FreeWare/LibGUnicode/index.html">unicode library docs</a></li>
+<li><a href="http://bibliofile.duhs.duke.edu/gww/FreeWare/LibGDraw/index.html">unicode widget docs</a></li>
+</ul>
+<h2 id="header-files">Header Files</h2>
+<p>edgelist.h</p>
+<p>This contains the data structures used by the rasterizer routines (splinefill.c), but it turns out that the same basic mechanism is used for a number of other things, autohint.c, splineoverlap.c, perhaps others.</p>
+<p>fontforge.h</p>
+<p>This is a general header which just includes other headers. Every source file in this directory should include it.</p>
+<p>fontforgeui.h</p>
+<p>Another general header file which includes others and defines a few global variables. All UI source files should include this.</p>
+<p>psfont.h</p>
+<p>These data structures are used by parsepfa.c as a temporary resting place for a postscript font before it gets converted into a SplineFont (splinefont.h) by calling SplineFontFromPSFont in splineutil.c</p>
+<p>splinefont.h</p>
+<p><a href="splinefont.html">This one contains all the basic data structures of the program.</a></p>
+<p>views.h</p>
+<p><a href="views.html">This contains the basic UI data structures.</a></p>
+<h2 id="source-files">Source Files</h2>
+<p>autohint.c</p>
+<p>Contains the routines which guess at postscript hints.</p>
+<p>autosave.c</p>
+<p>Contains a few basic routines that handle autosaving, but most of the real work is done in sfd.c</p>
+<p>autowidth.c</p>
+<p>Guesses at good widths for characters and good kerning for them. Creates a dialog to get guidance from the user and the goes off and tries to guess reasonable values.</p>
+<p>bitmapdlg.c</p>
+<p>Handles the two dialogs for creating and recreating bitmaps. (The creating one creates an entire new bitmap font, the recreating one modifies an already existing font by regenerating the selected characters).</p>
+<p>bitmapview.c</p>
+<p>Does much of the basic work of the bitmap editor. Handles menus, events, etc.</p>
+<p>bvedit.c</p>
+<p>Some extra routines for editing bitmaps (bv =&gt; bitmapview). Handles floating selections, paste, translations, etc.</p>
+<p>charview.c</p>
+<p>Does the basic work for the spline glyph editor. Handles menus, events, dispatches mouse events to the appropriate tools, etc.</p>
+<p>charviewicons.c</p>
+<p>These are the icon resources for the images that appear in the info area of the spline editor above.</p>
+<p>cursors.c</p>
+<p>Defines the various cursors used.</p>
+<p>cvaddpoints.c</p>
+<p>Handles mouse events when the current tool is a point generator. charview.c will dispatch events to us. (cv =&gt; charview)</p>
+<p>cvexport.c</p>
+<p>The dialog to export data into a different format. Also (some of) the conversion routines for that format. (Also used to export xbm files from the bitmapview)</p>
+<p>cvgetinfo.c</p>
+<p>Contains the Get Info dispatcher and dialogs for the charview. There are several different types of info depending on the current selection and there's a dialog for each</p>
+<ul>
+<li>A point is selected</li>
+<li>A reference to another character is selected (in the foreground)</li>
+<li>An image is selected (in the background)</li>
+<li>Or if more than one thing is (or no things are) selected, then general information on the character itself<br> This last is also used by the fontview.</li>
+</ul>
+<p>cvhints.c</p>
+<p>A series of trivial little dialogs and commands that allow the user to set postscript hints manually.</p>
+<p>cvimages.c</p>
+<p>Contains code to import stuff into a CharView, BitmapView or FontView. Initially it was only images into the CharView, but it has grown beyond its name. CharViews can import Images (gif, png, tiff, jpeg, xbm, xpm, sun raster, windows bmp, ...) into the background of a CharView. I'd like to be able to do this from the clipboard, but I don't know whether there's a standard way of moving images around there. Also can import eps files (very restricted) and xfig (not too well). BitmapViews can only import images into their foreground. I think only bitmaps but I forget. FontViews can import bdf fonts into their list of bitmaps.</p>
+<p>cvknife.c</p>
+<p>The dispatch file for mouse events when the knife tool is selected.</p>
+<p>cvpalettes.c</p>
+<p>Handles the two palettes associated with a CharvView, and the two palettes for a BitmapView, and the Char and BitmapView popup menus.</p>
+<p>cvpointer.c</p>
+<p>The dispatch file for mouse events when the pointer tool is selected.</p>
+<p>cvruler.c</p>
+<p>The dispatch file for mouse events when the ruler tool is selected.</p>
+<p>cvshapes.c</p>
+<p>The dispatch file for mouse events when one of the shape tools (rectangle, ellipse, polygon, star) is selected.</p>
+<p>cvstroke.c</p>
+<p>The dialog for the expand stroke command. Also some of the routines which do the work. See also splinestroke.c</p>
+<p>cvtranstools.c</p>
+<p>The dispatch file for mouse events when one of the transform tools (scale, rotate, flip, skew) is selected.</p>
+<p>cvundoes.c</p>
+<p>Contains the routines that handle Undoes, Redoes and Copy/Paste for CharViews, BitmapViews and FontViews.</p>
+<p>dumpbdf.c</p>
+<p>Writes a bdf file.</p>
+<p>dumppfa.c</p>
+<p>Writes a postscript file. pfa, pfb, type3, type0. See also splinesave.c.</p>
+<p>fontinfo.c</p>
+<p>Contains the fontinfo dialog and the routines to reencode a font.</p>
+<p>fontview.c</p>
+<p>The main file for the fontview. Menu dispatcher, event handler. Basic Font level routines.</p>
+<p>fvcomposit.c</p>
+<p>The file that figures out how to build a composite character for you (ie. for Agrave will put a reference to A in your character, and a reference to grave and then will position the accent on top of A nicely). Operates on both the splines and the bitmaps.</p>
+<p>fvfonts.c</p>
+<p>Contains the dialogs and the functions for the Merge Fonts and Interpolate Fonts commands</p>
+<p>fvimportbdf.c</p>
+<p>The routine which reads in a bdf font. (note the font selection dialog is in cvimages.c)</p>
+<p>fvmetrics.c</p>
+<p>The dialog and routines for autowidth and autokern.</p>
+<p>images.c</p>
+<p>icon resources for the images used in the palettes. There's no good reason why this isn't merged in with charviewicons.c</p>
+<p>metricsview.c</p>
+<p>The main file for the metricsview. Menu dispatcher, event hander. Most of the functionality.</p>
+<p>print.c</p>
+<p>Handles the print and pagesetup dialogs.</p>
+<p>parsepfa.c</p>
+<p>Parses a postscript font. Doesn't get the encoding of a type0 font. Type3s are too free form for me to be able to interpret all (or even most?) of them. But we can at least read in the type3s we write out (unless they contain images). Some of the work also done in psread.c and splineutil.c</p>
+<p>parsettf.c</p>
+<p>Parses a TTF (or OTF) font file, and converts from quadratic Bézier to cubic Bézier (easy).</p>
+<p>prefs.c</p>
+<p>Preference dialog.</p>
+<p>psread.c</p>
+<p>This is our postscript interpreter for various flavors of postscript-- eps files, type3s, type1s, type2s, etc. It can't handle much.</p>
+<p>psunicodenames.c</p>
+<p>A list of all the adobe standard names for unicode characters in postscript. Any NULL entry in this array gets an algorithmically generated name uni%04X</p>
+<p>scripting.c</p>
+<p>All the routines to handle scripts</p>
+<p>savefontdlg.c</p>
+<p>Dialog and dispatcher for the Generate Fonts command.</p>
+<p>sfd.c</p>
+<p>Routines to write and read our spline font database format (<a href="sfdformat.html">sfd</a>). Also routines to handle autosave files which are basically just the bits of the font which have changed written out in sfd format with a few extra headers to say what these changes should be applied to.</p>
+<p>splashimage.c</p>
+<p>The resource containing the splash image.</p>
+<p>splinefill.c</p>
+<p>The routines that do rasterizing (and anti-aliasing). Also provides skeleton routines for autohinting, remove overlap, etc. which use a similar structure.</p>
+<p>splineoverlap.c</p>
+<p>The routines which implement the remove overlap command.</p>
+<p>splinesave.c</p>
+<p>Various helper routines when saving a postscript (and to a lesser extent TTF) font. Converts to type1 or type2 commands. Figures out optimal referencing.</p>
+<p>splinesaveafm.c</p>
+<p>Generates an afm file.</p>
+<p>splinestroke.c</p>
+<p>More routines to handle expand stroke.</p>
+<p>splineutil.c</p>
+<p>A bunch of utility routines. Converts postscript type1 strings into SplineChars. Figures bounding boxes. Handles updating references and dependencies. Figures linear approximations to splines for drawing. Figures clockwise, counter-clockwise. Guesses at good pointtypes when loading in postscript/ttf fonts. Copies SplinePointLists. Transforms SplinePointLists. Solves (approximates a solution) cubic equations. Finds points of inflection. Figures out if a point is &quot;near&quot; a spline.</p>
+<p>splineutil2.c</p>
+<p>More utility functions. Determines if a spline is linear (even if its control points aren't degenerate, we can still get spines which trace out a line, for instance if both control points are on the line between the to base points). Finds (approximates) the intersection of two splines. Aproximate a spline from a set of points (used by MergePoint, inserting a point onto a spline, and many other things). The Merge command itself. The Simplify command. Commands to remove tiny spline segments (these can confuse the Overlap routine, so we take them out before it does anything). Routine to create a new SplineFont. Routines to make sure the control points of tangent points continue to point in the right direction even when the point is moved. Routines to figure good default values for control points on new points (and on points where the user has not set the control points him/herself when that point is moved). Determines if any point on a path is selected. Reverses the direction of a closed path.</p>
+<p>stamp.c</p>
+<p>Time stamp of when I last built.</p>
+<p>stamper.c</p>
+<p>Program which generates time stamp. (stamp.c)</p>
+<p>start.c</p>
+<p>main routine. Initializes things and reads comand line arguments. Handles the splash screen. Top dispatcher for autosave.</p>
+<p>threaddummy.c</p>
+<p>contains a dummy pthread_create so I don't need to drag in pthreads when I'm not interested in that section of gio.</p>
+<p>tottf.c</p>
+<p>Saves a true type or open type font. see also splinesave.c for reference character optimization and for OpenType Type2 conversion routines.</p>
+<p>transform.c</p>
+<p>Transform dialog and dispatch routines.</p>
+<p>uiutil.c</p>
+<p>Utilities for the user interface.</p>
+<p>utils.c</p>
+<p>Hmm. this is blank.</p>
+<p>windowmenu.c</p>
+<p>Builds and dispatches the window menu.</p>
+<h2 id="prev----toc----next">-- <a href="files.html">Prev</a> -- <a href="overview.html">TOC</a> -- <a href="sfdformat.html">Next</a></h2>
+</div><!-- end main -->
+
+<footer>
+<section>
+<h3 id="fontforge">Fontforge</h3>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="download.html">Download</a></li>
+<li><a href="changelog.html">Changelog</a></li>
+<li><a href="acknowledgements.html">Acknowledgements</a></li>
+<li><a href="helpout.html">Help Out</a></li>
+<li><a href="http://sourceforge.net/projects/fontforge/">SF Project page</a><br></li>
+<li><a href="http://sourceforge.net/project/project_donations.php?group_id=103338">Donate</a></li>
+</ul>
+</section> <section>
+<h3 id="features">Features</h3>
+<ul>
+<li><a href="features.html">Features</a></li>
+<li><a href="lacks.html">Things missing</a></li>
+<li><a href="bugs.html">Known bugs</a></li>
+</ul>
+</section> <section>
+<h3 id="reference">Reference</h3>
+<ul>
+<li><a href="bibliography.html">Bibliography</a></li>
+<li><a href="related-tools.html">Related tools</a></li>
+<li><a href="librefontdevelopment.html">Libre Font Dev Efforts</a></li>
+</ul>
+</section> <section>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li><a href="overview.html">Table of Contents</a></li>
+<li><a href="install.html">Install</a></li>
+<li><a href="editexampple.html">Get started</a></li>
+<li><a href="glossary.html">Typographic Glossary</a></li>
+<li><a href="faqFS.html">FAQ</a></li>
+</ul>
+</section>
+</footer><!-- end main -->
+
+</body>
+</html>

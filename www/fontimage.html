@@ -1,0 +1,107 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head><!--[if IE]><script>document.lastChild.id="ie"+/IE (d+)/.exec(navigator.userAgent)[1]</script><![endif]-->
+<!-- explanation: http://www.eric-shinn.com/css-if-ie-conditional-hack-futureproof/ -->
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>fontimage -- generate a font thumbnail image</title>
+	<meta name="description" content="Outline font editor">
+	<meta name="author" content="humans.txt">
+
+	
+
+	<meta name="viewport" content="width=1024">
+
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="favicon.png">
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script>window.html5 || document.write('<script src="js/libs/html5.js"></script>')</script>
+	<![endif]-->
+</head>
+<body>
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+<header>
+<a href="index.html"><h1><img src="img/fontforge.png">Fontforge</h1></a>
+<nav>
+	<li><a href="download.html">Download</a></li>
+	<li><a href="source-build.html">Install</a></li>
+	<!-- <li><a href="index.html">Features</a></li> -->
+	<li><a href="overview.html">Documentation</a></li>
+	<li><a href="helpout.html">Help Out</a></li>
+</nav>
+</header><!-- end main -->
+
+<div id="main">
+<p>fontimage<br> generate a font thumbnail image ================================</p>
+<p><code>fontimage [--o outfile] [--width num] [--height num] [--pixelsize num]   [--fontname] [--text string] [--version] [--help] fontfile</code></p>
+<p><em>Fontimage</em> produces a thumbnail image of a font (which may be in any format <a href="overview.html">fontforge</a> can read).</p>
+<p>You may either explicitly specify text to be displayed in the font, or rely on fontimage's default behavior, which is to check for various scripts it knows about and display something appropriate for each one present.</p>
+<p>--help</p>
+<p>Displays a list of arguments and descriptions of each.</p>
+<p>--width num</p>
+<p>Specifies the width (in pixels) of the output image. If omitted the image will be as wide as it needs to be to display the text.</p>
+<p>--height num</p>
+<p>Specifies the height (in pixels) of the output image. If omitted the image will be as high as it needs to be to display the text.</p>
+<p>--o outputfile</p>
+<p>Specifies the name of the output image file. The format is determined by the extension. Currently only &quot;.bmp&quot; and &quot;.png&quot; are supported. If omitted, fontimage will choose a filename based on the fontname of the font.</p>
+<p>--pixelsize num</p>
+<p>Specifies the pixelsize at which to display text. This may be specified multiple times. Each specification applies to any --text arguments which occur after it.</p>
+<p>--fontname</p>
+<p>Include the fontname as a line of text.</p>
+<p>--text string</p>
+<p>Specifies a string to be displayed. The string <em>must</em> be in UTF-8. This option may be provided multiple times to supply more than one line of text. If omitted entirely, fontimage will examine the scripts it knows about in the font and will display text appropriate to each one present.</p>
+<p>--version</p>
+<p>Displays the fontimage version.</p>
+<h3 id="see-also">See Also</h3>
+<p><a href="overview.html">FontForge</a></p>
+<hr>
+<h3 id="example">Example</h3>
+<p>Font: Ambrosia Bold Ambrosia Italic Ambrosia Outline Ambrosia Andrade Swash Baldur Bastarda Bocklin Caliban Caprice Carmen Caslon Black Caslon Italic Caslon Roman Caslon Bold Crystal Cupola BoldItalic Cupola Bold Cupola Italic Cupola Cupola SmallCaps Decorative Dufrene Type3 Edda Filled Edda Narrow Edda Outline Extravagant Capitals Fantasie Artistique Flash Floral Caps Formal Script Bold Formal Script Fractur Gothic Bamboo Hohenzollern Initials Humanistic Cursive Humanistic Italic Hand Lombardic Mix Lombardic Mirage Monopol Monospace Bold Monospace Oblique Monospace Regular Morris Initials Parisian Peignot Picadilly Bizarre Picadilly Ringlet Black Ringlet Roman Uncial Modern Rotunda Square Caps Textura Modern Uncial Animals Versal Point size: DPI: <br> Text: (If you leave this blank, fontimage will generate some default text showing all scripts in the font)<br> <br> IFrame doesn't work in your browser. Try pressing the [Display] button</p>
+</div><!-- end main -->
+
+<footer>
+<section>
+<h3 id="fontforge">Fontforge</h3>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="download.html">Download</a></li>
+<li><a href="changelog.html">Changelog</a></li>
+<li><a href="acknowledgements.html">Acknowledgements</a></li>
+<li><a href="helpout.html">Help Out</a></li>
+<li><a href="http://sourceforge.net/projects/fontforge/">SF Project page</a><br></li>
+<li><a href="http://sourceforge.net/project/project_donations.php?group_id=103338">Donate</a></li>
+</ul>
+</section> <section>
+<h3 id="features">Features</h3>
+<ul>
+<li><a href="features.html">Features</a></li>
+<li><a href="lacks.html">Things missing</a></li>
+<li><a href="bugs.html">Known bugs</a></li>
+</ul>
+</section> <section>
+<h3 id="reference">Reference</h3>
+<ul>
+<li><a href="bibliography.html">Bibliography</a></li>
+<li><a href="related-tools.html">Related tools</a></li>
+<li><a href="librefontdevelopment.html">Libre Font Dev Efforts</a></li>
+</ul>
+</section> <section>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li><a href="overview.html">Table of Contents</a></li>
+<li><a href="install.html">Install</a></li>
+<li><a href="editexampple.html">Get started</a></li>
+<li><a href="glossary.html">Typographic Glossary</a></li>
+<li><a href="faqFS.html">FAQ</a></li>
+</ul>
+</section>
+</footer><!-- end main -->
+
+</body>
+</html>

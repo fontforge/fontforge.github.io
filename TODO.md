@@ -1,4 +1,3 @@
-
 Todo
 ====
 
@@ -10,7 +9,6 @@ Todo
 - fix anchor linking problem
 - Move a bunch of stuff from helpout.html to features.html and acknowledgements
 - Integrate http://dmtr.org/ff.php into site
-- Make the stylesheet more sane
 - Rewrite build/install pages
 - make test page with various elements and style the to all match
 
@@ -105,4 +103,10 @@ Note: on importexample.html there is a nice, sane list of links, which is more w
 - bezier.html
 - corpchar.html
 - 
-- [breaks at ./sfds/index.html]
+- Breaks at ./sfds/index.html
+- but, the next one is
+- faq.html
+- GlossaryFS.html
+- IndexFS.html
+- nvd.html
+- bibliography.html

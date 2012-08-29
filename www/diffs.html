@@ -1,0 +1,119 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head><!--[if IE]><script>document.lastChild.id="ie"+/IE (d+)/.exec(navigator.userAgent)[1]</script><![endif]-->
+<!-- explanation: http://www.eric-shinn.com/css-if-ie-conditional-hack-futureproof/ -->
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>Differences from Fontographer</title>
+	<meta name="description" content="Outline font editor">
+	<meta name="author" content="humans.txt">
+
+	
+
+	<meta name="viewport" content="width=1024">
+
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="favicon.png">
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script>window.html5 || document.write('<script src="js/libs/html5.js"></script>')</script>
+	<![endif]-->
+</head>
+<body>
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+<header>
+<a href="index.html"><h1><img src="img/fontforge.png">Fontforge</h1></a>
+<nav>
+	<li><a href="download.html">Download</a></li>
+	<li><a href="source-build.html">Install</a></li>
+	<!-- <li><a href="index.html">Features</a></li> -->
+	<li><a href="overview.html">Documentation</a></li>
+	<li><a href="helpout.html">Help Out</a></li>
+</nav>
+</header><!-- end main -->
+
+<div id="main">
+<h2 id="differences-from-fontographer">Differences from <a href="http://www.macromedia.com/software/fontographer/">Fontographer</a></h2>
+<ul>
+<li>FontForge supports OpenType</li>
+<li>FontForge supports scripting</li>
+<li>FontForge understands GPOS/GSUB/GDEF tables as well as morx/prop/etc.</li>
+<li>The font window can display the outline font at various pixelsizes</li>
+<li>The font window can display a bitmap font instead
+<ul>
+<li>(if it does then double clicking on a character will open a bitmap editor)</li>
+</ul></li>
+<li>The metrics window also lets you look at the bitmap fonts (but doesn't let you change their metrics, except by changing those of the outline font).</li>
+<li>Supports many more international standard encodings, allows you to create your own encodings. Better unicode support. Can generate type0 fonts for 2byte encodings. Support for some 94x94 CJK encodings (like JISX208)</li>
+<li>There's a command to jump to any particular character in the font, outline or bitmap windows. Characters may be entered by name, local encoding, ku ten (for CJK fonts), and unicode name.</li>
+<li>If you change the width of a character then all that character's bitmaps will automagically have their widths changed. Also if the character is used as a reference in any other character, and that other character had the same width then it's width will also be updated (as will the widths of any of its bitmaps)</li>
+<li>If you change the lbearing of a character (if you translate all elements in the foreground of an outline character, and the translation is only in the x direction) then all hints will also be translated, and if the character is a letter, then any characters which depend on it will have all other elements translated by the same amount. (So if you move the character &quot;A&quot; then the reference to tilde in &quot;Ã&quot; will be moved to correspond)</li>
+<li><p>There's a command to build an accented character.</p>
+<p>The base characters should already have been created. Select an accented character (or several of them) in the font view and press <code>Build Accented     Chars</code>from the <code>Element</code> menu.</p>
+<p>Suppose you select À, then Unicode says this is made up of the characters 0x0041 and 0x0300. Now 0x0300 is not present in most postscript fonts, but it is sort of synonymous with either 0x02CB or 0x0060 which often are present. Unicode also says that 0x0300 floats on top of and centered horizontally over the base character. So...</p>
+<p>A reference to &quot;A&quot; will be placed into &quot;À&quot;, and that character will be given the same width as &quot;A&quot;. Then a reference to &quot;`&quot; will be centered on &quot;A&quot; and placed above it. Something similar will be done in any bitmaps.</p>
+<p>Some Unicode characters contain more than one accent. Additional accents will be treated similarly. This command can also be used to generate more general composite characters. Unicode 0x2163 is the roman numeral IV and this command may be used to build it. Greek capital Alpha looks exactly like Latin capital A and can be created. On the other hand the oe ligature will be replaced by an &quot;o&quot; followed by &quot;e&quot;, so be a little careful. Some accents (for example cedilla) are treated unexpectedly on certain letters (different ways in different languages), so be careful of g-cedilla. Å often merges the ring into the top of the A, but here it will float above it. Be careful.</p>
+<p><strong>NOTE:</strong> My centering algorithms attempt to guess what will look centered to the human eye (centering it in the middle of the character will often not look centered). You should examine all built characters and be prepared to adjust the accent.<br> The algorithms take some account of the italicangle.</p></li>
+<li>There's a merge font command. This is designed to allow you to build one monster unicode font out of several smaller fonts. It will prompt for a font to merge into the current one, and then will copy any characters which not in the current font and put them there. Note both fonts must be properly encoded.</li>
+<li>You can control what you want copy to copy in the font window. By default if you select &quot;A&quot; then and press copy then it will copy the outline description and all the bitmap descriptions for &quot;A&quot;, so when you paste it, the bitmaps will follow the outline. You can choose instead just to copy from the font that is being displayed (which might be the outline font or might be a bitmap). When you Paste, whatever is in the clipboard will be pasted. Transform sometimes will transform bitmaps, but not all transformations map into bitmap transforms.</li>
+<li>Most changes are preserved across crashes.</li>
+<li>Right clicking in the character and bitmap windows will produce a menu of tools</li>
+<li>The bitmap window has a number of (not very useful) tools which fontographer didn't include. They are only available from the menu (not from palettes)
+<ul>
+<li>Rectangle</li>
+<li>Filled Rectangle</li>
+<li>Ellipse</li>
+<li>Filled Ellipse</li>
+<li>Flip horizontal/vertical</li>
+<li>Rotate 90° Clockwise/Counter Clockwise</li>
+<li>Rotate 180°</li>
+</ul></li>
+</ul>
+<p>--- <a href="index.html">Main</a> ---</p>
+</div><!-- end main -->
+
+<footer>
+<section>
+<h3 id="fontforge">Fontforge</h3>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="download.html">Download</a></li>
+<li><a href="changelog.html">Changelog</a></li>
+<li><a href="acknowledgements.html">Acknowledgements</a></li>
+<li><a href="helpout.html">Help Out</a></li>
+<li><a href="http://sourceforge.net/projects/fontforge/">SF Project page</a><br></li>
+<li><a href="http://sourceforge.net/project/project_donations.php?group_id=103338">Donate</a></li>
+</ul>
+</section> <section>
+<h3 id="features">Features</h3>
+<ul>
+<li><a href="features.html">Features</a></li>
+<li><a href="lacks.html">Things missing</a></li>
+<li><a href="bugs.html">Known bugs</a></li>
+</ul>
+</section> <section>
+<h3 id="reference">Reference</h3>
+<ul>
+<li><a href="bibliography.html">Bibliography</a></li>
+<li><a href="related-tools.html">Related tools</a></li>
+<li><a href="librefontdevelopment.html">Libre Font Dev Efforts</a></li>
+</ul>
+</section> <section>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li><a href="overview.html">Table of Contents</a></li>
+<li><a href="install.html">Install</a></li>
+<li><a href="editexampple.html">Get started</a></li>
+<li><a href="glossary.html">Typographic Glossary</a></li>
+<li><a href="faqFS.html">FAQ</a></li>
+</ul>
+</section>
+</footer><!-- end main -->
+
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head><!--[if IE]><script>document.lastChild.id="ie"+/IE (d+)/.exec(navigator.userAgent)[1]</script><![endif]-->
+<!-- explanation: http://www.eric-shinn.com/css-if-ie-conditional-hack-futureproof/ -->
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title></title>
+	<meta name="description" content="Outline font editor">
+	<meta name="author" content="humans.txt">
+
+	
+
+	<meta name="viewport" content="width=1024">
+
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="favicon.png">
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script>window.html5 || document.write('<script src="js/libs/html5.js"></script>')</script>
+	<![endif]-->
+</head>
+<body>
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+<header>
+<a href="index.html"><h1><img src="img/fontforge.png">Fontforge</h1></a>
+<nav>
+	<li><a href="download.html">Download</a></li>
+	<li><a href="source-build.html">Install</a></li>
+	<!-- <li><a href="index.html">Features</a></li> -->
+	<li><a href="overview.html">Documentation</a></li>
+	<li><a href="helpout.html">Help Out</a></li>
+</nav>
+</header><!-- end main -->
+
+<div id="main">
+<hr>
+<p>The book should be brief enough to read in a few hours (or a day for a slow reader),ld and cover the topics of making fonts using FontForge, and extending FontForge for improved speed or usage, with a special section for developers. Other things which don’t seem to fit into the plan can be kept in separate articles, that go into more depth. (In gray is bits for me to include or notes.)</p>
+<pre><code>     Contributors
+
+1    Terminology
+2    The interface
+
+     Making Fonts
+     ============
+
+3    Drawing with vector outlines  
+      ( cubic, quadratic, spiros.. bitmaps = separate article?
+4    Building letters  
+      ( construction, accented glyphs
+5    Metrics 
+      ( includes spacing &amp; kerning
+6    Opentype Features  
+      ( should it include all types of lookups? probably should be its own article
+7    Names  
+      ( font names, glyph names, unicode
+9    Generating the font file : includes validating
+10   Testing
+
+     Forging farther
+     ===============
+
+11   Customizing FontForge
+12   Scripting
+
+     Appendix A: Keyboard shortcuts
+     Appendix B: Glossary of Terms
+     Appendix C: Libré type initiatives
+
+     FAQ
+     Further Reading
+     Index
+
+     Things to work in:
+     ==================
+
+     Interpolation
+     The style functions
+     MM
+     Encodings</code></pre>
+<h1 id="notes">Notes</h1>
+<p>These are just my notes. :)</p>
+<h2 id="terms">Terms</h2>
+<p>Define the usage of these terms in the scope of the manual:</p>
+<ul>
+<li>Glyph</li>
+<li>Font</li>
+<li><p>Family</p></li>
+<li>Anatomy</li>
+<li>Serif / Sans serif</li>
+<li>Counter</li>
+<li>Terminal</li>
+<li>Ligature</li>
+<li><p>Kern</p></li>
+<li>Metrics</li>
+<li>Body size</li>
+<li>Width</li>
+<li>Ascent</li>
+<li>Descent</li>
+<li>Cap, ascender, &amp; descender lines</li>
+<li><p>Overshoot</p></li>
+</ul>
+<p>In-depth definitions of kerning and bezier curves will be in their respective chapters, and in the glossary.</p>
+<hr>
+<h2 id="drawing-with-beziers">Drawing with beziers</h2>
+<p>Start explaining them:</p>
+<ol type="1">
+<li>With a brief history of bezier curves</li>
+<li>an explanation of the different types of beziers and curves (mention spiros)</li>
+<li>The “anatomy” of a bezier curve</li>
+<li>With animations showing usage.</li>
+</ol>
+</div><!-- end main -->
+
+<footer>
+<section>
+<h3 id="fontforge">Fontforge</h3>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="download.html">Download</a></li>
+<li><a href="changelog.html">Changelog</a></li>
+<li><a href="acknowledgements.html">Acknowledgements</a></li>
+<li><a href="helpout.html">Help Out</a></li>
+<li><a href="http://sourceforge.net/projects/fontforge/">SF Project page</a><br></li>
+<li><a href="http://sourceforge.net/project/project_donations.php?group_id=103338">Donate</a></li>
+</ul>
+</section> <section>
+<h3 id="features">Features</h3>
+<ul>
+<li><a href="features.html">Features</a></li>
+<li><a href="lacks.html">Things missing</a></li>
+<li><a href="bugs.html">Known bugs</a></li>
+</ul>
+</section> <section>
+<h3 id="reference">Reference</h3>
+<ul>
+<li><a href="bibliography.html">Bibliography</a></li>
+<li><a href="related-tools.html">Related tools</a></li>
+<li><a href="librefontdevelopment.html">Libre Font Dev Efforts</a></li>
+</ul>
+</section> <section>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li><a href="overview.html">Table of Contents</a></li>
+<li><a href="install.html">Install</a></li>
+<li><a href="editexampple.html">Get started</a></li>
+<li><a href="glossary.html">Typographic Glossary</a></li>
+<li><a href="faqFS.html">FAQ</a></li>
+</ul>
+</section>
+</footer><!-- end main -->
+
+</body>
+</html>

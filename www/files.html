@@ -1,0 +1,115 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head><!--[if IE]><script>document.lastChild.id="ie"+/IE (d+)/.exec(navigator.userAgent)[1]</script><![endif]-->
+<!-- explanation: http://www.eric-shinn.com/css-if-ie-conditional-hack-futureproof/ -->
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>Files used by FontForge</title>
+	<meta name="description" content="Outline font editor">
+	<meta name="author" content="humans.txt">
+
+	
+
+	<meta name="viewport" content="width=1024">
+
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="favicon.png">
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script>window.html5 || document.write('<script src="js/libs/html5.js"></script>')</script>
+	<![endif]-->
+</head>
+<body>
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+<header>
+<a href="index.html"><h1><img src="img/fontforge.png">Fontforge</h1></a>
+<nav>
+	<li><a href="download.html">Download</a></li>
+	<li><a href="source-build.html">Install</a></li>
+	<!-- <li><a href="index.html">Features</a></li> -->
+	<li><a href="overview.html">Documentation</a></li>
+	<li><a href="helpout.html">Help Out</a></li>
+</nav>
+</header><!-- end main -->
+
+<div id="main">
+<h1 id="files-used-by-fontforge">Files used by FontForge</h1>
+<p>~/.FontForge</p>
+<p>FontForge creates this directory the first time it starts up. It contains various files FontForge uses to hold context across invocations.</p>
+<hr>
+<p>~/.FontForge/prefs</p>
+<p>This file contains user preference settings.</p>
+<p>~/.FontForge/groups</p>
+<p>This file contains groups as defined by Encoding-&gt;Define Groups...</p>
+<p>~/.FontForge/Encodings.ps</p>
+<p>If there are any user defined encodings they reside in this file.</p>
+<p>~/.FontForge/autosave</p>
+<p>This directory contains the files used to drive the crash-recovery process. When FontForge is running there will be one file in this directory corresponding to each font loaded into FontForge that has been modified. These files will contain all changed glyphs.</p>
+<p>When FontForge exits normally, this directory will be cleaned up and there should be no files in it.</p>
+<p>~/.FontForge/plugins</p>
+<p>This directory contains any <a href="plugins.html">plugins</a> you want available for your private use.</p>
+<p>~/.FontForge/python</p>
+<p>This directory contains any python init scripts you want to run when FontForge starts</p>
+<p>~/.PfaEdit</p>
+<p>Before Oct 2007 the .PfaEdit subdirectory was used instead of .FontForge. After Oct 2007 if FontForge finds a .PfaEdit directory (and no .FontForge directory) it will rename .PfaEdit to be .FontForge.</p>
+<p>/usr/local/share -- Assuming you installed FontForge on /usr/local, otherwise substitute $PREFIX/share for &quot;/usr/local/share&quot; in the following.</p>
+<p>/usr/local/share/fontforge/*.ui</p>
+<p>These files contain translations of the ui for various locales. (used by fontforge before November 2005)</p>
+<p>/usr/local/share/locale/??/LC_MESSAGES/FontForge.mo</p>
+<p>Contain translations of the ui for various locales. (used after November 2005)</p>
+<p>/usr/local/share/fontforge/*.cidmap</p>
+<p>&quot;Encoding&quot; files for Adobe's cid formats. <a href="cidmaps.tgz">You can pull down a compressed archive from here.</a></p>
+<p>/usr/local/share/fontforge/plugins</p>
+<p>This directory contains any plugins you want available to everyone on your system.</p>
+<p>/usr/local/share/fontforge/python</p>
+<p>This directory contains any python init scripts you want available to everyone on your system.</p>
+<p>/usr/local/share/doc/fontforge/*.html</p>
+<p>Optional location for online documentation. <a href="source-build.html#Documentation">You can pull down a compressed archive from here.</a></p>
+<p>-- <a href="cliargs.html">Prev</a> -- <a href="overview.html">TOC</a> -- <a href="src.html">Next</a> --</p>
+</div><!-- end main -->
+
+<footer>
+<section>
+<h3 id="fontforge">Fontforge</h3>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="download.html">Download</a></li>
+<li><a href="changelog.html">Changelog</a></li>
+<li><a href="acknowledgements.html">Acknowledgements</a></li>
+<li><a href="helpout.html">Help Out</a></li>
+<li><a href="http://sourceforge.net/projects/fontforge/">SF Project page</a><br></li>
+<li><a href="http://sourceforge.net/project/project_donations.php?group_id=103338">Donate</a></li>
+</ul>
+</section> <section>
+<h3 id="features">Features</h3>
+<ul>
+<li><a href="features.html">Features</a></li>
+<li><a href="lacks.html">Things missing</a></li>
+<li><a href="bugs.html">Known bugs</a></li>
+</ul>
+</section> <section>
+<h3 id="reference">Reference</h3>
+<ul>
+<li><a href="bibliography.html">Bibliography</a></li>
+<li><a href="related-tools.html">Related tools</a></li>
+<li><a href="librefontdevelopment.html">Libre Font Dev Efforts</a></li>
+</ul>
+</section> <section>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li><a href="overview.html">Table of Contents</a></li>
+<li><a href="install.html">Install</a></li>
+<li><a href="editexampple.html">Get started</a></li>
+<li><a href="glossary.html">Typographic Glossary</a></li>
+<li><a href="faqFS.html">FAQ</a></li>
+</ul>
+</section>
+</footer><!-- end main -->
+
+</body>
+</html>

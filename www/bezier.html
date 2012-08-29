@@ -1,0 +1,192 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head><!--[if IE]><script>document.lastChild.id="ie"+/IE (d+)/.exec(navigator.userAgent)[1]</script><![endif]-->
+<!-- explanation: http://www.eric-shinn.com/css-if-ie-conditional-hack-futureproof/ -->
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>B&eacute;zier Splines</title>
+	<meta name="description" content="Outline font editor">
+	<meta name="author" content="humans.txt">
+
+	
+
+	<meta name="viewport" content="width=1024">
+
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="favicon.png">
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script>window.html5 || document.write('<script src="js/libs/html5.js"></script>')</script>
+	<![endif]-->
+</head>
+<body>
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+<header>
+<a href="index.html"><h1><img src="img/fontforge.png">Fontforge</h1></a>
+<nav>
+	<li><a href="download.html">Download</a></li>
+	<li><a href="source-build.html">Install</a></li>
+	<!-- <li><a href="index.html">Features</a></li> -->
+	<li><a href="overview.html">Documentation</a></li>
+	<li><a href="helpout.html">Help Out</a></li>
+</nav>
+</header><!-- end main -->
+
+<div id="main">
+<h1 id="bézier1-splines">Bézier<sup><a href="#bezier">1</a></sup> Splines</h1>
+<p><img src="img/splines.gif">Technically PostScript uses cubic Bézier splines. Each control point determines the slope of the spline at the corresponding end point. TrueType uses quadratic Bézier splines, in these there is only one control point between two end points and that point determines the slope of the spline at both end points. Both formats also use lines (which are linear Bézier splines).</p>
+<p><img src="img/quadbezier.gif">It is also possible to have other degree Bézier splines. For a quartic spline there would be 3 control points, for a quintic 4 control points, etc. Of these only the linear, quadratic and cubic splines are interesting to us-- those used by TrueType and PostScript.</p>
+<p>The examples at left are cubic splines with two control points, each determining the slope at the nearest end point, while the example at right shows a quadratic spline with one control point used to determine the slopes at both end points.</p>
+<p>In general if there are n+1 points labeled P<sub>0</sub>, P<sub>1</sub>, ... P<sub>n</sub>, with P<sub>0</sub> and P<sub>n</sub> the end points (and all the others control points) then the equation of the Bézier spline between them is: <img src="img/bezier.gif">. If there are two points then this is just the line between the two end points, if three then the quadratic spline used by TrueType, if four then the cubic spline used by PostScript.</p>
+<p>A cubic Bézier curve may be viewed as:</p>
+<blockquote>
+<p>x = a<sub>x</sub>*t<sup>3</sup> + b<sub>x</sub>*t<sup>2</sup> + c<sub>x</sub>*t +d<sub>x</sub><br> y = a<sub>y</sub>*t<sup>3</sup> + b<sub>y</sub>*t<sup>2</sup> + c<sub>y</sub>*t +d<sub>y</sub></p>
+</blockquote>
+<p>Where</p>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">     </td>
+<td style="text-align: left;">d<sub>x</sub>= P0.x</td>
+<td style="text-align: left;">d<sub>y</sub> = P0.y</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">c<sub>x</sub> = 3*P1.x-3*P0.x</td>
+<td style="text-align: left;">c<sub>y</sub> = 3*P1.y-3*P0.y</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">b<sub>x</sub> = 3*P2.x-6*P1.x+3*P0.x</td>
+<td style="text-align: left;">b<sub>y</sub> = 3*P2.y-6*P1.y+3*P0.y</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">a<sub>x</sub> = P3.x-3*P2.x+3*P1.x-P0.x</td>
+<td style="text-align: left;">a<sub>y</sub> = P3.y-3*P2.y+3*P1.y-P0.y</td>
+</tr>
+</tbody>
+</table>
+<p>And a quadratic Bézier curve:</p>
+<blockquote>
+<p>x = b<sub>x</sub>*t<sup>2</sup> + c<sub>x</sub>*t +d<sub>x</sub><br> y = b<sub>y</sub>*t<sup>2</sup> + c<sub>y</sub>*t +d<sub>y</sub></p>
+</blockquote>
+<p>with</p>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">     </td>
+<td style="text-align: left;">d<sub>x</sub> = P0.x</td>
+<td style="text-align: left;">d<sub>y</sub> = P0.y</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">c<sub>x</sub> = 2*P1.x-2*P0.x</td>
+<td style="text-align: left;">c<sub>y</sub> = 2*P1.y-2*P0.y</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">b<sub>x</sub> = P2.x-2*P1.x+P0.x</td>
+<td style="text-align: left;">b<sub>y</sub> = P2.y-2*P1.y+P0.y</td>
+</tr>
+</tbody>
+</table>
+<p>And a line:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">     </td>
+<td style="text-align: left;">d<sub>x</sub>= P0.x</td>
+<td style="text-align: left;">d<sub>y</sub> = P0.y</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">c<sub>x</sub> = P1.x-P0.x</td>
+<td style="text-align: left;">c<sub>y</sub> = P1.y-P0.y</td>
+</tr>
+</tbody>
+</table>
+<h2 id="converting-truetype-to-postscript">Converting TrueType to PostScript</h2>
+<p>Lines convert with no math whatsoever.</p>
+<p>Any quadratic spline can be expressed as a cubic (where the cubic term is zero). The end points of the cubic will be the same as the quadratic's.</p>
+<blockquote>
+<p>CP<sub>0</sub> = QP<sub>0</sub><br> CP<sub>3</sub> = QP<sub>2</sub></p>
+</blockquote>
+<p>The two control points for the cubic are:</p>
+<blockquote>
+<p>CP<sub>1</sub> = QP<sub>0</sub> + 2/3 *(QP<sub>1</sub>-QP<sub>0</sub>)<br> CP<sub>2</sub> = QP<sub>2</sub> + 2/3 *(QP<sub>1</sub>-QP<sub>2</sub>)</p>
+</blockquote>
+<p>So converting from TrueType to PostScript is trivial. There is a slight error introduced due to rounding, but it is usually not noticeable.</p>
+<p>(Anish Mehta points out that in truetype it is possible to specify points which are in the middle of a pixel (ie. with an x or y value ending in 1/2). These will also introduce rounding errors when converted to postscript, but here the solution is simple: Scale the em-square of the font by a factor of 2 and the problem vanishes).</p>
+<h2 id="converting-postscript-to-truetype">Converting PostScript to TrueType</h2>
+<p>Most cubic splines cannot be represented exactly by a quadratic (or even by a series of quadratics). The best that can be done is to approximate the cubic to within some margin of error. Here is a way to do that:</p>
+<p>Given a cubic spline. Look at two points on the spline. Then there is only one possible quadratic spline between those two points which has the desired slope at those two points. (the one quadratic has its end points as the end points of the interval, and its control point is determined by the intersections of the lines tangent to the cubic at the start and end of the interval).</p>
+<p><img src="img/cubic2quad.png">I cannot prove this, but have determined empirically (after being told it worked) that if a cubic spline -- like the quarter ellipse at right -- is divided &quot;evenly&quot; into n quadratic splines (here n==3) then the control points will have the nice property that the on-curve points are exactly mid-way between control points -- this means that truetype can represent them as interpolated points. An even division means means that each sub-point is placed where t=i/n (where 0&lt;i&lt;n).</p>
+<p>FontForge first checks to see if the curve is already a quadratic -- this might happen if the cubic originally came from a truetype font. If it is it simply converts the control point.</p>
+<p>Otherwise FontForge start inserting points. It begins by inserting a single point mid-way on the spline. If this produces a good approximation it stops, otherwise it tries again with two, three ... additional points.</p>
+<p>On each test it will round the control points to integer values because truetype output requires this (note that it does not do this to the on-curve points, they are interpolated between control points and will be ok if the control points are). Then it checks to see if the resultant quadratics are close to the original curve.</p>
+<p>FontForge may also break the curve at its points of inflection (because no quadratic can have one there should be a point there to start a new quadratic) and apply the above algorithm to the components.</p>
+<p>If FontForge can find no good approximation using the above algorithm it will fall back to its old method, which is:</p>
+<p>Start from the end of the spline and every so often (ie. within the margin of error) check to see if the one permissible quadratic approximation actually matches the cubic closely enough .</p>
+<p>If this approximation works then keep it as part of the result, and continue the process by advancing our start point along to the cubic spline to the end of the quadratic we just created.</p>
+<p>(There are some slight complexities introduced because there may not be a quadratic approximation at a given point (if the tangents happen to be parallel) or because the approximation happens to be linear, but these are easily dealt with).</p>
+<p>It may, of course, happen that the &quot;cubic&quot; we are given is actually a quadratic (if its third degree term is 0), the most likely cause is that the font came from a truetype source. In that case the control point for the quadratic is at:</p>
+<blockquote>
+<p>QP<sub>1</sub> = CP<sub>0</sub> + 3/2 * (CP<sub>1</sub> - CP<sub>0</sub>)</p>
+</blockquote>
+<p>Other sources I have read on the net suggest checking the cubic spline for points of inflection (which quadratic splines cannot have) and forcing breaks there. To my eye this actually makes the result worse, it uses more points and the approximation does not look as close as it does when ignoring the points of inflection. So I ignore them.</p>
+<h2 id="open-type-another-solution">Open Type, another solution</h2>
+<p>Adobe and Microsoft decided to produce one font format which could hold either a true type font or a postscript font. This is called Open Type. It is essentially a superset of TrueType. Any TrueType font is a valid Open Type font, but Open Type fonts can also contain postscript. Anything that supports Open Type will not require converting between PostScript and True Type.</p>
+<h3 id="see-also">See Also</h3>
+<ul>
+<li><a href="pfaeditmath.html">FontForge's math</a></li>
+</ul>
+<p><sup>1</sup>Bézier splines were developed by Pierre Bézier (1910-1999).</p>
+<p>-- <a href="sfdformat.html">Prev</a> -- <a href="overview.html">TOC</a> -- <a href="corpchar.html">Next</a> --</p>
+</div><!-- end main -->
+
+<footer>
+<section>
+<h3 id="fontforge">Fontforge</h3>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="download.html">Download</a></li>
+<li><a href="changelog.html">Changelog</a></li>
+<li><a href="acknowledgements.html">Acknowledgements</a></li>
+<li><a href="helpout.html">Help Out</a></li>
+<li><a href="http://sourceforge.net/projects/fontforge/">SF Project page</a><br></li>
+<li><a href="http://sourceforge.net/project/project_donations.php?group_id=103338">Donate</a></li>
+</ul>
+</section> <section>
+<h3 id="features">Features</h3>
+<ul>
+<li><a href="features.html">Features</a></li>
+<li><a href="lacks.html">Things missing</a></li>
+<li><a href="bugs.html">Known bugs</a></li>
+</ul>
+</section> <section>
+<h3 id="reference">Reference</h3>
+<ul>
+<li><a href="bibliography.html">Bibliography</a></li>
+<li><a href="related-tools.html">Related tools</a></li>
+<li><a href="librefontdevelopment.html">Libre Font Dev Efforts</a></li>
+</ul>
+</section> <section>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li><a href="overview.html">Table of Contents</a></li>
+<li><a href="install.html">Install</a></li>
+<li><a href="editexampple.html">Get started</a></li>
+<li><a href="glossary.html">Typographic Glossary</a></li>
+<li><a href="faqFS.html">FAQ</a></li>
+</ul>
+</section>
+</footer><!-- end main -->
+
+</body>
+</html>

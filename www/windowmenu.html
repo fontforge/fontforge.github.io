@@ -1,0 +1,130 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head><!--[if IE]><script>document.lastChild.id="ie"+/IE (d+)/.exec(navigator.userAgent)[1]</script><![endif]-->
+<!-- explanation: http://www.eric-shinn.com/css-if-ie-conditional-hack-futureproof/ -->
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>The Window Menu</title>
+	<meta name="description" content="Outline font editor">
+	<meta name="author" content="humans.txt">
+
+	
+
+	<meta name="viewport" content="width=1024">
+
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="favicon.png">
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script>window.html5 || document.write('<script src="js/libs/html5.js"></script>')</script>
+	<![endif]-->
+</head>
+<body>
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+<header>
+<a href="index.html"><h1><img src="img/fontforge.png">Fontforge</h1></a>
+<nav>
+	<li><a href="download.html">Download</a></li>
+	<li><a href="source-build.html">Install</a></li>
+	<!-- <li><a href="index.html">Features</a></li> -->
+	<li><a href="overview.html">Documentation</a></li>
+	<li><a href="helpout.html">Help Out</a></li>
+</nav>
+</header><!-- end main -->
+
+<div id="main">
+<h1 id="the-window-menu">The Window Menu</h1>
+<ul>
+<li><a href="#Outline">Open Outline</a></li>
+<li><a href="#Bitmap">Open Bitmap</a></li>
+<li><a href="#Metrics">Open Metrics</a></li>
+</ul>
+<p>-</p>
+<pre><code>* * * * *</code></pre>
+<ul>
+<li><a href="#windows">window</a> titles...</li>
+</ul>
+<p>Open Outline</p>
+<p>In the font view this will open outline views on all selected glyphs (if there are more than 15 or so it will ask whether you really meant to do that).</p>
+<p>In the bitmap view it will open an outline view on the current glyph.</p>
+<p>In the metrics view it will open an outline view on whatever glyph is active.</p>
+<p>This menu item is always grey in an outline view.</p>
+<p>Note: It is possible to have more than one window displaying the same glyph. Any editing that occurs in one should be reflected in all.</p>
+<p>Open Bitmap</p>
+<p>In the font view this will open bitmap views on all selected glyphs (if there are more than 15 or so it will ask whether you really meant to do that). If the font view is displaying a bitmap then it will open a bitmap view showing that pixelsize, otherwise it will pick a pixelsize.</p>
+<p>In the outline view it will open a bitmap view on the current glyph. It will pick a pointsize.</p>
+<p>In the metrics view it will open an outline view on whatever glyph is active, as with the font view, if it is displaying a bitmap it will use its pixelsize, otherwise it will pick a pixelsize.</p>
+<p>This menu item is always grey in an bitmap view.</p>
+<p>Note: It is possible to have more than one window displaying the same glyph. Any editing that occurs in one should be reflected in all.</p>
+<p>Open Metrics</p>
+<p>In the font view it will open a metrics view displaying all selected glyphs (the order in which you selected those glyphs is important). The new metrics view will display whatever the font view displays (outline or bitmap).</p>
+<p>In the outline view it will open a metrics view displaying the current glyph. The display will be an outline.</p>
+<p>In the bitmap view it will open a metrics view displaying the current glyph. The display will be a bitmap in the current size.</p>
+<p>This menu item is always grey in the metrics view.</p>
+<p>It is possible to have more than one metrics view open at a time.</p>
+<p>After that the window menu is just a list of all the open windows. If the window has been changed (and not saved since) then it has a white background. The names of font views are in red. Views connected to a given font will all be displayed together (with the font view on top). Clicking on an entry raises that window.</p>
+<h2 id="other-menus">Other menus</h2>
+<ul>
+<li><a href="filemenu.html">File</a></li>
+<li><a href="editmenu.html">Edit</a></li>
+<li><a href="pointmenu.html">Point</a></li>
+<li><a href="elementmenu.html">Element</a></li>
+<li><a href="toolsmenu.html">Tools</a></li>
+<li><a href="hintsmenu.html">Hints</a></li>
+<li><a href="encodingmenu.html">Encoding</a></li>
+<li><a href="viewmenu.html">View</a></li>
+<li><a href="metricsmenu.html">Metrics</a></li>
+<li><a href="cidmenu.html">CID</a></li>
+<li><a href="mmmenu.html">MM</a></li>
+<li><a href="windowmenu.html">Window</a></li>
+<li><a href="helpmenu.html">Help</a></li>
+<li><a href="HotKeys.html">Hot Keys</a></li>
+</ul>
+<h2 id="prev----toc----next">-- <a href="mmmenu.html">Prev</a> -- <a href="overview.html">TOC</a> -- <a href="helpmenu.html">Next</a></h2>
+</div><!-- end main -->
+
+<footer>
+<section>
+<h3 id="fontforge">Fontforge</h3>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="download.html">Download</a></li>
+<li><a href="changelog.html">Changelog</a></li>
+<li><a href="acknowledgements.html">Acknowledgements</a></li>
+<li><a href="helpout.html">Help Out</a></li>
+<li><a href="http://sourceforge.net/projects/fontforge/">SF Project page</a><br></li>
+<li><a href="http://sourceforge.net/project/project_donations.php?group_id=103338">Donate</a></li>
+</ul>
+</section> <section>
+<h3 id="features">Features</h3>
+<ul>
+<li><a href="features.html">Features</a></li>
+<li><a href="lacks.html">Things missing</a></li>
+<li><a href="bugs.html">Known bugs</a></li>
+</ul>
+</section> <section>
+<h3 id="reference">Reference</h3>
+<ul>
+<li><a href="bibliography.html">Bibliography</a></li>
+<li><a href="related-tools.html">Related tools</a></li>
+<li><a href="librefontdevelopment.html">Libre Font Dev Efforts</a></li>
+</ul>
+</section> <section>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li><a href="overview.html">Table of Contents</a></li>
+<li><a href="install.html">Install</a></li>
+<li><a href="editexampple.html">Get started</a></li>
+<li><a href="glossary.html">Typographic Glossary</a></li>
+<li><a href="faqFS.html">FAQ</a></li>
+</ul>
+</section>
+</footer><!-- end main -->
+
+</body>
+</html>

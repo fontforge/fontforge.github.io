@@ -1,0 +1,190 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head><!--[if IE]><script>document.lastChild.id="ie"+/IE (d+)/.exec(navigator.userAgent)[1]</script><![endif]-->
+<!-- explanation: http://www.eric-shinn.com/css-if-ie-conditional-hack-futureproof/ -->
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>Creating a glyph using spiro points</title>
+	<meta name="description" content="Outline font editor">
+	<meta name="author" content="humans.txt">
+
+	
+
+	<meta name="viewport" content="width=1024">
+
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="favicon.png">
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script>window.html5 || document.write('<script src="js/libs/html5.js"></script>')</script>
+	<![endif]-->
+</head>
+<body>
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+<header>
+<a href="index.html"><h1><img src="img/fontforge.png">Fontforge</h1></a>
+<nav>
+	<li><a href="download.html">Download</a></li>
+	<li><a href="source-build.html">Install</a></li>
+	<!-- <li><a href="index.html">Features</a></li> -->
+	<li><a href="overview.html">Documentation</a></li>
+	<li><a href="helpout.html">Help Out</a></li>
+</nav>
+</header><!-- end main -->
+
+<div id="main">
+<h1 id="spiro-tutorial">Spiro Tutorial</h1>
+<ul>
+<li><a href="editexample.html#FontCreate">Font Creation</a></li>
+<li><a href="editexample.html#CharCreate">Creating a glyph (tracing outlines)</a></li>
+<li><a href="editspiro.html">Create glyph outlines using spiro points</a></li>
+<li><a href="importexample.html">Importing a glyph from Inkscape (or Illustrator, or some other vector editor)</a></li>
+<li><a href="editexample2.html#Navigating">Navigating to other glyphs</a></li>
+<li><a href="editexample2.html#Creating-o">On to the next glyph (consistent directions)</a></li>
+<li><a href="editexample3.html#consistent-stems">Consistent serifs and stem widths</a></li>
+<li><a href="editexample4.html#accents">Building accented glyphs</a></li>
+<li><a href="editexample4.html#ligature">Building a ligature</a></li>
+<li><a href="editexample4.html#lookups">Lookups and features</a></li>
+<li><a href="editexample5.html#metrics">Examining metrics</a></li>
+<li><a href="editexample5.html#Kerning">Kerning</a></li>
+<li><a href="editexample6.html#Variants">Glyph variants</a></li>
+<li><a href="editexample6.html#Marks">Anchoring marks</a></li>
+<li><a href="editexample6-5.html#Conditional">Conditional features</a></li>
+<li><a href="editexample7.html#checking">Checking your font</a></li>
+<li><a href="editexample7.html#generating">Generating it</a></li>
+<li><a href="editexample7.html#Families">Font Families</a></li>
+<li><a href="editexample7.html#summary">Final Summary</a></li>
+<li><a href="editexample8.html">Bitmap strikes</a></li>
+<li><a href="scripting-tutorial.html">Scripting Tutorial</a></li>
+<li><a href="scriptnotes.html#Special">Notes on various scripts</a></li>
+<li>Searching the documentation: (Powered by <a href="http://www.google.com/">Google</a>)</li>
+</ul>
+<h2 id="creating-a-glyph-using-spiros">Creating a glyph using spiros</h2>
+<p>Spiro is the work of <a href="http://www.levien.com/">Raph Levien</a>, it provides an alternate method of designing a glyph using a set of on-curve points rather than the traditional mixture of on and off curve points used for bezier splines.</p>
+<p>There are 5 different types of spiro points</p>
+<ul>
+<li>G4 Curve Points (continuous up to the fourth derivative)</li>
+<li>G2 Curve Points (continuous up to the second derivative)<br> Bascally this boils down to: If you have a sharp curve you are probably better off using a G2 point, while a more gentle curve would call for a G4.</li>
+<li>Corner Points</li>
+<li>Prev Constraint points (to be used when the contour changes from a curve to a straight line)<img src="img/spiroprevconstraint.png"></li>
+<li>Next Constraint points (to be used when the contour changes from a straight line to a curve) <img src="img/spironextconstraint.png"></li>
+</ul>
+<p>As before let us try to edit the &quot;C&quot; glyph from Ambrosia.</p>
+<figure>
+<img src="img/Cspiro0.png"><figcaption></figcaption>
+</figure>
+<figure>
+<img src="img/Cspiro1.png"><figcaption></figcaption>
+</figure>
+<figure>
+<img src="img/Cspiro2.png"><figcaption></figcaption>
+</figure>
+<p>Again we start with a blank glyph. Note that there is a button in the shape of a spiral in the tool pane. If you press this button you go into spiro mode, and the tools available to you change slightly.</p>
+<p>(If you press the button again you go back to Bezier mode)</p>
+<p>Again use File-&gt;Import to import a background image and then scale it properly. (If you don't know how this is done, look at the <a href="editexample.html#Import">previous page</a>)</p>
+<p>Select the G4 curve point (the tool on the left side of the third row).</p>
+<p>G4 curve points have the nice properties that the slope of the splines will be the same on either side of them, and the curvature of the splines will be too.</p>
+<p>Then move the pointer over the image and click to place a point at a point on the edge of the bitmap image.</p>
+<p>Select the &quot;next constraint&quot; point which changes the contour nicely from a curve to a straight line.</p>
+<p>If you pick the wrong constraint (and I often do -- it will become obvious later when the contour looks distorted here), then select the constraint point and use <a href="getinfo.html#Spiro">Element-&gt;Get Info</a>to change the point type -- or use the <a href="pointmenu.html">Point menu</a>.</p>
+<figure>
+<img src="img/Cspiro3.png"><figcaption></figcaption>
+</figure>
+<figure>
+<img src="img/Cspiro4.png"><figcaption></figcaption>
+</figure>
+<figure>
+<img src="img/Cspiro5.png"><figcaption></figcaption>
+</figure>
+<p>Now select the corner point from the tool menu (the one that looks like a square).</p>
+<p>Place it at a location where the slope changes abruptly -- a corner.</p>
+<p>We are now readly to talk about the &quot;left tangent point&quot;. Pretend you are standing on the corner point, facing toward the tangent point. Is the next point after it (in this case the curved point) to your left or to your right? If to your left, use a left tangen, if to your right, use a right tangent.</p>
+<p>Now we want to do some fiddly work on the top of the &quot;C&quot;. Here we have a serif with a slight curve to it between two corners, two abrupt changes of direction.</p>
+<p>We need to get a close up view of the image in order to work more precisely, so select the magnifying glass tool from the tool pane, move it to the middle of the serif, and click it several times until the serif fills the screen.</p>
+<p>Generally a corner point should have a constraint (or another corner) point on either side of it, so we need to pick another constraint. In this case the contour will change from a straight line to a curve, so that means a &quot;prev constraint&quot; point.</p>
+<figure>
+<img src="img/Cspiro6.png"><figcaption></figcaption>
+</figure>
+<figure>
+<img src="img/Cspiro6_5.png"><figcaption></figcaption>
+</figure>
+<figure>
+<img src="img/Cspiro7.png"><figcaption></figcaption>
+</figure>
+<p>Then proceeding to fill in the other points needed to make for a smooth curve of the serif.</p>
+<p>And another smooth curve of the other side of the serif.</p>
+<p>Now it is no longer useful to have such a close view of the image, so grab the magnifying glass tool again, and hold down the Alt (Meta, Option) key. The cursor should change, and clicking it will zoom you out.</p>
+<p>Then fill in the remainder of the points on this side.</p>
+<figure>
+<img src="img/Cspiro8.png"><figcaption></figcaption>
+</figure>
+<figure>
+<img src="img/Cspiro9.png"><figcaption></figcaption>
+</figure>
+<figure>
+<img src="img/Cspirals.png"><figcaption></figcaption>
+</figure>
+<p>As we approach the lower tip of the C we again need to zoom in</p>
+<p>And eventually we have completed a rough outline of the glyph. Clicking on the start point will close the curve.</p>
+<p>Unfortunately the result isn't quite what we'd hoped. There are some rather erratic bulges.</p>
+<p>We can fix that by</p>
+<ol type="1">
+<li>moving points around <br> Use the pointer tool, click on a point (or hold down the shift key to select several points) and then drag them around.</li>
+<li>adding new points to the outline.<br> Using the appropriate spiro tool, depress the mouse somewhere on the outline -- a new point appears there. You may now drag this point around.</li>
+</ol>
+<p>In the process of fixing things we can move a point so far that the spiro converter can't make sense of it. All of a sudden our (almost) nice outline turns into an erratic spirals.</p>
+<p>Don't worry about it, just move the point back and things return to normal. If you move the point too far things can get even worse and the outline will disappear altogether. Don't worry about that either, just put the point back. Or use Edit-&gt;Undo.</p>
+<p>And enjoy the curious beauty of the spirals you have unintentionally created.</p>
+<p>(Raph is working on this, and at some point we may lose the spirals entirely, but they have a certain charm -- I'll be sorry to see them go)</p>
+<figure>
+<img src="img/Cspiro10.png"><figcaption></figcaption>
+</figure>
+<p>This is probably not the best way to edit with spiros. Raph Levien uses an approach where he puts points at the major features of the glyph, closes the contour and then adds and moves points later to get a better fit to the glyph. Experiment, find what works for you.</p>
+<p>-- <a href="editexample.html">Prev</a> -- <a href="overview.html">TOC</a> -- <a href="importexample.html">Next</a> --</p>
+</div><!-- end main -->
+
+<footer>
+<section>
+<h3 id="fontforge">Fontforge</h3>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="download.html">Download</a></li>
+<li><a href="changelog.html">Changelog</a></li>
+<li><a href="acknowledgements.html">Acknowledgements</a></li>
+<li><a href="helpout.html">Help Out</a></li>
+<li><a href="http://sourceforge.net/projects/fontforge/">SF Project page</a><br></li>
+<li><a href="http://sourceforge.net/project/project_donations.php?group_id=103338">Donate</a></li>
+</ul>
+</section> <section>
+<h3 id="features">Features</h3>
+<ul>
+<li><a href="features.html">Features</a></li>
+<li><a href="lacks.html">Things missing</a></li>
+<li><a href="bugs.html">Known bugs</a></li>
+</ul>
+</section> <section>
+<h3 id="reference">Reference</h3>
+<ul>
+<li><a href="bibliography.html">Bibliography</a></li>
+<li><a href="related-tools.html">Related tools</a></li>
+<li><a href="librefontdevelopment.html">Libre Font Dev Efforts</a></li>
+</ul>
+</section> <section>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li><a href="overview.html">Table of Contents</a></li>
+<li><a href="install.html">Install</a></li>
+<li><a href="editexampple.html">Get started</a></li>
+<li><a href="glossary.html">Typographic Glossary</a></li>
+<li><a href="faqFS.html">FAQ</a></li>
+</ul>
+</section>
+</footer><!-- end main -->
+
+</body>
+</html>

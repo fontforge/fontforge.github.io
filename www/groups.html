@@ -1,0 +1,95 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head><!--[if IE]><script>document.lastChild.id="ie"+/IE (d+)/.exec(navigator.userAgent)[1]</script><![endif]-->
+<!-- explanation: http://www.eric-shinn.com/css-if-ie-conditional-hack-futureproof/ -->
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>Groups of Glyphs</title>
+	<meta name="description" content="Outline font editor">
+	<meta name="author" content="humans.txt">
+
+	
+
+	<meta name="viewport" content="width=1024">
+
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="favicon.png">
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script>window.html5 || document.write('<script src="js/libs/html5.js"></script>')</script>
+	<![endif]-->
+</head>
+<body>
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+<header>
+<a href="index.html"><h1><img src="img/fontforge.png">Fontforge</h1></a>
+<nav>
+	<li><a href="download.html">Download</a></li>
+	<li><a href="source-build.html">Install</a></li>
+	<!-- <li><a href="index.html">Features</a></li> -->
+	<li><a href="overview.html">Documentation</a></li>
+	<li><a href="helpout.html">Help Out</a></li>
+</nav>
+</header><!-- end main -->
+
+<div id="main">
+<h1 id="groups-of-glyphs">Groups of Glyphs</h1>
+<p>A group is a collection of glyphs. It may be any collection that appeals to you. My expectation is that groups will be used to collect glyphs which are visually associated (in some way) close together so that they may be examined and changed without the visual clutter of the rest of the font. So you might make a group that consisted of &quot;b d p q&quot; which often have similar shapes, or in a Korean font you might wish to look at all sylables with a give cho-sung.</p>
+<p><img src="img/fontview-grouped.png">FontForge treats groups like baby encodings. In the image at left, it is displaying a font showing only the glyphs &quot;b d p q&quot;. The order the glyphs are mentioned in the group is the order in which they will be displayed in the fontview -- and, like an encoding the group may be compaced so there are no empty holes for missing glyphs (so if the group had contained &quot;b d p uniAC00 q&quot; and the font was missing uniAC00, the display would be exactly the same) or uncompacted with holes.<br> Glyphs in a group may be specified by glyph name, by unicode code point or by a range of unicode values. The examples above all used glyph names. A unicode code point looks like &quot;U+XXXX&quot; (where XXXX indicates a hex number). Occasionally fonts will use this notation to name their glyphs (they should not, but some do), that should not be a significant problem because such glyphs should have the obvious unicode code points and so will still match. A range of unicode code points looks like &quot;U+XXXX-U+YYYY&quot; (XXXX &lt; YYYY).</p>
+<p>A groups are heirarchical. A group may either contain a list of glyphs, or a list of sub-groups. (If you display (in the fontview) a group which contains subgroups you will see all glyphs in all sub-groups. A glyph may occur more than once if that is desirable. So a group could contain &quot;A A A A&quot; and the fontview would show four copies of &quot;A&quot; (I'm not sure why you'd want to do that, but you could). As you design your groups you can ask fontforge to check so that you do not inadvertently put the same glyph in more that one group (or in the same group twice).</p>
+<h2 id="display-by-groups"><img src="img/displaygroups.png">Display by Groups</h2>
+<p>The Display by Groups dialog is shown in the screen shot at right. The top-level group is called &quot;Groups&quot; it has two children, one called &quot;Vowels&quot; which is a terminal group and contains the glyph names of the latin vowels, the other called &quot;consonants&quot; which itself contains three subgroups.</p>
+<p>Any group with children will have (to the right of its name) a square box containing either a &quot;+&quot; or a &quot;-&quot;, clicking on this box will either expand all the sub-groups of the group, or contract them into invisibility (here all are expanded).</p>
+<p>Clicking on a group's name will select it (clicking again will deselect it). Here groups &quot;ascenders&quot; and &quot;descenders&quot; are selected. If you were to press <code>[OK]</code>then the fontview would show the glyphs associated with &quot;b d f h k l t g j p q y&quot; in that order.</p>
+<p>Underneath everything is a check box you may use to specify whether you want the results compacted or not.<br> <img src="img/definegroups.png">Define Groups ----------------------------------</p>
+<p>This dialog is a bit more complicated than the previous one. It again contains the group list at the top of the dialog, but here only one group at a time may be selected, and information about it is displayed in the bottom part of the dialog and is subject to change.</p>
+<p>You can <code>[Delete]</code>the group (this also deletes any subgroups). If the group contains no glyphs then you may add sub-groups to it. Every group has a name. If the group contains no subgroups you may add glyphs to it.</p>
+<p>The <code>[Set]</code>and <code>[Select]</code>buttons interact with the selection in the associated fontview. <code>[Set]</code> sets the glyph list to the glyphs selected in the fontview, while <code>[Select]</code>changes the selection to the glyphs specified in the glyph list. Normally glyphs are entered into the glyph list by <code>&lt;*&gt;Name</code>, but you can change the radio button to <code>&lt;*&gt;Unicode</code> and glyphs will be entered as U+0067 U+006A U+0070-U+0071 U+0079.</p>
+<p>If you select <code>[*]No glyph duplicates</code>then ff will prevent you from entering the same glyph name (or unicode code point) twice (ff will allow you to enter &quot;A&quot; and U+0041 -- because I'm lazy and this is harder to check for and less likely to occur). If you set this in a parent group then there can be no glyph duplicates among any of its children.<br> -- <a href="encodingmenu.html">Up</a> -- <a href="overview.html">TOC</a> --</p>
+</div><!-- end main -->
+
+<footer>
+<section>
+<h3 id="fontforge">Fontforge</h3>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="download.html">Download</a></li>
+<li><a href="changelog.html">Changelog</a></li>
+<li><a href="acknowledgements.html">Acknowledgements</a></li>
+<li><a href="helpout.html">Help Out</a></li>
+<li><a href="http://sourceforge.net/projects/fontforge/">SF Project page</a><br></li>
+<li><a href="http://sourceforge.net/project/project_donations.php?group_id=103338">Donate</a></li>
+</ul>
+</section> <section>
+<h3 id="features">Features</h3>
+<ul>
+<li><a href="features.html">Features</a></li>
+<li><a href="lacks.html">Things missing</a></li>
+<li><a href="bugs.html">Known bugs</a></li>
+</ul>
+</section> <section>
+<h3 id="reference">Reference</h3>
+<ul>
+<li><a href="bibliography.html">Bibliography</a></li>
+<li><a href="related-tools.html">Related tools</a></li>
+<li><a href="librefontdevelopment.html">Libre Font Dev Efforts</a></li>
+</ul>
+</section> <section>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li><a href="overview.html">Table of Contents</a></li>
+<li><a href="install.html">Install</a></li>
+<li><a href="editexampple.html">Get started</a></li>
+<li><a href="glossary.html">Typographic Glossary</a></li>
+<li><a href="faqFS.html">FAQ</a></li>
+</ul>
+</section>
+</footer><!-- end main -->
+
+</body>
+</html>

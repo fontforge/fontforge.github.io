@@ -1,0 +1,502 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head><!--[if IE]><script>document.lastChild.id="ie"+/IE (d+)/.exec(navigator.userAgent)[1]</script><![endif]-->
+<!-- explanation: http://www.eric-shinn.com/css-if-ie-conditional-hack-futureproof/ -->
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>The Metrics View</title>
+	<meta name="description" content="Outline font editor">
+	<meta name="author" content="humans.txt">
+
+	
+
+	<meta name="viewport" content="width=1024">
+
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="favicon.png">
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script>window.html5 || document.write('<script src="js/libs/html5.js"></script>')</script>
+	<![endif]-->
+</head>
+<body>
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+<header>
+<a href="index.html"><h1><img src="img/fontforge.png">Fontforge</h1></a>
+<nav>
+	<li><a href="download.html">Download</a></li>
+	<li><a href="source-build.html">Install</a></li>
+	<!-- <li><a href="index.html">Features</a></li> -->
+	<li><a href="overview.html">Documentation</a></li>
+	<li><a href="helpout.html">Help Out</a></li>
+</nav>
+</header><!-- end main -->
+
+<div id="main">
+<h1 id="the-metrics-view">The Metrics View</h1>
+<figure>
+<img src="img/MetricsView.png"><figcaption></figcaption>
+</figure>
+<p>The metrics view allows you to examine how glyphs look together and to alter the spacing between them. You may apply various OpenType features to those glyphs and see how they are altered.</p>
+<p>If the metrics view is created from the font view then any selected glyphs (well, the first 15 or so) will be displayed in the view in the order they were selected. If it is created from an outline or bitmap glyph view then only that glyph is displayed. If it is created from a bitmap glyph view (or from the font view when that view is displaying a bitmap font) then the metrics view will display bitmaps, but will not allow you to edit the bitmaps metrics (you must do your metrics editing in a view displaying outlines).</p>
+<p>Underneath the menu bar is a series of fields. The first shows the current script and language combination being used to determine what lookups to apply within the selected features, the next is a text field which allows you to enter additional unicode characters to be displayed, and finally there is a pulldown list of lookup subtables, this will be used if you create a kerning pair (the kerning pair will become part of that subtable). Underneath that is a list showing all features defined in the font. You may select which ones you want to be active in this display. (Note the features are listed in alphabetic order -- this is not the order in which the lookups will be executed (or not usually the order)).</p>
+<p>If you wish to enter characters you cannot type:</p>
+<ol type="1">
+<li>Select the character (or glyph) in the fontview and then drag and drop it into the metrics view at the appropriate place</li>
+<li>Use the View menu to change or insert a character or glyph (View-&gt;Insert Glyph After)</li>
+<li>Select the characters individually and in order in the font view before you open the metrics view, when you do open it the characters will appear in the order you selected them</li>
+<li>FontForge has its own funky <a href="#Entering">input method</a></li>
+</ol>
+<p>The mid portion of the view is taken up with the displayed glyphs. For outline glyphs these are sized so that the em-height of the font just fits in this region. There are grey lines between the glyphs marking the origin of the glyph on the right and the width of the glyph on the left. The baseline is also drawn in grey.</p>
+<p>A metrics view may be in one of three modes (Metrics-&gt;Window Type)</p>
+<ul>
+<li>Kerning only -- you may adjust the kerning between any pairs of glyphs shown, but you may not set any advance widths</li>
+<li>Advance Width only -- you may adjust the advance width of any glyph shown, but you may not set kerning</li>
+<li>Both -- see below</li>
+</ul>
+<p>One of the glyphs is active. That glyph has a green line on its left (at its origin) and a blue line on its right (its width). You may change the width by dragging this line. You may change the left side bearing (lbearing) of the glyph by clicking on the glyph and dragging it left or right. You may change the kerning between this glyph and the one to its left by dragging the green line around. (If you wish to create a <a href="#DeviceTable">Device Table</a> for small pixel sizes you must use the <a href="metricsview.html#kernpair">Kern Pair Closeup dialog</a>)</p>
+<table>
+<caption>Kerning</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="img/To-unkerned.png"></td>
+<td style="text-align: left;"><img src="img/To-kerned.png"></td>
+</tr>
+</tbody>
+</table>
+<p>The active glyph may be changed by clicking on any of the glyphs.</p>
+<p>Underneath the display area are a set of text fields. You may type in new numbers for any of these fields to change the corresponding metrics of the glyph.</p>
+<p>Sometimes it is handy to be able to load a list of words into the metrics view (so that you don't have to type them one by one). The text entry field has a pull down list, and at the bottom of this list is an entry to load a word list from a file. Once you select this, and your file, the pulldown list will ill up with choices. You may use the up/down arrow keys to move through the word list.</p>
+<p>If the first glyph to be displayed is in Hebrew or Arabic (or any other right to left language) then the entire display area will be shown right to left</p>
+<p><strong>Note</strong> there is a very complicated algorithm given in the Unicode spec for displaying mixed right to left and left to right passages. This is not followed here. The direction determination is done by the first glyph alone.</p>
+<figure>
+<img src="img/VerticalMetrics.png"><figcaption></figcaption>
+</figure>
+<figure>
+<img src="img/HebrewMetrics.png"><figcaption></figcaption>
+</figure>
+<p>You can make the window display vertical metrics and kerning by View-&gt;Vertical. (This is only available if your font has vertical metrics enabled, Element-&gt;Font Info-&gt;General-&gt;Has Vertical Metrics). In this mode you can change vertical width, vertical kerning, etc.</p>
+<p>If you double click on one of the displayed glyphs then FontForge will bring up a outline glyph view to allow you to edit that glyph.</p>
+<figure>
+<img src="img/MetricsView-features.png"><figcaption></figcaption>
+</figure>
+<p>In the example at left, the input text is an &quot;f&quot; followed by an &quot;i&quot;, and as the 'liga' feature is turned on, this becomes the &quot;fi&quot; ligature. Then an &quot;a&quot; followed by a &quot;b&quot;, but as the 'smcp' (small caps) feature is on these become small-caps letters rather than lower case. Finally &quot;1&quot;, &quot;/&quot; and &quot;2&quot; were entered, and as the 'frac' (diagonal fractions) feature is turned on these three input glyphs become the onehalf glyph on output.</p>
+<p>Note: This window is not a full blown layout engine. All the glyphs will be treated as if they were in the same script, and all features will be applied to all glyphs. Baseline alignment will not be done.</p>
+<h2 id="entering-non-ascii-characters">Entering non-ASCII characters</h2>
+<p>Most of us are stuck with keyboards that only have ASCII characters on them. Or at best some sub-set of ISO 8859-1 characters. How can the full range of unicode characters be entered?</p>
+<p>X supplies a sophisticated mechanism for entering characters via stand-alone <a href="xim.html">input method servers</a>. FontForge supports this to some extent now.</p>
+<p>Aside from that, many versions of X supply a &quot;Compose Character&quot; key, or something equivalent. The X software will map a sequence of keystrokes to one character in whatever the native encoding may be.</p>
+<p>My keyboard doesn't have such a key, and my X doesn't do this. But I have implemented something along those lines for those of us with less expensive keyboards. If you are in a mode where text entry is possible then press the F12 key and follow it by a series of keystrokes. Accented characters may be built using the following:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">    </td>
+<td style="text-align: left;">`</td>
+<td style="text-align: left;">grave accent</td>
+<td style="text-align: left;">    </td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">ring</td>
+<td style="text-align: left;">    </td>
+<td style="text-align: left;">&quot;</td>
+<td style="text-align: left;">double grave (or tonos)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">'</td>
+<td style="text-align: left;">acute accent</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">/</td>
+<td style="text-align: left;">slash</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">.</td>
+<td style="text-align: left;">dot above</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">:</td>
+<td style="text-align: left;">diaeresis (umlaut)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">breve</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">,</td>
+<td style="text-align: left;">dot below</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">^</td>
+<td style="text-align: left;">circumflex</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">caron</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">cedilla</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">~</td>
+<td style="text-align: left;">tilde</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">_</td>
+<td style="text-align: left;">macron</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">ogonec</td>
+</tr>
+</tbody>
+</table>
+<p>So Â may be built by [F12] ^ A, and A with diaeresis and macron may be built with [F12] : _ A.</p>
+<p>Greek letters may also be created. If you start with [F12] @ and follow with:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">   </td>
+<td style="text-align: left;">A</td>
+<td style="text-align: left;">Alpha</td>
+<td style="text-align: left;">   </td>
+<td style="text-align: left;">B</td>
+<td style="text-align: left;">Beta</td>
+<td style="text-align: left;">   </td>
+<td style="text-align: left;">C</td>
+<td style="text-align: left;">Chi</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">Delta</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">E</td>
+<td style="text-align: left;">Epsilon</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">F</td>
+<td style="text-align: left;">Phi</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">G</td>
+<td style="text-align: left;">Gamma</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">Eta</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">I</td>
+<td style="text-align: left;">Iota</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">J</td>
+<td style="text-align: left;">(technical) Theta</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">K</td>
+<td style="text-align: left;">Kappa</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">L</td>
+<td style="text-align: left;">Lamda</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">M</td>
+<td style="text-align: left;">Mu</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">N</td>
+<td style="text-align: left;">Nu</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">O</td>
+<td style="text-align: left;">Omicron</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">P</td>
+<td style="text-align: left;">Pi</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Q</td>
+<td style="text-align: left;">Theta</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">R</td>
+<td style="text-align: left;">Rho</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">S</td>
+<td style="text-align: left;">Sigma</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">T</td>
+<td style="text-align: left;">Tau</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">U</td>
+<td style="text-align: left;">Upsilon</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">V</td>
+<td style="text-align: left;">final sigma</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">W</td>
+<td style="text-align: left;">Omega</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">Xi</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Y</td>
+<td style="text-align: left;">Psi</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Z</td>
+<td style="text-align: left;">Zeta</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p>This is the mapping used by the Symbol font. (Lower case letters are created similarly so [F12] @ a yields a lower case alpha). Accented greek letters may also be built up, [F12] @ &quot; A yields Alpha tonos.</p>
+<p>Finally the following special characters may be built:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">   </td>
+<td style="text-align: left;">[F12] &lt;space&gt;</td>
+<td style="text-align: left;">&lt;no break space&gt;</td>
+<td style="text-align: left;">   </td>
+<td style="text-align: left;">[F12] *</td>
+<td style="text-align: left;">°</td>
+<td style="text-align: left;">   </td>
+<td style="text-align: left;">[F12] @ *</td>
+<td style="text-align: left;">&lt;bullet&gt;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F12] @ &lt;space&gt;</td>
+<td style="text-align: left;">&lt;em space&gt;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F12] #</td>
+<td style="text-align: left;">£</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F12] @ #</td>
+<td style="text-align: left;">¥</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F12] $</td>
+<td style="text-align: left;">&lt;euro&gt;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F12] @ $</td>
+<td style="text-align: left;">¢</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F12] !</td>
+<td style="text-align: left;">¡</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F12] +</td>
+<td style="text-align: left;">±</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F12] -</td>
+<td style="text-align: left;">&lt;soft-hyphen&gt;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F12] @ -</td>
+<td style="text-align: left;">&lt;en dash&gt;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F12] @ .</td>
+<td style="text-align: left;">·</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F12] 7 2</td>
+<td style="text-align: left;">½</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F12] ;</td>
+<td style="text-align: left;">. . .</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F12] &lt;</td>
+<td style="text-align: left;">&lt;less or equal&gt;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F12] &gt;</td>
+<td style="text-align: left;">&lt;greater or equal&gt;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F12] @ &gt;</td>
+<td style="text-align: left;">&lt;triangle bullet&gt;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F12] =</td>
+<td style="text-align: left;">&lt;quote dash&gt;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F12] ?</td>
+<td style="text-align: left;">¿</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F12] A</td>
+<td style="text-align: left;">Å</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F12] C</td>
+<td style="text-align: left;">Ç</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F12] H</td>
+<td style="text-align: left;">&lt;right index&gt;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F12] O</td>
+<td style="text-align: left;">&lt;OE lig&gt;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F12] P</td>
+<td style="text-align: left;">§</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F12] [</td>
+<td style="text-align: left;">&lt;single right quote&gt;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F12] ]</td>
+<td style="text-align: left;">&lt;single right quote&gt;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F12] </td>
+<td style="text-align: left;">«</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F12] @ </td>
+<td style="text-align: left;">&lt;single guillemot&gt;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F12] a</td>
+<td style="text-align: left;">å</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F12] c</td>
+<td style="text-align: left;">ç</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F12] f</td>
+<td style="text-align: left;">&lt;female sign&gt;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F12] g</td>
+<td style="text-align: left;">©</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F12] h</td>
+<td style="text-align: left;">&lt;left index&gt;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F12] m</td>
+<td style="text-align: left;">&lt;male sign&gt;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F12] o</td>
+<td style="text-align: left;">&lt;oe lig&gt;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F12] p</td>
+<td style="text-align: left;">¶</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F12] r</td>
+<td style="text-align: left;">®</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F12] s</td>
+<td style="text-align: left;">ß</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F12] t</td>
+<td style="text-align: left;">TM</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F12] z</td>
+<td style="text-align: left;">&lt;long s&gt;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F12] {</td>
+<td style="text-align: left;">&lt;left dbl quote&gt;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F12] }</td>
+<td style="text-align: left;">&lt;right dbl quote&gt;</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F12] |</td>
+<td style="text-align: left;">»</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F12] @ |</td>
+<td style="text-align: left;">&lt;right single guillemot&gt;</td>
+</tr>
+</tbody>
+</table>
+<p>This still misses most unicode characters. But pressing [F12] twice will bring up a dialog which will allow you to select any character in unicode.</p>
+<p>If you type [F12] by mistake then an Escape will get you out of accent mode.</p>
+<h2 id="kerning-by-class">Kerning By Class</h2>
+<p>Often it is a good idea to create classes of glyphs which kern alike. For example A, À, Á, Â, Â, Ã and Ä probably all kern alike (but note that o and ô probably kern quite differently after a T), and rather than create separate kerning pairs for each of the &quot;A&quot;s above, they could all be placed in a class of glyphs which kern alike.</p>
+<p>The <a href="lookups.html">Element-&gt;Font Info-&gt;Lookups</a> provides an interface to this.</p>
+<figure>
+<img src="img/kerningformat.png"><figcaption></figcaption>
+</figure>
+<p>It brings up a dialog showing all the GPOS lookups (of which kerning is one) and their subtables. Each set of kerning classes lives in its own subtable. When you create a kerning subtable you will be asked whether you want a set of individual kerning pairs or a matrix based on kerning classes.</p>
+<p>If you choose the latter then you may have fontforge try to guess a good set of classes for you (it will look at the glyphs selected and divide them into classes). The <code>Intra Class Distance</code> gives you some control over how picky fontforge will be about what goes into a class. (This can be thought of as being in em-units and being, roughly, the average error in how two different glyphs interact with other glyphs). A value of 1 is very picky and almost all classes will have one member. A value of 20 (in a 1000em font) is fairly loose.</p>
+<p>The <code>Default Separation</code> and <code>Min Kern</code> fields are used in AutoKerning. The goal of kerning to to make the optical separation between all glyphs to be constant, and the <code>Default Separation</code>field specifies that desired value. The <code>Min Kern</code> value is simply to prevent the dialog from filling with useless junk. If AutoKerning suggests that two glyphs should be kerned by 1 em unit then this won't make any difference to the human eye and there is no point in including it. So if the kerning value (in absolute value) suggested by AutoKern is less than <code>Min Kern</code> then fontforge will ignore that value. Selecting <code>[]   Touching</code> makes AutoKerning work in a slightly different way, instead of trying to make the optical distance be the desired value this attempts to make the minimum separation be the desired value (This is rarely useful, but occasionally people want to set text where the letters actually touch one another). The <code>[] Only kern glyphs closer</code>flag means that FontForge will only generate negative kerning offsets, that is, offsets which will move glyphs closer together.</p>
+<figure>
+<img src="img/kerningclass.png"><figcaption></figcaption>
+</figure>
+<p>Each kerning class belongs to a <a href="lookups.html">lookup subtable</a> and the subtable name is displayed at the top of the dialog.</p>
+<p>But the more interesting stuff follows this. A kerning by class actually consists of two sets of classes -- one set for the first glyph of the pair and one for the second glyph of the pair. A glyph class consists of a space separated list of glyph names (For most glyphs you may also enter the unicode character itself, and fontforge will convert that to a glyph name).</p>
+<p>To edit a class, simply type in it (at the very bottom of the class list is an entry called &lt;New&gt;, clicking here will create a new class). Pressing the little rectangle at the right of the class will allow you to define your class as a selection in a font view widget. You may delete a class by selecting it (clicking in it) and pressing the [Delete] button.</p>
+<p>The kerning classes can be fairly complex. You can search for a glyph by typing its name in the &quot;Select Glyph&quot; field. This will highlight the class containing that glyph.</p>
+<p>Class 0 is usually magic. You almost never set it, it contains any glyphs not mentioned elsewhere. In OpenType, class 0 of the first character can be set and behaves normally.</p>
+<p>Underneath the classes is a display of kerning values. The possible first glyph classes are listed vertically, the possible second glyph classes are listed horizontally. When you select a class (in one of the class lists above) the display of kerning values will scroll to display that class. If you move the mouse into the display and let it rest, a popup window will appear showing the glyphs that make up the classes which intersect at that point. If you click on a kerning value in the display, the dlg displays a visual representation of that amount of kerning.</p>
+<p>The kerning dialog displays a representative glyph from each class and allows you to adjust the kerning between them (and all other class members of each class). You can select which glyphs to display in the pulldown menus. You can enter a new kerning offset by typing in a value, or you can click on the second glyph of the kern pair and drag it around.</p>
+<p>You can also create something called a &quot;Device Table&quot;, a name which is not very informative. When a font is rasterized at small pixel sizes rounding errors become important, and this is particularly true of kerning, there are three things that get rounded: The locations of the outlines (to fit them to a pixel grid), the advance widths of the glyphs, and the kerning value itself. The result is that something which looks perfectly kerned at 150pixels may be either too close or too far apart at 12pixels</p>
+<p><img src="img/kern-We-150.png"> Kerning at 150 pixels</p>
+<p><img src="img/kern-We-12.png"> Kerning at 12 pixels (magnified by 2)</p>
+<p>You could adjust the kerning value slightly until it looked right at 12pixels, of course, but that might break it at 14 pixels. So OpenType has the concept of a Device Table which allows you to add small corrections at particular point sizes. Simply set the Display Size to a small, but common, value (say 10-24) and examine the kerning. If the results are ugly then type a value into the &quot;Device Table Correction&quot; field, and this will change the spacing by that many pixels at the given display size (and no other). In the case above a correction of 1 might be appropriate for the 12px display.</p>
+<p>Because small pixel sizes can be hard to examine, you can change the magnification (rasterized at the same size, but each pixel made twice as big).</p>
+<p><a href="metricsview.html#DeviceTable">Device Tables</a> may also be created in a number of other cases. The example above was for a kerning class. Kerning pairs may also have tables attached to them with the Metrics-&gt;Kern Pair Closeup dialog, which looks similar to the Kerning Class dialog above.</p>
+<figure>
+<img src="img/kernpairclose.png"><figcaption></figcaption>
+</figure>
+<p><br> -- <a href="bitmapview.html">Prev</a> -- <a href="overview.html">TOC</a> -- <a href="filemenu.html">Next</a> --</p>
+</div><!-- end main -->
+
+<footer>
+<section>
+<h3 id="fontforge">Fontforge</h3>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="download.html">Download</a></li>
+<li><a href="changelog.html">Changelog</a></li>
+<li><a href="acknowledgements.html">Acknowledgements</a></li>
+<li><a href="helpout.html">Help Out</a></li>
+<li><a href="http://sourceforge.net/projects/fontforge/">SF Project page</a><br></li>
+<li><a href="http://sourceforge.net/project/project_donations.php?group_id=103338">Donate</a></li>
+</ul>
+</section> <section>
+<h3 id="features">Features</h3>
+<ul>
+<li><a href="features.html">Features</a></li>
+<li><a href="lacks.html">Things missing</a></li>
+<li><a href="bugs.html">Known bugs</a></li>
+</ul>
+</section> <section>
+<h3 id="reference">Reference</h3>
+<ul>
+<li><a href="bibliography.html">Bibliography</a></li>
+<li><a href="related-tools.html">Related tools</a></li>
+<li><a href="librefontdevelopment.html">Libre Font Dev Efforts</a></li>
+</ul>
+</section> <section>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li><a href="overview.html">Table of Contents</a></li>
+<li><a href="install.html">Install</a></li>
+<li><a href="editexampple.html">Get started</a></li>
+<li><a href="glossary.html">Typographic Glossary</a></li>
+<li><a href="faqFS.html">FAQ</a></li>
+</ul>
+</section>
+</footer><!-- end main -->
+
+</body>
+</html>

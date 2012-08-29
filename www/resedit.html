@@ -1,0 +1,113 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head><!--[if IE]><script>document.lastChild.id="ie"+/IE (d+)/.exec(navigator.userAgent)[1]</script><![endif]-->
+<!-- explanation: http://www.eric-shinn.com/css-if-ie-conditional-hack-futureproof/ -->
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>X Resource Editor</title>
+	<meta name="description" content="Outline font editor">
+	<meta name="author" content="humans.txt">
+
+	
+
+	<meta name="viewport" content="width=1024">
+
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="favicon.png">
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script>window.html5 || document.write('<script src="js/libs/html5.js"></script>')</script>
+	<![endif]-->
+</head>
+<body>
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+<header>
+<a href="index.html"><h1><img src="img/fontforge.png">Fontforge</h1></a>
+<nav>
+	<li><a href="download.html">Download</a></li>
+	<li><a href="source-build.html">Install</a></li>
+	<!-- <li><a href="index.html">Features</a></li> -->
+	<li><a href="overview.html">Documentation</a></li>
+	<li><a href="helpout.html">Help Out</a></li>
+</nav>
+</header><!-- end main -->
+
+<div id="main">
+<figure>
+<img src="img/resedit.png"><figcaption></figcaption>
+</figure>
+<p>This dialog allows you to control the look and feel of FontForge. You can control (most of) the same resources described in the <a href="xres.html">X Resource page</a>, but in (I hope) a more convenient format. Some changes will be reflected instantly, other changes require refreshing the screen, other changes require invoking a new dialog, and some changes you must save the resources and restart fontforge.</p>
+<p>To the left of the dialog is a list of all fontforge's controls (and some other stuff). Every control is drawn within a box, and the box specifies a background, border, shape, size... Many controls have an associated font. Most controls inherit much of their design from other controls (The GGadget, which is an abstract control, is the root of the hierarchy). A particular attribute may be inherited from its parent, or it may be defined by the current control.</p>
+<p>Other controls may depend on the current one, changes to the current control may affect those others if the attribute changed is inherited.</p>
+<p>The top of the pane identifies the current control, and describes the parent of the current control (you may click on the &quot;Inherits from&quot; entry to change the pane to view that control). Often there are some examples of the control, generally an enabled and disabled version.</p>
+<p>Beneath this are the actual data. First the data describing the box. There are a series of flags</p>
+<p>Outline Inner Border</p>
+<p>A line (in the text color) will be drawn on the inside of the border to make it more distinct.</p>
+<p>Outline Outer Border</p>
+<p>A line will be drawn on the outside of the border.</p>
+<p>Show Active Border</p>
+<p>Not all controls display this, and there are some differences among controls about when one is active, but basically if the focus or mouse cursor is in the control, then a special border (drawn with the active border color) is drawn on the inside of the main border. This will be instead of the &quot;Outline Inner Border&quot; if both be specified.</p>
+<p>Despressed Background</p>
+<p>If selected (and the control supports it -- buttons do) then when the mouse is depressed in the control the background of the control changes color.</p>
+<p>Outline Default Button</p>
+<p>If the current control is a default button, then a special border is drawn well outside the normal border to indicate that it is.</p>
+<p>Background Gradient</p>
+<p>If set then the background is drawn as a reflected gradient with the normal background color drawn in the center (vertically) of the control and the background gradient color drawn at the top and bottom edges (like the [OK] button above).</p>
+<p>Then come a series of colors. Different colors may be specified for enabled and disabled controls. The border has four different colors, for the brightest, mid bright, mid dark and darkest edges of the control. Where each of the border colors is used depends on the border type.</p>
+<p>The peculiar button, <img src="img/colorbutton.png">, is a color button. It displays the current color in a rectangle, and, if pressed, invokes a color picker dialog.</p>
+<figure>
+<img src="img/colorpicker.jpeg"><figcaption></figcaption>
+</figure>
+<p>The color picker displays a Hue/Saturation/Value color wheel. A vertical bar on the right shows the Value, the wheel shows Hue and Saturation. The original color is displayed on the bottom left. The current color on the bottom right. If the color is not fully opaque a checker board of black and white squares will be visible under the colors.</p>
+<p>Not all colors support opacities (only those drawn on the cairo canvas), and for many colors the Opacity control will be hidden (and fixed at 1.0).</p>
+<p>Underneath the colors are ways of specifying the shape and type of the border, how wide it is, whether there is any padding between the border and the inner part of the control, and (for borders with a round-rectangle shape) the radius of the circle used to round the corners (a radius of 0 means: half the height of the control -- actually half the smaller dimension of the control).</p>
+<p>Finally we come to the font used in the control. This is specified by a number (between 0 and 1000) specifying the weight of the font (400 is normal, 700 is bold), a point size, and a comma separated list of font family names. Changing the font will not have any obvious effect until you restart the dialog.</p>
+<p>That specifies the standard box used to draw each control. Some controls have additional resources. The Button control above contains an additional boolean resource which (if set) will cause the text of the button to shift slightly right when the button is pressed. (This is another of those resources where you must restart the dialog to see it take effect).</p>
+<p>If you press the [OK] button then your current resource settings will be used in subsequent dialogs created by FontForge -- but any changes you make will vanish when you exit. If you press the [Save] button then your changes</p>
+</div><!-- end main -->
+
+<footer>
+<section>
+<h3 id="fontforge">Fontforge</h3>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="download.html">Download</a></li>
+<li><a href="changelog.html">Changelog</a></li>
+<li><a href="acknowledgements.html">Acknowledgements</a></li>
+<li><a href="helpout.html">Help Out</a></li>
+<li><a href="http://sourceforge.net/projects/fontforge/">SF Project page</a><br></li>
+<li><a href="http://sourceforge.net/project/project_donations.php?group_id=103338">Donate</a></li>
+</ul>
+</section> <section>
+<h3 id="features">Features</h3>
+<ul>
+<li><a href="features.html">Features</a></li>
+<li><a href="lacks.html">Things missing</a></li>
+<li><a href="bugs.html">Known bugs</a></li>
+</ul>
+</section> <section>
+<h3 id="reference">Reference</h3>
+<ul>
+<li><a href="bibliography.html">Bibliography</a></li>
+<li><a href="related-tools.html">Related tools</a></li>
+<li><a href="librefontdevelopment.html">Libre Font Dev Efforts</a></li>
+</ul>
+</section> <section>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li><a href="overview.html">Table of Contents</a></li>
+<li><a href="install.html">Install</a></li>
+<li><a href="editexampple.html">Get started</a></li>
+<li><a href="glossary.html">Typographic Glossary</a></li>
+<li><a href="faqFS.html">FAQ</a></li>
+</ul>
+</section>
+</footer><!-- end main -->
+
+</body>
+</html>

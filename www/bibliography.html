@@ -1,0 +1,299 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head><!--[if IE]><script>document.lastChild.id="ie"+/IE (d+)/.exec(navigator.userAgent)[1]</script><![endif]-->
+<!-- explanation: http://www.eric-shinn.com/css-if-ie-conditional-hack-futureproof/ -->
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>A meandering bibliography of font related things</title>
+	<meta name="description" content="Outline font editor">
+	<meta name="author" content="humans.txt">
+
+	
+
+	<meta name="viewport" content="width=1024">
+
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="favicon.png">
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script>window.html5 || document.write('<script src="js/libs/html5.js"></script>')</script>
+	<![endif]-->
+</head>
+<body>
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+<header>
+<a href="index.html"><h1><img src="img/fontforge.png">Fontforge</h1></a>
+<nav>
+	<li><a href="download.html">Download</a></li>
+	<li><a href="source-build.html">Install</a></li>
+	<!-- <li><a href="index.html">Features</a></li> -->
+	<li><a href="overview.html">Documentation</a></li>
+	<li><a href="helpout.html">Help Out</a></li>
+</nav>
+</header><!-- end main -->
+
+<div id="main">
+<ul>
+<li><a href="bibliography.html#Formats">Font File Formats</a></li>
+<li><a href="bibliography.html#Unicode">Unicode</a></li>
+<li><a href="bibliography.html#Encodings">Other Encodings</a></li>
+<li><a href="#Books">Books</a></li>
+<li><a href="index.html#tools">Font Related tools</a></li>
+<li><a href="http://www.w3.org/WAI/ER/IG/iso639.htm">Language codes</a></li>
+<li><a href="http://ftp.ics.uci.edu/pub/websoft/wwwstat/country-codes.txt">Country codes</a></li>
+</ul>
+<hr>
+<h2 id="font-file-formats">Font File Formats</h2>
+<ul>
+<li><a href="http://partners.adobe.com/public/developer/en/font/T1_SPEC.PDF">PostScript Type1</a>
+<ul>
+<li><a href="http://partners.adobe.com/public/developer/en/font/5015.Type1_Supp.pdf">Supplement</a> (discussion of multiple master fonts &amp; counter hints)</li>
+<li><a href="http://partners.adobe.com/public/developer/en/font/T1Format.pdf">Format</a></li>
+<li><a href="%20http://partners.adobe.com/public/developer/opentype/index_glyph.html">PostScript unicode character names</a></li>
+<li><a href="http://www.adobe.com/products/postscript/pdfs/PLRM.pdf">PostScript Language Reference Manual</a></li>
+</ul></li>
+<li>PostScript Multiple Master
+<ul>
+<li><a href="http://partners.adobe.com/public/developer/en/font/5015.Type1_Supp.pdf">Type1 MM format specification (in the Type1 Supplement)</a></li>
+<li><a href="http://partners.adobe.com/public/developer/en/font/5091.Design_MM_Fonts.pdf">Design considerations</a></li>
+<li><a href="http://partners.adobe.com/public/developer/en/font/5088.FontNames.pdf">Naming requirements</a></li>
+<li>Type2 (In March of 2000, Adobe removed multiple master support from Type2 and CFF files)
+<ul>
+<li><a href="http://ftp.ktug.or.kr/obsolete/info/adobe/devtechnotes/pdffiles/5177.Type2.pdf">Type2 MM format specification</a> (In <strong>OBSOLETE</strong> type2 spec)</li>
+<li><a href="http://ftp.ktug.or.kr/obsolete/info/adobe/devtechnotes/pdffiles/5176.CFF.pdf">CFF MM format specification</a> (In <strong>OBSOLETE</strong> CFF spec)</li>
+</ul></li>
+</ul></li>
+<li><a href="http://partners.adobe.com/public/developer/en/font/5014.CMap_CIDFont_Spec.pdf">CID keyed fonts</a></li>
+<li><a href="http://partners.adobe.com/public/developer/en/font/5177.Type2.pdf">PostSript Type2</a>
+<ul>
+<li><a href="http://partners.adobe.com/public/developer/en/font/5176.CFF.pdf">Compact Font Format Specification</a> (CFF)</li>
+<li>For more information see under <a href="#OpenType">OpenType fonts</a></li>
+</ul></li>
+<li>PostScript Type3
+<ul>
+<li><a href="http://www.adobe.com/products/postscript/pdfs/PLRM.pdf">PostScript Language Reference Manual 3.0</a> (see section 5.7)</li>
+</ul></li>
+<li>PostScript Type14 (Chameleon)
+<ul>
+<li>The PLRM (5.8.1) documents that this font format is undocumented.</li>
+</ul></li>
+<li><a href="http://partners.adobe.com/public/developer/en/font/5012.Type42_Spec.pdf">PostScript Type42</a></li>
+<li><a href="http://www.adobe.com/devnet/opentype/afdko/topic_feature_file_syntax.html">Adobe Feature File (fea)</a>
+<ul>
+<li>(<a href="featurefile.html">FontForge's implementation</a>of this format is a superset of what Adobe accepts, and a superset of what Adobe documents. Neither can completely describe opentype. Adobe claims they will update the feat spec in late 2007).</li>
+</ul></li>
+<li><a href="http://partners.adobe.com/public/developer/en/font/5004.AFM_Spec.pdf">AFM</a></li>
+<li>PFM
+<ul>
+<li>I can't find microsoft's docs for pfm files any more, I think the format may be obsolete having been replaced by ntf.</li>
+<li><a href="http://partners.adobe.com/public/developer/en/font/5178.PFM.pdf">Adobe's notes on PFM files for two byte fonts</a></li>
+<li><a href="http://homepages.muenchen.org/bm134751/pfm_fmt_en.html">Third Party description</a></li>
+</ul></li>
+<li><a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/graphics/hh/graphics/pscript_7twn.asp">NTF</a>
+<ul>
+<li>This format is supposed to replace the pfm files above in windows &gt;2000. I can't find any docs on it.</li>
+</ul></li>
+<li><a href="http://partners.adobe.com/public/developer/en/font/5005.BDF_Spec.pdf">BDF</a>
+<ul>
+<li><a href="http://ftp.xfree86.org/pub/XFree86/4.5.0/doc/xlfd.txt">X11 Long Font Descriptor</a>spec defines standard X BDF Properties</li>
+<li><a href="http://partners.adobe.com/public/developer/en/font/5006.ABF_Spec.pdf">ABF</a> -- Binary format</li>
+<li><a href="BDFgrey.html">Extensions to BDF for greymap support</a></li>
+</ul></li>
+<li>True Type Standard<br> (Sadly different sources have slightly different definitions of less important parts of the standard, be warned)
+<ul>
+<li><a href="http://developer.apple.com/fonts/TTRefMan/">Apple</a> (I find Apple's prose difficult, and sometimes misleading. I suggest using a different source when possible)</li>
+<li><a href="http://www.microsoft.com/typography/tt/tt.htm">Microsoft</a></li>
+<li><a href="http://www.truetype.demon.co.uk/ttspec.htm">random useful site</a></li>
+<li><a href="http://partners.adobe.com/asn/tech/type/opentype/otff.jsp">TTC</a> -- True Type Font Collection</li>
+</ul></li>
+<li><a href="http://developer.apple.com/fonts/TTRefMan/RM06/Chap6.html">Apple Advanced Typography</a> extensions to TrueType</li>
+<li>Apple distortable font (variation tables) -- vaguely equivalent to Multiple Master fonts for TrueType
+<ul>
+<li><a href="http://developer.apple.com/fonts/TTRefMan/RM06/Chap6fvar.html">fvar</a> (font variations)</li>
+<li><a href="http://developer.apple.com/fonts/TTRefMan/RM06/Chap6gvar.html">gvar</a> (glyph variations)</li>
+<li><a href="http://developer.apple.com/fonts/TTRefMan/RM06/Chap6cvar.html">cvar</a> (cvt variations)</li>
+<li><a href="http://developer.apple.com/fonts/TTRefMan/RM06/Chap6avar.html">avar</a> (axis variations)</li>
+</ul></li>
+<li><a href="http://partners.adobe.com/public/developer/opentype/index_spec.html">OpenType</a> (postscript embedded in a truetype wrapper, or advanced typography tables in a truetype wrapper)
+<ul>
+<li>PostScript <a href="http://partners.adobe.com/public/developer/en/font/5177.Type2.pdf">Type2</a></li>
+<li><a href="http://partners.adobe.com/public/developer/en/font/5176.CFF.pdf">CFF</a></li>
+<li><a href="http://partners.adobe.com/public/developer/opentype/index_spec.html">Adobe's version of file format</a>
+<ul>
+<li><a href="http://partners.adobe.com/public/developer/opentype/gdk/topic.html">SING Gaiji extention</a> (more information is available in the documentation subdirectory of the Glyphlet GDK)</li>
+</ul></li>
+<li><a href="http://www.microsoft.com/typography/otspec/default.htm">Microsoft's version</a></li>
+<li>Possible source of script codes for scripts not specified by MS/Adobe: <a href="http://www.evertype.com/standards/iso15924/document/dis15924.pdf">ISO 15924</a></li>
+<li><a href="http://www.microsoft.com/globaldev/reference/lcd-all.mspx">Microsoft's full list of locale/language IDs</a> (not all are supported, some may never be)</li>
+</ul></li>
+<li>Open Font Format Specification (ISO/IEC 14496-22:2007)<br> (based on OpenType 1.4 but an international standard)</li>
+<li><a href="ftp://ftp.apple.com/developer/Development_Kits/QuickDraw_GX/Documents.sit.hqx">Apple's sfnt wrapper around a PS type1 font</a></li>
+<li><a href="bitmaponlysfnt.html">Various bitmap only sfnt formats</a></li>
+<li><a href="http://people.mozilla.com/~jkew/woff/woff-2009-09-16.html">WOFF</a> -- Web Open Font Format, mozilla's compressed sfnt format</li>
+<li><a href="http://partners.adobe.com/public/developer/en/font/5012.Type42_Spec.pdf">PostScript Type42</a> (the opposite of opentype, it's truetype embedded in postscript)</li>
+<li>SVG 1.1 <a href="http://www.w3c.org/TR/SVG11/fonts.html">fonts</a>
+<ul>
+<li><a href="http://www.w3c.org/TR/SVG12/">SVG 1.2 font hinting proposal</a></li>
+</ul></li>
+<li><a href="macformats.html">Macintosh font formats</a></li>
+<li>Windows raster font formats
+<ul>
+<li><a href="http://www.technoir.nu/hplx/hplx-l/9708/msg00404.html">FNT -- Windows version 2</a></li>
+<li><a href="http://support.microsoft.com/default.aspx?scid=KB;en-us;q65123">FNT -- Windows version 3</a></li>
+<li><a href="http://www.csn.ul.ie/~caolan/publink/winresdump/winresdump/doc/resfmt.txt">Some info on FON file format</a></li>
+</ul></li>
+<li>X11 pcf format
+<ul>
+<li>Sadly there is no real standard for this. <a href="http://ftp.x.org/pub/R6.4/xc/lib/font/bitmap/">There's the source code used by X11</a>.</li>
+<li><a href="pcf-format.html">So I wrote my own description...</a></li>
+</ul></li>
+<li><a href="http://www.win.tue.nl/~aeb/linux/kbd/font-formats-1.html">PC Screen Font (psf/psfu/psf2)</a></li>
+<li>TeX font formats
+<ul>
+<li><a href="http://www.ctan.org/tex-archive/systems/knuth/local/mfware/pktype.web">pk packed bitmap format</a></li>
+<li><a href="http://www.ctan.org/tex-archive/systems/knuth/mfware/gftype.web">gf generic font (bitmap) format</a></li>
+<li><a href="http://www.ctan.org/tex-archive/systems/knuth/texware/tftopl.web">tfm metrics format</a></li>
+<li>To make these viewable you probably want to do something like:<br> $ weave pktype.web<br> $ pdftex pktype.tex</li>
+</ul></li>
+<li><a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;cat_id=RenderingGraphite">SIL Graphite Fonts</a> (smart font extension to TrueType. Additional tables containing rules for composing, reordering, spacing, etc. glyphs)</li>
+<li>Palm pilot fonts (pdb files)
+<ul>
+<li><a href="http://www.palmos.com/dev/support/docs/palmos/PalmOSReference/Font.html">font record format</a></li>
+<li><a href="http://www.palmos.com/dev/support/docs/fileformats/Intro.html#970318">pdb file format</a></li>
+</ul></li>
+<li><a href="http://www.bitstream.com/categories/developer/truedoc/pfrspec.html">OpenDoc</a>. Sadly Proprietary so I shan't support it.</li>
+<li><a href="http://www.pinknoise.demon.co.uk/Docs/Arc/Fonts/Formats.html">Acorn RISC OS font format</a> (these fonts are often zipped up with a non-standard zip).</li>
+<li>Ikarus IK format is documented in Peter Karow's book <em>Digital Formats for Typefaces,</em> Appendices G&amp;I. (copies may still be available from <a href="http://www.urwpp.de/english/home.htm">URW++</a>)<br> Interestingly the exact format of a curve is up to the interpretation program.</li>
+<li><a href="sfdformat.html">sfd</a> files (FontForge's internal spline font database format)</li>
+<li><a href="cidmapformat.html">cidmap</a> files (Fontforge's format for mapping cids to unicode)</li>
+<li>XML formats
+<ul>
+<li>TTX -- TrueType XML</li>
+<li><a href="http://unifiedfontobject.org/">UFO</a> &amp; <a href="http://unifiedfontobject.org/storageformats/glif.html">GLIF</a> -- Unified font objects &amp; Glyph Interchange Format</li>
+</ul></li>
+</ul>
+<p>Other font links</p>
+<ul>
+<li><a href="http://partners.adobe.com/public/developer/en/font/5040.Download_Fonts.pdf">Adobe's downloadable font spec</a></li>
+<li><a href="http://partners.adobe.com/asn/tech/type/ftechnotes.jsp">Adobe's technical notes</a></li>
+<li><a href="http://partners.adobe.com/asn/acrobat/sdk/public/docs/FontPolicies.pdf">Adobe's Font Policies document</a></li>
+<li><a href="http://www.adobe.com/products/postscript/pdfs/PLRM.pdf">PostScript reference manual</a>
+<ul>
+<li>(old<a href="http://partners.adobe.com/asn/developer/pdfs/tn/psrefman.pdf">reference manual</a>)</li>
+</ul></li>
+<li><a href="http://www.microsoft.com/typography/fontpack/default.htm">Microsoft's downloadable fonts</a></li>
+<li><a href="ftp://ftp.ora.com/pub/examples/nutshell/ujip/adobe/samples/">Downloadable PS CID CJK fonts</a> (this site also has cmap files)<a href="ftp://ftp.ora.com/pub/examples/nutshell/cjkv/adobe/samples/"><br> others</a></li>
+<li><a href="http://www.adobe.com/products/acrobat/acrrasianfontpack.html">Downloadable OTF CID CJK fonts</a> (this site also has cmap files)</li>
+<li><a href="ftp://ftp.oreilly.com/pub/examples/nutshell/cjkv/adobe">Most recent cid2code tables that I'm aware of</a></li>
+<li>PANOSE
+<ul>
+<li><a href="http://www.agfamonotype.com/hardware/pan1.asp">From AGFA</a></li>
+<li><a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/gdi/fontext_48aa.asp">From MS</a></li>
+<li><a href="http://www.fonts.com/hp/panose/greybook/frame.htm">Panose font classification scheme</a></li>
+</ul></li>
+</ul>
+<h2 id="unicode">Unicode</h2>
+<ul>
+<li><a href="http://www.unicode.org/">Unicode consortium</a>
+<ul>
+<li><a href="http://www.unicode.org/Public/MAPPINGS/VENDORS/APPLE/CORPCHAR.TXT">Apple's corporate use extensions</a> (0xF850-0xF8FE)</li>
+<li><a href="http://partners.adobe.com/asn/tech/type/type/corporateuse.txt">Adobe's corporate use extensions</a> (0xF634-0F7FF) (also includes some of Apple's codes above)</li>
+<li><a href="corpchar.html">FontForge's corporate use extensions</a>(0xF500-0xF580)</li>
+<li><a href="http://www.evertype.com/standards/csur/">A registry of code points in the private area</a>(does not include any of Adobe's or Apple's codepoints)</li>
+<li><a href="http://www.ams.org/STIX/bnb/stix-tbl.asc-2003-10-10">American Mathematical Society's corporate use extensions</a> (0xE000-0xF7D7)</li>
+<li>MicroSoft uses 0xF000-0xF0FF in their &quot;Symbol&quot; encoding (3,0) when they want to an uninterpretted encoding vector (ie. a mapping from byte to glyph with no meaning attached to the mapping)</li>
+</ul></li>
+<li><a href="http://hapax.qc.ca/">Unicode en français<img src="img/Tricolor.png"></a></li>
+<li><a href="http://www.unicode.org/charts/">Pictures of the characters</a></li>
+<li><a href="http://www.unicode.org/Public/UNIDATA/Scripts.txt">Unicode script assignments</a>
+<ul>
+<li><a href="http://www.unicode.org/iso15924-en.html">ISO 15924 script list</a></li>
+</ul></li>
+<li><a href="http://www.babelstone.co.uk/Unicode/Bloopers.html">Unicode Bloopers</a></li>
+<li><a href="%20http://partners.adobe.com/public/developer/opentype/index_glyph.html">PostScript Unicode names</a>
+<ul>
+<li><a href="http://partners.adobe.com/public/developer/en/opentype/aglfn13.txt">Glyph names for new fonts</a> (these are the names FontForge automatically assigns to glyphs)</li>
+<li><a href="http://partners.adobe.com/public/developer/en/opentype/glyphlist.txt">Adobe Glyph Names</a> provides further synonyms</li>
+<li><a href="http://partners.adobe.com/public/developer/opentype/index_glyph2.html">Glyph name limitations</a></li>
+</ul></li>
+<li>Linux issues
+<ul>
+<li><a href="http://www.cl.cam.ac.uk/~mgk25/unicode.html">FAQ</a></li>
+<li><a href="ftp://ftp.ilog.fr/pub/Users/haible/utf8/Unicode-HOWTO.html">HOWTO</a></li>
+<li><a href="http://bobo.fuw.edu.pl/cgi-bin/man2html/usr/share/man/man7/unicode.7.gz">Linux Unicode man page</a></li>
+</ul></li>
+</ul>
+<h3 id="other-encodings">Other Encodings</h3>
+<ul>
+<li><a href="http://www.microsoft.com/globaldev/reference/wincp.asp">Microsoft's Codepages</a>, and at the <a href="http://www.unicode.org/Public/MAPPINGS/VENDORS/MICSFT/WINDOWS/">unicode site</a></li>
+<li><a href="http://www.unicode.org/Public/MAPPINGS/VENDORS/APPLE/">Mac Encodings</a></li>
+<li><a href="http://devworld.apple.com/techpubs/mac/Text/Text-516.html">MacRoman</a></li>
+<li><a href="http://www2.arts.gla.ac.uk/IPA/fullchart.html">IPA</a></li>
+<li><a href="http://www-106.ibm.com/developerworks/unicode/library/u-china.html?dwzone=unicode">GB 18030</a></li>
+<li><a href="http://www.tug.org/fontname/html/Encodings.html">TeX latin encodings</a> (possibly also on your local machine in <code>/usr/share/texmf/dvips/base</code>)</li>
+<li><a href="http://www.ctan.org/tex-archive/macros/latex/contrib/supported/t2/enc-maps/encfiles/">TeX cyrillic encodings</a></li>
+</ul>
+<hr>
+<h2 id="books">Books</h2>
+<h3 id="fontforge">FontForge</h3>
+<ul>
+<li><img src="http://images-eu.amazon.com/images/P/284177273X.08.MZZZZZZZ.jpg" alt="Fontes et Codages"> <a href="http://www.amazon.fr/exec/obidos/ASIN/284177273X/qid%3D1096481415/402-5423443-8577732">Haralambous, Yannis, 2004, <em>Fontes &amp; Codages</em></a><br></li>
+<li><img src="http://images.amazon.com/images/P/0596102429.01._AA240_SCLZZZZZZZ_V40077239_.jpg" alt="Fontes et Codages"> <a href="http://www.amazon.com/Fonts-Encodings-Yannis-Haralambous/dp/0596102429/sr=1-1/qid=1158862933/ref=sr_1_1/103-9032945-8593416?ie=UTF8&amp;s=books">Haralambous, Yannis (translated: P Scott Horne), 2006, <em>Fonts &amp; Encodings</em></a><br></li>
+</ul>
+<h3 id="typography">Typography</h3>
+<h3 id="font-editor-concepts">Font editor concepts</h3>
+<p>Karow, Peter, 1994, <em>Font Technology, Description and Tools</em></p>
+<p>Karow, Peter, 1987, <em>Digital Formats for Typefaces</em></p>
+<h3 id="tex">TeX</h3>
+<p>Hoenig, Alan <em>TeX Unbound: LaTeX and TeX Strategies for Fonts, Graphics &amp; More</em></p>
+<p>Knuth, Donald, 1979, <em>TeX and METAFONT, New Directions in Typesetting</em></p>
+<h2 id="interview">Interview</h2>
+<p>I was interviewed by the Open Source Publishing people at <a href="http://www.libregraphicsmeeting.org/">LGM2</a>. There's an <a href="http://ospublish.constantvzw.org/?p=221">mp3 file of the interview available on their site.</a></p>
+<p>-- <a href="nvd.html">Prev</a> -- <a href="overview.html">TOC</a> --</p>
+</div><!-- end main -->
+
+<footer>
+<section>
+<h3 id="fontforge">Fontforge</h3>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="download.html">Download</a></li>
+<li><a href="changelog.html">Changelog</a></li>
+<li><a href="acknowledgements.html">Acknowledgements</a></li>
+<li><a href="helpout.html">Help Out</a></li>
+<li><a href="http://sourceforge.net/projects/fontforge/">SF Project page</a><br></li>
+<li><a href="http://sourceforge.net/project/project_donations.php?group_id=103338">Donate</a></li>
+</ul>
+</section> <section>
+<h3 id="features">Features</h3>
+<ul>
+<li><a href="features.html">Features</a></li>
+<li><a href="lacks.html">Things missing</a></li>
+<li><a href="bugs.html">Known bugs</a></li>
+</ul>
+</section> <section>
+<h3 id="reference">Reference</h3>
+<ul>
+<li><a href="bibliography.html">Bibliography</a></li>
+<li><a href="related-tools.html">Related tools</a></li>
+<li><a href="librefontdevelopment.html">Libre Font Dev Efforts</a></li>
+</ul>
+</section> <section>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li><a href="overview.html">Table of Contents</a></li>
+<li><a href="install.html">Install</a></li>
+<li><a href="editexampple.html">Get started</a></li>
+<li><a href="glossary.html">Typographic Glossary</a></li>
+<li><a href="faqFS.html">FAQ</a></li>
+</ul>
+</section>
+</footer><!-- end main -->
+
+</body>
+</html>

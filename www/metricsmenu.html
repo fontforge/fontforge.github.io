@@ -1,0 +1,159 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head><!--[if IE]><script>document.lastChild.id="ie"+/IE (d+)/.exec(navigator.userAgent)[1]</script><![endif]-->
+<!-- explanation: http://www.eric-shinn.com/css-if-ie-conditional-hack-futureproof/ -->
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>The Metrics Menu</title>
+	<meta name="description" content="Outline font editor">
+	<meta name="author" content="humans.txt">
+
+	
+
+	<meta name="viewport" content="width=1024">
+
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="favicon.png">
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script>window.html5 || document.write('<script src="js/libs/html5.js"></script>')</script>
+	<![endif]-->
+</head>
+<body>
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+<header>
+<a href="index.html"><h1><img src="img/fontforge.png">Fontforge</h1></a>
+<nav>
+	<li><a href="download.html">Download</a></li>
+	<li><a href="source-build.html">Install</a></li>
+	<!-- <li><a href="index.html">Features</a></li> -->
+	<li><a href="overview.html">Documentation</a></li>
+	<li><a href="helpout.html">Help Out</a></li>
+</nav>
+</header><!-- end main -->
+
+<div id="main">
+<h1 id="the-metrics-menu">The Metrics Menu</h1>
+<p>This menu is not present in the Bitmap View, and the Metrics View only contains &quot;Center in Width&quot; and &quot;Thirds in Width&quot;.</p>
+<ul>
+<li><a href="#Center">Center in Width</a></li>
+<li><a href="#Thirds">Thirds in Width</a></li>
+<li><a href="metricsmenu.html#WindowType">Window Type</a>
+<ul>
+<li><a href="metricsmenu.html#WT-Kerning">Kerning only</a></li>
+<li><a href="metricsmenu.html#WT-Width">Advance Width only</a></li>
+<li><a href="metricsmenu.html#WT-Both">Both</a></li>
+</ul></li>
+<li><a href="#Width">Set Width...</a></li>
+<li><a href="#LBearing">Set LBearing...</a></li>
+<li><a href="#RBearing">Set RBearing...</a></li>
+<li><a href="#Auto">Auto Width...</a></li>
+<li><del>Auto Kern...</del> (See the <a href="lookups.html#Pair">kerning subtable</a> dialog and the <a href="metricsview.html#kernclass">kerning class</a>dialog)</li>
+<li><a href="#KernByClasses">Kern By Classes...</a></li>
+<li><a href="#Remove">Remove All Kern Pairs</a></li>
+<li><a href="#kernpair">Kern Pair Closeup...</a></li>
+<li><a href="metricsmenu.html#VKernByClasses">VKern By Classes...</a></li>
+<li><a href="#VKernFromHKern">VKern From HKern</a></li>
+<li><a href="metricsmenu.html#VRemove">Remove All VKern Pairs</a></li>
+<li><a href="#vertical">Set Vertical Advance...</a></li>
+</ul>
+<p>Center in Width</p>
+<p>In the Outline and Metrics Views this centers the current glyph (makes its lbearing be the same as its rbearing) within the current width.</p>
+<p>In the Font View the same thing is done for all selected glyphs.</p>
+<p>Thirds in Width</p>
+<p>This is very like Center in Width above... except that I happen to prefer having a bit more white space after my glyphs than before them. So this command makes the rbearing twice the lbearing (instead of making them be the same).</p>
+<p>Window Type</p>
+<p>In the Metrics View, the window may behave in different ways.</p>
+<p>Kerning Only</p>
+<p>This metrics view may only be used to adjust kerning</p>
+<p>Advance Width Only</p>
+<p>This metrics view may only be used to adjust the advance widths of glyphs</p>
+<p>Both</p>
+<p>This metrics view will adjust either the advance width or kerning</p>
+<p>Set Width...</p>
+<p><img src="img/setwidth.png"><br> The Set Width command allows you to change the width of the current glyph (in the outline view) or all selected glyphs (in the font view). You may either set the width to an absolute value, change the width by adding a constant value to it, or multiply it by a scale factor. Normally the width will be expressed in em-units, but in a bitmap only font the width will be expressed as pixels in the current displayed font.</p>
+<p>Set LBearing...</p>
+<p>The Set LBearing command is similar to the Set Width command above, the dialog is pretty much the same except that it applies to the left side bearing rather than to the width.</p>
+<p>Set RBearing...</p>
+<p>The Set RBearing command is similar to the Set Width command above, the dialog is pretty much the same except that it applies to the right side bearing rather than to the width.</p>
+<p>Auto Width...</p>
+<p>This command is only available in the font view. <a href="autowidth.html#AutoWidth">It attempts to guess reasonable values for the widths</a> (more accurately the left and right bearings) of the specified glyphs.</p>
+<p>Kern By Classes...</p>
+<p>This command is only available from the font and metrics views. It provides the user with a <a href="metricsview.html#kernclass">dialog</a> to manipulate kerning classes.</p>
+<p>Remove All Kern Pairs</p>
+<p>In the font view removes all kern pairs (and kern classes) in the font.<br> In the outline glyph view removes all kern pairs where the current glyph is the left hand glyph.<br> Not present in the Metrics or Bitmap views.</p>
+<p>Kern Pair Closeup...</p>
+<p>(Sorry about the name, I couldn't think of a better). <a href="metricsview.html#kernpair">Allows</a> you to get a look at kerning between two glyphs at different point-sizes and to build a &quot;<a href="metricsview.html#DeviceTable">Device Table</a>&quot; (which allows small corrections from the standard behavior at specified point sizes)<br> Not present in the Bitmap view.</p>
+<p>VKern By Classes...</p>
+<p>This command is only available from the font and metrics views. It provides the user with a <a href="metricsview.html#kernclass">dialog</a> to manipulate vertical kerning classes.</p>
+<p>VKern From HKern</p>
+<p>This command is only available from the font and metrics views. It removes all current vertical kerning information, then it looks through the font and for each pair of horizontally kerned glyphs where both have a 'vert' or 'vrt2' feature it produces a vertical kerning pair for the vertical versions of those glyphs. (That is: If <code>A</code>+<code>V</code> are horizontally kerned by -50 and <code>A</code> =&gt; <code>A.vert</code> and <code>V</code> =&gt; <code>V.vert</code>then this command will produce a vertical kerning pair between <code>A.vert</code> + <code>V.vert</code> with a value of -50)</p>
+<p>Remove All VKern Pairs</p>
+<p>In the font view removes all vertical kern pairs (and kern classes) in the font.<br> In the outline glyph view removes all kern pairs where the current glyph is the left hand glyph.<br> Not present in the Metrics or Bitmap views.</p>
+<p>Set Vertical Advance...</p>
+<p>If vertical metrics are enabled for the font this will be active in the font and outline glyph view.<br> It behaves exactly like Set Width... except it works on the vertical advance rather than the horizontal advance (width).</p>
+<h2 id="other-menus">Other menus</h2>
+<ul>
+<li><a href="filemenu.html">File</a></li>
+<li><a href="editmenu.html">Edit</a></li>
+<li><a href="pointmenu.html">Point</a></li>
+<li><a href="elementmenu.html">Element</a></li>
+<li><a href="toolsmenu.html">Tools</a></li>
+<li><a href="hintsmenu.html">Hints</a></li>
+<li><a href="encodingmenu.html">Encoding</a></li>
+<li><a href="viewmenu.html">View</a></li>
+<li><a href="metricsmenu.html">Metrics</a></li>
+<li><a href="cidmenu.html">CID</a></li>
+<li><a href="mmmenu.html">MM</a></li>
+<li><a href="windowmenu.html">Window</a></li>
+<li><a href="helpmenu.html">Help</a></li>
+<li><a href="HotKeys.html">Hot Keys</a></li>
+</ul>
+<h2 id="prev----toc----next">-- <a href="viewmenu.html">Prev</a> -- <a href="overview.html">TOC</a> -- <a href="cidmenu.html">Next</a></h2>
+</div><!-- end main -->
+
+<footer>
+<section>
+<h3 id="fontforge">Fontforge</h3>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="download.html">Download</a></li>
+<li><a href="changelog.html">Changelog</a></li>
+<li><a href="acknowledgements.html">Acknowledgements</a></li>
+<li><a href="helpout.html">Help Out</a></li>
+<li><a href="http://sourceforge.net/projects/fontforge/">SF Project page</a><br></li>
+<li><a href="http://sourceforge.net/project/project_donations.php?group_id=103338">Donate</a></li>
+</ul>
+</section> <section>
+<h3 id="features">Features</h3>
+<ul>
+<li><a href="features.html">Features</a></li>
+<li><a href="lacks.html">Things missing</a></li>
+<li><a href="bugs.html">Known bugs</a></li>
+</ul>
+</section> <section>
+<h3 id="reference">Reference</h3>
+<ul>
+<li><a href="bibliography.html">Bibliography</a></li>
+<li><a href="related-tools.html">Related tools</a></li>
+<li><a href="librefontdevelopment.html">Libre Font Dev Efforts</a></li>
+</ul>
+</section> <section>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li><a href="overview.html">Table of Contents</a></li>
+<li><a href="install.html">Install</a></li>
+<li><a href="editexampple.html">Get started</a></li>
+<li><a href="glossary.html">Typographic Glossary</a></li>
+<li><a href="faqFS.html">FAQ</a></li>
+</ul>
+</section>
+</footer><!-- end main -->
+
+</body>
+</html>

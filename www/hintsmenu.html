@@ -1,0 +1,193 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head><!--[if IE]><script>document.lastChild.id="ie"+/IE (d+)/.exec(navigator.userAgent)[1]</script><![endif]-->
+<!-- explanation: http://www.eric-shinn.com/css-if-ie-conditional-hack-futureproof/ -->
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>The Hints Menu</title>
+	<meta name="description" content="Outline font editor">
+	<meta name="author" content="humans.txt">
+
+	
+
+	<meta name="viewport" content="width=1024">
+
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="favicon.png">
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script>window.html5 || document.write('<script src="js/libs/html5.js"></script>')</script>
+	<![endif]-->
+</head>
+<body>
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+<header>
+<a href="index.html"><h1><img src="img/fontforge.png">Fontforge</h1></a>
+<nav>
+	<li><a href="download.html">Download</a></li>
+	<li><a href="source-build.html">Install</a></li>
+	<!-- <li><a href="index.html">Features</a></li> -->
+	<li><a href="overview.html">Documentation</a></li>
+	<li><a href="helpout.html">Help Out</a></li>
+</nav>
+</header><!-- end main -->
+
+<div id="main">
+<h1 id="the-hints-menu">The Hints Menu</h1>
+<p>This menu is only present in the outline glyph view and the font view. <br> <a href="hinting.html">A more detailed description of the hinting UI</a>.</p>
+<ul>
+<li><a href="#AutoHint">AutoHint</a></li>
+<li><a href="#SubstitutionPt">Hint Substitution Pts</a></li>
+<li><a href="#Counter">Auto Counter</a></li>
+<li><a href="hintsmenu.html#DontAutoHint">Don't AutoHint</a></li>
+<li><a href="#AutoInstr">AutoInstr</a></li>
+<li><a href="#EditInstrs">Edit Instructions...</a></li>
+<li><a href="#Debug">Debug...</a></li>
+<li><a href="#Editfpgm">Edit fpgm...</a></li>
+<li><a href="#Editprep">Edit prep...</a></li>
+<li><a href="#Editcvt">Edit cvt...</a></li>
+<li><a href="#Deltas">Suggest Deltas...</a></li>
+<li><a href="#RmTables">Remove Instr Tables</a></li>
+<li><a href="#ClearHints">Clear Hints</a></li>
+<li><a href="#ClearInstrs">Clear Instructions</a></li>
+<li><a href="#Clear">Clear HStem</a></li>
+<li><a href="#ClearV">Clear VStem</a></li>
+<li><a href="#ClearD">Clear DStem</a></li>
+<li><a href="#HHint">Add HHint</a></li>
+<li><a href="#VHint">Add VHint</a></li>
+<li><a href="#DHint">Add DHint</a></li>
+<li><a href="#Create">Create HHint</a></li>
+<li><a href="#CreateV">Create VHint</a></li>
+<li><a href="#Review">Review Hints</a></li>
+<li><a href="#Histogram">Histograms</a>
+<ul>
+<li><a href="hintsmenu.html#HStem-Hist">HStem</a></li>
+<li><a href="hintsmenu.html#VStem-Hist">VStem</a></li>
+<li><a href="hintsmenu.html#Blue-Hist">BlueValues</a></li>
+</ul></li>
+</ul>
+<p>AutoHint</p>
+<p>The Auto Hint command causes FontForge to throw away any existing hints for the glyph and guess an new ones. In the outline view this operates on the current glyph, in the font view it operates on all selected glyphs.<br> FontForge will do a better job hinting a font if you have previously set the BlueValues, StdVW and StdHW fields in <a href="fontinfo.html#Private">Element-&gt;Font Info-&gt;PS Private</a>. These in turn depend on the hints so it is best to autohint the entire font, then set the above values, and then autohint the font again.</p>
+<p>If you wish to use AutoInstr below you should first AutoHint your font with <code>File-&gt;Preferences-&gt;PS       Hints-&gt;Detect Diagonal Stems</code> enabled.</p>
+<p>Hint Substitution Pts</p>
+<p>In the font view this figures substitution points for all selected glyphs. In the outline glyph view, this figures substitution points for the current glyph using the current hint set.</p>
+<p>Auto Counter</p>
+<p>Attempt to figure out counter groups for the selected glyphs (font view) or the current glyph (outline glyph view).</p>
+<p>Don't AutoHint</p>
+<p>Tells FontForge not to do any implicit hinting on the selected glyphs. (FontForge will normally perform an autohint on a glyph if the glyph's contours have changed since it was last hinted and the user has not explicitly changed the hints). The user may turn this flag off by invoking AutoHint explicitly.</p>
+<p>In the outline glyph view, behavior is a bit more complicated. This command will toggle the current setting of the &quot;Don't AutoHint&quot; flag. If the flag is currently on the menu entry will be checked.</p>
+<p>AutoInstr</p>
+<p>The Auto Instr command is only available in quadratic fonts and is used to generate truetype instructions. It is designed to produce instructions based on PostScript information, so please insure that all glyphs are correctly hinted and that the <a href="fontinfo.html#Private">PostScript private dictionary</a> has been filled in. (I know the instructions aren't used by PostScript, but the information needed to generate the instructions is clearly expressed in the PostScript data).</p>
+<p>If you are using AutoHint to generate hints, please insure that the diagonal hint preference item is turned on (<code>File-&gt;Preferences-&gt;PS       Hints-&gt;Detect Diagonal Stems)</code></p>
+<p>Edit Instructions...</p>
+<p>Only available in the outline and font views, and only in quadratic fonts. <a href="ttfinstrs.html">This dialog</a> shows any truetype instructions associated with this glyph, and allows you to edit them.<br> Note there are some glyphs for which you cannot write instructions if they contain references that cannot be represented in TrueType. If a glyph contains a reference that is scaled by a factor of 2 or more, or if a glyph contains both a reference and a contour then you may not generate instructions for it. You can either:</p>
+<ul>
+<li>Unlink all references</li>
+<li>(in the case of a glyph with references and contours) Place all the contours into a new glyph and make a reference to that glyph. (So the composite glyph will now contain only references).</li>
+</ul>
+<p>Debug...</p>
+<p>Only available in the outline view, and only if you have linked with a version of freetype with the bytecode interpreter and only in quadratic fonts. This allows you to <a href="charview.html#Debugging">debug truetype programs</a>.</p>
+<p>Edit fpgm...</p>
+<p>Only available in the font view, and only in quadratic fonts. <a href="ttfinstrs.html">This dialog</a> shows any truetype instructions in the 'fpgm' table, and allows you to edit them.</p>
+<p>Edit prep...</p>
+<p>Only available in the font view, and only in quadratic fonts. <a href="ttfinstrs.html">This dialog</a> shows any truetype instructions in the 'prep' table, and allows you to edit them.</p>
+<p>Edit cvt...</p>
+<p>Only available in the font view, and only in quadratic fonts. <a href="ttfinstrs.html#cvt">This dialog</a> shows the initial values in the 'cvt ' table, and allows you to edit them. You can also add a brief comment to describe what each entry is used for.</p>
+<p>Suggest Deltas...</p>
+<p>Brings up a <a href="SuggestDeltas.html">dialog</a> which will help you search for places where truetype delta instructions might be useful.</p>
+<p>Remove Instr Tables</p>
+<p>If the font contains a 'fpgm', 'prep', 'cvt ' or 'maxp' table, then this command will remove them. This should be done in conjunction with <a href="hintsmenu.html">Hints-&gt;Clear Instructions</a>, otherwise any remaining instructed glyphs will fail to work.</p>
+<p>Clear Hints</p>
+<p>Clears all hints in all selected glyphs.</p>
+<p>Clear Instructions</p>
+<p>Clears any truetype instructions associated with the selected glyphs.</p>
+<p>Clear HStem</p>
+<p>Removes all Horizontal Stem hints from the current glyph.</p>
+<p>Clear VStem</p>
+<p>Removes all Vertical Stem hints.</p>
+<p>Clear DStem</p>
+<p>Removes all Diagonal Stem hints.</p>
+<p>Add HHint</p>
+<p>If there are two points selected (exactly two) and if they have different y positions, then this will create a Horizontal Stem Hint starting at the lower one of the two going up to the upper one.</p>
+<p>Add VHint</p>
+<p>If there are two points selected (exactly two) and if they have different x positions, then this will create a Vertical Stem Hint starting at the leftmost one of the two going right to the rightmost one.</p>
+<p>Add DHint</p>
+<p>If there are exactly 4 points selected and they can describe a diagonal stem hint then this menu item will be active and will add it.</p>
+<p>Create HHint</p>
+<p>Brings up a dialog allowing you to specify exactly where and how wide you want a Horizontal Stem Hint.</p>
+<p>Create VHint</p>
+<p>Brings up a dialog allowing you to specify exactly where and how wide you want a Vertical Stem Hint.</p>
+<p>Review Hints<img src="img/ReviewHints.png"></p>
+<p>Brings up a dialog allowing you to examine (and modify) all horizontal/vertical stem hints (not diagonal). The currently active hint is picked out in either dark blue or dark green.</p>
+<p><br> The Histograms SubMenu ----------------------</p>
+<p>HStem</p>
+<p>Brings up a <a href="histogram.html">dialog</a> displaying a histogram of the horizontal stem widths of all selected glyphs.</p>
+<p>VStem</p>
+<p>Brings up a <a href="histogram.html">dialog</a> displaying a histogram of the vertical stem widths of all selected glyphs.</p>
+<p>BlueValues</p>
+<p>Brings up a <a href="histogram.html">dialog</a> displaying a histogram of the vertical maxima and minima of all selected glyphs.</p>
+<h2 id="other-menus">Other menus</h2>
+<ul>
+<li><a href="filemenu.html">File</a></li>
+<li><a href="editmenu.html">Edit</a></li>
+<li><a href="pointmenu.html">Point</a></li>
+<li><a href="elementmenu.html">Element</a></li>
+<li><a href="toolsmenu.html">Tools</a></li>
+<li><a href="hintsmenu.html">Hints</a></li>
+<li><a href="encodingmenu.html">Encoding</a></li>
+<li><a href="viewmenu.html">View</a></li>
+<li><a href="metricsmenu.html">Metrics</a></li>
+<li><a href="cidmenu.html">CID</a></li>
+<li><a href="mmmenu.html">MM</a></li>
+<li><a href="windowmenu.html">Window</a></li>
+<li><a href="helpmenu.html">Help</a></li>
+<li><a href="HotKeys.html">Hot Keys</a></li>
+</ul>
+<p>-- <a href="toolsmenu.html">Prev</a> -- <a href="overview.html">TOC</a> -- <a href="encodingmenu.html">Next</a> --</p>
+</div><!-- end main -->
+
+<footer>
+<section>
+<h3 id="fontforge">Fontforge</h3>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="download.html">Download</a></li>
+<li><a href="changelog.html">Changelog</a></li>
+<li><a href="acknowledgements.html">Acknowledgements</a></li>
+<li><a href="helpout.html">Help Out</a></li>
+<li><a href="http://sourceforge.net/projects/fontforge/">SF Project page</a><br></li>
+<li><a href="http://sourceforge.net/project/project_donations.php?group_id=103338">Donate</a></li>
+</ul>
+</section> <section>
+<h3 id="features">Features</h3>
+<ul>
+<li><a href="features.html">Features</a></li>
+<li><a href="lacks.html">Things missing</a></li>
+<li><a href="bugs.html">Known bugs</a></li>
+</ul>
+</section> <section>
+<h3 id="reference">Reference</h3>
+<ul>
+<li><a href="bibliography.html">Bibliography</a></li>
+<li><a href="related-tools.html">Related tools</a></li>
+<li><a href="librefontdevelopment.html">Libre Font Dev Efforts</a></li>
+</ul>
+</section> <section>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li><a href="overview.html">Table of Contents</a></li>
+<li><a href="install.html">Install</a></li>
+<li><a href="editexampple.html">Get started</a></li>
+<li><a href="glossary.html">Typographic Glossary</a></li>
+<li><a href="faqFS.html">FAQ</a></li>
+</ul>
+</section>
+</footer><!-- end main -->
+
+</body>
+</html>

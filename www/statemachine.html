@@ -1,0 +1,152 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head><!--[if IE]><script>document.lastChild.id="ie"+/IE (d+)/.exec(navigator.userAgent)[1]</script><![endif]-->
+<!-- explanation: http://www.eric-shinn.com/css-if-ie-conditional-hack-futureproof/ -->
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>The Mac State Machine dialog</title>
+	<meta name="description" content="Outline font editor">
+	<meta name="author" content="humans.txt">
+
+	
+
+	<meta name="viewport" content="width=1024">
+
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="favicon.png">
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script>window.html5 || document.write('<script src="js/libs/html5.js"></script>')</script>
+	<![endif]-->
+</head>
+<body>
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+<header>
+<a href="index.html"><h1><img src="img/fontforge.png">Fontforge</h1></a>
+<nav>
+	<li><a href="download.html">Download</a></li>
+	<li><a href="source-build.html">Install</a></li>
+	<!-- <li><a href="index.html">Features</a></li> -->
+	<li><a href="overview.html">Documentation</a></li>
+	<li><a href="helpout.html">Help Out</a></li>
+</nav>
+</header><!-- end main -->
+
+<div id="main">
+<h1 id="the-mac-state-machine-dialog">The Mac State Machine Dialog</h1>
+<p><img src="img/statemachine-context.png">The mac uses state machines where opentype would use a contextual lookup. The example at right (with appropriate substitutions attached to it) will convert an initial or medial short-s into a long-s (for doing renaissance printing).</p>
+<p>FontForge currently supports 4 types of state machines: contextual glyph substitution, indic rearrangement, contextual glyph insertion, and contextual kerning. The example at right is of contextual glyph substitution.</p>
+<p>An example conditional substitution state machine is provided in the <a href="editexample6-5.html#Apple">tutorial</a>.</p>
+<p>On the mac there are four predefined classes, one meaning the end of input, one for all glyphs not specified elsewhere, one for the magic &quot;deleted&quot; glyph (Apple does not always delete a glyph when asked to do so, instead it retains a special mark in the glyph stream indicating that the glyph should be deleted later), and finally a class for the end of a line of text. Any classes after this are user defined. In the example at right there are many user defined classes representing various groupings of arabic letters. Any other glyphs in the font (the digits for example) will automatically be assigned to class 1 (&quot;{Everything Else}&quot;).</p>
+<p>The state machine itself is shown as a two dimensional matrix of transitions, one transition for every state and class. Classes are shown at the top of the matrix, and states down the side. The transition from state 0 when given input from class 0 is shown in the upper left corner of the matrix, and so on.</p>
+<p>When the state machine starts up it will be in one of the first two states. It will be in state 0 at the beginning of input, and in state1 when it starts at the beginning of a new line.</p>
+<p>The transitions look slightly differently depending on the type of state machine:</p>
+<p>Indic</p>
+<p>Contextual</p>
+<p>Insertion</p>
+<p>Kerning</p>
+<figure>
+<img src="img/transition-indic.png"><figcaption></figcaption>
+</figure>
+<figure>
+<img src="img/transition-context.png"><figcaption></figcaption>
+</figure>
+<figure>
+<img src="img/transition-insert.png"><figcaption></figcaption>
+</figure>
+<figure>
+<img src="img/transition-kern.png"><figcaption></figcaption>
+</figure>
+<p>The first line of all transitions shows the next state. The next line contains a set of flags where &quot;M&quot; =&gt; the current glyph should be marked (the meaning of this becomes apparent later), &quot;A&quot; =&gt; processing should advance to the next glyph. For indic tables there is a third flag shown, &quot;L&quot; =&gt; the current glyph is the last glyph of the indic rearrangement, while for kerning tables there is a &quot;P&quot; flag indicating that the current glyph should be pushed onto the kerning stack.</p>
+<p>The last two lines have varied meanings depending on the type of the state machine.</p>
+<ul>
+<li>For Indic transitions the two lines should be appended to get the indic rearrangement verb (in the example above that would be &quot;Ax =&gt; xA&quot; meaning that the first glyph marked should be moved after the last glyph marked)</li>
+<li>For contextual transitions the two lines specify the lookup names of simple substitutions. The first one is applied to the last glyph marked and the second one to the current glyph (if a line is blank, no substitution is applied to that glyph here).<br> If a transition has both a &quot;marked substitution&quot; and the &quot;mark current glyph&quot; flag, I believe the substitution applies to the glyph that was previously marked, and not to the current glyph. (Apple doesn't document this)<br> <strong>Caveat:</strong>Apple's 'mort' format was not designed to allow fonteditors to figure out what a state machine did. FontForge can usually make a good guess of what substitutions do which apply to the current glyph, but it will often include extraneous glyph substitutions when a substitution applies to a marked glyph. These should not be harmful (they should never get invoked) but they are annoying ('morx' tables should not have this problem).</li>
+<li>For insertion transitions the lines specify the glyphs that are to be inserted. The first line applies to the marked glyph, the second line to current glyph (there may not be room enough to show all the inserted glyphs, in which case the glyph list is truncated). There are additional flags here that are also not shown because of lack of room. They may be viewed by clicking on a transition.</li>
+<li>For kerning transitions the first line shows the first (few) kerning values, the second line shows either &quot;...&quot; if there are more kerning values, or nothing.<br> Note: The number of kerning values <strong>MUST</strong> match the number of glyphs pushed on the kern stack, or your application crashes.</li>
+</ul>
+<p>For a complete description of what these state machines can do you should read Apple's documentation</p>
+<ul>
+<li>On the <a href="http://developer.apple.com/fonts/TTRefMan/RM06/Chap6morx.html">'morx'</a> and <a href="http://developer.apple.com/fonts/TTRefMan/RM06/Chap6mort.html">'mort'</a> tables</li>
+<li>On the <a href="http://developer.apple.com/fonts/TTRefMan/RM06/Chap6kern.html">'kern'</a> table (format 1)</li>
+<li><a href="http://developer.apple.com/fonts/TTRefMan/RM06/Chap6Tables.html#StateTables">On state machines in general</a></li>
+<li><a href="http://developer.apple.com/fonts/TTRefMan/RM06/Chap6feat.html">The 'feat' (feature) table</a></li>
+<li><a href="http://developer.apple.com/fonts/Registry/index.html">Apple's Font Feature registry</a></li>
+</ul>
+<p>The general idea is that a word processor converts text into a string of glyphs, and then the state machine is applied to that string. The state machine starts in state 0 or 1, it figures out what class the first glyph belongs to, and indexes into the current state by that class. The transition at that location provides a new state to move to (which might be the same as the current one), it will usually advance to the next glyph (so the new state will be indexed by a different glyph) but sometimes you will want to continue processing the current glyph in the new state. Also it will perform a set of operations which differ depending on the type of state machine.</p>
+<p>Many of the state machines have the concept of a &quot;marked&quot; glyph. This is important if the desired change for a given glyph depends on what glyphs follow it. In that case when we reach an interesting glyph we &quot;mark&quot; it, and then, after reading a few more glyphs when we know what to do, we apply a transformation to the marked glyph.</p>
+<p>Indic</p>
+<p>Contextual</p>
+<p>Insertion</p>
+<p>Kerning</p>
+<p>In addition to a &quot;mark&quot;ed glyph, indic transformations also have a the concept of a &quot;last&quot; glyph. There are 16 transformations which may be applied the the glyphs between the &quot;mark&quot;ed and &quot;last&quot; glyphs. Suppose the glyph stream looks like<br>     abcdef<br> And &quot;a&quot; was &quot;mark&quot;ed and &quot;d&quot; was &quot;last&quot; then a transition &quot;AxD =&gt; DxA&quot; refers to the marked glyph as &quot;A&quot;, the last glyph as &quot;D&quot; and everything in between as &quot;x&quot;, so this would change the glyph stream to<br>     dbcaef</p>
+<p>This can apply a substitution to the current glyph, a different substitution to the marked glyph, and it may mark the current glyph. The substitutions are indicated by 4 character tags and should be &quot;Nested&quot; substitutions which may be created by the Element-&gt;Char Info dialog.</p>
+<p>This can insert a string (up to 31 glyphs) before or after the current and the marked glyphs.</p>
+<p>Kerning does not have a single &quot;mark&quot;ed glyph, instead it can push up to 8 glyphs onto a stack, and at a later point a set of kerning values may be applied to those glyphs (so the flag which is usually indicated as &quot;M&quot; for mark, is here &quot;P&quot; for push). Once all the glyphs have been pushed, a set of kerning values may be applied. One value for each pushed glyph. This is a number which indicates how much the glyph in question should be kerned. If the glyph stream looks like:<br>     F.&quot;<br> and you want to kern &quot;.&quot; by -300, and &quot;&quot;&quot; by 0 em-units, then you would enter<br>     -300 0<br> as kerning values.</p>
+<h2 id="editing-transitions">Editing Transitions</h2>
+<p>To edit a transition, simply click on it and a dialog will pop up, appropriate to the type of state machine.</p>
+<p>Indic</p>
+<p>Contextual</p>
+<p>Insertion</p>
+<p>Kerning</p>
+<figure>
+<img src="img/edittransition-indic.png"><figcaption></figcaption>
+</figure>
+<figure>
+<img src="img/edittransition-context.png"><figcaption></figcaption>
+</figure>
+<figure>
+<img src="img/edittransition-insert.png"><figcaption></figcaption>
+</figure>
+<figure>
+<img src="img/edittransition-kern.png"><figcaption></figcaption>
+</figure>
+<p>See <a href="statemachine.html#transitions">above</a> for a description of what the fields mean.</p>
+<p>If you wish to add a new state, simply edit a transition so that its next state field is the state number desired. FontForge will automatically create the state for you.<br> -- <a href="fontinfo.html">Up</a> -- <a href="overview.html">TOC</a> --</p>
+</div><!-- end main -->
+
+<footer>
+<section>
+<h3 id="fontforge">Fontforge</h3>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="download.html">Download</a></li>
+<li><a href="changelog.html">Changelog</a></li>
+<li><a href="acknowledgements.html">Acknowledgements</a></li>
+<li><a href="helpout.html">Help Out</a></li>
+<li><a href="http://sourceforge.net/projects/fontforge/">SF Project page</a><br></li>
+<li><a href="http://sourceforge.net/project/project_donations.php?group_id=103338">Donate</a></li>
+</ul>
+</section> <section>
+<h3 id="features">Features</h3>
+<ul>
+<li><a href="features.html">Features</a></li>
+<li><a href="lacks.html">Things missing</a></li>
+<li><a href="bugs.html">Known bugs</a></li>
+</ul>
+</section> <section>
+<h3 id="reference">Reference</h3>
+<ul>
+<li><a href="bibliography.html">Bibliography</a></li>
+<li><a href="related-tools.html">Related tools</a></li>
+<li><a href="librefontdevelopment.html">Libre Font Dev Efforts</a></li>
+</ul>
+</section> <section>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li><a href="overview.html">Table of Contents</a></li>
+<li><a href="install.html">Install</a></li>
+<li><a href="editexampple.html">Get started</a></li>
+<li><a href="glossary.html">Typographic Glossary</a></li>
+<li><a href="faqFS.html">FAQ</a></li>
+</ul>
+</section>
+</footer><!-- end main -->
+
+</body>
+</html>

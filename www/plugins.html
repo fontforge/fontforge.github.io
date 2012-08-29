@@ -1,0 +1,119 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head><!--[if IE]><script>document.lastChild.id="ie"+/IE (d+)/.exec(navigator.userAgent)[1]</script><![endif]-->
+<!-- explanation: http://www.eric-shinn.com/css-if-ie-conditional-hack-futureproof/ -->
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>Plugins in FontForge</title>
+	<meta name="description" content="Outline font editor">
+	<meta name="author" content="humans.txt">
+
+	
+
+	<meta name="viewport" content="width=1024">
+
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="favicon.png">
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script>window.html5 || document.write('<script src="js/libs/html5.js"></script>')</script>
+	<![endif]-->
+</head>
+<body>
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+<header>
+<a href="index.html"><h1><img src="img/fontforge.png">Fontforge</h1></a>
+<nav>
+	<li><a href="download.html">Download</a></li>
+	<li><a href="source-build.html">Install</a></li>
+	<!-- <li><a href="index.html">Features</a></li> -->
+	<li><a href="overview.html">Documentation</a></li>
+	<li><a href="helpout.html">Help Out</a></li>
+</nav>
+</header><!-- end main -->
+
+<div id="main">
+<h1 id="plugins-in-fontforge">Plugins in FontForge</h1>
+<p>FontForge supports a plugin mechanism for extending its functionality.</p>
+<p>Plugins are shared libraries that can be loaded at runtime. When fontforge starts up (actually, when it loads its preferences) it will automatically load all files that look like shared libraries and that live in the two directories:</p>
+<ul>
+<li><code>/usr/local/share/fontforge/plugins</code><br> (more precisely: <code>$(PREFIX)/share/fontforge/plugins</code>)</li>
+<li><code>~/.FontForge/plugins</code></li>
+</ul>
+<p>Most of what I once expected to do with plugins I now do with <a href="python.html#python-init-scripts">python scripts</a>.</p>
+<h2 id="installing-a-one-of-my-example-plugins">Installing a one of my example plugins</h2>
+<p>Currently none of my pre-built packages contain any plugins. If you want to play with them you must <a href="source-build.html">grab a source distribution</a>, build it, and install it. Having done that type the following:</p>
+<blockquote>
+<pre><code>$ cd plugins
+$ make install</code></pre>
+</blockquote>
+<h2 id="creating-your-own-plugin">Creating your own plugin</h2>
+<p>FontForge currently supports two types of plugins:</p>
+<ul>
+<li>plugins which add a 2byte encoding</li>
+<li>plugins which add a scripting command to the native scripting interface.</li>
+</ul>
+<p>(Actually I suppose there is a third type. When it loads a plugin FF calls an initialization routine. I suppose the plugin could just start running and doing things without ever returning to fontforge).</p>
+<p>I once expected to add</p>
+<ul>
+<li>plugins which add new menu items</li>
+</ul>
+<p>(but I did that in python instead).</p>
+<p>When FontForge loads a plugin it calls a routine <code>int FontForgeInit(void)</code>. This routine is responsible for registering the plugin with FontForge, and then returning to allow FontForge to continue. FontForge provides two registration routines:</p>
+<p><code>AddEncoding(char *name,int (*enc_to_uni)(int), int     (*uni_to_enc)(int))</code></p>
+<p>This registers a new encoding with the given name. You must supply two functions, one which converts from the encoding to unicode, and the other which converts from unicode to the encoding. <strong>NOTE:</strong>FontForge has a slightly unconventional definition of an encoding. It is not interested in byte streams, but in numbers. So if you have an 8/16 encoding (like EUC or SJIS) then the encoding of a character will be a number between 0 and 65535. A single byte will be a number &lt;256, while a double byte character will be a number like 0xa1a1.</p>
+<p>This will return 0 if it failed (if you tried to replace a built in encoding for example), 1 if it added the encoding, 2 if it replaced a previous plugin with that name.</p>
+<p><code>AddScriptingCommand(char *name, void (*UserScriptFunc)(Context *),     int needs_font)</code></p>
+<p>This will add a new scripting command with the given name. If that name is called then UserScriptFunc will be invoked with a Context (which contains information like the arguments passed, the current font, and into which you set the return value (if any) of your function). The final argument indicates whether your command needs a font to be loaded or not. (the command Open() does not need a font loaded. The command Close() does).</p>
+<p>This will return 0 if it failed (if you tried to replace a built in scripting command for example), 1 if it added the command, 2 if it replaced a previous plugin with that name.</p>
+<p>You may register more than one thing in from <code>FontForgeInit</code>. For example, many encodings have an EUC form and an ISO-2022 form and it makes sense for one plugin to handle both.</p>
+<p><code>FontForgeInit</code> should return 1 if it succeeds, and 0 if it fails. If it fails FontForge will dlclose() the library.</p>
+<p>When you write your plugin you should include &quot;plugins.h&quot; from the fontforge directory.</p>
+<p>Look in the plugins subdirectory for an example on how to create, build &amp;</p>
+</div><!-- end main -->
+
+<footer>
+<section>
+<h3 id="fontforge">Fontforge</h3>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="download.html">Download</a></li>
+<li><a href="changelog.html">Changelog</a></li>
+<li><a href="acknowledgements.html">Acknowledgements</a></li>
+<li><a href="helpout.html">Help Out</a></li>
+<li><a href="http://sourceforge.net/projects/fontforge/">SF Project page</a><br></li>
+<li><a href="http://sourceforge.net/project/project_donations.php?group_id=103338">Donate</a></li>
+</ul>
+</section> <section>
+<h3 id="features">Features</h3>
+<ul>
+<li><a href="features.html">Features</a></li>
+<li><a href="lacks.html">Things missing</a></li>
+<li><a href="bugs.html">Known bugs</a></li>
+</ul>
+</section> <section>
+<h3 id="reference">Reference</h3>
+<ul>
+<li><a href="bibliography.html">Bibliography</a></li>
+<li><a href="related-tools.html">Related tools</a></li>
+<li><a href="librefontdevelopment.html">Libre Font Dev Efforts</a></li>
+</ul>
+</section> <section>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li><a href="overview.html">Table of Contents</a></li>
+<li><a href="install.html">Install</a></li>
+<li><a href="editexampple.html">Get started</a></li>
+<li><a href="glossary.html">Typographic Glossary</a></li>
+<li><a href="faqFS.html">FAQ</a></li>
+</ul>
+</section>
+</footer><!-- end main -->
+
+</body>
+</html>

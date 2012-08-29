@@ -1,0 +1,92 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head><!--[if IE]><script>document.lastChild.id="ie"+/IE (d+)/.exec(navigator.userAgent)[1]</script><![endif]-->
+<!-- explanation: http://www.eric-shinn.com/css-if-ie-conditional-hack-futureproof/ -->
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>The Anchor Control dialog</title>
+	<meta name="description" content="Outline font editor">
+	<meta name="author" content="humans.txt">
+
+	
+
+	<meta name="viewport" content="width=1024">
+
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="favicon.png">
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script>window.html5 || document.write('<script src="js/libs/html5.js"></script>')</script>
+	<![endif]-->
+</head>
+<body>
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+<header>
+<a href="index.html"><h1><img src="img/fontforge.png">Fontforge</h1></a>
+<nav>
+	<li><a href="download.html">Download</a></li>
+	<li><a href="source-build.html">Install</a></li>
+	<!-- <li><a href="index.html">Features</a></li> -->
+	<li><a href="overview.html">Documentation</a></li>
+	<li><a href="helpout.html">Help Out</a></li>
+</nav>
+</header><!-- end main -->
+
+<div id="main">
+<h1 id="the-anchor-control-dialog">The Anchor Control dialog</h1>
+<p><img src="img/anchorcontrol-base.png">You invoke this dialog from the outline glyph view by selecting an anchor point in that glyph and selecting <code>Metrics-&gt;Anchor Control</code>. In the example at right, the arabic letter Hamza was chosen. In the first pane of the dialog are various controls, next to that is a pane displaying the letter Hamza and showing the anchor point relative to that letter. You may move the anchor point around to position it as you wish.<br> After this there is a scrollable region containing multiple sub-panes. Each sub-pane contains one combination of Hamza and a mark that fits on top of it. If you click in one of these sub-panes, FontForge changes the dialog to look at the mark you selected.<img src="img/anchorcontrol-mark.png"> Here we clicked on the Fathatan mark, and we now see all the base letters that fit underneath it. This dialog now gives you control of the anchor point in the Fathatan mark.</p>
+<p>At the top of the control region is a pull down list containing the names of all glyphs in this anchor class. You may look at the combinations based on any of them. You may also use the Page Up and Page Down keys to cycle through this list.</p>
+<p>You may control the pixelsize used to display the combinations. Sometimes it is important to get a close up view of a small pixelsize (which may be quite different from looking at a larger pixelsize) and the Magnification field allows for this.</p>
+<p>You can also enter the anchor point's location by manual typing in the X,Y textfields at right.</p>
+<h2 id="device-tables">Device Tables</h2>
+<p>You can also create something called a &quot;Device Table&quot;, a name which is not very informative. When a font is rasterized at small pixel sizes rounding errors become important, and this is particularly true of mark positioning, where there are four things that get rounded: The locations of the each glyph's outlines (to fit them to a pixel grid), and the locations of the anchor points of each glyph. The result is that something which looks perfectly positioned at 150pixels may be either too close or too far apart at 12pixels.</p>
+<p>You could adjust the anchor point's location slightly until it looked right at 12pixels, of course, but that might break it at 14 pixels. So OpenType has the concept of a Device Table which allows you to add small corrections at particular point sizes. Simply set the Size to a small, but common, value (say 10-24) and examine the positioning. If the results are ugly then type a value into the appropriate <code>Cor</code>(rection) field, and this will change the spacing by that many pixels at the given display size (and no other).</p>
+<p>Note it may sometimes be better to define a correction in the matching glyph rather than the current one. Corrections will apply to all glyphs matched with the current one.</p>
+<p>-- <a href="metricsmenu.html">Back</a> --</p>
+</div><!-- end main -->
+
+<footer>
+<section>
+<h3 id="fontforge">Fontforge</h3>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="download.html">Download</a></li>
+<li><a href="changelog.html">Changelog</a></li>
+<li><a href="acknowledgements.html">Acknowledgements</a></li>
+<li><a href="helpout.html">Help Out</a></li>
+<li><a href="http://sourceforge.net/projects/fontforge/">SF Project page</a><br></li>
+<li><a href="http://sourceforge.net/project/project_donations.php?group_id=103338">Donate</a></li>
+</ul>
+</section> <section>
+<h3 id="features">Features</h3>
+<ul>
+<li><a href="features.html">Features</a></li>
+<li><a href="lacks.html">Things missing</a></li>
+<li><a href="bugs.html">Known bugs</a></li>
+</ul>
+</section> <section>
+<h3 id="reference">Reference</h3>
+<ul>
+<li><a href="bibliography.html">Bibliography</a></li>
+<li><a href="related-tools.html">Related tools</a></li>
+<li><a href="librefontdevelopment.html">Libre Font Dev Efforts</a></li>
+</ul>
+</section> <section>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li><a href="overview.html">Table of Contents</a></li>
+<li><a href="install.html">Install</a></li>
+<li><a href="editexampple.html">Get started</a></li>
+<li><a href="glossary.html">Typographic Glossary</a></li>
+<li><a href="faqFS.html">FAQ</a></li>
+</ul>
+</section>
+</footer><!-- end main -->
+
+</body>
+</html>
