@@ -51,7 +51,6 @@ for j in "$@"; do
 	case "$j" in
 		*oldchangelog.md) ;; # it hangs so long on this... Move it to a txt?
 		*pfaeditchangelog.md) ;; 
-changelog.md) ;; # it hangs so long on this... Move it to a txt?
 		*) template ;;
 	esac
 done
