@@ -5,47 +5,53 @@
 autoload -U regexp-replace
 setopt rematchpcre
 
-markdown() {
-	#pandoc -f markdown -t html5
-	perl ./build/Markdown.pl --html4tags
+markdown() { 
+	# perl ./build/Markdown.pl --html4tags # 43.49s
+	# multimarkdown # 32.14s
+	pandoc -f markdown -t html5 # 17.77
+	# Pandoc, despite being a larger dependency, is much faster
+	# and seems to have better output
+}
+
+replace() { 
+	regexp-replace template$2 "{{ $1 }}" "\$$1"
 }
 
 template_=$(<templates/fontforge)
-footer_=$(<templates/footer.md | tail -n +6 | markdown) 
+footer=$(<templates/footer.md | markdown) 
+replace footer _
+	
+template() {
+	template=$template_
+	output="www/$(basename $j .md).html"
+	print -n "$output ... " >&2
+
+	# This resets & gets page specific variables
+	#
+	title=""; bits=""; section=""
+	eval $(<"$j" | grep -B50 -m2 "+++" | head -n -1 | tail -n +2)
+	main=$(<"$j" | tail -n +6 | markdown) #todo: make this get between +++
+
+	# Replace variables
+	#
+	replace title
+	replace bits
+	replace main
+
+	# Print to output
+	#
+	print $template > $output
+
+	# Alert User
+	#
+	print "Done!" >&2
+}
 
 for j in "$@"; do
 	case "$j" in
 		*oldchangelog.md) ;; # it hangs so long on this... Move it to a txt?
-		*)
-			template=$template_
-			footer=$footer_
-			output="www/$(basename $j .md).html"
-			print -n $output" ... " >&2
-
-			# This resets & gets page specific variables
-			#
-			title=""; bits=""; section=""
-			eval $(<"$j" | grep -B50 -m2 "+++" | head -n -1 | tail -n +2)
-			main=$(<"$j" | tail -n +6 | markdown) #todo: make this get between +++
-
-			# Replace variables
-			#
-			replace() {
-				regexp-replace template "{{ $@ }}" "\$$@"
-				# This does search & replace on $template
-			}
-			replace title
-			replace bits
-			replace main
-			replace footer
-
-			# Print to output
-			#
-			print $template > $output
-
-			# Alert User
-			#
-			print "Done!" >&2
-		;;
+		*pfaeditchangelog.md) ;; 
+changelog.md) ;; # it hangs so long on this... Move it to a txt?
+		*) template ;;
 	esac
 done

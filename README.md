@@ -5,9 +5,11 @@ FontForge website repository
 
 - `README-HOWTO.md` Instructions for working with site
 - `src/` Source files -- edit these
+- `www/\*.html` Generated files -- don't mess with this
 - `build/` Scripts are stored here
-- `www/` Generated website -- don't mess with this
-- `www/old/` Old website
+- `www/img/` images
+- `www/css/` css
+- `www/js/` javascript
 
 
 Ref for the website

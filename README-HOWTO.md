@@ -3,6 +3,8 @@ How to build the site
 
 	$ ./build/go src/*.md
 
+Note: this requires Pandoc.
+
 Pages
 =====
 
