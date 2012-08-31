@@ -56,6 +56,7 @@ for j in "$@"; do
 
 	prefix=$j
 
+	regexp-replace prefix "src/" ""
 	regexp-replace prefix "[^/]" ""
 	regexp-replace prefix "/" "../"
 
