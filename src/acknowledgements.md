@@ -5,21 +5,29 @@ bits=""
 +++
 
 Acknowledgements
-----------------
+================
 
-The sample text in File-\>Print comes from [many
-sources](quotations.html).
+This page exists to acknowledge everone who's helped out with Fontforge. Many thanks! 
+(Actually the list should be far longer than this,
+but as time goes on there are just too many people to thank.)
 
-The following people have helped debug fontforge. Many thanks! (actually
-the list should be far longer than this, but as time goes on there are
-just too many people to thank)
+
+Sample Text
+-----------
+
+The sample text in `File-\>Print` comes from [many sources](quotations.html).
+
+Debugging
+---------
+
+The following people, among others, have helped debug fontforge. Thanks!
 
 -   Tom Harvey
 -   Ken Chilton
 -   [Gerhard Killesreiter]()
 -   Alexander Kotelnikov
--   [University of California, Santa Barbara](http://ucsb.edu/)\
-     (which has several times let me use some of their machines to do
+-   [University of California, Santa Barbara](http://ucsb.edu/)  
+    (which has several times let me use some of their machines to do
     builds and find bugs if I didn't have the requisite system at home).
 -   [Uwe Koloska](http://rcswww.urz.tu-dresden.de/~koloska/)
 -   Max Neunhoeffer
@@ -55,13 +63,18 @@ just too many people to thank)
 -   Huw Davies of CodeWarriors who showed me how to generate a windows
     fon format.
 -   Wei-Lun Chao
--   Sergey Malkin\
-      
+-   Sergey Malkin
 -   And many others!
+
+TrueType and PostScript Autohinting
+-----------------------------------
 
 Michal Nowakowski in Poland and Alexej Kryukov of Moscow State
 University have taken over TrueType and PostScript autohinting and are
 doing a far better job than I could have.
+
+Blocks of real type
+-------------------
 
 [Ben Weiner](http://readingtype.org.uk/) from Reading provided the
 banner image of blocks of real type. The type face is Imprint, created
@@ -69,10 +82,16 @@ by Monotype (UK).
 
 ![](img/fontforge-banner-420.jpeg)
 
+SourceForge
+-----------
+
 I owe David Turner (and everyone else) of
 [FreeType](http://freetype.sf.net/) a debt for providing an API which
 allows me to debug truetype instructions. Also he came up with the name
 "FontForge".
+
+Inspiration
+-----------
 
 FontForge was inspired by AltSys's
 [Fontographer](http://www.macromedia.com/software/fontographer/) now
@@ -84,5 +103,3 @@ interested in renaissance printing techniques rather than computers).
 
 And finally I owe thanks to Linda Dozier, David Cole and everyone at
 NaviSoft which company has given me the free time to write this program.
-
-

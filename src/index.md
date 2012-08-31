@@ -4,6 +4,17 @@ section=""
 bits=""
 +++
 
+Fontforge is a font editor.
+===========================
+
+It lets you create your own fonts in [many formats](features.html#EditsManyFormats),
+including ttf, otf, svg, and bitmap formats. 
+FontForge is free/libre software: you can redistribute it and/or
+modify it under the terms of a BSD-style license.
+
+Features
+--------
+
 
 **FontForge** -- An outline font editor that lets you create your own
 postscript, truetype, opentype, cid-keyed, multi-master, cff, svg and
@@ -12,15 +23,15 @@ convert one format to another. FontForge has support for many macintosh
 font formats. Fontforge also supports [scripting via python](http://dmtr.org/ff.php).
 
 System specific install procedures  
-  [Unix/Linux](nix-install.html)
-- [Mac](mac-install.html)
-- [MS/Windows](ms-install.html)
-- [VMS](vms-install.html)
-- [from source](source-build.html)
-- [Uninstalling](uninstall.html)
+    [Unix/Linux](nix-install.html)
+-   [Mac](mac-install.html)
+-   [MS/Windows](ms-install.html)
+-   [VMS](vms-install.html)
+-   [from source](source-build.html)
+-   [Uninstalling](uninstall.html)
 
 Companion programs & fontforge scripts  
-   [fontlint man page](fontlint.html)
+    [fontlint man page](fontlint.html)
 -   [sfddiff man page](sfddiff.html)
 -   [fontimage man page](fontimage.html)
 -   [acorn2sfd man page](acorn2sfd.html)

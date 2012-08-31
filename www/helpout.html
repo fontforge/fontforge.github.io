@@ -17,6 +17,13 @@
 
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="icon" href="favicon.png">
+	<script src="js/jquery.min.js"></script>
+	<script>
+	$('.helper .header').live('click', function() {
+		$(this).parent().toggleClass('closed');
+		return false;
+	});
+	</script>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -40,8 +47,8 @@
 <div id="main">
 <h1 id="how-you-can-help-with-fontforge">How you can help with FontForge</h1>
 <ul>
-<li><em>My writing leaves much to be desired</em>. Anyone who can make my documentation more readable is encouraged to do so. (or who wishes to translate it into other languages, or who wishes to put it into a more flexable format, KANOU has a <a href="ja/index.html">Japanese version</a>)</li>
-<li><em>I also have a brief tutorial in <a href="fontforge-tutorial.pdf">pdf format</a> and in <a href="editexample.html">html</a>.</em> This could also be translated into other languages (and would be a simpler job than trying to translate the entire website). The html has been translated into <a href="de/editexample.html">German</a> and <a href="http://edt1023.sayya.org/fontforge/editexample.html">Chinese</a>.</li>
+<li><p><em>My writing leaves much to be desired</em>. Anyone who can make my documentation more readable is encouraged to do so. (or who wishes to translate it into other languages, or who wishes to put it into a more flexable format, KANOU has a <a href="ja/index.html">Japanese version</a>)</p></li>
+<li><p><em>I also have a brief tutorial in <a href="fontforge-tutorial.pdf">pdf format</a> and in <a href="editexample.html">html</a>.</em> This could also be translated into other languages (and would be a simpler job than trying to translate the entire website). The html has been translated into <a href="de/editexample.html">German</a> and <a href="http://edt1023.sayya.org/fontforge/editexample.html">Chinese</a>.</p></li>
 <li><em>The UI can be translated into different languages.</em> FontForge now uses gnu gettext. See the section on <a href="uitranslationnotes.html">translation notes</a>for more info.
 <ul>
 <li>English I take care of
@@ -78,7 +85,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Walter Echarri'+'</'+'a'+'
 <li>Can you point me at documentation for other standards</li>
 <li>Can you explain why that format is useful?</li>
 </ul></li>
-<li>There are certain c<em>ommands</em><em>which don't work very well</em>and if someone else wanted to they might code them better than I...
+<li><em>There are certain commands which don't work very well</em>and if someone else wanted to they might code them better than I...
 <ul>
 <li>Remove overlap (has problems with coincident splines)</li>
 <li>Expand Stroke (has problems when there are sharp bends near the end of a contour (or near a joint where the slope is discontinuous) -- a sharp bend is one where the radius of curvature is smaller than half the stroke-width)</li>
@@ -114,7 +121,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'for me'+'</'+'a'+'>');
 <pre><code>U+0066 + U+0069 =&gt; U+FB01 &#39;liga&#39;</code></pre>
 </blockquote></li>
 </ul></li>
-<li><a href="http://sourceforge.net/project/project_donations.php?group_id=103338">Donate to FontForge</a></li>
+<li><p><a href="http://sourceforge.net/project/project_donations.php?group_id=103338">Donate to FontForge</a></p></li>
 </ul>
 </div><!-- end main -->
 

@@ -1,12 +1,17 @@
 #!/bin/zsh
 #
 # Run this to build the site.
+#
+# So, this indeed must do a lot. Which a lot?
+# - Handle nesting (like a file kept in doc/devel/)
+#   Probably with a prefix. Like [link to guide]({{ prefix }}doc/guide/)
+# - Add ids to headings, for linking
 
 autoload -U regexp-replace
 setopt rematchpcre
 
 markdown() { 
-	# perl ./build/Markdown.pl --html4tags # 43.49s
+	# perl ./Markdown.pl --html4tags # 43.49s
 	# multimarkdown # 32.14s
 	pandoc -f markdown -t html5 # 17.77
 	# Pandoc, despite being a larger dependency, is much faster
@@ -48,9 +53,18 @@ template() {
 }
 
 for j in "$@"; do
-	case "$j" in
-		*oldchangelog.md) ;; # it hangs so long on this... Move it to a txt?
-		*pfaeditchangelog.md) ;; 
-		*) template ;;
-	esac
+
+	prefix=$j
+
+	regexp-replace prefix "[^/]" ""
+	regexp-replace prefix "/" "../"
+
+	print $prefix
+
+#	case "$j" in
+#		*oldchangelog.md) ;; # it hangs so long on this... Move it to a txt?
+#		*pfaeditchangelog.md) ;; 
+#		*) template ;;
+#	esac
+
 done

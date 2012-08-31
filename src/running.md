@@ -4,7 +4,6 @@ section=""
 bits=""
 +++
 
-
 Starting fontforge
 ==================
 
@@ -28,29 +27,42 @@ Starting fontforge
 Starting FontForge
 ------------------
 
-### Before starting fontforge on cygwin
+<div class="helper closed">
+<h3 class="header">Before starting fontforge on cygwin</h3>
+<div class="content">
 
 Before you can start fontforge on cygwin you must start the X11 server.
 
 On recent versions of cygwin this may be done by invoking
 
->     C:\cygwin\usr\X11R6\bin\startxwin.bat
+     C:\\cygwin\\usr\\X11R6\\bin\\startxwin.bat
 
-On older systems:
+#### For older systems
 
-> Open a cygwin window and type
->
-> >     $ xinit
->
-> This should create a task window that covers your entire screen,
-> inside of which there should be an xterm (sort of like the cygwin
-> window earlier). Be prepared to type commands in this window.
->
-> You should then type
->
-> >     $ twm &
+Open a cygwin window and type
 
-### Notes on the PATH variable
+     $ xinit
+
+This should create a task window that covers your entire screen,
+inside of which there should be an xterm (sort of like the cygwin
+window earlier). Be prepared to type commands in this window.
+
+You should then type
+
+     $ twm &
+</div>
+</div>
+
+### Starting fontforge from the command line
+
+     $ fontforge
+
+Will open up FontForge with a file picker where you can browse and open a font
+or create a new one.
+
+<div class="helper closed">
+<h3 class="header">If you get a message from your computer saying: "fontforge: Command not found"</h3>
+<div class="content">
 
 On most systems fontforge will install itself into /usr/local/bin
 (that's the standard place for optional software), and this is not
@@ -65,24 +77,24 @@ You need to set the PATH environment variable so that it includes
 /usr/local/bin. The value of the PATH variable is a set of directories
 separated by colons.
 
->     $ echo $PATH
->     /home/gww/bin:/usr/bin:/bin:/usr/X11R6/bin:/sbin
+     $ echo $PATH
+     /home/gww/bin:/usr/bin:/bin:/usr/X11R6/bin:/sbin
 
 Unfortunately there are four ways of doing this because there are two
 different conventions used by unix shells and then the mac doesn't
 behave normally requiring another two conventions. Type:
 
->     $ echo $SHELL
->     /bin/bash
+     $ echo $SHELL
+     /bin/bash
 
 If the name of your shell is bash (as above), ksh or sh then you want to
 type
 
->     $ PATH=/usr/local/bin:$PATH ; export PATH
+     $ PATH=/usr/local/bin:$PATH ; export PATH
 
 If the name of your shell is tcsh or csh then you say
 
->     $ setenv PATH /usr/local/bin:$PATH
+     $ setenv PATH /usr/local/bin:$PATH
 
 But you'd have to do that every time you logged in. Instead you want
 this included in the shell's initialization. Again there are two cases,
@@ -91,43 +103,41 @@ for the bash family of shells you want to edit the file \~/.bashrc (or
 \~/.cshrc (or \~/.login). On a bash system the following command is
 generally sufficient:
 
->     $ cat >>~/.bashrc
->     PATH=/usr/local/bin:$PATH ; export PATH
->     ^D
+     $ cat >>~/.bashrc
+     PATH=/usr/local/bin:$PATH ; export PATH
+     ^D
 
 (where \^D represents control-D, obtained by holding down the control
 key while depressing d. \
  And for the csh family you would type:
 
->     $ cat >>~/.cshrc
->     setenv PATH /usr/local/bin:$PATH
->     ^D
+     $ cat >>~/.cshrc
+     setenv PATH /usr/local/bin:$PATH
+     ^D
 
 On non-mac systems it is better to use `~/.profile` and `~/.login`
 rather than the files given above.
 
-### Starting fontforge from the command line
+</div>
+</div>
 
->     $ fontforge font.pfa font2.sfd font3.ttf font4.otf 
+### More commandline options
+
+     $ fontforge font.pfa font2.sfd font3.ttf font4.otf 
 
 will start fontforge looking at the fonts you specify on the command
 line. It can read either pfb or pfa fonts, and some ps fonts (type 0
 fonts based on a type 1 dictionary) as well as truetype fonts, open type
 fonts and many other formats.
 
-(If you get a message from your computer saying: "fontforge: Command not
-found" you should read the [previous section](running.html#PATH))
 
->     $ fontforge -new
+
+     $ fontforge -new
 
 will cause fontforge to create a new font (in iso-8859-1 encoding)
 
->     $ fontforge
 
-will open up a file picker dialog and allow you to browse till you've
-found a font file (or have created a new one).
-
->     $ fontforge -script script.pe fonts...
+     $ fontforge -script script.pe fonts...
 
 This will invoke fontforge in a non-interactive mode, and have it run
 the named script. Any further arguments on the command line will be
@@ -212,7 +222,7 @@ add one yourself:
 Applications menu and select Terminal (or xterm), and then type [one of
 the commands listed above](running.html#Starting))
 
-**Caveat:**Normally FontForge will never see the command key shortcuts.
+**Caveat:** Normally FontForge will never see the command key shortcuts.
 X11 intercepts these and uses them itself. If you would like to be able
 to use Command-Q to quit FontForge then
 
@@ -220,10 +230,8 @@ to use Command-Q to quit FontForge then
 -   Select the menu item `X11->Preferences->Input`
 -   turn off (uncheck) `[] Enable keyboard shortcuts under X11`
 
-**Caveat:**FontForge was written assuming the availability of a three
+**Caveat:** FontForge was written assuming the availability of a three
 button mouse. Under 10.4 X11 simulates this by creating a virtual three
 button mouse where the middle button is invoked by Option-Mouse click
 and the right button by Command-Mouse click. (You can also control this
 from X11-\>Preferences).
-
-

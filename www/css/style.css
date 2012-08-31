@@ -2,59 +2,52 @@
 @import url(http://fonts.googleapis.com/css?family=Anonymous+Pro:400,700);
 */
 
+/* Resets */
+
+* {
+	color: inherit;
+	margin: 0;
+	padding: 0;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { 
+	display: block;
+}
+html, button, input, select, textarea { 
+	font-family: inherit;
+	color: #222;
+}
+nav ul, nav ol, nav li {
+	list-style: none; 
+	list-style-image: none;
+	margin: 0;
+	padding: 0;
+}
+img { 
+	border: 0;
+	-ms-interpolation-mode: bicubic;
+	vertical-align: middle;
+	max-width: 100%;
+}
+
 /* Below are some nice defaults */
 
-article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
-html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
-html, button, input, select, textarea { font-family: sans-serif; color: #222; }
-hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
-dd { margin: 0 0 0 40px; }
-nav ul, nav ol, nav li { list-style: none; list-style-image: none; margin: 0; padding: 0; }
-img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; max-width: 100%; }
-figure { margin: 0; }
 abbr[title] { border-bottom: 1px dotted; }
-q { quotes: none; }
-q:before, q:after { content: ""; content: none; }
-ins { background: #ff9; color: #000; text-decoration: none; }
-mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
-dfn { font-style: italic; }
-::-moz-selection { background: #f16529; color: #fff; text-shadow: none; }
-::selection      { background: #f16529; color: #fff; text-shadow: none; }
-
-/* Reset */
-
-body,h1,h2,h3,h4,h5,h6,p,a,ul,ol,dl,dt,dd,table,caption,th,td,fieldset,legend,blockquote {
-	font-weight:400;
-	color:inherit;
-	margin:0;
-	padding:0;
-}
+ins  { background: #ff9; color: #000; text-decoration: none; }
+hr   { border: 0; border-top: 1px solid #ccc; }
 
 /* Fonts */
 
-body { font: 16px/1.5 "Helvetica Neue", Arial, sans-serif; }
-pre, code, kbd, samp { font-family: "Anonymous Pro",  monospace; font-size: 1em; }
+body                 { font: 16px/1.5 "Helvetica Neue", Arial, sans-serif; }
 
 /* Block Elements */
 
-p,ul,ol,dl,img,table { margin-bottom:1.2em; }
-p img, table img { margin-bottom: 0; }
-
-h1,h2,h3,h4,h5,h6 { font-weight: bold; }
-/*
-h1 { font-size:300%; }
-h2 { font-size:160%; }
-h3 { font-size:140%; }
-h4,h5 { font-size:120%; }
-h6 { font-size:100%; }
-*/
-h5,h6 { font-family:"Helvetica Neue", Arial, Helvetica, sans-serif; }
+p, ul, ol, dl, hr, pre, blockquote,
+figure img, table, div.helper {
+	margin-bottom:1.2em;
+}
 h4,h5,h6 { color:#450b09; }
-
-ul,ol { margin-left: 1.5em; }
-
+ul,ol { padding-left: 1.5em; }
 blockquote {
-	margin: 1em 2em;
 	padding: 0.5em 0 0 1em; 
 	background: #e6f1f6;
 	border-left: 3px solid #c5d5dd;
@@ -62,21 +55,9 @@ blockquote {
 }
 
 pre {
-	-webkit-border-radius:3px;
-	-moz-border-radius:3px;
-	border-radius:3px;
-	-moz-background-clip:padding;
-	-webkit-background-clip:padding-box;
-	background-clip:padding-box;
-
-	font-family:Monaco,"DejaVu Sans Mono","Courier New",monospace;
-	font-size:13px;
-	overflow:auto;
-	margin:10px 0;
-	border:2px solid #ddd;
 	background-color:#333;
 	color:#fff;
-	-webkit-font-smoothing:auto;
+	overflow:auto;
 	padding:10px;
 }
 
@@ -91,26 +72,46 @@ table {
 	border-spacing: 1px;
 	padding:3px;
 }
-
 table td { padding:8px; }
-
-
 #module { background-color: #dff; }
 table table { background: #fdd; }
 table tr.odd { background: #fff; }
 
-dt { font-weight: bold; }
-
-caption { 
-	
-}
-
-caption a {
-	padding-top: .4em;
-	
-}
-
 p { max-width: 40em; }
+
+/*
+ * Helpers
+ */
+
+div.helper {
+	margin-bottom: 1em;
+	border: 1px solid #c0c7cb;
+	border-bottom-width: 2px;
+	border-radius: 6px;
+}
+
+div.helper .header {
+	border-radius: 3px 3px 0 0;
+	background: #e6f1f6;
+	padding: 4px 10px;
+	display: block;
+	cursor: pointer;
+	border-bottom: 3px solid #d1dfe6;
+}
+	div.helper.closed .header {
+		border-radius: 4px;
+		border-bottom: 0;
+	}
+
+div.helper .content {
+	padding: 10px;
+	padding-bottom: 0;
+}
+
+div.helper.closed div.content {
+	display: none;
+}
+
 
 /* ===================
     ALL: Theme
@@ -120,16 +121,12 @@ p { max-width: 40em; }
 header, #main, footer { padding: 2em 5% 1em; }
 
 header { border-bottom: 2px solid #000; }
-header h1 img { margin-bottom: 0; }
-header a { text-decoration: none; }
-header a:hover { text-decoration: underline; }
-nav li { list-style: none; }
+	header h1 img { margin-bottom: 0; }
+	header a { text-decoration: none; }
+	header a:hover { text-decoration: underline; }
 
 
-footer {
-	font-size: 12px;
-	border-top: 2px solid #000;
-}
+footer { font-size: 12px; border-top: 2px solid #000; }
 	footer section {
 		display: inline-block;
 		margin-right: 2em;

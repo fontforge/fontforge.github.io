@@ -11,12 +11,14 @@ How you can help with FontForge
     documentation more readable is encouraged to do so. (or who wishes
     to translate it into other languages, or who wishes to put it into a
     more flexable format, KANOU has a [Japanese version](ja/index.html))
+
 -   *I also have a brief tutorial in [pdf
     format](fontforge-tutorial.pdf) and in [html](editexample.html).*
     This could also be translated into other languages (and would be a
     simpler job than trying to translate the entire website). The html
     has been translated into [German](de/editexample.html) and
     [Chinese](http://edt1023.sayya.org/fontforge/editexample.html).
+
 -   *The UI can be translated into different languages.* FontForge now
     uses gnu gettext. See the section on [translation
     notes](uitranslationnotes.html)for more info.
@@ -72,19 +74,19 @@ How you can help with FontForge
     -   Michal Nowakowski and Alexej Kyukov have taken over the auto
         instructor and auto hinter.
 
--   *Different font formats*\
-     FontForge supports Type1, truetype, opentype, cff, type42,
+-   *Different font formats*  
+    FontForge supports Type1, truetype, opentype, cff, type42,
     cid-keyed and svg fonts, also bdf and NFNT for bitmaps\
-     FontForge will sort-of accept metafont files (essentially it runs
+    FontForge will sort-of accept metafont files (essentially it runs
     metafont and autotraces the result). It won't produce .mf files\
-     FontForge will read (but not produce) Ikarus files\
-     FontForge will read acorn font files with a helper app.\
-     But there are other formats out there that I can't find
+    FontForge will read (but not produce) Ikarus files\
+    FontForge will read acorn font files with a helper app.\
+    But there are other formats out there that I can't find
     descriptions of or don't think are worth supporting
     -   Can you point me at documentation for other standards
     -   Can you explain why that format is useful?
 
--   There are certain c*ommands**which don't work very well*and if
+-   *There are certain commands which don't work very well*and if
     someone else wanted to they might code them better than I...
     -   Remove overlap (has problems with coincident splines)
     -   Expand Stroke (has problems when there are sharp bends near the

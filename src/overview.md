@@ -1120,11 +1120,13 @@ number in the lower.
 You can also provide kerning information for any two adjacent glyphs.
 You can view how various OpenType features affect the glyph stream
 
-  ---------------------- -------------------------------
-  ![](img/MetricsView.png)   ![](img/MetricsView-features.png)
-  ---------------------- -------------------------------
+  ------------------------ ---------------------------------
+  ![](img/MetricsView.png) ![](img/MetricsView-features.png)
+  ------------------------ ---------------------------------
 
-![](img/VerticalMetrics.png)Note that in Hebrew, or Arabic (or any other
+![](img/VerticalMetrics.png)
+
+Note that in Hebrew, or Arabic (or any other
 right to left alphabet) the glyphs will start on the right and run to
 the left. While in CJK fonts you may want to see things arranged
 vertically.

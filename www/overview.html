@@ -17,6 +17,13 @@
 
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="icon" href="favicon.png">
+	<script src="js/jquery.min.js"></script>
+	<script>
+	$('.helper .header').live('click', function() {
+		$(this).parent().toggleClass('closed');
+		return false;
+	});
+	</script>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -543,12 +550,15 @@
 <table>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">![](img/MetricsView.png</td>
-<td style="text-align: left;">) <img src="img/MetricsView-features.png"></td>
+<td style="text-align: left;"><img src="img/MetricsView.png"></td>
+<td style="text-align: left;"><img src="img/MetricsView-features.png"></td>
 </tr>
 </tbody>
 </table>
-<p><img src="img/VerticalMetrics.png">Note that in Hebrew, or Arabic (or any other right to left alphabet) the glyphs will start on the right and run to the left. While in CJK fonts you may want to see things arranged vertically.</p>
+<figure>
+<img src="img/VerticalMetrics.png"><figcaption></figcaption>
+</figure>
+<p>Note that in Hebrew, or Arabic (or any other right to left alphabet) the glyphs will start on the right and run to the left. While in CJK fonts you may want to see things arranged vertically.</p>
 <figure>
 <img src="img/HebrewMetrics.png"><figcaption></figcaption>
 </figure>

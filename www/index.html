@@ -17,6 +17,13 @@
 
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="icon" href="favicon.png">
+	<script src="js/jquery.min.js"></script>
+	<script>
+	$('.helper .header').live('click', function() {
+		$(this).parent().toggleClass('closed');
+		return false;
+	});
+	</script>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -38,6 +45,9 @@
 </header><!-- end main -->
 
 <div id="main">
+<h1 id="fontforge-is-a-font-editor.">Fontforge is a font editor.</h1>
+<p>It lets you create your own fonts in <a href="features.html#EditsManyFormats">many formats</a>, including ttf, otf, svg, and bitmap formats. FontForge is free/libre software: you can redistribute it and/or modify it under the terms of a BSD-style license.</p>
+<h2 id="features">Features</h2>
 <p><strong>FontForge</strong> -- An outline font editor that lets you create your own postscript, truetype, opentype, cid-keyed, multi-master, cff, svg and bitmap (bdf, FON, NFNT) fonts, or edit existing ones. Also lets you convert one format to another. FontForge has support for many macintosh font formats. Fontforge also supports <a href="http://dmtr.org/ff.php">scripting via python</a>.</p>
 <p>System specific install procedures<br> <a href="nix-install.html">Unix/Linux</a> - <a href="mac-install.html">Mac</a> - <a href="ms-install.html">MS/Windows</a> - <a href="vms-install.html">VMS</a> - <a href="source-build.html">from source</a> - <a href="uninstall.html">Uninstalling</a></p>
 <p>Companion programs &amp; fontforge scripts<br> <a href="fontlint.html">fontlint man page</a> - <a href="sfddiff.html">sfddiff man page</a> - <a href="fontimage.html">fontimage man page</a> - <a href="acorn2sfd.html">acorn2sfd man page</a> - <a href="fontutils.html">random font utilities</a></p>
