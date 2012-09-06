@@ -1,0 +1,48 @@
+/*!
+ * 
+ *	FONTFORGE SPECIFIC STYLES
+ *
+ */
+ 
+ /* Site wide styles */
+ 
+ .footer {
+ 	background: #fafafa;
+ 	min-height: 100px;
+ 	margin: 20px 0;
+ 	padding: 20px 0;
+ }
+ 
+ .hero-unit h1 {
+ 	font-weight: 900;
+ }
+ 
+ .hero-unit p {
+ 	color: #fff;
+ 	font-weight: bold;
+ 	margin-bottom: 30px;
+ 	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+ 	font-size: 19.5px;
+ 	-webkit-font-smoothing: antialiased;
+ }
+ 
+ .hero-unit .language-switcher {
+ 	float: right;
+ }
+ 
+ .hero-unit .download {
+ 	background: #171717;
+ 	color: #b3b3b3;
+ 	padding: 15px 0;
+ 	-webkit-font-smoothing: antialiased;
+ }
+ 
+ .hero-unit .download p {
+ 	margin-bottom: 0;
+ }
+ 
+ .roundel {
+ 	
+ }
+ 
+ /* Page specific styles */
