@@ -9,20 +9,59 @@
  .footer {
  	background: #fafafa;
  	min-height: 100px;
- 	margin: 20px 0;
- 	padding: 20px 0;
+ 	margin: 60px 0 0 0;
+ 	padding: 0px 0 40px 0;
+ }
+ 
+ .footer .container {
+ 	border-top: 8px solid #181818;
+ 	padding-top: 20px;
+ }
+ 
+ .footer ul {
+ 	margin: 0;
+ }
+ 
+ .footer ul li {
+ 	list-style-type: none;
+ 	padding: 0;
+ 	margin: 0;
+ }
+ 
+ .footer ul li a {
+ 	color: #999;
+ 	font-size: 0.85em;
+ 	font-weight: bold;
+ }
+ 
+ .footer h3 {
+ 	font-weight: normal;
+ 	padding-left: 48px;
+ 	background: url(../img/logo-transparent.png) no-repeat center left;
+ }
+ 
+ .hero-unit {
+ 	padding-top: 20px;
+ }
+ 
+ .hero-unit .screen {
+ 	background: url(../img/home-hero-screenshot.png) no-repeat right bottom;
+ 	min-height: 380px;
  }
  
  .hero-unit h1 {
  	font-weight: 900;
+ 	font-size: 52px;
+ 	line-height: 65px;
+ 	margin-bottom: 12px;
  }
  
  .hero-unit p {
  	color: #fff;
  	font-weight: bold;
- 	margin-bottom: 30px;
+ 	margin-bottom: 40px;
  	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
- 	font-size: 19.5px;
+ 	font-size: 19px;
  	-webkit-font-smoothing: antialiased;
  }
  
@@ -41,8 +80,19 @@
  	margin-bottom: 0;
  }
  
+ .hero-unit .download .btn-large {
+ 	font-size: 20px;
+ 	padding-left: 30px;
+ 	padding-right: 30px;
+ }
+ 
  .roundel {
  	
  }
  
- /* Page specific styles */
+ .mailing-lists ul li {
+ 	display: inline;
+ 	margin-right: 20px;
+ }
+ 
+ 

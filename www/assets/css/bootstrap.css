@@ -487,6 +487,8 @@ p {
   font-size: 22.5px;
   font-weight: 200;
   line-height: 36px;
+  font-weight: bold;
+  color: #4CAA79;
 }
 small {
   font-size: 85%;
@@ -521,7 +523,7 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 12px 0;
+  margin: 24px 0 12px 0;
   font-family: inherit;
   font-weight: bold;
   line-height: 1;
@@ -539,28 +541,38 @@ h6 small {
   color: #999999;
 }
 h1 {
-  font-size: 36px;
-  line-height: 40px;
+  font-size: 45px;
+  line-height: 65px;
+  margin-top: 36px;
 }
 h2 {
   font-size: 30px;
-  line-height: 40px;
+  line-height: 36px;
+  font-weight: 900;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 11px;
+  margin-top: 36px;
 }
 h3 {
-  font-size: 24px;
-  line-height: 40px;
+  font-size: 22px;
+  line-height: 36px;
 }
 h4 {
-  font-size: 18px;
-  line-height: 20px;
+  font-size: 17px;
+  line-height: 24px;
 }
 h5 {
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 15px;
+  line-height: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
 }
 h6 {
-  font-size: 12px;
-  line-height: 20px;
+  font-size: 15px;
+  line-height: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: #999;
 }
 h1 small {
   font-size: 24px;
@@ -651,7 +663,14 @@ abbr.initialism {
 blockquote {
   padding: 0 0 0 15px;
   margin: 0 0 24px;
-  border-left: 5px solid #eeeeee;
+  border-left: 8px solid #5EAB82;
+   margin-bottom: 24px;
+  font-size: 22.5px;
+  font-weight: 200;
+  line-height: 36px;
+  font-weight: bold;
+  color: #4CAA79;
+  -webkit-font-smoothing: antialiased;
 }
 blockquote p {
   margin-bottom: 0;
@@ -663,6 +682,8 @@ blockquote small {
   display: block;
   line-height: 24px;
   color: #999999;
+  font-size: 0.6em;
+  margin-top: 12px;
 }
 blockquote small:before {
   content: '\2014 \00A0';
@@ -2014,7 +2035,7 @@ input[type="button"].btn-block {
 .btn-success.active,
 .btn-info.active,
 .btn-inverse.active {
-  color: rgba(255, 255, 255, 0.75);
+  color: #fff;
 }
 .btn {
   border-color: #c5c5c5;
@@ -2176,7 +2197,7 @@ input[type="button"].btn-block {
   background-color: #24748c \9;
 }
 .btn-inverse {
-  color: #C7C7C7;
+  color: #fff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   background-color: #363636;
   background-image: -moz-linear-gradient(top, #444444, #222222);
@@ -2882,7 +2903,7 @@ input[type="submit"].btn.btn-mini {
 .btn-info .caret,
 .btn-success .caret,
 .btn-inverse .caret {
-  border-top-color: #ffffff;
+  border-top-color: rgba(255,255,255,0.3);
   border-bottom-color: #ffffff;
 }
 .btn-group-vertical {
@@ -3291,7 +3312,7 @@ input[type="submit"].btn.btn-mini {
 }
 .navbar-inverse a.brand  {
 	 color: #fff;
-	 background: url(../img/navbar-logo.png) no-repeat center left;
+	 background: url(../img/logo-transparent.png) no-repeat center left;
 	 padding-left: 42px;
 	 font-size: 1.5em;
 }
@@ -3471,9 +3492,6 @@ input[type="submit"].btn.btn-mini {
   color: #e17638;
   text-decoration: none;
   background-color: #060606;
-  -webkit-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
-  -moz-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
-  box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
 }
 .navbar .btn-navbar {
   display: none;
