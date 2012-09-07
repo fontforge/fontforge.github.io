@@ -70,6 +70,10 @@ a:hover,
 a:active {
   outline: 0;
 }
+a:active {
+  position: relative;
+  top: 1px;
+}
 sub,
 sup {
   position: relative;
@@ -1897,7 +1901,7 @@ legend + .control-group {
   /* IE7 inline-block hack */
 
   *zoom: 1;
-  padding: 4px 14px;
+  padding: 4px 22px;
   margin-bottom: 0;
   font-size: 15px;
   font-weight: bold;
@@ -5847,11 +5851,17 @@ x@media (min-width: 1200px) {
   }
   
   .navbar .nav > li > a { 
+  	-webkit-box-shadow:inset 1px 0px 0 rgba(255,255,255,0.13);
+  	-moz-box-shadow:inset 1px 0px 0 rgba(255,255,255,0.13);
   	box-shadow:inset 1px 0px 0 rgba(255,255,255,0.13); 
   	width: 120px;
   	border-top:6px solid #FFE101;
   	position: relative;
   	padding: 22px 15px 22px;
+  	-webkit-transition: all 0.2s ease-out;  /* Safari 3.2+, Chrome */
+     -moz-transition: all 0.2s ease-out;  /* Firefox 4-15 */
+       -o-transition: all 0.2s ease-out;  /* Opera 10.5Ð12.00 */
+          transition: all 0.2s ease-out;  /* Firefox 16+, Opera 12.50+ */
   }
   
   .navbar .nav > li > a:after {
@@ -5862,6 +5872,7 @@ x@media (min-width: 1200px) {
   	left: 0;
   	right: 0;
   	height: 6px;
+  	opacity:1;
   	background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.2)), color-stop(100%,rgba(0,0,0,0.2))); /* 		Chrome,Safari4+ */
 	background: -webkit-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%); /* Chrome10+,Safari5.1+ */
@@ -5872,10 +5883,12 @@ x@media (min-width: 1200px) {
   }
   
   .navbar .nav > li.active > a:after, .navbar .nav > li > a:hover:after {
-  	display: none;
+  	opacity:0;
   }
 
   .navbar .nav{
+  	-webkit-box-shadow:inset -1px 0px 0 rgba(70,70,70,0.5); 
+  	-moz-box-shadow:inset -1px 0px 0 rgba(70,70,70,0.5); 
   	box-shadow:inset -1px 0px 0 rgba(70,70,70,0.5); 
   }
   
@@ -5883,6 +5896,7 @@ x@media (min-width: 1200px) {
   .navbar .nav > li.docs a {	border-top:6px solid #FFC800;	}
   .navbar .nav > li.about a {	border-top:6px solid #FF7D32;	}
   .navbar .nav > li.help-out a {	border-top:6px solid #5BDC96;	}
+  
   
    .navbar .nav > li.active > a, .navbar .nav > li.active > a:hover {
    		background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%); /* FF3.6+ */
