@@ -17,7 +17,7 @@ Directory Layout
 
 - `build/` Build scripts to convert source pages into html files
 
-- `www/\*.html` html files as served *(Don't change these because they are
+- `www/*.html` html files as served *(Don't change these because they are
   generated from the source files with the build scripts!)*
 
 - `www/img/` images as served
