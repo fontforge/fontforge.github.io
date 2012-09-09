@@ -54,8 +54,9 @@ Become an active user
 ----------------------
 
 Most of FontForge was created by a single person, George Williams, as a
-retirement project from 1999 (?) until 2011. Since then a community of active
-users maintain the project, including:
+retirement project from 2000 until 2011. Read the full story on the
+[history](/about/history.html) page. Since then, a community of active users
+maintain the project, including:
 
 - Can this list be made automatically via github api?
 - Some One
@@ -63,8 +64,8 @@ users maintain the project, including:
 - The Third Man
 - Another Person
 
-Since it is under active development, this is essentially (and eternally) beta
-software. Expect to find bugs. When you do, please become an active user
+FontForge is under active development, so it is essentially (and eternally)
+beta software. Expect to find bugs. When you do, please become an active user
 yourself and take 5 minutes to [report a bug](bugs.html) on Github, so it can
 be fixed.
 
