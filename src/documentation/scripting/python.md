@@ -4,7 +4,7 @@ section=""
 bits=""
 +++
 
-A better version of this page is [here](http://dmtr.org/ff.php).
+A better version of this page is [here](http://dmtr.org/ff.php) which should be taken into account when redesigning the site
 
 Writing python scripts to change fonts in FontForge
 ===================================================
