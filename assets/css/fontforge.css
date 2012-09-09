@@ -33,10 +33,10 @@
  	min-height: 100px;
  	margin: 60px 0 0 0;
  	padding: 0px 0 40px 0;
+ 	border-top: 8px solid #181818;
  }
  
  .footer .container {
- 	border-top: 8px solid #181818;
  	padding-top: 20px;
  }
  
