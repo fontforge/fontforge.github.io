@@ -1,79 +1,93 @@
-Homepage
-========
-
-This should be as to-the-point and clearly designed as possible, I think it needs to have:
-
-- Brief project description
-- Maintainers
-- License (but just a link to a TXT)
-- Mailing list
-- links to information that someone might be looking for right away
-
-The links to download, install, and documentation will already be prominant as a part of the navigation. But we might want to include a link to the python-scripting documentation directly. ALSO: Should we keep a direct download link right on the main page?
 +++
-title="FontForge"
+title="FontForge is a font editor"
 section=""
 bits=""
 +++
 
-Fontforge is a font editor.
+Fontforge is a font editor
 ===========================
 
-It lets you create your own fonts in [many formats](features.html#EditsManyFormats),
-including ttf, otf, svg, and bitmap formats. 
-FontForge is free/libre software: you can redistribute it and/or
-modify it under the terms of a BSD-style license.
+Create and edit fonts in many formats: OpenType, TrueType, AAT, PostScript,
+Multiple Master, CID-Keyed, SVG and many bitmap formats.
 
-Features
---------
+FontForge is libre software: you can share copies freely and make changes
+under a [BSD-style license](/about/project/license.html). You are invited to
+participate in this project, and bug reports, feature suggestions,
+documentation and code contributions are all welcome!
 
+Screenshots
+-------------
 
-**FontForge** -- An outline font editor that lets you create your own
-postscript, truetype, opentype, cid-keyed, multi-master, cff, svg and
-bitmap (bdf, FON, NFNT) fonts, or edit existing ones. Also lets you
-convert one format to another. FontForge has support for many macintosh
-font formats. Fontforge also supports [scripting via python](http://dmtr.org/ff.php).
+- Small image one
+- Small image two
+- Small image three
+- See more
 
-System specific install procedures  
-    [Unix/Linux](nix-install.html)
--   [Mac](mac-install.html)
--   [MS/Windows](ms-install.html)
--   [VMS](vms-install.html)
--   [from source](source-build.html)
--   [Uninstalling](uninstall.html)
-
-Companion programs & fontforge scripts  
-    [fontlint man page](fontlint.html)
--   [sfddiff man page](sfddiff.html)
--   [fontimage man page](fontimage.html)
--   [acorn2sfd man page](acorn2sfd.html)
--   [random font utilities](fontutils.html)
+First Section
+--------------
 
 
-I have no one to do QA for me except users on the net, so this is
-essentially (and eternally) beta software. Expect to find bugs. [Please
-let me know when you do](bugs.html).
+New users can learn a lot from the [tutorials](/tutorial), and the
+[interface](/documentation/interface/) is fully documented.
 
-License
--------
+Font conversion is also simple, see this tutorial on [how to convert font
+formats](/tutorial/convert.html).
 
-See [license](license.html).
+Scripting is an essential part of any font editor, and FontForge has excellent
+[scripting](/documentation/scripting/) support, with both its own scripting
+language and [Python](/documentation/scripting/python.html).
+
+Users can customize FontForge, including customizing hotkeys, visual theme,
+and translation of the interface.
+
+Download
+-------------
+
+- [GNU+Linux](nix-install.html)
+- [OS X](mac-install.html)
+- [Windows](ms-install.html)
+- [VMS](vms-install.html)
+- [Source Code](source-build.html)
+
+
+Become an active user
+----------------------
+
+Most of FontForge was created by a single person, George Williams, as a
+retirement project from 1999 (?) until 2011. Since then a community of active
+users maintain the project, including:
+
+- Can this list be made automatically via github api?
+- Some One
+- Someone Else
+- The Third Man
+- Another Person
+
+Since it is under active development, this is essentially (and eternally) beta
+software. Expect to find bugs. When you do, please become an active user
+yourself and take 5 minutes to [report a bug](bugs.html) on Github, so it can
+be fixed.
 
 Mailing Lists
 -------------
 
-There are currently two mailing lists established for FontForge. 
-You can only post to a list when you are subscribed.
+FontForge has two mailing lists, one for users and one for developers:
 
--   **fontforge-devel** &mdash;
-    [Subscribe](http://sourceforge.net/mailarchive/forum.php?forum=fontforge-devel) -
-    [Archives](http://old.nabble.com/Fontforge---Dev-f1094.html) -
-    [mailto](mailto:fontforge-devel@lists.sourceforge.net)  
-    For reporting bugs, requesting features and discussing development
--   **fontforge-users** &mdash;
-    [Subscribe](http://lists.sourceforge.net/lists/listinfo/fontforge-users) -
-    [Archives](http://old.nabble.com/Fontforge---User-f1095.html) -
-    [mailto](mailto:fontforge-users@lists.sourceforge.net)  
-    General discussion of fontforge
+#### fontforge-devel
 
-**Caveat:** Posting to these mailing lists exposes your email address.
+For reporting bugs, suggesting features and discussing development
+
+- [Subscribe](http://sourceforge.net/mailarchive/forum.php?forum=fontforge-devel) -
+- [Archives](http://old.nabble.com/Fontforge---Dev-f1094.html) -
+- [Email](mailto:fontforge-devel@lists.sourceforge.net)  
+
+#### fontforge-users
+
+General discussions 
+
+- [Subscribe](http://lists.sourceforge.net/lists/listinfo/fontforge-users) -
+- [Archives](http://old.nabble.com/Fontforge---User-f1095.html) -
+- [Email](mailto:fontforge-users@lists.sourceforge.net)  
+
+Note: Subscribing is required to post a message, and posting to these mailing
+lists exposes your email address.
