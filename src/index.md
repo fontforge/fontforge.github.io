@@ -15,17 +15,8 @@ under a [BSD-style license](/about/project/license.html). You are invited to
 participate in this project, and bug reports, feature suggestions,
 documentation and code contributions are all welcome!
 
-Screenshots
--------------
-
-- Small image one
-- Small image two
-- Small image three
-- See more
-
-First Section
+Welcome
 --------------
-
 
 New users can learn a lot from the [tutorials](/tutorial), and the
 [interface](/documentation/interface/) is fully documented.
@@ -68,6 +59,14 @@ FontForge is under active development, so it is essentially (and eternally)
 beta software. Expect to find bugs. When you do, please become an active user
 yourself and take 5 minutes to [report a bug](bugs.html) on Github, so it can
 be fixed.
+
+Screenshots
+-------------
+
+- Small image one
+- Small image two
+- Small image three
+- See more
 
 Mailing Lists
 -------------
