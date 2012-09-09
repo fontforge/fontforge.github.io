@@ -1,3 +1,5 @@
+(We should generate a sitemap that has all the pages and titles, similar to the old nvd.html)
+
 - Fontforge
   - Home
   - Download
@@ -25,4 +27,9 @@
   - Typographic Glossary
   - FAQ
 
-(We should generate a sitemap that has all the pages and titles, similar to the old nvd.html)
+- Companion programs
+-   [random font utilities](fontutils.html)
+-   [fontlint man page](fontlint.html)
+-   [sfddiff man page](sfddiff.html)
+-   [fontimage man page](fontimage.html)
+-   [acorn2sfd man page](acorn2sfd.html)
