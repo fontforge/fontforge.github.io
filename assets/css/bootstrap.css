@@ -493,6 +493,8 @@ p {
   line-height: 36px;
   font-weight: bold;
   color: #4CAA79;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.04em;
 }
 small {
   font-size: 85%;
@@ -548,6 +550,7 @@ h1 {
   font-size: 45px;
   line-height: 65px;
   margin-top: 36px;
+  letter-spacing: -0.03em;
 }
 h2 {
   font-size: 30px;
@@ -1175,7 +1178,7 @@ input[type="color"],
   padding: 4px 6px;
   margin-bottom: 9px;
   font-size: 15px;
-  line-height: 24px;
+  line-height: 17px;
   color: #555555;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -3030,8 +3033,8 @@ input[type="submit"].btn.btn-mini {
 }
 .nav-tabs > li > a,
 .nav-pills > li > a {
-  padding-right: 12px;
-  padding-left: 12px;
+  padding-right: 15px;
+  padding-left: 15px;
   margin-right: 2px;
   line-height: 14px;
 }
@@ -3066,15 +3069,23 @@ input[type="submit"].btn.btn-mini {
   padding-bottom: 8px;
   margin-top: 2px;
   margin-bottom: 2px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
+  margin-right: 10px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  color: #fff;
+  background-color: rgba(0,0,0,0.2);
 }
 .nav-pills > .active > a,
 .nav-pills > .active > a:hover {
-  color: #ffffff;
-  background-color: #d26627;
+  color: #181818;
+  background-color: rgba(255,255,255,0.9);
 }
+
+.nav-pills > li > a:hover {
+	background-color: rgba(0,0,0,0.3);
+}
+
 .nav-stacked > li {
   float: none;
 }
@@ -3745,13 +3756,9 @@ input[type="submit"].btn.btn-mini {
   background-color: #000000 \9;
 }
 .breadcrumb {
-  padding: 8px 15px;
-  margin: 0 0 24px;
+  padding: 0;
+  margin: 15px 0 24px 0;
   list-style: none;
-  background-color: #f5f5f5;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
 }
 .breadcrumb li {
   display: inline-block;
@@ -3760,6 +3767,10 @@ input[type="submit"].btn.btn-mini {
 
   *zoom: 1;
   text-shadow: 0 1px 0 #ffffff;
+}
+
+.breadcrumb li a {
+	color: #444;
 }
 .breadcrumb .divider {
   padding: 0 5px;
@@ -4675,11 +4686,8 @@ a.thumbnail:hover {
   margin-bottom: 24px;
 }
 .accordion-group {
-  margin-bottom: 2px;
-  border: 1px solid #e5e5e5;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
+  margin-bottom: 0px;
+  
 }
 .accordion-heading {
   border-bottom: 0;

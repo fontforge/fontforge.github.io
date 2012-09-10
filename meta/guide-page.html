@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>FontForge</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+	<!-- CSS -->
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,700,900' rel='stylesheet' type='text/css'>
+    <link href="/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="/assets/css/fontforge.css" rel="stylesheet">
+    <!--<link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">-->
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body class="docs">
+
+	<!-- MAIN NAV -->
+	<div class="navbar navbar-inverse">
+    	<div class="navbar-inner">
+    		<div class="container">
+				<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="brand" href="/">FontForge</a>
+				<div class="nav-collapse collapse">
+					<ul class="nav">
+						<li class="download active"><a href="#">Download</a></li>
+						<li class="docs"><a href="#">Docs</a></li>
+						<li class="about"><a href="#">About</a></li>
+						<li class="help-out"><a href="#">Help out</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	<!-- SUBNAV  -->
+	<div class="subnav noise">
+  		<div class="container">
+  		
+  				<!-- LANGUAGE SWITCHER -->
+		  		<div class="btn-group language-switcher">
+		  			<a class="btn btn-inverse dropdown-toggle" data-toggle="dropdown" href="#">
+		    			Language
+					    <span class="caret"></span>
+					</a>
+					  <ul class="dropdown-menu">
+					    <li><a href="#">English</a></li>
+					    <li><a href="#">Spanish</a></li>
+					    <li><a href="#">French</a></li>
+					    <li><a href="#">Japanese</a></li>
+					  </ul>
+				</div>
+  		
+  		
+  			<ul class="nav nav-pills">
+			  <li class="active">
+			    <a href="#">Guide</a>
+			  </li>
+			  <li><a href="#">Devel docs</a></li>
+			  <li><a href="#">Reference</a></li>
+			</ul>
+			
+			
+  		</div>
+	</div>
+	
+
+	<!-- MAIN CONTENT CONTAINER -->
+	<div class="content">
+		<div class="container">
+		
+			<!-- BREADCRUMBS -->
+			<ul class="breadcrumb">
+  				<li><a href="#">Home</a> <span class="divider">&raquo;</span></li>
+  				<li><a href="#">Docs</a> <span class="divider">&raquo;</span></li>
+ 				<li ><a href="#">Guide</a></li><span class="divider">&raquo;</span>
+ 				<li class="active">Building Accented glyphs</li>
+			</ul>
+		
+			<div class="row-fluid">
+	  			
+				<div class="span12">
+				
+					<form class="form-search doc-search-form">
+  						<input type="text" class="input-medium search-query" placeholder="Search the docs...">
+  						<button type="submit" class="btn btn-small">Go</button>
+					</form>
+				
+					<h1 class="page-heading">Building accented glyphs</h1>
+					
+					
+						<div class="accordion table-of-contents" id="accordion1">
+							<div class="row-fluid accordion-group collapse" id="collapseOne">
+								<ul class="link-list span6">
+									<li><a href="#">Font Creation</a></li>
+		   							<li><a href="#">Creating a glyph (tracing outlines)</a></li>
+									<li><a href="#">Create glyph outlines using spiro points</a></li>
+									<li><a href="#">Importing a glyph </a></li>
+									<li><a href="#">Navigating to other glyphs</a></li>
+									<li><a href="#">On to the next glyph (consistent directions)</a></li>
+									<li><a href="#">Consistent serifs & stem widths</a></li>
+									<li><a href="#">Building accented glyphs</a></li>
+									<li><a href="#">Building a ligature</a></li>
+									<li><a href="#">Lookups & features</a></li>
+									<li><a href="#">Examining metrics</a></li>
+								</ul>
+								<ul class="link-list span6">
+									<li><a href="#">Kerning</a></li>
+									<li><a href="#">Glyph variants</a></li>
+									<li><a href="#">Anchoring marks</a></li>
+									<li><a href="#">Conditional features</a></li>
+									<li><a href="#">Checking your font</a></li>
+									<li><a href="#">Generating it</a></li>
+									<li><a href="#">Font Families</a></li>
+									<li><a href="#">Final Summary</a></li>
+									<li><a href="#">Bitmap strikes</a></li>
+									<li><a href="#">Scripting Tutorial</a></li>
+									<li><a href="#">Notes on various scripts</a></li>
+								</ul>
+							</div>
+							<a href="#collapseOne" class="toc-toggle accordion-toggle" data-toggle="collapse" data-parent="#accordion1"><span >Show all Guides</span></a>
+						</div>
+					</div>
+					
+					
+					
+					<p class="lead">Latin, Greek and Cyrillic all have a large complement of accented glyphs. FontForge provides several ways to build accented glyphs out of base glyphs.</p>
+				</div>
+				
+				<div class="row-fluid">
+				
+					<div class="span10 big-text">
+					
+						<p>The most obvious mechanism is simple copy and paste: <a href="editmenu.html#Copy">Copy</a> the letter &quot;A&quot; and <a href="editmenu.html#Paste">Paste</a> it to &quot;&Atilde;&quot; then <a href="editmenu.html#Copy">copy</a> the tilde accent and <a href="editmenu.html#PasteInto">Paste it Into</a> &quot;&Atilde;&quot; (note Paste Into is subtly different from Paste. Paste clears out the glyph before pasting, while Paste Into merges what was in the glyph with the what is in the clipboard). Then you open up &quot;&Atilde;&quot; and position the accent so that it appears properly centered over the A.</p>
+			<p>This mechanism is not particularly efficient, if you change the shape of the letter &quot;A&quot; you will need to regenerate all the accented glyphs built from it. FontForge has the concept of a <a href="overview.html#References">Reference</a> to a glyph. So you can Copy a Reference to &quot;A&quot;, and Paste it, the Copy a Reference to tilde and Paste it Into, and then again adjust the position of the accent over the A.</p>
+			<p>Then if you change the shape of the A the shape of the A in &quot;&Atilde;&quot; will be updated automagically -- as will the width of &quot;&Atilde;&quot;.</p>
+			<p>But FontForge knows that &quot;&Atilde;&quot; is built out of &quot;A&quot; and the tilde accent, and it can easily create your accented glyphs itself by placing the references in &quot;&Atilde;&quot; and then positioning the accent over the &quot;A&quot;. (The Unicode consortium provides a database which lists the components of every accented glyph in Unicode and FontForge uses this).</p>
+			<p>As an example, open the file: tutorial/Ambrosia.sfd, then select all the glyphs at encodings 0xc0-0xff, and then press <a href="elementmenu.html#Accented">Element-&gt;Build-&gt;Build Accented</a> all the accented glyphs will magically appear (there are a few glyphs in this range which are not accented, and they will remain blank).</p>
+			<p>FontForge has a heuristic for positioning accents (most accents are centered over the highest point of the glyph), sometimes this will produce bad results (if the one of the two stems of &quot;u&quot; is slightly taller than the other the accent will be placed over it rather than being centered over the glyph), so you should be prepared to look at your accented glyphs after creating them. You may need to adjust one or two (or you may even want to redesign your base glyphs slightly).</p>
+					<input type="text" placeholder="Hello there">
+					</div>
+				
+				</div>
+		
+				
+	    
+			</div>
+	
+			
+		   			
+			
+		  
+		
+		</div>
+	</div>
+
+	<!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+      
+      	<div class="row-fluid">
+      		
+      		<div class="span3">
+        		<h3 class="brand">FontForge</h3>
+    			<ul>
+    				<li><a href="#">Home</a></li>
+					<li><a href="#">Download</a></li>
+					<li><a href="#">Changelog</a></li>
+					<li><a href="#">Acknowledgements</a></li>
+					<li><a href="#">Help Out</a></li>
+					<li><a href="#">SF Project page</a></li>
+					<li><a href="#">Donate</a></li>
+    			</ul>
+        	</div>
+        	
+        	<div class="span3">
+        		<h4>Features</h4>
+        		<ul>
+    				<li><a href="#">Features</a></li>
+					<li><a href="#">Things missing</a></li>
+					<li><a href="#">Know bugs</a></li>
+    			</ul>
+    			<h4>Reference</h4>
+        		<ul>
+    				<li><a href="#">Bibliography</a></li>
+					<li><a href="#">Related Tools</a></li>
+					<li><a href="#">Libre Font Dev Efforts</a></li>
+    			</ul>
+        	</div>
+        	
+        	<div class="span3">
+        		<h4>Documentation</h4>
+        		<ul>
+    				<li><a href="#">Table of Contents</a></li>
+					<li><a href="#">Install</a></li>
+					<li><a href="#">Get started</a></li>
+					<li><a href="#">Typographic Glossary</a></li>
+					<li><a href="#">FAQ</a></li>
+    			</ul>
+        	</div>
+        	
+        	<div class="span3">
+				<div class="roundel">
+					<h6>Volunteer</h6>
+					<h3>Help out!</h3>
+					<a href="#">Become a FontForge volunteer  &raquo;</a>
+				</div>
+			</div>
+			
+      	</div>
+    </footer>
+
+
+
+    
+	<!-- JAVASCRIPT -->
+	<script src="/assets/js/jquery.js"></script>
+    <script src="/assets/js/bootstrap.js"></script>
+    <script src="/assets/js/fontforge.js"></script>
+
+	<!-- CHROME FRAME -->
+	<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+   
+  </body>
+</html>
