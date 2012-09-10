@@ -46,8 +46,8 @@ Become an active user
 
 Most of FontForge was created by a single person, George Williams, as a
 retirement project from 2000 until 2011. Read the full story on the
-[history](/about/history.html) page. Since then, a community of active users
-maintain the project, including:
+[history](/about/history.html) page. Currently a community of active users
+maintains the project, including:
 
 - Can this list be made automatically via github api?
 - Some One
