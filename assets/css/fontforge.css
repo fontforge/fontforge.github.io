@@ -43,7 +43,6 @@
  
  .footer .container {
  	padding-top: 20px;
- 	border-top: 8px solid #181818;
  }
  
  .footer ul {
@@ -270,7 +269,7 @@
  }
  
  .table-of-contents .toc-toggle span {
- 	background: url(../img/toc-icon-open.png) no-repeat left center;
+ 	background: url(../img/toc-icon.png) no-repeat left center;
  	padding-left: 30px;
  	letter-spacing: 0.3em;
  	font-size: 13px;
