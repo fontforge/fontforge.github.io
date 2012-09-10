@@ -37,7 +37,11 @@
  }
  
  .footer .container {
+<<<<<<< HEAD:assets/css/fontforge.css
  	padding-top: 20px;
+=======
+ 	border-top: 8px solid #181818;
+>>>>>>> CSS for home page, not responsive just yet.:www/assets/css/fontforge.css
  }
  
  .footer ul {
@@ -56,10 +60,14 @@
  	font-weight: bold;
  }
  
- .footer h3 {
+ .footer h3.brand {
  	font-weight: normal;
  	padding-left: 48px;
  	background: url(../img/logo-transparent.png) no-repeat center left;
+ }
+ 
+ .footer .roundel {
+ 	margin-top: 20px;
  }
  
  
@@ -207,20 +215,195 @@
  	border-radius: 110px;
  	background: #fff;
  	text-align: center;
- 	-webkit-box-shadow: 2px 2px 4px rgba(0,0,0,0.25);
-  	-moz-box-shadow: 2px 2px 4px rgba(0,0,0,0.25);
-  	box-shadow: 2px 2px 4px rgba(0,0,0,0.25);
+ 	-webkit-box-shadow: 1px 1px 5px rgba(0,0,0,0.35);
+  	-moz-box-shadow: 1px 1px 5px rgba(0,0,0,0.35);
+  	box-shadow: 1px 1px 5px rgba(0,0,0,0.35);
   	padding: 40px 20px 0 20px;
+  	position: relative;
  }
  
- .roundel h2,.roundel h3,.roundel h4,.roundel h5{
+ .roundel:before {
+ 	content: " ";
+ 	display: block;
+ 	width: 200px;
+ 	height: 200px;
+ 	position: absolute;
+ 	top:10px;
+ 	left: 10px;
+ 	-webkit-border-radius: 110px;
+ 	-moz-border-radius: 110px;
+ 	border-radius: 110px;
+ 	background: transparent;
+ 	border: 1px solid #eaeaea;
+ 	z-index: 1;  	
+ }
+ 
+  .roundel:after { 
+ 	content: " ";
+ 	display: block;
+ 	width: 190px;
+ 	height: 190px;
+ 	position: absolute;
+ 	top:15px;
+ 	left: 15px;
+ 	-webkit-border-radius: 110px;
+ 	-moz-border-radius: 110px;
+ 	border-radius: 110px;
+ 	background: transparent;
+ 	border: 1px solid #eaeaea;
+ 	z-index: 1;
+ }
+ 
+ .roundel h2,.roundel h3,.roundel h4,.roundel h5, .roundel h6,.roundel p,.roundel a{
  	margin-top: 6px;
  	margin-bottom: 6px;
+ 	position: relative;
+ 	z-index: 50;
  } 
+ 
+ .roundel h6 {
+ 	font-size: 0.8em;
+ }
+ 
+ .roundel h3 {
+ 	font-size: 2.2em;
+ 	line-height: 1.2;
+ }
+
  
  .mailing-lists ul li {
  	display: inline;
  	margin-right: 20px;
  }
+ 
+ .install-procedures {
+ 	margin-bottom: 32px;
+ }
+ 
+ .install-procedures h2 {
+ 	text-align: center;
+ 	border: none;
+ 	background: url(../img/thick-rule.gif) repeat-x 0px 20px;
+ }
+ 
+ .install-procedures h2 span {
+  	background: #E9E8E6;
+  	padding: 0 25px 0 25px;
+  	display: inline-block;
+  }
+  
+.install-procedures ul {
+	padding: 0;
+	margin: 0;
+}
+ 
+.install-procedures li a {
+ 	background: #FBE635 url(../img/systems-sprite.png) no-repeat;
+ 	display: block;
+ 	width: 126px;
+ 	height: 106px;
+ 	text-indent: -9999px;
+ 	-webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.25);
+  	-moz-box-shadow: 0px 0px 3px rgba(0,0,0,0.25);
+  	box-shadow: 0px 0px 3px rgba(0,0,0,0.25);
+  	border: 7px solid #fff;
+ }
+ 
+.install-procedures li a.linux { background: #FBE635 url(../img/systems-sprite.png) no-repeat 30px 13px;	}
+.install-procedures li a.mac { background: #F6C20B url(../img/systems-sprite.png) no-repeat -98px 13px;	}
+.install-procedures li a.windows { background: #EA8142 url(../img/systems-sprite.png) no-repeat -212px 13px;	}
+.install-procedures li a.vms { background: #5FC78F url(../img/systems-sprite.png) no-repeat -332px 13px;	}
+.install-procedures li a.source { background: #FBE635 url(../img/systems-sprite.png) no-repeat -453px 15px;	}
+.install-procedures li a.uninstalling { background: #F6C20B url(../img/systems-sprite.png) no-repeat -575px 15px;	}
+ 
+ .install-procedures li a:hover {
+ 	-webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.65);
+  	-moz-box-shadow: 0px 0px 3px rgba(0,0,0,0.65);
+  	box-shadow: 0px 0px 3px rgba(0,0,0,0.65);
+ }
+ 
+ .companion-programs h2 {
+ 	border-bottom: 8px solid #181818;
+ }
+ 
+ .companion-programs h2 span {
+ 	font-size: 0.75em;
+ 	display: block;
+ 	padding-top: 8px;
+ }
+ 
+ .companion-programs p {
+ 	padding-right: 30px;
+ }
+ 
+ .link-list {
+ 	margin-left: 0;
+ 	list-style-type: none;
+ }
+ 
+ .link-list li {
+ 	
+ }
+ 
+ .link-list li a {
+ 	border-bottom: 1px solid #fff;
+ 	display: block;
+ 	background: url(../img/link-list-arrow.png) no-repeat right center;
+ 	margin-bottom: 7px;
+ 	padding-bottom: 3px;
+ }
+ 
+ .link-list li:last-child a {
+ 	border: none;
+ }
+ 
+ .mailing-lists {
+ 	background: #fff;
+ 	margin-top: 36px;
+ 	-webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.25);
+  	-moz-box-shadow: 0px 0px 3px rgba(0,0,0,0.25);
+  	box-shadow: 0px 0px 3px rgba(0,0,0,0.25);
+
+ }
+ 
+ .mailing-lists .wrapper {
+ 	padding: 0px 25px 30px 25px;
+ }
+ 
+ .mailing-lists h2 {
+ 	border-bottom: none;
+ 	padding-bottom: 1px;
+ 	margin-top: 24px;
+ }
+ 
+ .mailing-lists h3 {
+ 	margin-top: 13px;
+ 	margin-bottom: 0;
+ }
+ 
+ .mailing-lists h3 span {
+	font-size: 0.6em; 
+	padding-left: 10px;
+ }
+
+ 
+ /* page specific styles */
+ 
+ .home .license .roundel {
+ 	margin-top: 30px;
+ }
+ 
+ .home .license .roundel h3 span {
+ 	font-size: 0.7em;
+ 	display: block;
+ }
+ 
+ .home .features h1 {
+ 	background: url(../img/home-ff-icon.png) no-repeat;
+ 	padding-left: 80px;
+ 	padding-top: 2px;
+ }
+ 
+ 
  
  
