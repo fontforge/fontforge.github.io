@@ -356,6 +356,10 @@ figcaption {
 	margin-top: 8px;
 }
 
+.image-center {
+	text-align: center;
+}
+
 .image-right {
 	float: right;
 	margin-right: -160px;
