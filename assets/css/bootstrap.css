@@ -2010,7 +2010,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dfe3e8', end
   margin-top: 2px;
 }
 .btn-small {
-  padding: 3px 9px;
+  padding: 3px 18px;
   font-size: 13px;
   line-height: 22px;
 }
@@ -2018,7 +2018,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dfe3e8', end
   margin-top: 0;
 }
 .btn-mini {
-  padding: 2px 6px;
+  padding: 2px 12px;
   font-size: 12px;
   line-height: 21px;
 }
