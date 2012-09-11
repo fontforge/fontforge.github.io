@@ -213,7 +213,7 @@
 	background: rgba(0,0,0,0.1);
 	margin: 10px 0 0 0;
 	font-size: 13px;
-	font-weight: bold;
+	font-weight: normal;
 }
  
 .breadcrumb {
@@ -222,11 +222,12 @@
  
 .breadcrumb li {
 	text-shadow: none;
-	color: rgba(0,0,0,0.4);
+	color: rgba(255,255,255,0.9);
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
 }
  
 .breadcrumb li a {
-	color: rgba(0,0,0,0.4);
+	color: rgba(255,255,255,0.9);
 }
 
 .breadcrumb li a .icon-home {
@@ -236,12 +237,12 @@
 }
  
 .breadcrumb .divider {
-	color: rgba(0,0,0,0.1);
+	color: rgba(255,255,255,0.5);
 }
  
 .breadcrumb li.active {
-	text-shadow: none;
-	color: rgba(0,0,0,0.3);
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+	color: rgba(255,255,255,1.0);
 }
  
 .breadcrumbs .doc-search-form {
@@ -252,20 +253,21 @@
 .breadcrumbs .doc-search-form .input-medium {
 	background: rgba(255,255,255,0.5);
 	border: none;
-	color: rgba(0,0,0,0.2);
+	color: rgba(255,255,255,0.9);
 	padding: 2px 15px 3px 15px;
 	margin-right: 5px;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
 }
  
 .breadcrumbs .doc-search-form .btn {
 	background: rgba(0,0,0,0.2);
 	border: none;
-	color: rgba(255,255,255,0.5);
+	color: rgba(255,255,255,0.9);
 	text-shadow: none;
 }
  
 .breadcrumbs .doc-search-form .btn:hover {
-	background: rgba(0,0,0,0.3);
+	background: rgba(0,0,0,0.7);
 	box-shadow: none;
 }
 
@@ -439,7 +441,7 @@ figcaption {
 	color: #666666;
 	-webkit-transition: all 0.6s ease-out;  /* Safari 3.2+, Chrome */
      -moz-transition: all 0.6s ease-out;  /* Firefox 4-15 */
-       -o-transition: all 0.6s ease-out;  /* Opera 10.5-12.00 */
+       -o-transition: all 0.6s ease-out;  /* Opera 10.5Ð12.00 */
           transition: all 0.6s ease-out;  /* Firefox 16+, Opera 12.50+ */
     cursor: pointer;
 }
