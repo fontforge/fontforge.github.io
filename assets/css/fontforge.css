@@ -229,7 +229,7 @@
 .breadcrumb li a {
 	color: rgba(255,255,255,0.9);
 }
-
+ 
 .breadcrumb li a .icon-home {
 	opacity: 0.3;
 	padding-right: 6px;
@@ -239,12 +239,12 @@
 .breadcrumb .divider {
 	color: rgba(255,255,255,0.5);
 }
- 
+
 .breadcrumb li.active {
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
 	color: rgba(255,255,255,1.0);
 }
- 
+
 .breadcrumbs .doc-search-form {
 	float: right;
 	margin: 10px 0 0 0;
@@ -366,7 +366,7 @@ figcaption {
 
 .thumb-grid {
 	overflow: hidden;
-	margin-bottom: 12px;
+	margin-bottom: 36px;
 	margin-top: 24px;
 }
 
