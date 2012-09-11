@@ -59,6 +59,10 @@
 	font-size: 17px;
 	line-height: 30px;
 	margin-bottom: 24px;
+	-webkit-hyphens:auto;
+	-moz-hyphens:auto;
+	-ms-hyphens:auto;
+	hyphens:auto;
 }
  
 
@@ -326,29 +330,61 @@
 	padding-top: 13px;
 }
 
+/* Images */
+
+figure {
+	margin: 0 0 24px 0;
+}
+
+figure img {
+	margin-bottom: 12px;
+}
+
+figcaption {
+	font-size: 13px;
+	text-align: center;
+}
+
+.image-right, .image-left {
+	margin-top: 8px;
+}
+
+.image-right {
+	float: right;
+	margin-right: -160px;
+	margin-left:50px; 
+}
+
+.image-left {
+	float: left;
+	margin-right: 50px;
+}
+
 /* Thumb grid */
 
 .thumb-grid {
 	overflow: hidden;
-	margin-bottom: 36px;
+	margin-bottom: 12px;
+	margin-top: 24px;
 }
 
 .thumb-grid figure {
 	margin: 0;
 	float: left;
+	width: 23%;
+	padding-right: 2%;
+}
+
+.thumb-grid.five-per-row figure {
 	width: 18%;
 	padding-right: 2%;
 }
 
-.thumb-grid figure img {
-	margin-bottom: 18px;
-}
-
 .thumb-grid figcaption {
-	font-size: 13px;
+	text-align: left;
 }
 
-/* List of links style */
+/* Introduction style */
 
 .intro {
 	margin: 20px 0 20px 0;
