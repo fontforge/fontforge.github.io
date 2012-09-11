@@ -622,7 +622,17 @@ figcaption {
 .companion-programs p {
 	padding-right: 30px;
 }
- 
+
+
+/* White module */
+
+.white-module {
+	background: #fff;
+	-webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.25);
+	-moz-box-shadow: 0px 0px 3px rgba(0,0,0,0.25);
+	box-shadow: 0px 0px 3px rgba(0,0,0,0.25);
+	padding: 0px 25px 30px 25px;
+}
 
 /* Mailing lists module */ 
 
