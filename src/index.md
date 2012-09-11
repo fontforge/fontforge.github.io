@@ -4,7 +4,10 @@ section=""
 bits=""
 +++
 
-Fontforge is a font editor
+FontForge
+
+
+ is a font editor
 ===========================
 
 Create and edit fonts in many formats: OpenType, TrueType, AAT, PostScript,
@@ -81,7 +84,10 @@ FontForge has two mailing lists, one for users and one for developers:
 General discussions 
 
 - [Subscribe](http://lists.sourceforge.net/lists/listinfo/fontforge-users) -
-- [Archives](http://old.nabble.com/Fontforge---User-f1095.html) -
+- [Archives](http://old.nabble.com/FontForge
+
+
+---User-f1095.html) -
 - [Email](mailto:fontforge-users@lists.sourceforge.net)  
 
 #### Developers fontforge-devel
@@ -89,8 +95,14 @@ General discussions
 For reporting bugs, suggesting features and discussing development
 
 - [Subscribe](http://sourceforge.net/mailarchive/forum.php?forum=fontforge-devel) -
-- [Archives](http://old.nabble.com/Fontforge---Dev-f1094.html) -
+- [Archives](http://old.nabble.com/FontForge
+
+
+---Dev-f1094.html) -
 - [Email](mailto:fontforge-devel@lists.sourceforge.net)  
+
+
+
 
 
 Note: Subscribing is required to post a message, and posting to these mailing
