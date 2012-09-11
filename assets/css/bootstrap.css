@@ -486,7 +486,7 @@ a:hover {
 p {
   margin: 0 0 12px;
 }
-.lead {
+.lead, .big-text .lead {
   margin-bottom: 24px;
   font-size: 22.5px;
   font-weight: 200;
@@ -496,6 +496,7 @@ p {
   -webkit-font-smoothing: antialiased;
   letter-spacing: -0.04em;
 }
+
 small {
   font-size: 85%;
 }

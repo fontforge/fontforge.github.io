@@ -208,6 +208,8 @@
 .breadcrumbs {
 	background: rgba(0,0,0,0.1);
 	margin: 10px 0 0 0;
+	font-size: 13px;
+	font-weight: bold;
 }
  
 .breadcrumb {
@@ -221,6 +223,12 @@
  
 .breadcrumb li a {
 	color: rgba(0,0,0,0.4);
+}
+
+.breadcrumb li a .icon-home {
+	opacity: 0.3;
+	padding-right: 6px;
+	margin-top: 0px;
 }
  
 .breadcrumb .divider {
