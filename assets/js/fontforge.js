@@ -9,3 +9,5 @@ $(".table-of-contents").on('shown', function () {
 $(".table-of-contents").on('hidden', function () {
   $('.toc-toggle span').text('Show all guides');
 })
+
+$(".video-container").fitVids();
