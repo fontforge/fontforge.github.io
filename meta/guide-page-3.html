@@ -14,7 +14,7 @@
     <!--<link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">-->
 
     <!--[if lt IE 9]>
-      <script src="/www/img/http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
   </head>
@@ -108,7 +108,7 @@
 				<div class="span12">
 				
 					<!-- PAGE HEADING -->
-					<h1 class="page-heading">Lookups &amp; features</h1>
+					<h1 class="page-heading">Creating a ligature</h1>
 					
 					<!-- TOP TABLE OF CONTENTS -->
 					<div class="accordion table-of-contents" id="accordion1">
@@ -122,8 +122,8 @@
 								<li><a href="#">On to the next glyph (consistent directions)</a></li>
 								<li><a href="#">Consistent serifs & stem widths</a></li>
 								<li><a href="#">Building accented glyphs</a></li>
-								<li><a href="#">Building a ligature</a></li>
-								<li class="active" ><a href="#">Lookups & features</a></li>
+								<li class="active"><a href="#">Building a ligature</a></li>
+								<li><a href="#">Lookups & features</a></li>
 								<li><a href="#">Examining metrics</a></li>
 							</ul>
 							<ul class="link-list span6">
@@ -156,103 +156,101 @@
 			<div class="row-fluid big-text">
 				<div class="span10">
 				
-					<p class="lead">Unfortunately simply creating a ligature glyph is not enough. 
-					You must also include information in the font to say that the glyph is a ligature, and to say 
-					what components it is built from.</p>
+					<p class="lead">Unicode contains a number of ligature glyphs (in latin we have: &#198;, OE, fi, etc. while in arabic there are hundreds). Again Unicode provides a database listing the components of each standard ligature.</p>
 					<p>
-					
-					<figure class="image-right">
-					  <img src="/assets/img/example-content/fontinfo-lookups.png"  >
-					  <figcaption>Click to enlarge image</figcaption>
-					</figure>
-					 
+					Unicode contains a number of ligature glyphs (in latin we have: &AElig;,
+					OE, fi, etc. while in arabic there are hundreds). Again Unicode provides
+					a database listing the components of each standard ligature.
 					<p>
-					In OpenType this is handled by lookups and features. A lookup is a collection
-					of tables in the font which contain transformation information. A feature
-					is a collection of lookups and is a provides semantic information to the
-					world outside the font about what that set of lookups can be expected to
-					do. So in the example above the lookup would contain the information that
-					"f" + "f" + "i" should turn into "ffi", while the feature would say that
-					this is a standard ligature for the latin script.</p>
-					<p>
-					So the first time you create a ligature glyph you will need to create a lookup
-					(and a lookup subtable) in which the information for that glyph will reside.
-					Any subsequent ligatures can probably share the same lookup and subtable.</p>
-					<p>
-					(This may seem like overkill for latin ligatures, and perhaps it is, bt the
-					complexity is needed for more complex writing systems).</p>
-					<p>
-					You would open the Lookups pane of the
-					<a href="fontinfo.html#Lookups">Element-&gt;FontInfo</a> command and press
-					the <code>[Add Lookup] </code>button. This will give you a new dialog in
-					which you can fill in the attributes of your new lookup.</p>
-					  
-					  
-					<figure class="image-left">
-						<img src="/www/img/AddLookup-Liga.png"  >
-					</figure>
-					
-					<p>You must
-					first choose the lookup type. For ligatures this should be "Ligature
-					Substitution". You may then bind this lookup to a feature, script and language
-					set. The "ffi" ligature is a standard ligature in latin typesetting so it
-					should be bound to the 'liga' tag, and the 'latn' script. (If you click on
-					the little box to the right of "liga" you will get a pulldown list of the
-					so-called "friendly names" for the features. "liga" corresponds to "Standard
-					Ligatures").</p>
-					
-					<p>
-					The language is a bit tricky. This ligature should probably be active for
-					all languages except Turkish that use the latin script (Turkish uses a dotlessi
-					and it is not clear whether the "i" in the "fi" and "ffi" ligatures has a
-					dot over it). So we want to list all languages but Turkish. That's a lot
-					of languages. The convention instead is that if a language isn't mentioned
-					explicitly anywhere in the font then that language will be treated as the
-					"default" language. So to make this feature not be active for Turkish, we'd
-					have to create some other feature which specifically mentioned Turkish in
-					its language list.</p>
-					
-					<p>
-					Underneath the feature list is a set of flags. In latin ligatures none of
-					these flags need be set. In Arabic one might want to set both "Right to Left"
-					and "Ignore Combining Marks".</p>
-					
-					<p>
-					Next the lookup must be given a name. This name is for your use and will
-					never be seen in the real font. The name must be distinct from the name of
-					any other lookup however.</p>
-					
-					<p>
-					Finally you get to decide whether you want the ligatures in this lookup to
-					be stored in afm files.</p>
-					
-	
-					<figure class="image-right">
-						<img src="/www/img/subtable-ffi.png"  >
-					</figure>
-					
-					<p>Once you
-					have created a lookup, you must create a subtable in that lookup. Select
-					the lookup line (in the Lookups pane of Font Info) and press <code>[Add
-					Subtable]</code>. This is a fairly simple dialog... you simply provide a
-					name for the sub-table, and then another dialog will pop up and you will
-					(finally) be able to store your ligature information.</p>
-					
-					<p>
-					CAVEAT: OpenType engines
-					will only apply features which they believe are appropriate for the current
-					script (in Latin scripts, Uniscribe will apply 'liga'). Even worse, some
-					applications may choose not to apply any features ever (Word does not do
-					ligatures in latin -- though this may have changed with the 2007 release?).
-					<a href="http://www.microsoft.com/typography/specs/default.htm">Microsoft
-					tries to document </a>what features they apply for which scripts in Uniscribe,
-					but that isn't very helpful since Word and Office have quite different behavior
-					than the default.</p>
-					  
+					FontForge cannot create a nice ligature for you, but what it can do is put
+					all the components of the ligature into the glyph with
+					<a href="elementmenu.html#Accented">Element-&gt;Build-&gt;Build Composite</a>.
+					This makes it slightly easier (at least in latin) to design a ligature.
 				</div>
 			</div>
 			
+			<!-- CONTENT ROW WIDER FOR IMAGES -->
+			<div class="row-fluid">
+				<div class="span12">
+					<div class="thumb-grid five-per-row">
+					
+						<figure>
+							<img src="/www/img/ffi-refs.png" alt="ffi ligature as references" >
+							<figcaption>Use the <a href="elementmenu.html#CharInfo">Element -&gt; Glyph Info</a>
+							dialog to name the glyph and mark it as a ligature. Then use
+							<a href="elementmenu.html#Accented">Element -&gt; Build -&gt; Build
+							Composite</a> to insert references to the ligature components.<figcaption>
+						</figure>
+						
+						<figure>
+							<img src="/www/img/ffi-unlink.png"  alt="ffi after unlinking references">
+							<figcaption>Use the <a href="editmenu.html#Unlink">Edit-&gt; Unlink References</a>
+							command to turn the references into a set of contours.<figcaption>
+						</figure>
+						
+						<figure>
+							<img src="/www/img/ffi-moved.png"  alt="ffi after lowering first f">	
+							<figcaption>Adjust the components so that they will look better together. Here the
+							stem of the first f has been lowered.<figcaption>
+						</figure>
+						
+						<figure>
+							<img src="/www/img/ffi-rmoverlap.png" alt="ffi after doing remove overlap" >
+							<figcaption>Use the <a href="elementmenu.html#Remove">Element -&gt; Remove Overlap</a>
+							command to clean up the glyph.</figcaption>
+						</figure>
+						
+						<figure>
+							<img src="/www/img/ffi-caret.png" alt="ffi after adjusting ligature carets" >
+							<figcaption>Finally drag the ligature caret lines from the origin to more appropriate
+							places between the components.</figcaption>
+						</figure>
+						
+					</div>
+				</div>
+			</div>
 			
+			<!-- CONTENT ROW WITH BIG TEXT -->
+			<div class="row-fluid big-text">
+				<div class="span10">  
+					    
+					<p>
+					Some word processors will allow the editing caret to be placed inside a ligature
+					(with a caret position between each component of the ligature). This means
+					that the user of that word processor does not need to know s/he is dealing
+					with a ligature and sees behavior very similar to what s/he would see if
+					the components were present. But if the word processor is to be able to do
+					this it must have some information from the font designer giving the locations
+					of appropriate caret positions. As soon as FontForge notices that a glyph
+					is a ligature it will insert in it enough caret location lines to fit between
+					the ligature's components. FontForge places these on the origin, if you leave
+					them on the origin FontForge will ignore them. But once you have built your
+					ligature you might want to move the pointer tool over to the origin line,
+					press the button and drag one of the caret lines to its correct location.
+					(Only Apple Advanced Typography and OpenType support this).
+					</p>
+					<p>
+					There are a good many ligatures needed for the indic scripts, but Unicode
+					does not provide an encoding for them. If you wish to build a ligature that
+					is not part of Unicode you may do so. First <a href="faq.html#new-name">add
+					an unencoded glyph to your font</a> (or if your font is a Unicode font, you
+					could use a code point in the private use area), and name the glyph. The
+					name is important, if you name it correctly FontForge will be able to figure
+					out that it is a ligature and what its components are. If you want to build
+					a ligature out of the glyphs "longs", "longs" and "l" then name it
+					"longs_longs_l", if you want to build a ligature out of Unicode 0D15, 0D4D
+					and 0D15 then name it "uni0D15_uni0D4D_uni0D15".
+					</p>
+					<p>
+					Once you have named your ligature, and inserted its components (with Build
+					Composite), you probably want to open the glyph,
+					<a href="editmenu.html#Unlink">Unlink your References</a> and edit them to
+					make a pleasing shape (as above).
+					</p>
+					
+				</div>
+			</div>
+			<!-- END CONTENT ROW -->
 		
 		
 		
@@ -282,8 +280,8 @@
 								<li><a href="#">On to the next glyph (consistent directions)</a></li>
 								<li><a href="#">Consistent serifs & stem widths</a></li>
 								<li><a href="#">Building accented glyphs</a></li>
-								<li><a href="#">Building a ligature</a></li>
-								<li class="active"><a href="#">Lookups & features</a></li>
+								<li class="active"><a href="#">Building a ligature</a></li>
+								<li><a href="#">Lookups & features</a></li>
 								<li><a href="#">Examining metrics</a></li>
 							</ul>
 							<ul class="link-list span6">
