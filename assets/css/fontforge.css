@@ -326,6 +326,27 @@
 	padding-top: 13px;
 }
 
+/* Thumb grid */
+
+.thumb-grid {
+	overflow: hidden;
+	margin-bottom: 36px;
+}
+
+.thumb-grid figure {
+	margin: 0;
+	float: left;
+	width: 18%;
+	padding-right: 2%;
+}
+
+.thumb-grid figure img {
+	margin-bottom: 18px;
+}
+
+.thumb-grid figcaption {
+	font-size: 13px;
+}
 
 /* List of links style */
 
