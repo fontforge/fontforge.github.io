@@ -430,14 +430,45 @@ figcaption {
 	padding-top: 0px;
 	margin-bottom: 24px;
 }
- 
-.table-of-contents .toc-toggle {
+
+.toc-controls {
+	background: url(../img/toc-icon.png) no-repeat left center;
 	background: #fff;
 	display: block;
+	
+	position: relative;
+	min-height: 40px;
+}
+
+.toc-controls .prev, .toc-controls .next {
+	padding: 8px 1% 8px 1%;
+}
+
+.toc-controls .prev {
+	float: left;
+	width: 33%;
+	font-size: 14px;
+}
+
+.toc-controls .next {
+	float: right;
+	width: 33%;
+	text-align: right;
+	font-size: 14px;
+}
+
+ 
+.table-of-contents .toc-toggle, .table-of-contents .toc-toggle:active {
 	text-align: center;
 	padding: 8px 0 8px 0;
-	text-transform: uppercase;	
+	text-transform: uppercase;
+	float: left;
+	font-size: 14px;
+	position: absolute;
+	right: 0;
+	left: 0;
 }
+
  
  .table-of-contents .toc-toggle span {
 	background: url(../img/toc-icon.png) no-repeat left center;
@@ -453,7 +484,7 @@ figcaption {
      -moz-transition: all 0.6s ease-out;  /* Firefox 4-15 */
        -o-transition: all 0.6s ease-out;  /* Opera 10.5-12.00 */
           transition: all 0.6s ease-out;  /* Firefox 16+, Opera 12.50+ */
-    cursor: pointer;
+    
 }
 
 .table-of-contents li a:hover,
