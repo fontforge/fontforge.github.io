@@ -578,8 +578,19 @@ figcaption {
 	line-height: 1.2;
 }
 
+/* Black Bar Titles */
 
-/* Install Procedures */
+h2.blackbar {
+	text-align: center;
+	border: none;
+	background: url(../img/thick-rule.gif) repeat-x 0px 20px;
+}
+ 
+h2.blackbar span {
+	background: #E9E8E6;
+	padding: 0 25px 0 25px;
+	display: inline-block;
+ }
  
 .install-procedures {
 	margin-bottom: 32px;
