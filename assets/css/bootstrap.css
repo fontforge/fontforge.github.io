@@ -5735,7 +5735,6 @@ x@media (min-width: 1200px) {
     padding: 5px;
   }
   .navbar .container {
-    width: auto;
     padding: 0;
   }
   .navbar .brand {
@@ -5873,10 +5872,10 @@ x@media (min-width: 1200px) {
   	border-top:6px solid #FFE101;
   	position: relative;
   	padding: 22px 15px 22px;
-  	-webkit-transition: all 0.2s ease-out;  /* Safari 3.2+, Chrome */
-     -moz-transition: all 0.2s ease-out;  /* Firefox 4-15 */
-       -o-transition: all 0.2s ease-out;  /* Opera 10.5-12.00 */
-          transition: all 0.2s ease-out;  /* Firefox 16+, Opera 12.50+ */
+  	-webkit-transition: color 0.2s ease-out;  /* Safari 3.2+, Chrome */
+     -moz-transition: color 0.2s ease-out;  /* Firefox 4-15 */
+       -o-transition: color 0.2s ease-out;  /* Opera 10.5-12.00 */
+          transition: color 0.2s ease-out;  /* Firefox 16+, Opera 12.50+ */
   }
   
   .navbar .nav > li > a:after {
