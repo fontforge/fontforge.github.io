@@ -628,27 +628,23 @@ h2.blackbar span {
 	box-shadow: 0px 0px 3px rgba(0,0,0,0.65);
 }
 
-	text-align: center;
-	border: none;
-	background: url(../img/thick-rule.gif) repeat-x 0px 20px;
+
+/* Block Row 3 items */
+ 
+.blockrow3 {
+	margin-bottom: 32px;
 }
  
-.install-procedures h2 span {
-	background: #E9E8E6;
-	padding: 0 25px 0 25px;
-	display: inline-block;
- }
-  
-.install-procedures ul {
+.blockrow3 ul {
 	padding: 0;
 	margin: 0;
 }
  
-.install-procedures li a {
+.blockrow3 li a {
 	background: #FBE635 url(../img/systems-sprite.png) no-repeat;
 	display: block;
-	width: 126px;
-	height: 106px;
+	width: 252px;
+	height: 212px;
 	text-indent: -9999px;
 	-webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.25);
 	-moz-box-shadow: 0px 0px 3px rgba(0,0,0,0.25);
@@ -656,14 +652,11 @@ h2.blackbar span {
 	border: 7px solid #fff;
 }
  
-.install-procedures li a.linux { background: #FBE635 url(../img/systems-sprite.png) no-repeat 30px 13px;	}
-.install-procedures li a.mac { background: #F6C20B url(../img/systems-sprite.png) no-repeat -98px 13px;	}
-.install-procedures li a.windows { background: #EA8142 url(../img/systems-sprite.png) no-repeat -212px 13px;	}
-.install-procedures li a.vms { background: #5FC78F url(../img/systems-sprite.png) no-repeat -332px 13px;	}
-.install-procedures li a.source { background: #FBE635 url(../img/systems-sprite.png) no-repeat -453px 15px;	}
-.install-procedures li a.uninstalling { background: #F6C20B url(../img/systems-sprite.png) no-repeat -575px 15px;	}
+.blockrow3 li a.orange { background: #F6C20B;}
+.blockrow3 li a.red { background: #EA8142;}
+.blockrow3 li a.green { background: #5FC78F;}
  
-.install-procedures li a:hover {
+.blockrow3 li a:hover {
 	-webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.65);
 	-moz-box-shadow: 0px 0px 3px rgba(0,0,0,0.65);
 	box-shadow: 0px 0px 3px rgba(0,0,0,0.65);
