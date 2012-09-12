@@ -561,6 +561,10 @@ h2 {
   padding-bottom: 11px;
   margin-top: 36px;
 }
+h2.heavy {
+  border-bottom: 8px solid #1a1a1a;
+  margin-bottom: 24px;
+}
 h3 {
   font-size: 22px;
   line-height: 36px;

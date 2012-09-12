@@ -387,6 +387,54 @@
 	margin-bottom: 24px;
 }
 
+.video-thumbs {
+	list-style-type: none;
+	margin: 0;
+}
+
+.video-thumbs li {
+	list-style-type: none;
+	margin: 0 2.55% 0 0;
+	width: 18%;
+	float: left;
+	text-align: center;
+}
+
+.video-thumbs li:last-child {
+	margin-right: 0;
+}
+
+.video-thumbs li img{
+	list-style-type: none;
+	margin: 0 0 5px 0;
+}
+
+
+/* Screenshot thumbs */
+
+
+.screenshot-thumbs {
+	list-style-type: none;
+	margin: 0;
+}
+
+.screenshot-thumbs li {
+	list-style-type: none;
+	margin: 0 2.55% 0 0;
+	width: 18%;
+	float: left;
+	text-align: center;
+}
+
+.screenshot-thumbs li:last-child {
+	margin-right: 0;
+}
+
+.screenshot-thumbs li img{
+	list-style-type: none;
+	margin: 0 0 5px 0;
+}
+
 
 /* Images */
 
@@ -460,7 +508,7 @@ figcaption {
 /* Introduction style */
 
 .intro {
-	margin: 20px 0 20px 0;
+	
 } 
 
 
@@ -658,51 +706,13 @@ figcaption {
 
 /* Install Procedures */
  
-.install-procedures {
-	margin-bottom: 32px;
+.download-links {
+	margin-top: 18px;
 }
  
-.install-procedures h2 {
-	text-align: center;
-	border: none;
-	background: url(../img/thick-rule.gif) repeat-x 0px 20px;
-}
+
  
-.install-procedures h2 span {
-	background: #E9E8E6;
-	padding: 0 25px 0 25px;
-	display: inline-block;
- }
-  
-.install-procedures ul {
-	padding: 0;
-	margin: 0;
-}
  
-.install-procedures li a {
-	background: #FBE635 url(../img/systems-sprite.png) no-repeat;
-	display: block;
-	width: 126px;
-	height: 106px;
-	text-indent: -9999px;
-	-webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.25);
-	-moz-box-shadow: 0px 0px 3px rgba(0,0,0,0.25);
-	box-shadow: 0px 0px 3px rgba(0,0,0,0.25);
-	border: 7px solid #fff;
-}
- 
-.install-procedures li a.linux { background: #FBE635 url(../img/systems-sprite.png) no-repeat 30px 13px;	}
-.install-procedures li a.mac { background: #F6C20B url(../img/systems-sprite.png) no-repeat -98px 13px;	}
-.install-procedures li a.windows { background: #EA8142 url(../img/systems-sprite.png) no-repeat -212px 13px;	}
-.install-procedures li a.vms { background: #5FC78F url(../img/systems-sprite.png) no-repeat -332px 13px;	}
-.install-procedures li a.source { background: #FBE635 url(../img/systems-sprite.png) no-repeat -453px 15px;	}
-.install-procedures li a.uninstalling { background: #F6C20B url(../img/systems-sprite.png) no-repeat -575px 15px;	}
- 
-.install-procedures li a:hover {
-	-webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.65);
-	-moz-box-shadow: 0px 0px 3px rgba(0,0,0,0.65);
-	box-shadow: 0px 0px 3px rgba(0,0,0,0.65);
-}
 
  
 /* Companion programs */
