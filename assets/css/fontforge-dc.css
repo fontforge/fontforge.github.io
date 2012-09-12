@@ -783,7 +783,10 @@ h2.blackbar span {
 	padding-left: 80px;
 	padding-top: 2px;
 }
- 
- 
- 
- 
+
+.home .video-container {
+	float:left;
+	text-align: center;
+	width: 420px;
+	height: 315px;
+}
