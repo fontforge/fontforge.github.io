@@ -801,12 +801,12 @@ h2.blackbar span {
 	border: 7px solid #fff;
 }
  
-.blockrow6 li a.gnulinux { background: #FBE635 url(../img/systems-sprite.png) no-repeat 30px 13px;	}
-.blockrow6 li a.mac { background: #F6C20B url(../img/systems-sprite.png) no-repeat -98px 13px;	}
-.blockrow6 li a.windows { background: #EA8142 url(../img/systems-sprite.png) no-repeat -212px 13px;	}
-.blockrow6 li a.vms { background: #5FC78F url(../img/systems-sprite.png) no-repeat -332px 13px;	}
-.blockrow6 li a.source { background: #FBE635 url(../img/systems-sprite.png) no-repeat -453px 15px;	}
-.blockrow6 li a.uninstalling { background: #F6C20B url(../img/systems-sprite.png) no-repeat -575px 15px;	}
+.blockrow6 li a.gnulinux { background: #FBE635 url(../img/systems-sprite.png) no-repeat 27px 17px;	}
+.blockrow6 li a.mac { background: #F6C20B url(../img/systems-sprite.png) no-repeat -99px 17px;	}
+.blockrow6 li a.windows { background: #EA8142 url(../img/systems-sprite.png) no-repeat -211px 17px;	}
+.blockrow6 li a.vms { background: #5FC78F url(../img/systems-sprite.png) no-repeat -331px 17px;	}
+.blockrow6 li a.source { background: #FBE635 url(../img/systems-sprite.png) no-repeat -453px 17px;	}
+.blockrow6 li a.uninstalling { background: #F6C20B url(../img/systems-sprite.png) no-repeat -572px 17px;	}
  
 .blockrow6 li a:hover {
 	-webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.65);
@@ -949,6 +949,10 @@ h2.blackbar span {
 .home .license .roundel h3 span {
 	font-size: 0.7em;
 	display: block;
+}
+
+.home .welcome {
+	margin-top: 24px;
 }
  
 .home .welcome h1 {
