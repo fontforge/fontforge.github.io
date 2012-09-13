@@ -3075,9 +3075,9 @@ input[type="submit"].btn.btn-mini {
 }
 .nav-pills > li > a {
   padding-top: 8px;
-  padding-bottom: 7px;
+  padding-bottom: 8px;
   margin-top: 2px;
-  margin-bottom: 2px;
+  margin-bottom: 6px;
   margin-right: 10px;
   -webkit-border-radius: 50px;
   -moz-border-radius: 50px;
