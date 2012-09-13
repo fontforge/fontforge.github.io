@@ -31,7 +31,7 @@
 }
  
 .footer ul {
-	margin: 0;
+	margin: 0 0 0 0;
 }
  
 .footer ul li {
@@ -48,8 +48,12 @@
  
 .footer h3.brand {
 	font-weight: normal;
-	padding-left: 48px;
-	background: url(../img/logo-transparent.png) no-repeat center left;
+	margin-bottom: 21px;
+}
+
+.footer h3.brand img {
+	margin-top: 3px;
+	margin-bottom: 24px;
 }
  
 .footer .roundel {
