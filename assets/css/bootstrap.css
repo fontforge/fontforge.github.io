@@ -3075,7 +3075,7 @@ input[type="submit"].btn.btn-mini {
 }
 .nav-pills > li > a {
   padding-top: 8px;
-  padding-bottom: 8px;
+  padding-bottom: 7px;
   margin-top: 2px;
   margin-bottom: 2px;
   margin-right: 10px;
@@ -5900,9 +5900,7 @@ x@media (min-width: 1200px) {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33ffffff', endColorstr='#33000000',GradientType=0 ); /* IE6-9 */
   }
   
-  .navbar .nav > li.active > a:after, .navbar .nav > li > a:hover:after {
-  	opacity:0;
-  }
+  
 
   .navbar .nav{
   	-webkit-box-shadow:inset -1px 0px 0 rgba(70,70,70,0.5); 
@@ -5910,10 +5908,10 @@ x@media (min-width: 1200px) {
   	box-shadow:inset -1px 0px 0 rgba(70,70,70,0.5); 
   }
   
-  .navbar .nav > li.download a {	border-top:6px solid #FFE101;	}
-  .navbar .nav > li.docs a {	border-top:6px solid #FFC800;	}
-  .navbar .nav > li.about a {	border-top:6px solid #FF7D32;	}
-  .navbar .nav > li.help-out a {	border-top:6px solid #5BDC96;	}
+  .navbar .nav > li.downloads a {	border-top:6px solid #FFE101;	}
+  .navbar .nav > li.tutorials a {	border-top:6px solid #FFC800;	}
+  .navbar .nav > li.docs a {	border-top:6px solid #FF7D32;	}
+  .navbar .nav > li.about a {	border-top:6px solid #5BDC96;	}
   
   
    .navbar .nav > li.active > a, .navbar .nav > li.active > a:hover {
