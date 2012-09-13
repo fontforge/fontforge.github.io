@@ -6,6 +6,7 @@
 
 /* Page content container*/
 .content {	background: url(../img/twister.gif) no-repeat top center;	}
+.content.secondary {	background: none; padding-top: 36px;	}
 
 
 /* Page heading */
@@ -801,7 +802,7 @@ h2.blackbar span {
 	border: 7px solid #fff;
 }
  
-.blockrow6 li a.gnulinux { background: #FBE635 url(../img/systems-sprite.png) no-repeat 27px 17px;	}
+.blockrow6 li a.gnulinux { background: #FBE635 url(../img/systems-sprite.png) no-repeat 26px 17px;	}
 .blockrow6 li a.mac { background: #F6C20B url(../img/systems-sprite.png) no-repeat -99px 17px;	}
 .blockrow6 li a.windows { background: #EA8142 url(../img/systems-sprite.png) no-repeat -211px 17px;	}
 .blockrow6 li a.vms { background: #5FC78F url(../img/systems-sprite.png) no-repeat -331px 17px;	}

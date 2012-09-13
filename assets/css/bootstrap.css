@@ -150,7 +150,7 @@ body {
   font-family: 'Merriweather', Georgia, "Times New Roman", Times, serif;
   font-size: 15px;
   line-height: 24px;
-  color: #131313;
+  color: #1a1a1a;
   background-color: #E9E8E6;
 }
 a {
@@ -660,9 +660,9 @@ dd {
   margin-left: 180px;
 }
 hr {
-  margin: 24px 0;
+  margin: 36px 0;
   border: 0;
-  border-top: 8px solid #181818;
+  border-top: 8px solid #1a1a1a;
 }
 abbr[title] {
   cursor: help;
