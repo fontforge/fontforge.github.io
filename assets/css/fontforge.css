@@ -704,30 +704,103 @@ figcaption {
 }
 
 
-/* Install Procedures */
- 
-.download-links {
-	margin-top: 18px;
+/* Black Bar Titles */
+
+h2.blackbar {
+	text-align: center;
+	border: none;
+	background: url(../img/thick-rule.gif) repeat-x 0px 20px;
 }
  
+h2.blackbar span {
+	background: #E9E8E6;
+	padding: 0 25px 0 25px;
+	display: inline-block;
+ }
 
+/* Block Row 6 items */
  
+.blockrow6 {
+	margin-bottom: 32px;
+}
  
+.blockrow6 ul {
+	padding: 0;
+	margin: 0;
+}
+ 
+.blockrow6 li a {
+	background: #FBE635 url(../img/systems-sprite.png) no-repeat;
+	display: block;
+	width: 126px;
+	height: 106px;
+	text-indent: -9999px;
+	-webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.25);
+	-moz-box-shadow: 0px 0px 3px rgba(0,0,0,0.25);
+	box-shadow: 0px 0px 3px rgba(0,0,0,0.25);
+	border: 7px solid #fff;
+}
+ 
+.blockrow6 li a.gnulinux { background: #FBE635 url(../img/systems-sprite.png) no-repeat 30px 13px;	}
+.blockrow6 li a.mac { background: #F6C20B url(../img/systems-sprite.png) no-repeat -98px 13px;	}
+.blockrow6 li a.windows { background: #EA8142 url(../img/systems-sprite.png) no-repeat -212px 13px;	}
+.blockrow6 li a.vms { background: #5FC78F url(../img/systems-sprite.png) no-repeat -332px 13px;	}
+.blockrow6 li a.source { background: #FBE635 url(../img/systems-sprite.png) no-repeat -453px 15px;	}
+.blockrow6 li a.uninstalling { background: #F6C20B url(../img/systems-sprite.png) no-repeat -575px 15px;	}
+ 
+.blockrow6 li a:hover {
+	-webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.65);
+	-moz-box-shadow: 0px 0px 3px rgba(0,0,0,0.65);
+	box-shadow: 0px 0px 3px rgba(0,0,0,0.65);
+}
 
- 
-/* Companion programs */
 
-.companion-programs h2 {
+/* Block Row 3 items */
+ 
+.blockrow3 {
+	margin-bottom: 32px;
+}
+ 
+.blockrow3 ul {
+	padding: 0;
+	margin: 0;
+}
+ 
+.blockrow3 li a {
+	background: #FBE635 url(../img/systems-sprite.png) no-repeat;
+	display: block;
+	width: 252px;
+	height: 212px;
+	text-indent: -9999px;
+	-webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.25);
+	-moz-box-shadow: 0px 0px 3px rgba(0,0,0,0.25);
+	box-shadow: 0px 0px 3px rgba(0,0,0,0.25);
+	border: 7px solid #fff;
+}
+ 
+.blockrow3 li a.orange { background: #F6C20B;}
+.blockrow3 li a.red { background: #EA8142;}
+.blockrow3 li a.green { background: #5FC78F;}
+ 
+.blockrow3 li a:hover {
+	-webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.65);
+	-moz-box-shadow: 0px 0px 3px rgba(0,0,0,0.65);
+	box-shadow: 0px 0px 3px rgba(0,0,0,0.65);
+}
+
+/* Link Sets */
+
+.link-set h2 {
 	border-bottom: 8px solid #181818;
 }
  
-.companion-programs h2 span {
+.link-set h2 span {
 	font-size: 0.75em;
 	display: block;
 	padding-top: 8px;
 }
  
-.companion-programs p {
+.link-set p {
 	padding-right: 30px;
 }
 
@@ -778,17 +851,6 @@ figcaption {
 }
 
 
-/* License */
-
-.license {
-	background: #fff;
-	padding: 5px 0;
-	-webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.25);
-	-moz-box-shadow: 0px 0px 3px rgba(0,0,0,0.25);
-	box-shadow: 0px 0px 3px rgba(0,0,0,0.25);
-	position: relative;
-	z-index: 10;
-}
 
 
 /* Background noise effect */ 
@@ -821,7 +883,7 @@ figcaption {
 ============================================================ */
  
 .home .license .roundel {
-	margin-top: 30px;
+	margin-top: 55px;
 }
  
 .home .license .roundel h3 span {
@@ -829,12 +891,18 @@ figcaption {
 	display: block;
 }
  
-.home .features h1 {
+.home .welcome h1 {
 	background: url(../img/home-ff-icon.png) no-repeat;
 	padding-left: 80px;
 	padding-top: 2px;
 }
- 
- 
- 
+
+.home .video-container {
+	background: #000;
+	padding: 10px 80px;
+}
+
+.home .video-container  .fluid-width-video-wrapper {
+ 	margin-bottom: 0;
+}
  
