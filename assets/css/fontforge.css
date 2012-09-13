@@ -577,6 +577,11 @@ figcaption {
 	text-decoration: none;
 }
 
+.link-list li.active a
+ {
+	background-image: none;
+}
+
 .link-list li ul li a:hover {
 	padding-left: 30px;
 }
