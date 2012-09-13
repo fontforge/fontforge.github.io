@@ -673,10 +673,10 @@ abbr.initialism {
   text-transform: uppercase;
 }
 blockquote {
-  padding: 0 0 0 15px;
+  padding: 0 0 0 20px;
   margin: 0 0 24px;
   border-left: 8px solid #5EAB82;
-   margin-bottom: 24px;
+  margin-bottom: 24px;
   font-size: 22.5px;
   font-weight: 200;
   line-height: 36px;
@@ -684,11 +684,12 @@ blockquote {
   color: #4CAA79;
   -webkit-font-smoothing: antialiased;
 }
-blockquote p {
-  margin-bottom: 0;
-  font-size: 16px;
-  font-weight: 300;
+blockquote p, .big-text blockquote p {
+  margin-bottom: 24px;
+  font-size: 17px;
   line-height: 30px;
+  font-size: 22.5px;
+  line-height: 36px;
 }
 blockquote small {
   display: block;
@@ -699,6 +700,9 @@ blockquote small {
 }
 blockquote small:before {
   content: '\2014 \00A0';
+}
+blockquote .small-caps {
+	color: #929292;
 }
 blockquote.pull-right {
   float: right;
@@ -861,11 +865,14 @@ table {
 }
 .table {
   width: 100%;
-  margin-bottom: 24px;
+  margin-bottom: 36px;
+  background: #F1F0EF;
+  border: 1px solid #ccc;
+  border-top:8px solid #4CAA79;
 }
 .table th,
 .table td {
-  padding: 8px;
+  padding: 6px 10px 6px 10px;
   line-height: 24px;
   text-align: left;
   vertical-align: top;
@@ -876,6 +883,12 @@ table {
 }
 .table thead th {
   vertical-align: bottom;
+}
+
+table .header-row {
+	background: #fff;
+	color: #7B7B7B;
+	padding: 12px 8px 12px 8px;
 }
 .table caption + thead tr:first-child th,
 .table caption + thead tr:first-child td,

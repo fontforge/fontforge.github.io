@@ -11,6 +11,10 @@
 /* Page heading */
 .page-heading {	margin-top: 36px;	margin-bottom: 24px;	}
 
+.small-caps {
+	font-size: 0.8em;
+	letter-spacing: 0.2em;
+}
 
 /* Site footer */
  
@@ -69,7 +73,7 @@
 	hyphens:auto;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 980px) {
 	
 	.big-text .span10{
 		width: 100%;
@@ -204,9 +208,9 @@
 	background: #FFE101;
 	padding: 25px 0 0px 0;
 	border-bottom: 8px solid #181818;
-	-webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,0.6),inset 0 -1px 0 rgba(255,255,255,0.6);
-	-moz-box-shadow:inset 0 1px 0 rgba(255,255,255,0.6),inset 0 -1px 0 rgba(255,255,255,0.6);
-	box-shadow:inset 0 1px 0 rgba(255,255,255,0.6),inset 0 -1px 0 rgba(255,255,255,0.6);
+	-webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,0.3),inset 0 -1px 0 rgba(255,255,255,0.3);
+	-moz-box-shadow:inset 0 1px 0 rgba(255,255,255,0.3),inset 0 -1px 0 rgba(255,255,255,0.3);
+	box-shadow:inset 0 1px 0 rgba(255,255,255,0.3),inset 0 -1px 0 rgba(255,255,255,0.3);
 	position: relative;
 }
  
@@ -228,6 +232,17 @@
 .tutorials .subnav {	background: #FFC800;	}
 .docs .subnav {	background: #FF7D32;	}
 .about .subnav {	background: #5BDC96;	}
+
+/* Slighly srtonger highlights on the light bg colours */
+
+.downloads .subnav,
+.tutorials .subnav {
+	-webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,0.6),inset 0 -1px 0 rgba(255,255,255,0.6);
+	-moz-box-shadow:inset 0 1px 0 rgba(255,255,255,0.6),inset 0 -1px 0 rgba(255,255,255,0.6);
+	box-shadow:inset 0 1px 0 rgba(255,255,255,0.6),inset 0 -1px 0 rgba(255,255,255,0.6);
+}
+
+
 
 @media (min-width: 768px) {
 
@@ -935,7 +950,7 @@ h2.blackbar span {
 .home .welcome h1 {
 	background: url(../img/home-ff-icon.png) no-repeat;
 	padding-left: 80px;
-	padding-top: 2px;
+	padding-top: 6px;
 }
 
 .home .videos {
