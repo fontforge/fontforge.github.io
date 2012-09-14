@@ -89,7 +89,7 @@
 /* Language switcher */
  
 .language-switcher {
-	
+	opacity: 0.93;
 }
 
 .language-switcher .dropdown-toggle {
