@@ -90,6 +90,8 @@
  
 .language-switcher {
 	opacity: 0.93;
+	position: relative;
+	z-index: 100;
 }
 
 .language-switcher .dropdown-toggle {
