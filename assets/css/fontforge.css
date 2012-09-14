@@ -89,14 +89,20 @@
 /* Language switcher */
  
 .language-switcher {
-	position: absolute;
-	right: 90px;
-	top:-1px;
+	
 }
 
 .language-switcher .dropdown-toggle {
 	font-size: 13px;
 	padding: 3px 15px 2px 15px;
+}
+
+@media (min-width: 400px) {
+	.language-switcher {
+		position: absolute;
+		right: 90px;
+		top:-1px;
+	}
 }
 
 @media (min-width: 768px) {
