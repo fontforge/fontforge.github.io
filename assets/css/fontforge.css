@@ -200,6 +200,7 @@
 	.hero-unit  .container{
 		padding: 0 0 0 0;
 		background: url(../img/home-hero-screenshot.png) no-repeat right bottom;
+		min-height: 380px;
 	}
 	
 	.hero-unit .screen {
@@ -628,7 +629,7 @@ figcaption {
 .link-list li a {
 	border-top: 1px solid #ccc;
 	display: block;
-	background: url(../img/link-list-arrow.png) no-repeat right center;
+	background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAJCAYAAADpeqZqAAAAeklEQVQYlWNgAIKDB/YLMGABuMTBEkD8AYgXALECkrgBVHwCsjiyRgcgfgDE/4H4AIgPFQ+AavwPNdQBm40boAr+I2kUgBqEIo6ueQM2SSD/AoY4FpsMoOIKSDZ9gIkjux2EG2AeB9IFaOICDEgmoQqiBk4CzqAnBQAAujeyxo9tbTMAAAAASUVORK5CYII=') no-repeat right center;
 	padding-top: 9px;
 	padding-bottom: 6px;
 	padding-right: 20px;
@@ -695,7 +696,7 @@ figcaption {
 }
 
 .toc-controls {
-	background: url(../img/toc-icon.png) no-repeat left center;
+	background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAMAQMAAAC6HhTBAAAABlBMVEX////acTNcKEo5AAAAHklEQVR4Xo3GAQkAAADCMPuXsopNVEzg4TCY2u1xACGmFPGaD3OPAAAAAElFTkSuQmCC') no-repeat left center;
 	background: #fff;
 	display: block;
 	position: relative;
@@ -841,7 +842,7 @@ figcaption {
 h2.blackbar {
 	text-align: center;
 	border: none;
-	background: url(../img/thick-rule.gif) repeat-x 0px 20px;
+	background: url('data:image/gif;base64,R0lGODlhAQAIAIAAABgYGP///yH5BAAHAP8ALAAAAAABAAgAAAIDhG8FADs=') repeat-x 0px 20px;
 }
  
 h2.blackbar span {
