@@ -141,6 +141,10 @@
 	padding: 20px 0 0 0;
 	margin-bottom: 0;
 }
+
+.hero-unit h1 {
+	color: #181818;
+}
   
 .hero-unit:after {
 	content: " ";
@@ -183,7 +187,7 @@
 
 @media (min-width: 768px) {
 	.hero-unit .screen {
-		background: url(../img/home-hero-screenshot.png) no-repeat 130% bottom;
+		background: url(../img/home-hero-screenshot.png) no-repeat 135% bottom;
 		background-size: auto;
 		padding-bottom: 0;
 	}	
@@ -416,6 +420,11 @@
 	padding-left: 20px;
 	padding-right: 20px;
 	margin-left: 20px;
+	opacity: 0.95;
+}
+
+.download-bar .btn-large:hover {
+	opacity: 1;
 }
  
 .download-bar .statistic {
@@ -869,6 +878,10 @@ h2.blackbar span {
 	float: left;
 	margin: 0 12px 12px 0;
 }
+
+.blockrow6 li:last-child a {
+	margin-right: 0;
+}
  
 .blockrow6 li a.gnulinux { background: #FBE635 url(../img/systems-sprite.png) no-repeat 26px 17px;	}
 .blockrow6 li a.mac { background: #F6C20B url(../img/systems-sprite.png) no-repeat -99px 17px;	}
@@ -906,6 +919,10 @@ h2.blackbar span {
 	box-shadow: 0px 0px 3px rgba(0,0,0,0.25);
 	border: 7px solid #fff;
 	margin-bottom: 12px;
+}
+
+.blockrow6 li:last-child a {
+	margin-right: 0;
 }
  
 .blockrow3 li a.orange { background: #F6C20B;}
