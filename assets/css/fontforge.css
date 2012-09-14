@@ -590,22 +590,22 @@ figcaption {
 
 @media (min-width: 850px) {
 
-.thumb-grid figure {
-	margin: 0;
-	float: left;
-	width: 23%;
-	padding-right: 2%;
-	text-align: left;
-}
-
-.thumb-grid.five-per-row figure {
-	width: 18%;
-	padding-right: 2%;
-}
-
-.thumb-grid figcaption {
-	text-align: left;
-}
+	.thumb-grid figure {
+		margin: 0;
+		float: left;
+		width: 23%;
+		padding-right: 2%;
+		text-align: left;
+	}
+	
+	.thumb-grid.five-per-row figure {
+		width: 18%;
+		padding-right: 2%;
+	}
+	
+	.thumb-grid figcaption {
+		text-align: left;
+	}
 
 }
 
@@ -689,6 +689,10 @@ figcaption {
 	margin-bottom: 24px;
 }
 
+.table-of-contents.toc-bottom {
+	margin-top: 50px;
+}
+
 .toc-controls {
 	background: url(../img/toc-icon.png) no-repeat left center;
 	background: #fff;
@@ -714,7 +718,6 @@ figcaption {
 	font-size: 14px;
 }
 
- 
 .table-of-contents .toc-toggle, .table-of-contents .toc-toggle:active {
 	text-align: center;
 	padding: 8px 0 8px 0;
@@ -726,7 +729,6 @@ figcaption {
 	left: 0;
 }
 
- 
  .table-of-contents .toc-toggle span {
 	background: url(../img/toc-icon.png) no-repeat left center;
 	padding-left: 30px;
@@ -734,7 +736,6 @@ figcaption {
 	font-size: 13px;
 	display: inline-block;
 }
-
 
 
 /* Previous and next pagaination */
