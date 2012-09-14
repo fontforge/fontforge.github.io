@@ -745,7 +745,6 @@ pre {
 }
 code {
   padding: 2px 4px;
-  color: #d14;
   background-color: #f7f7f9;
   border: 1px solid #e1e1e8;
 }
@@ -2039,6 +2038,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dfe3e8', end
   padding: 2px 12px;
   font-size: 12px;
   line-height: 21px;
+}
+.btn-mini.btn-inline {
+ 	padding: 0 10px;
+ 	border-bottom-width: 1px;
 }
 .btn-block {
   display: block;
