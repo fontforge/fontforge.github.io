@@ -750,8 +750,8 @@ figcaption {
 	float: left;
 	font-size: 14px;
 	position: absolute;
-	right: 0;
-	left: 0;
+	right: 33%;
+	left: 33%;
 }
 
  .table-of-contents .toc-toggle span {
