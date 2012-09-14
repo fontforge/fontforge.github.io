@@ -498,6 +498,19 @@
 
 /* Videos */
 
+.videos {
+	margin-bottom: 36px;
+}
+
+.videos .video-container {
+	background: #000;
+	padding: 10px 80px;
+}
+
+.videos .video-container  .fluid-width-video-wrapper {
+ 	margin-bottom: 0;
+}
+
 .fluid-width-video-wrapper {
 	margin-bottom: 24px;
 }
@@ -1071,18 +1084,7 @@ h2.blackbar span {
 	padding-top: 6px;
 }
 
-.home .videos {
-	margin-bottom: 36px;
-}
 
-.home .video-container {
-	background: #000;
-	padding: 10px 80px;
-}
-
-.home .video-container  .fluid-width-video-wrapper {
- 	margin-bottom: 0;
-}
  
  
 
