@@ -3096,7 +3096,7 @@ input[type="submit"].btn.btn-mini {
   -moz-border-radius: 50px;
   border-radius: 50px;
   color: #fff;
-  background-color: rgba(0,0,0,0.2);
+  background-color: rgba(0,0,0,0.1);
 }
 .nav-pills > .active > a,
 .nav-pills > .active > a:hover {
@@ -3105,7 +3105,7 @@ input[type="submit"].btn.btn-mini {
 }
 
 .nav-pills > li > a:hover {
-	background-color: rgba(0,0,0,0.3);
+	background-color: rgba(0,0,0,0.15);
 }
 
 .nav-stacked > li {
