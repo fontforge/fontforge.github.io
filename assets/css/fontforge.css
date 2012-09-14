@@ -724,6 +724,7 @@ figcaption {
 	display: block;
 	position: relative;
 	min-height: 40px;
+	overflow: hidden;
 }
 
 .toc-controls .prev, .toc-controls .next {
