@@ -368,10 +368,16 @@
 .breadcrumbs .doc-search-form .input-medium {
 	background: rgba(255,255,255,0.5);
 	border: none;
-	color: rgba(255,255,255,0.9);
+	color: rgba(0,0,0,0.5);
 	padding: 2px 15px 3px 15px;
 	margin-right: 5px;
-	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+}
+
+.breadcrumbs .doc-search-form .input-medium:-ms-input-placeholder,
+.breadcrumbs .doc-search-form .input-medium:-webkit-input-placeholder,
+.breadcrumbs .doc-search-form .input-medium:-moz-input-placeholder {
+	color: rgba(0,0,0,0.5);
+
 }
  
 .breadcrumbs .doc-search-form .btn {
