@@ -2909,7 +2909,7 @@ input[type="submit"].btn.btn-mini {
 }
 .btn .caret {
   margin-top: 8px;
-  margin-left: 0;
+  margin-left: 8px;
 }
 .btn-mini .caret,
 .btn-small .caret,
