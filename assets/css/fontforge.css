@@ -921,8 +921,17 @@ h2.blackbar span {
 	margin-bottom: 12px;
 }
 
-.blockrow6 li:last-child a {
-	margin-right: 0;
+@media (min-width: 980px) {
+
+	.blockrow3 li:nth-child(2) a {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	.blockrow3 li:nth-child(3) a{
+		float: right;
+	}
+
 }
  
 .blockrow3 li a.orange { background: #F6C20B;}
