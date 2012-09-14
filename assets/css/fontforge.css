@@ -650,7 +650,6 @@ figcaption {
 }
 
 .link-list li ul li a {
-	background: url(../img/bullet.png) no-repeat left center;
 	padding-left: 20px;
 	font-size: 13px;
 }
