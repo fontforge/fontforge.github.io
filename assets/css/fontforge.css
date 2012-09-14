@@ -1081,8 +1081,9 @@ h2.blackbar span {
  
 .home .welcome h1 {
 	background: url(../img/home-ff-icon.png) no-repeat;
-	padding-left: 80px;
+	padding-left: 74px;
 	padding-top: 6px;
+	margin-left: -7px;
 }
 
 
