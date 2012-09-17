@@ -48,7 +48,7 @@
 }
  
 .footer .brand {
-	background: url(../img/logo-transparent-48px.png) no-repeat;
+	background: url(../img/logo-transparent-48px.png) no-repeat 0 0;
 	padding-top: 68px;
 	margin-top: 28px;
 }
