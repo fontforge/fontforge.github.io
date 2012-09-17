@@ -79,7 +79,7 @@
 .metal {
 	background: #ccc;
 	text-align: center;
-	padding: 24px 0 24px ;
+	padding: 24px 0 24px 0;
 }
 
  
@@ -669,7 +669,7 @@ figcaption {
 .link-list li a {
 	border-top: 1px solid #ccc;
 	display: block;
-	background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAJCAYAAADpeqZqAAAAeklEQVQYlWNgAIKDB/YLMGABuMTBEkD8AYgXALECkrgBVHwCsjiyRgcgfgDE/4H4AIgPFQ+AavwPNdQBm40boAr+I2kUgBqEIo6ueQM2SSD/AoY4FpsMoOIKSDZ9gIkjux2EG2AeB9IFaOICDEgmoQqiBk4CzqAnBQAAujeyxo9tbTMAAAAASUVORK5CYII=')  no-repeat right center;
+	background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAJCAYAAADHP4f4AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNXG14zYAAADMSURBVCiRnZLBDcIwEAQniD/pAKgAKsDnCkgplBA6SAnQAVQQp4PQASVABeGRPSmP8HBWsnQa2bt38gHQpbZkRv/4MAxZp5DRG3gAdbD4VsARSMANaJx7SI4KGZrMtkCnsNSlthLfAHfgFiymRSEKKmV4FooKKhmnDM5PwVJOyMqLYPETLFbAc3pB3IBXVvsTrb2YmeQjvhM/AF/nOVrJqGL8fAOuwD5Y7LvUXoAeOIrvgsU+N6RQpz3QMG6RT2CaoAYezmHBduU+WKIfEY9+b7ahn2IAAAAASUVORK5CYII=')  no-repeat right center;
 	padding-top: 9px;
 	padding-bottom: 6px;
 	padding-right: 20px;
