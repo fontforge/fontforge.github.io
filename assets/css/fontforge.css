@@ -1034,6 +1034,20 @@ h2.blackbar span {
 	padding-bottom: 1px;
 	margin-top: 24px;
 }
+
+.mailing-lists .mailing-list-search-form {
+	float: right;	
+}
+
+.mailing-lists .mailing-list-search-form .search-query {
+	font-size: 13px;
+	width: 120px;
+	padding: 5px 14px 0px 14px;
+}
+
+.mailing-lists .mailing-list-search-form .btn {
+	padding: 3px 8px 2px 8px;
+}
  
 .mailing-lists h3 {
 	margin-top: 13px;
