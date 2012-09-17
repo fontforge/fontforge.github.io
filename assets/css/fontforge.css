@@ -47,9 +47,10 @@
 	font-weight: bold;
 }
  
-.footer h3.brand {
-	font-weight: normal;
-	margin-bottom: 21px;
+.footer .brand {
+	background: url(../img/logo-transparent-48px.png) no-repeat;
+	padding-top: 68px;
+	margin-top: 28px;
 }
 
 .footer h3.brand img {
@@ -63,6 +64,22 @@
 
 .footer .roundel a {
 	display: block;
+}
+
+.footer .copyright {
+	color: #999;
+	margin-bottom: 24px;
+}
+
+.footer .copyright a {
+	font-weight: bold;
+	color: #999;
+}
+
+.metal {
+	background: #ccc;
+	text-align: center;
+	padding: 24px 0 24px ;
 }
 
  
