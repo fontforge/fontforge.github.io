@@ -47,9 +47,10 @@
 	font-weight: bold;
 }
  
-.footer h3.brand {
-	font-weight: normal;
-	margin-bottom: 21px;
+.footer .brand {
+	background: url(../img/logo-transparent-48px.png) no-repeat 0 0;
+	padding-top: 68px;
+	margin-top: 28px;
 }
 
 .footer h3.brand img {
@@ -63,6 +64,22 @@
 
 .footer .roundel a {
 	display: block;
+}
+
+.footer .copyright {
+	color: #999;
+	margin-bottom: 24px;
+}
+
+.footer .copyright a {
+	font-weight: bold;
+	color: #999;
+}
+
+.metal {
+	background: #ccc;
+	text-align: center;
+	padding: 24px 0 24px 0;
 }
 
  
@@ -652,7 +669,7 @@ figcaption {
 .link-list li a {
 	border-top: 1px solid #ccc;
 	display: block;
-	background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAJCAYAAADpeqZqAAAAeklEQVQYlWNgAIKDB/YLMGABuMTBEkD8AYgXALECkrgBVHwCsjiyRgcgfgDE/4H4AIgPFQ+AavwPNdQBm40boAr+I2kUgBqEIo6ueQM2SSD/AoY4FpsMoOIKSDZ9gIkjux2EG2AeB9IFaOICDEgmoQqiBk4CzqAnBQAAujeyxo9tbTMAAAAASUVORK5CYII=')  no-repeat right center;
+	background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAJCAYAAADHP4f4AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNXG14zYAAADMSURBVCiRnZLBDcIwEAQniD/pAKgAKsDnCkgplBA6SAnQAVQQp4PQASVABeGRPSmP8HBWsnQa2bt38gHQpbZkRv/4MAxZp5DRG3gAdbD4VsARSMANaJx7SI4KGZrMtkCnsNSlthLfAHfgFiymRSEKKmV4FooKKhmnDM5PwVJOyMqLYPETLFbAc3pB3IBXVvsTrb2YmeQjvhM/AF/nOVrJqGL8fAOuwD5Y7LvUXoAeOIrvgsU+N6RQpz3QMG6RT2CaoAYezmHBduU+WKIfEY9+b7ahn2IAAAAASUVORK5CYII=')  no-repeat right center;
 	padding-top: 9px;
 	padding-bottom: 6px;
 	padding-right: 20px;
@@ -1016,6 +1033,28 @@ h2.blackbar span {
 	border-bottom: none;
 	padding-bottom: 1px;
 	margin-top: 24px;
+}
+
+.mailing-lists .mailing-list-search-form {
+	margin-top: 20px;	
+}
+
+@media (min-width: 980px) {
+
+	.mailing-lists .mailing-list-search-form {
+		float: right;	
+		margin-top: 4px;
+	}
+}
+
+.mailing-lists .mailing-list-search-form .search-query {
+	font-size: 13px;
+	width: 120px;
+	padding: 5px 14px 0px 14px;
+}
+
+.mailing-lists .mailing-list-search-form .btn {
+	padding: 3px 8px 2px 8px;
 }
  
 .mailing-lists h3 {
