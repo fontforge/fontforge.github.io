@@ -4,6 +4,10 @@ section=""
 bits=""
 +++
 
+### Coding Style
+
+TODO: Add a clear explanation of the FontForge coding style. 
+
 #### Git Commit Messages
 
 When committing changes, please follow the git commit message guidelines: 
@@ -11,9 +15,6 @@ When committing changes, please follow the git commit message guidelines:
 http://git.kernel.org/?p=git/git.git;a=blob;f=Documentation/SubmittingPatches;hb=HEAD
 
 When making a pull request on GitHub, please include the long description to the commit messages themselves, not only in the pull request.
-
-
-
 
 #### Code Style for Emacs
 
