@@ -1,17 +1,27 @@
 +++
-title="License and Copyright"
+title="FontForge License and Copyright Notices"
 section=""
 bits=""
 +++
 
+Our License Policy [DRAFT]
+==============================
 
-License and Copyright
-=====================
+[The following is a draft policy]
 
-> Copyright ©
-> 2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011 by
-> George Williams
->
+The majority of FontForge was written by George Williams and published under a simple permissive libre license, the "[revised BSD license](http://www.law.yi.org/~sfllaw/talks/bsd.pdf)".
+
+This license is very permissive, and allows for code to be combined with other code under other licenses. 
+
+There are many useful libraries available under copyleft libre licenses, such as the LGPL and GPL, which FontForge now uses. For example, Pango and Cairo are available under the LGPL, and gnulib is available under the GPL.  
+
+Contributions to existing files must be made under the existing license for that file. 
+
+Contributions in new files should be made under the original Revised BSD License, but any license compatible with the GPLv3 is okay.
+
+The Revised BSD License used by FontForge
+-------------------------------------------
+
 > Redistribution and use in source and binary forms, with or without
 > modification, are permitted provided that the following conditions
 > are met:
@@ -39,7 +49,14 @@ License and Copyright
 > OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 > IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-This is essentially the "[revised BSD
-license](http://www.law.yi.org/~sfllaw/talks/bsd.pdf)".
+LGPL and GPL
+-------------
 
--- [Prev](nvd.html) -- [TOC](overview.html) -- [Next](nvd.html) --
+To read the [LGPL](http://www.gnu.org/licenses/lgpl.html) and [GPL](http://www.gnu.org/copyleft/gpl.html) texts, please refer to the GNU website.
+
+Copyright Notices
+-------------------
+
+Copyright © 2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011 by George Williams.
+
+TODO: Get name and email of all contributors from git history.
