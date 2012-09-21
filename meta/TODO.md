@@ -55,6 +55,11 @@ Big Tasks
 - Using a thin space as the separator in the masthead downloads stat, not a . or ,
 - Make the masthead background a canvas or SVG (with appropriate fallback) that animates on load and mouse movement like okfestival.org
 - use an icon font like Font Awesome instead of icon images (consider the 'code on github' button on pybossa.com)
+- WL: Change the absolute width of the 'page body' container, so it
+  increases if you increase the font size. (On my 1680x1050 laptop screen, with
+  Firefox opened fullscreen, almost the 50% of the width stays unused today). 
+  Due to this fixed size, after pressing Ctrl-+ a few times, the 
+  'Documentation'  label text overlaps with the its right neighbour button.
 
 Narrowest Design
 -----------------
