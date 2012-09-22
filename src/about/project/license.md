@@ -4,20 +4,20 @@ section=""
 bits=""
 +++
 
-Our License Policy [DRAFT]
+FontForge License [DRAFT]
 ==============================
 
 [The following is a draft policy]
 
-The majority of FontForge was written by George Williams and published under a simple permissive libre license, the "[revised BSD license](http://www.law.yi.org/~sfllaw/talks/bsd.pdf)".
+FontForge is available as a whole under the terms of the [GNU GPL version 3](http://www.gnu.org/copyleft/gpl.html), or any later version. However, almost all of its parts are available under the "[revised BSD license](http://www.law.yi.org/~sfllaw/talks/bsd.pdf)"
 
-This license is very permissive, and allows for code to be combined with other code under other licenses. 
+The majority of FontForge was written by George Williams and published under the revised BSD license. This license is very permissive, and allows for code to be combined with other code under other licenses. There are many useful libraries available under copyleft libre licenses, such as the LGPL and GPL, which FontForge has started to depend on recently. For example, Pango and Cairo are available under the LGPL, and gnulib is available under the GPL.  
 
-There are many useful libraries available under copyleft libre licenses, such as the LGPL and GPL, which FontForge now uses. For example, Pango and Cairo are available under the LGPL, and gnulib is available under the GPL.  
+How To License Contributions
+------------------------------
 
-Contributions to existing files must be made under the existing license for that file. 
-
-Contributions in new files should be made under the original Revised BSD License, but any license compatible with the GPLv3 is okay.
+- Contributions to existing files must be made under the existing license for that file. 
+- Contributions in new files should be made under the original Revised BSD License, but any license compatible with the GPLv3 is okay.
 
 The Revised BSD License used by FontForge
 -------------------------------------------
