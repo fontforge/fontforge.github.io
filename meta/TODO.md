@@ -20,7 +20,7 @@ Content To Add
 - [ff install for mountain lion](http://www.pixilate.com/about/installing-fontforge-in-mountain-lion)
 - [info from wiki](http://sourceforge.net/apps/trac/fontforge/wiki)
 - Add HTML files with meta tags to redirect them so we dont give people 404s
-
+- Add note about Mac copy and paste from '[Fontforge-users] Can't copy/paste references' thread
 
 
 HTML/CSS
