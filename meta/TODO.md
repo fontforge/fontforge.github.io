@@ -21,7 +21,8 @@ Content To Add
 - [info from wiki](http://sourceforge.net/apps/trac/fontforge/wiki)
 - Add HTML files with meta tags to redirect them so we dont give people 404s
 - Add note about Mac copy and paste from '[Fontforge-users] Can't copy/paste references' thread
-
+- Add util for svg splitting (fontforge -lang=ff -c 'Open($1); SelectWorthOutputting(); foreach
+Export("svg"); endloop;' font_file.ttf)
 
 HTML/CSS
 =============
