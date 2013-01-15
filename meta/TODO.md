@@ -81,6 +81,8 @@ Narrowest Design
 Future Ideas
 --------------
 
+- Ask SourceForge to make this Project of the Month
 - convert css to sass/compass
 - convert html to haml 
 - give a individual page design to the key pages - download, tutorials, about, donate, others?
+- 
