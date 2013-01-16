@@ -1,6 +1,18 @@
 Content
 =============
 
+To convert the old site to the new site, Brian Zick ran the 
+`build/old/clean` script, which uses pandoc (`apt-get install pandoc`). 
+You may want to change the `for j in *.html` on line 5 to 
+`for j in $(find -type f | grep ".html")` and for YAML front matter
+change line 14 to something like
+```
+echo "---
+layout: default
+title: $title
+---"
+```
+
 - fix lines ending in \
 - the \<dl\> tags on some page have been stripped. find them and copy it back.
 
@@ -61,6 +73,10 @@ Big Tasks
   Firefox opened fullscreen, almost the 50% of the width stays unused today). 
   Due to this fixed size, after pressing Ctrl-+ a few times, the 
   'Documentation'  label text overlaps with the its right neighbour button.
+- Check the display of tables. Find all the pages in the old HTML site 
+  with `grep -i -r "<table>"` and compare the display with the generated 
+  markdown pages to see if the tables converted in to markdown. If not, fi
+  by hand.
 
 Narrowest Design
 -----------------
