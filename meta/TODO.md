@@ -35,6 +35,7 @@ Content To Add
 - Add note about Mac copy and paste from '[Fontforge-users] Can't copy/paste references' thread
 - Add util for svg splitting (fontforge -lang=ff -c 'Open($1); SelectWorthOutputting(); foreach
 Export("svg"); endloop;' font_file.ttf)
+- Add a note about 'Add Extrema' as per https://github.com/fontforge/fontforge/pull/125
 
 HTML/CSS
 =============
