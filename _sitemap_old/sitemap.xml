@@ -1,0 +1,2133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+	<loc>http://fontforge.sourceforge.net/</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-08-01T16:59:39+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/overview.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:03:55+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/editexample.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:51:15+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/fontview.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:55:31+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/charview.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:48:01+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/multilayer.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:02:39+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/bitmapview.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:46:37+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/metricsview.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:02:03+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/fontinfo.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:54:22+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/histogram.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:57:46+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/charinfo.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:47:36+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/getinfo.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:56:25+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/bdfinfo.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:46:02+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/baseline.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:45:58+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/justify.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:59:02+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/math.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:01:17+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/multiplemaster.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:02:41+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/lookups.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:00:52+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/kernpairs.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:59:53+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/anchorcontrol.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:45:20+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/contextchain.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:48:40+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/statemachine.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:07:54+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/showatt.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:07:12+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/problems.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:05:24+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/validation.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:10:24+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/generate.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:56:11+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/filemenu.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:53:25+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/oflib.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:03:20+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/display.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:50:58+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/prefs.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:04:40+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/groups.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:57:08+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/elementmenu.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:52:02+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/search.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:06:36+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/Styles.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:08:04+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/transform.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:09:20+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/tilepath.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:08:42+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/InsertTextDlg.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:58:50+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/metricsmenu.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:02:01+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/autowidth.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:45:45+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/hintsmenu.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:57:44+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ttfinstrs.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:09:39+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/selectbyatt.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:06:38+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/editmenu.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:51:39+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/pointmenu.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:04:34+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/toolsmenu.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:09:16+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/encodingmenu.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:52:09+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/viewmenu.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:10:31+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/cidmenu.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:48:17+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/mmmenu.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:02:31+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/windowmenu.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:10:42+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/helpmenu.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:57:21+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/faqFS.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:52:42+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/IndexFS.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:58:48+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/GlossaryFS.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:56:36+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:41:31+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/de/editexample.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:37:12+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/nix-install.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:02:51+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/mac-install.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:01:04+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ms-install.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:02:37+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/vms-install.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:10:38+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/source-build.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:07:31+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/uninstall.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:10:20+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/tutorial.tgz</loc>
+	<priority>0.5</priority>
+	<lastmod>2004-03-02T17:33:03+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/overview.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:42:27+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/wacom.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:10:40+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/index.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2008-04-20T15:44:44+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/changelog.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-08-01T16:59:25+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/oldchangelog.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:03:40+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/pfaeditchangelog.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:04:09+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfdchangelog.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:06:54+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/index.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-08-01T16:59:39+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/bibliography.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:46:25+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/fontlint.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:55:20+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfddiff.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:06:57+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/fontimage.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:54:18+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/acorn2sfd.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:44:51+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/fontutils.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:55:26+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/index.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:41:31+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/uitranslationnotes.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:10:18+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/quotations.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:05:43+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/otherlinks.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:03:44+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/scriptnotes.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:06:34+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/HotKeys.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:58:28+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/scripting.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:06:24+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/PfaEdit-TeX.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:04:16+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/errrecovery.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:52:15+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/xres.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:10:53+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/cliargs.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:48:19+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/files.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:53:27+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/src.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:07:52+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfdformat.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:06:59+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/plugins.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:04:26+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/bezier.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:46:22+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/corpchar.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:49:03+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/nvd.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:03:00+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/license.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:00:40+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/running.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:06:17+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/glossary.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:56:32+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/hinting.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:57:37+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ref-caveats.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:05:52+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/gposgsub.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:56:51+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/editexample.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:39:36+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/editspiro.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:51:41+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/importexample.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:58:41+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/editexample2.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:51:17+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/editexample3.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:51:19+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/editexample4.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:51:22+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/editexample5.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:51:24+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/editexample6.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:51:26+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/editexample6-5.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:51:28+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/editexample7.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:51:30+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/editexample8.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:51:32+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/scripting-tutorial.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:06:30+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/AA-Comparison.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:44:40+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/cidmaps.tgz</loc>
+	<priority>0.5</priority>
+	<lastmod>2008-09-05T19:55:46+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/xim.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:10:49+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/UniqueID.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:10:22+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/faq.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:52:37+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/fontstyles.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:55:24+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/featurefile.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:52:46+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/Big5.txt</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:46:27+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/bitmaponlysfnt.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:46:31+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/palmfonts.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:04:00+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/non-standard.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:02:56+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/resedit.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:05:56+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/scripting-alpha.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:06:28+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/pfaeditmath.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:04:11+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/autotrace.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:45:43+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/accented.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:44:47+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/SuggestDeltas.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:08:27+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/selections.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:06:42+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/python.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:05:28+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/Encodings.ps.gz</loc>
+	<priority>0.5</priority>
+	<lastmod>2004-03-02T17:32:47+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/faqFrame.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:52:40+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/IndexFrame.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:58:46+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/realindex.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:05:50+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/GlossaryFrame.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:56:34+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/nix-install.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:42:08+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/mac-install.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:41:43+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/ms-install.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:42:01+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/vms-install.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:44:26+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/source-build.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:43:59+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/uninstall.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:44:18+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/wacom.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:44:28+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/future.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:41:00+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/changelog.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:39:06+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/oldchangelog.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:42:21+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/pfaeditchangelog.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:42:38+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/faqFS.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:40:10+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/bibliography.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:38:59+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/sfddiff.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:43:51+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/acorn2sfd.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:38:43+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/fontutils.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:40:52+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/multilayer.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:42:03+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/quotations.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:43:17+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/de/editexample2.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:37:14+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/de/editexample3.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:37:16+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/de/editexample4.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:37:18+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/de/editexample5.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:37:21+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/de/editexample6.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:37:26+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/de/editexample6-5.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:37:24+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/de/editexample7.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:37:28+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/nonBMP/index.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:44:38+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/fontforge_ja_htdocs-20060822.tar.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2006-08-23T01:13:04+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/scriptnotes.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:43:40+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/fontview.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:40:57+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/charview.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:39:12+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/bitmapview.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:39:03+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/metricsview.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:41:57+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/filemenu.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:40:14+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/editmenu.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:39:54+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/pointmenu.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:42:48+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/elementmenu.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:39:57+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/hintsmenu.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:41:26+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/encodingmenu.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:40:00+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/viewmenu.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:44:21+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/metricsmenu.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:41:54+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/cidmenu.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:39:18+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/mmmenu.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:41:59+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/windowmenu.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:44:30+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/helpmenu.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:41:21+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/HotKeys.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:38:15+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/scripting.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:43:37+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/PfaEdit-TeX.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:38:32+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/locale.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:41:40+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/errrecovery.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:40:02+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/xres.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:44:35+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/cliargs.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:39:21+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/files.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:40:16+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/src.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:44:05+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/sfdformat.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:43:55+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/plugins.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:42:42+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/bezier.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:38:56+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/corpchar.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:39:25+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/GlossaryFS.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:38:11+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/IndexFS.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:38:17+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/nvd.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:42:17+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/license.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:41:38+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/running.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:43:27+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/fontinfo.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:40:48+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/hinting.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:41:24+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/ref-caveats.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:43:23+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/gposgsub.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:41:14+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/CaslonRoman.sfd.gz</loc>
+	<priority>0.5</priority>
+	<lastmod>2004-03-02T03:39:46+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/CaslonItalic.sfd.gz</loc>
+	<priority>0.5</priority>
+	<lastmod>2004-03-02T03:39:47+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/CaslonBold.sfd.gz</loc>
+	<priority>0.5</priority>
+	<lastmod>2004-03-02T03:39:47+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/Caslon-Black.sfd.gz</loc>
+	<priority>0.5</priority>
+	<lastmod>2004-03-02T03:39:47+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/CaslonMM.sfd.gz</loc>
+	<priority>0.5</priority>
+	<lastmod>2004-03-02T03:39:49+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/Caliban.sfd.gz</loc>
+	<priority>0.5</priority>
+	<lastmod>2004-03-02T03:39:46+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/MonospaceRegular.sfd.gz</loc>
+	<priority>0.5</priority>
+	<lastmod>2004-03-02T03:39:47+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/MonospaceBold.sfd.gz</loc>
+	<priority>0.5</priority>
+	<lastmod>2004-03-02T03:39:46+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/MonospaceOblique.sfd.gz</loc>
+	<priority>0.5</priority>
+	<lastmod>2004-03-02T03:39:48+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/Cupola.sfd.gz</loc>
+	<priority>0.5</priority>
+	<lastmod>2004-03-02T03:39:48+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/FormalScript.tgz</loc>
+	<priority>0.5</priority>
+	<lastmod>2004-03-02T03:39:49+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/ItalicHand.sfd.gz</loc>
+	<priority>0.5</priority>
+	<lastmod>2004-03-02T03:39:49+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/UBraille.tar.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2004-03-02T03:39:48+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/toyfonts.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2008-04-18T04:13:41+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/Composites/index.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2004-03-02T03:39:30+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/BDFgrey.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:46:00+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/macformats.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:01:02+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/pcf-format.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:04:04+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/cidmapformat.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:48:15+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/FontForge.pot.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2011-02-22T02:51:50+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/OFL-Unofficial.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:03:25+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/FontForge-MenuShortCuts.pot.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2011-02-22T02:51:50+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/splinefont.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:07:47+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/views.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:10:34+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfd.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:06:52+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/mad.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:01:09+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/future.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:55:45+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/TrueOpenTables.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:09:35+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/editexample2.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:39:38+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/editexample3.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:39:41+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/editexample4.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:39:43+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/editexample5.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:39:45+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/editexample6.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:39:50+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/editexample6-5.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:39:48+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/editexample7.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:39:52+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/scripting-tutorial.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:43:35+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ff-history.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:53:01+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/fontforge-themes.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:54:07+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/FontForgeSplash.png</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:54:04+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/nonBMP/index.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:42:15+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/prefs.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:43:07+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/showatt.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:43:57+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/charinfo.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:39:09+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/realindex.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:43:20+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/display.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:39:32+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/xim.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:44:32+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/search.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:43:42+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/getinfo.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:41:07+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/MetaFont.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:38:26+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/problems.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:43:15+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/faqFrame.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:40:12+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/faq.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:40:08+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/BDFgrey.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:38:00+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/macformats.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:41:49+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/pcf-format.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:42:31+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/cidmapformat.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:39:16+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/nonBMP/PlaneOne.sfd.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2007-11-12T15:24:04+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/nonBMP/PlaneOne-13.bdf.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2007-11-12T15:24:02+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/nonBMP/toplane.c.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2005-09-30T02:08:47+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/AA-Comparison.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:37:56+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/multiplemaster.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:42:06+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/generate.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:41:02+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/print.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:43:09+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/selections.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:43:46+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/pfaeditmath.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:42:40+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/selectbyatt.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:43:44+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/bdfinfo.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:38:54+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/typofeat.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:44:16+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/transform.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:44:12+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/scripting-alpha.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:43:32+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/autotrace.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:38:49+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/accented.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:38:41+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/ttfinstrs.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:44:14+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/histogram.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:41:28+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/groups.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:41:19+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ListeDesGlyphes.nam</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T16:00:44+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/kernpairs.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:41:34+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/anchorcontrol.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:38:47+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/autowidth.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:38:52+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/non-standard.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:42:10+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/splinefont.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:44:02+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/views.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:44:24+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/sfd.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:43:49+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/GlossaryFrame.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:38:13+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/glossary.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:41:10+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/IndexFrame.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:38:19+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/TrueOpenTables.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:38:35+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/statemachine.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:44:08+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/palmfonts.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:42:29+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/UniqueID.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:38:37+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/otherlinks.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:42:23+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/tilepath.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:44:10+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/contextchain.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:39:23+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/ja/mad.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:41:51+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/Ambrosia.sfd.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2008-02-26T23:30:22+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/AmbrosiaItalic.sfd.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2005-07-25T03:44:22+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/AmbrosiaBold.sfd.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2008-01-27T17:32:27+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/AmbrosiaOutline.sfd.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2005-07-25T03:44:22+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/AndradeSwash.sfd.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2005-07-25T03:44:23+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/Baldur.sfd.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2005-07-25T03:44:23+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/Bastarda.sfd.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2005-07-25T03:44:23+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/GothicBamboo.sfd.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2007-09-08T02:25:11+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/Bocklin.sfd.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2005-07-25T03:44:23+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/Caprice.sfd.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2005-07-25T03:44:23+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/Carmen.sfd.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2005-07-25T03:44:24+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/Crystal.sfd.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2005-07-25T03:44:24+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/CupolaBoldItalic.sfd.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2005-07-25T03:44:24+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/CupolaBold.sfd.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2005-07-25T03:44:24+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/CupolaItalic.sfd.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2005-07-25T03:44:24+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/Cupola.sfd.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2005-07-25T03:44:24+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/Decorative.sfd.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2005-07-25T03:44:24+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/DufreneType3.sfd.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2007-10-07T19:07:35+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/EddaNarrow.sfd.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2005-07-25T03:44:24+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/EddaOutline.sfd.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2005-07-25T03:44:25+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/ExtravagantCapitals.sfd.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2008-01-27T04:41:35+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/FantasieArtistique.sfd.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2005-07-25T03:44:25+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/Flash.sfd.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2005-07-25T03:44:25+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/FloralCaps.sfd.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2005-07-25T03:44:26+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/FormalScript.sfd.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2008-01-27T04:39:56+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/HohenzollernInitials.sfd.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2008-01-27T04:38:56+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/Humanistic.sfd.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2008-01-27T04:40:10+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/ItalicHand.sfd.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2008-01-27T04:39:19+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/Lombardic.sfd.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2005-07-25T03:44:26+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/Mirage.sfd.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2005-07-25T03:44:26+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/Monopol.sfd.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2008-01-27T17:43:54+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/Morris-Initials.sfd.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2008-01-27T04:43:40+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/Parisian.sfd.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2005-07-25T03:44:26+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/Peignot.sfd.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2005-07-25T03:44:26+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/Picadilly.sfd.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2005-07-25T03:44:27+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/Ringlet.sfd.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2005-07-25T03:44:27+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/RingletBlack.sfd.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2005-07-25T03:44:27+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/RomanUncialModern.sfd.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2005-07-25T03:44:27+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/Rotunda.sfd.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2005-07-25T03:44:27+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/SquareCaps.sfd.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2008-01-27T17:45:32+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/TexturaModern.sfd.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2005-07-25T03:44:27+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/UncialAnimals.sfd.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2005-07-25T03:44:27+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/sfds/Versal.sfd.bz2</loc>
+	<priority>0.5</priority>
+	<lastmod>2005-07-25T03:44:27+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/Composites/CompositeMac.ttf</loc>
+	<priority>0.5</priority>
+	<lastmod>2004-03-02T03:39:30+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/Composites/CompositeMS.ttf</loc>
+	<priority>0.5</priority>
+	<lastmod>2004-03-02T03:39:30+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/Composites/CompositeAmbiguous.ttf</loc>
+	<priority>0.5</priority>
+	<lastmod>2004-03-02T03:39:30+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/Composites/CompositeMac.ttf.bin</loc>
+	<priority>0.5</priority>
+	<lastmod>2004-03-02T03:39:30+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/Composites/CompositeMS.ttf.bin</loc>
+	<priority>0.5</priority>
+	<lastmod>2004-03-02T03:39:30+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/Composites/CompositeAmbiguous.ttf.bin</loc>
+	<priority>0.5</priority>
+	<lastmod>2004-03-02T03:39:30+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/Composites/CompositeMac.dfont</loc>
+	<priority>0.5</priority>
+	<lastmod>2004-03-02T03:39:30+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/Composites/CompositeMS.dfont</loc>
+	<priority>0.5</priority>
+	<lastmod>2004-03-02T03:39:30+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/Composites/CompositeAmbiguous.dfont</loc>
+	<priority>0.5</priority>
+	<lastmod>2004-03-02T03:39:30+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/OFL-fr.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2007-03-19T20:52:18+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/OFL-el.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2007-03-19T23:03:05+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/OFL-pl.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2007-03-25T21:46:38+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/OFL-vi.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2007-03-19T20:52:23+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/OFL-FAQ-vi.html</loc>
+	<priority>0.5</priority>
+	<lastmod>2007-03-19T20:52:13+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://fontforge.sourceforge.net/englishkernpairs.txt</loc>
+	<priority>0.5</priority>
+	<lastmod>2012-07-31T15:52:11+00:00</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+</urlset>
