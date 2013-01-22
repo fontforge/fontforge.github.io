@@ -12,7 +12,7 @@ You are invited to participate in this project; your bug reports, feature
 suggestions, tutorial ideas and code contributions are all welcome! [Learn
 more...](/documentation/developer/)
 
-<p>Learning FontForge is easy. New users can get started with the
+Learning FontForge is easy. New users can get started with the
 [tutorials](/tutorial), and the entire [interface](/documentation/interface/)
 is fully documented.
 
