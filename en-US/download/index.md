@@ -1,7 +1,6 @@
 ---
-title: Download FontForge"
-section="download"
-bits="<link rel=\"stylesheet\" href=\"css/download.css\">"
+title: Download FontForge
+layout: default
 ---
 
 
