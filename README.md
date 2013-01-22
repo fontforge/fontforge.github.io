@@ -22,6 +22,8 @@ Directory Layout
 - `_build/` Some older build scripts to convert source pages from the old site 
   into md files (ignore this directory)
 
+- `en-US/` The site's contents, in US English. 
+
 Files of interest
 -------------------
 
