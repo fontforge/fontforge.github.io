@@ -1,1 +1,0 @@
-See /meta/home*.html for this page
