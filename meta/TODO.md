@@ -36,6 +36,7 @@ Content To Add
 - Add util for svg splitting (fontforge -lang=ff -c 'Open($1); SelectWorthOutputting(); foreach
 Export("svg"); endloop;' font_file.ttf)
 - Add a note about 'Add Extrema' as per https://github.com/fontforge/fontforge/pull/125
+- Add a note about how to make translations: `make -C po potfile; cd po; msgmerge ru.po FontForge.pot > ru.po`
 
 HTML/CSS
 =============
