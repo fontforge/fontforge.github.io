@@ -1,6 +1,5 @@
 ---
 title: FontForge redesign meta pages
-layout: default
 ---
 
 - [TODO.md](TODO.html)
