@@ -1,8 +1,7 @@
-+++
-title="The Edit Menu"
-section=""
-bits=""
-+++
+---
+title: The Edit Menu
+layout: default
+---
 
 
 The Edit Menu

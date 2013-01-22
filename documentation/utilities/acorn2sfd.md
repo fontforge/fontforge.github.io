@@ -1,8 +1,7 @@
-+++
-title="acorn2sfd -- A program for comparing fonts"
-section=""
-bits=""
-+++
+---
+title: acorn2sfd -- A program for comparing fonts
+layout: default
+---
 
 
 acorn2sfd\

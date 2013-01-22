@@ -1,8 +1,7 @@
-+++
-title="Auto Width and Auto Kern"
-section=""
-bits=""
-+++
+---
+title: Auto Width and Auto Kern
+layout: default
+---
 
 
 Auto Width![](img/autowidth.png)

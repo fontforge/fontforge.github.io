@@ -1,8 +1,7 @@
-+++
-title="The histogram dialog"
-section=""
-bits=""
-+++
+---
+title: The histogram dialog
+layout: default
+---
 
 
 ![](img/histogram.png)The histogram dialog

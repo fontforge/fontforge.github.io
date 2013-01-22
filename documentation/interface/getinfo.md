@@ -1,8 +1,7 @@
-+++
-title="Get Info"
-section=""
-bits=""
-+++
+---
+title: Get Info
+layout: default
+---
 
 
 Get Info

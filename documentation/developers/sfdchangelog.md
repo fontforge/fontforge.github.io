@@ -1,8 +1,7 @@
-+++
-title="Change log for FontForge's sfd format"
-section=""
-bits=""
-+++
+---
+title: Change log for FontForge's sfd format
+layout: default
+---
 
 
 Changes to the sfd format

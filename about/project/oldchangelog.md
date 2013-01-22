@@ -1,8 +1,7 @@
-+++
-title="Older changes to FontForge"
-section=""
-bits=""
-+++
+---
+title: Older changes to FontForge
+layout: default
+---
 
 
 > **CHAPLAIN:**\

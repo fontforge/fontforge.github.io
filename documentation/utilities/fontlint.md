@@ -1,8 +1,7 @@
-+++
-title="fontlint -- A program for checking the validity of fonts"
-section=""
-bits=""
-+++
+---
+title: fontlint -- A program for checking the validity of fonts
+layout: default
+---
 
 
 fontlint\

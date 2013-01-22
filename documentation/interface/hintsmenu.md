@@ -1,8 +1,7 @@
-+++
-title="The Hints Menu"
-section=""
-bits=""
-+++
+---
+title: The Hints Menu
+layout: default
+---
 
 
 The Hints Menu

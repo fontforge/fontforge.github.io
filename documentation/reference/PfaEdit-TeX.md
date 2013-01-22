@@ -1,8 +1,7 @@
-+++
-title="Using FontForge with TeX"
-section=""
-bits=""
-+++
+---
+title: Using FontForge with TeX
+layout: default
+---
 
 
 FontForge and TeX

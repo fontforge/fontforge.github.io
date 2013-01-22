@@ -1,8 +1,7 @@
-+++
-title="Plugins in FontForge"
-section=""
-bits=""
-+++
+---
+title: Plugins in FontForge
+layout: default
+---
 
 
 Plugins in FontForge

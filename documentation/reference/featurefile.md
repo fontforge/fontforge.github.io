@@ -1,8 +1,7 @@
-+++
-title="FontForge's implementation of Adobe's Feature File syntax."
-section=""
-bits=""
-+++
+---
+title: FontForge's implementation of Adobe's Feature File syntax.
+layout: default
+---
 
 
 Major differences between FontForge's and Adobe's interpretation of feature files

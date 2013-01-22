@@ -1,8 +1,7 @@
-+++
-title="Hinting"
-section=""
-bits=""
-+++
+---
+title: Hinting
+layout: default
+---
 
 
 Hinting

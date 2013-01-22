@@ -1,8 +1,7 @@
-+++
-title="Cidmap files"
-section=""
-bits=""
-+++
+---
+title: Cidmap files
+layout: default
+---
 
 
 Cidmap files

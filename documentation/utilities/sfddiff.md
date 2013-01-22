@@ -1,8 +1,7 @@
-+++
-title="sfddiff -- A program for comparing fonts"
-section=""
-bits=""
-+++
+---
+title: sfddiff -- A program for comparing fonts
+layout: default
+---
 
 
 sfddiff\

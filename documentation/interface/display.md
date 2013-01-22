@@ -1,8 +1,7 @@
-+++
-title="Display Fonts"
-section=""
-bits=""
-+++
+---
+title: Display Fonts
+layout: default
+---
 
 
 Display & Print Fonts

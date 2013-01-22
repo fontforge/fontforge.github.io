@@ -1,8 +1,7 @@
-+++
-title="Bitmap Character View"
-section=""
-bits=""
-+++
+---
+title: Bitmap Character View
+layout: default
+---
 
 
 Bitmap Glyph View

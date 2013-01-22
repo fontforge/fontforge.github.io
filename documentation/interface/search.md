@@ -1,8 +1,7 @@
-+++
-title="Searching for shapes within characters..."
-section=""
-bits=""
-+++
+---
+title: Searching for shapes within characters...
+layout: default
+---
 
 
 ![](img/rplref.png)Finding shapes within glyphs

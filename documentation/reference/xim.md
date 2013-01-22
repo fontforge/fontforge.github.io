@@ -1,8 +1,7 @@
-+++
-title="X Input Methods"
-section=""
-bits=""
-+++
+---
+title: X Input Methods
+layout: default
+---
 
 
 For entering text in CJK languages, simple keyboard typing is not

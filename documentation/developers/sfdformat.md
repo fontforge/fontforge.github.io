@@ -1,8 +1,7 @@
-+++
-title="Spline Font Database File Format"
-section=""
-bits=""
-+++
+---
+title: Spline Font Database File Format
+layout: default
+---
 
 
 Spline Font Database

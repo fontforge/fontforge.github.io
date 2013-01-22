@@ -1,8 +1,7 @@
-+++
-title="FontForge's math"
-section=""
-bits=""
-+++
+---
+title: FontForge's math
+layout: default
+---
 
 
 FontForge's math

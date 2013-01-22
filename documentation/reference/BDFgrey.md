@@ -1,8 +1,7 @@
-+++
-title="Extensions to Adobe's Bitmap Distribution Format for greymap (anti-aliased)"
-section=""
-bits=""
-+++
+---
+title: Extensions to Adobe's Bitmap Distribution Format for greymap (anti-aliased)
+layout: default
+---
 
 
 Extensions to [Adobe's BDF](http://partners.adobe.com/asn/developer/PDFS/TN/5005.BDF_Spec.pdf) for greymap fonts

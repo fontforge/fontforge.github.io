@@ -1,8 +1,7 @@
-+++
-title="Quotations used in the sample text for Printing"
-section=""
-bits=""
-+++
+---
+title: Quotations used in the sample text for Printing
+layout: default
+---
 
 
 Quotations used in the sample text for Printing

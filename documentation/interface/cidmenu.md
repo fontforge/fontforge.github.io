@@ -1,8 +1,7 @@
-+++
-title="The CID Menu and CID keyed fonts"
-section=""
-bits=""
-+++
+---
+title: The CID Menu and CID keyed fonts
+layout: default
+---
 
 
 The CID Menu

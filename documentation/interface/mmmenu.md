@@ -1,8 +1,7 @@
-+++
-title="Multiple Master menu"
-section=""
-bits=""
-+++
+---
+title: Multiple Master menu
+layout: default
+---
 
 
 The Multiple Master Menu

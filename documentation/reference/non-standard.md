@@ -1,8 +1,7 @@
-+++
-title="Non standard extensions used by FontForge in True/Open Type"
-section=""
-bits=""
-+++
+---
+title: Non standard extensions used by FontForge in True/Open Type
+layout: default
+---
 
 
 Non standard extensions used FontForge in True/Open Type

@@ -1,8 +1,7 @@
-+++
-title="Uninstalling"
-section=""
-bits=""
-+++
+---
+title: Uninstalling
+layout: default
+---
 
 
 Uninstalling FontForge

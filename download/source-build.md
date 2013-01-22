@@ -1,8 +1,7 @@
-+++
-title="Building FontForge from source"
-section=""
-bits=""
-+++
+---
+title: Building FontForge from source
+layout: default
+---
 
 
 FontForge build procedures

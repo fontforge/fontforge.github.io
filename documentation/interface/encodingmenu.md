@@ -1,8 +1,7 @@
-+++
-title="Encoding Menu"
-section=""
-bits=""
-+++
+---
+title: Encoding Menu
+layout: default
+---
 
 
 Encoding Menu

@@ -1,8 +1,7 @@
-+++
-title="Transform Dialog"
-section=""
-bits=""
-+++
+---
+title: Transform Dialog
+layout: default
+---
 
 
 Transform Dialog

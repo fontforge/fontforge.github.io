@@ -1,8 +1,7 @@
-+++
-title="FontForge Website Translations"
-section=""
-bits=""
-+++
+---
+title: FontForge Website Translations
+layout: default
+---
 
 FontForge Website Translations
 ------------------------------

@@ -1,8 +1,7 @@
-+++
-title="The Open Font Library"
-section=""
-bits=""
-+++
+---
+title: The Open Font Library
+layout: default
+---
 
 
 Open Font Library

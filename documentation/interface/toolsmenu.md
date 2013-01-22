@@ -1,8 +1,7 @@
-+++
-title="The Tools Menu"
-section=""
-bits=""
-+++
+---
+title: The Tools Menu
+layout: default
+---
 
 
 The Tools Menu

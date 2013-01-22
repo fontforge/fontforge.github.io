@@ -1,8 +1,7 @@
-+++
-title="The Kerning Pairs dialog"
-section=""
-bits=""
-+++
+---
+title: The Kerning Pairs dialog
+layout: default
+---
 
 
 ![](img/KernPairs.png)The Kerning Pairs dialog

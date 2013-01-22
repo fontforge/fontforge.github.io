@@ -1,8 +1,7 @@
-+++
-title="More advanced features, ligatures, mark positioning, glyph variants"
-section=""
-bits=""
-+++
+---
+title: More advanced features, ligatures, mark positioning, glyph variants
+layout: default
+---
 
 
 Tutorial \#6

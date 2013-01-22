@@ -1,8 +1,7 @@
-+++
-title="Font Info"
-section=""
-bits=""
-+++
+---
+title: Font Info
+layout: default
+---
 
 
 Font Info

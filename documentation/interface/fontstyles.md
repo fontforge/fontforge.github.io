@@ -1,8 +1,7 @@
-+++
-title="Font Styles in various languages"
-section=""
-bits=""
-+++
+---
+title: Font Styles in various languages
+layout: default
+---
 
 
 Font Styles in various languages

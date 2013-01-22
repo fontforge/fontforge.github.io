@@ -1,8 +1,7 @@
-+++
-title="Creating a glyph using spiro points"
-section=""
-bits=""
-+++
+---
+title: Creating a glyph using spiro points
+layout: default
+---
 
 
 Spiro Tutorial

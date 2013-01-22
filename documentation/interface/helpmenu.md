@@ -1,8 +1,7 @@
-+++
-title="Help menu"
-section=""
-bits=""
-+++
+---
+title: Help menu
+layout: default
+---
 
 
 Help Menu

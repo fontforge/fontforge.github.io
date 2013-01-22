@@ -1,8 +1,7 @@
-+++
-title="Outline Glyph View"
-section=""
-bits=""
-+++
+---
+title: Outline Glyph View
+layout: default
+---
 
 
 Outline Glyph View

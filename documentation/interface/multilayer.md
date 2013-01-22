@@ -1,8 +1,7 @@
-+++
-title="Multi Layered Editing of Type3 and SVG fonts"
-section=""
-bits=""
-+++
+---
+title: Multi Layered Editing of Type3 and SVG fonts
+layout: default
+---
 
 
 Multi Layered Editing of Type3 and SVG fonts

@@ -1,8 +1,7 @@
-+++
-title="The Insert Text Dialog"
-section=""
-bits=""
-+++
+---
+title: The Insert Text Dialog
+layout: default
+---
 
 
 The Insert Text Dialog

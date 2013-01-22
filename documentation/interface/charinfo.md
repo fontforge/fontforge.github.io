@@ -1,8 +1,7 @@
-+++
-title="Char Info"
-section=""
-bits=""
-+++
+---
+title: Char Info
+layout: default
+---
 
 
 Glyph Info

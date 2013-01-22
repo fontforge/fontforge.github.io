@@ -1,8 +1,7 @@
-+++
-title="The Mac State Machine dialog"
-section=""
-bits=""
-+++
+---
+title: The Mac State Machine dialog
+layout: default
+---
 
 
 The Mac State Machine Dialog

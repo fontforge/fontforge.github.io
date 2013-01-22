@@ -1,8 +1,7 @@
-+++
-title="Please title this page. (SuggestDeltas.html in FontForge)"
-section=""
-bits=""
-+++
+---
+title: Please title this page. (SuggestDeltas.html in FontForge)
+layout: default
+---
 
 
 After you have generated truetype instructions to grid fit a glyph it

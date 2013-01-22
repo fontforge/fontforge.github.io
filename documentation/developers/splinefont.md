@@ -1,8 +1,7 @@
-+++
-title="The basic spline data structures of FontForge"
-section=""
-bits=""
-+++
+---
+title: The basic spline data structures of FontForge
+layout: default
+---
 
 
 Data Types

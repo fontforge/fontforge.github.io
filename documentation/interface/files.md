@@ -1,8 +1,7 @@
-+++
-title="Files used by FontForge"
-section=""
-bits=""
-+++
+---
+title: Files used by FontForge
+layout: default
+---
 
 
 Files used by FontForge

@@ -1,8 +1,7 @@
-+++
-title="Select By Lookup Subtable"
-section=""
-bits=""
-+++
+---
+title: Select By Lookup Subtable
+layout: default
+---
 
 
 ![](img/SelectByATT.png)Select By Lookup Subtable

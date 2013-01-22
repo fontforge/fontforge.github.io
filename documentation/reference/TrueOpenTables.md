@@ -1,8 +1,7 @@
-+++
-title="TrueType and OpenType tables supported by FontForge"
-section=""
-bits=""
-+++
+---
+title: TrueType and OpenType tables supported by FontForge
+layout: default
+---
 
 
 TrueType and OpenType tables supported by FontForge

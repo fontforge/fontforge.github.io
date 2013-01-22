@@ -1,8 +1,7 @@
-+++
-title="Contextual features"
-section=""
-bits=""
-+++
+---
+title: Contextual features
+layout: default
+---
 
 
 Tutorial \#7

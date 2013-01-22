@@ -1,8 +1,7 @@
-+++
-title="Bitmap strikes"
-section=""
-bits=""
-+++
+---
+title: Bitmap strikes
+layout: default
+---
 
 
 Tutorial \#9

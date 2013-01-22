@@ -1,7 +1,6 @@
 ---
-layout: default
 title: Donate
-section: About
+layout: default
 ---
 
 FontForge development can be funded via a donation to the Libre Font Fund.

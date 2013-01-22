@@ -1,8 +1,7 @@
-+++
-title="X Resources"
-section=""
-bits=""
-+++
+---
+title: X Resources
+layout: default
+---
 
 
 X Resources

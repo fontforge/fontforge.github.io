@@ -1,8 +1,7 @@
-+++
-title="FontForge install procedures for VMS"
-section=""
-bits=""
-+++
+---
+title: FontForge install procedures for VMS
+layout: default
+---
 
 
 FontForge install procedures\

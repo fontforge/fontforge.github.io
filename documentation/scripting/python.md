@@ -1,8 +1,7 @@
-+++
-title="Writing python scripts to change fonts in FontForge"
-section=""
-bits=""
-+++
+---
+title: Writing python scripts to change fonts in FontForge
+layout: default
+---
 
 A better version of this page is [here](http://dmtr.org/ff.php) which should be taken into account when redesigning the site
 

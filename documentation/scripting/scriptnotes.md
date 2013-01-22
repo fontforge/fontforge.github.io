@@ -1,8 +1,7 @@
-+++
-title="Special thoughts for special scripts"
-section=""
-bits=""
-+++
+---
+title: Special thoughts for special scripts
+layout: default
+---
 
 
 Special thoughts for special scripts

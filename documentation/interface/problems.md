@@ -1,8 +1,7 @@
-+++
-title="Finding common font problems automagically"
-section=""
-bits=""
-+++
+---
+title: Finding common font problems automagically
+layout: default
+---
 
 
 Finding common font problems automagically

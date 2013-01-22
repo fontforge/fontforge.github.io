@@ -1,8 +1,7 @@
-+++
-title="High level description of what each source file contains..."
-section=""
-bits=""
-+++
+---
+title: High level description of what each source file contains...
+layout: default
+---
 
 
 High level description of what each source file contains...\

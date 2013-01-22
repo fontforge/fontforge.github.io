@@ -1,8 +1,7 @@
-+++
-title="FontForge Developer Documentation"
-section=""
-bits=""
-+++
+---
+title: FontForge Developer Documentation
+layout: default
+---
 
 ### Coding Style
 

@@ -1,8 +1,7 @@
-+++
-title="Website Contributors"
-section=""
-bits=""
-+++
+---
+title: Website Contributors
+layout: default
+---
 
 This should list the contributors to the website:
 

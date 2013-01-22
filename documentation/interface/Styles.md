@@ -1,8 +1,7 @@
-+++
-title="Stylistic Transformations on Fonts"
-section=""
-bits=""
-+++
+---
+title: Stylistic Transformations on Fonts
+layout: default
+---
 
 
 Stylistic Transformations on Fonts

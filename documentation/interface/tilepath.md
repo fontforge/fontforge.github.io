@@ -1,8 +1,7 @@
-+++
-title="Tile Path"
-section=""
-bits=""
-+++
+---
+title: Tile Path
+layout: default
+---
 
 
 Tile Path

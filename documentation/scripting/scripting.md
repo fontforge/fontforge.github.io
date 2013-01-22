@@ -1,8 +1,7 @@
-+++
-title="Writing scripts to change fonts in FontForge"
-section=""
-bits=""
-+++
+---
+title: Writing scripts to change fonts in FontForge
+layout: default
+---
 
 
 Writing scripts to change fonts in FontForge

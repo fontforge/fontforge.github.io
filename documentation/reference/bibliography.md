@@ -1,8 +1,7 @@
-+++
-title="A meandering bibliography of font related things"
-section=""
-bits=""
-+++
+---
+title: A meandering bibliography of font related things
+layout: default
+---
 
 
 -   [Font File Formats](bibliography.html#Formats)

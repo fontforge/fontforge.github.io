@@ -1,8 +1,7 @@
-+++
-title="Hot Keys"
-section=""
-bits=""
-+++
+---
+title: Hot Keys
+layout: default
+---
 
 
 Menu Hot Keys

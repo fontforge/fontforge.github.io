@@ -1,8 +1,7 @@
-+++
-title="FontForge License and Copyright Notices"
-section=""
-bits=""
-+++
+---
+title: FontForge License and Copyright Notices
+layout: default
+---
 
 FontForge License [DRAFT]
 ==============================

@@ -1,8 +1,7 @@
-+++
-title="FontForge Scripting Tutorial"
-section=""
-bits=""
-+++
+---
+title: FontForge Scripting Tutorial
+layout: default
+---
 
 
 FontForge Scripting Tutorial

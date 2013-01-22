@@ -1,8 +1,7 @@
-+++
-title="FontForge Lacks"
-section=""
-bits=""
-+++
+---
+title: FontForge Lacks
+layout: default
+---
 
 Lacks
 -----

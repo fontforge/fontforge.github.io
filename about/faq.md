@@ -1,8 +1,7 @@
-+++
-title="Frequently Asked Questions"
-section=""
-bits=""
-+++
+---
+title: Frequently Asked Questions
+layout: default
+---
 
 
 ![](img/fontforge-banner-420.jpeg)

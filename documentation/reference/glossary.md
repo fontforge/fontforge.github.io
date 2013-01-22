@@ -1,8 +1,7 @@
-+++
-title="Glossary of (some) typographical terms"
-section=""
-bits=""
-+++
+---
+title: Glossary of (some) typographical terms
+layout: default
+---
 
 
   ---------------------------

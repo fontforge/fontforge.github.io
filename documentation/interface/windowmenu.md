@@ -1,8 +1,7 @@
-+++
-title="The Window Menu"
-section=""
-bits=""
-+++
+---
+title: The Window Menu
+layout: default
+---
 
 
 The Window Menu

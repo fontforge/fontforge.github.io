@@ -1,8 +1,7 @@
-+++
-title="Known Bugs"
-section=""
-bits=""
-+++
+---
+title: Known Bugs
+layout: default
+---
 
 Known Bugs
 ----------

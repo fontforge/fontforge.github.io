@@ -1,8 +1,7 @@
-+++
-title="Anti-Alias Comparison"
-section=""
-bits=""
-+++
+---
+title: Anti-Alias Comparison
+layout: default
+---
 
 
 ![](img/AmbrosiaFV-bm.png)\

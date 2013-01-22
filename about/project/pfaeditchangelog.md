@@ -1,8 +1,7 @@
-+++
-title="Changes to pfaedit (predecessor to fontforge)"
-section=""
-bits=""
-+++
+---
+title: Changes to pfaedit (predecessor to fontforge)
+layout: default
+---
 
 
 [Current fontforge changes](changelog.html)\

@@ -1,8 +1,7 @@
-+++
-title="FontForge install procedures for unix/linux based systems"
-section=""
-bits=""
-+++
+---
+title: FontForge install procedures for unix/linux based systems
+layout: default
+---
 
 
 FontForge install procedures\

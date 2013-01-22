@@ -1,8 +1,7 @@
-+++
-title="The Metrics Menu"
-section=""
-bits=""
-+++
+---
+title: The Metrics Menu
+layout: default
+---
 
 
 The Metrics Menu

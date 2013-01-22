@@ -1,8 +1,7 @@
-+++
-title="Building accented glyphs"
-section=""
-bits=""
-+++
+---
+title: Building accented glyphs
+layout: default
+---
 
 
 Tutorial \#4

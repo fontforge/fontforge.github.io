@@ -1,8 +1,7 @@
-+++
-title="FontForge install procedures for macintosh"
-section=""
-bits=""
-+++
+---
+title: FontForge install procedures for macintosh
+layout: default
+---
 
 
 FontForge install procedures\

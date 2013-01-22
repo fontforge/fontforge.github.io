@@ -1,8 +1,7 @@
-+++
-title="Unicode Corporate Characters used by FontForge"
-section=""
-bits=""
-+++
+---
+title: Unicode Corporate Characters used by FontForge
+layout: default
+---
 
 
 Unicode Corporate Characters used by FontForge

@@ -1,8 +1,7 @@
-+++
-title="Creating the letter "o" -- consistant directions"
-section=""
-bits=""
-+++
+---
+title: Creating the letter "o" -- consistant directions
+layout: default
+---
 
 
 Tutorial \#2

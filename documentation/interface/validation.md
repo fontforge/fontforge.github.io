@@ -1,8 +1,7 @@
-+++
-title="The font validation window"
-section=""
-bits=""
-+++
+---
+title: The font validation window
+layout: default
+---
 
 
 Font Validation window

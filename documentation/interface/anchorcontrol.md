@@ -1,8 +1,7 @@
-+++
-title="The Anchor Control dialog"
-section=""
-bits=""
-+++
+---
+title: The Anchor Control dialog
+layout: default
+---
 
 
 The Anchor Control dialog

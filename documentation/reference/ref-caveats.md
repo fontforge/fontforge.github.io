@@ -1,8 +1,7 @@
-+++
-title="Caveats about References"
-section=""
-bits=""
-+++
+---
+title: Caveats about References
+layout: default
+---
 
 
 Different font formats place different restrictions on the use of

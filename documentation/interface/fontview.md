@@ -1,8 +1,7 @@
-+++
-title="The Font View"
-section=""
-bits=""
-+++
+---
+title: The Font View
+layout: default
+---
 
 
 Font View

@@ -1,8 +1,7 @@
-+++
-title="Palm fonts"
-section=""
-bits=""
-+++
+---
+title: Palm fonts
+layout: default
+---
 
 
 Palm fonts

@@ -1,8 +1,7 @@
-+++
-title="FontForge -- An outline font editor for PostScript&reg;, TrueType"
-section=""
-bits=""
-+++
+---
+title: FontForge -- An outline font editor for PostScript&reg;, TrueType
+layout: default
+---
 
 
 [![](flags/Nisshoki-Japan.png)](ja/overview.html)

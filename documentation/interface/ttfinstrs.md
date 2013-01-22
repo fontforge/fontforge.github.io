@@ -1,8 +1,7 @@
-+++
-title="Viewing and Editing truetype instructions in FontForge."
-section=""
-bits=""
-+++
+---
+title: Viewing and Editing truetype instructions in FontForge.
+layout: default
+---
 
 
   --------------------------

@@ -1,8 +1,7 @@
-+++
-title="Possible future improvements to FontForge"
-section=""
-bits=""
-+++
+---
+title: Possible future improvements to FontForge
+layout: default
+---
 
 
 Currently under development

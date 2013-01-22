@@ -1,8 +1,7 @@
-+++
-title="Random utilities for examining fonts"
-section=""
-bits=""
-+++
+---
+title: Random utilities for examining fonts
+layout: default
+---
 
 
 Utilities for examining fonts

@@ -1,8 +1,7 @@
-+++
-title="Steps to creating a font..."
-section=""
-bits=""
-+++
+---
+title: Steps to creating a font...
+layout: default
+---
 
 
 Tutorial

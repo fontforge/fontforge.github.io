@@ -1,8 +1,7 @@
-+++
-title="Advanced Typography tables"
-section=""
-bits=""
-+++
+---
+title: Advanced Typography tables
+layout: default
+---
 
 
 Advanced Typography Tables

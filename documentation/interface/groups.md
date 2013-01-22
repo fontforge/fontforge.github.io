@@ -1,8 +1,7 @@
-+++
-title="Groups of Glyphs"
-section=""
-bits=""
-+++
+---
+title: Groups of Glyphs
+layout: default
+---
 
 
 Groups of Glyphs

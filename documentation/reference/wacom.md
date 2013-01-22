@@ -1,8 +1,7 @@
-+++
-title="Wacom graphics tablets and FontForge"
-section=""
-bits=""
-+++
+---
+title: Wacom graphics tablets and FontForge
+layout: default
+---
 
 
 Wacom graphics tablets and FontForge

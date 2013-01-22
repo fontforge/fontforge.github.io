@@ -1,8 +1,7 @@
-+++
-title="X Resource Editor"
-section=""
-bits=""
-+++
+---
+title: X Resource Editor
+layout: default
+---
 
 
 ![](img/resedit.png)

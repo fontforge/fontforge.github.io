@@ -1,8 +1,7 @@
-+++
-title="Starting fontforge"
-section=""
-bits=""
-+++
+---
+title: Starting fontforge
+layout: default
+---
 
 Starting fontforge
 ==================

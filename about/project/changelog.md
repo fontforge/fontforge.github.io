@@ -1,8 +1,7 @@
-+++
-title="Changelog for FontForge"
-section=""
-bits=""
-+++
+---
+title: Changelog for FontForge
+layout: default
+---
 
 Changelog
 =========

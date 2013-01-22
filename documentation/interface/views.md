@@ -1,8 +1,7 @@
-+++
-title="UI data structures for FontForge"
-section=""
-bits=""
-+++
+---
+title: UI data structures for FontForge
+layout: default
+---
 
 
 >     /* Copyright (C) 2000-2003 by George Williams */

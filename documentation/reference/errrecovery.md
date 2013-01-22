@@ -1,8 +1,7 @@
-+++
-title="Error Recovery"
-section=""
-bits=""
-+++
+---
+title: Error Recovery
+layout: default
+---
 
 
 Error Recovery

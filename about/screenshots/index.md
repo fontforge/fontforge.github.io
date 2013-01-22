@@ -1,8 +1,7 @@
-+++
-title="FontForge Features"
-section=""
-bits=""
-+++
+---
+title: FontForge Features
+layout: default
+---
 
 FontForge Features
 ==================

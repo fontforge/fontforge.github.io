@@ -1,8 +1,7 @@
-+++
-title="Macintosh font formats"
-section=""
-bits=""
-+++
+---
+title: Macintosh font formats
+layout: default
+---
 
 
 Macintosh font formats

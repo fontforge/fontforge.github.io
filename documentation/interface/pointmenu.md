@@ -1,8 +1,7 @@
-+++
-title="The Point Menu"
-section=""
-bits=""
-+++
+---
+title: The Point Menu
+layout: default
+---
 
 
 The Point Menu

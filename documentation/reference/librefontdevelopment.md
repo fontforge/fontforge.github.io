@@ -1,8 +1,7 @@
-+++
-title="Open Source font development efforts"
-section=""
-bits=""
-+++
+---
+title: Open Source font development efforts
+layout: default
+---
 
 
 Open Source font development efforts

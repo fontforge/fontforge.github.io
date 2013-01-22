@@ -1,8 +1,7 @@
-+++
-title="FontForge color schemes"
-section=""
-bits=""
-+++
+---
+title: FontForge color schemes
+layout: default
+---
 
 
 The following are some suggestions for color schemes. You simply copy

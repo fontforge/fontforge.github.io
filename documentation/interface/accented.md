@@ -1,8 +1,7 @@
-+++
-title="Building Accented and other Composite Characters"
-section=""
-bits=""
-+++
+---
+title: Building Accented and other Composite Characters
+layout: default
+---
 
 
 Building Accented and other Composite Glyphs

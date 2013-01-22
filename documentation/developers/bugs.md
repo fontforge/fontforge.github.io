@@ -1,8 +1,7 @@
-+++
-title="Report a Bug in FontForge"
-section=""
-bits=""
-+++
+---
+title: Report a Bug in FontForge
+layout: default
+---
 
 Reporting a bug in FontForge is easy, thanks to GitHub. Here's how:
 

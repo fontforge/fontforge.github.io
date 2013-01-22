@@ -1,8 +1,7 @@
-+++
-title="Preferences Dialog"
-section=""
-bits=""
-+++
+---
+title: Preferences Dialog
+layout: default
+---
 
 
 Preferences Dialog

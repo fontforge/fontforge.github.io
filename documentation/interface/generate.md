@@ -1,8 +1,7 @@
-+++
-title="Generate Font Dialog"
-section=""
-bits=""
-+++
+---
+title: Generate Font Dialog
+layout: default
+---
 
 
 Generate Font Dialog

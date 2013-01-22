@@ -1,8 +1,7 @@
-+++
-title="The File Menu"
-section=""
-bits=""
-+++
+---
+title: The File Menu
+layout: default
+---
 
 
 The File Menu

@@ -1,8 +1,7 @@
-+++
-title="MATH typesetting information"
-section=""
-bits=""
-+++
+---
+title: MATH typesetting information
+layout: default
+---
 
 
 Math typesetting information

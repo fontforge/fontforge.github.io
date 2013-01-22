@@ -1,8 +1,7 @@
-+++
-title="Multiple Master Dialog"
-section=""
-bits=""
-+++
+---
+title: Multiple Master Dialog
+layout: default
+---
 
 
 Multiple Master Dialog

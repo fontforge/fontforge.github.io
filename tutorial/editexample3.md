@@ -1,8 +1,7 @@
-+++
-title="Consistent serifs and stem widths"
-section=""
-bits=""
-+++
+---
+title: Consistent serifs and stem widths
+layout: default
+---
 
 
 Tutorial \#3

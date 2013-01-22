@@ -1,8 +1,7 @@
-+++
-title="The Metrics View"
-section=""
-bits=""
-+++
+---
+title: The Metrics View
+layout: default
+---
 
 
 The Metrics View

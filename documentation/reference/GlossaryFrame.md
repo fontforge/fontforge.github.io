@@ -1,8 +1,7 @@
-+++
-title=""
-section=""
-bits=""
-+++
+---
+title: 
+layout: default
+---
 
 
 [No Frames](glossary.html)

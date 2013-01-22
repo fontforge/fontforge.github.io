@@ -1,8 +1,7 @@
-+++
-title="Index"
-section=""
-bits=""
-+++
+---
+title: Index
+layout: default
+---
 
 
   ------------------------

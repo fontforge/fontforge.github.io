@@ -1,8 +1,7 @@
-+++
-title="FontForge Translations"
-section=""
-bits=""
-+++
+---
+title: FontForge Translations
+layout: default
+---
 
 Pull page contents from old site
 

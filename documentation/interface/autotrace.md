@@ -1,8 +1,7 @@
-+++
-title="Autotracing bitmaps in FontForge"
-section=""
-bits=""
-+++
+---
+title: Autotracing bitmaps in FontForge
+layout: default
+---
 
 
 Autotracing bitmaps in FontForge

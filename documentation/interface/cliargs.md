@@ -1,8 +1,7 @@
-+++
-title="Command Line Arguments"
-section=""
-bits=""
-+++
+---
+title: Command Line Arguments
+layout: default
+---
 
 
 Command Line Arguments

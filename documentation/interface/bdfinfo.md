@@ -1,8 +1,7 @@
-+++
-title="BDF Info (Properties) Dialog"
-section=""
-bits=""
-+++
+---
+title: BDF Info (Properties) Dialog
+layout: default
+---
 
 
 BDF Info Dialog

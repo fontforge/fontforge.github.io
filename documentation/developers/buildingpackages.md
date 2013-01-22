@@ -1,8 +1,7 @@
-+++
-title="How to build FontForge binary packages"
-section=""
-bits=""
-+++
+---
+title: How to build FontForge binary packages
+layout: default
+---
 
 Windows
 -----------

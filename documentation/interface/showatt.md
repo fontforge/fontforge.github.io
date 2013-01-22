@@ -1,8 +1,7 @@
-+++
-title="Show Advanced Typographic Features"
-section=""
-bits=""
-+++
+---
+title: Show Advanced Typographic Features
+layout: default
+---
 
 
 Show Advanced Typographic Features

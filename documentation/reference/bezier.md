@@ -1,8 +1,7 @@
-+++
-title="B&eacute;zier Splines"
-section=""
-bits=""
-+++
+---
+title: B&eacute;zier Splines
+layout: default
+---
 
 
 Bézier^[1](#bezier)^ Splines

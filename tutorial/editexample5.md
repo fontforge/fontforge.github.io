@@ -1,8 +1,7 @@
-+++
-title="Examining and controling metrics and kerning"
-section=""
-bits=""
-+++
+---
+title: Examining and controling metrics and kerning
+layout: default
+---
 
 
 Tutorial \#5

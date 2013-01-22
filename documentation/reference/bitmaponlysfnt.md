@@ -1,8 +1,7 @@
-+++
-title="Several formats for bitmap only sfnts (truetype files)"
-section=""
-bits=""
-+++
+---
+title: Several formats for bitmap only sfnts (truetype files)
+layout: default
+---
 
 
 Several formats for bitmap only sfnts\

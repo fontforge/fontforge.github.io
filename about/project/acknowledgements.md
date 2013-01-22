@@ -1,8 +1,7 @@
-+++
-title="Acknowledgements"
-section=""
-bits=""
-+++
+---
+title: Acknowledgements
+layout: default
+---
 
 Acknowledgements
 ================

@@ -1,8 +1,7 @@
-+++
-title="Final cleanup"
-section=""
-bits=""
-+++
+---
+title: Final cleanup
+layout: default
+---
 
 
 Tutorial \#8

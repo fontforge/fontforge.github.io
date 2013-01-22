@@ -1,8 +1,7 @@
-+++
-title="The Justify dialog"
-section=""
-bits=""
-+++
+---
+title: The Justify dialog
+layout: default
+---
 
 
 ![](img/JustifyDlg.png)Text justification is handled differently in

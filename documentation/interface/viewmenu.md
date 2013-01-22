@@ -1,8 +1,7 @@
-+++
-title="The View Menu"
-section=""
-bits=""
-+++
+---
+title: The View Menu
+layout: default
+---
 
 
 The View Menu

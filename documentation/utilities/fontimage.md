@@ -1,8 +1,7 @@
-+++
-title="fontimage -- generate a font thumbnail image"
-section=""
-bits=""
-+++
+---
+title: fontimage -- generate a font thumbnail image
+layout: default
+---
 
 
 fontimage\

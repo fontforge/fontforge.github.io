@@ -1,8 +1,7 @@
-+++
-title="Manipulating OpenType Lookups"
-section=""
-bits=""
-+++
+---
+title: Manipulating OpenType Lookups
+layout: default
+---
 
 
 > "The question is," said Humpty Dumpty, "which is to be master --"

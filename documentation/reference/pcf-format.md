@@ -1,8 +1,7 @@
-+++
-title="Format for X11 pcf bitmap font files"
-section=""
-bits=""
-+++
+---
+title: Format for X11 pcf bitmap font files
+layout: default
+---
 
 
 Format for X11 pcf bitmap font files

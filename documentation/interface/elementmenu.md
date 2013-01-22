@@ -1,8 +1,7 @@
-+++
-title="The Element Menu"
-section=""
-bits=""
-+++
+---
+title: The Element Menu
+layout: default
+---
 
 
 The Element Menu

@@ -1,8 +1,7 @@
-+++
-title="X Selections and the X Clipboard"
-section=""
-bits=""
-+++
+---
+title: X Selections and the X Clipboard
+layout: default
+---
 
 
 X Selections and the X Clipboard

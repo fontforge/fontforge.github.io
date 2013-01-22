@@ -1,8 +1,7 @@
-+++
-title="Scripting functions"
-section=""
-bits=""
-+++
+---
+title: Scripting functions
+layout: default
+---
 
 
 Scripting functions

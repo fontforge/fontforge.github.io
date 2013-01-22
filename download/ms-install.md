@@ -1,8 +1,7 @@
-+++
-title="FontForge install procedures for cygwin (MS/Windows)"
-section=""
-bits=""
-+++
+---
+title: FontForge install procedures for cygwin (MS/Windows)
+layout: default
+---
 
 
 FontForge install procedures\

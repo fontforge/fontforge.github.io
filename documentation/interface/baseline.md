@@ -1,8 +1,7 @@
-+++
-title="The baseline dialog, and the OpenType BASE table."
-section=""
-bits=""
-+++
+---
+title: The baseline dialog, and the OpenType BASE table.
+layout: default
+---
 
 
 ![](img/BASEdlg.png)This dialog may be invoked by

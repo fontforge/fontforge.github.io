@@ -1,8 +1,7 @@
-+++
-title="Differences from Fontographer"
-section=""
-bits=""
-+++
+---
+title: Differences from Fontographer
+layout: default
+---
 
 
 Differences from [Fontographer](http://www.macromedia.com/software/fontographer/)

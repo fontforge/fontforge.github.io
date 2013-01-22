@@ -1,8 +1,7 @@
-+++
-title="How you can help with FontForge"
-section=""
-bits=""
-+++
+---
+title: How you can help with FontForge
+layout: default
+---
 
 How you can help with FontForge
 ===============================
