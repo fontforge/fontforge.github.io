@@ -1,38 +1,31 @@
 fontforge.github.com
 ====================
 
-This is the FontForge website repository. To contribute, please fork this
-on www.github.com/fontforge/fontforge.github.com/ and make a pull request,
-or join the fontforge-devel list to discuss.
+This is the FontForge website repository. To contribute, please create issues, 
+join the fontforge-devel list to discuss general topics, or simply make 
+pull requests. Please don't hesitate to ask for direct commit access.
 
 Directory Layout
 ------------------
 
-- `README-HOWTO.md` Instructions for working with site
+- `meta/` Files made to redevelop the site, including a to-do list, sitemap 
+  visualisation, and mock up pages for the homepage, other pages and navigation
 
-- `meta/` Files made to redevelop the site (To Do list, sitemap visualisation,
-  ideas for homepage and nav copy)
+- `_layouts/*.html` html template files
 
-- `src/` Source pages -- the meat of the site, so please **edit these!**
+- `_includes/*.html` snippets of HTML that are included in pages and templates
 
-- `build/` Build scripts to convert source pages into html files
+- `assets/` CSS, JS and image files
 
-- `www/*.html` html files as served *(Don't change these because they are
-  generated from the source files with the build scripts!)*
+- `_config.yml` Configuration for Jeykll (ignore this file)
 
-- `www/img/` images as served
-
-- `www/css/` css as served
-
-- `www/js/` javascript as served
+- `_build/` Some older build scripts to convert source pages from the old site 
+  into md files (ignore this directory)
 
 Files of interest
 -------------------
 
-- `TODO.md` Todo list
-- `documentation.md` Organization for the documentation
-- `homepage.md` Ideas for homepage
-- `navigation.md` Ideas for navigation and main section
+- `meta/TODO.md` 
 
 How to build the site
 -------------------
