@@ -1,4 +1,5 @@
 ---
+layout: default
 title: Donate
 section: About
 ---
