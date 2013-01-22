@@ -59,6 +59,7 @@ Medium
 -------
 
 - add a sitemap.xml for search engine indexing
+- add a human readable sitemap, that has all the pages and titles, similar to the old nvd.html
 - add a copyright and license notice to the footer (Copyright © 2000–2012, <a href="contributors.html">George Williams and others</a>, and shared under the <a href="license.html">revised BSD license</a>.)
 - add mailing list search boxes to the homepage
 - add retina versions of all bitmap images
