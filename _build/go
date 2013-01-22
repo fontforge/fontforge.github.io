@@ -1,6 +1,11 @@
 #!/bin/zsh
 #
-# Run this to build the site.
+# 2013-01-22 DC: This script is for the old site, and it out of date!
+# But we keep it around in case we want to compare the old site to 
+# the new site
+# 
+# Brian Zick used this script to build the site, but we now use 
+# Jekyll for this.
 #
 # So, this indeed must do a lot. Which a lot?
 # - Handle nesting (like a file kept in doc/devel/)

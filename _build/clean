@@ -1,6 +1,11 @@
 #!/bin/zsh
 #
-# how I get from all the html in ./old/ to the more clean markdown files
+# 2013-01-22 DC: This script is for the old site, and it out of date!
+# But we keep it around in case we want to compare the old site to 
+# the new site
+#
+# how brian zick got from all the html in ./old/ to the more clean 
+# markdown files
 
 for j in *.html; do echo -n $j ' '; cat $j | grep -ic '<div id="in">'; done >> list-a
 cat list-a | grep -v FS | grep -v 404 > list-b
@@ -11,7 +16,7 @@ cat list-b | sed s/'  1'/''/g | sed s/'  0'//g >> list-c
 for j in `cat list-div-in`; do
 	(
 	title=`cat $j | grep '<TITLE>' | sed s/'  <TITLE>'//g | sed s/'<\/TITLE>'//g`
-	echo -e "+++\ntitle=\"${title}\"\nsection=\"\"\nbits=\"\"\n+++\n\n"
+	echo -e "---\ntitle: ${title}\nlayout: default\n---\n\n"
 	cat $j | grep -A 99999 '<DIV id="in">' | tail -n +2 | head -n -2 \
 	| pandoc -f html -t markdown
 	) > `basename $j .html`.md
@@ -20,7 +25,7 @@ done
 for j in `cat list-no-div`; do
 	(
 	title=`cat $j | grep '<TITLE>' | sed s/'  <TITLE>'//g | sed s/'<\/TITLE>'//g`
-	echo -e "+++\ntitle=\"${title}\"\nsection=\"\"\nbits=\"\"\n+++\n\n"
+	echo -e "---\ntitle: ${title}\nlayout: default\n---\n\n"
 	cat $j | grep -iA 99999 '<BODY' | tail -n +2 | head -n -2 \
 	| pandoc -f html -t markdown
 	) > `basename $j .html`.md

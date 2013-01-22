@@ -1,5 +1,5 @@
 #!/bin/zsh
 
 for j in $@; do
-	echo -e "+++\ntitle=\"\"\nsection=\"\"\nbits=\"\"\n+++\n\n" > src/${j}.md
+	echo -e "---\ntitle: Page title\nlayout: default\n---\n\n" > ${j}.md
 done

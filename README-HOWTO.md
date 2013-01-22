@@ -1,30 +1,24 @@
 How to build the site
 =====================
 
-	$ ./build/go src/*.md
-
-Note: this requires Pandoc.
+This site uses (Jeykll)[https://github.com/mojombo/jekyll/wiki/Usage]
 
 Pages
 =====
 
-Each page should have a `*.md` file assiciated with it, starting with these lines:
+Each page is in MarkDown format, with a `.md` file extension. 
 
-	+++
-	title="Page title"
-	section=""
-	bits=""
-	+++
+These files are converted into corresponding .html files by Jekyll when they start with these lines:
 
-`bits` is where you stick things you want to go into the header.
+```
+    ---
+    title: Page title
+    layout: default
+    ---
+```
 
-If you want to be lazy, then just do 
+We have a simple script to make such a page:
 
-	./build/add src/page.md
+    ./_build/add en-US/path/to/page.md
 
-and it will make a .md file with the required lines.
-
-section=""
-----------
-
-This defines the section so that the page may use the appropriate template.
+This will make a file with the required lines.
