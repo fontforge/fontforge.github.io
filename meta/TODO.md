@@ -49,6 +49,7 @@ HTML/CSS
 Small
 ------
 
+- in default.html and others, for PAGE HEADING, make a liquid if/else, if page.headline is defined use that there instead
 - history mock has a bigtext class missing from a para
 - add a different :visited color
 - rework the table of contents transition on the 'show all' text so it doesnt fade in/out, just transitions directly

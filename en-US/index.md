@@ -7,25 +7,25 @@ Welcome
 ==========
 
 FontForge is libre software: you can share copies freely and make changes
-under a [BSD-style license](https://github.com/about/project/license.html).
+under a [libre license](/en-US/about/project/license.html).
 You are invited to participate in this project; your bug reports, feature
 suggestions, tutorial ideas and code contributions are all welcome! [Learn
-more...](/documentation/developer/)
+more...](/en-US/documentation/developer/)
 
 Learning FontForge is easy. New users can get started with the
-[tutorials](/tutorial), and the entire [interface](/documentation/interface/)
+[tutorials](/en-US/tutorials/index.html), and the entire [interface](/en-US/documentation/interface/index.html)
 is fully documented.
 
 Font conversion is simple too. See this tutorial on [how to convert font
-formats](/tutorial/convert.html).
+formats](/en-US/tutorial/convert.html).
 
 Scripting is allows designers to get repetitive tasks done quickly, and
-FontForge has excellent [scripting support](/documentation/scripting/) with
+FontForge has excellent [scripting support](/en-US/documentation/scripting/index.html) with
 both its own scripting language and
-[Python](/documentation/scripting/python.html).
+[Python](/en-US/documentation/scripting/python/index.html).
 
-FontForge can be [customized](/documentation/customizing/) so it feels
+FontForge can be [customized](/en-US/documentation/customizing/index.html) so it feels
 familiar, from hotkeys to visual themes and a translatable interface.
 
 This page will soon look like [this mockup
-page](http://fontforge.github.com/meta/home.html).
+page](/meta/home.html).
