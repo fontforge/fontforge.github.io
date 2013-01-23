@@ -5,9 +5,9 @@
 # the new site
 #
 # how brian zick got from all the html in ./old/ to the more clean 
-# markdown files
+# markdown files. requires pandoc
 
-for j in *.html; do echo -n $j ' '; cat $j | grep -ic '<div id="in">'; done >> list-a
+for j in $(find -type f | grep ".html"); do echo -n $j ' '; cat $j | grep -ic '<div id="in">'; done >> list-a
 cat list-a | grep -v FS | grep -v 404 > list-b
 cat list-b | grep '  1' | sed s/'  1'/''/g > list-div-in
 cat list-b | grep '  0' | sed s/'  0'/''/g > list-no-div

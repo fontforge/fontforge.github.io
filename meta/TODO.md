@@ -6,18 +6,6 @@ layout: default
 Content
 =============
 
-To convert the old site to the new site, Brian Zick ran the 
-`build/old/clean` script, which uses pandoc (`apt-get install pandoc`). 
-You may want to change the `for j in *.html` on line 5 to 
-`for j in $(find -type f | grep ".html")` and for YAML front matter
-change line 14 to something like
-```
-echo "---
-layout: default
-title: $title
----"
-```
-
 - fix lines ending in \
 - the \<dl\> tags on some page have been stripped. find them and copy it back.
 
