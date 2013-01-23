@@ -26,13 +26,6 @@
 				</form>
 
 				<ul class="breadcrumb">
-				<!-- BREADCRUMBS TODO MAKE THIS WORK
-					<li><a href="#"><i class="icon-home"></i>Home</a> <span class="divider">&raquo;</span></li>
-					<li><a href="#">About</a> <span class="divider">&raquo;</span></li>
-					<li><a href="#">The Project</a> <span class="divider">&raquo;</span></li>
-					<li class="active">History</li>
-				Made with http://stackoverflow.com/questions/9612235/what-are-some-good-ways-to-implement-breadcrumbs-on-a-jekyll-site
-				-->
 					{% assign url = {{page.url}} %}
 					{% assign delimiter = '/' %}
 					{% capture allparts %}{{ url | replace: delimiter, ' ' }}{% endcapture %}
@@ -87,7 +80,7 @@
 					  <li><a href="/{{myFirstWord}}/{{mySecondWord}}/{{myThirdWord}}/{{myFourthWord}}/index.html">{{myFourthWord}}</a> <span class="divider">&#187;</span> </li>
 					  <li class="active">{{mySixthWord}}</li>
 					{% endif %}
-				</ul>
+					</ul>
 
 			</div>
 		</div>	
