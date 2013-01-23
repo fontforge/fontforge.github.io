@@ -43,8 +43,6 @@ Small
 - history mock has a bigtext class missing from a para
 - add a different :visited color
 - rework the table of contents transition on the 'show all' text so it doesnt fade in/out, just transitions directly
-- make the footer title h2 same size as the h4s and just 'FontForge'
-- make no top nav active on homepage
 - main texts narrower (span 9 not 10?)
 - add a little right padding to the chevrons used in the table of contents
 - add line breaks for the netx/prev texts in table of contents
