@@ -18,13 +18,12 @@
 		
 		<div class="breadcrumbs">
 			<div class="container">
-		  		
-				<!-- SEARCH FORM TODO MAKE THIS WORK
-				<form class="form-search doc-search-form">
-					<input type="text" class="input-medium search-query" placeholder="Search the docs...">
-					<button type="submit" class="btn btn-small">Go</button>
-				</form> -->
-	
+
+				<form class="form-search doc-search-form" method="get" action="//www.google.com/search">
+				     <input type="text" class="input-medium search-query" name="q" placeholder="Search this site...">
+				     <button type="submit" class="btn btn-small">Go</button>
+				     <input name="sitesearch" value="fontforge.github.com" type="hidden">
+				</form>
 
 				<ul class="breadcrumb">
 				<!-- BREADCRUMBS TODO MAKE THIS WORK

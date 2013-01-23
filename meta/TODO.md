@@ -49,6 +49,7 @@ HTML/CSS
 Small
 ------
 
+- make the breadcrumb Liquid template in nav-sub.html remove the '.html' from final crumbs
 - in default.html and others, for PAGE HEADING, make a liquid if/else, if page.headline is defined use that there instead
 - history mock has a bigtext class missing from a para
 - add a different :visited color
@@ -70,6 +71,7 @@ Medium
 - add mailing list search boxes to the homepage
 - add retina versions of all bitmap images
 - add a lightbox (perhaps bootstrap modal?) for see enlarged images 
+- improve the algorithm of the breadcrumb generator, perhaps using the 2nd one from http://stackoverflow.com/questions/9612235/what-are-some-good-ways-to-implement-breadcrumbs-on-a-jekyll-site but perhaps a JS one, which will also work on the 2nd nav pillbox links if they are used.
 
 Big Tasks
 ---------
