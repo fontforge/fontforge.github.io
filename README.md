@@ -27,16 +27,28 @@ Directory Layout
 Files of interest
 -------------------
 
-- `meta/TODO.md` 
+- `meta/TODO.md` has a list of TO DO items, for quick updating while
+  the site is under active initial development. In the future, GitHub
+  issues may be used.
 
 How to build the site
 -------------------
 
 This site uses (Jeykll)[https://github.com/mojombo/jekyll/wiki/Usage]
 
-Each page is in MarkDown format, with a `.md` file extension. 
+You can install Jekyll with `gem`:
 
-These files are converted into corresponding .html files by Jekyll when they start with these lines:
+    sudo gem install jekyll;
+
+then you can edit files and browse http://localhost:4000/en-US/ to see
+the site as it will appear on fontforge.github.com after processing
+by Jekyll:
+
+    jekyll --server
+
+Each page is in MarkDown format, with a `.md` file extension. These 
+files are converted into corresponding .html files by Jekyll when 
+they start with these lines:
 
 ```
     ---
