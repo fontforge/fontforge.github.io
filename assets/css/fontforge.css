@@ -289,22 +289,6 @@
 .subnav .nav a {
 	font-size: 14px;
 }
- 
-.downloads .subnav {	background: #FFE101;	}
-.tutorials .subnav {	background: #FFC800;	}
-.docs .subnav {	background: #FF7D32;	}
-.about .subnav {	background: #5BDC96;	}
-
-/* Slighly stronger highlights on the light bg colours */
-
-.downloads .subnav,
-.tutorials .subnav {
-	-webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,0.6),inset 0 -1px 0 rgba(255,255,255,0.6);
-	-moz-box-shadow:inset 0 1px 0 rgba(255,255,255,0.6),inset 0 -1px 0 rgba(255,255,255,0.6);
-	box-shadow:inset 0 1px 0 rgba(255,255,255,0.6),inset 0 -1px 0 rgba(255,255,255,0.6);
-}
-
-
 
 @media (min-width: 768px) {
 
@@ -1125,9 +1109,18 @@ h2.blackbar span {
 	margin-left: -7px;
 }
 
+/* Section-specific nav-main colors - main colors */
 
- 
- 
+.downloads .subnav {	background: #FFE101;	}
+.tutorials .subnav {	background: #FFC800;	}
+.docs .subnav {	background: #FF7D32;	}
+.about .subnav {	background: #5BDC96;	}
 
+/* Section-specific nav-main colors -  Slighly stronger highlights on the light bg colours */
 
-
+.downloads .subnav,
+.tutorials .subnav {
+	-webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,0.6),inset 0 -1px 0 rgba(255,255,255,0.6);
+	-moz-box-shadow:inset 0 1px 0 rgba(255,255,255,0.6),inset 0 -1px 0 rgba(255,255,255,0.6);
+	box-shadow:inset 0 1px 0 rgba(255,255,255,0.6),inset 0 -1px 0 rgba(255,255,255,0.6);
+}
