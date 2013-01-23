@@ -4,7 +4,7 @@ layout: default
 ---
 
 
-FontForge install procedures\
+FontForge install procedures
  for the macintosh
 =============================
 
@@ -142,7 +142,7 @@ will not work and you must delve more deeply into the past.
 
 -   If you follow the [link
     above](http://sourceforge.net/projects/fontforge/files/)you will end
-    up on a page showing many releases of FontForge for many systems\
+    up on a page showing many releases of FontForge for many systems
      in most cases you will want the most recent release.
 -   Then click on the executable package you want to download:
     -   The mac release will be called something like

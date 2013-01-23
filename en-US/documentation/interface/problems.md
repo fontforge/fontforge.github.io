@@ -139,7 +139,7 @@ cannot be represented in a generated font. If FontForge detects two
 points too far from each other it will select both (a special case --
 the first point in a glyph must be within 32767 of the origin, if it is
 further, only the first point will be selected), stop and let you fix
-things.\
+things.
 
 ![](img/findprobs-paths.png)**Open Paths**
 
@@ -196,7 +196,7 @@ included in the count. Note that when checking a quadratic font (ie. a
 truetype font) there will be at most one control point between any two
 end points, but when that font gets converted to PostScript there will
 be two. FontForge currently counts this as one point). TrueType has no
-such limit.\
+such limit.
 
 ### **![](img/findprobs-refs.png)Flipped References**
 
@@ -255,7 +255,7 @@ references. TrueType has no such limit.
 TrueType allows references to be positioned by aligning points in
 different references. If the point count in one of the glyphs being
 referred changes then you will need to fix up these references to match
-the new point count.\
+the new point count.
 
 **![](img/findprobs-hint.png)Hints controlling no points**
 
@@ -263,7 +263,7 @@ This is a bit esoteric, and is present to provide a work-around for
 (what I think is) a bug in ghostview. Consider the following glyph
 
 ![](img/phi-nohints-outline.png) ![](img/phi-nohints-filled.png)
-![](img/phi-hints-outline.png) ![](img/phi-hints-filled.png)\
+![](img/phi-hints-outline.png) ![](img/phi-hints-filled.png)
  The first two images show the glyph with no hints, first as seen in
 FontForge, then as displayed by ghostview. The result looks good. If we
 add hints to the two curved stems then ghostview gets very confused. I
@@ -351,7 +351,7 @@ Check that you do not have two glyphs with the same name.
 
 Look for glyphs whose name indicates a unicode value different from the
 one attached to a glyph. So if a glyph were named "A" but had Unicode
-code point U+0020 (space) FontForge would complain about it.\
+code point U+0020 (space) FontForge would complain about it.
 
 ![](img/findprobs-bb.png)**Glyph BB Above**
 
@@ -380,7 +380,7 @@ have the same width).
 **Check Vertical Advance**
 
 Check for any glyphs whose vertical advance (for fonts with vertical
-metrics) differs from the specified value. \
+metrics) differs from the specified value. 
 
 ![](img/findprobs-att.png)**Missing Glyph Names**
 
@@ -428,7 +428,7 @@ glyphs in two or more fonts.
 **Check for undefined CIDs**
 
 Looks for CIDs which have no glyphs defined for them in any font. This
-is a fairly common occurrence in CID fonts, so use this with caution.\
+is a fairly common occurrence in CID fonts, so use this with caution.
 
 At the bottom of the dialog are two buttons (`[Clear All]` and
 `[Set All]` which will, respectively, clear and set the check boxes for

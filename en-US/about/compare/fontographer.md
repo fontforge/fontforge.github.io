@@ -70,7 +70,7 @@ Differences from [Fontographer](http://www.macromedia.com/software/fontographer/
     **NOTE:** My centering algorithms attempt to guess what will look
     centered to the human eye (centering it in the middle of the
     character will often not look centered). You should examine all
-    built characters and be prepared to adjust the accent.\
+    built characters and be prepared to adjust the accent.
      The algorithms take some account of the italicangle.
 
 -   There's a merge font command. This is designed to allow you to build

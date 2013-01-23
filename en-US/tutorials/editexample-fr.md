@@ -163,7 +163,7 @@ One of the hardest tasks of all is getting to spaces around the
 characters to look nice. FontForge has a `Metrics->Auto Width` command
 which attempts to guess reasonable values for the character spacings in
 your font. Just select the "All" radio button in both sets of buttons
-and press OK.\
+and press OK.
  *![](img/autowidth.png)*
 
 At this point you might want some bitmaps to go with the postscript

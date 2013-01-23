@@ -113,7 +113,7 @@ relevant event occurred.
   -------------- ------------------------------------------------------------------------------------------------------------------------------
   newFontHook    This function will be called when a new font has been created.
 
-  loadFontHook   This function will be called when a font is loaded from disk.\
+  loadFontHook   This function will be called when a font is loaded from disk.
                   (if a font has an "initScriptString" entry in its persistent dictionary, that script will be invoked before this function).
   -------------- ------------------------------------------------------------------------------------------------------------------------------
 
@@ -1571,8 +1571,8 @@ Returns additional unicode code points for this glyph. For a primary
 code point, see [unicode](#g-unicode).
 
 Returns either None or a tuple of alternate encodings. Each alternate
-encoding is a tuple of\
- `(unicode-value, variation-selector, reserved-field)`\
+encoding is a tuple of
+ `(unicode-value, variation-selector, reserved-field)`
  The first is an unicode value of this alternate code point. The second
 is an integer for variation selector and can be set to -1 if not used.
 The third is an empty field reserved for future use and currently must
@@ -1583,8 +1583,8 @@ be set to zero.
 `anchorPoints`
 
 Returns the list of anchor points in the glyph. Each anchor point is a
-tuple of\
- `(anchor-class-name, type, x,y [,ligature-index])`\
+tuple of
+ `(anchor-class-name, type, x,y [,ligature-index])`
  The first two are strings, the next two doubles, and the last (which is
 only present if type=="ligature") is an integer. Type may be
 
@@ -1599,8 +1599,8 @@ only present if type=="ligature") is an integer. Type may be
 
 Same as the above, except also includes whether the anchor point is
 selected in the UI. Returns a tuple of all anchor points in the glyph.
-Each anchor point is a tuple of\
- `(anchor-class-name, type, x,y, selected [,ligature-index])`\
+Each anchor point is a tuple of
+ `(anchor-class-name, type, x,y, selected [,ligature-index])`
  The first two are strings, the next two doubles, then a boolean, and
 the last (which is only present if type=="ligature") is an integer. Type
 may be
@@ -1644,7 +1644,7 @@ stem's direction.
 
 Returns the glyph's encoding in the font's encoding. (readonly)
 
-If the glyph has multiple encodings, one will be picked at random.\
+If the glyph has multiple encodings, one will be picked at random.
  If the glyph is not in the font's encoding then a number will be
 returned beyond the encoding size (or in some cases -1 will be
 returned).
@@ -1858,7 +1858,7 @@ A bit mask indicating some problems this glyph might have. (readonly)
 
 0x1
 
-If set then this glyph has been validated.\
+If set then this glyph has been validated.
  If unset then other bits are meaningless.
 
 0x2
@@ -1875,7 +1875,7 @@ At least one contour is drawn in the wrong direction
 
 0x10
 
-At least one reference in the glyph has been flipped\
+At least one reference in the glyph has been flipped
  (and so is drawn in the wrong direction)
 
 0x20
@@ -2192,7 +2192,7 @@ glyph. The first two arguments provide information on shrinking/growing
 the counters, the second two the sidebearings. If the last two are
 omitted they default to the same values as the first two.
 
-A counter's width will become:\
+A counter's width will become:
  `   new_width = c_factor * old_width + c_add`
 
 If present the `correct` argument allows you to specify whether you want
@@ -2576,14 +2576,14 @@ Invert the selection.
 There may be an arbetrary number of arguments. Each argument may be
 either:
 
--   A glyph name\
+-   A glyph name
      Note: There need not be a glyph with this name in the font yet, but
     if you use a standard name (like "A") fontforge will still know
     where that glyph should be.
 -   An integer (this will be interpreted as either an encoding index or
     (default) a unicode code point depending on the flags).
 -   A fontforge glyph.
--   A tuple of flags.\
+-   A tuple of flags.
      (If you wish to specify a single flag it must still be in a tuple,
     and you must append a trailing comma to the flag (so
     `("more",) `rather than just `("more")`). FF needs the flags to be
@@ -2653,13 +2653,13 @@ This type may not be pickled.
 
 Members
 
-Any of the math constant names may be used as member names.\
- The list is long, and I shall not copy them all. Here is a subset\
+Any of the math constant names may be used as member names.
+ The list is long, and I shall not copy them all. Here is a subset
 
-`ScriptPercentScaleDown     ScriptScriptPercentScaleDown     DelimitedSubFormulaMinHeight     ...`\
+`ScriptPercentScaleDown     ScriptScriptPercentScaleDown     DelimitedSubFormulaMinHeight     ...`
  (These names begin with capital letters, not python's conventions but
-MicroSoft's)\
- These all take (16 bit) integer values.\
+MicroSoft's)
+ These all take (16 bit) integer values.
  I do not currently provide python access to any associated device
 tables.
 
@@ -2812,7 +2812,7 @@ PostScript copyright notice
 
 Returns a sequence object containing the font's cvt table. Changes made
 to this object will be made to the font (this is a reference not a
-copy).\
+copy).
  The object has one additional method cvt.find(value[,low,high]) which
 finds the index of value in the cvt table (or -1 if not found). If low
 and high are specified then the index will be between [low,high).
@@ -2853,7 +2853,7 @@ A comment associated with the font. Can be anything.
 
 `fontname`
 
-PostScript font name\
+PostScript font name
  Note that in a CID keyed font this will be the name of the current
 subfont. Use cidfontname for the name of the font as a whole.
 
@@ -2908,8 +2908,8 @@ A copy of the font's guide layer
 
 Returns a tuple of tuples containing the horizontal baseline information
 in the font (the 'BASE' table). If there is no information NONE will be
-returned, otherwise the format of the tuple is:\
- `((tuple of baseline tags used), (tuple of script information))` \
+returned, otherwise the format of the tuple is:
+ `((tuple of baseline tags used), (tuple of script information))` 
  The `(tuple of baseline tags used)` is simply a tuple of 4 letter
 strings as `("hang", "ideo", "romn")` these are standard baseline tag
 names as defined in the opentype spec. The number of entries here, and
@@ -2919,9 +2919,9 @@ script tuple) which use the same ordering.
 The `(tuple of script information)` is again a tuple of
 `script     information` tuples.
 
-A `script information` tuple looks like\
+A `script information` tuple looks like
 
-`(script-tag,default-baseline-tag, (tuple of baseline positions), (tuple     of language extents))`\
+`(script-tag,default-baseline-tag, (tuple of baseline positions), (tuple     of language extents))`
  If there are no baseline tags defined (an empty tuple), then the
 `default-baseline-tag` and the `(tuple of baseline     positions)` will
 be NONE. Otherwise both tags will be 4 character strings, and the
@@ -2932,8 +2932,8 @@ relative positions of each baseline for this script.
 A `(tuple of language extents)` is a tuple of `language     extent`
 tuples.
 
-A `language extent` tuple is\
- `(language-tag,min-extent,max-extent, (tuple of feature     extents))`\
+A `language extent` tuple is
+ `(language-tag,min-extent,max-extent, (tuple of feature     extents))`
  `language-tag` is a 4 letter string specifying an opentype
 language,`min`/`max-extent` are numbers specifying how far above and
 below the baseline characters go in this script/language.
@@ -2941,8 +2941,8 @@ below the baseline characters go in this script/language.
 A `(tuple of feature extents>` is a tuple of `feature     extent`
 tuples.
 
-A `feature extent` tuple is\
- `(feature-tag,min-extent,max-extent, (tuple of feature     extents))`\
+A `feature extent` tuple is
+ `(feature-tag,min-extent,max-extent, (tuple of feature     extents))`
  `feature-tag` is a 4 letter string specifying an opentype (GPOS or
 GSUB) feature tag,`min`/`max-extent` are numbers specifying how far
 above and below the baseline characters go in this script/language with
@@ -2993,13 +2993,13 @@ Returns a dictionary like object with information on the layers of the
 font -- a name and a boolean indicating whether the layer is quadratic
 or not.
 
-You may remove a layer with `del font.layers["unneeded     layer"]`;\
+You may remove a layer with `del font.layers["unneeded     layer"]`;
  You may add a new layer with
-`font.layers.add("layer-name",is_quadratic[,     is_background])`;\
+`font.layers.add("layer-name",is_quadratic[,     is_background])`;
  You may change a layer's name with
-`font.layers["layer"].name =     "new-name"`;\
+`font.layers["layer"].name =     "new-name"`;
  You may change the type of splines in a layer with
-`font.layers["layer"].is_quadratic = True`;\
+`font.layers["layer"].is_quadratic = True`;
  You may change whether it is a background layer by
 `font.layers["layer"].is_background = True`;
 
@@ -3029,7 +3029,7 @@ A bitmask indicating non-fatal errors found when loading the font.
 
   0x80    Bad OpenType advanced typography table (GPOS, GSUB, GDEF, BASE)
 
-  0x100   Bad OS/2 version number\
+  0x100   Bad OS/2 version number
            Windows will reject all fonts with a OS/2 version number of 0 and will reject OT-CFF fonts with a version number of 1
   ------- ------------------------------------------------------------------------------------------------------------------------
 
@@ -3490,7 +3490,7 @@ with an entry for each script for which the feature is active. Each
 entry here is itself a two element tuple. The first element is a 4
 letter script tag and the second is a tuple of languages. Each entry in
 the language tuple is a four letter language. Example:
-(("liga",(("latn",("dflt")),)),)\
+(("liga",(("latn",("dflt")),)),)
  The optional final argument allows you to specify the ordering of the
 lookup. If not specified the lookup will be come the first lookup in its
 table.
@@ -3544,8 +3544,8 @@ The remaining arguments are optional, keyword arguments.
 
 When `type="glyph"`
 
-The rule should look something like:\
- `  glyph-name1 glyph-name2 | glyph-name3 @<lookup-name> | glyph-name4`\
+The rule should look something like:
+ `  glyph-name1 glyph-name2 | glyph-name3 @<lookup-name> | glyph-name4`
  The "|"s divide between backtrack, match and lookahead sections. So
 this example would match it the current glyph were named `glyph-name3`
 and it were preceded by `glyph-name2` and that by `glyph-name1` and
@@ -3556,15 +3556,15 @@ and should be present in the rule.
 If the invoked lookup is a ligature lookup then it should be invoked
 after the first glyph that forms the lookup (rather than the last) and
 all glyphs that might make up the lookup should be in the match section.
-So...\
- `  e | f @ f l | o`\
+So...
+ `  e | f @ f l | o`
  would only apply the `ff-lig` lookup if the `ffl` were preceeded by `e`
 and followed by `o`.
 
 When `type="class"`
 
-The rule should look something like:\
- `  class-name1 class-name2 | class-name3 @<lookup-name> | class-name4`\
+The rule should look something like:
+ `  class-name1 class-name2 | class-name3 @<lookup-name> | class-name4`
  Very similar to the case of glyphs, except that instead of glyph names
 we have class names here. It is possible to have different sets of class
 names in the three different sections (backtrack, match and lookahead).
@@ -3574,15 +3574,15 @@ first class will be class 0, the second class 1, and so on).
 
 When `type="coverage"`
 
-The rule should look something like:\
- `  [g1 g2] [g3 g4] | [g5 g6 g7] @<lookup-name> | [g8 g9]`\
+The rule should look something like:
+ `  [g1 g2] [g3 g4] | [g5 g6 g7] @<lookup-name> | [g8 g9]`
  Each entry within brackets, `[]`, represents a coverage table and
 should be a list of glyph names. The brackets are specified literally.
 
 When `type="reversecoverage"`
 
-The rule should look something like:\
- `  [g1 g2] [g3 g4] | [g5 g6 g7] => [rg1 rg2 rg3] | [g8 g9]`\
+The rule should look something like:
+ `  [g1 g2] [g3 g4] | [g5 g6 g7] => [rg1 rg2 rg3] | [g8 g9]`
  Very similar to normal coverage tables except that instead of
 specifying a lookup there are replacement glyphs inline. There must be
 the same number of replacement glyphs (`rg1, rg2, rg3`) as match glyphs
@@ -3785,7 +3785,7 @@ If there is already a character there, return it
 Searches the font for all glyphs containing the contour (or layer) and
 returns an iterator which returns those glyphs.
 
-error-bound: defaults to 0.01.\
+error-bound: defaults to 0.01.
  search\_flags: tuple of the strings: reverse, flips, rotate, scale.
 
 When found, the glyph.temporary is set to a dict of:
@@ -4193,12 +4193,12 @@ Display all glyphs in the font in encoding order
 
 chars
 
-Display the selected glyphs scaled to fill a page\
+Display the selected glyphs scaled to fill a page
  Ignores the pointsize argument.
 
 waterfall
 
-Displays the selected glyphs at many pointsizes.\
+Displays the selected glyphs at many pointsizes.
  The pointsize argument should be a tuple of pointsizes here.
 
 fontsample
@@ -4347,7 +4347,7 @@ Normally each glyph will cache its validation\_state and it will not be
 recalculated. If you pass a non-zero argument to the routine then it
 will force recalculation of each glyph -- this can be slow.s
 
-Selection based interface\
+Selection based interface
  See the [selection type](#selection) for how to alter the selection
 
 `addExtrema`
@@ -4454,7 +4454,7 @@ selected glyphs. The first two arguments provide information on
 shrinking/growing the counters, the second two the sidebearings. If the
 last two are omitted they default to the same values as the first two.
 
-A counter's width will become:\
+A counter's width will become:
  `   new_width = c_factor * old_width + c_add`
 
 If present the `correct` argument allows you to specify whether you want

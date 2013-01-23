@@ -141,7 +141,7 @@ glyph view the currently active stems are drawn much darker than the
 inactive ones. Points with hintmasks attached to them have circles drawn
 around them.
 
-Remember to hold the control key down when making disjoint selections.\
+Remember to hold the control key down when making disjoint selections.
 
 ### Manual Counter Groups
 
@@ -218,5 +218,5 @@ hinting.
 -   Is it meaningful for a hint to have points only on one side of it?
     Can reasonable hints be written for the serif cap above left?
 
-[Overview of Hinting in PostScript and TrueType](overview.html#Hints).\
+[Overview of Hinting in PostScript and TrueType](overview.html#Hints).
  [Hinting menu.](hintsmenu.html)

@@ -52,7 +52,7 @@ accent, this argument is the or of the following flags:
   0x100000   Touching
   ---------- ------------------
 
-AddAnchorClass(name,type,lookup-subtable-name)\
+AddAnchorClass(name,type,lookup-subtable-name)
  ~~AddAnchorClass(name,type,script-lang,tag,flags,merge-with)~~
 
 These mirror the values of the Anchor class dialog of Element-\>Font
@@ -70,9 +70,9 @@ is the name of the AnchorClass. The second should be one of the strings:
 values specify the location of the point. The final argument is only
 present for things of type "baselig".
 
-~~AddATT(type,script-lang,tag,flags,variant)\
+~~AddATT(type,script-lang,tag,flags,variant)
 
-AddATT("Position",script-lang,tag,flags,xoff,yoff,h\_adv\_off,v\_adv\_off)\
+AddATT("Position",script-lang,tag,flags,xoff,yoff,h\_adv\_off,v\_adv\_off)
 
 AddATT("Pair",script-lang,tag,flags,name,xoff,yoff,h\_adv\_off,v\_adv\_off,xoff2,yoff2,h\_adv\_off2,v\_adv\_off2)~~
 
@@ -103,10 +103,10 @@ AddInstrs(thingamy,replace,instrs)
 Where thingamy is a string, either "fpgm" or "prep" in which case it
 refers to that truetype table (which will be created if need be), or a
 glyph-name in which case it refers to that glyph, or a null string in
-which case any selected characters will be used.\
+which case any selected characters will be used.
  Where replace is an integer. If zero then the instructions will be
 appended to any already present. If non-zero then the instructions will
-replace those already present.\
+replace those already present.
  And instrs is a string containing fontforge's human readable version of
 tt instructions, as "`IUP[x]\nIUP[y]`"
 
@@ -143,7 +143,7 @@ with an entry for each script for which the feature is active. Each
 entry here is itself a two element array. The first element is a 4
 letter script tag and the second is an array of languages. Each entry in
 the language array is a four letter language. Example:
-[["liga",[["latn",["dflt"]]]]]\
+[["liga",[["latn",["dflt"]]]]]
  The optional final argument allows you to specify the ordering of the
 lookup. If not specified the lookup will be come the first lookup in its
 table.
@@ -154,8 +154,8 @@ Creates a new subtable within the specified lookup. The optional final
 argument allows you to specify the ordering within the lookup. If not
 specified this subtable will be first in the lookup.
 
-AddPosSub(subtable-name,variant-glyph-name(s))\
- AddPosSub(subtable-name,dx,dy,dadv\_x,dadv\_y)\
+AddPosSub(subtable-name,variant-glyph-name(s))
+ AddPosSub(subtable-name,dx,dy,dadv\_x,dadv\_y)
 
 AddPosSub(subtable-name,other-glyph-name,dx1,dy1,dadv\_x1,dadv\_y1,dx2,dy2,dadv\_x2,dadv\_y2)
 
@@ -165,11 +165,11 @@ type of the lookup containing the subtable.
 AddSizeFeature(default-size[,range-bottom,range-top,style-id,array-of-lang-names])
 
 This allows you to specify an OpenType 'size' feature. It will also set
-the TeX design size header value.\
+the TeX design size header value.
  The 'size' feature has two formats. The simplest one specifies the
 optical design size for the font, the more complex one specifies that as
 well as a design range, a style id, and a list of language/name pairs
-(at least one of which must be in English).\
+(at least one of which must be in English).
  The design range is a range of point sizes for which this font is to be
 preferred. For instance you might have a family of fonts with the
 following attributes:
@@ -263,10 +263,10 @@ Generates (PostScript) hints for selected glyphs automagically.
 
 Generates (TrueType) instructions for selected glyphs.
 
-[AutoKern](metricsmenu.html#Kern)(spacing,threshold,subtable-name[,kernfile])\
+[AutoKern](metricsmenu.html#Kern)(spacing,threshold,subtable-name[,kernfile])
  ~~AutoKern(spacing,threshold[,kernfile])~~
 
-(AutoKern doesn't work well in general)\
+(AutoKern doesn't work well in general)
  Guesses at kerning pairs by looking at all selected glyphs, store the
 new kerning pairs in the indicated subtable, or if a kernfile is
 specified, FontForge will read the kern pairs out of the file.
@@ -292,11 +292,11 @@ Controls what bitmap sizes are stored in the font's database. It is
 passed an array of sizes. If a size is specified which is not in the
 font database it will be generated. If a size is not specified which is
 in the font database it will be removed. A size which is specified and
-present in the font database will not be touched.\
+present in the font database will not be touched.
  If you want to specify greymap fonts then the low-order 16 bits will be
 the pixel size and the high order 16 bits will specify the bits/pixel.
 Thus 0x8000c would be a 12 pixel font with 8 bits per pixel, while
-either 0xc or 0x1000c could be used to refer to a 12 pixel bitmap font.\
+either 0xc or 0x1000c could be used to refer to a 12 pixel bitmap font.
  If you want to create blank strikes (with no glyphs in them) set the
 optional rasterized parameter to 0.
 
@@ -341,7 +341,7 @@ available to be put in subroutines.
 Ceil(real)
 
 Converts a real number to the smallest integer larger than the real. It
-can execute with no current font.\
+can execute with no current font.
  See Also [Int](#Int), [Round](#Round), [Floor](#Floor)
 
 [CenterInWidth](metricsmenu.html#Center)()
@@ -369,7 +369,7 @@ CheckForAnchorClass(name)
 Returns 1 if the current font contains an Anchor class with the given
 name (which must be in utf8).
 
-Chr(int)\
+Chr(int)
  Chr(array)
 
 Takes an integer [0,255] and returns a single character string
@@ -417,9 +417,9 @@ ClearGlyphCounterMasks()
 
 Clears any counter masks from the (one) selected glyph.
 
-[ClearHints](hintsmenu.html#ClearHints)()\
- ClearHints("Vertical")\
- ClearHints("Horizontal")\
+[ClearHints](hintsmenu.html#ClearHints)()
+ ClearHints("Vertical")
+ ClearHints("Horizontal")
  ClearHints("Diagonal")
 
 Clears any (PostScript) hints from the selected instructions. The first
@@ -673,18 +673,18 @@ Exp(val)
 
 Returns e^val^. It can execute with no current font.
 
-[ExpandStroke](elementmenu.html#Expand)(width)\
- ExpandStroke(width,line cap, line join)\
+[ExpandStroke](elementmenu.html#Expand)(width)
+ ExpandStroke(width,line cap, line join)
  ExpandStroke(width,line cap, line join,0,removeinternal /external
-flag)\
- ExpandStroke(width,calligraphic-angle,height-numerator,height-denom)\
+flag)
+ ExpandStroke(width,calligraphic-angle,height-numerator,height-denom)
  ExpandStroke(width,calligraphic-angle,height-numerator,height-denom, 0,
 remove internal/external flag)
 
 In the first format a line cap of "butt" and line join of "round" are
-implied.\
+implied.
  A value of 1 for remove internal/external will remove the internal
-contour, a value of 2 will remove the external contour.\
+contour, a value of 2 will remove the external contour.
  The first three calls simulate the PostScript "stroke" command, the two
 final simulate a caligraphic pen.
 
@@ -694,7 +694,7 @@ In the PostScript "stroke" command the width is the distance between the
 two generated curves. To be more precise, at ever point on the original
 curve, a point will be added to each of the new curves at width/2 units
 as measured on a vector normal to the direction of the original curve at
-that point.\
+that point.
  In a caligraphic pen, the width is the width of the pen used to draw
 the curve.
 
@@ -712,16 +712,16 @@ the (fixed) angle at which the pen is held.
 
 height-numerator/denominator
 
-These two values specify a ratio between the height and the width\
- height = numerator \* width / denominator\
+These two values specify a ratio between the height and the width
+ height = numerator \* width / denominator
  (the scripting language only deals in integers, so when fractions are
 needed this kludge is used)
 
 remove internal/external contour flags
 
-1 =\> remove internal contour\
- 2=\> remove external contour\
- (you may not remove both contours)\
+1 =\> remove internal contour
+ 2=\> remove external contour
+ (you may not remove both contours)
  4 =\> run remove overlap on result (buggy)
 
 [Export](filemenu.html#Export)(format[,bitmap-size])
@@ -749,7 +749,7 @@ The format may consist entirely of the filetype (extension, see above),
 or it may include a full filename (with some format control within it)
 which has the file type as an extension:
 
-> `"Glyph %n from font %f.svg"`\
+> `"Glyph %n from font %f.svg"`
 >  `"U+%U.bmp"`
 
 If the format constists entirely of a filetype then FontForge will use a
@@ -798,7 +798,7 @@ value can be looked up (or added).
 Floor(real)
 
 Converts a real number to the largest integer smaller than the real. It
-can execute with no current font.\
+can execute with no current font.
  See Also [Ceil](#Ceil), [Int](#Int), [Round](#Round)
 
 FontImage(filename,array[,width[,height]])
@@ -810,9 +810,9 @@ that you have libpng on your system). The array is a list of pairs of
 image. The width need not be specified, if omitted (or specified as -1)
 the image will be just wide enough to contain the longest string. The
 height need not be specified, if omitted (or specified as -1) it will be
-just long enough to contain all the lines.\
-     `FontImage("FontImage.png",[17,"abcd",38,"ABCD"])`\
- produces\
+just long enough to contain all the lines.
+     `FontImage("FontImage.png",[17,"abcd",38,"ABCD"])`
+ produces
  ![](img/FontImage.png)
 
 FontsInFile(filename)
@@ -833,7 +833,7 @@ filename. Valid extensions are:
 
 -   .pfa
 -   .pfb
--   .bin (a mac postscript (pfb) resource in a mac binary wrapper)\
+-   .bin (a mac postscript (pfb) resource in a mac binary wrapper)
      .res (on the Mac itself FontForge will put the result directly into
     a font suitcase file, and the extension should be ".res" rather than
     ".bin")
@@ -855,7 +855,7 @@ filename. Valid extensions are:
 -   .cid.cff (bare cff cid-keyed font)
 -   .ttf
 -   .sym.ttf (a truetype file with a symbol (custom) encoding)
--   .ttf.bin (a mac truetype resource in a mac binary wrapper)\
+-   .ttf.bin (a mac truetype resource in a mac binary wrapper)
      suit (on the Mac itself FontForge will put the result directly into
     a font suitcase file, and the extension should be ".suit" not
     ".ttf.bin")
@@ -908,7 +908,7 @@ fmflags controls
 -   fmflags&8 =\> do not include ttf instructions
 -   fmflags&0x10 =\> where apple and ms/adobe differ about the format of
     a true/open type file, use apple's definition (otherwise use
-    ms/adobe)\
+    ms/adobe)
      Currently this affects bitmaps stored in the font (Apple calls the
     table 'bdat', ms/adobe 'EBDT'), the PostScript name in the 'name'
     table (Apple says it must occur exactly once, ms/adobe say at least
@@ -919,7 +919,7 @@ fmflags controls
 -   fmflags&0x40 =\> generate a '[PfEd](non-standard.html#PfEd)' table
     and store glyph colors
 -   fmflags&0x80 =\> generate tables so the font will work on both Apple
-    and MS platforms.\
+    and MS platforms.
      Apple has screwed up and in Mac 10.4 (Tigger), if OpenType tables
     are present in a font then the AAT tables will be ignored -- or so
     I'm told (I can't test this myself). Unfortunately Apple does not
@@ -1040,7 +1040,7 @@ The argument takes the same set of tag strings as
 [SetOS2Value](#SetOS2Value). `VendorId` returns a string, and `Panose`
 returns an array. The others return integers.
 
-GetPosSub(lookup-subtable-name)\
+GetPosSub(lookup-subtable-name)
  ~~GetPosSub(feature-tag,script,lang)~~
 
 One glyph must be selected, this returns information about GPOS/GSUB
@@ -1117,7 +1117,7 @@ returned.
 GetTeXParam(index)
 
 If index == -1 then the tex font type will be returned (text==0,
-math==1, math extended=2)\
+math==1, math extended=2)
  Else index is used to index into the font's tex params array.
 
 GetSubtableOfAnchor(anchor-class-name)
@@ -1130,10 +1130,10 @@ The lang and nameid arguments are as in [SetTTFName](#SetTTFName). This
 returns the current value as a utf8 encoded string. Combinations which
 are not present will be returned as "".
 
-**GlyphInfo**(str)\
- GlyphInfo("Kern",glyph-spec)\
- GlyphInfo("VKern",glyph-spec)\
- GlyphInfo(str,script,lang,tag)\
+**GlyphInfo**(str)
+ GlyphInfo("Kern",glyph-spec)
+ GlyphInfo("VKern",glyph-spec)
+ GlyphInfo(str,script,lang,tag)
  GlyphInfo(str,position)
 
 There must be exactly one glyph selected in the font, and this returns
@@ -1206,7 +1206,7 @@ obvious meanings:
 -   ~~"Ligature" takes three additional arguments, a script, a language
     and a tag (all 4 character strings) and returns a space separated
     list of the names of all components with that tag (or a null string
-    if there is none).~~\
+    if there is none).~~
      (See [GetPosSub](#GetPosSub) for these)
 -   "GlyphIndex" returns the index of the current glyph in the ttf
     'glyf' table, or -1 if it has been created since. This value may
@@ -1319,7 +1319,7 @@ inlined glyph.
 Int(real)
 
 Uses standard C conversion from real to integer. It can execute with no
-current font.\
+current font.
  See Also [Ceil](#Ceil), [Round](#Round), [Floor](#Floor)
 
 [InterpolateFonts](elementmenu.html#Interpolate)(percentage,other-font-name[,flags])
@@ -1650,7 +1650,7 @@ execute without a current font.
 When loading from a ttc file (mac suitcase, dfont, svg, etc), a
 particular font may be selected by placing the fontname in parens and
 appending it to the filename, as `Open("gulim.ttc(Dotum)")`. If you know
-the font's index you may also say: `Open("gulim.ttc(0)")`.\
+the font's index you may also say: `Open("gulim.ttc(0)")`.
  The optional flags argument current has only two flags in it:
 
 -   1 =\> the user does have the appropriate license to examine the font
@@ -1769,9 +1769,9 @@ and 4
 
 If the type is 4 (other) and the second argument is specified, then the
 second argument should be a string containing the "other" printing
-command.\
+command.
  If the type is 0 (lp) or 1 (lpr) and the second argument is specified,
-then the second argument should contain the name of a laser printer\
+then the second argument should contain the name of a laser printer
  (If the second argument is a null string neither will be set).
 
 The third and fourth arguments should specify the page width and height
@@ -1841,17 +1841,17 @@ font.
 
 [Reencode](encodingmenu.html)(encoding-name[,force])
 
-Reencodes the current font into the given encoding which may be:\
- compacted,original,\
+Reencodes the current font into the given encoding which may be:
+ compacted,original,
  iso8859-1, isolatin1, latin1, iso8859-2, latin2, iso8859-3, latin3,
 iso8859-4, latin4, iso8859-5, iso8859-6, iso8859-7, iso8859-8,
 iso8859-9, iso8859-10, isothai, iso8859-13, iso8859-14, iso8859-15,
 latin0, koi8-r, jis201, jisx0201, AdobeStandardEncoding, win, mac,
 symbol, wansung, big5, johab, jis208, jisx0208, jis212, jisx0212, sjis,
 gh2312, gb2312packed, unicode, iso10646-1, unicode4, TeX-Base-Encoding,
-one of the user defined encodings.\
+one of the user defined encodings.
  You may also specify that you want to force the encoding to be the
-given one.\
+given one.
  Note: some encodings are specified by glyph names (ie. user defined
 encodings specified as postscript encoding arrays) others are specified
 as lists of unicode code points (most built in encodings except for
@@ -1966,7 +1966,7 @@ otherwise the center of the glyph is used.
 Round(real)
 
 Converts a real number to an integer by rounding to the nearest integer.
-It can execute with no current font.\
+It can execute with no current font.
  See Also [Ceil](#Ceil), [Int](#Int), [Floor](#Floor)
 
 [RoundToCluster](elementmenu.html#Cluster)([within[,max]])
@@ -2007,7 +2007,7 @@ glyph has two unicode code points associated with it).
 If no filename is specified then this saves the current font back into
 its sfd file (if the font has no sfd file then this is an error). With
 one argument it executes a SaveAs command, saving the current font to
-that filename.\
+that filename.
  If the filename has an extension ".sfdir" then the font will be saved
 into a SplineFont Directory.
 
@@ -2036,7 +2036,7 @@ All selected glyphs will be scaled (scale factors are in percent)
 -   with four arguments they will be scaled differently about the
     specified center
 
-ScaleToEm(em-size)\
+ScaleToEm(em-size)
  ScaleToEm(ascent,descent)
 
 Change the font's ascent and descent and scale everything in the font to
@@ -2089,7 +2089,7 @@ See [SelectByPosSub](#SelectByPosSub)
 
 SelectByPosSub(lookup-subtable-name,search\_type)
 
-Selects all glyphs affected by the lookup subtable.\
+Selects all glyphs affected by the lookup subtable.
  And for search\_type
 
 1.  Select Results
@@ -2195,20 +2195,20 @@ Deprecated name for [SetGlyphName](#SetGlyphName)
 
 SetGasp([ppem,flag[,ppem2,flag[,...]]])
 
-With no arguments gives the font an empty gasp table.\
+With no arguments gives the font an empty gasp table.
  With an even number of integer arguments it sets the gasp table to the
 given pixel size/flag value pairs. These must be ordered by pixel size
-(smallest first) and must end with an entry for pixel size 65535.\
+(smallest first) and must end with an entry for pixel size 65535.
  With exactly one argument it must be an array containing an ordered
 list of pixel size/flag value pairs (as above).
 
 >     SetGasp(8,2,16,1,65535,3)
 >     SetGasp([8,2,16,1,65535,3])
 
-A flag value of 0 means neither grid-fit nor anti-alias\
- A flag value of 1 means grid-fit but no anti-alias.\
- A flag value of 2 means no grid-fit but anti-alias.\
- A flag value of 3 means both grid-fit and anti-alias.\
+A flag value of 0 means neither grid-fit nor anti-alias
+ A flag value of 1 means grid-fit but no anti-alias.
+ A flag value of 2 means no grid-fit but anti-alias.
+ A flag value of 3 means both grid-fit and anti-alias.
  On other values are currently documented.
 
 SetGlyphColor(color)
@@ -2289,7 +2289,7 @@ bearing will be incremented by the first, and if the argument is 2 then
 the left bearing will be scaled by \<first argument\>/100.0 . In bitmap
 only fonts see the comment at [SelectBitmap](#SelectBitmap) about units.
 
-SetMacStyle(val)\
+SetMacStyle(val)
  SetMacStyle(str)
 
 The argument may be either an integer or a string. If an integer it is a
@@ -2364,14 +2364,14 @@ only fonts see the comment at [SelectBitmap](#SelectBitmap) about units.
 
 [SetTeXParams](fontinfo.html#TeX)(type,design-size,slant,space,stretch,shrink,xheight,quad,extraspace[...])
 
-Sets the TeX (text) font parameters for the font.\
+Sets the TeX (text) font parameters for the font.
  Type may be 1, 2 or 3, depending on whether the font is text, math or
-math extension. \
- DesignSize is the pointsize the font was designed for.\
+math extension. 
+ DesignSize is the pointsize the font was designed for.
  The remaining parameters are described in Knuth's The MetaFont Book,
-pp. 98-100.\
+pp. 98-100.
  Slant is expressed as a percentage. All the others are expressed in
-em-units.\
+em-units.
  If type is 1 then the 9 indicated arguments are required. If type is 2
 then 24 arguments are required (the remaining 15 are described in the
 metafont book). If type is 3 then 15 arguments are required.
@@ -2386,9 +2386,9 @@ indicate a standard
 name](http://partners.adobe.com/public/developer/opentype/index_name.html#enc4),
 while the final argument should be a utf8 encoded string which will
 become the value of that entry. A null string ("") may be used to clear
-an entry.\
+an entry.
  Example: To set the SubFamily string in the American English
-language/locale\
+language/locale
  `   SetTTFName(0x409,2,"Bold Oblique")`
 
 SetUnicodeValue(uni[,set-from-value-flag])
@@ -2430,7 +2430,7 @@ comment at [SelectBitmap](#SelectBitmap) about units.
 
 Converts the selected glyphs into shadowed versions of themselves.
 
-[Simplify](elementmenu.html#Simplify)()\
+[Simplify](elementmenu.html#Simplify)()
 
 Simplify(flags,error[,tan\_bounds[,bump\_size[,error\_denom,line\_len\_max]]])
 
@@ -2451,14 +2451,14 @@ or of
     point is not an extremum
 
 The error argument is the number of font units by which the modified
-path is allowed to stray from the true path.\
+path is allowed to stray from the true path.
  The tan\_bounds argument specifies the tangent of the angle between the
 curves at which smoothing will stop (argument is multiplied by .01
-before use).\
+before use).
  And bump\_size gives the maximum distance a bump can move from the line
-and still be smoothed out.\
+and still be smoothed out.
  If a fifth argument is given then it will be treated as the denominator
-of the error term (so users can express fraction pixel distances).\
+of the error term (so users can express fraction pixel distances).
  Generally it is a bad idea to merge a line segment with any other than
 a colinear line segment. The longer the line segment, the more likely
 that such a merge will produce unpleasing results. The sixth argument,
@@ -2474,7 +2474,7 @@ SizeOf(arr)
 Returns the number of elements in an array. It can execute with no
 current font.
 
-Skew(angle[,ox,oy])\
+Skew(angle[,ox,oy])
  Skew(angle-num,angle-denom[,ox,oy])
 
 All selected glyphs will be skewed by the given angle.
@@ -2507,8 +2507,8 @@ if a locale is specified it will be used.
 StrJoin(string-array,delimiter)
 
 Returns a single string made by concatenating all the strings in the
-array together with the delimiter string added after each. So:\
- `StrJoin(["The","quick","brown","box"]," ") `yields\
+array together with the delimiter string added after each. So:
+ `StrJoin(["The","quick","brown","box"]," ") `yields
  `"The quick brown box"`
 
 Strlen(str)
@@ -2529,12 +2529,12 @@ character that could not be parsed. It can execute with no current font.
 StrSplit(str,delimiter[,max-cnt])
 
 Splits the string at every occurance of the delimiter and produces an
-array of sub-strings.\
- `StrSplit("The quick brown box"," ") `yields\
- `["The", "quick","brown","box"]`\
+array of sub-strings.
+ `StrSplit("The quick brown box"," ") `yields
+ `["The", "quick","brown","box"]`
  If max-cnt is specified then it will limit the number of sub-strings in
-the array\
- `StrSplit("The quick brown box"," ",2) `yields\
+the array
+ `StrSplit("The quick brown box"," ",2) `yields
  `["The", "quick brown box"]`
 
 Strstr(haystack,needle)
@@ -2629,7 +2629,7 @@ Returns a string naming the type of the argument:
 -   "Unicode"
 -   "String"
 -   "Array"
--   "Void"\
+-   "Void"
      (The following type is used internally, but I don't think the user
     can ever see it. It is included here for completeness)
 -   "LValue"

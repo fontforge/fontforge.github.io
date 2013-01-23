@@ -379,17 +379,17 @@ the above.
 The different point types are:
 
 -   G4 (continuous up to the fourth derivative)
--   G2 (continuous up to the second derivative)\
+-   G2 (continuous up to the second derivative)
      Basically, if you have a sharp curve you should probably use a G2
     point, and if a more gentle curve a G4.
 -   corner
 -   prev constraint point -- vaguely like a tangent (Raph calls this a
-    "left" point)\
+    "left" point)
      This type of point should be used where the contour changes from a
     curve to a straight line (where the curve is on the previous side of
     the constraint point)
 -   next constraint point -- vaguely like a tangent (Raph calls this a
-    "right" point)\
+    "right" point)
      This type of point should be used where the contour changes from a
     straight line to a curve (where the curve is on the next side of the
     constraint point)
@@ -495,7 +495,7 @@ press point defines one axis of the transformation. Distances
 perpendicular to this line are retained, distances parallel to it are
 scaled as:
 
->	*x' = release\_x + (release\_y - y)/release\_y \* ( x - release\_x )* *y' = y*\
+>	*x' = release\_x + (release\_y - y)/release\_y \* ( x - release\_x )* *y' = y*
 
 ### ![](img/cvrecticon.png) ![](img/cvellipseicon.png)The rectangle/ellipse tools
 
@@ -541,7 +541,7 @@ Vertical View
 ![](img/charview-vert.png) In this view the vertical metrics of the glyph
 are shown. You can change the vertical advance just as you changed the
 glyph's width (by selecting the pointer tool and dragging the vertical
-advance line up or down).\
+advance line up or down).
 
 Grid Fit View
 -------------
@@ -571,7 +571,7 @@ The Debugging View
 >
 > "It was the *best* butter," the March Hare meekly replied.
 >
-> Alice's Adventures in Wonderland\
+> Alice's Adventures in Wonderland
 >  Lewis Carroll
 
 FontForge has a truetype debugger -- provided you have a version of

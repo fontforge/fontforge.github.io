@@ -76,19 +76,19 @@ confusing.
 
 ![](img/FVVMetrics.png)
 
-A 96 pixel display showing the various horizontal metric lines.\
- The blue line is the baseline\
- The small red tick on the left marks the glyph origin.\
+A 96 pixel display showing the various horizontal metric lines.
+ The blue line is the baseline
+ The small red tick on the left marks the glyph origin.
  The green line on the right shows where the advance width is while the
 bottom green line shows how long it is. (normally you will not display
-both at once)\
+both at once)
  The glyph is centered horizontally, and the font ascent is the top of
 the box displaying it, while the descent is the bottom.
 
-A 96 pixel display showing the various vertical metric lines.\
- The blue line down the center is the vertical baseline.\
+A 96 pixel display showing the various vertical metric lines.
+ The blue line down the center is the vertical baseline.
  The red bar at the top (over writing the ascent line) is the vertical
-origin.\
+origin.
  The green line at the bottom shows where the vertical advance  is while
 the green line on the right shows how long it is.  (normally you will
 not display both at once)
@@ -318,8 +318,8 @@ indicates how many times the ordering has been revised. Glyphs may only
 be added to an ordering, never removed, so an old font will be perfectly
 described by a newer glyph set, while a new font described by an old
 glyph set will have some unavailable glyphs. So a full cidmap name will
-look like:\
-                 Adobe-Japan1-4.cidmap\
+look like:
+                 Adobe-Japan1-4.cidmap
                  Adobe-Korea1-2.cidmap
 
 **Warning:** CID keyed fonts (actually any CJK font) use massive amounts

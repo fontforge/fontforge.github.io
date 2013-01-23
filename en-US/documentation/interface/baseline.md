@@ -38,7 +38,7 @@ appropriate checkboxes. All scripts will have the same set of baselines.
 In every script one baseline will be the default baseline. Generally
 glyphs in that script will be drawn with their vertical origin (If you
 are working on horizontal baselines, that is) on that baseline. You then
-should specify how other baselines are offset from this one.\
+should specify how other baselines are offset from this one.
 
 ![](img/BASElang.png)You may also set the minimum and maximum extent of the
 font for each script (by pressing the `[Set Extents] `button). This

@@ -29,7 +29,7 @@ The first priority level will be invoked to make small adjustments to
 spacing. If this is not enough to fix the problem then the second level
 will be invoked (in addition to the first, I believe). If the second
 level is not enough then third, fourth, fifth... levels will be invoked
-in turn until the line can be justified.\
+in turn until the line can be justified.
 
 ![](img/JustifyLangDlg.png)
 

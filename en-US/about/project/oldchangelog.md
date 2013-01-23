@@ -4,17 +4,17 @@ layout: default
 ---
 
 
-> **CHAPLAIN:**\
->   It was very interesting; I was dreaming I stood\
->   On Jacob's ladder, waiting for the gates to open.\
->   And the ladder was made entirely of diminished sevenths.\
->   I was surprised, but not put out. Nothing\
+> **CHAPLAIN:**
+>   It was very interesting; I was dreaming I stood
+>   On Jacob's ladder, waiting for the gates to open.
+>   And the ladder was made entirely of diminished sevenths.
+>   I was surprised, but not put out. Nothing
 >   Is altogether what we suppose it to be.
-> *The Lady's not for Burning*\
+> *The Lady's not for Burning*
 >  Christopher Fry
 
-[Current changes](changelog.html)\
- [Changes to PfaEdit (predecessor to FontForge)](pfaeditchangelog.html)\
+[Current changes](changelog.html)
+ [Changes to PfaEdit (predecessor to FontForge)](pfaeditchangelog.html)
  Changes to the [sfd format](sfdchangelog.html).
 
 -   24-August-2008
@@ -27,9 +27,9 @@ layout: default
         wants it to open files. Add icons, etc. so it will look like a
         mac app.
     -   Make it possible to drag and drop lookups
-        -   from one font info window to another\
+        -   from one font info window to another
                  (copy lookups from one font to another)
-        -   within a font info window\
+        -   within a font info window
                  (reorder lookups)
 
     -   Layers can now be marked as either background or foreground.
@@ -213,8 +213,8 @@ layout: default
     -   glyph.appendAccents didn't mark the glyph as changed nor did it
         force an update.
     -   Barry wants a way to control the use\_my\_metrics bit of a
-        reference from python.\
-         Give him a hack\
+        reference from python.
+         Give him a hack
          glyph.useRefsMetrics(name[,set])
     -   Add a glyph.appendAccent() command.
     -   Ralf from end-if.de points out that when trying to change the
@@ -379,7 +379,7 @@ layout: default
     -   I find it really hard to believe that this is an error, but I
         have a second hand report that MicroSoft claims that it is. To
         me making it erroneous is pointless and annoying, but I don't
-        write the spec. \
+        write the spec. 
          Add to Find Problems and Validate a check to see that if a base
         glyph (or mark) contains an anchor point in one anchor class in
         a lookup subtable, then it must have anchor points for ALL
@@ -629,10 +629,10 @@ layout: default
     -   FF wasn't handling a FontMatrix in the top dict of a cid font.
     -   Trying to filter for fig files in the Import dlg caused a crash.
     -   Check for bad OS/2 versions (that is, versions windows will
-        reject) when loading a font.\
+        reject) when loading a font.
          Connect validation's "Points too far" with Find Problem's
-        version.\
-         Make fontlint aware of the new validation states.\
+        version.
+         Make fontlint aware of the new validation states.
          When generating a font we complained about bad os/2 version
         only if they asked for a validation. Move it somewhere more
         prominant.
@@ -681,7 +681,7 @@ layout: default
         other files, before normal files, or in a separate pane.
         Also add a bookmark (and back/forward) mechanism.
     -   Add support for opening a font from http & ftp URLs. Can browse
-        ftp URLs, and save fonts back to ftp.\
+        ftp URLs, and save fonts back to ftp.
 
         `$ fontforge       http://openfontlibrary.org/people/Nasenbaer/Nasenbaer_-_Widelands.ttf`
     -   The validation patch broke the save mac family dialog, and then
@@ -692,7 +692,7 @@ layout: default
         job. So be careful of this case.
     -   Layers change introduced a potential crash in the Embolden
         command.
-    -   fontimage didn't draw the first line.\
+    -   fontimage didn't draw the first line.
          Add a cgi front end to [fontimage](fontimage.html) so now it is
         possible to get a font sample of any font on my website.
     -   In the Display dlg, if you changed the font, or the point size
@@ -1573,11 +1573,11 @@ layout: default
         (but leave the old, misspelled membernames around but
         undocumented in case anyone has been mislead by my previous
         documentation.
-    -   Add new python stuff to provide access to spiros.\
+    -   Add new python stuff to provide access to spiros.
          The fontforge module has a new method -- hasSpiro() which
-        returns whether we've got access to libspiro or not.\
+        returns whether we've got access to libspiro or not.
          The module also has a bunch of numeric constants defined
-        spiroG4, spiroG2, etc. for use in the\
+        spiroG4, spiroG2, etc. for use in the
          The Contour type has a new member -- spiros which is a tuple of
         spiro control points (which are themselves tuples:
         x,y,type,flags, where type is one of the numeric constants
@@ -1611,7 +1611,7 @@ layout: default
         GMT seems more sensible.
     -   Max Rabkin supplies a patch to let python import plate files.
     -   A couple of new name table string ids: WWS Family & WWS
-        Subfamily.\
+        Subfamily.
          Provide reasonable defaults for the wws\* ttf names.
     -   Correct the list of dutch font styles.
     -   Most of the items in the popup menu of the lookup pane didn't
@@ -1738,11 +1738,11 @@ layout: default
         of the OS/2 table. Add python scripting commands to access them
         too.
     -   When the user renames a glyph then things dependant on it should
-        change too.\
+        change too.
          So if any substitution (or pairwise positioning) refers to the
-        old name, change it to refer to the new.\
+        old name, change it to refer to the new.
          If any contextual change refers to the old name change to the
-        new.\
+        new.
          If any class of glyphs (kerning class, apple state machine,
         contextual by classes) refers to the old name change to the new.
         More debateable: if we change "f" to "u0066" then change "f.sc"
@@ -1798,7 +1798,7 @@ layout: default
         FontForge will clear any legacy tables ('fpgm', 'prep' and
         'cvt '). The old values will be of no use, and they just get in
         the way.
-    -   Add a Edit-\>Select-\>Select by Script command\
+    -   Add a Edit-\>Select-\>Select by Script command
          Make the Select by Name take a wildcard (so you could select
         "\*.sc").
     -   ApplySubstitutions still had problems. Caused crashes in a font
@@ -1807,7 +1807,7 @@ layout: default
         there would be no 'kern' feature in the feature list yet, and
         the display would randomly lose track of kern pairs and then
         create new ones. Very confusing.
-    -   Hmm. In some cases Merge Fonts didn't copy over lookup info.\
+    -   Hmm. In some cases Merge Fonts didn't copy over lookup info.
          Add the ability to merge cross-font kerning pairs (in case the
         two fonts being merged have the same glyphs for those which are
         in both fonts).
@@ -1817,7 +1817,7 @@ layout: default
     -   If a glyph ended in a suffix (one.superior, etc.), then changes
         to that glyph were not reflected in the fontview.
     -   Add the ability to Populate a lookup from the selection (in the
-        lookup sub-table dialogs)\
+        lookup sub-table dialogs)
          Do a better job of providing default values for single
         substitutions & positions.
     -   In the Print/Display dlg, deleting something so that the next
@@ -1836,8 +1836,8 @@ layout: default
     -   The Control Point Info window could wander off the bottom of the
         screen. I was very carefully calculating its position -- and
         then not using the result.
-    -   Inkscape stuffs bitmap images into svg files using the data URI\
-            data:\<mimetype\>,\<data\>\
+    -   Inkscape stuffs bitmap images into svg files using the data URI
+            data:\<mimetype\>,\<data\>
          (see IETF standard RFC 2397)
 
         So, I'll support this now as my only way of handling type3 style
@@ -1986,10 +1986,10 @@ layout: default
     -   Patch by Barry SCHWARTZ to feature file output on 64bit
         machines.
     -   In freetype 2.3.5 the binary layout of the execution context
-        changed.\
+        changed.
          This means that if ff is compiled against a 2.3.4 library it
         can't debug truetype if linked with a 2.3.5 library (and vice
-        versa).\
+        versa).
          So put in checks to see that the library version matches what
         we expect.
 
@@ -2005,7 +2005,7 @@ layout: default
 
     -   Patch from Barry SCHWARTZ. python fontforge.font.addPosSub was
         expecting its args inside a redundant tuple.
-    -   New Vietnamese translation from Clytie.\
+    -   New Vietnamese translation from Clytie.
          Also some spelling corrections in the original messages.
     -   Patch by Barry SCHWARTZ to lookup/subtable comparison.
     -   If a metricsview was open, then creating a new glyph slot would
@@ -2128,9 +2128,9 @@ layout: default
         sub-table.
     -   In TrueType composite glyphs with the USE\_MY\_METRICS bit set
         the lock icon wasn't scrolled properly.
-    -   The change from UCS2 to UCS4 broke text copy/paste.\
+    -   The change from UCS2 to UCS4 broke text copy/paste.
          We failed to add a terminating NUL of the right size in all
-        cases\
+        cases
          We continued to use charset=UCS-2 when it should have been
         UCS-4
     -   FF crashed when trying to View-\>Show ATT on a font that appears
@@ -2173,12 +2173,12 @@ layout: default
         base glyph were itself unmoved (that is the mark was placed
         relative to the unmoved location, not the actual location).
     -   The search dialog should provide user with control over the
-        error bound.\
+        error bound.
          The rotate checkbox didn't work if the flip checkbox wasn't
         checked.
     -   If a replace contour added a control point to a point that did
         not have one (went from a line to a curve) then that control
-        point would get lost.\
+        point would get lost.
          If a search matched across the start point of a contour then
         search/replace could go into an infinite loop if the search and
         replace paths were the same.
@@ -2188,11 +2188,11 @@ layout: default
         -   Font.createInterpolatedGlyph(glyph1,glyph2,amount)
 
         The first creates a new layer by interpolating between the
-        current layer and the layer in the first argument.\
+        current layer and the layer in the first argument.
          The second creates a new glyph in the font by interpolating
         between the first two arguments. The glyph's unicodecode point
         and name will be copied from the first argument (the font must
-        not already contain this glyph).\
+        not already contain this glyph).
          If amount is 0 the result will look like the first glyph, if 1
         then like the second.
     -   When recovering from a crash, FF would sometimes complain about
@@ -2211,7 +2211,7 @@ layout: default
     -   Kerning by classes got broken in metricsview by the addition of
         support for device tables.
     -   A GPOS contextual lookup only listed GSUB lookups in the
-        lookup/sequence dlg\
+        lookup/sequence dlg
          Pressing [OK] in the lookup/sequence dlg caused a crash if no
         lookup selected.
     -   Openfontdlg was looking at the filter listbutton rather than the
@@ -2236,8 +2236,8 @@ layout: default
         for having duplicate encodings point to the same glyph. Result
         was that occasionally a glyph would be removed and a pointer to
         something it refered to would be put in its place.
-    -   Change the name of activeFontInUI to activeFont\
-         Add an activeGlyph method.\
+    -   Change the name of activeFontInUI to activeFont
+         Add an activeGlyph method.
          Add the ability to call a python script from a outline view.
     -   Hmmm. If a textfield is shifted right, and then resized so
         there's now room for all the text, the unshift it.
@@ -2265,8 +2265,8 @@ layout: default
     -   Remove the code to produce the old, broken, 'size' feature.
 
 -   07-June-2007
-    -   Add support for Adobe's feature file syntax.\
-         Use Merge Kern (now Merge Feature) to read one\
+    -   Add support for Adobe's feature file syntax.
+         Use Merge Kern (now Merge Feature) to read one
          Use Element-\>Font Info-\>Lookups-\>popup menu-\>Save to
         generate one
 
@@ -2291,7 +2291,7 @@ layout: default
     -   Remove the code to produce the old, broken, 'size' feature.
     -   An earlier patch, designed to make the tabset work in the
         charview even if the user changed the name, didn't work.
-    -   Bug in the selection iterator.\
+    -   Bug in the selection iterator.
          Also Max Rabkin points out the docs say the iterator returns
         selected glyphs rather than encoding slots. Fix the docs, then
         add a member (.byGlyphs) which will make the iterator return
@@ -2394,7 +2394,7 @@ layout: default
         >
         > The lookup itself will be tagged with a feature tag (possibly
         > several tags) and with scripts and languages in which that
-        > lookup should be active.\
+        > lookup should be active.
         >  **NOTE:** This reverses the way GPOS/GSUB think about things,
         > but it contains the same information.
         >
@@ -2425,8 +2425,8 @@ layout: default
         > all changed in that they no longer request a feature tag, they
         > now need a lookup subtable.
         >
-        > The metrics view also needs a subtable.\
-        >  The metrics view has changed considerably.\
+        > The metrics view also needs a subtable.
+        >  The metrics view has changed considerably.
         >  It displays all the features in the font, and allows you to
         > select which ones you want active in the view. It lets you set
         > the script & language. It will apply lookups that it couldn't
@@ -2516,10 +2516,10 @@ layout: default
         glyph changed elsewhere the metrics view would not be updated.
     -   If the width of a glyph changed in the metrics view then that
         was not synchronized to dependent glyphs.
-    -   Enforce the "Use My Metrics" bit of a reference.\
+    -   Enforce the "Use My Metrics" bit of a reference.
          In TrueType, if this bit is set on a reference then then width
         of the containing glyph will be the same as that of the
-        reference.\
+        reference.
          So don't let the user change the width of such glyphs. (and add
         a lock icon to the width line in the character view to show that
         it is fixed).
@@ -2590,8 +2590,8 @@ layout: default
         in a glyph with no fonts, it does seem bad practice, and a
         program called tx.exe complained about it.
     -   Patch by Michal Nowakowski to allow a nicer notation for delta
-        instructions in the instruction editing window: Example:\
-         `PUSHB_3 6@12 8 1 DELTAP2 `\
+        instructions in the instruction editing window: Example:
+         `PUSHB_3 6@12 8 1 DELTAP2 `
          This moves point 8 by six delta-steps (that's clear) at 37 ppem
         (that's not clear at first glance - assuming delta\_base is 9,
         DELTAP2 works from 25 ppem to 25+15 ppem, in this example it's
@@ -2634,7 +2634,7 @@ layout: default
         DOES NOT CONFORM TO THE AGL !!!!!
     -   Oops. The gloss for the shift point/contour/zone was slightly
         off and gave the wrong information.
-    -   Add vietnamese font styles (bold, italic, regular, etc.)\
+    -   Add vietnamese font styles (bold, italic, regular, etc.)
          From Clytie Siddall.
     -   Fixes for rounding errors in finding spline intersections.
     -   Werner points out that removing a bitmap glyph from the
@@ -2644,7 +2644,7 @@ layout: default
         so any truetype instructions would be ignored. And the generated
         strikes would be ugly.
     -   Add a command to show anchor point attachments within the
-        outline character view\
+        outline character view
          (View-\>Combinations-\>Anchor Glyph at Point)
     -   Force point numbers to be correct when changing glyphs in the
         charview.
@@ -2654,7 +2654,7 @@ layout: default
         different, people want the image scaled the same in svg input.
     -   People would like to have only one charview and double clicking
         in the fontview just changes the contents of an existing
-        window.\
+        window.
          Preference Item: OpenCharsInNewWindow
     -   Add a tabs line to the outline char window. If users are going
         to have only one charview open then they probably want some
@@ -3043,7 +3043,7 @@ layout: default
         same.
     -   Try to clean up bitmap only sfnt generation.
     -   pcf wasn't in the Open Font dialog format list (nor was pmf, nor
-        pdf)\
+        pdf)
          Add a filter for TeX bitmap fonts.
     -   Provide a mechanism (if a preference item is set) for picking a
         cmap when loading a font.
@@ -3157,9 +3157,9 @@ layout: default
 
 -   15-Jul-2006
     -   Apple's bitmap only fonts should not have an 'hhea' nor an
-        'hmtx' table\
+        'hmtx' table
          Dummy up outline glyph widths when we don't have a 'hmtx' table
-        by looking at bitmap widths for that glyph.\
+        by looking at bitmap widths for that glyph.
          ftxvalidate complains if the vertical line metrics are 0. Even
         in a strike with no vertical metrics information. So dummy
         something up.
@@ -3340,7 +3340,7 @@ layout: default
     -   The hintmask part of PointInfo would not let you clear a
         hintmask.
     -   Add a new command to the fontview: Edit-\>Select-\>Select by
-        Name\
+        Name
          and a new scripting command: SelectAllInstancesOf
         Both will select all encoding slots containing the named glyph
         (or unicode value)
@@ -3425,7 +3425,7 @@ layout: default
         crash.
     -   The PLRM says that formfeed is whitespace. The T1\_Spec says
         that it is not. After an eexec the T1\_Spec is right (and ff was
-        following the PLRM definition).\
+        following the PLRM definition).
          Also add a check to insure that the first character we generate
         in pfb encryption isn't a white space character.
     -   On some windows systems (mine at least), windows will refuse to
@@ -4550,7 +4550,7 @@ layout: default
         get cleared properly.
     -   Some display problems in the SameGlyphAs command.
     -   The Apply Substitutions code did not consider the possibility of
-        loops:\
+        loops:
          a-\>b-\>c-\>d-\>a
     -   Werner suggests indicating multi-layer in the version string.
     -   Mark to Mark anchor classes should allow each mark glyph also to
@@ -4577,12 +4577,12 @@ layout: default
         syntax checking without actually executing the script. I think
         it is trivial.
     -   Werner points out that the DSC Version comment has a very
-        specific syntax:\
-         %%Version: \<version\> \<revision\>\
+        specific syntax:
+         %%Version: \<version\> \<revision\>
          \<version\> is a real, \<revision\> is a uint. So we can't use
         the font's version string here (which might be anything).
-        Instead we now generate a version comment\
-         %Version: \<string\>\
+        Instead we now generate a version comment
+         %Version: \<string\>
          rather than a DSC Comment.
     -   We used to assign a unicode value to ".notdef"s when reading ps
         encoding file, if the encoding was in the region of control

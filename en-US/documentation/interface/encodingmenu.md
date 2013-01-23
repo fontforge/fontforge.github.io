@@ -185,7 +185,7 @@ FontForge knows about the following encodings by default:
 -   ISO-8859-6 (Arabic)
 -   ISO-8859-7 (Greek)
 -   ISO-8859-8 (Hebrew) -- (and Yiddish)
--   ISO-8859-11 (Thai) -- Also know as TIS 620\
+-   ISO-8859-11 (Thai) -- Also know as TIS 620
      \<there is no ISO-8859-12\>
 
     * * * * *
@@ -201,7 +201,7 @@ FontForge knows about the following encodings by default:
 
 -   ISO-10646-1 (Unicode, BMP)
 -   ISO-10646-1 (Unicode, Full)
--   ISO-10646-? (Unicode, by plane)\
+-   ISO-10646-? (Unicode, by plane)
      (You can select a specific plane of unicode as an encoding (ie BMP,
     SMP, SIP,...)
 
@@ -334,20 +334,20 @@ and it must be 31 or fewer characters in length.
 
 FontForge provides a series of standard namelists:
 
--   Adobe Glyph List\
+-   Adobe Glyph List
      This is the set of names that Adobe publishes on the web.
--   AGL without afii\
+-   AGL without afii
      The cyrillic and hebrew glyphs have been assigned some very odd
     names (afiiXXXXX) and some people prefer not to use them.
--   AGL with PUA\
+-   AGL with PUA
      Adobe has assigned part of the unicode public use area to hold some
     standard glyph variants like small caps, subscripts, old-style
     numbers, etc.
--   Greek small caps\
+-   Greek small caps
      I've added some greek small cap assignments
--   TeX Names\
+-   TeX Names
      The TeX typesetting system has its own set of names
--   AMS Names\
+-   AMS Names
      The American Mathematical Society has its set of names (see the
     American Mathematical Society's
     [specification](http://www.ams.org/STIX/bnb/stix-tbl.asc-2003-10-10))
@@ -399,9 +399,9 @@ decree that all your new fonts will use this namelist. You can change a
 font's namelist with either:
 
 -   [Element-\>Font
-    Info-\>General-\>NameList](fontinfo.html#PS-General)\
+    Info-\>General-\>NameList](fontinfo.html#PS-General)
      Which will change the way new glyphs are assigned names
--   [Encoding-\>Rename Glyphs...](#RenameGlyphs)\
+-   [Encoding-\>Rename Glyphs...](#RenameGlyphs)
      Which will rename existing glyphs as well as changing the way new
     glyphs are named.
 

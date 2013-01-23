@@ -54,8 +54,8 @@ Optionally set any glyphlists
 -   Press [New]
 -   Set the tag to `TeX Glyphlist` from the pulldown list
 -   Type the names of all the other glyphs in the glyphlist into the
-    Components field\
-     So if the charlist is for left parenthesis\
+    Components field
+     So if the charlist is for left parenthesis
      You would select the lparen glyph and might type in "lparen.big
     lparen.bigger lparen.biggest"
 
@@ -67,9 +67,9 @@ Optionally set any extension glyphs.
 -   Press [New]
 -   Set the tag to `TeX Extension list `from the pulldown list
 -   Type the names of the glyphs that this glyph decomposes into in the
-    order: top middle bottom extension\
-     If a field is not present use .notdef\
-     So if the extension list is for left parenthesis\
+    order: top middle bottom extension
+     If a field is not present use .notdef
+     So if the extension list is for left parenthesis
      You would select the lparen.biggest glyph and might type in
     "lparen.top lparen.mid lparen.bottom lparen.ext"
 
@@ -96,7 +96,7 @@ must:
 
 -   \<configure TeX so that it is prepared for local additions\>
 -   Rename the font file so that the filename is in a format TeX
-    understands\
+    understands
      (I'm told this isn't required, but I couldn't get things to work
     without doing this. Perhaps I have an old system. Perhaps I didn't
     try hard enough)
@@ -137,7 +137,7 @@ resources on the web:
         italic, "o" for oblique, "b" for bold, and "bi" for bold italic
     -   the last two letters should be "8a" (which means your font is in
         Adobe Standard Encoding. And your font *must be* in that
-        encoding or things don't work).\
+        encoding or things don't work).
          (Again I am told that you can use any encoding as long as you
         register it with TeX. I was unable to get this to work. But my
         system is out of date)
@@ -220,10 +220,10 @@ I did the following:
     >     rm fi.tex *.mtx *.pl *.vpl
     >
     >     # create the directories we need for the various components
-    >     mkdir -p $LOCALTEXMF/fonts/type1/$VENDOR/$PACKAGE \
-    >         $LOCALTEXMF/fonts/afm/$VENDOR/$PACKAGE \
-    >         $LOCALTEXMF/fonts/tfm/$VENDOR/$PACKAGE \
-    >         $LOCALTEXMF/fonts/vf/$VENDOR/$PACKAGE \
+    >     mkdir -p $LOCALTEXMF/fonts/type1/$VENDOR/$PACKAGE 
+    >         $LOCALTEXMF/fonts/afm/$VENDOR/$PACKAGE 
+    >         $LOCALTEXMF/fonts/tfm/$VENDOR/$PACKAGE 
+    >         $LOCALTEXMF/fonts/vf/$VENDOR/$PACKAGE 
     >         $LOCALTEXMF/tex/latex/$VENDOR/$PACKAGE
     >
     >     # move everything into its expected directory

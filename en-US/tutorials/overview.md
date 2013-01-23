@@ -126,7 +126,7 @@ See Also
 > \`\`No,'' said Piglet.
 > \`\`It's an A.''
 > \`\`Oh,'' said Piglet.
-> -- A. A. Milne, 1928\
+> -- A. A. Milne, 1928
 >  The House At Pooh Corner
 > \`\`Not O, A,'' said Eeyore severely.
 
@@ -214,14 +214,14 @@ fonts directly (the [Expand Stroke](elementmenu.html#Expand) command can
 be used to turn them into outlines), but if you wish to edit stroked
 fonts, see the section on [multi-layered editing](multilayer.html).
 
-*![](img/outlinechar.png)*\
+*![](img/outlinechar.png)*
  A glyph's outline
 
-![](img/bitmapchar.png)\
+![](img/bitmapchar.png)
  A glyph's bitmap
 
-![](img/strokechar.png)\
- A stroked glyph\
+![](img/strokechar.png)
+ A stroked glyph
  (showing the equiv. outline in grey)
 
 An outline is composed of a set of contours or paths. In the picture on
@@ -495,15 +495,15 @@ font is quite difficult to do well. PostScript and TrueType have
 different approaches to the problem of providing extra information to
 the rasterizer about how to draw small fonts.
 
-Rasterization improvements\
- from hinting TrueType.\
- 18pt font rasterized by Windows\
+Rasterization improvements
+ from hinting TrueType.
+ 18pt font rasterized by Windows
  (scaled by a factor of 2)
 
-  ![](img/HI.nohints.png)  \
+  ![](img/HI.nohints.png)  
  no hints
 
-  ![](img/HI.hints.png)  \
+  ![](img/HI.hints.png)  
  hints
 
 #### PostScript
@@ -557,7 +557,7 @@ reasonable values for these. It also allows you to override these
 guesses and [specify your own values](fontinfo.html#Private). For a more
 comprehensible description of the private dictionary and what it can do,
 look at [Adobe's Type1 font
-specification](http://partners.adobe.com/asn/developer/PDFS/TN/T1_SPEC.PDF).\
+specification](http://partners.adobe.com/asn/developer/PDFS/TN/T1_SPEC.PDF).
  FontForge's [AutoHint](hintsmenu.html#AutoHint) command will work
 better if the BlueValues have been set. So before running AutoHint go to
 [Element-\> FontInfo-\> Private](fontinfo.html#Private) to set this
@@ -567,7 +567,7 @@ Element-\> FontInfo-\> Private).
 #### True Type
 
   --------------------
-  ![](img/GridFitM.png)\
+  ![](img/GridFitM.png)
    Grid Fit M
   --------------------
 
@@ -780,7 +780,7 @@ languages, features and lookups thusly:
 
   dlig (discretionary)    lookup for ct and st                                                                                                                                                                                                               
 
-  Turkish                 liga                                                                                                                                                                                                                               lookup for ff, fl and ffl   Lookups may be shared, so this can be the same lookup as above\
+  Turkish                 liga                                                                                                                                                                                                                               lookup for ff, fl and ffl   Lookups may be shared, so this can be the same lookup as above
                                                                                                                                                                                                                                                                                           (Turkish distinguishes between i and dotlessi and fi ligatures hide this distinction.)
 
   German                  liga                                                                                                                                                                                                                               lookup for ff, fl and ffl   

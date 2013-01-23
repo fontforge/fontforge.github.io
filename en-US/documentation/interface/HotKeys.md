@@ -69,10 +69,10 @@ Menu Hot Keys
   Ctl-2       [24 pixel outline](viewmenu.html#px24)\                        Ctl-Shft-@                     [Average Points](elementmenu.html#Average)          Alt-Ctl-2         [Invokes user script](filemenu.html#ScriptMenu)
                [Curve Point](pointmenu.html#Curve)                                                                                                                                
 
-  Ctl-3       [36 pixel outline](viewmenu.html#px36)\                        Ctl-Shft-\#                    [Space Points](elementmenu.html#Space-Pts)          Alt-Ctl-3         [Invokes user script](filemenu.html#ScriptMenu)\
+  Ctl-3       [36 pixel outline](viewmenu.html#px36)\                        Ctl-Shft-\#                    [Space Points](elementmenu.html#Space-Pts)          Alt-Ctl-3         [Invokes user script](filemenu.html#ScriptMenu)
                [Corner Point](pointmenu.html#Corner)                                                                                                                                   ...
 
-  Ctl-4       [48 pixel outline](viewmenu.html#px48)\
+  Ctl-4       [48 pixel outline](viewmenu.html#px48)
                [Tangent Point](pointmenu.html#Tangent)
 
   Ctl-5       [Anti-Alias](viewmenu.html#AntiAlias)                          Ctl-Shft-%                     [32x8 cell window](viewmenu.html#32x8)              
@@ -146,7 +146,7 @@ I am aware of the following significant differences:
 
 -   On Mac OS/X the Option key is equivalent to the Alt modifier key
 -   On Suse PPC linux, the Command key is equivalent to the Alt modifier
-    key\
+    key
      (And the Option key acts as a compose key in the same way it does
     on the Mac when not using X)
 -   On Suns the meta (diamond) key is equivalent to the Alt modifier
@@ -182,12 +182,12 @@ Constrain horizontal/vert or italic angle/45°
 Magnify
 
   --------
-  Shift\
+  Shift
   Alt
   --------
 
   --------------------------------------
-  When dragging a magnification area,\
+  When dragging a magnification area,
    make it square
 
   minify
@@ -211,7 +211,7 @@ scroll
 
 Shift
 
-Constrain scroll either in single direction or\
+Constrain scroll either in single direction or
  by same amount in both directions
 
 add curve
@@ -236,7 +236,7 @@ pen
 
 Shift
 
-Constrain points h/v/45 from last point\
+Constrain points h/v/45 from last point
  Constrain control points h/v/45 from point
 
 knife
@@ -259,7 +259,7 @@ scale
 
 Shift
 
-Constrain either to scale along x or y axis or\
+Constrain either to scale along x or y axis or
  scale both axes the same
 
 flip
@@ -286,14 +286,14 @@ polygon/star
 
 Shift
 
-Constrains so that one of the vertices is\
+Constrains so that one of the vertices is
  horizontal/vertical/45°
 
 Modifer keys for arrow keys in the Outline Glyph Window
 -------------------------------------------------------
 
-Control\
- - or -\
+Control
+ - or -
  CapsLock
 
 Makes the arrow keys scroll

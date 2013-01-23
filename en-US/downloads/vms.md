@@ -4,7 +4,7 @@ layout: default
 ---
 
 
-FontForge install procedures\
+FontForge install procedures
  for VMS
 =============================
 

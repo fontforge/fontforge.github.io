@@ -78,11 +78,11 @@ state machine.
 -   For contextual transitions the two lines specify the lookup names of
     simple substitutions. The first one is applied to the last glyph
     marked and the second one to the current glyph (if a line is blank,
-    no substitution is applied to that glyph here).\
+    no substitution is applied to that glyph here).
      If a transition has both a "marked substitution" and the "mark
     current glyph" flag, I believe the substitution applies to the glyph
     that was previously marked, and not to the current glyph. (Apple
-    doesn't document this)\
+    doesn't document this)
      **Caveat:**Apple's 'mort' format was not designed to allow
     fonteditors to figure out what a state machine did. FontForge can
     usually make a good guess of what substitutions do which apply to
@@ -98,7 +98,7 @@ state machine.
     room. They may be viewed by clicking on a transition.
 -   For kerning transitions the first line shows the first (few) kerning
     values, the second line shows either "..." if there are more kerning
-    values, or nothing.\
+    values, or nothing.
      Note: The number of kerning values **MUST** match the number of
     glyphs pushed on the kern stack, or your application crashes.
 
@@ -148,11 +148,11 @@ Kerning
 In addition to a "mark"ed glyph, indic transformations also have a the
 concept of a "last" glyph. There are 16 transformations which may be
 applied the the glyphs between the "mark"ed and "last" glyphs. Suppose
-the glyph stream looks like\
-     abcdef\
+the glyph stream looks like
+     abcdef
  And "a" was "mark"ed and "d" was "last" then a transition "AxD =\> DxA"
 refers to the marked glyph as "A", the last glyph as "D" and everything
-in between as "x", so this would change the glyph stream to\
+in between as "x", so this would change the glyph stream to
      dbcaef
 
 This can apply a substitution to the current glyph, a different
@@ -169,11 +169,11 @@ be applied to those glyphs (so the flag which is usually indicated as
 "M" for mark, is here "P" for push). Once all the glyphs have been
 pushed, a set of kerning values may be applied. One value for each
 pushed glyph. This is a number which indicates how much the glyph in
-question should be kerned. If the glyph stream looks like:\
-     F."\
+question should be kerned. If the glyph stream looks like:
+     F."
  and you want to kern "." by -300, and """ by 0 em-units, then you would
-enter\
-     -300 0\
+enter
+     -300 0
  as kerning values.
 
 Editing Transitions
@@ -203,6 +203,6 @@ fields mean.
 
 If you wish to add a new state, simply edit a transition so that its
 next state field is the state number desired. FontForge will
-automatically create the state for you.\
+automatically create the state for you.
 
 -- [Up](fontinfo.html) -- [TOC](overview.html) --

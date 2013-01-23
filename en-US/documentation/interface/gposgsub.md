@@ -95,7 +95,7 @@ FontForge will read the following sub tables of the GPOS table:
 
   9     extension positioning             This is used to allow for a GPOS table which is bigger than 64k. Its use should be quite invisible to the font designer                                                                                                                                                                                                                                                                                                FontForge uses this sub-table when needed.
 
-  10+   reserved for future use                                                                                                                                                                                                                                                                                                                                                                                                                                  FontForge does not support these sub-tables yet.\
+  10+   reserved for future use                                                                                                                                                                                                                                                                                                                                                                                                                                  FontForge does not support these sub-tables yet.
                                                                                                                                                                                                                                                                                                                                                                                                                                                                   (nor does anyone)
   ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -129,7 +129,7 @@ FontForge will read the following sub tables of the GSUB table:
 
   8    reverse chaining contextual single substitution   This allows glyph substitutions to happen in reverse order, and it a variant of the chaining contextual subtable.                                                                                                                                                                                                                                                                                                                                                                                                                                                     These may be created with the [Element-\>Font Info-\>Contextual](lookups.html#contextual-subs)command
 
-  9+   reserved for future use                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 FontForge does not support these sub-tables yet.\
+  9+   reserved for future use                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 FontForge does not support these sub-tables yet.
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 (nor does anyone)
   ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -371,20 +371,20 @@ interconvert.
 
 GSUB tables have 7 sub-table formats, while morx tables have 5.
 
-GSUB\
- sub-\
+GSUB
+ sub-
  table
 
-morx\
- sub-\
+morx
+ sub-
  table
 
 Description
 
 Single
 
-Non-\
- Contextual\
+Non-
+ Contextual
  Glyph
 
 These two sub-tables have almost exactly the same capabilities. Each
@@ -403,7 +403,7 @@ except:
     (But if this sub-table is wrapped inside a Context or Chaining
     Context subtable the result can be contextual).
 
-Glyph\
+Glyph
  Insertion
 
 This morx subtable allows a string of glyphs to be inserted before or
@@ -436,7 +436,7 @@ sub-table. FontForge loses all contextual ligatures.
 In OpenType, contextual ligatures can be built by wrapping a ligature
 sub-table inside a Context or Chaining Context subtable.
 
-Contextual\
+Contextual
  Glyph
 
 This morx subtable allows single glyph substitutions to be applied
@@ -453,19 +453,19 @@ contextual glyph substitutions, contextual ligatures, or even glyph
 insertion. [Unfortunately this is rarely the
 case](gposgsub.html#sometimes).
 
-Chaining\
+Chaining
  Context
 
-Reverse\
- Chaining\
+Reverse
+ Chaining
  Context
 
 This GSUB subtable is applied backwards to the stream of glyphs, it
 allows a single glyph substitution per contextual match. There is
 nothing like it in 'morx'.
 
-Indic\
- Rearrange-\
+Indic
+ Rearrange-
  ment
 
 This 'morx' subtable allows for several glyphs to interchange their
@@ -486,7 +486,7 @@ this means:
     1.  Either
         -   The sub-table is in coverage format
         -   The sub-table contains either exactly one nested single
-            glyph replacement substitution, or\
+            glyph replacement substitution, or
              it contains exactly two single glyph replacements and one
             of them refers to the last glyph matched (and the other does
             not)
@@ -499,12 +499,12 @@ this means:
         -   If a rule has a substitution at a given glyph position, then
             all rules which match the current rule up to that glyph
             position must also have a substitution at that position.
-        -   A rule with exactly one substitution is acceptable\
+        -   A rule with exactly one substitution is acceptable
              A rule with one substitution in the middle and one
-            substitution on the last glyph is acceptable.\
+            substitution on the last glyph is acceptable.
              A rule may contain more substitutions only if there is
             another rule which matches it exactly up to the internal
-            substitution.\
+            substitution.
              So the following rule set is valid:
 
             Rule
@@ -768,7 +768,7 @@ equivalent output in the other.
 
 ### Apple and OpenType features
 
-Correspondences between Apple and OpenType features\
+Correspondences between Apple and OpenType features
  (that I support)
 
 Apple Feature Setting

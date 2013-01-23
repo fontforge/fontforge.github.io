@@ -132,7 +132,7 @@ notice that the "o" reaches a little above the guide line we put in to
 mark the x-height (and a little below the baseline). This is called
 overshoot and is an attempt to remedy an optical illusion. A curve
 actually needs to rise about 3% (of its diameter) above the x-height for
-it to appear on the x-height.\
+it to appear on the x-height.
 
 Let's look at "k". Again we will copy an "l" into it and import an
 appropriate image.

@@ -65,7 +65,7 @@ continue to be interpolated. The \<\> Normal and \<\>Interpolated radio
 buttons control which view is active.
 
 Pressing \<\> Interpolated may move the point to position it correctly
-for interpolation.\
+for interpolation.
 
 ### ![](img/hintmaskinfo.png)Hint Mask
 
@@ -104,7 +104,7 @@ If you are editing in spiro (clothoid) mode rather than Bezier mode,
 then there are no control points and the get info dialog is much
 simpler. Just the location of the point and the point type.
 
-\
+
 
 ![](img/agetinfo.png)Anchor Points Info
 -----------------------------------
@@ -121,7 +121,7 @@ the truetype glyph. This point can then be manipulated with truetype
 instructions to grid fit it properly with the current rasterization.
 
 Anchor points may also be created with the [Point-\>Add
-Anchor](pointmenu.html#AddAnchor) command. \
+Anchor](pointmenu.html#AddAnchor) command. 
 
 ![](img/rgetinfo.png)Reference Info
 -------------------------------
@@ -131,7 +131,7 @@ the font and its postscript transformation matrix. You may alter the
 transformation matrix if you desire.
 
 The transformation matrix maps points in the glyph being refered to into
-their location in the current glyph: \
+their location in the current glyph: 
 
 `    xcurrent = TM[1,1]*xref +   TM[2,1]*yref + TM[3,1]       ycurrent = TM[1,2]*yref +   TM[2,2]*yref + TM[3,2]`
 
@@ -170,7 +170,7 @@ The bounding box information is informative only and displays the
 current location and size of the reference.
 
 The [Show] button will open a glyph outline view showing the glyph being
-referred to.\
+referred to.
 
 Image Info
 ----------

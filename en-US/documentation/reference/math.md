@@ -60,7 +60,7 @@ higher than normal shapes.
 
 This sub-table consists of a list of glyph names and an indication of
 whether this glyph is an extended shape (you may add additional glyphs
-at the bottom of the list, order is irrelevant here).\
+at the bottom of the list, order is irrelevant here).
 
 ### Italic Correction
 
@@ -76,7 +76,7 @@ pop up showing the glyph, the normal advance width (as a dotted line),
 and the corrected advance width.
 
 Here again you are allowed to specify a device table to adjust the
-correction.\
+correction.
 
 ### Top Accent Attachment
 
@@ -94,7 +94,7 @@ line indicates the attachment position in each, and the glyphs will be
 adjusted so the two lines match up.
 
 Again a device table may be specified to control positioning at small
-pixel sizes.\
+pixel sizes.
 
 ### Math Kerning
 
@@ -112,20 +112,20 @@ sub/superscript and exactly where it attaches vertically.
 
 This subtable allows you to specify a list of glyph kerning/height pairs
 for each corner of the glyph. Click on the word "Change" above to get a
-new dialog. These data may be specified textually:\
- ![](img/MATH-MathKernText.png) \
+new dialog. These data may be specified textually:
+ ![](img/MATH-MathKernText.png) 
  At any given height a kerning value may be specified. This value is
 relative to the default position of the subscript (and I'm not entirely
 sure what that is). As always device table adjustments may be
-specified.\
- FontForge also allows you to specify these data graphically\
- ![](img/MATH-MathKernGraph.png)\
+specified.
+ FontForge also allows you to specify these data graphically
+ ![](img/MATH-MathKernGraph.png)
  FontForge displays bottom right attachments relative to the advance
-width line of the glyph\
+width line of the glyph
  FontForge displays top right attachments relative to the advance width
-plus the italic correction.\
+plus the italic correction.
  FontForge displays bottom left attachments relative to the origin of
-the glyph.\
+the glyph.
  FontForge displays top left attachments relative to the italic
 correction.
 
@@ -152,7 +152,7 @@ In this sub-table you may specify a normal sized glyph (here
 "leftparen") and then a list of variants in increasing sizes.
 
 Glyphs may be grow along either the vertical axis (as here) or the
-horizontal axis.\
+horizontal axis.
 
 ### Vertical and Horizontal Glyph Construction
 
@@ -165,8 +165,8 @@ of the glyph.
 
 The components are rather difficult to specify in this display, but if
 you scroll the dialog to the far right you will find a little
-rectanglular box, and clicking on this will produce the dialog below. \
- ![](img/MATH-GlyphConstructionDlg.png) \
+rectanglular box, and clicking on this will produce the dialog below. 
+ ![](img/MATH-GlyphConstructionDlg.png) 
  Every ![](img/MATH-GlyphConstructed.png)component is either an "Extender"
 component -- which means it may be stuck in the composed glyph as often
 as needed (or not at all) to make the glyph be as big as needed.
@@ -177,7 +177,7 @@ the component adds to the total height (or width) of the composed glyph.
 
 Finally there is a font-wide constant (in the Connectors pane of the
 Constants section) called MinConnectorOverlap which specifies that
-glyphs must overlap by at least this amount.\
+glyphs must overlap by at least this amount.
  The per-glyph information may also be specified from the [Glyph
 Information dialog.](charinfo.html)
 

@@ -4,7 +4,7 @@ layout: default
 ---
 
 
-Several formats for bitmap only sfnts\
+Several formats for bitmap only sfnts
  (the file type which holds a truetype or opentype font)
 ========================================================
 
@@ -25,7 +25,7 @@ in part by examining the (few) bitmap only fonts of theirs I have found,
 and in part by error messages given by some of their tools.
 
 -   As is expected on Apple, the bitmap data reside in '`bloc`' and
-    '`bdat`' tables.\
+    '`bdat`' tables.
      (These are identical in format to the '`EBLC`' and '`EBDT`' tables
     used in OpenType)
 -   The '`head`' table is replaced by a '`bhed`' table which is byte for

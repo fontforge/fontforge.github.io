@@ -128,7 +128,7 @@ unicode character may map to very different chinese or japanese glyphs).
 To handle this FontForge has the concept of "Interpretation".
 
 When you create a new glyph in a font, fontforge will assign it a name
-based on the current [namelist](encodingmenu.html#namelist).\
+based on the current [namelist](encodingmenu.html#namelist).
 
 ![](img/fontinfo-layers.png)Layers
 ------------------------------
@@ -161,7 +161,7 @@ will look like may outweigh that.
 You may also mark a layer as a foreground layer or a background layer.
 Background layers can hold images. Pasting into an empty glyph in a
 background layer will not set the width. Splines in background layers do
-not make a glyph worth outputting.\
+not make a glyph worth outputting.
 
 ![](img/fontinfo-psuid.png)PostScript Unique ID
 -------------------------------------------
@@ -186,7 +186,7 @@ number for you in the allowable range. If you want your font to have no
 unique id then give this the value of -1. If you have talked to Adobe
 and been assigned a real UniqueID then you may use this field, otherwise
 leave it blank. (The UniqueID field is only meaningful in PostScript
-fonts)\
+fonts)
 
 Private -- (font-wide postscript hinting)
 -----------------------------------------
@@ -242,7 +242,7 @@ field in the Font Dictionary. (this is different from True Type's
 UniqueID. They perform the same function but are formatted differently).
 
 Some of these entries are only meaningful for PostScript fonts, others
-will be used by the truetype autoinstructor.\
+will be used by the truetype autoinstructor.
 
 ![](img/fontinfo-ttfvals.png)OS/2
 -----------------------------
@@ -284,7 +284,7 @@ Finally you may order lookups in the GSUB (or morx) table.
 
 These entries are only meaningful in TrueType and OpenType fonts (though
 the Embeddable entry (generally called FSType) will be set on CID keyed
-fonts even if they are not in an OpenType wrapper.\
+fonts even if they are not in an OpenType wrapper.
 
 ### `GSUB/morx` Ordering
 
@@ -300,7 +300,7 @@ executed first, things at the bottom last.
 features (actually lookups) will be ordered by their appearence in the
 lookup table, MicroSoft claims that they will apply features in the
 order that they think best. So the order specified in the font may be
-ignored.\
+ignored.
 
 ![](img/fontinfo-ttfmetrics.png)OS/2 Metrics
 ----------------------------------------
@@ -362,7 +362,7 @@ LineGap in vertical text).
 
 [See the FAQ](faq.html#linespace)for a discussion on the complexities
 involved in setting the line spacing. [The 'BASE' table](baseline.html)
-provides a more precise method for setting line spacing.\
+provides a more precise method for setting line spacing.
 
 ![](img/fontinfo-subsup.png)OS/2 Sub/Superscripts
 ---------------------------------------------
@@ -374,7 +374,7 @@ Most fonts don't really need this control. If you leave the [\*] Default
 check box on, then FontForge will generate some reasonable values on
 output (if nothing significant changes, it will use the values shown
 here). If you want control of these values, turn off the checkbox and
-the text fields will be enabled for you to change.\
+the text fields will be enabled for you to change.
 
 ![](img/fontinfo-panose.png)Panose
 ------------------------------
@@ -393,7 +393,7 @@ If you leave the [\*] Default checkbox set then FontForge will generate
 reasonable values when the font is output, otherwise you may set these
 values manually.
 
-These entries are only meaningful for TrueType, OpenType and SVG fonts.\
+These entries are only meaningful for TrueType, OpenType and SVG fonts.
 
 ![](img/fontinfo-charsets.png)Charsets
 ----------------------------------
@@ -405,7 +405,7 @@ checkboxes set then FontForge will generate reasonable values when the
 font is output. Sometimes you need to override that behavior if you wish
 Windows to use a font with an incomplete code page.
 
-These entries are only meaningful for TrueType, and OpenType fonts.\
+These entries are only meaningful for TrueType, and OpenType fonts.
 
 ![](img/fontinfo-ttfname.png)TTF Names
 ----------------------------------
@@ -450,7 +450,7 @@ different popup menu which will allow you to:
     modify it)
 -   Delete a string entirely (except for the special strings bound to
     PostScript)
--   Edit a string in a larger window.\
+-   Edit a string in a larger window.
 
 If you click with the left button on a string value you may edit that
 string in line, if it is small enough,
@@ -522,7 +522,7 @@ An URL (often an e-mail address) pointing to the font's designer
 
 License
 
-A string describing the license terms under which the font is marketed.\
+A string describing the license terms under which the font is marketed.
  If you want to use the [SIL Open Font
 License](http://scripts.sil.org/OFL/), there is a button at the bottom
 of the dialog which will add that directly (so you don't need to type it
@@ -582,7 +582,7 @@ The OpenType features 'ss01'-'ss20' are magic, and you are allowed to
 provide more interesting names for them than the default "Style Set
 01"... This table allows you to assign names, in various languages to
 the various features. It is very similar to, though less complicated
-than, the previous pane.\
+than, the previous pane.
 
 ![](img/fontinfo-gasp.png)Grid Fit ('gasp' table)
 ---------------------------------------------
@@ -614,7 +614,7 @@ In the table above:
 -   All pixel sizes between 9 and 16 (inclusive) will be grid-fit but
     not anti-aliased.
 -   All pixel sizes above 16 will be both grid-fit and anti-aliased, and
-    will have Cleartype Symetric Smoothing done.\
+    will have Cleartype Symetric Smoothing done.
 
 ![](img/fontinfo-tex.png)TeX
 ------------------------
@@ -629,7 +629,7 @@ default values for the Math Extension parameters are probably
 unreasonable**.
 
 These values are stored in tfm files (should you generate a tfm file
-with your font).\
+with your font).
 
 ![](img/fontinfo-size.png)Size
 --------------------------
@@ -674,7 +674,7 @@ should be "Regular".
 Adobe allows two forms of size information. In one, only the design size
 field is specified, in the other all the fields must be specified. This
 means that if you want to supply a design range you are also required to
-provide a style id and name.\
+provide a style id and name.
 
 ![](img/fontinfo-comment.png)Comment
 --------------------------------
@@ -698,7 +698,7 @@ about the font as well (see the [OFL
 FAQ)](http://scripts.sil.org/OFL-FAQ_web). This pane allows you to store
 this information within the font itself where it won't get lost.
 
-\
+
 
 Mark Classes & Mark Sets
 ------------------------
@@ -733,7 +733,7 @@ in the [Add Lookup](lookups.html#Add-Lookup)dialog from the
 
 The Mark Set pane looks almost exactly like the Mark Class pane, and
 functions similarly. From these panes you may add new classes, or edit
-old ones.\
+old ones.
 
 Lookups
 -------
@@ -798,8 +798,8 @@ lookups.
 Save Feature File
 
 Saves all lookups (both GSUB and GPOS) to an [Adobe Feature
-File](featurefile.html).\
- \
+File](featurefile.html).
+ 
 
 ![Font Info WOFF](fontinfo-woff.png) WOFF (Web Open Font Format)
 ----------------------------------------------------------------
@@ -815,7 +815,7 @@ available to it.
 It also has a metadata string. This is a small xml document (which ff
 does not currently parse), stored in utf8. Its internal format is
 specified in [a document from
-Mozilla](http://people.mozilla.com/~jkew/woff/woff-2009-09-16.html). \
+Mozilla](http://people.mozilla.com/~jkew/woff/woff-2009-09-16.html). 
 
 ![Font Info Mac Styles](fontinfo-macstyle.png) Mac Style & FOND
 ---------------------------------------------------------------
@@ -840,7 +840,7 @@ font file), but is most important in creating mac font families.
 
 The FOND name is only used for generating mac families. It is a grouping
 level underneath the family level. See the [FAQ](faq.html#How-family)
-for a discussion on when to use this.\
+for a discussion on when to use this.
 
 ![Font Info Mac Features](fontinfo-macfeat.png) Mac Features
 ------------------------------------------------------------
@@ -848,7 +848,7 @@ for a discussion on when to use this.\
 This sub-dialog allows you to create and remove Mac features from your
 font. This will override the Mac features specified in the [preferences
 dialog](prefs.html#Mac)for this particular font (for example to give a
-more appropriate but local name to a certain feature setting).\
+more appropriate but local name to a certain feature setting).
 
 Dates
 -----
@@ -870,7 +870,7 @@ If you click on a range, the font view will select all characters in
 that range and scroll to one of them.
 
 If you double click on a range, the font view will select any characters
-not defined in the font within that range, and scroll to one of them.\
+not defined in the font within that range, and scroll to one of them.
 
 See Also:
 

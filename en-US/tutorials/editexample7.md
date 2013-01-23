@@ -93,7 +93,7 @@ Type 1, TrueType, OpenType (and for CJK fonts, also CID-keyed fonts).
 
 You also have a choice of bitmap formats. FontForge supports bdf (used
 by X), mac NFNT (used by the Mac), Windows FNT (used by Windows 2.0 I
-think) and storing bitmaps inside true (or open) type wrappers.\
+think) and storing bitmaps inside true (or open) type wrappers.
 
 Font Families
 -------------

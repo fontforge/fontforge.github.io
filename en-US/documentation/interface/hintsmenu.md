@@ -7,7 +7,7 @@ layout: default
 The Hints Menu
 ==============
 
-This menu is only present in the outline glyph view and the font view. \
+This menu is only present in the outline glyph view and the font view. 
  [A more detailed description of the hinting UI](hinting.html).
 
 -   [AutoHint](#AutoHint)
@@ -43,7 +43,7 @@ AutoHint
 The Auto Hint command causes FontForge to throw away any existing hints
 for the glyph and guess an new ones. In the outline view this operates
 on the current glyph, in the font view it operates on all selected
-glyphs.\
+glyphs.
  FontForge will do a better job hinting a font if you have previously
 set the BlueValues, StdVW and StdHW fields in [Element-\>Font Info-\>PS
 Private](fontinfo.html#Private). These in turn depend on the hints so it
@@ -94,7 +94,7 @@ Edit Instructions...
 
 Only available in the outline and font views, and only in quadratic
 fonts. [This dialog](ttfinstrs.html) shows any truetype instructions
-associated with this glyph, and allows you to edit them.\
+associated with this glyph, and allows you to edit them.
  Note there are some glyphs for which you cannot write instructions if
 they contain references that cannot be represented in TrueType. If a
 glyph contains a reference that is scaled by a factor of 2 or more, or
@@ -198,7 +198,7 @@ Brings up a dialog allowing you to examine (and modify) all
 horizontal/vertical stem hints (not diagonal). The currently active hint
 is picked out in either dark blue or dark green.
 
-\
+
 
 The Histograms SubMenu
 ----------------------

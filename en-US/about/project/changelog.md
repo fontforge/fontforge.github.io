@@ -732,7 +732,7 @@ To get the latest changes, for now, take a look at:
         which allow you to compare two contours (or layers) and specify
         an error bound on how far they may diverge.
     -   Khaled would like access to the math constant table from python.
-        Add a set of fields\
+        Add a set of fields
          font.math.\<math-constant-name\> to the font, and a set of
         fields to the glyph for math kerning, variants and composition.
     -   If the method of approximating a cubic spline by subdivision
@@ -785,7 +785,7 @@ To get the latest changes, for now, take a look at:
     -   Andrew Robbins points out that when generating an svg font the
         unicode-range attribute should look like U+0020-0E4A rather than
         U+0020-U+0E4A (no second U+).
-    -   d binderman points out a missing closedir.\
+    -   d binderman points out a missing closedir.
          Also d binderman points out that I was missing an fclose in
         archive processing.
     -   FontForge failed to handle archives with double extensions (like
@@ -920,7 +920,7 @@ To get the latest changes, for now, take a look at:
     -   Allow the user to provide a python routine which will calculate
         the optical spacing between two glyphs. Used to override
         fontforge's default routine when calculating autokern, autowidth
-        and left and right optical bounds.\
+        and left and right optical bounds.
          fontforge.registerGlyphSeparationHook
     -   I recently broke loading sfd files which contain multiple
         kerning subtables.
@@ -1053,13 +1053,13 @@ To get the latest changes, for now, take a look at:
     -   When opening a ttf file the guideline psuedo-layer was cubic not
         quadratic.
     -   Patch by Michal:
-        -   Duplicate "Raster Dark Color" in xresources editor.\
+        -   Duplicate "Raster Dark Color" in xresources editor.
              "Delta Grid Color" was really meant the second time
         -   Duplicate charview-\>point-\>tools-\>rotate menu item.
         -   In charview palettes, it was impossible to unset "don't
             stroke" in freehand
         -   Charview-\>hinting-\>autohint and
-            Charview-\>hinting-\>autoinstr were not\
+            Charview-\>hinting-\>autoinstr were not
              disabled if guide were the active layer. This resulted in
             segfaults
         -   In GlyphInfo-\>Unicode, "variant selector" matrix had
@@ -1223,8 +1223,8 @@ To get the latest changes, for now, take a look at:
         so other people tell me. I can't reproduce the issue on my
         10.5.7 system.
 
-        I hope I have worked around this by adding a preference item\
-            File-\>Preferences-\>Generic-\>ExportClipboard\
+        I hope I have worked around this by adding a preference item
+            File-\>Preferences-\>Generic-\>ExportClipboard
          Turn this **Off** if the clipboard doesn't seem to work.
 
         Peter Baker says that a solution is to go into X11 Preferences,
@@ -1256,7 +1256,7 @@ To get the latest changes, for now, take a look at:
         -   Apple (or xorg) has changed the default setting of DISPLAY.
 
         Together these meant that ff did not use appropriate command
-        keys in the menus.\
+        keys in the menus.
          I wish Apple wouldn't do pointless changes.
     -   When faced with non-integral coordinates ff would sometimes
         introduce rounding errors so the start and end of a contour were
@@ -1288,7 +1288,7 @@ To get the latest changes, for now, take a look at:
     -   Fixed buffer overrun when filling GASP with default values.
     -   Enlarging Metrics window made the feature pane and kerning
         values grid illegible.
-    -   Fixed a bug reported by Louis Simard:\
+    -   Fixed a bug reported by Louis Simard:
          'Build composite glyph' was enabled in wrong situations and
         crashed.
     -   when saving an sfd after adding a new "kerning by classes"
@@ -1982,7 +1982,7 @@ To get the latest changes, for now, take a look at:
         make the x-height a little smaller.
     -   Change the menu handler so it can draw mac menu icons
         (cloverleaf for command, up arrow for shift, \^ for control and
-        weird squiggly for option).\
+        weird squiggly for option).
          ![](img/MenuWithMacIcons.png) ![](img/MenuWithoutMacIcons.png)
 
         Remove the hack that if the modifier mask for the command key

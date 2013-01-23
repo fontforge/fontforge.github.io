@@ -92,7 +92,7 @@ Font File Formats
         -- Binary format
     -   [Extensions to BDF for greymap support](BDFgrey.html)
 
--   True Type Standard\
+-   True Type Standard
      (Sadly different sources have slightly different definitions of
     less important parts of the standard, be warned)
     -   [Apple](http://developer.apple.com/fonts/TTRefMan/) (I find
@@ -139,7 +139,7 @@ Font File Formats
         IDs](http://www.microsoft.com/globaldev/reference/lcd-all.mspx)
         (not all are supported, some may never be)
 
--   Open Font Format Specification (ISO/IEC 14496-22:2007)\
+-   Open Font Format Specification (ISO/IEC 14496-22:2007)
      (based on OpenType 1.4 but an international standard)
 -   [Apple's sfnt wrapper around a PS type1
     font](ftp://ftp.apple.com/developer/Development_Kits/QuickDraw_GX/Documents.sit.hqx)
@@ -176,8 +176,8 @@ Font File Formats
         format](http://www.ctan.org/tex-archive/systems/knuth/mfware/gftype.web)
     -   [tfm metrics
         format](http://www.ctan.org/tex-archive/systems/knuth/texware/tftopl.web)
-    -   To make these viewable you probably want to do something like:\
-         \$ weave pktype.web\
+    -   To make these viewable you probably want to do something like:
+         \$ weave pktype.web
          \$ pdftex pktype.tex
 
 -   [SIL Graphite
@@ -197,7 +197,7 @@ Font File Formats
     (these fonts are often zipped up with a non-standard zip).
 -   Ikarus IK format is documented in Peter Karow's book *Digital
     Formats for Typefaces,* Appendices G&I. (copies may still be
-    available from [URW++](http://www.urwpp.de/english/home.htm))\
+    available from [URW++](http://www.urwpp.de/english/home.htm))
      Interestingly the exact format of a curve is up to the
     interpretation program.
 -   [sfd](sfdformat.html) files (FontForge's internal spline font
@@ -227,7 +227,7 @@ Other font links
     fonts](http://www.microsoft.com/typography/fontpack/default.htm)
 -   [Downloadable PS CID CJK
     fonts](ftp://ftp.ora.com/pub/examples/nutshell/ujip/adobe/samples/)
-    (this site also has cmap files)[\
+    (this site also has cmap files)[
      others](ftp://ftp.ora.com/pub/examples/nutshell/cjkv/adobe/samples/)
 -   [Downloadable OTF CID CJK
     fonts](http://www.adobe.com/products/acrobat/acrrasianfontpack.html)
@@ -318,11 +318,11 @@ Books
 -   ![Fontes et
     Codages](http://images-eu.amazon.com/images/P/284177273X.08.MZZZZZZZ.jpg)
     [Haralambous, Yannis, 2004, *Fontes &
-    Codages*](http://www.amazon.fr/exec/obidos/ASIN/284177273X/qid%3D1096481415/402-5423443-8577732)\
+    Codages*](http://www.amazon.fr/exec/obidos/ASIN/284177273X/qid%3D1096481415/402-5423443-8577732)
 -   ![Fontes et
     Codages](http://images.amazon.com/images/P/0596102429.01._AA240_SCLZZZZZZZ_V40077239_.jpg)
     [Haralambous, Yannis (translated: P Scott Horne), 2006, *Fonts &
-    Encodings*](http://www.amazon.com/Fonts-Encodings-Yannis-Haralambous/dp/0596102429/sr=1-1/qid=1158862933/ref=sr_1_1/103-9032945-8593416?ie=UTF8&s=books)\
+    Encodings*](http://www.amazon.com/Fonts-Encodings-Yannis-Haralambous/dp/0596102429/sr=1-1/qid=1158862933/ref=sr_1_1/103-9032945-8593416?ie=UTF8&s=books)
 
 ### Typography
 

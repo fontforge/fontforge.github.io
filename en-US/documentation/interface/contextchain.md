@@ -14,11 +14,11 @@ There are two types of contextual positioning modes: Contextual
 Positioning and Chained Contextual Positioning. In the simplest form of
 the first you may specify a list glyphs and specify repositioning to
 occur if that sequence is matched. For example you might specify (in
-English)\
- `      5 t h`\
+English)
+ `      5 t h`
  and if that sequence were found raise the "t" and "h" to 5^th^. You can
-also specify classes of glyphs so you could say something like:\
- `      [0-9] t h`\
+also specify classes of glyphs so you could say something like:
+ `      [0-9] t h`
  to raise "t" and "h" after any digit.
 
 After applying this lookup, a word processor will skip over the three
@@ -42,8 +42,8 @@ Suppose you had a script font where most letters join at the base line,
 but after some letters (b,o,v,w) the join is near the x-height, so a
 special version of each lower case letter needs to be created designed
 for a left side join near the x-height. You would want to be able to
-say:\
- `      [bovw] [a-z]`\
+say:
+ `      [bovw] [a-z]`
  Note that this just specifies the cases in which the substitution may
 be applied. It does not specify the substitution itself, that is done in
 a separate lookup.
@@ -93,22 +93,22 @@ of three formats.
 
 The simplest format is a list of [glyphs](#Glyphs). You may specify
 several glyph sequences in a single feature. So the script example above
-could be specified (quite inefficiently) by 4\*26 lines like:\
- `      b a`\
- `      b b`\
- `      ...         o a`\
+could be specified (quite inefficiently) by 4\*26 lines like:
+ `      b a`
+ `      b b`
+ `      ...         o a`
  `      ...`
 
 The next format allows you to specify a list of [classes](#Classes). In
-the script example we would define 2 classes:\
- `      [bovw]`\
- `      [ac-np-ux-z]`\
- and define two patterns as:\
+the script example we would define 2 classes:
+ `      [bovw]`
+ `      [ac-np-ux-z]`
+ and define two patterns as:
  `      class1 [class2]         class1 [class1]`
 
 The third format is the most general and allows you to specify your
 pattern by a [separate list of glyphs](#Coverage) for each glyph
-position:\
+position:
  `      [bovw] [a-z]`
 
 Most contextual specifications are fairly simple, FontForge has two
@@ -123,7 +123,7 @@ rule. I know this sounds odd, I did not design the system).
 multiple rules within a single subtable. Instead I suggest you use
 multiple subtables. It will have the same effect but is less efficient.
 FontForge still supports multiple rules because the spec says it should.
-\
+
 
 ### ![](img/contextchain-simplecoverage.png)Simple Coverage
 
@@ -164,7 +164,7 @@ name -- a few characters which have special meaning: space, right
 parenthesis, asterix; must have their names typed in full). If you click
 on the little box on the right you will get a dialog containing a font
 view. In this view you may select glyphs to your heart's content, when
-you press OK these glyphs become your table.\
+you press OK these glyphs become your table.
 
 ### ![](img/contextchain-coverage.png) Coverage
 
@@ -192,7 +192,7 @@ menu of all lookups that can be applied. You can change the position by
 editing it.
 
 You can add a new entry by pressing the \<New\> button, and then
-selecting a lookup.\
+selecting a lookup.
 
 ### ![](img/contextchain-simpleglyph.png)Simple Glyphs
 
@@ -210,7 +210,7 @@ what was done easily with one coverage table rule. Every possible
 combination of letters must be spelled out as a separate rule.
 
 At the bottom of the list are two buttons, one to add a lookup reference
-after a glyph, and the other to start a new section. \
+after a glyph, and the other to start a new section. 
 
 ### ![](img/contextchain-glyphlists.png) Glyphs
 
@@ -222,15 +222,15 @@ finally "F G H" after them. If everything matched then the lookup
 "superscript" to location 1 (here, "E").
 
 The order is significant, word processors will stop at the first match
-they find so in the following pattern strings:\
- `      b a`\
- `      b a f`\
+they find so in the following pattern strings:
+ `      b a`
+ `      b a f`
  the second entry would never be matched because "b a" would be applied
-first. While:\
- `      b a f`\
- `      b a`\
+first. While:
+ `      b a f`
+ `      b a`
  would apply match "b a f" when an "f" was present, and "b a"
-otherwise.\
+otherwise.
 
 ### ![](img/contextchain-pickglyph.png)Selecting glyphs
 
@@ -239,7 +239,7 @@ specifying a string of glyphs each of which must be matched, rather than
 a class of glyphs any of which could match. So in the example at right,
 "DE" would match, but "E" would not.
 
-As above a set of lookups can be applied after the match occurs.\
+As above a set of lookups can be applied after the match occurs.
 
 ### ![](img/contextchain-simpleclasses.png)Simple Classes
 
@@ -268,11 +268,11 @@ There is a small bug here. Because classes must be disjoint, the
 needs to be a second rule that looks like
 `"high-after | high-after @<To-TopJoin> |"`. As I mentioned early,
 multiple rules don't actually work, so that rule is in a separate
-subtable (which is in the same lookup) and isn't displayed here.\
+subtable (which is in the same lookup) and isn't displayed here.
 
 ### ![](img/contextchain-class.png) Classes
 
-\
+
 
 ### ![](img/contextchain-classlist.png)A list of Class numbers
 
@@ -282,6 +282,6 @@ displays the class list underneath the pattern. Clicking on a class will
 insert that class's index into the pattern.
 
 Finally you must set the nested lookups. This is exactly the same as
-previous sequence / lookup settings.\
+previous sequence / lookup settings.
 
 -- [Up](fontinfo.html) -- [TOC](overview.html) --

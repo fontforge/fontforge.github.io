@@ -59,7 +59,7 @@ displays all bitmap images. Change the Format to EPS or SVG (depending
 on which you used). Then find the glyph you just created and import it.
 
 You should now have the outlines of a glyph in the fontforge editing
-window.\
+window.
 
 ![](img/floating-A.png)But it may be the wrong size. It may be at the wrong
 place.
@@ -85,10 +85,10 @@ In Inkscape the following approach will simplify the process:
 1.  Open Inkscape
 2.  From the File menu, select Document Properties.
 3.  Set units to pixels (px) and document dimensions to 1000 x 1000,
-    click OK\
+    click OK
      Or if your font has a different number of units per em use that,
     but 1000 is fontforge's default)
-4.  Set a horizontal guide at 200px\
+4.  Set a horizontal guide at 200px
      Use this as your baseline.
 5.  Draw a glyph - the hardest part! :-)
 6.  Save the drawing as an SVG file

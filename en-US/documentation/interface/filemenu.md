@@ -51,14 +51,14 @@ By default this dialog will display all files with extensions of pfa,
 pfb, pt3, sfd, ttf, otf, otb, t42, cef, cff, gsf, ttc, svg, ik, mf and
 bdf (possibly others as FontForge comes to support more formats). You
 can change this with the Filter pull down list -- there are several
-standard filters, and you may define your own.\
+standard filters, and you may define your own.
  You may select multiple files (by holding down the shift or control
-keys when clicking on them), and all selected files will be opened.\
+keys when clicking on them), and all selected files will be opened.
  FontForge can open macbinary resource files containing postscript and
-truetype fonts (it does not open bitmap fonts currently)\
+truetype fonts (it does not open bitmap fonts currently)
  FontForge does not open Acorn RISC/OS files, but you can use
 *[acorn2sfd](acorn2sfd.html)* to convert them into an sfd file which
-FontForge can then open.\
+FontForge can then open.
  If you have [*mf*](http://www.tug.org/)and
 *[autotrace](http://sourceforge.net/projects/autotrace/)*installed on
 your machine FontForge will process metafont's mf files for you. But you
@@ -147,7 +147,7 @@ called "Ambrosia.sfd\~".
 Save As...
 
 Allows you to give a new name to the current spline font database. Pops
-up a file picker.\
+up a file picker.
  Normally fonts are saved into "sfd" files (a single file containing all
 the information needed to regenerate your font), but you may choose to
 save it into a directory format where every glyph has its own file.
@@ -203,10 +203,10 @@ name as the current glyph. All changes to this glyph will be lost (but
 if the glyph has references then any changes made to the glyphs being
 refered to will still be visible), *this command may be undone.*
 
-So if you have changed the name of the glyph this command will fail.\
- If the font did not come from an sfd file this command will fail.\
+So if you have changed the name of the glyph this command will fail.
+ If the font did not come from an sfd file this command will fail.
  If the font has been reencoded and the glyph has references this
-command may fail.\
+command may fail.
  If you have made a global change to the font (like scaling it to a new
 em-size) then the results may not be appropriate.
 
@@ -236,7 +236,7 @@ background of the "A" outline glyph), this is to make tracing glyphs
 easier. Be careful, you need to load a big bitmap for autotrace to be
 useful. **NOTE:**FontForge is unable to read an encoding from pk files,
 you will may need to set it with "Force Encoding" after you've loaded
-the pk file.\
+the pk file.
  You may also load images into the glyph backgrounds. There are two ways
 to do this, you may either select several image files and they will be
 loaded consecutively into selected glyphs, or you may select an image
@@ -263,7 +263,7 @@ bitmaps here.
 You may load an encapsulated postscript file (or rather the sub-set of
 postscript that FontForge understands) into the foreground of glyphs. As
 with images above this may import either depending on the selection or a
-template.\
+template.
  If you have libxml2 on your system then FontForge will also be able to
 import svg files. As with postscript, only a subset of svg is
 understood).
@@ -276,8 +276,8 @@ really bad, the eps conversion is very limited).
 In the Bitmap View this allows you to import a bitmap image into the
 glyph.
 
-This menu item is not available in the Metrics View\
-   \
+This menu item is not available in the Metrics View
+   
  In the font view you may select multiple files (by holding down the
 shift or control keys when clicking on them), and all selected bitmap
 fonts will be imported into the sfd.
@@ -292,7 +292,7 @@ not be needed because when FontForge opens a .pfa or .pfb font it will
 automagically search for an appropriate .afm file in the same place. But
 sometimes afm files are stored in other directories. And sometimes you
 want to import information from TeX, from mac resource files or from
-windows pfm files.\
+windows pfm files.
  **NOTE:**FontForge is unable to read an encoding from tfm/ofm files or
 from mac resource files, it is your responsibility to ensure that the
 encoding of your font matches that of the tfm file *BEFORE* merging
@@ -307,7 +307,7 @@ Print...
 
 Not available in the bitmap view. Allows you to print out all the glyphs
 in the font, a text sample of the font, or specific glyphs at a very
-large scale.\
+large scale.
  See the section on [printing](display.html) for more information.
 
 Execute Script...

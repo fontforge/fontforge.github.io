@@ -79,7 +79,7 @@ Undo
 
 In the outline view and the bitmap view this will undo the last command.
 The number of commands that may be undone for any glyph is controlled by
-the [UndoDepth](prefs.html#UndoDepth) preference item.\
+the [UndoDepth](prefs.html#UndoDepth) preference item.
  In the font and metrics views, this does NOT undo the last command. It
 undoes the last operation on all selected glyphs.
 
@@ -87,7 +87,7 @@ Redo
 
 In the outline view and the bitmap view this will redo the last command
 undone. Up to twelve commands may be redone (after that they get thrown
-away)\
+away)
  In the font and metrics views, this does NOT undo the last command. It
 undoes the last operation on all selected glyphs.
 
@@ -211,7 +211,7 @@ A and B were selected when the copy happened and now glyphs C, D and E
 are selected, the C will get A, D will get B and E will also get A). If
 exactly one glyph is selected but the clipboard contains more that one
 glyph, the selection will be extended so that enough glyphs are selected
-that something may be pasted in each. \
+that something may be pasted in each. 
  If the clipboard contains outline information then that information
 will go into the glyph outline regardless of the setting of Copy From.
 If the clipboard contains a bitmap and the display is set to outline
@@ -296,7 +296,7 @@ This command is not available in the bitmap view. It looks for any paths
 with endpoints as the endpoints of other paths and then join those two
 paths. Also if the endpoint of a path is the same as the start point it
 will make that path into a loop. (The commands that move points around
-will normally do this automatically, but Paste will not).\
+will normally do this automatically, but Paste will not).
  In the Outline view things are slightly more complicated: If any paths
 have selected points on them it will only attempt to join those paths.
 

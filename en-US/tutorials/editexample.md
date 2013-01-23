@@ -4,14 +4,14 @@ layout: default
 ---
 
 
-Tutorial\
+Tutorial
  [![](flags/Nisshoki-Japan.png)](ja/editexample.html) [![](flags/taiwan.png)](http://edt1023.sayya.org/fontforge/editexample.html) [![](flags/GermanFlag.png)](de/editexample.html)
 ===================================================================================================================================================================================
 
 This tutorial is also available as a [pdf
 version](fontforge-tutorial.pdf). If you wish to follow along with the
 tutorial, [this bundle](tutorial.tgz) should provide you with the basic
-files you need.\
+files you need.
  I shall not presume to teach aesthetics, I concentrate solely on the
 mechanics here.
 
@@ -53,7 +53,7 @@ mechanics here.
 > cunningly inset. But nowadays, instead of looking at books, people
 > read them. A book might as well be one of those orders for bacon and
 > bran that you are scribbling.
-> -- Saint Joan, Scene IV\
+> -- Saint Joan, Scene IV
 >  George Bernard Shaw, 1924
 
 Font creation

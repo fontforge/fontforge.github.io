@@ -10,16 +10,16 @@ layout: default
   [Frames](faqFS.html)
   ----------------------
 
-Frequently Asked Questions\
+Frequently Asked Questions
  (or many of the questions I've been asked so far)
 ==================================================
 
                         
 
-> **Sir Toby:**Thy most exquisite reason, dear knight?\
->  **Sir Andrew** I have no exquisite reason for't,\
+> **Sir Toby:**Thy most exquisite reason, dear knight?
+>  **Sir Andrew** I have no exquisite reason for't,
 >  but I have reason good enough
-> Twelfth Night, II, iii, 130\
+> Twelfth Night, II, iii, 130
 >  Shakespeare
 
 Most important question
@@ -213,11 +213,11 @@ Random questions
 
 **Why a font editor, aren't there enough fonts already?**
 
-> But Eeyore was saying to himself,\
->  "This writing business. Pencils\
->  and whatnot. Over-rated, if you\
+> But Eeyore was saying to himself,
+>  "This writing business. Pencils
+>  and whatnot. Over-rated, if you
 >  ask me. Silly stuff. Nothing in it
-> Winnie-the-Pooh\
+> Winnie-the-Pooh
 >  A.A. Milne
 
 Well... no. Otherwise I wouldn't be writing this, and. more to the
@@ -259,7 +259,7 @@ having to install it.
 **Why did I write it?**
 
 > Why not?
-> The Phantom Tollbooth\
+> The Phantom Tollbooth
 >  Juster
 
 -   Because it was fun
@@ -300,12 +300,12 @@ encourage you to do so.
 I wanted a widget set that would handle Unicode reasonably well. In
 particular I thought support for bidi text was important for hebrew and
 arabic typography. As I was unaware of any widget sets that did that, I
-wrote my own.\
+wrote my own.
  I also wanted a widget set where I could actually figure out whether
 the checkbox was checked or not checked. In far too many cases my eyes
 can't work out which is which... (Ironically the most frequent complaint
 I get is from people who can't tell whether my checkboxes are checked. I
-don't know what to make of that).\
+don't know what to make of that).
  I realize now that that there are essentially two free widget sets that
 are far better at unicode support than mine. These are
 [QT](http://www.trolltech.com/developer/downloads/qt) and
@@ -465,12 +465,12 @@ the rest of fontforge continues to work.
 
 **Why is there no future roadmap for FontForge?**
 
-> **TYSON:**\
->   I'm not bewildered, I assure you I'm not\
->   Bewildered. As a matter of fact a plan\
->   Is almost certainly forming itself in my head\
+> **TYSON:**
+>   I'm not bewildered, I assure you I'm not
+>   Bewildered. As a matter of fact a plan
+>   Is almost certainly forming itself in my head
 >   At this very moment. It may even be adequate.
-> *The Lady's not for Burning*\
+> *The Lady's not for Burning*
 >  Christopher Fry
 
 Mostly because I don't thnk that way. I don't plan things out, I have a
@@ -505,7 +505,7 @@ on pots or baking bread?**
 
 ![](img/bowlweb.gif)**From an interview with [Open Source
 Publishing](http://ospublish.constantvzw.org/?p=221), done at
-[LGM](http://www.libregraphicsmeeting.org/)2007**\
+[LGM](http://www.libregraphicsmeeting.org/)2007**
  I like to make things. I like to make things that -- in some strange
 definition are beautiful. I'm not sure how that applies to making bread,
 but my pots -- I think I make beautiful pots. And I really like the
@@ -632,13 +632,13 @@ under which you are running, and luck.
     bounding box and use those to set the line spacing. This is a really
     bad idea on their part, but it is common practice.
 -   For True/Open Type fonts the answer is complicated.
-    -   On the mac\
+    -   On the mac
          The line spacing is set by the ascender and descender values of
         the 'hhea' table. These in turn are set to the bounding box
         values of the font. Not a good choice. You can control these
         values from [Element-\>Font
         Info-\>OS/2-\>Metrics](fontinfo.html#TTF-Metrics).
-    -   On windows\
+    -   On windows
          Line spacing is supposed to be set to the Typo Ascent/Typo
         Desent values specified in the OS/2 table. And these in turn are
         supposed to sum to the emsize. (FontForge sets these values to
@@ -663,7 +663,7 @@ under which you are running, and luck.
         UseTypoMetrics in OpenType, and in FontForge it is available as
         Element-\>Font Info-\>OS/2 -\>Metrics-\>Really Use Typo Metrics.
 
-    -   On linux\
+    -   On linux
          I don't know that there is a general consensus. An application
         will probably use one of the above methods.
 
@@ -719,8 +719,8 @@ not meet the specific needs of font designers. I know of two licenses
 specifically produced for fonts:
 
 -   [The Open Font License from SIL](http://scripts.sil.org/OFL) (and
-    its [FAQ](http://scripts.sil.org/OFL-FAQ_web))\
-     The above is the license I would recommend.[\
+    its [FAQ](http://scripts.sil.org/OFL-FAQ_web))
+     The above is the license I would recommend.[
      A collection of unofficial translations of the
     OFL](OFL-Unofficial.html). These are not legally binding but may
     help non-English speakers get the intent of the license.
@@ -803,16 +803,16 @@ then you might:
 >     $ xset fp+ `pwd`
 
 and your fonts should be installed. After that, whenever you start X you
-need to remind it of where your fonts live, so you should add\
- `    $ xset fp+ /home/me/my_fonts`\
+need to remind it of where your fonts live, so you should add
+ `    $ xset fp+ /home/me/my_fonts`
  to your .xsession (or equivalent).
 
-If you want to install *postscript fonts*\
+If you want to install *postscript fonts*
  You should generate them as postscript binary (.pfb) files, then move
 both the .pfb and the .afm file into (one of) your font directory(ies)
 and run
 [type1inst](http://rpmfind.net/linux/rpm2html/search.php?query=type1inst)
-in it.\
+in it.
  type1inst will probably complain that your font doesn't have a foundry
 and will probably get the encoding wrong. You can either:
 
@@ -822,21 +822,21 @@ and will probably get the encoding wrong. You can either:
 -   Make your font's Copyright be reasonable, and then edit type1inst
     and add your foundry (directions for this are in type1inst itself)
 
-If you want to install *truetype fonts*\
+If you want to install *truetype fonts*
  You move the .ttf file into your font directory and run mkttfdir and
-mkfontdir.\
+mkfontdir.
 
 ([mkttfdir](http://rpmfind.net/linux/rpm2html/search.php?query=mkttfdir)
 has a small problem with fonts created by FontForge, it will almost
 invariably complain that it doesn't recognize the foundry. You can
 safely ignore this, but if it bothers you then add a line to ttmkfdir.c
-at 936\
+at 936
  `             { "PFED", "FontForge"           },`
 
 Some versions of X (ie, those shipped by redhat) rely on the x font
 server to do font work rather than the X server itself. You may need to
 use chkfontpath to add your new directory to the font server's font path
-(rather than xset fp).\
+(rather than xset fp).
  You may also need to insure that the font directory (and all its parent
 directories) are readable to world. (the font server runs as a
 non-privileged user)
@@ -871,13 +871,13 @@ document](PfaEdit-TeX.html#TeX-Install).
 
 You install truetype fonts on windows by dropping them into the
 \\Windows\\Fonts directory on your machine. You may need to set the
-execute permission bit on the font before installing it.\
+execute permission bit on the font before installing it.
  **Do NOT generate the font directly into \\Windows\\Fonts**, this
 doesn't seem to work (at least on under my XP machine). You must
 generate the font into another directory and drag & drop it to
-\\Windows\\Fonts .\
+\\Windows\\Fonts .
  If you want to use type1 fonts you will need to install adobe type
-manager and follow its instructions.\
+manager and follow its instructions.
  If you want to install opentype fonts then on old systems (before
 windows 2000, I think) you need to install ATM, on more recent systems
 opentype should work the same way truetype does.
@@ -888,12 +888,12 @@ Oh dear. The mac sticks fonts into resource forks and wraps them up in
 its own headers. Mac fonts aren't compatible with anybody else's.
 FontForge can create a resource fork if it wraps the font up in a
 macbinary encoding. See the [following question](faq.html#How-mac) for
-more information.\
+more information.
  I've also written [some
 utilities](http://fondu.sourceforge.net/)designed to convert from one
-format to another and they may prove useful.\
+format to another and they may prove useful.
  [University of Oregon has some links that might be
-helpful](http://babel.uoregon.edu/yamada/fontconversionfaq.html).\
+helpful](http://babel.uoregon.edu/yamada/fontconversionfaq.html).
  Once you've converted your fonts you just drop them into the System
 Folder and they should be available after that.
 
@@ -902,10 +902,10 @@ Folder and they should be available after that.
 On OS/X fonts should be placed either in the top-level Library/Fonts
 directory (By default `/Mac OS X/Library/Fonts/`), in the
 System/Library/Fonts directory, or in the user's appropriate fonts
-sub-directory (`~/Library/Fonts`).\
+sub-directory (`~/Library/Fonts`).
  Either a resource font (unwrapped from its macbinary wrapper) or a
 dfont may be used. You can also use straight ttf and otf files (ie. the
-same file you might use on Unix or MS).\
+same file you might use on Unix or MS).
  As far as I can tell the old NFNT bitmap resources do not work on my OS
 10.2. If you want to use bitmap fonts wrap them up in a ttf file or an
 sfnt. However if you want to use a Type1 resource font, you must
@@ -927,7 +927,7 @@ I am told that fonts produced by old versions of FontForge will not
 install on Windows 2000 (and XP) systems.
 
 I believe this problem is fixed now (as of 20-Oct-2003). If you have an
-older version please upgrade.\
+older version please upgrade.
  If you are copying a font from another machine make sure the execute
 bit is set in the permissions of the font file (I don't know how to do
 this with the Windows UI, under cygwin you say `$ chmod +x foo.ttf`
@@ -939,13 +939,13 @@ Mac OS/9 (or less)
 Traditionally the macintosh has stored fonts in the resource fork of
 files (after about OS/8.5 I believe the mac also supported bare .ttf
 files). This causes problems for any machine other than a mac, because
-the very concept of a resource fork is lacking.\
+the very concept of a resource fork is lacking.
  There are several programs whose job it is to store all of a macintosh
 file in one package that can be manipulated on other systems (mac binary
 and binhex are the most common). FontForge knows how to read both of
 these formats and can extract a postscript or truetype font from either.
 FontForge can also create fonts in macbinary format (I see no reason to
-support both output formats, and macbinary is slightly simpler).\
+support both output formats, and macbinary is slightly simpler).
  So to edit a font on your mac:
 
 1.  Find the file in the `System Folder:Fonts` folder
@@ -970,7 +970,7 @@ give it a new unique id. See the [Font Info](fontinfo.html) dlg.
 
 **Caveat:** A postscript font is useless on a macintosh unless it is
 accompanied by at least one bitmap font. If you generate a postscript
-font make sure you also generate an NFNT as well (this has the FOND).\
+font make sure you also generate an NFNT as well (this has the FOND).
  **Caveat:** The mac is picky about the filename used to contain a
 postscript file. It is based on the postscript font name but suffers a
 transformation. Don't try to rename this file. Basically the rules are
@@ -983,7 +983,7 @@ transformation. Don't try to rename this file. Basically the rules are
     initial capital
 -   Subsequent chunks may only have two lower case letters following the
     capital.
--   Non-letter glyphs (or at least hyphens) vanish.\
+-   Non-letter glyphs (or at least hyphens) vanish.
      So TimesBold =\> TimesBol, Helvetica-BoldItalic =\> HelveBolIta,
     NCenturySchoolbook =\> NCenSch
 
@@ -1013,8 +1013,8 @@ method was to produce mac font families.
 
 Snow Leopard (10.6) and after
 
-First open all the fonts that make up your family in fontforge.\
- Then choose `File->Generate TTC`\
+First open all the fonts that make up your family in fontforge.
+ Then choose `File->Generate TTC`
  This should be simpler than the old method.
 
 Leopard (10.5) and before
@@ -1053,12 +1053,12 @@ place several FONDs inside such a font file. Each FOND contains a
 sub-family of related fonts. The 'FOND's appear to be distributed as
 follows:
 
-Suppose you have a family of fonts with the following styles:\
+Suppose you have a family of fonts with the following styles:
  Regular, Bold, Italic, Bold-Italic, Condense, Condense-Italic, Oblique,
-Light, Light-Italic, Black\
+Light, Light-Italic, Black
  Then you should create a font family with the styles that the FOND does
-support, which in this case would be\
- Regular, Bold, Italic, Bold-Italic, Condense, Condense-Italic\
+support, which in this case would be
+ Regular, Bold, Italic, Bold-Italic, Condense, Condense-Italic
  For each of these use [Element-\>Font
 Info-\>Mac](fontinfo.html#FONDName) to set the FondName field to the
 font's family name.
@@ -1136,7 +1136,7 @@ information from it.
 No. Again the kerning information is not stored in the font file (it is
 stored in a bitmap font file), but on the mac it is impossible to guess
 what name to use for the associated bitmap file, and FontForge does not
-even try. \
+even try. 
  See the info below on how to load kerning from a
 [FOND](faq.html#FOND-kern).
 
@@ -1240,7 +1240,7 @@ following procedure will not produce good results.
 -   Edit-\>Select-\>Select All
 -   Element-\>Autotrace
 -   Element-\>Add Extrema
--   Element-\>Simplify\
+-   Element-\>Simplify
      At this point you will probably want to look at your outline glyphs
     and clean them up.
 -   File-\>Generate Fonts
@@ -1249,10 +1249,10 @@ following procedure will not produce good results.
 
 There are a number of similarities between the results achieved by these
 formats, but the overlap is not total. Most conversions will lose some
-information.\
+information.
  The simple answer is that this is pretty much automatic. You load an
 apple font, and then Generate an equivalent font with the [\*] OpenType
-checkbox checked in the Options dialog.\
+checkbox checked in the Options dialog.
  FontForge will convert any non-contextual features where Apple's
 feature/setting matches an OpenType feature. (This includes
 non-contextual ligatures even though they live in a contextual format).
@@ -1263,7 +1263,7 @@ For more information see the section on this
 
 Again this is mostly automatic. Load an OpenType font, and Generate an
 equivalent font with the [\*] Apple checkbox checked in the Options
-dialog.\
+dialog.
  FontForge is capable of converting some contextual OpenType tables to
 AAT. Non-contextual features which match an Apple feature/setting will
 be converted too. For more information see the section on this
@@ -1271,7 +1271,7 @@ be converted too. For more information see the section on this
 
 **How do I make FontForge use hint substitution?**
 
-It happens automagically. \
+It happens automagically. 
  Or you can control the place where hint sets change by selecting a
 point and choosing [Element-\>Get Info](getinfo.html#HintMask)-\>Hint
 Mask.
@@ -1299,7 +1299,7 @@ fashion. Some rasterizers don't care. But other rasterizers will have
 difficulties with counter-clockwise paths and produced stems of
 different widths when they should be the same, or fuzzy stems, or even
 nothing at all. The solution to this is to run Element-\>Correct
-Direction on all your glyphs before generating a font.\
+Direction on all your glyphs before generating a font.
  But sometimes the poor rasterizer just can't do the right thing...
 
 **How do I set a particular bit in the OS/2 table (or any other)?**
@@ -1315,13 +1315,13 @@ This is FontForge's own format. It a text file, which means it is large
 but readable to a human (OK, by a determined human). It only uses ASCII
 characters which means it should not be distorted by old mail programs
 if sent around the internet (it's a registered MIME type
-`application/vnd.font-fontforge-sfd`).\
+`application/vnd.font-fontforge-sfd`).
  [An overview of the format.](sfdformat.html)
 
 **FontForge's grey background distresses me. How do I change it?**
 
 The general mechanism is discussed on the [X Resources
-page](xres.html).\
+page](xres.html).
  [Here are some combinations you might try](fontforge-themes.html).
 
 **The fonts FontForge uses in its GUI are too small (too big) how do I
@@ -1346,7 +1346,7 @@ inches or centimeters) than it actually is, ff will use a bigger font.
 You don't. Just insure that all the glyphs in the font have the same
 width and then FontForge will automatically mark it as monospaced for
 you. (If you mark it as monospaced incorrectly some rasterizers will
-give strange results).\
+give strange results).
  If you want to set a font's panose values yourself ([Element-\>Font
 Info-\>OS/2-\>Panose](fontinfo.html#Panose)) then set the Proportion
 field to Monospaced. This is necessary but not sufficient to mark the
@@ -1418,23 +1418,23 @@ Let's say you wanted to add a "dotlessi" glyph to an ISO-8859-1 font
 (this encoding does not include dotlessi). There are two ways to
 approach the problem:
 
-1.  Bring up `Encoding->Add Encoding Slots...`\
-     Type in the number of extra glyphs you want (probably 1)\
-     Press `OK`\
-     Scroll down to the end of the font and find the new slot\
-     Select it\
-     Bring up `Element->Glyph Info`\
+1.  Bring up `Encoding->Add Encoding Slots...`
+     Type in the number of extra glyphs you want (probably 1)
+     Press `OK`
+     Scroll down to the end of the font and find the new slot
+     Select it
+     Bring up `Element->Glyph Info`
      Type your new name into the `Unicode Name` field (in this example
-    you'd type in `dotlessi`)\
-     Press the `Set From Name` button\
-     Press `OK`\
+    you'd type in `dotlessi`)
+     Press the `Set From Name` button
+     Press `OK`
      Now draw a dotlessi in the glyph.
-2.  Bring up `Encoding->Reencode->ISO-10646-1`\
-     Bring up `View->Goto`\
-     Type in `dotlessi`\
-     Press `OK`\
-     Now draw the dotlessi glyph in the selected glyph slot\
-     Bring up `Encoding->Reencode `again\
+2.  Bring up `Encoding->Reencode->ISO-10646-1`
+     Bring up `View->Goto`
+     Type in `dotlessi`
+     Press `OK`
+     Now draw the dotlessi glyph in the selected glyph slot
+     Bring up `Encoding->Reencode `again
      Change the encoding back to whatever it was
 
 **Why does FontForge give some of my glyphs the wrong name?**
@@ -1531,7 +1531,7 @@ The PostScript used in OpenType is slightly different from that used in
 Type2 fonts. Type2 is almost a superset of Type1 with a few minor
 changes and many extensions. Adobe's subroutine based extensions to
 Type1 (flex hints, hint substitution, counter hints) have been added to
-Type2 as direct instructions.\
+Type2 as direct instructions.
  OpenType can also include additional information (see
 [below](#AAT-Open)) that allows for the layout of complex scripts
 (Arabic, Indic, etc.) as when as support for glyph variants and other
@@ -1596,16 +1596,16 @@ Info, select the Encoding tab, select TeX Base from the pulldown list).
 As Knuth said "(the problem with WSYWYG is that...) What you see is
 *all* you get." FontForge suffers from this.
 
-Let us take a simple example. Suppose we have a point defined by\
- `     top1y2 = CapHeight`\
+Let us take a simple example. Suppose we have a point defined by
+ `     top1y2 = CapHeight`
  And the user tries to drag point 2 to a new y location. How should
 FontForge interpret this? It could:
 
 -   Change `CapHeight`
 -   Change the width of pen 1
--   Change the equation to something like:\
+-   Change the equation to something like:
      `   top1y2 = CapHeight - 30`
--   Or to something like:\
+-   Or to something like:
      `   top1y2 = (CapHeight +       XHeight)/2`
 -   Or to half a dozen other things.
 
@@ -1635,10 +1635,10 @@ consortium to refer to "GREEK PI SYMBOL") should be named "omega1", when
 
 Firstly because I believe that any attempt to copy a glyph's name will
 almost certainly be better done by defining a custom
-[encoding](encodingmenu.html).\
- Secondly because most of the time you don't want the name copied.\
+[encoding](encodingmenu.html).
+ Secondly because most of the time you don't want the name copied.
  Thirdly because it is esthetically better that copy should only work
-with data and not meta-data.\
+with data and not meta-data.
  HOWEVER... enough people have asked this question that I've enabled a
 mode in [Edit-\>Copy From-\>Char Name](editmenu.html#CharName) which
 allows you to change the default behavior.
@@ -1685,11 +1685,11 @@ fonts. So many europeans/americans won't need them.
 
 **Does the simplify command lose accuracy?**
 
-Yes it does.\
- But not much.\
+Yes it does.
+ But not much.
  It is designed to replace a set of splines with another spline that
 nowhere differs from the original by more than one unit in the local
-coordinate system.\
+coordinate system.
  If this level of accuracy is not good enough then (In the outline
 view):
 
@@ -1708,10 +1708,10 @@ original by no more than .1 unit.
 **How does FontForge convert a cubic spline into a quadratic spline for
 truetype?**
 
-Again this can involve a loss of accuracy.\
+Again this can involve a loss of accuracy.
  First FontForge checks to see if the spline happens to be a quadratic
 already (this would happen if you'd just read in a truetype font, or if
-a miracle occurred when you generated the spline).\
+a miracle occurred when you generated the spline).
  Otherwise FontForge will divide the original spline into smaller chunks
 and try to find a set of quadratic splines that differ from the cubic by
 no more than one unit anywhere. (Once you have picked two end-points and
@@ -1734,9 +1734,9 @@ import an image file?**
 FontForge depends on certain dynamic libraries to load images. It does
 not check for the existance of these libraries until you actually try to
 load an image. If the library has not been installed on your system it
-will give the above error (and fail to load the image).\
+will give the above error (and fail to load the image).
  The [Dependencies](source-build.html#Dependencies) section of the main
-page describes how to find these libraries.\
+page describes how to find these libraries.
  If the libraries are installed and you still get this message try
 setting your LD\_LIBRARY\_PATH variable to the directory containing the
 library in question (On the mac this is DYLD\_LIBRARY\_PATH).
@@ -1744,7 +1744,7 @@ library in question (On the mac this is DYLD\_LIBRARY\_PATH).
 **Why does fontforge say "EPS file is too complex to be understood"?**
 
 (Well because it is a misquotation of Shakespeare, and how could I pass
-that up? *Much Ado About Nothing, V . i. 217*)\
+that up? *Much Ado About Nothing, V . i. 217*)
  Most programs which load eps files treat them as black boxes. They will
 read the file into memory and output it, unchanged, to a postscript
 printer. Unfortunately FontForge cannot do this. FontForge needs to
@@ -1766,7 +1766,7 @@ fontforge.
 -   Open Inkscape
 -   From the File menu, select Document Properties.
 -   Set units to pixels (px) and document dimensions to 1000 x 1000,
-    click OK\
+    click OK
      Or if your font has a different number of units per em use that,
     but 1000 is fontforge's default)
 -   Set a horizontal guide at 200px
@@ -1797,7 +1797,7 @@ glyph in any significant way those instructions are no longer valid
 (they depend intimately on the details of the outlines), so FontForge
 removes them when you make a change. The result is that changing a glyph
 with FontForge will degrade its appearance in most truetype fonts (not
-all, some have no hints).\
+all, some have no hints).
  FontForge can generate truetype instructions for you itself, but you
 must ask it to do so -- use the Hints-\>AutoInstr command.
 
@@ -1813,7 +1813,7 @@ too, though unix tends to be less picky).
 
 The major differences I've stumbled onto so far are:
 
--   The postscript name entry in the NAME table.\
+-   The postscript name entry in the NAME table.
      (I am told that this is actually an error in Apple's version of the
     spec, and the behavior of the Mac matches that of Windows).
 -   The names of the tables containing bitmap fonts
@@ -1827,7 +1827,7 @@ The major differences I've stumbled onto so far are:
 As far as I can tell Windows will mark a truetype font with the "O" icon
 if that font contains a 'DSIG' (Digital Signature) table. FontForge does
 not produce digital signatures (I think they are of negative utility,
-and anyway I don't know how to create them).\
+and anyway I don't know how to create them).
  However, it is possible to [ask FontForge to create a 'DSIG'
 table](generate.html#Options)which contains no signatures. That seems
 enough to make windows happy.
@@ -1892,15 +1892,15 @@ differences. It is used to specify names for sfnts.
 
 Here you have
 
--   Family\
+-   Family
      This corresponds to the PostScript Family
--   SubFamily\
+-   SubFamily
      Vaguely like the weight field, but takes all stylistic varients not
-    just weight.\
+    just weight.
      This might be "Bold", "Italic", "Bold Italic", "SemiBold",
-    "Condensed", ...\
+    "Condensed", ...
      Whatever is appropriate for your font.
--   Fullname\
+-   Fullname
      This corresponds to the "Name for humans"
 -   Copyright
 
@@ -1927,7 +1927,7 @@ CID fontname should be ignored unless you are building a CID keyed font
 
 * * * * *
 
-Compatible Fullname\
+Compatible Fullname
  Is another name I don't see the need for. I think it should be the same
 as Fullname, and should be omitted.
 
@@ -1984,7 +1984,7 @@ certainly did crash. When I downloaded the source from
 [pdftex](http://www.ctan.org/tex-archive/obsolete/systems/pdftex/) area
 of ctan and built it (with debug) the resultant program did not crash.
 Therefore I believe this is a bug in ttf2afm and that bug has been
-fixed.\
+fixed.
  The afm files produced by ttf2afm don't conform to [Adobe's
 specifications](http://partners.adobe.com/asn/developer/PDFS/TN/5004.AFM_Spec.pdf).
 
@@ -2008,64 +2008,64 @@ with each glyph with the File-\>Preferences-\>Editing-\>UndoDepth.
 **Why is FontForge so unstable?**
 
 I don't bother much with doing QA. This is a problem. I don't enjoy
-doing it, and no one is paying me to do it, so little gets done.\
+doing it, and no one is paying me to do it, so little gets done.
  If you would like to volunteer to do [QA let me
 know](mailto:fontforge-devel@lists.sourceforge.net) (this is a public
 mailing list). It's a thankless job, but important!
 
 **Why does FontForge look ugly under Xgl/Compiz?**
 
-I haven't the foggiest idea, but I'm told you can fix it by setting:\
- `    XLIB_SKIP_ARGB_VISUALS=1`\
+I haven't the foggiest idea, but I'm told you can fix it by setting:
+ `    XLIB_SKIP_ARGB_VISUALS=1`
  for FontForge.
 
 **Why don't I talk at conferences?**
 
 Because I have nothing to say.
 
-> **TYSON:**\
->  I'm not\
->   To be found. I'm fully occupied elsewhere.\
->   If you wish to find me I shall be in my study.\
->   You can knock, but I shall give you no reply.\
->   I wish to be alone with my convictions.\
+> **TYSON:**
+>  I'm not
+>   To be found. I'm fully occupied elsewhere.
+>   If you wish to find me I shall be in my study.
+>   You can knock, but I shall give you no reply.
+>   I wish to be alone with my convictions.
 >   Good night. *[Exit]*
-> *The Lady's not for Burning*\
+> *The Lady's not for Burning*
 >  Christopher Fry
 
-\
+
 
 * * * * *
 
                         
 
-> The answer to the Great Question...?\
->  Yes...!\
->  Is...\
->  Yes...!\
->  Is...\
->  Yes...!!!...?\
->  "Forty-two," said Deep Thought with infinite majesty and calm.\
+> The answer to the Great Question...?
+>  Yes...!
+>  Is...
+>  Yes...!
+>  Is...
+>  Yes...!!!...?
+>  "Forty-two," said Deep Thought with infinite majesty and calm.
 >  "Forty-two!" yelled Loonquawl, "Is that all you've got to show for
-> seven and a half million years of work?"\
+> seven and a half million years of work?"
 >  "I checked it very thoroughly," said the computer, "and that quite
 > definitely is the answer. I think the problem, to be quite honest with
 > you, is that you've never actually known what the question is."
-> *The Hitchhiker's Guide to the Galaxy*\
+> *The Hitchhiker's Guide to the Galaxy*
 >  Douglas Adams
 
                         
 
 > It's all in Plato, all in Plato: bless me, what do they teach them in
 > these schools?
-> *The Last Battle*\
+> *The Last Battle*
 >  C.S. Lewis
 
-> "I have answered three questions, and that is enough,"\
->  Said his father, "Don't give yourself airs!\
->  Do you think I can listen all day to such stuff?\
+> "I have answered three questions, and that is enough,"
+>  Said his father, "Don't give yourself airs!
+>  Do you think I can listen all day to such stuff?
 >  Be off, or I'll kick you down stairs."
-> *You are old, Father William*\
+> *You are old, Father William*
 >  Lewis Carroll
 
 -- [Prev](sfds/index.html) -- [TOC](overview.html) --

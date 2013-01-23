@@ -39,12 +39,12 @@ specify which interpreter to use with the -lang argument.
 
 FontForge can also be used as an interpreter to which the shell will
 automatically pass scripts. If you a mark your script files as
-executable\
- `    $ chmod +x scriptfile.pe`\
- and begin each one with the line\
- `    #!/usr/local/bin/fontforge`\
+executable
+ `    $ chmod +x scriptfile.pe`
+ and begin each one with the line
+ `    #!/usr/local/bin/fontforge`
  (or wherever fontforge happens to reside on your system) then you can
-invoke the script just by typing\
+invoke the script just by typing
  `    $ scriptfile.pe {fontnames}`
 
 If you wish FontForge to read a script from stdin then you can use "-"
@@ -87,7 +87,7 @@ access to the arguments.
 
 Terms can be
 
--   A variable name (like "\$1" or "i" or "@fontvar" or "\_global")\
+-   A variable name (like "\$1" or "i" or "@fontvar" or "\_global")
      The scope of the variable depends on the initial character of its
     name.
     -   A '\$' signifies that it is a built-in variable. The user cannot
@@ -129,7 +129,7 @@ omitted, a few added from shell scripts. Operator precedence has been
 simplified slightly. So operators (and their precedences) are:
 
 -   unary operators (+, -, !, \~, ++ (prefix and postfix), --(prefix and
-    postfix), () (procedure call), [] (array index), :h, :t, :r, :e\
+    postfix), () (procedure call), [] (array index), :h, :t, :r, :e
      Most of these are as expected in C, the last four are borrowed from
     shell scripts and are applied to strings
     -   :h gives the head (directory) of a pathspec
@@ -138,7 +138,7 @@ simplified slightly. So operators (and their precedences) are:
     -   :e gives the extension
 
 -   \*, /, % (binary multiplicative operators)
--   +, - (binary arithmetic operators)\
+-   +, - (binary arithmetic operators)
      If the first operand of + is a string then + will be treated as
     concatenation rather than addition. If the second operand is a
     number it will be converted to a string (decimal representation) and
@@ -174,8 +174,8 @@ Arrays are passed by reference, strings and integers are passed by
 value.
 
 Variables may be created by assigning a value to them (only with the
-"="), so:\
- `    i=3`\
+"="), so:
+ `    i=3`
  could be used to define "i" as a variable. Variables are limited in
 scope to the current file, they will not be inherited by called
 procedures.
@@ -190,17 +190,17 @@ A statement may be
 -   `return [ expression ]`
 -   `shift`
 
-As with C, non-zero expressions are defined to be true.\
+As with C, non-zero expressions are defined to be true.
  A return statement may be followed by a return value (the expression)
-or a procedure may return nothing (void).\
+or a procedure may return nothing (void).
  The shift statement is stolen from shell scripts and shifts all
 arguments down by one. (argument 0, the name of the script file, remains
-unchanged.\
+unchanged.
  The foreach statement requires that there be a current font. It
 executes the statements once for each glyph in the selection. Within the
 statements only one glyph at a time will be selected. After execution
 the selection will be restored to what it was initially. (Caveat: Don't
-reencode the font within a foreach statement).\
+reencode the font within a foreach statement).
  Statements are terminated either by a new line (you can break up long
 lines with backslash newline) or a semicolon.
 
@@ -260,7 +260,7 @@ existing ones)
 -   `$fontversion` the string containing the font's version
 -   `$iscid `1 if the current font is a cid keyed font, 0 if not
 -   `$cidfontname `returns the fontname of the top-level cid-keyed font
-    (or the empty string if there is none)\
+    (or the empty string if there is none)
      Can be used to detect if this is a cid keyed font.
 -   `$cidfamilyname, $cidfullname, $cidweight, $cidcopyright `similar to
     above
@@ -605,8 +605,8 @@ more information.
 -   [AddAnchorPoint(name,type,x,y[,lig-index])](scripting-alpha.html#AddAnchorPoint)
 -   [AddLookup(new-lookup-name,type,flags,feature-script-lang-array[,after-lookup-name)](scripting-alpha.html#AddLookup)
 -   [AddLookupSubtable(lookup-name,new-subtable-name[,after-subtable-name])](scripting-alpha.html#AddLookupSubtable)
--   [AddPosSub(subtable-name,variant(s))\
-     AddPosSub(subtable-name,dx,dy,dadv\_x,dadv\_y)\
+-   [AddPosSub(subtable-name,variant(s))
+     AddPosSub(subtable-name,dx,dy,dadv\_x,dadv\_y)
 
     AddPosSub(subtable-name,other-glyph-name,dx1,dy1,dadv\_x1,dadv\_y1,dx2,dy2,dadv\_x2,dadv\_y2)](scripting-alpha.html#AddPosSub)
 -   [AddSizeFeature(default-size[,range-bottom,range-top,style-id,array-of-lang-names])](scripting-alpha.html#AddSizeFeature)

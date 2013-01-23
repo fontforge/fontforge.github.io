@@ -23,13 +23,13 @@ What can be built?
 -   Unicode specifies various normative glyph decompositions. So
     "Aacute" is defined to be an "A" with an "acute" accent centered on
     top. Any of these can be built (though if the glyph contains no
-    accents it will need to be built with the build composite command).\
+    accents it will need to be built with the build composite command).
      Sometimes Unicode's normative definition is not as informative as
     it might be (many of the greek accents are "unified" with latin
     accents that they don't really look like, the result is that
     following Unicode slavishly will yield the wrong glyph). So in some
     cases FontForge will use a slightly different set of glyphs than the
-    normative decomposition.\
+    normative decomposition.
      This includes:
     -   Latin accented characters
     -   Latin ligatures (ae, oe, fi, fl, etc)
@@ -68,7 +68,7 @@ What can be built?
     latin glyphs. When CJK text is written vertically the convention is
     that any text in western alphabets should be displayed rotated 90º
     clockwise. If you apply Build Accented Glyph to one of these slots
-    it will find the appropriate latin letter and rotate it properly.\
+    it will find the appropriate latin letter and rotate it properly.
      If a glyph's name is "vertcid\_\<cid\>" where \<cid\> is a decimal
     number, then it is assumed to be a vertically rotated version of the
     glyph at \<cid\>. In non-cid-keyed fonts, if a glyph's name is
@@ -81,7 +81,7 @@ glyph have already been created then this command will delete anything
 that is in the current layerand put a reference to the base glyph and
 another reference to the accent glyph into the foreground. So if the
 current glyph were "À" then a reference to "A" would be added to it, and
-a reference to "\`" would be centered above the "A". \
+a reference to "\`" would be centered above the "A". 
  If [Copy From](editmenu.html#From) is set to All Fonts then any bitmaps
 will have a similar process done -- that is to say, bitmap references
 will be created (even in the outline glyph view).
@@ -129,10 +129,10 @@ more baroque. FontForge knows many oddities of accent placement, but it
 will never know all of them (some letters have multiple forms depending
 on the font, or perhaps on the humidity and phase of the moon).
 
-![](img/acenter.png)\
+![](img/acenter.png)
  Center point of the glyph
 
-![](img/ahighest.png)\
+![](img/ahighest.png)
  Highest point of the glyph
 
 And how accents are centered depends on the accents themselves. Usually
@@ -141,10 +141,10 @@ over the base glyph's "center". But that doesn't always work either. The
 grave and acute accents are usually (but not always) centered only on
 the bottom part of the glyph.
 
-![](img/aacutemid.png)\
+![](img/aacutemid.png)
  Midpoint of accent
 
-![](img/aacutebase.png)\
+![](img/aacutebase.png)
  Centered on base of accent
 
 FontForge gives you a minuscule amount of control over where it puts

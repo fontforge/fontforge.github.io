@@ -87,16 +87,16 @@ wrapper around them so PostScript can deal with them).
 dialog are a set of tabs "Display" and "Print". The "Print" pane allows
 you to print certain standard displays of a single font.
 
--   All the characters of your font, in a rectangular grid:\
+-   All the characters of your font, in a rectangular grid:
      ![](img/FontDisplay.png)
 -   Certain selected characters, one per page, at a scale to fill up the
-    page\
+    page
      ![](img/CharPrint.png)
 -   Certain selected characters at various pointsizes (72, 48, 36, 24,
     20, 18, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7.5, 7, 6.5, 6, 5.5, 5,
-    4.5, 4)\
+    4.5, 4)
      ![](img/MultiPrint.png)
--   Or the edited display from the other pane.\
+-   Or the edited display from the other pane.
      ![](img/FontSample.png)
 
 ![](img/Print.png)The print pane appears again at right. The three choices
@@ -108,7 +108,7 @@ characters are selected in the font view).
 
 The PointSize field applies to the Full Font Display.
 
-The Setup button allows you to pick a printer, pagesize, etc.\
+The Setup button allows you to pick a printer, pagesize, etc.
 
 ![](img/PageSetup.png)You may choose to queue the result with lp or lpr, you
 may also direct it to ghostview, or simply print to a file. Files may be

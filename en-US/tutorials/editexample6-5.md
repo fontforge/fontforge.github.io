@@ -118,7 +118,7 @@ This will pop up a series of dialogs to edit a contextual subtable
 
 The first dialog allows you to specify the
 overall format of the substitution. We want a class based system --
-we've already mentioned what the glyph classes will be.\
+we've already mentioned what the glyph classes will be.
 
 ![](img/contextchain-simpleclasses.png)
 
@@ -150,7 +150,7 @@ Now there should be a second line which would look like
 mentioned above. Unfortunately that doesn't seem to work. The OpenType
 spec allows for it, but implementations of OpenType don't seem to
 support it. Instead that line must be in a separate sub-table in the
-same lookup.\
+same lookup.
  To edit a glyph class simply click on it and type. To create a new one
 press the \<New\> button (at the bottom of the list). You can also click
 on the little box thingy off on the right. This produces another dialog
@@ -248,7 +248,7 @@ ligature itself. Add the glyph for U+03D7, and then create a ligature
 lookup and subtable (with `Element->Font   Info->Lookups)` to bind
 U+03D7 to be a ligature of "kappa" and "iota". This lookup will never be
 used directly -- only under the control of another, a conditional
-feature -- so we don't give it a feature tag.\
+feature -- so we don't give it a feature tag.
 
 ![](img/kappa_iota-subtable.png)
 

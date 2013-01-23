@@ -46,7 +46,7 @@ bezier splines.
 There are 5 different types of spiro points
 
 -   G4 Curve Points (continuous up to the fourth derivative)
--   G2 Curve Points (continuous up to the second derivative)\
+-   G2 Curve Points (continuous up to the second derivative)
      Bascally this boils down to: If you have a sharp curve you are
     probably better off using a G2 point, while a more gentle curve
     would call for a G4.
@@ -156,10 +156,10 @@ rather erratic bulges.
 
 We can fix that by
 
-1.  moving points around \
+1.  moving points around 
      Use the pointer tool, click on a point (or hold down the shift key
     to select several points) and then drag them around.
-2.  adding new points to the outline.\
+2.  adding new points to the outline.
      Using the appropriate spiro tool, depress the mouse somewhere on
     the outline -- a new point appears there. You may now drag this
     point around.

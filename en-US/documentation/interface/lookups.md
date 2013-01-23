@@ -6,7 +6,7 @@ layout: default
 
 > "The question is," said Humpty Dumpty, "which is to be master --"
 > *(you or the word)*
-> -- Lewis Carroll\
+> -- Lewis Carroll
 >  *Through the Looking-Glass*
 
 Manipulating OpenType Lookups
@@ -186,7 +186,7 @@ ligatures output in an afm file.
 enter scripts and languages. Again you may edit these directly or press
 on the little rectangles to get a list of friendly names. If you choose
 to bring up the language dialog you may choose more than one language in
-it (use the control key to make disjoint selections).\
+it (use the control key to make disjoint selections).
 
 After you have created a lookup you may add subtables to it. In most
 cases you will only need to create one subtable, but for contextual or
@@ -202,10 +202,10 @@ lookup type.
 
 Basic substitutions
 
-![GSUB single glyph substitution](subtable-gsub-single.png)\
+![GSUB single glyph substitution](subtable-gsub-single.png)
  GSUB single glyph substitution dialog
 
-![](img/subtable-gsub-ligature.png)\
+![](img/subtable-gsub-ligature.png)
  GSUB ligature substitution dialog
 
 Many of the basic substitution dialogs are very similar. Most of the
@@ -349,7 +349,7 @@ middle of a word, so you don't need it on the right side of a kerning
 pair. (Of course there are exceptions: "FontForge" uses an internal
 capital, but that is rare and if you want to save space in your font
 tables you can ignore it). Similarly the closing quote character will
-almost never be on the left side of a kerning pair.\
+almost never be on the left side of a kerning pair.
 
 #### Kerning pairs
 
@@ -390,7 +390,7 @@ also request to see that rasterization magnified (Note: This is
 different from just rasterizing at twice the pixelsize, each pixel will
 be twice as big and the effects of rounding errors will be more
 obvious). Magnification is probably only useful if you are working on
-device tables for screen pixelsizes.\
+device tables for screen pixelsizes.
 
 ### Anchor Positioning
 
@@ -427,7 +427,7 @@ You may adjust the pixelsize of the display and the magnification factor
 (again the magnification factor is most useful if you are looking at
 small pixelsizes.
 
-You may provide device table adjustments for each pixelsize.\
+You may provide device table adjustments for each pixelsize.
 
 ### Contextual Positioning
 

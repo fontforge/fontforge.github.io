@@ -33,7 +33,7 @@ Expanded
 
 Outline
 
-simplified\
+simplified
 Chinese
 
 正常
@@ -140,7 +140,7 @@ Halbfett
 
 mager
 
-mittel\
+mittel
  normal
 
 Buchschrift

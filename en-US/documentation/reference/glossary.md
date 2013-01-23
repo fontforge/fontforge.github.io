@@ -18,13 +18,13 @@ Typographical glossary
 
                         
 
-> \`The time has come,' the Walrus said,\
->  \`To talk of may things:\
->  Of shoes— and ships— and sealing-wax—\
->  Of cabbages— and kings—\
->  And why the sea is boiling hot—\
+> \`The time has come,' the Walrus said,
+>  \`To talk of may things:
+>  Of shoes— and ships— and sealing-wax—
+>  Of cabbages— and kings—
+>  And why the sea is boiling hot—
 >  And whether pigs have wings.'
-> The Walrus and the Carpenter\
+> The Walrus and the Carpenter
 >  Lewis Carroll
 
 A
@@ -92,7 +92,7 @@ fonts](glossary.html#Multi-Master).
 Ascender
 
 A stem on a lower case letter which extends above the x-height. "l" has
-an ascender.\
+an ascender.
  See also [X-height](#x-height), [Cap-height](#cap-height),
 [Descender](#descender), [Overshoot](#overshoot), [Baseline](#baseline)
 
@@ -124,7 +124,7 @@ in a different place for different scripts. In Indic scripts most
 letters descend below the baseline. In CJK scripts there is also a
 vertical baseline usually in the middle of the glyph. The [BASE and
 bsln](baseline.html)tables allow you to specify how the baselines of
-different scripts should be aligned with respect to each other.\
+different scripts should be aligned with respect to each other.
  See also [X-height](#x-height), [Cap-height](#cap-height),
 [Ascender](#ascender), [Descender](#descender), [Overshoot](#overshoot)
 
@@ -135,11 +135,11 @@ manual.](bezier.html)
 
 Bidi
 
-> He looked thoughtful and grave- but the orders he gave\
->  Were enough to bewilder the crew.\
->  When he cried \`Steer to starboard, but keep her head larboard!'\
+> He looked thoughtful and grave- but the orders he gave
+>  Were enough to bewilder the crew.
+>  When he cried \`Steer to starboard, but keep her head larboard!'
 >  What on earth was the helmsman to do?
-> The Hunting of the Snark\
+> The Hunting of the Snark
 >  Lewis Carroll
 
 Bi-Directional text. That is a section of text which contains both
@@ -150,7 +150,7 @@ text. See also: [Boustrophedon](glossary.html#Boustrophedon).
 
 Black letter
 
-Any of various type families based on medieval handwriting.\
+Any of various type families based on medieval handwriting.
  See also [gothic](#gothic).
 
 BMP (Basic Multilingual Plane)
@@ -189,7 +189,7 @@ C
 Cap-height![](img/cap-height.png)
 
 The height of a capital letter above the baseline (a letter with a flat
-top like "I" as opposed to one with a curved one like "O").\
+top like "I" as opposed to one with a curved one like "O").
  See also [X-height](#x-height), [Ascender](#ascender),
 [Descender](#descender), [Overshoot](#overshoot), [Baseline](#baseline)
 
@@ -258,7 +258,7 @@ D
 Descender
 
 A stem on a lower case letter which extends below the baseline. "p" has
-a descender.\
+a descender.
  See also [X-height](#x-height), [Cap-height](#cap-height),
 [Ascender](#ascender), [Overshoot](#overshoot), [Baseline](#baseline)
 
@@ -415,7 +415,7 @@ than FontForge could unaided.
 Fractur
 
 The old black letter writing style used in Germany up until world war
-II.\
+II.
  See also [gothic](#gothic).
 
 Fuþark (Futhark)
@@ -608,7 +608,7 @@ L
 ![](img/sidebearings.png)Left side bearing
 
 The horizontal distance from a glyph's origin to its leftmost extent.
-This may be negative or positive.\
+This may be negative or positive.
 
 Lemur
 
@@ -699,7 +699,7 @@ If the contour crosses the line in a clockwise direction add 1, of the
 contour crosses in a counter clockwise direction subtract one. If the
 result is non-zero then fill the pixel. If it is zero leave it blank.
 This method is used for rasterizing fonts by truetype and older (before
-version 2) postscript.\
+version 2) postscript.
  See Also [Even-Odd Fill Rule](#Even-Odd)
 
 O
@@ -746,15 +746,15 @@ In order for the curved shape of the "O" to appear to be the same height
 as the flat top of the "I" it tends to "overshoot" the cap-height (or
 x-height), or undershoot the baseline by about 3% of the cap-height (or
 x-height). For a triangular shape (such as "A") the overshoot is even
-greater, perhaps 5%.\
+greater, perhaps 5%.
  These guidelines are based on the way the eye works and the optical
 illusions it generates and are taken from Peter Karow's *Digital Formats
-for Typefaces*, p. 26).\
+for Typefaces*, p. 26).
  The overshoot is also dependant on the point-size of a font, the larger
 the point-size the smaller the overshoot should be. Generally modern
 fonts will be used at multiple point-sizes, but in some font families
 there are multiple faces for the different point-sizes, and in such a
-case the overshoot will probably vary from face to face.\
+case the overshoot will probably vary from face to face.
  See also [X-height](#x-height), [Cap-height](#cap-height),
 [Ascender](#ascender), [Descender](#descender), [Baseline](#baseline)
 
@@ -921,8 +921,8 @@ are all scripts.
 
 Serif
 
-latin\
- greek\
+latin
+ greek
  cyrillic
 
 ![](img/serif-def.png)
@@ -1155,7 +1155,7 @@ currently used in the world, and many historical ones as well. See the
 -   [SMP](#SMP) -- Supplementary Multilingual Plane (0x10000-0x1FFFF)
 -   [SIP](#SIP) -- Supplementary Ideographic Plane (0x20000-0x2FFFF)
 -   [SSP](#SSP) -- Supplementary Special-purpose Plane
-    (0xE0000-0xEFFFF)\
+    (0xE0000-0xEFFFF)
      [More info.](bibliography.html#Unicode)
 
 Undershoot
@@ -1167,7 +1167,7 @@ UniqueID
 This is a field in a PostScript font, it was formerly used as a
 mechanism for identifying fonts uniquely, then Adobe decided it was not
 sufficient and created the XUID (extended Unique ID) field. Adobe has
-now decided that both are unneeded.\
+now decided that both are unneeded.
  There is a very similar field in the TrueType 'name' table.
 
 UseMyMetrics
@@ -1219,7 +1219,7 @@ X-height![](img/x-height.png)
 
 The height of a lower case letter above the base line (with a flat top
 like "x" or "z" or "v" as opposed to one with a curved top like "o" or
-one with an ascender like "l") .\
+one with an ascender like "l") .
  See also [Cap-height](#cap-height), [Ascender](#ascender),
 [Descender](#descender), [Overshoot](#overshoot), [Baseline](#baseline)
 

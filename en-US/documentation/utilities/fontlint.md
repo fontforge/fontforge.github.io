@@ -4,7 +4,7 @@ layout: default
 ---
 
 
-fontlint\
+fontlint
  A program for checking the validity of fonts
 =============================================
 

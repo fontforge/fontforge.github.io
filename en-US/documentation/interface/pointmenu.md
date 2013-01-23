@@ -129,7 +129,7 @@ Make Clip Path
 Only meaningful in Type3 fonts. For a more complete description see the
 section on [Type3 editing](multilayer.html#ClipPath). The clipping path
 will be set to any selected contour(s) in the glyph. If no contour is
-selected then there will be no clipping path.\
+selected then there will be no clipping path.
 
 Other menus
 -----------

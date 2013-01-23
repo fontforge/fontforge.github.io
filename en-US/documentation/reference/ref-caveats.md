@@ -28,7 +28,7 @@ outlines during output.
 
 This means that any instructions in the glyph itself will be
 meaningless, and any instructions in referred glyphs will not be
-executed.\
+executed.
  NOTE: Just because general transformations are supported, it isn't
 always a good idea to use them. If you flip a reference, the rasterizer
 will probably have difficulties with it (its contours will run in the
@@ -51,10 +51,10 @@ of the composite glyph is the same as the width of this referred glyph
 and the other is only translated (possibly by 0, but not scaled,
 rotated, flipped, etc.) THEN FontForge can generate two references (this
 is done with the 'seac' instruction). CID-keyed fonts do not support
-this.\
+this.
  The implications of this are that this form of referencing is useless
 for non-latin scripts (except for glyphs shared by latin and another
-script, Greek and Cyrillic often share the glyph used for latin A).\
+script, Greek and Cyrillic often share the glyph used for latin A).
  FontForge makes a slight extension, in that if you have a glyph which
 contains one single untranslated reference, then FontForge will add a
 dummy reference to the space glyph to make it fit the two reference

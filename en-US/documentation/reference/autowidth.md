@@ -21,7 +21,7 @@ becoming unrealistically large (these rarely matter).
 Adjusting the left and right bearings of a letter will also adjust the
 left and right bearings of all accented letters based (by reference) on
 it. You should not try to use AutoWidth on accented letters directly
-(unless those glyphs do not use references).\
+(unless those glyphs do not use references).
 
 Auto Kern
 ---------

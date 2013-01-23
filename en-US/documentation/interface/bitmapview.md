@@ -8,7 +8,7 @@ Bitmap Glyph View
 =================
 
   ---------------------------------------------------
-  ![](img/BitmapReference.png)\
+  ![](img/BitmapReference.png)
    A bitmap glyph composed of two bitmap references
   ---------------------------------------------------
 
@@ -86,9 +86,9 @@ The hand scrolls the screen.
 -   Rotate it 180°.
 -   Flip it horizontally
 -   Flip it vertically.
--   Set Width\
+-   Set Width
      This is only available if there is no outline font (ie. if you
-    opened a bdf file directly).\
+    opened a bdf file directly).
      It sets the width (glyph advance) of the bitmap.
 
 Anti-Aliased Glyphs
@@ -119,16 +119,16 @@ There are two ways to select the drawing color:
 Shades
 ------
 
-![](img/Shades.png)\
- Shades of grey available\
+![](img/Shades.png)
+ Shades of grey available
  with 8 bits/pixel
 
-![](img/Shades4.png)\
- Shades of grey available\
+![](img/Shades4.png)
+ Shades of grey available
  with 4 bits/pixel
 
-![](img/Shades2.png)\
- Shades of grey available\
+![](img/Shades2.png)
+ Shades of grey available
  with 2 bits/pixel
 
 The shades palette is only visible in an anti-aliased glyph. The palette

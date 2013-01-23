@@ -34,7 +34,7 @@ then the cubic spline used by PostScript.
 
 A cubic Bézier curve may be viewed as:
 
-> x = a~x~\*t^3^ + b~x~\*t^2^ + c~x~\*t +d~x~\
+> x = a~x~\*t^3^ + b~x~\*t^2^ + c~x~\*t +d~x~
 >  y = a~y~\*t^3^ + b~y~\*t^2^ + c~y~\*t +d~y~
 
 Where
@@ -48,7 +48,7 @@ Where
 
 And a quadratic Bézier curve:
 
-> x = b~x~\*t^2^ + c~x~\*t +d~x~\
+> x = b~x~\*t^2^ + c~x~\*t +d~x~
 >  y = b~y~\*t^2^ + c~y~\*t +d~y~
 
 with
@@ -75,12 +75,12 @@ Any quadratic spline can be expressed as a cubic (where the cubic term
 is zero). The end points of the cubic will be the same as the
 quadratic's.
 
-> CP~0~ = QP~0~\
+> CP~0~ = QP~0~
 >  CP~3~ = QP~2~
 
 The two control points for the cubic are:
 
-> CP~1~ = QP~0~ + 2/3 \*(QP~1~-QP~0~)\
+> CP~1~ = QP~0~ + 2/3 \*(QP~1~-QP~0~)
 >  CP~2~ = QP~2~ + 2/3 \*(QP~1~-QP~2~)
 
 So converting from TrueType to PostScript is trivial. There is a slight

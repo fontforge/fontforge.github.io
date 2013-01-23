@@ -28,7 +28,7 @@ Preferences Dialog
     -   [Features](prefs.html#Mac)
     -   [Mapping to OpenType](prefs.html#Mapping)
 
-    \
+    
 
 ![](img/prefs-generic.png)
 
@@ -73,7 +73,7 @@ UsePangoDrawing
 Controls whether FontForge uses its own interface text drawing routines,
 or relies on Pango library. Using Pango slows down older machines, but
 gives antialiased text, exotic Unicode support, and complex script
-support. New setting applies only to windows created afterwards.\
+support. New setting applies only to windows created afterwards.
 
 ![](img/prefs-newfont.png)
 
@@ -103,7 +103,7 @@ LoadedFontsAsNew
 When FontForge reads in a font it will generally keep the splines in the
 format they used in the font (that is quadratic for truetype fonts and
 cubic for postscript). If you set this flag then all loaded fonts will
-have the same file format as that specified by NewFontsQuadratic above.\
+have the same file format as that specified by NewFontsQuadratic above.
 
 ![](img/prefs-openfont.png)
 
@@ -136,7 +136,7 @@ CompactOnOpen
 
 Whether fontforge should make a font compact when it opens one (does not
 apply to openning an sfd file which already knows whether it should be
-compact or not).\
+compact or not).
 
 ![](img/prefs-navigation.png)
 
@@ -151,7 +151,7 @@ OpenCharsInNewWindow
 
 Double clicking on a glyph in a [font view](fontview.html) can either
 always create a new [glyph view](charview.html), or reuse an already
-opened one.\
+opened one.
 
 ![](img/prefs-editing.png)
 
@@ -220,7 +220,7 @@ This setting can be used to show you when those criteria are not met.
 AutoKernDialog
 
 Controls whether FontForge opens an [auto kern
-dialog](lookups.html#Pair) for each new kerning subtable.\
+dialog](lookups.html#Pair) for each new kerning subtable.
 
 ![](img/prefs-sync.png)
 
@@ -235,7 +235,7 @@ AutoLBearingSync
 
 Whether you want left side bearings of accented glyphs to track the left
 side bearing of base glyphs (so if you shift A left, then the accent in
-À will also be shifted left)\
+À will also be shifted left)
 
 ![](img/prefs-tt.png)
 
@@ -263,7 +263,7 @@ When copying and pasting in the font view, copy and paste instructions
 as well as the glyph outlines. **WARNING**: If you copy a glyph from one
 font to another its instructions will probably not work (it will make
 assumptions about the control table and subroutines which do not hold in
-the new font).\
+the new font).
 
 ![](img/prefs-accent.png)
 
@@ -286,7 +286,7 @@ of the letter, or on the center of the top of the letter.
 PreferSpacingAccents
 
 Whether to prefer spacing accents (Unicode 02C0-02FF) or combining
-accents (0300-036F) when building accented glyphs.\
+accents (0300-036F) when building accented glyphs.
 
 ![](img/prefs-apps.png)
 
@@ -326,7 +326,7 @@ The mf program generates a fair amount of verbiage even when it is
 working correctly. And if it is working correctly you don't want to see
 those words. So normally FontForge suppresses messages from mf. But if
 something goes wrong you do want to see mf's output and setting this
-will allow you to do so.\
+will allow you to do so.
 
 ![](img/prefs-font.png)
 
@@ -369,7 +369,7 @@ AddCharToNameList
 Some character names are barely understandable or unintuitive. While
 editing opentype lookups having long lists of such names, confusion is
 easy. A character itself may be appended to the name to make things
-easier. \
+easier. 
 
 ![](img/prefs-generate.png)
 
@@ -384,7 +384,7 @@ you have to click through another dlg.
 AutoHint
 
 Whether glyphs should be automagically hinted before a font is generated
-or rasterized.\
+or rasterized.
 
 ![](img/prefs-pshints.png)
 
@@ -411,19 +411,19 @@ PS Hints
 
 ![](img/hintdiagonalends.png)
 
-HintBoundingBoxes\
+HintBoundingBoxes
  Add hints around the bounding boxes of some glyphs. Adobe seems to do
 this.
 
-HintDiagonalInter\
+HintDiagonalInter
  Add hints at the intersections of diagonal stems
 
-HintDiagonalEnds\
+HintDiagonalEnds
  Add hints at the ends of diagonal stems.
 
 More importantly there is also the DetectDiagonalStems option. Make sure
 this is turned on if you intend to have FontForge [generate truetype
-instructions automatically](hintsmenu.html#AutoInstr). \
+instructions automatically](hintsmenu.html#AutoInstr). 
 
 ![](img/prefs-ttinstrs.png) [Truetype
 autoinstructor](hintsmenu.html#AutoInstr) bases its output on postscript
@@ -465,7 +465,7 @@ outlines. This was inspired by, but works somewhat independently from,
 means that proper shapes are more important than proper scaling of
 advance widths.
 
-\
+
 
 ![](img/prefs-opentype.png)
 
@@ -473,7 +473,7 @@ UseNewIndicScripts
 
 MS has changed the way it handles indic scripts and has created a
 parallel set of script tags for the new method. Set this flag if you
-want to create a font using the new Indic system. \
+want to create a font using the new Indic system. 
 
 ![](img/prefs-script.png)This section of the dialog allows you to define
 built in scripts that will show up in the [script
@@ -483,7 +483,7 @@ of this entry inside the script menu, and the [script
 file](scripting.html) will be the filename of the file to be invoked.
 The "..." button allows you to browse for script files, which I think
 have extension .pe (but which can have whatever extension you prefer if
-you don't like my conventions).\
+you don't like my conventions).
 
 ![](img/prefs-macfeat.png)The Mac Features dialog allows you to define a set
 of default names (in many languages) for mac features and settings.
@@ -512,8 +512,8 @@ To add a new setting press the [New] button under the setting list. The
 setting dialog contains the numeric value of this setting (Apple has
 decreed that if the feature is not mutually exclusive, all settings must
 be even numbers), whether this setting is on by default, and then a list
-of names for the setting in as many languages as you like.\
- ![](img/MacFeatName.png)![](img/macFeatureSetting.png)\
+of names for the setting in as many languages as you like.
+ ![](img/MacFeatName.png)![](img/macFeatureSetting.png)
 
 ![](img/prefs-macmap.png)The Mac Mapping dialog allows you to define a
 mapping between OTF `GSUB` feature tags and Apple's
@@ -531,7 +531,7 @@ that the mac feature setting you desire is present in the feature list
 (above), and then you may add the mappings.
 
 ![](img/MacMapping.png)You must specify a mac feature (which must already be
-defined), a mac setting code and a 4 character opentype tag.\
+defined), a mac setting code and a 4 character opentype tag.
 
 Other ways of configuring
 -------------------------

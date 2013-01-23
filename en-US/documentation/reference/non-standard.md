@@ -14,11 +14,11 @@ Internal
 
 -   `' REQ'` -- tag used for required features
 
-For TeX\
+For TeX
  I no longer use these. MS has come up with a MATH table which can
 contain all the TeX information.
 
--   `ITLC` -- [Italic correction](PfaEdit-TeX.html#Italic)\
+-   `ITLC` -- [Italic correction](PfaEdit-TeX.html#Italic)
      I have proposed this as an extension to OpenType. There was some
     discussion of it, but I believe the idea died.
 -   `TCHL` -- [TeX Charlist](PfaEdit-TeX.html#charlist)
@@ -152,7 +152,7 @@ Non standard file formats
 >   -------- --------------- -----------------------------------------------------------------------------------------------------
 >   uint16   version         0
 >
->   uint16   count           number of entries in the cvt comments array\
+>   uint16   count           number of entries in the cvt comments array
 >                             which might be smaller than the number of entries in the cvt array itself if we want to save space
 >
 >   uint16   offset[count]   offsets to the start of utf8-encoded, NUL terminated strings. Or 0 if this cvt entry has no comment
@@ -344,9 +344,9 @@ Non standard file formats
 > This is followed by an array of structures describing each layer
 >
 >   -------- ---------- ----------------------------------------------------------------------------------
->   uint16   typeflag   Low order byte is the type\
->                        2=\>quadratic splines, 3=\>cubic splines, 1=\>spiros, other values not defined\
->                        High order byte are the flags\
+>   uint16   typeflag   Low order byte is the type
+>                        2=\>quadratic splines, 3=\>cubic splines, 1=\>spiros, other values not defined
+>                        High order byte are the flags
 >                        0x100 =\> foreground layer
 >
 >   uint16   offset     to the name of this layer, a utf8, NUL terminated string
@@ -526,13 +526,13 @@ file because em-units make more sense in a sfnt and take up less space.
 >   -------- ------- ---------------------------------------------------------------------------
 >   uint32   name    offset into the string table of the property's name
 >
->   uint16   type    0=\>string\
->                     1=\>atom\
->                     2=\>int\
->                     3=\>uint\
+>   uint16   type    0=\>string
+>                     1=\>atom
+>                     2=\>int
+>                     3=\>uint
 >                     0x10 may be ored into one of the above types to indicate a real property
 >
->   uint32   value   For strings and atoms, this is an offset into the string table\
+>   uint32   value   For strings and atoms, this is an offset into the string table
 >                     for integers it is the value itself
 >   -------- ------- ---------------------------------------------------------------------------
 >
@@ -562,13 +562,13 @@ file because em-units make more sense in a sfnt and take up less space.
 >
 >   int64    FontForge's own timestamp             (the date of the sources for fontforge)
 >
->   int64    creation date of this font            Not the creation date of the tt/ot file,\
->                                                   but the date the sfd file was created.\
+>   int64    creation date of this font            Not the creation date of the tt/ot file,
+>                                                   but the date the sfd file was created.
 >                                                   (not always accurate).
 >
->   int64    last modification date of this font   Not the modification date of the file,\
->                                                   but the time a glyph, etc. was last\
->                                                   changed in the font database.\
+>   int64    last modification date of this font   Not the modification date of the file,
+>                                                   but the time a glyph, etc. was last
+>                                                   changed in the font database.
 >                                                   (not always accurate)
 >   -------- ------------------------------------- -------------------------------------------
 >

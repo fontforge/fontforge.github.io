@@ -4,10 +4,10 @@ layout: default
 ---
 
 
-![](img/AmbrosiaFV-bm.png)\
+![](img/AmbrosiaFV-bm.png)
  Bitmap display in font view.
 
-![](img/AmbrosiaFV.png)\
+![](img/AmbrosiaFV.png)
  Anti-Aliased (Greymap) display in font view.
 
 At screen pixel sizes the rasterizer has trouble rendering some of the

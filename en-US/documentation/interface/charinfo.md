@@ -70,12 +70,12 @@ the glyph is composed of references which overlap, and you wish to
 retain the references, but you wish it to be output without an overlap,
 simply check this box. Then when it comes time to save the font, ff will
 perform the unlink and then run remove overlap, save the font, and then
-restore the glyph to its original condition.\
+restore the glyph to its original condition.
 
 ![](img/charinfo-comment.png)You can assign an arbitrary (unicode) comment
 to the glyph. Simply type any text into this field. The comment is for
 your use, it will not go into any generated fonts. You may also assign a
-color to a glyph to make it stand out in the font view.\
+color to a glyph to make it stand out in the font view.
 
 ![](img/charinfo-pos.png)There are 6 separate sub-dialogs to help you edit
 the [lookups](lookups.html) of the [GPOS and GSUB](gposgsub.html) tables
@@ -106,7 +106,7 @@ could add data to.
 The pairwise positioning sub-dialog allows you to change the positions
 of two glyphs when they occur next to one another -- better know as
 kerning. I think the [Metrics View](metricsview.html)provides a better
-place to do kerning, but you can do it here if you wish.\
+place to do kerning, but you can do it here if you wish.
 
 ![](img/charinfo-subs.png) A simple substitution replaces one glyph with
 another. Here the glyph "one" has a series of substitutions to various
@@ -121,10 +121,10 @@ and the user is to be given a choice as to which glyph is to be chosen.
 
 > "Hello Rabbit," he said, "is that you?"
 > "Let's pretend it isn't," said Rabbit, "and see what happens."
-> Winnie-The-Pooh\
+> Winnie-The-Pooh
 >  A. A. Milne, 1926
 
-\
+
 
 ![](img/charinfo-lig.png) The ligature pane allows you to tell FontForge
 that the current glyph is a ligature composed of several other glyphs.
@@ -135,14 +135,14 @@ ligatures then they may both be specified in different lines. For
 example "ffi" may be viewed as a ligature of "f" "f" and "i" or of "ff"
 and "i".
 
-\
+
 
 ![](img/charinfo-counters.png) In complicated Asian glyphs, postscript has a
 mechanism for controlling the width of counters between stems. These are
 called counter mask hints![](img/newcountermask.png). In Latin, Cyrillic,
 Greek fonts only glyphs like "m" are allowed to have counter masks, and
 only in very controlled conditions. See the description of [counter
-masks](hinting.html#Counter).\
+masks](hinting.html#Counter).
 
 ![](img/charinfo-counters.png) Some glyphs (ligatures, accented glyphs,
 Hangul syllables, etc.) are built up out of other glyphs (at least
@@ -152,7 +152,7 @@ font then you can use FontForge's Element-\>Build-\>Build Accented or
 Element-\>Build-\>Build Composite commands to create the current glyph.
 The information displayed here is informative only, you may not change
 this field directly (it changes when you change the unicode value or
-glyph name associated with this glyph).\
+glyph name associated with this glyph).
 
 ![](img/charinfo-tex.png) The TeX pane allows you to specify glyph specific
 information used in TeX tmf files. The height and depth fields are often
@@ -177,7 +177,7 @@ alerts the typesetter to this fact.
 
 The [Math Kerning] button brings up the [Math Kerning
 dialog](math.html#MathKern) which gives you fine control over the
-placement of subscripts and superscripts near the glyph.\
+placement of subscripts and superscripts near the glyph.
 
 ### Variants
 
@@ -196,7 +196,7 @@ bigger than the one before.
 
 Underneath you may specify a way of building really big parentheses by
 combining several component glyphs. See the description of this in the
-[MATH Info dialog](math.html#GlyphConstruction)for more details.\
+[MATH Info dialog](math.html#GlyphConstruction)for more details.
 
 ### ![](img/charinfo-tilesize.png)Tile Size
 
@@ -212,14 +212,14 @@ control over the whitespace that surrounds the drawn region of the tile.
 
 You can specify that you want a constant margin of white space around
 all edges of the tile, or you can specify explicitly the coordinates of
-the tile.\
+the tile.
 
 The Next and Prev buttons allow you to move from one glyph to the next
 (if, for example, you need to enter encodings for a range of glyphs).
 
 The Cancel button now cancels all changes made with this instance of the
-dialog.\
- \
+dialog.
+ 
 
 See Also:
 

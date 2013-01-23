@@ -81,7 +81,7 @@ here.
         -   PathFlags
 
 -   2-Mar-2008
-    -   **Layers**\
+    -   **Layers**
          This turned out to be a change which was backwards
         incompatible. I did not realize that at the time
 
@@ -131,7 +131,7 @@ here.
         of the guideline semi-layer.
 
 -   3-Feb-2008
-    -   The point flags bitmap in a SplineSet has been extended by\
+    -   The point flags bitmap in a SplineSet has been extended by
          0x200 -- Any extrema on the preceding spline are marked as
         acceptable to the validator
     -   Some sfnt tables are now output in text instead of binary.

@@ -99,7 +99,7 @@ compressed (PCF\_COMPRESSED\_METRICS) or uncompressed (DEFAULT) formats.
 The compressed format uses bytes to contain values, while the
 uncompressed uses shorts. The (compressed) bytes are unsigned bytes
 which are offset by 0x80 (so the actual value will be
-`(getc(pcf_file)-0x80)`. The data are stored as:\
+`(getc(pcf_file)-0x80)`. The data are stored as:
  Compressed
 
 >     uint8 left_sided_bearing;

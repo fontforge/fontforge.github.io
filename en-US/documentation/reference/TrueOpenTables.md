@@ -20,10 +20,10 @@ long name
 
 FontForge's use
 
-Apple\
+Apple
  docs
 
-Adobe\
+Adobe
  docs
 
 avar
@@ -379,7 +379,7 @@ MATH
 
 mathematical typesetting
 
-Provides general information needed for mathematical typesetting.\
+Provides general information needed for mathematical typesetting.
  This is a new table (August 2007) and there is currently no publicly
 available documentation for it.
 

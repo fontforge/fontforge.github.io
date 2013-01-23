@@ -73,7 +73,7 @@ The Mayan K'iche' text is from the prolog to the Popol Wuj and is
 courtesy of Daniel Johnson.
 
 Various translations of the Gospel of John are taken from: *Compendium
-of the world's languages,* by George L. Campbell.\
+of the world's languages,* by George L. Campbell.
  Belorussian, Basque, Danish, Dutch, Finnish, Georgian, Icelandic,
 Irish, Norwegian (two styles), Old Church Slavonic, Swedish, Portuguese,
 Cherokee, Swahili, Thai.

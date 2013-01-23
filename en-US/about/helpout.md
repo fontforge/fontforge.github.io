@@ -28,41 +28,41 @@ How you can help with FontForge
 
     -   Russian is provided by [Alexandre
         Prokoudine](http://www.linuxgraphics.ru/), originally by Valek
-        Filippov.\
+        Filippov.
          Last Update Aug 2012
     -   Japanese is provided by KANOU Hiroki. (and has translated the
-        entire website) This needs to be updated!\
+        entire website) This needs to be updated!
          Last Update Jul 2006
-    -   French is provided by Pierre Hanser and Yannis Haralambous.\
+    -   French is provided by Pierre Hanser and Yannis Haralambous.
          Last update Nov 2007
     -   Italian was provided by Claudio Beccari, but I can no longer
-        contact him. This needs to be updated!\
+        contact him. This needs to be updated!
          Last update Feb 2003
     -   Spanish is provided by [Walter
-        Echarri](mailto:wecharri@yahoo.com) This needs to be updated!\
+        Echarri](mailto:wecharri@yahoo.com) This needs to be updated!
          Last update Oct 2004
     -   Vietnamese is provided by [Clytie
-        Siddall](http://vnoss.net/dokuwiki/doku.php?id=projects:l10n).\
+        Siddall](http://vnoss.net/dokuwiki/doku.php?id=projects:l10n).
          Last update Apr 2010
-    -   Simplified Chinese is provided by Lee Chenhwa\
+    -   Simplified Chinese is provided by Lee Chenhwa
          Last update Jun 2012
     -   Traditional Chinese is provided by Wei-Lun Chao at
-        [OSSII](http://opendesktop.org.tw/)\
+        [OSSII](http://opendesktop.org.tw/)
          Last update May 2012
     -   Wei-ju Wu has translated the tutorial into German
-    -   Philipp Poll is providing a German UI.\
+    -   Philipp Poll is providing a German UI.
          Last update Apr 2007
     -   Michal Nowakowski is constantly updating the Polish
-        translation.\
+        translation.
          Last update Jul 2012
     -   [Apostolos Syropoulos](http://obelix.ee.duth.gr/~apostolo/)is
-        working on a Greek translation\
+        working on a Greek translation
          Last update Oct 2008
     -   Serhij Dubyk has provided a Ukrainian translation, his last
-        update was May-2009.\
-         Then Yuri Chornoivan took it further.\
+        update was May-2009.
+         Then Yuri Chornoivan took it further.
          Last update Jul 2012
-    -   Rafael Ferran i Peralta provided a Catalan translation.\
+    -   Rafael Ferran i Peralta provided a Catalan translation.
          Last update Jun 2011
     -   Any other language additions would be great (the entire UI does
         not need to be translated, any subset is a help), if you are
@@ -75,11 +75,11 @@ How you can help with FontForge
 
 -   *Different font formats*  
     FontForge supports Type1, truetype, opentype, cff, type42,
-    cid-keyed and svg fonts, also bdf and NFNT for bitmaps\
+    cid-keyed and svg fonts, also bdf and NFNT for bitmaps
     FontForge will sort-of accept metafont files (essentially it runs
-    metafont and autotraces the result). It won't produce .mf files\
-    FontForge will read (but not produce) Ikarus files\
-    FontForge will read acorn font files with a helper app.\
+    metafont and autotraces the result). It won't produce .mf files
+    FontForge will read (but not produce) Ikarus files
+    FontForge will read acorn font files with a helper app.
     But there are other formats out there that I can't find
     descriptions of or don't think are worth supporting
     -   Can you point me at documentation for other standards
@@ -112,7 +112,7 @@ How you can help with FontForge
         current stuff, please let me know.
 
 -   *QA*
-    -   I don't.\
+    -   I don't.
          I find QA boring, and since no one is paying me for this I
         don't do very much (I generally run it past my testsuite from
         time to time). This is obviously a problem. If anyone (or
@@ -123,7 +123,7 @@ How you can help with FontForge
 -   *Printing tests*
     -   I'm always on the look out for short copyright free texts for
         printing. I'm looking for samples from languages I don't have
-        anything on, or in styles that I don't have.\
+        anything on, or in styles that I don't have.
          I'm also interested in phrases equivalent to "The quick brown
         fox jumps over the lazy dog." (pangrams). These are short
         sentences which use every letter in the script.

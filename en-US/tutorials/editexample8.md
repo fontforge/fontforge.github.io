@@ -191,7 +191,7 @@ the `[Recalculate Bitmaps] `button.
 Editing an anti-aliased greymap has the added complexity that you need
 to select a color (actually a level of greyness) to be applied with the
 pencil. There will be an additional palette with all possible greys for
-this.\
+this.
 
 Sparse Bitmap Strikes
 ---------------------

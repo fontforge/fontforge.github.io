@@ -22,7 +22,7 @@ which they will be displayed in the fontview -- and, like an encoding
 the group may be compaced so there are no empty holes for missing glyphs
 (so if the group had contained "b d p uniAC00 q" and the font was
 missing uniAC00, the display would be exactly the same) or uncompacted
-with holes.\
+with holes.
  Glyphs in a group may be specified by glyph name, by unicode code point
 or by a range of unicode values. The examples above all used glyph
 names. A unicode code point looks like "U+XXXX" (where XXXX indicates a
@@ -61,7 +61,7 @@ to press `[OK] `then the fontview would show the glyphs associated with
 "b d f h k l t g j p q y" in that order.
 
 Underneath everything is a check box you may use to specify whether you
-want the results compacted or not.\
+want the results compacted or not.
 
 ![](img/definegroups.png)Define Groups
 ----------------------------------
@@ -86,6 +86,6 @@ If you select `[*]No glyph duplicates `then ff will prevent you from
 entering the same glyph name (or unicode code point) twice (ff will
 allow you to enter "A" and U+0041 -- because I'm lazy and this is harder
 to check for and less likely to occur). If you set this in a parent
-group then there can be no glyph duplicates among any of its children.\
+group then there can be no glyph duplicates among any of its children.
 
 -- [Up](encodingmenu.html) -- [TOC](overview.html) --

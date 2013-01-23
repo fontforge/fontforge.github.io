@@ -19,11 +19,11 @@ There are three variants on how the search behaves:
     criteria will become selected.
 3.  The selection will be restricted. Only glyphs previously selected
     will be searched, the selection will be restricted to those which
-    match\
+    match
      So if you want to search for all ligatures containing both "f" and
-    "i"...\
+    "i"...
      Search for ligatures containing "f" with "\<\*\> Select Results"
-    set\
+    set
      Then Search for ligatures containing "i" with \<\*\> Restrict
     Selection" set
 

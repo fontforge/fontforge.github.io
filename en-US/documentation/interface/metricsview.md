@@ -328,7 +328,7 @@ Class dialog above.
 
 ![](img/kernpairclose.png)
 
-\
+
 
 -- [Prev](bitmapview.html) -- [TOC](overview.html) --
 [Next](filemenu.html) --

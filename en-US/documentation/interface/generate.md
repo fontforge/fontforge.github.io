@@ -20,7 +20,7 @@ The outline types are:
     printers)
 -   PostScript Type1 font, macbinary format (a postscript font wrapped
     up in a set of mac resources wrapped up in a macbinary file, to be
-    copied to a mac, unmacbinaried, and installed there)\
+    copied to a mac, unmacbinaried, and installed there)
      If you are on a mac then a resource fork will be generated
     directly, macbinary will not be used.
 
@@ -69,7 +69,7 @@ The outline types are:
     use this mode.
 -   True Type macbinary format, a truetype font wrapped up in a mac
     resource, wrapped up in a macbinary file. Designed to be used for a
-    mac.\
+    mac.
      If you are on a mac, then a file with a resource fork will be
     generated directly (macbinary will not be used).
 -   True Type dfont format, a truetype font wrapped up in a mac dfont
@@ -107,7 +107,7 @@ The bitmap types are:
     with bitmaps embedded in an sfnt wrapper](bitmaponlysfnt.html#X11)
     (an opentype or truetype font) but with no outline data.
 -   NFNT (MacBin) -- Converts the bitmap fonts into Macintosh NFNT
-    resources and wraps them up in a mac binary file.\
+    resources and wraps them up in a mac binary file.
      NFNT (Resource) -- On a mac the NFNT font will be generated in a
     resource fork directly.
     **NOTE:** Mac OS/X appears not to support NFNT bitmaps (at least I
@@ -132,7 +132,7 @@ boxes. Not all are enabled at all times.
 -   [] Hints -- Include PostScript hints in the output file
 -   [] Flex Hints -- Include PostScript flex hints in the output file
 -   [] AFM -- Generate an adobe font metrics file (controls generation
-    of .amfm files for multiple master fonts too)\
+    of .amfm files for multiple master fonts too)
      Note: Normally only 'liga' and 'rlig' ligatures will be output in
     the AFM file. But you can control that in the lookup dialog off of
     [Font Info](fontinfo.html).
@@ -327,7 +327,7 @@ moving toward [TTC files (see below](#GenerateTTC)).
 For information on creating mac font families beyond the capabilities of
 this dialog look at the [FAQ](faq.html#How-family).
 
-\
+
 
 * * * * *
 
@@ -373,7 +373,7 @@ will fail if:
     match.
 -   (or something else goes wrong)
 
-\
+
 
 * * * * *
 

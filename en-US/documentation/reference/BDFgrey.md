@@ -15,19 +15,19 @@ black/white) fonts. Recently others have started using this same format
 [freetype](http://freetype.sf.net/) and [fontforge](index.html)).
 
 In Section 3.1 of the format description Adobe defines a "SIZE" keyword.
-MicroSoft has added an optional fourth parameter to this keyword\
- `         SIZE PointSize XRes YRes [Bits_Per_Pixel]`\
+MicroSoft has added an optional fourth parameter to this keyword
+ `         SIZE PointSize XRes YRes [Bits_Per_Pixel]`
  This fourth parameter may take the values 1, 2, 4 and 8. If omitted it
 is assumed to be 1. (FontForge will also read in fonts with values of 16
 and 32, but it will simply ignore any low order data and only retain the
 high order byte).
 
-FontForge will also include a font property\
- `         BITS_PER_PIXEL Value`\
+FontForge will also include a font property
+ `         BITS_PER_PIXEL Value`
  in all greymap fonts it generates.
 
 FontForge will also mark all such fonts as version 2.3 of the bdf
-standard \
+standard 
  `         STARTFONT 2.3`
 
 The bitmap data are stored with 8, 4, 2 or 1 pixels packed into a byte
@@ -35,8 +35,8 @@ depending on whether BITS\_PER\_PIXEL is 1, 2, 4 or 8. As in Adobe's
 spec all data are presented in hex and an even number of nibbles must be
 present.
 
-**Example:**\
- `  BITMAP   C8   ENDCHAR`\
+**Example:**
+ `  BITMAP   C8   ENDCHAR`
  Would represent the pixel sequences
 
 Bits/Pixel

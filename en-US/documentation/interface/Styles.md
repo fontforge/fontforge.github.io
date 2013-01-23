@@ -18,14 +18,14 @@ Stylistic Transformations on Fonts
 The Style sub-menu provides a series of dialogs which allow you to
 create some common stylistic variations of latin fonts.
 
--   Stems and their widths\
+-   Stems and their widths
      Modification of a Stem's width makes the font appear Bolder or
     Lighter
 -   Counters and their widths (a counter is the white space between
-    stems)\
+    stems)
      Modification of a Counter's width makes the font appear Expanded or
     Condensed
--   Left and Right Side Bearings\
+-   Left and Right Side Bearings
      Behavior similar to Counter's
 
 The results will probably always need to be examined and fixed up by the
@@ -217,7 +217,7 @@ width of "originality" (compared to 12pt)    
 
 104%
 
-\
+
 
 ### SmallCaps
 
@@ -243,11 +243,11 @@ vertical stems..
 
 Letterform changes in Galliard: ![](img/ItalicCompGalliard.png)
 
-Letterform changes in Caslon:![](img/ItalicCompCaslon.png) \
+Letterform changes in Caslon:![](img/ItalicCompCaslon.png) 
  (These glyphs have been deskewed to display the shape transformation
 better.)
 
-Cyrillic Letterform changes:![](img/CyrilItalicComp.png) \
+Cyrillic Letterform changes:![](img/CyrilItalicComp.png) 
  (These glyphs are also deskewed.)
 
 This is not a complete list, but it shows most of the salient features
@@ -289,7 +289,7 @@ proportionate to its current thickness.
 constraint of the latin baseline and cap height, this expansion is
 probably enough. The image at right shows the Hiragana DA syllable --
 the original glyph shape is in the background, and the expanded shape is
-in the foreground.\
+in the foreground.
 
 However if we do that to a latin (or Greek, or Cyrillic) glyph the
 result is rather odd because the glyph no longer rests on the baseline,
@@ -477,7 +477,7 @@ widths. You may specify different values for lower case, upper case and
 symbols.
 
 Finally we come to the italic angle. This will generally be between -10
-and -15 degrees.\
+and -15 degrees.
 
 Condense/Extend dialog![](img/CondenseExtend.png)
 ---------------------------------------------
@@ -489,7 +489,7 @@ amount to them.
 
 If the font has and Italic Angle specified in Font Info, then fontforge
 will first unskew the glyph in the hopes of getting some vertical stems,
-then Condense it, and the reskew it.\
+then Condense it, and the reskew it.
 
 Change X-Height dialog![](img/ChangeXHeightDlg.png)
 -----------------------------------------------
@@ -498,7 +498,7 @@ This changes the x-height of a font. The dialog shows the current
 x-height (or what it thinks is the current x-height), and you can chose
 an new value for it. If the font has serifs and you don't want the
 serifs to change in height then specify the current serif height. If you
-do want the serifs to change, then set this field to 0.\
+do want the serifs to change, then set this field to 0.
 
 Change Glyphs dialog![](img/ChangeGlyph1Dlg.png)
 --------------------------------------------
@@ -551,7 +551,7 @@ In CJK glyphs it may make sense to control vertical glyphs.
 But in latin it makes more sense to map alignment zones. Here there is a
 overall (default) scaling factor. If you don't adjust the zones yourself
 then changing the scale factor will change the "Resultant Y Position" by
-the obvious amount.\
+the obvious amount.
 
 Small Capitals dialog![](img/SmallcapsDlg.png)
 ------------------------------------------
@@ -598,7 +598,7 @@ Glyphs](#changeglyph)dialog to play with.
 
 **Note:**The default sizes are the same for both small caps and petite
 caps. If you want both features you will need to change settings for at
-least one of them!\
+least one of them!
 
 Subscipt/Superscript dialog![](img/SubSuperDlg.png)
 -----------------------------------------------
@@ -620,13 +620,13 @@ default each new glyph will be scaled down to be 2/3^rd^s the original
 size, but the stems would only be scaled by 3/4 (so the glyph will look
 proportionately darker). Finally each new glyph will be moved up by 450
 em-units. Again if you don't like these defaults you have all the
-options of the [Change Glyphs](#changeglyph) dialog to play with.\
+options of the [Change Glyphs](#changeglyph) dialog to play with.
 
 ### Caveat
 
-> Then the bowsprit got mixed with the rudder sometimes,\
->  A thing as the Bellman remarked\
->  That frequently happens in tropical climes,\
+> Then the bowsprit got mixed with the rudder sometimes,
+>  A thing as the Bellman remarked
+>  That frequently happens in tropical climes,
 >  When a vessel is, so to speak, "Snarked".
 > *The Hunting of the Snark*, Lewis Carroll
 

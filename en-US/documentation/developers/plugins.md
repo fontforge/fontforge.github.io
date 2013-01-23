@@ -14,7 +14,7 @@ fontforge starts up (actually, when it loads its preferences) it will
 automatically load all files that look like shared libraries and that
 live in the two directories:
 
--   `/usr/local/share/fontforge/plugins`\
+-   `/usr/local/share/fontforge/plugins`
      (more precisely: `$(PREFIX)/share/fontforge/plugins`)
 -   `~/.FontForge/plugins`
 

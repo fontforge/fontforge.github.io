@@ -4,7 +4,7 @@ layout: default
 ---
 
 
-FontForge install procedures\
+FontForge install procedures
  for cygwin under MS Windows
 =============================
 
@@ -71,7 +71,7 @@ but you get the file eventually.
 -   If you follow the [link
     above](http://sourceforge.net/projects/fontforge/files/fontforge-executables/)you
     will end up on a page showing many releases of FontForge for many
-    systems\
+    systems
      in most cases you will want the most recent release.
 -   Then click on the executable package you want to download:
     -   The cygwin release will be called something like

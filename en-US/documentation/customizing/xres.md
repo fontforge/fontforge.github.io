@@ -469,7 +469,7 @@ Sets the font used in the Warnings dialog
 
 `Gdraw.ScreenWidthCentimeters`
 
-A double. (centimeters)\
+A double. (centimeters)
  X usually does not know the physical width of a screen (it knows the
 logical, pixel width). Gdraw's internals are based on points rather than
 pixels, and it will sometimes pick a font that is too small or too large
@@ -477,26 +477,26 @@ if it relies on X's idea of how wide the screen is.
 
 `Gdraw.ScreenWidthInches`
 
-A double. (inches)\
+A double. (inches)
  Same as the above, except measured in inches.
 
 `Gdraw.ScreenWidthPixels`
 
-An integer (pixels)\
+An integer (pixels)
  When X creates a virtual screen it may not be possible for Gdraw to
 find the actual number of pixels on the screen. This again will throw
 off point calculations.
 
 `Gdraw.ScreenHeightPixels`
 
-An integer (pixels)\
+An integer (pixels)
  When X creates a virtual screen it may not be possible for Gdraw to
 find the actual number of pixels on the screen. This is not used in
 point calculations.
 
 `Gdraw.Depth`
 
-An integer (1, 8, 16, 32)\
+An integer (1, 8, 16, 32)
  You can use this to request a different depth than the default one. Not
 all servers will support all depths. If FontForge can't find a visual
 with the desired depth it will use the default depth.
@@ -504,13 +504,13 @@ with the desired depth it will use the default depth.
 `Gdraw.VisualClass`
 
 A string ("StaticGray", "GrayScale", "StaticColor", "PsuedoColor",
-"TrueColor", "DirectColor")\
+"TrueColor", "DirectColor")
  FontForge will search for a visual with the given class (and possibly
 depth if the depth argument is specified too).
 
 `Gdraw.Colormap`
 
-An string ("Current", "Copy", "Private")\
+An string ("Current", "Copy", "Private")
  You can use this to control what FontForge does about the colormap on
 an 8bit screen
 
@@ -527,24 +527,24 @@ an 8bit screen
 
 `Gdraw.DoDithering`
 
-An integer (0 or 1)\
+An integer (0 or 1)
  You can use this to turn off dithering of images on an 8bit screen.
 
 `Gdraw.MultiClickTime`
 
-An integer (milliseconds)\
+An integer (milliseconds)
  The maximum amount of time allowed between two clicks for them to be
 considered a double (triple, etc.) click.
 
 `Gdraw.MultiClickWiggle`
 
-An integer (pixels)\
+An integer (pixels)
  The maximum number of pixels the mouse is allowed to move between two
 clicks and have them still be considered a double click.
 
 `Gdraw.TwoButtonFixup`
 
-A boolean\
+A boolean
  On a windows keyboard use the modifier key with the flag on it to
 simulate mouse button 2 (middle button). If this key is depressed when a
 mouse button is pressed or released then pretend it was button 2 that
@@ -562,7 +562,7 @@ tablet.
 
 `Gdraw.MacOSXCmd`
 
-A boolean\
+A boolean
  On Mac OS X the user will probably expect to use the Command (apple,
 cloverleaf) key to control the menu (rather than the Control key). If
 this is set then the command key will be mapped to the control key
@@ -570,84 +570,84 @@ internally.
 
 `Gdraw.MultiClickWiggle`
 
-An integer (pixels)\
+An integer (pixels)
  The maximum number of pixels the mouse is allowed to move between two
 clicks and have them still be considered a double click.
 
 `Gdraw.Keyboard`
 
-ibm | mac | sun | ppc | 0 | 1 | 2 | 3\
+ibm | mac | sun | ppc | 0 | 1 | 2 | 3
  Allows you to specify the type of keyboard. Currently this is only
 relevent when generating menus. The modifier keys are in different
 locations on different keyboards (under different operating systems) and
 if FontForge knows what keyboard you are using it can make the hot-keys
 have better labels.
 
--   ibm | 0\
+-   ibm | 0
      Uses the Control and Alt keys
--   mac | 1\
+-   mac | 1
      Uses the Command and Option keys (Mac OS/X, Mac keyboard)
--   ppc | 3\
+-   ppc | 3
      Uses the Control and Command keys (Suse ppc linux, Mac keyboard)
--   sun | 2\
+-   sun | 2
      Uses the Control and Meta keys
 
 `Gdraw.SelectionNotifyTimeout`
 
-An integer (seconds)\
+An integer (seconds)
  Gdraw will wait this many seconds after making a request for a
 selection (ie. when doing a Paste). If it gets no responce after that
 period it reports a failure.
 
 `Gdraw.Background`
 
-A [color](#color)\
+A [color](#color)
  Gdraw will use this as the default background color for the windows.
 
 `Gdraw.Foreground`
 
-A [color](#color)\
+A [color](#color)
  Gdraw will use this as the default foreground color for dialogs.
 
 `Gdraw.GGadget.Popup.Foreground`
 
-A [color](#color)\
+A [color](#color)
  Specifies the foreground color of popup (tooltip) messages.
 
 `Gdraw.GGadget.Popup.Background`
 
-A [color](#color)\
+A [color](#color)
  Specifies the background color of popup messages.
 
 `Gdraw.GGadget.Popup.Delay`
 
-An integer (milliseconds).\
+An integer (milliseconds).
  Specifies the amount of time the cursor must remain motionless before a
 popup message pops up.
 
 `Gdraw.GGadget.Popup.LifeTime`
 
-An integer (milliseconds).\
+An integer (milliseconds).
  Specifies the length of time the message will display.
 
 `Gdraw.GGadget.Popup.Font`
 
-A [font](#font)\
+A [font](#font)
  Specifies the font to use in a popup message.
 
 `Gdraw.GGadget.Progress.FillCol`
 
-A [color](#color)\
+A [color](#color)
  Specifies the color of the progress bar in the progress window.
 
 `Gdraw.GGadget.Progress.Background`
 
-A [color](#color)\
+A [color](#color)
  Specifies the background color of progress window.
 
 `Gdraw.GGadget.Progress.Font`
 
-A [font](#font)\
+A [font](#font)
  Specifies the font to use in a progress window.
 
 `Gdraw.GGadget.ImagePath`
@@ -655,7 +655,7 @@ A [font](#font)\
 A unix style path string, with directories separated by ":". The
 sequence "\~/" at the start of a directory will be interpreted as the
 user's home directory. If a directory is "=" then the installed pixmap
-directory will be used.\
+directory will be used.
  Specifies the search path for images. Specifically those used in the
 menus, and those used in various gadgets listed below.
 
@@ -668,122 +668,122 @@ abstract class. The following information may be supplied for any box:
 `...Box.BorderType`
 
 one of "none", "box", "raised", "lowered", "engraved", "embossed",
-"double"\
+"double"
  For a description of these see the css manual.
 
 `...Box.BorderShape`
 
-one of "rect", "roundrect", "ellipse", "diamond"\
+one of "rect", "roundrect", "ellipse", "diamond"
  Describes the basic shape of the box. (some ggadgets must be in
 rectangles).
 
 `...Box.BorderWidth`
 
-An integer (points)\
+An integer (points)
  Specifies the width of the box's border in points (NOT pixels)
 
 `...Box.Padding`
 
-An integer (points)\
+An integer (points)
  Specifies the padding between the interior of the box and the border
 
 `...Box.Radius`
 
-An integer (points)\
+An integer (points)
  Specifies the radius of a roundrect. Ignored for everything else.
 
 `...Box.BorderInner`
 
-A boolean (true, on or 1, false, off or 0)\
+A boolean (true, on or 1, false, off or 0)
  Specifies whether a line should be drawn inside the border.
 
 `...Box.BorderInnerCol`
 
-A [color](#color)\
+A [color](#color)
  Specifies a color of line that should be drawn inside a border.
 
 `...Box.BorderOuter`
 
-A boolean (true, on or 1, false, off or 0)\
+A boolean (true, on or 1, false, off or 0)
  Specifies whether a black line should be drawn outside the border.
 
 `...Box.BorderOuterCol`
 
-A [color](#color)\
+A [color](#color)
  Specifies a color of line that should be drawn outside a border.
 
 `...Box.ActiveInner`
 
-A boolean (true, on or 1, false, off or 0)\
+A boolean (true, on or 1, false, off or 0)
  Specifies whether a yellow line should be drawn inside the border when
 the gadget is active (not all gadgets support this).
 
 `...Box.DoDepressedBackground`
 
-A boolean (true, on or 1, false, off or 0)\
+A boolean (true, on or 1, false, off or 0)
  Changes the color of the background while a button is depressed.
 
 `...Box.GradientBG`
 
-A boolean (true, on or 1, false, off or 0)\
+A boolean (true, on or 1, false, off or 0)
  Draws a gradient from GradientStartCol (at top and bottom edge) to
 Background (in the center).
 
 `...Box.BorderBrightest`
 
-A [color](#color)\
+A [color](#color)
  The color of the brightest edge of the border (usually the left edge)
 
 `...Box.BorderBrighter`
 
-A [color](#color)\
+A [color](#color)
  The color of the next to brightest edge of the border (usually the top
 edge)
 
 `...Box.BorderDarkest`
 
-A [color](#color)\
+A [color](#color)
  The color of the darkest edge of the border (usually the right edge)
 
 `...Box.BorderDarker`
 
-A [color](#color)\
+A [color](#color)
  The color of the next to next to darkest edge of the border. (usually
 the bottom edge)
 
 `...Box.NormalBackground`
 
-A [color](#color)\
+A [color](#color)
  The color of a normal background (not disabled, not depressed)
 
 `...Box.NormalForeground`
 
-A [color](#color)\
+A [color](#color)
  The color of a normal foreground (not disabled)
 
 `...Box.DisabledBackground`
 
-A [color](#color)\
+A [color](#color)
  The color of a disabled background .
 
 `...Box.DisabledForeground`
 
-A [color](#color)\
+A [color](#color)
  The color of a normal foreground.
 
 `...Box.ActiveBorder`
 
-A [color](#color)\
+A [color](#color)
  The color of an ActiveInner border.
 
 `...Box.PressedBackground`
 
-A [color](#color)\
+A [color](#color)
  The color of a depressed background.
 
 `...Box.GradientStartCol`
 
-A [color](#color)\
+A [color](#color)
  Only meaningful if GradientBG is set. Draws a gradient of colors for
 the background with this color as the start point at the top and bottom
 edges of the gadget, and Background as the end point in the center of
@@ -791,12 +791,12 @@ it.
 
 `...Font`
 
-A [font](#font)\
+A [font](#font)
  Specifies the default font for a ggadget.
 
 `Gdraw.GButton...       Gdraw.GDefaultButton...       Inherits from GButton       Gdraw.GCancelButton...       Inherits from GButton       Gdraw.GLabel...       Gdraw.GDropList...       Gdraw.GListMark... controls       the shape of the mark used to show the menu of a combo box.       Gdraw.GRadio... affects the       text of the radio       GDraw.GRadioOn... -- affects the shape used (above, the diamond to the left       of the text) of an on radio button        GDraw.GRadioOff... -- affects the shape used of an off radio button        Gdraw.GCheckBox...       GDraw.GCheckBoxOn...       GDraw.GCheckBoxOff...       Gdraw.GTextField...       Gdraw.GComboBox... Inherits       from GTextField       Gdraw.GComboBoxMenu...       Inherits from GComboBox (This is the box drawn around the GListMark in a       ComboBox)       Gdraw.GNumericField...        Inherits from GTextField       Gdraw.GNumericFieldSpinner...        Inherits from       GNumericField       Gdraw.GList...       Gdraw.GScrollBar...       Gdraw.GScrollBarThumb...       Gdraw.GGroup... -- a frame around groups of gadgets.       Gdraw.GLine...       Gdraw.GMenu...       Gdraw.GMenuBar...       Gdraw.GTabSet...`
 
-As above.\
+As above.
  Specifies the box, font, color, etc. for this particular type of
 ggadget.
 
@@ -817,52 +817,52 @@ actually want to style it.
 
 `Gdraw.GScrollBar.Width`
 
-An integer (points)\
+An integer (points)
  Specifies the scrollbar width in points (for horizontal scrollbars it
 specifies the height)
 
 `Gdraw.GListMark.Width`
 
-An integer (points)\
+An integer (points)
  Specifies the width for the little mark at the end of comboboxes and
 drop lists.
 
 `Gdraw.GListMark.Image`
 
-A filename of an image file\
+A filename of an image file
  Will be used instead of GListMark.Box if present. This is either a
 fully qualified pathname, or the filename of an image in the pixmap
 directory.
 
 `Gdraw.GListMark.DisabledImage`
 
-A filename of an image file\
+A filename of an image file
  Will be used instead of GListMark.Box for disabled (non-clickable)
 instances, if present. This is either a fully qualified pathname, or the
 filename of an image in the pixmap directory.
 
 `Gdraw.GMenu.Grab`
 
-A boolean\
+A boolean
  Controls whether menus do pointer grabs. Debugging is easier if they
 don't. Default is for them to do grabs.
 
 `Gdraw.GMenu.MacIcons`
 
-A boolean\
+A boolean
  Controls whether menus show shortcuts as the standard mac icons
 (cloverleaf for Command key, up arrow for shift, \^ for control and
 wierd squiggle for Option(Meta/Alt)) or as text ("Cnt-Shft-A"). Default
 is True on the mac and False elsewhere.
 
   ---------------------------- -------------------------------
-  ![](img/MenuWithMacIcons.png)\   ![](img/MenuWithoutMacIcons.png)\
+  ![](img/MenuWithMacIcons.png)\   ![](img/MenuWithoutMacIcons.png)
    True                         False
   ---------------------------- -------------------------------
 
 `Gdraw.GRadioOn.Image`
 
-A filename of an image file.\
+A filename of an image file.
  Used for drawing the "On" state of a radio button. (This is drawn
 within the `GRadioOn` box, if you intend the image to be the entire
 radio marker you should probably make the `GRadioOn` box be a blank
@@ -871,7 +871,7 @@ of an image in the pixmap directory.
 
 `Gdraw.GRadioOn.DisabledImage`
 
-A filename of an image file.\
+A filename of an image file.
  Used for drawing the "On" state of a disabled (non-clickable) radio
 button. (This is drawn within the `GRadioOn` box, if you intend the
 image to be the entire radio marker you should probably make the
@@ -880,7 +880,7 @@ pathname, or the filename of an image in the pixmap directory.
 
 `Gdraw.GRadioOff.Image`
 
-A filename of an image file.\
+A filename of an image file.
  Used for drawing the "Off" state of a radio button. (This is drawn
 within the `GRadioOff` box, if you intend the image to be the full radio
 marker you should probably make the `GRadioOff` box be a blank
@@ -889,7 +889,7 @@ of an image in the pixmap directory.
 
 `Gdraw.GRadioOff.DisabledImage`
 
-A filename of an image file.\
+A filename of an image file.
  Used for drawing the "Off" state of a disabled (non-clickable) radio
 button. (This is drawn within the `GRadioOff` box, if you intend the
 image to be the full radio marker you should probably make the
@@ -898,7 +898,7 @@ pathname, or the filename of an image in the pixmap directory.
 
 `Gdraw.GCheckBoxOn.Image`
 
-A filename of an image file.\
+A filename of an image file.
  Used for drawing the "On" state of a check box button. (This is drawn
 within the `GCheckBoxOn` box, if you intend the image to be the complete
 check box marker you should probably make the `GCheckBoxOn` box be a
@@ -907,7 +907,7 @@ filename of an image in the pixmap directory.
 
 `Gdraw.GCheckBoxOn.DisabledImage`
 
-A filename of an image file.\
+A filename of an image file.
  Used for drawing the "On" state of a disabled (non-clickable) check box
 button. (This is drawn within the `GCheckBoxOn` box, if you intend the
 image to be the complete check box marker you should probably make the
@@ -916,7 +916,7 @@ qualified pathname, or the filename of an image in the pixmap directory.
 
 `Gdraw.GCheckBoxOff.Image`
 
-A filename of an image file.\
+A filename of an image file.
  Used for drawing the "Off" state of a check box button. (This is drawn
 within the `GCheckBoxOff` box, if you intend the image to be the sole
 check box marker you should probably make the `GCheckBoxOff` box be a
@@ -925,7 +925,7 @@ filename of an image in the pixmap directory.
 
 `Gdraw.GCheckBoxOff.DisabledImage`
 
-A filename of an image file.\
+A filename of an image file.
  Used for drawing the "Off" state of a disabled )non-clickable) check
 box button. (This is drawn within the `GCheckBoxOff` box, if you intend
 the image to be the sole check box marker you should probably make the
@@ -934,7 +934,7 @@ qualified pathname, or the filename of an image in the pixmap directory.
 
 `Gdraw.GVisibilityBoxOn.Image`
 
-A filename of an image file.\
+A filename of an image file.
  Used for drawing the "On" state of a visibility box button. (This is
 the "eye" drawn within the layers palette of glyph view). This is either
 a fully qualified pathname, or the filename of an image in the pixmap
@@ -942,7 +942,7 @@ directory.
 
 `Gdraw.GVisibilityBoxOn.DisabledImage`
 
-A filename of an image file.\
+A filename of an image file.
  Used for drawing the "On" state of a disabled (non-clickable)
 visibility box button. (This is the "eye" drawn within the layers
 palette of glyph view). This is either a fully qualified pathname, or
@@ -950,7 +950,7 @@ the filename of an image in the pixmap directory.
 
 `Gdraw.GVisibilityBoxOff.Image`
 
-A filename of an image file.\
+A filename of an image file.
  Used for drawing the "Off" state of a visibility box button. (This is
 the "eye" drawn within the layers palette of glyph view). This is either
 a fully qualified pathname, or the filename of an image in the pixmap
@@ -958,7 +958,7 @@ directory.
 
 `Gdraw.GVisibilityBoxOff.DisabledImage`
 
-A filename of an image file.\
+A filename of an image file.
  Used for drawing the "Off" state of a disabled (non-clickable)
 visibility box button. (This is the "eye" drawn within the layers
 palette of glyph view). This is either a fully qualified pathname, or
@@ -966,40 +966,40 @@ the filename of an image in the pixmap directory.
 
 `Gdraw.GMatrixEdit.TitleFont`
 
-A font.\
+A font.
  The font used to draw titles in a GMatrixEdit. By default this is
 smaller and bolder than the font used for text in the matrix edit.
 
 `Gdraw.GMatrixEdit.TitleBG`
 
-A color.\
+A color.
  Background color used for the titles of a matrix edit.
 
 `Gdraw.GMatrixEdit.TitleFG`
 
-A color.\
+A color.
  Foreground color used to draw the text of the titles of a matrix edit.
 
 `Gdraw.GMatrixEdit.TitleDivider`
 
-A color.\
+A color.
  Color used to draw the divider lines in the titles of a matrix edit.
 
 `Gdraw.GMatrixEdit.RuleCol`
 
-A color.\
+A color.
  Used to draw the horizontal and vertical lines in the body of a matrix
 edit.
 
 `Gdraw.GMatrixEdit.FrozenCol`
 
-A color.\
+A color.
  Used to draw text in a cell which is frozen (cannot but updated by the
 user)
 
 `Gdraw.GMatrixEdit.ActiveCol`
 
-A color.\
+A color.
  Used to draw text in the cell which is active (and used for the
 "\<New\>" entry).
 
@@ -1009,35 +1009,35 @@ Colors
 
 Colors may be specified as:
 
--   rgb(r,g,b)\
+-   rgb(r,g,b)
      where r,g and b are doubles between 0 and 1.0
--   argb(a,r,g,b)\
-     where a,r,g, and b are doubles between 0 and 1.0\
+-   argb(a,r,g,b)
+     where a,r,g, and b are doubles between 0 and 1.0
      (The alpha channel is only supported in windows with cairo -- that
     is the glyph view. Alpha 1.0 is fully opaque, alpha 0.0 should be
     fully transparent, values in between are translucent. Since drawing
     something fully transparent has no effect, FontForge treats
     transparent spot colors as fully opaque).
--   rgb(r%,g%,b%)\
+-   rgb(r%,g%,b%)
      where r, g, and b are doubles between 0% and 100%
--   hsv(h,s,v)\
+-   hsv(h,s,v)
      A color expressed as hue (between 0 and 360), saturation (0.0 and
     1.0) and value (0.0 and 1.0)
--   hsl(h,s,l)\
+-   hsl(h,s,l)
      A color expressed as hue (between 0 and 360), saturation (0.0 and
     1.0) and luminosity (0.0 and 1.0)
--   r g b\
+-   r g b
      where r, g, and b are decimal integers between 0 and 255
--   \#rgb\
+-   \#rgb
      where r, g, and b are hex digits between 0 and 15 (0xf)
--   \#rrggbb\
+-   \#rrggbb
      where rr, gg, bb are hex numbers between 0x00 and 0xff
--   \#aarrggbb\
-     where aa, rr, gg, bb are hex numbers between 0x00 and 0xff\
+-   \#aarrggbb
+     where aa, rr, gg, bb are hex numbers between 0x00 and 0xff
      (The alpha channel is only supported in cairo windows. If alpha is
     0, then fontforge will treat the color as opaque because drawing a
     completely transparent spot color does nothing).
--   \#rrrrggggbbbb\
+-   \#rrrrggggbbbb
      where rrrr, gggg, bbbb are hex numbers between 0x0000 and 0xffff
 -   or one of the color names accepted on the net (red, green, blue,
     cyan, magenta, yellow, white, black, maroon, olive, navy, purple,
@@ -1045,8 +1045,8 @@ Colors may be specified as:
 
 Fonts
 
-A font may be specified as:\
- \<boldness\> \<italicness\> \<pointsize\> \<familyname\>\
+A font may be specified as:
+ \<boldness\> \<italicness\> \<pointsize\> \<familyname\>
  (I know the order looks a bit weird but that's what is used by css).
 
 -   \<boldness\> can be:
@@ -1068,9 +1068,9 @@ A font may be specified as:\
 
 Examples
 
--   bold 14pt helvetica\
+-   bold 14pt helvetica
      Helvetica Bold at 14 points
--   italic 10pt times\
+-   italic 10pt times
      Times italic at 10 points
 
 Keyboards and Mice.

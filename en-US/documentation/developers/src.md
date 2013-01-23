@@ -4,7 +4,7 @@ layout: default
 ---
 
 
-High level description of what each source file contains...\
+High level description of what each source file contains...
  **This page is grievously out of date**
 ============================================================
 
@@ -120,7 +120,7 @@ there's a dialog for each
 -   A reference to another character is selected (in the foreground)
 -   An image is selected (in the background)
 -   Or if more than one thing is (or no things are) selected, then
-    general information on the character itself\
+    general information on the character itself
      This last is also used by the fontview.
 
 cvhints.c

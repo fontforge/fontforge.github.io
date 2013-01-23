@@ -107,7 +107,7 @@ generally sufficient:
      ^D
 
 (where \^D represents control-D, obtained by holding down the control
-key while depressing d. \
+key while depressing d. 
  And for the csh family you would type:
 
      $ cat >>~/.cshrc

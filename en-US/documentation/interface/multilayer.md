@@ -171,7 +171,7 @@ A Radial gradient specifies a center point and a final radius, the start
 position (and color) is the center point and colors change in concentric
 circles until the final radius (and final color) is attained.
 
-![](img/RadialGradient.png) ![](img/RadialGradientDlg.png)\
+![](img/RadialGradient.png) ![](img/RadialGradientDlg.png)
 
 ### Patterns
 

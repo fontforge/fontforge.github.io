@@ -4,7 +4,7 @@ layout: default
 ---
 
 
-sfddiff\
+sfddiff
  A program for comparing fonts
 ==============================
 

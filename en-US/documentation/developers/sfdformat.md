@@ -7,14 +7,14 @@ layout: default
 Spline Font Database
 ====================
 
-> **TYSON:**\
+> **TYSON:**
 >   What is the meaning of this?
 >
-> **THOMAS:**\
->               That's the most relevant\
+> **THOMAS:**
+>               That's the most relevant
 >   Question in the world.
 >
-> *The Lady's not for Burning*\
+> *The Lady's not for Burning*
 >  Christopher Fry
 
 **This page is often out of date. I thought it was a correct on 16 Feb
@@ -179,7 +179,7 @@ One entry for each layer to name it and describe its splines «Layer: 1 1
 "Fore" 0» means this is layer 1, it has quadratic splines, is named
 "Fore" and is not a background layer, while «Layer: 2 0 "Cubic\_Fore" 0»
 means this is layer 2, it does not have quadratic splines (so it has
-cubic), is named "Cubic\_Fore" and is also not a background layer.\
+cubic), is named "Cubic\_Fore" and is also not a background layer.
  Layer \<layer-number\> \<quadratic-flag\> \<name\>
 [\<background-flag\>]
 
@@ -613,7 +613,7 @@ header. The are introduced by one of the keywords: "ContextPos2",
 ended by "EndFPST". Contextual chaining lookups may check previous
 glyphs (called backtracking), current glyphs and lookahead glyphs, while
 Contextual lookups only check for a string of current glyphs. There are
-four formats:\
+four formats:
  By coverage tables
 
 >     ChainSub2: coverage "calt-1" 0 0 0 1
@@ -889,7 +889,7 @@ of flags whose bits have the following meanings:
 
   0x40    point is to be rounded in y (truetype hinting. doesn't really work)
 
-  0x80    point was interpolated between two control points (when\
+  0x80    point was interpolated between two control points (when
            read from a ttf file) and so has no point number of its own
 
   0x100   point should never be interpolated
@@ -1047,7 +1047,7 @@ final number is a set of truetype flags:
 
 -   1 =\> Use My Metrics
 -   2 =\> Round to Grid
--   4 =\> Position reference by point match (rather than by offset)\
+-   4 =\> Position reference by point match (rather than by offset)
      If this is set there will be two additional numbers, the first
     indicating the point number in the base glyph, and the second the
     point number in the current reference.
@@ -1288,14 +1288,14 @@ Specifies the tfm height and depth of a glyph.
 >     TopRightVertex: 2 0,0{13-15 1,0,1} 100,10
 
 Specifies the Italic Correction (either from a tfm file or the MATH
-table). Italic Correction may also include a device table.\
+table). Italic Correction may also include a device table.
  Specifies the horizontal placement of top accents in mathmatical
-typesetting. This may also include a device table.\
+typesetting. This may also include a device table.
  Specifies the current glyph is an extended shape (and therefore may
 need special superscript positioning).
 
 For both glyph variants and construction the word "Vertical" may be
-replaced with Horizontal for glyphs that grow horizontally.\
+replaced with Horizontal for glyphs that grow horizontally.
  The first number in GlyphConstruction is the number of components. Each
 component is represented by a glyphname, followed by "%", followed by an
 indication of whether this is an extender, followed by the start overlap
@@ -1432,8 +1432,8 @@ pixel).
 Optionally there may be a set of BDF properties. If there are any
 properties there will be a line "BDFStartProperties:" with a count of
 properties. There should be that many property lines, and then a
-"BDFEndProperties" line. Each property is of the form:\
- `<NAME> <TYPE> <VALUE>`\
+"BDFEndProperties" line. Each property is of the form:
+ `<NAME> <TYPE> <VALUE>`
  Where \<NAME\> is the property name, \<TYPE\> is 0 for a string, 1 for
 an atom, 2 for an int, 3 for an unsigned int. In addition \<TYPE\> may
 have a 16 ored to one of the above values indicating the line is a true

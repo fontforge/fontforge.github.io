@@ -64,7 +64,7 @@ This metrics view will adjust either the advance width or kerning
 
 Set Width...
 
-![](img/setwidth.png)\
+![](img/setwidth.png)
  The Set Width command allows you to change the width of the current
 glyph (in the outline view) or all selected glyphs (in the font view).
 You may either set the width to an absolute value, change the width by
@@ -99,9 +99,9 @@ manipulate kerning classes.
 
 Remove All Kern Pairs
 
-In the font view removes all kern pairs (and kern classes) in the font.\
+In the font view removes all kern pairs (and kern classes) in the font.
  In the outline glyph view removes all kern pairs where the current
-glyph is the left hand glyph.\
+glyph is the left hand glyph.
  Not present in the Metrics or Bitmap views.
 
 Kern Pair Closeup...
@@ -110,7 +110,7 @@ Kern Pair Closeup...
 [Allows](metricsview.html#kernpair) you to get a look at kerning between
 two glyphs at different point-sizes and to build a "[Device
 Table](metricsview.html#DeviceTable)" (which allows small corrections
-from the standard behavior at specified point sizes)\
+from the standard behavior at specified point sizes)
  Not present in the Bitmap view.
 
 VKern By Classes...
@@ -133,15 +133,15 @@ with a value of -50)
 Remove All VKern Pairs
 
 In the font view removes all vertical kern pairs (and kern classes) in
-the font.\
+the font.
  In the outline glyph view removes all kern pairs where the current
-glyph is the left hand glyph.\
+glyph is the left hand glyph.
  Not present in the Metrics or Bitmap views.
 
 Set Vertical Advance...
 
 If vertical metrics are enabled for the font this will be active in the
-font and outline glyph view.\
+font and outline glyph view.
  It behaves exactly like Set Width... except it works on the vertical
 advance rather than the horizontal advance (width).
 

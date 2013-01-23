@@ -161,7 +161,7 @@ glyph.
 Substitutions may be set with the [Element-\>Glyph Info](charinfo.html)
 command.
 
-Goto\
+Goto
  Replace Glyph...
 
 In the Font, Outline, Bitmap and Metrics views this brings up a dialog
@@ -190,7 +190,7 @@ it will be selected
 In the bitmap, outline and metrics views, the current glyph will change
 to be the one specified.
 
-Insert Glyph Before...\
+Insert Glyph Before...
  Insert Glyph After...
 
 In the metrics view this brings up a dialog similar to the previous one
@@ -249,7 +249,7 @@ of glyphs from a given anchor class, or all combinations from all
 anchored classes.
 
 If invoked from the outline glyph view it will provide a list of all
-anchored combinations involving that glyph.\
+anchored combinations involving that glyph.
  Selecting a combination and double clicking on it will bring up an
 [Anchor Control](anchorcontrol.html)dialog.
 
@@ -320,7 +320,7 @@ In the font view you may choose how large you want the rasterized
 representation of the outline view to be. The default is to rasterize it
 on a 24 pixel block. If this item is checked then a 24 pixel version of
 the outline font is displayed, selecting it will display a 24 pixel
-version of the font.\
+version of the font.
  (Exactly one em-square of the glyph will be displayed, if the glyph
 extends above the ascent or below the descent those features will be
 clipped)
@@ -381,8 +381,8 @@ In the font view or metrics view there is a list of all generated bitmap
 fonts. You may select to have one of them displayed in the view rather
 than a rasterized version of the outline font. If one is checked then
 that one is currently displayed, if you select one then it will be
-displayed.\
- In CID keyed fonts this list will not be present.\
+displayed.
+ In CID keyed fonts this list will not be present.
  If your font database includes some greymap fonts then these will be
 listed here too, as usual they will be displayed as
 \<pixel-size\>@\<bits-per-pixel\>
@@ -525,7 +525,7 @@ fonts. Controls whether the shades of grey palette is visible or not.
 Dock Palettes
 
 Allows you to control whether you want the palettes free standing or
-docked in the current view.\
+docked in the current view.
  The window manager under gnome does not handle this properly. If you
 want docked palettes under gnome: Open a window with palettes, select
 docked palettes (the palettes will not dock), close the window, reopen

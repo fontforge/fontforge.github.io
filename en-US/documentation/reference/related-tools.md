@@ -8,7 +8,7 @@ Related Tools
 
 -   BDF editors
     -   [gbdfed](http://crl.nmsu.edu/~mleisher/gbdfed.html) -- bdf
-        editor\
+        editor
          Formerly called
         [xmbdfed](http://crl.nmsu.edu/~mleisher/xmbdfed.html)
     -   [gfe](http://www.gnu.org/software/gfe/gfe.html) -- GNU font

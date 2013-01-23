@@ -14,12 +14,12 @@ tilt perhaps).
 To install a wacom tablet on your (linux) machine you must do two
 things:
 
--   Install a kernel module "wacom.o" into your system\
+-   Install a kernel module "wacom.o" into your system
      Unfortunately the module which ships with linux (Nov 2002) does not
     work but John Joganic has [an excellent
     website](http://linuxwacom.sf.net/) that will help you install a
     working driver.
--   Install an X11 driver "wacom\_drv.o"\
+-   Install an X11 driver "wacom\_drv.o"
      Again the X11 driver that ships with X does not work for USB
     tablets. Again John's website provides a patched driver.
 

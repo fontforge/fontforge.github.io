@@ -4,7 +4,7 @@ layout: default
 ---
 
 
-[Current fontforge changes](changelog.html)\
+[Current fontforge changes](changelog.html)
  [Older fontforge changes](oldchangelog.html)
 
 -   1-Mar-2004
@@ -822,7 +822,7 @@ layout: default
             1.  There is an apple feature which matches the otf tag
             2.  The sub-table is in coverage format
             3.  The sub-table contains either exactly one nested single
-                glyph replacement substitution, or\
+                glyph replacement substitution, or
                  it contains exactly two single glyph replacements and
                 one of them refers to the last glyph matched (and the
                 other does not)
@@ -1689,7 +1689,7 @@ layout: default
     -   Problems reading GSUB table of a ttc files (problems remain, but
         we should no longer crash).
     -   Reorganized libraries. Now FontForge has an additional
-        dependency:\
+        dependency:
          [libuninameslist](http://libuninameslist.sf.net). Please
         install this.
     -   With libuninameslist FontForge can display the Unicode
@@ -2406,7 +2406,7 @@ layout: default
     -   removed some debugging code inadvertently left in after the rle
         fix.
     -   Added support for [X Input Methods](xim.html) (to do CJK
-        character input properly)\
+        character input properly)
          This only works if X\_HAVE\_UTF8\_STRING is defined -- an XFree
         4.0.2 extension (ie. not on solaris)
     -   Added a possible fix to a resizing problem for some window
@@ -3020,7 +3020,7 @@ layout: default
 
 -   9-Feb-2002
     -   FontForge will now use freetype (if available) to generate
-        bitmaps for the fonts (results are much better).\
+        bitmaps for the fonts (results are much better).
          It still does its own rasterizing for the fontview (there's a
         lot of overhead involved with freetype, and this needs to be
         fastish)
@@ -3043,10 +3043,10 @@ layout: default
     -   I think I've figured out how Apple does asian bitmaps now. They
         don't use NFNTs at all (or they do, but those NFNT are tiny
         stubs with no real data in them). All the data are in the sfnt.
-        I should produce them properly now.\
+        I should produce them properly now.
          -- Except I don't.
     -   I've also added the ability to create bitmap only sfnts for the
-        mac.\
+        mac.
          -- Which also isn't recognized by the mac.
     -   Made it possible for scripts to generate bitmaps without
         generating an outline font
@@ -3154,7 +3154,7 @@ layout: default
 
 -   21-Jan-2002
     -   Import will now allow you to import background images from the
-        font view\
+        font view
          (and the default setting of "Background" for "pk" files has
         been set to true)
     -   Added a scripting command to access
@@ -3216,8 +3216,8 @@ layout: default
         encodings of "-1"
     -   Fixed several bugs with ttf bitmap tables.
     -   Added a mechanism for specifying a font inside a truetype
-        collection from the command line:\
-         `    $ fontforge "gulim.ttc(GulimChe)"`\
+        collection from the command line:
+         `    $ fontforge "gulim.ttc(GulimChe)"`
          will load the GulimChe font within the collection file.
 
 -   12 Jan 2002
@@ -3659,14 +3659,14 @@ layout: default
         it's there
     -   Added two new concepts to hinting which only apply to truetype:
         -   You can specify that a certain point should be rounded to
-            the grid in x or y\
+            the grid in x or y
              (note: points on hints don't need this, they'll always be
             rounded)
         -   You can specify that the x or y distance between two points
-            should never vanish (this is called Minimum Distance)\
+            should never vanish (this is called Minimum Distance)
              (note: each hint implies one of these going from one side
             of the hint to the other, also there is an implied one of
-            these between any two non-overlapping hints)\
+            these between any two non-overlapping hints)
              You can also specify that the distance between a point and
             the width should never vanish. This means that there will
             always be at least one pixel between that point and the
@@ -3711,7 +3711,7 @@ layout: default
 -   20-Oct-2001
     -   FontForge generated awful instructions (hints) for truetype
         characters. I've fixed some of the more egregious problems (I
-        hope).\
+        hope).
          In particular:
         -   Diagonal hints were completely broken
         -   Overlapping hints didn't work either
@@ -3918,7 +3918,7 @@ layout: default
         fit into a "seac" then try to use subroutines. Subroutines are
         possible if:
         -   None of the references in the character use hint
-            substitution (or flex hints)\
+            substitution (or flex hints)
                    - or -
         -   Only one of the references uses hint substitution and it
             isn't translated (not moved)
@@ -4014,7 +4014,7 @@ layout: default
         (presumably other shapes, but I didn't check). It also would
         randomly leave paths counter-clockwise when they should have
         been clockwise.
-    -   Finally!\
+    -   Finally!
          Often when joining two paths (or closing one path) the point
         would jump when you released the mouse. I finally figured out
         why.
@@ -4070,7 +4070,7 @@ layout: default
 
 -   15-July-2001
     -   FontForge should now be able to read truetype collection files
-        and do something reasonable --\
+        and do something reasonable --
          At least in theory. I don't have any truetype collection files
         to test on.
     -   Oh dear. The rasterizer was looking at vertical hints when it
@@ -4531,9 +4531,9 @@ layout: default
 
 -   5 Mar 2001
     -   Minimal truetype instructing (hinting) is now in place.
-        ![](img/HI.nohints.png)\
+        ![](img/HI.nohints.png)
          no hints
-        ![](img/HI.hints.png)\
+        ![](img/HI.hints.png)
          hints
     -   This includes applying instructions to all points that lie on
         the Hints generated for PostScript, a certain amount of extra

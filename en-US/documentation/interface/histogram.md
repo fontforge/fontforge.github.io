@@ -12,12 +12,12 @@ for setting the some of the global hinting values that live in the
 PostScript [Private dictionary](fontinfo.html#Private). The dialog can
 display
 
--   the distribution of horizontal stem widths\
+-   the distribution of horizontal stem widths
      which is helpful in setting [StdHW] and [StemSnapH]
--   the distribution of vertical stem widths\
+-   the distribution of vertical stem widths
      which is helpful in setting [StdVW] and [StemSnapV]
 -   and the distribution of the minimal and maximal vertical positions
-    of each glyph\
+    of each glyph
      which is helpful in setting [BlueValues] and [OtherBlues]
 
 Moving the mouse around the histogram at the top of the dialog will

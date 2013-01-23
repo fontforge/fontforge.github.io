@@ -44,7 +44,7 @@ The Element Menu
 -   Transformations
     -   [Transform](#Transform)...
     -   [Point of View Projection](#PoV)...
-    -   [Non-Linear Transform](elementmenu.html#Non-Linear)...\
+    -   [Non-Linear Transform](elementmenu.html#Non-Linear)...
     -   [Flip Horizontally](#Flip)
     -   [Flip Vertically](#FlipV)
     -   [Rotate 90° CW](#Rotate)
@@ -110,7 +110,7 @@ compiling FontForge.
 
 Font Info
 
-In all views this brings up the [Font Info dialog](fontinfo.html).\
+In all views this brings up the [Font Info dialog](fontinfo.html).
  CID keyed fonts can set information on the CID font as a whole (rather
 than just the current sub-font, which is what this command does) from
 [CID-\>CID Font Info](cidmenu.html#FontInfo).
@@ -211,7 +211,7 @@ page](validation.html) for more info.
 
 Bitmap Strikes Available...
 
-This brings up a list of pixel sizes for bitmap fonts.\
+This brings up a list of pixel sizes for bitmap fonts.
  ![](img/bitmapsavail.png) If you have bitmap fonts this will show their
 pixel sizes. If you remove a size that is in the list then that font
 will be deleted from the sfd file. If you add a size then that size font
@@ -258,14 +258,14 @@ If you want to generate a blank strike (one containing no glyphs) then
 turn off the `[] Create Rasterized Strikes` checkbox.
 
 In CID keyed fonts there will not be a set of bitmaps for each sub font,
-instead the entire complex of sub-fonts share bitmaps. \
+instead the entire complex of sub-fonts share bitmaps. 
 
 ![](img/greymapsavail.png)FontForge also supports anti-aliased bitmap fonts,
 and you can use this dialog to generate them. If you want to generate a
 12 point anti-aliased font with 8 bits per pixel you would type 12@8
 into the dialog above. FontForge supports 1, 2, 4 and 8 bit per pixel
 fonts (a 1 bit per pixel font is a standard bitmap, the others are
-greymaps).\
+greymaps).
  (New greymaps can not be created by scaling old greymaps, if you wish
 to generate a greymap font, you must have an outline font).
 
@@ -278,7 +278,7 @@ In the font view you can regenerate all selected glyphs, while in the
 bitmap and outline views you can regenerate the current glyph. You can
 pick what pixel sizes should be regenerated too (unlike the above
 command, removing a bitmap size from the regenerate list will not delete
-it).\
+it).
  As before, if you wish to change a greymap you should refer to it by
 \<pixel-size\>@\<bits-per-pixel\>.
 
@@ -307,9 +307,9 @@ For CJK glyphs it simply expands the strokes of the font outward.
 For LCG (Latin, Cyrillic, Greek) glyphs it expands the stroke outward
 and then moves everything below a certain point up, and everything above
 another point down. This is based on heuristics and will fail if a glyph
-is even the slightest bit unexpected.\
+is even the slightest bit unexpected.
  For other writing systems FontForge will do something, currently it
-will fall into one of the two cases above.\
+will fall into one of the two cases above.
  See the [Change Weight dialog](Styles.html#Embolden).
 
 Italic
@@ -406,7 +406,7 @@ Non-Linear Transform...
 
 [This dialog](transform.html#Non-Linear) allows you to perform a general
 transformation (which could be linear or which can be non-linear).
-Essentially you provide two equations for how x and y should be mapped.\
+Essentially you provide two equations for how x and y should be mapped.
 
 Flip Horizontally
 
@@ -450,12 +450,12 @@ Expand Stroke...
 Not in the bitmap view. In the font view it applies to all foreground
 splines in all selected glyphs. In the outline view it applies to all
 paths that have at least one point selected (or if no points are
-selected then it applies to all paths).\
- ![](img/twolines.png) ![](img/expandedlines.png)\
+selected then it applies to all paths).
+ ![](img/twolines.png) ![](img/expandedlines.png)
  Above is a simple example of what expand stroke can do. It takes the
 two open paths above left and turns them into the two closed paths
-right.\
- ![](img/expandstroke.png)\
+right.
+ ![](img/expandstroke.png)
  The Expand Stroke dialog gives you control over various aspects of the
 expansion process. First you can specify three types of pen nibs:
 
@@ -476,7 +476,7 @@ Make sure your glyph is oriented correctly with [Edit-\>Correct
 Direction](elementmenu.html#Correct)before removing a contour (if
 misoriented the wrong contour may be removed)).
 
-[How is this done?](pfaeditmath.html#Stroke)\
+[How is this done?](pfaeditmath.html#Stroke)
 
 Tile Path
 
@@ -512,9 +512,9 @@ everywhere), but if the contours run in opposite orientations then the
 inner path will be retained. Things get very strange if you have
 intersecting paths with different orientations.
 
-![](img/expandedlines.png) ![](img/overlappedlines.png)\
+![](img/expandedlines.png) ![](img/overlappedlines.png)
  This command is probably the buggiest in FontForge. So before FontForge
-invokes the command it will save the state to the error recovery file.\
+invokes the command it will save the state to the error recovery file.
  Warning: Splines which are tangent (or nearly so) cause problems.
 Points which are close together can cause problems.
 
@@ -629,10 +629,10 @@ Average Points
 This will look at all the selected points and find the coordinate with
 the least change. Then it will average find the median point on that
 axis and set all the selected points to have that value for the
-appropriate coordinate.\
+appropriate coordinate.
  So if you have a line which is almost horizontal, and select its
-endpoints and apply this command it will be horizontal.\
-                 ![](img/Constrain2_1.png)        ![](img/Constrain2_2.png)\
+endpoints and apply this command it will be horizontal.
+                 ![](img/Constrain2_1.png)        ![](img/Constrain2_2.png)
  (if you select exactly two points, and they lie close to a 45 diagonal,
 then they will be forced to the diagonal rather than to
 horizontal/vertical)
@@ -641,17 +641,17 @@ Space Points
 
 If you have three or more points selected then FontForge will figure out
 the coordinate that has the greatest change and will space the points
-out regularly along that axis.\
+out regularly along that axis.
  If you select one point (and that point is in the middle of a path)
 then (internally) the point's location will be expressed in a coordinate
 system which is rotated so that one axis is parallel to the line between
 the two points that surround the selected point. The selected point will
 be moved mid-way between the two on this axis, while its other
-coordinate remains fixed.\
+coordinate remains fixed.
  That's an extremely complicated way of saying: If the selected point is
 connected to two points which are on a horizontal line, then the
 selected point's x coordinate will be midway between the two, while its
-y coordinate remains unchanged.\
+y coordinate remains unchanged.
                  ![](img/Constrain1_1.png)        ![](img/Constrain1_2.png)
 
 Space Regions
@@ -664,7 +664,7 @@ which is within some maximum distance of at least one other point in the
 region. The purpose of this is to allow you to space out the stems of
 the letter "m" so that they regularly spaced horizontally. Sadly it
 won't work in many cases because in a serifed font the serifs will often
-be closer to each other than to their respective stems.\
+be closer to each other than to their respective stems.
                  ![](img/Spacem_1.png)         ![](img/Spacem_2.png)
 
 Make Parallel
@@ -673,7 +673,7 @@ If four points are selected, and there are two lines between them, then
 FontForge will make those lines parallel. If there are four lines
 between them (ie. they form a quadrilateral, then FontForge will turn it
 into a parallelogram. (note, this only works on lines, not on curved
-splines)\
+splines)
  The last point selected will be the one moved (sometimes FontForge
 doesn't remember which point was selected last, then it will just pick
 one randomly. If you don't want that to happen, select your points and
@@ -738,8 +738,8 @@ Correct Direction
 
 Not in the bitmap view. Sets the direction of outermost paths to be
 clockwise. The next path crossed will be made counter-clockwise, the
-next clockwise, etc.\
- This command may produce unexpected results if two splines cross.\
+next clockwise, etc.
+ This command may produce unexpected results if two splines cross.
  If a glyph contains a flipped reference, this command will be unable to
 correct the contours inside of the reference directly, instead it will
 offer to unlink the reference after which it can treat its (former)
@@ -764,20 +764,20 @@ anything that is currently in the foreground and put a reference to the
 base glyph and another reference to the accent glyph into the
 foreground. So if the current glyph were "À" then a reference to "A"
 would be added to it, and a reference to "\`" would be centered above
-the "A". \
+the "A". 
  If the current glyph is something like "agrave.sc" then it will be
 built using the rules of "agrave" but with ".sc" variants. So
 "agrave.sc" would contain "a.sc". For accents it will use "grave.sc" if
-it exists and "grave" if it does not.\
+it exists and "grave" if it does not.
  If [Copy From](editmenu.html#From) is set to All Fonts then any bitmaps
 will have a similar process done -- that is bitmap references will be
-created (even in the outline glyph view).\
+created (even in the outline glyph view).
  A more complete description is given in the section on [accented
 glyphs](accented.html).
 
 Build Duplicate
 
-Only in the font view.\
+Only in the font view.
  Consider the letters "Alpha" and "A". Often these may be represented by
 the same glyph. This command which change the encoding slightly so that
 the encoding for U+0391 will refer to the glyph named "A". Note that
@@ -817,7 +817,7 @@ FontForge does the following when merging CID-keyed fonts:
     better solution.
 
 FontForge will also copy advanced typographic features, kerning,
-ligatures, etc.\
+ligatures, etc.
  If one of the two glyphs of a kerning pair is in the mergee and the
 other in the merger then you will be given the option of either ignoring
 this kerning pair or adding it to the resultant font. This happens if

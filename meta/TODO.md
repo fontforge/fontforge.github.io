@@ -6,7 +6,6 @@ layout: default
 Content
 =============
 
-- fix lines ending in \
 - the \<dl\> tags on some page have been stripped. find them and copy it back.
 
 - make use of section variable

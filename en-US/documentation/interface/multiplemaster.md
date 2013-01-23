@@ -70,14 +70,14 @@ supports 4 axes for Apple's fonts too.
 Then s/he provides information about each axis, specifically:
 
 -   The axis type (Weight, Width, Optical Size, etc)
--   The range of design values over which this axis will vary\
+-   The range of design values over which this axis will vary
      Typically 1-999 for Weight and Width (1 being extremely thin or
     condensed, 999 being extremely black or extended) or 6-72 for
-    Optical Size\
+    Optical Size
      Apple fonts seem to have a different default range, .05-2.0
 -   A mapping from the design value range to the range [0 1] called the
     normalized range. (Apple maps to [-1,1] with the default design
-    mapped to 0)\
+    mapped to 0)
      This mapping is piecewise linear. Generally it will just be the
     obvious (1=\>0.0, 999=\>1.0) but it is possible to add intermediate
     points so that 500=\>.3 which would give a different scaling between
@@ -141,12 +141,12 @@ the sequence for Adobe's fonts, and then explain Apple's fonts.
 distortable font you wish to generate (Adobe Multiple Master, or Apple),
 the number of axes in your font, and the number of master designs, and a
 family name (which will be used for creating new fonts, if you need any
-new ones).\
+new ones).
 
 ![](img/mmaxes.png)The second screen gives you control of each axis. There
 are a few standard axis types defined by Adobe (and by Apple), but you
 could define your own. Note that there are fields which are disabled
-here, they only apply to Apple's fonts.\
+here, they only apply to Apple's fonts.
 
 ![](img/mmdesigns.png)Then you must assign a font to each of the master
 designs. You can either have FontForge create a new font for you (as
@@ -157,7 +157,7 @@ You must also specify the coordinates of this design along the axes. If
 you use the minimum number of designs they will all be extremes and the
 coordinate values will be either 0 or 1. Unless you are working with
 intermediate designs it is best to let FontForge initialize this field
-for you.\
+for you.
 
 ![](img/mmfuncs.png)This screen shows the postscript functions needed to map
 a design vector to a weight vector (ie. given positions on each of the
@@ -165,22 +165,22 @@ design axes, these produce blending coefficients for each master
 design). In most useful case FontForge is able to generate these
 functions automatically, but if you use intermediate designs things get
 too complicated for FontForge and you must enter the functions
-manually.\
+manually.
 
 ![](img/mmfinal.png)The last screen shows the default weights (which you may
 either enter directly or as coordinates along the design axes), the
-ForceBoldThreshold private dictionary entry).\
+ForceBoldThreshold private dictionary entry).
 
 ### An Apple distortable font.
 
 ![](img/mmappleaxes.png)The dialog looks very similar, but there are a few
 differences. In the Axis pane of the dlg, you must also specify a
-default value for the axis, and a translatable name.\
+default value for the axis, and a translatable name.
 
 ![](img/mmnamedstyles.png)Apple allows coordinates in design space to be
 named. Here the name "Black" is given to the location where Weight=3.2
 (the darkest value) and ![](img/mmnamingastyle.png)Width=1 (the default
-value). Again these names can be translated into multiple languages.\
+value). Again these names can be translated into multiple languages.
 
 A suggestion
 ------------

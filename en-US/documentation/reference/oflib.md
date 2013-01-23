@@ -50,7 +50,7 @@ reverse chronological order -- so the most recent font creations appear
 first in the list.
 
 You may restrict the list so that it only shows fonts by a certain
-designer, with a specified license, with certain tags, ...\
+designer, with a specified license, with certain tags, ...
 
 ![](img/generate-upload.png)Uploading Fonts
 ---------------------------------------

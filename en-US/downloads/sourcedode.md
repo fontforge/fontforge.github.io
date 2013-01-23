@@ -345,20 +345,20 @@ from:
     -   [libungif](http://gnuwin32.sourceforge.net/packages/libungif.htm)
     -   [libjpeg](http://www.ijg.org/)
 
--   [libxml2](http://xmlsoft.org/)\
+-   [libxml2](http://xmlsoft.org/)
      To parse SVG files and fonts
--   [libspiro](http://libspiro.sf.net/)\
+-   [libspiro](http://libspiro.sf.net/)
      Raph Levien's clothoid to bezier spline conversion routines. If
     this is available fontforge will allow you to edit with clothoid
     splines (spiro).
--   [libuninameslist](http://libuninameslist.sf.net)\
+-   [libuninameslist](http://libuninameslist.sf.net)
      To display unicode names and annotations.
--   [libiconv](http://www.gnu.org/software/libiconv/)\
+-   [libiconv](http://www.gnu.org/software/libiconv/)
      Only important for systems with no built-in iconv(). If not present
     FontForge contains a minimal version of the library which allows it
     to work. But if you want to use libiconv you must configure it with
     `--enable-extra-encodings`, as FontForge requires Shift-JIS.
--   [freetype](http://freetype.sf.net/)\
+-   [freetype](http://freetype.sf.net/)
      To do a better job rasterizing bitmaps, and to enable the truetype
     debugger.
     Some of FontForge's commands depend on you compiling freetype with
@@ -374,27 +374,27 @@ from:
     To enable the truetype debugger, FontForge needs to have the
     freetype source directories available when it is built (there are
     some include files there which it depends on)
--   [cygwin](http://www.cygwin.com/)\
+-   [cygwin](http://www.cygwin.com/)
      To build or run on a MS Windows system you need the cygwin
     environment and libraries.
--   libintl\
+-   libintl
      Is standard on most unixes. It is part of the fink package on the
     mac. Handles UI localization.
--   [libpython](http://www.python.org/)\
+-   [libpython](http://www.python.org/)
      If present when FontForge is compiled, allows the user to execute
     python scripts within fontforge (and you can configure fontforge so
     that fontforge's functionality can be imported into python -- that
     is fontforge both *extends* and *embeds* python)
--   [libX](http://x.org/)\
+-   [libX](http://x.org/)
      Normally FontForge depends on the X11 windowing system, but if you
     are just interested in the scripting engines (with no user
     interface), it may be built on systems without X (the configure
     script should figure this out).
--   [libcairo](http://www.cairographics.org/)\
+-   [libcairo](http://www.cairographics.org/)
      Cairo handles drawing anti-aliased splines in the outline glyph
     view. It is dependent on libfontconfig, libXft and perhaps other
     libraries.
--   [libpango](http://www.pango.org/)\
+-   [libpango](http://www.pango.org/)
      Pango draws text for complex scripts. It depends on glib-2.0,
     libfontconfig, libfreetype, libXft, and perhaps other libraries.
 -   Under Mac OS/X these libraries are available from the [fink
@@ -478,7 +478,7 @@ Documentation
         containing the Japanese translation of the manual
 
     See the general comments on the [git repository](#src-git)to see how
-    to access this.\
+    to access this.
      See the section on [installing git
     documentation](#installing-documentation-git)to see how to install
     the docs from the git tree

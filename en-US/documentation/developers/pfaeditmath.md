@@ -8,7 +8,7 @@ FontForge's math
 ================
 
 *Being a brief description of the mathematics underlying various of
-FontForge's commands \
+FontForge's commands 
  It is presumed that you understand about parameterized splines, if not
 look at the description of [Bézier curves](bezier.html).*
 
@@ -139,20 +139,20 @@ specify the slope at those end points). Here we know the end points, so
 all we need is to find the control points. The spline can also be
 expressed as a cubic polynomial:
 
-> S(t) = a\*t^3^ + b\*t^2^ + c\*t +d\
->      -- with --\
->  d = P0\
->  c = 3\*CP0 - 3\*P0\
->  b = 3\*CP1 - 6\*CP0 + 3\*P0\
->  a = P1 - 3\*CP1 + 3\*CP0 - P0\
->      substituting\
->  S(t) = (P1 - 3\*CP1 + 3\*CP0 - P0)\*t^3^ +\
->    (3\*CP1 - 6\*CP0 + 3\*P0)\*t^2^ +\
->    (3\*CP0 - 3\*P0)\*t +\
->    P0\
->      rearranging\
->  S(t) = (-3\*t^3^ + 3\*t^2^) \* CP1 +\
->    (3\*t^3^ - 6\*t^2^ + 3\*t) \* CP0 +\
+> S(t) = a\*t^3^ + b\*t^2^ + c\*t +d
+>      -- with --
+>  d = P0
+>  c = 3\*CP0 - 3\*P0
+>  b = 3\*CP1 - 6\*CP0 + 3\*P0
+>  a = P1 - 3\*CP1 + 3\*CP0 - P0
+>      substituting
+>  S(t) = (P1 - 3\*CP1 + 3\*CP0 - P0)\*t^3^ +
+>    (3\*CP1 - 6\*CP0 + 3\*P0)\*t^2^ +
+>    (3\*CP0 - 3\*P0)\*t +
+>    P0
+>      rearranging
+>  S(t) = (-3\*t^3^ + 3\*t^2^) \* CP1 +
+>    (3\*t^3^ - 6\*t^2^ + 3\*t) \* CP0 +
 >    (P1-P0)\*t^3^ + 3\*P0\*t^2^ - 3\*P0\*t + P0
 
 Now we want to minimize the sum of the squares of the difference between
@@ -193,7 +193,7 @@ only show one:
   --------- --------------------- ------------------------------------------------------------ -------------------------------------------------------------------------- -----
 
   --------- -------- --------------------- -------------------------------------------- --- --- --------------------- ------------------------ --------------------------------------------------------------------------
-            CP1~x~   ![](img/Sigma28x33.png)   (-3\*t^3^ + 3\*t^2^)\*(-3\*t^3^ + 3\*t^2^)   =   -   ![](img/Sigma28x33.png)   (-3\*t^3^ + 3\*t^2^)\*   [ (3\*t^3^ - 6\*t^2^ + 3\*t) \* CP0~x~ +\
+            CP1~x~   ![](img/Sigma28x33.png)   (-3\*t^3^ + 3\*t^2^)\*(-3\*t^3^ + 3\*t^2^)   =   -   ![](img/Sigma28x33.png)   (-3\*t^3^ + 3\*t^2^)\*   [ (3\*t^3^ - 6\*t^2^ + 3\*t) \* CP0~x~ +
                                                                                                                                                   (P1~x~-P0~x~)\*t^3^ + 3\*P0~x~\*t^2^ - 3\*P0~x~\*t + P0~x~ - P~i.x~ ]
   --------- -------- --------------------- -------------------------------------------- --- --- --------------------- ------------------------ --------------------------------------------------------------------------
 
@@ -209,7 +209,7 @@ CP1~x~
 
 (-3\*t^3^ + 3\*t^2^)\*
 
-[ (3\*t^3^ - 6\*t^2^ + 3\*t) \* CP0~x~ +\
+[ (3\*t^3^ - 6\*t^2^ + 3\*t) \* CP0~x~ +
    (P1~x~-P0~x~)\*t^3^ + 3\*P0~x~\*t^2^ - 3\*P0~x~\*t + P0~x~ - P~i.x~ ]
 
 * * * * *
@@ -264,7 +264,7 @@ end point: CP~1~ = P~1~ + r~1~ ![](img/delta1.png)
 
 We want to find r~0~ and r~1~.
 
-Converting from bezier control points into a polynomial gives us\
+Converting from bezier control points into a polynomial gives us
  S(t) = a\*t^3^ + b\*t^2^ + c\*t + d
 
 -   d = P~0~
@@ -281,7 +281,7 @@ Substituting we get
     r~1~\*![](img/delta1.png))
 
 For least squares we want to minimize ![](img/Sigma13x16.png)(S(t~i~) -
-P~i~)^2^.\
+P~i~)^2^.
  taking derivatives with both r0 and r1 we get:
 
   --------- --------------------- ------------------------------------------------------------------------ ------------------------------------------------ --------- --------------------- ------------------------------- ------------------------------------------------------------------- ------- --------- --------------------- ------------------------- ------------------------------------------------------------------- -------
@@ -312,11 +312,11 @@ This is very, very slow.
 #### ^1^Guessing values for t
 
 FontForge approximates the lengths of the two splines being merged. If
-Point~i~= Spline1(old-t~i~), then we approximate ti by\
-     t~i~ = old-t~i~ \*len(spline1)/(len(spline1)+len(spline2)\
- and if Point~i~= Spline2(old-t~i~)\
+Point~i~= Spline1(old-t~i~), then we approximate ti by
+     t~i~ = old-t~i~ \*len(spline1)/(len(spline1)+len(spline2)
+ and if Point~i~= Spline2(old-t~i~)
      t~i~ = len(spline1)/(len(spline1)+len(spline2) + old-t~i~
-\*len(spline2)/(len(spline1)+len(spline2)\
+\*len(spline2)/(len(spline1)+len(spline2)
  That is we do a linear interpolation of t based on the relative lengths
 of the two splines.
 
@@ -331,10 +331,10 @@ PostScript supports several variants on the theme of a circular pen, and
 FontForge tries to emulate them all. Basically PostScript "stroke"s a
 path at a certain width by:
 
-at every location on the curve\
-     find the normal vector at that location\
-     find the two points which are width/2 away from the curve\
-     filling in between those two points\
+at every location on the curve
+     find the normal vector at that location
+     find the two points which are width/2 away from the curve
+     filling in between those two points
  end
 
 This is essentially what a circular pen does. The only aberrations

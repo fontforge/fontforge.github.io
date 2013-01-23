@@ -17,7 +17,7 @@ opentype, mac resource, bitmap, svg, etc.).
 
 Some files (.ttc or mac resource) may contain more than one outline
 font. You may pick which font you want by following the filename with
-the fontname in parentheses, thus:\
+the fontname in parentheses, thus:
 
 >     $ fontforge "gulim.ttc(GulimChe)"
 
@@ -46,8 +46,8 @@ it called "foo.ttf"
 
 -cmap type
 
-Where type may be\
-     Current | Copy | Private\
+Where type may be
+     Current | Copy | Private
  Gives the user some control over [colormap
 handling](xres.html#Colormap)on 8bit screens.
 
@@ -72,7 +72,7 @@ tablet.
 
 Bring up a [browser](helpmenu.html) looking at this documentation.
 
--lang={py|ff}\
+-lang={py|ff}
  -lang {py|ff}
 
 Specifies whether the script should be interpretted as a python script
@@ -84,21 +84,21 @@ Prints out the source version and exits.
 
 -keyboard type
 
-Where type may be\
-     ibm | mac | sun | ppc | 0 | 1 | 2 | 3\
+Where type may be
+     ibm | mac | sun | ppc | 0 | 1 | 2 | 3
  Allows you to specify the type of keyboard. Currently this is only
 relevent when generating menus. The modifier keys are in different
 locations on different keyboards (under different operating systems) and
 if FontForge knows what keyboard you are using it can make the hot-keys
 have better labels.
 
--   ibm | 0\
+-   ibm | 0
      Uses the Control and Alt keys
--   mac | 1\
+-   mac | 1
      Uses the Control and Option keys (Mac OS/X, Mac keyboard)
--   ppc | 3\
+-   ppc | 3
      Uses the Control and Command keys (Suse ppc linux, Mac keyboard)
--   sun | 2\
+-   sun | 2
      Uses the Control and Meta keys
 
 -last
@@ -177,8 +177,8 @@ Display a brief description of the options
 
 -vc type
 
-Where type may be:\
- StaticGray GrayScale StaticColor PsuedoColor TrueColor DirectColor\
+Where type may be:
+ StaticGray GrayScale StaticColor PsuedoColor TrueColor DirectColor
  (See the X manuals for a description of what these mean). FontForge
 will search through the visuals in an attempt to find one with the
 desired VisualClass (given here) and depth (given with the -depth

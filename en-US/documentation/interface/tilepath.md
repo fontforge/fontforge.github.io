@@ -15,14 +15,14 @@ tile fit to the curve.
 Consider the following:
 
   ------------------------------ ------------------------- --------------------------
-  ![](img/tilepath-selection.png)\   ![](img/tilepath-orig.png)\   ![](img/tilepath-final.png)\
+  ![](img/tilepath-selection.png)\   ![](img/tilepath-orig.png)\   ![](img/tilepath-final.png)
    The tile                       Two paths to be tiled.    The result.
   ------------------------------ ------------------------- --------------------------
 
 The tile has been replicated (and warped) to follow the original
 contours.
 
-![](img/TilePath.png)\
+![](img/TilePath.png)
  As you can see above there are several different tiles you can specify.
 You must specify the tile called Medial; you may specify the other
 three. There meanings are:
@@ -49,7 +49,7 @@ outside the path), or be tangent to the right edge (for a clockwise path
 the right edge is inside the path).
 
   ------------------------- --------------------------- --------------------------
-  ![](img/tilepath-left.png)\   ![](img/tilepath-center.png)\   ![](img/tilepath-right.png)\
+  ![](img/tilepath-left.png)\   ![](img/tilepath-center.png)\   ![](img/tilepath-right.png)
    left (outside)            center                      right (inside)
   ------------------------- --------------------------- --------------------------
 
@@ -61,7 +61,7 @@ there will be exactly one tile and it will be scaled to be as long as
 the path.
 
   ------------------------- ----------------------- --------------------------
-  ![](img/tilepath-tile.png)\   ![](img/tilepath-ts.png)\   ![](img/tilepath-scale.png)\
+  ![](img/tilepath-tile.png)\   ![](img/tilepath-ts.png)\   ![](img/tilepath-scale.png)
    tile                      tile & scale            scale
   ------------------------- ----------------------- --------------------------
 

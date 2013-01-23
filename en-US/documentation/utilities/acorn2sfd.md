@@ -4,7 +4,7 @@ layout: default
 ---
 
 
-acorn2sfd\
+acorn2sfd
  Converter from Acorn RISC/OS fonts
 ===================================
 

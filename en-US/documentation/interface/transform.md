@@ -44,7 +44,7 @@ be done above, but it's slightly easier only to set one number).
 
 Flip
 
-You may flip either horizontally or vertically\
+You may flip either horizontally or vertically
  **Note: After flipping an outline you will almost certainly want to
 apply [Element-\>Correct Direction](elementmenu.html#Correct).**
 
@@ -58,7 +58,7 @@ Rotate 3D Around...
 You may do a three dimensional rotation of the glyph around either the X
 axis or the Y axis. This operation is immediately followed by a
 projection of the result back into the xy-plane (A rotation around the Z
-axis is a normal rotaton (and isn't included here). \
+axis is a normal rotaton (and isn't included here). 
  Following the rotation by a projection produces the same results no
 matter what the sign of the angle (so there are no
 Clockwise/CounterClockwise options here).
@@ -111,7 +111,7 @@ two expressions, one of which results in the transformed value for the X
 coordinate, the other provides the y coordinate. In the example at
 right:
 
-> *x' = 5·x^2^ + x + 3·sin(y)\
+> *x' = 5·x^2^ + x + 3·sin(y)
 >  y' = y*
 
 Expressions may be made up of the usual C operators: "+", "-", "\*",

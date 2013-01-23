@@ -12,12 +12,12 @@ output of two freely available programs which do autotracing. These are:
 
 -   Peter Selinger's [potrace](http://potrace.sf.net/)
 -   Martin Weber's [autotrace
-    program](http://sourceforge.net/projects/autotrace/)\
+    program](http://sourceforge.net/projects/autotrace/)
      **CAVEAT:**Autotrace 2.8 changed its argument conventions (around
     Dec 2001). New versions (after 15 Dec) of fontforge will not work
     with autotrace2.7, old versions of fontforge will not work with
     autotrace2.8. I see no way to make fontforge work with both or to
-    detect the current version...\
+    detect the current version...
      **CAVEAT2:**I may not be loading the results of autotrace properly
     in all cases (I do in my test cases, of course). AutoTrace traces
     out both foreground and background regions, so I may sometimes leave

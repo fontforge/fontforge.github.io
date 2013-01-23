@@ -13,7 +13,7 @@ view by selecting an anchor point in that glyph and selecting
 Hamza was chosen. In the first pane of the dialog are various controls,
 next to that is a pane displaying the letter Hamza and showing the
 anchor point relative to that letter. You may move the anchor point
-around to position it as you wish.\
+around to position it as you wish.
 
 After this there is a scrollable region containing multiple sub-panes.
 Each sub-pane contains one combination of Hamza and a mark that fits on

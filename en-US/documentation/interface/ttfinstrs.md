@@ -5,7 +5,7 @@ layout: default
 
 
   --------------------------
-  ![](img/ttfinstrs-view.png)\
+  ![](img/ttfinstrs-view.png)
    ![](img/ttfinstrs-edit.png)
   --------------------------
 

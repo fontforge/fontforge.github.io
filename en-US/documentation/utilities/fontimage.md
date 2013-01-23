@@ -4,7 +4,7 @@ layout: default
 ---
 
 
-fontimage\
+fontimage
  generate a font thumbnail image
 ================================
 
@@ -78,9 +78,9 @@ Hohenzollern Initials Humanistic Cursive Humanistic Italic Hand
 Lombardic Mix Lombardic Mirage Monopol Monospace Bold Monospace Oblique
 Monospace Regular Morris Initials Parisian Peignot Picadilly Bizarre
 Picadilly Ringlet Black Ringlet Roman Uncial Modern Rotunda Square Caps
-Textura Modern Uncial Animals Versal Point size: DPI: \
+Textura Modern Uncial Animals Versal Point size: DPI: 
  Text: (If you leave this blank, fontimage will generate some default
-text showing all scripts in the font)\
- \
+text showing all scripts in the font)
+ 
 
 IFrame doesn't work in your browser. Try pressing the [Display] button
