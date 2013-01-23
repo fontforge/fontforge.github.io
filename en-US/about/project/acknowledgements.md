@@ -6,7 +6,7 @@ layout: default
 Acknowledgements
 ================
 
-This page exists to acknowledge everone who's helped out with Fontforge. Many thanks! 
+This page exists to acknowledge everyone who's helped out with FontForge. Many thanks! 
 (Actually the list should be far longer than this,
 but as time goes on there are just too many people to thank.)
 

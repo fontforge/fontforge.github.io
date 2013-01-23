@@ -1,4 +1,4 @@
 fontforge-docs
 ==============
 
-Fontforge website and documentation
+FontForge website and documentation

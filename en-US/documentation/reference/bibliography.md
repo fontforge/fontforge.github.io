@@ -202,7 +202,7 @@ Font File Formats
     interpretation program.
 -   [sfd](sfdformat.html) files (FontForge's internal spline font
     database format)
--   [cidmap](cidmapformat.html) files (Fontforge's format for mapping
+-   [cidmap](cidmapformat.html) files (FontForge's format for mapping
     cids to unicode)
 -   XML formats
     -   TTX -- TrueType XML

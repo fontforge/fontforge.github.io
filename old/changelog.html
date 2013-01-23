@@ -34,7 +34,7 @@
 <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 
 <header>
-<a href="index.html"><h1><img src="img/fontforge.png">Fontforge</h1></a>
+<a href="index.html"><h1><img src="img/fontforge.png">FontForge</h1></a>
 <nav>
 	<li><a href="download.html">Download</a></li>
 	<li><a href="source-build.html">Install</a></li>
@@ -275,7 +275,7 @@
 <li>Removed two infinite loops in overlap code. Turned out to be a floating point accurracy issue.</li>
 <li>Zoom by mouse scroll scales around mouse pointer now.</li>
 <li>Ctrl+A in background layer (in charview window) picked up anchor points from foreground layers, too.</li>
-<li>Fontforge forgot to categorize points after importing a svg font.</li>
+<li>FontForge forgot to categorize points after importing a svg font.</li>
 <li>Patch by Philipp Stephani, to fix wrong interpretation of most top accent data for newer versions of Cambria Math.</li>
 <li>Patch by Louis Simard: fixes multiple stack based buffer overflows in BDF processing routine. Ref: https://bugzilla.redhat.com/show_bug.cgi?id=659359</li>
 <li>Patch by Barry Schwartz to fix error in handling of glyph name ranges in feature files, reported by Matthew Skala:</li>
@@ -350,7 +350,7 @@
 <li>Richard Gitshlag suggests that the buttons in the &quot;non-integral coordinates&quot; question of validation are confusing and suggests they be relabeled.</li>
 <li>More fixes needed where *printf expects a double and gets a long double if --enabel-longdouble.</li>
 <li><p>According to the spec there are two different types of GPOS 'size' feature. One specifies a design size and nothing else, the other specifies a design size, a design range a style name and a magic number used to associate all fonts in the same family with the same weight and style but with different design sizes.</p>
-<p>Fontforge was not very good about warning the user when s/he created something which had some but not all of these attributes. (ie. a design range but no style name). So add some error messages to the fontinfo dlg which makes these checks.</p>
+<p>FontForge was not very good about warning the user when s/he created something which had some but not all of these attributes. (ie. a design range but no style name). So add some error messages to the fontinfo dlg which makes these checks.</p>
 <p>FF would also not read in a 'size' feature unless it were in one of these formats. So if the user created a 'size' feature with a design size, and a design range but no style name, then FF would not complain, would happily output it, but would not read it back in again. So be a little more lenient in what we read in.</p></li>
 <li><p>Sort human-readable stylistic set names (first by feature tag, then by language) both in the FontInfo dialog and in SFD output.</p></li>
 </ul></li>
@@ -999,7 +999,7 @@ I wish to thank Michal Nowakowski for fixing my bugs these last few months. I no
 
 <footer>
 <section>
-<h3 id="fontforge">Fontforge</h3>
+<h3 id="fontforge">FontForge</h3>
 <ul>
 <li><a href="index.html">Home</a></li>
 <li><a href="download.html">Download</a></li>

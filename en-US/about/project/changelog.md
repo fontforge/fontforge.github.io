@@ -472,7 +472,7 @@ To get the latest changes, for now, take a look at:
     -   Zoom by mouse scroll scales around mouse pointer now.
     -   Ctrl+A in background layer (in charview window) picked up anchor
         points from foreground layers, too.
-    -   Fontforge forgot to categorize points after importing a svg
+    -   FontForge forgot to categorize points after importing a svg
         font.
     -   Patch by Philipp Stephani, to fix wrong interpretation of most
         top accent data for newer versions of Cambria Math.
@@ -691,7 +691,7 @@ To get the latest changes, for now, take a look at:
         family with the same weight and style but with different design
         sizes.
 
-        Fontforge was not very good about warning the user when s/he
+        FontForge was not very good about warning the user when s/he
         created something which had some but not all of these
         attributes. (ie. a design range but no style name). So add some
         error messages to the fontinfo dlg which makes these checks.
