@@ -41,6 +41,10 @@
 	margin: 0;
 }
  
+.footer h4, .footer h4 a {
+	color: rgb(210, 102, 39);
+}
+ 
 .footer ul li a {
 	color: #999;
 	font-size: 0.85em;
