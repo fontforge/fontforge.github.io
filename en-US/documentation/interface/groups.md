@@ -1,6 +1,6 @@
 ---
-title: Groups of Glyphs
 layout: default
+title: Groups of Glyphs
 ---
 
 A group is a collection of glyphs. It may be any collection that appeals

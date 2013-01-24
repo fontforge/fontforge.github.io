@@ -1,6 +1,6 @@
 ---
-title: Display Fonts
 layout: default
+title: Display Fonts
 ---
 
 ![](img/DisplayFonts.png)This dialog allows you to display text in any fonts

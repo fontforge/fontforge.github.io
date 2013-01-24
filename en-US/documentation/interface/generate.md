@@ -1,6 +1,6 @@
 ---
-title: Generate Font Dialog
 layout: default
+title: Generate Font Dialog
 ---
 
 ![](img/generate.png)This generates font files, both outline and bitmap. You

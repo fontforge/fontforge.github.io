@@ -1,6 +1,6 @@
 ---
-title: Known Bugs
 layout: default
+title: Known Bugs
 ---
 
 Known Bugs

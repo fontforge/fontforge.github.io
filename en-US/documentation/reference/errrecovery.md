@@ -1,6 +1,6 @@
 ---
-title: Error Recovery
 layout: default
+title: Error Recovery
 ---
 
 

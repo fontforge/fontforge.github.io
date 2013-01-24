@@ -1,6 +1,6 @@
 ---
-title: Examining and controling metrics and kerning
 layout: default
+title: Examining and controling metrics and kerning
 ---
 
 

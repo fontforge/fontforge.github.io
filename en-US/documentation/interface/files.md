@@ -1,6 +1,6 @@
 ---
-title: Files used by FontForge
 layout: default
+title: Files used by FontForge
 ---
 
 

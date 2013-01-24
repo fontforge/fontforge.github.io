@@ -1,6 +1,6 @@
 ---
-title: The histogram dialog
 layout: default
+title: The histogram dialog
 ---
 
 The histogram dialog is used to display three things which are useful

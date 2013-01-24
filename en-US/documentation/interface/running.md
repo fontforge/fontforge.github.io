@@ -1,6 +1,6 @@
 ---
-title: Starting fontforge
 layout: default
+title: Starting fontforge
 ---
 
 -   [Installing from a pre-built unix

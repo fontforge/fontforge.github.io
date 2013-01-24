@@ -1,6 +1,6 @@
 ---
-title: The Edit Menu
 layout: default
+title: The Edit Menu
 ---
 
 In the Metrics View this menu is greyed out. The commands are only

@@ -1,6 +1,6 @@
 ---
-title: Building accented glyphs
 layout: default
+title: Building accented glyphs
 ---
 
 

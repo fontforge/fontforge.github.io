@@ -1,6 +1,6 @@
 ---
-title: FontForge's implementation of Adobe's Feature File syntax.
 layout: default
+title: FontForge's implementation of Adobe's Feature File syntax.
 ---
 
 

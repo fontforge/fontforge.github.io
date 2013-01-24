@@ -1,6 +1,6 @@
 ---
-title: Website Contributors
 layout: default
+title: Website Contributors
 ---
 
 This should list the contributors to the website:

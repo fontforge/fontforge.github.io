@@ -1,6 +1,6 @@
 ---
-title: The File Menu
 layout: default
+title: The File Menu
 ---
 
 -   [New](#New)

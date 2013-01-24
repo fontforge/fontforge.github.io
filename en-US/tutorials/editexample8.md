@@ -1,6 +1,6 @@
 ---
-title: Bitmap strikes
 layout: default
+title: Bitmap strikes
 ---
 
 

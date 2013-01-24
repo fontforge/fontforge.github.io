@@ -1,6 +1,6 @@
 ---
-title: X Resource Editor
 layout: default
+title: X Resource Editor
 ---
 
 

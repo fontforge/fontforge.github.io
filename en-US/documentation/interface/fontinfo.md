@@ -1,6 +1,6 @@
 ---
-title: Font Info
 layout: default
+title: Font Info
 ---
 
 ![](img/fontinfo.png)

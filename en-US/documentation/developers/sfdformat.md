@@ -1,6 +1,6 @@
 ---
-title: Spline Font Database File Format
 layout: default
+title: Spline Font Database File Format
 ---
 
 

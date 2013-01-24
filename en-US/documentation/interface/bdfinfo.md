@@ -1,6 +1,6 @@
 ---
-title: BDF Info (Properties) Dialog
 layout: default
+title: BDF Info (Properties) Dialog
 ---
 
 ![BDF Info dialog](bdfinfo.png)If your font contains bitmaps you may

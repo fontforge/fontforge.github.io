@@ -1,6 +1,6 @@
 ---
-title: The basic spline data structures of FontForge
 layout: default
+title: The basic spline data structures of FontForge
 ---
 
 

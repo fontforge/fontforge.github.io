@@ -1,6 +1,6 @@
 ---
-title: Wacom graphics tablets and FontForge
 layout: default
+title: Wacom graphics tablets and FontForge
 ---
 
 

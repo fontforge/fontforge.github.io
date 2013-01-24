@@ -1,6 +1,6 @@
 ---
-title: FontForge Developer Documentation
 layout: default
+title: FontForge Developer Documentation
 ---
 
 ### Coding Style

@@ -1,6 +1,6 @@
 ---
-title: Bitmap Character View
 layout: default
+title: Bitmap Character View
 ---
 
 

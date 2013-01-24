@@ -1,6 +1,6 @@
 ---
-title: The Kerning Pairs dialog
 layout: default
+title: The Kerning Pairs dialog
 ---
 
 This dialog either displays all kerning pairs in the entire font, or all

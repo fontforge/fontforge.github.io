@@ -1,6 +1,6 @@
 ---
-title: Viewing and Editing truetype instructions in FontForge.
 layout: default
+title: Viewing and Editing truetype instructions in FontForge.
 ---
 
 

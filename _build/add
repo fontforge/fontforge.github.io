@@ -1,5 +1,5 @@
 #!/bin/zsh
 
 for j in $@; do
-	echo -e "---\ntitle: Page title\nlayout: default\n---\n\n" > ${j}.md
+	echo -e "---\nlayout: default\ntitle: Page title\n---\n\n" > ${j}.md
 done

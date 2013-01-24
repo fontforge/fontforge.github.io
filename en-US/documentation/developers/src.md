@@ -1,6 +1,6 @@
 ---
-title: High level description of what each source file contains...
 layout: default
+title: High level description of what each source file contains...
 ---
 
 

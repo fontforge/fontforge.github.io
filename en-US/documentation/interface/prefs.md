@@ -1,6 +1,6 @@
 ---
-title: Preferences Dialog
 layout: default
+title: Preferences Dialog
 ---
 
 -   ![](img/prefs-generic.png)[Generic](prefs.html#ResourceFile)

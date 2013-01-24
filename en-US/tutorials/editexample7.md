@@ -1,6 +1,6 @@
 ---
-title: Final cleanup
 layout: default
+title: Final cleanup
 ---
 
 

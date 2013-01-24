@@ -1,6 +1,6 @@
 ---
-title: Several formats for bitmap only sfnts (truetype files)
 layout: default
+title: Several formats for bitmap only sfnts (truetype files)
 ---
 
 

@@ -1,6 +1,6 @@
 ---
-title: More advanced features, ligatures, mark positioning, glyph variants
 layout: default
+title: More advanced features, ligatures, mark positioning, glyph variants
 ---
 
 

@@ -1,6 +1,6 @@
 ---
-title: Steps to creating a font...
 layout: default
+title: Steps to creating a font...
 ---
 
 

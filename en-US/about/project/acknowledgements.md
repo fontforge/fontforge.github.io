@@ -1,6 +1,6 @@
 ---
-title: Acknowledgements
 layout: default
+title: Acknowledgements
 ---
 
 

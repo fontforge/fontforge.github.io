@@ -1,6 +1,6 @@
 ---
-title: Random utilities for examining fonts
 layout: default
+title: Random utilities for examining fonts
 ---
 
 

@@ -1,6 +1,6 @@
 ---
-title: Encoding Menu
 layout: default
+title: Encoding Menu
 ---
 
 The Encoding menu is only found in the font view:

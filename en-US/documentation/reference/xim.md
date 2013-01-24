@@ -1,6 +1,6 @@
 ---
-title: X Input Methods
 layout: default
+title: X Input Methods
 ---
 
 

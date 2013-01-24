@@ -1,6 +1,6 @@
 ---
-title: Glossary of (some) typographical terms
 layout: default
+title: Glossary of (some) typographical terms
 ---
 
 

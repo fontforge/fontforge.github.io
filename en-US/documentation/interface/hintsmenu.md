@@ -1,6 +1,6 @@
 ---
-title: The Hints Menu
 layout: default
+title: The Hints Menu
 ---
 
 This menu is only present in the outline glyph view and the font view. 

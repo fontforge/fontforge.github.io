@@ -1,6 +1,6 @@
 ---
-title: Hinting
 layout: default
+title: Hinting
 ---
 
 PostScript originally required that hints should not overlap. Now it

@@ -1,6 +1,6 @@
 ---
-title: The View Menu
 layout: default
+title: The View Menu
 ---
 
 

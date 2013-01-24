@@ -1,6 +1,6 @@
 ---
-title: FontForge -- An outline font editor for PostScript&reg;, TrueType
 layout: default
+title: FontForge -- An outline font editor for PostScript&reg;, TrueType
 ---
 
 

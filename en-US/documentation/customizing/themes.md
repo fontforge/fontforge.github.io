@@ -1,6 +1,6 @@
 ---
-title: FontForge color schemes
 layout: default
+title: FontForge color schemes
 ---
 
 

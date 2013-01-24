@@ -1,6 +1,6 @@
 ---
-title: The Tools Menu
 layout: default
+title: The Tools Menu
 ---
 
 

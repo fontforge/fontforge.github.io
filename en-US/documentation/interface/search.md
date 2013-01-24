@@ -1,6 +1,6 @@
 ---
-title: Searching for shapes within characters...
 layout: default
+title: Searching for shapes within characters...
 ---
 
 FontForge will allow you to search a font for all glyphs containing a

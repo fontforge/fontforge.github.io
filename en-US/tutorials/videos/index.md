@@ -1,6 +1,6 @@
 ---
-title: Video Tutorials
 layout: default
+title: Video Tutorials
 ---
 
 This page will have information on video tutorials.

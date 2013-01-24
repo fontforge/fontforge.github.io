@@ -1,6 +1,6 @@
 ---
-title: Caveats about References
 layout: default
+title: Caveats about References
 ---
 
 

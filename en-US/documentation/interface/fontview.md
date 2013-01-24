@@ -1,6 +1,6 @@
 ---
-title: The Font View
 layout: default
+title: The Font View
 ---
 
 

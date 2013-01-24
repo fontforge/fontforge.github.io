@@ -1,6 +1,6 @@
 ---
-title: FontForge Website Translations
 layout: default
+title: FontForge Website Translations
 ---
 
 FontForge Website Translations

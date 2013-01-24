@@ -1,4 +1,5 @@
 ---
+layout: default
 title: FontForge redesign meta pages
 ---
 

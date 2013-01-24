@@ -1,6 +1,6 @@
 ---
-title: The font validation window
 layout: default
+title: The font validation window
 ---
 
 

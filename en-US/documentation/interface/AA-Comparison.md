@@ -1,6 +1,6 @@
 ---
-title: Anti-Alias Comparison
 layout: default
+title: Anti-Alias Comparison
 ---
 
 

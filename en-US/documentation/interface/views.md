@@ -1,6 +1,6 @@
 ---
-title: UI data structures for FontForge
 layout: default
+title: UI data structures for FontForge
 ---
 
 

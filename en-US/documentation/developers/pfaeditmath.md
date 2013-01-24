@@ -1,6 +1,6 @@
 ---
-title: FontForge's math
 layout: default
+title: FontForge's math
 ---
 
 

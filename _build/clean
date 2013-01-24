@@ -16,7 +16,7 @@ cat list-b | sed s/'  1'/''/g | sed s/'  0'//g >> list-c
 for j in `cat list-div-in`; do
 	(
 	title=`cat $j | grep '<TITLE>' | sed s/'  <TITLE>'//g | sed s/'<\/TITLE>'//g`
-	echo -e "---\ntitle: ${title}\nlayout: default\n---\n\n"
+	echo -e "---\nlayout: default\ntitle: ${title}\n---\n\n"
 	cat $j | grep -A 99999 '<DIV id="in">' | tail -n +2 | head -n -2 \
 	| pandoc -f html -t markdown
 	) > `basename $j .html`.md
@@ -25,7 +25,7 @@ done
 for j in `cat list-no-div`; do
 	(
 	title=`cat $j | grep '<TITLE>' | sed s/'  <TITLE>'//g | sed s/'<\/TITLE>'//g`
-	echo -e "---\ntitle: ${title}\nlayout: default\n---\n\n"
+	echo -e "---\nlayout: default\ntitle: ${title}\n---\n\n"
 	cat $j | grep -iA 99999 '<BODY' | tail -n +2 | head -n -2 \
 	| pandoc -f html -t markdown
 	) > `basename $j .html`.md

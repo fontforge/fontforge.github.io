@@ -1,6 +1,6 @@
 ---
-title: Tile Path
 layout: default
+title: Tile Path
 ---
 
 

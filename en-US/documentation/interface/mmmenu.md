@@ -1,6 +1,6 @@
 ---
-title: Multiple Master menu
 layout: default
+title: Multiple Master menu
 ---
 
 The MM Menu provides a few commands for manipulating [Multiple Master or

@@ -1,6 +1,6 @@
 ---
-title: Consistent serifs and stem widths
 layout: default
+title: Consistent serifs and stem widths
 ---
 
 

@@ -1,6 +1,6 @@
 ---
-title: What is the FontForge Project?
 layout: default
+title: What is the FontForge Project?
 ---
 
 **(TODO: Table of contents for this section about the overall FontForge project.)**

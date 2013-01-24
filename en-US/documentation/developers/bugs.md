@@ -1,6 +1,6 @@
 ---
-title: Report a Bug in FontForge
 layout: default
+title: Report a Bug in FontForge
 ---
 
 Reporting a bug in FontForge is easy, thanks to GitHub. Here's how:

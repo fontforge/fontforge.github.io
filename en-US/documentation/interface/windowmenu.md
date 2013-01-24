@@ -1,6 +1,6 @@
 ---
-title: The Window Menu
 layout: default
+title: The Window Menu
 ---
 
 

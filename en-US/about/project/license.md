@@ -1,6 +1,6 @@
 ---
-title: FontForge License
 layout: default
+title: FontForge License
 ---
 
 FontForge is available as a whole under the terms of the 

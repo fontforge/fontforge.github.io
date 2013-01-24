@@ -1,6 +1,6 @@
 ---
-title: Auto Width and Auto Kern
 layout: default
+title: Auto Width and Auto Kern
 ---
 
 

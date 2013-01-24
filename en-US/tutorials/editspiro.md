@@ -1,6 +1,6 @@
 ---
-title: Creating a glyph using spiro points
 layout: default
+title: Creating a glyph using spiro points
 ---
 
 

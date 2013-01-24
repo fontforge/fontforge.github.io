@@ -1,6 +1,6 @@
 ---
-title: Show Advanced Typographic Features
 layout: default
+title: Show Advanced Typographic Features
 ---
 
 ![](img/showatt.png)This dialog shows the contents of some advanced

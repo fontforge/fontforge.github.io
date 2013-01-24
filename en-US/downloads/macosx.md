@@ -1,6 +1,6 @@
 ---
-title: Install FontForge on Mac OS X
 layout: default
+title: Install FontForge on Mac OS X
 ---
 
 Latest Package

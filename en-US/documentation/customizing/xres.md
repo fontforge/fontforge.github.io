@@ -1,6 +1,6 @@
 ---
-title: X Resources
 layout: default
+title: X Resources
 ---
 
 

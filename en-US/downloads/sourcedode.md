@@ -1,6 +1,6 @@
 ---
-title: Building FontForge from source
 layout: default
+title: Building FontForge from source
 ---
 
 

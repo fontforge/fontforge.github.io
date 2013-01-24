@@ -1,6 +1,6 @@
 ---
-title: The Element Menu
 layout: default
+title: The Element Menu
 ---
 
 -   [Font Info](#Font)...

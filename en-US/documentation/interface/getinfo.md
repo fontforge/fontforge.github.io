@@ -1,6 +1,6 @@
 ---
-title: Get Info
 layout: default
+title: Get Info
 ---
 
 In the Outline View the Get Info command can generate one of four

@@ -1,6 +1,6 @@
 ---
-title: Hot Keys
 layout: default
+title: Hot Keys
 ---
 
 

@@ -1,6 +1,6 @@
 ---
-title: Differences from Fontographer
 layout: default
+title: Differences from Fontographer
 ---
 
 

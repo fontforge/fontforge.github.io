@@ -1,6 +1,6 @@
 ---
-title: Extensions to Adobe's Bitmap Distribution Format for greymap (anti-aliased)
 layout: default
+title: Extensions to Adobe's Bitmap Distribution Format for greymap (anti-aliased)
 ---
 
 

@@ -1,6 +1,6 @@
 ---
-title: The Open Font Library
 layout: default
+title: The Open Font Library
 ---
 
 

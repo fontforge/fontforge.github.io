@@ -1,6 +1,6 @@
 ---
-title: Changes to pfaedit (predecessor to fontforge)
 layout: default
+title: Changes to pfaedit (predecessor to fontforge)
 ---
 
 

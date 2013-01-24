@@ -1,6 +1,6 @@
 ---
-title: Finding common font problems automagically
 layout: default
+title: Finding common font problems automagically
 ---
 
 Nobody is perfect.

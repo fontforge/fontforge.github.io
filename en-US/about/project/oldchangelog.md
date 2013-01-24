@@ -1,6 +1,6 @@
 ---
-title: Older changes to FontForge
 layout: default
+title: Older changes to FontForge
 ---
 
 

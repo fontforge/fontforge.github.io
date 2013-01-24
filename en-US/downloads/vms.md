@@ -1,6 +1,6 @@
 ---
-title: FontForge install procedures for VMS
 layout: default
+title: FontForge install procedures for VMS
 ---
 
 

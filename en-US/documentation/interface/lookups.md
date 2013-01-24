@@ -1,6 +1,6 @@
 ---
-title: Manipulating OpenType Lookups
 layout: default
+title: Manipulating OpenType Lookups
 ---
 
 

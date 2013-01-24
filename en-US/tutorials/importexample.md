@@ -1,6 +1,6 @@
 ---
-title: Importing a glyph designed in some other vector editor
 layout: default
+title: Importing a glyph designed in some other vector editor
 ---
 
 

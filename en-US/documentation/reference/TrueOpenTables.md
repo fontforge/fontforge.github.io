@@ -1,6 +1,6 @@
 ---
-title: TrueType and OpenType tables supported by FontForge
 layout: default
+title: TrueType and OpenType tables supported by FontForge
 ---
 
 

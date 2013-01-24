@@ -1,6 +1,6 @@
 ---
-title: FontForge Translations
 layout: default
+title: FontForge Translations
 ---
 
 Pull page contents from old site

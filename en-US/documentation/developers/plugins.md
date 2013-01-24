@@ -1,6 +1,6 @@
 ---
-title: Plugins in FontForge
 layout: default
+title: Plugins in FontForge
 ---
 
 

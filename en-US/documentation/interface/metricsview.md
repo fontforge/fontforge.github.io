@@ -1,6 +1,6 @@
 ---
-title: The Metrics View
 layout: default
+title: The Metrics View
 ---
 
 ![](img/MetricsView.png)

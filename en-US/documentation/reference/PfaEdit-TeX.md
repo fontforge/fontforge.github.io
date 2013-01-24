@@ -1,6 +1,6 @@
 ---
-title: Using FontForge with TeX
 layout: default
+title: Using FontForge with TeX
 ---
 
 

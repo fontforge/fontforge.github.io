@@ -1,6 +1,6 @@
 ---
-title: acorn2sfd -- A program for comparing fonts
 layout: default
+title: acorn2sfd -- A program for comparing fonts
 ---
 
 

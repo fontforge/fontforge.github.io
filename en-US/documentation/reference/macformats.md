@@ -1,6 +1,6 @@
 ---
-title: Macintosh font formats
 layout: default
+title: Macintosh font formats
 ---
 
 

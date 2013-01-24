@@ -1,6 +1,6 @@
 ---
-title: Contextual features
 layout: default
+title: Contextual features
 ---
 
 

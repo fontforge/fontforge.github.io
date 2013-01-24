@@ -1,6 +1,6 @@
 ---
-title: Download FontForge
 layout: default
+title: Download FontForge
 ---
 
 

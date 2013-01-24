@@ -1,6 +1,6 @@
 ---
-title: FontForge Features
 layout: default
+title: FontForge Features
 ---
 
 

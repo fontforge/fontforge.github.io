@@ -1,6 +1,6 @@
 ---
-title: The baseline dialog, and the OpenType BASE table.
 layout: default
+title: The baseline dialog, and the OpenType BASE table.
 ---
 
 

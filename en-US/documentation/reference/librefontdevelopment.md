@@ -1,6 +1,6 @@
 ---
-title: Open Source font development efforts
 layout: default
+title: Open Source font development efforts
 ---
 
 

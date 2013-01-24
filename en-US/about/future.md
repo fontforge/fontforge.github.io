@@ -1,6 +1,6 @@
 ---
-title: Possible future improvements to FontForge
 layout: default
+title: Possible future improvements to FontForge
 ---
 
 

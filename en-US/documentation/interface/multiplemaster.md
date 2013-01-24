@@ -1,6 +1,6 @@
 ---
-title: Multiple Master Dialog
 layout: default
+title: Multiple Master Dialog
 ---
 
 Allows you to create or modify a multiple master font

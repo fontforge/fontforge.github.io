@@ -1,6 +1,6 @@
 ---
-title: Special thoughts for special scripts
 layout: default
+title: Special thoughts for special scripts
 ---
 
 

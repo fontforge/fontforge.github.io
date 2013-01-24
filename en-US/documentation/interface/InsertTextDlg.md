@@ -1,6 +1,6 @@
 ---
-title: The Insert Text Dialog
 layout: default
+title: The Insert Text Dialog
 ---
 
 ![](img/InsertTxtDlg.png)Generally when designing a font you will not want

@@ -1,6 +1,6 @@
 ---
-title: Stylistic Transformations on Fonts
 layout: default
+title: Stylistic Transformations on Fonts
 ---
 
 

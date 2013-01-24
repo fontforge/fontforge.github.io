@@ -1,6 +1,6 @@
 ---
-title: Change log for FontForge's sfd format
 layout: default
+title: Change log for FontForge's sfd format
 ---
 
 

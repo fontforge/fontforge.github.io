@@ -1,6 +1,6 @@
 ---
-title: fontlint -- A program for checking the validity of fonts
 layout: default
+title: fontlint -- A program for checking the validity of fonts
 ---
 
 

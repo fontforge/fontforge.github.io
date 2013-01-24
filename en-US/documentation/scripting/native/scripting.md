@@ -1,6 +1,6 @@
 ---
-title: Writing scripts to change fonts in FontForge
 layout: default
+title: Writing scripts to change fonts in FontForge
 ---
 
 

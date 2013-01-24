@@ -1,6 +1,6 @@
 ---
-title: How you can help with FontForge
 layout: default
+title: How you can help with FontForge
 ---
 
 -   *My writing leaves much to be desired*. Anyone who can make my

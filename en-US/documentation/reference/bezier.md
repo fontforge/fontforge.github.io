@@ -1,6 +1,6 @@
 ---
-title: B&eacute;zier Splines
 layout: default
+title: B&eacute;zier Splines
 ---
 
 

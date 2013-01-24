@@ -1,6 +1,6 @@
 ---
-title: The Metrics Menu
 layout: default
+title: The Metrics Menu
 ---
 
 This menu is not present in the Bitmap View, and the Metrics View only

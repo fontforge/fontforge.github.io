@@ -1,6 +1,6 @@
 ---
-title: The Anchor Control dialog
 layout: default
+title: The Anchor Control dialog
 ---
 
 ![](img/anchorcontrol-base.png)You invoke this dialog from the outline glyph

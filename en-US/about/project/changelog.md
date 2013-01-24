@@ -1,6 +1,6 @@
 ---
-title: Changelog for FontForge
 layout: default
+title: Changelog for FontForge
 ---
 
 

@@ -1,6 +1,6 @@
 ---
-title: fontimage -- generate a font thumbnail image
 layout: default
+title: fontimage -- generate a font thumbnail image
 ---
 
 

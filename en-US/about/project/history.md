@@ -1,6 +1,6 @@
 ---
-title: The history of the development of FontForge
 layout: default
+title: The history of the development of FontForge
 ---
 
 

@@ -1,6 +1,6 @@
 ---
-title: Advanced Typography tables
 layout: default
+title: Advanced Typography tables
 ---
 
 These differ between OpenType (originally called TrueType Open) and

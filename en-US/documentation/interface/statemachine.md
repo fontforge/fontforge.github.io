@@ -1,6 +1,6 @@
 ---
-title: The Mac State Machine dialog
 layout: default
+title: The Mac State Machine dialog
 ---
 
 ![](img/statemachine-context.png)The mac uses state machines where opentype

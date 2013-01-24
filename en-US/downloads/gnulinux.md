@@ -1,6 +1,6 @@
 ---
-title: FontForge install procedures for unix/linux based systems
 layout: default
+title: FontForge install procedures for unix/linux based systems
 ---
 
 

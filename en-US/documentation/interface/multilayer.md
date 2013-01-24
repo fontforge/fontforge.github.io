@@ -1,6 +1,6 @@
 ---
-title: Multi Layered Editing of Type3 and SVG fonts
 layout: default
+title: Multi Layered Editing of Type3 and SVG fonts
 ---
 
 Normal builds of fontforge do not have this mode enabled (it can eat up

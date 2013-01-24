@@ -1,6 +1,6 @@
 ---
-title: FontForge Lacks
 layout: default
+title: FontForge Lacks
 ---
 
 Lacks

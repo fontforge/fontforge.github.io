@@ -1,6 +1,6 @@
 ---
-title: Uninstalling
 layout: default
+title: Uninstalling
 ---
 
 

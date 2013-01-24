@@ -1,6 +1,6 @@
 ---
-title: Building Accented and other Composite Characters
 layout: default
+title: Building Accented and other Composite Characters
 ---
 
 

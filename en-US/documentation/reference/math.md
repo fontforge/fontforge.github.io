@@ -1,6 +1,6 @@
 ---
-title: MATH typesetting information
 layout: default
+title: MATH typesetting information
 ---
 
 

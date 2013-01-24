@@ -1,6 +1,6 @@
 ---
-title: The Justify dialog
 layout: default
+title: The Justify dialog
 ---
 
 

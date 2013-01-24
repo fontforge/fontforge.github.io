@@ -1,6 +1,6 @@
 ---
-title: Tutorials
 layout: default
+title: Tutorials
 ---
 
 Table of contents for this section.

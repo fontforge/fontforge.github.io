@@ -1,6 +1,6 @@
 ---
-title: FontForge TO DO items
 layout: default
+title: FontForge TO DO items
 ---
 
 Content

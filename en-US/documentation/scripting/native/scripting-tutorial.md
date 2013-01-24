@@ -1,6 +1,6 @@
 ---
-title: FontForge Scripting Tutorial
 layout: default
+title: FontForge Scripting Tutorial
 ---
 
 

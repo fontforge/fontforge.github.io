@@ -1,6 +1,6 @@
 ---
-title: Creating the letter "o" -- consistant directions
 layout: default
+title: Creating the letter "o" -- consistant directions
 ---
 
 

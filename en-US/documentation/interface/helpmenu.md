@@ -1,6 +1,6 @@
 ---
-title: Help menu
 layout: default
+title: Help menu
 ---
 
 

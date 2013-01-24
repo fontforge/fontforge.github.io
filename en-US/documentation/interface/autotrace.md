@@ -1,6 +1,6 @@
 ---
-title: Autotracing bitmaps in FontForge
 layout: default
+title: Autotracing bitmaps in FontForge
 ---
 
 FontForge does not have a native autotrace, but it will happily use the

@@ -1,6 +1,6 @@
 ---
-title: A meandering bibliography of font related things
 layout: default
+title: A meandering bibliography of font related things
 ---
 
 

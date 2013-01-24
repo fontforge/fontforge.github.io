@@ -1,6 +1,6 @@
 ---
-title: Outline Glyph View
 layout: default
+title: Outline Glyph View
 ---
 
 

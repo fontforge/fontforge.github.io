@@ -1,6 +1,6 @@
 ---
-title: X Selections and the X Clipboard
 layout: default
+title: X Selections and the X Clipboard
 ---
 
 

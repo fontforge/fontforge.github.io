@@ -1,6 +1,6 @@
 ---
-title: Other software that might be of interest...
 layout: default
+title: Other software that might be of interest...
 ---
 
 

@@ -1,6 +1,6 @@
 ---
-title: How to build FontForge binary packages
 layout: default
+title: How to build FontForge binary packages
 ---
 
 Windows

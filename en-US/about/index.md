@@ -1,6 +1,6 @@
 ---
-title: About FontForge
 layout: default
+title: About FontForge
 ---
 
 Table of contents for this section.

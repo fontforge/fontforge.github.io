@@ -1,6 +1,6 @@
 ---
-title: FontForge is a font editor
 layout: homepage
+title: FontForge is a font editor
 ---
 
 FontForge is libre software: you can share copies freely and make changes

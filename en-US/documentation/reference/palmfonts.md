@@ -1,6 +1,6 @@
 ---
-title: Palm fonts
 layout: default
+title: Palm fonts
 ---
 
 

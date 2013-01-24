@@ -1,6 +1,6 @@
 ---
-title: Command Line Arguments
 layout: default
+title: Command Line Arguments
 ---
 
 >     $ fontforge [-options] [filenames]

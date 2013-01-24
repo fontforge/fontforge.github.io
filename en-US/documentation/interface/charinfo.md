@@ -1,6 +1,6 @@
 ---
-title: Char Info
 layout: default
+title: Char Info
 ---
 
 

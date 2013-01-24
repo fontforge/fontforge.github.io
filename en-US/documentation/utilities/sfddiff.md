@@ -1,6 +1,6 @@
 ---
-title: sfddiff -- A program for comparing fonts
 layout: default
+title: sfddiff -- A program for comparing fonts
 ---
 
 

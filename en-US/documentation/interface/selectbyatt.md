@@ -1,6 +1,6 @@
 ---
-title: Select By Lookup Subtable
 layout: default
+title: Select By Lookup Subtable
 ---
 
 This dialog allows you to select glyphs which undergo a transformation
