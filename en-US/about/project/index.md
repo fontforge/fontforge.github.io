@@ -30,7 +30,9 @@ it in the next release for all other users to enjoy and build on further.
 convenient.)
 
 Doing something in public inevitably invites discussion, critique, and 
-criticism of what you do. Sometimes this can be 
-[unfair, snarky, or even nasty](http://harthur.wordpress.com/2013/01/24/771/). 
-We hope you will find the FontForge project fun to contribute to.
+even criticism of what you do. Yet making contributions can be very 
+rewarding, and we hope you will find the FontForge  project fun to 
+contribute to.
 
+TODO: Add links to books/sites that explain how to contribute to 
+libre software projects, eg Fogel book, GitHub docs
