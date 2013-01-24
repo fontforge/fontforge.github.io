@@ -5,8 +5,8 @@ layout: default
 
 Pull page contents from old site
 
-Website Translation
---------------------
+Contact HP when this is ready to test the instructions here with a vietnamese translation
 
-Website translation hasn't been figured out yet. Please discuss on the devel list.
+==== Website Translation ====
 
+Please refer to the [website translation](/about/site/sitetranslation.html) page for details.
