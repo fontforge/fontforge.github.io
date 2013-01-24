@@ -30,6 +30,7 @@ Content To Add
 Export("svg"); endloop;' font_file.ttf)
 - Add a note about 'Add Extrema' as per https://github.com/fontforge/fontforge/pull/125
 - Add a note about how to make translations: `make -C po potfile; cd po; msgmerge ru.po FontForge.pot > ru.po`
+- Add a note about customizing the [screensize part of theme](https://github.com/fontforge/fontforge/issues/228#issuecomment-12636201) on the mac download page
 
 HTML/CSS
 =============
