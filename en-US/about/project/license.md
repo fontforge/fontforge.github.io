@@ -1,12 +1,7 @@
 ---
 title: FontForge License
 layout: default
-headline: FontForge is free
 ---
-
-FontForge is libre software, which means users and developers have an equal
-amount of power over how the software is developed. The exact terms of
-development are specified in the software license.
 
 FontForge is available as a whole under the terms of the 
 [GNU GPL](http://www.gnu.org/copyleft/gpl.html), version
