@@ -4,10 +4,6 @@ layout: default
 ---
 
 
-FontForge install procedures
- for cygwin under MS Windows
-=============================
-
 **I no longer provide pre-built packages. You may either compile from
 source or download a package from another site (cygwin has a fontforge
 package).**

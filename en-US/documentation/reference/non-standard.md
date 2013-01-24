@@ -4,9 +4,6 @@ layout: default
 ---
 
 
-Non standard extensions used FontForge in True/Open Type
-========================================================
-
 Non standard feature tags
 -------------------------
 

@@ -4,9 +4,6 @@ layout: default
 ---
 
 
-Special thoughts for special scripts
-====================================
-
 -   [Font Creation](editexample.html#FontCreate)
 -   [Creating a glyph (tracing outlines)](editexample.html#CharCreate)
 -   [Navigating to other glyphs](editexample2.html#Navigating)

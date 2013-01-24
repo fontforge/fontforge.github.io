@@ -4,10 +4,6 @@ layout: default
 ---
 
 
-Tutorial
- [![](flags/Nisshoki-Japan.png)](ja/editexample.html) [![](flags/taiwan.png)](http://edt1023.sayya.org/fontforge/editexample.html) [![](flags/GermanFlag.png)](de/editexample.html)
-===================================================================================================================================================================================
-
 This tutorial is also available as a [pdf
 version](fontforge-tutorial.pdf). If you wish to follow along with the
 tutorial, [this bundle](tutorial.tgz) should provide you with the basic

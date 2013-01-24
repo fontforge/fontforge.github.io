@@ -4,9 +4,6 @@ layout: default
 ---
 
 
-TrueType and OpenType tables supported by FontForge
-===================================================
-
 [Apple](http://developer.apple.com/fonts/TTRefMan/RM06/Chap6.html),
 [MS](http://www.microsoft.com/typography/tt/tt.htm) and
 [Adobe](http://partners.adobe.com/public/developer/opentype/index_spec.html)

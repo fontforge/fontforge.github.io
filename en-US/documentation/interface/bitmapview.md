@@ -4,9 +4,6 @@ layout: default
 ---
 
 
-Bitmap Glyph View
-=================
-
   ---------------------------------------------------
   ![](img/BitmapReference.png)
    A bitmap glyph composed of two bitmap references

@@ -3,10 +3,6 @@ title: Hinting
 layout: default
 ---
 
-
-Hinting
-=======
-
 PostScript originally required that hints should not overlap. Now it
 requires that any active set of hints be non-overlapping, but it allows
 you to change sets as you move through the glyph.

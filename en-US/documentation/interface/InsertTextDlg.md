@@ -3,10 +3,6 @@ title: The Insert Text Dialog
 layout: default
 ---
 
-
-The Insert Text Dialog
-======================
-
 ![](img/InsertTxtDlg.png)Generally when designing a font you will not want
 to use this dialog. What is the point of a glyph which is made up of
 precomposed text?

@@ -6,7 +6,7 @@ layout: default
 Content
 =============
 
-- search for all pages with a MarkDown headline (a line at the top followed by a line of 3 or more = characters) and where this is duplicated with the title: in the YAML front matter, remove the markdown headline
+- ~~search for all pages with a MarkDown headline (a line at the top followed by a line of 3 or more = characters) and where this is duplicated with the title: in the YAML front matter, remove the markdown headline~~
 - the \<dl\> tags on some page have been stripped. find them and copy it back.
 
 - make use of section variable

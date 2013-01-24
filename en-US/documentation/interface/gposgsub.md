@@ -3,10 +3,6 @@ title: Advanced Typography tables
 layout: default
 ---
 
-
-Advanced Typography Tables
-==========================
-
 These differ between OpenType (originally called TrueType Open) and
 Apple (GX or Apple Advanced Typography). My support for both OpenType
 and Apple is incomplete.

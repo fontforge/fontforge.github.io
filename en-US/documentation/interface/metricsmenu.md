@@ -3,10 +3,6 @@ title: The Metrics Menu
 layout: default
 ---
 
-
-The Metrics Menu
-================
-
 This menu is not present in the Bitmap View, and the Metrics View only
 contains "Center in Width" and "Thirds in Width".
 

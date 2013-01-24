@@ -4,9 +4,6 @@ layout: default
 ---
 
 
-Tutorial
-========
-
 I shall not presume to teach aesthetics, I concentrate solely on the
 mechanics here.
 

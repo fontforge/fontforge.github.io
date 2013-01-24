@@ -4,9 +4,6 @@ layout: default
 ---
 
 
-Error Recovery
-==============
-
 All programs crash, and new programs (like this one) crash a lot.
 
 Every minute or so FontForge looks around and sees if anything has

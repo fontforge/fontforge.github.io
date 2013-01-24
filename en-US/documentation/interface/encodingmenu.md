@@ -3,10 +3,6 @@ title: Encoding Menu
 layout: default
 ---
 
-
-Encoding Menu
-=============
-
 The Encoding menu is only found in the font view:
 
 -   [Reencode \>](encodingmenu.html#Reencode)

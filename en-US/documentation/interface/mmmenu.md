@@ -3,10 +3,6 @@ title: Multiple Master menu
 layout: default
 ---
 
-
-The Multiple Master Menu
-========================
-
 The MM Menu provides a few commands for manipulating [Multiple Master or
 Apple distortable fonts](multiplemaster.html#MM). If the current font is
 a MM itself font the menu also includes a list of all font instances

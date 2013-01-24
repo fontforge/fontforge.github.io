@@ -4,9 +4,6 @@ layout: default
 ---
 
 
-Tile Path
-=========
-
 The Tile Path command may be used to apply a repetative decoration to a
 font. You invoke the command on a glyph (or set of glyphs), then design
 your tile(s). All selected paths in the glyph will be replaced by the

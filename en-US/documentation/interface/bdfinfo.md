@@ -3,10 +3,6 @@ title: BDF Info (Properties) Dialog
 layout: default
 ---
 
-
-BDF Info Dialog
-===============
-
 ![BDF Info dialog](bdfinfo.png)If your font contains bitmaps you may
 want control over the BDF Properties associated with those bitmaps. Each
 pixel size (bitmap strike) has its own set of properties.

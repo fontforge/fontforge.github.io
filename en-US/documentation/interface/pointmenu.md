@@ -3,10 +3,6 @@ title: The Point Menu
 layout: default
 ---
 
-
-The Point Menu
-==============
-
 This menu is only available in the Outline Character View.
 
 -   [Curve](#Curve)

@@ -3,10 +3,6 @@ title: Generate Font Dialog
 layout: default
 ---
 
-
-Generate Font Dialog
-====================
-
 ![](img/generate.png)This generates font files, both outline and bitmap. You
 may choose not to generate either, you may generate an afm file or a pfm
 file, you may select the type of postscript output, you may select which

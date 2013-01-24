@@ -4,9 +4,6 @@ layout: default
 ---
 
 
-Wacom graphics tablets and FontForge
-====================================
-
 I have added support to FontForge for the wacom graphics tablet.
 Eventually I will write some drawing tools that depend on pressure (and
 tilt perhaps).

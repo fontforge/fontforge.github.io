@@ -4,9 +4,6 @@ layout: default
 ---
 
 
-Macintosh font formats
-======================
-
 The mac stores fonts in resources. It use to store resources in resource
 forks (which have no representation on unix) but now (Mac OS/X) it also
 stores them in data forks.

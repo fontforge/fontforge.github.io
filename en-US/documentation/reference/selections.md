@@ -4,9 +4,6 @@ layout: default
 ---
 
 
-X Selections and the X Clipboard
-================================
-
 The general description of how selections and the clipboard works under
 X is given in
 [clipboards.txt](http://www.freedesktop.org/standards/clipboards.txt).

@@ -3,10 +3,6 @@ title: The Hints Menu
 layout: default
 ---
 
-
-The Hints Menu
-==============
-
 This menu is only present in the outline glyph view and the font view. 
  [A more detailed description of the hinting UI](hinting.html).
 

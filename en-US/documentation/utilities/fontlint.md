@@ -4,10 +4,6 @@ layout: default
 ---
 
 
-fontlint
- A program for checking the validity of fonts
-=============================================
-
 `fontlint fontfile1 ...`
 
 *fontlint* checks a font for certain standard problems

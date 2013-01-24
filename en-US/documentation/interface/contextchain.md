@@ -3,10 +3,6 @@ title: The dialog for editing Contextual or Chaining Contextual lookups
 layout: default
 ---
 
-
-Editing Contextual or Chaining Contextual lookups
-=================================================
-
 What is a Contextual Positioning lookup?
 ----------------------------------------
 

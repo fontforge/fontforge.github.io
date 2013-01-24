@@ -3,10 +3,6 @@ title: Finding common font problems automagically
 layout: default
 ---
 
-
-Finding common font problems automagically
-==========================================
-
 Nobody is perfect.
 
 Well, I'm not.

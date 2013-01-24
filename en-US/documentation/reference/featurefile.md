@@ -4,9 +4,6 @@ layout: default
 ---
 
 
-Major differences between FontForge's and Adobe's interpretation of feature files
-=================================================================================
-
 Not really any, any more. Except that FontForge supports much of the
 syntax which adobe documents but does not support. Adobe continues to
 reserve the right to change the syntax of anything they do not currently

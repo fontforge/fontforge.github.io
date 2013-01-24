@@ -3,9 +3,6 @@ title: How you can help with FontForge
 layout: default
 ---
 
-How you can help with FontForge
-===============================
-
 -   *My writing leaves much to be desired*. Anyone who can make my
     documentation more readable is encouraged to do so. (or who wishes
     to translate it into other languages, or who wishes to put it into a

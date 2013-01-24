@@ -4,9 +4,6 @@ layout: default
 ---
 
 
-Utilities for examining fonts
-=============================
-
 [ShowTTF](http://fontforge.git.sourceforge.net/git/gitweb.cgi?p=fontforge/fontforge;a=summary)
 ----------------------------------------------------------------------------------------------
 

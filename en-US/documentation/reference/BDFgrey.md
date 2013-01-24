@@ -4,9 +4,6 @@ layout: default
 ---
 
 
-Extensions to [Adobe's BDF](http://partners.adobe.com/asn/developer/PDFS/TN/5005.BDF_Spec.pdf) for greymap fonts
-================================================================================================================
-
 Adobe has defined a file format for distributing bitmap fonts called
 BDF. MicroSoft extended this format to support greymap (anti-aliased,
 each pixel representing various levels of grey rather than just

@@ -3,10 +3,6 @@ title: The Anchor Control dialog
 layout: default
 ---
 
-
-The Anchor Control dialog
-=========================
-
 ![](img/anchorcontrol-base.png)You invoke this dialog from the outline glyph
 view by selecting an anchor point in that glyph and selecting
 `Metrics->Anchor Control`. In the example at right, the arabic letter

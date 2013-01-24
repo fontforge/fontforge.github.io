@@ -3,9 +3,6 @@ title: Starting fontforge
 layout: default
 ---
 
-Starting fontforge
-==================
-
 -   [Installing from a pre-built unix
     package](nix-install.html#Installing)
 -   [Installing on a Mac](mac-install.html#Installing)

@@ -4,9 +4,6 @@ layout: default
 ---
 
 
-Math typesetting information
-============================
-
 In summer of 2007 (as I write) MicroSoft is proposing an extension to
 OpenType which will allow fonts to contain information useful for
 mathematical typesetting. The information all lives in a new

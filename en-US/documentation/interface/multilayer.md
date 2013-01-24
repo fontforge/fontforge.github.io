@@ -3,10 +3,6 @@ title: Multi Layered Editing of Type3 and SVG fonts
 layout: default
 ---
 
-
-Multi Layered Editing of Type3 and SVG fonts
-============================================
-
 Normal builds of fontforge do not have this mode enabled (it can eat up
 a lot of memory), if you wish to edit type3 fonts then configure
 fontforge with

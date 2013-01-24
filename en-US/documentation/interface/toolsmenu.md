@@ -4,9 +4,6 @@ layout: default
 ---
 
 
-The Tools Menu
-==============
-
 This menu is different from all the others: It is yours. The menu is
 initially empty (and disabled). There are [python scripting commands
 which will add menu elements](python.html#python-init-scripts) (and

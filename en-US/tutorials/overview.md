@@ -7,9 +7,6 @@ layout: default
 [![](flags/Nisshoki-Japan.png)](ja/overview.html)
 
 
-Table of Contents
-=================
-
 -   [Overview](#Overview)
     -   [Installing](#Installing)
     -   [Starting the program](#Starting)

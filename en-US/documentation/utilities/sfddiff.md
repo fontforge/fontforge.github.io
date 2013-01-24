@@ -4,10 +4,6 @@ layout: default
 ---
 
 
-sfddiff
- A program for comparing fonts
-==============================
-
 `sfddiff [-merge outfile] [-ignorehints] [-ignorenames] [-ignoregpos]   [-ignoregsub] [-ignorebitmaps] [-exact] [-warn] [-version] [-help] fontfile1   fontfile2`
 
 *Sfddiff* compares (or merges) two font files (in any format

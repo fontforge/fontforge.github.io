@@ -4,9 +4,6 @@ layout: default
 ---
 
 
-The View Menu
-=============
-
 -   [Fit](#Fit)
 -   [Zoom Out](#Out)
 -   [Zoom In](#In)

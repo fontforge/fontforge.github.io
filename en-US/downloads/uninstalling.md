@@ -4,9 +4,6 @@ layout: default
 ---
 
 
-Uninstalling FontForge
-======================
-
 I've never bothered to make this easy.
 
 If you installed in /usr/local (the default) then you type either:

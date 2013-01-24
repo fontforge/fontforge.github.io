@@ -4,9 +4,6 @@ layout: default
 ---
 
 
-Font Styles in various languages
-================================
-
 English
 
 Regular

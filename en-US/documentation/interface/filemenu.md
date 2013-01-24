@@ -3,10 +3,6 @@ title: The File Menu
 layout: default
 ---
 
-
-The File Menu
-=============
-
 -   [New](#New)
 -   [Open](#Open)
 -   Browse Web

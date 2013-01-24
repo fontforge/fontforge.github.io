@@ -3,10 +3,6 @@ title: Groups of Glyphs
 layout: default
 ---
 
-
-Groups of Glyphs
-================
-
 A group is a collection of glyphs. It may be any collection that appeals
 to you. My expectation is that groups will be used to collect glyphs
 which are visually associated (in some way) close together so that they

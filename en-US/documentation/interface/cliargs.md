@@ -3,10 +3,6 @@ title: Command Line Arguments
 layout: default
 ---
 
-
-Command Line Arguments
-======================
-
 >     $ fontforge [-options] [filenames]
 >     $ fontforge [-script] scriptfile [arguments]
 >     $ fontforge -c script-string [arguments]

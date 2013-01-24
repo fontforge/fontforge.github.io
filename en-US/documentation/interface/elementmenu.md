@@ -3,10 +3,6 @@ title: The Element Menu
 layout: default
 ---
 
-
-The Element Menu
-================
-
 -   [Font Info](#Font)...
 -   [Glyph Info](#CharInfo)...
 -   Other Info

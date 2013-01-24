@@ -9,8 +9,6 @@ layout: default
    ![](img/ttfinstrs-edit.png)
   --------------------------
 
-Viewing and Editing truetype instructions in FontForge.
-=======================================================
 
 -   [Apple's overview on instructing
     glyphs](http://developer.apple.com/fonts/TTRefMan/RM03/Chap3.html)

@@ -4,9 +4,6 @@ layout: default
 ---
 
 
-Files used by FontForge
-=======================
-
 \~/.FontForge
 
 FontForge creates this directory the first time it starts up. It

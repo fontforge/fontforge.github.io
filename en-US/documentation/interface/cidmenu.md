@@ -4,9 +4,6 @@ layout: default
 ---
 
 
-The CID Menu
-============
-
 The CID Menu provides a few commands for manipulating CID keyed fonts.
 If the current font is a CID keyed font the menu also includes a list of
 all subfonts that make up this one. This menu is only available in the

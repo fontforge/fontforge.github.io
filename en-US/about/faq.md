@@ -10,10 +10,6 @@ layout: default
   [Frames](faqFS.html)
   ----------------------
 
-Frequently Asked Questions
- (or many of the questions I've been asked so far)
-==================================================
-
                         
 
 > **Sir Toby:**Thy most exquisite reason, dear knight?

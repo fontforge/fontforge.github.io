@@ -4,10 +4,6 @@ layout: default
 ---
 
 
-Several formats for bitmap only sfnts
- (the file type which holds a truetype or opentype font)
-========================================================
-
 Unfortunately every system has its own way of storing bitmap only fonts
 into an sfnt wrapper (or the system just doesn't support it)
 

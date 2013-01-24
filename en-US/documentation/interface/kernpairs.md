@@ -3,10 +3,6 @@ title: The Kerning Pairs dialog
 layout: default
 ---
 
-
-![](img/KernPairs.png)The Kerning Pairs dialog
-==========================================
-
 This dialog either displays all kerning pairs in the entire font, or all
 kerning pairs associated with a character (if it is invoked from the
 outline view).

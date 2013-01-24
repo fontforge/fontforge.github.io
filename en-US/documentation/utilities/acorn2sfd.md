@@ -4,10 +4,6 @@ layout: default
 ---
 
 
-acorn2sfd
- Converter from Acorn RISC/OS fonts
-===================================
-
 `acorn2sfd [-version] [-help] {acorndir ...}`
 
 *acorn2sfd* will take several Acorn RISC/OS font directories and convert

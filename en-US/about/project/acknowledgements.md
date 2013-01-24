@@ -3,8 +3,6 @@ title: Acknowledgements
 layout: default
 ---
 
-Acknowledgements
-================
 
 This page exists to acknowledge everyone who's helped out with FontForge. Many thanks! 
 (Actually the list should be far longer than this,

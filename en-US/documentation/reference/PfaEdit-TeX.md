@@ -4,9 +4,6 @@ layout: default
 ---
 
 
-FontForge and TeX
-=================
-
 FontForge has a number of features built in to it to deal with TeX.
 
 It can read "pk" and "gf" bitmap files and

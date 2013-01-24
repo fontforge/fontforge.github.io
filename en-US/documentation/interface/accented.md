@@ -4,9 +4,6 @@ layout: default
 ---
 
 
-Building Accented and other Composite Glyphs
-============================================
-
 You can use the Element-\>Build-\>Build Accented Glyph command to build
 up accented glyphs. Or you can use Element-\>Build-\>Build Composite and
 build slightly more general composite glyphs (ligatures and so forth).

@@ -4,10 +4,6 @@ layout: default
 ---
 
 
-High level description of what each source file contains...
- **This page is grievously out of date**
-============================================================
-
 -   [Header files](#Header)
 -   [Source files](#Source)
 -   [unicode library

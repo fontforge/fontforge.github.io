@@ -4,9 +4,6 @@ layout: default
 ---
 
 
-Transform Dialog
-================
-
 ![](img/transform.png)
 
 This dialog is available in the font, outline and metrics views. In the

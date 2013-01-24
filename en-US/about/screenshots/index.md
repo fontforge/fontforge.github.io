@@ -3,8 +3,6 @@ title: FontForge Features
 layout: default
 ---
 
-FontForge Features
-==================
 
 Scripting
 ---------

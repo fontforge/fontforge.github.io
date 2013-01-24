@@ -4,9 +4,6 @@ layout: default
 ---
 
 
-Format for X11 pcf bitmap font files
-====================================
-
 This file is based on the [X11
 sources](http://ftp.x.org/pub/R6.4/xc/lib/font/bitmap/). If something
 here disagrees with what is found in the sources, my statement is

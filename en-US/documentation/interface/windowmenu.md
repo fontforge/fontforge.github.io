@@ -4,9 +4,6 @@ layout: default
 ---
 
 
-The Window Menu
-===============
-
 -   [Open Outline](#Outline)
 -   [Open Bitmap](#Bitmap)
 -   [Open Metrics](#Metrics)

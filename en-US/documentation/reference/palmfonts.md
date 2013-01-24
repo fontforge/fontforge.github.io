@@ -4,9 +4,6 @@ layout: default
 ---
 
 
-Palm fonts
-==========
-
 Fonts on the palm pilot are rather limited. Each strike is stored in its
 own record of a database with no name or indication of whether it is
 connected to any other font (ie. there is no concept of a family of

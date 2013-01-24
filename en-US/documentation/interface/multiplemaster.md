@@ -3,10 +3,6 @@ title: Multiple Master Dialog
 layout: default
 ---
 
-
-Multiple Master Dialog
-======================
-
 Allows you to create or modify a multiple master font
 
 What is a multiple master font?

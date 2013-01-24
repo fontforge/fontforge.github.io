@@ -5,8 +5,6 @@ layout: default
 
 A better version of this page is [here](http://dmtr.org/ff.php) which should be taken into account when redesigning the site
 
-Writing python scripts to change fonts in FontForge
-===================================================
 
 I assume you have a working knowledge of python (because I do not).
 [Python documentation may be found on the

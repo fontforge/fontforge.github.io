@@ -4,9 +4,6 @@ layout: default
 ---
 
 
-Help Menu
-=========
-
 The Help menu has only a few entries:
 
 -   [Help](helpmenu.html#Help)

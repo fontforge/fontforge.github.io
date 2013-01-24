@@ -4,9 +4,6 @@ layout: default
 ---
 
 
-FontForge Scripting Tutorial
-============================
-
 -   [A simple example](scripting-tutorial.html#simple)
     -   [Stating the problem](scripting-tutorial.html#simple)
     -   [Initial solution](scripting-tutorial.html#Intial)

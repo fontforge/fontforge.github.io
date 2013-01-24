@@ -4,10 +4,6 @@ layout: default
 ---
 
 
-FontForge install procedures
- for VMS
-=============================
-
 -   [Installing from a pre-built vms package](#Installing)
 -   [Installing on a unix/linux system](nix-install.html)
 -   [Installing on a mac](mac-install.html)

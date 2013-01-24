@@ -4,9 +4,6 @@ layout: default
 ---
 
 
-FontForge's math
-================
-
 *Being a brief description of the mathematics underlying various of
 FontForge's commands 
  It is presumed that you understand about parameterized splines, if not

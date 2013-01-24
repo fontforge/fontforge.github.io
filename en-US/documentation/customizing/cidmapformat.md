@@ -4,9 +4,6 @@ layout: default
 ---
 
 
-Cidmap files
-============
-
 These are FontForge's own files which it uses to map from CIDs in one
 Registry-Ordering-Supplement to unicode code points.
 

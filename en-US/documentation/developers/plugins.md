@@ -4,9 +4,6 @@ layout: default
 ---
 
 
-Plugins in FontForge
-====================
-
 FontForge supports a plugin mechanism for extending its functionality.
 
 Plugins are shared libraries that can be loaded at runtime. When

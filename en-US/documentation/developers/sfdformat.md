@@ -4,9 +4,6 @@ layout: default
 ---
 
 
-Spline Font Database
-====================
-
 > **TYSON:**
 >   What is the meaning of this?
 >

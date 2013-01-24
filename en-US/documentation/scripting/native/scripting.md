@@ -4,9 +4,6 @@ layout: default
 ---
 
 
-Writing scripts to change fonts in FontForge
-============================================
-
 FontForge includes two interpreters so you can write scripts to modify
 fonts. One of these interpreters is [python](python.html), one is a
 legacy language I came up with. FontForge may be configured with either

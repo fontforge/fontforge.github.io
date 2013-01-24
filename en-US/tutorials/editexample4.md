@@ -4,9 +4,6 @@ layout: default
 ---
 
 
-Tutorial \#4
-============
-
 -   [Font Creation](editexample.html#FontCreate)
 -   [Creating a glyph (tracing outlines)](editexample.html#CharCreate)
 -   [Create glyph outlines using spiro points](editspiro.html)

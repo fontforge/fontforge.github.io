@@ -4,9 +4,6 @@ layout: default
 ---
 
 
-Glyph Info
-==========
-
 ![](img/charinfo.png) Glyph Info
 ----------------------------
 

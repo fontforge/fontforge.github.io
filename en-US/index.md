@@ -3,9 +3,6 @@ title: FontForge is a font editor
 layout: homepage
 ---
 
-Welcome
-==========
-
 FontForge is libre software: you can share copies freely and make changes
 under a [libre license](/en-US/about/project/license.html).
 You are invited to participate in this project; your bug reports, feature

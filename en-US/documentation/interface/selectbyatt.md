@@ -3,10 +3,6 @@ title: Select By Lookup Subtable
 layout: default
 ---
 
-
-![](img/SelectByATT.png)Select By Lookup Subtable
-=============================================
-
 This dialog allows you to select glyphs which undergo a transformation
 described in the selected lookup subtable.
 

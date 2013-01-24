@@ -4,9 +4,6 @@ layout: default
 ---
 
 
-Font Validation window
-======================
-
 ![](img/validation.png)Both PostScript and TrueType impose some restrictions
 on the data that define a font. Before you save a font you should do a
 quick check (well... it's not always quick) to insure that you are not

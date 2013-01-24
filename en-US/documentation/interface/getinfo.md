@@ -3,10 +3,6 @@ title: Get Info
 layout: default
 ---
 
-
-Get Info
-========
-
 In the Outline View the Get Info command can generate one of four
 different dialogs depending on what is selected. If a single thing is
 selected, and that thing is a point then the [point

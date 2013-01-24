@@ -3,10 +3,6 @@ title: Show Advanced Typographic Features
 layout: default
 ---
 
-
-Show Advanced Typographic Features
-==================================
-
 ![](img/showatt.png)This dialog shows the contents of some advanced
 typography tables (GDEF, GPOS and GSUB for opentype fonts, kern, lcar,
 morx, opbd and prop for Apple fonts) as far as fontforge understands

@@ -4,9 +4,6 @@ layout: default
 ---
 
 
-Bézier^[1](#bezier)^ Splines
-============================
-
 ![](img/splines.gif)Technically PostScript uses cubic Bézier splines. Each
 control point determines the slope of the spline at the corresponding
 end point. TrueType uses quadratic Bézier splines, in these there is

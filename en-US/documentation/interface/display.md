@@ -3,10 +3,6 @@ title: Display Fonts
 layout: default
 ---
 
-
-Display & Print Fonts
-=====================
-
 ![](img/DisplayFonts.png)This dialog allows you to display text in any fonts
 you have loaded into FontForge and see how they look on the screen and
 together. Having done that to your satisfaction you may optionally print

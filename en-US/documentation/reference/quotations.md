@@ -4,9 +4,6 @@ layout: default
 ---
 
 
-Quotations used in the sample text for Printing
-===============================================
-
 The Swedish version of "The quick brown fox..." (flying snipes seeks
 rest on soft tussocks") is courtesy of Martin Norbäck.
 

@@ -4,9 +4,6 @@ layout: default
 ---
 
 
-X Resources
-===========
-
 Every X application has an inordinate number of resources that you can
 tweak. This one is no exception. However I don't follow standard
 conventions, so it's all different. Sorry (a little anyway).

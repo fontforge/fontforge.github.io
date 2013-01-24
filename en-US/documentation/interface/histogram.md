@@ -3,10 +3,6 @@ title: The histogram dialog
 layout: default
 ---
 
-
-![](img/histogram.png)The histogram dialog
-======================================
-
 The histogram dialog is used to display three things which are useful
 for setting the some of the global hinting values that live in the
 PostScript [Private dictionary](fontinfo.html#Private). The dialog can

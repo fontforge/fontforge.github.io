@@ -4,9 +4,6 @@ layout: default
 ---
 
 
-Stylistic Transformations on Fonts
-==================================
-
 -   [Change Weight dialog](#Embolden)
 -   [Italic dialog](#Italic)
 -   [Condense/Extend dialog](#Condense)

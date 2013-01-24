@@ -4,9 +4,6 @@ layout: default
 ---
 
 
-Open Font Library
-=================
-
 The [Open Font Library](http://openfontlibrary.org/) is a web-site which
 allows you to download free/libre/open fonts made by others and to
 upload your own.

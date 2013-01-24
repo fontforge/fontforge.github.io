@@ -4,9 +4,6 @@ layout: default
 ---
 
 
-Outline Glyph View
-==================
-
 ![](img/charview2.png)
 
 The outline glyph view is the window in which most editing happens.

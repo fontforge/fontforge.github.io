@@ -4,10 +4,6 @@ layout: default
 ---
 
 
-fontimage
- generate a font thumbnail image
-================================
-
 `fontimage [--o outfile] [--width num] [--height num] [--pixelsize num]   [--fontname] [--text string] [--version] [--help] fontfile`
 
 *Fontimage* produces a thumbnail image of a font (which may be in any

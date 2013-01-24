@@ -4,9 +4,6 @@ layout: default
 ---
 
 
-Font View
-=========
-
 ![](img/AmbrosiaFV.png)
 
 The font view is a list of all the glyphs available in the given font.

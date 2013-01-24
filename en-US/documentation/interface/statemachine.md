@@ -3,10 +3,6 @@ title: The Mac State Machine dialog
 layout: default
 ---
 
-
-The Mac State Machine Dialog
-============================
-
 ![](img/statemachine-context.png)The mac uses state machines where opentype
 would use a contextual lookup. The example at right (with appropriate
 substitutions attached to it) will convert an initial or medial short-s

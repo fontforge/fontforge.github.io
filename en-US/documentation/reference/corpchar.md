@@ -4,9 +4,6 @@ layout: default
 ---
 
 
-Unicode Corporate Characters used by FontForge
-==============================================
-
 Unicode has a region (0xe000-0xf8ff) in which font vendors may assign
 their own characters. Adobe and Apple have each done so and FontForge
 recognizes the most common of these (things like the Small Caps

@@ -3,8 +3,6 @@ title: Changelog for FontForge
 layout: default
 ---
 
-Changelog
-=========
 
 -   On this page: 25 August 2008 to current
 -   [Older changes](oldchangelog.html), from 2 Mar 2004 to 24 August 2008

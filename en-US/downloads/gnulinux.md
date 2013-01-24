@@ -4,10 +4,6 @@ layout: default
 ---
 
 
-FontForge install procedures
- for unix/linux based systems
-=============================
-
 **I no longer provide pre-built packages. You may either compile from
 source or download a package from another site (most linux distributors
 will have a fontforge package).**

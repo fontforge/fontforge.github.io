@@ -9,8 +9,6 @@ layout: default
 > -- Lewis Carroll
 >  *Through the Looking-Glass*
 
-Manipulating OpenType Lookups
-=============================
 
 ![](img/fontinfo-lookups.png)You use the Lookups pane of the [Element-\>Font
 Info](fontinfo.html) command to control OpenType lookups.

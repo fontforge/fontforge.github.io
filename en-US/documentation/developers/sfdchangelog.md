@@ -4,9 +4,6 @@ layout: default
 ---
 
 
-Changes to the sfd format
-=========================
-
 FontForge's [sfd (spline font database) format](sfdformat.html) changes
 over time as fontforge supports more things. I have only recently
 started keeping track of these changes, so older changes are not listed

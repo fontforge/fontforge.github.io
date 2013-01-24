@@ -3,10 +3,6 @@ title: Searching for shapes within characters...
 layout: default
 ---
 
-
-![](img/rplref.png)Finding shapes within glyphs
-===========================================
-
 FontForge will allow you to search a font for all glyphs containing a
 certain shape and optionally replace that shape with another shape.
 

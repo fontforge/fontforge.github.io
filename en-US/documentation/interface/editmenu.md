@@ -3,10 +3,6 @@ title: The Edit Menu
 layout: default
 ---
 
-
-The Edit Menu
-=============
-
 In the Metrics View this menu is greyed out. The commands are only
 available in text fields.
 

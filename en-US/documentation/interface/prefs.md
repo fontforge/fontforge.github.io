@@ -3,10 +3,6 @@ title: Preferences Dialog
 layout: default
 ---
 
-
-Preferences Dialog
-==================
-
 -   ![](img/prefs-generic.png)[Generic](prefs.html#ResourceFile)
 -   [New Font](prefs.html#NewCharset)
 -   [Open Font](prefs.html#PreferCJKEncoding)

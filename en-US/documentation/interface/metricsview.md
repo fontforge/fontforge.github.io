@@ -3,10 +3,6 @@ title: The Metrics View
 layout: default
 ---
 
-
-The Metrics View
-================
-
 ![](img/MetricsView.png)
 
 The metrics view allows you to examine how glyphs look together and to
