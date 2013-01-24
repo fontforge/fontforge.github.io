@@ -15,3 +15,7 @@ $(".table-of-contents").on('hidden', function () {
 })
 
 $(".video-container").fitVids();
+
+// Breadcrumbs active highlight
+
+$(".breadcrumb li").last().addClass('active');

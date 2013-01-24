@@ -26,60 +26,15 @@
 				</form>
 
 				<ul class="breadcrumb">
-					{% capture allparts %}{{ page.url | replace: '/', ' ' }}{% endcapture %}
-
-					{% capture myFirstWord  %}{{ allparts    | truncatewords: 1, '' }}{% endcapture %}
-					{% capture minusFirst   %}{{ allparts    | replace_first: myFirstWord, ''   }}{% endcapture %}
-
-					{% capture mySecondWord %}{{ minusFirst  | truncatewords: 1, '' }}{% endcapture %}
-					{% capture minusSecond  %}{{ minusFirst  | replace_first: mySecondWord, ''  }}{% endcapture %}
-
-					{% capture myThirdWord  %}{{ minusSecond | truncatewords: 1, '' }}{% endcapture %}
-					{% capture minusThird   %}{{ minusSecond | replace_first: myThirdWord, ''   }}{% endcapture %}
-
-					{% capture myFourthWord %}{{ minusThird  | truncatewords: 1, '' }}{% endcapture %}
-					{% capture minusFourth  %}{{ minusThird  | replace_first: myFourthWord, ''  }}{% endcapture %}
-
-					{% capture myFifthWord  %}{{ minusFourth | truncatewords: 1, '' }}{% endcapture %}
-					{% capture minusFifth  %}{{ minusFourth  | replace_first: myFifthWord, ''  }}{% endcapture %}
-
-					{% capture mySixthWord  %}{{ minusFifth  | truncatewords: 1, '' }}{% endcapture %}
-
-					{% if myFirstWord contains '.html' %}
-					  <li><a href="/{{myFirstWord}}/index.html"><i class="icon-home"></i>Home</a> </li>
-					{% elsif mySecondWord contains '.html' %}
-					  <li><a href="/{{myFirstWord}}/index.html"><i class="icon-home"></i>Home</a> <span class="divider">&#187;</span> </li>
-					  <li class="active">{{mySecondWord | remove: '.html' }}</li>
-					{% elsif myThirdWord contains '.html' %}
-					  <li><a href="/{{myFirstWord}}/index.html"><i class="icon-home"></i>Home</a> <span class="divider">&#187;</span> </li>
-					  <li><a href="/{{myFirstWord}}/{{mySecondWord}}/index.html">{{mySecondWord}}</a> <span class="divider">&#187;</span> </li>
-					  {% unless myThirdWord == 'index.html' %}
-					  <li class="active">{{myThirdWord | remove: '.html' }}</li>
-					  {% endunless %}
-					{% elsif myFourthWord contains '.html' %}
-					  <li><a href="/{{myFirstWord}}/index.html"><i class="icon-home"></i>Home</a> <span class="divider">&#187;</span> </li>
-					  <li><a href="/{{myFirstWord}}/{{mySecondWord}}/index.html">{{mySecondWord}}</a> <span class="divider">&#187;</span> </li>
-					  <li><a href="/{{myFirstWord}}/{{mySecondWord}}/{{myThirdWord}}/index.html">{{myThirdWord}}</a> <span class="divider">&#187;</span> </li>
-					  {% unless myFourthWord == 'index.html' %}
-					  <li class="active">{{myFourthWord | remove: '.html' }}</li>
-					  {% endunless %}
-					{% elsif myFifthWord contains '.html' %}
-					  <li><a href="/{{myFirstWord}}/index.html"><i class="icon-home"></i>Home</a> <span class="divider">&#187;</span> </li>
-					  <li><a href="/{{myFirstWord}}/{{mySecondWord}}/index.html">{{mySecondWord}}</a> <span class="divider">&#187;</span> </li>
-					  <li><a href="/{{myFirstWord}}/{{mySecondWord}}/{{myThirdWord}}/index.html">{{myThirdWord}}</a> <span class="divider">&#187;</span> </li>
-					  <li><a href="/{{myFirstWord}}/{{mySecondWord}}/{{myThirdWord}}/{{myFourthWord}}/index.html">{{myFourthWord}}</a> <span class="divider">&#187;</span> </li>
-					  {% unless myFifthWord == 'index.html' %}
-					  <li class="active">{{myFifthWord | remove: '.html' }}</li>
-					  {% endunless %}
-					{% else %}
-					  <li><a href="/{{myFirstWord}}/index.html"><i class="icon-home"></i>Home</a> <span class="divider">&#187;</span> </li>
-					  <li><a href="/{{myFirstWord}}/{{mySecondWord}}/index.html">{{mySecondWord}}</a> <span class="divider">&#187;</span> </li>
-					  <li><a href="/{{myFirstWord}}/{{mySecondWord}}/{{myThirdWord}}/index.html">{{myThirdWord}}</a> <span class="divider">&#187;</span> </li>
-					  <li><a href="/{{myFirstWord}}/{{mySecondWord}}/{{myThirdWord}}/{{myFourthWord}}/index.html">{{myFourthWord}}</a> <span class="divider">&#187;</span> </li>
-					  <li class="active">{{mySixthWord | remove: '.html' }}</li>
-					{% endif %}
-					</ul>
-
+					<li><a href="#"><i class="icon-home"></i>Home</a> </li>
+					{% assign crumbs = page.url | split: '/' %}
+					{% assign crumbstotal = crumbs | size %}
+					{% for crumb in crumbs offset:2 %}
+						{% unless crumb == 'index.html' %}
+							<li><span class="divider">&#187;</span> {{ crumb | remove: '.html' }} </li>
+						{% endunless %}
+					{% endfor %}
+				</ul>
 			</div>
 		</div>	
 
