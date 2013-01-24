@@ -49,19 +49,19 @@
 					  <li><a href="/{{myFirstWord}}/index.html"><i class="icon-home"></i>Home</a> </li>
 					{% elsif mySecondWord contains '.html' %}
 					  <li><a href="/{{myFirstWord}}/index.html"><i class="icon-home"></i>Home</a> <span class="divider">&#187;</span> </li>
-					  <li class="active">{{mySecondWord}}</li>
+					  <li class="active">{{mySecondWord | remove: '.html' }}</li>
 					{% elsif myThirdWord contains '.html' %}
 					  <li><a href="/{{myFirstWord}}/index.html"><i class="icon-home"></i>Home</a> <span class="divider">&#187;</span> </li>
 					  <li><a href="/{{myFirstWord}}/{{mySecondWord}}/index.html">{{mySecondWord}}</a> <span class="divider">&#187;</span> </li>
 					  {% unless myThirdWord == 'index.html' %}
-					  <li class="active">{{myThirdWord}}</li>
+					  <li class="active">{{myThirdWord | remove: '.html' }}</li>
 					  {% endunless %}
 					{% elsif myFourthWord contains '.html' %}
 					  <li><a href="/{{myFirstWord}}/index.html"><i class="icon-home"></i>Home</a> <span class="divider">&#187;</span> </li>
 					  <li><a href="/{{myFirstWord}}/{{mySecondWord}}/index.html">{{mySecondWord}}</a> <span class="divider">&#187;</span> </li>
 					  <li><a href="/{{myFirstWord}}/{{mySecondWord}}/{{myThirdWord}}/index.html">{{myThirdWord}}</a> <span class="divider">&#187;</span> </li>
 					  {% unless myFourthWord == 'index.html' %}
-					  <li class="active">{{myFourthWord}}</li>
+					  <li class="active">{{myFourthWord | remove: '.html' }}</li>
 					  {% endunless %}
 					{% elsif myFifthWord contains '.html' %}
 					  <li><a href="/{{myFirstWord}}/index.html"><i class="icon-home"></i>Home</a> <span class="divider">&#187;</span> </li>
@@ -69,14 +69,14 @@
 					  <li><a href="/{{myFirstWord}}/{{mySecondWord}}/{{myThirdWord}}/index.html">{{myThirdWord}}</a> <span class="divider">&#187;</span> </li>
 					  <li><a href="/{{myFirstWord}}/{{mySecondWord}}/{{myThirdWord}}/{{myFourthWord}}/index.html">{{myFourthWord}}</a> <span class="divider">&#187;</span> </li>
 					  {% unless myFifthWord == 'index.html' %}
-					  <li class="active">{{myFifthWord}}</li>
+					  <li class="active">{{myFifthWord | remove: '.html' }}</li>
 					  {% endunless %}
 					{% else %}
 					  <li><a href="/{{myFirstWord}}/index.html"><i class="icon-home"></i>Home</a> <span class="divider">&#187;</span> </li>
 					  <li><a href="/{{myFirstWord}}/{{mySecondWord}}/index.html">{{mySecondWord}}</a> <span class="divider">&#187;</span> </li>
 					  <li><a href="/{{myFirstWord}}/{{mySecondWord}}/{{myThirdWord}}/index.html">{{myThirdWord}}</a> <span class="divider">&#187;</span> </li>
 					  <li><a href="/{{myFirstWord}}/{{mySecondWord}}/{{myThirdWord}}/{{myFourthWord}}/index.html">{{myFourthWord}}</a> <span class="divider">&#187;</span> </li>
-					  <li class="active">{{mySixthWord}}</li>
+					  <li class="active">{{mySixthWord | remove: '.html' }}</li>
 					{% endif %}
 					</ul>
 
