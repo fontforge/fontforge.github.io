@@ -1,6 +1,36 @@
 ---
-title: Project FontForge
+title: What is the FontForge Project?
 layout: default
 ---
 
-Table of contents for this section about the overall FontForge project.
+**(TODO: Table of contents for this section about the overall FontForge project.)**
+
+FontForge is libre software, which means free as in freedom (like free speech)
+and not merely free as in price (like free beer.) Software freedom means that 
+each user has an equal amount of power as the developers over what the 
+software does: everyone who has a copy has access to the source code, and is 
+free to modify the code to change what the program does. 
+
+Additionally,each user has an equal amount of power as the developers over when and how
+copies of the work are distributed. Everyone can redistribute copies,
+unchanged or with their improvements, with or without a fee.
+
+With cheap internet access everywhere, that freedoms mean that libre 
+software is usually available free of charge. 
+
+But more importantly, the ongoing development of the software is done 
+in a very public way: A project.
+
+When users make changes to the code to improve their lives, they can keep 
+their changes private. But they are invited by the project to contribute their 
+work back 'upstream.' The frequent contributors
+review the work, and perhaps after some discussion and revision include 
+it in the next release for all other users to enjoy and build on further. 
+(The Git version control system and the GitHub website make the process 
+convenient.)
+
+Doing something in public inevitably invites discussion, critique, and 
+criticism of what you do. Sometimes this can be 
+[unfair, snarky, or even nasty](http://harthur.wordpress.com/2013/01/24/771/). 
+We hope you will find the FontForge project fun to contribute to.
+
