@@ -26,9 +26,7 @@
 				</form>
 
 				<ul class="breadcrumb">
-					{% assign url = {{page.url}} %}
-					{% assign delimiter = '/' %}
-					{% capture allparts %}{{ url | replace: delimiter, ' ' }}{% endcapture %}
+					{% capture allparts %}{{ page.url | replace: '/', ' ' }}{% endcapture %}
 
 					{% capture myFirstWord  %}{{ allparts    | truncatewords: 1 | remove: '...' }}{% endcapture %}
 					{% capture minusFirst   %}{{ allparts    | replace_first: myFirstWord, ''   }}{% endcapture %}

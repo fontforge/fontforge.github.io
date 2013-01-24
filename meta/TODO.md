@@ -37,7 +37,6 @@ HTML/CSS
 Small
 ------
 
-- make the breadcrumb Liquid template in nav-sub.html remove the '.html' from final crumbs
 - make the homepage.html XXX numbers work via a JS call to http://developer.github.com/v3/
 - in default.html and others, for PAGE HEADING, make a liquid if/else, if page.headline is defined use that there instead
 - history mock has a bigtext class missing from a para
