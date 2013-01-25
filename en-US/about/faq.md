@@ -1,7 +1,7 @@
 ---
+toc: yes
 layout: default
 title: Frequently Asked Questions
-toc: yes
 ---
 
     Sir Toby   : Thy most exquisite reason, dear knight?
