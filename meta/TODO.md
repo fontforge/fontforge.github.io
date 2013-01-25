@@ -46,7 +46,7 @@ Small
 - add a little right padding to the chevrons used in the table of contents
 - add line breaks for the netx/prev texts in table of contents
 - make .imageright have -300 so it doesn't effect paragraph width
-
+- when the site launches, removed the 'noindex' from the html-start
 
 Medium
 -------
