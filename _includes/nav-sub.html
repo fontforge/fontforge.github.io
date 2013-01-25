@@ -25,7 +25,11 @@
 				     <input name="sitesearch" value="fontforge.github.com" type="hidden">
 				</form>
 
-				<ul class="breadcrumb"><!-- TODO redo this in jQuery so it links perhaps with https://github.com/tombonner/jurlp -->
+				<ul class="breadcrumb">
+				<!-- TODO redo this in jQuery so it links. I've installed https://github.com/tombonner/jurlp in the site, 
+				$(document).jurlp("path"); //  [["en-US", "about", "index.html"]]
+				$(document).jurlp("path").toString(); // /en-US/about/index.html
+				-->
 					<li><a href="#"><i class="icon-home"></i>Home</a> </li>
 					{% assign crumbs = page.url | split: '/' %}
 					{% assign crumbstotal = crumbs | size %}
