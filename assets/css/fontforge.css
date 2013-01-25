@@ -72,15 +72,21 @@
 	color: #000;
 	font-size: 2.2em;
 	line-height: 1.2;
+	margin: 0;
+	padding: 0;
 }
 
-.footer .roundel a {
+.footer .roundel h3 a {
+	color: #000;
+}
+
+.footer .roundel p a {
 	font-size:0.75em;
 	margin: 0;
 	padding: 0;
 }
 
-.footer .roundel h2,.roundel h3,.roundel h4,.roundel h5, .roundel h6,.roundel p,.roundel a {
+.footer .roundel h2,.roundel h3,.roundel h4,.roundel h5, .roundel h6 {
 	margin-top: 6px;
 	margin-bottom: 6px;
 	position: relative;
