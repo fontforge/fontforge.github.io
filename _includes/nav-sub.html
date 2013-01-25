@@ -4,6 +4,35 @@
 		<div class="container">
 		
 			<!-- PILL NAV -->
+			{% assign crumbs = page.url | split: '/' %}
+			{% if crumbs[2] == 'downloads' %}
+			<ul class="nav nav-pills">
+				<li><a href="/en-US/downloads/gnulinux.html">GNU+Linux</a></li>
+				<li><a href="/en-US/downloads/macosx.html">Mac OS X</a></li>
+				<li><a href="/en-US/downloads/windows.html">Windows</a></li>
+				<li><a href="/en-US/downloads/vms.html">VMS</a></li>
+				<li><a href="/en-US/downloads/sourcecode.html">Source Code</a></li>
+				<li><a href="/en-US/downloads/uninstalling.html">Uninstalling</a></li>
+			</ul>
+			{% elsif crumbs[2] == 'tutorials' %}
+			<ul class="nav nav-pills">
+				<li><a href="/en-US/tutorials/broken.html">Broken</a></li>
+				<li><a href="/en-US/tutorials/broken.html">Broken</a></li>
+				<li><a href="/en-US/tutorials/broken.html">Broken</a></li>
+				<li><a href="/en-US/tutorials/broken.html">Broken</a></li>
+				<li><a href="/en-US/tutorials/broken.html">Broken</a></li>
+				<li><a href="/en-US/tutorials/broken.html">Broken</a></li>
+			</ul>
+			{% elsif crumbs[2] == 'documentation' %}
+			<ul class="nav nav-pills">
+				<li><a href="/en-US/documentation/customizing/index.html">Customize</a></li>
+				<li><a href="/en-US/documentation/developers/index.html">Develop</a></li>
+				<li><a href="/en-US/documentation/interface/index.html">Interface</a></li>
+				<li><a href="/en-US/documentation/reference/index.html">Reference</a></li>
+				<li><a href="/en-US/documentation/scripting/index.html">Scripting</a></li>
+				<li><a href="/en-US/documentation/utilities/index.html">Utilities</a></li>
+			</ul>
+			{% else %}
 			<ul class="nav nav-pills">
 				<li><a href="/en-US/about/faq.html">FAQ</a></li>
 				<li><a href="/en-US/about/screenshots.html">Screenshots</a></li>
@@ -12,6 +41,8 @@
 				<li><a href="/en-US/about/project/index.html">The project</a></li>
 				<li><a href="/en-US/about/site/index.html">This site</a></li>
 			</ul>
+			{% endif %}
+
 		
 		</div>
 	
@@ -30,7 +61,7 @@
 				$(document).jurlp("path"); //  [["en-US", "about", "index.html"]]
 				$(document).jurlp("path").toString(); // /en-US/about/index.html
 				-->
-					<li><a href="#"><i class="icon-home"></i>Home</a> </li>
+					<li><a href="/"><i class="icon-home"></i>Home</a> </li>
 					{% assign crumbs = page.url | split: '/' %}
 					{% for crumb in crumbs offset:2 %}
 						{% unless crumb == 'index.html' %}
