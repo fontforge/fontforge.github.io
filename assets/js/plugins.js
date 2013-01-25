@@ -76,6 +76,10 @@
   }
 })( jQuery );
 
+
+// TODO explore gregfranko.com/jquery.tocify.js/
+// TODO explore http://www.jankoatwarpspeed.com/wp-content/uploads/examples/table-of-contents/
+
 /*
  * jQuery autoTOC plugin
  *
