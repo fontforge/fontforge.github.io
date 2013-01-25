@@ -27,7 +27,8 @@ $(".video-container").fitVids();
 
 $(".breadcrumb li").last().addClass('active');
 
-$("#breadcrumbs").dynamicBreadcrumbs(); 
+// dynamicBreadcrumbs(), turned off until it works
+// $("#breadcrumbs").dynamicBreadcrumbs(); 
 
 // Table of Contents generator
 
