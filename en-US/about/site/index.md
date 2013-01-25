@@ -12,3 +12,13 @@ Like FontForge itself, the website is developed as a project on [GitHub](http://
 Once you are logged in, you will be able to click the small 'GitHub' link in the footer's roundel.
 
 There is also a link to [prose.io](http://prose.io) which is a more elegant way to edit files on Git Hub.
+
+## Contributors ##
+
+1. George Williams, primary author of all of FontForge and most of the site's contents
+2. Bevan Stephens, primary visual designer of this website
+3. Dave Crossland
+4. Brian Zick
+
+
+TODO This should list all the contributors to the website.
