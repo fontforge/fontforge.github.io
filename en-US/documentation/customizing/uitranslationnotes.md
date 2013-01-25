@@ -9,4 +9,4 @@ Contact HP when this is ready to test the instructions here with a vietnamese tr
 
 ==== Website Translation ====
 
-Please refer to the [website translation](/about/site/sitetranslation.html) page for details.
+Please refer to the [website translation](/about/site/translation.html) page for details.
