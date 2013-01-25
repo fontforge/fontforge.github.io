@@ -23,6 +23,20 @@ $(".breadcrumb li").last().addClass('active');
 // Table of Contents generator
 
 $(document).ready(function() { 
+//	$("#toc").autoTOC({cols: 2, selector: "content h2,h3,h4,h5,h6"})
+
+/*
+    $("h2").each(function(i) {
+        var current = $(this);
+        current.attr("id", "title" + i);
+        
+        var pos = current.position().top / $("#content").height() * $(window).height();
+
+        $("#toc").append("<a id='link" + i + "' href='#title" + i + "' title='" + current.attr("tagName") + "'>" + current.html() + "</a>");
+        $("#link" + i).css("top", pos);
+    });
+*/
+
 $('#toc').toc({
     'selectors': 'h2,h3', //elements to use as headings
     'container': '#content', //element to find all selectors in
