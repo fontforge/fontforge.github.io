@@ -4,8 +4,6 @@ title: Frequently Asked Questions
 ---
 
 
-![](img/fontforge-banner-420.jpeg)
-
   ----------------------
   [Frames](faqFS.html)
   ----------------------
