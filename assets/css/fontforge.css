@@ -5,8 +5,9 @@
  
 
 /* Page content container*/
-.content {	background: url(../img/twister.gif) no-repeat top center;	}
-.content.secondary {	background: none; padding-top: 36px;	}
+.content {
+	background: url('/assets/img/twister.gif') no-repeat top center;
+}
 
 
 /* Page heading */

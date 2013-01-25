@@ -4,18 +4,11 @@ title: Frequently Asked Questions
 toc: yes
 ---
 
-
-  ----------------------
-  [Frames](faqFS.html)
-  ----------------------
-
-                        
-
-> **Sir Toby:**Thy most exquisite reason, dear knight?
->  **Sir Andrew** I have no exquisite reason for't,
->  but I have reason good enough
-> Twelfth Night, II, iii, 130
->  Shakespeare
+    **Sir Toby:**Thy most exquisite reason, dear knight?
+    **Sir Andrew** I have no exquisite reason for't,
+    but I have reason good enough
+    Twelfth Night, II, iii, 130
+    Shakespeare
 
 Most important question
 -----------------------
