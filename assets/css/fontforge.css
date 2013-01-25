@@ -65,11 +65,27 @@
  
 .footer .roundel {
 	margin-top: 20px;
+	line-height: 0.75;
+}
+
+.footer .roundel h3 {
+	color: #000;
+	font-size: 2.2em;
+	line-height: 1.2;
 }
 
 .footer .roundel a {
-	display: block;
+	font-size:0.75em;
+	margin: 0;
+	padding: 0;
 }
+
+.footer .roundel h2,.roundel h3,.roundel h4,.roundel h5, .roundel h6,.roundel p,.roundel a {
+	margin-top: 6px;
+	margin-bottom: 6px;
+	position: relative;
+	z-index: 50;
+} 
 
 .footer .copyright {
 	color: #999;
@@ -851,7 +867,7 @@ figcaption {
 	z-index: 1;
 }
  
-.roundel h2,.roundel h3,.roundel h4,.roundel h5, .roundel h6,.roundel p,.roundel a{
+.roundel h2,.roundel h3,.roundel h4,.roundel h5, .roundel h6,.roundel p,.roundel a {
 	margin-top: 6px;
 	margin-bottom: 6px;
 	position: relative;
