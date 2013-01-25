@@ -1,3 +1,10 @@
+// set the area as a class of <body> which has appropriate CSS to 
+// color the subnav.
+//   jurlp array magic is like this
+//   http://fontforge.github.com/en-US/about/site/translations.html
+//                                     ^^^^^
+var siteArea = $(document).jurlp("path")[0][1];
+$('body').addClass(siteArea);
 
 // Table of contents accordion
 $(".table-of-contents").collapse();
