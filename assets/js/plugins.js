@@ -350,6 +350,10 @@
  * 
  */
 
+// TODO remove the first item of the crumb that is dropped as its the language
+// TODO add a > like the liquid breadcrumbs have
+// TODO add a home icon 
+
 !(function($) {
     $.fn.dynamicBreadcrumbs = function(options)
     {
