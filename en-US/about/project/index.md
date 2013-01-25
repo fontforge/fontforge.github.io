@@ -3,8 +3,6 @@ layout: default
 title: What is the FontForge Project?
 ---
 
-**(TODO: Table of contents for this section about the overall FontForge project.)**
-
 FontForge is libre software, which means free as in freedom (like free speech)
 and not merely free as in price (like free beer.) Software freedom means that 
 each user has an equal amount of power as the developers over what the 
