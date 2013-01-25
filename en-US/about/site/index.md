@@ -13,12 +13,14 @@ Once you are logged in, you will be able to click the small 'GitHub' link in the
 
 There is also a link to [prose.io](http://prose.io) which is a more elegant way to edit files on Git Hub.
 
-## Contributors ##
+#### Contributors
 
-1. George Williams, primary author of all of FontForge and most of the site's contents
-2. Bevan Stephens, primary visual designer of this website
-3. Dave Crossland
-4. Brian Zick
+1. __George Williams__, primary author of all of FontForge and most of the site's contents
+2. __Bevan Stephens__, primary visual designer of this website
+3. __Brian Zick__, helped with the information architecture of the new site and scripts to convert the old content to markdown
+4. __Dave Crossland__, initiated the new site project, implemented Bevan's mockups as Jekyll, wrote some of new website content 
+5. __Vera Lobatcheva__, helped migrate the old content to the new site
+6. Your name here? :-)
 
 
 TODO This should list all the contributors to the website.
