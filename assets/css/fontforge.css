@@ -462,7 +462,7 @@
 	padding-left: 20px;
 	padding-right: 20px;
 	margin-left: 20px;
-	opacity: 0.95;
+	opacity: 0.9;
 }
 
 .download-bar .btn-large:hover {
@@ -485,7 +485,7 @@
 	font-size: 2.8em;
 	line-height: 1;
 	letter-spacing: -0.05em;
-	color: white;
+	color: #ccc;
 	display: block;
 	float: left;
 	margin-right: 15px;
