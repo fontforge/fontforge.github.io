@@ -10,7 +10,6 @@ title: FontForge redesign meta pages
 - [guide-page-3.html](guide-page-3.html)
 - [guide-page.html](guide-page.html)
 - [history-page.html](history-page.html)
-- [home-dc.html](home-dc.html)
 - [home.html](home.html)
 - [styleguide.html](styleguide.html)
 - [toc-page.html](toc-page.html)
