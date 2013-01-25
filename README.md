@@ -5,6 +5,11 @@ This is the FontForge website repository. To contribute, please create issues,
 join the fontforge-devel list to discuss general topics, or simply make 
 pull requests. Please don't hesitate to ask for direct commit access.
 
+Use the prose.io site to contribute VERY easily. For example, to edit
+this page, simply visit this page:
+
+http://prose.io/#fontforge/fontforge.github.com/edit/master/README.md
+
 Directory Layout
 ------------------
 
