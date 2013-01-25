@@ -31,20 +31,8 @@ Files of interest
   the site is under active initial development. In the future, GitHub
   issues may be used.
 
-How to build the site
--------------------
-
-This site uses (Jeykll)[https://github.com/mojombo/jekyll/wiki/Usage]
-
-You can install Jekyll with `gem`:
-
-    sudo gem install jekyll;
-
-then you can edit files and browse http://localhost:4000/en-US/ to see
-the site as it will appear on fontforge.github.com after processing
-by Jekyll:
-
-    jekyll --server
+File Formats
+---------------
 
 Each page is in MarkDown format, with a `.md` file extension. These 
 files are converted into corresponding .html files by Jekyll when 
@@ -62,3 +50,18 @@ We have a simple script to make such a page:
     ./_build/add en-US/path/to/page.md
 
 This will make a file with the required lines.
+
+How to build the site
+-------------------
+
+This site uses [Jeykll](https://github.com/mojombo/jekyll/wiki/Usage)
+
+You can install Jekyll with `gem`:
+
+    sudo gem install jekyll;
+
+then you can edit files and browse http://localhost:4000/en-US/ to see
+the site as it will appear on fontforge.github.com after processing
+by Jekyll:
+
+    jekyll --server
