@@ -3,6 +3,9 @@ layout: homepage
 title: FontForge is a font editor
 ---
 
+Welcome
+==========
+
 FontForge is libre software: you can share copies freely and make changes under a [libre license](/en-US/about/project/license.html). You are invited to participate in this project; your bug reports, feature suggestions, tutorial ideas and code contributions are all welcome! [Learn more...](/en-US/documentation/developer/)
 
 Learning FontForge is easy. New users can get started with the [tutorials](/en-US/tutorials/index.html), and the entire [interface](/en-US/documentation/interface/index.html) is fully documented.
