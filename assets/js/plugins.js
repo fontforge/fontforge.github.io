@@ -337,3 +337,101 @@
   * MIT License
   */
 !function(e){e.fn.toc=function(t){var n=this,r=e.extend({},jQuery.fn.toc.defaults,t),i=e(r.container),s=e(r.selectors,i),o=[],u=r.prefix+"-active",a=function(t){for(var n=0,r=arguments.length;n<r;n++){var i=arguments[n],s=e(i);if(s.scrollTop()>0)return s;s.scrollTop(1);var o=s.scrollTop()>0;s.scrollTop(0);if(o)return s}return[]},f=a(r.container,"body","html"),l=function(t){if(r.smoothScrolling){t.preventDefault();var i=e(t.target).attr("href"),s=e(i);f.animate({scrollTop:s.offset().top},400,"swing",function(){location.hash=i})}e("li",n).removeClass(u),e(t.target).parent().addClass(u)},c,h=function(t){c&&clearTimeout(c),c=setTimeout(function(){var t=e(window).scrollTop(),i;for(var s=0,a=o.length;s<a;s++)if(o[s]>=t){e("li",n).removeClass(u),i=e("li:eq("+(s-1)+")",n).addClass(u),r.onHighlight(i);break}},50)};return r.highlightOnScroll&&(e(window).bind("scroll",h),h()),this.each(function(){var t=e(this),n=e("<ul/>");s.each(function(i,s){var u=e(s);o.push(u.offset().top-r.highlightOffset);var a=e("<span/>").attr("id",r.anchorName(i,s,r.prefix)).insertBefore(u),f=e("<a/>").text(r.headerText(i,s,u)).attr("href","#"+r.anchorName(i,s,r.prefix)).bind("click",function(n){l(n),t.trigger("selected",e(this).attr("href"))}),c=e("<li/>").addClass(r.itemClass(i,s,u,r.prefix)).append(f);n.append(c)}),t.html(n)})},jQuery.fn.toc.defaults={container:"body",selectors:"h1,h2,h3",smoothScrolling:!0,prefix:"toc",onHighlight:function(){},highlightOnScroll:!0,highlightOffset:100,anchorName:function(e,t,n){return n+e},headerText:function(e,t,n){return n.text()},itemClass:function(e,t,n,r){return r+"-"+n[0].tagName.toLowerCase()}}}(jQuery)
+
+/*
+ * jQuery Dynamic Breadcrumbs v1.0
+ * http://code.google.com/p/jquery-dynamic-breadcrumbs/
+ * http://twitter.com/blackdynamo
+ * http://developingwithstyle.blogspot.com/
+ *
+ * Copyright 2010, Donnovan Lewis
+ * Free to use under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ * 
+ */
+
+!(function($) {
+    $.fn.dynamicBreadcrumbs = function(options)
+    {
+        //Capitalize extension for String
+        String.prototype.capitalize = String.prototype.capitalize || function(){
+            return this.replace( /(^|\s)([a-z])/g , function(m,p1,p2){ return p1+p2.toUpperCase(); } );
+        }; 
+    
+        //Defaults are below
+        var settings = $.extend({}, $.fn.dynamicBreadcrumbs.defaults, options);
+    
+        return this.each(function(){
+            setUpTrail($(this));
+        });
+        
+        function setUpTrail(container){
+			var path = settings.firstCrumbLabel + $(location).attr("pathname");
+			console.log(path)
+			var paths = path.split("/");
+			console.log(paths)
+            var labels = cleanse(paths.slice(0));
+			console.log(labels)
+            
+            //Don't build any crumbs if the page is at the root
+            if(labels.length <= 2) return;
+            
+            var crumbs = new Array();
+            crumbs.push({name: labels[0], value: "/"}); //Initialize first crumb
+            
+            var list = $("<ul>");
+            list.append(buildCrumb(crumbs[0]).addClass(settings.firstCrumbClass)); //Add first crumb
+            
+            //Build remaining crumbs
+            for(var i = 1; i < labels.length-1; i++){
+                crumbs.push({name: labels[i], value: crumbs[i-1].value + paths[i] + "/"});
+                if(i == labels.length-1)
+                    list.append(buildLastCrumb(crumbs[i]));
+                else
+                    list.append(buildCrumb(crumbs[i]));
+            }
+            
+            container.append(list);
+        }
+        
+		function cleanse(labels){
+			for(var i = 0; i < labels.length; i++){
+				//Remove all dashes
+				labels[i] = labels[i].replace(/-/gi, " ");
+				
+				//Remove all .html
+				labels[i] = labels[i].replace(/.html/gi, "");
+				
+				//Handle crumb case
+				if(settings.crumbCase == "uppercase")
+				    labels[i] = labels[i].toUpperCase();
+				else if(settings.crumbCase == "lowercase")
+				    labels[i] = labels[i].toLowerCase();
+				else
+				    labels[i] = labels[i].toLowerCase().capitalize();
+				    
+				//Replace keywords
+				for(var w = 0; w < settings.keywords.length; w++){
+				    labels[i] = labels[i].replace(eval("/"+settings.keywords[w]+"/gi"), settings.keywords[w])
+			    }
+			}
+			
+			return labels;
+		}
+		
+        function buildCrumb(crumb){
+            return $("<li>").append($("<a>").attr("href", crumb.value).append(crumb.name));
+        }
+        
+        function buildLastCrumb(crumb){
+            return $("<li>").append(crumb.name);
+        }
+    }
+    
+    jQuery.fn.dynamicBreadcrumbs.defaults = {
+        firstCrumbLabel: "Home",
+        firstCrumbClass: "first",
+        crumbCase: "capitalize", //lowercase,uppercase,capitalize
+        keywords: ['en US']
+    }
+})(jQuery);

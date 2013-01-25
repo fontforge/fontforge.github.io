@@ -20,6 +20,8 @@ $(".video-container").fitVids();
 
 $(".breadcrumb li").last().addClass('active');
 
+$("#breadcrumbs").dynamicBreadcrumbs(); 
+
 // Table of Contents generator
 
 $(document).ready(function() { 
