@@ -5,8 +5,7 @@ title: Install FontForge on Mac OS X
 
 FontForge does not conform to Apple's Human Interface Guidelines.
 FontForge never will. Don't expect it to look like a normal Mac
-Application. It doesn't. However, it does run on Mac OS X with
-some gotchas.
+Application. It doesn't. However, it does run on Macs.
 
 Latest Package
 ---------------
