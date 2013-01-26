@@ -13,7 +13,7 @@ Latest Package
 First, you must look in your `/Applications/Utilities/` folder to check that 
 you have the `XQuartz.app` installed on your system.
 If you don't have it already, 
-[download XQuartz](xquartz.macosforge.org) and install it in the normal way.
+[download XQuartz](http://xquartz.macosforge.org) and install it in the normal way.
 
 Next, download 
 [FontForge.app.zip](http://fuuko.libferris.com/osx/packages/v13/MacFontForgeBundledApp.zip). 
