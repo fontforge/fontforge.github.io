@@ -15,6 +15,3 @@ You may have seen the round 'Edit This Page' item in the footer of each page, wi
 4. __Dave Crossland__, initiated the new site project, implemented Bevan's mockups as Jekyll, wrote some of new website content 
 5. __Vera Lobatcheva__, helped migrate the old content to the new site
 6. Your name here? :-)
-
-
-TODO This should list all the contributors to the website.
