@@ -1,8 +1,6 @@
 ---
 layout: default
-title: Donate
+title: Fund New Features
 ---
 
-FontForge development can be funded via a donation to the Libre Font Fund.
-
-More details about this.
+Donations to the [Libre Font Fund](https://www.tug.org/fonts/librefontfund.html) are used to improve FontForge.
