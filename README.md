@@ -1,4 +1,4 @@
-fontforge.github.com
+[fontforge.github.com](http://fontforge.github.com)
 ====================
 
 This is the FontForge website repository. To contribute, please create issues, 
