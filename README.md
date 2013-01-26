@@ -45,6 +45,7 @@ they start with these lines:
 
 ```
     ---
+    published: true
     title: Page title
     layout: default
     ---
