@@ -1,4 +1,5 @@
 ---
+published: true
 layout: default
 title: Searching for shapes within characters...
 ---

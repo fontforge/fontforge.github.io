@@ -1,4 +1,5 @@
 ---
+published: true
 layout: default
 title: Examining and controling metrics and kerning
 ---

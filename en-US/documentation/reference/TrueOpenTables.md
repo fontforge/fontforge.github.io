@@ -1,4 +1,5 @@
 ---
+published: true
 layout: default
 title: TrueType and OpenType tables supported by FontForge
 ---

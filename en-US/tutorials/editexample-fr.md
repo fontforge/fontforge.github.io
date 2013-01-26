@@ -1,4 +1,5 @@
 ---
+published: true
 layout: default
 title: Steps to creating a font...
 ---

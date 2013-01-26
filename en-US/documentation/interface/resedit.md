@@ -1,4 +1,5 @@
 ---
+published: true
 layout: default
 title: X Resource Editor
 ---

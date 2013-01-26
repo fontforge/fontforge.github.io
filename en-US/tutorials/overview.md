@@ -1,4 +1,5 @@
 ---
+published: true
 layout: default
 title: FontForge -- An outline font editor for PostScript&reg;, TrueType
 ---

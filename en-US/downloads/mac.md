@@ -1,4 +1,5 @@
 ---
+published: true
 layout: default
 title: Install FontForge on Mac OS X
 ---

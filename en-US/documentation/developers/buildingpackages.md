@@ -1,4 +1,5 @@
 ---
+published: true
 layout: default
 title: How to build FontForge binary packages
 ---

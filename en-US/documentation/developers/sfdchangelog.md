@@ -1,4 +1,5 @@
 ---
+published: true
 layout: default
 title: Change log for FontForge's sfd format
 ---

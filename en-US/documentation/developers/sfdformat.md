@@ -1,4 +1,5 @@
 ---
+published: true
 layout: default
 title: Spline Font Database File Format
 ---

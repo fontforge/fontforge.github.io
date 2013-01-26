@@ -1,4 +1,5 @@
 ---
+published: true
 layout: default
 title: The history of the development of FontForge
 ---
