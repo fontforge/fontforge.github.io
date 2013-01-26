@@ -3,6 +3,11 @@ layout: default
 title: Install FontForge on Mac OS X
 ---
 
+FontForge does not conform to Apple's Human Interface Guidelines.
+FontForge never will. Don't expect it to look like a normal Mac
+Application. It doesn't. However, it does run on Mac OS X with
+some gotchas.
+
 Latest Package
 ---------------
 
@@ -22,24 +27,14 @@ the 'Open Font' window.
 
 If the UI appears very big, open 
 `/Applications/FontForge.app/Contents/Resources/opt/local/share/fontforge/pixmaps/resources` 
-thiswith a text editor and change the value of the first line, 
+with a text editor and change the value of the first line, 
 `Gdraw.ScreenWidthCentimeters: 34`, to its true value.
-
-Installing from Package Managers
-----------------------------------
-
-Both
-[macports](http://www.macports.org/) and
-[fink](http://www.finkproject.org/) have FontForge packages
-which you may like to use.
 
 ### Improving the experience
 
 You can make FontForge more pleasant to use by taking a moment to configure a few extra settings.
 
-#### X11
-
-`X11->Preferences->Input`
+Click the XQuartz app in the Dock, and then go to X11 menu and open Preferences.
 
 FontForge is designed to make use of a three button mouse. It is also
 designed to make use of modifier key modes on mouse clicks (so Control
@@ -58,6 +53,9 @@ checks this, and if X11 gets command then fontforge configures its
 menubar to use Control rather than command. This isn't very mac-like. If
 you turn **off** the "`Enable keyboard shortcuts under X11`" preference
 item then fontforge will configure its menubar to make use of Command.
+
+On the mac, the Option key is mapped to what fontforge calls "Alt" or
+"Meta".
 
 #### System Fonts
 
@@ -79,11 +77,9 @@ Apple supplies with OS X.
 >
 >     </fontconfig>
 
-## Notes
+## Installing from Package Managers
 
-On the mac, the Option key is mapped to what fontforge calls "Alt" or
-"Meta".
-
-FontForge does not conform to Apple's Human Interface Guidelines.
-FontForge never will. Don't expect it to look like a normal Mac
-Application. It doesn't.
+Both
+[macports](http://www.macports.org/) and
+[fink](http://www.finkproject.org/) have FontForge packages
+which you may like to use.
