@@ -31,7 +31,7 @@ the site is ready, make a pull request :-)
 When a translation is ready, we'll have to make a modification to the language dropdown in `_includes/nav-main.html` so
 that it will work to switch the URL (with the JS library `jurlp`)
 
-(If you're interested in translating FontForge itself, please refer to the [FontForge User Interface Translations](/documentation/customizing/translations.html) page.
+(If you're interested in translating FontForge itself, please refer to the [FontForge User Interface Translations](/documentation/customizing/translations.html) page.)
 
 ## Contributors
 
