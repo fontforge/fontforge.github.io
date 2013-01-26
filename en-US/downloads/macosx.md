@@ -6,16 +6,24 @@ title: Install FontForge on Mac OS X
 Latest Package
 ---------------
 
-First, you must look in your /Applications folder to check that 
-you have the X11.app or XQuartz.app installed on your system.
+First, you must look in your `/Applications/Utilities/` folder to check that 
+you have the `XQuartz.app` installed on your system.
 If you don't have it already, 
-[download XQuartz now](xquartz.macosforge.org).
+[download XQuartz](xquartz.macosforge.org) and install it in the normal way.
 
-Next, download [FontForge.app.zip](#). Unzip it and move the 
-`FontForge.app` file to /Applications. Then run it and it will 
-appear in the Dock. It will automatically then start X11 (but 
-the first time can take a while.) You will soon see the 'Open 
-Font' window.
+Next, download 
+[FontForge.app.zip](http://fuuko.libferris.com/osx/packages/v13/MacFontForgeBundledApp.zip). 
+Unzip it and move the `FontForge.app` file to /Applications. 
+Then run it and it will appear in the Dock. It will automatically
+start X11 (but the first time can take a while.) You will soon see 
+the 'Open Font' window.
+
+#### Screen Size Problems
+
+If the UI appears very big, open 
+`/Applications/FontForge.app/Contents/Resources/opt/local/share/fontforge/pixmaps/resources` 
+thiswith a text editor and change the value of the first line, 
+`Gdraw.ScreenWidthCentimeters: 34`, to its true value.
 
 Installing from Package Managers
 ----------------------------------
