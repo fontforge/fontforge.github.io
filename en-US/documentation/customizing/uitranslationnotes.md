@@ -10,6 +10,6 @@ TODO: Pull page contents from old site
 
 TODO Contact HP when this is ready to test the instructions here with a vietnamese translation
 
-==== Website Translation ====
+#### Website Translation
 
 Please refer to the [website translation](/about/site/index.html) page for details.
