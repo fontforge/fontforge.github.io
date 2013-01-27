@@ -4,10 +4,12 @@ layout: default
 title: FontForge Translations
 ---
 
-Pull page contents from old site
+To translate FontForge, edit the `.po` files in https://github.com/fontforge/fontforge/tree/master/po with something like [POEdit](http://en.wikipedia.org/wiki/Poedit) 
 
-Contact HP when this is ready to test the instructions here with a vietnamese translation
+TODO: Pull page contents from old site
+
+TODO Contact HP when this is ready to test the instructions here with a vietnamese translation
 
 ==== Website Translation ====
 
-Please refer to the [website translation](/about/site/translation.html) page for details.
+Please refer to the [website translation](/about/site/index.html) page for details.
