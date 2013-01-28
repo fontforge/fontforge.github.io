@@ -1,4 +1,5 @@
 ---
+published: true
 layout: default
 title: Using FontForge with TeX
 ---

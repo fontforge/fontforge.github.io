@@ -1,4 +1,5 @@
 ---
+published: true
 layout: default
 title: fontimage -- generate a font thumbnail image
 ---

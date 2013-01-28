@@ -1,4 +1,5 @@
 ---
+published: true
 layout: default
 title: Glossary of (some) typographical terms
 ---

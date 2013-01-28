@@ -1,4 +1,5 @@
 ---
+published: true
 layout: default
 title: FontForge install procedures for unix/linux based systems
 ---

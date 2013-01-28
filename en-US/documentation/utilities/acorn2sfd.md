@@ -1,4 +1,5 @@
 ---
+published: true
 layout: default
 title: acorn2sfd -- A program for comparing fonts
 ---

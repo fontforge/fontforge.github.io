@@ -1,4 +1,5 @@
 ---
+published: true
 layout: default
 title: Creating the letter "o" -- consistant directions
 ---

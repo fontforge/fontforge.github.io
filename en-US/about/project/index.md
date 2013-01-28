@@ -1,4 +1,5 @@
 ---
+published: true
 layout: default
 title: What is the FontForge Project?
 ---

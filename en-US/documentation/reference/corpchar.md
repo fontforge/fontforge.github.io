@@ -1,4 +1,5 @@
 ---
+published: true
 layout: default
 title: Unicode Corporate Characters used by FontForge
 ---

@@ -1,4 +1,5 @@
 ---
+published: true
 layout: default
 title: Writing scripts to change fonts in FontForge
 ---

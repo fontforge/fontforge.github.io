@@ -1,4 +1,5 @@
 ---
+published: true
 layout: default
 title: Viewing and Editing truetype instructions in FontForge.
 ---

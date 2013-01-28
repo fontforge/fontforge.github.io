@@ -1,4 +1,5 @@
 ---
+published: true
 layout: default
 title: Format for X11 pcf bitmap font files
 ---

@@ -1,4 +1,5 @@
 ---
+published: true
 layout: default
 title: Several formats for bitmap only sfnts (truetype files)
 ---

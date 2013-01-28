@@ -1,4 +1,5 @@
 ---
+published: true
 layout: default
 title: Multi Layered Editing of Type3 and SVG fonts
 ---

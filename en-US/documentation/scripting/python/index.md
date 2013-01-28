@@ -1,4 +1,5 @@
 ---
+published: true
 layout: default
 title: Writing python scripts to change fonts in FontForge
 ---

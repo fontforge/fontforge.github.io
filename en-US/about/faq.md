@@ -1,4 +1,5 @@
 ---
+published: true
 layout: default
 title: Frequently Asked Questions
 toc: yes

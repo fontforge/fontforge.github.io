@@ -1,4 +1,5 @@
 ---
+published: true
 layout: default
 title: Report a Bug in FontForge
 ---

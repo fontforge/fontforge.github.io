@@ -1,4 +1,5 @@
 ---
+published: true
 layout: default
 title: Files used by FontForge
 ---

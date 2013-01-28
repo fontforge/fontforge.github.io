@@ -1,4 +1,5 @@
 ---
+published: true
 layout: default
 title: Consistent serifs and stem widths
 ---

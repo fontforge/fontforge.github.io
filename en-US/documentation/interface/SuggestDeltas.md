@@ -1,4 +1,5 @@
 ---
+published: true
 layout: default
 title: Please title this page. (SuggestDeltas.html in FontForge)
 ---

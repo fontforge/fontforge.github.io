@@ -1,4 +1,5 @@
 ---
+published: true
 layout: default
 title: sfddiff -- A program for comparing fonts
 ---

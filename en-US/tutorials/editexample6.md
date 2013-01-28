@@ -1,4 +1,5 @@
 ---
+published: true
 layout: default
 title: More advanced features, ligatures, mark positioning, glyph variants
 ---

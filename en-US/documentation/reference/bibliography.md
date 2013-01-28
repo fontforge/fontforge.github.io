@@ -1,4 +1,5 @@
 ---
+published: true
 layout: default
 title: A meandering bibliography of font related things
 ---

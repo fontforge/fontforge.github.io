@@ -1,4 +1,5 @@
 ---
+published: true
 layout: default
 title: The dialog for editing Contextual or Chaining Contextual lookups
 ---

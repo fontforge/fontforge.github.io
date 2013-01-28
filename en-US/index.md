@@ -1,4 +1,5 @@
 ---
+published: true
 layout: homepage
 title: FontForge is a font editor
 ---
