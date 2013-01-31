@@ -17,7 +17,7 @@ If you don't have it already,
 [download XQuartz](http://xquartz.macosforge.org) and install it in the normal way.
 
 Next, download 
-[FontForge.app.zip](http://fuuko.libferris.com/osx/packages/v13/MacFontForgeBundledApp.zip). 
+[FontForge.app.zip](http://fuuko.libferris.com/osx/packages/v15/FontForge.app.zip). 
 Unzip it and move the `FontForge.app` file to /Applications. 
 Then run it and it will appear in the Dock. It will automatically
 start X11 (but the first time can take a while.) You will soon see 
