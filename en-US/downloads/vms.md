@@ -1,23 +1,8 @@
 ---
 published: true
 layout: default
-title: FontForge install procedures for VMS
+title: Install FontForge on VMS
 ---
-
-
--   [Installing from a pre-built vms package](#Installing)
--   [Installing on a unix/linux system](nix-install.html)
--   [Installing on a mac](mac-install.html)
--   [Installing on MS/Windows](ms-install.html)
--   [Building and installing from source](source-build.html)
--   [Dependencies (external libraries/helper
-    programs)](source-build.html#Dependencies)
--   [Installing documentation](source-build.html#Documentation)
--   [Running FontForge](running.html)
--   [Uninstalling](uninstall.html)
-
-Installing from a VMS package
------------------------------
 
 I'm afraid I have absolutely no idea what you need to do. All I can say
 is that Jacob Jansen has provided a vms package at:
