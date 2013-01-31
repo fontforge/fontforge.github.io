@@ -1,7 +1,7 @@
 ---
 published: true
 layout: default
-title: FontForge install procedures for cygwin (MS/Windows)
+title: Install FontForge on Windows
 ---
 
 Matt Petroff offers an unoffical Windows installer:
