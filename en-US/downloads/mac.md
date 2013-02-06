@@ -4,24 +4,18 @@ layout: default
 title: Install FontForge on Mac OS X
 ---
 
-FontForge does not conform to Apple's Human Interface Guidelines.
-FontForge never will. Don't expect it to look like a normal Mac
-Application. It doesn't. However, it does run on Macs.
+FontForge is not a regular Mac application. It was developed since 2001 as a UNIX application, so don't expect it to look and behave like a normal Mac
+Application. It doesn't. 
 
-Latest Package
+It does run on Macs, though it requires a UNIX compatibility layer. 
+
+Install Beta Package
 ---------------
 
-First, you must look in your `/Applications/Utilities/` folder to check that 
-you have the `XQuartz.app` installed on your system.
-If you don't have it already, 
-[download XQuartz](http://xquartz.macosforge.org) and install it in the normal way.
+1. With Finder, look in your `/Applications/Utilities/` folder and check that 
+you have the `XQuartz.app` installed on your system. If you don't have it already, [download XQuartz](http://xquartz.macosforge.org) and install it in the normal way.
 
-Next, download 
-[FontForge.app.zip](http://fuuko.libferris.com/osx/packages/v15/FontForge.app.zip). 
-Unzip it and move the `FontForge.app` file to /Applications. 
-Then run it and it will appear in the Dock. It will automatically
-start X11 (but the first time can take a while.) You will soon see 
-the 'Open Font' window.
+2. Download this ZIP file: [FontForge.app.zip](http://fuuko.libferris.com/osx/packages/v21/FontForge.app.zip). Unzip it and move the `FontForge.app` file to `/Applications`. Then open it in the normal way, and this first time can take a while so please be patient (and relax, it loads quickly after the first time.) It will automatically start XQuartz and then show you the 'Open Font' window.
 
 #### Screen Size Problems
 
@@ -80,3 +74,7 @@ Both
 [macports](http://www.macports.org/) and
 [fink](http://www.finkproject.org/) have FontForge packages
 which you may like to use.
+
+# Compiling a package from source code
+
+Ben Martin discussed how to build a binary package [on GitHub](https://github.com/fontforge/fontforge/issues/102#issuecomment-12314099).
