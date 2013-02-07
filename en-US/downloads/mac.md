@@ -74,6 +74,6 @@ Both
 [fink](http://www.finkproject.org/) have FontForge packages
 which you may like to use.
 
-# Compiling a package from source code
+## Compiling a Mac package from source code
 
 Ben Martin discussed how to build a binary package [on GitHub](https://github.com/fontforge/fontforge/issues/102#issuecomment-12314099).
