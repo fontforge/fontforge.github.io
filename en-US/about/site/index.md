@@ -1,16 +1,18 @@
 ---
 published: true
 layout: default
-title: Edit This Website
+title: About This Website
 ---
 
 Like FontForge itself, this website is developed as a [collaborative  project](/en-US/about/project/index.html) where everyone is invited to contribute. The collaboration is organized through the [GitHub](http://github.com) website, so to contribute you'll need an account there. 
 
-### Making Contribution Easy
+### Edit That Page
 
-Contributing to this website should be as easy as possible, like Wikipedia.
+Contributing to this website is easy for anyone to do, like Wikipedia.
 
-We've added a couple of little links to the 'Edit This Page' roundel in the footer of each page. Once you are logged into GitHub, the little 'github' link will work for you. There is also a link to [prose](http://prose.io), a more elegant UI for editing files on GitHub.
+You'll see a couple of little links to the 'Edit This Page' roundel in the footer of each page. Click the 'github' link and you'll see the source file on GitHub. If you sign up to GitHub and log in, you can click the 'edit' button.
+
+There is also a link to [prose](http://prose.io), a more elegant UI for editing files on GitHub.
 
 ### Diving Into The Design
 
