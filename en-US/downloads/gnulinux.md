@@ -4,7 +4,13 @@ layout: default
 title: Install FontForge on UNIX
 ---
 
-#### Obtaining a package 
+#### Daily Build Service Packages
+
+Ben Martin has developed a daily package building system on OpenSUSE Build Service:
+
+> https://build.opensuse.org/project/repositories?project=home%3Amonkeyiq%3Afontforge
+
+#### Distro Packages 
 
 Most of the GNU+Linux distributions have packages for fontforge. These will
 often be a little old, but perhaps more stable. This is not a complete list, but there are packages for:
