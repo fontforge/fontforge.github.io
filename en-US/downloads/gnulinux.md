@@ -1,7 +1,7 @@
 ---
 published: true
 layout: default
-title: Install FontForge on UNIX
+title: Install FontForge on GNU+Linux
 ---
 
 #### Daily Build Service Packages
