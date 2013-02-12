@@ -157,11 +157,14 @@
 							<hgroup>
 							
 								<!-- MAILING LIST SEARCH FORM -->
-								<form class="form-search mailing-list-search-form">
-									<input type="text" class="input-medium search-query" placeholder="Search lists...">
+								<form class="form-search mailing-list-search-form" method="get" action="http://sourceforge.net/search/index.php">
+									<input type="text" class="input-medium search-query" placeholder="Search lists..." name="q">
+									<input type="hidden" name="group_id" value="103338">
+									<input type="hidden" name="type_of_search" value="mlists">
+									<input type="hidden" name="ml_name[]" value="fontforge-devel">
+									<input type="hidden" name="ml_name[]" value="fontforge-users">
 									<button type="submit" class="btn btn-small">Go</button>
 								</form>
-								
 					 	 		<h2>Mailing Lists</h2>
 								
 					 	 		<p>The FontForge community gathers on two mailing lists, 
@@ -171,8 +174,8 @@
 					 	 		<h3>Users <span><a href="mailto:fontforge-users@lists.sourceforge.net" >fontforge-users@</a></span></h3>
 					 	 		<p>General discussions about FontForge, how to use it, and solve any installation problems</p>
 					 	 		<ul class="unstyled">
-					 	 			<li><a href="#" class="btn btn-mini">Subscribe</a></li>
-					 	 			<li><a href="#" >Archives</a></li>
+					 	 			<li><a href="https://lists.sourceforge.net/lists/listinfo/fontforge-users" class="btn btn-mini">Subscribe</a></li>
+					 	 			<li><a href="http://sourceforge.net/mailarchive/forum.php?forum_name=fontforge-users" >Archives</a></li>
 					 	 		</ul>
 				 	 		</div>	 		
 					 	 	<div class="developers">
@@ -180,8 +183,8 @@
 						 	 	<p>For reporting bugs to developers, discussing possible new features 
 								and the website, and any other development topics</p>
 						 	 	<ul class="unstyled">
-						 	 		<li><a href="#" class="btn btn-mini">Subscribe</a></li>
-						 	 		<li><a href="#" >Archives</a></li>
+						 	 		<li><a href="https://lists.sourceforge.net/lists/listinfo/fontforge-devel" class="btn btn-mini">Subscribe</a></li>
+						 	 		<li><a href="http://sourceforge.net/mailarchive/forum.php?forum_name=fontforge-devel&source=navbar" >Archives</a></li>
 						 	 	</ul>
 					 	 	</div>	
 				 	 		<div class="note" >Note: Subscribing is required to post a message, and posting to these mailing
