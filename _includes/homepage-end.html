@@ -22,6 +22,9 @@
         $.getJSON("http://sfbadge.herokuapp.com/sf/fontforge/json", function(json) {
             $('#cnt-downloads').html(humanise(json.total));
         });
+        $.getJSON("http://sfbadge.herokuapp.com/commits/fontforge/fontforge/json", function(json) {
+            $('#cnt-contributors').html(humanise(json.commits));
+        });
     });
     </script>
     </body>
