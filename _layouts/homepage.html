@@ -157,8 +157,12 @@
 							<hgroup>
 							
 								<!-- MAILING LIST SEARCH FORM -->
-								<form class="form-search mailing-list-search-form">
-									<input type="text" class="input-medium search-query" placeholder="Search lists...">
+								<form class="form-search mailing-list-search-form" method="get" action="http://sourceforge.net/search/index.php">
+									<input type="text" class="input-medium search-query" placeholder="Search lists..." name="q">
+									<input type="hidden" name="group_id" value="103338">
+									<input type="hidden" name="type_of_search" value="mlists">
+									<input type="hidden" name="ml_name[]" value="fontforge-devel">
+									<input type="hidden" name="ml_name[]" value="fontforge-users">
 									<button type="submit" class="btn btn-small">Go</button>
 								</form>
 					 	 		<h2>Mailing Lists</h2>
