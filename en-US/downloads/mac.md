@@ -5,9 +5,7 @@ title: Install FontForge on Mac OS X
 ---
 
 FontForge is not a regular Mac application. It was developed since 2001 as a UNIX application, so don't expect it to look and behave like a normal Mac
-Application. It doesn't. 
-
-It does run on Macs, though it requires a UNIX compatibility layer. 
+Application. It runs on Macs thanks to a UNIX compatibility layer. 
 
 Install Beta Package
 ---------------
