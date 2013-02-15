@@ -4,18 +4,20 @@ layout: default
 title: Download FontForge
 ---
 
-Packages are available for [Mac](mac.html), [Windows](windows.html) and [GNU+Linux](gnulinux.html).
+Installation Packages
+------------------------------
 
-Source Code
-------------------
+Easily install FontForge on [Mac](mac.html), [Windows](windows.html) and [GNU+Linux](gnulinux.html).
 
-Please see the [source code](source.html) for full details on compiling from source. 
+### Source Code
 
-### Release Version
+Please see the [Installing Fom Source Code](source.html) page for full details on compiling from source. 
+
+#### Release Version
 
 [fontforge_full-20120731-b.tar.bz2 (5.5 MB)](http://sourceforge.net/projects/fontforge/files/latest/download)
 
-### Daily Development Version
+#### Daily Development Version
 
 [Daily packages](https://build.opensuse.org/project/show?project=home%3Amonkeyiq%3Afontforge) are created from the git repository:
 
