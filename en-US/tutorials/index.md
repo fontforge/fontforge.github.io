@@ -4,6 +4,5 @@ layout: default
 title: Tutorials
 ---
 
-Table of contents for this section.
-
-[Nitro tutorial](http://nitrofurano.altervista.org/typefaces/tutorial/)
+* [Design With FontForge](http://designwithfontforge.com) - a complete textbook
+* [Nitro tutorial](http://nitrofurano.altervista.org/typefaces/tutorial/) - a short tutorial
