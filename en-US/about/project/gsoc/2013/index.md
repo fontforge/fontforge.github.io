@@ -16,7 +16,7 @@ FontForge is a loosely organized free software font editor project. The C codeba
 
 #### Why is your organization applying to participate in Google Summer of Code 2013? What do you hope to gain by participating?
 
-FontForge has a lot of powerful tools
+FontForge has a lot of powerful functionality under the hood, but the user interface sucks. We hope font design is an interesting nexus of technology and design for students interested in UX-centered development, and from participating in GSOC FontForge will gain a better interface in various areas.
 
 #### Has your organization participated in past Google Summer of Codes? (yes/no)
 
@@ -36,7 +36,16 @@ MIT and GPLv3
 
 #### What is the URL for your Ideas list? **This is the most important part of your proposal. Please make sure we can access it and it is complete when you submit this proposal. “Placeholder” or inaccessible ideas pages will be grounds for an automatic rejection for participation in Google Summer of Code 2013.**
 
-TODO: Set up a GitHub Issue Tracker tag
+Here are some proposed ideas:
+
+* Add UI for class based metrics (Impallari method)
+* Improve UI for class based kerning (OpenType classes)
+* Improve UI for OpenType feature development
+* Add UI for interpolating glyphs (similar to Simplepolator)
+* Add UI for interpolating fonts (similar to Superpolator, Glyphs, etc)
+* Add UI for diffing fonts (no parallels)
+
+TODO: Set up a GitHub Issue Tracker tag for these after they are fleshed out
 
 #### What is the main development mailing list for your organization?
 
