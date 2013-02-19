@@ -4,6 +4,12 @@ layout: default
 title: Google Summer of Code 2013
 ---
 
+<div class="alert alert-block">
+<button type="button" class="close" data-dismiss="alert">&times;</button>
+<h4>Warning!</h4>
+This document is a draft
+</div>
+
 #### Describe your organization
 
 FontForge is a loosely organized free software font editor project. The C codebase is on GitHub and actively developed by a community of volunteers.
