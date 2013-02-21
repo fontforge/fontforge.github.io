@@ -4,6 +4,10 @@ layout: default
 title: FontForge Developer Documentation
 ---
 
+# Crash Reporting
+
+To report a crash, please make a screencast of the series of actions that cause the crash, upload it to youtube, and file an issue with a link to the video on youtube.
+
 ### Interface
 
 If you would like to suggest a new interface, http://pencil.evolus.vn is a useful tool for making mockups.
