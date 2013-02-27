@@ -188,6 +188,7 @@ positioned at the top directory of that tree. You need to configure your
 package (this is a little program that figures out how to use your
 system), and then build it (do not type the "\$"):
 
+>     $ ./autogen.sh
 >     $ ./configure
 >     $ make
 
