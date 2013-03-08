@@ -7,20 +7,21 @@ title: Install FontForge on Mac OS X
 FontForge is not a regular Mac application. It was developed since 2001 as a UNIX application, so don't expect it to look and behave like a normal Mac
 Application. It runs on Macs thanks to a UNIX compatibility layer. 
 
-Install Beta Package
----------------
+## Install Beta Package
 
 1. With Finder, look in your `/Applications/Utilities/` folder and check that you have the `XQuartz.app` installed on your system. If you don't have it already, [download XQuartz](http://xquartz.macosforge.org) and install it in the normal way.
 2. Download this ZIP file: [FontForge.app.zip](http://fuuko.libferris.com/osx/packages/201303/08_1344/FontForge.app.zip) (published on 2013-03-08)
 3. Unzip it and move the `FontForge.app` file to `/Applications`. Then open it in the normal way, and this first time can take a while so please be patient (and relax, it loads quickly after the first time.) It will automatically start XQuartz and then show you the 'Open Font' window.
 
+### Optional Steps To Improve The Experience
+
+You can make FontForge more pleasant to use by taking a moment to configure a few extra settings.
+
 #### Screen Size Problems
 
 If the UI appears very big, quit FontForge and X11, then open `/Applications/FontForge.app/Contents/Resources/opt/local/share/fontforge/pixmaps/resources` with a text editor and remove the first line, `Gdraw.ScreenWidthCentimeters: 34`. If FontForge still looks odd, set this line with the true value of your screen or another value (`42` is said to work well) as the whole FontForge UI is scalable.
 
-### Improving the experience
-
-You can make FontForge more pleasant to use by taking a moment to configure a few extra settings.
+#### Mouse Buttons
 
 Click the XQuartz app in the Dock, and then go to X11 menu and open Preferences.
 
@@ -34,6 +35,8 @@ simulate a three button mouse (for instance Option mouse click behaves
 like clicking the middle mouse button). Unfortunately this means you can
 no longer use the Option key to change the behavior of the left (only)
 button click. So either choice means you lose capabilities.
+
+#### Keyboard Shortcuts
 
 Normally X11 is configured so that the Command key (cloverleaf) is bound
 to the X11 menu bar, and not to fontforge's. When fontforge starts it
