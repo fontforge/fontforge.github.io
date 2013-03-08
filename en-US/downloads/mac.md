@@ -11,10 +11,8 @@ Install Beta Package
 ---------------
 
 1. With Finder, look in your `/Applications/Utilities/` folder and check that you have the `XQuartz.app` installed on your system. If you don't have it already, [download XQuartz](http://xquartz.macosforge.org) and install it in the normal way.
-
 2. Download this ZIP file: [FontForge.app.zip](http://fuuko.libferris.com/osx/packages/201303/08_1344/FontForge.app.zip) (published on 2013-03-08)
-3. 
-4. Unzip it and move the `FontForge.app` file to `/Applications`. Then open it in the normal way, and this first time can take a while so please be patient (and relax, it loads quickly after the first time.) It will automatically start XQuartz and then show you the 'Open Font' window.
+3. Unzip it and move the `FontForge.app` file to `/Applications`. Then open it in the normal way, and this first time can take a while so please be patient (and relax, it loads quickly after the first time.) It will automatically start XQuartz and then show you the 'Open Font' window.
 
 #### Screen Size Problems
 
