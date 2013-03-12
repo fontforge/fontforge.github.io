@@ -5,68 +5,61 @@ title: Install FontForge on Mac OS X
 ---
 
 FontForge is not a regular Mac application. It was developed since 2001 as a UNIX application, so don't expect it to look and behave like a normal Mac
-Application. It runs on Macs thanks to a UNIX compatibility layer. 
+Application. It runs on Macs thanks to a UNIX compatibility layer called X11.
 
-## Install Beta Package
+## Install Beta Package for Mac OS X 10.6+
 
-1. With Finder, look in your `/Applications/Utilities/` folder and check that you have the `XQuartz.app` installed on your system. If you don't have it already, [download XQuartz](http://xquartz.macosforge.org) and install it in the normal way.
-2. Download this ZIP file: [FontForge.app.zip](http://fuuko.libferris.com/osx/packages/201303/08_1344/FontForge.app.zip) (published on 2013-03-08)
+1. With Finder, look in your `/Applications/Utilities/` folder and check if you have the `X11` or `XQuartz` apps installed on your computer. If you don't have one of these, [download XQuartz](http://xquartz.macosforge.org) and install it in the normal way.
+2. Download this ZIP file: [FontForge.app.zip](http://fuuko.libferris.com/osx/packages/201303/12_1745/FontForge.app.zip) (published on 2013-03-12)
 3. Unzip it and move the `FontForge.app` file to `/Applications`. Then open it in the normal way, and this first time can take a while so please be patient (and relax, it loads quickly after the first time.) It will automatically start XQuartz and then show you the 'Open Font' window.
+
+## Update Beta Package
+
+New beta packages are released every few days. To install an update
+
+1. quit FontForge and X11
+2. drag and drop the new FontForge.app into `/Applications` and replace it
+3. start FontForge again
 
 ### Optional Steps To Improve The Experience
 
 You can make FontForge more pleasant to use by taking a moment to configure a few extra settings.
 
+#### Changing Hot Keys
+
+If the hotkeys are unfamiliar, you can change them!
+
+1. quit FontForge and X11
+2. with your text editor, open `/Applications/FontForge.app/Contents/Resources/opt/local/share/fontforge/hotkeys/default`
+3. change the hotkeys and save the file
+4. start FontForge again
+
 #### Screen Size Problems
 
-If the UI appears very big, quit FontForge and X11, then open `/Applications/FontForge.app/Contents/Resources/opt/local/share/fontforge/pixmaps/resources` with a text editor and remove the first line, `Gdraw.ScreenWidthCentimeters: 34`. If FontForge still looks odd, set this line with the true value of your screen or another value (`42` is said to work well) as the whole FontForge UI is scalable.
+If the UI appears very big or very small, you can change that because the UI is scalable. 
 
-#### Mouse Buttons
+1. quit FontForge and X11
+2. with your text editor, open `/Applications/FontForge.app/Contents/Resources/opt/local/share/fontforge/pixmaps/resources`
+3. measure the physical width of your screen in centimeters. In this example, it is 34cm wide.
+4. add a new line, `Gdraw.ScreenWidthCentimeters: 34` and save the file
+5. start FontForge again
+6. if the scaling is still not right, play with the value until it is
 
-Click the XQuartz app in the Dock, and then go to X11 menu and open Preferences.
+#### If you use a real mouse
 
 FontForge is designed to make use of a three button mouse. It is also
-designed to make use of modifier key modes on mouse clicks (so Control
-left click can mean something different than left click). If you have a
-three (or two) button mouse then use it (and turn off
-"`Emulate three button   mouse`" in the X11 preferences). If you have a
-standard one button mouse then you have the option of having the mac
-simulate a three button mouse (for instance Option mouse click behaves
-like clicking the middle mouse button). Unfortunately this means you can
-no longer use the Option key to change the behavior of the left (only)
-button click. So either choice means you lose capabilities.
+designed to make use of modifier keys on mouse clicks (eg, Control-left-click can mean something different than left-click.) 
 
-#### Keyboard Shortcuts
+If you have a two or three button mouse, then use it (and turn off
+`Emulate three button mouse` in the X11 preferences.) 
 
-Normally X11 is configured so that the Command key (cloverleaf) is bound
-to the X11 menu bar, and not to fontforge's. When fontforge starts it
-checks this, and if X11 gets command then fontforge configures its
-menubar to use Control rather than command. This isn't very mac-like. If
-you turn **off** the "`Enable keyboard shortcuts under X11`" preference
-item then fontforge will configure its menubar to make use of Command.
+If you have a standard one button mouse, then you have the option of having the mac simulate a three button mouse (for instance Option-left-click behaves like clicking the middle mouse button). Unfortunately this means you can no longer use the Option key to change the behavior of the left (only) button click. To enable this, click the XQuartz app in the Dock, and then go to X11 menu in the top left, Preferences, Input, and turn on `Emulate three button mouse`
 
-On the mac, the Option key is mapped to what fontforge calls "Alt" or
-"Meta".
+#### Mac-like Keyboard Shortcuts
 
-#### System Fonts
+X11 is configured by default so that the Command key (with the cloverleaf symbol, next to the spacebar key) is bound to X11, and not to FontForge. When FontForge starts it checks this, and if X11 gets Command then FontForge hotkeys use Control, like Windows and unlike everything else on a Mac. 
 
-If you create a file in your home folder named `.fonts.conf` with the
-following contents then fontforge's UI will be able to use the fonts 
-Apple supplies with OS X.
-
->     <?xml version="1.0"?>
->     <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
->     <!-- /etc/fonts/fonts.conf file to configure system font access -->
->     <fontconfig>
->
->     <!-- Font directory list -->
->     <!-- Add to system list -->
->
->             <dir>/System/Library/Fonts</dir>
->             <dir>/Library/Fonts</dir>
->             <dir>~/Library/Fonts</dir>
->
->     </fontconfig>
+To get Mac-like hotkeys you must turn off the "`Enable keyboard shortcuts under X11`" preference item of X11 and restart FontForge.
 
 ## Installing from Package Managers
 
@@ -75,6 +68,6 @@ Both
 [fink](http://www.finkproject.org/) have FontForge packages
 which you may like to use.
 
-## Compiling a Mac package from source code
+## Installing from Source Code
 
 Ben Martin discussed how to build a binary package [on GitHub](https://github.com/fontforge/fontforge/issues/102#issuecomment-12314099).
