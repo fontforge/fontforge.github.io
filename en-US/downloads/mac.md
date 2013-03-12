@@ -57,6 +57,8 @@ If you have a standard one button mouse, then you have the option of having the 
 
 #### Mac-like Keyboard Shortcuts
 
+(This is currently broken and only Windows-style hotkeys work right now.)
+
 X11 is configured by default so that the Command key (with the cloverleaf symbol, next to the spacebar key) is bound to X11, and not to FontForge. When FontForge starts it checks this, and if X11 gets Command then FontForge hotkeys use Control, like Windows and unlike everything else on a Mac. 
 
 To get Mac-like hotkeys you must turn off the "`Enable keyboard shortcuts under X11`" preference item of X11 and restart FontForge.
