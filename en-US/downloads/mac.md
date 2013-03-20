@@ -10,8 +10,10 @@ Application. It runs on Macs thanks to a UNIX compatibility layer called X11.
 ## Install Beta Package for Mac OS X 10.6+
 
 1. With Finder, look in your `/Applications/Utilities/` folder and check if you have the `X11` or `XQuartz` apps installed on your computer. If you don't have one of these, [download XQuartz](http://xquartz.macosforge.org) and install it in the normal way.
-2. Download this ZIP file: [FontForge.app.zip](https://docs.google.com/file/d/0B4Odx154QIHFTklWNU9mYjhQMDQ/edit?usp=sharing) (published on 2013-03-20, **now with natural mac keys**)
-3. Unzip it and move the `FontForge.app` file to `/Applications`. Then open it in the normal way, and this first time can take a while so please be patient (and relax, it loads quickly after the first time.) It will automatically start XQuartz and then show you the 'Open Font' window.
+2. Start XQuartz, go to X11 menu, Preferences, Input, and **turn off the `Enable keyboard shortcuts under X11` or `Enable key equivalents under X11` preference item.
+3. Download this ZIP file: [FontForge.app.zip](https://docs.google.com/file/d/0B4Odx154QIHFTklWNU9mYjhQMDQ/edit?usp=sharing) (published on 2013-03-20)
+4. Unzip it and move the `FontForge.app` file to `/Applications`. Then open it in the normal way. You may need to go to System Preferences, Security, unlock, and allow Mac apps from `Everywhere.` The first time FontForge runs it can take a while, so please be patient (it loads quickly after the first time.) In future, it will automatically start XQuartz. 
+5. When you see the 'Open Font' window click the `New` button.
 
 ## Update Beta Package
 
@@ -54,14 +56,6 @@ If you have a two or three button mouse, then use it (and turn off
 `Emulate three button mouse` in the X11 preferences.) 
 
 If you have a standard one button mouse, then you have the option of having the mac simulate a three button mouse (for instance Option-left-click behaves like clicking the middle mouse button). Unfortunately this means you can no longer use the Option key to change the behavior of the left (only) button click. To enable this, click the XQuartz app in the Dock, and then go to X11 menu in the top left, Preferences, Input, and turn on `Emulate three button mouse`
-
-#### Mac-like Keyboard Shortcuts
-
-(This is currently broken and only Windows-style hotkeys work right now.)
-
-X11 is configured by default so that the Command key (with the cloverleaf symbol, next to the spacebar key) is bound to X11, and not to FontForge. When FontForge starts it checks this, and if X11 gets Command then FontForge hotkeys use Control, like Windows and unlike everything else on a Mac. 
-
-To get Mac-like hotkeys you must turn off the "`Enable keyboard shortcuts under X11`" preference item of X11 and restart FontForge.
 
 ## Installing from Package Managers
 
