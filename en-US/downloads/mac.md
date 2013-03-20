@@ -10,7 +10,7 @@ Application. It runs on Macs thanks to a UNIX compatibility layer called X11.
 ## Install Beta Package for Mac OS X 10.6+
 
 1. With Finder, look in your `/Applications/Utilities/` folder and check if you have the `X11` or `XQuartz` apps installed on your computer. If you don't have one of these, [download XQuartz](http://xquartz.macosforge.org) and install it in the normal way.
-2. Download this ZIP file: [FontForge.app.zip](http://fuuko.libferris.com/osx/packages/201303/12_1745/FontForge.app.zip) (published on 2013-03-12)
+2. Download this ZIP file: [FontForge.app.zip](https://docs.google.com/file/d/0B4Odx154QIHFTklWNU9mYjhQMDQ/edit?usp=sharing) (published on 2013-03-20, **now with natural mac keys**)
 3. Unzip it and move the `FontForge.app` file to `/Applications`. Then open it in the normal way, and this first time can take a while so please be patient (and relax, it loads quickly after the first time.) It will automatically start XQuartz and then show you the 'Open Font' window.
 
 ## Update Beta Package
