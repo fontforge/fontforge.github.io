@@ -9,11 +9,19 @@ Application. It runs on Macs thanks to a UNIX compatibility layer called X11.
 
 ## Install Beta Package for Mac OS X 10.6+
 
-1. With Finder, look in your `/Applications/Utilities/` folder and check if you have the `X11` or `XQuartz` apps installed on your computer. If you don't have one of these, [download XQuartz](http://xquartz.macosforge.org) and install it in the normal way.
-2. Start XQuartz, go to X11 menu, Preferences, Input, and **turn off the `Enable keyboard shortcuts under X11` or `Enable key equivalents under X11` preference item.
-3. Download this ZIP file: [FontForge.app.zip](https://docs.google.com/file/d/0B4Odx154QIHFTklWNU9mYjhQMDQ/edit?usp=sharing) (published on 2013-03-20)
-4. Unzip it and move the `FontForge.app` file to `/Applications`. Then open it in the normal way. You may need to go to System Preferences, Security, unlock, and allow Mac apps from `Everywhere.` The first time FontForge runs it can take a while, so please be patient (it loads quickly after the first time.) In future, it will automatically start XQuartz. 
-5. When you see the 'Open Font' window click the `New` button.
+First you need to install the X11 compatibility system:
+
+1. With Finder, look in your `/Applications/Utilities/` folder and check if you have the `X11` or `XQuartz` apps installed on your computer. 
+2. If you don't have one of these, [download XQuartz](http://xquartz.macosforge.org)
+3. Install it in the normal way
+4. Log out and log back in to ensure it works correctly
+
+Then install FontForge:
+
+1. Start XQuartz, go to X11 menu, Preferences, Input, and **turn off the `Enable keyboard shortcuts under X11` or `Enable key equivalents under X11` preference item.
+2. Download this ZIP file: [FontForge.app.zip](https://docs.google.com/file/d/0B4Odx154QIHFTklWNU9mYjhQMDQ/edit?usp=sharing) (published on 2013-03-20)
+3. Unzip it and move the `FontForge.app` file to `/Applications`. Then open it in the normal way. You may need to go to System Preferences, Security, unlock, and allow Mac apps from `Everywhere.` The first time FontForge runs it can take a while, so please be patient (it loads quickly after the first time.) In future, it will automatically start XQuartz. 
+4. When you see the 'Open Font' window click the `New` button.
 
 ## Update Beta Package
 
