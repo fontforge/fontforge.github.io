@@ -23,7 +23,7 @@ Then install FontForge:
 3. Unzip it and move the `FontForge.app` file to `/Applications`. Then open it in the normal way. You may need to go to System Preferences, Security, unlock, and allow Mac apps from `Everywhere.` The first time FontForge runs it can take a while, so please be patient (it loads quickly after the first time.) In future, it will automatically start XQuartz. 
 4. When you see the 'Open Font' window click the `New` button.
 
-## Update Beta Package
+### Update Beta Package
 
 New beta packages are released every few days. To install an update:
 
@@ -31,9 +31,11 @@ New beta packages are released every few days. To install an update:
 2. drag and drop the new FontForge.app into `/Applications` and replace it
 3. start FontForge again
 
-### Optional Steps To Improve The Experience
+## Advanced Configuration
 
-You can make FontForge more pleasant to use by taking a moment to configure a few extra settings.
+**The following steps are optional**
+
+To make FontForge more pleasant to use, you can change some aspects of the way it works on Macs.
 
 #### Changing Hot Keys
 
@@ -44,7 +46,7 @@ If the hotkeys are unfamiliar, you can change them!
 3. change the hotkeys and save the file
 4. start FontForge again
 
-#### Screen Size Problems
+#### Changing UI Size
 
 If the UI appears very big or very small, you can change the way the UI is sized. 
 
