@@ -31,6 +31,10 @@ New beta packages are released every few days. To install an update:
 2. drag and drop the new FontForge.app into `/Applications` and replace it
 3. start FontForge again
 
+### If things go wrong
+
+If you have any problems with installation or upgrading, ask for help on the [FontForge Users](/) mailing list.
+
 ## Advanced Configuration
 
 **The following steps are optional**
