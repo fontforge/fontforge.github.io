@@ -35,3 +35,7 @@ contribute to.
 
 TODO: Add links to books/sites that explain how to contribute to 
 libre software projects, eg Fogel book, GitHub docs
+
+TODO: make this the /about page
+
+TODO: add rule 5 from http://hintjens.com/blog:17 to this page as a pull quote
