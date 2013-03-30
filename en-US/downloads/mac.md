@@ -23,7 +23,7 @@ Then install FontForge:
 3. Unzip it, move the `FontForge.app` file to `/Applications` and open it in the normal way. (In 10.8+, you may need to go to System Preferences, Security, unlock, and allow Mac apps from `Everywhere.`) The first time FontForge runs it can take a while, depending on how many fonts you have installed, so please be patient. It loads quickly after the first time. 
 4. When you see the 'Open Font' window click the `New` button.
 
-You can use FontForge directly and it will automatically start XQuartz for you.
+Next time you with to start FontForge, just open it in the normal way and it will automatically start XQuartz for you.
 
 ### Update Beta Package
 
