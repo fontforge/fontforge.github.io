@@ -20,7 +20,7 @@ Then install FontForge:
 
 1. Start XQuartz, go to X11 menu, Preferences, Input, and **turn off** the `Enable keyboard shortcuts under X11` or `Enable key equivalents under X11` preference item.
 2. Download this ZIP file: [2013-03-26-FontForge.app.zip](https://docs.google.com/file/d/0B4Odx154QIHFQ3dTMkRKRmlPWms/edit?usp=sharing) (published on 2013-03-26)
-3. Unzip it and move the `FontForge.app` file to `/Applications`. Then open it in the normal way. You may need to go to System Preferences, Security, unlock, and allow Mac apps from `Everywhere.` The first time FontForge runs it can take a while, so please be patient (it loads quickly after the first time.) In future, it will automatically start XQuartz. 
+3. Unzip it and move the `FontForge.app` file to `/Applications`. Then open it in the normal way. (In 10.8+, you may need to go to System Preferences, Security, unlock, and allow Mac apps from `Everywhere.`) The first time FontForge runs it can take a while, so please be patient (it loads quickly after the first time.) In future, it will automatically start XQuartz.
 4. When you see the 'Open Font' window click the `New` button.
 
 ### Update Beta Package
