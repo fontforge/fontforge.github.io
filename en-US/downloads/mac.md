@@ -18,10 +18,12 @@ First you need to install the X11 compatibility system:
 
 Then install FontForge:
 
-1. Start XQuartz, go to X11 menu, Preferences, Input, and **turn off** the `Enable keyboard shortcuts under X11` or `Enable key equivalents under X11` preference item.
+1. Start XQuartz from `Applications/Utilities/`, go to X11 menu, Preferences, Input, and **turn off** the `Enable keyboard shortcuts under X11` or `Enable key equivalents under X11` preference item.
 2. Download this ZIP file: [2013-03-26-FontForge.app.zip](https://docs.google.com/file/d/0B4Odx154QIHFQ3dTMkRKRmlPWms/edit?usp=sharing) (published on 2013-03-26)
-3. Unzip it and move the `FontForge.app` file to `/Applications`. Then open it in the normal way. (In 10.8+, you may need to go to System Preferences, Security, unlock, and allow Mac apps from `Everywhere.`) The first time FontForge runs it can take a while, so please be patient (it loads quickly after the first time.) In future, it will automatically start XQuartz.
+3. Unzip it, move the `FontForge.app` file to `/Applications` and open it in the normal way. (In 10.8+, you may need to go to System Preferences, Security, unlock, and allow Mac apps from `Everywhere.`) The first time FontForge runs it can take a while, depending on how many fonts you have installed, so please be patient. It loads quickly after the first time. 
 4. When you see the 'Open Font' window click the `New` button.
+
+You can use FontForge directly and it will automatically start XQuartz for you.
 
 ### Update Beta Package
 
@@ -33,13 +35,13 @@ New beta packages are released every few days. To install an update:
 
 ### If things go wrong
 
+The first time you run FontForge it may pop up a dialog box saying "Choose Application. Where is X11?" with a sort of Finder window. Find XQuartz in `Applications/Utilities` and click OK. 
+
 If you have any problems with installation or upgrading, ask for help on the [FontForge Users](/) mailing list.
 
 ## Advanced Configuration
 
-**The following steps are optional**
-
-To make FontForge more pleasant to use, you can change some aspects of the way it works on Macs.
+To make FontForge more pleasant to use, you can change some aspects of the way it works on Macs. **These steps are optional.** 
 
 #### Changing Hot Keys
 
