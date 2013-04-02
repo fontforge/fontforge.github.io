@@ -54,7 +54,7 @@ keys when clicking on them), and all selected files will be opened.
  FontForge can open macbinary resource files containing postscript and
 truetype fonts (it does not open bitmap fonts currently)
  FontForge does not open Acorn RISC/OS files, but you can use
-*[acorn2sfd](acorn2sfd.html)* to convert them into an sfd file which
+*[acorn2sfd](../../utilities/acorn2sfd/)* to convert them into an sfd file which
 FontForge can then open.
  If you have [*mf*](http://www.tug.org/)and
 *[autotrace](http://sourceforge.net/projects/autotrace/)*installed on
@@ -98,7 +98,7 @@ for pdf files).
 
 You can also force fontforge to rename all the glyphs in the font being
 read in to fit some standard naming convention. See the section on
-[namelists](encodingmenu.html#namelist) for more information.
+[namelists](../encodingmenu/#namelist) for more information.
 
 * * * * *
 
@@ -115,7 +115,7 @@ or so that there is a separate pane for directories.
 
 Browse Open Font Library
 
-Brings up a [dialog](OFLib.html) which will browse fonts on the Open
+Brings up a [dialog](../../reference/oflib/) which will browse fonts on the Open
 Font Library website.
 
 Recent
@@ -156,10 +156,10 @@ Save As file picker for that font.
 
 Generate Fonts...
 
-[This generates font files](generate.html), both outline and bitmap. You
+[This generates font files](../generate/), both outline and bitmap. You
 may choose not to generate either, you may generate an afm file or a pfm
 file, you may select the type of postscript output, you may select which
-pixelsizes of bitmap to generate. (See [that page](generate.html)for
+pixelsizes of bitmap to generate. (See [that page](../generate/)for
 more info)
 
 Generate Mac Family...
@@ -168,14 +168,14 @@ This is only available if there are multiple fonts open in the same
 family, and if the current font is the "Plain" style of that family. It
 generates a mac FOND structure containing references to all family
 members, sfnt, and POST resources for all selected faces. It brings up a
-[dlg](generate.html#Mac-Family) very similar to the Generate fonts
+[dlg](../generate/#Mac-Family) very similar to the Generate fonts
 dialog, but one that includes a list of all potential faces for family
 members.
 
 Generate TTC...
 
 This is only available if there are multiple fonts open (they need not
-be the same family). It opens a [dialog](generate.html#GenerateTTC)
+be the same family). It opens a [dialog](../generate/#GenerateTTC)
 similar to the above listing all open fonts. You select which fonts go
 into the ttc file and how they should be stored.
 
@@ -247,7 +247,7 @@ in the appropriate place. Files named "enc\*" or "cid\*" are handled
 similarly except that they specify the current encoding (and the number
 must be in decimal rather than hex).
 
-If you are editing a [multi-layered font](multilayer.html) (and have a
+If you are editing a [multi-layered font](../multilayer/) (and have a
 version of FontForge configured for it) then you can also import an
 image into one of the foreground layers.
 
@@ -282,7 +282,7 @@ fonts will be imported into the sfd.
 Merge Feature Info...
 
 Only available in the font view window. This command will allow you to
-search for an [adobe feature file](featurefile.html) (.fea) for
+search for an [adobe feature file](../../reference/featurefile/) (.fea) for
 feature/lookup information or an afm, ofm, tfm, pfm or mac resource file
 containing kerning pairs for the specified font. In many cases it will
 not be needed because when FontForge opens a .pfa or .pfb font it will
@@ -305,12 +305,12 @@ Print...
 Not available in the bitmap view. Allows you to print out all the glyphs
 in the font, a text sample of the font, or specific glyphs at a very
 large scale.
- See the section on [printing](display.html) for more information.
+ See the section on [printing](../display/) for more information.
 
 Execute Script...
 
 Only in the font view. Brings up a dlg and allows you to enter a
-[script](scripting.html), which could be just calling a prewritten
+[script](../../scripting/native/scripting/), which could be just calling a prewritten
 script file. There is a [Call] button in the dlg to help you locate any
 such files. The default extension is "\*.pe" (postscript edit) but you
 can change that with the [Filter] button if you use something else.
@@ -318,24 +318,24 @@ can change that with the [Filter] button if you use something else.
 Script Menu
 
 Only in the font view. You may define up to 10
-[scripts](scripting.html#menu) that you want to execute frequently and
+[scripts](../../scripting/native/scripting/#menu) that you want to execute frequently and
 place them in this menu. The scripts may also be invoked by short cut
 with the first one being invoked by Control-Meta(Alt)-1, the second
 Control-Meta-2, and the tenth by Control-Meta-0. The scripts are set in
-the [preferences dialog](prefs.html#scripts)
+the [preferences dialog](../prefs/#scripts)
 
 Preferences...
 
 This pops up a [dialog allowing you to configure various esoteric bits
-of fontforge](prefs.html).
+of fontforge](../prefs/).
 
 A number of things, like the colors used in FontForge, that might be
 controlled from a preference window are controlled by [X
-Resources](xres.html) below.
+Resources](../xres/) below.
 
 X Resource Editor...
 
-[This dialog](resedit.html) allows you to edit FontForge's X Resources,
+[This dialog](../resedit/) allows you to edit FontForge's X Resources,
 you may either save them to a file for perminant storage, or change the
 current settings for this use of FontForge.
 
@@ -346,22 +346,22 @@ Exits the program, prompting you whether to save any changed fonts.
 Other menus
 -----------
 
--   [File](filemenu.html)
--   [Edit](editmenu.html)
--   [Point](pointmenu.html)
--   [Element](elementmenu.html)
--   [Tools](toolsmenu.html)
--   [Hints](hintsmenu.html)
--   [Encoding](encodingmenu.html)
--   [View](viewmenu.html)
--   [Metrics](metricsmenu.html)
--   [CID](cidmenu.html)
--   [MM](mmmenu.html)
--   [Window](windowmenu.html)
--   [Help](helpmenu.html)
--   [Hot Keys](HotKeys.html)
+-   [File](../filemenu/)
+-   [Edit](../editmenu/)
+-   [Point](../pointmenu/)
+-   [Element](../elementmenu/)
+-   [Tools](../toolsmenu/)
+-   [Hints](../hintsmenu/)
+-   [Encoding](../encodingmenu/)
+-   [View](../viewmenu/)
+-   [Metrics](../metricsmenu/)
+-   [CID](../cidmenu/)
+-   [MM](../mmmenu/)
+-   [Window](../windowmenu/)
+-   [Help](../helpmenu/)
+-   [Hot Keys](../HotKeys/)
 
--- [Prev](metricsview.html) -- [TOC](overview.html) --
-[Next](editmenu.html) --
+-- [Prev](../metricsview/) -- [TOC](overview.html) --
+[Next](../editmenu/) --
 
 

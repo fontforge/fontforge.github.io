@@ -351,10 +351,10 @@ Nét ngoài
 appreciated
 [pfaedit@users.sourceforge.net](mailto:pfaedit@users.sourceforge.net)).
 For more information on translating fontforge see the [UI Translation
-page](uitranslationnotes.html).
+page](../../customizing/uitranslationnotes/).
 
 When you create a Style entry for an language in the [Element-\>Font
-Info-\>TTF Name](fontinfo.html#TTF-Names) dialog, FontForge will attempt
+Info-\>TTF Name](../fontinfo/#TTF-Names) dialog, FontForge will attempt
 to translate the American English style into something appropriate for
 that language. It understands languages in the above table, but not
 others so it won't always work.

@@ -6,7 +6,7 @@ title: The histogram dialog
 
 The histogram dialog is used to display three things which are useful
 for setting the some of the global hinting values that live in the
-PostScript [Private dictionary](fontinfo.html#Private). The dialog can
+PostScript [Private dictionary](../fontinfo/#Private). The dialog can
 display
 
 -   the distribution of horizontal stem widths
@@ -49,7 +49,7 @@ a bit that a near-by value would be a slightly better choice.
 Pressing [OK] will set the indicated values in the font's private
 dictionary.
 
-When invoked from the [font info dialog](fontinfo.html#Private) these
+When invoked from the [font info dialog](../fontinfo/#Private) these
 dialogs will display information on all glyphs. When invoked from the
 Hint-\>Histograms menu of the font view then only information on
 selected glyphs will be shown (if no glyphs are selected, then again
@@ -62,9 +62,9 @@ better than what FontForge will do on its own -- it uses essentially
 these data itself). This will happen when you generate a postscript font
 and the font has no BlueValues or StemSnap information associated with
 it, or when you use the [Element-\>Font
-Info-\>Private](fontinfo.html#Private) dialog.
+Info-\>Private](../fontinfo/#Private) dialog.
 
--- [Prev](hintsmenu.html) -- [TOC](overview.html) --
-[Next](hintsmenu.html) --
+-- [Prev](../hintsmenu/) -- [TOC](overview.html) --
+[Next](../hintsmenu/) --
 
 

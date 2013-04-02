@@ -29,7 +29,7 @@ available in text fields.
 -   [Copy Fg To Bg](#CopyFg)
 -   [Copy Layer To Layer](#CopyL2L)
 -   [Select](#Select)
-    -   [Select All](editmenu.html#All)
+    -   [Select All](#All)
     -   [Invert Selection](#Invert)
     -   [Deselect All](#Deselect)
     -   [First Point](#FirstPt)
@@ -76,7 +76,7 @@ Undo
 
 In the outline view and the bitmap view this will undo the last command.
 The number of commands that may be undone for any glyph is controlled by
-the [UndoDepth](prefs.html#UndoDepth) preference item.
+the [UndoDepth](../prefs/#UndoDepth) preference item.
  In the font and metrics views, this does NOT undo the last command. It
 undoes the last operation on all selected glyphs.
 
@@ -127,7 +127,7 @@ Copy a series of glyphs into the clipboard, the only the first one will
 be exported to external applications. If the clipboard contains a single
 point, then this will also be exported in STRING format (giving the
 coordinates of the point); the intent is to make it easier to people to
-identify the point. See the section on [selections](selections.html)
+identify the point. See the section on [selections](../../reference/selections/)
 
 Copy Reference
 
@@ -193,7 +193,7 @@ This command is not available in the Bitmap View.
 Copy Grid Fit
 
 Only available in the outline glyph view and only if [View-\>Show Grid
-Fit](viewmenu.html#ShowGridFit)is selected. This will place a copy of
+Fit](../viewmenu/#ShowGridFit)is selected. This will place a copy of
 the grid fit version of the glyph into the clipboard.
 
 Paste
@@ -234,7 +234,7 @@ currently respond to external clipboards):
   "image/eps", "image/ps", "image/svg"   as spline data
   -------------------------------------- -------------------
 
-See the section on [selections](selections.html)
+See the section on [selections](../../reference/selections/)
 
 Paste Into
 
@@ -468,19 +468,19 @@ Selects all glyphs which FontForge thinks need to be hinted.
 Autohintable
 
 Selects all glyphs which FontForge thinks can be autohinted -- ie. all
-glyphs not marked [Hints-\>Don't Autohint](hintsmenu.html#DontAutoHint)
+glyphs not marked [Hints-\>Don't Autohint](../hintsmenu/#DontAutoHint)
 (this does not check whether ff thinks the glyphs in question NEED to be
 autohinted)
 
 Select By Lookup Subtable...
 
-Only in the font view. Brings up a [dlg](selectbyatt.html) which allows
+Only in the font view. Brings up a [dlg](../selectbyatt/) which allows
 you to select various glyphs depending on various advanced typographic
 features.
 
 Find / Replace
 
-Only in the font view, this brings up a [dialog](search.html) that
+Only in the font view, this brings up a [dialog](../search/) that
 allows you to find patterns within glyphs and replace them with other
 patterns.
 
@@ -539,8 +539,8 @@ copy the truetype instructions (which may depend on subroutines or
 values in the 'fpgm', 'prep' and 'cvt ' tables).
 
 This also controls the behavior of the
-[Transform](elementmenu.html#Transform) and [Build
-Accented](elementmenu.html#Accented) glyph commands.
+[Transform](../elementmenu/#Transform) and [Build
+Accented](../elementmenu/#Accented) glyph commands.
 
 Remove Undoes
 
@@ -557,22 +557,22 @@ the memory FontForge is currently squandering on keeping track of Undoes
 Other menus
 -----------
 
--   [File](filemenu.html)
--   [Edit](editmenu.html)
--   [Point](pointmenu.html)
--   [Element](elementmenu.html)
--   [Tools](toolsmenu.html)
--   [Hints](hintsmenu.html)
--   [Encoding](encodingmenu.html)
--   [View](viewmenu.html)
--   [Metrics](metricsmenu.html)
--   [CID](cidmenu.html)
--   [MM](mmmenu.html)
--   [Window](windowmenu.html)
--   [Help](helpmenu.html)
--   [Hot Keys](HotKeys.html)
+-   [File](../filemenu/)
+-   [Edit](../editmenu/)
+-   [Point](../pointmenu/)
+-   [Element](../elementmenu/)
+-   [Tools](../toolsmenu/)
+-   [Hints](../hintsmenu/)
+-   [Encoding](../encodingmenu/)
+-   [View](../viewmenu/)
+-   [Metrics](../metricsmenu/)
+-   [CID](../cidmenu/)
+-   [MM](../mmmenu/)
+-   [Window](../windowmenu/)
+-   [Help](../helpmenu/)
+-   [Hot Keys](../HotKeys/)
 
--- [Prev](filemenu.html) -- [TOC](overview.html) --
-[Next](pointmenu.html) --
+-- [Prev](../filemenu/) -- [TOC](overview.html) --
+[Next](../pointmenu/) --
 
 

@@ -400,7 +400,7 @@ I don't like forcing restrictions on people.
 
 I'm giving away fontforge, so I do.
 
-The [BSD license](license.html)says "Don't sue me, and include my
+The [BSD license](../project/license/) says "Don't sue me, and include my
 copyright notice if you use my code" and that's all I care about.
 
 Perhaps I am naif, but I don't believe that anyone is going to start

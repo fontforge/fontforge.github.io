@@ -8,18 +8,18 @@ title: FontForge's math
 *Being a brief description of the mathematics underlying various of
 FontForge's commands 
  It is presumed that you understand about parameterized splines, if not
-look at the description of [Bézier curves](bezier.html).*
+look at the description of [Bézier curves](../../reference/bezier/).*
 
--   [Linear Transformations](pfaeditmath.html#Linear)
--   [Finding maxima and minima of a spline](pfaeditmath.html#maxima)
+-   [Linear Transformations](#Linear)
+-   [Finding maxima and minima of a spline](#maxima)
 -   [Rasterizing a Glyph](#Rasterizing)
     -   finding intersections
     -   removing overlap
 
--   [Approximating a spline](pfaeditmath.html#Approximating)
--   [Stroking a spline](pfaeditmath.html#Stroke)
+-   [Approximating a spline](#Approximating)
+-   [Stroking a spline](#Stroke)
 -   [Approximating a cubic spline by a series of quadratic
-    splines](bezier.html#ps2ttf)
+    splines](../../reference/bezier/#ps2ttf)
 
 * * * * *
 
@@ -131,7 +131,7 @@ spline. It calculates the locations of several points along the old
 splines, and then it guesses^[1](#guess-t)^ at t values for those
 points.
 
-Now a cubic [Bézier](bezier.html) spline is determined by its two end
+Now a cubic [Bézier](../../reference/bezier/) spline is determined by its two end
 points (P~0~ and P~1~) and two control points (CP~0~ and CP~1~, which
 specify the slope at those end points). Here we know the end points, so
 all we need is to find the control points. The spline can also be

@@ -76,7 +76,7 @@ put in a subroutine, FF may still be able to put some of its components
 
 FontForge will recognize 'seac' as defining references, but it does not
 recognize subroutine calls. Use [Edit-\>Replace With
-Reference](editmenu.html#ReplaceRef) after loading a Type1 font.
+Reference](../../interface/editmenu/#ReplaceRef) after loading a Type1 font.
 
 FontForge can also break an outline into smaller segments and place
 those in subroutines these may be shared more easily among glyphs. They
@@ -101,7 +101,7 @@ references but do make the font smaller.
 
 FontForge will not recognize any references when loading a Type2 (otf,
 cff, cef, gai) font. Use [Edit-\>Replace With
-Reference](editmenu.html#ReplaceRef) after loading the font.
+Reference](../../interface/editmenu/#ReplaceRef) after loading the font.
 
 Type3
 

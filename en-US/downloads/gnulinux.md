@@ -24,7 +24,7 @@ often be a little old, but perhaps more stable. This is not a complete list, but
     for Fedora, Suse, Mandrake, and others
 -   Apostolos Syropoulos has a Solaris x86 package at [his
     site](http://www.sunfreepacks.com/)
--   [Mac OS/X](mac.html)-- Although the Mac is now a unix system
+-   [Mac OS/X](../mac/)-- Although the Mac is now a unix system
     its install procedure is sufficiently different that I have a page
     devoted to it specifically.
 

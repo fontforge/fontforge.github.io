@@ -12,7 +12,7 @@ title: Bitmap Character View
 
 ![](img/BitmapView.png)
 
-The bitmap view is vaguely similar to the [outline view](charview.html).
+The bitmap view is vaguely similar to the [outline view](../charview/).
 It is also designed for editing glyph shapes, but here bitmap glyph
 shapes.
 
@@ -57,7 +57,7 @@ only font the pointer tool can change the advance width.
 
 The if you click with the magnifying tool the view is magnified,
 centered around the point at which you clicked. If you hold down the
-[Meta (or Alt or CapsLock)](charview.html#alt-meta-capslock) key during
+[Meta (or Alt or CapsLock)](../charview/#alt-meta-capslock) key during
 the click then the view will be minified.
 
 The pencil tool allows you to set or clear bits. If you depress the
@@ -139,5 +139,5 @@ new color, move the cursor to the desired color and click the mouse.
 As the cursor moves over the bitmap in the bitmap view, the color under
 the cursor will be outlined in white.
 
--- [Prev](charview.html) -- [TOC](overview.html) --
-[Next](metricsview.html) --
+-- [Prev](../charview/) -- [TOC](overview.html) --
+[Next](../metricsview/) --

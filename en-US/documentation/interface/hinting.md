@@ -68,7 +68,7 @@ postscript font from something that contains glyphs with out of date
 hints, then FontForge will automagically regenerate them.
 
 This may not always be appropriate. You can turn this off in general
-with the [AutoHint preference item](prefs.html#AutoHint). You may turn
+with the [AutoHint preference item](./prefs/#AutoHint). You may turn
 it off for an individual glyph with the Hints-\>Don't AutoHint command.
 
 Manual Hinting
@@ -120,7 +120,7 @@ These do not set the "Don't AutoHint" bit.
 FontForge's Hints-\>Hint Substitution Pts command will automatically
 figure out where hint substitution should occur, but if this isn't good
 enough you may do it manually with the [Element-\>Get
-Info](getinfo.html#HintMask) command (when the selection is a single
+Info](../getinfo/#HintMask) command (when the selection is a single
 point to which you want to attach a hintmask).
 
 If a glyph has conflicting hints then the first point in the glyph (the
@@ -146,7 +146,7 @@ FontForge also has a Hints-\>Auto Counter command which tries to figure
 out what stems form a counter group.
 
 Again you can do this manually, with the
-[Counter](charinfo.html#CounterMasks) pane of the Element-\>Char Info
+[Counter](../charinfo/#CounterMasks) pane of the Element-\>Char Info
 dialog. When creating a new counter group you are presented with a
 dialog very similar to the one above in which you must select a set of
 hints that bound a set of counters.
@@ -159,7 +159,7 @@ capitals and lower case letters (BlueValues, OtherBlues), and so forth.
 These live in the PostScript Private dictionary. Once you have hinted
 your font fontforge can generate reasonable values for these settings
 (But you must have hinted the font first!) -- See the [Guess] button in
-the [Element-\>Font Info-\>PS Private](fontinfo.html#Private)dialog.
+the [Element-\>Font Info-\>PS Private](.../fontinfo/#Private)dialog.
 Then once you have generated BlueValues you should rehint the font (the
 hints depend on the BlueValues, just as the BlueValues depend on the
 hints:-).
@@ -192,7 +192,7 @@ can create diagonal stems manually (Hints-\>Add DHint), or you can let
 the autohinter do this for you
 (File-\>Preferences-\>PSHints-\>DetectDiagonalStems).
 
-Please look at the [page on instructing fonts](ttfinstrs.html).
+Please look at the [page on instructing fonts](../ttfinstrs/).
 
 Hint questions:
 ---------------
@@ -216,4 +216,4 @@ hinting.
     Can reasonable hints be written for the serif cap above left?
 
 [Overview of Hinting in PostScript and TrueType](overview.html#Hints).
- [Hinting menu.](hintsmenu.html)
+ [Hinting menu.](../hintsmenu/)

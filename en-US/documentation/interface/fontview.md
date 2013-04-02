@@ -14,7 +14,7 @@ displayed with the outline font rasterized on a 24 pixel em square. You
 may display it at 36, 48, 72 and 96 pixel sizes as well. You may also
 choose to look at an anti-aliased greymap (the above image is
 anti-aliased). These are slower to generate but look nicer
-([Comparison](AA-Comparison.html)).
+([Comparison](../AA-Comparison/)).
 
 If you have an encoding slot which has nothing in it (as opposed to an
 encoding which maps to a space glyph) then that will be shown by a faint
@@ -213,8 +213,8 @@ Western Europe, the encoding used by MS Windows for the US and Europe
 (whose goal is to specify every character currently used by humans).
 There are many large CJK (Chinese, Japanese, Korean) two byte encodings.
 You can also add your own encodings with the
-[Encoding](encodingmenu.html) menu. A brief description of what's in the
-encodings also appears [on that page](encodingmenu.html).
+[Encoding](../encodingmenu/) menu. A brief description of what's in the
+encodings also appears [on that page](../encodingmenu/).
 
 There may be some slight differences between one vendor's definition of
 an encoding and another. I try to follow those encodings specified by
@@ -278,12 +278,12 @@ The standard mechanisms that postscript provides work reasonably well
 for alphabets and syllabaries, but the massive number of characters
 needed for CJK (Chinese, Japanese or Korean) fonts require more complex
 machinations. Adobe's current solution is the [CID-keyed
-font](cidmenu.html#CID), a font consisting of several subfonts each a
+font](../cidmenu/#CID), a font consisting of several subfonts each a
 collection of glyph descriptions with no encoding imposed on them and no
 names given to them.
 
 If FontForge loads in a CID keyed font it will enable a special menu
-called [CID](cidmenu.html) which (among other things) displays the list
+called [CID](../cidmenu/) which (among other things) displays the list
 of all the sub-fonts in the font. When it starts up FontForge will pick
 (practically at random) a sub-font to display in the font view. You may
 change which font is displayed by the CID menu.
@@ -324,7 +324,7 @@ look like:
 of memory in FontForge. I am able to work on many of them on my 256M
 machine with 384M of swap space.
 
-The [Remove Undoes](editmenu.html#Remove-Undoes)command will allow you
+The [Remove Undoes](../editmenu/#Remove-Undoes)command will allow you
 to free up memory if you think you may be running short. FontForge is
 not always able to protect itself against running out of memory,
 sometimes the OS just sends it a SIGKILL signal.
@@ -332,10 +332,10 @@ sometimes the OS just sends it a SIGKILL signal.
 Multiple Master Fonts
 ---------------------
 
-If the font is a [Multiple Master](multiplemaster.html#MM)Font there
+If the font is a [Multiple Master](../multiplemaster/#MM)Font there
 will again be several subfonts only this time all the subfonts contain
 the same glyph set. Each subfont provides glyphs for one style of the
-font family. The [MM](mmmenu.html) menu allows you to control which
+font family. The [MM](../mmmenu/) menu allows you to control which
 style of the family is visible in the font view, and provides a few
 other commands for manipulating multiple masters.
 
@@ -364,4 +364,4 @@ You can view the vertical metrics in the font view just as you can the
 horizontal metrics with View-\>Show V Metrics.
 
 -- [Prev](editexample.html) -- [TOC](overview.html) --
-[Next](charview.html) --
+[Next](../charview/) --

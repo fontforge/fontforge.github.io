@@ -5,31 +5,31 @@ title: Creating a glyph using spiro points
 ---
 
 
--   [Font Creation](editexample.html#FontCreate)
--   [Creating a glyph (tracing outlines)](editexample.html#CharCreate)
--   [Create glyph outlines using spiro points](editspiro.html)
+-   [Font Creation](../editexample/#FontCreate)
+-   [Creating a glyph (tracing outlines)](../editexample/#CharCreate)
+-   [Create glyph outlines using spiro points]()
 -   [Importing a glyph from Inkscape (or Illustrator, or some other
-    vector editor)](importexample.html)
--   [Navigating to other glyphs](editexample2.html#Navigating)
+    vector editor)](../importexample/)
+-   [Navigating to other glyphs](../editexample2/#Navigating)
 -   [On to the next glyph (consistent
-    directions)](editexample2.html#Creating-o)
+    directions)](../editexample2/#Creating-o)
 -   [Consistent serifs and stem
-    widths](editexample3.html#consistent-stems)
--   [Building accented glyphs](editexample4.html#accents)
--   [Building a ligature](editexample4.html#ligature)
--   [Lookups and features](editexample4.html#lookups)
--   [Examining metrics](editexample5.html#metrics)
--   [Kerning](editexample5.html#Kerning)
--   [Glyph variants](editexample6.html#Variants)
--   [Anchoring marks](editexample6.html#Marks)
--   [Conditional features](editexample6-5.html#Conditional)
--   [Checking your font](editexample7.html#checking)
--   [Generating it](editexample7.html#generating)
--   [Font Families](editexample7.html#Families)
--   [Final Summary](editexample7.html#summary)
--   [Bitmap strikes](editexample8.html)
--   [Scripting Tutorial](scripting-tutorial.html)
--   [Notes on various scripts](scriptnotes.html#Special)
+    widths](../editexample3/#consistent-stems)
+-   [Building accented glyphs](../editexample4/#accents)
+-   [Building a ligature](../editexample4/#ligature)
+-   [Lookups and features](../editexample4/#lookups)
+-   [Examining metrics](../editexample5/#metrics)
+-   [Kerning](../editexample5/#Kerning)
+-   [Glyph variants](../editexample6/#Variants)
+-   [Anchoring marks](../editexample6/#Marks)
+-   [Conditional features](../editexample6-5/#Conditional)
+-   [Checking your font](../editexample7/#checking)
+-   [Generating it](../editexample7/#generating)
+-   [Font Families](../editexample7/#Families)
+-   [Final Summary](../editexample7/#summary)
+-   [Bitmap strikes](../editexample8/)
+-   [Scripting Tutorial](../../documentation/scripting/native/scripting-tutorial/)
+-   [Notes on various scripts](../../documentation/scripting/native/scriptnotes/#Special)
 -   Searching the documentation: (Powered by
     [Google](http://www.google.com/))
 
@@ -70,7 +70,7 @@ spiro mode, and the tools available to you change slightly.
 
 Again use File-\>Import to import a background image and then scale it
 properly. (If you don't know how this is done, look at the [previous
-page](editexample.html#Import))
+page](../editexample/#Import))
 
 Select the G4 curve point (the tool on the left side of the third row).
 
@@ -86,8 +86,8 @@ a curve to a straight line.
 
 If you pick the wrong constraint (and I often do -- it will become
 obvious later when the contour looks distorted here), then select the
-constraint point and use [Element-\>Get Info](getinfo.html#Spiro)to
-change the point type -- or use the [Point menu](pointmenu.html).
+constraint point and use [Element-\>Get Info](../../documentation/interface/getinfo/#Spiro)to
+change the point type -- or use the [Point menu](../../documentation/interface/pointmenu/).
 
 ![](img/Cspiro3.png)
 
@@ -184,5 +184,5 @@ an approach where he puts points at the major features of the glyph,
 closes the contour and then adds and moves points later to get a better
 fit to the glyph. Experiment, find what works for you.
 
--- [Prev](editexample.html) -- [TOC](overview.html) --
-[Next](importexample.html) --
+-- [Prev](../editexample/) -- [TOC](../overview/) --
+[Next](../importexample/) --

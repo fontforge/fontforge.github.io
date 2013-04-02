@@ -7,11 +7,11 @@ title: Download FontForge
 Installation Packages
 ------------------------------
 
-Easily install FontForge on [Mac](mac.html), [Windows](windows.html) and [GNU+Linux](gnulinux.html).
+Easily install FontForge on [Mac](../mac/), [Windows](../windows/) and [GNU+Linux](../gnulinux/).
 
 ### Source Code
 
-Please see the [Installing Fom Source Code](source.html) page for full details on compiling from source. 
+Please see the [Installing Fom Source Code](../source/) page for full details on compiling from source. 
 
 #### Release Version
 

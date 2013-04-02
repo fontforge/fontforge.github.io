@@ -46,7 +46,7 @@ often be able to map a CID to a unicode character name (but not always),
 so FontForge will give glyphs names when it can.
 
 For more information see the [section on CID keyed fonts on the font
-view page](fontview.html#CID).
+view page](../fontview/#CID).
 
 Convert to CID
 
@@ -98,7 +98,7 @@ CID Font Info
 
 This allows you to provide information on the entire collection of
 subfonts rather than just the current subfont. It provides access to the
-standard [font info dialog](fontinfo.html).
+standard [font info dialog](../fontinfo/).
 
 * * * * *
 
@@ -110,22 +110,22 @@ sub-font to be displayed instead of the current one.
 Other menus
 -----------
 
--   [File](filemenu.html)
--   [Edit](editmenu.html)
--   [Point](pointmenu.html)
--   [Element](elementmenu.html)
--   [Tools](toolsmenu.html)
--   [Hints](hintsmenu.html)
--   [Encoding](encodingmenu.html)
--   [View](viewmenu.html)
--   [Metrics](metricsmenu.html)
--   [CID](cidmenu.html)
--   [MM](mmmenu.html)
--   [Window](windowmenu.html)
--   [Help](helpmenu.html)
--   [Hot Keys](HotKeys.html)
+-   [File](../filemenu/)
+-   [Edit](../editmenu/)
+-   [Point](../pointmenu/)
+-   [Element](../elementmenu/)
+-   [Tools](../toolsmenu/)
+-   [Hints](../hintsmenu/)
+-   [Encoding](../encodingmenu/)
+-   [View](../viewmenu/)
+-   [Metrics](../metricsmenu/)
+-   [CID](../cidmenu/)
+-   [MM](../mmmenu/)
+-   [Window](../windowmenu/)
+-   [Help](../helpmenu/)
+-   [Hot Keys](../HotKeys/)
 
--- [Prev](metricsmenu.html) -- [TOC](overview.html) --
-[Next](mmmenu.html) --
+-- [Prev](../metricsmenu/) -- [TOC](overview.html) --
+[Next](../mmmenu/) --
 
 

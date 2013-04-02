@@ -173,9 +173,9 @@ PostScript and True Type.
 
 ### See Also
 
--   [FontForge's math](pfaeditmath.html)
+-   [FontForge's math](../pfaeditmath/)
 
 ^1^Bézier splines were developed by Pierre Bézier (1910-1999).
 
--- [Prev](sfdformat.html) -- [TOC](overview.html) --
-[Next](corpchar.html) --
+-- [Prev](../sfdformat/) -- [TOC](overview.html) --
+[Next](../corpchar/) --

@@ -12,7 +12,7 @@ title: Manipulating OpenType Lookups
 
 
 ![](img/fontinfo-lookups.png)You use the Lookups pane of the [Element-\>Font
-Info](fontinfo.html) command to control OpenType lookups.
+Info](../fontinfo/) command to control OpenType lookups.
 
 A lookup is a collection of commands that provide a text layout program
 with a transformation to apply on the input glyph stream. A lookup might
@@ -68,86 +68,86 @@ will bring up a dialog that allows you to control the attributes of the
 lookup. Every lookup has a lookup type (here "Single Substitution")
 which specifies broadly what kinds of things this lookup can do.
 
-[Single Substitution](lookups.html#basic-subs)
+[Single Substitution](#basic-subs)
 
 Substitute exactly one glyph with another.
 
-[Multiple Substitution](lookups.html#basic-subs)
+[Multiple Substitution](#basic-subs)
 
 Substitutes exactly one glyph with several others.
 
-[Alternate Substitution](lookups.html#basic-subs)
+[Alternate Substitution](#basic-subs)
 
 Provides the user with a choice of substitute glyphs for each glyph.
 
-[Ligature Substitution](lookups.html#basic-subs)
+[Ligature Substitution](#basic-subs)
 
 Substitutes multiple glyphs with a single one
 
-[Contextual Substitution](lookups.html#contextual-subs)
+[Contextual Substitution](#contextual-subs)
 
 Performs substitutions depending on the glyphs around the current one
 
-[Contextual Chaining Substitutions](lookups.html#contextual-subs)
+[Contextual Chaining Substitutions](#contextual-subs)
 
 A more complicated way of performing contextual substitutions
 
 [Reverse Contextual Chaining
-Substitutions](lookups.html#contextual-subs)
+Substitutions](#contextual-subs)
 
 For arabic scripts where substitutions need to be done backwards.
 
-[Mac Indic State Machine](lookups.html#sm-subs)
+[Mac Indic State Machine](#sm-subs)
 
 (Not an OpenType lookup at all, but one for Apple's Advanced typography
 tables -- rearranges indic glyphs)
 
-[Mac Contextual State Machine](lookups.html#sm-subs)
+[Mac Contextual State Machine](#sm-subs)
 
 (Not an OpenType lookup at all, but one for Apple's Advanced typography
 tables -- contextual substitutions)
 
-[Mac Insertion State Machine](lookups.html#sm-subs)
+[Mac Insertion State Machine](#sm-subs)
 
 (Not an OpenType lookup at all, but one for Apple's Advanced typography
 tables -- contextually inserts glyphs)
 
 * * * * *
 
-[Single Positioning](lookups.html#Single-pos)
+[Single Positioning](#Single-pos)
 
 Moves a single glyph around
 
-[Pair Positioning (kerning)](lookups.html#Pair)
+[Pair Positioning (kerning)](#Pair)
 
 Moves two glyphs relative to each other
 
-[Cursive Positioning](lookups.html#Anchor)
+[Cursive Positioning](#Anchor)
 
 For Urdu and other similar scripts. Positions one glyph at the
 appropriate anchor point relative to another.
 
-[Mark to Base Positioning](lookups.html#Anchor)
+[Mark to Base Positioning](#Anchor)
 
 Positions a mark (or accent) relative to a base letter
 
-[Mark to Ligature Positioning](lookups.html#Anchor)
+[Mark to Ligature Positioning](#Anchor)
 
 Positions a mark relative to ta ligature
 
-[Mark to Mark Positioning](lookups.html#Anchor)
+[Mark to Mark Positioning](#Anchor)
 
 Positions a mark relative to another mark.
 
-[Contextual Positioning](lookups.html#contextual-pos)
+[Contextual Positioning](#contextual-pos)
 
 Positions glyphs depending on other glyphs around them
 
-[Contextual chaining Positioning](lookups.html#contextual-pos)
+[Contextual chaining Positioning](#contextual-pos)
 
 A more complex form of the above.
 
-[Mac Kerning State Machine](lookups.html#sm-kern)
+[Mac Kerning State Machine](#sm-kern)
 
 (Not an OpenType lookup at all, but one for Apple's Advanced typography
 tables -- contextual kerning)
@@ -164,8 +164,8 @@ press on the rectangle to get a friendlier dialog (see
 
 Every lookup is associated with a set of flags which control its
 behavior. The "Mark Class:" field is only active if there are [Mark
-Classes](fontinfo.html#MarkClass)defined, and the "Mark Set:" field is
-active if there are [Mark Sets](fontinfo.html#MarkSet)defined. Mark
+Classes](../fontinfo/#MarkClass)defined, and the "Mark Set:" field is
+active if there are [Mark Sets](../fontinfo/#MarkSet)defined. Mark
 classes and sets are very similar, with mark sets being the newer
 (largely unsupported as I write in spring 2009) but more versatile of
 the two. These provide an extension of the Ignore Marks flag -- if you
@@ -251,13 +251,13 @@ are ordered alphabetically or unicodally, thus "A" would be grouped with
 ### Contextual substitutions
 
 The contextual substitution dialog is quite complicated and is discussed
-in its [own section](contextchain.html). These lookups can only live in
+in its [own section](../contextchain/). These lookups can only live in
 an OpenType font, not in an Apple Advanced Typography font.
 
 ### Substitution by State Machine
 
 The state machine substitution dialog is quite complicated and is
-discussed in its [own section](statemachine.html). These lookups can
+discussed in its [own section](../statemachine/). These lookups can
 only live in an Apple Advanced Typography font.
 
   ----------------------------------- -----------------------------------
@@ -353,7 +353,7 @@ almost never be on the left side of a kerning pair.
 #### Kerning pairs
 
 ![](img/subtable-gpos-kernpair.png) The kerning class dialog is described in
-its [own section](metricsview.html#kernclass), while the kerning pair
+its [own section](../metricsview/#kernclass), while the kerning pair
 subtable dialog is described below.
 
 Each entry in the dialog specifies a pair of glyphs and then adjustments
@@ -431,11 +431,11 @@ You may provide device table adjustments for each pixelsize.
 ### Contextual Positioning
 
 The contextual substitution dialog is quite complicated and is discussed
-in its [own section](contextchain.html). These lookups can only live in
+in its [own section](../contextchain/). These lookups can only live in
 an OpenType font, not in an Apple Advanced Typography font.
 
 ### Kerning by State Machine
 
 The state machine substitution dialog is quite complicated and is
-discussed in its [own section](statemachine.html). These lookups can
+discussed in its [own section](../statemachine/). These lookups can
 only

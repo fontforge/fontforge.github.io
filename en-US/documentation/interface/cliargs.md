@@ -46,7 +46,7 @@ it called "foo.ttf"
 Where type may be
      Current | Copy | Private
  Gives the user some control over [colormap
-handling](xres.html#Colormap)on 8bit screens.
+handling](../xres/#Colormap)on 8bit screens.
 
 -depth val
 
@@ -67,7 +67,7 @@ tablet.
 
 -help
 
-Bring up a [browser](helpmenu.html) looking at this documentation.
+Bring up a [browser](../helpmenu/) looking at this documentation.
 
 -lang={py|ff}
  -lang {py|ff}
@@ -147,7 +147,7 @@ before saving.
 -script script-file
 
 If FontForge's first argument is "-script" then the argument that
-follows will be treated as a [script file](scripting.html) and all the
+follows will be treated as a [script file](../../scripting/native/scripting/) and all the
 remaining arguments will be passed as arguments to that file. (The
 "-script" argument may be omitted, and if the first argument is an
 executable file which whose first line starts with "\#!" and contains
@@ -252,4 +252,4 @@ user preferences and the recovery files.
 Used to create comments in new fonts about who created the font, or who
 saved it.
 
--- [Prev](xres.html) -- [TOC](overview.html) -- [Next](files.html) --
+-- [Prev](../xres/) -- [TOC](overview.html) -- [Next](../files/) --

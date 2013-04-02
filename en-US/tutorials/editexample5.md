@@ -5,35 +5,35 @@ title: Examining and controling metrics and kerning
 ---
 
 
--   [Font Creation](editexample.html#FontCreate)
--   [Creating a glyph (tracing outlines)](editexample.html#CharCreate)
--   [Create glyph outlines using spiro points](editspiro.html)
+-   [Font Creation](../editexample/#FontCreate)
+-   [Creating a glyph (tracing outlines)](../editexample/#CharCreate)
+-   [Create glyph outlines using spiro points](../editspiro/)
 -   [Importing a glyph from Inkscape (or Illustrator, or some other
-    vector editor)](importexample.html)
--   [Navigating to other glyphs](editexample2.html#Navigating)
+    vector editor)](../importexample/)
+-   [Navigating to other glyphs](../editexample2/#Navigating)
 -   [On to the next glyph (consistent
-    directions)](editexample2.html#Creating-o)
+    directions)](../editexample2/#Creating-o)
 -   [Consistent serifs and stem
-    widths](editexample3.html#consistent-stems)
--   [Building accented glyphs](editexample4.html#accents)
--   [Building a ligature](editexample4.html#ligature)
--   [Lookups and features](editexample4.html#lookups)
--   [Examining metrics](editexample5.html#metrics)
+    widths](../editexample3/#consistent-stems)
+-   [Building accented glyphs](../editexample4/#accents)
+-   [Building a ligature](../editexample4/#ligature)
+-   [Lookups and features](../editexample4/#lookups)
+-   [Examining metrics](#metrics)
     -   [Vertical metrics](#Vertical)
     -   [Setting the baseline to baseline spacing of a
-        font](editexample5.html#baseline)
+        font](#baseline)
 
--   [Kerning](editexample5.html#Kerning)
--   [Glyph variants](editexample6.html#Variants)
--   [Anchoring marks](editexample6.html#Marks)
--   [Conditional features](editexample6-5.html#Conditional)
--   [Checking your font](editexample7.html#checking)
--   [Generating it](editexample7.html#generating)
--   [Font Families](editexample7.html#Families)
--   [Final Summary](editexample7.html#summary)
--   [Bitmap strikes](editexample8.html)
--   [Scripting Tutorial](scripting-tutorial.html)
--   [Notes on various scripts](scriptnotes.html#Special)
+-   [Kerning](#Kerning)
+-   [Glyph variants](../editexample6/#Variants)
+-   [Anchoring marks](../editexample6/#Marks)
+-   [Conditional features](../editexample6-5/#Conditional)
+-   [Checking your font](../editexample7/#checking)
+-   [Generating it](../editexample7/#generating)
+-   [Font Families](../editexample7/#Families)
+-   [Final Summary](../editexample7/#summary)
+-   [Bitmap strikes](../editexample8/)
+-   [Scripting Tutorial](../../documentation/scripting/native/scripting-tutorial/)
+-   [Notes on various scripts](../../documentation/scripting/native/scriptnotes/#Special)
 -   Searching the documentation: (Powered by
     [Google](http://www.google.com/))
 
@@ -121,13 +121,13 @@ Unfortunately this depends on the platform
 On a mac the baseline to baseline spacing is determined again by the
 bounding box values of the font, specified in the 'hhea' table, possibly
 modified by a linegap (Which you can set in FontForge with
-[Element-\>FontInfo-\>OS/2](fontinfo.html).
+[Element-\>FontInfo-\>OS/2](../../documentation/interface/fontinfo/).
 
 ##### On Windows
 
 According to the OpenType spec, the baseline to baseline distance is set
 by the values of Typographic Ascent and Descent of the 'OS/2' table.
-These can be set with [Element-\>FontInfo-\>OS/2](fontinfo.html), but
+These can be set with [Element-\>FontInfo-\>OS/2](../../documentation/interface/fontinfo/), but
 are usually allowed to default to the Ascent and Descent values of
 FontForge -- they generally sum to 1em and are equivalent to the
 traditional unleaded default.
@@ -177,7 +177,7 @@ spacing looks nice.
 
 Sadly that statement is a simplification... Before you can create a
 kerning pair you must create a kerning lookup (see [the section on
-lookups](editexample4.html#lookups)). Once again you bring up the
+lookups](../editexample4/#lookups)). Once again you bring up the
 Element-\>Font Info-\>Lookups pane and this time you must select the
 GPOS (Glyph Positioning) tab at the top of the pane. Once again you
 press `[Add Lookup]`. This time the lookup type is "Pairwise
@@ -190,7 +190,7 @@ will ask you whether you want a subtable of kerning pairs or kerning
 classes.
 
 If you have many glyphs which have similar kerning features you might
-wish to create a set of [kerning classes](metricsview.html#kernclass)
+wish to create a set of [kerning classes](../../documentation/interface/metricsview/#kernclass)
 (which might say that A, À, Á, Â, Â, Ã and Ä all kern alike). However
 for this example you want a kerning pair subtable.
 
@@ -202,7 +202,7 @@ glyphs and so get a better feel for the "color" of the font.
 ![](img/subtable-to.png)
 
 **NOTE**: Some glyph combinations are better treated by [creating a
-ligature](editexample4.html#ligature) than by kerning the letters.
+ligature](../editexample4/#ligature) than by kerning the letters.
 
 ### Vertical Kerning
 
@@ -217,5 +217,5 @@ kerned by -200.
 
 (Vertical kerning is only available if the font has vertical metrics)
 
--- [Prev](editexample4.html) -- [TOC](overview.html) --
-[Next](editexample6.html) --
+-- [Prev](../editexample4/) -- [TOC](../overview/) --
+[Next](../editexample6/) --

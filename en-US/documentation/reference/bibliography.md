@@ -5,11 +5,11 @@ title: A meandering bibliography of font related things
 ---
 
 
--   [Font File Formats](bibliography.html#Formats)
--   [Unicode](bibliography.html#Unicode)
--   [Other Encodings](bibliography.html#Encodings)
+-   [Font File Formats](#Formats)
+-   [Unicode](#Unicode)
+-   [Other Encodings](#Encodings)
 -   [Books](#Books)
--   [Font Related tools](index.html#tools)
+-   [Font Related tools](../../utilities/)
 -   [Language codes](http://www.w3.org/WAI/ER/IG/iso639.htm)
 -   [Country
     codes](http://ftp.ics.uci.edu/pub/websoft/wwwstat/country-codes.txt)
@@ -67,7 +67,7 @@ Font File Formats
     Type42](http://partners.adobe.com/public/developer/en/font/5012.Type42_Spec.pdf)
 -   [Adobe Feature File
     (fea)](http://www.adobe.com/devnet/opentype/afdko/topic_feature_file_syntax.html)
-    -   ([FontForge's implementation](featurefile.html)of this format is
+    -   ([FontForge's implementation](../featurefile/)of this format is
         a superset of what Adobe accepts, and a superset of what Adobe
         documents. Neither can completely describe opentype. Adobe
         claims they will update the feat spec in late 2007).
@@ -91,7 +91,7 @@ Font File Formats
         defines standard X BDF Properties
     -   [ABF](http://partners.adobe.com/public/developer/en/font/5006.ABF_Spec.pdf)
         -- Binary format
-    -   [Extensions to BDF for greymap support](BDFgrey.html)
+    -   [Extensions to BDF for greymap support](../BDFgrey/)
 
 -   True Type Standard
      (Sadly different sources have slightly different definitions of
@@ -144,7 +144,7 @@ Font File Formats
      (based on OpenType 1.4 but an international standard)
 -   [Apple's sfnt wrapper around a PS type1
     font](ftp://ftp.apple.com/developer/Development_Kits/QuickDraw_GX/Documents.sit.hqx)
--   [Various bitmap only sfnt formats](bitmaponlysfnt.html)
+-   [Various bitmap only sfnt formats](../bitmaponlysfnt/)
 -   [WOFF](http://people.mozilla.com/~jkew/woff/woff-2009-09-16.html) --
     Web Open Font Format, mozilla's compressed sfnt format
 -   [PostScript
@@ -153,7 +153,7 @@ Font File Formats
 -   SVG 1.1 [fonts](http://www.w3c.org/TR/SVG11/fonts.html)
     -   [SVG 1.2 font hinting proposal](http://www.w3c.org/TR/SVG12/)
 
--   [Macintosh font formats](macformats.html)
+-   [Macintosh font formats](../macformats/)
 -   Windows raster font formats
     -   [FNT -- Windows version
         2](http://www.technoir.nu/hplx/hplx-l/9708/msg00404.html)
@@ -166,7 +166,7 @@ Font File Formats
     -   Sadly there is no real standard for this. [There's the source
         code used by
         X11](http://ftp.x.org/pub/R6.4/xc/lib/font/bitmap/).
-    -   [So I wrote my own description...](pcf-format.html)
+    -   [So I wrote my own description...](../pcf-format/)
 
 -   [PC Screen Font
     (psf/psfu/psf2)](http://www.win.tue.nl/~aeb/linux/kbd/font-formats-1.html)
@@ -201,9 +201,9 @@ Font File Formats
     available from [URW++](http://www.urwpp.de/english/home.htm))
      Interestingly the exact format of a curve is up to the
     interpretation program.
--   [sfd](sfdformat.html) files (FontForge's internal spline font
+-   [sfd](../sfdformat/) files (FontForge's internal spline font
     database format)
--   [cidmap](cidmapformat.html) files (FontForge's format for mapping
+-   [cidmap](../cidmapformat/) files (FontForge's format for mapping
     cids to unicode)
 -   XML formats
     -   TTX -- TrueType XML
@@ -253,7 +253,7 @@ Unicode
         extensions](http://partners.adobe.com/asn/tech/type/type/corporateuse.txt)
         (0xF634-0F7FF) (also includes some of Apple's codes above)
     -   [FontForge's corporate use
-        extensions](corpchar.html)(0xF500-0xF580)
+        extensions](../corpchar/)(0xF500-0xF580)
     -   [A registry of code points in the private
         area](http://www.evertype.com/standards/csur/)(does not include
         any of Adobe's or Apple's codepoints)
@@ -348,4 +348,4 @@ I was interviewed by the Open Source Publishing people at
 the interview available on their
 site.](http://ospublish.constantvzw.org/?p=221)
 
--- [Prev](nvd.html) -- [TOC](overview.html) --
+-- [Prev](../nvd/) -- [TOC](overview.html) --

@@ -5,37 +5,37 @@ title: Bitmap strikes
 ---
 
 
--   [Font Creation](editexample.html#FontCreate)
--   [Creating a glyph (tracing outlines)](editexample.html#CharCreate)
--   [Create glyph outlines using spiro points](editspiro.html)
+-   [Font Creation](../editexample/#FontCreate)
+-   [Creating a glyph (tracing outlines)](../editexample/#CharCreate)
+-   [Create glyph outlines using spiro points](../editspiro/)
 -   [Importing a glyph from Inkscape (or Illustrator, or some other
-    vector editor)](importexample.html)
--   [Navigating to other glyphs](editexample2.html#Navigating)
+    vector editor)](../importexample/)
+-   [Navigating to other glyphs](../editexample2/#Navigating)
 -   [On to the next glyph (consistent
-    directions)](editexample2.html#Creating-o)
+    directions)](../editexample2/#Creating-o)
 -   [Consistent serifs and stem
-    widths](editexample3.html#consistent-stems)
--   [Building accented glyphs](editexample4.html#accents)
--   [Building a ligature](editexample4.html#ligature)
--   [Examining metrics](editexample5.html#metrics)
--   [Kerning](editexample5.html#Kerning)
--   [Glyph variants](editexample6.html#Variants)
--   [Anchoring marks](editexample6.html#Marks)
--   [Conditional features](editexample6-5.html#Conditional)
--   [Checking your font](editexample7.html#checking)
--   [Bitmaps](editexample7.html#Bitmaps)
--   [Generating it](editexample7.html#generating)
--   [Font Families](editexample7.html#Families)
--   [Final Summary](editexample7.html#summary)
+    widths](../editexample3/#consistent-stems)
+-   [Building accented glyphs](../editexample4/#accents)
+-   [Building a ligature](../editexample4/#ligature)
+-   [Examining metrics](../editexample5/#metrics)
+-   [Kerning](../editexample5/#Kerning)
+-   [Glyph variants](../editexample6/#Variants)
+-   [Anchoring marks](../editexample6/#Marks)
+-   [Conditional features](../editexample6-5/#Conditional)
+-   [Checking your font](../editexample7/#checking)
+-   [Bitmaps](../editexample7/#Bitmaps)
+-   [Generating it](../editexample7/#generating)
+-   [Font Families](../editexample7/#Families)
+-   [Final Summary](../editexample7/#summary)
 -   [Opening & Importing Bitmap strikes](#Opening)
--   [Creating Bitmap Strikes](editexample8.html#Creating)
--   [Bitmap Properties](editexample8.html#Properties)
--   [Creating a bitmap only font](editexample8.html#bitmap-only)
--   [Bitmaps in the Font View](editexample8.html#FontView)
--   [Editing Bitmaps](editexample8.html#Editing)
--   [Sparse Bitmap Strikes](editexample8.html#Sparse)
--   [Scripting Tutorial](scripting-tutorial.html)
--   [Notes on various scripts](scriptnotes.html#Special)
+-   [Creating Bitmap Strikes](#Creating)
+-   [Bitmap Properties](#Properties)
+-   [Creating a bitmap only font](#bitmap-only)
+-   [Bitmaps in the Font View](#FontView)
+-   [Editing Bitmaps](#Editing)
+-   [Sparse Bitmap Strikes](#Sparse)
+-   [Scripting Tutorial](../../documentation/scripting/native/scripting-tutorial/)
+-   [Notes on various scripts](../../documentation/scripting/native/scriptnotes/#Special)
 
 Opening & Importing Bitmap strikes
 ----------------------------------
@@ -64,26 +64,26 @@ These strikes will be used in preference to rasterizing the outline in
 any pixel sizes for which they are present.
 
 If you have an sfnt with both an outline font and bitmap strikes you can
-open it directly with the [File-\>Open](filemenu.html#Open) command and
+open it directly with the [File-\>Open](../../documentation/interface/filemenu/#Open) command and
 FontForge will load all the bits and pieces.
 
 You can also open a bitmap only font directly with the
-[File-\>Open](filemenu.html#Open) command, however if you have multiple
+[File-\>Open](../../documentation/interface/filemenu/#Open) command, however if you have multiple
 strikes of the same underlying font in separate files, you will probably
 want to open only the first (or only the outline version) with Open, and
-use [File-\>Import](filemenu.html#Import) to merge the other strikes
+use [File-\>Import](../../documentation/interface/filemenu/#Import) to merge the other strikes
 into one FontForge font.
 
 Suppose you have `Ambrosia.pfb` (an outline font), `Ambrosia-12.bdf`,
 and `Ambrosia-24.bdf `(two bitmap strikes, one 12 pixels high, one 24),
 and you want them all in one font. First use
-[File-\>Open](filemenu.html#Open) to open Ambrosia.pfb, then
-[File-\>Import](filemenu.html#Import) and select both of the bitmap
+[File-\>Open](../../documentation/interface/filemenu/#Open) to open Ambrosia.pfb, then
+[File-\>Import](../../documentation/interface/filemenu/#Import) and select both of the bitmap
 strikes (hold down the shift key).
 
 On the other hand, if you have only two bitmaps: `Ambrosia-12.bdf`, and
-`Ambrosia-24.bdf`, then use [File-\>Open](filemenu.html#Open) to open
-either strike, and use [File-\>Import](filemenu.html#Import) and import
+`Ambrosia-24.bdf`, then use [File-\>Open](../../documentation/interface/filemenu/#Open) to open
+either strike, and use [File-\>Import](../../documentation/interface/filemenu/#Import) and import
 the other.
 
 You may have noticed that Import has a checkbox labeled
@@ -131,13 +131,13 @@ OpenType Bitmap fonts. Each strike may have its own set of properties.
 FontForge will generate them automatically when you create a strike (and
 will retain them when it reads in a font that has them). You may
 override the current values with the
-[`Element-Bdf Info `](elementmenu.html#BDF-Info)dialog.
+[`Element-Bdf Info `](../../documentation/interface/elementmenu/#BDF-Info)dialog.
 
 Creating a new bitmap only font
 -------------------------------
 
 If you want to create a new font with no outlines, only bitmap strikes,
-you would use [File-\>New](filemenu.html#New) to create a new font, and
+you would use [File-\>New](../../documentation/interface/filemenu/#New) to create a new font, and
 then `Element->Bitmap Strikes   Available` to add some (empty) strikes
 to it. As soon as you add a strike to a new font, the font will become a
 bitmap only font.
@@ -149,26 +149,26 @@ support for a bitmap only sfnt format.
 Bitmaps in the Font View
 ------------------------
 
-The [`View`](viewmenu.html#bitmaps) menu of the Font View (and the
+The [`View`](../../documentation/interface/viewmenu/#bitmaps) menu of the Font View (and the
 Metrics View) contains a list of all bitmap strikes in the font. You may
 select which one will be displayed in the Font View. You may also change
 the magnification at which a strike is displayed with [View-\>Bitmap
-Magnification...](viewmenu.html#BitmapMag) (it can be hard to see the
+Magnification...](../../documentation/interface/viewmenu/#BitmapMag) (it can be hard to see the
 details of an 8 pixel font on a high resolution screen, so you might
 want to display it at 3 times its actual size).
 
 Many commands in the Font View will apply to all strikes (and the
-outline) in the font. For instance [`Edit->Copy`](editmenu.html#Copy)
+outline) in the font. For instance [`Edit->Copy`](../../documentation/interface/editmenu/#Copy)
 will copy the outline glyph and all bitmap glyphs. Sometimes you only
 want to affect one strike, if so then deselect
-[`Edit->Copy From->All   Fonts`](editmenu.html#Fonts).
+[`Edit->Copy From->All   Fonts`](../../documentation/interface/editmenu/#Fonts).
 
-The [`Element->Build`](elementmenu.html#Accented)commands will build
+The [`Element->Build`](../../documentation/interface/elementmenu/#Accented)commands will build
 accented bitmap glyphs just as it builds accented outline glyphs.
 
 If the Font View is displaying a bitmap strike and you double click on a
 character, then FontForge will bring up a [bitmap editing
-window](bitmapview.html) displaying that character in the current strike
+window](../../documentation/interface/bitmapview/) displaying that character in the current strike
 (rather than opening an outline editing window). If the character does
 not have a matching glyph in the current strike FontForge will create
 one by rasterizing the outline version of the font.
@@ -200,7 +200,7 @@ you can create an empty strike (with
 `Element->Bitmap Strikes   Available` unchecking the
 `[*] Create Rasterized Strikes` checkbox) and then select the one glyph
 you care about and say
-[`Element->Regenerate Bitmap   Glyphs`](elementmenu.html#Regenerate).
+[`Element->Regenerate Bitmap   Glyphs`](../../documentation/interface/elementmenu/#Regenerate).
 
 Alternately you could create a fully rasterized strike and then select
 the glyphs you don't need and say `Element->Remove Bitmap   Glyphs`.

@@ -24,7 +24,7 @@ The outline types are:
     **NOTE:** The mac will not recognize a PostScript font unless you
     also generate a bitmap font in NFNT format and place it in the same
     directory. If you haven't created any bitmap fonts yet, cancel this
-    dlg and use [Element-\>Bitmaps Available](elementmenu.html#Bitmaps)
+    dlg and use [Element-\>Bitmaps Available](../elementmenu/#Bitmaps)
     to generate a bitmap font, and then retry this dlg.
 
     **NOTE:** Apple implies that this format is deprecated and therefore
@@ -51,7 +51,7 @@ The outline types are:
 -   PostScript Type11 font (this is another format for wrapping a
     TrueType font in PostScript, it is a CID format)
 -   PostScript CID font, this is only available if your font is a [CID
-    font](cidmenu.html). This produces a font in the old Type1 CID
+    font](../cidmenu/). This produces a font in the old Type1 CID
     format. You probably want to use the OpenType CID format...
 -   PostScript CFF font, this is the format that lives inside the 'CFF '
     table of an opentype font. It is a valid font format in its own
@@ -78,7 +78,7 @@ The outline types are:
 -   OpenType dfont format, an OpenType font wrapped up in a mac dfont
     (data fork resource file). Mac OS/X font.
 -   OpenType CID, This is only available if your font is a [CID
-    font](cidmenu.html). It produces an OpenType CID-keyed font.
+    font](../cidmenu/). It produces an OpenType CID-keyed font.
 -   [SVG font](#svg)
 -   None
 
@@ -94,14 +94,14 @@ The bitmap types are:
     OpenType bits in the Options dlg).
 -   Apple bitmap only sfnt (dfont) -- Only available if no outline font
     is generated. [Apple allows bitmaps to be stored within a truetype
-    file (sfnt)](bitmaponlysfnt.html#Apple) even if there is no outline
+    file (sfnt)](../../reference/bitmaponlysfnt/#Apple) even if there is no outline
     font. So this generates a ttf file that just contains bitmaps and
     wraps it up in a dfont.
 -   (faked) MS bitmap only sfnt (ttf) -- [Microsoft does not support a
-    bitmap only format for an sfnt](bitmaponlysfnt.html#MS), but this
+    bitmap only format for an sfnt](../../reference/bitmaponlysfnt/#MS), but this
     option attempts to fake one as best it can.
 -   X11 bitmap only sfnt (otb) -- this is the new [X11 bitmap format
-    with bitmaps embedded in an sfnt wrapper](bitmaponlysfnt.html#X11)
+    with bitmaps embedded in an sfnt wrapper](../../reference/bitmaponlysfnt/#X11)
     (an opentype or truetype font) but with no outline data.
 -   NFNT (MacBin) -- Converts the bitmap fonts into Macintosh NFNT
     resources and wraps them up in a mac binary file.
@@ -114,7 +114,7 @@ The bitmap types are:
 -   Windows FON -- Windows resource based font format.
 -   Windows FNT -- Windows format, one bitmap font per file.
 -   Palm fonts -- support for [various palm bitmap font
-    formats.](palmfonts.html)
+    formats.](../../reference/palmfonts/)
 -   PS Type3 Bitmap -- create a PostScript Type3 font which uses the
     imagemask operator to display each glyph's bitmap.
 -   None
@@ -132,7 +132,7 @@ boxes. Not all are enabled at all times.
     of .amfm files for multiple master fonts too)
      Note: Normally only 'liga' and 'rlig' ligatures will be output in
     the AFM file. But you can control that in the lookup dialog off of
-    [Font Info](fontinfo.html).
+    [Font Info](../fontinfo/).
 -   [] Composites in AFM -- the AFM format includes a mechanism for
     building composite glyphs out of components. It is roughly
     equivalent to the OpenType mark-to-base feature. Almost nobody uses
@@ -185,18 +185,18 @@ boxes. Not all are enabled at all times.
     FontForge can't generate a useful 'DSIG' table, but it can generate
     a useless, empty and valid one.
 -   [] Save Comments -- I have added my own table
-    ('[PfEd](non-standard.html#PfEd)') in the truetype format in which I
+    ('[PfEd](../../reference/non-standard/#PfEd)') in the truetype format in which I
     can store whatever data I want. Checking this box saves all the
     glyph comments into the output file.
 -   [] Save Colors -- Save the glyph colors in the
-    '[PfEd](non-standard.html#PfEd)' table as well.
+    '[PfEd](../../reference/non-standard/#PfEd)' table as well.
 -   [] Lookup Names -- Preserve lookup, lookup subtable and anchor class
     names in the 'PfEd' table.
 -   [] Save Guides -- Save information about where the font's guidelines
     are into the 'PfEd' table.
 -   [] Save Layers -- Save the background (and spiro) layers into the
     'PfEd' table.
--   [] TeX -- Save TeX metrics in the '[TeX](non-standard.html#TeX) '
+-   [] TeX -- Save TeX metrics in the '[TeX](../../reference/non-standard/#TeX) '
     table
 -   [] Output Glyph Map -- Output a file (with extension .g2n) mapping
     TrueType (OpenType) glyph IDs to glyphnames (and possibly to unicode
@@ -206,7 +206,7 @@ boxes. Not all are enabled at all times.
     * * * * *
 
 -   [] Output Font Log -- if the font contains [font
-    log](fontinfo.html#FontLog)information then write it out into a
+    log](../fontinfo/#FontLog)information then write it out into a
     separate file "FontLog.txt".
 
 TTF (and OpenType) fonts are usually generated in Unicode encoding,
@@ -253,14 +253,14 @@ fonts can be indicated by following the pixelsize by "@\<depth\>" (ie.
 If you are generating a bdf font then you will be prompted for a
 resolution later.
 
-See the section on [namelists](encodingmenu.html#namelist) for a
+See the section on [namelists](../encodingmenu/#namelist) for a
 discussion of the "Force glyph names to" field.
 
 If you leave [] Validate Before Saving checked then FontForge will
 attempt to validate your font. If it passes then FontForge will save it
 without bothering you further, but if it fails FontForge will give you
 the option of reviewing errors and fixing them. It will pop up a
-[validation window](validation.html).
+[validation window](../validation/).
 
 If you check [] Append a FONTLOG entry then a text area will open up in
 which you can create a new FONTLOG entry to be appended to the end of
@@ -272,13 +272,13 @@ If you generate a TrueType or OpenType font with the OpenType mode set
 (note: the term "OpenType" means two things, a truetype wrapper around a
 postscript font, or a set of tables containing typographic information
 -- here the OpenType mode refers to the typographic tables) then
-FontForge will generate [GPOS, GSUB, and GDEF tables](gposgsub.html).
+FontForge will generate [GPOS, GSUB, and GDEF tables](../gposgsub/).
 These contain kerning, ligature information, arabic forms data, anchor
 points, etc.
 
 Apple does not completely support these OpenType layout tables. If you
 set Apple mode ['kern', 'opbd', 'morx', 'feat', 'lcar' and
-'prop'](gposgsub.html#AAT)tables may be generated instead. (and a couple
+'prop'](../gposgsub/#AAT)tables may be generated instead. (and a couple
 of other small differences will appear).
 
 If you set both Apple and OpenType then both sets of tables will be
@@ -293,7 +293,7 @@ OpenType have diverged, but which both still support).
 ### Uploads to [Open Font Library](http://openfontlibrary.org/)
 
 It is possible to upload a font to the Open Font Library, please see
-[that section](oflib.html#Uploading)for more information.
+[that section](../../reference/oflib/#Uploading)for more information.
 
 * * * * *
 
@@ -316,13 +316,13 @@ there is already a "Bold" style), "Oblique" (if there is already an
 "Italic" style), etc. Generally FontForge will be able to figure out a
 font's style from its fontname, but in some cases you may wish to
 override this by setting the [mac
-style](fontinfo.html#Mac-Style)directly in fontinfo.
+style](../fontinfo/#Mac-Style)directly in fontinfo.
 
 As of Mac OS/X 10.6 Apple appears to be deprecating this format and
 moving toward [TTC files (see below](#GenerateTTC)).
 
 For information on creating mac font families beyond the capabilities of
-this dialog look at the [FAQ](faq.html#How-family).
+this dialog look at the [FAQ](/about/faq/#How-family).
 
 
 
@@ -391,5 +391,5 @@ needed to draw it.
 FontForge usually generates the first format, but for multi layered or
 stroked fonts it will generate the second format.
 
--- [Prev](filemenu.html) -- [TOC](overview.html) --
-[Next](filemenu.html) --
+-- [Prev](../filemenu/) -- [TOC](overview.html) --
+[Next](../filemenu/) --

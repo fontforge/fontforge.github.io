@@ -70,7 +70,7 @@ article](http://en.wikipedia.org/wiki/Abugida).
 
 The distance between the start of this glyph and the start of the next
 glyph. Sometimes called the glyph's width. See also [Vertical Advance
-Width.](glossary.html#Vertical-Advance)
+Width.](#Vertical-Advance)
 
 Alphabet
 
@@ -86,7 +86,7 @@ Apple Advanced Typography
 
 Apple's extension to basic TrueType fonts. Includes contextual
 substitutions, ligatures, kerning, etc. Also includes [distortable
-fonts](glossary.html#Multi-Master).
+fonts](#Multi-Master).
 
 Ascender
 
@@ -122,7 +122,7 @@ the (latin, greek, cyrillic) letters sit. The baseline will probably be
 in a different place for different scripts. In Indic scripts most
 letters descend below the baseline. In CJK scripts there is also a
 vertical baseline usually in the middle of the glyph. The [BASE and
-bsln](baseline.html)tables allow you to specify how the baselines of
+bsln](../../interface/baseline/)tables allow you to specify how the baselines of
 different scripts should be aligned with respect to each other.
  See also [X-height](#x-height), [Cap-height](#cap-height),
 [Ascender](#ascender), [Descender](#descender), [Overshoot](#overshoot)
@@ -130,7 +130,7 @@ different scripts should be aligned with respect to each other.
 Bézier curve or Bézier splines
 
 Bézier curves are described in detail in the [Bézier section of the main
-manual.](bezier.html)
+manual.](../bezier/)
 
 Bidi
 
@@ -145,7 +145,7 @@ Bi-Directional text. That is a section of text which contains both
 left-to-right and right-to-left scripts. English text quoting Arabic,
 for example. Things get even more complex with nested quotations. The
 [Unicode](#Unicode) standard contains an algorithm for laying out Bidi
-text. See also: [Boustrophedon](glossary.html#Boustrophedon).
+text. See also: [Boustrophedon](#Boustrophedon).
 
 Black letter
 
@@ -169,7 +169,7 @@ the few [LGC](#LGC) styles that translate readily to other scripts.
 
 Bopomofo
 
-A (modern\~1911) Chinese (Mandarin) [alphabet](glossary.html#alphabet)
+A (modern\~1911) Chinese (Mandarin) [alphabet](#alphabet)
 used to provide phonetic transliteration of Han ideographs in
 dictionaries.
 
@@ -195,7 +195,7 @@ top like "I" as opposed to one with a curved one like "O").
 CFF
 
 Compact Font Format most commonly used within
-[OpenType](glossary.html#opentype) postscript fonts, but is a valid font
+[OpenType](#opentype) postscript fonts, but is a valid font
 format even without a [SFNT](#SFNT) wrapper. This is the native font
 format for fonts with PostScript Type2 charstrings.
 
@@ -214,7 +214,7 @@ A character set is an unordered set of [characters](#character)
 
 CID
 
-Character Identifier, a number. In some [CJK](glossary.html#CJK)
+Character Identifier, a number. In some [CJK](#CJK)
 [PostScript](#postscript) fonts the glyphs are not named but are refered
 to by a CID number.
 
@@ -274,11 +274,11 @@ Device Table
 A concept in OpenType which allows you to enter spacing adjustments
 geared to rasterization at particular pixel sizes. If a kerning value
 that works most of the time leads to an [ugly juxtaposition of
-glyphs](metricsview.html#DeviceTable) on a 12 pixel high font, then you
+glyphs](../../interface/metricsview/#DeviceTable) on a 12 pixel high font, then you
 can add a special tweak to the spacing that only is applicable at 12
 pixels (and another one at 14 and 18, or whatever is needed). Similar
 functionality is needed for [anchored
-marks](anchorcontrol.html#DeviceTable).
+marks](../../interface/anchorcontrol/#DeviceTable).
 
 Didot point
 
@@ -317,7 +317,7 @@ One half of an "[em](#em)"
 Encoding
 
 An encoding is a mapping from a set of bytes onto a [character
-set](glossary.html#character-set). It is what determines which byte
+set](#character-set). It is what determines which byte
 sequence represents which character. The words "encoding" and "character
 set" are often used synonymously. The specification for ASCII specifies
 both a character set and an encoding. But CJK character sets often have
@@ -368,7 +368,7 @@ are identified as font features and are tagged with (in OpenType) a 4
 letter tag or (in Apple) a 2 number identfier. The meanings of these
 features are predefined by MicroSoft and Apple. FontForge allows you to
 tag each lookup with one or several features [when you create
-it](lookups.html#Add-Lookup) (or later).
+it](../../interface/lookups/#Add-Lookup) (or later).
 
 Feature File
 
@@ -379,7 +379,7 @@ another.
 Feature/Settings (Apple)
 
 These are roughly equivalent to OpenType's
-[Features](glossary.html#Features) above, they are [defined by
+[Features](#Features) above, they are [defined by
 Apple](http://developer.apple.com/fonts/Registry/index.html).
 
 Font
@@ -427,7 +427,7 @@ Ghost Hint
 
 Sometimes it is important to indicate that a horizontal edge is indeed
 horizontal. But the edge has no corresponding edge with which to make a
-normal stem. In this case a special [hint](glossary.html#hints) is used
+normal stem. In this case a special [hint](#hints) is used
 with a width of -20 (or -21). A ghost hint must lie entirely within a
 glyph. If it is at the top of a contour use a width of -20, if at the
 bottom use -21. Ghost hints should also lie within BlueZones.
@@ -494,21 +494,21 @@ H
 
 Han characters
 
-The ideographic characters used in China, [Japan](glossary.html#Kanji)
-and [Korea](glossary.html#Hanja) (and, I believe, in various other asian
+The ideographic characters used in China, [Japan](#Kanji)
+and [Korea](#Hanja) (and, I believe, in various other asian
 countries as well (Vietnam?)), all based on the writing style that
 evolved in China.
 
 Hangul
 
-The Korean [syllabary](glossary.html#syllabary). The only syllabary
+The Korean [syllabary](#syllabary). The only syllabary
 (that I'm aware of anway) based on an alphabet -- the letters of the
 alphabet never appear alone, but only as groups of two or three making
 up a syllable.
 
 Hanja
 
-The Korean name for the [Han](glossary.html#Han) characters
+The Korean name for the [Han](#Han) characters
 
 Hints
 
@@ -518,8 +518,8 @@ pointsizes.
 
 Hint Masks
 
-At any given point on a contour [hints](glossary.html#hints) may not
-[conflict](glossary.html#Conflicting-hints). However different points in
+At any given point on a contour [hints](#hints) may not
+[conflict](#Conflicting-hints). However different points in
 a glyph may need conflicting hints. So every now and then a contour will
 change which hints are active. Each list of active hints is called a
 hint mask.
@@ -527,7 +527,7 @@ hint mask.
 Hiragana
 
 One of the two Japanese syllabaries. Both Hiragana and
-[Katakana](glossary.html#Katakana) have the same sounds.
+[Katakana](#Katakana) have the same sounds.
 
 I
 
@@ -552,7 +552,7 @@ Jamo
 
 The letters of the Korean alphabet. These are almost never seen alone,
 generally appearing in groups of three as part of a
-[Hangul](glossary.html#Hangul) syllable. The Jamo are divided into three
+[Hangul](#Hangul) syllable. The Jamo are divided into three
 catagories (with considerable overlap between the first and third), the
 choseong -- initial consonants, the jungseong -- medial vowels, and the
 jongseong -- final consonants. A syllable is composed by placing a
@@ -564,12 +564,12 @@ K
 
 Kanji
 
-The Japanese name for the [Han](glossary.html#Han) characters.
+The Japanese name for the [Han](#Han) characters.
 
 Katakana
 
 One of the two (modern) Japanese syllabaries. Both
-[Hiragana](glossary.html#Hiragana) and Katakana have the same sounds.
+[Hiragana](#Hiragana) and Katakana have the same sounds.
 
 Kerning
 
@@ -637,7 +637,7 @@ Manyogana
 An early Japanese script, ancestral to both [hiragana](#hiragana) and
 [katakana](#katakana).
 [Manyogana](http://en.wikipedia.org/wiki/Manyogana) used
-[kanji](glossary.html#Kanji) for their phontic sounds, and over the
+[kanji](#Kanji) for their phontic sounds, and over the
 years these kanji were simplified into hiragana and katahana.
 
 ![](img/MetalType.jpeg)Metal Type
@@ -664,11 +664,11 @@ up more memory).
 >     $ make
 >     $ make install
 
-See [Also](multilayer.html)
+See [Also](../../interface/multilayer/)
 
--   [general information](multilayer.html)
+-   [general information](../../interface/multilayer/)
 -   Setting font type with [Element-\>Font
-    Info-\>Layers](fontinfo.html#Layers)
+    Info-\>Layers](../../interface/fontinfo/#Layers)
 
 Multiple Master Font
 
@@ -681,7 +681,7 @@ Bold-Condensed, etc.
 
 Adobe is no longer developing this format. Apple has a format which
 acheives the same effect but has not produced many examples. FontForge
-[supports both](multiplemaster.html).
+[supports both](../../interface/multiplemaster/).
 
 N
 
@@ -730,7 +730,7 @@ OpenType Tables
 
 Each opentype font contains a collection of tables each of which
 contains a certain kind of information. See [here for the tables used by
-FontForge](TrueOpenTables.html).
+FontForge](../TrueOpenTables/).
 
 Oblique
 
@@ -967,7 +967,7 @@ SFD
 
 SplineFont DataBase. These are FontForge's own personal font
 representation. The files are ASCII and vaguely readable, the format is
-described [here](sfdformat.html). As of 14 May 2008 the format has been
+described [here](../../developers/sfdformat/). As of 14 May 2008 the format has been
 registered with IANA for a MIME type:
 [application/vnd.font-fontforge-sfd](http://www.iana.org/assignments/media-types/application/).
 
@@ -1030,8 +1030,8 @@ State machine
 
 A state machine is like a very simple little program, they are used on
 the mac for performing contextual substitutions and kerning. The [state
-machine dialog](statemachine.html)is reachable from [Element-\>Font
-Info-\>Lookups](fontinfo.html#Lookups)
+machine dialog](../../interface/statemachine/)is reachable from [Element-\>Font
+Info-\>Lookups](../../interface/fontinfo/#Lookups)
 
 The "state machine" consists of a table of states, each state in turn
 consists of a series of potential transitions (to the same or different
@@ -1068,7 +1068,7 @@ outline, shadow.
 SVG
 
 Scalable Vector Graphics. An XML format used for drawing vector images.
-It includes a [font format](generate.html#svg).
+It includes a [font format](../../interface/generate/#svg).
 
 Syllabary
 
@@ -1107,13 +1107,13 @@ the font.
 Apple and Adobe/MicroSoft have expanded these tables in different ways
 to include for advanced typographic features needed for non-latin
 scripts (or for complex latin scripts). See [Apple Advanced
-Typography](glossary.html#AAT)and [OpenType](glossary.html#opentype).
+Typography](#AAT)and [OpenType](#opentype).
 
 TrueType Tables
 
 Each truetype font contains a collection of tables each of which
 contains a certain kind of information. See [here for the tables used by
-FontForge](TrueOpenTables.html).
+FontForge](../TrueOpenTables/).
 
 Type 1
 
@@ -1155,11 +1155,11 @@ currently used in the world, and many historical ones as well. See the
 -   [SIP](#SIP) -- Supplementary Ideographic Plane (0x20000-0x2FFFF)
 -   [SSP](#SSP) -- Supplementary Special-purpose Plane
     (0xE0000-0xEFFFF)
-     [More info.](bibliography.html#Unicode)
+     [More info.](../bibliography/#Unicode)
 
 Undershoot
 
-See the explanation at [Overshoot](glossary.html#overshoot).
+See the explanation at [Overshoot](#overshoot).
 
 UniqueID
 
@@ -1181,7 +1181,7 @@ Vertical Advance Width
 
 CJK text is often written vertically (and sometimes horizontally), so
 each CJK glyph has a vertical advance as well as a [horizontal
-advance](glossary.html#advance-width).
+advance](#advance-width).
 
 W
 
@@ -1225,7 +1225,7 @@ one with an ascender like "l") .
 XUID
 
 Extended Unique ID in a PostScript font. Now somewhat obsolete. See the
-explanation at [Unique ID](glossary.html#UniqueID).
+explanation at [Unique ID](#UniqueID).
 
 Y
 

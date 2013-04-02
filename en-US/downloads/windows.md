@@ -4,7 +4,7 @@ layout: default
 title: Install FontForge on Windows
 ---
 
-Matt Petroff offers an unoffical Windows installer:
+Matthew Petroff offers an unoffical Windows installer:
 
 [www.mpetroff.net/software/fontforge-windows/](http://www.mpetroff.net/software/fontforge-windows/)
 

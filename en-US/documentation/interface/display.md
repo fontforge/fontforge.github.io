@@ -41,7 +41,7 @@ And different bits of text can have different settings, so you can
 compare them and decide which is least worse. Also you can compare two
 different fonts and see how well they work together.
 
-As with the [metrics view](metricsview.html)you may set the script and
+As with the [metrics view](../metricsview/)you may set the script and
 language of the selected text and then choose which features to apply.
 Note that if you start typing text in a different script you will
 probably have to change it manually -- FontForge expects you to set the
@@ -50,7 +50,7 @@ Apple feature/settings) which will be applied to the selected text.
 
 Unlike the metrics view, fontforge will attempt to do baseline alignment
 if the font being displayed has [horizontal baseline
-information.](elementmenu.html#HBase)
+information.](../elementmenu/#HBase)
 
 FontForge tries to guess the appropriate dots per inch for your display
 -- it may not get it right (X doesn't always know it either). If it
@@ -139,7 +139,7 @@ unicode encoding...
 
 [Sources of the samples](quotations.html)...
 
--- [Prev](filemenu.html) -- [TOC](overview.html) --
-[Next](filemenu.html) --
+-- [Prev](../filemenu/) -- [TOC](overview.html) --
+[Next](../filemenu/) --
 
 

@@ -5,7 +5,7 @@ title: Change log for FontForge's sfd format
 ---
 
 
-FontForge's [sfd (spline font database) format](sfdformat.html) changes
+FontForge's [sfd (spline font database) format](../sfdformat/) changes
 over time as fontforge supports more things. I have only recently
 started keeping track of these changes, so older changes are not listed
 here.

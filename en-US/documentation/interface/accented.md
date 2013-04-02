@@ -80,7 +80,7 @@ that is in the current layerand put a reference to the base glyph and
 another reference to the accent glyph into the foreground. So if the
 current glyph were "À" then a reference to "A" would be added to it, and
 a reference to "\`" would be centered above the "A". 
- If [Copy From](editmenu.html#From) is set to All Fonts then any bitmaps
+ If [Copy From](../editmenu/#From) is set to All Fonts then any bitmaps
 will have a similar process done -- that is to say, bitmap references
 will be created (even in the outline glyph view).
 
@@ -147,7 +147,7 @@ the bottom part of the glyph.
 
 FontForge gives you a minuscule amount of control over where it puts
 accents. There are two preference items you can set
-([File-\>Preferences](filemenu.html#prefs))
+([File-\>Preferences](../filemenu/#prefs))
 
 -   AccentOffsetPercent -- This allows you to control the amount of
     space between the top of the letter and the bottom of the accent (or
@@ -173,8 +173,8 @@ an italic (or oblique) font FontForge is even more likely to do
 something you don't like.
 
 If all else fails you can build your own accented glyphs with
-[Edit-\>Copy Reference](editmenu.html#Reference) and
-[Edit-\>Paste](editmenu.html#Paste)
+[Edit-\>Copy Reference](../editmenu/#Reference) and
+[Edit-\>Paste](../editmenu/#Paste)
 
--- [Element Menu](elementmenu.html) -- [TOC](overview.html) --
+-- [Element Menu](../elementmenu/) -- [TOC](overview.html) --
 [Tutorial](editexample.html) --
