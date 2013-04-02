@@ -5,21 +5,21 @@ title: FontForge -- An outline font editor for PostScript&reg;, TrueType
 ---
 
 
-[![](flags/Nisshoki-Japan.png)](ja/overview.html)
+[![](flags/Nisshoki-Japan.png)](ja/overview/)
 
 
 -   [Overview](#Overview)
     -   [Installing](#Installing)
     -   [Starting the program](#Starting)
-    -   [What is a font editor?](overview.html#What)
+    -   [What is a font editor?](#What)
     -   [Introductory concepts: fonts, splines, lines, points and
         paths](#intro)
-    -   [Font Formats](overview.html#PT)
+    -   [Font Formats](#PT)
     -   [Hints](#Hints)
     -   [References](#References)
     -   [Layers](#Layers)
     -   [Scripts](#Scripts)
-    -   [Glyph names & Namelists](overview.html#Glyph-names)
+    -   [Glyph names & Namelists](#Glyph-names)
     -   [Lookups, Features, Scripts and Languages](#Lookups)
     -   [Anchor Points and Classes](#Anchors)
     -   [Baselines](#Baseline)
@@ -28,89 +28,89 @@ title: FontForge -- An outline font editor for PostScript&reg;, TrueType
     -   [Bitmap Glyph View](#BitmapView)
     -   [Metrics View](#MetricsView)
 
--   [Example](editexample.html)
-    -   [Tutorial](editexample.html) & User Guide
-    -   [Special thoughts for special scripts](scriptnotes.html#Special)
+-   [Example](../editexample/)
+    -   [Tutorial](../editexample/) & User Guide
+    -   [Special thoughts for special scripts](../../documentation/scripting/native/scriptnotes/#Special)
 
--   [Font View](fontview.html)
-    -   [Encodings](fontview.html#Encodings)
-    -   [Unicode](fontview.html#Unicode)
-    -   [CID keyed fonts](fontview.html#CID)
-    -   [Multiple Master fonts](fontview.html#MM)
-    -   [Vertical Metrics](fontview.html#Vertical-Metrics)
+-   [Font View](../../documentation/interface/fontview/)
+    -   [Encodings](../../documentation/interface/fontview/#Encodings)
+    -   [Unicode](../../documentation/interface/fontview/#Unicode)
+    -   [CID keyed fonts](../../documentation/interface/fontview/#CID)
+    -   [Multiple Master fonts](../../documentation/interface/fontview/#MM)
+    -   [Vertical Metrics](../../documentation/interface/fontview/#Vertical-Metrics)
 
--   [Outline Glyph View](charview.html)
-    -   [Layers](charview.html#Layers)
-    -   [Tools](charview.html#Tools)
-    -   [Vertical view](charview.html#Vertical)
-    -   [Debugging TrueType glyphs](charview.html#Debugging)
-    -   [Multiple Master](charview.html#MM)
+-   [Outline Glyph View](../../documentation/interface/charview/)
+    -   [Layers](../../documentation/interface/charview/#Layers)
+    -   [Tools](../../documentation/interface/charview/#Tools)
+    -   [Vertical view](../../documentation/interface/charview/#Vertical)
+    -   [Debugging TrueType glyphs](../../documentation/interface/charview/#Debugging)
+    -   [Multiple Master](../../documentation/interface/charview/#MM)
 
--   [Bitmap Glyph View](bitmapview.html)
-    -   [Layers](bitmapview.html#Layers)
-    -   [Tools](bitmapview.html#Tools)
-    -   [Anti-Aliased Glyphs](bitmapview.html#AA)
-    -   [Shades](bitmapview.html#Shades)
+-   [Bitmap Glyph View](../../documentation/interface/bitmapview/)
+    -   [Layers](../../documentation/interface/bitmapview/#Layers)
+    -   [Tools](../../documentation/interface/bitmapview/#Tools)
+    -   [Anti-Aliased Glyphs](../../documentation/interface/bitmapview/#AA)
+    -   [Shades](../../documentation/interface/bitmapview/#Shades)
 
--   [Metrics View](metricsview.html)
-    -   [Entering non-ASCII characters](metricsview.html#Entering)
+-   [Metrics View](../../documentation/interface/metricsview/)
+    -   [Entering non-ASCII characters](../../documentation/interface/metricsview/#Entering)
 
--   [Menu Commands](filemenu.html)
-    -   [File](filemenu.html)
-    -   [Edit](editmenu.html)
-    -   [Points](pointmenu.html)
-    -   [Element](elementmenu.html)
-    -   [Tools](toolsmenu.html)
-    -   [Hints](hintsmenu.html)
-    -   [Encoding](encodingmenu.html)
-    -   [View](viewmenu.html)
-    -   [Metrics](metricsmenu.html)
-    -   [CID](cidmenu.html)
-    -   [MM](mmmenu.html)
-    -   [Window](windowmenu.html)
-    -   [Help](helpmenu.html)
-    -   [Hot Keys](HotKeys.html)
+-   [Menu Commands](../../documentation/interface/filemenu/)
+    -   [File](../../documentation/interface/filemenu/)
+    -   [Edit](../../documentation/interface/editmenu/)
+    -   [Points](../../documentation/interface/pointmenu/)
+    -   [Element](../../documentation/interface/elementmenu/)
+    -   [Tools](../../documentation/interface/toolsmenu/)
+    -   [Hints](../../documentation/interface/hintsmenu/)
+    -   [Encoding](../../documentation/interface/encodingmenu/)
+    -   [View](../../documentation/interface/viewmenu/)
+    -   [Metrics](../../documentation/interface/metricsmenu/)
+    -   [CID](../../documentation/interface/cidmenu/)
+    -   [MM](../../documentation/interface/mmmenu/)
+    -   [Window](../../documentation/interface/windowmenu/)
+    -   [Help](../../documentation/interface/helpmenu/)
+    -   [Hot Keys](../../documentation/interface/HotKeys/)
 
--   [Scripting](scripting.html)
+-   [Scripting](../../documentation/scripting/native/scripting/)
 -   Appendices...
-    -   [Using FontForge with TeX](PfaEdit-TeX.html)
-    -   [Localization](uitranslationnotes.html)
-    -   [Error Recovery](errrecovery.html)
-    -   [X Resources](xres.html)
-        -   [Keyboards and Mice](xres.html#Keyboards)
+    -   [Using FontForge with TeX](../../documentation/reference/PfaEdit-TeX/)
+    -   [Localization](../../documentation/customizing/uitranslationnotes/)
+    -   [Error Recovery](../../documentation/reference/errrecovery/)
+    -   [X Resources](../../documentation/customizing/xres/)
+        -   [Keyboards and Mice](../../documentation/customizing/xres/#Keyboards)
 
-    -   [Command line arguments](cliargs.html)
-        -   [Environment Variables](cliargs.html#Environment)
+    -   [Command line arguments](../../documentation/interface/cliargs/)
+        -   [Environment Variables](../../documentation/interface/cliargs/#Environment)
 
-    -   [Files](files.html)
+    -   [Files](../../documentation/interface/files/)
     -   Internals
-        -   [Source file overview](src.html) (out of date, but goes over
+        -   [Source file overview](../../documentation/developers/src/) (out of date, but goes over
             the basics)
-        -   [Spline Font Database File Format](sfdformat.html) (also out
+        -   [Spline Font Database File Format](../../documentation/developers/sfdformat/) (also out
             of date)
-        -   [Plugins](plugins.html)
-        -   [PostScript \<-\> TrueType Conversions](bezier.html)
+        -   [Plugins](../../documentation/developers/plugins/)
+        -   [PostScript \<-\> TrueType Conversions](../../documentation/reference/bezier/)
         -   [FontForge's use of the Unicode Private Use
-            Area](corpchar.html)
+            Area](../../documentation/reference/corpchar/)
 
-    -   [Font samples](sfds/index.html)
+    -   [Font samples](sfds/index/)
 
--   [Frequently Asked Questions](faqFS.html)
--   [Hot Keys](HotKeys.html)
--   [Typographical glossary](GlossaryFS.html)
--   [Index](IndexFS.html)
--   [File List](nvd.html)
--   [Bibliography](bibliography.html)
--   [License and Copyright](license.html)
--   [Download](nix-install.html)
+-   [Frequently Asked Questions](faqFS/)
+-   [Hot Keys](../../documentation/reference/HotKeys/)
+-   [Typographical glossary](GlossaryFS/)
+-   [Index](IndexFS/)
+-   [File List](../../documentation/reference/nvd/)
+-   [Bibliography](../../documentation/reference/bibliography/)
+-   [License and Copyright](../../about/project/license/)
+-   [Download](nix-install/)
 -   Searching the documentation: (Powered by
     [Google](http://www.google.com/))
 
 See Also
 --------
 
--   [sfddiff man page](sfddiff.html)
--   [acorn2sfd man page](acorn2sfd.html)
+-   [sfddiff man page](../../documentation/utilities/sfddiff/)
+-   [acorn2sfd man page](../../documentation/utilities/acorn2sfd/)
 
 > Eeyore had three sticks on the ground, and was looking at them. Two of
 > the sticks were touching at one end, but not at the other, and the
@@ -141,14 +141,14 @@ and generate bitmaps.
 ### Installing or building fontforge
 
 System specific install procedures  
-  [Unix/Linux](nix-install.html)
-- [Mac](mac-install.html)
-- [MS/Windows](ms-install.html)
-- [VMS](vms-install.html)
-- [from source](source-build.html)
-- [Uninstalling](uninstall.html)
+  [Unix/Linux](nix-install/)
+- [Mac](mac-install/)
+- [MS/Windows](ms-install/)
+- [VMS](vms-install/)
+- [from source](source-build/)
+- [Uninstalling](uninstall/)
 
-[Running fontforge](running.html)
+[Running fontforge](running/)
 
 ### Er... What is a font editor?
 
@@ -208,9 +208,9 @@ picture of that character on a rectangular grid of pixels. There is a
 third type, a stroked font, where each stem of the glyph is represented
 by one line down the center of the stem, and the line is later drawn
 with a certain width. Most of the time we will not deal with stroked
-fonts directly (the [Expand Stroke](elementmenu.html#Expand) command can
+fonts directly (the [Expand Stroke](../../documentation/interface/elementmenu/#Expand) command can
 be used to turn them into outlines), but if you wish to edit stroked
-fonts, see the section on [multi-layered editing](multilayer.html).
+fonts, see the section on [multi-layered editing](../../documentation/interface/multilayer/).
 
 *![](img/outlinechar.png)*
  A glyph's outline
@@ -232,7 +232,7 @@ either).
 
 Each cubic spline is defined by four points, two of which mark the end
 points of the spline and two more to describe the slope of the spline at
-those end points. Here are [two cubic splines](bezier.html) with all
+those end points. Here are [two cubic splines](../../documentation/reference/bezier/) with all
 their points shown:
 
 ![](img/splines.gif)
@@ -267,7 +267,7 @@ splines cannot bend in as many ways as cubic splines (the first spline
 above left would need at least two quadratic splines to draw), and you
 will often need more splines to achieve the same curve. You can control
 whether a font contains cubic or quadratic splines with the
-[Element-\>Font Info](fontinfo.html#PS-General)command.
+[Element-\>Font Info](../../documentation/interface/fontinfo/#PS-General)command.
 
 There are many different types of splines in the world. The ones
 described above are Béziers -- these are numerically simple and have a
@@ -284,7 +284,7 @@ clothoid splines into Béziers.
 Clothoid splines are much easier to work with than Béziers -- there are
 no control points, just a sequence of on-curve points, and magically a
 beautiful curve will appear between them. FontForge can
-[either](charview.html#spiro-mode) edit a curve as a set of Béziers or
+[either](../../documentation/interface/charview/#spiro-mode) edit a curve as a set of Béziers or
 as a set of clothoids.
 
 A path is closed when it comes back and joins its start. All paths in an
@@ -398,8 +398,8 @@ the font will be drawn.
 
 FontForge can produce many font types. What's the difference?
 
-PostScript is based on a [cubic spline](bezier.html) technology, while
-TrueType is based on a [quadratic](bezier.html) technology. Cubic
+PostScript is based on a [cubic spline](../../documentation/reference/bezier/) technology, while
+TrueType is based on a [quadratic](../../documentation/reference/bezier/) technology. Cubic
 splines are generally easier to edit (more shapes are possible with
 them). Any quadratic spline can be converted to a cubic spline with
 essentially no loss. A cubic spline can be converted to a quadratic with
@@ -421,8 +421,8 @@ The first meaning describes the glyph (and spline) format of the font.
 In this sense Open Type is just a postscript font put into a truetype
 file format -- From the outside it looks like a truetype font except
 that the outline descriptions are postscript Type2 font descriptions
-rather than TrueType. Technically it is a [CFF](glossary.html#CFF) font
-inside an [sfnt](glossary.html#SFNT) wrapper.
+rather than TrueType. Technically it is a [CFF](../../documentation/reference/glossary/#CFF) font
+inside an [sfnt](../../documentation/reference/glossary/#SFNT) wrapper.
 
 In a second sense of the word OpenType refers to a set of tables
 containing advanced typographic information. These tables may be added
@@ -511,7 +511,7 @@ rasterizer about how things should be treated. The most obvious of these
 are the horizontal and vertical stem hints. Each glyph has its own set
 of hints to tell the rasterizer where to find stems. FontForge can
 usually figure out a reasonable set of stem hints (a process called
-[autohinting](hintsmenu.html#AutoHint)), but some glyphs are too complex
+[autohinting](../../documentation/interface/hintsmenu/#AutoHint)), but some glyphs are too complex
 for it and it can make bad choices. It also provides a mode for you to
 override its choices.
 
@@ -542,7 +542,7 @@ complicated,. FontForge will generate counter hints when appropriate.
 
 Adobe provides some font-wide hinting mechanisms. The two most obvious
 are the BlueValues and StemSnap settings in the [private
-dictionary](fontinfo.html#Private). BlueValues provides a list of
+dictionary](../../documentation/interface/fontinfo/#Private). BlueValues provides a list of
 vertical zones in which interesting things happen (so in a latin font
 this might include the ascender height, the cap-height, the x-height,
 the baseline and the descender height. At small point sizes everything
@@ -552,13 +552,13 @@ and an "x" usually have slightly different heights, but displaying that
 at a small point size would be ugly). Similarly the StemSnap variables
 specify standard stem widths for the font. FontForge will try to guess
 reasonable values for these. It also allows you to override these
-guesses and [specify your own values](fontinfo.html#Private). For a more
+guesses and [specify your own values](../../documentation/interface/fontinfo/#Private). For a more
 comprehensible description of the private dictionary and what it can do,
 look at [Adobe's Type1 font
 specification](http://partners.adobe.com/asn/developer/PDFS/TN/T1_SPEC.PDF).
- FontForge's [AutoHint](hintsmenu.html#AutoHint) command will work
+ FontForge's [AutoHint](../../documentation/interface/hintsmenu/#AutoHint) command will work
 better if the BlueValues have been set. So before running AutoHint go to
-[Element-\> FontInfo-\> Private](fontinfo.html#Private) to set this
+[Element-\> FontInfo-\> Private](../../documentation/interface/fontinfo/#Private) to set this
 array. After AutoHinting you should regenerate the StemSnaps (also at
 Element-\> FontInfo-\> Private).
 
@@ -584,7 +584,7 @@ When FontForge reads in a TrueType font it will store the instructions
 used, and when it next generates that font it will use those
 instructions -- provided no significant change has happened to a glyph.
 
-Most of my [hinting user interface](hinting.html) is designed with
+Most of my [hinting user interface](../../documentation/interface/hinting/) is designed with
 PostScript fonts in mind.
 
 ### References
@@ -609,7 +609,7 @@ glyph. Finally the `Element->Build->Accented   Glyphs` command will
 figure out what glyphs should be refered to to build this composite
 glyph, and then will make those references and position them
 appropriately. So if "à" were selected and you did a
-[`Element->Build->Accented   Glyphs`](elementmenu.html#Accented)command,
+[`Element->Build->Accented   Glyphs`](../../documentation/interface/elementmenu/#Accented)command,
 FontForge would make a reference to "a" and another to "\`", and place
 the accent above the letter, and centered on it.
 
@@ -623,7 +623,7 @@ output font. Generally this causes no problems (FontForge will simply
 unlink the reference in the output, which just makes the font a little
 bigger, but it has implications for instructing TrueType, and, to a
 lesser extent, hinting PostScript. Most people can ignore this, but if
-you are interested [follow this link](ref-caveats.html)).
+you are interested [follow this link](../../documentation/reference/ref-caveats/)).
 
 Most font formats require that a glyph contain either a set of outlines
 (or bitmap rasters) or a set of references. FontForge allows glyphs with
@@ -666,17 +666,17 @@ share the same hints, instructions, character set, bitmaps, etc. It is
 only the outlines which differ.) Furthermore, you may choose to store
 all the layers of a font into an sfnt (TrueType / OpenType font) with
 the [`[]Layers` checkbox of the PfaEdit table of the
-`[Options]`](generate.html#Options)` `dialog.
+`[Options]`](../../documentation/interface/generate/#Options)` `dialog.
 
 #### Type3 Fonts
 
 Most people aren't interested in editing [Type3 PostScript
-fonts](multilayer.html)(nor the equivalent SVG font), but if you want
+fonts](../../documentation/interface/multilayer/)(nor the equivalent SVG font), but if you want
 to, FontForge can (you must configure it to do so however, but default
 it won't). Here each layer represents a different drawing operation, and
 may specify a different color, stroke, fill, etc. Layers are not
 font-wide, each glyph has its own set of layers (which are not named).
-You can [create new layers with a popup menu](multilayer.html#Layer)in
+You can [create new layers with a popup menu](../../documentation/interface/multilayer/#Layer)in
 the layers pane of the outline view.
 
 #### Guidelines
@@ -723,7 +723,7 @@ speaker you might prefer it to be named "aumlaut". No matter who you are
 you might prefer more mnemonic names for the code block you are working
 on.
 
-FontForge has a concept called a [namelist](encodingmenu.html#namelist),
+FontForge has a concept called a [namelist](../../documentation/interface/encodingmenu/#namelist),
 each of which is simply a mapping from unicode code point to name.
 Several namelists may be defined, different lists may apply to different
 fonts and a font may have all its glyphs renamed from one namelist to
@@ -824,7 +824,7 @@ information. Different kinds of lookup are needed to specify ligature
 data, glyph substitution data and kerning data.
 
 Lookups may be specified with the [Element-\>Font
-Info](fontinfo.html#Lookups) dialog
+Info](../../documentation/interface/fontinfo/#Lookups) dialog
 
 #### Lookup subtables
 
@@ -932,7 +932,7 @@ anchor point is positioned where the anchor from "a" was.
 
 FontForge does not compose these glyphs (well, it can, but that's a
 completely different area), instead it provides information within the
-[font](gposgsub.html) to a text layout program so that the program can
+[font](../../documentation/interface/gposgsub/) to a text layout program so that the program can
 do the composition.
 
 The example above is unlikely to be very useful since most latin fonts
@@ -946,7 +946,7 @@ Each of the different attachment styles mentioned above (cursive, mark
 to base, mark to ligature and mark to mark) is a different type of GPOS
 lookup. If you want to do attachment positioning you must first create
 the appropriate lookup ([Element-\>Font
-Info-\>Lookups-\>GPOS](fontinfo.html#Lookups), then a lookup subtable,
+Info-\>Lookups-\>GPOS](../../documentation/interface/fontinfo/#Lookups), then a lookup subtable,
 and then an anchor class within the lookup subtable. An anchor class is
 specified by providing a name for it (in the above example the class was
 called "Top").
@@ -961,7 +961,7 @@ A glyph may contain several Anchor Points, but only one for each mark to
 base anchor class (ligatures may have more than one for a class, and
 'curs' and 'mkmk' classes will usually have two). Inside a glyph may
 create a point with the [Point-\>Add Anchor
-command](pointmenu.html#AddAnchor). You must specify an anchor class,
+command](../../documentation/interface/pointmenu/#AddAnchor). You must specify an anchor class,
 and whether this point is in a base glyph or in a mark glyph, and a
 location. So in the example above the anchor point in "a" has class
 "Top" and is a base glyph, while the anchor point in "grave" also has
@@ -1032,13 +1032,13 @@ their baselines in the same place you get a mess:
 to say that these different scripts have their baselines in different
 places so that the glyphs can fit together
 reasonably:![](img/alignedBaselines.png). Both Apple Typography and OpenType
-allow for this. There is a [baseline table](baseline.html)which says how
+allow for this. There is a [baseline table](../../documentation/interface/baseline/)which says how
 the baselines for each script (or each glyph) should be aligned with
 respect to other baselines.
 
 ### Font View
 
-The [font view](fontview.html) displays all the glyphs in the font (or
+The [font view](../../documentation/interface/fontview/) displays all the glyphs in the font (or
 all that will fit in the window). Every line has two parts, at the top
 is a label, often small clear letters, underneath that, somewhat larger
 is a 24 pixel rasterization of the font you have designed. As you edit a
@@ -1065,9 +1065,9 @@ Another Wadalab font encapsulated in a CID keyed font
 
 ### Outline Glyph View
 
-The [outline view](charview.html) is probably the most complex view in
+The [outline view](../../documentation/interface/charview/) is probably the most complex view in
 FontForge. This is where you actually edit the splines ([Bézier
-splines](bezier.html)) that make up your glyphs.
+splines](../../documentation/reference/bezier/)) that make up your glyphs.
 
 You may have a background image loaded into the view to help you trace
 out the shape you are working on (it is displayed in grey). There are
@@ -1091,7 +1091,7 @@ are visible and editable.
 
 ### Bitmap View
 
-The [bitmap view](bitmapview.html) is similar to the outline view above.
+The [bitmap view](../../documentation/interface/bitmapview/) is similar to the outline view above.
 It also has a tools and layer palette.
 
 This allows you to edit bitmap versions of the outline glyphs you create
@@ -1107,7 +1107,7 @@ a full sized image of your bitmap glyph.
 
 ### Metrics View
 
-The [metrics view](metricsview.html) allows you to see how the glyphs
+The [metrics view](../../documentation/interface/metricsview/) allows you to see how the glyphs
 look together.
 
 You can change the width and left/right bearings of a glyph, either by
@@ -1130,4 +1130,4 @@ vertically.
 
 ![](img/HebrewMetrics.png)
 
--- [Next](editexample.html) --
+-- [Next](../editexample/) --

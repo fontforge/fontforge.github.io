@@ -13,9 +13,9 @@ and Apple is incomplete.
 -   [Apple Advanced Typography](#AAT)
 -   [What features can be converted between OpenType and
     AAT?](#Conversion)
--   [other true type and open type tables](TrueOpenTables.html)
+-   [other true type and open type tables](../../reference/TrueOpenTables/)
 -   [What is unsupported](#Unsupported)
--   [FontForge's non-standard extensions](non-standard.html)
+-   [FontForge's non-standard extensions](../../reference/non-standard/)
 
 The **`GPOS,`** **`GSUB,`** **`GDEF`** and `BASE` opentype tables
 -----------------------------------------------------------------
@@ -64,7 +64,7 @@ arabic, 'hani' for chinese ideographs. Two examples of features are
 'init' which will transform one set of glyphs to another when those
 glyphs are at the beginning of a word.
 
-FontForge [does not support](gposgsub.html#Unsupported)the full range of
+FontForge [does not support](#Unsupported)the full range of
 possibilities inherent in these tables.
 
 ### The **`GPOS`** table
@@ -74,21 +74,21 @@ FontForge will read the following sub tables of the GPOS table:
   ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         name                              Reading support                                                                                                                                                                                                                                                                                                                                                                                                        Writing support
   ----- --------------------------------- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------------------------------------
-  1     single adjustment                 This sub-table allows the font designer to change the metrics of a specific glyph. The feature tag will provide a context in which the change should occur. For instance the 'tnum' (tabular numbers) feature could change a proportionally spaced digit by adjusting its advance width to be some set value and then centering the digit (by adjusting the left side bearing) within the new width.                   These can be created with the [Element-\>Char Info](charinfo.html)-\>Position command.
+  1     single adjustment                 This sub-table allows the font designer to change the metrics of a specific glyph. The feature tag will provide a context in which the change should occur. For instance the 'tnum' (tabular numbers) feature could change a proportionally spaced digit by adjusting its advance width to be some set value and then centering the digit (by adjusting the left side bearing) within the new width.                   These can be created with the [Element-\>Char Info](../charinfo/)-\>Position command.
 
-  2     pair adjustment                   This sub-table allows the font designer to change the metrics of a specific pair of glyph. The most common use of this is for kerning where the advance width of the first glyph is altered depending on which glyph follows it. But the table is more general than that and could support mark (accent, vowel) positioning over a base glyph (though that is more efficiently done with the mark to base subtable).   'kern' feature s may be created from the [Metrics View](metricsview.html). 'vkrn' with [Metrics-\>VKern From HKern](metricsmenu.html#VKernFromHKern).
+  2     pair adjustment                   This sub-table allows the font designer to change the metrics of a specific pair of glyph. The most common use of this is for kerning where the advance width of the first glyph is altered depending on which glyph follows it. But the table is more general than that and could support mark (accent, vowel) positioning over a base glyph (though that is more efficiently done with the mark to base subtable).   'kern' feature s may be created from the [Metrics View](../metricsview/). 'vkrn' with [Metrics-\>VKern From HKern](../metricsmenu/#VKernFromHKern).
 
-  3     cursive attachment                This sub-table allows the font designer to force adjacent glyphs to join at specific points. It can be used to generate the slanted script style needed for Urdu.                                                                                                                                                                                                                                                      Only the 'curs' feature is supported for this sub-table. These may be created with the [Points-\>Add Anchor](pointmenu.html#AddAnchor) command
+  3     cursive attachment                This sub-table allows the font designer to force adjacent glyphs to join at specific points. It can be used to generate the slanted script style needed for Urdu.                                                                                                                                                                                                                                                      Only the 'curs' feature is supported for this sub-table. These may be created with the [Points-\>Add Anchor](../pointmenu/#AddAnchor) command
 
-  4     mark to base                      This sub-table allows the font designer to specify how mark glyphs (accents, vowel signs, etc.) are positioned over base glyphs. Every glyph can have an attachment point and the mark's attachment point will be placed on the base's attachment point so the two join properly. See my [example](overview.html#Anchors) in the overview.                                                                             These may be created with the [Points-\>Add Anchor](pointmenu.html#AddAnchor) command
+  4     mark to base                      This sub-table allows the font designer to specify how mark glyphs (accents, vowel signs, etc.) are positioned over base glyphs. Every glyph can have an attachment point and the mark's attachment point will be placed on the base's attachment point so the two join properly. See my [example](overview.html#Anchors) in the overview.                                                                             These may be created with the [Points-\>Add Anchor](../pointmenu/#AddAnchor) command
 
-  5     mark to ligature                  This sub-table is very similar to the previous one except that the base glyph is a ligature and may have several different points at which the same type of accent may be placed.                                                                                                                                                                                                                                      These may be created with the [Points-\>Add Anchor](pointmenu.html#AddAnchor) command
+  5     mark to ligature                  This sub-table is very similar to the previous one except that the base glyph is a ligature and may have several different points at which the same type of accent may be placed.                                                                                                                                                                                                                                      These may be created with the [Points-\>Add Anchor](../pointmenu/#AddAnchor) command
 
-  6     mark to mark                      This sub-table is very similar to the previous two except that the base glyph is itself a mark. This may be used when a glyph has two accents each of which would normally be placed at the same attachment point on a base glyph. The second accent will be place relative to the first accent rather than to the base glyph.                                                                                         These may be created with the [Points-\>Add Anchor](pointmenu.html#AddAnchor) command
+  6     mark to mark                      This sub-table is very similar to the previous two except that the base glyph is itself a mark. This may be used when a glyph has two accents each of which would normally be placed at the same attachment point on a base glyph. The second accent will be place relative to the first accent rather than to the base glyph.                                                                                         These may be created with the [Points-\>Add Anchor](../pointmenu/#AddAnchor) command
 
-  7     contextual positioning            This sub-table allows the font designer to control the positioning of glyphs when they occur within a specific string (or class of strings). For instance this table could say "when you see a digit followed by the string "th" then raise the "th" into a superscript position"                                                                                                                                      These may be created with the [Element-\>Font Info-\>Contextual](lookups.html#contextual-subs)command
+  7     contextual positioning            This sub-table allows the font designer to control the positioning of glyphs when they occur within a specific string (or class of strings). For instance this table could say "when you see a digit followed by the string "th" then raise the "th" into a superscript position"                                                                                                                                      These may be created with the [Element-\>Font Info-\>Contextual](../lookups/#contextual-subs)command
 
-  8     chaining contextual positioning   This is a slightly more complex version of the above, it doesn't really add new capabilities, but it does provide a more logical approach to the issue.                                                                                                                                                                                                                                                                These may be created with the [Element-\>Font Info-\>Contextual](lookups.html#contextual-subs)command
+  8     chaining contextual positioning   This is a slightly more complex version of the above, it doesn't really add new capabilities, but it does provide a more logical approach to the issue.                                                                                                                                                                                                                                                                These may be created with the [Element-\>Font Info-\>Contextual](../lookups/#contextual-subs)command
 
   9     extension positioning             This is used to allow for a GPOS table which is bigger than 64k. Its use should be quite invisible to the font designer                                                                                                                                                                                                                                                                                                FontForge uses this sub-table when needed.
 
@@ -98,7 +98,7 @@ FontForge will read the following sub tables of the GPOS table:
 
 FontForge also has built into it knowledge on how to provide default
 values for some features that use these tables. See [Element-\>Typo.
-Features-\>Default ATT](elementmenu.html#DefaultATT) command for that.
+Features-\>Default ATT](../elementmenu/#DefaultATT) command for that.
 
 FontForge will retain the order of features in the GPOS table and when a
 font is generated the order should be the same as it was before.
@@ -110,21 +110,21 @@ FontForge will read the following sub tables of the GSUB table:
   ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
        name                                              Reading support                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       Writing support
   ---- ------------------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -------------------------------------------------------------------------------------------------------
-  1    single substitution                               This sub-table allows the font designer to change from one glyph to another, with a context provided by the feature tag. For example many scripts have letters which have a different form at the end of a word than they do within (this is true of every letter in arabic, several in hebrew, lower case sigma in greek, and the long-s/short-s pair in renaissance latin). So the 'fina' feature would map the normal form into the final form, and the word processing program would do a lookup at the end of each word to see if a transformation was needed.   These can be created with the [Element-\>Char Info](charinfo.html)-\>Substitution command.
+  1    single substitution                               This sub-table allows the font designer to change from one glyph to another, with a context provided by the feature tag. For example many scripts have letters which have a different form at the end of a word than they do within (this is true of every letter in arabic, several in hebrew, lower case sigma in greek, and the long-s/short-s pair in renaissance latin). So the 'fina' feature would map the normal form into the final form, and the word processing program would do a lookup at the end of each word to see if a transformation was needed.   These can be created with the [Element-\>Char Info](../charinfo/)-\>Substitution command.
 
-  2    multiple substitution                             This sub-table allows the font designer to replace one glyph by a series of others. This is generally used for rather technical layout issues.                                                                                                                                                                                                                                                                                                                                                                                                                        These can be created with the [Element-\>Char Info](charinfo.html)-\>Multiple Substitution command.
+  2    multiple substitution                             This sub-table allows the font designer to replace one glyph by a series of others. This is generally used for rather technical layout issues.                                                                                                                                                                                                                                                                                                                                                                                                                        These can be created with the [Element-\>Char Info](../charinfo/)-\>Multiple Substitution command.
 
-  3    alternate substitution                            This sub-table allows the font designer to have a series of "alternates" for each glyph. One common example would be an italic font which had several swash variants for each capital letter. The word processing program would allow the user to choose which variant was appropriate                                                                                                                                                                                                                                                                                These can be created with the [Element-\>Char Info](charinfo.html)-\>Alternate Substitution command.
+  3    alternate substitution                            This sub-table allows the font designer to have a series of "alternates" for each glyph. One common example would be an italic font which had several swash variants for each capital letter. The word processing program would allow the user to choose which variant was appropriate                                                                                                                                                                                                                                                                                These can be created with the [Element-\>Char Info](../charinfo/)-\>Alternate Substitution command.
 
-  4    ligature substitution                             This sub-table allows the font designer to replace a string of glyphs with another glyph. A common example is a ligature where the string ![](img/f+i.png) is replaced by the ![](img/fi.png) ligature.                                                                                                                                                                                                                                                                                                                                                                       These can be created with the [Element-\>Char Info](charinfo.html)-\>Ligature command.
+  4    ligature substitution                             This sub-table allows the font designer to replace a string of glyphs with another glyph. A common example is a ligature where the string ![](img/f+i.png) is replaced by the ![](img/fi.png) ligature.                                                                                                                                                                                                                                                                                                                                                                       These can be created with the [Element-\>Char Info](../charinfo/)-\>Ligature command.
 
-  5    contextual substitution                           This subtable allows for a string of glyphs to replace another string of glyphs (or class of strings of glyphs)                                                                                                                                                                                                                                                                                                                                                                                                                                                       These may be created with the [Element-\>Font Info-\>Contextual](lookups.html#contextual-subs)command
+  5    contextual substitution                           This subtable allows for a string of glyphs to replace another string of glyphs (or class of strings of glyphs)                                                                                                                                                                                                                                                                                                                                                                                                                                                       These may be created with the [Element-\>Font Info-\>Contextual](../lookups/#contextual-subs)command
 
-  6    chaining contextual substitution                  This is a slightly more complex version of the above, it doesn't really add new capabilities, but it does provide a more logical approach to the issue.                                                                                                                                                                                                                                                                                                                                                                                                               These may be created with the [Element-\>Font Info-\>Contextual](lookups.html#contextual-subs)command
+  6    chaining contextual substitution                  This is a slightly more complex version of the above, it doesn't really add new capabilities, but it does provide a more logical approach to the issue.                                                                                                                                                                                                                                                                                                                                                                                                               These may be created with the [Element-\>Font Info-\>Contextual](../lookups/#contextual-subs)command
 
   7    extension positioning                             This is used to allow for a GSUB table which is bigger than 64k. Its use should be quite invisible to the font designer                                                                                                                                                                                                                                                                                                                                                                                                                                               FontForge uses this sub-table when needed.
 
-  8    reverse chaining contextual single substitution   This allows glyph substitutions to happen in reverse order, and it a variant of the chaining contextual subtable.                                                                                                                                                                                                                                                                                                                                                                                                                                                     These may be created with the [Element-\>Font Info-\>Contextual](lookups.html#contextual-subs)command
+  8    reverse chaining contextual single substitution   This allows glyph substitutions to happen in reverse order, and it a variant of the chaining contextual subtable.                                                                                                                                                                                                                                                                                                                                                                                                                                                     These may be created with the [Element-\>Font Info-\>Contextual]../(lookups/#contextual-subs)command
 
   9+   reserved for future use                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 FontForge does not support these sub-tables yet.
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 (nor does anyone)
@@ -132,14 +132,14 @@ FontForge will read the following sub tables of the GSUB table:
 
 FontForge also has built into it knowledge on how to provide default
 values for some features that use these tables. See the [Populate]
-button of the various [lookup subtable](lookups.html)dialogs.
+button of the various [lookup subtable](../lookups/)dialogs.
 
 FontForge can produce some of these tables, but the text layout/word
 processing program used has to look up the tables and do the actual work
 of rearranging the glyphs.
 
 FontForge will retain the order of features in the GSUB table, and the
-user may adjust it with the [Element-\>Font Info](lookups.html#Order)
+user may adjust it with the [Element-\>Font Info](../lookups/#Order)
 command.
 
 ### The **`GDEF `**table
@@ -206,7 +206,7 @@ vaguely to the [GSUB](#GSUB) table. Note: Any feature type/setting
 combinations which correspond directly to an open type feature will be
 converted to the opentype tag when read in. It will be converted back to
 a feature/setting when an apple font is generated (use
-[File-\>Preferences](prefs.html#Mac) to extend FontForge's mapping from
+[File-\>Preferences](../prefs/#Mac) to extend FontForge's mapping from
 feature type/setting to opentype tags).
 
 Sub tables of `'mort'` or `'morx'`
@@ -222,7 +222,7 @@ Writing support
 Indic style rearrangement
 
 FontForge can read these and stores them as state machines (which can be
-edited with [Font Info](lookups.html#sm-subs))
+edited with [Font Info](../lookups/#sm-subs))
 
 Any indic state machines will be output in the generated font.
 
@@ -231,7 +231,7 @@ Any indic state machines will be output in the generated font.
 contextual glyph substitution
 
 FontForge can read these and stores them as state machines (which can be
-edited with [Font Info](lookups.html#sm-subs))
+edited with [Font Info](../lookups/#sm-subs))
 
 If the font contains any state machines they will be output here. If
 there are no state machines then the following conversions of opentype
@@ -240,7 +240,7 @@ features will be done:
 -   FontForge will generate a cursive connection feature using this
     subtable type if the font contains 'init', 'medi', 'fina' or 'isol'
     simple substitutions.
--   In [some cases](gposgsub.html#sometimes) FontForge is able to
+-   In [some cases](#sometimes) FontForge is able to
     convert an OpenType Contextual/Chaining substitution table into an
     Apple contextual glyph substitution table.
 
@@ -250,7 +250,7 @@ ligature substitution
 
 FontForge can read the unconditional information from these and stores
 them as opentype ligatures (which can be edited with [Font
-Info](lookups.html) or [Char Info](charinfo.html#lookups)).
+Info](../lookups/) or [Char Info](../charinfo/#lookups)).
 
 If there are any ligatures with an apple feature/setting (or which have
 an opentype tag which can be converted to an apple feature/setting) then
@@ -261,8 +261,8 @@ this table will be output.
 non-contextual glyph substitution
 
 FontForge can read these and stores them as opentype simple
-substitutions (which can be edited with [Font Info](lookups.html) or
-[Char Info](charinfo.html#lookups))
+substitutions (which can be edited with [Font Info](../lookups/) or
+[Char Info](../charinfo/#lookups))
 
 If there are any substitutions with an apple feature/setting (or which
 have an opentype tag which can be converted to an apple feature/setting)
@@ -273,7 +273,7 @@ then this table will be output.
 contextual glyph insertion
 
 FontForge can read these and stores them as state machines (which can be
-edited with [Font Info](lookups.html#sm-subs))
+edited with [Font Info](../lookups/#sm-subs))
 
 Any glyph insertion state machines will be output in the generated font.
 
@@ -362,7 +362,7 @@ to be able to inter-convert an OpenType feature into an Apple feature
 there must first be a correspondence between the two naming conventions.
 Sometimes there is an easy direct conversion (above 'liga' and \<1,2\>
 both represent "Common Ligatures") but far more often there is none. See
-[below](gposgsub.html#OT-Mac-features) for a list of the tags and
+[below](#OT-Mac-features) for a list of the tags and
 feature settings that FontForge considers similar enough to
 interconvert.
 
@@ -439,7 +439,7 @@ Contextual
 This morx subtable allows single glyph substitutions to be applied
 within certain contexts. At first glance it seems that this could be
 converted into an opentype Context subtable, [but this is rarely the
-case](gposgsub.html#sometimes).
+case](#sometimes).
 
 Context
 
@@ -448,7 +448,7 @@ applied contextually. At first glance one might think that these (with
 appropriate nested substitutions) might be converted to 'morx'
 contextual glyph substitutions, contextual ligatures, or even glyph
 insertion. [Unfortunately this is rarely the
-case](gposgsub.html#sometimes).
+case](#sometimes).
 
 Chaining
  Context
@@ -881,7 +881,7 @@ JIS 1990 Characters
 jp90
 
 FontForge will retain the order of features in the morx table, and the
-user may adjust it with the [Element-\>Font Info](fontinfo.html#Lookups)
+user may adjust it with the [Element-\>Font Info](../fontinfo/#Lookups)
 command. (this is the same list as that used for GSUB table. GSUB
 features that don't correspond to mac features will be ignored).
 
@@ -897,7 +897,7 @@ available in either opentype or apple advanced typography.
     MarkAttachClassDef subtable of the GDEF table.
 -   FontForge does not support the VORG and JUST tables
 
-[See here for a complete list of supported tables](TrueOpenTables.html).
+[See here for a complete list of supported tables](../../reference/TrueOpenTables/).
 
 ### Apple Advanced Typography
 
@@ -916,7 +916,7 @@ available in either opentype or apple advanced typography.
     -   trak (tracking)
     -   Zapf (glyph reference)
 
-[See here for a complete list of supported tables](TrueOpenTables.html).
+[See here for a complete list of supported tables](../../reference/TrueOpenTables/).
 
--- [Prev](generate.html) -- [TOC](overview.html) --
-[Next](filemenu.html) --
+-- [Prev](../generate/) -- [TOC](overview.html) --
+[Next](../filemenu/) --

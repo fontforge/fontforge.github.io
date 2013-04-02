@@ -6,23 +6,23 @@ title: Encoding Menu
 
 The Encoding menu is only found in the font view:
 
--   [Reencode \>](encodingmenu.html#Reencode)
+-   [Reencode \>](#Reencode)
     -   various standard and user defined encodings
 
 -   [Compact](#Compact)
--   [Force Encoding \>](encodingmenu.html#Force)
+-   [Force Encoding \>](#Force)
     -   various standard and user defined encodings
 
 -   [Add Encoding Slots...](#AddSlots)
 -   [Remove Unused Slots](#RemoveSlots)
--   [Detach Glyphs](encodingmenu.html#Detach)
--   [Detach & Remove Glyphs...](encodingmenu.html#RemoveGlyphs)
+-   [Detach Glyphs](#Detach)
+-   [Detach & Remove Glyphs...](#RemoveGlyphs)
 -   [Add Encoding...](#AddEnc)
 -   [Load Encoding...](#Load)
 -   [Make From Font](#Make)
 -   [Remove Encoding...](#RemoveEnc)
 -   [Display by Groups...](#Display)
--   [Define Groups...](encodingmenu.html#Define)
+-   [Define Groups...](#Define)
 -   [Save NameList of Font...](#SaveNL)
 -   [Load NameList...](#LoadNL)
 -   [Rename Glyphs...](#RenameGlyphs)
@@ -30,11 +30,11 @@ The Encoding menu is only found in the font view:
 
     * * * * *
 
--   [General notes on encodings](encodingmenu.html#General-encodings)
-    -   [Built-in encodings](encodingmenu.html#Encodings)
-    -   [User defined encodings](encodingmenu.html#User-def)
+-   [General notes on encodings](#General-encodings)
+    -   [Built-in encodings](#Encodings)
+    -   [User defined encodings](#User-def)
 
--   [Namelists](encodingmenu.html#namelist)
+-   [Namelists](#namelist)
 
 Reencode
 
@@ -116,11 +116,11 @@ Removes one of the user defined encodings from the menu.
 Display by Group...
 
 Allows you restrict the glyphs displayed in the font view to those in a
-user defined [group](groups.html) (specified in the next command).
+user defined [group](../groups/) (specified in the next command).
 
 Define Groups...
 
-Allows you to define [groups](groups.html) of glyphs which (presumably)
+Allows you to define [groups](../groups/) of glyphs which (presumably)
 have some meaningful connection to each other.
 
 Save NameList of Font...
@@ -155,7 +155,7 @@ the CJK encodings, type1 fonts only support single byte encodings, etc.
 
 In a CID keyed font you are not allowed to change the encoding (in
 essence because there is none), but there is an entry [CID-\>Change
-Supplement](cidmenu.html#ChangeSup)which will display the
+Supplement](../cidmenu/#ChangeSup)which will display the
 Registry/Ordering information and allow you to change the supplement.
 
 * * * * *
@@ -391,12 +391,12 @@ So if you find it easier to work with names other than those Adobe has
 established you may create your own namelist file. Then use
 [Encoding-\>Load NameList...](#LoadNL) to load that into FontForge (you
 only need do this once, FontForge should remember it thereafter). You
-may use [File-\>Preferences-\>Font Info](prefs.html#NewFontNameList) to
+may use [File-\>Preferences-\>Font Info](../prefs/#NewFontNameList) to
 decree that all your new fonts will use this namelist. You can change a
 font's namelist with either:
 
 -   [Element-\>Font
-    Info-\>General-\>NameList](fontinfo.html#PS-General)
+    Info-\>General-\>NameList](../fontinfo/#PS-General)
      Which will change the way new glyphs are assigned names
 -   [Encoding-\>Rename Glyphs...](#RenameGlyphs)
      Which will rename existing glyphs as well as changing the way new
@@ -410,20 +410,20 @@ names of the Adobe Glyph List.
 Other menus
 -----------
 
--   [File](filemenu.html)
--   [Edit](editmenu.html)
--   [Point](pointmenu.html)
--   [Element](elementmenu.html)
--   [Tools](toolsmenu.html)
--   [Hints](hintsmenu.html)
--   [Encoding](encodingmenu.html)
--   [View](viewmenu.html)
--   [Metrics](metricsmenu.html)
--   [CID](cidmenu.html)
--   [MM](mmmenu.html)
--   [Window](windowmenu.html)
--   [Help](helpmenu.html)
--   [Hot Keys](HotKeys.html)
+-   [File](../filemenu/)
+-   [Edit](../editmenu/)
+-   [Point](../pointmenu/)
+-   [Element](../elementmenu/)
+-   [Tools](../toolsmenu/)
+-   [Hints](../hintsmenu/)
+-   [Encoding](../encodingmenu/)
+-   [View](../viewmenu/)
+-   [Metrics](../metricsmenu/)
+-   [CID](../cidmenu/)
+-   [MM](../mmmenu/)
+-   [Window](../windowmenu/)
+-   [Help](../helpmenu/)
+-   [Hot Keys](../HotKeys/)
 
--- [Prev](hintsmenu.html) -- [TOC](overview.html) --
-[Next](viewmenu.html) --
+-- [Prev](../hintsmenu/) -- [TOC](overview.html) --
+[Next](../viewmenu/) --

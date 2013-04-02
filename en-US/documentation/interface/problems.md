@@ -35,7 +35,7 @@ FontForge will be able to check for more problems if you:
 
 -   AutoHint the font first
 -   Bring up the [Element-\>Font
-    Info-\>Private](fontinfo.html#Private)sub-dialog, add entries for
+    Info-\>Private](../fontinfo/#Private)sub-dialog, add entries for
     BlueValues, StdHW and StdVW and press the [Guess] button for each of
     them
 
@@ -95,7 +95,7 @@ things.
 
 **Control points near horizontal/vertical/italic**
 
-This is similar to the [Edges near Horizontal option](problems.html)
+This is similar to the [Edges near Horizontal option]()
 below, but where that only looks for straight lines, this one looks for
 curved lines that begin or end near horizontal (vertical, italic angle).
 
@@ -172,7 +172,7 @@ constraint is violated.
 
 **FontForge cannot determine path direction properly if there are
 self-intersecting paths.** [Do that test
-first.](problems.html#Intersecting)
+first.](#Intersecting)
 
 Currently the command will report the same error several times if you do
 not fix the problem. That's sort of a bug, but I don't see an easy way
@@ -437,5 +437,5 @@ There is also a text field which allows you to define the meaning of
 things are "near" if they are within 3 em-units of the desired value and
 not equal to that value.
 
--- [Prev](elementmenu.html) -- [TOC](overview.html) --
-[Next](elementmenu.html) --
+-- [Prev](../elementmenu/) -- [TOC](overview.html) --
+[Next](../elementmenu/) --

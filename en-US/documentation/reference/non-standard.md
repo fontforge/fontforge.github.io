@@ -16,27 +16,27 @@ For TeX
  I no longer use these. MS has come up with a MATH table which can
 contain all the TeX information.
 
--   `ITLC` -- [Italic correction](PfaEdit-TeX.html#Italic)
+-   `ITLC` -- [Italic correction](../PfaEdit-TeX/#Italic)
      I have proposed this as an extension to OpenType. There was some
     discussion of it, but I believe the idea died.
--   `TCHL` -- [TeX Charlist](PfaEdit-TeX.html#charlist)
--   `TEXL` -- [TeX Extension List](PfaEdit-TeX.html#extension)
+-   `TCHL` -- [TeX Charlist](../PfaEdit-TeX/#charlist)
+-   `TEXL` -- [TeX Extension List](../PfaEdit-TeX/#extension)
 
 Non standard tables.
 --------------------
 
--   ['PfEd' the FontForge extensions table](non-standard.html#PfEd)
+-   ['PfEd' the FontForge extensions table](#PfEd)
 -   ['TeX ' the TeX metrics table](#TeX)
 -   ['BDF ' the BDF properties table](#BDF)
 -   ['FFTM' the FontForge time stamp table](#FFTM)
 
     * * * * *
 
--   ([standard tables](TrueOpenTables.html))
+-   ([standard tables](../TrueOpenTables/))
 
 Non standard file formats
 
--   [Bitmap only sfnt for MS Windows](bitmaponlysfnt.html#MS)
+-   [Bitmap only sfnt for MS Windows](../bitmaponlysfnt/#MS)
 
 'PfEd' -- the FontForge extensions table
 ----------------------------------------
@@ -65,10 +65,10 @@ Non standard file formats
 >
 > -   '[colr](#colr)' -- per glyph color sub-table (stores the color
 >     that appears in the font view)
-> -   '[cmnt](non-standard.html#cmnt)' -- per glyph comment sub-table
+> -   '[cmnt](#cmnt)' -- per glyph comment sub-table
 >     (stores the comment that appears in the Char Info dialog for the
 >     character)
-> -   '[fcmt](non-standard.html#fcmt)' -- the font comment sub-table
+> -   '[fcmt](#fcmt)' -- the font comment sub-table
 >     (stores the comment that appears in the Font Info dialog)
 > -   '[flog](#fcmt)' -- the font log sub-table (looks just like the
 >     'fcmt' subtable)
@@ -77,7 +77,7 @@ Non standard file formats
 >     names of GPOS lookups
 > -   '[GSUB](#GPOS)' -- Save lookup and lookup subtable names of GSUB
 >     lookups
-> -   '[guid](non-standard.html#guid)' -- Save guideline locations
+> -   '[guid](#guid)' -- Save guideline locations
 > -   '[layr](#layr)' -- Save background and spiro layers
 
 ### 'colr' -- the per-glyph color sub-table

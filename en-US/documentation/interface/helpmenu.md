@@ -7,17 +7,17 @@ title: Help menu
 
 The Help menu has only a few entries:
 
--   [Help](helpmenu.html#Help)
--   [Overview](helpmenu.html#Overview)
--   [Index](helpmenu.html#Index)
--   [About](helpmenu.html#About)...
--   [License](helpmenu.html#License)...
+-   [Help](#Help)
+-   [Overview](#Overview)
+-   [Index](#Index)
+-   [About](#About)...
+-   [License](#License)...
 
 Help
 
 Invokes a browser and brings up contextual help on fontforge web site.
 
-If you define the environment variable [BROWSER](cliargs.html#BROWSER)
+If you define the environment variable [BROWSER](../cliargs/#BROWSER)
 so that it contains the name of the browser you like then FontForge will
 use that, otherwise it will try to guess something appropriate by
 looking at your PATH. On CygWin systems browsers that work in the
@@ -48,20 +48,20 @@ Invokes a browser to display FontForge's license.
 Other menus
 -----------
 
--   [File](filemenu.html)
--   [Edit](editmenu.html)
--   [Point](pointmenu.html)
--   [Element](elementmenu.html)
--   [Tools](toolsmenu.html)
--   [Hints](hintsmenu.html)
--   [Encoding](encodingmenu.html)
--   [View](viewmenu.html)
--   [Metrics](metricsmenu.html)
--   [CID](cidmenu.html)
--   [MM](mmmenu.html)
--   [Window](windowmenu.html)
--   [Help](helpmenu.html)
--   [Hot Keys](HotKeys.html)
+-   [File](../filemenu/)
+-   [Edit](../editmenu/)
+-   [Point](../pointmenu/)
+-   [Element](../elementmenu/)
+-   [Tools](../toolsmenu/)
+-   [Hints](../hintsmenu/)
+-   [Encoding](../encodingmenu/)
+-   [View](../viewmenu/)
+-   [Metrics](../metricsmenu/)
+-   [CID](../cidmenu/)
+-   [MM](../mmmenu/)
+-   [Window](../windowmenu/)
+-   [Help](../helpmenu/)
+-   [Hot Keys](../HotKeys/)
 
--- [Prev](windowmenu.html) -- [TOC](overview.html) --
-[Next](HotKeys.html) --
+-- [Prev](../windowmenu/) -- [TOC](overview.html) --
+[Next](../HotKeys/) --

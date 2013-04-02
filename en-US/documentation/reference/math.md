@@ -177,7 +177,7 @@ Finally there is a font-wide constant (in the Connectors pane of the
 Constants section) called MinConnectorOverlap which specifies that
 glyphs must overlap by at least this amount.
  The per-glyph information may also be specified from the [Glyph
-Information dialog.](charinfo.html)
+Information dialog.](../../interface/charinfo/)
 
 I wish to thank Sergey Malkin at MicroSoft who provided me with a copy
 of the spec, and Apostolos Syropoulos who provided me with a test font

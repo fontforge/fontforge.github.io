@@ -161,7 +161,7 @@ Related Tools
 
 -   [Unicode Font Guide for Free/Libre Open Source Operating
     Systems](http://unifont.org/fontguide/)
--   [Other related links...](otherlinks.html)
+-   [Other related links...](../otherlinks/)
 
 If you know of a tool you think should be on this list, please [let me
 know](mailto:fontforge-devel@lists.sourceforge.net) (this is a public

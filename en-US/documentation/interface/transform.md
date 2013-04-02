@@ -44,7 +44,7 @@ Flip
 
 You may flip either horizontally or vertically
  **Note: After flipping an outline you will almost certainly want to
-apply [Element-\>Correct Direction](elementmenu.html#Correct).**
+apply [Element-\>Correct Direction](../elementmenu/#Correct).**
 
 Skew
 
@@ -64,19 +64,19 @@ Clockwise/CounterClockwise options here).
 Move by Ruler
 
 Fill in the amount to move from the x and y offsets of the last
-measurements made with the [ruler tool](charview.html#Ruler).
+measurements made with the [ruler tool](../charview/#Ruler).
 
 Rotate by Ruler
 
 Fill in the rotation angle from the angle of the last measurements made
-with the [ruler tool](charview.html#Ruler).
+with the [ruler tool](../charview/#Ruler).
 
 Skew by Ruler
 
 Fill in the skew angle from the angle of the last measurements made with
-the [ruler tool](charview.html#Ruler).
+the [ruler tool](../charview/#Ruler).
 
-If you are in the font view, and if [Copy From](editmenu.html#From) is
+If you are in the font view, and if [Copy From](../editmenu/#From) is
 set to all fonts, then the transformation will also be applied to the
 bitmaps. Not all of these transforms can be mapped to ones on the bitmap
 font (arbitrary rotations, scales, etc. do not map). Only rotations by
@@ -153,5 +153,5 @@ change fields (Note: It cannot figure out meta information like "Center
 of Selection", so whenever the eye is positioned with this value, it
 just assumes a value of 0 for that coordinate.
 
--- [Prev](elementmenu.html) -- [TOC](overview.html) --
-[Next](elementmenu.html) --
+-- [Prev](../elementmenu/) -- [TOC](overview.html) --
+[Next](../elementmenu/) --

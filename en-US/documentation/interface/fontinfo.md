@@ -8,30 +8,30 @@ title: Font Info
 
 The Font Info dialog is available from all views. It allows you to name
 your font and various other useful bits of information. In a [CID keyed
-font](fontview.html#CID), things are more complex. Each CID keyed font
+font](../fontview/#CID), things are more complex. Each CID keyed font
 is composed of man sub-fonts; this command works on the current sub-font
-while there is a [separate command](cidmenu.html#FontInfo) to access the
+while there is a [separate command](../cidmenu/#FontInfo) to access the
 information for the font as a whole -- that dialog looks the same. The
 dialog is composed of many different sub dialogs.
 
--   [Names](fontinfo.html#Names)
--   [General](fontinfo.html#PS-General)
+-   [Names](#Names)
+-   [General](#PS-General)
 -   [Layers](#Layers)
 -   [PostScript Unique IDs](#PSUID)
--   [PostScript Private Dictionary](fontinfo.html#Private)
--   [OS/2](fontinfo.html#TTF-Values)
-    -   [OS/2 Misc](fontinfo.html#TTF-Values)
-    -   [OS/2 Metrics](fontinfo.html#TTF-Metrics)
+-   [PostScript Private Dictionary](#Private)
+-   [OS/2](#TTF-Values)
+    -   [OS/2 Misc](#TTF-Values)
+    -   [OS/2 Metrics](#TTF-Metrics)
     -   [OS/2 Sub/Superscripts](#SubSuper)
-    -   [OS/2 Panose](fontinfo.html#Panose)
+    -   [OS/2 Panose](#Panose)
     -   [OS/2 Charsets](#Charsets)
 
--   [TTF Names](fontinfo.html#TTF-Names)
+-   [TTF Names](#TTF-Names)
 -   [StyleSet Names](#SSNames)
 -   [Grid Fit](#gasp)
--   [TeX](fontinfo.html#TeX)
+-   [TeX](#TeX)
 -   [Size](#Size)
--   [Comment](fontinfo.html#Comment)
+-   [Comment](#Comment)
 -   [FONTLOG](#FontLog)
 -   [Mark Classes](#MarkClass)
     -   [Mark Sets](#MarkSets)
@@ -69,7 +69,7 @@ you may leave this field blank. If you leave it blank FontForge will
 generate a default value based on other version information specified
 elsewhere.
 
-Normally when [generating a font,](generate.html) FontForge will use the
+Normally when [generating a font,](../generate/) FontForge will use the
 fontname as the base for the default filename of the font file (the base
 to which the extension is added). But that is not always what you want.
 You may wish to attach a version string to the fontname, or abbreviate
@@ -77,7 +77,7 @@ it, etc. The `Base Filename` field allows you to specify this to
 fontforge.
 
 Many of these names are similar to the english names of the [TTF
-Names](fontinfo.html#TTF-Names) section. If nothing is specified in that
+Names](#TTF-Names) section. If nothing is specified in that
 section then the names specified here will be used by default in ttf
 files.
 
@@ -125,7 +125,7 @@ unicode character may map to very different chinese or japanese glyphs).
 To handle this FontForge has the concept of "Interpretation".
 
 When you create a new glyph in a font, fontforge will assign it a name
-based on the current [namelist](encodingmenu.html#namelist).
+based on the current [namelist](../encodingmenu/#namelist).
 
 ![](img/fontinfo-layers.png)Layers
 ------------------------------
@@ -134,7 +134,7 @@ You may control how many and what types of layers are available in your
 font.
 
 Fonts may be either outlined or stroked, or (if you configured FontForge
-for [multi-layered editing](multilayer.html)) type3. You may choose
+for [multi-layered editing](../multilayer/)) type3. You may choose
 which kind of font you want.
 
 You may also decide what kind of splines you want in the font in
@@ -221,7 +221,7 @@ When the `[Guess]` button is enabled FontForge thinks it can make a
 reasonable guess for the value of the currently selected entry.
 
 The `[Histogram]` button is similar, it will bring up a [dialog showing
-a histogram](histogram.html) of the values of an attribute of the font.
+a histogram](../histogram/) of the values of an attribute of the font.
 The hope is that this will allow you to pick a good value for the entry.
 
 You may also delete an entry from the dictionary with the
@@ -331,7 +331,7 @@ Windows Ascent/Descent described above).
 
 In traditional (Latin) typography, the unleaded line spacing should be
 1em, and that is what Adobe recommends for these fields (they should sum
-to the Em-Size specified in the [General](fontinfo.html#PS-General)
+to the Em-Size specified in the [General](#PS-General)
 pane). The Typographic Ascent should be the same as the font's Ascent,
 and the Typographic Descent should be the (negative) of the font's
 descent.
@@ -353,12 +353,12 @@ spacing. They behave very much the way the Win Ascent & Descent behave
 own line gap field.
 
 And if your font has vertical metrics enabled (See
-[General](fontinfo.html#PS-General) above) you will be able to set the
+[General](#PS-General) above) you will be able to set the
 default spacing between vertical columns of text. (the equivalent to
 LineGap in vertical text).
 
-[See the FAQ](faq.html#linespace)for a discussion on the complexities
-involved in setting the line spacing. [The 'BASE' table](baseline.html)
+[See the FAQ](/about/faq/#linespace)for a discussion on the complexities
+involved in setting the line spacing. [The 'BASE' table](../baseline/)
 provides a more precise method for setting line spacing.
 
 ![](img/fontinfo-subsup.png)OS/2 Sub/Superscripts
@@ -426,7 +426,7 @@ thereafter.
 Certain strings in English (Copyright, Family, Styles, Fullname,
 Version) will always be present. If you do not set them explicitly they
 will be taken (possibly with modifications) from the equivalent
-postscript strings on the [Names](fontinfo.html#Names) pane. You may not
+postscript strings on the [Names](#Names) pane. You may not
 remove these strings, and if you wish to modify them you must first
 detach them from the PostScript. In the example at right the strings
 bound to PostScript are shown in red (Copyright, Family, Styles), while
@@ -564,7 +564,7 @@ translated into different languages.
 When you create a Style entry for an language, FontForge will attempt to
 translate the American English style into something appropriate for that
 language. It understands languages in [the table on the font styles
-page](fontstyles.html), but not others so it won't always work.
+page](../fontstyles/), but not others so it won't always work.
 
 So if your style in American English is "BoldItalic" then after you
 create the appropriate strings FontForge will default to "GrasItalique"
@@ -641,7 +641,7 @@ the glyph. This made small point sizes more readable than they would
 otherwise be. Conversely large pointsizes would tend to have less white
 space around them, otherwise the letters would appear too far apart.
 
-[Multi-master fonts](multiplemaster.html) provide one method to avoid
+[Multi-master fonts](../multiplemaster/) provide one method to avoid
 this problem. This dialog provides another. Suppose you have a series of
 font-faces designed for different point-sizes.
 
@@ -725,8 +725,8 @@ hand classes can be stored more compactly in the font file (a slight
 advantage).
 
 Once you have created your classes (or sets, or both) you may use them
-in the [Add Lookup](lookups.html#Add-Lookup)dialog from the
-[Lookup](fontinfo.html#Lookups) pane.
+in the [Add Lookup](../lookups/#Add-Lookup)dialog from the
+[Lookup](#Lookups) pane.
 
 The Mark Set pane looks almost exactly like the Mark Class pane, and
 functions similarly. From these panes you may add new classes, or edit
@@ -736,7 +736,7 @@ Lookups
 -------
 
 ![Font Info Anchors](fontinfo-lookups.png) This pane is so complex that
-it merits its [own section](lookups.html).
+it merits its [own section](../lookups/).
 
 Briefly, lookups contain the data to do the work needed for complex
 typography. There are two main classes of lookups, those which
@@ -771,7 +771,7 @@ provides these functions as well as:
 Save Lookup
 
 Saves the currently selected lookup to an [Adobe Feature
-File](featurefile.html) of its very own.
+File](../../reference/featurefile/) of its very own.
 
 Add 'aalt' features
 
@@ -795,7 +795,7 @@ lookups.
 Save Feature File
 
 Saves all lookups (both GSUB and GPOS) to an [Adobe Feature
-File](featurefile.html).
+File](../../reference/featurefile/).
  
 
 ![Font Info WOFF](fontinfo-woff.png) WOFF (Web Open Font Format)
@@ -836,7 +836,7 @@ The mac style is stored in the header of an sfnt (truetype or opentype
 font file), but is most important in creating mac font families.
 
 The FOND name is only used for generating mac families. It is a grouping
-level underneath the family level. See the [FAQ](faq.html#How-family)
+level underneath the family level. See the [FAQ](/about/faq/#How-family)
 for a discussion on when to use this.
 
 ![Font Info Mac Features](fontinfo-macfeat.png) Mac Features
@@ -844,7 +844,7 @@ for a discussion on when to use this.
 
 This sub-dialog allows you to create and remove Mac features from your
 font. This will override the Mac features specified in the [preferences
-dialog](prefs.html#Mac)for this particular font (for example to give a
+dialog](../prefs/#Mac)for this particular font (for example to give a
 more appropriate but local name to a certain feature setting).
 
 Dates
@@ -871,9 +871,9 @@ not defined in the font within that range, and scroll to one of them.
 
 See Also:
 
--   [The char info dialog](charinfo.html)
--   [The get info dialogs](getinfo.html)
--   [The contextual / chaining dialog](contextchain.html)
+-   [The char info dialog](../charinfo/)
+-   [The get info dialogs](../getinfo/)
+-   [The contextual / chaining dialog](../contextchain/)
 
--- [Prev](elementmenu.html) -- [TOC](overview.html) --
-[Next](elementmenu.html) --
+-- [Prev](../elementmenu/) -- [TOC](overview.html) --
+[Next](../elementmenu/) --

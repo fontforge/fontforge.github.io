@@ -195,11 +195,11 @@ Kerning
 
 ![](img/edittransition-kern.png)
 
-See [above](statemachine.html#transitions) for a description of what the
+See [above](#transitions) for a description of what the
 fields mean.
 
 If you wish to add a new state, simply edit a transition so that its
 next state field is the state number desired. FontForge will
 automatically create the state for you.
 
--- [Up](fontinfo.html) -- [TOC](overview.html) --
+-- [Up](../fontinfo/) -- [TOC](overview.html) --

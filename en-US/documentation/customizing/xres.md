@@ -20,10 +20,10 @@ then run "\$ xrdb \~/.Xdefaults". For example:
 Some systems (the mac) will not automatically load X resources when
 starting X, in this case you must explicitly tell fontforge where to
 find a resource file with the preference item:
-[File-\>Preference-\>Generic-\>ResourceFile](prefs.html#ResourceFile).
+[File-\>Preference-\>Generic-\>ResourceFile](../../interface/prefs/#ResourceFile).
 
 You may also use fontforge's resource editor ([File-\>X Resource
-Editor](resedit.html))
+Editor](../../interface/resedit/))
 
 If a resource begins with "`Gdraw.`" or "`fontforge.`" then the program
 will look at it.
@@ -1084,7 +1084,7 @@ instance XDarwin and suse linux use quite different mappings for the
 modifier keys on the mac keyboard). Usually this is only relevant for
 menus (and mnemonics). FontForge tries to guess the keyboard from the
 environment in which it was compiled. But with X this may not always be
-appropriate. So the "[Gdraw.Keyboard](xres.html#Keyboard)" resource
+appropriate. So the "[Gdraw.Keyboard](#Keyboard)" resource
 above may be used to change this. (Currently this setting only control
 the labels that appear in menus for the hotkeys).
 

@@ -5,31 +5,31 @@ title: Building accented glyphs
 ---
 
 
--   [Font Creation](editexample.html#FontCreate)
--   [Creating a glyph (tracing outlines)](editexample.html#CharCreate)
--   [Create glyph outlines using spiro points](editspiro.html)
+-   [Font Creation](../editexample/#FontCreate)
+-   [Creating a glyph (tracing outlines)](../editexample/#CharCreate)
+-   [Create glyph outlines using spiro points](../editspiro/)
 -   [Importing a glyph from Inkscape (or Illustrator, or some other
-    vector editor)](importexample.html)
--   [Navigating to other glyphs](editexample2.html#Navigating)
+    vector editor)](../importexample/)
+-   [Navigating to other glyphs](../editexample2/#Navigating)
 -   [On to the next glyph (consistent
-    directions)](editexample2.html#Creating-o)
+    directions)](../editexample2/#Creating-o)
 -   [Consistent serifs and stem
-    widths](editexample3.html#consistent-stems)
--   [Building accented glyphs](editexample4.html#accents)
--   [Building a ligature](editexample4.html#ligature)
--   [Lookups and features](editexample4.html#lookups)
--   [Examining metrics](editexample5.html#metrics)
--   [Kerning](editexample5.html#Kerning)
--   [Glyph variants](editexample6.html#Variants)
--   [Anchoring marks](editexample6.html#Marks)
--   [Conditional features](editexample6-5.html#Conditional)
--   [Checking your font](editexample7.html#checking)
--   [Generating it](editexample7.html#generating)
--   [Font Families](editexample7.html#Families)
--   [Final Summary](editexample7.html#summary)
--   [Bitmap strikes](editexample8.html)
--   [Scripting Tutorial](scripting-tutorial.html)
--   [Notes on various scripts](scriptnotes.html#Special)
+    widths](../editexample3/#consistent-stems)
+-   [Building accented glyphs](#accents)
+-   [Building a ligature](#ligature)
+-   [Lookups and features](#lookups)
+-   [Examining metrics](../editexample5/#metrics)
+-   [Kerning](../editexample5/#Kerning)
+-   [Glyph variants](../editexample6/#Variants)
+-   [Anchoring marks](../editexample6/#Marks)
+-   [Conditional features](../editexample6-5/#Conditional)
+-   [Checking your font](../editexample7/#checking)
+-   [Generating it](../editexample7/#generating)
+-   [Font Families](../editexample7/#Families)
+-   [Final Summary](../editexample7/#summary)
+-   [Bitmap strikes](../editexample8/)
+-   [Scripting Tutorial](../../documentation/scripting/native/scripting-tutorial/)
+-   [Notes on various scripts](../../documentation/scripting/native/scriptnotes/#Special)
 -   Searching the documentation: (Powered by
     [Google](http://www.google.com/))
 
@@ -41,9 +41,9 @@ glyphs. FontForge provides several ways to build accented glyphs out of
 base glyphs.
 
 The most obvious mechanism is simple copy and paste:
-[Copy](editmenu.html#Copy) the letter "A" and
-[Paste](editmenu.html#Paste) it to "Ã" then [copy](editmenu.html#Copy)
-the tilde accent and [Paste it Into](editmenu.html#PasteInto) "Ã" (note
+[Copy](../../documentation/interface/editmenu/#Copy) the letter "A" and
+[Paste](../../documentation/interface/editmenu/#Paste) it to "Ã" then [copy](../../documentation/interface/editmenu/#Copy)
+the tilde accent and [Paste it Into](../../documentation/interface/editmenu/#PasteInto) "Ã" (note
 Paste Into is subtly different from Paste. Paste clears out the glyph
 before pasting, while Paste Into merges what was in the glyph with the
 what is in the clipboard). Then you open up "Ã" and position the accent
@@ -52,7 +52,7 @@ so that it appears properly centered over the A.
 This mechanism is not particularly efficient, if you change the shape of
 the letter "A" you will need to regenerate all the accented glyphs built
 from it. FontForge has the concept of a
-[Reference](overview.html#References) to a glyph. So you can Copy a
+[Reference](../overview/#References) to a glyph. So you can Copy a
 Reference to "A", and Paste it, the Copy a Reference to tilde and Paste
 it Into, and then again adjust the position of the accent over the A.
 
@@ -67,7 +67,7 @@ every accented glyph in Unicode and FontForge uses this).
 
 As an example, open the file: tutorial/Ambrosia.sfd, then select all the
 glyphs at encodings 0xc0-0xff, and then press [Element-\>Build-\>Build
-Accented](elementmenu.html#Accented) all the accented glyphs will
+Accented](../../documentation/interface/elementmenu/#Accented) all the accented glyphs will
 magically appear (there are a few glyphs in this range which are not
 accented, and they will remain blank).
 
@@ -88,7 +88,7 @@ database listing the components of each standard ligature.
 
 FontForge cannot create a nice ligature for you, but what it can do is
 put all the components of the ligature into the glyph with
-[Element-\>Build-\>Build Composite](elementmenu.html#Accented). This
+[Element-\>Build-\>Build Composite](../../documentation/interface/elementmenu/#Accented). This
 makes it slightly easier (at least in latin) to design a ligature.
 
 Steps to building a ligature
@@ -103,18 +103,18 @@ Steps to building a ligature
 
 ![ffi after adjusting ligature carets](img/ffi-caret.png)
 
-Use the [Element -\> Glyph Info](elementmenu.html#CharInfo) dialog to
+Use the [Element -\> Glyph Info](../../documentation/interface/elementmenu/#CharInfo) dialog to
 name the glyph and mark it as a ligature. Then use [Element -\> Build
--\> Build Composite](elementmenu.html#Accented) to insert references to
+-\> Build Composite](../../documentation/interface/elementmenu/#Accented) to insert references to
 the ligature components.
 
-Use the [Edit-\> Unlink References](editmenu.html#Unlink) command to
+Use the [Edit-\> Unlink References](../../documentation/interface/editmenu/#Unlink) command to
 turn the references into a set of contours.
 
 Adjust the components so that they will look better together. Here the
 stem of the first f has been lowered.
 
-Use the [Element -\> Remove Overlap](elementmenu.html#Remove) command to
+Use the [Element -\> Remove Overlap](../../documentation/interface/elementmenu/#Remove) command to
 clean up the glyph.
 
 Finally drag the ligature caret lines from the origin to more
@@ -138,7 +138,7 @@ Advanced Typography and OpenType support this).
 There are a good many ligatures needed for the indic scripts, but
 Unicode does not provide an encoding for them. If you wish to build a
 ligature that is not part of Unicode you may do so. First [add an
-unencoded glyph to your font](faq.html#new-name) (or if your font is a
+unencoded glyph to your font](../../about/faq/#new-name) (or if your font is a
 Unicode font, you could use a code point in the private use area), and
 name the glyph. The name is important, if you name it correctly
 FontForge will be able to figure out that it is a ligature and what its
@@ -149,7 +149,7 @@ build a ligature out of Unicode 0D15, 0D4D and 0D15 then name it
 
 Once you have named your ligature, and inserted its components (with
 Build Composite), you probably want to open the glyph, [Unlink your
-References](editmenu.html#Unlink) and edit them to make a pleasing shape
+References](../../documentation/interface/editmenu/#Unlink) and edit them to make a pleasing shape
 (as above).
 
 Lookups and Features
@@ -177,7 +177,7 @@ and subtable.
 the complexity is needed for more complex writing systems).
 
 You would open the Lookups pane of the
-[Element-\>FontInfo](fontinfo.html#Lookups) command and press the
+[Element-\>FontInfo](../../documentation/interface/fontinfo/#Lookups) command and press the
 `[Add Lookup] `button. This will give you a new dialog in which you can
 fill in the attributes of your new lookup.
 
@@ -228,5 +228,5 @@ features they apply for which scripts in Uniscribe, but that isn't very
 helpful since Word and Office have quite different behavior than the
 default.
 
--- [Prev](editexample3.html) -- [TOC](overview.html) --
-[Next](editexample5.html) --
+-- [Prev](../editexample3/) -- [TOC](../overview/) --
+[Next](../editexample5/) --

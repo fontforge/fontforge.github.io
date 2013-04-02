@@ -31,7 +31,7 @@ dashed line.
 The Layer palette looks a little different here. There is no hinting
 information (hints are irrelevant in type3 fonts), instead there are two
 named layers (background and grid) which behave pretty much as they
-[normally](charview.html) do. They may be made active by clicking on
+[normally](../charview/) do. They may be made active by clicking on
 their names. They may be made invisible by turning off the check box
 associated with them.
 
@@ -49,13 +49,13 @@ Clicking with the right button brings up the layer menu which contains:
 
 Layer Info...
 
-Brings up the [Layer Info](multilayer.html#Layer) dialog on the current
+Brings up the [Layer Info](#Layer) dialog on the current
 layer (same as double clicking)
 
 New Layer...
 
 Creates a new layer and brings up the [Layer
-Info](multilayer.html#Layer) dialog to describe it. (the new layer will
+Info](#Layer) dialog to describe it. (the new layer will
 appear at the bottom of the layer list and will be drawn last)
 
 Del Layer
@@ -83,7 +83,7 @@ Makes the current layer be drawn last.
 ### Images
 
 Images are allowed in Type3 fonts. You can use the
-[File-\>Import](filemenu.html#Import) command to load an image into any
+[File-\>Import](../filemenu/#Import) command to load an image into any
 of the foreground layers. If the image is a bitmap image and the layer
 will be filled, then it will be output with an imagemask command in
 PostScript (the bitmap will be drawn with the fill color), otherwise
@@ -187,7 +187,7 @@ pattern replicated, but after that it is rotated through 45 degrees
 The pattern is defined in another glyph in the same font. By default the
 bounding box of that glyph will be used to describe the pattern's extent
 (You may change change that with [Element-\>Glyph Info-\>Tile
-Size](charinfo.html#TileSize)). You may then scale it by specifying the
+Size](../charinfo/#TileSize)). You may then scale it by specifying the
 Width and Height fields. You may apply other transformations as
 described in the dialog.
 
@@ -196,6 +196,6 @@ full color (rounding everything to a shade of grey), and its stroking
 algorithm is quite poor (it does not rasterize dashes), it does not
 support the full complexity of radial gradients...
 
--- [Back](charview.html) -- [TOC](overview.html) --
+-- [Back](../charview/) -- [TOC](overview.html) --
 
 

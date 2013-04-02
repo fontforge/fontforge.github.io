@@ -5,19 +5,19 @@ title: Multiple Master menu
 ---
 
 The MM Menu provides a few commands for manipulating [Multiple Master or
-Apple distortable fonts](multiplemaster.html#MM). If the current font is
+Apple distortable fonts](../multiplemaster/#MM). If the current font is
 a MM itself font the menu also includes a list of all font instances
 that make up this one. This menu is available in the [font
-view](mmmenu.html#fontview) and the [outline glyph
-view](mmmenu.html#outline-char).
+view](#fontview) and the [outline glyph
+view](#outline-char).
 
 ### The menu as it appears in the font view
 
--   [Create MM](mmmenu.html#Create)...
--   [MM Valid](mmmenu.html#Valid)
--   [MM Info](mmmenu.html#Info)...
+-   [Create MM](#Create)...
+-   [MM Valid](#Valid)
+-   [MM Info](#Info)...
 -   [Blend to New Font](#NewFont)...
--   [MM Change Default Weights](mmmenu.html#DefWeights)...
+-   [MM Change Default Weights](#DefWeights)...
 
     * * * * *
 
@@ -25,7 +25,7 @@ view](mmmenu.html#outline-char).
 
 Create MM
 
-Brings up the [multiple master dialog](multiplemaster.html) and allows
+Brings up the [multiple master dialog](../multiplemaster/) and allows
 you to create your own multiple master font from scratch.
 
 MM Valid
@@ -57,7 +57,7 @@ master design must match in:
 
 MM Info
 
-Brings up the [multiple master dialog](multiplemaster.html) and allows
+Brings up the [multiple master dialog](../multiplemaster/) and allows
 you to modify the current multiple master font.
 
 Blend to New Font...
@@ -80,11 +80,11 @@ the master designs and the default blended font.
 
 ### The menu as it appears in the outline glyph view
 
--   [MM Reblend](mmmenu.html#Reblend)
+-   [MM Reblend](#Reblend)
 
     * * * * *
 
--   [View](mmmenu.html#View)
+-   [View](#View)
 
     * * * * *
 
@@ -110,22 +110,22 @@ subfonts are the master designs and the default blended font.
 Other menus
 -----------
 
--   [File](filemenu.html)
--   [Edit](editmenu.html)
--   [Point](pointmenu.html)
--   [Element](elementmenu.html)
--   [Tools](toolsmenu.html)
--   [Hints](hintsmenu.html)
--   [Encoding](encodingmenu.html)
--   [View](viewmenu.html)
--   [Metrics](metricsmenu.html)
--   [CID](cidmenu.html)
--   [MM](mmmenu.html)
--   [Window](windowmenu.html)
--   [Help](helpmenu.html)
--   [Hot Keys](HotKeys.html)
+-   [File](../filemenu/)
+-   [Edit](../editmenu/)
+-   [Point](../pointmenu/)
+-   [Element](../elementmenu/)
+-   [Tools](../toolsmenu/)
+-   [Hints](../hintsmenu/)
+-   [Encoding](../encodingmenu/)
+-   [View](../viewmenu/)
+-   [Metrics](../metricsmenu/)
+-   [CID](../cidmenu/)
+-   [MM](../mmmenu/)
+-   [Window](../windowmenu/)
+-   [Help](../helpmenu/)
+-   [Hot Keys](../HotKeys/)
 
--- [Prev](cidmenu.html) -- [TOC](overview.html) --
-[Next](windowmenu.html) --
+-- [Prev](../cidmenu/) -- [TOC](overview.html) --
+[Next](../windowmenu/) --
 
 

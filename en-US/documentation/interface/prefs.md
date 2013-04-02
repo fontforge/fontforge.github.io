@@ -4,26 +4,26 @@ layout: default
 title: Preferences Dialog
 ---
 
--   ![](img/prefs-generic.png)[Generic](prefs.html#ResourceFile)
--   [New Font](prefs.html#NewCharset)
--   [Open Font](prefs.html#PreferCJKEncoding)
--   [Navigation](prefs.html#GlyphAutoGoto)
--   [Editing](prefs.html#ItalicConstrained)
-    -   [Synchronize](prefs.html#AutoWidthSync)
-    -   [TT](prefs.html#ClearInstrsBigChanges)
-    -   [Accents](prefs.html#AccentOffsetPercent)
-    -   [Apps](prefs.html#PreferPotrace)
+-   ![](img/prefs-generic.png)[Generic](#ResourceFile)
+-   [New Font](#NewCharset)
+-   [Open Font](#PreferCJKEncoding)
+-   [Navigation](#GlyphAutoGoto)
+-   [Editing](#ItalicConstrained)
+    -   [Synchronize](#AutoWidthSync)
+    -   [TT](#ClearInstrsBigChanges)
+    -   [Accents](#AccentOffsetPercent)
+    -   [Apps](#PreferPotrace)
 
--   [Font Info](prefs.html#FoundryName)
--   [Generate](prefs.html#AskBDFResolution)
-    -   [PS Hints](prefs.html#Hints)
-    -   [TT Instrs](prefs.html#Instrs)
-    -   [OpenType](prefs.html#UseNewIndicScripts)
+-   [Font Info](#FoundryName)
+-   [Generate](#AskBDFResolution)
+    -   [PS Hints](#Hints)
+    -   [TT Instrs](#Instrs)
+    -   [OpenType](#UseNewIndicScripts)
 
--   [Script Menu](prefs.html#scripts)
+-   [Script Menu](#scripts)
 -   Mac
-    -   [Features](prefs.html#Mac)
-    -   [Mapping to OpenType](prefs.html#Mapping)
+    -   [Features](#Mac)
+    -   [Mapping to OpenType](#Mapping)
 
     
 
@@ -31,7 +31,7 @@ title: Preferences Dialog
 
 ResourceFile
 
-FontForge will read [X Resources](xres.html) from a property on the
+FontForge will read [X Resources](../../customizing/xres/) from a property on the
 screen. But sometimes this isn't enough. You set this preference item to
 specify a file from which these resources should be read (those on the
 screen will also be read and will supersede those in the file).
@@ -45,7 +45,7 @@ OtherSubrsFile
 
 Allows you to redefine the OtherSubrs routines used in type1 fonts. The
 file format is described at the scripting command
-[ReadOtherSubrsFile](scripting-alpha.html#ReadOtherSubrsFile).
+[ReadOtherSubrsFile](../../scripting/native/scripting-alpha/#ReadOtherSubrsFile).
 
 FreeTypeInFontView
 
@@ -61,7 +61,7 @@ Controls whether a splash screen is displayed on start up.
 UseCairoDrawing
 
 FontForge can use its own drawing routines, or rely on Cairo library in
-the [outline glyph view](charview.html). Using Cairo is slower, but
+the [outline glyph view](../charview/). Using Cairo is slower, but
 gives smooth curves, and subpixel display precision. New setting applies
 only to windows created afterwards.
 
@@ -146,8 +146,8 @@ characters will be ignored.
 
 OpenCharsInNewWindow
 
-Double clicking on a glyph in a [font view](fontview.html) can either
-always create a new [glyph view](charview.html), or reuse an already
+Double clicking on a glyph in a [font view](../fontview/) can either
+always create a new [glyph view](../charview/), or reuse an already
 opened one.
 
 ![](img/prefs-editing.png)
@@ -217,7 +217,7 @@ This setting can be used to show you when those criteria are not met.
 AutoKernDialog
 
 Controls whether FontForge opens an [auto kern
-dialog](lookups.html#Pair) for each new kerning subtable.
+dialog](../lookups/#Pair) for each new kerning subtable.
 
 ![](img/prefs-sync.png)
 
@@ -341,7 +341,7 @@ NewFontNameList
 
 Specifies the namelist that will be attached to any new font. This list
 will be used to name any glyphs created in that font. See the section on
-[namelists](encodingmenu.html#namelist) for more information.
+[namelists](../encodingmenu/#namelist) for more information.
 
 RecognizePUANames
 
@@ -420,10 +420,10 @@ HintDiagonalEnds
 
 More importantly there is also the DetectDiagonalStems option. Make sure
 this is turned on if you intend to have FontForge [generate truetype
-instructions automatically](hintsmenu.html#AutoInstr). 
+instructions automatically](../hintsmenu/#AutoInstr). 
 
 ![](img/prefs-ttinstrs.png) [Truetype
-autoinstructor](hintsmenu.html#AutoInstr) bases its output on postscript
+autoinstructor](../hintsmenu/#AutoInstr) bases its output on postscript
 hints, but it has also its own options:
 
 InstructDiagonalStems
@@ -458,7 +458,7 @@ CounterControl
 
 Make sure similar or equal counters remain the same in gridfitted
 outlines. This was inspired by, but works somewhat independently from,
-[PS Counter Hints](charinfo.html#CounterMasks). Enabling this option
+[PS Counter Hints](../charinfo/#CounterMasks). Enabling this option
 means that proper shapes are more important than proper scaling of
 advance widths.
 
@@ -474,10 +474,10 @@ want to create a font using the new Indic system.
 
 ![](img/prefs-script.png)This section of the dialog allows you to define
 built in scripts that will show up in the [script
-menu](filemenu.html#ScriptMenu). Each entry has two things associated
+menu](../filemenu/#ScriptMenu). Each entry has two things associated
 with it, the menu name and a script file. The menu name will be the name
 of this entry inside the script menu, and the [script
-file](scripting.html) will be the filename of the file to be invoked.
+file](../../scripting/native/scripting/) will be the filename of the file to be invoked.
 The "..." button allows you to browse for script files, which I think
 have extension .pe (but which can have whatever extension you prefer if
 you don't like my conventions).
@@ -493,7 +493,7 @@ You may also use this dialog to establish which setting(s) should be on
 by default in a given feature and whether the feature only allows one
 setting to be on at a time (the settings are mutually exclusive). All of
 this data may be overridden by the similar dialog in the [Element-\>Font
-Info](fontinfo.html#Mac-Features)dialog.
+Info](../fontinfo/#Mac-Features)dialog.
 
 ![Mac Feature dialog](macfeature.png)To edit an existing feature double
 click on that feature in the list (at right) this will bring up the
@@ -536,10 +536,10 @@ Other ways of configuring
 A number of things that might be controlled from a preference window are
 controlled by
 
--   [X Resources](xres.html)
--   [Environment Variables](cliargs.html#Environment)
+-   [X Resources](../../customizing/xres/)
+-   [Environment Variables](../cliargs/#Environment)
 
--- [Prev](filemenu.html) -- [TOC](overview.html) --
-[Next](filemenu.html) --
+-- [Prev](../filemenu/) -- [TOC](overview.html) --
+[Next](../filemenu/) --
 
 

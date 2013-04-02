@@ -15,10 +15,10 @@ title: The View Menu
 -   [Prev Glyph](#Prev)
 -   [Next Defined Glyph](#NextDef)
 -   [Prev Defined Glyph](#PrevDef)
--   [Former Glyph](viewmenu.html#Former)
+-   [Former Glyph](#Former)
 -   [Substitutions](#Substitutions)
 -   [Goto](#Goto)
--   [Layers](viewmenu.html#FVLayers)
+-   [Layers](#FVLayers)
 -   [Find In Font View](#FindInFV)
 -   [Show ATT](#ShowATT)
 -   [Display Substitutions](#DspSubs)
@@ -83,19 +83,19 @@ title: The View Menu
     -   [Palettes](#Palettes)
         -   [Tools](#Tools)
         -   [Layers](#Layers)
-        -   [Shades](viewmenu.html#Shades)
+        -   [Shades](#Shades)
         -   [Dock](#Dock)
 
     -   [Glyph Tabs](#GTabs)
-    -   [Rulers](viewmenu.html#Rulers)
-    -   [Horizontal Hints](viewmenu.html#HHints)
-    -   [Vertical Hints](viewmenu.html#VHints)
-    -   [Diagonal Hints](viewmenu.html#DHints)
-    -   [BlueValues](viewmenu.html#BlueValues)
-    -   [FamilyBlues](viewmenu.html#FamilyBlues)
-    -   [Anchors](viewmenu.html#Anchors)
-    -   [Horizontal Metrics](viewmenu.html#CV-HMetrics)
-    -   [Vertical Metrics](viewmenu.html#CV-VMetrics)
+    -   [Rulers](#Rulers)
+    -   [Horizontal Hints](#HHints)
+    -   [Vertical Hints](#VHints)
+    -   [Diagonal Hints](#DHints)
+    -   [BlueValues](#BlueValues)
+    -   [FamilyBlues](#FamilyBlues)
+    -   [Anchors](#Anchors)
+    -   [Horizontal Metrics](#CV-HMetrics)
+    -   [Vertical Metrics](#CV-VMetrics)
     -   [Snap Outlines to pixel grid](#SnapOutlines)
 
 -   [Bigger Pixel Size](#Bigger)
@@ -156,7 +156,7 @@ glyph and allows you to change the glyph as directed by the
 substitution. Also contains an entry to return you to the original
 glyph.
 
-Substitutions may be set with the [Element-\>Glyph Info](charinfo.html)
+Substitutions may be set with the [Element-\>Glyph Info](../charinfo/)
 command.
 
 Goto
@@ -208,7 +208,7 @@ fontview.
 
 Show ATT
 
-Only in the font view. Brings up a [dlg](showatt.html) showing the
+Only in the font view. Brings up a [dlg](../showatt/) showing the
 advanced typographic tables (GPOS/GSUB or morx/kern) that FontForge
 supports.
 
@@ -234,7 +234,7 @@ A submenu containing
 
 Kern Pairs
 
-This [brings up a dialog showing all kerning pairs](kernpairs.html)in
+This [brings up a dialog showing all kerning pairs](../kernpairs/)in
 the current font (or, if invoked from the outline glyph view, a list of
 all kerning pairs involving that glyph). You may alter kerning pairs
 here too.
@@ -249,12 +249,12 @@ anchored classes.
 If invoked from the outline glyph view it will provide a list of all
 anchored combinations involving that glyph.
  Selecting a combination and double clicking on it will bring up an
-[Anchor Control](anchorcontrol.html)dialog.
+[Anchor Control](../anchorcontrol/) dialog.
 
 Anchor Control
 
 Only in the outline view. Has a submenu of all anchor points in this
-glyph. Selecting one brings upt the [Anchor Control](anchorcontrol.html)
+glyph. Selecting one brings upt the [Anchor Control](../anchorcontrol/)
 dialog.
 
 Anchor Glyph at Point
@@ -287,7 +287,7 @@ View H. Metrics...
 In the font view this will control which of the horizontal metrics lines
 are draw across the displayed glyphs. In the outline glyph view the same
 functionality is available from one of the palettes. [See the font view
-for more information](fontview.html#metrics)
+for more information](../fontview/#metrics)
 
 View V. Metrics...
 
@@ -295,7 +295,7 @@ In the font view this will control which of the vertical metrics lines
 are draw across the displayed glyphs. In the outline glyph view the same
 functionality is available from one of the palettes. (This will be
 greyed out if your font does not have vertical metrics in it). [See the
-font view for more information](fontview.html#metrics)
+font view for more information](../fontview/#metrics)
 
 32x8 cell window
 
@@ -417,7 +417,7 @@ Show Grid Fit
 Show Grid Fit
 
 In the Outline view and only if the freetype library is available.
-Brings up a [dialog](charview.html#GridFit) which allows you to control
+Brings up a [dialog](../charview/#GridFit) which allows you to control
 whether a grid fit version of the splines in the font is displayed.
 
 Bigger Point Size
@@ -451,7 +451,7 @@ This hides or displays the points in the outline glyph view.
 Show Control Point Info
 
 In the Outline view, when you move a [control
-point](charview.html#CpInfo)this mode pops up a little window showing
+point](../charview/#CpInfo)this mode pops up a little window showing
 various bits of information about the control point you are editing.
 
 Extrema
@@ -462,7 +462,7 @@ extrema at the endpoints of splines. This setting will mark extremal
 endpoints by coloring them a dull purple to remind you that you should
 not delete them. If an extremum occurs somewhere other than an end point
 a crosshair will be drawn around it. You might consider doing
-[Element-\>Add Extrema](elementmenu.html#Add-Extrema)in this case (or
+[Element-\>Add Extrema](../elementmenu/#Add-Extrema)in this case (or
 you might not, this can be ok in some cases).
 
 ![](img/extrema-poi.png)
@@ -594,22 +594,22 @@ bitmap font (if there is one)
 Other menus
 -----------
 
--   [File](filemenu.html)
--   [Edit](editmenu.html)
--   [Point](pointmenu.html)
--   [Element](elementmenu.html)
--   [Tools](toolsmenu.html)
--   [Hints](hintsmenu.html)
--   [Encoding](encodingmenu.html)
--   [View](viewmenu.html)
--   [Metrics](metricsmenu.html)
--   [CID](cidmenu.html)
--   [MM](mmmenu.html)
--   [Window](windowmenu.html)
--   [Help](helpmenu.html)
--   [Hot Keys](HotKeys.html)
+-   [File](../filemenu/)
+-   [Edit](../editmenu/)
+-   [Point](../pointmenu/)
+-   [Element](../elementmenu/)
+-   [Tools](../toolsmenu/)
+-   [Hints](../hintsmenu/)
+-   [Encoding](../encodingmenu/)
+-   [View](../viewmenu/)
+-   [Metrics](../metricsmenu/)
+-   [CID](../cidmenu/)
+-   [MM](../mmmenu/)
+-   [Window](../windowmenu/)
+-   [Help](../helpmenu/)
+-   [Hot Keys](../HotKeys/)
 
--- [Prev](encodingmenu.html) -- [TOC](overview.html) --
-[Next](metricsmenu.html) --
+-- [Prev](../encodingmenu/) -- [TOC](overview.html) --
+[Next](../metricsmenu/) --
 
 

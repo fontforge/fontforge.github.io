@@ -16,30 +16,30 @@
 			</ul>
 			{% elsif crumbs[2] == 'tutorials' %}
 			<ul class="nav nav-pills">
-				<li><a href="/en-US/tutorials/broken.html">Broken</a></li>
-				<li><a href="/en-US/tutorials/broken.html">Broken</a></li>
-				<li><a href="/en-US/tutorials/broken.html">Broken</a></li>
-				<li><a href="/en-US/tutorials/broken.html">Broken</a></li>
-				<li><a href="/en-US/tutorials/broken.html">Broken</a></li>
-				<li><a href="/en-US/tutorials/broken.html">Broken</a></li>
+				<li><a href="/en-US/tutorials/broken/">Broken</a></li>
+				<li><a href="/en-US/tutorials/broken/">Broken</a></li>
+				<li><a href="/en-US/tutorials/broken/">Broken</a></li>
+				<li><a href="/en-US/tutorials/broken/">Broken</a></li>
+				<li><a href="/en-US/tutorials/broken/">Broken</a></li>
+				<li><a href="/en-US/tutorials/broken/">Broken</a></li>
 			</ul>
 			{% elsif crumbs[2] == 'documentation' %}
 			<ul class="nav nav-pills">
-				<li><a href="/en-US/documentation/customizing/index.html">Customize</a></li>
-				<li><a href="/en-US/documentation/developers/index.html">Develop</a></li>
-				<li><a href="/en-US/documentation/interface/index.html">Interface</a></li>
-				<li><a href="/en-US/documentation/reference/index.html">Reference</a></li>
-				<li><a href="/en-US/documentation/scripting/index.html">Scripting</a></li>
-				<li><a href="/en-US/documentation/utilities/index.html">Utilities</a></li>
+				<li><a href="/en-US/documentation/customizing/">Customize</a></li>
+				<li><a href="/en-US/documentation/developers/">Develop</a></li>
+				<li><a href="/en-US/documentation/interface/">Interface</a></li>
+				<li><a href="/en-US/documentation/reference/">Reference</a></li>
+				<li><a href="/en-US/documentation/scripting/">Scripting</a></li>
+				<li><a href="/en-US/documentation/utilities/">Utilities</a></li>
 			</ul>
 			{% else %}
 			<ul class="nav nav-pills">
-				<li><a href="/en-US/about/faq.html">FAQ</a></li>
-				<li><a href="/en-US/about/screenshots.html">Screenshots</a></li>
-				<li><a href="/en-US/about/donate.html">Donate</a></li>
-				<li><a href="/en-US/about/helpout.html">Volunteer</a></li>
-				<li><a href="/en-US/about/project/index.html">The project</a></li>
-				<li><a href="/en-US/about/site/index.html">This site</a></li>
+				<li><a href="/en-US/about/faq/">FAQ</a></li>
+				<li><a href="/en-US/about/screenshots/">Screenshots</a></li>
+				<li><a href="/en-US/about/donate/">Donate</a></li>
+				<li><a href="/en-US/about/helpout/">Volunteer</a></li>
+				<li><a href="/en-US/about/project/">The project</a></li>
+				<li><a href="/en-US/about/site/">This site</a></li>
 			</ul>
 			{% endif %}
 
@@ -63,9 +63,13 @@
 				-->
 					<li><a href="/"><i class="icon-home"></i>Home</a> </li>
 					{% assign crumbs = page.url | split: '/' %}
+					{% for crumb in crumbs limit:1 offset:1 %}
+						{% capture previous %}/{{ crumb }}/{% endcapture %}
+					{% endfor %}
 					{% for crumb in crumbs offset:2 %}
+						{% capture previous %}{{ previous }}{{ crumb }}/{% endcapture %}
 						{% unless crumb == 'index.html' %}
-							<li><span class="divider">&#187;</span> {{ crumb | remove: '.html' }} </li>
+							<li><span class="divider">&#187;</span><a href="{{ previous }}">{{ crumb | remove: '.html' }}</a></li>
 						{% endunless %}
 					{% endfor %}
 				</ul>

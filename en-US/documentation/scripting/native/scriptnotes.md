@@ -22,7 +22,7 @@ title: Special thoughts for special scripts
 -   [Generating it](editexample7.html#generating)
 -   [Font Families](editexample7.html#Families)
 -   [Final Summary](editexample7.html#summary)
--   [Notes on various scripts](scriptnotes.html#Special)
+-   [Notes on various scripts](#Special)
 
 Special thoughts for special scripts
 ------------------------------------

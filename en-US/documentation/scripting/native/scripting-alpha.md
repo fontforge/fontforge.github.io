@@ -81,16 +81,16 @@ AddDHint(x1,y1,x2,y2,unit.x,unit.y)
 Adds a diagonal hint. A diagonal hint requires two points on oposite
 sides of the stem and a unit vector in the direction of the stem.
 
-[AddExtrema](elementmenu.html#Add-Extrema)()
+[AddExtrema](../../../interface/elementmenu/#Add-Extrema)()
 
 If a spline in a glyph reaches a maximum or minimum x or y value within
 a spline then break the spline so that there will be a point at all
 significant extrema. (If this point is too close to an end-point then
 the end-point itself may be moved. There are various other caveats. See
-Element-\>[AddExtrema](elementmenu.html#Add-Extrema) for more
+Element-\>[AddExtrema](../../../interface/elementmenu/#Add-Extrema) for more
 information).
 
-[AddHHint](hintsmenu.html#HHint)(start,width)
+[AddHHint](../../../interface/hintsmenu/#HHint)(start,width)
 
 Adds horizontal stem hint to any selected glyphs. The hint starts at
 location "start" and is width wide. A hint will be added to all selected
@@ -199,7 +199,7 @@ for US English, 0x40c is the code for French from France).
 -   [MS language values are documented with the 'name'
     table](http://partners.adobe.com/public/developer/opentype/index_name.html#lang3)
 
-[AddVHint](hintsmenu.html#VHint)(start,width)
+[AddVHint](../../../interface/hintsmenu/#VHint)(start,width)
 
 Adds a vertical stem hint to any selected glyphs. The hint starts at
 location "start" and is width wide. A hint will be added to all selected
@@ -249,19 +249,19 @@ ATan2(val1,val2)
 Returns the arc-tangent. See atan2(3) for more info. It can execute with
 no current font.
 
-[AutoCounter](hintsmenu.html#Counter)()
+[AutoCounter](../../../interface/hintsmenu/#Counter)()
 
 Generates (PostScript) counter masks for selected glyphs automagically.
 
-[AutoHint](hintsmenu.html#AutoHint)()
+[AutoHint](../../../interface/hintsmenu/#AutoHint)()
 
 Generates (PostScript) hints for selected glyphs automagically.
 
-[AutoInstr](hintsmenu.html#AutoInstr)()
+[AutoInstr](../../../interface/hintsmenu/#AutoInstr)()
 
 Generates (TrueType) instructions for selected glyphs.
 
-[AutoKern](metricsmenu.html#Kern)(spacing,threshold,subtable-name[,kernfile])
+[AutoKern](../../../interface/metricsmenu/#Kern)(spacing,threshold,subtable-name[,kernfile])
  ~~AutoKern(spacing,threshold[,kernfile])~~
 
 (AutoKern doesn't work well in general)
@@ -269,13 +269,13 @@ Generates (TrueType) instructions for selected glyphs.
 new kerning pairs in the indicated subtable, or if a kernfile is
 specified, FontForge will read the kern pairs out of the file.
 
-[AutoTrace](elementmenu.html#AutoTrace)()
+[AutoTrace](../../../interface/elementmenu/#AutoTrace)()
 
 If you have either potrace or autotrace installed, this will invoke them
 on the selected glyphs to trace the background image and generate
 splines.
 
-[AutoWidth](metricsmenu.html#Auto)(spacing)
+[AutoWidth](../../../interface/metricsmenu/#Auto)(spacing)
 
 Guesses at the widths of all selected glyphs so that two adjacent "I"
 glyphs will appear to be spacing em-units apart. (if spacing is the
@@ -284,7 +284,7 @@ will be used).
 
 B
 
-[BitmapsAvail](elementmenu.html#Bitmaps)(sizes[,rasterized])
+[BitmapsAvail](../../../interface/elementmenu/#Bitmaps)(sizes[,rasterized])
 
 Controls what bitmap sizes are stored in the font's database. It is
 passed an array of sizes. If a size is specified which is not in the
@@ -298,24 +298,24 @@ either 0xc or 0x1000c could be used to refer to a 12 pixel bitmap font.
  If you want to create blank strikes (with no glyphs in them) set the
 optional rasterized parameter to 0.
 
-[BitmapsRegen](elementmenu.html#Regenerate)(sizes)
+[BitmapsRegen](../../../interface/elementmenu/#Regenerate)(sizes)
 
 Allows you to update specific bitmaps in an already generated bitmap
 font. It will regenerate the bitmaps of all selected glyphs at the
 specified pixelsizes.
 
-[BuildAccented](elementmenu.html#Accented)()
+[BuildAccented](../../../interface/elementmenu/#Accented)()
 
 If any of the selected glyphs are accented, then clear them and create a
 new glyph by inserting references to the approriate base glyph and
 accents.
 
-[BuildComposite](elementmenu.html#Accented)()
+[BuildComposite](../../../interface/elementmenu/#Accented)()
 
 Similar to BuildAccented but will build any composite glyph -- ligatures
 and what not.
 
-[BuildDuplicate](elementmenu.html#BuildDuplicate)()
+[BuildDuplicate](../../../interface/elementmenu/#BuildDuplicate)()
 
 Changes the encoding so that to encoding points share the same glyph.
 
@@ -342,12 +342,12 @@ Converts a real number to the smallest integer larger than the real. It
 can execute with no current font.
  See Also [Int](#Int), [Round](#Round), [Floor](#Floor)
 
-[CenterInWidth](metricsmenu.html#Center)()
+[CenterInWidth](../../../interface/metricsmenu/#Center)()
 
 Centers any selected glyphs so that their right and left side bearings
 are equal.
 
-[ChangePrivateEntry](fontinfo.html#Private)(key,val)
+[ChangePrivateEntry](../../../interface/fontinfo/#Private)(key,val)
 
 Changes (or adds if the key is not already present) the value in the
 dictionary indexed by key. (all values must be strings even if they
@@ -383,27 +383,27 @@ If the current font is a cid keyed font, this command changes the active
 sub-font to be the one specified (the string should be the postscript
 FontName of the subfont)
 
-[CIDFlatten](cidmenu.html#Flatten)()
+[CIDFlatten](../../../interface/cidmenu/#Flatten)()
 
 Flattens a cid-keyed font.
 
-[CIDFlattenByCMap](cidmenu.html#FlattenCMap)(cmap-filename)
+[CIDFlattenByCMap](../../../interface/cidmenu/#FlattenCMap)(cmap-filename)
 
 Flattens a cid-keyed font, producing a font encoded with the result of
 the CMAP file.
 
-[CIDSetFontNames](cidmenu.html#FontInfo)(fontname[,family[,fullname[,weight[,copyright-notice]]]])
+[CIDSetFontNames](../../../interface/cidmenu/#FontInfo)(fontname[,family[,fullname[,weight[,copyright-notice]]]])
 
 Sets various postscript names associated with the top level cid font. If
 a name is omitted (or is the empty string) it will not be changed. (this
 is just like SetFontNames except it works on the top level cid font
 rather than the current font).
 
-[Clear](editmenu.html#Clear)
+[Clear](../../../interface/editmenu/#Clear)
 
 Clears out all selected glyphs
 
-[ClearBackground](editmenu.html#Background)
+[ClearBackground](../../../interface/editmenu/#Background)
 
 Clears the background of all selected glyphs
 
@@ -415,7 +415,7 @@ ClearGlyphCounterMasks()
 
 Clears any counter masks from the (one) selected glyph.
 
-[ClearHints](hintsmenu.html#ClearHints)()
+[ClearHints](../../../interface/hintsmenu/#ClearHints)()
  ClearHints("Vertical")
  ClearHints("Horizontal")
  ClearHints("Diagonal")
@@ -428,7 +428,7 @@ ClearInstrs()
 
 Clears any (TrueType) instructions from selected glyphs
 
-[ClearPrivateEntry](fontinfo.html#Private)(key)
+[ClearPrivateEntry](../../../interface/fontinfo/#Private)(key)
 
 Removes the entry indexed by the given key from the private dictionary
 of the font.
@@ -546,19 +546,19 @@ success flags at once if you are comparing more than one glyph)
 
 ~~ControlAfmLigatureOutput(script,lang,ligature-tag-list)~~
 
-[ConvertByCMap](cidmenu.html#ConvertCMap)(cmapfilename)
+[ConvertByCMap](../../../interface/cidmenu/#ConvertCMap)(cmapfilename)
 
 Converts current font to a CID-keyed font using specified CMap file.
 cmapfilename must be a path name of a file conforming Adobe CMap File
 Format.
 
-[ConvertToCID](cidmenu.html#Convert)(registry, ordering, supplement)
+[ConvertToCID](../../../interface/cidmenu/#Convert)(registry, ordering, supplement)
 
 Converts current font to a CID-keyed font using given registry, ordering
 and supplement. registry and ordering must be strings, supplement must
 be a integer.
 
-[Copy](editmenu.html#Copy)
+[Copy](../../../interface/editmenu/#Copy)
 
 Makes a copy of all selected glyphs.
 
@@ -566,40 +566,40 @@ CopyAnchors
 
 Copies all the anchor points in a glyph.
 
-[CopyFgToBg](editmenu.html#CopyFg)
+[CopyFgToBg](../../../interface/editmenu/#CopyFg)
 
 Copies all foreground splines into the background in all selected glyphs
 
-~~[CopyGlyphFeatures](editmenu.html#CopyGlyphFeatures)(arg,...)~~
+~~[CopyGlyphFeatures](../../../interface/editmenu/#CopyGlyphFeatures)(arg,...)~~
 
-[CopyLBearing](editmenu.html#LBearing)
+[CopyLBearing](../../../interface/editmenu/#LBearing)
 
 Stores the left side bearing of all selected glyphs in the clipboard
 
-[CopyRBearing](editmenu.html#RBearing)
+[CopyRBearing](../../../interface/editmenu/#RBearing)
 
 Stores the right side bearing of all selected glyphs in the clipboard
 
-[CopyReference](editmenu.html#Reference)
+[CopyReference](../../../interface/editmenu/#Reference)
 
 Makes references to all selected glyphs and stores them in the
 clipboard.
 
 CopyUnlinked
 
-Makes a copy of all selected glyphs, just as [Copy](editmenu.html#Copy)
+Makes a copy of all selected glyphs, just as [Copy](../../../interface/editmenu/#Copy)
 does. However if a glyph contains a reference, then the reference will
 be unlinked (turned into splines) before it is added to the clipboard.
 
-[CopyVWidth](editmenu.html#VWidth)
+[CopyVWidth](../../../interface/editmenu/#VWidth)
 
 Stores the vertical widths of all selected glyphs in the clipboard
 
-[CopyWidth](editmenu.html#Width)
+[CopyWidth](../../../interface/editmenu/#Width)
 
 Stores the widths of all selected glyphs in the clipboard
 
-[CorrectDirection](elementmenu.html#Correct)([unlinkrefs])
+[CorrectDirection](../../../interface/elementmenu/#Correct)([unlinkrefs])
 
 If the an argument is present it must be integral and is treated as a
 flag controlling whether flipped references should be unlinked before
@@ -610,14 +610,14 @@ Cos(val)
 
 Returns the cosine of val. It can execute with no current font.
 
-[Cut](editmenu.html#Cut)
+[Cut](../../../interface/editmenu/#Cut)
 
 Makes a copy of all selected glyphs and saves it in the clipboard, then
 clears out the selected glyphs
 
 D
 
-~~[DefaultATT](elementmenu.html#DefaultATT)(tag)~~
+~~[DefaultATT](../../../interface/elementmenu/#DefaultATT)(tag)~~
 
 DefaultOtherSubrs()
 
@@ -637,19 +637,19 @@ have the "USE-MY-METRICS" bit set on any of those references, and if one
 of those references has the same width as the current glyph, and has an
 identity transformation matrix, then set the bit on that reference.
 
-[DetachAndRemoveGlyphs](encodingmenu.html#RemoveGlyphs)()
+[DetachAndRemoveGlyphs](../../../interface/encodingmenu/#RemoveGlyphs)()
 
 Any selected encoding slots will have their glyph pointer nulled out. In
 addition, if this glyph is now unencoded it will remove the glyph from
 the font.
 
-[DetachGlyphs](encodingmenu.html#Detach)()
+[DetachGlyphs](../../../interface/encodingmenu/#Detach)()
 
 Any selected encoding slots will have their glyph pointer nulled out.
 This does not remove the glyph from the font, it just makes it
 unreachable through this encoding slot.
 
-[DontAutoHint](hintsmenu.html#DontAutoHint)()
+[DontAutoHint](../../../interface/hintsmenu/#DontAutoHint)()
 
 Mark any selected glyphs so that they will not be AutoHinted when saving
 the font. (This flag is cleared if the user explicitely AutoHints the
@@ -671,7 +671,7 @@ Exp(val)
 
 Returns e^val^. It can execute with no current font.
 
-[ExpandStroke](elementmenu.html#Expand)(width)
+[ExpandStroke](../../../interface/elementmenu/#Expand)(width)
  ExpandStroke(width,line cap, line join)
  ExpandStroke(width,line cap, line join,0,removeinternal /external
 flag)
@@ -722,7 +722,7 @@ remove internal/external contour flags
  (you may not remove both contours)
  4 =\> run remove overlap on result (buggy)
 
-[Export](filemenu.html#Export)(format[,bitmap-size])
+[Export](../../../interface/filemenu/#Export)(format[,bitmap-size])
 
 For each selected glyph in the current font, this command will export
 that glyph into a file in the current directory. Format must be a string
@@ -824,7 +824,7 @@ without a current font.
 
 G
 
-[Generate](filemenu.html#Generate)(filename[,bitmaptype[,fmflags[,res[,mult-sfd-file[,namelist-name]]]]])
+[Generate](../../../interface/filemenu/#Generate)(filename[,bitmaptype[,fmflags[,res[,mult-sfd-file[,namelist-name]]]]])
 
 Generates a font. The type of font is determined by the extension of the
 filename. Valid extensions are:
@@ -881,7 +881,7 @@ If present, bitmaptype may be one of:
     obsolete NFNT is also present)
 -   fnt (For windows FNT format)
 -   otb (For X11 opentype bitmap format)
--   pdb (for [palm bitmap fonts](palmfonts.html))
+-   pdb (for [palm bitmap fonts](../../../reference/palmfonts/))
 -   pt3 (for a postscript type3 bitmap font)
 -   "" for no bitmaps
 
@@ -890,7 +890,7 @@ database will be output, but this command will not create bitmaps, so if
 there are no strikes in your font database, no strikes will be output
 (even if you ask for them). If you wish to output bitmaps you must first
 create them with the [BitmapsAvail](#BitmapsAvail) scripting command or
-[Element-\>Bitmaps Avail](elementmenu.html#Bitmaps).
+[Element-\>Bitmaps Avail](../../../interface/elementmenu/#Bitmaps).
 
 fmflags controls
 
@@ -912,9 +912,9 @@ fmflags controls
     table (Apple says it must occur exactly once, ms/adobe say at least
     twice), and whether morx/feat/kern/opbd/prop/lcar or GSUB/GPOS/GDEF
     tables are generated.
--   fmflags&0x20 =\> generate a '[PfEd](non-standard.html#PfEd)' table
+-   fmflags&0x20 =\> generate a '[PfEd](../../../reference/non-standard/#PfEd)' table
     and store glyph comments
--   fmflags&0x40 =\> generate a '[PfEd](non-standard.html#PfEd)' table
+-   fmflags&0x40 =\> generate a '[PfEd](../../../reference/non-standard/#PfEd)' table
     and store glyph colors
 -   fmflags&0x80 =\> generate tables so the font will work on both Apple
     and MS platforms.
@@ -927,7 +927,7 @@ fmflags controls
     'kern' table and nothing else) then set both 0x80 and 0x10.
 -   fmflags&0x100 =\> generate a glyph map file (GID=\>glyph name,
     unicode map). The map file will have extension ".g2n".
--   fmflags&0x200 =\> generate a '[TeX](non-standard.html#TeX) ' table
+-   fmflags&0x200 =\> generate a '[TeX](../../../reference/non-standard/#TeX) ' table
     containing (most) TeX font metrics information
 -   fmflags&0x400 =\> generate an ofm file (for omega)
 -   fmflags&0x800 =\> generate an old style 'kern'ing table. Only
@@ -959,7 +959,7 @@ containing the mapping from the current encoding into the subfonts.
 will go through its default search process to find a file for the
 encoding, and if it fails the fonts will not be saved.
 
-[GenerateFamily](filemenu.html#GenerateMac)(filename,bitmaptype,fmflags,array-of-font-filenames)
+[GenerateFamily](../../../interface/filemenu/#GenerateMac)(filename,bitmaptype,fmflags,array-of-font-filenames)
 
 Generates a mac font family (FOND) from the fonts (which must be loaded)
 in the array-of-font-filenames. filename, bitmaptype, fmflags are as in
@@ -1032,7 +1032,7 @@ GetMaxpValue(field-name)
 Field name can be the same set of tag strings as
 [SetMaxpValue](#SetMaxpValue).
 
-[GetOS2Value](fontinfo.html#TTF-Values)(field-name)
+[GetOS2Value](../../../interface/fontinfo/#TTF-Values)(field-name)
 
 The argument takes the same set of tag strings as
 [SetOS2Value](#SetOS2Value). `VendorId` returns a string, and `Panose`
@@ -1156,7 +1156,7 @@ obvious meanings:
 -   "BBox" returns a 4 element array containing [minimum-x-value,
     minimum-y-value, maximum-x-value, maximum-y-value] of the glyph.
 -   "ValidationState" returns a bitmask of the glyph's validation state.
-    (See the [ff python docs](python.html#validation-state) for the bit
+    (See the [ff python docs](../../python/#validation-state) for the bit
     break down)
 -   "Kern" (there must be a second argument here which specifies another
     glyph as in Select()) Returns the kern offset between the two glyphs
@@ -1254,7 +1254,7 @@ be flipped about their central point.
 
 I
 
-[Import](filemenu.html#Import)(filename[,toback[,flags]])
+[Import](../../../interface/filemenu/#Import)(filename[,toback[,flags]])
 
 Either imports a bitmap font into the database, or imports background
 image[s] into various glyphs. There may be one or two arguments. The
@@ -1308,7 +1308,7 @@ total number of glyphs in the font. Otherwise if the argument is a
 unicode code point or a postscript glyph name, true is returned if that
 glyph is in the font.
 
-[Inline](elementmenu.html#Inline)(width,gap)
+[Inline](../../../interface/elementmenu/#Inline)(width,gap)
 
 Produces an outline as in [Outline](#Outline), and then shrinks the
 glyph so that it fits inside the outline. In other words, it produces an
@@ -1320,7 +1320,7 @@ Uses standard C conversion from real to integer. It can execute with no
 current font.
  See Also [Ceil](#Ceil), [Round](#Round), [Floor](#Floor)
 
-[InterpolateFonts](elementmenu.html#Interpolate)(percentage,other-font-name[,flags])
+[InterpolateFonts](../../../interface/elementmenu/#Interpolate)(percentage,other-font-name[,flags])
 
 Interpolates a font which is percentage of the way from the current font
 to the one specified by other-font-name (note: percentage may be
@@ -1382,7 +1382,7 @@ the string. It can execute with no current font.
 
 J
 
-[Join](editmenu.html#Join)([fudge])
+[Join](../../../interface/editmenu/#Join)([fudge])
 
 Joins open paths in selected glyphs. If fudge is specified then the
 endpoints only need to be within fudge em-units of each other to be
@@ -1395,7 +1395,7 @@ L
 LoadEncodingFile(filename)
 
 Reads an encoding file and stores it in FontForge's list of possible
-encodings. See Encoding-\>[LoadEncoding](encodingmenu.html#Load) for
+encodings. See Encoding-\>[LoadEncoding](../../../interface/encodingmenu/#Load) for
 more info.
 
 LoadNamelist(filename)
@@ -1411,7 +1411,7 @@ default directory. It can execute with no current font.
 
 LoadPlugin(filename)
 
-Will load the [fontforge plugin](plugins.html)stored in the given file
+Will load the [fontforge plugin](../../../developers/plugins/)stored in the given file
 (this should be a shared library). It can execute with no current font.
 
 LoadPluginDir([directory-name])
@@ -1462,19 +1462,19 @@ is described at [AddLookup](#AddLookup).
 
 M
 
-[MergeFonts](elementmenu.html#Merge)(other-font-name[,flags])
+[MergeFonts](../../../interface/elementmenu/#Merge)(other-font-name[,flags])
 
 Loads other-font-name, and extracts any glyphs from it which are not in
 the current font and moves them to the current font. The flags argument
 is the same as that for Open. Currently the only relevant flag is to say
 that you do have a license to use a font with fstype=2.
 
-[MergeFeature](filemenu.html#Merge-feature)(filename)
+[MergeFeature](../../../interface/filemenu/#Merge-feature)(filename)
 
 Loads Feature and lookup info out of a feature file or kerning info from
 either an afm or a tfm file and merges it into the current font.
 
-[MergeKern](filemenu.html#Merge-feature)(filename)
+[MergeKern](../../../interface/filemenu/#Merge-feature)(filename)
 
 Deprecated name for [MergeFeature](#MergeFeature).
 
@@ -1506,7 +1506,7 @@ MMAxisNames()
 
 Returns an array containing the names of all axes in a multi master set.
 
-[MMBlendToNewFont](mmmenu.html#NewFont)(weights)
+[MMBlendToNewFont](../../../interface/mmmenu/#NewFont)(weights)
 
 Weights is an array of integers, one for each axis. Each value should be
 65536 times the desired value (to deal with mac blends which tend to be
@@ -1522,7 +1522,7 @@ the indicated one. If passed a small integer, then -1 indicates the
 weighted font and values between [0,\$mmcount) represent that specific
 instance in the font set.
 
-[MMChangeWeight](mmmenu.html#DefWeights)(weights)
+[MMChangeWeight](../../../interface/mmmenu/#DefWeights)(weights)
 
 Weights is an array of integers, one for each axis. Each value should be
 65536 times the desired value (to deal with mac blends which tend to be
@@ -1606,7 +1606,7 @@ Returns a glyph name given a unicode code point. If a namelist is
 specified then the name will come from it. It can execute with no
 current font.
 
-[New](filemenu.html#New)()
+[New](../../../interface/filemenu/#New)()
 
 This creates a new font. It can execute with no current font.
 
@@ -1639,7 +1639,7 @@ file `configure-fontforge.h` and then rebuild FontForge.
 
 O
 
-[Open](filemenu.html#Open)(filename[,flags])
+[Open](../../../interface/filemenu/#Open)(filename[,flags])
 
 This makes the font named by filename be the current font. If filename
 has not yet been loaded into memory it will be loaded now. It can
@@ -1663,7 +1663,7 @@ pos is given it should be an integer less than the string length and the
 function will return the integer representing that byte in the string.
 It can execute with no current font.
 
-[Outline](elementmenu.html#Outline)(width)
+[Outline](../../../interface/elementmenu/#Outline)(width)
 
 Strokes all selected glyphs with a stroke of the specified width
 (internal to the glyphs). The bounding box of the glyph will not change.
@@ -1675,12 +1675,12 @@ Removes everything but the intersection.
 
 P
 
-[Paste Into](editmenu.html#PasteInto)
+[Paste Into](../../../interface/editmenu/#PasteInto)
 
 Copies the clipboard into the current font (merging with what was there
 before)
 
-[Paste](editmenu.html#Paste)
+[Paste](../../../interface/editmenu/#Paste)
 
 Copies the clipboard into the selected glyphs of the current font
 (removing what was there before)
@@ -1726,11 +1726,11 @@ Print(arg1,arg2,arg3,...)
 This corresponds to no menu item. It will print all of its arguments to
 stdout. It can execute with no current font.
 
-[PrintFont](filemenu.html#Print)(type[,pointsize[,sample-text/filename[,output-file]]])
+[PrintFont](../../../interface/filemenu/#Print)(type[,pointsize[,sample-text/filename[,output-file]]])
 
 Prints the current font according to the [PrintSetup](#PrintSetup). The
 values for type are (meanings are described in the [section on
-printing](display.html)):
+printing](../../../interface/display/)):
 
 -   0 =\> Prints a full font display at the given pointsize
 -   1 =\> Prints selected glyphs to fill page
@@ -1784,7 +1784,7 @@ for example.
 
 Q
 
-[Quit](filemenu.html#Quit)(status)
+[Quit](../../../interface/filemenu/#Quit)(status)
 
 Causes FontForge to exit with the given status (no attempt is made to
 save unsaved files). This command can execute with no current font.
@@ -1837,7 +1837,7 @@ Real(int)
 Converts an integer to a real number. It can execute with no current
 font.
 
-[Reencode](encodingmenu.html)(encoding-name[,force])
+[Reencode](../../../interface/encodingmenu/)(encoding-name[,force])
 
 Reencodes the current font into the given encoding which may be:
  compacted,original,
@@ -1861,11 +1861,11 @@ this is the fi ligature: AdobeStandard says it should be named "fi",
 modern fonts tend to call it "f\_i". Reencoding to AdobeStandard will
 move this glyph to the right slot, and then name it "fi".
 
-[RemoveAllKerns](metricsmenu.html#Remove)()
+[RemoveAllKerns](../../../interface/metricsmenu/#Remove)()
 
 Removes all kern pairs and classes from the current font.
 
-[RemoveAllVKerns](metricsmenu.html#VRemove)()
+[RemoveAllVKerns](../../../interface/metricsmenu/#VRemove)()
 
 Removes all vertical kern pairs and classes from the current font.
 
@@ -1898,7 +1898,7 @@ If this font contains any glyphs which do not have an encoding slot then
 those glyphs will be removed from the font. In other words any glyph not
 displayed in the fontview will be removed.
 
-[RemoveOverlap](elementmenu.html#Remove)()
+[RemoveOverlap](../../../interface/elementmenu/#Remove)()
 
 Does the obvious.
 
@@ -1907,7 +1907,7 @@ RemovePreservedTable(tag)
 Searches for a preserved table with the given tag, and removes it from
 the font.
 
-[RenameGlyphs](encodingmenu.html#RenameGlyphs)(namelist-name)
+[RenameGlyphs](../../../interface/encodingmenu/#RenameGlyphs)(namelist-name)
 
 Renames all the glyphs in the current font according to the namelist.
 
@@ -1934,7 +1934,7 @@ ReplaceCvtAt(index,value)
 
 Change the cvt table at the given index to have the new value.
 
-[ReplaceWithReference](editmenu.html#ReplaceRef)([fudge])
+[ReplaceWithReference](../../../interface/editmenu/#ReplaceRef)([fudge])
 
 Finds any glyph which contains an inline copy of one of the selected
 glyphs, and converts that copy into a reference to the appropriate
@@ -1947,11 +1947,11 @@ or two integers where the first specifies the numerator and the second
 the denominator of the fudge (=arg1/arg2). Left over from the days when
 ff did not support real numbers.
 
-[Revert](filemenu.html#Revert)()
+[Revert](../../../interface/filemenu/#Revert)()
 
 Reverts the current font to the last version.
 
-[RevertToBackup](filemenu.html#RevertBackup)()
+[RevertToBackup](../../../interface/filemenu/#RevertBackup)()
 
 Reverts the current font to a backup sfd file (if any)
 
@@ -1967,7 +1967,7 @@ Converts a real number to an integer by rounding to the nearest integer.
 It can execute with no current font.
  See Also [Ceil](#Ceil), [Int](#Int), [Floor](#Floor)
 
-[RoundToCluster](elementmenu.html#Cluster)([within[,max]])
+[RoundToCluster](../../../interface/elementmenu/#Cluster)([within[,max]])
 
 The first two provide a fraction that indicates a value within which
 similar coordinates will be bundled together. Max indicates how many
@@ -1980,7 +1980,7 @@ Will merge coordinates within .1 em-unit of each other. A sequence like
 `-.1,-.05,0,.05,.1,.15` will all be merged together because each is
 within .1 of the next, and none is more than .5 from the center.
 
-[RoundToInt](elementmenu.html#Round)([factor])
+[RoundToInt](../../../interface/elementmenu/#Round)([factor])
 
 Rounds all points/hints/reference-offsets to be integers. If the
 "factor" argument is specified then it rounds like
@@ -1989,7 +1989,7 @@ Rounds all points/hints/reference-offsets to be integers. If the
 
 S
 
-[SameGlyphAs](editmenu.html#SameGlyphAs)
+[SameGlyphAs](../../../interface/editmenu/#SameGlyphAs)
 
 If the clipboard contains a reference to a single glyph then this makes
 all selected glyphs refer to that one.
@@ -2000,7 +2000,7 @@ encodings causes problems (Acrobat uses the glyph to back-map through
 the encoding to work out the unicode code point. But that will fail if a
 glyph has two unicode code points associated with it).
 
-[Save](filemenu.html#Save)([filename])
+[Save](../../../interface/filemenu/#Save)([filename])
 
 If no filename is specified then this saves the current font back into
 its sfd file (if the font has no sfd file then this is an error). With
@@ -2061,11 +2061,11 @@ be selected. An argument may be specified by:
     that number of glyphs in the font but should otherwise be in the
     same format as that returned by the \$selection psuedo-variable.
 
-[SelectAll](editmenu.html#All)
+[SelectAll](../../../interface/editmenu/#All)
 
 Selects all glyphs
 
-[SelectAllInstancesOf](editmenu.html#SelectName)(name1[,...])
+[SelectAllInstancesOf](../../../interface/editmenu/#SelectName)(name1[,...])
 
 A glyph may be mapped to more than one encoding slot. This will select
 all encoding slots which refer to the named glyph(s). The name may be
@@ -2094,7 +2094,7 @@ Selects all glyphs affected by the lookup subtable.
 2.  Merge Selection
 3.  Restrict Selection
 
-[SelectChanged](editmenu.html#SelChanged)([merge])
+[SelectChanged](../../../interface/editmenu/#SelChanged)([merge])
 
 Selects all changed glyphs. If merge is true, will or the current
 selection with the new one.
@@ -2106,14 +2106,14 @@ the indicated glyphs, so it reduces the current selection.
 
 SelectFewerSingletons(arg1, ...)
 
-Same as [SelectSingletons](scripting-alpha.html#SelectSingletons) except
+Same as [SelectSingletons](#SelectSingletons) except
 it removes single glyphs from the current selection.
 
 SelectGlyphsBoth()
 
 Selects glyphs with both references and contours.
 
-[SelectHintingNeeded](editmenu.html#SelHinting)([merge])
+[SelectHintingNeeded](../../../interface/editmenu/#SelHinting)([merge])
 
 Selects all glyphs which FontForge thinks need their hints updated.
 
@@ -2145,16 +2145,16 @@ code if one of the glyph(s) does not exist.
 
 SelectMoreSingletons(arg1, ...)
 
-Same as [SelectSingletons](scripting-alpha.html#SelectSingletons) except
+Same as [SelectSingletons](#SelectSingletons) except
 it adds single glyphs from the current selection.
 
 SelectMoreSingletonsIf(arg1, ...)
 
 Same as
-[SelectMoreSingletons](scripting-alpha.html#SelectMoreSingletons) except
+[SelectMoreSingletons](#SelectMoreSingletons) except
 it returns an error code if one of the glyph(s) does not exist.
 
-[SelectNone](editmenu.html#Deselect)()
+[SelectNone](../../../interface/editmenu/#Deselect)()
 
 Deselects all glyphs
 
@@ -2187,7 +2187,7 @@ SetCharCounterMask(cg,hint-index,hint-index,...)
 
 Deprecated name for [SetGlyphCounterMask](#SetGlyphCounterMask)
 
-[SetCharName](charinfo.html#Unicode)(name[,set-from-name-flag])
+[SetCharName](../../../interface/charinfo/#Unicode)(name[,set-from-name-flag])
 
 Deprecated name for [SetGlyphName](#SetGlyphName)
 
@@ -2226,7 +2226,7 @@ Creates or sets the counter mask at index cg to contain the hints
 listed. Hint index 0 corresponds to the first hstem hint, index 1 to the
 second hstem hint, etc. vstem hints follow hstems.
 
-[SetGlyphName](charinfo.html#Unicode)(name[,set-from-name-flag])
+[SetGlyphName](../../../interface/charinfo/#Unicode)(name[,set-from-name-flag])
 
 Sets the currently selected glyph to have the given name. If
 set-from-name-flag is absent or is present and true then it will also
@@ -2246,7 +2246,7 @@ SetFontNames(fontname[,family[,fullname[,weight[,copyright-notice[,fontversion]]
 Sets various postscript names associated with a font. If a name is
 omitted (or is the empty string) it will not be changed.
 
-[SetFontOrder](fontinfo.html#PS-General)(order)
+[SetFontOrder](../../../interface/fontinfo/#PS-General)(order)
 
 Sets the font's order. Order must be either 2 (quadratic) or 3 (cubic).
 It returns the old order.
@@ -2279,7 +2279,7 @@ offset. The first argument may be specified as in Select(), the second
 is an integer representing the kern offset. You can also specify a
 lookup-subtable-name in which to put the kerning pair.
 
-[SetLBearing](metricsmenu.html#LBearing)(lbearing[,relative])
+[SetLBearing](../../../interface/metricsmenu/#LBearing)(lbearing[,relative])
 
 If the second argument is absent or zero then the left bearing will be
 set to the first argument, if the second argument is 1 then the left
@@ -2315,7 +2315,7 @@ The field-name must be a string and one of:
 `Zones, TwilightPntCnt,         StorageCnt, MaxStackDepth, FDEFs,` or
 `IDEFs`. Value must be an integer.
 
-[SetOS2Value](fontinfo.html#TTF-Values)(field-name,field-value)
+[SetOS2Value](../../../interface/fontinfo/#TTF-Values)(field-name,field-value)
 
 This sets one of the fields of the OS/2 table to the given value. The
 field-name must be one of the strings listed below:
@@ -2323,7 +2323,7 @@ field-name must be one of the strings listed below:
 `Weight, Width, FSType, IBMFamily, VendorID, Panose,         WinAscent, WinAscentIsOffset`
 
 These are equivalent to the WinAscent field & []Offset check box in
-[Font Info-\>OS/2-\>Misc.](fontinfo.html#TTF-Values)Where
+[Font Info-\>OS/2-\>Misc.](../../../interface/fontinfo/#TTF-Values)Where
 WinAscentOffset controls whether WinAscent is treated as an absolute
 number or as relative to the expected number.
 
@@ -2340,7 +2340,7 @@ Sets the Superscript x/y sizes/offsets.
 Usually the second argument is an integer but `VendorID` takes a 4
 character ASCII string, and `Panose` takes a 10 element integer array.
 
-[SetPanose](fontinfo.html#Panose)(array) SetPanose(index,value)
+[SetPanose](../../../interface/fontinfo/#Panose)(array) SetPanose(index,value)
 
 This sets the panose values for the font. Either it takes an array of 10
 integers and sets all the values, or it takes two integer arguments and
@@ -2352,7 +2352,7 @@ Sets the value of the preference item whose name is contained in str. If
 the preference item has a real type then a second argument may be passed
 and the value set will be val/val2. It can execute with no current font.
 
-[SetRBearing](metricsmenu.html#RBearing)(rbearing[,relative])
+[SetRBearing](../../../interface/metricsmenu/#RBearing)(rbearing[,relative])
 
 If the second argument is absent or zero then the right bearing will be
 set to the first argument, if the second argument is 1 then the right
@@ -2360,7 +2360,7 @@ bearing will be incremented by the first, and if the argument is 2 then
 the right bearing will be scaled by \<first argument\>/100.0 . In bitmap
 only fonts see the comment at [SelectBitmap](#SelectBitmap) about units.
 
-[SetTeXParams](fontinfo.html#TeX)(type,design-size,slant,space,stretch,shrink,xheight,quad,extraspace[...])
+[SetTeXParams](../../../interface/fontinfo/#TeX)(type,design-size,slant,space,stretch,shrink,xheight,quad,extraspace[...])
 
 Sets the TeX (text) font parameters for the font.
  Type may be 1, 2 or 3, depending on whether the font is text, math or
@@ -2374,7 +2374,7 @@ em-units.
 then 24 arguments are required (the remaining 15 are described in the
 metafont book). If type is 3 then 15 arguments are required.
 
-[SetTTFName](fontinfo.html#TTF-Names)(lang,nameid,utf8-string)
+[SetTTFName](../../../interface/fontinfo/#TTF-Names)(lang,nameid,utf8-string)
 
 Sets the indicated truetype name in the MS platform. Lang must be one of
 the
@@ -2407,7 +2407,7 @@ offset. The first argument may be specified as in Select(), the second
 is an integer representing the kern offset. You can also specify a
 lookup-subtable-name in which to put the kerning pair.
 
-[SetVWidth](metricsmenu.html#vertical)(vertical-width[,relative])
+[SetVWidth](../../../interface/metricsmenu/#vertical)(vertical-width[,relative])
 
 If the second argument is absent or zero then the vertical width will be
 set to the first argument, if the second argument is 1 then the vertical
@@ -2416,7 +2416,7 @@ the vertical width will be scaled by \<first argument\>/100.0 . In
 bitmap only fonts see the comment at [SelectBitmap](#SelectBitmap) about
 units.
 
-[SetWidth](metricsmenu.html#Width)(width[,relative])
+[SetWidth](../../../interface/metricsmenu/#Width)(width[,relative])
 
 If the second argument is absent or zero then the width will be set to
 the first argument, if the second argument is 1 then the width will be
@@ -2424,16 +2424,16 @@ incremented by the first, and if the argument is 2 then the width will
 be scaled by \<first argument\>/100.0 . In bitmap only fonts see the
 comment at [SelectBitmap](#SelectBitmap) about units.
 
-[Shadow](elementmenu.html#Shadow)(angle,outline-width,shadow-width)
+[Shadow](../../../interface/elementmenu/#Shadow)(angle,outline-width,shadow-width)
 
 Converts the selected glyphs into shadowed versions of themselves.
 
-[Simplify](elementmenu.html#Simplify)()
+[Simplify](../../../interface/elementmenu/#Simplify)()
 
 Simplify(flags,error[,tan\_bounds[,bump\_size[,error\_denom,line\_len\_max]]])
 
 With no arguments it does the obvious. If flags is -1 it does a
-[Cleanup](elementmenu.html#Cleanup), otherwise flags should be a bitwise
+[Cleanup](../../../interface/elementmenu/#Cleanup), otherwise flags should be a bitwise
 or of
 
 -   1 -- Slopes may change at the end points.
@@ -2561,7 +2561,7 @@ represents. A second argument may be used to specify the base of the
 conversion (it defaults to 10). Behavior is as for strtol(3). It can
 execute with no current font.
 
-[SubstitutionPoints](hintsmenu.html#SubstitutionPt)()
+[SubstitutionPoints](../../../interface/hintsmenu/#SubstitutionPt)()
 
 T
 
@@ -2596,7 +2596,7 @@ unicode or a string. The first two cases are treated as unicode code
 points, in the third the entire string will be converted. It can execute
 with no current font.
 
-[Transform](elementmenu.html#Transform)(t1,t2,t3,t4,t5,t6)
+[Transform](../../../interface/elementmenu/#Transform)(t1,t2,t3,t4,t5,t6)
 
 Each argument will be divided by 100. and then all selected glyphs will
 be transformed by this matrix
@@ -2648,7 +2648,7 @@ glyph names and returns the unicode value associated with that name, or
 -1 if not found. This does *not* check the current font (if any). It can
 execute with no current font.
 
-[UnlinkReference](editmenu.html#Unlink)
+[UnlinkReference](../../../interface/editmenu/#Unlink)
 
 Unlinks all references within all selected glyphs
 
@@ -2680,7 +2680,7 @@ All selected glyphs will be vertically flipped about the horizontal line
 through y=about-y. If no argument is given then all selected glyphs will
 be flipped about their central point.
 
-[VKernFromHKern](metricsmenu.html#VKernFromHKern)()
+[VKernFromHKern](../../../interface/metricsmenu/#VKernFromHKern)()
 
 Removes all vertical kern pairs and classes from the current font, and
 then generates new vertical kerning pairs by copying the horizontal
@@ -2689,7 +2689,7 @@ those glyphs.
 
 W
 
-[Wireframe](elementmenu.html#Wireframe)(angle,outline-width,shadow-width)
+[Wireframe](../../../interface/elementmenu/#Wireframe)(angle,outline-width,shadow-width)
 
 Converts the selected glyphs into wireframed versions of themselves.
 
@@ -2714,4 +2714,4 @@ Y
 
 Z
 
--- [Up](scripting.html) --
+-- [Up](../scripting/) --

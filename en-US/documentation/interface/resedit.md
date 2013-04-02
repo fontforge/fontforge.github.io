@@ -9,7 +9,7 @@ title: X Resource Editor
 
 This dialog allows you to control the look and feel of FontForge. You
 can control (most of) the same resources described in the [X Resource
-page](xres.html), but in (I hope) a more convenient format. Some changes
+page](../../customizing/xres/), but in (I hope) a more convenient format. Some changes
 will be reflected instantly, other changes require refreshing the
 screen, other changes require invoking a new dialog, and some changes
 you must save the resources and restart fontforge.

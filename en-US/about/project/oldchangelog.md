@@ -14,8 +14,8 @@ title: Older changes to FontForge
 > *The Lady's not for Burning*
 >  Christopher Fry
 
-[Current changes](changelog.html)
- [Changes to PfaEdit (predecessor to FontForge)](pfaeditchangelog.html)
+[Current changes](../changelog/)
+ [Changes to PfaEdit (predecessor to FontForge)](../pfaeditchangelog/)
  Changes to the [sfd format](sfdchangelog.html).
 
 -   24-August-2008

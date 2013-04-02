@@ -17,7 +17,7 @@ live in the two directories:
 -   `~/.FontForge/plugins`
 
 Most of what I once expected to do with plugins I now do with [python
-scripts](python.html#python-init-scripts).
+scripts](../../scripting/python/#python-init-scripts).
 
 Installing a one of my example plugins
 --------------------------------------

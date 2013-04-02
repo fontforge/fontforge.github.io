@@ -12,4 +12,4 @@ TODO Contact HP when this is ready to test the instructions here with a vietname
 
 #### Website Translation
 
-Please refer to the [website translation](/about/site/index.html) page for details.
+Please refer to the [website translation](/about/site/) page for details.

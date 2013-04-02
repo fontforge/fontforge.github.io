@@ -14,7 +14,7 @@ Descriptor](http://ftp.xfree86.org/pub/XFree86/4.5.0/doc/xlfd.txt)
 specification.
 
 When you first create a bitmap strike (with [Element-\>Bitmaps
-Available](elementmenu.html#Bitmaps)) it will have no properties
+Available](../elementmenu/#Bitmaps)) it will have no properties
 associated with it. If you then generate a bdf file based on that
 FontForge will give you some default properties.
 

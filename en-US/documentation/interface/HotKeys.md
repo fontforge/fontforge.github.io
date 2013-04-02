@@ -9,109 +9,109 @@ Menu Hot Keys
 -------------
 
   ----------- -------------------------------------------------------------- ------------------------------ --------------------------------------------------- ----------------- -------------------------------------------------------- ---------------- -----------------------------------------------------
-  Ctl-A       [Select All](editmenu.html#All)                                Ctl-Shft-A                     [Build Accented Glyph](elementmenu.html#Accented)   Alt-Ctl-A         [Select All Points](editmenu.html#SelectPoints)
+  Ctl-A       [Select All](../editmenu/#All)                                Ctl-Shft-A                     [Build Accented Glyph](../elementmenu/#Accented)   Alt-Ctl-A         [Select All Points](../editmenu/#SelectPoints)
 
-  Ctl-B       [Regenerate Bitmaps](elementmenu.html#Regenerate)              Ctl-Shft-B                     [Bitmaps Available](elementmenu.html#Bitmaps)
+  Ctl-B       [Regenerate Bitmaps](../elementmenu/#Regenerate)              Ctl-Shft-B                     [Bitmaps Available](../elementmenu/#Bitmaps)
 
-  Ctl-C       [Copy](editmenu.html#Copy)                                     Ctl-Shft-C                     [Copy Fg to Bg](editmenu.html#CopyFg)               Alt-Ctl-C         [Copy Lookup Data](editmenu.html#CopyLookup)
+  Ctl-C       [Copy](../editmenu/#Copy)                                     Ctl-Shft-C                     [Copy Fg to Bg](../editmenu/#CopyFg)               Alt-Ctl-C         [Copy Lookup Data](../editmenu/#CopyLookup)
 
-  Ctl-D       [Show/Hide Points](viewmenu.html#Points)                       Ctl-Shft-D                     [Correct Direction](elementmenu.html#Correct)
+  Ctl-D       [Show/Hide Points](../viewmenu/#Points)                       Ctl-Shft-D                     [Correct Direction](../elementmenu/#Correct)
 
-  Ctl-E       [Find Problems](elementmenu.html#Problems)                     Ctl-Shft-E                     [Expand Stroke](elementmenu.html#Expand)                                                                                       
+  Ctl-E       [Find Problems](../elementmenu/#Problems)                     Ctl-Shft-E                     [Expand Stroke](../elementmenu/#Expand)                                                                                       
 
-  Ctl-F       [Fit in Window](viewmenu.html#Fit)                             Ctl-Shft-F                     [Font Info](elementmenu.html#Font)                  Alt-Ctl-F         [Find / Replace](search.html)                            Alt-Ctl-Shft-F   [Replace With Reference](editmenu.html#ReplaceRef)
+  Ctl-F       [Fit in Window](../viewmenu/#Fit)                             Ctl-Shft-F                     [Font Info](../elementmenu/#Font)                  Alt-Ctl-F         [Find / Replace](../search/)                            Alt-Ctl-Shft-F   [Replace With Reference](../editmenu/#ReplaceRef)
 
-  Ctl-G       [Copy Reference](editmenu.html#Reference)                      Ctl-Shft-G                     [Generate Fonts](filemenu.html#Generate)            Alt-Ctl-G         [Generate Mac Family](filemenu.html#GenerateMac)         
+  Ctl-G       [Copy Reference](../editmenu/#Reference)                      Ctl-Shft-G                     [Generate Fonts](../filemenu/#Generate)            Alt-Ctl-G         [Generate Mac Family](../filemenu/#GenerateMac)         
 
-  Ctl-H       [Open Outline](filemenu.html#Outline)                          Ctl-Shft-H                     [AutoHint](hintsmenu.html#AutoHint)                 Alt-Ctl-H         [Review Hints](hintsmenu.html#Review)
+  Ctl-H       [Open Outline](../filemenu/#Outline)                          Ctl-Shft-H                     [AutoHint](../hintsmenu/#AutoHint)                 Alt-Ctl-H         [Review Hints](../hintsmenu/#Review)
 
-  Ctl-I       [Get Info](elementmenu.html#Info)                              Ctl-Shft-I                     [Import](filemenu.html#Import)                      Alt-Ctl-Shft-I    [Glyph Info](elementmenu.html#CharInfo)                  Alt-Ctl-I        [Show Dependencies...](elementmenu.html#Dependents)
+  Ctl-I       [Get Info](../elementmenu/#Info)                              Ctl-Shft-I                     [Import](../filemenu/#Import)                      Alt-Ctl-Shft-I    [Glyph Info](../elementmenu/#CharInfo)                  Alt-Ctl-I        [Show Dependencies...](../elementmenu/#Dependents)
 
-  Ctl-J       [Open Bitmap](filemenu.html#Bitmap)                            Ctl-Shft-J                     [Join](editmenu.html#Join)
+  Ctl-J       [Open Bitmap](../filemenu/#Bitmap)                            Ctl-Shft-J                     [Join](../editmenu/#Join)
 
-  Ctl-K       [Open Metrics](filemenu.html#Metrics)                          Ctl-Shft-K                     [Auto Kern](metricsmenu.html#Kern)                  Alt-Ctl-Shft-K    [Merge Feature Info](filemenu.html#Merge-feature)
+  Ctl-K       [Open Metrics](../filemenu/#Metrics)                          Ctl-Shft-K                     [Auto Kern](../metricsmenu/#Kern)                  Alt-Ctl-Shft-K    [Merge Feature Info](../filemenu/#Merge-feature)
 
-  Ctl-L       [Set LBearing](metricsmenu.html#LBearing)                      Ctl-Shft-L                     [Set Width](metricsmenu.html#Width)
+  Ctl-L       [Set LBearing](../metricsmenu/#LBearing)                      Ctl-Shft-L                     [Set Width](../metricsmenu/#Width)
 
-  Ctl-M       [Merge Point](editmenu.html#Merge)                             Ctl-Shft-M                     [Simplify](elementmenu.html#Simplify)               Alt-Ctl-M         [Elide Point](editmenu.html#Elide)                       Alt-Ctl-Shft-M   [Simplify More](editmenu.html#Simplify)
+  Ctl-M       [Merge Point](../editmenu/#Merge)                             Ctl-Shft-M                     [Simplify](../elementmenu/#Simplify)               Alt-Ctl-M         [Elide Point](../editmenu/#Elide)                       Alt-Ctl-Shft-M   [Simplify More](../editmenu/#Simplify)
 
-  Ctl-N       [New](filemenu.html#New)                                       Ctl-Shft-N                     
+  Ctl-N       [New](../filemenu/#New)                                       Ctl-Shft-N                     
 
-  Ctl-O       [Open](filemenu.html#Open)                                     Ctl-Shft-O                     [Remove Overlap](elementmenu.html#Remove)
+  Ctl-O       [Open](../filemenu/#Open)                                     Ctl-Shft-O                     [Remove Overlap](../elementmenu/#Remove)
 
-  Ctl-P       [Print](filemenu.html#Print)                                   Ctl-Shft-P                                                                         Alt-Ctl-P         [Display](display.html)
+  Ctl-P       [Print](../filemenu/#Print)                                   Ctl-Shft-P                                                                        Alt-Ctl-P         [Display](../display/)
 
-  Ctl-Q       [Quit](filemenu.html#Quit)                                     Ctl-Shft-Q                     [Close](filemenu.html#Close)
+  Ctl-Q       [Quit](../filemenu/#Quit)                                     Ctl-Shft-Q                     [Close](../filemenu/#Close)
 
-  Ctl-R       [Set RBearing](metricsmenu.html#RBearing)                      Ctl-Shft-R                     [Revert File](filemenu.html#Revert)                 Ctl-Alt-R         [Revert Glyph](filemenu.html#RevertGlyph)                                 
+  Ctl-R       [Set RBearing](../metricsmenu/#RBearing)                      Ctl-Shft-R                     [Revert File](../filemenu/#Revert)                 Ctl-Alt-R         [Revert Glyph](../filemenu/#RevertGlyph)                                 
 
-  Ctl-S       [Save](filemenu.html#Save)                                     Ctl-Shft-S                     [Save As](filemenu.html#SaveAs)
+  Ctl-S       [Save](../filemenu/#Save)                                     Ctl-Shft-S                     [Save As](../filemenu/#SaveAs)
 
-  Ctl-T       [AutoInstr](hintsmenu.html#AutoInstr)                          Ctl-Shft-T                     [AutoTrace](elementmenu.html#AutoTrace)
+  Ctl-T       [AutoInstr](../hintsmenu/#AutoInstr)                          Ctl-Shft-T                     [AutoTrace](../elementmenu/#AutoTrace)
 
-  Ctl-U       [Unlink Reference](editmenu.html#Unlink)                       Ctl-Shft-U                                                                         
+  Ctl-U       [Unlink Reference](../editmenu/#Unlink)                       Ctl-Shft-U                                                                         
 
-  Ctl-V       [Paste](editmenu.html#Paste)                                   Ctl-Shft-V                     [Paste Into](editmenu.html#PasteInto)
+  Ctl-V       [Paste](../editmenu/#Paste)                                   Ctl-Shft-V                     [Paste Into](../editmenu/#PasteInto)
 
-  Ctl-W       [](editmenu.html#PasteInto)[Copy Width](editmenu.html#Width)   Ctl-Shft-W                     [Auto Width](metricsmenu.html#Auto)
+  Ctl-W       [](../editmenu/#PasteInto)[Copy Width](../editmenu/#Width)    Ctl-Shft-W                     [Auto Width](../metricsmenu/#Auto)
 
-  Ctl-X       [Cut](editmenu.html#Cut)                                       Ctl-Shft-X                     [Add Extrema](elementmenu.html#Add-Extrema)
+  Ctl-X       [Cut](../editmenu/#Cut)                                       Ctl-Shft-X                     [Add Extrema](../elementmenu/#Add-Extrema)
 
-  Ctl-Y       [Redo](editmenu.html#Redo)                                     Ctl-Shft-Y                     
+  Ctl-Y       [Redo](../editmenu/#Redo)                                     Ctl-Shft-Y                     
 
-  Ctl-Z       [Undo](editmenu.html#Undo)                                     Ctl-Shft-Z                     
+  Ctl-Z       [Undo](../editmenu/#Undo)                                     Ctl-Shft-Z                     
 
-  Ctl-\\      [Transform](elementmenu.html#Transform)
+  Ctl-\\      [Transform](../elementmenu/#Transform)
 
-                                                                             Ctl-Shft-\_                    [Round to Int](elementmenu.html#Round)
+                                                                            Ctl-Shft-\_                    [Round to Int](../elementmenu/#Round)
 
-  Ctl-1       [Make First](pointmenu.html#Make-First)                        Ctl-Shft-!                                                                         Alt-Ctl-1         [Invokes user script](filemenu.html#ScriptMenu)
+  Ctl-1       [Make First](../pointmenu/#Make-First)                        Ctl-Shft-!                                                                        Alt-Ctl-1         [Invokes user script](../filemenu/#ScriptMenu)
 
-  Ctl-2       [24 pixel outline](viewmenu.html#px24)\                        Ctl-Shft-@                     [Average Points](elementmenu.html#Average)          Alt-Ctl-2         [Invokes user script](filemenu.html#ScriptMenu)
-               [Curve Point](pointmenu.html#Curve)                                                                                                                                
+  Ctl-2       [24 pixel outline](../viewmenu/#px24)\                        Ctl-Shft-@                     [Average Points](../elementmenu/#Average)          Alt-Ctl-2         [Invokes user script](../filemenu/#ScriptMenu)
+               [Curve Point](../pointmenu/#Curve)                                                                                                                                
 
-  Ctl-3       [36 pixel outline](viewmenu.html#px36)\                        Ctl-Shft-\#                    [Space Points](elementmenu.html#Space-Pts)          Alt-Ctl-3         [Invokes user script](filemenu.html#ScriptMenu)
-               [Corner Point](pointmenu.html#Corner)                                                                                                                                   ...
+  Ctl-3       [36 pixel outline](../viewmenu/#px36)\                        Ctl-Shft-\#                    [Space Points](../elementmenu/#Space-Pts)          Alt-Ctl-3         [Invokes user script](../filemenu/#ScriptMenu)
+               [Corner Point](../pointmenu/#Corner)                                                                                                                                   ...
 
-  Ctl-4       [48 pixel outline](viewmenu.html#px48)
-               [Tangent Point](pointmenu.html#Tangent)
+  Ctl-4       [48 pixel outline](../viewmenu/#px48)
+               [Tangent Point](../pointmenu/#Tangent)
 
-  Ctl-5       [Anti-Alias](viewmenu.html#AntiAlias)                          Ctl-Shft-%                     [32x8 cell window](viewmenu.html#32x8)              
+  Ctl-5       [Anti-Alias](../viewmenu/#AntiAlias)                          Ctl-Shft-%                     [32x8 cell window](../viewmenu/#32x8)              
 
-  Ctl-6       [Fit To Em](viewmenu.html#FitToEm)                             Ctl-Shft-\^                    [16x4 cell window](viewmenu.html#16x4)
+  Ctl-6       [Fit To Em](../viewmenu/#FitToEm)                             Ctl-Shft-\^                    [16x4 cell window](../viewmenu/#16x4)
 
-  Ctl-7       [72 pixel outline](viewmenu.html#px72)
+  Ctl-7       [72 pixel outline](../viewmenu/#px72)
 
-  Ctl-8                                                                      Ctl-Shft-\*                    [8x2 cell window](viewmenu.html#8x2)
+  Ctl-8                                                                      Ctl-Shft-\*                    [8x2 cell window](../viewmenu/#8x2)
 
-  Ctl-9       [96 pixel outline](viewmenu.html#px96)
+  Ctl-9       [96 pixel outline](../viewmenu/#px96)
 
-  Ctl-0       [Add Anchor Point...](pointmenu.html#AddAnchor)
+  Ctl-0       [Add Anchor Point...](../pointmenu/#AddAnchor)
 
-  Ctl-]       [Next Glyph](viewmenu.html#Next)                               Ctl-Shft-}                     [Next Point](editmenu.html#NPoint)                  
+  Ctl-]       [Next Glyph](../viewmenu/#Next)                               Ctl-Shft-}                     [Next Point](../editmenu/#NPoint)                  
 
-  Ctl-[       [Prev Glyph](viewmenu.html#Prev)                               Ctl-Shft-{                     [Prev Point](editmenu.html#PPoint)
+  Ctl-[       [Prev Glyph](../viewmenu/#Prev)                               Ctl-Shft-{                     [Prev Point](../editmenu/#PPoint)
 
-  Ctl-.       [Execute Script](filemenu.html#Execute)\                       Ctl-Shft-\>                    [Goto](viewmenu.html#Goto)                          Alt-Ctl-.         [First Point, Next Contour](editmenu.html#NextContour)
-               [Select First Point](editmenu.html#FirstPt)                                                                                                                        
+  Ctl-.       [Execute Script](../filemenu/#Execute)\                       Ctl-Shft-\>                    [Goto](../viewmenu/#Goto)                          Alt-Ctl-.         [First Point, Next Contour](../editmenu/#NextContour)
+               [Select First Point](../editmenu/#FirstPt)                                                                                                                        
 
-  Ctl-,       [Select Point At](editmenu.html#PointAt)                       Ctl-Shft-\<                    [Find In Font View](viewmenu.html#FindInFV)         Alt-Ctl-,         [Points on Selected Contours](editmenu.html#Contours)
+  Ctl-,       [Select Point At](../editmenu/#PointAt)                       Ctl-Shft-\<                    [Find In Font View](../viewmenu/#FindInFV)         Alt-Ctl-,         [Points on Selected Contours](../editmenu/#Contours)
 
-  Escape      [Deselect All](editmenu.html#Deselect)                         Ctl-Escape                     [Invert Selection](editmenu.html#Invert)
+  Escape      [Deselect All](../editmenu/#Deselect)                         Ctl-Escape                     [Invert Selection](../editmenu/#Invert)
 
-  Backspace   [Clear](editmenu.html#Clear)
+  Backspace   [Clear](../editmenu/#Clear)
 
-  Delete      [Clear](editmenu.html#Clear)
+  Delete      [Clear](../editmenu/#Clear)
 
-  Ctl-=       [Grid Fit Anti Alias](viewmenu.html#GFAntiAlias)               Ctl-Shft-+                     [Bigger Pixel Size](viewmenu.html#Bigger)\          Alt-Ctl-Shift-+   [Zoom In](viewmenu.html#In)
-                                                                                                             [Bigger Point Size](viewmenu.html#GFBigge)                           
+  Ctl-=       [Grid Fit Anti Alias](../viewmenu/#GFAntiAlias)               Ctl-Shft-+                     [Bigger Pixel Size](../viewmenu/#Bigger)\          Alt-Ctl-Shift-+   [Zoom In](../viewmenu/#In)
+                                                                                                             [Bigger Point Size](../viewmenu/#GFBigge)                           
 
-  Ctl--       [Smaller Pixel Size](viewmenu.html#Smaller)\                                                                                                      Alt-Ctl--         [Zoom Out](viewmenu.html#Out)
-               [Smaller Point Size](viewmenu.html#GFSmaller)                                                                                                                      
+  Ctl--       [Smaller Pixel Size](../viewmenu/#Smaller)\                                                                                                     Alt-Ctl--         [Zoom Out](../viewmenu/#Out)
+               [Smaller Point Size](../viewmenu/#GFSmaller)                                                                                                                      
 
-  Help        [Help](helpmenu.html)
+  Help        [Help](../helpmenu/)
 
-  F1          [Help](helpmenu.html)                                          [Index](helpmenu.html#Index)
+  F1          [Help](../helpmenu/)                                          [Index](../helpmenu/#Index)
 
   F2                                                                                                                                                            
 
@@ -132,7 +132,7 @@ Menu Hot Keys
   F10         
   ----------- -------------------------------------------------------------- ------------------------------ --------------------------------------------------- ----------------- -------------------------------------------------------- ---------------- -----------------------------------------------------
 
-[Hot Keys are now configurable through](uitranslationnotes.html#HotKeys)
+[Hot Keys are now configurable through](../../customizing/uitranslationnotes/#HotKeys)
 a [gettext](http://www.gnu.org/software/gettext/manual/) based
 mechanism.
 
@@ -157,7 +157,7 @@ FontForge will attempt to guess what keyboard you are using and produce
 menus with hot-key indicators that match the host machine. If you are
 displaying on a different machine from the one you are running on the
 menu names may be wrong. You can fix this up with the [keyboard
-resource](xres.html#Keyboard), or the -keyboard command line argument.
+resource](../../customizing/xres/#Keyboard), or the -keyboard command line argument.
 
 Tool modifiers in the Outline Glyph Window
 ------------------------------------------
@@ -306,18 +306,18 @@ Makes the arrow keys move by ten times as much as they would otherwise
 The menus
 ---------
 
--   [File](filemenu.html)
--   [Edit](editmenu.html)
--   [Point](pointmenu.html)
--   [Element](elementmenu.html)
--   [Hints](hintsmenu.html)
--   [View](viewmenu.html)
--   [Metrics](metricsmenu.html)
--   [CID](cidmenu.html)
--   [MM](mmmenu.html)
--   [Window](windowmenu.html)
--   [Help](helpmenu.html)
--   [Hot Keys](HotKeys.html)
+-   [File](../filemenu/)
+-   [Edit](../editmenu/)
+-   [Point](../pointmenu/)
+-   [Element](../elementmenu/)
+-   [Hints](../hintsmenu/)
+-   [View](../viewmenu/)
+-   [Metrics](../metricsmenu/)
+-   [CID](../cidmenu/)
+-   [MM](../mmmenu/)
+-   [Window](../windowmenu/)
+-   [Help](../helpmenu/)
+-   [Hot Keys](../HotKeys/)
 
--- [Prev](helpmenu.html) -- [TOC](overview.html) --
-[Next](scripting.html) --
+-- [Prev](../helpmenu/) -- [TOC](overview.html) --
+[Next](../../scripting/native/scripting/) --

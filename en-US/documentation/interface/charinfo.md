@@ -8,16 +8,16 @@ title: Char Info
 ![](img/charinfo.png) Glyph Info
 ----------------------------
 
--   [Encoding and Unicode data](charinfo.html#Unicode)
--   [Glyph Comment](charinfo.html#comment)
--   [Simple Glyph Positioning](charinfo.html#position)(GPOS)
+-   [Encoding and Unicode data](#Unicode)
+-   [Glyph Comment](#comment)
+-   [Simple Glyph Positioning](#position)(GPOS)
 -   [Pair-wise Glyph Positioning
-    (kerning)](charinfo.html#pairwise)(GPOS)
--   [Glyph Simple Substitution](charinfo.html#substitution) (GSUB, morx)
--   [Glyph Alternate Substitution](charinfo.html#multiple) (GSUB)
--   [Glyph Multiple Substitution](charinfo.html#multiple) (GSUB)
--   [Glyph Ligature Substitution](charinfo.html#ligature)(GSUB, morx)
--   [Components](charinfo.html#components)
+    (kerning)](#pairwise)(GPOS)
+-   [Glyph Simple Substitution](#substitution) (GSUB, morx)
+-   [Glyph Alternate Substitution](#multiple) (GSUB)
+-   [Glyph Multiple Substitution](#multiple) (GSUB)
+-   [Glyph Ligature Substitution](#ligature)(GSUB, morx)
+-   [Components](#components)
 -   [Counter Masks](#CounterMasks)
 -   [TeX & Math](#TeX)
 -   [Variants](#Variants)
@@ -53,7 +53,7 @@ appropriate code point and variation selector below.
 The Glyph class field is for the opentype 'GDEF' table. You can usually
 leave it set to automatic. FontForge will then figure out the class, and
 whether it should be output into GDEF. You can see what FontForge does
-in [View-\>Show ATT](showatt.html).
+in [View-\>Show ATT](../showatt/).
 
 The `[] Mark for Unlink, Remove Overlap Before Save` checkbox sounds
 absurdly complicated. Consider the glyphs Aring, Ccedilla, and Oogonek.
@@ -76,11 +76,11 @@ your use, it will not go into any generated fonts. You may also assign a
 color to a glyph to make it stand out in the font view.
 
 ![](img/charinfo-pos.png)There are 6 separate sub-dialogs to help you edit
-the [lookups](lookups.html) of the [GPOS and GSUB](gposgsub.html) tables
+the [lookups](../lookups/) of the [GPOS and GSUB](../gposgsub/) tables
 (some of these data can be converted into various of Apple's AAT tables,
 particularly 'morx'). Lookups and their subtables are described in some
 detail [here](overview.html#Lookups), and may be manipulated and created
-with the [Element-\>Font Info](fontinfo.html#Lookups) commmand.
+with the [Element-\>Font Info](../fontinfo/#Lookups) commmand.
 
 The first of sub-dialogs is the alternate position pane which allows you
 to associate certain modifications to a glyph's metrics with a feature
@@ -103,7 +103,7 @@ could add data to.
 
 The pairwise positioning sub-dialog allows you to change the positions
 of two glyphs when they occur next to one another -- better know as
-kerning. I think the [Metrics View](metricsview.html)provides a better
+kerning. I think the [Metrics View](../metricsview/)provides a better
 place to do kerning, but you can do it here if you wish.
 
 ![](img/charinfo-subs.png) A simple substitution replaces one glyph with
@@ -140,7 +140,7 @@ mechanism for controlling the width of counters between stems. These are
 called counter mask hints![](img/newcountermask.png). In Latin, Cyrillic,
 Greek fonts only glyphs like "m" are allowed to have counter masks, and
 only in very controlled conditions. See the description of [counter
-masks](hinting.html#Counter).
+masks](../hinting/#Counter).
 
 ![](img/charinfo-counters.png) Some glyphs (ligatures, accented glyphs,
 Hangul syllables, etc.) are built up out of other glyphs (at least
@@ -161,11 +161,11 @@ to the x-height and baseline (ff will attempt to do this when you press
 `[Guess]`).
 
 The Italic correction is used by both TeX and the new OpenType
-[MATH](math.html#Italic) table. In the MATH table you may also specify a
+[MATH](../../reference/math/#Italic) table. In the MATH table you may also specify a
 device table to correct rounding errors at small pixel sizes.
 
 The Top Accent Position is another concept from the [MATH
-table](math.html#TopAccent) and provides a horizontal position over
+table](../../reference/math/#TopAccent) and provides a horizontal position over
 which to position math accents (vertical positioning is done somewhere
 else).
 
@@ -174,7 +174,7 @@ superscripts are inappropriate and the `[] Is Extended Shape` checkbox
 alerts the typesetter to this fact.
 
 The [Math Kerning] button brings up the [Math Kerning
-dialog](math.html#MathKern) which gives you fine control over the
+dialog](../../reference/math/#MathKern) which gives you fine control over the
 placement of subscripts and superscripts near the glyph.
 
 ### Variants
@@ -194,13 +194,13 @@ bigger than the one before.
 
 Underneath you may specify a way of building really big parentheses by
 combining several component glyphs. See the description of this in the
-[MATH Info dialog](math.html#GlyphConstruction)for more details.
+[MATH Info dialog](../../reference/math/#GlyphConstruction)for more details.
 
 ### ![](img/charinfo-tilesize.png)Tile Size
 
 This only applies when editing type3 fonts. Even then it is only
 meaningful if the current glyph is used as a
-[pattern](multilayer.html#Patterns) in some other glyph.
+[pattern](../multilayer/#Patterns) in some other glyph.
 
 When a glyph is used as a pattern, the size of the pattern tile defaults
 to the bounding box of the glyph used. This means there will be no
@@ -221,9 +221,9 @@ dialog.
 
 See Also:
 
--   [The font info dialog](fontinfo.html)
--   [The get info dialogs](getinfo.html)
--   [The MATH info dialog](math.html)
+-   [The font info dialog](../fontinfo/)
+-   [The get info dialogs](../getinfo/)
+-   [The MATH info dialog](../../reference/math/)
 
--- [Prev](elementmenu.html) -- [TOC](overview.html) --
-[Next](elementmenu.html) --
+-- [Prev](../elementmenu/) -- [TOC](overview.html) --
+[Next](../elementmenu/) --

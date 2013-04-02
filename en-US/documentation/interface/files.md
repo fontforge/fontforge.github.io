@@ -37,7 +37,7 @@ there should be no files in it.
 
 \~/.FontForge/plugins
 
-This directory contains any [plugins](plugins.html) you want available
+This directory contains any [plugins](../../developers/plugins/) you want available
 for your private use.
 
 \~/.FontForge/python
@@ -85,4 +85,4 @@ everyone on your system.
 Optional location for online documentation. [You can pull down a
 compressed archive from here.](source-build.html#Documentation)
 
--- [Prev](cliargs.html) -- [TOC](overview.html) -- [Next](src.html) --
+-- [Prev](../cliargs/) -- [TOC](overview.html) -- [Next](../../developers/src/) --

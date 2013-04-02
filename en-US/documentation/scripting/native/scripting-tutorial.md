@@ -5,25 +5,25 @@ title: FontForge Scripting Tutorial
 ---
 
 
--   [A simple example](scripting-tutorial.html#simple)
-    -   [Stating the problem](scripting-tutorial.html#simple)
-    -   [Initial solution](scripting-tutorial.html#Intial)
+-   [A simple example](#simple)
+    -   [Stating the problem](#simple)
+    -   [Initial solution](#Intial)
     -   [Real world considerations](#RealWorld)
     -   [Invoking a script and passing it arguments](#Invoking)
-    -   [Using loops](scripting-tutorial.html#loops)
-    -   [Complexities](scripting-tutorial.html#Complexities)
+    -   [Using loops](#loops)
+    -   [Complexities](#Complexities)
 
--   [Other Examples](scripting-tutorial.html#OtherExamples)
+-   [Other Examples](#OtherExamples)
     -   [Adding accented characters to a type1 font](#Accented)
     -   [Merging a type1 and type1 expert font and creating appropriate
         GSUB tables.](#GSUB)
 
--   [Examples elsewhere](scripting.html#Example)
+-   [Examples elsewhere](../scripting/#Example)
 
 Note: *FontForge now provides python scripting. If you are familiar with
 python that is probably a better choice. There is a lot of information
 available on [python](http://www.python.org/doc/), I shan't repeat it.
-FontForge's own additions to python are documented [here](python.html).*
+FontForge's own additions to Python are documented [here](../../python/).*
 
 I try to keep things at a fairly elementary level, but this is *not* an
 attempt to teach programming.
@@ -36,8 +36,8 @@ would like to convert it into a TrueType font. What would a script look
 like that could do this?
 
 If you were doing this with the UI you would first
-[File-\>Open](filemenu.html#Open) the font and then
-[File-\>Generate](filemenu.html#Generate) a truetype font. You do
+[File-\>Open](../../../interface/filemenu/#Open) the font and then
+[File-\>Generate](../../../filemenu/#Generate) a truetype font. You do
 essentially the same thing when writing a script:
 
 ### Intial Solution
@@ -48,10 +48,10 @@ essentially the same thing when writing a script:
 There is usually a scripting function with the same name as a menu
 command (well, the same as the English name of the menu command).
 
-'[\$1](scripting.html#variables)' is magic. It means the [first argument
+'[\$1](../scripting/#variables)' is magic. It means the [first argument
 passed to the script](#Invoking).
 
-'[\$1:r + ".ttf"](scripting.html#Expressions)' is even more complicated
+'[\$1:r + ".ttf"](../scripting/#Expressions)' is even more complicated
 magic. It means: 'take the first argument (\$1) and remove the extension
 (which is probably ".pfb") and then append the string ".ttf" to the
 filename.'
@@ -277,4 +277,4 @@ linking the glyphs.
 
 ### More examples
 
-See the [page on scripting](scripting.html#Example).
+See the [page on scripting](../scripting/#Example).

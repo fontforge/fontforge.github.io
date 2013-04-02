@@ -63,7 +63,7 @@ point](overview.html#Anchors) to the glyph. The last click in the window
 provides a default location for the point.
 
 See [the overview](overview.html#Anchors) and the [Element-\>Get Info
-command](getinfo.html#Anchors) for more info.
+command](../getinfo/#Anchors) for more info.
 
 Acceptable Extrema
 
@@ -124,29 +124,29 @@ Background) layer. You can attach a mnemonic name to a guide line (like
 Make Clip Path
 
 Only meaningful in Type3 fonts. For a more complete description see the
-section on [Type3 editing](multilayer.html#ClipPath). The clipping path
+section on [Type3 editing](../multilayer/#ClipPath). The clipping path
 will be set to any selected contour(s) in the glyph. If no contour is
 selected then there will be no clipping path.
 
 Other menus
 -----------
 
--   [File](filemenu.html)
--   [Edit](editmenu.html)
--   [Point](pointmenu.html)
--   [Element](elementmenu.html)
--   [Tools](toolsmenu.html)
--   [Hints](hintsmenu.html)
--   [Encoding](encodingmenu.html)
--   [View](viewmenu.html)
--   [Metrics](metricsmenu.html)
--   [CID](cidmenu.html)
--   [MM](mmmenu.html)
--   [Window](windowmenu.html)
--   [Help](helpmenu.html)
--   [Hot Keys](HotKeys.html)
+-   [File](../filemenu/)
+-   [Edit](../editmenu/)
+-   [Point](../pointmenu/)
+-   [Element](../elementmenu/)
+-   [Tools](../toolsmenu/)
+-   [Hints](../hintsmenu/)
+-   [Encoding](../encodingmenu/)
+-   [View](../viewmenu/)
+-   [Metrics](../metricsmenu/)
+-   [CID](../cidmenu/)
+-   [MM](../mmmenu/)
+-   [Window](../windowmenu/)
+-   [Help](../helpmenu/)
+-   [Hot Keys](../HotKeys/)
 
--- [Prev](editmenu.html) -- [TOC](overview.html) --
-[Next](elementmenu.html) --
+-- [Prev](../editmenu/) -- [TOC](overview.html) --
+[Next](../elementmenu/) --
 
 

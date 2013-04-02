@@ -61,7 +61,7 @@ X11 BDF header
 
 This table is not part of the official TrueType or OpenType specs. It
 contains the header information from old bdf fonts. I describe its
-format [here](non-standard.html).
+format [here](../non-standard/).
 
 \*
 
@@ -209,7 +209,7 @@ FontForge timestamp
 
 This table is unique to FontForge. It contains three timestamps: First
 FontForge's version date, then when the font was generated, and when the
-font was created. I describe its format [here](non-standard.html).
+font was created. I describe its format [here](../non-standard/).
 
 \*
 
@@ -277,7 +277,7 @@ GPOS
 glyph positioning
 
 Provides kerning information, mark-to-base, etc. for opentype fonts. See
-the [chapter on GPOS](gposgsub.html#GPOS) in FontForge for more
+the [chapter on GPOS](../../interface/gposgsub/#GPOS) in FontForge for more
 information. Vaguely equivalent to 'kern' and 'opbd' tables.
 
 \*
@@ -289,7 +289,7 @@ GSUB
 glyph substitution
 
 Provides ligature information, swash, etc. for opentype fonts. See the
-[chapter on GSUB](gposgsub.html#GSUB) in FontForge for more information.
+[chapter on GSUB](../../interface/gposgsub/#GSUB) in FontForge for more information.
 Vaguely equivalent to 'morx'.
 
 \*
@@ -415,7 +415,7 @@ extended metamorphosis
 
 Provides ligature information, swash, etc. for apple's truetype fonts.
 FontForge can read and write this table. See the [chapter on
-morx](gposgsub.html#AAT) in FontForge for more information. Vaguely
+morx](../../interface/gposgsub/#AAT) in FontForge for more information. Vaguely
 equivalent to 'GSUB'.
 
 [morx](http://developer.apple.com/fonts/TTRefMan/RM06/Chap6morx.html)
@@ -452,7 +452,7 @@ FontForge's personal table
 
 This table is unique to FontForge. It can contain things like
 FontForge's comments, and colors.I describe its format
-[here](non-standard.html).
+[here](../non-standard/).
 
 \*
 
@@ -496,7 +496,7 @@ TeX
 TeX information
 
 This table is unique to FontForge and is for use by TeX. I describe its
-format [here](non-standard.html).
+format [here](../non-standard/).
 
 \*
 
@@ -524,4 +524,4 @@ contains the per-glyph vertical metrics.
 
 [vmtx](http://partners.adobe.com/public/developer/opentype/index_vmtx.html)
 
-[Advanced Typography tables in FontForge](gposgsub.html)
+[Advanced Typography tables in FontForge](../../interface/gposgsub/)

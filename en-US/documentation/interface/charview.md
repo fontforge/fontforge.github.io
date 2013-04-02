@@ -122,7 +122,7 @@ perhaps others), then FontForge will be able to read images in either
 files.
 
 When debugging truetype (`Hints->Debug)`, or showing gritfit outlines
-([`View->Show   Gridfit`](viewmenu.html#ShowGridFit)) the visibility of
+([`View->Show   Gridfit`](../viewmenu/#ShowGridFit)) the visibility of
 the gridfit outlines can be controlled by the background layer's
 visibility.
 
@@ -180,7 +180,7 @@ points of that line or spline. Clicking on the dark part of an image
 (when in a layer with images) will select the image. Clicking on the
 outline of a referenced glyph will select that reference (if a reference
 glyph happens to have the same outline and bounding box, then holding
-down the [meta/alt/caps-lock](charview.html#alt-meta-capslock) key will
+down the [meta/alt/caps-lock](#alt-meta-capslock) key will
 allow you to move it once it is selected, without the meta key you will
 resize it).
 
@@ -212,7 +212,7 @@ something and drag the mouse then it and everything else selected will
 be moved. If you drag an open path and one of the end points happens to
 fall on the end point of another open path, then the two will be merged
 into one (If you don't want open paths to merge, hold down the
-[Alt/meta/caps-lock](charview.html#alt-meta-capslock) key). If you drag
+[Alt/meta/caps-lock](#alt-meta-capslock) key). If you drag
 a control point then it will be moved (if you drag a control point
 defining an implied point, then the implied point(s) will also be
 moved).
@@ -224,7 +224,7 @@ spline).
 If you hold the shift key down when you drag then the motion will be
 constrained to be either horizontal, vertical, or at a 45° angle. (When
 moving control points the combination of shift and [meta
-(alt)](charview.html#alt-meta-capslock)will mean that the control point
+(alt)](#alt-meta-capslock)will mean that the control point
 is constrained to be the same angle from the base point as it was before
 you started moving it).
 
@@ -259,7 +259,7 @@ line). If the last thing you selected was a control point then that
 point will be moved. If you hold down the shift key at the same time the
 up and down arrows will move parallel to the italic angle (be careful of
 this: this leads to non-integral values). If you hold down the [meta
-(alt)](charview.html#alt-meta-capslock) key, then the motion will be 10
+(alt)](#alt-meta-capslock) key, then the motion will be 10
 times the normal amount.
 
 If you hold down the control key while working with the arrows then the
@@ -280,7 +280,7 @@ ligature](editexample4.html#ligature)for a more complete description.
 
 Clicking with the magnifying tool will magnify the view and center it
 around the point you clicked on. Holding down the
-[Alt/Meta/CapsLock](charview.html#alt-meta-capslock)key and clicking
+[Alt/Meta/CapsLock](#alt-meta-capslock)key and clicking
 will minify the view, again centered around the point at which you
 clicked. Again some window managers will steal meta-clicks, so you may
 have to use the View menu to minify (It's called Zoom Out
@@ -303,11 +303,11 @@ bars.
 
 You can use this tool to draw a random curve which FontForge will then
 attempt to convert into a set of splines. If you hold down the
-[Alt/Meta/CapsLock](charview.html#alt-meta-capslock) key then FontForge
+[Alt/Meta/CapsLock](#alt-meta-capslock) key then FontForge
 will close the curve when you release the mouse.
 
 If you double click on the icon in the tool palette you get a dialog
-similar to the [Element-\>Expand Stroke](elementmenu.html#Expand) which
+similar to the [Element-\>Expand Stroke](../elementmenu/#Expand) which
 will give you slightly more control over the results, as you can have it
 not expand the stroke you draw (ie. leave a single trace.)
 
@@ -335,7 +335,7 @@ open path and you drag it to the end point of another open path then the
 two paths will be joined.
 
 If you double click then a point will be added as above and a [Point
-Info](getinfo.html) dlg will appear to give you fine control over the
+Info](../getinfo/) dlg will appear to give you fine control over the
 location of the point and its control points.
 
 The four different point types are
@@ -426,7 +426,7 @@ spline and move it to the other endpoint then it will also show the
 length of that spline.
 
 If you hold down the
-[Meta/Alt/CapsLock](charview.html#alt-meta-capslock)key then information
+[Meta/Alt/CapsLock](#alt-meta-capslock)key then information
 will only be shown when the mouse is depressed.
 
 ### ![](img/cvscaleicon.png)The scale tool
@@ -451,7 +451,7 @@ Double clicking on this will bring up the transform dialog with the
 "Flip..." option selected.
 
 **Note: After flipping an outline you will almost certainly want to
-apply [Element-\>Correct Direction](elementmenu.html#Correct).**
+apply [Element-\>Correct Direction](../elementmenu/#Correct).**
 
 ### ![](img/cvrotateicon.png)The rotate tool
 
@@ -770,7 +770,7 @@ Several words of caution:
 Multiple Master View
 --------------------
 
-In a multiple master font the [MM](mmmenu.html#outline-char) menu gives
+In a multiple master font the [MM](../mmmenu/#outline-char) menu gives
 you control over which style of the font you are editing. It will also
 allow you to display any (or all) of the other styles in the background.
 Although the menu is called "MM" it applies equally to Apple's
@@ -782,9 +782,9 @@ Multiple Layer Editing
 ![](img/charview-multilayer.png)
 
 If you wish to [edit type3
-fonts](multilayer.html), and you have configured FontForge correctly,
+fonts](../multilayer/), and you have configured FontForge correctly,
 the FontForge can display a glyph broken down into a series of strokes
 and fills and allow you to edit each one.
 
--- [Prev](fontview.html) -- [TOC](overview.html) --
-[Next](bitmapview.html) --
+-- [Prev](../fontview/) -- [TOC](overview.html) --
+[Next](../bitmapview/) --

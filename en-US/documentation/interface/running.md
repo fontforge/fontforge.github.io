@@ -14,11 +14,11 @@ title: Starting fontforge
 -   [Dependencies (external libraries/helper
     programs)](source-build.html#Dependencies)
 -   [Installing documentation](source-build.html#Documentation)
--   [Starting FontForge](running.html#FontForge)
-    -   [Before starting fontforge on cygwin](running.html#cygwin)
-    -   [Notes on the PATH variable](running.html#PATH)
+-   [Starting FontForge](#FontForge)
+    -   [Before starting fontforge on cygwin](#cygwin)
+    -   [Notes on the PATH variable](#PATH)
     -   [Starting fontforge from the command
-        line](running.html#Starting)
+        line](#Starting)
     -   [On the mac](#mac)
 
 Starting FontForge
@@ -141,7 +141,7 @@ the named script. Any further arguments on the command line will be
 passed as arguments to the script and processed (or not) by it.
 
 For a complete description of possible arguments see [the section on the
-command line](cliargs.html).
+command line](../cliargs/).
 
 ### Troubleshooting on cygwin
 
@@ -217,7 +217,7 @@ add one yourself:
 
 (You may also start fontforge from the command line here. Go to the
 Applications menu and select Terminal (or xterm), and then type [one of
-the commands listed above](running.html#Starting))
+the commands listed above](#Starting))
 
 **Caveat:** Normally FontForge will never see the command key shortcuts.
 X11 intercepts these and uses them itself. If you would like to be able

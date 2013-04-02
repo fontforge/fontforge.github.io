@@ -7,11 +7,11 @@ title: Get Info
 In the Outline View the Get Info command can generate one of four
 different dialogs depending on what is selected. If a single thing is
 selected, and that thing is a point then the [point
-info](getinfo.html#Point)dialog is brought up, if it is a reference then
-the [reference dialog](getinfo.html#GetReferenceInfo) is brought up, if
-it is a background image then the [image dialog](getinfo.html#Image) is
+info](#Point)dialog is brought up, if it is a reference then
+the [reference dialog](#GetReferenceInfo) is brought up, if
+it is a background image then the [image dialog](#Image) is
 brought up. If it is an anchor point then the [anchor
-point](getinfo.html#Anchors)dialog is brought up.
+point](#Anchors)dialog is brought up.
 
 Point Info
 ----------
@@ -118,7 +118,7 @@ the truetype glyph. This point can then be manipulated with truetype
 instructions to grid fit it properly with the current rasterization.
 
 Anchor points may also be created with the [Point-\>Add
-Anchor](pointmenu.html#AddAnchor) command. 
+Anchor](../pointmenu/#AddAnchor) command. 
 
 ![](img/rgetinfo.png)Reference Info
 -------------------------------
@@ -159,7 +159,7 @@ composite is the one which is drawn first, not the one which is added
 first. The Base numbering scheme is from the full composite, while the
 reference point is numbered by the current reference. The current
 reference must be drawn after the base point. You may use
-[Element-\>Order](elementmenu.html#Order) to reorder the references.
+[Element-\>Order](../elementmenu/#Order) to reorder the references.
 
 (You should probably not set Round To Grid when doing point matching)
 
@@ -178,8 +178,8 @@ anything here, it is purely informational.
 
 See Also:
 
--   [The font info dialog](fontinfo.html)
--   [The glyph info dialog](charinfo.html)
+-   [The font info dialog](../fontinfo/)
+-   [The glyph info dialog](../charinfo/)
 
--- [Prev](elementmenu.html) -- [TOC](overview.html) --
-[Next](elementmenu.html) --
+-- [Prev](../elementmenu/) -- [TOC](overview.html) --
+[Next](../elementmenu/) --

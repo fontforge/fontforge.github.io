@@ -5,8 +5,8 @@ title: Changes to pfaedit (predecessor to fontforge)
 ---
 
 
-[Current fontforge changes](changelog.html)
- [Older fontforge changes](oldchangelog.html)
+[Current fontforge changes](../changelog/)
+ [Older fontforge changes](../oldchangelog/)
 
 -   1-Mar-2004
     -   The Check directions option of Find Problems caused multilayer

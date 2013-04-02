@@ -5,33 +5,33 @@ title: More advanced features, ligatures, mark positioning, glyph variants
 ---
 
 
--   [Font Creation](editexample.html#FontCreate)
--   [Creating a glyph (tracing outlines)](editexample.html#CharCreate)
--   [Create glyph outlines using spiro points](editspiro.html)
+-   [Font Creation](../editexample/#FontCreate)
+-   [Creating a glyph (tracing outlines)](../editexample/#CharCreate)
+-   [Create glyph outlines using spiro points](../editspiro/)
 -   [Importing a glyph from Inkscape (or Illustrator, or some other
-    vector editor)](importexample.html)
--   [Navigating to other glyphs](editexample2.html#Navigating)
+    vector editor)](../importexample/)
+-   [Navigating to other glyphs](../editexample2/#Navigating)
 -   [On to the next glyph (consistent
-    directions)](editexample2.html#Creating-o)
+    directions)](../editexample2/#Creating-o)
 -   [Consistent serifs and stem
-    widths](editexample3.html#consistent-stems)
--   [Building accented glyphs](editexample4.html#accents)
--   [Building a ligature](editexample4.html#ligature)
--   [Lookups and features](editexample4.html#lookups)
--   [Examining metrics](editexample5.html#metrics)
--   [Kerning](editexample5.html#Kerning)
--   [Glyph variants](editexample6.html#Variants)
-    -   [Conditional variants](editexample6.html#Conditional)
+    widths](../editexample3/#consistent-stems)
+-   [Building accented glyphs](../editexample4/#accents)
+-   [Building a ligature](../editexample4/#ligature)
+-   [Lookups and features](../editexample4/#lookups)
+-   [Examining metrics](../editexample5/#metrics)
+-   [Kerning](../editexample5/#Kerning)
+-   [Glyph variants](#Variants)
+    -   [Conditional variants](#Conditional)
 
--   [Anchoring marks](editexample6.html#Marks)
--   [Conditional features](editexample6-5.html#Conditional)
--   [Checking your font](editexample7.html#checking)
--   [Generating it](editexample7.html#generating)
--   [Font Families](editexample7.html#Families)
--   [Final Summary](editexample7.html#summary)
--   [Bitmap strikes](editexample8.html)
--   [Scripting Tutorial](scripting-tutorial.html)
--   [Notes on various scripts](scriptnotes.html#Special)
+-   [Anchoring marks](#Marks)
+-   [Conditional features](../editexample6-5/#Conditional)
+-   [Checking your font](../editexample7/#checking)
+-   [Generating it](../editexample7/#generating)
+-   [Font Families](../editexample7/#Families)
+-   [Final Summary](../editexample7/#summary)
+-   [Bitmap strikes](../editexample8/)
+-   [Scripting Tutorial](../../documentation/scripting/native/scripting-tutorial/)
+-   [Notes on various scripts](../../documentation/scripting/native/scriptnotes/#Special)
 -   Searching the documentation: (Powered by
     [Google](http://www.google.com/))
 
@@ -66,7 +66,7 @@ mentioned above. Assume that the glyph called "one" contains the tabular
 variant of one, the glyph "one.prop" contains the proportional variant
 and "one.oldstyle" contains the lower-case variant, and so on for all
 the other digits. Before you do anything else you must create two
-[lookups](editexample4.html#lookups) and associated subtables (I shan't
+[lookups](../editexample4/#lookups) and associated subtables (I shan't
 go into that again. Here the lookup type is "Single Substitution", and
 the features are "pnum" for Proportional Numbers and "onum" for Oldstyle
 Figures. Also the digits aren't in any single script, but are in many,
@@ -98,7 +98,7 @@ FontForge supports OpenType's Contextual Substitution and Chaining
 Contextual Substitution sub-tables, and to a lesser extent, Apple's
 contextual glyph substitution sub-table. This means that you can insert
 conditional variants into your font. [The next
-page](editexample6-5.html#Conditional) will go into this in greater
+page](../editexample6-5/#Conditional) will go into this in greater
 detail.
 
 Anchoring marks
@@ -136,7 +136,7 @@ Before one can create an anchor in a glyph one must (of course) create a
 lookup and subtable. This is another Glyph Positioning lookup (so you
 enter it in the GPOS pane). Once you have created the subtable you will
 be presented with another dialog asking for anchor classes, you must
-create an [anchor class](overview.html#Anchors) for each type of
+create an [anchor class](../overview/#Anchors) for each type of
 attachment (thus in the case of A above with two types of attachments
 (one above and one below) you would create two anchor classes.
 
@@ -151,5 +151,5 @@ combine with it by using the `View->Anchor   Control...` command.
 And even more confusing software may support them for some scripts and
 not for others.
 
--- [Prev](editexample5.html) -- [TOC](overview.html) --
-[Next](editexample6-5.html) --
+-- [Prev](../editexample5/) -- [TOC](../overview/) --
+[Next](../editexample6-5/) --

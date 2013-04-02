@@ -8,8 +8,8 @@ title: Stylistic Transformations on Fonts
 -   [Change Weight dialog](#Embolden)
 -   [Italic dialog](#Italic)
 -   [Condense/Extend dialog](#Condense)
--   [Change X-Height](Styles.html#xheight)
--   [Change Glyphs](Styles.html#changeglyph)
+-   [Change X-Height](#xheight)
+-   [Change Glyphs](#changeglyph)
 -   [Small Caps dialog](#Smallcaps)
 -   [Subscripts/superscripts dialog](#SubSuper)
 
@@ -219,7 +219,7 @@ width of "originality" (compared to 12pt)    
 
 ### SmallCaps
 
-A SmallCaps font is made by [scaling](transform.html) the capital
+A SmallCaps font is made by [scaling](../transform/) the capital
 letters approximately to the x-height (so that they are the same height
 as lower case letters without ascenders) and then adjusting the stem
 widths (emboldening) so that they too will match stem widths of the
@@ -229,7 +229,7 @@ lower case.
 
 The Italic transformation contains at least five parts: A change in the
 letterforms of the lowercase letters, a slight decrease in x-height, a
-[skew](transform.html), and a condensation and a narrowing of the
+[skew](../transform/), and a condensation and a narrowing of the
 vertical stems..
 
   ----------------------------- -------------- -------------- ------------------- -----------------
@@ -253,7 +253,7 @@ of such a transformation.
 
 ### Oblique
 
-The Oblique transformation is a simple [skew](transform.html),
+The Oblique transformation is a simple [skew](../transform/),
 
   ------------------------------------ ------
   Computer Modern Slanted Sans Serif   9.5º
@@ -278,7 +278,7 @@ negative, in which case you will be making a lighter, rather than a
 bolder variant of the glyph.
 
 You may find that in some cases the [Change
-Glyph](Styles.html#changeglyph)dialog will do a better job of
+Glyph](#changeglyph)dialog will do a better job of
 emboldening or thinning a font. Instead of increasing all stems by the
 same fixed amount it will increase the thickness of each stem
 proportionate to its current thickness.
@@ -406,7 +406,7 @@ The italic lower case is
     will generally be a little lower than the xheight of its companion
     roman font. Note -- if the xheight changes, you should adjust the
     BlueValues (and perhaps the FamilyBlues) with the [Font Info
-    dialog](fontinfo.html#Private).
+    dialog](../fontinfo/#Private).
 -   more flowing -- This may be extremely obvious![](img/wItalic.png)or more
     subtle -- in some fonts even the apparently straight sides of "l"
     will have a slight curve to them.
