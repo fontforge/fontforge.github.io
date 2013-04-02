@@ -1,5 +1,5 @@
 auto: true
 pygments: true
 markdown: rdiscount
-permalink: none
+permalink: pretty
 url: http://fontforge.github.com

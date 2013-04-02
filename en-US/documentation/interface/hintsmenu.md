@@ -5,12 +5,12 @@ title: The Hints Menu
 ---
 
 This menu is only present in the outline glyph view and the font view. 
- [A more detailed description of the hinting UI](hinting.html).
+ [A more detailed description of the hinting UI](../hinting/).
 
 -   [AutoHint](#AutoHint)
 -   [Hint Substitution Pts](#SubstitutionPt)
 -   [Auto Counter](#Counter)
--   [Don't AutoHint](hintsmenu.html#DontAutoHint)
+-   [Don't AutoHint](#DontAutoHint)
 -   [AutoInstr](#AutoInstr)
 -   [Edit Instructions...](#EditInstrs)
 -   [Debug...](#Debug)
@@ -31,9 +31,9 @@ This menu is only present in the outline glyph view and the font view.
 -   [Create VHint](#CreateV)
 -   [Review Hints](#Review)
 -   [Histograms](#Histogram)
-    -   [HStem](hintsmenu.html#HStem-Hist)
-    -   [VStem](hintsmenu.html#VStem-Hist)
-    -   [BlueValues](hintsmenu.html#Blue-Hist)
+    -   [HStem](#HStem-Hist)
+    -   [VStem](#VStem-Hist)
+    -   [BlueValues](#Blue-Hist)
 
 AutoHint
 
@@ -43,7 +43,7 @@ on the current glyph, in the font view it operates on all selected
 glyphs.
  FontForge will do a better job hinting a font if you have previously
 set the BlueValues, StdVW and StdHW fields in [Element-\>Font Info-\>PS
-Private](fontinfo.html#Private). These in turn depend on the hints so it
+Private](../fontinfo/#Private). These in turn depend on the hints so it
 is best to autohint the entire font, then set the above values, and then
 autohint the font again.
 
@@ -79,7 +79,7 @@ The Auto Instr command is only available in quadratic fonts and is used
 to generate truetype instructions. It is designed to produce
 instructions based on PostScript information, so please insure that all
 glyphs are correctly hinted and that the [PostScript private
-dictionary](fontinfo.html#Private) has been filled in. (I know the
+dictionary](../fontinfo/#Private) has been filled in. (I know the
 instructions aren't used by PostScript, but the information needed to
 generate the instructions is clearly expressed in the PostScript data).
 
@@ -90,7 +90,7 @@ diagonal hint preference item is turned on
 Edit Instructions...
 
 Only available in the outline and font views, and only in quadratic
-fonts. [This dialog](ttfinstrs.html) shows any truetype instructions
+fonts. [This dialog](../ttfinstrs/) shows any truetype instructions
 associated with this glyph, and allows you to edit them.
  Note there are some glyphs for which you cannot write instructions if
 they contain references that cannot be represented in TrueType. If a
@@ -108,37 +108,37 @@ Debug...
 Only available in the outline view, and only if you have linked with a
 version of freetype with the bytecode interpreter and only in quadratic
 fonts. This allows you to [debug truetype
-programs](charview.html#Debugging).
+programs](../charview/#Debugging).
 
 Edit fpgm...
 
 Only available in the font view, and only in quadratic fonts. [This
-dialog](ttfinstrs.html) shows any truetype instructions in the 'fpgm'
+dialog](../ttfinstrs/) shows any truetype instructions in the 'fpgm'
 table, and allows you to edit them.
 
 Edit prep...
 
 Only available in the font view, and only in quadratic fonts. [This
-dialog](ttfinstrs.html) shows any truetype instructions in the 'prep'
+dialog](../ttfinstrs/) shows any truetype instructions in the 'prep'
 table, and allows you to edit them.
 
 Edit cvt...
 
 Only available in the font view, and only in quadratic fonts. [This
-dialog](ttfinstrs.html#cvt) shows the initial values in the 'cvt '
+dialog](../ttfinstrs/#cvt) shows the initial values in the 'cvt '
 table, and allows you to edit them. You can also add a brief comment to
 describe what each entry is used for.
 
 Suggest Deltas...
 
-Brings up a [dialog](SuggestDeltas.html) which will help you search for
+Brings up a [dialog](../SuggestDeltas/) which will help you search for
 places where truetype delta instructions might be useful.
 
 Remove Instr Tables
 
 If the font contains a 'fpgm', 'prep', 'cvt ' or 'maxp' table, then this
 command will remove them. This should be done in conjunction with
-[Hints-\>Clear Instructions](hintsmenu.html), otherwise any remaining
+[Hints-\>Clear Instructions](../hintsmenu/), otherwise any remaining
 instructed glyphs will fail to work.
 
 Clear Hints
@@ -202,38 +202,38 @@ The Histograms SubMenu
 
 HStem
 
-Brings up a [dialog](histogram.html) displaying a histogram of the
+Brings up a [dialog](../histogram/) displaying a histogram of the
 horizontal stem widths of all selected glyphs.
 
 VStem
 
-Brings up a [dialog](histogram.html) displaying a histogram of the
+Brings up a [dialog](../histogram/) displaying a histogram of the
 vertical stem widths of all selected glyphs.
 
 BlueValues
 
-Brings up a [dialog](histogram.html) displaying a histogram of the
+Brings up a [dialog](../histogram/) displaying a histogram of the
 vertical maxima and minima of all selected glyphs.
 
 Other menus
 -----------
 
--   [File](filemenu.html)
--   [Edit](editmenu.html)
--   [Point](pointmenu.html)
--   [Element](elementmenu.html)
--   [Tools](toolsmenu.html)
--   [Hints](hintsmenu.html)
--   [Encoding](encodingmenu.html)
--   [View](viewmenu.html)
--   [Metrics](metricsmenu.html)
--   [CID](cidmenu.html)
--   [MM](mmmenu.html)
--   [Window](windowmenu.html)
--   [Help](helpmenu.html)
--   [Hot Keys](HotKeys.html)
+-   [File](../filemenu/)
+-   [Edit](../editmenu/)
+-   [Point](../pointmenu/)
+-   [Element](../elementmenu/)
+-   [Tools](../toolsmenu/)
+-   [Hints](../hintsmenu/)
+-   [Encoding](../encodingmenu/)
+-   [View](../viewmenu/)
+-   [Metrics](../metricsmenu/)
+-   [CID](../cidmenu/)
+-   [MM](../mmmenu/)
+-   [Window](../windowmenu/)
+-   [Help](../helpmenu/)
+-   [Hot Keys](../HotKeys/)
 
--- [Prev](toolsmenu.html) -- [TOC](overview.html) --
-[Next](encodingmenu.html) --
+-- [Prev](../toolsmenu/) -- [TOC](overview.html) --
+[Next](../encodingmenu/) --
 
 

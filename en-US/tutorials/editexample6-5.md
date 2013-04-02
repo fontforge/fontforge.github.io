@@ -5,37 +5,37 @@ title: Contextual features
 ---
 
 
--   [Font Creation](editexample.html#FontCreate)
--   [Creating a glyph (tracing outlines)](editexample.html#CharCreate)
--   [Create glyph outlines using spiro points](editspiro.html)
+-   [Font Creation](../editexample/#FontCreate)
+-   [Creating a glyph (tracing outlines)](../editexample/#CharCreate)
+-   [Create glyph outlines using spiro points](../editspiro/)
 -   [Importing a glyph from Inkscape (or Illustrator, or some other
-    vector editor)](importexample.html)
--   [Navigating to other glyphs](editexample2.html#Navigating)
+    vector editor)](../importexample/)
+-   [Navigating to other glyphs](../editexample2/#Navigating)
 -   [On to the next glyph (consistent
-    directions)](editexample2.html#Creating-o)
+    directions)](../editexample2/#Creating-o)
 -   [Consistent serifs and stem
-    widths](editexample3.html#consistent-stems)
--   [Building accented glyphs](editexample4.html#accents)
--   [Building a ligature](editexample4.html#ligature)
--   [Lookups and features](editexample4.html#lookups)
--   [Examining metrics](editexample5.html#metrics)
--   [Kerning](editexample5.html#Kerning)
--   [Glyph variants](editexample6.html#Variants)
--   [Anchoring marks](editexample6.html#Marks)
--   [Conditional features](editexample6-5.html)
-    -   [OpenType](editexample6-5.html#OpenType) (behavior needed in
+    widths](../editexample3/#consistent-stems)
+-   [Building accented glyphs](../editexample4/#accents)
+-   [Building a ligature](../editexample4/#ligature)
+-   [Lookups and features](../editexample4/#lookups)
+-   [Examining metrics](../editexample5/#metrics)
+-   [Kerning](../editexample5/#Kerning)
+-   [Glyph variants](../editexample6/#Variants)
+-   [Anchoring marks](../editexample6/#Marks)
+-   [Conditional features]()
+    -   [OpenType](#OpenType) (behavior needed in
         latin for script joins)
-    -   [Apple](editexample6-5.html#Apple) (behavior needed in latin for
+    -   [Apple](#Apple) (behavior needed in latin for
         script joins)
-    -   [OpenType](editexample6-5.html#Greek) (Greek ligatures)
+    -   [OpenType](#Greek) (Greek ligatures)
 
--   [Checking your font](editexample7.html#checking)
--   [Generating it](editexample7.html#generating)
--   [Font Families](editexample7.html#Families)
--   [Final Summary](editexample7.html#summary)
--   [Bitmap strikes](editexample8.html)
--   [Scripting Tutorial](scripting-tutorial.html)
--   [Notes on various scripts](scriptnotes.html#Special)
+-   [Checking your font](../editexample7/#checking)
+-   [Generating it](../editexample7/#generating)
+-   [Font Families](../editexample7/#Families)
+-   [Final Summary](../editexample7/#summary)
+-   [Bitmap strikes](../editexample8/)
+-   [Scripting Tutorial](../../documentation/scripting/native/scripting-tutorial/)
+-   [Notes on various scripts](../../documentation/scripting/native/scriptnotes/#Special)
 -   Searching the documentation: (Powered by
     [Google](http://www.google.com/))
 
@@ -53,7 +53,7 @@ applied. In an Apple font, the context is specified by a state machine
 Conditional features may involve substitutions, ligatures or kerning
 (and some more obscure behaviors). First I shall provide an example of a
 contextual substitution, later of [contextual
-ligatures](editexample6-5.html#Greek).
+ligatures](#Greek).
 
 ![](img/bed-script.png)
 
@@ -447,11 +447,11 @@ been accepted.
 ![](img/kappaiota-lookups.png)
 
 Once you have created your lookups you may test the result in the
-[metrics view](metricsview.html).
+[metrics view](../../documentation/interface/metricsview/).
 
 ![](img/metrics-kappa_iota.png)
 
 (This example was provided by Apostolos Syropoulos)
 
--- [Prev](editexample6.html) -- [TOC](overview.html) --
-[Next](editexample7.html) --
+-- [Prev](../editexample6/) -- [TOC](../overview/) --
+[Next](../editexample7/) --

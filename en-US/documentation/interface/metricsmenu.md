@@ -9,23 +9,23 @@ contains "Center in Width" and "Thirds in Width".
 
 -   [Center in Width](#Center)
 -   [Thirds in Width](#Thirds)
--   [Window Type](metricsmenu.html#WindowType)
-    -   [Kerning only](metricsmenu.html#WT-Kerning)
-    -   [Advance Width only](metricsmenu.html#WT-Width)
-    -   [Both](metricsmenu.html#WT-Both)
+-   [Window Type](#WindowType)
+    -   [Kerning only](#WT-Kerning)
+    -   [Advance Width only](#WT-Width)
+    -   [Both](#WT-Both)
 
 -   [Set Width...](#Width)
 -   [Set LBearing...](#LBearing)
 -   [Set RBearing...](#RBearing)
 -   [Auto Width...](#Auto)
--   ~~Auto Kern...~~ (See the [kerning subtable](lookups.html#Pair)
-    dialog and the [kerning class](metricsview.html#kernclass)dialog)
+-   ~~Auto Kern...~~ (See the [kerning subtable](../lookups/#Pair)
+    dialog and the [kerning class](../metricsview/#kernclass)dialog)
 -   [Kern By Classes...](#KernByClasses)
 -   [Remove All Kern Pairs](#Remove)
 -   [Kern Pair Closeup...](#kernpair)
--   [VKern By Classes...](metricsmenu.html#VKernByClasses)
+-   [VKern By Classes...](#VKernByClasses)
 -   [VKern From HKern](#VKernFromHKern)
--   [Remove All VKern Pairs](metricsmenu.html#VRemove)
+-   [Remove All VKern Pairs](#VRemove)
 -   [Set Vertical Advance...](#vertical)
 
 Center in Width
@@ -85,13 +85,13 @@ bearing rather than to the width.
 Auto Width...
 
 This command is only available in the font view. [It attempts to guess
-reasonable values for the widths](autowidth.html#AutoWidth) (more
+reasonable values for the widths](../autowidth/#AutoWidth) (more
 accurately the left and right bearings) of the specified glyphs.
 
 Kern By Classes...
 
 This command is only available from the font and metrics views. It
-provides the user with a [dialog](metricsview.html#kernclass) to
+provides the user with a [dialog](../metricsview/#kernclass) to
 manipulate kerning classes.
 
 Remove All Kern Pairs
@@ -104,16 +104,16 @@ glyph is the left hand glyph.
 Kern Pair Closeup...
 
 (Sorry about the name, I couldn't think of a better).
-[Allows](metricsview.html#kernpair) you to get a look at kerning between
+[Allows](../metricsview/#kernpair) you to get a look at kerning between
 two glyphs at different point-sizes and to build a "[Device
-Table](metricsview.html#DeviceTable)" (which allows small corrections
+Table](../metricsview/#DeviceTable)" (which allows small corrections
 from the standard behavior at specified point sizes)
  Not present in the Bitmap view.
 
 VKern By Classes...
 
 This command is only available from the font and metrics views. It
-provides the user with a [dialog](metricsview.html#kernclass) to
+provides the user with a [dialog](../metricsview/#kernclass) to
 manipulate vertical kerning classes.
 
 VKern From HKern
@@ -145,22 +145,22 @@ advance rather than the horizontal advance (width).
 Other menus
 -----------
 
--   [File](filemenu.html)
--   [Edit](editmenu.html)
--   [Point](pointmenu.html)
--   [Element](elementmenu.html)
--   [Tools](toolsmenu.html)
--   [Hints](hintsmenu.html)
--   [Encoding](encodingmenu.html)
--   [View](viewmenu.html)
--   [Metrics](metricsmenu.html)
--   [CID](cidmenu.html)
--   [MM](mmmenu.html)
--   [Window](windowmenu.html)
--   [Help](helpmenu.html)
--   [Hot Keys](HotKeys.html)
+-   [File](../filemenu/)
+-   [Edit](../editmenu/)
+-   [Point](../pointmenu/)
+-   [Element](../elementmenu/)
+-   [Tools](../toolsmenu/)
+-   [Hints](../hintsmenu/)
+-   [Encoding](../encodingmenu/)
+-   [View](../viewmenu/)
+-   [Metrics](../metricsmenu/)
+-   [CID](../cidmenu/)
+-   [MM](../mmmenu/)
+-   [Window](../windowmenu/)
+-   [Help](../helpmenu/)
+-   [Hot Keys](../HotKeys/)
 
--- [Prev](viewmenu.html) -- [TOC](overview.html) -- [Next](cidmenu.html)
+-- [Prev](../viewmenu/) -- [TOC](overview.html) -- [Next](../cidmenu/)
 --
 
 

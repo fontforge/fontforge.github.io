@@ -58,4 +58,4 @@ Note it may sometimes be better to define a correction in the matching
 glyph rather than the current one. Corrections will apply to all glyphs
 matched with the current one.
 
--- [Back](metricsmenu.html) --
+-- [Back](../metricsmenu/) --

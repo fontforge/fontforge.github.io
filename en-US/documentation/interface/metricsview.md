@@ -63,7 +63,7 @@ width by dragging this line. You may change the left side bearing
 right. You may change the kerning between this glyph and the one to its
 left by dragging the green line around. (If you wish to create a [Device
 Table](#DeviceTable) for small pixel sizes you must use the [Kern Pair
-Closeup dialog](metricsview.html#kernpair))
+Closeup dialog](#kernpair))
 
   ------------------------ ----------------------
   ![](img/To-unkerned.png) ![](img/To-kerned.png)
@@ -127,7 +127,7 @@ them. Or at best some sub-set of ISO 8859-1 characters. How can the full
 range of unicode characters be entered?
 
 X supplies a sophisticated mechanism for entering characters via
-stand-alone [input method servers](xim.html). FontForge supports this to
+stand-alone [input method servers](../../reference/xim/). FontForge supports this to
 some extent now.
 
 Aside from that, many versions of X supply a "Compose Character" key, or
@@ -206,7 +206,7 @@ that o and ô probably kern quite differently after a T), and rather than
 create separate kerning pairs for each of the "A"s above, they could all
 be placed in a class of glyphs which kern alike.
 
-The [Element-\>Font Info-\>Lookups](lookups.html) provides an interface
+The [Element-\>Font Info-\>Lookups](../lookups/) provides an interface
 to this.
 
 ![](img/kerningformat.png)
@@ -246,7 +246,7 @@ move glyphs closer together.
 ![](img/kerningclass.png)
 
 Each kerning class belongs to a [lookup
-subtable](lookups.html) and the subtable name is displayed at the top of
+subtable](../lookups/) and the subtable name is displayed at the top of
 the dialog.
 
 But the more interesting stuff follows this. A kerning by class actually
@@ -317,7 +317,7 @@ Because small pixel sizes can be hard to examine, you can change the
 magnification (rasterized at the same size, but each pixel made twice as
 big).
 
-[Device Tables](metricsview.html#DeviceTable) may also be created in a
+[Device Tables](#DeviceTable) may also be created in a
 number of other cases. The example above was for a kerning class.
 Kerning pairs may also have tables attached to them with the
 Metrics-\>Kern Pair Closeup dialog, which looks similar to the Kerning
@@ -327,5 +327,5 @@ Class dialog above.
 
 
 
--- [Prev](bitmapview.html) -- [TOC](overview.html) --
-[Next](filemenu.html) --
+-- [Prev](../bitmapview/) -- [TOC](overview.html) --
+[Next](../filemenu/) --

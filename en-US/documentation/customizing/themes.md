@@ -10,7 +10,7 @@ these into your \~/.Xdefaults file and then run
 
 >     $ xrdb ~/.Xdefaults
 
-For more information see the [X Resources page](xres.html).
+For more information see the [X Resources page](../../interface/xres/).
 
 Grey
 ----

@@ -101,5 +101,3 @@ Differences from [Fontographer](http://www.macromedia.com/software/fontographer/
     -   Flip horizontal/vertical
     -   Rotate 90° Clockwise/Counter Clockwise
     -   Rotate 180°
-
---- [Main](index.html) ---

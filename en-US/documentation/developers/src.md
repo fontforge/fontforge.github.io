@@ -41,11 +41,11 @@ place for a postscript font before it gets converted into a SplineFont
 splinefont.h
 
 [This one contains all the basic data structures of the
-program.](splinefont.html)
+program.](../splinefont/)
 
 views.h
 
-[This contains the basic UI data structures.](views.html)
+[This contains the basic UI data structures.](../../interface/views/)
 
 Source Files
 ------------
@@ -265,7 +265,7 @@ Dialog and dispatcher for the Generate Fonts command.
 sfd.c
 
 Routines to write and read our spline font database format
-([sfd](sfdformat.html)). Also routines to handle autosave files which
+([sfd](../sfdformat/)). Also routines to handle autosave files which
 are basically just the bits of the font which have changed written out
 in sfd format with a few extra headers to say what these changes should
 be applied to.

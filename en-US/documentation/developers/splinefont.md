@@ -263,7 +263,7 @@ converted into a [floating selection](#BDFFloat) and copied into the
 selection field.
 
 ut\_composite is used when doing a copy from the
-[FontView](views.html#FontView) where you are copying both the splines
+[FontView](../../interface/views/#FontView) where you are copying both the splines
 and the bitmaps of a character.
 
 ut\_mult is used when doing a copy from the FontView where you are
@@ -563,7 +563,7 @@ The splines field gives all the foreground paths
 ([SplinePointLists](#SplinePointList)). Hints for horizontal and
 vertical stems. A set of other characters referenced in this one, again
 only in the foreground. Then a linked list of all
-[CharViews](views.html#CharView) displaying this SplineChar (if this guy
+[CharViews](../../interface/views/#CharView) displaying this SplineChar (if this guy
 changes, all must be updated to reflect the change). A pointer to the
 [SplineFont](#SplineFont) that contains us. A set of bits: changed means
 the character has changed since the last save to disk,
@@ -631,7 +631,7 @@ that something has changed since autosave last happened (so we should
 actually process this font the next time autosave rolls around).
 
 Display\_antialias means we are displaying an antialias bytemap font in
-the [FontView](views.html#FontView), rather than a bitmap font. These
+the [FontView](../../interface/views/#FontView), rather than a bitmap font. These
 look better but are slower.
 
 Dotlesswarn means that we've warned the user when s/he attempted to
@@ -639,7 +639,7 @@ create an accented character based on i or j and a dotless version of
 those characters was not present in the font (there's no point in
 warning him again. The operation proceeded with a dotted version).
 
-There is only one [FontView](views.html#FontView) associated with a font
+There is only one [FontView](../../interface/views/#FontView) associated with a font
 (other data structures allowed for multiple views, but the font does
 not).
 

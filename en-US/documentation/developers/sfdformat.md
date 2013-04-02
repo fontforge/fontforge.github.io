@@ -16,7 +16,7 @@ title: Spline Font Database File Format
 >  Christopher Fry
 
 **This page is often out of date. I thought it was a correct on 16 Feb
-2011.** A [changelog](sfdchangelog.html) file is available. Even if out
+2011.** A [changelog](../sfdchangelog/) file is available. Even if out
 of date it should be helpful, but if you really need to know the current
 format look at
 [fontforge/sfd.c](http://fontforge.git.sourceforge.net/git/gitweb.cgi?p=fontforge/fontforge;a=summary)
@@ -34,7 +34,7 @@ created before then are better understood if you look at an [older
 version of this
 document](http://fontforge.git.sourceforge.net/git/gitweb.cgi?p=fontforge/fontforge;a=summary).
 
-FontForge's [sfd](sfd.html) files are ASCII files (so they can be copied
+FontForge's sfd files are ASCII files (so they can be copied
 easily across the internet and so that diffs are somewhat meaningful).
 They contain a full description of your font. As of 14 May 2008 there is
 a registered (with IANA) MIME type for them
@@ -44,13 +44,13 @@ They are vaguely modeled on bdf files. The first few lines contain
 general font properties, then there's a section for each character, then
 a section for each bitmap font.
 
--   [Font Header](sfdformat.html#Font-Header)
--   [Outline Character Data](sfdformat.html#Outline-Char-Data)
--   [Bitmap Fonts](sfdformat.html#Bitmap-Fonts)
--   [CID keyed fonts](sfdformat.html#CID-keyed-fonts)
--   [Multiple Master fonts](sfdformat.html#Multiple-Master-fonts)
+-   [Font Header](#Font-Header)
+-   [Outline Character Data](#Outline-Char-Data)
+-   [Bitmap Fonts](#Bitmap-Fonts)
+-   [CID keyed fonts](#CID-keyed-fonts)
+-   [Multiple Master fonts](#Multiple-Master-fonts)
 -   [SplineFont Directories](#sfdir)
--   [AutoSave Format](sfdformat.html#Autosave-Format)
+-   [AutoSave Format](#Autosave-Format)
 
 **WARNING:**It is tempting to cut and paste information from one sfd
 file to another. This is usually ok, but there are a couple of cases
@@ -131,7 +131,7 @@ basically a set of keyword value pairs. Within a given section, order is
 largely irrelevant. The next few lines give the various different names
 that postscript allows fonts to have. Then some fairly self-explanatory
 items (if they don't make sense, look them up in the [font
-info](fontinfo.html) dlg). A few things need some explanation:
+info](../../interface/fontinfo/) dlg). A few things need some explanation:
 
 Comments
 
@@ -796,7 +796,7 @@ every constant that lives in the math table. The names are the same as
 the names in the (English) MATH Info dialog.
 
 Most math constants may also specify device tables (for more on [device
-tables see below](sfdformat.html#device-table)):
+tables see below](#device-table)):
 
 >     MATH:SubscriptShiftDown: 483 {12-17 1,0,0,0,1,1}
 
@@ -1218,7 +1218,7 @@ kern class, however)
 >     Kerns2: 60 -100 "Kern Latin" {12-13 -1,-1} 63 -92 "Kern Latin" 70 -123 "Kern Latin" 45 -107 "Kern Latin" 76 -107 "Kern Latin"
 
 Where each kern pair is represented by 2 numbers and a lookup subtable
-(and an optional [device](sfdformat.html#device-table) table, see
+(and an optional [device](#device-table) table, see
 above). The first is the original position of the second character (in
 the current font), the next is the horizontal kerning amount, then the
 lookup subtable name. Then we start over with the next kernpair.
@@ -1584,12 +1584,12 @@ directories with an extension of ".sfdir". The directory contains the
 following:
 
 -   A file `font.props `which contains the [font
-    header](sfdformat.html#Font-Header) and includes everything up to
+    header](#Font-Header) and includes everything up to
     (but not including) the `BeginChars` line
 -   For non-CID-keyed fonts the directory will contain one file for each
     glyph in the font, these files will be named `<glyph-name>.glyph`
     and will be in the format specified for [outline
-    data](sfdformat.html#Outline-Char-Data).
+    data](#Outline-Char-Data).
 -   If the font contains any bitmap strikes then there will be
     subdirectories named `<pixel-size>.strike`. And these directories
     will contain a `strike.props `file and one file per glyph in the
@@ -1597,7 +1597,7 @@ following:
     `strike.props       `file will contan the bitmap header and bdf
     properties, while the `*.bitmap` files will contain the per-glyph
     bitmap data. These will be in the format described in the section on
-    [bitmaps](sfdformat.html#Bitmap-Fonts).
+    [bitmaps](#Bitmap-Fonts).
 -   For CID-keyed fonts there will be subdirectories named
     `<subfontname>.subfont`, each subfont will contain its own
     `font.props` file and its own set of glyph files.
@@ -1607,7 +1607,7 @@ following:
 Autosave Format
 ---------------
 
-[Error recovery](errrecovery.html) files are saved in
+[Error recovery](../../reference/errrecovery/) files are saved in
 \~/.FontForge/autosave, they have quite random looking names and end in
 .asfd. They look very similar to .sfd files above.
 

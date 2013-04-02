@@ -8,12 +8,12 @@ title: The Element Menu
 -   [Glyph Info](#CharInfo)...
 -   Other Info
     -   [MATH Info...](#MATH)
-    -   [BDF Info...](elementmenu.html#BDF-Info)
+    -   [BDF Info...](#BDF-Info)
     -   [Horizontal Baselines...](#HBase)
     -   [Vertical Baselines...](#VBase)
     -   [Justification Information...](#Justify)
     -   Show Dependencies
-        -   [References](elementmenu.html#Dependencies)
+        -   [References](#Dependencies)
         -   [Substitutions](#DepSubs)
 
     -   [Mass Glyph Rename...](#MassRename)
@@ -41,7 +41,7 @@ title: The Element Menu
 -   Transformations
     -   [Transform](#Transform)...
     -   [Point of View Projection](#PoV)...
-    -   [Non-Linear Transform](elementmenu.html#Non-Linear)...
+    -   [Non-Linear Transform](#Non-Linear)...
     -   [Flip Horizontally](#Flip)
     -   [Flip Vertically](#FlipV)
     -   [Rotate 90° CW](#Rotate)
@@ -50,7 +50,7 @@ title: The Element Menu
     -   [Skew](#Skew)
 
 -   [Expand Stroke...](#Expand)
--   [Tile Path...](elementmenu.html#TilePath)
+-   [Tile Path...](#TilePath)
 -   [Tile Pattern...](#TilePattern)
 -   Overlap
     -   [Remove Overlap](#Remove)
@@ -60,17 +60,17 @@ title: The Element Menu
 
 -   Simplify
     -   [Simplify](#Simplify)
-    -   [Simplify More](elementmenu.html#SimplifyMore)
+    -   [Simplify More](#SimplifyMore)
     -   [Cleanup Glyphs](#Cleanup)
     -   [Canonical Start Points](#CanonicalSP)
     -   [Canonical Contour Order](#CanonicalContours)
 
--   [Add Extrema](elementmenu.html#Add-Extrema)
+-   [Add Extrema](#Add-Extrema)
 -   [AutoTrace](#AutoTrace)
 -   [Align](#Align)
-    -   [Average Points](elementmenu.html#Average)
-    -   [Space Points](elementmenu.html#Space-Pts)
-    -   [Space Regions](elementmenu.html#Space-Regions)
+    -   [Average Points](#Average)
+    -   [Space Points](#Space-Pts)
+    -   [Space Regions](#Space-Regions)
     -   [Make Parallel](#Parallel)
 
 -   Round
@@ -107,35 +107,35 @@ compiling FontForge.
 
 Font Info
 
-In all views this brings up the [Font Info dialog](fontinfo.html).
+In all views this brings up the [Font Info dialog](../fontinfo/).
  CID keyed fonts can set information on the CID font as a whole (rather
 than just the current sub-font, which is what this command does) from
-[CID-\>CID Font Info](cidmenu.html#FontInfo).
+[CID-\>CID Font Info](../cidmenu/#FontInfo).
 
 Glyph Info
 
 In the all views this brings up the [Glyph Info
-dialog](charinfo.html#Character).
+dialog](../charinfo/#Character).
 
 MATH Info...
 
-Brings up the [MATH Info dialog](math.html).
+Brings up the [MATH Info dialog](../../reference/math/).
 
 BDF Info
 
 If you have bitmaps in your font, then in the font view or bitmap view
-this command will bring up the [BDF Info dialog.](bdfinfo.html)
+this command will bring up the [BDF Info dialog.](../bdfinfo/)
 
 Horizontal Baselines...
 
-This [dialog](baseline.html) gives you control over the OpenType 'BASE'
+This [dialog](../baseline/) gives you control over the OpenType 'BASE'
 table which allows you to specify different baselines for different
 scripts, and how to align those baselines with each other. It also
 provides fine control over the inter-baseline spacing (the line height).
 
 Vertical Baselines...
 
-This [dialog](baseline.html) gives you control over the OpenType 'BASE'
+This [dialog](../baseline/) gives you control over the OpenType 'BASE'
 table which allows you to specify different baselines for different
 scripts, and how to align those baselines with each other. It also
 provides fine control over the inter-baseline spacing (the column
@@ -143,14 +143,14 @@ width).
 
 Justification Information...
 
-This [dialog](justify.html) allows you to examine and provide the
+This [dialog](../justify/) allows you to examine and provide the
 information needed for the OpenType JSTF table -- information which
 helps layout engines do text justification.
 
 Get Info
 
 In the outline view this brings up [one of four different
-dialogs](getinfo.html) (Point Info, Image Info, Reference Info, Anchor
+dialogs](../getinfo/) (Point Info, Image Info, Reference Info, Anchor
 Point Info) depending on what is selected.
 
 Show Dependencies
@@ -196,7 +196,7 @@ several common problems. In the glyph view it will select anything that
 needs to be fixed, in the font view it will check all selected glyphs
 and if any have problems will open them and select the problems. It will
 post a message telling you of each problem found. It brings up the [Find
-Problem](problems.html) dialog to let you choose what problems to look
+Problem](../problems/) dialog to let you choose what problems to look
 for.
 
 Validate...
@@ -204,7 +204,7 @@ Validate...
 Rather similar to Find Problems, but works with a much smaller set of
 things which are definitely errors, and provides an overview of the
 problems found in all glyphs of the font. See the [validation
-page](validation.html) for more info.
+page](../validation/) for more info.
 
 Bitmap Strikes Available...
 
@@ -288,7 +288,7 @@ strikes.
 
 Styles
 
-There are many [standard variations](Styles.html) on Latin (Greek,
+There are many [standard variations](../Styles/) on Latin (Greek,
 Cyrillic) fonts. Some of them apply to other scripts -- making a font
 darker (bolder) is common to many scripts, though the actual mechanics
 differ from script to script) Others -- such as Italic -- are more
@@ -307,7 +307,7 @@ another point down. This is based on heuristics and will fail if a glyph
 is even the slightest bit unexpected.
  For other writing systems FontForge will do something, currently it
 will fall into one of the two cases above.
- See the [Change Weight dialog](Styles.html#Embolden).
+ See the [Change Weight dialog](../Styles/#Embolden).
 
 Italic
 
@@ -315,7 +315,7 @@ An italic font is different from and more complex than an oblique font.
 Traditionally fonts with serifs are made italic and fonts without serifs
 are made oblique. This will change some letterforms, change the serifs,
 condense the font and slant things. See the [Italic
-dialog.](Styles.html#Italic)
+dialog.](../Styles/#Italic)
 
 Oblique
 
@@ -328,7 +328,7 @@ Condense/Extend
 Allows you to change the width of the counters and side bearings of a
 glyph. The algorithm only works on simple latin glyphs, and it has
 problems with diagonal stems. See the [Condense/Extend
-dialog](Styles.html#Condense).
+dialog](../Styles/#Condense).
 
 Change X-Height
 
@@ -349,7 +349,7 @@ capital letters to small caps, and the other bound to 'smcp' which maps
 lower case letters to small caps. It will build the appropriate small
 caps glyphs in the new glyph slots. This only applies to upper and lower
 case letters in the latin, greek and cyrillic scripts. [See the Small
-Caps dialog](Styles.html#Smallcaps).
+Caps dialog](../Styles/#Smallcaps).
 
 Add Subscripts/Superscripts
 
@@ -358,7 +358,7 @@ ones. The outlines of the selected glyphs will be scaled (with stems
 potentially being scaled differently from the glyph as a whole), and
 moved vertically. Then a new lookup will be created mapping the original
 glyph to the newly created one under control of the appropriate feature.
-[See the Subscript/Superscript dialog](Styles.html#SubSuper).
+[See the Subscript/Superscript dialog](../Styles/#SubSuper).
 
 Outline
 
@@ -390,18 +390,18 @@ transformations of splines are not meaningful).
 Transform...
 
 [In the Font and Outline Views this brings up the transform
-dialog](transform.html). This provides the standard linear
+dialog](../transform/). This provides the standard linear
 transformations you expect to have available (rotation, scaling,
 translation, skewing).
 
 Point of View Projection
 
-[This dialog](transform.html#PoV)allows you to perform a perspective
+[This dialog](../transform/#PoV)allows you to perform a perspective
 transformation on your glyphs. (This is a non-linear transformation)
 
 Non-Linear Transform...
 
-[This dialog](transform.html#Non-Linear) allows you to perform a general
+[This dialog](../transform/#Non-Linear) allows you to perform a general
 transformation (which could be linear or which can be non-linear).
 Essentially you provide two equations for how x and y should be mapped.
 
@@ -439,7 +439,7 @@ allows the user to specify a non-linear transformation as a pair of
 expressions (the first specifies the transformation for the x
 coordinate, the second for the y coordinate). These expressions may be
 fairly general functions of x and y. See the [scripting
-page](scripting-alpha.html#NonLinearTransform) for a description of the
+page](../../scripting/native/scripting-alpha/#NonLinearTransform) for a description of the
 syntax.
 
 Expand Stroke...
@@ -470,7 +470,7 @@ corner point).
 For closed contours you may also choose to remove either the generated
 contour which is inside the original, or that which is outside (Note:
 Make sure your glyph is oriented correctly with [Edit-\>Correct
-Direction](elementmenu.html#Correct)before removing a contour (if
+Direction](#Correct)before removing a contour (if
 misoriented the wrong contour may be removed)).
 
 [How is this done?](pfaeditmath.html#Stroke)
@@ -480,13 +480,13 @@ Tile Path
 This command is not available in the default build, you must reconfigure
 \$ `configure --with-tilepath` and then rebuild FontForge. Not available
 in quadratic (truetype) fonts. This command brings up a
-[dialog](tilepath.html) which allows you to specify a tile to be applied
+[dialog](../tilepath/) which allows you to specify a tile to be applied
 to any selected contours.
 
 Tile Pattern...
 
 Also not available in the default build, also controled by \$
-`configure       --with-tilepath`. [This command](tilepath.html#Pattern)
+`configure       --with-tilepath`. [This command](../tilepath/#Pattern)
 allows you to design a pattern which will be layed down on the current
 layer m\*n times (where m is the number of horizontal repeats and n the
 number of vertical repeats.
@@ -613,7 +613,7 @@ This command is only available if you have downloaded Martin Weber's
 [autotrace program](http://sourceforge.net/projects/autotrace/), or
 Peter Selinger's [potrace](http://potrace.sf.net/). If you have a
 background image in a glyph then autotrace will automagically trace the
-outlines of that image. See [the section on autotracing](autotrace.html)
+outlines of that image. See [the section on autotracing](../autotrace/)
 for more information.
 
 Align menu
@@ -745,7 +745,7 @@ contours like any others.
 Insert Text Outlines...
 
 Upon occasion it is useful to be able to insert text into a glyph. The
-[Insert Text Dialog](InsertTextDlg.html) lets you do this.
+[Insert Text Dialog](../InsertTextDlg/) lets you do this.
 
 Build Accented/Composite Glyph
 
@@ -766,11 +766,11 @@ the "A".
 built using the rules of "agrave" but with ".sc" variants. So
 "agrave.sc" would contain "a.sc". For accents it will use "grave.sc" if
 it exists and "grave" if it does not.
- If [Copy From](editmenu.html#From) is set to All Fonts then any bitmaps
+ If [Copy From](../editmenu/#From) is set to All Fonts then any bitmaps
 will have a similar process done -- that is bitmap references will be
 created (even in the outline glyph view).
  A more complete description is given in the section on [accented
-glyphs](accented.html).
+glyphs](../accented/).
 
 Build Duplicate
 
@@ -880,22 +880,22 @@ message box pops up.
 Other menus
 -----------
 
--   [File](filemenu.html)
--   [Edit](editmenu.html)
--   [Point](pointmenu.html)
--   [Element](elementmenu.html)
--   [Tools](toolsmenu.html)
--   [Hints](hintsmenu.html)
--   [Encoding](encodingmenu.html)
--   [View](viewmenu.html)
--   [Metrics](metricsmenu.html)
--   [CID](cidmenu.html)
--   [MM](mmmenu.html)
--   [Window](windowmenu.html)
--   [Help](helpmenu.html)
--   [Hot Keys](HotKeys.html)
+-   [File](../filemenu/)
+-   [Edit](../editmenu/)
+-   [Point](../pointmenu/)
+-   [Element](../elementmenu/)
+-   [Tools](../toolsmenu/)
+-   [Hints](../hintsmenu/)
+-   [Encoding](../encodingmenu/)
+-   [View](../viewmenu/)
+-   [Metrics](../metricsmenu/)
+-   [CID](../cidmenu/)
+-   [MM](../mmmenu/)
+-   [Window](../windowmenu/)
+-   [Help](../helpmenu/)
+-   [Hot Keys](../HotKeys/)
 
--- [Prev](pointmenu.html) -- [TOC](overview.html) --
-[Next](toolsmenu.html) --
+-- [Prev](../pointmenu/) -- [TOC](overview.html) --
+[Next](../toolsmenu/) --
 
 

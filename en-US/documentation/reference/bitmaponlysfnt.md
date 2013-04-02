@@ -8,9 +8,9 @@ title: Several formats for bitmap only sfnts (truetype files)
 Unfortunately every system has its own way of storing bitmap only fonts
 into an sfnt wrapper (or the system just doesn't support it)
 
--   [Apple](bitmaponlysfnt.html#Apple)
--   [X11 (Unix/Linux)](bitmaponlysfnt.html#X11)
--   [MS](bitmaponlysfnt.html#MS)
+-   [Apple](#Apple)
+-   [X11 (Unix/Linux)](#X11)
+-   [MS](#MS)
 
 Apple
 -----

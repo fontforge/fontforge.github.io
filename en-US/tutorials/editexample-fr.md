@@ -8,26 +8,26 @@ title: Steps to creating a font...
 I shall not presume to teach aesthetics, I concentrate solely on the
 mechanics here.
 
--   [Font Creation](editexample.html#FontCreate)
+-   [Font Creation](../editexample/#FontCreate)
 -   [Creating a character (tracing
-    outlines)](editexample.html#CharCreate)
--   [Navigating to other characters](editexample2.html#Navigating)
+    outlines)](../editexample/#CharCreate)
+-   [Navigating to other characters](../editexample2/#Navigating)
 -   [On to the next character (consistent
-    directions)](editexample2.html#Creating-o)
+    directions)](../editexample2/#Creating-o)
 -   [Consistent serifs and stem
-    widths](editexample3.html#consistent-stems)
--   [Building accented characters](editexample4.html#accents)
--   [Building a ligature](editexample4.html#ligature)
--   [Examining metrics](editexample5.html#metrics)
--   [Kerning](editexample5.html#Kerning)
--   [Anchoring marks](editexample6.html#Marks)
--   [Character variants](editexample6.html#Variants)
--   [Checking your font](editexample7.html#checking)
--   [Generating it](editexample7.html#generating)
--   [Font Families](editexample7.html#Families)
--   [Final Summary](editexample7.html#summary)
--   [Notes on various scripts](scriptnotes.html#Special)
--   [FontForge and TeX](PfaEdit-TeX.html#TeX)
+    widths](../editexample3/#consistent-stems)
+-   [Building accented characters](../editexample4/#accents)
+-   [Building a ligature](../editexample4/#ligature)
+-   [Examining metrics](../editexample5/#metrics)
+-   [Kerning](../editexample5/#Kerning)
+-   [Anchoring marks](../editexample6/#Marks)
+-   [Character variants](../editexample6/#Variants)
+-   [Checking your font](../editexample7/#checking)
+-   [Generating it](../editexample7/#generating)
+-   [Font Families](../editexample7/#Families)
+-   [Final Summary](../editexample7/#summary)
+-   [Notes on various scripts](../../documentation/scripting/native/scriptnotes/#Special)
+-   [FontForge and TeX](../../documentation/reference/PfaEdit-TeX/#TeX)
 
 If you wish to follow along with the tutorial, [this
 bundle](tutorial.tgz) should provide you with the basic files you need.
@@ -134,7 +134,7 @@ And we are done with this character.
 
 Well sort of. If you are like me you didn't get everything quite right
 even though you checked. You can use Element-\>[Find
-Problems](problems.html)... to check for simple mistakes (like having
+Problems](../../documentation/interface/problems/)... to check for simple mistakes (like having
 your vertical lines be slightly skewed).
 
 You can use `View->Next Char` and `View->Prev Char` to look at
@@ -145,7 +145,7 @@ are easy to make once you have made the accents and base characters they
 depend on. For example if you have created the "C" character and the
 "cedilla" then you can scroll the font view until you can see the
 "Ccedilla" character, then select it and use Element-\>[Build Accented
-Char](accented.html) to create the accented glyph.
+Char](../../documentation/interface/accented/) to create the accented glyph.
 
 Of course you can also do this manually. Another way is to select the
 "C" character and do Edit-\>Copy Reference, then select the "Ccedilla"
@@ -178,5 +178,5 @@ Last of all you can generate font files. Select `File->Generate Fonts`,
 select the outline font format, and which (if any) of your bitmaps you
 want converted into a bitmap font.
 
--- [Prev](overview.html) -- [TOC](overview.html) --
-[Next](editexample2.html) --
+-- [Prev](../overview/) -- [TOC](../overview/) --
+[Next](../editexample2/) --

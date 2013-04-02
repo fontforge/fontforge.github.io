@@ -6,8 +6,8 @@ title: Changelog for FontForge
 
 
 -   On this page: 25 August 2008 to current
--   [Older changes](oldchangelog.html), from 2 Mar 2004 to 24 August 2008
--   [Even older changes](pfaeditchangelog.html) from 9 Nov 2000 to 1 Mar 2004,  
+-   [Older changes](../oldchangelog/), from 2 Mar 2004 to 24 August 2008
+-   [Even older changes](../pfaeditchangelog/) from 9 Nov 2000 to 1 Mar 2004,  
      when FontForge was known as PfaEdit 
 -   [Changes to the sfd format](sfdchangelog.html).
 

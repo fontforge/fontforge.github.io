@@ -8,7 +8,7 @@ title: Using FontForge with TeX
 FontForge has a number of features built in to it to deal with TeX.
 
 It can read "pk" and "gf" bitmap files and
-[autotrace](elementmenu.html#AutoTrace) them to generate outline fonts.
+[autotrace](../../interface/elementmenu/#AutoTrace) them to generate outline fonts.
 It can even invoke metafont directly on a ".mf" file, generate a "gf"
 bitmap from that, autotrace it and generate an outline font.
 
@@ -19,11 +19,11 @@ The [encodings](Encodings.ps.gz) file has a number of standard TeX
 encodings built in to it.
 
 For large CJK truetype fonts it can read a sub-font definition file as
-defined in the ttf2tfm man page and [generate](generate.html) a series
+defined in the ttf2tfm man page and [generate](../../interface/generate/) a series
 of postscript type-1 fonts based on those two.
 
 In consultation with the lilypond group we have designed a new [SFNT
-table 'TeX](non-standard.html)' for storing TeX specific information in
+table 'TeX](../non-standard/)' for storing TeX specific information in
 True/OpenType files.
 
 ### Generating a tfm file (and an enc file).
@@ -253,5 +253,5 @@ I did the following:
     >     echo "p +$BASE.map"
     >     echo at the appropriate place in it too.
 
--- [Prev](scripting.html) -- [TOC](overview.html) --
-[Next](errrecovery.html) --
+-- [Prev](../../scripting/native/scripting/) -- [TOC](overview.html) --
+[Next](../errrecovery/) --

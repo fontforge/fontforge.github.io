@@ -28,8 +28,8 @@ Auto Kern
 ---------
 
 There used to be an Auto Kern dialog. There is no longer, this is now
-done in the [kerning subtable](lookups.html#Pair) dialog and the
-[kerning class](metricsview.html#kernclass)dialog.
+done in the [kerning subtable](../../interface/lookups/#Pair) dialog and the
+[kerning class](../../interface/metricsview/#kernclass)dialog.
 
 * * * * *
 

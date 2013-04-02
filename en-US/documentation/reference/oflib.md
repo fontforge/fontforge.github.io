@@ -12,8 +12,8 @@ upload your own.
 FontForge has commands to make it easy to
 
 -   [Browse the library, generating font previews, and downloading
-    fonts.](OFLib.html#Browsing)
--   [Upload a completed font to the library.](OFLib.html#Uploading)
+    fonts.](#Browsing)
+-   [Upload a completed font to the library.](#Uploading)
 
 ![](img/OFLibBrowse.png)Browsing the Library
 ----------------------------------------
@@ -62,7 +62,7 @@ Library](http://openfontlibrary.org/media/register) and acquire a
 username/password combination.
 
 Checking the [\*] Upload to Open Font Library will expand the [Generate
-Fonts](generate.html) dialog with fields containing the information
+Fonts](../../interface/generate/) dialog with fields containing the information
 needed to upload a font to the library.
 
 First (obviously) you need the username/password combination you
@@ -92,7 +92,7 @@ licensed with either of these you should not upload it.
 
 Linux packagers appreciate it if you also include the license in a
 separate text file. If your font contains a license (see [Element-\>Font
-Info-\>TTF Names-\>License](fontinfo.html#TTF-Names)) then FontForge
+Info-\>TTF Names-\>License](../../interface/fontinfo/#TTF-Names)) then FontForge
 will extract this information and send it up as a separate file.
 (Currently the OFLib does not accept this information. I hope that will
 change).
@@ -109,7 +109,7 @@ you. FontForge searches the font for all the scripts in it and then
 displays the alphabets of those scripts (at least that's what it does
 for alphabets, for CJK it will display a small selection of the defined
 glyphs). You can see an example of a fontforge generated preview for
-NotCourier-Sans [above](OFLib.html#Browsing)
+NotCourier-Sans [above](#Browsing)
 
 Finally you may mark that your font is "Not safe for use in a work
 environment" I'm not sure what font would fall into that catagory (I

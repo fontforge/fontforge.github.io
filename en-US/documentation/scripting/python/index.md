@@ -359,7 +359,7 @@ If you neve call this, or if you call it with a value of `None`
 FontForge will use a built-in default. This routine gets called during
 AutoWidth, AutoKern, and computing the optical left and right side
 bearings (for 'lfbd' and 'rtbd' features). For more infomation see [its
-own section](autowidth.html#GlyphSeparationHook).
+own section](../../reference/autowidth/#GlyphSeparationHook).
 
 User Interface Methods
 
@@ -433,7 +433,7 @@ Returns True if this session of FontForge has a user interface
 `(menu-function,     enable_function,     data,     which_window,     shortcut_string,     {submenu-names,}     menu-name-string)`
 
 If fontforge has a user interface this will add this menu item to
-FontForge's [Tool](toolsmenu.html#Tools) menu, either in the font or the
+FontForge's [Tool](../../interface/toolsmenu/#Tools) menu, either in the font or the
 outline glyph view (or both).
 
 menu-function
@@ -469,7 +469,7 @@ shortcut-string
 
 May be None if you do not wish to supply a shortcut. Otherwise should be
 a string like "Menu Name|Cntl-H" (the syntax is defined in the
-[translation section](uitranslationnotes.html#HotKeys)).
+[translation section](../../customizing/uitranslationnotes/#HotKeys)).
 
 submenu-names
 
@@ -744,7 +744,7 @@ on-curve point will be interpolated between them. (This should be
 familiar to anyone who has read the truetype 'glyf' table docs).
 
 For examples of what these splines can look like see the [section on
-bezier curves](bezier.html).
+bezier curves](../../reference/bezier/).
 
 A contour may be open in which case it is just a long wiggly line, or
 closed when it is more like a circle with an inside and an outside.
@@ -1387,7 +1387,7 @@ xexpr and yexpr are strings specifying non-linear transformations that
 will be applied to all points in the layer (with xexpr being applied to
 x values, and yexpr to y values, of course). The syntax for the
 expressions is explained in the [non-linear transform
-dialog](transform.html#Non-Linear).
+dialog](../../interface/transform/#Non-Linear).
 
 `boundingBox`
 
@@ -1615,7 +1615,7 @@ may be
 
 The glyph's background layer. This is a *copy* of the glyph's data. See
 also [foreground](#g-foreground), and
-[layers](python.html#glyph-layers).
+[layers](#glyph-layers).
 
 `changed`
 
@@ -1655,7 +1655,7 @@ The font containing this glyph. (readonly)
 `foreground`
 
 The glyph's foreground layer. This is a *copy* of the glyph's data. See
-also [background](#g-background), [layers](python.html#glyph-layers) and
+also [background](#g-background), [layers](#glyph-layers) and
 [references](#g-references).
 
 `glyphclass`
@@ -1676,7 +1676,7 @@ of starting locations and widths.
 
 A tuple of tuples.
 
-This allows [constructing](math.html#GlyphConstruction) very large
+This allows [constructing](../../reference/math/#GlyphConstruction) very large
 versions of the glyph by stacking the componants together. Some
 components may be repeated so there is no bound on the size.
 
@@ -1698,7 +1698,7 @@ horizontalComponents.
 `horizontalVariants`
 
 A string containing a list of glyph names. These are [alternate
-forms](math.html#Variants</a) of the current glyph for use in
+forms](../../reference/math/#Variants</a) of the current glyph for use in
 typesetting math. Presumably the variants are of different sizes.
 
 Although ff will always return a string of glyph names, you may assign
@@ -1792,7 +1792,7 @@ pickled). See also [the temporary](#glyph-temporary) field.
 
 A tuple of tuples containing glyph-name and a transformation matrix for
 each reference in the foreground. See also [foreground](#g-foreground)
-and [layerrefs](python.html#layerrefs).
+and [layerrefs](#layerrefs).
 
 `right_side_bearing`
 
@@ -1982,7 +1982,7 @@ overlapped hints, or a hint mask specifies two overlapping hints.
 
 A tuple of tuples.
 
-This allows [constructing](math.html#GlyphConstruction) very large
+This allows [constructing](../../reference/math/#GlyphConstruction) very large
 versions of the glyph by stacking the componants together. Some
 components may be repeated so there is no bound on the size.
 
@@ -2004,7 +2004,7 @@ verticalComponents.
 `verticalVariants`
 
 A string containing a list of glyph names. These are [alternate
-forms](math.html#Variants</a) of the current glyph for use in
+forms](../../reference/math/#Variants</a) of the current glyph for use in
 typesetting math. Presumably the variants are of different sizes.
 
 `width`
@@ -2164,7 +2164,7 @@ subroutines.
 
 `(stroke_width[,type,     serif_height,serif_fuzz,     counter_type,custom_zones])`
 
-See the [Element-\>Style-\>Change Width](Styles.html#Embolden) command
+See the [Element-\>Style-\>Change Width](../../interface/Styles/#Embolden) command
 for a more complete description of these arguments.
 
 Stroke\_width is the amount by which all stems are expanded.
@@ -2441,7 +2441,7 @@ xexpr and yexpr are strings specifying non-linear transformations that
 will be applied to all points in the current layer (with xexpr being
 applied to x values, and yexpr to y values, of course). The syntax for
 the expressions is explained in the [non-linear transform
-dialog](transform.html#Non-Linear).
+dialog](../../interface/transform/#Non-Linear).
 
 `unlinkRef`
 
@@ -2971,7 +2971,7 @@ quadratic or cubic splines. Setting this value has the side effect of
 converting the entire font into the other format
 
 Now each layer may have its own setting for this value, which should be
-set on the font's [layers](python.html#f-layers) object.
+set on the font's [layers](#f-layers) object.
 
 `isnew`
 
@@ -2984,7 +2984,7 @@ A flag indicating that this is a new font
 `layer_cnt`
 
 The number of layers in the font. (Read only. Can change using `add` and
-`del` operations on the [layers](python.html#f-layers) array)
+`del` operations on the [layers](#f-layers) array)
 
 `layers`
 
@@ -3151,7 +3151,7 @@ Since it is a string it will receive no arguments, but the current font
 will be available in the activeFont method of the fontforge module.
 
 This string will be interpretted before the loadFontHook of the [module
-hooks](python.html#module-hooks) dictionary.
+hooks](#module-hooks) dictionary.
 
 One possible behavior for this string is to define function hooks to be
 stored in the temporary dict described below.
@@ -3286,7 +3286,7 @@ specially:
 
 `texparameters`
 
-Returns a tuple of [TeX font parameters](fontinfo.html#TeX). TeX font
+Returns a tuple of [TeX font parameters](../../interface/fontinfo/#TeX). TeX font
 type followed by 22 parameters. Font type is one of:
 
 -   text
@@ -3304,7 +3304,7 @@ underline position
 
 `userdata`
 
-Deprecated name for [temporary](python.html#font-temporary) above
+Deprecated name for [temporary](#font-temporary) above
 
 `uwidth`
 
@@ -3377,9 +3377,9 @@ Returns whether the font contains a glyph with the given name.
 
 Other iterators over the font:
 
-[selection](python.html#selection),
-font.[find](python.html#font-find)(),
-font.[glyphs](python.html#font-glyphs)()
+[selection](#selection),
+font.[find](#font-find)(),
+font.[glyphs](#font-glyphs)()
 
 Mapping Protocol
 
@@ -4105,7 +4105,7 @@ default value will be used. Some keywords have abbreviations ("ia" for
 
 This function will attempt to italicize each selected glyph. For a
 detailed explanation of what this entails please see the information on
-the [Italic dialog](Styles.html#Italic).
+the [Italic dialog](../../interface/Styles/#Italic).
 
 The `*_condense` keywords should be 4 element tuples of floating point
 numbers; these numbers correspond to: Left side bearing condensation,
@@ -4426,7 +4426,7 @@ subroutines.
 
 `(stroke_width[,type,     serif_height,serif_fuzz,     counter_type,custom_zones])`
 
-See the [Element-\>Style-\>Change Width](Styles.html#Embolden) command
+See the [Element-\>Style-\>Change Width](../../interface/Styles/#Embolden) command
 for a more complete description of these arguments.
 
 Stroke\_width is the amount by which all stems are expanded.
@@ -4642,7 +4642,7 @@ xexpr and yexpr are strings specifying non-linear transformations that
 will be applied to all points in the selected glyphs of the font (with
 xexpr being applied to x values, and yexpr to y values, of course). The
 syntax for the expressions is explained in the [non-linear transform
-dialog](transform.html#Non-Linear).
+dialog](../../interface/transform/#Non-Linear).
 
 `unlinkReferences`
 

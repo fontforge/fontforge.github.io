@@ -69,14 +69,14 @@ How do these relate to Apple Advanced Typography features?
 
 In some cases a contextual or chaining contextual substitution can be
 converted into one of Apple's contextual glyph substitution subtables.
-See the page on [Apple Advanced Typography](gposgsub.html#sometimes)for
+See the page on [Apple Advanced Typography](../gposgsub/#sometimes)for
 more information as to when and caveats about how.
 
 Creating a contextual lookup
 ----------------------------
 
 First you must create a contextual lookup with the [Element-\>Font
-Info-\>Lookups dialog](fontinfo.html#Lookups), then in that same dialog
+Info-\>Lookups dialog](../fontinfo/#Lookups), then in that same dialog
 create and name a subtable in that lookup. Then the contextual editor
 will open.
 
@@ -281,4 +281,4 @@ insert that class's index into the pattern.
 Finally you must set the nested lookups. This is exactly the same as
 previous sequence / lookup settings.
 
--- [Up](fontinfo.html) -- [TOC](overview.html) --
+-- [Up](../fontinfo/) -- [TOC](overview.html) --

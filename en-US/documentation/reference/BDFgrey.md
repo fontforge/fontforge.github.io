@@ -10,7 +10,7 @@ BDF. MicroSoft extended this format to support greymap (anti-aliased,
 each pixel representing various levels of grey rather than just
 black/white) fonts. Recently others have started using this same format
 ([xmbdfed](http://crl.nmsu.edu/~mleisher/xmbdfed.html),
-[freetype](http://freetype.sf.net/) and [fontforge](index.html)).
+[freetype](http://freetype.sf.net/) and [fontforge](/)).
 
 In Section 3.1 of the format description Adobe defines a "SIZE" keyword.
 MicroSoft has added an optional fourth parameter to this keyword

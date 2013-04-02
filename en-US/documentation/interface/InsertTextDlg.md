@@ -11,7 +11,7 @@ precomposed text?
 But occasionally it is useful. A company's logo might want to live in a
 single glyph.
 
-This dialog looks rather like the [print dialog](display.html). You may
+This dialog looks rather like the [print dialog](../display/). You may
 enter text, display it in a given font, and at a desired pointsize. You
 may apply OpenType features.
 
