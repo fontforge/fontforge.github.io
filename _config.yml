@@ -1,5 +1,7 @@
 auto: true
 pygments: true
 markdown: rdiscount
+rdiscount:
+  extensions: [smart]
 permalink: pretty
 url: http://fontforge.github.com
