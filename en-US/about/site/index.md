@@ -4,7 +4,7 @@ layout: default
 title: About This Website
 ---
 
-Like FontForge itself, this website is developed as a [collaborative project](/en-US/about/project/) - everyone is invited to contribute. 
+Like FontForge itself, this website is developed as a [collaborative project](/en-US/about/project/)---everyone is invited to contribute. 
 
 To help out, join the [FontForge Users Mailing List](https://lists.sourceforge.net/lists/listinfo/fontforge-users) and say hello. To make direct changes, sign up to [GitHub](http://github.com) and let us know your github username, and we'll add you to the Website team.
 
@@ -12,7 +12,7 @@ To help out, join the [FontForge Users Mailing List](https://lists.sourceforge.n
 
 Contributing to this website is easy for anyone to do, like Wikipedia.
 
-You'll see a couple of little links to the 'Edit This Page' roundel in the footer of each page. Click the 'github' link and you'll see the source file on GitHub. If you sign up to GitHub and log in, you can click the 'edit' button.
+You'll see a couple of little links to the "Edit This Page" roundel in the footer of each page. Click the "github" link and you'll see the source file on GitHub. If you sign up to GitHub and log in, you can click the "edit" button.
 
 There is also a link to [prose](http://prose.io), a more elegant UI for editing files on GitHub.
 

@@ -18,12 +18,12 @@ title: FontForge Scripting Tutorial
     -   [Merging a type1 and type1 expert font and creating appropriate
         GSUB tables.](#GSUB)
 
--   [Examples elsewhere](../scripting/#Example)
+-   [Examples elsewhere](/en-US/documentation/scripting/native/#Example)
 
 Note: *FontForge now provides python scripting. If you are familiar with
 python that is probably a better choice. There is a lot of information
 available on [python](http://www.python.org/doc/), I shan't repeat it.
-FontForge's own additions to Python are documented [here](../../python/).*
+FontForge's own additions to Python are documented [here](/en-US/documentation/scripting/python/).*
 
 I try to keep things at a fairly elementary level, but this is *not* an
 attempt to teach programming.
@@ -36,8 +36,8 @@ would like to convert it into a TrueType font. What would a script look
 like that could do this?
 
 If you were doing this with the UI you would first
-[File-\>Open](../../../interface/filemenu/#Open) the font and then
-[File-\>Generate](../../../filemenu/#Generate) a truetype font. You do
+[File-\>Open](/en-US/documentation/interface/filemenu/#Open) the font and then
+[File-\>Generate](/en-US/documentation/interface/filemenu/#Generate) a truetype font. You do
 essentially the same thing when writing a script:
 
 ### Intial Solution
@@ -48,10 +48,10 @@ essentially the same thing when writing a script:
 There is usually a scripting function with the same name as a menu
 command (well, the same as the English name of the menu command).
 
-'[\$1](../scripting/#variables)' is magic. It means the [first argument
+'[\$1](/en-US/documentation/scripting/native/#variables)' is magic. It means the [first argument
 passed to the script](#Invoking).
 
-'[\$1:r + ".ttf"](../scripting/#Expressions)' is even more complicated
+'[\$1:r + ".ttf"](/en-US/documentation/scripting/native/#Expressions)' is even more complicated
 magic. It means: 'take the first argument (\$1) and remove the extension
 (which is probably ".pfb") and then append the string ".ttf" to the
 filename.'
@@ -277,4 +277,4 @@ linking the glyphs.
 
 ### More examples
 
-See the [page on scripting](../scripting/#Example).
+See the [page on scripting](/en-US/documentation/scripting/native/#Example).
