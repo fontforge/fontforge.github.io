@@ -361,7 +361,7 @@ Other menus
 -   [Help](../helpmenu/)
 -   [Hot Keys](../HotKeys/)
 
--- [Prev](../metricsview/) -- [TOC](overview.html) --
+-- [Prev](../metricsview/) -- [TOC](/en-US/tutorials/overview/) --
 [Next](../editmenu/) --
 
 

@@ -62,5 +62,5 @@ repertory and so have started using my own block of characters
 >     f524;longs_longs_i;LATIN SMALL LIGATURE LONGS LONGS I;;;017f 0x17f 0069
 >     f525;longs_longs_l;LATIN SMALL LIGATURE LONGS LONGS L;;;017f 0x17f 006c
 
--- [Prev](../bezier/) -- [TOC](overview.html) --
+-- [Prev](../bezier/) -- [TOC](/en-US/tutorials/overview/) --
 [Next](sfds/index.html) --

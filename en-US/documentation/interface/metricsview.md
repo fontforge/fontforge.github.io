@@ -327,5 +327,5 @@ Class dialog above.
 
 
 
--- [Prev](../bitmapview/) -- [TOC](overview.html) --
+-- [Prev](../bitmapview/) -- [TOC](/en-US/tutorials/overview/) --
 [Next](../filemenu/) --

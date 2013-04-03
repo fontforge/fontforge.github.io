@@ -79,7 +79,7 @@ color to a glyph to make it stand out in the font view.
 the [lookups](../lookups/) of the [GPOS and GSUB](../gposgsub/) tables
 (some of these data can be converted into various of Apple's AAT tables,
 particularly 'morx'). Lookups and their subtables are described in some
-detail [here](overview.html#Lookups), and may be manipulated and created
+detail [here](/en-US/tutorials/overview/#Lookups), and may be manipulated and created
 with the [Element-\>Font Info](../fontinfo/#Lookups) commmand.
 
 The first of sub-dialogs is the alternate position pane which allows you
@@ -225,5 +225,5 @@ See Also:
 -   [The get info dialogs](../getinfo/)
 -   [The MATH info dialog](../../reference/math/)
 
--- [Prev](../elementmenu/) -- [TOC](overview.html) --
+-- [Prev](../elementmenu/) -- [TOC](/en-US/tutorials/overview/) --
 [Next](../elementmenu/) --

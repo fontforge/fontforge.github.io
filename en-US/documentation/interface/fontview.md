@@ -363,5 +363,5 @@ metrics just as you adjust the horizontal metrics.
 You can view the vertical metrics in the font view just as you can the
 horizontal metrics with View-\>Show V Metrics.
 
--- [Prev](editexample.html) -- [TOC](overview.html) --
+-- [Prev](editexample.html) -- [TOC](/en-US/tutorials/overview/) --
 [Next](../charview/) --

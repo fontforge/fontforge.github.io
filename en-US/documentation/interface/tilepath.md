@@ -85,7 +85,7 @@ shape, or use the Element-\>Overlap-\>Intersect command to clip it to
 some contour. Thus you can simulate some of the capabilities of a true
 pattern tile as is available in a type3 font.
 
--- [Prev](../elementmenu/) -- [TOC](overview.html) --
+-- [Prev](../elementmenu/) -- [TOC](/en-US/tutorials/overview/) --
 [Next](../elementmenu/) --
 
 

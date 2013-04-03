@@ -13,7 +13,7 @@ but as time goes on there are just too many people to thank.)
 Sample Text
 -----------
 
-The sample text in `File-\>Print` comes from [many sources](quotations.html).
+The sample text in `File-\>Print` comes from [many sources](/en-US/documentation/reference/quotations/).
 
 Debugging
 ---------

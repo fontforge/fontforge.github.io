@@ -139,5 +139,5 @@ new color, move the cursor to the desired color and click the mouse.
 As the cursor moves over the bitmap in the bitmap view, the color under
 the cursor will be outlined in white.
 
--- [Prev](../charview/) -- [TOC](overview.html) --
+-- [Prev](../charview/) -- [TOC](/en-US/tutorials/overview/) --
 [Next](../metricsview/) --

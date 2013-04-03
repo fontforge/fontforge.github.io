@@ -1034,5 +1034,5 @@ Cnt-Alt-1, then second by Cnt-Alt-2, and the tenth by Cnt-Alt-0.
 The current font of the script will be set to whatever font you invoked
 it from.
 
--- [Prev](HotKeys.html) -- [TOC](overview.html) --
+-- [Prev](HotKeys.html) -- [TOC](/en-US/tutorials/overview/) --
 [Next](PfaEdit-TeX.html) --

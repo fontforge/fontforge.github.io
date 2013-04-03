@@ -786,5 +786,5 @@ fonts](../multilayer/), and you have configured FontForge correctly,
 the FontForge can display a glyph broken down into a series of strokes
 and fills and allow you to edit each one.
 
--- [Prev](../fontview/) -- [TOC](overview.html) --
+-- [Prev](../fontview/) -- [TOC](/en-US/tutorials/overview/) --
 [Next](../bitmapview/) --

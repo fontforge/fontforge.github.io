@@ -324,7 +324,7 @@ Adobe has established a standard glyph naming convention which provides
 intelligible names for many glyphs of unicode characters. And some
 unintelligible names too.
 
-A [namelist](overview.html#Glyph-names) is just a mapping from unicode
+A [namelist](/en-US/tutorials/overview/#Glyph-names) is just a mapping from unicode
 to glyph names (a glyph name must be made up of alphanumeric characters
 (or the special characters '.' or '\_'), it may not begin with a digit,
 and it must be 31 or fewer characters in length.
@@ -425,5 +425,5 @@ Other menus
 -   [Help](../helpmenu/)
 -   [Hot Keys](../HotKeys/)
 
--- [Prev](../hintsmenu/) -- [TOC](overview.html) --
+-- [Prev](../hintsmenu/) -- [TOC](/en-US/tutorials/overview/) --
 [Next](../viewmenu/) --

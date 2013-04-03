@@ -539,7 +539,7 @@ controlled by
 -   [X Resources](../../customizing/xres/)
 -   [Environment Variables](../cliargs/#Environment)
 
--- [Prev](../filemenu/) -- [TOC](overview.html) --
+-- [Prev](../filemenu/) -- [TOC](/en-US/tutorials/overview/) --
 [Next](../filemenu/) --
 
 

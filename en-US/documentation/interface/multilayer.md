@@ -196,6 +196,6 @@ full color (rounding everything to a shade of grey), and its stroking
 algorithm is quite poor (it does not rasterize dashes), it does not
 support the full complexity of radial gradients...
 
--- [Back](../charview/) -- [TOC](overview.html) --
+-- [Back](../charview/) -- [TOC](/en-US/tutorials/overview/) --
 
 

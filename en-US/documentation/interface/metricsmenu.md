@@ -160,7 +160,7 @@ Other menus
 -   [Help](../helpmenu/)
 -   [Hot Keys](../HotKeys/)
 
--- [Prev](../viewmenu/) -- [TOC](overview.html) -- [Next](../cidmenu/)
+-- [Prev](../viewmenu/) -- [TOC](/en-US/tutorials/overview/) -- [Next](../cidmenu/)
 --
 
 

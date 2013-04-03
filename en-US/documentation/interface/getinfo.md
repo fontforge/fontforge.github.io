@@ -106,7 +106,7 @@ simpler. Just the location of the point and the point type.
 ![](img/agetinfo.png)Anchor Points Info
 -----------------------------------
 
-This dialog shows the selected [anchor point](overview.html#Anchors)
+This dialog shows the selected [anchor point](/en-US/tutorials/overview/#Anchors)
 with the anchor class, location, type and (for ligatures) the ligature
 index. You may change any of these attributes (as long as your changes
 are reasonable). You may create new points or delete the current one. As
@@ -181,5 +181,5 @@ See Also:
 -   [The font info dialog](../fontinfo/)
 -   [The glyph info dialog](../charinfo/)
 
--- [Prev](../elementmenu/) -- [TOC](overview.html) --
+-- [Prev](../elementmenu/) -- [TOC](/en-US/tutorials/overview/) --
 [Next](../elementmenu/) --

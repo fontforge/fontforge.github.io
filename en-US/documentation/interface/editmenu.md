@@ -572,7 +572,7 @@ Other menus
 -   [Help](../helpmenu/)
 -   [Hot Keys](../HotKeys/)
 
--- [Prev](../filemenu/) -- [TOC](overview.html) --
+-- [Prev](../filemenu/) -- [TOC](/en-US/tutorials/overview/) --
 [Next](../pointmenu/) --
 
 

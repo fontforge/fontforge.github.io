@@ -8,7 +8,7 @@ title: fontimage -- generate a font thumbnail image
 `fontimage [--o outfile] [--width num] [--height num] [--pixelsize num]   [--fontname] [--text string] [--version] [--help] fontfile`
 
 *Fontimage* produces a thumbnail image of a font (which may be in any
-format [fontforge](overview.html) can read).
+format [fontforge](/en-US/tutorials/overview/) can read).
 
 You may either explicitly specify text to be displayed in the font, or
 rely on fontimage's default behavior, which is to check for various
@@ -59,7 +59,7 @@ Displays the fontimage version.
 
 ### See Also
 
-[FontForge](overview.html)
+[FontForge](/en-US/tutorials/overview/)
 
 * * * * *
 

@@ -281,4 +281,4 @@ insert that class's index into the pattern.
 Finally you must set the nested lookups. This is exactly the same as
 previous sequence / lookup settings.
 
--- [Up](../fontinfo/) -- [TOC](overview.html) --
+-- [Up](../fontinfo/) -- [TOC](/en-US/tutorials/overview/) --

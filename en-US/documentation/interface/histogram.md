@@ -64,7 +64,7 @@ and the font has no BlueValues or StemSnap information associated with
 it, or when you use the [Element-\>Font
 Info-\>Private](../fontinfo/#Private) dialog.
 
--- [Prev](../hintsmenu/) -- [TOC](overview.html) --
+-- [Prev](../hintsmenu/) -- [TOC](/en-US/tutorials/overview/) --
 [Next](../hintsmenu/) --
 
 

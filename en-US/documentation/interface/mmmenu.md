@@ -125,7 +125,7 @@ Other menus
 -   [Help](../helpmenu/)
 -   [Hot Keys](../HotKeys/)
 
--- [Prev](../cidmenu/) -- [TOC](overview.html) --
+-- [Prev](../cidmenu/) -- [TOC](/en-US/tutorials/overview/) --
 [Next](../windowmenu/) --
 
 

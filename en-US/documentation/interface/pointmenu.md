@@ -59,10 +59,10 @@ off this interpolation.
 Add Anchor Point...
 
 ![](img/agetinfo.png)This command adds a new [anchor
-point](overview.html#Anchors) to the glyph. The last click in the window
+point](/en-US/tutorials/overview/#Anchors) to the glyph. The last click in the window
 provides a default location for the point.
 
-See [the overview](overview.html#Anchors) and the [Element-\>Get Info
+See [the overview](/en-US/tutorials/overview/#Anchors) and the [Element-\>Get Info
 command](../getinfo/#Anchors) for more info.
 
 Acceptable Extrema
@@ -146,7 +146,7 @@ Other menus
 -   [Help](../helpmenu/)
 -   [Hot Keys](../HotKeys/)
 
--- [Prev](../editmenu/) -- [TOC](overview.html) --
+-- [Prev](../editmenu/) -- [TOC](/en-US/tutorials/overview/) --
 [Next](../elementmenu/) --
 
 

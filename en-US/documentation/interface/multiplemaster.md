@@ -209,6 +209,6 @@ Adobe's Type2 designs appear to have been prepared to allow this
 approach, but the multiple master operators were dropped from the Type2
 spec, and the question is moot.
 
--- [Up](../mmmenu/) -- [TOC](overview.html) --
+-- [Up](../mmmenu/) -- [TOC](/en-US/tutorials/overview/) --
 
 

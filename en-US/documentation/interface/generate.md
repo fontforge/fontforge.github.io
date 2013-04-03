@@ -391,5 +391,5 @@ needed to draw it.
 FontForge usually generates the first format, but for multi layered or
 stroked fonts it will generate the second format.
 
--- [Prev](../filemenu/) -- [TOC](overview.html) --
+-- [Prev](../filemenu/) -- [TOC](/en-US/tutorials/overview/) --
 [Next](../filemenu/) --

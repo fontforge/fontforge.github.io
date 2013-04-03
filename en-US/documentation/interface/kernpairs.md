@@ -44,6 +44,6 @@ type](../metricsview/#Entering)), then the dlg will scroll to display
 the pairs associated with that character. The behavior depends in an
 obvious way on how the dlg is sorted.
 
--- [Prev](../viewmenu/) -- [TOC](overview.html) --
+-- [Prev](../viewmenu/) -- [TOC](/en-US/tutorials/overview/) --
 
 

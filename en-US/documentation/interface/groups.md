@@ -85,4 +85,4 @@ allow you to enter "A" and U+0041 -- because I'm lazy and this is harder
 to check for and less likely to occur). If you set this in a parent
 group then there can be no glyph duplicates among any of its children.
 
--- [Up](../encodingmenu/) -- [TOC](overview.html) --
+-- [Up](../encodingmenu/) -- [TOC](/en-US/tutorials/overview/) --

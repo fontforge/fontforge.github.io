@@ -139,7 +139,7 @@ unicode encoding...
 
 [Sources of the samples](quotations.html)...
 
--- [Prev](../filemenu/) -- [TOC](overview.html) --
+-- [Prev](../filemenu/) -- [TOC](/en-US/tutorials/overview/) --
 [Next](../filemenu/) --
 
 

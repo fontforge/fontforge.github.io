@@ -29,5 +29,5 @@ When editing CID-keyed fonts there are a few potential gotchas:
     this will be right, but if you add glyphs or if you have two
     sub-fonts defining the same CID, FontForge may guess wrong.
 
--- [Prev](../PfaEdit-TeX/) -- [TOC](overview.html) -- [Next](../../customizing/xres/)
+-- [Prev](../PfaEdit-TeX/) -- [TOC](/en-US/tutorials/overview/) -- [Next](../../customizing/xres/)
 --

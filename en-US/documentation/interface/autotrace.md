@@ -98,4 +98,4 @@ last time. AutoTrace's arguments are described in "\$ autotrace -help"
 or in the README file that came with the program. Please do not specify
 input/output files or formats. FontForge fills these in.
 
--- [Back](../elementmenu/#AutoTrace) -- [TOC](overview.html) --
+-- [Back](../elementmenu/#AutoTrace) -- [TOC](/en-US/tutorials/overview/) --

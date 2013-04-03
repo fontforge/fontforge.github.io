@@ -202,4 +202,4 @@ If you wish to add a new state, simply edit a transition so that its
 next state field is the state number desired. FontForge will
 automatically create the state for you.
 
--- [Up](../fontinfo/) -- [TOC](overview.html) --
+-- [Up](../fontinfo/) -- [TOC](/en-US/tutorials/overview/) --

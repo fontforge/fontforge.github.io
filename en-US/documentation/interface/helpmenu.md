@@ -63,5 +63,5 @@ Other menus
 -   [Help](../helpmenu/)
 -   [Hot Keys](../HotKeys/)
 
--- [Prev](../windowmenu/) -- [TOC](overview.html) --
+-- [Prev](../windowmenu/) -- [TOC](/en-US/tutorials/overview/) --
 [Next](../HotKeys/) --

@@ -37,7 +37,7 @@ Other menus
 -   [Help](../helpmenu/)
 -   [Hot Keys](../HotKeys/)
 
--- [Prev](../elementmenu/) -- [TOC](overview.html) --
+-- [Prev](../elementmenu/) -- [TOC](/en-US/tutorials/overview/) --
 [Next](../hintsmenu/) --
 
 

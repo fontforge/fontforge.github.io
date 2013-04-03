@@ -184,5 +184,5 @@ Vertical writing and left to right writing are used, and some glyphs
 have a different orientation when drawn vertically (parentheses for
 example).
 
--- [Prev](editexample7.html) -- [TOC](overview.html) --
+-- [Prev](editexample7.html) -- [TOC](/en-US/tutorials/overview/) --
 [Next](fontview.html) --

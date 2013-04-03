@@ -319,5 +319,5 @@ The menus
 -   [Help](../helpmenu/)
 -   [Hot Keys](../HotKeys/)
 
--- [Prev](../helpmenu/) -- [TOC](overview.html) --
+-- [Prev](../helpmenu/) -- [TOC](/en-US/tutorials/overview/) --
 [Next](../../scripting/native/scripting/) --

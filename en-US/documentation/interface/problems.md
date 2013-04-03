@@ -437,5 +437,5 @@ There is also a text field which allows you to define the meaning of
 things are "near" if they are within 3 em-units of the desired value and
 not equal to that value.
 
--- [Prev](../elementmenu/) -- [TOC](overview.html) --
+-- [Prev](../elementmenu/) -- [TOC](/en-US/tutorials/overview/) --
 [Next](../elementmenu/) --

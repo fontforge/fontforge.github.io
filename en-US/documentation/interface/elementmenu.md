@@ -895,7 +895,7 @@ Other menus
 -   [Help](../helpmenu/)
 -   [Hot Keys](../HotKeys/)
 
--- [Prev](../pointmenu/) -- [TOC](overview.html) --
+-- [Prev](../pointmenu/) -- [TOC](/en-US/tutorials/overview/) --
 [Next](../toolsmenu/) --
 
 

@@ -12,7 +12,7 @@ orientation) on which the glyphs of a particular script line up. You may
 also control the spacing between baselines, and the interline (or
 intercolumn) spacing on a per-script, or even per-language basis.
 
-See the [Baseline section](overview.html#Baseline)in the overview for a
+See the [Baseline section](/en-US/tutorials/overview/#Baseline)in the overview for a
 description of why this is important.
 
 There are currently seven standard baselines. The distinctions between

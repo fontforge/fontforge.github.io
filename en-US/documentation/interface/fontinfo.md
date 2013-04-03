@@ -144,7 +144,7 @@ layer may be in its own format.
 
 If you mark a layer as quadratic (or check
 `[*] All layers Quadratic)   `then FontForge will use quadratic
-[Bézier](overview.html#spline) splines for this layer rather than cubic
+[Bézier](/en-US/tutorials/overview/#spline) splines for this layer rather than cubic
 Béziers, this means that FontForge will be using the native spline
 format of truetype rather than postscript (or opentype). When FontForge
 generates a font it will convert from whatever format is used internally
@@ -875,5 +875,5 @@ See Also:
 -   [The get info dialogs](../getinfo/)
 -   [The contextual / chaining dialog](../contextchain/)
 
--- [Prev](../elementmenu/) -- [TOC](overview.html) --
+-- [Prev](../elementmenu/) -- [TOC](/en-US/tutorials/overview/) --
 [Next](../elementmenu/) --

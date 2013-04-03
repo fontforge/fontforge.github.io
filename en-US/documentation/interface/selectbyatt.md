@@ -24,7 +24,7 @@ There are three variants on how the search behaves:
      Then Search for ligatures containing "i" with \<\*\> Restrict
     Selection" set
 
--- [Prev](../editmenu/) -- [TOC](overview.html) --
+-- [Prev](../editmenu/) -- [TOC](/en-US/tutorials/overview/) --
 [Next](../editmenu/) --
 
 
