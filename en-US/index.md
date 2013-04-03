@@ -15,4 +15,4 @@ Scripting is allows designers to get repetitive tasks done quickly, and FontForg
 
 FontForge can be [customized](/en-US/documentation/customizing/) so it feels familiar, from hotkeys to visual themes and a translatable interface.
 
-You can share copies of FontForge freely and make changes under a [libre license](/en-US/about/project/license/). You are invited to participate in this project; your bug reports, feature suggestions, tutorial ideas and code contributions are all welcome! [Learn more...](/en-US/documentation/developer/)
+You can share copies of FontForge freely and make changes under a [libre license](/en-US/about/project/license/). You are invited to participate in this project; your bug reports, feature suggestions, tutorial ideas and code contributions are all welcome! [Learn more...](/en-US/documentation/developers/)

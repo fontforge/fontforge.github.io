@@ -11,7 +11,7 @@ Easily install FontForge on [Mac](mac/), [Windows](windows/) and [GNU+Linux](gnu
 
 ### Source Code
 
-Please see the [Installing Fom Source Code](../source/) page for full details on compiling from source. 
+Please see the [Installing From Source Code](source/) page for full details on compiling from source. 
 
 #### Release Version
 
