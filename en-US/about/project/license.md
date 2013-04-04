@@ -1,7 +1,7 @@
 ---
 published: true
 layout: default
-title: FontForge's License
+title: FontForge’s License
 ---
 
 FontForge is available as a whole under the terms of the 
