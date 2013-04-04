@@ -1176,8 +1176,8 @@ must ask it to do so--use the Hints-\>AutoInstr command.
 
 
 
-Questions about [Font Formats](/en-US/documentation/reference/bibliography/)
-=================================================
+Questions about Font Formats
+============================
 
 
 
