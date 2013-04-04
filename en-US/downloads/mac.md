@@ -15,13 +15,15 @@ First you need to install the X11 compatibility system:
 2. If you don't have one of these, [download XQuartz](http://xquartz.macosforge.org)
 3. Install it in the normal way
 4. Log out and log back in to ensure it works correctly
+5. Start XQuartz or X11 from `Applications/Utilities/`, go to X11 menu, Preferences, Input, and **turn off** the `Enable keyboard shortcuts under X11` or `Enable key equivalents under X11` preference item.
+
+![X11.app Preferences Window set correctly](x11prefs.png)
 
 Then install FontForge:
 
-1. Start XQuartz from `Applications/Utilities/`, go to X11 menu, Preferences, Input, and **turn off** the `Enable keyboard shortcuts under X11` or `Enable key equivalents under X11` preference item.
-2. Download this ZIP file: [FontForge.app.zip](http://fuuko.libferris.com/osx/packages/201304/03_0422/FontForge.app.zip) (published on 2013-04-03)
-3. Unzip it, move the `FontForge.app` file to `/Applications` and open it in the normal way. (In 10.8+, you may need to go to System Preferences, Security, unlock, and allow Mac apps from `Everywhere.`) The first time FontForge runs it can take a while, depending on how many fonts you have installed, so please be patient. It loads quickly after the first time. 
-4. When you see the 'Open Font' window click the `New` button.
+1. Download this ZIP file: [FontForge.app.zip](http://fuuko.libferris.com/osx/packages/201304/03_0422/FontForge.app.zip) (published on 2013-04-03)
+2. Unzip it, move the `FontForge.app` file to `/Applications` and open it in the normal way. (In 10.8+, you may need to go to System Preferences, Security, unlock, and allow Mac apps from `Everywhere.`) The first time FontForge runs it can take a while, depending on how many fonts you have installed, so please be patient. It loads quickly after the first time. 
+3. When you see the 'Open Font' window click the `New` button.
 
 Next time you with to start FontForge, just open it in the normal way and it will automatically start XQuartz for you.
 
