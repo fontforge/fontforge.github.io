@@ -3,6 +3,6 @@ pygments: true
 markdown: rdiscount
 rdiscount:
   extensions: [smart, generate_toc]
-  toc_token: "[TOC]"
+  toc_token: "[table_of_contents]"
 permalink: pretty
 url: http://fontforge.github.com

@@ -10,7 +10,7 @@ title: Frequently Asked Questions
 > 
 > --*Twelfth Night*, Shakespeare
 
-[TOC]
+[table_of_contents]
 
 
 
