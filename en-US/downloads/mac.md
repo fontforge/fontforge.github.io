@@ -17,7 +17,7 @@ First you need to install the X11 compatibility system:
 4. Log out and log back in to ensure it works correctly
 5. Start XQuartz or X11 from `Applications/Utilities/`, go to X11 menu, Preferences, Input, and **turn off** the `Enable keyboard shortcuts under X11` or `Enable key equivalents under X11` preference item.
 
-![X11.app Preferences Window set correctly](x11prefs.png)
+![X11.app Preferences Window set correctly](../x11prefs.png)
 
 Then install FontForge:
 
