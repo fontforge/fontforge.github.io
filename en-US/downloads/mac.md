@@ -21,7 +21,7 @@ First you need to install the X11 compatibility system:
 
 Then install FontForge:
 
-1. Download this ZIP file: [FontForge.app.zip](http://fuuko.libferris.com/osx/packages/201307/18_0422/FontForge.app.zip) (published on 2013-07-17)
+1. Download this ZIP file: [FontForge.app.zip](http://fuuko.libferris.com/osx/packages/201307/18_1235/FontForge.app.zip) (published on 2013-07-18)
 2. Unzip it, move the `FontForge.app` file to `/Applications` and open it in the normal way. (In 10.8+, you may need to go to System Preferences, Security, unlock, and allow Mac apps from `Everywhere.`) The first time FontForge runs it can take a while, depending on how many fonts you have installed, so please be patient. It loads quickly after the first time. 
 3. When you see the 'Open Font' window click the `New` button.
 
