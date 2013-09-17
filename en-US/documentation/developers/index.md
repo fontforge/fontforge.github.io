@@ -16,6 +16,8 @@ If you would like to suggest a new interface, http://pencil.evolus.vn is a usefu
 
 TODO: Add a clear explanation of the FontForge coding style. 
 
+Note: `false` should be used, not `FALSE` ([reference](https://github.com/fontforge/fontforge/issues/724)
+
 #### Git Commit Messages
 
 When committing changes, please follow the [git commit message guidelines](http://git.kernel.org/?p=git/git.git;a=blob;f=Documentation/SubmittingPatches;hb=HEAD
