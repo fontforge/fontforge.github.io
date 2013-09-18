@@ -75,7 +75,11 @@ If you have a standard one button mouse, then you have the option of having the 
 
 ## Installing from Package Managers
 
-Both [macports](http://www.macports.org/) and [fink](http://www.finkproject.org/) have FontForge packages which you may like to use.
+These Mac package managers all have FontForge:
+
+* [Homebrew](http://www.brew.sh) (recommended)
+* [MacPorts](http://www.macports.org/)
+* [Fink](http://www.finkproject.org/) have FontForge packages which you may like to use.
 
 ## Installing from Source Code
 
