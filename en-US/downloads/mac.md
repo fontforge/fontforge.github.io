@@ -79,7 +79,7 @@ These Mac package managers all have FontForge:
 
 * [Homebrew](http://www.brew.sh) (recommended)
 * [MacPorts](http://www.macports.org/)
-* [Fink](http://www.finkproject.org/) have FontForge packages which you may like to use.
+* [Fink](http://www.finkproject.org/) 
 
 ## Installing from Source Code
 
