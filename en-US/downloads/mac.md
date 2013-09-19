@@ -22,15 +22,10 @@ First you need to install the X11 compatibility system:
 Then install FontForge:
 
 1. Download this ZIP file: [FontForge.app.zip](http://fuuko.libferris.com/osx/packages/201309/18_2152/FontForge.app.zip) (release made on 2013-09-18)
-2. Unzip it, move the `FontForge.app` file to `/Applications` and open it in the normal way - double click it, drag it to the dock, use Launcher, Spotlight or Quicksilver...
-
-   **You must not move it to `/Applications/Fonts` or `Home/Applications` or anywhere else**
+2. Unzip it, move the `FontForge.app` file to `/Applications` and only there. Do not move it to `/Applications/Fonts` or `Home/Applications` or anywhere else.
+3. Open it in the normal way - double click it, drag it to the dock, use Launcher, Spotlight or Quicksilver...
    
-   If you use 10.8+, you may need to go to System Preferences, Security, unlock, and allow Mac apps from `Everywhere.`)
-   
-The first time FontForge runs it can take a while, depending on how many fonts you have installed, so please be patient. It loads quickly after the first time. 
-
-Next time you with to start FontForge, just open it in the normal way and it will automatically start XQuartz for you.
+If you use 10.8+, you may need to go to System Preferences, Security, unlock, and allow Mac apps from `Everywhere.`)
 
 ### Update Beta Package
 
