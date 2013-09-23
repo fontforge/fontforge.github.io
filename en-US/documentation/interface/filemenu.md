@@ -4,39 +4,21 @@ layout: default
 title: The File Menu
 ---
 
--   [New](#New)
--   [Open](#Open)
--   Browse Web
-    -   [Open Font Library](#OFLib)
+[table_of_contents]
 
--   [Recent](#Recent)
--   [Close](#Close)
--   [Save](#Save)
--   [Save As...](#SaveAs)
--   [Save All](#SaveAll)
--   [Generate Fonts...](#Generate)
--   [Generate Mac Family...](#GenerateMac)
--   [Generate TTC...](#GenerateTTC)
--   [Revert](#Revert)
--   [Revert To Backup](#RevertBackup)
--   [Revert Glyph](#RevertGlyph)
--   [Export...](#Export)
--   [Import...](#Import)
--   [Merge Feature Info...](#Merge-feature)
--   [Print...](#Print)
--   [Display...](#Display)
--   [Execute Script...](#Execute)
--   [Script Menu](#ScriptMenu)
--   [Preferences...](#prefs)
--   [X Resource Editor...](#ResEdit)
--   [Quit](#Quit)
 
-New
+* * * * *
+
+
+# New
 
 Creates a new font with (by default) ISO 8859-1 (Latin1) encoding. The
 default encoding may be changed in the preference dlg.
 
-![](img/openfont.png)
+
+# Open
+
+![](/assets/img/filemenu-openfont.png)
 
 Brings up a file chooser and allows you to open a font in any of the
 formats FontForge understands.
@@ -54,10 +36,10 @@ keys when clicking on them), and all selected files will be opened.
  FontForge can open macbinary resource files containing postscript and
 truetype fonts (it does not open bitmap fonts currently)
  FontForge does not open Acorn RISC/OS files, but you can use
-*[acorn2sfd](../../utilities/acorn2sfd/)* to convert them into an sfd file which
+[acorn2sfd](../../utilities/acorn2sfd/) to convert them into an sfd file which
 FontForge can then open.
- If you have [*mf*](http://www.tug.org/)and
-*[autotrace](http://sourceforge.net/projects/autotrace/)*installed on
+ If you have [mf](http://www.tug.org/) and
+[autotrace](http://sourceforge.net/projects/autotrace/) installed on
 your machine FontForge will process metafont's mf files for you. But you
 might want to use *pktrace, mftrace* or some other standalone program to
 do the job.
@@ -113,17 +95,22 @@ may set it to show hidden files (on unix files beginning with "." are
 files, in alphabetical order, so that directories precede normal files,
 or so that there is a separate pane for directories.
 
-Browse Open Font Library
+
+# Browse Web
+
+## Browse Open Font Library
 
 Brings up a [dialog](../../reference/oflib/) which will browse fonts on the Open
 Font Library website.
 
-Recent
+
+# Recent
 
 A submenu showing recently opened font files (it does not show the
 current font).
 
-Close
+
+# Close
 
 Closes the current window.
 
@@ -131,7 +118,8 @@ If this is a font view and the font has been changed, then it will ask
 whether you want to save the font. It will also close any outline glyph,
 bitmap glyph or metrics views associated with the font.
 
-Save
+
+# Save
 
 Saves the current file. If it is associated with a spline font database
 it will be saved there and a backup file will be created. If it is a new
@@ -141,7 +129,8 @@ dialog will pop up.
 If you are editing a font "Ambrosia.sfd" then the backup file will be
 called "Ambrosia.sfd\~".
 
-Save As...
+
+# Save As...
 
 Allows you to give a new name to the current spline font database. Pops
 up a file picker.
@@ -149,12 +138,14 @@ up a file picker.
 the information needed to regenerate your font), but you may choose to
 save it into a directory format where every glyph has its own file.
 
-Save All
+
+# Save All
 
 Saves all changed fonts. If any have not been named, it will pop up a
 Save As file picker for that font.
 
-Generate Fonts...
+
+# Generate Fonts...
 
 [This generates font files](../generate/), both outline and bitmap. You
 may choose not to generate either, you may generate an afm file or a pfm
@@ -162,7 +153,8 @@ file, you may select the type of postscript output, you may select which
 pixelsizes of bitmap to generate. (See [that page](../generate/)for
 more info)
 
-Generate Mac Family...
+
+# Generate Mac Family...
 
 This is only available if there are multiple fonts open in the same
 family, and if the current font is the "Plain" style of that family. It
@@ -172,27 +164,31 @@ members, sfnt, and POST resources for all selected faces. It brings up a
 dialog, but one that includes a list of all potential faces for family
 members.
 
-Generate TTC...
+
+# Generate TTC...
 
 This is only available if there are multiple fonts open (they need not
 be the same family). It opens a [dialog](../generate/#GenerateTTC)
 similar to the above listing all open fonts. You select which fonts go
 into the ttc file and how they should be stored.
 
-Revert
+
+# Revert
 
 Rereads the font from the file on the disk. All changes are lost.
 
-Revert To Backup
+
+# Revert To Backup
 
 Only available in the font view. When FontForge saves an sfd file (with
-the [Save](#Save) command, not the [Save As](#SaveAs) command) it
+the [Save](#Save) command, not the [Save As](#Save.As) command) it
 creates a backup version of the file containing the old data (this file
 has the same name as the main branch with a "\~" character appended to
 it). This command will revert to the backuped version of the file (if
 there is one).
 
-Revert Glyph
+
+# Revert Glyph
 
 Only available in the font and outline views. Rereads the font from the
 sfd file on the disk searching for a glyph in that file with the same
@@ -207,7 +203,8 @@ command may fail.
  If you have made a global change to the font (like scaling it to a new
 em-size) then the results may not be appropriate.
 
-Export...
+
+# Export...
 
 In the Outline view this allows you to export the splines that make up
 the glyph into an encapsulated postscript (.eps), pdf, svg or xfig
@@ -222,7 +219,8 @@ a .xbm or a .bmp (always as a bitmap) file.
 
 This menu item is not available in the Font or Metrics Views.
 
-Import...
+
+# Import...
 
 In the Font View this allows you to import one or several bitmap fonts
 (from a .bdf file or a ttf/otf/ttc file, TeX pk (gf) file, an X11 .pcf
@@ -251,17 +249,18 @@ If you are editing a [multi-layered font](../multilayer/) (and have a
 version of FontForge configured for it) then you can also import an
 image into one of the foreground layers.
 
-FontForge does best when given bitmap images. It will grey out the
+*FontForge does best when given bitmap images. It will grey out the
 foreground and make the background transparent. It will also compress
 them when it stores them in the sfd file. It will handle most other
 image formats but does not try to optimize them in anyway. Please use
-bitmaps here.
+bitmaps here.*
 
 You may load an encapsulated postscript file (or rather the sub-set of
 postscript that FontForge understands) into the foreground of glyphs. As
 with images above this may import either depending on the selection or a
 template.
- If you have libxml2 on your system then FontForge will also be able to
+
+If you have libxml2 on your system then FontForge will also be able to
 import svg files. As with postscript, only a subset of svg is
 understood).
 
@@ -274,12 +273,12 @@ In the Bitmap View this allows you to import a bitmap image into the
 glyph.
 
 This menu item is not available in the Metrics View
-   
+  
  In the font view you may select multiple files (by holding down the
 shift or control keys when clicking on them), and all selected bitmap
 fonts will be imported into the sfd.
 
-Merge Feature Info...
+# Merge Feature Info...
 
 Only available in the font view window. This command will allow you to
 search for an [adobe feature file](../../reference/featurefile/) (.fea) for
@@ -290,7 +289,8 @@ automagically search for an appropriate .afm file in the same place. But
 sometimes afm files are stored in other directories. And sometimes you
 want to import information from TeX, from mac resource files or from
 windows pfm files.
- **NOTE:**FontForge is unable to read an encoding from tfm/ofm files or
+
+**NOTE:** FontForge is unable to read an encoding from tfm/ofm files or
 from mac resource files, it is your responsibility to ensure that the
 encoding of your font matches that of the tfm file *BEFORE* merging
 kerning information. This is unfortunate, sorry.
@@ -300,14 +300,16 @@ associated kerning data will be found in the FOND stored with a bitmap
 font for this face. FontForge can't guess the name of this file when
 loading the font. You must figure it out yourself.
 
-Print...
+
+# Print...
 
 Not available in the bitmap view. Allows you to print out all the glyphs
 in the font, a text sample of the font, or specific glyphs at a very
 large scale.
  See the section on [printing](../display/) for more information.
 
-Execute Script...
+
+# Execute Script...
 
 Only in the font view. Brings up a dlg and allows you to enter a
 [script](../../scripting/native/scripting/), which could be just calling a prewritten
@@ -315,7 +317,8 @@ script file. There is a [Call] button in the dlg to help you locate any
 such files. The default extension is "\*.pe" (postscript edit) but you
 can change that with the [Filter] button if you use something else.
 
-Script Menu
+
+# Script Menu
 
 Only in the font view. You may define up to 10
 [scripts](../../scripting/native/scripting/#menu) that you want to execute frequently and
@@ -324,7 +327,8 @@ with the first one being invoked by Control-Meta(Alt)-1, the second
 Control-Meta-2, and the tenth by Control-Meta-0. The scripts are set in
 the [preferences dialog](../prefs/#scripts)
 
-Preferences...
+
+# Preferences...
 
 This pops up a [dialog allowing you to configure various esoteric bits
 of fontforge](../prefs/).
@@ -333,35 +337,14 @@ A number of things, like the colors used in FontForge, that might be
 controlled from a preference window are controlled by [X
 Resources](../xres/) below.
 
-X Resource Editor...
+
+# X Resource Editor...
 
 [This dialog](../resedit/) allows you to edit FontForge's X Resources,
 you may either save them to a file for perminant storage, or change the
 current settings for this use of FontForge.
 
-Quit
+
+# Quit
 
 Exits the program, prompting you whether to save any changed fonts.
-
-Other menus
------------
-
--   [File](../filemenu/)
--   [Edit](../editmenu/)
--   [Point](../pointmenu/)
--   [Element](../elementmenu/)
--   [Tools](../toolsmenu/)
--   [Hints](../hintsmenu/)
--   [Encoding](../encodingmenu/)
--   [View](../viewmenu/)
--   [Metrics](../metricsmenu/)
--   [CID](../cidmenu/)
--   [MM](../mmmenu/)
--   [Window](../windowmenu/)
--   [Help](../helpmenu/)
--   [Hot Keys](../HotKeys/)
-
--- [Prev](../metricsview/) -- [TOC](/en-US/tutorials/overview/) --
-[Next](../editmenu/) --
-
-
