@@ -181,7 +181,7 @@ Rereads the font from the file on the disk. All changes are lost.
 # Revert To Backup
 
 Only available in the font view. When FontForge saves an sfd file (with
-the [Save](#Save) command, not the [Save As](#Save.As) command) it
+the [Save](#Save) command, not the [Save As](#Save.As...) command) it
 creates a backup version of the file containing the old data (this file
 has the same name as the main branch with a "\~" character appended to
 it). This command will revert to the backuped version of the file (if
@@ -249,6 +249,7 @@ If you are editing a [multi-layered font](../multilayer/) (and have a
 version of FontForge configured for it) then you can also import an
 image into one of the foreground layers.
 
+<a name="bitmapfiles"></a>
 *FontForge does best when given bitmap images. It will grey out the
 foreground and make the background transparent. It will also compress
 them when it stores them in the sfd file. It will handle most other
