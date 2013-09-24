@@ -4,39 +4,11 @@ layout: default
 title: Encoding Menu
 ---
 
-The Encoding menu is only found in the font view:
 
--   [Reencode \>](#Reencode)
-    -   various standard and user defined encodings
+[table_of_contents]
 
--   [Compact](#Compact)
--   [Force Encoding \>](#Force)
-    -   various standard and user defined encodings
 
--   [Add Encoding Slots...](#AddSlots)
--   [Remove Unused Slots](#RemoveSlots)
--   [Detach Glyphs](#Detach)
--   [Detach & Remove Glyphs...](#RemoveGlyphs)
--   [Add Encoding...](#AddEnc)
--   [Load Encoding...](#Load)
--   [Make From Font](#Make)
--   [Remove Encoding...](#RemoveEnc)
--   [Display by Groups...](#Display)
--   [Define Groups...](#Define)
--   [Save NameList of Font...](#SaveNL)
--   [Load NameList...](#LoadNL)
--   [Rename Glyphs...](#RenameGlyphs)
--   [Create Named Glyphs...](#NameGlyphs)
-
-    * * * * *
-
--   [General notes on encodings](#General-encodings)
-    -   [Built-in encodings](#Encodings)
-    -   [User defined encodings](#User-def)
-
--   [Namelists](#namelist)
-
-Reencode
+#### Reencode
 
 Has an attached sub-menu of standard and user defined encodings. The
 font's current encoding will be indicated with a check mark. You may
@@ -57,13 +29,15 @@ into slot 65. If we have another encoding which maps "A" -\> slot 65,
 then (since "A" has unicode value U+0041) our glyph will still be mapped
 to slot 65, but in addition its name will be changed to "A".
 
-Compact
+
+#### Compact
 
 Remove any holes from the encoding so all the glyphs get smushed
 together. If the font is already compact, then selecting this again will
 restore the original.
 
-Force Encoding
+
+#### Force Encoding
 
 Has the same sub-menu as above. Here we assume that the glyphs of the
 font are currently encoded in the right order, but they have the wrong
@@ -71,74 +45,88 @@ names (This may seem odd, but it happens a lot). This command will
 change the names of all the glyphs to match what they should be if the
 indicated encoding were in force.
 
-Add Encoding Slots...
+
+#### Add Encoding Slots...
 
 Add some extra slots at the end of the font into which you can put
 unencoded glyphs (variant glyphs, etc.)
 
-Remove Unused Slots
+
+#### Remove Unused Slots
 
 Removes any unused slots from the end of the font. It does not remove
 unused slots inside the font, that would screw up the encoding.
 
-Detach Glyphs
+
+#### Detach Glyphs
 
 Detaches any selected encoding slots from their currently associated
 glyphs. These slots will now be marked as unused. The glyphs will remain
 in the font, just not encoded (If you reencode the font those glyphs
 will become visible again).
 
-Detach & Remove Glyphs...
+
+#### Detach & Remove Glyphs...
 
 Similar to the above except that any glyphs detached (which are not used
 elsewhere in the encoding) will be removed from the font.
 
-Add Encoding Name...
+
+#### Add Encoding Name...
 
 Requests an encoding name from the user and searches for it in the
 iconv() database. It then adds that encoding to the menu.
 
-Load Encoding...
+
+#### Load Encoding...
 
 Asks the user for a filename and attempts to load a user defined
 encoding from that file. (You can only load small encodings -- one byte
 encodings)
 
-Make from Font...
+
+#### Make from Font...
 
 Allows you to name the font's current encoding (if it isn't already
 named), and add it to the encoding menu.
 
-Remove Encoding...
+
+#### Remove Encoding...
 
 Removes one of the user defined encodings from the menu.
 
-Display by Group...
+
+#### Display by Group...
 
 Allows you restrict the glyphs displayed in the font view to those in a
 user defined [group](../groups/) (specified in the next command).
 
-Define Groups...
+
+#### Define Groups...
 
 Allows you to define [groups](../groups/) of glyphs which (presumably)
 have some meaningful connection to each other.
 
-Save NameList of Font...
 
-Creates a [namelist](#namelist) file mapping unicode to the glyph names
+#### Save NameList of Font...
+
+Creates a [namelist](#NameLists) file mapping unicode to the glyph names
 of the current font.
 
-Load NameList...
 
-Loads a [namelist](#namelist) file into fontforge and copies it so that
+#### Load NameList...
+
+Loads a [namelist](#NameLists) file into fontforge and copies it so that
 fontforge will load it on start up in the future.
 
-Rename Glyphs...
 
-Allows you to specify a [namelist](#namelist). All glyphs in the current
+#### Rename Glyphs...
+
+Allows you to specify a [namelist](#NameLists). All glyphs in the current
 font will be renamed to match the scheme in the namelist.
 
-Create Named Glyphs...
+
+#### Create Named Glyphs...
 
 Allows you to specify a file containing a list of glyph names. FontForge
 will create a sequence of unencoded glyphs with these names. This might
@@ -146,8 +134,8 @@ be useful if all your fonts contain small caps and you always want to
 have the names "A.small", "B.small", "C.small" etc. or perhaps you
 always want the ligatures "longs\_longs\_t", "f\_longs", "f\_j", etc.
 
-General notes on encodings
---------------------------
+
+### General notes on encodings
 
 Not all font formats support all encodings. SVG fonts will always be
 output in a unicode encoding, truetype fonts in either unicode or one of
@@ -158,9 +146,8 @@ essence because there is none), but there is an entry [CID-\>Change
 Supplement](../cidmenu/#ChangeSup)which will display the
 Registry/Ordering information and allow you to change the supplement.
 
-* * * * *
 
-### Built in Encodings
+#### Built in Encodings
 
 FontForge knows about the following encodings by default:
 
@@ -182,8 +169,7 @@ FontForge knows about the following encodings by default:
 -   ISO-8859-6 (Arabic)
 -   ISO-8859-7 (Greek)
 -   ISO-8859-8 (Hebrew) -- (and Yiddish)
--   ISO-8859-11 (Thai) -- Also know as TIS 620
-     \<there is no ISO-8859-12\>
+-   ISO-8859-11 (Thai) -- Also know as TIS 620 (there is no ISO-8859-12)
 
     * * * * *
 
@@ -198,9 +184,8 @@ FontForge knows about the following encodings by default:
 
 -   ISO-10646-1 (Unicode, BMP)
 -   ISO-10646-1 (Unicode, Full)
--   ISO-10646-? (Unicode, by plane)
-     (You can select a specific plane of unicode as an encoding (ie BMP,
-    SMP, SIP,...)
+-   ISO-10646-? (Unicode, by plane) (You can select a specific plane of
+    unicode as an encoding (ie BMP, SMP, SIP,...)
 
     * * * * *
 
@@ -220,6 +205,7 @@ FontForge knows about the following encodings by default:
 -   Custom -- An unknown encoding
 -   Glyph Order -- the glyph ordering used in the original font file.
 
+
 Encoding sources:
 
 -   [ISO 8859 Alphabet Soup](http://czyborra.com/charsets/iso8859.html)
@@ -228,9 +214,8 @@ Encoding sources:
 [An index to images of all the glyphs in
 unicode](http://www.unicode.org/charts/).
 
-* * * * *
 
-### User Defined Encodings
+#### User Defined Encodings
 
 You can also add new encodings to the set that FontForge knows about.
 There are three menu items that manipulate a set of user defined
@@ -247,8 +232,8 @@ consortium for [mapping ISO
 unicode, or it must be a postscript encoding array. The first format
 looks like this:
 
->     0x20   0x0020  #   SPACE
->     0x21    0x0021  #   EXCLAMATION MARK
+>     0x20      0x0020  #   SPACE
+>     0x21      0x0021  #   EXCLAMATION MARK
 >     ...
 
 A postscript file looks like:
@@ -317,8 +302,8 @@ contains:
 -   US-ASCII -- Not really useful by itself any more, but provides the
     first 128 characters of almost every other encoding.
 
-NameLists
----------
+
+### NameLists
 
 Adobe has established a standard glyph naming convention which provides
 intelligible names for many glyphs of unicode characters. And some
@@ -389,7 +374,7 @@ font.
 
 So if you find it easier to work with names other than those Adobe has
 established you may create your own namelist file. Then use
-[Encoding-\>Load NameList...](#LoadNL) to load that into FontForge (you
+[Encoding-\>Load NameList...](#Load.NameList...) to load that into FontForge (you
 only need do this once, FontForge should remember it thereafter). You
 may use [File-\>Preferences-\>Font Info](../prefs/#NewFontNameList) to
 decree that all your new fonts will use this namelist. You can change a
@@ -398,7 +383,7 @@ font's namelist with either:
 -   [Element-\>Font
     Info-\>General-\>NameList](../fontinfo/#PS-General)
      Which will change the way new glyphs are assigned names
--   [Encoding-\>Rename Glyphs...](#RenameGlyphs)
+-   [Encoding-\>Rename Glyphs...](#Rename.Glyphs...)
      Which will rename existing glyphs as well as changing the way new
     glyphs are named.
 
@@ -406,24 +391,3 @@ You may also want to force a rename of all glyphs when you Open a font,
 and the open dialog now lets you do this. Similarly when generating a
 font you will probably want to force that font to be use the standard
 names of the Adobe Glyph List.
-
-Other menus
------------
-
--   [File](../filemenu/)
--   [Edit](../editmenu/)
--   [Point](../pointmenu/)
--   [Element](../elementmenu/)
--   [Tools](../toolsmenu/)
--   [Hints](../hintsmenu/)
--   [Encoding](../encodingmenu/)
--   [View](../viewmenu/)
--   [Metrics](../metricsmenu/)
--   [CID](../cidmenu/)
--   [MM](../mmmenu/)
--   [Window](../windowmenu/)
--   [Help](../helpmenu/)
--   [Hot Keys](../HotKeys/)
-
--- [Prev](../hintsmenu/) -- [TOC](/en-US/tutorials/overview/) --
-[Next](../viewmenu/) --
