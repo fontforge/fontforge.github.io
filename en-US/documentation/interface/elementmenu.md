@@ -770,7 +770,7 @@ built using the rules of "agrave" but with ".sc" variants. So
 "agrave.sc" would contain "a.sc". For accents it will use "grave.sc" if
 it exists and "grave" if it does not.
 
-If [Copy From](../editmenu/#From) is set to All Fonts then any bitmaps
+If [Copy From](../editmenu/#Copy.From) is set to All Fonts then any bitmaps
 will have a similar process done -- that is bitmap references will be
 created (even in the outline glyph view).
 

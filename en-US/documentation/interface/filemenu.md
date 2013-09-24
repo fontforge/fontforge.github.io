@@ -31,14 +31,18 @@ pfb, pt3, sfd, ttf, otf, otb, t42, cef, cff, gsf, ttc, svg, ik, mf and
 bdf (possibly others as FontForge comes to support more formats). You
 can change this with the Filter pull down list -- there are several
 standard filters, and you may define your own.
- You may select multiple files (by holding down the shift or control
+
+You may select multiple files (by holding down the shift or control
 keys when clicking on them), and all selected files will be opened.
- FontForge can open macbinary resource files containing postscript and
+
+FontForge can open macbinary resource files containing postscript and
 truetype fonts (it does not open bitmap fonts currently)
- FontForge does not open Acorn RISC/OS files, but you can use
-[acorn2sfd](../../utilities/acorn2sfd/) to convert them into an sfd file which
-FontForge can then open.
- If you have [mf](http://www.tug.org/) and
+
+FontForge does not open Acorn RISC/OS files, but you can use
+[acorn2sfd](../../utilities/acorn2sfd/) to convert them into 
+an sfd file which FontForge can then open.
+
+If you have [mf](http://www.tug.org/) and
 [autotrace](http://sourceforge.net/projects/autotrace/) installed on
 your machine FontForge will process metafont's mf files for you. But you
 might want to use *pktrace, mftrace* or some other standalone program to

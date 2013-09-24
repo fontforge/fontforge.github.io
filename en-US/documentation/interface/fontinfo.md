@@ -125,7 +125,7 @@ unicode character may map to very different chinese or japanese glyphs).
 To handle this FontForge has the concept of "Interpretation".
 
 When you create a new glyph in a font, fontforge will assign it a name
-based on the current [namelist](../encodingmenu/#namelist).
+based on the current [namelist](../encodingmenu/#NameLists).
 
 ![](img/fontinfo-layers.png)Layers
 ------------------------------

@@ -125,8 +125,8 @@ places where truetype delta instructions might be useful.
 
 If the font contains a 'fpgm', 'prep', 'cvt ' or 'maxp' table, then this
 command will remove them. This should be done in conjunction with
-[Hints-\>Clear Instructions](../hintsmenu/), otherwise any remaining
-instructed glyphs will fail to work.
+[Hints-\>Clear Instructions](../hintsmenu/#Clear.Instructions), 
+otherwise any remaining instructed glyphs will fail to work.
 
 
 #### Clear Hints

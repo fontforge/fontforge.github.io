@@ -23,7 +23,8 @@ text fields has the focus.
 In the outline view and the bitmap view this will undo the last command.
 The number of commands that may be undone for any glyph is controlled by
 the [UndoDepth](../prefs/#UndoDepth) preference item.
- In the font and metrics views, this does NOT undo the last command. It
+
+In the font and metrics views, this does NOT undo the last command. It
 undoes the last operation on all selected glyphs.
 
 
@@ -32,7 +33,8 @@ undoes the last operation on all selected glyphs.
 In the outline view and the bitmap view this will redo the last command
 undone. Up to twelve commands may be redone (after that they get thrown
 away)
- In the font and metrics views, this does NOT undo the last command. It
+
+In the font and metrics views, this does NOT undo the last command. It
 undoes the last operation on all selected glyphs.
 
 
@@ -149,7 +151,7 @@ This command is not available in the Bitmap View.
 #### Copy Grid Fit
 
 Only available in the outline glyph view and only if [View-\>Show Grid
-Fit](../viewmenu/#ShowGridFit)is selected. This will place a copy of
+Fit](../viewmenu/#Show.Grid.Fit) is selected. This will place a copy of
 the grid fit version of the glyph into the clipboard.
 
 
@@ -166,7 +168,8 @@ are selected, the C will get A, D will get B and E will also get A). If
 exactly one glyph is selected but the clipboard contains more that one
 glyph, the selection will be extended so that enough glyphs are selected
 that something may be pasted in each.
- If the clipboard contains outline information then that information
+
+If the clipboard contains outline information then that information
 will go into the glyph outline regardless of the setting of Copy From.
 If the clipboard contains a bitmap and the display is set to outline
 then the bitmap is pasted into the bitmap font it was copied from (ie.
@@ -257,7 +260,8 @@ with endpoints as the endpoints of other paths and then join those two
 paths. Also if the endpoint of a path is the same as the start point it
 will make that path into a loop. (The commands that move points around
 will normally do this automatically, but Paste will not).
- In the Outline view things are slightly more complicated: If any paths
+
+In the Outline view things are slightly more complicated: If any paths
 have selected points on them it will only attempt to join those paths.
 
 
@@ -370,7 +374,7 @@ line is selected.
 
 ##### Select Points Affected by Current HintMask
 
-if a single point with a hintmask is selected, then this command selects
+If a single point with a hintmask is selected, then this command selects
 all points affected by that hintmask.
 
 ##### Select by Color
@@ -460,7 +464,7 @@ Selects all glyphs which FontForge thinks need to be hinted.
 ##### Autohintable
 
 Selects all glyphs which FontForge thinks can be autohinted -- ie. all
-glyphs not marked [Hints-\>Don't Autohint](../hintsmenu/#DontAutoHint)
+glyphs not marked [Hints-\>Don't Autohint](../hintsmenu/#Don.t.AutoHint)
 (this does not check whether ff thinks the glyphs in question NEED to be
 autohinted)
 
@@ -540,8 +544,8 @@ copy the truetype instructions (which may depend on subroutines or
 values in the 'fpgm', 'prep' and 'cvt ' tables).
 
 This also controls the behavior of the
-[Transform](../elementmenu/#Transform) and [Build
-Accented](../elementmenu/#Accented) glyph commands.
+[Transform](../elementmenu/#Transform...) and [Build
+Accented](../elementmenu/#Build.Accented.Composite.Glyph) glyph commands.
 
 
 #### Remove Undoes
