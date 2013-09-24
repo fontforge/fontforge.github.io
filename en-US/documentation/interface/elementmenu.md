@@ -7,112 +7,18 @@ title: The Element Menu
 
 [table_of_contents]
 
--   [Font Info](#Font)...
--   [Glyph Info](#CharInfo)...
--   Other Info
-    -   [MATH Info...](#MATH)
-    -   [BDF Info...](#BDF-Info)
-    -   [Horizontal Baselines...](#HBase)
-    -   [Vertical Baselines...](#VBase)
-    -   [Justification Information...](#Justify)
-    -   Show Dependencies
-        -   [References](#Dependencies)
-        -   [Substitutions](#DepSubs)
 
-    -   [Mass Glyph Rename...](#MassRename)
-
--   [Get Info](#Info)...
--   [Find Problems...](#Problems)
--   [Validate...](#Validate)
--   [Bitmap Strikes Available...](#Bitmaps)
--   [Regenerate Bitmap Glyphs...](#Regenerate)
--   [Remove Bitmap Glyphs...](#RemoveBitmaps)
--   Style
-    -   [Change Weight...](#Embolden)
-    -   [Italic](#Italic)
-    -   [Oblique](#Oblique)
-    -   [Condense/Extend](#Condense)...
-    -   [Change X-Height...](#xheight)
-    -   [Change Glyph...](#changeglyph)
-    -   [Add Small Caps](#SmallCaps)
-    -   [Add Subscripts/Superscripts](#SubSuper)
-    -   [Outline](#Outline)
-    -   [Inline](#Inline)
-    -   [Shadow](#Shadow)
-    -   [Wireframe](#Wireframe)
-
--   Transformations
-    -   [Transform](#Transform)...
-    -   [Point of View Projection](#PoV)...
-    -   [Non-Linear Transform](#Non-Linear)...
-    -   [Flip Horizontally](#Flip)
-    -   [Flip Vertically](#FlipV)
-    -   [Rotate 90° CW](#Rotate)
-    -   [Rotate 90° CCW](#Rotate90CCW)
-    -   [Rotate 180°](#Rotate180)
-    -   [Skew](#Skew)
-
--   [Expand Stroke...](#Expand)
--   [Tile Path...](#TilePath)
--   [Tile Pattern...](#TilePattern)
--   Overlap
-    -   [Remove Overlap](#Remove)
-    -   [Intersect](#Intersect)
-    -   [Exclude](#Exclude)
-    -   [Find Intersections](#FindInter)
-
--   Simplify
-    -   [Simplify](#Simplify)
-    -   [Simplify More](#SimplifyMore)
-    -   [Cleanup Glyphs](#Cleanup)
-    -   [Canonical Start Points](#CanonicalSP)
-    -   [Canonical Contour Order](#CanonicalContours)
-
--   [Add Extrema](#Add-Extrema)
--   [AutoTrace](#AutoTrace)
--   [Align](#Align)
-    -   [Average Points](#Average)
-    -   [Space Points](#Space-Pts)
-    -   [Space Regions](#Space-Regions)
-    -   [Make Parallel](#Parallel)
-
--   Round
-    -   [To Int](#Round)
-    -   [To Hundredths](#Hundredths)
-    -   [Cluster](#Cluster)
-
--   [Order](#Order)
-    -   First
-    -   Earlier
-    -   Later
-    -   Last
-
--   [Clockwise](#Clockwise)
--   [Counter-Clockwise](#Counter)
--   [Correct Direction](#Correct)
--   [Insert Text Outlines...](#Insert-Text)
--   Build
-    -   [Build Accented Glyph](#Accented)
-    -   [Build Composite Glyph](#Accented)
-    -   [Build Duplicate](#BuildDuplicate)
-
--   [Merge Fonts...](#Merge)
--   [Interpolate Fonts...](#Interpolate)
--   [Compare Fonts...](#CompareFonts)
--   [Compare Layer To Layer...](#CompareL2L)
-
-There are also two menu entries which are not part of the default build
-but which may be configured by modifying `configure-fontforge.h` before
-compiling FontForge.
-
--   [Tile Path](#TilePath)
--   [Non Linear Transform...](#NonLinear)
+There are two menu entries [Tile Path](##Tile.Path) and
+[Non Linear Transform...](##Non-Linear.Transform...) which are not part of the default
+build but which may be configured by modifying `configure-fontforge.h`
+before compiling FontForge.
 
 
 #### Font Info
 
 In all views this brings up the [Font Info dialog](../fontinfo/).
- CID keyed fonts can set information on the CID font as a whole (rather
+
+CID keyed fonts can set information on the CID font as a whole (rather
 than just the current sub-font, which is what this command does) from
 [CID-\>CID Font Info](../cidmenu/#FontInfo).
 
