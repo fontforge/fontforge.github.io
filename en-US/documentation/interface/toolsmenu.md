@@ -5,6 +5,9 @@ title: The Tools Menu
 ---
 
 
+[table_of_contents]
+
+
 This menu is different from all the others: It is yours. The menu is
 initially empty (and disabled). There are [python scripting commands
 which will add menu elements](../../scripting/python/#python-init-scripts) (and
@@ -18,26 +21,3 @@ glyph views.
 At some point there may be some standard python scripts that ship with
 fontforge, and their behavior will then be documented here. Currently
 there are no such scripts.
-
-Other menus
------------
-
--   [File](../filemenu/)
--   [Edit](../editmenu/)
--   [Point](../pointmenu/)
--   [Element](../elementmenu/)
--   [Tools](../toolsmenu/)
--   [Hints](../hintsmenu/)
--   [Encoding](../encodingmenu/)
--   [View](../viewmenu/)
--   [Metrics](../metricsmenu/)
--   [CID](../cidmenu/)
--   [MM](../mmmenu/)
--   [Window](../windowmenu/)
--   [Help](../helpmenu/)
--   [Hot Keys](../HotKeys/)
-
--- [Prev](../elementmenu/) -- [TOC](/en-US/tutorials/overview/) --
-[Next](../hintsmenu/) --
-
-
