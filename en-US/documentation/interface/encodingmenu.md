@@ -135,7 +135,7 @@ have the names "A.small", "B.small", "C.small" etc. or perhaps you
 always want the ligatures "longs\_longs\_t", "f\_longs", "f\_j", etc.
 
 
-### General notes on encodings
+## General notes on encodings
 
 Not all font formats support all encodings. SVG fonts will always be
 output in a unicode encoding, truetype fonts in either unicode or one of
@@ -147,7 +147,7 @@ Supplement](../cidmenu/#ChangeSup)which will display the
 Registry/Ordering information and allow you to change the supplement.
 
 
-#### Built in Encodings
+### Built in Encodings
 
 FontForge knows about the following encodings by default:
 
@@ -184,8 +184,9 @@ FontForge knows about the following encodings by default:
 
 -   ISO-10646-1 (Unicode, BMP)
 -   ISO-10646-1 (Unicode, Full)
--   ISO-10646-? (Unicode, by plane) (You can select a specific plane of
-    unicode as an encoding (ie BMP, SMP, SIP,...)
+-   ISO-10646-? (Unicode, by plane)  
+    (You can select a specific plane of unicode as an encoding
+    (ie BMP, SMP, SIP,...)
 
     * * * * *
 
@@ -215,7 +216,7 @@ Encoding sources:
 unicode](http://www.unicode.org/charts/).
 
 
-#### User Defined Encodings
+### User Defined Encodings
 
 You can also add new encodings to the set that FontForge knows about.
 There are three menu items that manipulate a set of user defined
@@ -232,18 +233,18 @@ consortium for [mapping ISO
 unicode, or it must be a postscript encoding array. The first format
 looks like this:
 
->     0x20      0x0020  #   SPACE
->     0x21      0x0021  #   EXCLAMATION MARK
->     ...
+    0x20      0x0020  #   SPACE
+    0x21      0x0021  #   EXCLAMATION MARK
+    ...
 
 A postscript file looks like:
 
->     /TeXBase1Encoding [
->      % 00
->      /.notdef /dotaccent /fi /fl
->      /fraction /hungarianumlaut /Lslash /lslash
->      ...
->     ] def
+    /TeXBase1Encoding [
+     % 00
+     /.notdef /dotaccent /fi /fl
+     /fraction /hungarianumlaut /Lslash /lslash
+     ...
+    ] def
 
 There may be more than one encoding in a postscript file. The encoding
 parser is not smart. It will only read arrays specified like this, don't
@@ -303,7 +304,7 @@ contains:
     first 128 characters of almost every other encoding.
 
 
-### NameLists
+## NameLists
 
 Adobe has established a standard glyph naming convention which provides
 intelligible names for many glyphs of unicode characters. And some
@@ -316,36 +317,41 @@ and it must be 31 or fewer characters in length.
 
 FontForge provides a series of standard namelists:
 
--   Adobe Glyph List
-     This is the set of names that Adobe publishes on the web.
--   AGL without afii
-     The cyrillic and hebrew glyphs have been assigned some very odd
+-   Adobe Glyph List  
+    This is the set of names that Adobe publishes on the web.
+
+-   AGL without afii  
+    The cyrillic and hebrew glyphs have been assigned some very odd
     names (afiiXXXXX) and some people prefer not to use them.
--   AGL with PUA
-     Adobe has assigned part of the unicode public use area to hold some
+
+-   AGL with PUA  
+    Adobe has assigned part of the unicode public use area to hold some
     standard glyph variants like small caps, subscripts, old-style
     numbers, etc.
--   Greek small caps
-     I've added some greek small cap assignments
--   TeX Names
-     The TeX typesetting system has its own set of names
--   AMS Names
-     The American Mathematical Society has its set of names (see the
+
+-   Greek small caps  
+    I've added some greek small cap assignments
+
+-   TeX Names  
+    The TeX typesetting system has its own set of names
+
+-   AMS Names  
+    The American Mathematical Society has its set of names (see the
     American Mathematical Society's
     [specification](http://www.ams.org/STIX/bnb/stix-tbl.asc-2003-10-10))
 
 You may define your own namelist file. It should have the extension
 ".nam". And it should contain a series of lines that look like:
 
->     0x0020 space
->     0x0021 exclam
->     0x0022 dblquote
+    0x0020 space
+    0x0021 exclam
+    0x0022 dblquote
 
 In many cases you will just want to make a few modifications to an
 already existing namelist. You can write:
 
->     Based: Adobe Glyph List
->     0x0021 exclamation
+    Based: Adobe Glyph List
+    0x0021 exclamation
 
 Which means the namelist is the same as the Adobe Glyph List except that
 in your system U+0021 will be called "exclamation" rather than "exclam".
@@ -374,17 +380,19 @@ font.
 
 So if you find it easier to work with names other than those Adobe has
 established you may create your own namelist file. Then use
-[Encoding-\>Load NameList...](#Load.NameList...) to load that into FontForge (you
-only need do this once, FontForge should remember it thereafter). You
-may use [File-\>Preferences-\>Font Info](../prefs/#NewFontNameList) to
-decree that all your new fonts will use this namelist. You can change a
-font's namelist with either:
+[Encoding-\>Load NameList...](#Load.NameList...) to load that into
+FontForge (you only need do this once, FontForge should remember it
+thereafter). You may use
+[File-\>Preferences-\>Font Info](../prefs/#NewFontNameList) to decree that
+all your new fonts will use this namelist. You can change a font's
+namelist with either:
 
 -   [Element-\>Font
-    Info-\>General-\>NameList](../fontinfo/#PS-General)
-     Which will change the way new glyphs are assigned names
--   [Encoding-\>Rename Glyphs...](#Rename.Glyphs...)
-     Which will rename existing glyphs as well as changing the way new
+    Info-\>General-\>NameList](../fontinfo/#PS-General)  
+    Which will change the way new glyphs are assigned names
+
+-   [Encoding-\>Rename Glyphs...](#Rename.Glyphs...)  
+    Which will rename existing glyphs as well as changing the way new
     glyphs are named.
 
 You may also want to force a rename of all glyphs when you Open a font,
