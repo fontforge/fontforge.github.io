@@ -4,6 +4,9 @@ layout: default
 title: The Element Menu
 ---
 
+
+[table_of_contents]
+
 -   [Font Info](#Font)...
 -   [Glyph Info](#CharInfo)...
 -   Other Info
@@ -105,35 +108,41 @@ compiling FontForge.
 -   [Tile Path](#TilePath)
 -   [Non Linear Transform...](#NonLinear)
 
-Font Info
+
+#### Font Info
 
 In all views this brings up the [Font Info dialog](../fontinfo/).
  CID keyed fonts can set information on the CID font as a whole (rather
 than just the current sub-font, which is what this command does) from
 [CID-\>CID Font Info](../cidmenu/#FontInfo).
 
-Glyph Info
+
+#### Glyph Info
 
 In the all views this brings up the [Glyph Info
 dialog](../charinfo/#Character).
 
-MATH Info...
+
+#### MATH Info...
 
 Brings up the [MATH Info dialog](../../reference/math/).
 
-BDF Info
+
+##### BDF Info
 
 If you have bitmaps in your font, then in the font view or bitmap view
 this command will bring up the [BDF Info dialog.](../bdfinfo/)
 
-Horizontal Baselines...
+
+##### Horizontal Baselines...
 
 This [dialog](../baseline/) gives you control over the OpenType 'BASE'
 table which allows you to specify different baselines for different
 scripts, and how to align those baselines with each other. It also
 provides fine control over the inter-baseline spacing (the line height).
 
-Vertical Baselines...
+
+##### Vertical Baselines...
 
 This [dialog](../baseline/) gives you control over the OpenType 'BASE'
 table which allows you to specify different baselines for different
@@ -141,55 +150,62 @@ scripts, and how to align those baselines with each other. It also
 provides fine control over the inter-baseline spacing (the column
 width).
 
-Justification Information...
+
+##### Justification Information...
 
 This [dialog](../justify/) allows you to examine and provide the
 information needed for the OpenType JSTF table -- information which
 helps layout engines do text justification.
 
-Get Info
 
-In the outline view this brings up [one of four different
-dialogs](../getinfo/) (Point Info, Image Info, Reference Info, Anchor
-Point Info) depending on what is selected.
+##### Show Dependencies
 
-Show Dependencies
-
-References...
+###### References...
 
 This dialog is not available in the bitmap view. It shows you what
 glyphs contain a reference to the current glyph. You can open a window
 looking at any of the dependent glyphs by selecting that glyph and
 pressing the [Show] button.
 
-Substitutions...
+###### Substitutions...
 
 Show any glyphs that have substitutions (ligatures, multiple subs, etc.)
 which depend on the current glyph. So if you select "i", you might see
 that "fi" depended on it as a ligature, and if you select "A.swash" you
 might see that "A" depended on it as a 'swsh' alternate subs.
 
-Mass Glyph Rename...
 
-![](img/MassRename.png)This allows you to rename a bunch of selected glyphs.
-It can be used in two ways, either:
+##### Mass Glyph Rename...
 
--   You want to rename all the selected glyphs by adding a suffix to
-    their names (this might be useful if you are working with a small
-    caps Type1 font that you wanted to convert to an otf font, where the
-    old convention was just to name the glyphs as "a", "b" and so forth
-    rather than "a.sc", "b.sc", etc.).
--   Or you can select a block of glyphs, and specify another glyph
-    somewhere in the encoding, then the selected glyphs would get be
-    named by appending the suffix to the sequence of glyphs starting
-    with the one identified in the dialog. (This might be useful if you
-    wanted to add a small caps collection to an existing font). In this
-    case you may also specify a lookup subtable so that the base glyphs
-    would get substituted by the appropriate renamed glyphs when that
-    subtable was activated (this can't be done in the previous case,
-    because there are no longer any base glyphs)
+![](/assets/img/filemenu-massrename.png)
 
-Find Problems...
+This allows you to rename a bunch of selected glyphs. It can be used
+in two ways, either:
+
+- You want to rename all the selected glyphs by adding a suffix to
+  their names (this might be useful if you are working with a small
+  caps Type1 font that you wanted to convert to an otf font, where the
+  old convention was just to name the glyphs as "a", "b" and so forth
+  rather than "a.sc", "b.sc", etc.).
+- Or you can select a block of glyphs, and specify another glyph
+  somewhere in the encoding, then the selected glyphs would get be
+  named by appending the suffix to the sequence of glyphs starting
+  with the one identified in the dialog. (This might be useful if you
+  wanted to add a small caps collection to an existing font). In this
+  case you may also specify a lookup subtable so that the base glyphs
+  would get substituted by the appropriate renamed glyphs when that
+  subtable was activated (this can't be done in the previous case,
+  because there are no longer any base glyphs)
+
+
+#### Get Info
+
+In the outline view this brings up [one of four different
+dialogs](../getinfo/) (Point Info, Image Info, Reference Info, Anchor
+Point Info) depending on what is selected.
+
+
+#### Find Problems...
 
 This command is not present in the bitmap view. It will search for
 several common problems. In the glyph view it will select anything that
@@ -199,20 +215,25 @@ post a message telling you of each problem found. It brings up the [Find
 Problem](../problems/) dialog to let you choose what problems to look
 for.
 
-Validate...
+
+#### Validate...
 
 Rather similar to Find Problems, but works with a much smaller set of
 things which are definitely errors, and provides an overview of the
 problems found in all glyphs of the font. See the [validation
 page](../validation/) for more info.
 
-Bitmap Strikes Available...
+
+####Bitmap Strikes Available...
 
 This brings up a list of pixel sizes for bitmap fonts.
- ![](img/bitmapsavail.png) If you have bitmap fonts this will show their
-pixel sizes. If you remove a size that is in the list then that font
-will be deleted from the sfd file. If you add a size then that size font
-will be created and stored in the sfd file.
+
+![](/assets/img/filemenu-bitmapsavail.png)
+
+If you have bitmap fonts this will show their pixel sizes. If you remove
+a size that is in the list then that font will be deleted from the sfd
+file. If you add a size then that size font will be created and stored
+in the sfd file.
 
 FontForge deals in pixel sizes, not point sizes. The conversion between
 pixels and points differs on different systems and indeed on different
@@ -224,18 +245,12 @@ to know about these standards.
 
 Some conversions between points and pixels
 
------------------ ----- ------ ----- ------ ------
-Screen Resolution 72dpi 75dpi  96dpi 100dpi 120dpi
-Point Size        Mac   X      Win   X      Win
-
-10pt              10    10     13    14     17
-
-12pt              12    12~13  16    17     20
-
-18pt              18    19     24    25     30
-
-24pt              24    25     32    33     40
------------------ ----- ------ ----- ------ ------
+    Screen Resolution   72dpi   75dpi   96dpi   100dpi  120dpi
+    Point Size          Mac     X       Win     X       Win
+    10pt                10      10      13      14      17
+    12pt                12      12~13   16      17      20
+    18pt                18      19      24      25      30
+    24pt                24      25      32      33      40
 
 Sadly your screen will probably not match one of the standard screens
 precisely. On X the standard resolutions are 75 and 100dpi, on MS
@@ -255,9 +270,11 @@ If you want to generate a blank strike (one containing no glyphs) then
 turn off the `[] Create Rasterized Strikes` checkbox.
 
 In CID keyed fonts there will not be a set of bitmaps for each sub font,
-instead the entire complex of sub-fonts share bitmaps. 
+instead the entire complex of sub-fonts share bitmaps.
 
-![](img/greymapsavail.png)FontForge also supports anti-aliased bitmap fonts,
+![](/assets/img/filemenu-greymapsavail.png)
+
+FontForge also supports anti-aliased bitmap fonts,
 and you can use this dialog to generate them. If you want to generate a
 12 point anti-aliased font with 8 bits per pixel you would type 12@8
 into the dialog above. FontForge supports 1, 2, 4 and 8 bit per pixel
@@ -266,7 +283,8 @@ greymaps).
  (New greymaps can not be created by scaling old greymaps, if you wish
 to generate a greymap font, you must have an outline font).
 
-Regenerate Bitmap Glyphs...
+
+#### Regenerate Bitmap Glyphs...
 
 If you have changed the outline that a bitmap is based one then you
 should (at some point) look into changing the bitmap too. This command
@@ -275,18 +293,19 @@ In the font view you can regenerate all selected glyphs, while in the
 bitmap and outline views you can regenerate the current glyph. You can
 pick what pixel sizes should be regenerated too (unlike the above
 command, removing a bitmap size from the regenerate list will not delete
-it).
- As before, if you wish to change a greymap you should refer to it by
+it). As before, if you wish to change a greymap you should refer to it by
 \<pixel-size\>@\<bits-per-pixel\>.
 
-Remove Bitmap Glyphs...
+
+#### Remove Bitmap Glyphs...
 
 This command will remove one or several bitmap glyphs from a strike
 (while leaving the strike otherwise intact). The dialog is similar to
 the above two. Any indicated glyphs will be removed from the specified
 strikes.
 
-Styles
+
+#### Styles
 
 There are many [standard variations](../Styles/) on Latin (Greek,
 Cyrillic) fonts. Some of them apply to other scripts -- making a font
@@ -294,7 +313,8 @@ darker (bolder) is common to many scripts, though the actual mechanics
 differ from script to script) Others -- such as Italic -- are more
 specialized.
 
-Change Weight...
+
+##### Change Weight...
 
 This is a simplistic command to make the stems of glyphs darker or
 lighter. It sometimes works.
@@ -309,36 +329,42 @@ is even the slightest bit unexpected.
 will fall into one of the two cases above.
  See the [Change Weight dialog](../Styles/#Embolden).
 
-Italic
+
+##### Italic
 
 An italic font is different from and more complex than an oblique font.
 Traditionally fonts with serifs are made italic and fonts without serifs
 are made oblique. This will change some letterforms, change the serifs,
-condense the font and slant things. See the [Italic
-dialog.](../Styles/#Italic)
+condense the font and slant things. See the
+[Italic dialog](../Styles/#Italic).
 
-Oblique
+
+##### Oblique
 
 An oblique font is different from and simpler than an italic font.
 Traditionally fonts with serifs are made italic and fonts without serifs
 are made oblique. This will slant the letters.
 
-Condense/Extend
+
+##### Condense/Extend
 
 Allows you to change the width of the counters and side bearings of a
 glyph. The algorithm only works on simple latin glyphs, and it has
-problems with diagonal stems. See the [Condense/Extend
-dialog](../Styles/#Condense).
+problems with diagonal stems. See the
+[Condense/Extend dialog](../Styles/#Condense).
 
-Change X-Height
+
+##### Change X-Height
 
 Allows you to change the x-height of a font
 
-Change Glyph...
+
+##### Change Glyph...
 
 Allows you to make very general changes to a glyph's shape.
 
-Add Small Caps
+
+##### Add Small Caps
 
 This is a little different from the previous menu items as it does not
 change the selected characters themselves. Instead it creates a new
@@ -348,10 +374,11 @@ selected "A", "B", and "C" it would create glyphs "a.sc", "b.sc" and
 capital letters to small caps, and the other bound to 'smcp' which maps
 lower case letters to small caps. It will build the appropriate small
 caps glyphs in the new glyph slots. This only applies to upper and lower
-case letters in the latin, greek and cyrillic scripts. [See the Small
-Caps dialog](../Styles/#Smallcaps).
+case letters in the latin, greek and cyrillic scripts.
+[See the Small Caps dialog](../Styles/#Smallcaps).
 
-Add Subscripts/Superscripts
+
+##### Add Subscripts/Superscripts
 
 Like the previous command this creates new glyphs based on the selected
 ones. The outlines of the selected glyphs will be scaled (with stems
@@ -360,107 +387,130 @@ moved vertically. Then a new lookup will be created mapping the original
 glyph to the newly created one under control of the appropriate feature.
 [See the Subscript/Superscript dialog](../Styles/#SubSuper).
 
-Outline
 
-![](img/OutlineInline.png)Changes the selected glyphs so that instead of
-being a solid block, only the outline of the glyph is visible. The
-glyphs' bounding boxes will not change.
+##### Outline
 
-Inline
+![](/assets/img/filemenu-outlineinline.png)
+
+Changes the selected glyphs so that instead of being a solid block, only
+the outline of the glyph is visible. The glyphs' bounding boxes will not
+change.
+
+
+##### Inline
 
 Changes the selected glyphs so that the glyph is surrounded by an
 outline. The glyphs' bounding boxes will not change.
 
-Shadow
+
+##### Shadow
 
 Changes the selected glyphs to give them each a
-shadow.![](img/ShadowWireframe.png) The user has control over the shadow
-size and angle.
+shadow.
 
-Wireframe
+![](/assets/img/filemenu-shadowwireframe.png)
+
+The user has control over the shadow size and angle.
+
+
+##### Wireframe
 
 Changes the selected glyphs to give them a 3D wireframe look.
 
-Transformations
+
+#### Transformations
 
 This sub-menu has rather different choices in the bitmap view from the
 other views. (Because bitmaps are discrete and the continuous
 transformations of splines are not meaningful).
 
-Transform...
+
+##### Transform...
 
 [In the Font and Outline Views this brings up the transform
 dialog](../transform/). This provides the standard linear
 transformations you expect to have available (rotation, scaling,
 translation, skewing).
 
-Point of View Projection
+
+##### Point of View Projection
 
 [This dialog](../transform/#PoV)allows you to perform a perspective
 transformation on your glyphs. (This is a non-linear transformation)
 
-Non-Linear Transform...
+
+##### Non-Linear Transform...
 
 [This dialog](../transform/#Non-Linear) allows you to perform a general
 transformation (which could be linear or which can be non-linear).
 Essentially you provide two equations for how x and y should be mapped.
-
-Flip Horizontally
-
-Flips the bitmap horizontally. (Only in bitmap view)
-
-Flip Vertically
-
-Flips the bitmap vertically. (Only in bitmap view)
-
-Rotate 90° CW
-
-Rotates the bitmap 90° clockwise. (Only in bitmap view)
-
-Rotate 90° CCW
-
-Rotates the bitmap 90° counter-clockwise. (Only in bitmap view)
-
-Rotate 180°
-
-Rotates the bitmap 180° (Only in bitmap view)
-
-Skew
-
-Allows you to specify a ratio by which to skew the bitmap 1:3 means for
-every 3 pixel rise in y, skew the bitmap one pixel horizontally. (Only
-in bitmap view)
-
-Non Linear Transform...
 
 This command is not available in the default build, you must modify the
 file `configure-fontforge.h` and then rebuild FontForge. This command
 allows the user to specify a non-linear transformation as a pair of
 expressions (the first specifies the transformation for the x
 coordinate, the second for the y coordinate). These expressions may be
-fairly general functions of x and y. See the [scripting
-page](../../scripting/native/scripting-alpha/#NonLinearTransform) for a description of the
-syntax.
+fairly general functions of x and y. See the
+[scripting page](../../scripting/native/scripting-alpha/#NonLinearTransform)
+for a description of the syntax.
 
-Expand Stroke...
+
+##### Flip Horizontally
+
+Flips the bitmap horizontally. (Only in bitmap view)
+
+
+##### Flip Vertically
+
+Flips the bitmap vertically. (Only in bitmap view)
+
+
+##### Rotate 90° CW
+
+Rotates the bitmap 90° clockwise. (Only in bitmap view)
+
+
+##### Rotate 90° CCW
+
+Rotates the bitmap 90° counter-clockwise. (Only in bitmap view)
+
+
+##### Rotate 180°
+
+Rotates the bitmap 180° (Only in bitmap view)
+
+
+##### Skew
+
+Allows you to specify a ratio by which to skew the bitmap 1:3 means for
+every 3 pixel rise in y, skew the bitmap one pixel horizontally. (Only
+in bitmap view)
+
+
+#### Expand Stroke...
 
 Not in the bitmap view. In the font view it applies to all foreground
 splines in all selected glyphs. In the outline view it applies to all
 paths that have at least one point selected (or if no points are
 selected then it applies to all paths).
- ![](img/twolines.png) ![](img/expandedlines.png)
- Above is a simple example of what expand stroke can do. It takes the
+
+![](/assets/img/filemenu-twolines.png)
+![](/assets/img/filemenu-expandedlines.png)
+
+Above is a simple example of what expand stroke can do. It takes the
 two open paths above left and turns them into the two closed paths
 right.
- ![](img/expandstroke.png)
- The Expand Stroke dialog gives you control over various aspects of the
+
+![](/assets/img/filemenu-expandstroke.png)
+
+The Expand Stroke dialog gives you control over various aspects of the
 expansion process. First you can specify three types of pen nibs:
 
--   A round pen, which is circular by default but may be transformed
-    into an ellipse
--   A rectangular pen, which is square by default but may be transformed
-    into more traditional caligraphic nib shapes
--   A polygonal pen -- you can draw almost any convex polygon.
+- A round pen, which is circular by default but may be transformed
+  into an ellipse
+- A rectangular pen, which is square by default but may be transformed
+  into more traditional caligraphic nib shapes
+- A polygonal pen -- you can draw almost any convex polygon.
 
 For circular and caligraphic pens you can chose a stroke width, how the
 ends of an open path should be drawn, and how the path should look when
@@ -468,34 +518,39 @@ two splines (or lines) join which do not have the same slope (ie. at a
 corner point).
 
 For closed contours you may also choose to remove either the generated
-contour which is inside the original, or that which is outside (Note:
-Make sure your glyph is oriented correctly with [Edit-\>Correct
-Direction](#Correct)before removing a contour (if
-misoriented the wrong contour may be removed)).
+contour which is inside the original, or that which is outside
+
+*Note: Make sure your glyph is oriented correctly with
+[Edit-\>Correct Direction](#Correct) before removing a contour (if
+misoriented the wrong contour may be removed).*
 
 [How is this done?](pfaeditmath.html#Stroke)
 
-Tile Path
+
+#### Tile Path
 
 This command is not available in the default build, you must reconfigure
-\$ `configure --with-tilepath` and then rebuild FontForge. Not available
+`$ configure --with-tilepath` and then rebuild FontForge. Not available
 in quadratic (truetype) fonts. This command brings up a
 [dialog](../tilepath/) which allows you to specify a tile to be applied
 to any selected contours.
 
-Tile Pattern...
 
-Also not available in the default build, also controled by \$
-`configure       --with-tilepath`. [This command](../tilepath/#Pattern)
+#### Tile Pattern...
+
+Also not available in the default build, also controled by
+`$ configure --with-tilepath`. [This command](../tilepath/#Pattern)
 allows you to design a pattern which will be layed down on the current
 layer m\*n times (where m is the number of horizontal repeats and n the
 number of vertical repeats.
 
-Overlap
+
+#### Overlap
 
 None of these is available in the bitmap view.
 
-Remove Overlap
+
+##### Remove Overlap
 
 Not in the bitmap view, *not available when the font has quadratic
 splines*^[1](#overlap-footnote)^. If two closed paths intersect then
@@ -509,37 +564,42 @@ everywhere), but if the contours run in opposite orientations then the
 inner path will be retained. Things get very strange if you have
 intersecting paths with different orientations.
 
-![](img/expandedlines.png) ![](img/overlappedlines.png)
- This command is probably the buggiest in FontForge. So before FontForge
+![](/assets/img/filemenu-expandedlines.png)
+![](/assets/img/filemenu-overlappedlines.png)
+
+This command is probably the buggiest in FontForge. So before FontForge
 invokes the command it will save the state to the error recovery file.
- Warning: Splines which are tangent (or nearly so) cause problems.
-Points which are close together can cause problems.
 
-Intersect
+**Warning: Splines which are tangent (or nearly so) cause problems.
+Points which are close together can cause problems.**
 
-  ---------------------- -------------------------
-  ![](img/exclude-pre.png)   ![](img/intersect-post.png)
-  ---------------------- -------------------------
+
+##### Intersect
+
+![](/assets/img/filemenu-exclude-pre.png)
+![](/assets/img/filemenu-intersect-post.png)
 
 This will remove everything not in the intersection of two regions.
 
-Exclude
+##### Exclude
 
-  ---------------------- -----------------------
-  ![](img/exclude-pre.png)   ![](img/exclude-post.png)
-  ---------------------- -----------------------
+![](/assets/img/filemenu-exclude-pre.png)
+![](/assets/img/filemenu-exclude-post.png)
 
 This will remove the selected contours from the unselected ones. Only
 available in the outline glyph view.
 
-Find Intersections
+
+##### Find Intersections
 
 This finds the places where overlapping contours intersect and inserts
 points at those locations.
 
-Simplify
 
-Simplify
+#### Simplify
+
+
+##### Simplify
 
 Not in the bitmap view. If you have lots of points on a path, some of
 which do not materially add to the path's shape, then this command will
@@ -549,52 +609,57 @@ points present).
 
 [How is this done?](pfaeditmath.html#Approximating)
 
-Simplify More
+
+##### Simplify More
 
 This is a variant of the simplify command. It brings up a dialog which
 gives you control over what sorts of errors this simplification is
 allowed to induce. You can control:
 
--   How far the simplified contour is allowed to stray from the original
--   Whether to allow removal of extreme points
--   Whether to allow the slope to change at points.
--   Whether to make corner points into curve points (by adjusting the
-    control points)
--   Whether to flatten small bumps off of lines
--   Whether to try to simplify straight lines at all
+- How far the simplified contour is allowed to stray from the original
+- Whether to allow removal of extreme points
+- Whether to allow the slope to change at points.
+- Whether to make corner points into curve points (by adjusting the
+  control points)
+- Whether to flatten small bumps off of lines
+- Whether to try to simplify straight lines at all
 
 Finally, you may specify whether this set of values should become the
 default value for future Simplify commands
 
-Cleanup Glyph
+
+##### Cleanup Glyph
 
 This is a special case of the simplify command. In this case if there is
 a spline which actually traces out a line but none the less has control
 points, then this command will remove the control points. It will also
 cleanup zero length splines.
 
-Canonical Start Points
+
+##### Canonical Start Points
 
 This will change the start point of the contour (or of all selected
 contours) to be the leftmost point on the contour. If there are several
 points with the same horizontal coordinate it will pick the one closest
 to the baseline. There are two reasons for doing this:
 
--   In a PostScript Type1 or Type2 font it will (usually) reduce the
-    size of the code expressing the glyph slightly. (I don't think it
-    can increase the code, but there are certainly cases where the
-    optimization will have no effect).
--   It will enable FontForge to find more reusable bits of code which it
-    can put in subroutines
+- In a PostScript Type1 or Type2 font it will (usually) reduce the
+  size of the code expressing the glyph slightly. (I don't think it
+  can increase the code, but there are certainly cases where the
+  optimization will have no effect).
+- It will enable FontForge to find more reusable bits of code which it
+  can put in subroutines
 
-Canonical Contour Order
+
+##### Canonical Contour Order
 
 Order the contours so that the contour with the leftmost point comes
 first, then the contour whose leftmost point is a little further right
 and so forth. Again, this should decrease the code size slightly in a
 Type1 font.
 
-Add Extrema
+
+#### Add Extrema
 
 Not in the bitmap view. Both TrueType and Type1 say that there should be
 points on the contour where it reaches its extreme horizontal and
@@ -607,7 +672,8 @@ spline) attains its maximum/minimum value at this point. If the added
 extrema is extremely close to an already existing point, fontforge may
 remove that point to avoid creating tiny splines.
 
-AutoTrace
+
+#### AutoTrace
 
 This command is only available if you have downloaded Martin Weber's
 [autotrace program](http://sourceforge.net/projects/autotrace/), or
@@ -616,42 +682,53 @@ background image in a glyph then autotrace will automagically trace the
 outlines of that image. See [the section on autotracing](../autotrace/)
 for more information.
 
-Align menu
+
+#### Align menu
 
 This submenu is only present in the outline view, it allows you to align
 points or to space them out along an axis.
 
-Average Points
+
+##### Average Points
 
 This will look at all the selected points and find the coordinate with
 the least change. Then it will average find the median point on that
 axis and set all the selected points to have that value for the
 appropriate coordinate.
- So if you have a line which is almost horizontal, and select its
-endpoints and apply this command it will be horizontal.
-                 ![](img/Constrain2_1.png)        ![](img/Constrain2_2.png)
- (if you select exactly two points, and they lie close to a 45 diagonal,
-then they will be forced to the diagonal rather than to
-horizontal/vertical)
 
-Space Points
+So if you have a line which is almost horizontal, and select its
+endpoints and apply this command it will be horizontal.
+
+![](/assets/img/filemenu-constrain2_1.png)
+![](/assets/img/filemenu-constrain2_2.png)
+
+(if you select exactly two points, and they lie close to a 45 diagonal,
+then they will be forced to the diagonal rather than to horizontal/vertical)
+
+
+##### Space Points
 
 If you have three or more points selected then FontForge will figure out
 the coordinate that has the greatest change and will space the points
 out regularly along that axis.
- If you select one point (and that point is in the middle of a path)
+
+If you select one point (and that point is in the middle of a path)
 then (internally) the point's location will be expressed in a coordinate
 system which is rotated so that one axis is parallel to the line between
 the two points that surround the selected point. The selected point will
 be moved mid-way between the two on this axis, while its other
 coordinate remains fixed.
- That's an extremely complicated way of saying: If the selected point is
+
+That's an extremely complicated way of saying: If the selected point is
 connected to two points which are on a horizontal line, then the
 selected point's x coordinate will be midway between the two, while its
 y coordinate remains unchanged.
-                 ![](img/Constrain1_1.png)        ![](img/Constrain1_2.png)
 
-Space Regions
+![](/assets/img/filemenu-constrain1_1.png)
+![](/assets/img/filemenu-constrain1_2.png)
+
+
+##### Space Regions
 
 This is similar to the above command except that it allows you to make a
 rather simple definition of a collection of points which should be moved
@@ -662,23 +739,29 @@ region. The purpose of this is to allow you to space out the stems of
 the letter "m" so that they regularly spaced horizontally. Sadly it
 won't work in many cases because in a serifed font the serifs will often
 be closer to each other than to their respective stems.
-                 ![](img/Spacem_1.png)         ![](img/Spacem_2.png)
 
-Make Parallel
+![](/assets/img/filemenu-spacem_1.png)
+![](/assets/img/filemenu-spacem_2.png)
+
+
+##### Make Parallel
 
 If four points are selected, and there are two lines between them, then
 FontForge will make those lines parallel. If there are four lines
 between them (ie. they form a quadrilateral, then FontForge will turn it
 into a parallelogram. (note, this only works on lines, not on curved
 splines)
- The last point selected will be the one moved (sometimes FontForge
+
+The last point selected will be the one moved (sometimes FontForge
 doesn't remember which point was selected last, then it will just pick
 one randomly. If you don't want that to happen, select your points and
 then single click on the one you want moved).
 
-Round
 
-Round to Int
+#### Round
+
+
+##### Round to Int
 
 Not in the bitmap view. FontForge stores point locations as real numbers
 (ie. it retains fractional values). TrueType only supports integral
@@ -687,18 +770,21 @@ fonts also -- using real numbers makes font files bigger), so when
 generating the font points are rounded to integral values. This command
 will round all selected locations to the closest integer.
 
-Round to Hundredths
+
+##### Round to Hundredths
 
 Not in bitmap or metrics views. FontForge's Type1 output is limited to
 hundredths of an em-unit, even when rounding is turned off in the
 Generate [Options] dialog.
 
-Round to Cluster
+
+##### Round to Cluster
 
 Occasionally you want to make sure that coordinates which are close
 together have the same value. This command will do that.
 
-Order
+
+#### Order
 
 This changes the order in which contours, references and images are
 drawn. It is almost useless because this order of contours and
@@ -711,7 +797,8 @@ FontForge does not specify whether references or contours are drawn
 first (or whether the two are intermixed). If this matters to you,
 unlink your references.
 
-Clockwise
+
+#### Clockwise
 
 Only in the outline view. If all selected paths have a clockwise
 direction then this will be checked. Selecting it will make all paths be
@@ -721,7 +808,8 @@ If not paths are selected, or if all selected paths are open this will
 be greyed out. I a selected path intersects itself results are
 indeterminate.
 
-Counter-Clockwise
+
+#### Counter-Clockwise
 
 Only in the outline view. If all selected paths have a counter-clockwise
 direction then this will be checked. Selecting it will make all paths be
@@ -731,23 +819,31 @@ If not paths are selected, or if all selected paths are open this will
 be greyed out. I a selected path intersects itself results are
 indeterminate.
 
-Correct Direction
+
+#### Correct Direction
 
 Not in the bitmap view. Sets the direction of outermost paths to be
 clockwise. The next path crossed will be made counter-clockwise, the
 next clockwise, etc.
- This command may produce unexpected results if two splines cross.
- If a glyph contains a flipped reference, this command will be unable to
+
+This command may produce unexpected results if two splines cross.
+
+If a glyph contains a flipped reference, this command will be unable to
 correct the contours inside of the reference directly, instead it will
 offer to unlink the reference after which it can treat its (former)
 contours like any others.
 
-Insert Text Outlines...
+
+#### Insert Text Outlines...
 
 Upon occasion it is useful to be able to insert text into a glyph. The
 [Insert Text Dialog](../InsertTextDlg/) lets you do this.
 
-Build Accented/Composite Glyph
+
+#### Build
+
+
+##### Build Accented/Composite Glyph
 
 Not in the bitmap view.
 
@@ -761,21 +857,26 @@ anything that is currently in the foreground and put a reference to the
 base glyph and another reference to the accent glyph into the
 foreground. So if the current glyph were "À" then a reference to "A"
 would be added to it, and a reference to "\`" would be centered above
-the "A". 
- If the current glyph is something like "agrave.sc" then it will be
+the "A".
+
+If the current glyph is something like "agrave.sc" then it will be
 built using the rules of "agrave" but with ".sc" variants. So
 "agrave.sc" would contain "a.sc". For accents it will use "grave.sc" if
 it exists and "grave" if it does not.
- If [Copy From](../editmenu/#From) is set to All Fonts then any bitmaps
+
+If [Copy From](../editmenu/#From) is set to All Fonts then any bitmaps
 will have a similar process done -- that is bitmap references will be
 created (even in the outline glyph view).
- A more complete description is given in the section on [accented
-glyphs](../accented/).
 
-Build Duplicate
+A more complete description is given in the section on
+[accented glyphs](../accented/).
+
+
+##### Build Duplicate
 
 Only in the font view.
- Consider the letters "Alpha" and "A". Often these may be represented by
+
+Consider the letters "Alpha" and "A". Often these may be represented by
 the same glyph. This command which change the encoding slightly so that
 the encoding for U+0391 will refer to the glyph named "A". Note that
 this is subtly different from refering to a glyph named "Alpha" which
@@ -784,7 +885,8 @@ refers to another glyph named "A".
 Adobe suggests that you use a reference rather than giving to unicode
 code points to one glyph, but it is part of the font format.
 
-Merge Fonts...
+
+#### Merge Fonts...
 
 Only in the font view. If you are building a unicode font you will often
 want to merge in other fonts. You can, of course, cut and paste from one
@@ -800,7 +902,6 @@ FontForge does the following when merging CID-keyed fonts:
     font then the merger font will be merged into whichever of the
     mergee's subfonts is currently active.
 -   If both are CID keyed fonts, then they should:
-
     -   Have the same registry and ordering
     -   The supplement number of the mergee should be at least as big as
         that of the merger
@@ -813,9 +914,11 @@ FontForge does the following when merging CID-keyed fonts:
     This strikes me as somewhat problematic, but I can't think of a
     better solution.
 
+
 FontForge will also copy advanced typographic features, kerning,
 ligatures, etc.
- If one of the two glyphs of a kerning pair is in the mergee and the
+
+If one of the two glyphs of a kerning pair is in the mergee and the
 other in the merger then you will be given the option of either ignoring
 this kerning pair or adding it to the resultant font. This happens if
 both the mergee and the merger contain a glyph, and the kerning pair is
@@ -823,7 +926,8 @@ in the merger font -- if that glyph is the same in both fonts then you
 would want to include the kerning pair, but if it differs then you
 probably don't.
 
-Interpolate Fonts...
+
+#### Interpolate Fonts...
 
 Only in the font view. If you have a bold font and a light font and
 would like to create a medium font, then you can interpolate a font
@@ -837,18 +941,22 @@ Examples: If you are interpolating from a light font to a bold one, then
 a medium font might be 50% between the two, an extra-bold font might be
 200% and a thin one -100%.
 
-Compare Fonts...
 
-![](img/fontcompdlg.png)Sometimes it is useful to compare two versions of a
+#### Compare Fonts...
+
+
+![](/assets/img/filemenu-fontcompdlg.png)
+
+Sometimes it is useful to compare two versions of a
 font and see what has changed. This command will allow you to check:
 
--   The addition or removal of glyphs
--   Changes to outline glyphs
--   Changes to bitmap glyphs
--   Changes to the font's names (truetype 'name' table and some
-    postscript names)
--   Changes to the font's glyph substitutions (ligatures and whatnot)
--   Changes to the font's glyph positioning (kerning and whatnot)
+- The addition or removal of glyphs
+- Changes to outline glyphs
+- Changes to bitmap glyphs
+- Changes to the font's names (truetype 'name' table and some
+  postscript names)
+- Changes to the font's glyph substitutions (ligatures and whatnot)
+- Changes to the font's glyph positioning (kerning and whatnot)
 
 You can also use it to compare truetype and postscript versions of the
 same font. Normally fontforge checks to make sure all the splines match
@@ -866,9 +974,10 @@ Finally you can have it place the outlines of each differing glyph from
 the second font into the background of the corresponding glyph in the
 first font. This can be helpful in correcting discrepancies.
 
-![](img/fontcompresults.png)
+![](/assets/img/filemenu-fontcompresults.png)
 
-Compare Layer To Layer...
+
+#### Compare Layer To Layer...
 
 Only available in the Outline and Font Views. This command allows you to
 specify two layers within the current font and then checks that they are
@@ -876,26 +985,3 @@ similar. In the outline view a message box pops up to say if the layers
 are the same or different. In the Font View, the view will scroll to the
 first glyph whch differs, all differing glyphs will be selected and a
 message box pops up.
-
-Other menus
------------
-
--   [File](../filemenu/)
--   [Edit](../editmenu/)
--   [Point](../pointmenu/)
--   [Element](../elementmenu/)
--   [Tools](../toolsmenu/)
--   [Hints](../hintsmenu/)
--   [Encoding](../encodingmenu/)
--   [View](../viewmenu/)
--   [Metrics](../metricsmenu/)
--   [CID](../cidmenu/)
--   [MM](../mmmenu/)
--   [Window](../windowmenu/)
--   [Help](../helpmenu/)
--   [Hot Keys](../HotKeys/)
-
--- [Prev](../pointmenu/) -- [TOC](/en-US/tutorials/overview/) --
-[Next](../toolsmenu/) --
-
-

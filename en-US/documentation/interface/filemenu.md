@@ -10,13 +10,13 @@ title: The File Menu
 * * * * *
 
 
-# New
+#### New
 
 Creates a new font with (by default) ISO 8859-1 (Latin1) encoding. The
 default encoding may be changed in the preference dlg.
 
 
-# Open
+#### Open
 
 ![](/assets/img/filemenu-openfont.png)
 
@@ -82,9 +82,7 @@ You can also force fontforge to rename all the glyphs in the font being
 read in to fit some standard naming convention. See the section on
 [namelists](../encodingmenu/#namelist) for more information.
 
-* * * * *
-
-The dialog has several buttons at the top, one takes you to your home
+**The dialog has several buttons at the top, one takes you to your home
 directory, one to the directory above the current one and the other two
 produce menus. The bookmark menu allows you to pick a directory from
 your list of bookmarks, and to add to or remove from your list of
@@ -93,24 +91,24 @@ stack. The tools menu allows you to rearrange how the dialog works. You
 may set it to show hidden files (on unix files beginning with "." are
 "hidden"), you may set it so that directories are displayed amid other
 files, in alphabetical order, so that directories precede normal files,
-or so that there is a separate pane for directories.
+or so that there is a separate pane for directories.**
 
 
-# Browse Web
+#### Browse Web
 
-## Browse Open Font Library
+##### Browse Open Font Library
 
 Brings up a [dialog](../../reference/oflib/) which will browse fonts on the Open
 Font Library website.
 
 
-# Recent
+#### Recent
 
 A submenu showing recently opened font files (it does not show the
 current font).
 
 
-# Close
+#### Close
 
 Closes the current window.
 
@@ -119,7 +117,7 @@ whether you want to save the font. It will also close any outline glyph,
 bitmap glyph or metrics views associated with the font.
 
 
-# Save
+#### Save
 
 Saves the current file. If it is associated with a spline font database
 it will be saved there and a backup file will be created. If it is a new
@@ -130,7 +128,7 @@ If you are editing a font "Ambrosia.sfd" then the backup file will be
 called "Ambrosia.sfd\~".
 
 
-# Save As...
+#### Save As...
 
 Allows you to give a new name to the current spline font database. Pops
 up a file picker.
@@ -139,13 +137,13 @@ the information needed to regenerate your font), but you may choose to
 save it into a directory format where every glyph has its own file.
 
 
-# Save All
+#### Save All
 
 Saves all changed fonts. If any have not been named, it will pop up a
 Save As file picker for that font.
 
 
-# Generate Fonts...
+#### Generate Fonts...
 
 [This generates font files](../generate/), both outline and bitmap. You
 may choose not to generate either, you may generate an afm file or a pfm
@@ -154,7 +152,7 @@ pixelsizes of bitmap to generate. (See [that page](../generate/)for
 more info)
 
 
-# Generate Mac Family...
+#### Generate Mac Family...
 
 This is only available if there are multiple fonts open in the same
 family, and if the current font is the "Plain" style of that family. It
@@ -165,7 +163,7 @@ dialog, but one that includes a list of all potential faces for family
 members.
 
 
-# Generate TTC...
+#### Generate TTC...
 
 This is only available if there are multiple fonts open (they need not
 be the same family). It opens a [dialog](../generate/#GenerateTTC)
@@ -173,12 +171,12 @@ similar to the above listing all open fonts. You select which fonts go
 into the ttc file and how they should be stored.
 
 
-# Revert
+#### Revert
 
 Rereads the font from the file on the disk. All changes are lost.
 
 
-# Revert To Backup
+#### Revert To Backup
 
 Only available in the font view. When FontForge saves an sfd file (with
 the [Save](#Save) command, not the [Save As](#Save.As...) command) it
@@ -188,7 +186,7 @@ it). This command will revert to the backuped version of the file (if
 there is one).
 
 
-# Revert Glyph
+#### Revert Glyph
 
 Only available in the font and outline views. Rereads the font from the
 sfd file on the disk searching for a glyph in that file with the same
@@ -197,14 +195,17 @@ if the glyph has references then any changes made to the glyphs being
 refered to will still be visible), *this command may be undone.*
 
 So if you have changed the name of the glyph this command will fail.
- If the font did not come from an sfd file this command will fail.
- If the font has been reencoded and the glyph has references this
+
+If the font did not come from an sfd file this command will fail.
+
+If the font has been reencoded and the glyph has references this
 command may fail.
- If you have made a global change to the font (like scaling it to a new
+
+If you have made a global change to the font (like scaling it to a new
 em-size) then the results may not be appropriate.
 
 
-# Export...
+#### Export...
 
 In the Outline view this allows you to export the splines that make up
 the glyph into an encapsulated postscript (.eps), pdf, svg or xfig
@@ -220,7 +221,7 @@ a .xbm or a .bmp (always as a bitmap) file.
 This menu item is not available in the Font or Metrics Views.
 
 
-# Import...
+#### Import...
 
 In the Font View this allows you to import one or several bitmap fonts
 (from a .bdf file or a ttf/otf/ttc file, TeX pk (gf) file, an X11 .pcf
@@ -275,11 +276,11 @@ glyph.
 
 This menu item is not available in the Metrics View
   
- In the font view you may select multiple files (by holding down the
+In the font view you may select multiple files (by holding down the
 shift or control keys when clicking on them), and all selected bitmap
 fonts will be imported into the sfd.
 
-# Merge Feature Info...
+#### Merge Feature Info...
 
 Only available in the font view window. This command will allow you to
 search for an [adobe feature file](../../reference/featurefile/) (.fea) for
@@ -302,15 +303,16 @@ font for this face. FontForge can't guess the name of this file when
 loading the font. You must figure it out yourself.
 
 
-# Print...
+#### Print...
 
 Not available in the bitmap view. Allows you to print out all the glyphs
 in the font, a text sample of the font, or specific glyphs at a very
 large scale.
- See the section on [printing](../display/) for more information.
+
+See the section on [printing](../display/) for more information.
 
 
-# Execute Script...
+#### Execute Script...
 
 Only in the font view. Brings up a dlg and allows you to enter a
 [script](../../scripting/native/scripting/), which could be just calling a prewritten
@@ -319,7 +321,7 @@ such files. The default extension is "\*.pe" (postscript edit) but you
 can change that with the [Filter] button if you use something else.
 
 
-# Script Menu
+#### Script Menu
 
 Only in the font view. You may define up to 10
 [scripts](../../scripting/native/scripting/#menu) that you want to execute frequently and
@@ -329,7 +331,7 @@ Control-Meta-2, and the tenth by Control-Meta-0. The scripts are set in
 the [preferences dialog](../prefs/#scripts)
 
 
-# Preferences...
+#### Preferences...
 
 This pops up a [dialog allowing you to configure various esoteric bits
 of fontforge](../prefs/).
@@ -339,13 +341,13 @@ controlled from a preference window are controlled by [X
 Resources](../xres/) below.
 
 
-# X Resource Editor...
+#### X Resource Editor...
 
 [This dialog](../resedit/) allows you to edit FontForge's X Resources,
 you may either save them to a file for perminant storage, or change the
 current settings for this use of FontForge.
 
 
-# Quit
+#### Quit
 
 Exits the program, prompting you whether to save any changed fonts.

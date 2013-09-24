@@ -10,34 +10,34 @@ This menu is only available in the Outline Character View.
 [table_of_contents]
 
 
-# Curve
+#### Curve
 
 If all the selected points are Curve points then this entry will be
 checked. Selecting it will change all selected points to be Curve
 points.
 
 
-# Corner
+#### Corner
 
 If all the selected points are Corner points then this entry will be
 checked. Selecting it will change all selected points to be Corner
 points.
 
 
-# Tangent
+#### Tangent
 
 If all the selected points are Tangent points then this entry will be
 checked. Selecting it will change all selected points to be Tangent
 points.
 
 
-# Make First
+#### Make First
 
 If exactly one point is selected and it is on a closed path and it is
 not the "first point" of that path, then it will become the first point.
 
 
-# Can Be Interpolated, Can't Be Interpolated
+#### Can Be Interpolated, Can't Be Interpolated
 
 When editing truetype curves, an on-curve point can be omitted from the
 point list that is stored in the output font if it happens to be exactly
@@ -48,7 +48,7 @@ point matching), so on rare occasions you will need to be able to turn
 off this interpolation.
 
 
-# Add Anchor Point...
+#### Add Anchor Point...
 
 ![](/assets/img/filemenu-agetinfo.png)
 
@@ -60,13 +60,13 @@ See [the overview](/en-US/tutorials/overview/#Anchors) and
 the [Element-\>Get Info command](../getinfo/#Anchors) for more info.
 
 
-# Acceptable Extrema
+#### Acceptable Extrema
 
 Tells the validator that it is OK for this spline to have extrema. You
 select a spline by selecting its two end-points.
 
 
-# Make Line
+#### Make Line
 
 If two adjacent points are selected then make the spline between them
 into a straight line. If two points are selected and they are the
@@ -75,7 +75,7 @@ line. If a point is selected and has no adjacent selected points then
 make its control points be on top of the point
 
 
-# Make Arc
+#### Make Arc
 
 If two adjacent points are selected then make the spline between them
 into an elliptical arc. If two points are selected and they are the
@@ -101,28 +101,28 @@ layer -- this was for debugging, but I thought it kind of cool so I left
 it in).
 
 
-# Insert Point on Spline at...
+#### Insert Point on Spline at...
 
 Select the two end-points of a spline, then bring up this dialog. You
 can request that FontForge insert a point on the selected spline with
 either a given X or a given Y coordinate.
 
 
-# Center Between Control Points
+#### Center Between Control Points
 
 In truetype, if an on-curve point is centered between its control
 points, then that point may be omitted when written to the output file.
 This command allows you to create such a point more easily.
 
 
-# Name Contour
+#### Name Contour
 
 A contour may be named. This is designed for use in the Guide line (and
 Background) layer. You can attach a mnemonic name to a guide line (like
 "X-Height" or "Cap-Height" or whatever strikes your fancy).
 
 
-# Make Clip Path
+#### Make Clip Path
 
 Only meaningful in Type3 fonts. For a more complete description see the
 section on [Type3 editing](../multilayer/#ClipPath). The clipping path
