@@ -183,7 +183,7 @@ Rereads the font from the file on the disk. All changes are lost.
 #### Revert To Backup
 
 Only available in the font view. When FontForge saves an sfd file (with
-the [Save][] command, not the [Save As][] command) it
+the [Save](#Save) command, not the [Save As](#Save.As...) command) it
 creates a backup version of the file containing the old data (this file
 has the same name as the main branch with a "\~" character appended to
 it). This command will revert to the backuped version of the file (if
