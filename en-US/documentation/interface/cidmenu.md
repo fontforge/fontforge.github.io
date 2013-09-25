@@ -98,7 +98,7 @@ subfonts rather than just the current subfont. It provides access to the
 standard [font info dialog](../fontinfo/).
 
 
-#### \<sub font name\>
+#### (sub font name)
 
 Clicking on a different sub font name in the menu will cause that
 sub-font to be displayed instead of the current one.

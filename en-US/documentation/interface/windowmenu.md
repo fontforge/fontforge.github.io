@@ -62,7 +62,7 @@ This menu item is always grey in the metrics view.
 It is possible to have more than one metrics view open at a time.
 
 
-#### \<window titles...\>
+#### (window titles...)
 
 After that the window menu is just a list of all the open windows. If
 the window has been changed (and not saved since) then it has a white

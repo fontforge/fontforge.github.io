@@ -15,6 +15,11 @@ view](#outline-char).
 [table_of_contents]
 
 
+### Font View
+
+The menu as it appears in the font view.
+
+
 #### Create MM
 
 Brings up the [multiple master dialog](../multiplemaster/) and allows
@@ -63,11 +68,16 @@ Allows you to change the default weights assigned to each master design
 used in blending the default instance of the font
 
 
-#### \<sub font name\>
+#### (sub font name)
 
 Clicking on a different sub font name in the menu will cause that
 sub-font to be displayed instead of the current one. The subfonts are
 the master designs and the default blended font.
+
+
+### Glyph View
+
+The menu as it appears in the outline glyph view.
 
 
 #### MM Reblend
@@ -81,7 +91,7 @@ A submenu which allows you to choose which of the designs of this glyph
 you want displayed in the background of the view
 
 
-#### \<sub font name\>
+#### (sub font name)
 
 Clicking on a different sub font name in the menu will cause the glyph
 from that sub-font to be displayed instead of the current one. The
