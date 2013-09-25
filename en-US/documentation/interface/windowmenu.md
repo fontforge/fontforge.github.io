@@ -4,17 +4,10 @@ layout: default
 title: The Window Menu
 ---
 
+[table_of_contents]
 
--   [Open Outline](#Outline)
--   [Open Bitmap](#Bitmap)
--   [Open Metrics](#Metrics)
--   
 
-    * * * * *
-
--   [window](#windows) titles...
-
-Open Outline
+#### Open Outline
 
 In the font view this will open outline views on all selected glyphs (if
 there are more than 15 or so it will ask whether you really meant to do
@@ -30,7 +23,8 @@ This menu item is always grey in an outline view.
 Note: It is possible to have more than one window displaying the same
 glyph. Any editing that occurs in one should be reflected in all.
 
-Open Bitmap
+
+#### Open Bitmap
 
 In the font view this will open bitmap views on all selected glyphs (if
 there are more than 15 or so it will ask whether you really meant to do
@@ -49,7 +43,8 @@ This menu item is always grey in an bitmap view.
 Note: It is possible to have more than one window displaying the same
 glyph. Any editing that occurs in one should be reflected in all.
 
-Open Metrics
+
+#### Open Metrics
 
 In the font view it will open a metrics view displaying all selected
 glyphs (the order in which you selected those glyphs is important). The
@@ -66,31 +61,11 @@ This menu item is always grey in the metrics view.
 
 It is possible to have more than one metrics view open at a time.
 
+
+#### \<window titles...\>
+
 After that the window menu is just a list of all the open windows. If
 the window has been changed (and not saved since) then it has a white
 background. The names of font views are in red. Views connected to a
 given font will all be displayed together (with the font view on top).
 Clicking on an entry raises that window.
-
-Other menus
------------
-
--   [File](../filemenu/)
--   [Edit](../editmenu/)
--   [Point](../pointmenu/)
--   [Element](../elementmenu/)
--   [Tools](../toolsmenu/)
--   [Hints](../hintsmenu/)
--   [Encoding](../encodingmenu/)
--   [View](../viewmenu/)
--   [Metrics](../metricsmenu/)
--   [CID](../cidmenu/)
--   [MM](../mmmenu/)
--   [Window](../windowmenu/)
--   [Help](../helpmenu/)
--   [Hot Keys](../HotKeys/)
-
--- [Prev](../mmmenu/) -- [TOC](/en-US/tutorials/overview/) -- [Next](../helpmenu/)
---
-
-

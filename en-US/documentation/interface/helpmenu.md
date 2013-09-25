@@ -4,16 +4,10 @@ layout: default
 title: Help menu
 ---
 
+[table_of_contents]
 
-The Help menu has only a few entries:
 
--   [Help](#Help)
--   [Overview](#Overview)
--   [Index](#Index)
--   [About](#About)...
--   [License](#License)...
-
-Help
+#### Help
 
 Invokes a browser and brings up contextual help on fontforge web site.
 
@@ -27,41 +21,24 @@ a full path spec.
 FontForge will search for help in either /usr/share/doc/fontforge/ or on
 http://fontforge.sf.net/.
 
-Overview
+
+#### Overview
 
 Invokes a browser to bring up a page describing basic concepts you
 should understand before working on fonts.
 
-Index
+
+#### Index
 
 Invokes a browser and brings up [the index of help
 topics](IndexFS.html)on the web page.
 
-About
+
+#### About
 
 Will display the splash screen again.
 
-License
+
+#### License
 
 Invokes a browser to display FontForge's license.
-
-Other menus
------------
-
--   [File](../filemenu/)
--   [Edit](../editmenu/)
--   [Point](../pointmenu/)
--   [Element](../elementmenu/)
--   [Tools](../toolsmenu/)
--   [Hints](../hintsmenu/)
--   [Encoding](../encodingmenu/)
--   [View](../viewmenu/)
--   [Metrics](../metricsmenu/)
--   [CID](../cidmenu/)
--   [MM](../mmmenu/)
--   [Window](../windowmenu/)
--   [Help](../helpmenu/)
--   [Hot Keys](../HotKeys/)
-
--- [Prev](../windowmenu/) -- [TOC](/en-US/tutorials/overview/) --
-[Next](../HotKeys/) --
