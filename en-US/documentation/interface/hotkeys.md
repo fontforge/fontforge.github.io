@@ -162,146 +162,133 @@ line argument.
 #### Tool modifiers in the Outline Glyph Window
 
 
-|
-
-
-Tool
-
-Modifier
-
-Result
-
-Tool
-
-Modifier
-
-Result
-
-pointer
-
-Shift
-
-Constrain horizontal/vert or italic angle/45°
-
-Magnify
-
-  --------
-  Shift
-  Alt
-  --------
-
-  --------------------------------------
-  When dragging a magnification area,
-   make it square
-
-  minify
-  --------------------------------------
-
-Alt
-
-Select control points before normal points
-
-Shift-Alt
-
-Constrain control point motion to original angle from point
-
-freehand
-
-Shift
-
-Constrain horizontal/vert/45°
-
-scroll
-
-Shift
-
-Constrain scroll either in single direction or
- by same amount in both directions
-
-add curve
-
-Shift
-
-Constrain horizontal/vert/45° from last point
-
-add corner
-
-Shift
-
-Constrain horizontal/vert/45° from last point
-
-add tangent
-
-Shift
-
-Constrain horizontal/vert/45° from last point
-
-pen
-
-Shift
-
-Constrain points h/v/45 from last point
- Constrain control points h/v/45 from point
-
-knife
-
-Shift
-
-Constrain horizontal/vert/45°
-
-ruler
-
-Shift
-
-Constrain measurement to one direction
-
-Alt
-
-Give current position more accurately
-
-scale
-
-Shift
-
-Constrain either to scale along x or y axis or
- scale both axes the same
-
-flip
-
-rotate
-
-Shift
-
-Constrain rotation to a multiple of 45°
-
-skew
-
-3d rotate
-
-perspective
-
-rect/elipse
-
-Shft
-
-square/circle
-
-polygon/star
-
-Shift
-
-Constrains so that one of the vertices is
- horizontal/vertical/45°
+<table class="table" border>
+    <tbody>
+        <tr>
+            <th>Tool</th>
+            <th>Modifier</th>
+            <th>Result</th>
+        </tr>
+        <tr>
+            <td rowspan="3">pointer</td>
+            <td>Shift</td>
+            <td>Constrain horizontal/vert or italic angle/45°</td>
+        <tr>
+            <td>Alt</td>
+            <td>Select control points before normal points</td>
+        </tr>
+        <tr>
+            <td>Shift-Alt</td>
+            <td>Constrain control point motion to original angle from point</td>
+        </tr>
+        <tr valign="top">
+            <td>freehand</td>
+            <td>Shift</td>
+            <td>Constrain horizontal/vert/45°</td>
+        </tr>
+        <tr>
+            <td>add curve</td>
+            <td>Shift</td>
+            <td>Constrain horizontal/vert/45° from last point</td>
+        </tr>
+        <tr valign="top">
+            <td>add tangent</td>
+            <td>Shift</td>
+            <td>Constrain horizontal/vert/45° from last point</td>
+        </tr>
+        <tr>
+            <td>knife</td>
+            <td>Shift</td>
+            <td>Constrain horizontal/vert/45°</td>
+        </tr>
+        <tr valign="top">
+            <td>scale</td>
+            <td>Shift</td>
+            <td>Constrain either to scale along x or y axis or scale both axes the same</td>
+        </tr>
+        <tr>
+            <td>rotate</td>
+            <td>Shift</td>
+            <td>Constrain rotation to a multiple of 45°</td>
+        </tr>
+        <tr>
+            <td>3d rotate</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>rect/elipse</td>
+            <td>Shift</td>
+            <td>square/circle</td>
+        </tr>
+        <tr>
+            <td rowspan="2">magnify</td>
+            <td>Shift</td>
+            <td>When dragging a magnification area, make it square</td>
+        </tr>
+        <tr>
+            <td>Alt</td>
+            <td>minify</td>
+        </tr>
+        <tr>
+            <td>scroll</td>
+            <td>Shift</td>
+            <td>Constrain scroll either in single direction or by same amount in both directions</td>
+        </tr>
+        <tr>
+            <td>add corner</td>
+            <td>Shift</td>
+            <td>Constrain horizontal/vert/45° from last point</td>
+        </tr>
+        <tr>
+            <td>pen</td>
+            <td>Shift</td>
+            <td>Constrain points h/v/45 from last point Constrain control points h/v/45 from point</td>
+        </tr>
+        <tr>
+            <td rowspan="2">ruler</td>
+            <td>Shift</td>
+            <td>Constrain measurement to one direction</td>
+        </tr>
+        <tr>
+            <td>Alt</td>
+            <td>Give current position more accurately</td>
+        </tr>
+        <tr>
+            <td>flip</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>skew</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>perspective</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>polygon/star</td>
+            <td>Shift</td>
+            <td>Constrains so that one of the vertices is horizontal/vertical/45°</td>
+        </tr>
+    </tbody>
+</table>
 
 
 #### Modifer keys for arrow keys in the Outline Glyph Window
 
-Control
- - or -
- CapsLock
-
-Makes the arrow keys scroll
-
-Alt
-
-Makes the arrow keys move by ten times as much as they would otherwise
+<table class="table" border="">
+    <tbody>
+        <tr>
+            <td>Control<br />- or -<br />CapsLock</td>
+            <td>Makes the arrow keys scroll</td>
+        </tr>
+        <tr>
+            <td>Alt</td>
+            <td>Makes the arrow keys move by ten times as much as they would otherwise</td>
+        </tr>
+    </tbody>
+</table>
