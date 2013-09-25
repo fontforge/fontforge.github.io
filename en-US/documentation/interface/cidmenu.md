@@ -10,22 +10,10 @@ If the current font is a CID keyed font the menu also includes a list of
 all subfonts that make up this one. This menu is only available in the
 font view.
 
--   [Convert to CID](#Convert)
--   [Convert By CMap](#ConvertCMap)
--   [Flatten](#Flatten)
--   [Flatten By CMap](#FlattenCMap)
--   [Insert Font](#Insert)
--   [Insert Blank](#Blank)
--   [Remove Font](#Remove)
--   [Change Supplement...](#ChangeSup)
--   [CID Font Info](#FontInfo)
+[table_of_contents]
 
-    * * * * *
 
--   \<sub font names\>
-
-Er... What is a CID keyed Font?
--------------------------------
+### Er... What is a CID keyed Font?
 
 A CID keyed font is a postscript (or opentype) font designed to hold
 Chinese, Japanese and Korean characters efficiently. More accurately a
@@ -48,19 +36,22 @@ so FontForge will give glyphs names when it can.
 For more information see the [section on CID keyed fonts on the font
 view page](../fontview/#CID).
 
-Convert to CID
+
+#### Convert to CID
 
 If the current font is not a CID font then this command will convert it
 into one containing one subfont (with the glyphs in this font). You will
 be prompted for a glyph set.
 
-Convert By CMap
+
+#### Convert By CMap
 
 If the current font is not a CID font then this command will convert it
 into one containing a single subfont. You will be prompted for an Adobe
 CMap file.
 
-Flatten
+
+#### Flatten
 
 If the current font is a CID font then this command will convert it into
 a normal (flat) font by taking all the glyphs from all the sub-fonts and
@@ -68,64 +59,46 @@ merging them into one normal font. The new font should be in the same
 order as the CID font (ie. ordered by CID). After this operation you may
 re-encode it into whatever encoding is appropriate.
 
-Flatten By CMap
+
+#### Flatten By CMap
 
 If the current font is a CID font then this command will convert it into
 a normal font. It prompts you for an Adobe CMap file and uses that to
 define an encoding for the resultant font.
 
-Insert Font
+
+#### Insert Font
 
 Will allow you to browse for a normal font which will be added as
 another sub font to the current CID font.
 
-Insert Blank
+
+#### Insert Blank
 
 Inserts a blank sub-font into the current CID font.
 
-Remove Font
+
+#### Remove Font
 
 Removes the current font from the CID font. Anything in it will be lost.
 (If you want to save it first then use Generate Font and save it as a
 pfb file (or any other simple format).
 
-Change Supplement...
+
+#### Change Supplement...
 
 Displays the Registry/Ordering information of the font and allows you to
 change the Supplement level.
 
-CID Font Info
+
+#### CID Font Info
 
 This allows you to provide information on the entire collection of
 subfonts rather than just the current subfont. It provides access to the
 standard [font info dialog](../fontinfo/).
 
-* * * * *
 
-\<sub font name\>
+#### \<sub font name\>
 
 Clicking on a different sub font name in the menu will cause that
 sub-font to be displayed instead of the current one.
-
-Other menus
------------
-
--   [File](../filemenu/)
--   [Edit](../editmenu/)
--   [Point](../pointmenu/)
--   [Element](../elementmenu/)
--   [Tools](../toolsmenu/)
--   [Hints](../hintsmenu/)
--   [Encoding](../encodingmenu/)
--   [View](../viewmenu/)
--   [Metrics](../metricsmenu/)
--   [CID](../cidmenu/)
--   [MM](../mmmenu/)
--   [Window](../windowmenu/)
--   [Help](../helpmenu/)
--   [Hot Keys](../HotKeys/)
-
--- [Prev](../metricsmenu/) -- [TOC](/en-US/tutorials/overview/) --
-[Next](../mmmenu/) --
-
-
