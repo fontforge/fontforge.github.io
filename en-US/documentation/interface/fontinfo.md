@@ -125,7 +125,7 @@ unicode character may map to very different chinese or japanese glyphs).
 To handle this FontForge has the concept of "Interpretation".
 
 When you create a new glyph in a font, fontforge will assign it a name
-based on the current [namelist](../encodingmenu/#NameLists).
+based on the current [NameLists](../encodingmenu/#NameLists).
 
 ![](img/fontinfo-layers.png)Layers
 ------------------------------
@@ -143,7 +143,7 @@ there are radio buttons to make that easy), but it isn't required each
 layer may be in its own format.
 
 If you mark a layer as quadratic (or check
-`[*] All layers Quadratic)   `then FontForge will use quadratic
+`[*] All layers Quadratic)` then FontForge will use quadratic
 [Bézier](/en-US/tutorials/overview/#spline) splines for this layer rather than cubic
 Béziers, this means that FontForge will be using the native spline
 format of truetype rather than postscript (or opentype). When FontForge
