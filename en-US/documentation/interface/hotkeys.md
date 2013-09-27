@@ -7,128 +7,231 @@ title: Hot Keys
 [table_of_contents]
 
 
-    Ctl-A           [Select All](../editmenu/)
-    Ctl-B           [Regenerate Bitmaps](../elementmenu/#Regenerate)
-    Ctl-C           [Copy](../editmenu/#Copy)
-    Ctl-D           [Show/Hide Points](../viewmenu/#Points)
-    Ctl-E           [Find Problems](../elementmenu/#Problems)
-    Ctl-F           [Fit in Window](../viewmenu/#Fit)
-    Ctl-G           [Copy Reference](../editmenu/#Reference)
-    Ctl-H           [Open Outline](../filemenu/#Outline)
-    Ctl-I           [Get Info](../elementmenu/#Info)
-    Ctl-J           [Open Bitmap](../filemenu/#Bitmap)
-    Ctl-K           [Open Metrics](../filemenu/#Metrics)
-    Ctl-L           [Set LBearing](../metricsmenu/#LBearing)
-    Ctl-M           [Merge Point](../editmenu/#Merge)
-    Ctl-N           [New](../filemenu/#New)
-    Ctl-O           [Open](../filemenu/#Open)
-    Ctl-P           [Print](../filemenu/#Print)
-    Ctl-Q           [Quit](../filemenu/#Quit)
-    Ctl-R           [Set RBearing](../metricsmenu/#RBearing)
-    Ctl-S           [Save](../filemenu/#Save)
-    Ctl-T           [AutoInstr](../hintsmenu/#AutoInstr)
-    Ctl-U           [Unlink Reference](../editmenu/#Unlink)
-    Ctl-V           [Paste](../editmenu/#Paste)
-    Ctl-W           [Copy Width](../editmenu/#Width)
-    Ctl-X           [Cut](../editmenu/#Cut)
-    Ctl-Y           [Redo](../editmenu/#Redo)
-    Ctl-Z           [Undo](../editmenu/#Undo)
-    Ctl-\           [Transform](../elementmenu/#Transform)
-    Ctl-1           [Make First](../pointmenu/#Make-First)
-    Ctl-2           [24 pixel outline](../viewmenu/#px24)
-                    [Curve Point](../pointmenu/#Curve)
-    Ctl-3           [36 pixel outline](../viewmenu/#px36)
-                    [Corner Point](../pointmenu/#Corner)
-    Ctl-4           [48 pixel outline](../viewmenu/#px48)
-                    [Tangent Point](../pointmenu/#Tangent)
-    Ctl-5           [Anti-Alias](../viewmenu/#AntiAlias)
-    Ctl-6           [Fit To Em](../viewmenu/#FitToEm)
-    Ctl-7           [72 pixel outline](../viewmenu/#px72)
-    Ctl-8
-    Ctl-9           [96 pixel outline](../viewmenu/#px96)
-    Ctl-0           [Add Anchor Point...](../pointmenu/#AddAnchor)
-    Ctl-]           [Next Glyph](../viewmenu/#Next)
-    Ctl-[           [Prev Glyph](../viewmenu/#Prev)
-    Ctl-.           [Execute Script](../filemenu/#Execute)
-                    [Select First Point](../editmenu/#FirstPt)
-    Ctl-,           [Select Point At](../editmenu/#PointAt)
-    Ctl-=           [Grid Fit Anti Alias](../viewmenu/#GFAntiAlias)
-                    [Bigger Point Size](../viewmenu/#GFBigge)
-    Ctl--           [Smaller Pixel Size](../viewmenu/#Smaller)
-                    [Smaller Point Size](../viewmenu/#GFSmaller)
-    Ctl-Shft-A      [Build Accented Glyph](../elementmenu/#Accented)
-    Ctl-Shft-B      [Bitmaps Available](../elementmenu/#Bitmaps)
-    Ctl-Shft-C      [Copy Fg to Bg](../editmenu/#CopyFg)
-    Ctl-Shft-D      [Correct Direction](../elementmenu/#Correct)
-    Ctl-Shft-E      [Expand Stroke](../elementmenu/#Expand)
-    Ctl-Shft-F      [Font Info](../elementmenu/#Font)
-    Ctl-Shft-G      [Generate Fonts](../filemenu/#Generate)
-    Ctl-Shft-H      [AutoHint](../hintsmenu/#AutoHint)
-    Ctl-Shft-I      [Import](../filemenu/#Import)
-    Ctl-Shft-J      [Join](../editmenu/#Join)
-    Ctl-Shft-K      [Auto Kern](../metricsmenu/#Kern)
-    Ctl-Shft-L      [Set Width](../metricsmenu/#Width)
-    Ctl-Shft-M      [Simplify](../elementmenu/#Simplify)
-    Ctl-Shft-N
-    Ctl-Shft-O      [Remove Overlap](../elementmenu/#Remove)
-    Ctl-Shft-P
-    Ctl-Shft-Q      [Close](../filemenu/#Close)
-    Ctl-Shft-R      [Revert File](../filemenu/#Revert)
-    Ctl-Shft-S      [Save As](../filemenu/#SaveAs)
-    Ctl-Shft-T      [AutoTrace](../elementmenu/#AutoTrace)
-    Ctl-Shft-U
-    Ctl-Shft-V      [Paste Into](../editmenu/#PasteInto)
-    Ctl-Shft-W      [Auto Width](../metricsmenu/#Auto)
-    Ctl-Shft-X      [Add Extrema](../elementmenu/#Add-Extrema)
-    Ctl-Shft-Y
-    Ctl-Shft-Z
-    Ctl-Shft-_      [Round to Int](../elementmenu/#Round)
-    Ctl-Shft-!
-    Ctl-Shft-@      [Average Points](../elementmenu/#Average)
-    Ctl-Shft-#      [Space Points](../elementmenu/#Space-Pts)
-    Ctl-Shft-%      [32x8 cell window](../viewmenu/#32x8)
-    Ctl-Shft-^      [16x4 cell window](../viewmenu/#16x4)
-    Ctl-Shft-*      [8x2 cell window](../viewmenu/#8x2)
-    Ctl-Shft-}      [Next Point](../editmenu/#NPoint)
-    Ctl-Shft-{      [Prev Point](../editmenu/#PPoint)
-    Ctl-Shft->      [Goto](../viewmenu/#Goto)
-    Ctl-Shft-<      [Find In Font View](../viewmenu/#FindInFV)
-    Ctl-Shft-+      [Bigger Pixel Size](../viewmenu/#Bigger)
-    Alt-Ctl-A       [Select All Points](../editmenu/#SelectPoints)
-    Alt-Ctl-C       [Copy Lookup Data](../editmenu/#CopyLookup)
-    Alt-Ctl-F       [Find / Replace](../search/)
-    Alt-Ctl-G       [Generate Mac Family](../filemenu/#GenerateMac)
-    Alt-Ctl-H       [Review Hints](../hintsmenu/#Review)
-    Alt-Ctl-I       [Show Dependencies...](../elementmenu/#Dependents)
-    Alt-Ctl-M       [Elide Point](../editmenu/#Elide)
-    Alt-Ctl-P       [Display](../display/)
-    Ctl-Alt-R       [Revert Glyph](../filemenu/#RevertGlyph)
-    Alt-Ctl-1       [Invokes user script](../filemenu/#ScriptMenu)
-    Alt-Ctl-2       [Invokes user script](../filemenu/#ScriptMenu)
-    Alt-Ctl-3       [Invokes user script](../filemenu/#ScriptMenu)
-    Alt-Ctl-.       [First Point, Next Contour](../editmenu/#NextContour)
-    Alt-Ctl-,       [Points on Selected Contours](../editmenu/#Contours)
-    Alt-Ctl--       [Zoom Out](../viewmenu/#Out)
-    Alt-Ctl-Shft-M  [Simplify More](../editmenu/#Simplify)
-    Alt-Ctl-Shft-K  [Merge Feature Info](../filemenu/#Merge-feature)
-    Alt-Ctl-Shft-I  [Glyph Info](../elementmenu/#CharInfo)
-    Alt-Ctl-Shft-F  [Replace With Reference](../editmenu/#ReplaceRef)
-    Alt-Ctl-Shift-+ [Zoom In](../viewmenu/#In)
-    Escape          [Deselect All](../editmenu/#Deselect)
-    Ctl-Escape      [Invert Selection](../editmenu/#Invert)
-    Backspace       [Clear](../editmenu/#Clear)
-    Delete          [Clear](../editmenu/#Clear)
-    Help            [Help](../helpmenu/)
-    F1              [Help](../helpmenu/)    [Index](../helpmenu/#Index)
-    F2
-    F3
-    F4
-    F5
-    F6
-    F7
-    F8
-    F9
-    F10
+<table class="table" border>
+    <tr><td>Ctl-A</td>
+        <td>[Select All](../editmenu/)</td></tr>
+    <tr><td>Ctl-B</td>
+        <td>[Regenerate Bitmaps](../elementmenu/#Regenerate)</td></tr>
+    <tr><td>Ctl-C</td>
+        <td>[Copy](../editmenu/#Copy)</td></tr>
+    <tr><td>Ctl-D</td>
+        <td>[Show/Hide Points](../viewmenu/#Points)</td></tr>
+    <tr><td>Ctl-E</td>
+        <td>[Find Problems](../elementmenu/#Problems)</td></tr>
+    <tr><td>Ctl-F</td>
+        <td>[Fit in Window](../viewmenu/#Fit)</td></tr>
+    <tr><td>Ctl-G</td>
+        <td>[Copy Reference](../editmenu/#Reference)</td></tr>
+    <tr><td>Ctl-H</td>
+        <td>[Open Outline](../filemenu/#Outline)</td></tr>
+    <tr><td>Ctl-I</td>
+        <td>[Get Info](../elementmenu/#Info)</td></tr>
+    <tr><td>Ctl-J</td>
+        <td>[Open Bitmap](../filemenu/#Bitmap)</td></tr>
+    <tr><td>Ctl-K</td>
+        <td>[Open Metrics](../filemenu/#Metrics)</td></tr>
+    <tr><td>Ctl-L</td>
+        <td>[Set LBearing](../metricsmenu/#LBearing)</td></tr>
+    <tr><td>Ctl-M</td>
+        <td>[Merge Point](../editmenu/#Merge)</td></tr>
+    <tr><td>Ctl-N</td>
+        <td>[New](../filemenu/#New)</td></tr>
+    <tr><td>Ctl-O</td>
+        <td>[Open](../filemenu/#Open)</td></tr>
+    <tr><td>Ctl-P</td>
+        <td>[Print](../filemenu/#Print)</td></tr>
+    <tr><td>Ctl-Q</td>
+        <td>[Quit](../filemenu/#Quit)</td></tr>
+    <tr><td>Ctl-R</td>
+        <td>[Set RBearing](../metricsmenu/#RBearing)</td></tr>
+    <tr><td>Ctl-S</td>
+        <td>[Save](../filemenu/#Save)</td></tr>
+    <tr><td>Ctl-T</td>
+        <td>[AutoInstr](../hintsmenu/#AutoInstr)</td></tr>
+    <tr><td>Ctl-U</td>
+        <td>[Unlink Reference](../editmenu/#Unlink)</td></tr>
+    <tr><td>Ctl-V</td>
+        <td>[Paste](../editmenu/#Paste)</td></tr>
+    <tr><td>Ctl-W</td>
+        <td>[Copy Width](../editmenu/#Width)</td></tr>
+    <tr><td>Ctl-X</td>
+        <td>[Cut](../editmenu/#Cut)</td></tr>
+    <tr><td>Ctl-Y</td>
+        <td>[Redo](../editmenu/#Redo)</td></tr>
+    <tr><td>Ctl-Z</td>
+        <td>[Undo](../editmenu/#Undo)</td></tr>
+    <tr><td>Ctl-\</td>
+        <td>[Transform](../elementmenu/#Transform)</td></tr>
+    <tr><td>Ctl-1</td>
+        <td>[Make First](../pointmenu/#Make-First)</td></tr>
+    <tr><td rowspan="2">Ctl-2</td>
+        <td>[24 pixel outline](../viewmenu/#px24)</td></tr>
+    <tr><td>[Curve Point](../pointmenu/#Curve)</td></tr>
+    <tr><td rowspan="2">Ctl-3</td>
+        <td>[36 pixel outline](../viewmenu/#px36)</td></tr>
+    <tr><td>[Corner Point](../pointmenu/#Corner)</td></tr>
+    <tr><td rowspan="2">Ctl-4</td>
+        <td>[48 pixel outline](../viewmenu/#px48)</td></tr>
+    <tr><td>[Tangent Point](../pointmenu/#Tangent)</td></tr>
+    <tr><td>Ctl-5</td>
+        <td>[Anti-Alias](../viewmenu/#AntiAlias)</td></tr>
+    <tr><td>Ctl-6</td>
+        <td>[Fit To Em](../viewmenu/#FitToEm)</td></tr>
+    <tr><td rowspan="2">Ctl-7</td>
+        <td>[72 pixel outline](../viewmenu/#px72)</td></tr>
+    <tr><td>Ctl-8</td></tr>
+    <tr><td>Ctl-9</td>
+        <td>[96 pixel outline](../viewmenu/#px96)</td></tr>
+    <tr><td>Ctl-0</td>
+        <td>[Add Anchor Point...](../pointmenu/#AddAnchor)</td></tr>
+    <tr><td>Ctl-]</td>
+        <td>[Next Glyph](../viewmenu/#Next)</td></tr>
+    <tr><td>Ctl-[</td>
+        <td>[Prev Glyph](../viewmenu/#Prev)</td></tr>
+    <tr><td rowspan="2">Ctl-.</td>
+        <td>[Execute Script](../filemenu/#Execute)</td></tr>
+    <tr><td>[Select First Point](../editmenu/#FirstPt)</td></tr>
+    <tr><td>Ctl-,</td>
+        <td>[Select Point At](../editmenu/#PointAt)</td></tr>
+    <tr><td rowspan="2">Ctl-=</td>
+        <td>[Grid Fit Anti Alias](../viewmenu/#GFAntiAlias)</td></tr>
+    <tr><td>[Bigger Point Size](../viewmenu/#GFBigge)</td></tr>
+    <tr><td rowspan="2">Ctl--</td>
+        <td>[Smaller Pixel Size](../viewmenu/#Smaller)</td></tr>
+    <tr><td>[Smaller Point Size](../viewmenu/#GFSmaller)</td></tr>
+    <tr><td>Ctl-Shft-A</td>
+        <td>[Build Accented Glyph](../elementmenu/#Accented)</td></tr>
+    <tr><td>Ctl-Shft-B</td>
+        <td>[Bitmaps Available](../elementmenu/#Bitmaps)</td></tr>
+    <tr><td>Ctl-Shft-C</td>
+        <td>[Copy Fg to Bg](../editmenu/#CopyFg)</td></tr>
+    <tr><td>Ctl-Shft-D</td>
+        <td>[Correct Direction](../elementmenu/#Correct)</td></tr>
+    <tr><td>Ctl-Shft-E</td>
+        <td>[Expand Stroke](../elementmenu/#Expand)</td></tr>
+    <tr><td>Ctl-Shft-F</td>
+        <td>[Font Info](../elementmenu/#Font)</td></tr>
+    <tr><td>Ctl-Shft-G</td>
+        <td>[Generate Fonts](../filemenu/#Generate)</td></tr>
+    <tr><td>Ctl-Shft-H</td>
+        <td>[AutoHint](../hintsmenu/#AutoHint)</td></tr>
+    <tr><td>Ctl-Shft-I</td>
+        <td>[Import](../filemenu/#Import)</td></tr>
+    <tr><td>Ctl-Shft-J</td>
+        <td>[Join](../editmenu/#Join)</td></tr>
+    <tr><td>Ctl-Shft-K</td>
+        <td>[Auto Kern](../metricsmenu/#Kern)</td></tr>
+    <tr><td>Ctl-Shft-L</td>
+        <td>[Set Width](../metricsmenu/#Width)</td></tr>
+    <tr><td>Ctl-Shft-M</td>
+        <td>[Simplify](../elementmenu/#Simplify)</td></tr>
+    <tr><td>Ctl-Shft-N</td></tr>
+    <tr><td>Ctl-Shft-O</td>
+        <td>[Remove Overlap](../elementmenu/#Remove)</td></tr>
+    <tr><td>Ctl-Shft-P</td></tr>
+    <tr><td>Ctl-Shft-Q</td>
+        <td>[Close](../filemenu/#Close)</td></tr>
+    <tr><td>Ctl-Shft-R</td>
+        <td>[Revert File](../filemenu/#Revert)</td></tr>
+    <tr><td>Ctl-Shft-S</td>
+        <td>[Save As](../filemenu/#SaveAs)</td></tr>
+    <tr><td>Ctl-Shft-T</td>
+        <td>[AutoTrace](../elementmenu/#AutoTrace)</td></tr>
+    <tr><td>Ctl-Shft-U</td></tr>
+    <tr><td>Ctl-Shft-V</td>
+        <td>[Paste Into](../editmenu/#PasteInto)</td></tr>
+    <tr><td>Ctl-Shft-W</td>
+        <td>[Auto Width](../metricsmenu/#Auto)</td></tr>
+    <tr><td>Ctl-Shft-X</td>
+        <td>[Add Extrema](../elementmenu/#Add-Extrema)</td></tr>
+    <tr><td>Ctl-Shft-Y</td></tr>
+    <tr><td>Ctl-Shft-Z</td></tr>
+    <tr><td>Ctl-Shft-_</td>
+        <td>[Round to Int](../elementmenu/#Round)</td></tr>
+    <tr><td>Ctl-Shft-!</td></tr>
+    <tr><td>Ctl-Shft-@</td>
+        <td>[Average Points](../elementmenu/#Average)</td></tr>
+    <tr><td>Ctl-Shft-#</td>
+        <td>[Space Points](../elementmenu/#Space-Pts)</td></tr>
+    <tr><td>Ctl-Shft-%</td>
+        <td>[32x8 cell window](../viewmenu/#32x8)</td></tr>
+    <tr><td>Ctl-Shft-^</td>
+        <td>[16x4 cell window](../viewmenu/#16x4)</td></tr>
+    <tr><td>Ctl-Shft-*</td>
+        <td>[8x2 cell window](../viewmenu/#8x2)</td></tr>
+    <tr><td>Ctl-Shft-}</td>
+        <td>[Next Point](../editmenu/#NPoint)</td></tr>
+    <tr><td>Ctl-Shft-{</td>
+        <td>[Prev Point](../editmenu/#PPoint)</td></tr>
+    <tr><td>Ctl-Shft-></td>
+        <td>[Goto](../viewmenu/#Goto)</td></tr>
+    <tr><td>Ctl-Shft-<</td>
+        <td>[Find In Font View](../viewmenu/#FindInFV)</td></tr>
+    <tr><td>Ctl-Shft-+</td>
+        <td>[Bigger Pixel Size](../viewmenu/#Bigger)</td></tr>
+    <tr><td>Alt-Ctl-A</td>
+        <td>[Select All Points](../editmenu/#SelectPoints)</td></tr>
+    <tr><td>Alt-Ctl-C</td>
+        <td>[Copy Lookup Data](../editmenu/#CopyLookup)</td></tr>
+    <tr><td>Alt-Ctl-F</td>
+        <td>[Find / Replace](../search/)</td></tr>
+    <tr><td>Alt-Ctl-G</td>
+        <td>[Generate Mac Family](../filemenu/#GenerateMac)</td></tr>
+    <tr><td>Alt-Ctl-H</td>
+        <td>[Review Hints](../hintsmenu/#Review)</td></tr>
+    <tr><td>Alt-Ctl-I</td>
+        <td>[Show Dependencies...](../elementmenu/#Dependents)</td></tr>
+    <tr><td>Alt-Ctl-M</td>
+        <td>[Elide Point](../editmenu/#Elide)</td></tr>
+    <tr><td>Alt-Ctl-P</td>
+        <td>[Display](../display/)</td></tr>
+    <tr><td>Ctl-Alt-R</td>
+        <td>[Revert Glyph](../filemenu/#RevertGlyph)</td></tr>
+    <tr><td>Alt-Ctl-1</td>
+        <td>[Invokes user script](../filemenu/#ScriptMenu)</td></tr>
+    <tr><td>Alt-Ctl-2</td>
+        <td>[Invokes user script](../filemenu/#ScriptMenu)</td></tr>
+    <tr><td>Alt-Ctl-3</td>
+        <td>[Invokes user script](../filemenu/#ScriptMenu)</td></tr>
+    <tr><td>Alt-Ctl-.</td>
+        <td>[First Point, Next Contour](../editmenu/#NextContour)</td></tr>
+    <tr><td>Alt-Ctl-,</td>
+        <td>[Points on Selected Contours](../editmenu/#Contours)</td></tr>
+    <tr><td>Alt-Ctl--</td>
+        <td>[Zoom Out](../viewmenu/#Out)</td></tr>
+    <tr><td>Alt-Ctl-Shft-M</td>
+        <td>[Simplify More](../editmenu/#Simplify)</td></tr>
+    <tr><td>Alt-Ctl-Shft-K</td>
+        <td>[Merge Feature Info](../filemenu/#Merge-feature)</td></tr>
+    <tr><td>Alt-Ctl-Shft-I</td>
+        <td>[Glyph Info](../elementmenu/#CharInfo)</td></tr>
+    <tr><td>Alt-Ctl-Shft-F</td>
+        <td>[Replace With Reference](../editmenu/#ReplaceRef)</td></tr>
+    <tr><td>Alt-Ctl-Shift-+</td>
+        <td>[Zoom In](../viewmenu/#In)</td></tr>
+    <tr><td>Escape</td>
+        <td>[Deselect All](../editmenu/#Deselect)</td></tr>
+    <tr><td>Ctl-Escape</td>
+        <td>[Invert Selection](../editmenu/#Invert)</td></tr>
+    <tr><td>Backspace</td>
+        <td>[Clear](../editmenu/#Clear)</td></tr>
+    <tr><td>Delete</td>
+        <td>[Clear](../editmenu/#Clear)</td></tr>
+    <tr><td>Help</td>
+        <td>[Help](../helpmenu/)</td></tr>
+    <tr><td rowspan="2">F1</td>
+        <td>[Help](../helpmenu/)</td></tr>
+    <tr><td>[Index](../helpmenu/#Index)</td></tr>
+    <tr><td>F2</td></tr>
+    <tr><td>F3</td></tr>
+    <tr><td>F4</td></tr>
+    <tr><td>F5</td></tr>
+    <tr><td>F6</td></tr>
+    <tr><td>F7</td></tr>
+    <tr><td>F8</td></tr>
+    <tr><td>F9</td></tr>
+    <tr><td>F10</td></tr>
+</table>
 
 [Hot Keys are now configurable
 through](../../customizing/uitranslationnotes/#HotKeys)
