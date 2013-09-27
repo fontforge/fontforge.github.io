@@ -77,7 +77,7 @@ title: Hot Keys
         <td><a href="../viewmenu/#AntiAlias">Anti-Alias</a></td></tr>
     <tr><td>Ctl-6</td>
         <td><a href="../viewmenu/#FitToEm">Fit To Em</a></td></tr>
-    <tr><td rowspan="2">Ctl-7</td>
+    <tr><td>Ctl-7</td>
         <td><a href="../viewmenu/#px72">72 pixel outline</a></td></tr>
     <tr><td>Ctl-8</td></tr>
     <tr><td>Ctl-9</td>
