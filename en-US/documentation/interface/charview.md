@@ -123,7 +123,7 @@ perhaps others), then FontForge will be able to read images in either
 files.
 
 When debugging truetype (`Hints->Debug)`, or showing gritfit outlines
-([`View->Show   Gridfit`](../viewmenu/#ShowGridFit)) the visibility of
+(`[View->Show Grid Fit](../viewmenu/#Show+Grid+Fit)`) the visibility of
 the gridfit outlines can be controlled by the background layer's
 visibility.
 
@@ -163,7 +163,8 @@ usually bound to making a one button mouse look like a three button mouse.
 So on the mac fontforge uses the caps-lock key rather than alt/meta.
 
 
-#### ![](/assets/img/windows-cvarrowicon.png) The pointer tool
+#### The pointer tool
+![](/assets/img/windows-cvarrowicon.png)
 
 This tool is used for selecting points, images and referenced glyphs. It
 can also move these and scale images and referenced glyphs.
@@ -279,7 +280,8 @@ and dragging the line around. See the description on [building a
 ligature](editexample4.html#ligature) for a more complete description.
 
 
-#### ![](/assets/img/windows-cvmagicon.png) The magnifying tool
+#### The magnifying tool
+![](/assets/img/windows-cvmagicon.png)
 
 Clicking with the magnifying tool will magnify the view and center it
 around the point you clicked on. Holding down the
@@ -296,13 +298,15 @@ If your mouse has a scroll wheel then holding down the control key with
 the scroll wheel causes it to magnify or minify the window.
 
 
-#### ![](/assets/img/windows-cvhandicon.png) The scroll tool
+#### The scroll tool
+![](/assets/img/windows-cvhandicon.png)
 
 You can use this tool to scroll the window without using the scroll
 bars.
 
 
-#### ![](/assets/img/windows-cvfreehandicon.png) The freehand tool
+#### The freehand tool
+![](/assets/img/windows-cvfreehandicon.png)
 
 ![](/assets/img/windows-freehandctl.png)
 
@@ -312,12 +316,13 @@ attempt to convert into a set of splines. If you hold down the
 will close the curve when you release the mouse.
 
 If you double click on the icon in the tool palette you get a dialog
-similar to the [Element-\>Expand Stroke](../elementmenu/#Expand) which
+similar to the [Element-\>Expand Stroke](../elementmenu/#Expand+Stroke...) which
 will give you slightly more control over the results, as you can have it
 not expand the stroke you draw (ie. leave a single trace.)
 
 
-#### ![](/assets/img/windows-cvcurveicon.png) ![](/assets/img/windows-cvhvcurveicon.png) ![](/assets/img/windows-cvcornericon.png) ![](/assets/img/windows-cvtangenticon.png) Tools for adding curved, corner and tangent points.
+#### Tools for adding curved, corner and tangent points.
+![](/assets/img/windows-cvcurveicon.png) ![](/assets/img/windows-cvhvcurveicon.png) ![](/assets/img/windows-cvcornericon.png) ![](/assets/img/windows-cvtangenticon.png)
 
 These four tools behave similarly, differing only in what kind of point
 is added to the view.
@@ -357,7 +362,8 @@ The four different point types are
     the same slope as the line).
 
 
-#### ![](/assets/img/windows-cvpenicon.png) The pen tool
+#### The pen tool
+![](/assets/img/windows-cvpenicon.png)
 
 This tool behaves differently in cubic and quadratic editing. In many
 ways it is similar to the tools above as it adds a point to the current
@@ -376,7 +382,8 @@ If you hold down the Alt (Meta, etc) key you change the behavior so that
 cubic editing looks like quadratic and vice versa.
 
 
-#### ![](/assets/img/windows-cvspiroG4icon.png) ![](/assets/img/windows-cvspiroG2icon.png) ![](/assets/img/windows-cvspirocornericon.png) ![](/assets/img/windows-cvspirolefticon.png) ![](/assets/img/windows-cvspirorighticon.png) Tools for adding spiro control points
+#### Tools for adding spiro control points
+![](/assets/img/windows-cvspiroG4icon.png) ![](/assets/img/windows-cvspiroG2icon.png) ![](/assets/img/windows-cvspirocornericon.png) ![](/assets/img/windows-cvspirolefticon.png) ![](/assets/img/windows-cvspirorighticon.png)
 
 These tools add spiro control points to the current contour, these are
 only available in spiro mode, but the basic adding process is similar to
@@ -404,13 +411,15 @@ This is based on [Raph Levien's work](http://www.levien.com/spiro/) with
 clothoid splines which provide constant curvature across points.
 
 
-#### ![](/assets/img/windows-cvspiromodeicon.png) Spiro mode
+#### Spiro mode
+![](/assets/img/windows-cvspiromodeicon.png)
 
 This button toggles between editing contours using Bézier control
 points, or between using spiro (clothoid) control points.
 
 
-#### ![](/assets/img/windows-cvknifeicon.png) The knife tool
+#### The knife tool
+![](/assets/img/windows-cvknifeicon.png)
 
 This tool is used to cut splines. As you drag it across the view
 fontforge draws a line showing where the cut will happen. When you
@@ -421,7 +430,8 @@ new end points. These endpoints are not joined, so the spline is now
 open (or if it were previously open, it is now cut in two).
 
 
-#### ![](/assets/img/windows-cvrulericon.png) The ruler tool
+#### The ruler tool
+![](/assets/img/windows-cvrulericon.png)
 
 ![](/assets/img/windows-ruler.png)
 
@@ -436,12 +446,12 @@ mouse's current location. If you depress the tool at one end point of a
 spline and move it to the other endpoint then it will also show the
 length of that spline.
 
-If you hold down the
-[Meta/Alt/CapsLock](#alt-meta-capslock) key then information
-will only be shown when the mouse is depressed.
+If you hold down the [Meta/Alt/CapsLock](#alt-meta-capslock) key then 
+information will only be shown when the mouse is depressed.
 
 
-#### ![](/assets/img/windows-cvscaleicon.png) The scale tool
+#### The scale tool
+![](/assets/img/windows-cvscaleicon.png)
 
 This tool allows you to scale the selection by eye rather than by a set
 amount (if there is no selection then everything in the current layer
@@ -454,7 +464,8 @@ Double clicking on this will bring up the transform dialog with the
 "Scale..." option selected.
 
 
-#### ![](/assets/img/windows-cvflipicon.png) The flip tool
+#### The flip tool
+![](/assets/img/windows-cvflipicon.png)
 
 This tool allows you to flip the selection either horizontally or
 vertically. Again the point at which you press the mouse is the origin
@@ -467,7 +478,8 @@ Double clicking on this will bring up the transform dialog with the
 apply [Element-\>Correct Direction](../elementmenu/#Correct+Direction).**
 
 
-#### ![](/assets/img/windows-cvrotateicon.png) The rotate tool
+#### The rotate tool
+![](/assets/img/windows-cvrotateicon.png)
 
 This tools allows you to rotate the selection freely.
 
@@ -475,7 +487,8 @@ Double clicking on this will bring up the transform dialog with the
 "Rotate..." option selected.
 
 
-#### ![](/assets/img/windows-cvskewicon.png) The skew tool
+#### The skew tool
+![](/assets/img/windows-cvskewicon.png)
 
 This tool allows you to skew the selection.
 
@@ -483,7 +496,8 @@ Double clicking on this will bring up the transform dialog with the
 "Skew..." option selected.
 
 
-#### ![](/assets/img/windows-cvrotate3dicon.png) The rotate 3D tool
+#### The rotate 3D tool
+![](/assets/img/windows-cvrotate3dicon.png)
 
 This tool allows you to rotate the selection in the third dimension and
 project the result back onto the x-y plane. An imaginary line is drawn
@@ -495,7 +509,8 @@ Double clicking on this will bring up the transform dialog with the
 "Rotate 3D..." option selected.
 
 
-#### ![](/assets/img/windows-cvperspectiveicon.png) The perspective tool
+#### The perspective tool
+![](/assets/img/windows-cvperspectiveicon.png)
 
 ![](/assets/img/windows-Eperspective.png)
 
@@ -513,7 +528,8 @@ scaled as:
     *x' = release_x + (release_y - y)/release_y * ( x - release_x )* *y' = y*
 
 
-#### ![](/assets/img/windows-cvrecticon.png) ![](/assets/img/windows-cvellipseicon.png) The rectangle/ellipse tools
+#### The rectangle/ellipse tools
+![](/assets/img/windows-cvrecticon.png) ![](/assets/img/windows-cvellipseicon.png)
 
 By default this produces a rectangle, single-clicking on the tool
 palette will toggle between rectangle and ellipse, and double clicking
@@ -533,7 +549,8 @@ rectangle/ellipse should be placed, how big it should be, and whether it
 should be rotated.
 
 
-#### ![](/assets/img/windows-cvpolyicon.png) ![](/assets/img/windows-cvstaricon.png) The polygon/star tools
+#### The polygon/star tools
+![](/assets/img/windows-cvpolyicon.png) ![](/assets/img/windows-cvstaricon.png)
 
 By default this draws a regular polygon, but by double clicking on the
 button in the tools palette you can make it draw a star, or select the

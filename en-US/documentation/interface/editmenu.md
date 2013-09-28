@@ -11,9 +11,6 @@ available in text fields.
 [table_of_contents]
 
 
-* * * * *
-
-
 **NOTE**: In the metrics view this menu will be disabled when one of the
 text fields has the focus.
 
@@ -53,6 +50,7 @@ but without the point. (if there is no selection nothing happens)
 
 In the Bitmap View this will copy the selection into the clipboard and
 then delete it. If there is no selection nothing happens.
+
 
 #### Copy
 
