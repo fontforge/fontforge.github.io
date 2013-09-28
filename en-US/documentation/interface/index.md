@@ -4,4 +4,26 @@ layout: default
 title: FontForge Interface
 ---
 
-Table of contents for this section.
+
+- [Menus](filemenu)
+    - [File](filemenu)
+    - [Edit](editmenu)
+    - [Point](pointmenu)
+    - [Element](elementmenu)
+    - [Tools](toolsmenu)
+    - [Hints](hintsmenu)
+    - [Encoding](encodingmenu)
+    - [View](viewmenu)
+    - [Metrics](metricsmenu)
+    - [CID](cidmenu)
+    - [Multi Master](mmmenu)
+    - [Window](windowmenu)
+    - [Help](helpmenu)
+    - [Hot Keys](hotkeys)
+- [Windows](fontview)
+    - [Font](fontview)
+    - [Outline Glyph](charview)
+    - [Debugging TrueType](charview#The+Debugging+View)
+    - [Type3 Glyphs](multilayer)
+    - [Bitmap Glyph](bitmapview)
+    - [Metrics](metricsview)

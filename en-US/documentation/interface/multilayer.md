@@ -8,9 +8,9 @@ Normal builds of fontforge do not have this mode enabled (it can eat up
 a lot of memory), if you wish to edit type3 fonts then configure
 fontforge with
 
->     $ configure --enable-type3
->     $ make
->     $ make install
+    $ configure --enable-type3
+    $ make
+    $ make install
 
 If you have done this, then loading a type3 font (or an svg font
 organized in a similar fashion) will cause FontForge to retain
@@ -20,8 +20,9 @@ separate layer and may be edited in isolation.
 A new font may be converted to a multi-layered font by selecting
 Element-\>Font Info-\>Layers-\>Multi Layered Font.
 
-![](img/charview-multilayer.png)Multi Layered editing in the outline view
----------------------------------------------------------------------
+![](/assets/img/windows-charview-multilayer.png)
+
+### Multi Layered editing in the outline view
 
 In the image at left we have a glyph drawn by stroking two paths. One
 layer (containing one of the paths) is currently selected and is drawn
@@ -47,38 +48,46 @@ Double clicking on a layer brings up the [Layer Info dialog](#Layer).
 
 Clicking with the right button brings up the layer menu which contains:
 
-Layer Info...
+
+#### Layer Info...
 
 Brings up the [Layer Info](#Layer) dialog on the current
 layer (same as double clicking)
 
-New Layer...
+
+#### New Layer...
 
 Creates a new layer and brings up the [Layer
 Info](#Layer) dialog to describe it. (the new layer will
 appear at the bottom of the layer list and will be drawn last)
 
-Del Layer
+
+#### Del Layer
 
 Deletes the current layer (you may not delete the last layer in a glyph)
 
-First
+
+#### First
 
 Make the current layer the first one to be drawn.
 
-Earlier
+
+#### Earlier
 
 Make the current layer be drawn earlier. (swaps it with the layer above
 it)
 
-Later
+
+#### Later
 
 Makes the current layer be drawn later. (swaps it with the layer below
 it)
 
-Last
+
+#### Last
 
 Makes the current layer be drawn last.
+
 
 ### Images
 
@@ -98,7 +107,7 @@ Each layer in a Type 3 font may have its own clipping path. A clipping
 path is a contour (or set of contours) and only things inside the
 clipping path will be drawn.
 
-![](img/ClippedA.png) ![](img/ClippedARaster.png)
+![](/assets/img/windows-ClippedA.png) ![](/assets/img/windows-ClippedARaster.png)
 
 The above example shows the letter "A" drawn with a clipping path that
 looks like a star burst (the clipping path is drawn in blue). To the
@@ -110,8 +119,10 @@ You can change the clipping path with the `Points->Make Clip Path`
 command. The clipping path will be set to any selected contour(s) in the
 image. If no contour is selected then there will be no clipping path.
 
-![](img/layerdlg.png)The Layer Info dialog
---------------------------------------
+![](/assets/img/windows-layerdlg.png)
+
+
+### The Layer Info dialog
 
 This dialog describes various attributes of the way the splines (or
 images) in the current layer are drawn.
@@ -150,13 +161,15 @@ In an additional level of complexity a contour need not be filled (or
 stroked) with a constant color, you can provide a repeating pattern, or
 a gradual change from one color to another (a gradient).
 
-### ![](img/GradientDlg.png)Gradients
+### Gradients
+
+![](/assets/img/windows-GradientDlg.png)
 
 FontForge supports two kinds of gradients, linear gradients and radial
 gradients. In a linear gradient the color changes along a line (as in
 the example at right, and below)
 
-![](img/LinearGradient.png)
+![](/assets/img/windows-LinearGradient.png)
 
 You can specify the color at any point along the gradient line (as a
 percentage of the distance along that line). The example at left only
@@ -168,26 +181,28 @@ A Radial gradient specifies a center point and a final radius, the start
 position (and color) is the center point and colors change in concentric
 circles until the final radius (and final color) is attained.
 
-![](img/RadialGradient.png) ![](img/RadialGradientDlg.png)
+![](/assets/img/windows-RadialGradient.png) ![](/assets/img/windows-RadialGradientDlg.png)
 
 ### Patterns
 
-![](img/TilePatternDlg.png)A contour may also be filled or stroked with a
-tiled pattern. That is a pattern is repeatedly layed down until it
-covers the entire area to be filled.
+![](/assets/img/windows-TilePatternDlg.png)
 
-![](img/TiledPattern.png)
+A contour may also be filled or stroked with a tiled pattern. That is
+a pattern is repeatedly layed down until it covers the entire area
+to be filled.
 
-In the example above the tile ![](img/Tile.png) has been scaled and
+![](/assets/img/windows-TiledPattern.png)
+
+In the example above the tile ![](/assets/img/windows-Tile.png) has been scaled and
 replicated. The example at right is a bit more complex. Not only is the
 pattern replicated, but after that it is rotated through 45 degrees
 
-![](img/TiledPattern45.png)
+![](/assets/img/windows-TiledPattern45.png)
 
 The pattern is defined in another glyph in the same font. By default the
 bounding box of that glyph will be used to describe the pattern's extent
 (You may change change that with [Element-\>Glyph Info-\>Tile
-Size](../charinfo/#TileSize)). You may then scale it by specifying the
+Size](../charinfo/#Tile+Size)). You may then scale it by specifying the
 Width and Height fields. You may apply other transformations as
 described in the dialog.
 
@@ -195,7 +210,4 @@ FontForge's rasterization leaves much to be desired. It does not support
 full color (rounding everything to a shade of grey), and its stroking
 algorithm is quite poor (it does not rasterize dashes), it does not
 support the full complexity of radial gradients...
-
--- [Back](../charview/) -- [TOC](/en-US/tutorials/overview/) --
-
 
