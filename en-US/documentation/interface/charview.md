@@ -555,10 +555,11 @@ might look nicer).
 
 ### Vertical View
 
-![](/assets/img/windows-charview-vert.png) In this view the vertical metrics of the glyph
-are shown. You can change the vertical advance just as you changed the
-glyph's width (by selecting the pointer tool and dragging the vertical
-advance line up or down).
+![](/assets/img/windows-charview-vert.png)
+
+In this view the vertical metrics of the glyph are shown. You can change
+the vertical advance just as you changed the glyph's width (by selecting
+the pointer tool and dragging the vertical advance line up or down).
 
 
 ### Grid Fit View
