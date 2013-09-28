@@ -5,7 +5,10 @@ title: Outline Glyph View
 ---
 
 
-![](img/charview2.png)
+[table_of_contents]
+
+
+![](/assets/img/windows-charview2.png)
 
 The outline glyph view is the window in which most editing happens.
 
@@ -42,23 +45,21 @@ colored line. (in a curved point the control points will be collinear).
 (the "Next" control point will be drawn dull cyan, and the Prev point
 will be magenta).
 
-![A quadratic glyph](img/charview-quadratic.png)
+![A quadratic glyph](/assets/img/windows-charview-quadratic.png)
 
-In a TrueType font, an
-on-curve point can be implied between two control points. FontForge will
-draw these with an open circle.
+In a TrueType font, an on-curve point can be implied between two control
+points. FontForge will draw these with an open circle.
 
 The initial point in a contour will be drawn in green, and beside it
 will be a tiny arrow pointing in the direction of the contour.
 
-![Showing extrema](img/extrema-poi.png)
+![Showing extrema](/assets/img/windows-extrema-poi.png)
 
-Sometimes it is important to know
-which points are at the extrema of splines (postscript likes for there
-to be points at the extrema of all splines), if this is important to you
-set the "Mark Extrema" flag in the View menu. After that points at
-extrema will show up as dull purple. And internal extrema will also be
-marked.
+Sometimes it is important to know which points are at the extrema of
+splines (postscript likes for there to be points at the extrema of all
+splines), if this is important to you set the "Mark Extrema" flag in the
+View menu. After that points at extrema will show up as dull purple. And
+internal extrema will also be marked.
 
 There are also two palettes, one, a layer palette, allowing you to
 control [which layers are visible](#Layers), and one, a tool palette,
@@ -93,10 +94,10 @@ may disconnect the points. If your glyph is used as a reference in
 another glyph that positions references by point matching then editing
 this glyph may reposition those references.**
 
-Layers
-------
 
-![](img/layers.png)
+### Layers
+
+![](/assets/img/windows-layers.png)
 
 There are several drawing layers in the outline view.
 Each layer has an "eye box" (indicating whether it is visible or not),
@@ -140,10 +141,10 @@ button. Making the layer cubic or quadratic is a little trickier, as
 it's done with right mouse button: a pop-up menu will appear, allowing
 for some additional operations, like moving contents between layers.
 
-Tools
------
 
-![](img/tools.png)
+### Tools
+
+![](/assets/img/windows-tools.png)
 
 There are 19 different editing tools, a mode button which
 alters the behavior of 5 of them, and two others (rectangle/ellipse and
@@ -155,13 +156,14 @@ button 1 with the control key pressed is also bound to pointer, mouse
 button 2 is bound to magnify, and mouse button 2 with control is bound
 to ruler.
 
-Many of the tools have different behaviors if you hold the shift or alt
-(meta) key down when using the tool. On the mac there is no alt/meta
-key, and the Option and Command keys are usually bound to making a one
-button mouse look like a three button mouse. So on the mac fontforge
-uses the caps-lock key rather than alt/meta.
+Many of the tools have different <a name="alt-meta-capslock">behaviors</a>
+if you hold the shift or alt (meta) key down when using the tool.
+On the mac there is no alt/meta key, and the Option and Command keys are
+usually bound to making a one button mouse look like a three button mouse.
+So on the mac fontforge uses the caps-lock key rather than alt/meta.
 
-### ![](img/cvarrowicon.png)The pointer tool
+
+#### ![](/assets/img/windows-cvarrowicon.png) The pointer tool
 
 This tool is used for selecting points, images and referenced glyphs. It
 can also move these and scale images and referenced glyphs.
@@ -195,7 +197,7 @@ one back). Sadly some window managers (gnome-sawtooth for one) will
 steal meta-clicks. If this happens you will need to use Element-\>Get
 Info to set the control points.
 
-![](img/cpinfo.png)
+![](/assets/img/windows-cpinfo.png)
 
 When you move a control point you have the option
 (`View->Show Control Point   Info`) of getting a popup box showing
@@ -224,7 +226,7 @@ spline).
 If you hold the shift key down when you drag then the motion will be
 constrained to be either horizontal, vertical, or at a 45° angle. (When
 moving control points the combination of shift and [meta
-(alt)](#alt-meta-capslock)will mean that the control point
+(alt)](#alt-meta-capslock) will mean that the control point
 is constrained to be the same angle from the base point as it was before
 you started moving it).
 
@@ -274,13 +276,14 @@ series of vertical lines will be drawn across the screen at the caret
 locations. By default these lines will be placed at the origin, but you
 may move one by placing the mouse pointer on it, depressing the button
 and dragging the line around. See the description on [building a
-ligature](editexample4.html#ligature)for a more complete description.
+ligature](editexample4.html#ligature) for a more complete description.
 
-### ![](img/cvmagicon.png)The magnifying tool
+
+#### ![](/assets/img/windows-cvmagicon.png) The magnifying tool
 
 Clicking with the magnifying tool will magnify the view and center it
 around the point you clicked on. Holding down the
-[Alt/Meta/CapsLock](#alt-meta-capslock)key and clicking
+[Alt/Meta/CapsLock](#alt-meta-capslock) key and clicking
 will minify the view, again centered around the point at which you
 clicked. Again some window managers will steal meta-clicks, so you may
 have to use the View menu to minify (It's called Zoom Out
@@ -292,14 +295,16 @@ into the window.
 If your mouse has a scroll wheel then holding down the control key with
 the scroll wheel causes it to magnify or minify the window.
 
-### ![](img/cvhandicon.png)The scroll tool
+
+#### ![](/assets/img/windows-cvhandicon.png) The scroll tool
 
 You can use this tool to scroll the window without using the scroll
 bars.
 
-### ![](img/cvfreehandicon.png)The freehand tool
 
-![](img/freehandctl.png)
+#### ![](/assets/img/windows-cvfreehandicon.png) The freehand tool
+
+![](/assets/img/windows-freehandctl.png)
 
 You can use this tool to draw a random curve which FontForge will then
 attempt to convert into a set of splines. If you hold down the
@@ -311,7 +316,8 @@ similar to the [Element-\>Expand Stroke](../elementmenu/#Expand) which
 will give you slightly more control over the results, as you can have it
 not expand the stroke you draw (ie. leave a single trace.)
 
-### ![](img/cvcurveicon.png) ![](img/cvhvcurveicon.png) ![](img/cvcornericon.png) ![](img/cvtangenticon.png) Tools for adding curved, corner and tangent points.
+
+#### ![](/assets/img/windows-cvcurveicon.png) ![](/assets/img/windows-cvhvcurveicon.png) ![](/assets/img/windows-cvcornericon.png) ![](/assets/img/windows-cvtangenticon.png) Tools for adding curved, corner and tangent points.
 
 These four tools behave similarly, differing only in what kind of point
 is added to the view.
@@ -350,7 +356,8 @@ The four different point types are
     spline is curved then the curved spline is constrained to start with
     the same slope as the line).
 
-### ![](img/cvpenicon.png)The pen tool
+
+#### ![](/assets/img/windows-cvpenicon.png) The pen tool
 
 This tool behaves differently in cubic and quadratic editing. In many
 ways it is similar to the tools above as it adds a point to the current
@@ -368,7 +375,8 @@ point).
 If you hold down the Alt (Meta, etc) key you change the behavior so that
 cubic editing looks like quadratic and vice versa.
 
-### ![](img/cvspiroG4icon.png) ![](img/cvspiroG2icon.png) ![](img/cvspirocornericon.png) ![](img/cvspirolefticon.png) ![](img/cvspirorighticon.png) Tools for adding spiro control points
+
+#### ![](/assets/img/windows-cvspiroG4icon.png) ![](/assets/img/windows-cvspiroG2icon.png) ![](/assets/img/windows-cvspirocornericon.png) ![](/assets/img/windows-cvspirolefticon.png) ![](/assets/img/windows-cvspirorighticon.png) Tools for adding spiro control points
 
 These tools add spiro control points to the current contour, these are
 only available in spiro mode, but the basic adding process is similar to
@@ -395,12 +403,14 @@ The different point types are:
 This is based on [Raph Levien's work](http://www.levien.com/spiro/) with
 clothoid splines which provide constant curvature across points.
 
-### ![](img/cvspiromodeicon.png)Spiro mode
+
+#### ![](/assets/img/windows-cvspiromodeicon.png) Spiro mode
 
 This button toggles between editing contours using Bézier control
 points, or between using spiro (clothoid) control points.
 
-### ![](img/cvknifeicon.png)The knife tool
+
+#### ![](/assets/img/windows-cvknifeicon.png) The knife tool
 
 This tool is used to cut splines. As you drag it across the view
 fontforge draws a line showing where the cut will happen. When you
@@ -410,9 +420,10 @@ created and the old spline will be split in two connecting to the two
 new end points. These endpoints are not joined, so the spline is now
 open (or if it were previously open, it is now cut in two).
 
-### ![](img/cvrulericon.png) The ruler tool
 
-![](img/ruler.png)
+#### ![](/assets/img/windows-cvrulericon.png) The ruler tool
+
+![](/assets/img/windows-ruler.png)
 
 This tool tells you current position of the mouse. If the
 mouse is near the outline it will give the slope and curvature there. If
@@ -426,10 +437,11 @@ spline and move it to the other endpoint then it will also show the
 length of that spline.
 
 If you hold down the
-[Meta/Alt/CapsLock](#alt-meta-capslock)key then information
+[Meta/Alt/CapsLock](#alt-meta-capslock) key then information
 will only be shown when the mouse is depressed.
 
-### ![](img/cvscaleicon.png)The scale tool
+
+#### ![](/assets/img/windows-cvscaleicon.png) The scale tool
 
 This tool allows you to scale the selection by eye rather than by a set
 amount (if there is no selection then everything in the current layer
@@ -441,7 +453,8 @@ uniform or only in one dimension then hold down the shift key.
 Double clicking on this will bring up the transform dialog with the
 "Scale..." option selected.
 
-### ![](img/cvflipicon.png)The flip tool
+
+#### ![](/assets/img/windows-cvflipicon.png) The flip tool
 
 This tool allows you to flip the selection either horizontally or
 vertically. Again the point at which you press the mouse is the origin
@@ -451,23 +464,26 @@ Double clicking on this will bring up the transform dialog with the
 "Flip..." option selected.
 
 **Note: After flipping an outline you will almost certainly want to
-apply [Element-\>Correct Direction](../elementmenu/#Correct).**
+apply [Element-\>Correct Direction](../elementmenu/#Correct+Direction).**
 
-### ![](img/cvrotateicon.png)The rotate tool
+
+#### ![](/assets/img/windows-cvrotateicon.png) The rotate tool
 
 This tools allows you to rotate the selection freely.
 
 Double clicking on this will bring up the transform dialog with the
 "Rotate..." option selected.
 
-### ![](img/cvskewicon.png)The skew tool
+
+#### ![](/assets/img/windows-cvskewicon.png) The skew tool
 
 This tool allows you to skew the selection.
 
 Double clicking on this will bring up the transform dialog with the
 "Skew..." option selected.
 
-### ![](img/cvrotate3dicon.png)The rotate 3D tool
+
+#### ![](/assets/img/windows-cvrotate3dicon.png) The rotate 3D tool
 
 This tool allows you to rotate the selection in the third dimension and
 project the result back onto the x-y plane. An imaginary line is drawn
@@ -478,9 +494,10 @@ press determines the amount of rotation.
 Double clicking on this will bring up the transform dialog with the
 "Rotate 3D..." option selected.
 
-### ![](img/cvperspectiveicon.png) The perspective tool
 
-![](img/Eperspective.png)
+#### ![](/assets/img/windows-cvperspectiveicon.png) The perspective tool
+
+![](/assets/img/windows-Eperspective.png)
 
 This tool allows you to apply a perspective transformation to the
 selection (this is a non-linear transformation). This tool uses three
@@ -493,9 +510,10 @@ press point defines one axis of the transformation. Distances
 perpendicular to this line are retained, distances parallel to it are
 scaled as:
 
->	*x' = release\_x + (release\_y - y)/release\_y \* ( x - release\_x )* *y' = y*
+    *x' = release_x + (release_y - y)/release_y * ( x - release_x )* *y' = y*
 
-### ![](img/cvrecticon.png) ![](img/cvellipseicon.png)The rectangle/ellipse tools
+
+#### ![](/assets/img/windows-cvrecticon.png) ![](/assets/img/windows-cvellipseicon.png) The rectangle/ellipse tools
 
 By default this produces a rectangle, single-clicking on the tool
 palette will toggle between rectangle and ellipse, and double clicking
@@ -514,7 +532,8 @@ and get another dialog which allows you to define numerically where the
 rectangle/ellipse should be placed, how big it should be, and whether it
 should be rotated.
 
-### ![](img/cvpolyicon.png) ![](img/cvstaricon.png)The polygon/star tools
+
+#### ![](/assets/img/windows-cvpolyicon.png) ![](/assets/img/windows-cvstaricon.png) The polygon/star tools
 
 By default this draws a regular polygon, but by double clicking on the
 button in the tools palette you can make it draw a star, or select the
@@ -533,18 +552,18 @@ pick how far the star's points should extend beyond the circle in which
 the polygon is inscribed (this will make a non-regular star, but it
 might look nicer).
 
-Vertical View
--------------
 
-![](img/charview-vert.png) In this view the vertical metrics of the glyph
+### Vertical View
+
+![](/assets/img/windows-charview-vert.png) In this view the vertical metrics of the glyph
 are shown. You can change the vertical advance just as you changed the
 glyph's width (by selecting the pointer tool and dragging the vertical
 advance line up or down).
 
-Grid Fit View
--------------
 
-![](img/GridFit.png)
+### Grid Fit View
+
+![](/assets/img/windows-GridFit.png)
 
 If you have the freetype library, then you can see the
 results of rasterizing your glyph. If you have freetype's bytecode
@@ -557,12 +576,12 @@ The Show Grid Fit command will ask you for some basic information first.
 It needs to know the pointsize and resolution for which you want the
 action performed (the example at right is 12pt on a 72dpi screen).
 
-![](img/ShowGridFit.png)
+![](/assets/img/windows-ShowGridFit.png)
 
-The Debugging View
-------------------
 
-![](img/cvdebug.png)
+### The Debugging View
+
+![](/assets/img/windows-cvdebug.png)
 
 > "I told you butter wouldn't suit the works!" he added, looking angrily
 > at the March Hare.
@@ -618,15 +637,13 @@ window).
 
 When you are in this mode there are a few special "hot keys"
 
---- --------------------------------------------------------------
-r   run/restart
-k   kill/quit debugger
-q   kill/quit debugger
-c   continue
-s   step (into)
-n   next (step over)
-f   finish function (continue until we return from the function)
---- --------------------------------------------------------------
+    r   run/restart
+    k   kill/quit debugger
+    q   kill/quit debugger
+    c   continue
+    s   step (into)
+    n   next (step over)
+    f   finish function (continue until we return from the function)
 
 Similarly you may watch storage and cvt locations by clicking on the
 appropriate spot in the storage and cvt windows.
@@ -646,15 +663,15 @@ The sixth button brings up a menu with which you can control which of
 various debugging palettes are visible. The ones available so far are:
 Registers, Stack, Points, Storage, Cvt, Raster and Gloss.
 
-![](img/TTRegisters.png)
-
-![](img/TTStack.png)
-
-![](img/TTPoints.png)
+![](/assets/img/windows-TTRegisters.png)
 
 Shows the truetype graphics state.
 
+![](/assets/img/windows-TTStack.png)
+
 Shows the truetype stack. The value in parentheses is a 26.6 number.
+
+![](/assets/img/windows-TTPoints.png)
 
 Shows the points. You may choose to view the twilight points, or the
 points displayed in the glyph pane (the normal points). You may view the
@@ -679,11 +696,7 @@ is watched by clicking on it.
 
 Contours are separated by horizontal lines
 
-![](img/TTStorage.png)
-
-![](img/TTCvt.png)
-
-![](img/TTRaster.png)
+![](/assets/img/windows-TTStorage.png)
 
 Shows the truetype storage locations.
 
@@ -691,15 +704,19 @@ A small stop sign indicates the storage location is being watched (that
 is execution will stop if the location changes). You may change whether
 a location is watched by clicking on it.
 
+![](/assets/img/windows-TTCvt.png)
+
 Shows the current values in the cvt array.
 
 A small stop sign indicates the cvt location is being watched (that is
 execution will stop if the value changes). You may change whether a
 location is watched by clicking on it.
 
+![](/assets/img/windows-TTRaster.png)
+
 Shows the current raster with no magnificaton
 
-![](img/TTgloss.png)
+![](/assets/img/windows-TTgloss.png)
 
 This window tries to provide a gloss for the current instruction. It
 gives a brief description of the instruction in the top few lines, then
@@ -713,15 +730,13 @@ The final button will exit the debugger.
 The debugger also responds to some single character commands common to
 many debuggers:
 
-  --- ---------------------------
-  s   step into
-  n   step over (next)
-  c   continue
-  r   restart (with same grid)
-  f   step out (finish routine)
-  k   kill the debugger
-  q   kill the debugger
-  --- ---------------------------
+    s   step into
+    n   step over (next)
+    c   continue
+    r   restart (with same grid)
+    f   step out (finish routine)
+    k   kill the debugger
+    q   kill the debugger
 
 The Hints-\>Debug menu command can also be used to exit the debugger (by
 turning off the debug check box), or to restart the debugger with
@@ -730,7 +745,8 @@ control whether the fpgm and prep tables are debugged. Usually debugging
 will start when execution reaches the instructions associated with this
 glyph.
 
-### Debugging composite glyphs
+
+#### Debugging composite glyphs
 
 FontForge is not as friendly when debugging composite glyphs as it
 should be -- this is influenced by the way truetype works. Suppose you
@@ -762,13 +778,14 @@ Several words of caution:
 -   FontForge does not translate references which do point matching
     properly until the entire glyph has been loaded.
 
-  ----------------------------------------------------------------------------------------
-  ![](img/mmcharview.png)
-   Intermediate version of "A" with two other styles in the background
-  ----------------------------------------------------------------------------------------
 
-Multiple Master View
---------------------
+![](/assets/img/windows-mmcharview.png)
+
+Intermediate version of "A" with two other styles in the background
+
+
+### Multiple Master View
+
 
 In a multiple master font the [MM](../mmmenu/#outline-char) menu gives
 you control over which style of the font you are editing. It will also
@@ -776,15 +793,11 @@ allow you to display any (or all) of the other styles in the background.
 Although the menu is called "MM" it applies equally to Apple's
 distortable fonts ("\*var" fonts, like Skia).
 
-Multiple Layer Editing
-----------------------
 
-![](img/charview-multilayer.png)
+### Multiple Layer Editing
 
-If you wish to [edit type3
-fonts](../multilayer/), and you have configured FontForge correctly,
-the FontForge can display a glyph broken down into a series of strokes
-and fills and allow you to edit each one.
+![](/assets/img/windows-charview-multilayer.png)
 
--- [Prev](../fontview/) -- [TOC](/en-US/tutorials/overview/) --
-[Next](../bitmapview/) --
+If you wish to [edit type3 fonts](../multilayer/), and you have configured
+FontForge correctly, the FontForge can display a glyph broken down into
+a series of strokes and fills and allow you to edit each one.

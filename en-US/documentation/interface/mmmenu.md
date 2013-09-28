@@ -8,8 +8,7 @@ The MM Menu provides a few commands for manipulating [Multiple Master or
 Apple distortable fonts](../multiplemaster/#MM). If the current font is
 a MM itself font the menu also includes a list of all font instances
 that make up this one. This menu is available in the [font
-view](#fontview) and the [outline glyph
-view](#outline-char).
+view](#fontview) and the [outline glyph view](#outline-char).
 
 
 [table_of_contents]
@@ -77,7 +76,7 @@ the master designs and the default blended font.
 
 ### Glyph View
 
-The menu as it appears in the outline glyph view.
+The menu as it appears in the <a name="outline-char">outline glyph</a> view.
 
 
 #### MM Reblend
