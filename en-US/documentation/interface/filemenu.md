@@ -39,7 +39,7 @@ FontForge can open macbinary resource files containing postscript and
 truetype fonts (it does not open bitmap fonts currently)
 
 FontForge does not open Acorn RISC/OS files, but you can use
-[acorn2sfd](../../utilities/acorn2sfd/) to convert them into 
+[acorn2sfd](../../utilities/acorn2sfd/) to convert them into
 an sfd file which FontForge can then open.
 
 If you have [mf](http://www.tug.org/) and
@@ -84,7 +84,7 @@ for pdf files).
 
 You can also force fontforge to rename all the glyphs in the font being
 read in to fit some standard naming convention. See the section on
-[namelists](../encodingmenu/#namelist) for more information.
+[namelists](../encodingmenu/#NameLists) for more information.
 
 **The dialog has several buttons at the top, one takes you to your home
 directory, one to the directory above the current one and the other two

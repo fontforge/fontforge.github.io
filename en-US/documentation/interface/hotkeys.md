@@ -9,29 +9,29 @@ title: Hot Keys
 
 <table class="table" border>
     <tr><td>Ctl-A</td>
-        <td><a href="../editmenu/#Select.All">Select All</a></td></tr>
+        <td><a href="../editmenu/#Select+All">Select All</a></td></tr>
     <tr><td>Ctl-B</td>
-        <td><a href="../elementmenu/#Regenerate.Bitmap.Glyphs...">Regenerate Bitmaps</a></td></tr>
+        <td><a href="../elementmenu/#Regenerate+Bitmap+Glyphs...">Regenerate Bitmaps</a></td></tr>
     <tr><td>Ctl-C</td>
         <td><a href="../editmenu/#Copy">Copy</a></td></tr>
     <tr><td>Ctl-D</td>
         <td><a href="../viewmenu/#Points">Show/Hide Points</a></td></tr>
     <tr><td>Ctl-E</td>
-        <td><a href="../elementmenu/#Problems">Find Problems</a></td></tr>
+        <td><a href="../elementmenu/#Find+Problems...">Find Problems</a></td></tr>
     <tr><td>Ctl-F</td>
         <td><a href="../viewmenu/#Fit">Fit in Window</a></td></tr>
     <tr><td>Ctl-G</td>
-        <td><a href="../editmenu/#Reference">Copy Reference</a></td></tr>
+        <td><a href="../editmenu/#Copy+Reference">Copy Reference</a></td></tr>
     <tr><td>Ctl-H</td>
         <td><a href="../filemenu/#Outline">Open Outline</a></td></tr>
     <tr><td>Ctl-I</td>
-        <td><a href="../elementmenu/#Info">Get Info</a></td></tr>
+        <td><a href="../elementmenu/#Get+Info">Get Info</a></td></tr>
     <tr><td>Ctl-J</td>
         <td><a href="../filemenu/#Bitmap">Open Bitmap</a></td></tr>
     <tr><td>Ctl-K</td>
         <td><a href="../filemenu/#Metrics">Open Metrics</a></td></tr>
     <tr><td>Ctl-L</td>
-        <td><a href="../metricsmenu/#LBearing">Set LBearing</a></td></tr>
+        <td><a href="../metricsmenu/#Set+LBearing...">Set LBearing</a></td></tr>
     <tr><td>Ctl-M</td>
         <td><a href="../editmenu/#Merge">Merge Point</a></td></tr>
     <tr><td>Ctl-N</td>
@@ -39,21 +39,21 @@ title: Hot Keys
     <tr><td>Ctl-O</td>
         <td><a href="../filemenu/#Open">Open</a></td></tr>
     <tr><td>Ctl-P</td>
-        <td><a href="../filemenu/#Print">Print</a></td></tr>
+        <td><a href="../filemenu/#Print...">Print</a></td></tr>
     <tr><td>Ctl-Q</td>
         <td><a href="../filemenu/#Quit">Quit</a></td></tr>
     <tr><td>Ctl-R</td>
-        <td><a href="../metricsmenu/#RBearing">Set RBearing</a></td></tr>
+        <td><a href="../metricsmenu/#Set+RBearing...">Set RBearing</a></td></tr>
     <tr><td>Ctl-S</td>
         <td><a href="../filemenu/#Save">Save</a></td></tr>
     <tr><td>Ctl-T</td>
         <td><a href="../hintsmenu/#AutoInstr">AutoInstr</a></td></tr>
     <tr><td>Ctl-U</td>
-        <td><a href="../editmenu/#Unlink">Unlink Reference</a></td></tr>
+        <td><a href="../editmenu/#Unlink+Reference">Unlink Reference</a></td></tr>
     <tr><td>Ctl-V</td>
         <td><a href="../editmenu/#Paste">Paste</a></td></tr>
     <tr><td>Ctl-W</td>
-        <td><a href="../editmenu/#Width">Copy Width</a></td></tr>
+        <td><a href="../editmenu/#Copy+Width">Copy Width</a></td></tr>
     <tr><td>Ctl-X</td>
         <td><a href="../editmenu/#Cut">Cut</a></td></tr>
     <tr><td>Ctl-Y</td>
@@ -61,158 +61,158 @@ title: Hot Keys
     <tr><td>Ctl-Z</td>
         <td><a href="../editmenu/#Undo">Undo</a></td></tr>
     <tr><td>Ctl-\</td>
-        <td><a href="../elementmenu/#Transform">Transform</a></td></tr>
+        <td><a href="../elementmenu/#Transform...">Transform</a></td></tr>
     <tr><td>Ctl-1</td>
-        <td><a href="../pointmenu/#Make-First">Make First</a></td></tr>
+        <td><a href="../pointmenu/#Make+First">Make First</a></td></tr>
     <tr><td rowspan="2">Ctl-2</td>
-        <td><a href="../viewmenu/#px24">24 pixel outline</a></td></tr>
+        <td><a href="../viewmenu/#24+pixel+outline">24 pixel outline</a></td></tr>
     <tr><td><a href="../pointmenu/#Curve">Curve Point</a></td></tr>
     <tr><td rowspan="2">Ctl-3</td>
-        <td><a href="../viewmenu/#px36">36 pixel outline</a></td></tr>
+        <td><a href="../viewmenu/#36+pixel+outline">36 pixel outline</a></td></tr>
     <tr><td><a href="../pointmenu/#Corner">Corner Point</a></td></tr>
     <tr><td rowspan="2">Ctl-4</td>
-        <td><a href="../viewmenu/#px48">48 pixel outline</a></td></tr>
+        <td><a href="../viewmenu/#48+pixel+outline">48 pixel outline</a></td></tr>
     <tr><td><a href="../pointmenu/#Tangent">Tangent Point</a></td></tr>
     <tr><td>Ctl-5</td>
         <td><a href="../viewmenu/#AntiAlias">Anti-Alias</a></td></tr>
     <tr><td>Ctl-6</td>
-        <td><a href="../viewmenu/#FitToEm">Fit To Em</a></td></tr>
+        <td><a href="../viewmenu/#Fit+To+Em">Fit To Em</a></td></tr>
     <tr><td>Ctl-7</td>
-        <td><a href="../viewmenu/#px72">72 pixel outline</a></td></tr>
+        <td><a href="../viewmenu/#72+pixel+outline">72 pixel outline</a></td></tr>
     <tr><td>Ctl-8</td></tr>
     <tr><td>Ctl-9</td>
-        <td><a href="../viewmenu/#px96">96 pixel outline</a></td></tr>
+        <td><a href="../viewmenu/#96+pixel+outline">96 pixel outline</a></td></tr>
     <tr><td>Ctl-0</td>
-        <td><a href="../pointmenu/#AddAnchor">Add Anchor Point...</a></td></tr>
+        <td><a href="../pointmenu/#Add+Anchor+Point...">Add Anchor Point...</a></td></tr>
     <tr><td>Ctl-]</td>
-        <td><a href="../viewmenu/#Next">Next Glyph</a></td></tr>
+        <td><a href="../viewmenu/#Next+Glyph">Next Glyph</a></td></tr>
     <tr><td>Ctl-[</td>
-        <td><a href="../viewmenu/#Prev">Prev Glyph</a></td></tr>
+        <td><a href="../viewmenu/#Prev+Glyph">Prev Glyph</a></td></tr>
     <tr><td rowspan="2">Ctl-.</td>
-        <td><a href="../filemenu/#Execute">Execute Script</a></td></tr>
-    <tr><td><a href="../editmenu/#FirstPt">Select First Point</a></td></tr>
+        <td><a href="../filemenu/#Execute+Script...">Execute Script</a></td></tr>
+    <tr><td><a href="../editmenu/#First+Point">Select First Point</a></td></tr>
     <tr><td>Ctl-,</td>
-        <td><a href="../editmenu/#PointAt">Select Point At</a></td></tr>
+        <td><a href="../editmenu/#Point+At">Select Point At</a></td></tr>
     <tr><td rowspan="2">Ctl-=</td>
-        <td><a href="../viewmenu/#GFAntiAlias">Grid Fit Anti Alias</a></td></tr>
-    <tr><td><a href="../viewmenu/#GFBigge">Bigger Point Size</a></td></tr>
+        <td><a href="../viewmenu/#Anti-Alias">Grid Fit Anti Alias</a></td></tr>
+    <tr><td><a href="../viewmenu/#Bigger+Point+Size">Bigger Point Size</a></td></tr>
     <tr><td rowspan="2">Ctl--</td>
-        <td><a href="../viewmenu/#Smaller">Smaller Pixel Size</a></td></tr>
-    <tr><td><a href="../viewmenu/#GFSmaller">Smaller Point Size</a></td></tr>
+        <td><a href="../viewmenu/#Smaller+Pixel+Size">Smaller Pixel Size</a></td></tr>
+    <tr><td><a href="../viewmenu/#Smaller+Point+Size">Smaller Point Size</a></td></tr>
     <tr><td>Ctl-Shft-A</td>
-        <td><a href="../elementmenu/#Accented">Build Accented Glyph</a></td></tr>
+        <td><a href="../elementmenu/#Build+Accented/Composite+Glyph">Build Accented Glyph</a></td></tr>
     <tr><td>Ctl-Shft-B</td>
-        <td><a href="../elementmenu/#Bitmaps">Bitmaps Available</a></td></tr>
+        <td><a href="../elementmenu/#Bitmap+Strikes+Available...">Bitmaps Available</a></td></tr>
     <tr><td>Ctl-Shft-C</td>
-        <td><a href="../editmenu/#CopyFg">Copy Fg to Bg</a></td></tr>
+        <td><a href="../editmenu/#Copy+Fg+To+Bg">Copy Fg to Bg</a></td></tr>
     <tr><td>Ctl-Shft-D</td>
-        <td><a href="../elementmenu/#Correct">Correct Direction</a></td></tr>
+        <td><a href="../elementmenu/#Correct+Direction">Correct Direction</a></td></tr>
     <tr><td>Ctl-Shft-E</td>
-        <td><a href="../elementmenu/#Expand">Expand Stroke</a></td></tr>
+        <td><a href="../elementmenu/#Expand+Stroke...">Expand Stroke</a></td></tr>
     <tr><td>Ctl-Shft-F</td>
-        <td><a href="../elementmenu/#Font">Font Info</a></td></tr>
+        <td><a href="../elementmenu/#Font+Info">Font Info</a></td></tr>
     <tr><td>Ctl-Shft-G</td>
-        <td><a href="../filemenu/#Generate">Generate Fonts</a></td></tr>
+        <td><a href="../filemenu/#Generate+Fonts...">Generate Fonts</a></td></tr>
     <tr><td>Ctl-Shft-H</td>
         <td><a href="../hintsmenu/#AutoHint">AutoHint</a></td></tr>
     <tr><td>Ctl-Shft-I</td>
-        <td><a href="../filemenu/#Import">Import</a></td></tr>
+        <td><a href="../filemenu/#Import...">Import</a></td></tr>
     <tr><td>Ctl-Shft-J</td>
         <td><a href="../editmenu/#Join">Join</a></td></tr>
     <tr><td>Ctl-Shft-K</td>
         <td><a href="../metricsmenu/#Kern">Auto Kern</a></td></tr>
     <tr><td>Ctl-Shft-L</td>
-        <td><a href="../metricsmenu/#Width">Set Width</a></td></tr>
+        <td><a href="../metricsmenu/#Set+Width...">Set Width</a></td></tr>
     <tr><td>Ctl-Shft-M</td>
         <td><a href="../elementmenu/#Simplify">Simplify</a></td></tr>
     <tr><td>Ctl-Shft-N</td></tr>
     <tr><td>Ctl-Shft-O</td>
-        <td><a href="../elementmenu/#Remove">Remove Overlap</a></td></tr>
+        <td><a href="../elementmenu/#Remove+Overlap">Remove Overlap</a></td></tr>
     <tr><td>Ctl-Shft-P</td></tr>
     <tr><td>Ctl-Shft-Q</td>
         <td><a href="../filemenu/#Close">Close</a></td></tr>
     <tr><td>Ctl-Shft-R</td>
         <td><a href="../filemenu/#Revert">Revert File</a></td></tr>
     <tr><td>Ctl-Shft-S</td>
-        <td><a href="../filemenu/#SaveAs">Save As</a></td></tr>
+        <td><a href="../filemenu/#Save+As...">Save As</a></td></tr>
     <tr><td>Ctl-Shft-T</td>
         <td><a href="../elementmenu/#AutoTrace">AutoTrace</a></td></tr>
     <tr><td>Ctl-Shft-U</td></tr>
     <tr><td>Ctl-Shft-V</td>
-        <td><a href="../editmenu/#PasteInto">Paste Into</a></td></tr>
+        <td><a href="../editmenu/#Paste+Into">Paste Into</a></td></tr>
     <tr><td>Ctl-Shft-W</td>
-        <td><a href="../metricsmenu/#Auto">Auto Width</a></td></tr>
+        <td><a href="../metricsmenu/#Auto+Width...">Auto Width</a></td></tr>
     <tr><td>Ctl-Shft-X</td>
-        <td><a href="../elementmenu/#Add-Extrema">Add Extrema</a></td></tr>
+        <td><a href="../elementmenu/#Add+Extrema">Add Extrema</a></td></tr>
     <tr><td>Ctl-Shft-Y</td></tr>
     <tr><td>Ctl-Shft-Z</td></tr>
     <tr><td>Ctl-Shft-_</td>
-        <td><a href="../elementmenu/#Round">Round to Int</a></td></tr>
+        <td><a href="../elementmenu/#Round+to+Int">Round to Int</a></td></tr>
     <tr><td>Ctl-Shft-!</td></tr>
     <tr><td>Ctl-Shft-@</td>
-        <td><a href="../elementmenu/#Average">Average Points</a></td></tr>
+        <td><a href="../elementmenu/#Average+Points">Average Points</a></td></tr>
     <tr><td>Ctl-Shft-#</td>
-        <td><a href="../elementmenu/#Space-Pts">Space Points</a></td></tr>
+        <td><a href="../elementmenu/#Space+Points">Space Points</a></td></tr>
     <tr><td>Ctl-Shft-%</td>
-        <td><a href="../viewmenu/#32x8">32x8 cell window</a></td></tr>
+        <td><a href="../viewmenu/#32x8+cell+window">32x8 cell window</a></td></tr>
     <tr><td>Ctl-Shft-^</td>
-        <td><a href="../viewmenu/#16x4">16x4 cell window</a></td></tr>
+        <td><a href="../viewmenu/#16x4+cell+window">16x4 cell window</a></td></tr>
     <tr><td>Ctl-Shft-*</td>
-        <td><a href="../viewmenu/#8x2">8x2 cell window</a></td></tr>
+        <td><a href="../viewmenu/#8x2+cell+window">8x2 cell window</a></td></tr>
     <tr><td>Ctl-Shft-}</td>
-        <td><a href="../editmenu/#NPoint">Next Point</a></td></tr>
+        <td><a href="../editmenu/#Next+Point">Next Point</a></td></tr>
     <tr><td>Ctl-Shft-{</td>
-        <td><a href="../editmenu/#PPoint">Prev Point</a></td></tr>
+        <td><a href="../editmenu/#Prev+Point">Prev Point</a></td></tr>
     <tr><td>Ctl-Shft-></td>
-        <td><a href="../viewmenu/#Goto">Goto</a></td></tr>
+        <td><a href="../viewmenu/#Goto+/+Replace+Glyph...">Goto</a></td></tr>
     <tr><td>Ctl-Shft-<</td>
-        <td><a href="../viewmenu/#FindInFV">Find In Font View</a></td></tr>
+        <td><a href="../viewmenu/#Find+In+Font+View">Find In Font View</a></td></tr>
     <tr><td>Ctl-Shft-+</td>
-        <td><a href="../viewmenu/#Bigger">Bigger Pixel Size</a></td></tr>
+        <td><a href="../viewmenu/#Bigger+Pixel+Size">Bigger Pixel Size</a></td></tr>
     <tr><td>Alt-Ctl-A</td>
-        <td><a href="../editmenu/#SelectPoints">Select All Points</a></td></tr>
+        <td><a href="../editmenu/#Select+All+Points+++Refs">Select All Points</a></td></tr>
     <tr><td>Alt-Ctl-C</td>
-        <td><a href="../editmenu/#CopyLookup">Copy Lookup Data</a></td></tr>
+        <td><a href="../editmenu/#Copy+Lookup+Data">Copy Lookup Data</a></td></tr>
     <tr><td>Alt-Ctl-F</td>
         <td><a href="../search/">Find / Replace</a></td></tr>
     <tr><td>Alt-Ctl-G</td>
-        <td><a href="../filemenu/#GenerateMac">Generate Mac Family</a></td></tr>
+        <td><a href="../filemenu/#Generate+Mac+Family...">Generate Mac Family</a></td></tr>
     <tr><td>Alt-Ctl-H</td>
-        <td><a href="../hintsmenu/#Review">Review Hints</a></td></tr>
+        <td><a href="../hintsmenu/#Review+Hints">Review Hints</a></td></tr>
     <tr><td>Alt-Ctl-I</td>
-        <td><a href="../elementmenu/#Dependents">Show Dependencies...</a></td></tr>
+        <td><a href="../elementmenu/#Show+Dependencies">Show Dependencies...</a></td></tr>
     <tr><td>Alt-Ctl-M</td>
         <td><a href="../editmenu/#Elide">Elide Point</a></td></tr>
     <tr><td>Alt-Ctl-P</td>
         <td><a href="../display/">Display</a></td></tr>
     <tr><td>Ctl-Alt-R</td>
-        <td><a href="../filemenu/#RevertGlyph">Revert Glyph</a></td></tr>
+        <td><a href="../filemenu/#Revert+Glyph">Revert Glyph</a></td></tr>
     <tr><td>Alt-Ctl-1</td>
-        <td><a href="../filemenu/#ScriptMenu">Invokes user script</a></td></tr>
+        <td><a href="../filemenu/#Execute+Script...">Invokes user script</a></td></tr>
     <tr><td>Alt-Ctl-2</td>
-        <td><a href="../filemenu/#ScriptMenu">Invokes user script</a></td></tr>
+        <td><a href="../filemenu/#Execute+Script...">Invokes user script</a></td></tr>
     <tr><td>Alt-Ctl-3</td>
-        <td><a href="../filemenu/#ScriptMenu">Invokes user script</a></td></tr>
+        <td><a href="../filemenu/#Execute+Script...">Invokes user script</a></td></tr>
     <tr><td>Alt-Ctl-.</td>
-        <td><a href="../editmenu/#NextContour">First Point, Next Contour</a></td></tr>
+        <td><a href="../editmenu/#First+Point,+Next+Contour">First Point, Next Contour</a></td></tr>
     <tr><td>Alt-Ctl-,</td>
-        <td><a href="../editmenu/#Contours">Points on Selected Contours</a></td></tr>
+        <td><a href="../editmenu/#Points+on+Selected+Contours">Points on Selected Contours</a></td></tr>
     <tr><td>Alt-Ctl--</td>
-        <td><a href="../viewmenu/#Out">Zoom Out</a></td></tr>
+        <td><a href="../viewmenu/#Zoom+Out">Zoom Out</a></td></tr>
     <tr><td>Alt-Ctl-Shft-M</td>
         <td><a href="../editmenu/#Simplify">Simplify More</a></td></tr>
     <tr><td>Alt-Ctl-Shft-K</td>
-        <td><a href="../filemenu/#Merge-feature">Merge Feature Info</a></td></tr>
+        <td><a href="../filemenu/#Merge+Feature+Info...">Merge Feature Info</a></td></tr>
     <tr><td>Alt-Ctl-Shft-I</td>
-        <td><a href="../elementmenu/#CharInfo">Glyph Info</a></td></tr>
+        <td><a href="../elementmenu/#Glyph+Info">Glyph Info</a></td></tr>
     <tr><td>Alt-Ctl-Shft-F</td>
-        <td><a href="../editmenu/#ReplaceRef">Replace With Reference</a></td></tr>
+        <td><a href="../editmenu/#Replace+With+Reference">Replace With Reference</a></td></tr>
     <tr><td>Alt-Ctl-Shift-+</td>
-        <td><a href="../viewmenu/#In">Zoom In</a></td></tr>
+        <td><a href="../viewmenu/#Zoom+In">Zoom In</a></td></tr>
     <tr><td>Escape</td>
-        <td><a href="../editmenu/#Deselect">Deselect All</a></td></tr>
+        <td><a href="../editmenu/#Deselect+All">Deselect All</a></td></tr>
     <tr><td>Ctl-Escape</td>
-        <td><a href="../editmenu/#Invert">Invert Selection</a></td></tr>
+        <td><a href="../editmenu/#Invert+Selection">Invert Selection</a></td></tr>
     <tr><td>Backspace</td>
         <td><a href="../editmenu/#Clear">Clear</a></td></tr>
     <tr><td>Delete</td>
