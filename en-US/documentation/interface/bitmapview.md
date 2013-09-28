@@ -5,12 +5,15 @@ title: Bitmap Character View
 ---
 
 
-  ---------------------------------------------------
-  ![](img/BitmapReference.png)
-   A bitmap glyph composed of two bitmap references
-  ---------------------------------------------------
+[table_of_contents]
 
-![](img/BitmapView.png)
+
+![](/assets/img/windows-BitmapReference.png)
+
+A bitmap glyph composed of two bitmap references
+
+
+![](/assets/img/windows-BitmapView.png)
 
 The bitmap view is vaguely similar to the [outline view](../charview/).
 It is also designed for editing glyph shapes, but here bitmap glyph
@@ -32,20 +35,20 @@ outline of the glyph and a grid.
 As in the outline view you may choose to dock the palettes in the window
 with View-\>Palettes-\>Dock Palettes.
 
-Layers
-------
 
-![](img/bvlayers.png)
+### Layers
+
+![](/assets/img/windows-bvlayers.png)
 
 There are three layers to the bitmap view, the bitmap itself, the
 outline glyph and the grid lines. You are always editing in the bitmap
 layer so there is no control over what layer is editable, just which
 ones are visible.
 
-Tools
------
 
-![](img/bvtools.png)
+### Tools
+
+![](/assets/img/windows-bvtools.png)
 
 There are only six tools on the bitmap palette (there are some others
 available by right clicking in the view, this generates a popup menu.
@@ -73,7 +76,7 @@ The four-arrow tool moves the entire bitmap.
 
 The hand scrolls the screen.
 
-### Additional tools from the popup menu.
+#### Additional tools from the popup menu.
 
 -   Draw an open rectangle
 -   Draw a filled rectangle
@@ -89,10 +92,10 @@ The hand scrolls the screen.
     opened a bdf file directly).
      It sets the width (glyph advance) of the bitmap.
 
-Anti-Aliased Glyphs
--------------------
 
-![](img/greymapedit.png)
+### Anti-Aliased Glyphs
+
+![](/assets/img/windows-greymapedit.png)
 
 This window may also be used to edit anti-aliased
 glyphs (glyphs which are represented by shades of grey rather than by
@@ -114,20 +117,19 @@ There are two ways to select the drawing color:
 -   Use the [Shades](#Shades) palette.
 
 
-Shades
-------
+### Shades
 
-![](img/Shades.png)
- Shades of grey available
- with 8 bits/pixel
+![](/assets/img/windows-Shades.png)
 
-![](img/Shades4.png)
- Shades of grey available
- with 4 bits/pixel
+Shades of grey available with 8 bits/pixel
 
-![](img/Shades2.png)
- Shades of grey available
- with 2 bits/pixel
+![](/assets/img/windows-Shades4.png)
+
+Shades of grey available with 4 bits/pixel
+
+![](/assets/img/windows-Shades2.png)
+
+Shades of grey available with 2 bits/pixel
 
 The shades palette is only visible in an anti-aliased glyph. The palette
 displays all the possible shades of grey available to this glyph. Glyphs
@@ -138,6 +140,3 @@ new color, move the cursor to the desired color and click the mouse.
 
 As the cursor moves over the bitmap in the bitmap view, the color under
 the cursor will be outlined in white.
-
--- [Prev](../charview/) -- [TOC](/en-US/tutorials/overview/) --
-[Next](../metricsview/) --
