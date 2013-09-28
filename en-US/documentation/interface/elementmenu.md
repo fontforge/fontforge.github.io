@@ -200,7 +200,7 @@ bitmap and outline views you can regenerate the current glyph. You can
 pick what pixel sizes should be regenerated too (unlike the above
 command, removing a bitmap size from the regenerate list will not delete
 it). As before, if you wish to change a greymap you should refer to it by
-<pixel-size\>@<bits-per-pixel\>.
+`pixel-size@bits-per-pixel`.
 
 
 #### Remove Bitmap Glyphs...
