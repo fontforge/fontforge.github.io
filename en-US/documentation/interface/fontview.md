@@ -5,7 +5,10 @@ title: The Font View
 ---
 
 
-![](img/AmbrosiaFV.png)
+[table_of_contents]
+
+
+![](/assets/img/windows-ambrosiafv.png)
 
 The font view is a list of all the glyphs available in the given font.
 
@@ -27,11 +30,12 @@ show the glyph's name, unicode code point or encoding (in hex). In small
 views (24 pixel view for instance) there may not be room for the entire
 label, and it will appear truncated.
 
-![](img/fvOutOfDateHinting.png)If a glyph has been changed since it was last
-hinted (PostScript), or if a glyph contains contours but has no
-instructions (TrueType), then its label will be edged with blue bars. If
-the glyph has out of date instructions (TrueType), then its label will
-be edged with red.
+![](/assets/img/windows-fvOutOfDateHinting.png)
+
+If a glyph has been changed since it was last hinted (PostScript), or if
+a glyph contains contours but has no instructions (TrueType), then its label
+will be edged with blue bars. If the glyph has out of date instructions
+(TrueType), then its label will be edged with red.
 
 If one of your glyphs has something in its background layer then this
 will be indicated visually (currently by darkening the background of the
@@ -70,26 +74,37 @@ the font view. (View -\> Show H Metrics). If you do so, I suggest
 viewing the font at a large pixel size, otherwise the window looks too
 confusing.
 
-![](img/FVHMetrics.png)
-
-![](img/FVVMetrics.png)
-
-A 96 pixel display showing the various horizontal metric lines.
- The blue line is the baseline
- The small red tick on the left marks the glyph origin.
+<table class="table" border>
+    <tr>
+        <td>
+            <img src="/assets/img/windows-FVHMetrics.png" alt="">
+        </td>
+        <td>
+            <img src="/assets/img/windows-FVVMetrics.png" alt="">
+        </td>
+    </tr>
+    <tr>
+        <td>
+A 96 pixel display showing the various horizontal metric lines.<br />
+ The blue line is the baseline<br />
+ The small red tick on the left marks the glyph origin.<br />
  The green line on the right shows where the advance width is while the
 bottom green line shows how long it is. (normally you will not display
-both at once)
+both at once)<br />
  The glyph is centered horizontally, and the font ascent is the top of
 the box displaying it, while the descent is the bottom.
-
-A 96 pixel display showing the various vertical metric lines.
- The blue line down the center is the vertical baseline.
+        </td>
+        <td>
+A 96 pixel display showing the various vertical metric lines.<br />
+ The blue line down the center is the vertical baseline.<br />
  The red bar at the top (over writing the ascent line) is the vertical
-origin.
+origin.<br />
  The green line at the bottom shows where the vertical advance  is while
 the green line on the right shows how long it is.  (normally you will
 not display both at once)
+        </td>
+    </tr>
+</table>
 
 You may select any number of glyphs in the font by dragging through
 them. You may use shift-click to select (or deselect) additional glyphs.
@@ -99,17 +114,19 @@ remembered and a few commands will make use of that.
 
 You may drag and drop selected glyphs into
 
-The metrics view
+#### The metrics view
 
 Where they will be inserted into the display before the selected glyph
 (selected in the metrics view) in the order in which you selected them
 in the font view.
 
-The outline view
+
+#### The outline view
 
 Where they will appear as references
 
-The glyph info substitutions/ligature dlg
+
+#### The glyph info substitutions/ligature dlg
 
 Where they will appear as a substitution or ligature.
 
@@ -157,8 +174,8 @@ font will be named), its encoding value, its unicode encoding value, or
 
 Pressing the right mouse button invokes a popup menu.
 
-Encodings and Character Sets
-----------------------------
+
+### Encodings and Character Sets
 
 A Character Set is a set of characters (for example all the letters of
 the alphabet would be one character set). An encoding is a function that
@@ -271,14 +288,14 @@ Plane](http://www.unicode.org/roadmaps/sip.html), U+20000-U+2ffff), and
 Plane 14 ([SSP Supplementary Special-purpose
 Plane](http://www.unicode.org/roadmaps/ssp.html), U+e0000-U+effff).
 
-CID keyed fonts
----------------
+
+### CID keyed fonts
 
 The standard mechanisms that postscript provides work reasonably well
 for alphabets and syllabaries, but the massive number of characters
 needed for CJK (Chinese, Japanese or Korean) fonts require more complex
 machinations. Adobe's current solution is the [CID-keyed
-font](../cidmenu/#CID), a font consisting of several subfonts each a
+font](../cidmenu/), a font consisting of several subfonts each a
 collection of glyph descriptions with no encoding imposed on them and no
 names given to them.
 
@@ -324,13 +341,13 @@ look like:
 of memory in FontForge. I am able to work on many of them on my 256M
 machine with 384M of swap space.
 
-The [Remove Undoes](../editmenu/#Remove-Undoes)command will allow you
+The [Remove Undoes](../editmenu/#Remove+Undoes)command will allow you
 to free up memory if you think you may be running short. FontForge is
 not always able to protect itself against running out of memory,
 sometimes the OS just sends it a SIGKILL signal.
 
-Multiple Master Fonts
----------------------
+
+### Multiple Master Fonts
 
 If the font is a [Multiple Master](../multiplemaster/#MM)Font there
 will again be several subfonts only this time all the subfonts contain
@@ -339,8 +356,7 @@ font family. The [MM](../mmmenu/) menu allows you to control which
 style of the family is visible in the font view, and provides a few
 other commands for manipulating multiple masters.
 
-Vertical Metrics
-----------------
+### Vertical Metrics
 
 CJK fonts generally should have vertical metrics. Latin (Cyrillic,
 Greek) fonts generally should not. If FontForge reads in a font with
@@ -362,6 +378,3 @@ metrics just as you adjust the horizontal metrics.
 
 You can view the vertical metrics in the font view just as you can the
 horizontal metrics with View-\>Show V Metrics.
-
--- [Prev](editexample.html) -- [TOC](/en-US/tutorials/overview/) --
-[Next](../charview/) --
