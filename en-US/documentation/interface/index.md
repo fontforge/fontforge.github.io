@@ -31,3 +31,4 @@ title: FontForge Interface
     - [Font Info](fontinfo)
         - [Histogram Dialog](histogram)
     - [Glyph Information](charinfo)
+    - [Point, Reference Information](getinfo)

@@ -1,23 +1,28 @@
 ---
 published: true
 layout: default
-title: Get Info
+title: Point, Reference Information
 ---
+
+[table_of_contents]
+
 
 In the Outline View the Get Info command can generate one of four
 different dialogs depending on what is selected. If a single thing is
 selected, and that thing is a point then the [point
-info](#Point)dialog is brought up, if it is a reference then
-the [reference dialog](#GetReferenceInfo) is brought up, if
-it is a background image then the [image dialog](#Image) is
+info](#Point+Info) dialog is brought up, if it is a reference then
+the [reference dialog](#Reference+Info) is brought up, if
+it is a background image then the [image dialog](#Image+Info) is
 brought up. If it is an anchor point then the [anchor
-point](#Anchors)dialog is brought up.
+point](#Anchor+Points+Info) dialog is brought up.
 
-Point Info
-----------
 
-![](img/pointinfo.png) This shows information about the current point. The
-Base position is where the point itself is.
+### Point Info
+
+![](/assets/img/dialogs1-pointinfo.png)
+
+This shows information about the current point. The Base position is 
+where the point itself is.
 
 The Next CP shows both the location of the next control point, and the
 offset to that point from the base (and whether this setting is the
@@ -56,21 +61,25 @@ The point itself will be drawn in red, the previous control point will
 be drawn in magenta and the next control point will be drawn in dull
 cyan.
 
-![](img/pointinfo-interp.png)When editing truetype interpolated points it is
-more important to view the control points and let the base point
-continue to be interpolated. The \<\> Normal and \<\>Interpolated radio
-buttons control which view is active.
+![](/assets/img/dialogs1-pointinfo-interp.png)
 
-Pressing \<\> Interpolated may move the point to position it correctly
+When editing truetype interpolated points it is more important to view 
+the control points and let the base point continue to be interpolated.
+The Normal and Interpolated radio buttons control which view is active.
+
+Pressing Interpolated may move the point to position it correctly
 for interpolation.
 
-### ![](img/hintmaskinfo.png)Hint Mask
+### Hint Mask
 
-![](img/charwithhintmask.png)If you want to control what hints are active at
-a given point (and at all subsequent points until an new hintmask is
-given) you can use the hint mask pane. This provides you with a list of
-all hints in the current glyph, you should select the ones which you
-want active.
+![](/assets/img/dialogs1-hintmaskinfo.png)
+
+![](/assets/img/dialogs1-charwithhintmask.png)
+
+If you want to control what hints are active at a given point (and at all
+subsequent points until an new hintmask is given) you can use the hint
+mask pane. This provides you with a list of all hints in the current glyph,
+you should select the ones which you want active.
 
 As you select hints, the glyph view will darken those hints so you can
 see what you've selected.
@@ -88,23 +97,26 @@ Sadly the direction in which hintmasks apply is backwards from what you
 would expect (the hintmask applies to this point an all previous points
 on the contour, rather than all subsequent ones).
 
+
 #### Active Hints
 
 This looks just like the hint mask, except you cannot change anything it
 in. It shows you what hints are currently selected at this point. If a
 point has a hint mask then the two will be identical.
 
-![](img/spiropointinfo.png)Spiro Point Info
----------------------------------------
+
+### Spiro Point Info
+
+![](/assets/img/dialogs1-spiropointinfo.png)
 
 If you are editing in spiro (clothoid) mode rather than Bezier mode,
 then there are no control points and the get info dialog is much
 simpler. Just the location of the point and the point type.
 
 
+### Anchor Points Info
 
-![](img/agetinfo.png)Anchor Points Info
------------------------------------
+![](/assets/img/dialogs1-agetinfo.png)
 
 This dialog shows the selected [anchor point](/en-US/tutorials/overview/#Anchors)
 with the anchor class, location, type and (for ligatures) the ligature
@@ -117,11 +129,12 @@ In a truetype font you can force the anchor to track a contour point in
 the truetype glyph. This point can then be manipulated with truetype
 instructions to grid fit it properly with the current rasterization.
 
-Anchor points may also be created with the [Point-\>Add
-Anchor](../pointmenu/#AddAnchor) command. 
+Anchor points may also be created with the [Point->Add Anchor](../pointmenu/#Add+Anchor+Point...) command. 
 
-![](img/rgetinfo.png)Reference Info
--------------------------------
+
+### Reference Info
+
+![](/assets/img/dialogs1-rgetinfo.png)
 
 This dialog shows the name of the selected reference, its encoding in
 the font and its postscript transformation matrix. You may alter the
@@ -130,7 +143,8 @@ transformation matrix if you desire.
 The transformation matrix maps points in the glyph being refered to into
 their location in the current glyph: 
 
-`    xcurrent = TM[1,1]*xref +   TM[2,1]*yref + TM[3,1]       ycurrent = TM[1,2]*yref +   TM[2,2]*yref + TM[3,2]`
+	xcurrent = TM[1,1]*xref +   TM[2,1]*yref + TM[3,1]
+	ycurrent = TM[1,2]*yref +   TM[2,2]*yref + TM[3,2]
 
 The Use My Metrics checkbox is useful in truetype fonts where it forces
 the metrics (width) of a composite glyph (for exampe acute a) is the
@@ -159,7 +173,7 @@ composite is the one which is drawn first, not the one which is added
 first. The Base numbering scheme is from the full composite, while the
 reference point is numbered by the current reference. The current
 reference must be drawn after the base point. You may use
-[Element-\>Order](../elementmenu/#Order) to reorder the references.
+[Element->Order](../elementmenu/#Order) to reorder the references.
 
 (You should probably not set Round To Grid when doing point matching)
 
@@ -169,17 +183,9 @@ current location and size of the reference.
 The [Show] button will open a glyph outline view showing the glyph being
 referred to.
 
-Image Info
-----------
+
+### Image Info
 
 This dialog gives the offset to the lower left corner of the image and
 the scale factors applied to the image. Currently you may not alter
 anything here, it is purely informational.
-
-See Also:
-
--   [The font info dialog](../fontinfo/)
--   [The glyph info dialog](../charinfo/)
-
--- [Prev](../elementmenu/) -- [TOC](/en-US/tutorials/overview/) --
-[Next](../elementmenu/) --
