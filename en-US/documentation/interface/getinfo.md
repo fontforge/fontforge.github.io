@@ -70,6 +70,7 @@ The Normal and Interpolated radio buttons control which view is active.
 Pressing Interpolated may move the point to position it correctly
 for interpolation.
 
+
 ### Hint Mask
 
 ![](/assets/img/dialogs1-hintmaskinfo.png)

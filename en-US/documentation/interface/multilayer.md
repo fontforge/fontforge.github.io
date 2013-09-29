@@ -4,6 +4,10 @@ layout: default
 title: Multi Layered Editing of Type3 and SVG fonts
 ---
 
+
+[table_of_contents]
+
+
 Normal builds of fontforge do not have this mode enabled (it can eat up
 a lot of memory), if you wish to edit type3 fonts then configure
 fontforge with
@@ -18,9 +22,10 @@ information on each stroke and fill command. Each command is placed in a
 separate layer and may be edited in isolation.
 
 A new font may be converted to a multi-layered font by selecting
-Element-\>Font Info-\>Layers-\>Multi Layered Font.
+Element->Font Info->Layers->Multi Layered Font.
 
 ![](/assets/img/windows-charview-multilayer.png)
+
 
 ### Multi Layered editing in the outline view
 
@@ -101,6 +106,7 @@ the image (Transparent images are not supported here).
 
 FontForge will not skew, flip or rotate images.
 
+
 ### Clipping Path
 
 Each layer in a Type 3 font may have its own clipping path. A clipping
@@ -161,6 +167,7 @@ In an additional level of complexity a contour need not be filled (or
 stroked) with a constant color, you can provide a repeating pattern, or
 a gradual change from one color to another (a gradient).
 
+
 ### Gradients
 
 ![](/assets/img/windows-GradientDlg.png)
@@ -182,6 +189,7 @@ position (and color) is the center point and colors change in concentric
 circles until the final radius (and final color) is attained.
 
 ![](/assets/img/windows-RadialGradient.png) ![](/assets/img/windows-RadialGradientDlg.png)
+
 
 ### Patterns
 
