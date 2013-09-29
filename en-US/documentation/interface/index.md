@@ -27,3 +27,7 @@ title: FontForge Interface
     - [Type3 Glyphs](multilayer)
     - [Bitmap Glyph](bitmapview)
     - [Metrics](metricsview)
+- [Dialogs 1](fontinfo)
+    - [Font Info](fontinfo)
+        - [Histogram Dialog](histogram)
+    - [Glyph Information](charinfo)

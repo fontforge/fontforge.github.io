@@ -4,47 +4,22 @@ layout: default
 title: Font Info
 ---
 
-![](img/fontinfo.png)
+
+[table_of_contents]
+
+
+![](/assets/img/dialogs1-fontinfo.png)
 
 The Font Info dialog is available from all views. It allows you to name
 your font and various other useful bits of information. In a [CID keyed
-font](../fontview/#CID), things are more complex. Each CID keyed font
-is composed of man sub-fonts; this command works on the current sub-font
-while there is a [separate command](../cidmenu/#FontInfo) to access the
-information for the font as a whole -- that dialog looks the same. The
-dialog is composed of many different sub dialogs.
+font](../fontview/), things are more complex. Each CID keyed font is 
+composed of man sub-fonts; this command works on the current sub-font 
+while there is a [separate command](../cidmenu/#CID+Font+Info) to access 
+the information for the font as a whole -- that dialog looks the same. 
+The dialog is composed of many different sub dialogs.
 
--   [Names](#Names)
--   [General](#PS-General)
--   [Layers](#Layers)
--   [PostScript Unique IDs](#PSUID)
--   [PostScript Private Dictionary](#Private)
--   [OS/2](#TTF-Values)
-    -   [OS/2 Misc](#TTF-Values)
-    -   [OS/2 Metrics](#TTF-Metrics)
-    -   [OS/2 Sub/Superscripts](#SubSuper)
-    -   [OS/2 Panose](#Panose)
-    -   [OS/2 Charsets](#Charsets)
 
--   [TTF Names](#TTF-Names)
--   [StyleSet Names](#SSNames)
--   [Grid Fit](#gasp)
--   [TeX](#TeX)
--   [Size](#Size)
--   [Comment](#Comment)
--   [FONTLOG](#FontLog)
--   [Mark Classes](#MarkClass)
-    -   [Mark Sets](#MarkSets)
-
--   [Lookups](#Lookups)
--   [WOFF](#WOFF)
--   [Mac Style](#Mac-Style)
--   [Mac Features](#Mac-Features)
--   [Dates](#Dates)
--   [Unicode Ranges](#Unicode)
-
-Names
------
+### Names
 
 PostScript fonts have several different names, but basically there are
 two important ones: the family name (like Times) and the fontname (which
@@ -81,8 +56,10 @@ Names](#TTF-Names) section. If nothing is specified in that
 section then the names specified here will be used by default in ttf
 files.
 
-![](img/fontinfo-general.png)General
---------------------------------
+
+### General
+
+![](/assets/img/dialogs1-fontinfo-general.png)
 
 This sub dialog contains a rather random collection of settings.
 
@@ -127,8 +104,10 @@ To handle this FontForge has the concept of "Interpretation".
 When you create a new glyph in a font, fontforge will assign it a name
 based on the current [NameLists](../encodingmenu/#NameLists).
 
-![](img/fontinfo-layers.png)Layers
-------------------------------
+
+### Layers
+
+![](/assets/img/dialogs1-fontinfo-layers.png)
 
 You may control how many and what types of layers are available in your
 font.
@@ -142,17 +121,16 @@ general, often all the layers will use the same type of splines (so
 there are radio buttons to make that easy), but it isn't required each
 layer may be in its own format.
 
-If you mark a layer as quadratic (or check
-`[*] All layers Quadratic)` then FontForge will use quadratic
-[Bézier](/en-US/tutorials/overview/#spline) splines for this layer rather than cubic
-Béziers, this means that FontForge will be using the native spline
-format of truetype rather than postscript (or opentype). When FontForge
-generates a font it will convert from whatever format is used internally
-to whatever format is required for the font, so there will be no problem
-if this is set incorrectly, but setting it correctly for your font means
-you get a clearer idea of what the outlines will look like. I find
-quadratic splines harder to edit with because each spline is less
-flexible, but the advantage of actually seeing what your truetype font
+If you mark a layer as quadratic (or check `[*] All layers Quadratic`)
+then FontForge will use quadratic [Bézier](/en-US/tutorials/overview/#spline) 
+splines for this layer rather than cubic Béziers, this means that 
+FontForge will be using the native spline format of truetype rather than 
+postscript (or opentype). When FontForge generates a font it will convert 
+from whatever format is used internally to whatever format is required for 
+the font, so there will be no problem if this is set incorrectly, but setting 
+it correctly for your font means you get a clearer idea of what the outlines 
+will look like. I find quadratic splines harder to edit with because each spline 
+is less flexible, but the advantage of actually seeing what your truetype font
 will look like may outweigh that.
 
 You may also mark a layer as a foreground layer or a background layer.
@@ -160,8 +138,10 @@ Background layers can hold images. Pasting into an empty glyph in a
 background layer will not set the width. Splines in background layers do
 not make a glyph worth outputting.
 
-![](img/fontinfo-psuid.png)PostScript Unique ID
--------------------------------------------
+
+### PostScript Unique ID
+
+![](/assets/img/dialogs1-fontinfo-psuid.png)
 
 **NOTE:** [Adobe now says](http://permalink.gmane.org/gmane.comp.fonts.fontforge.user/173) that both XUID and UniqueID
 are unnecessary.
@@ -185,15 +165,17 @@ and been assigned a real UniqueID then you may use this field, otherwise
 leave it blank. (The UniqueID field is only meaningful in PostScript
 fonts)
 
-Private -- (font-wide postscript hinting)
------------------------------------------
 
-![](img/fontinfo-private.png)This sub-dialog shows most entries in the
-font's Private dictionary. The interesting things in this dictionary are
-mostly concerned with hints appropriate for the entire font. I shall not
-go into detail about the meanings of the various entries, that is best
-understood by reading [Adobe's Type1
-specification](http://partners.adobe.com/asn/developer/PDFS/TN/T1_SPEC.PDF).
+### Private -- (font-wide postscript hinting)
+
+
+![](/assets/img/dialogs1-fontinfo-private.png)
+
+This sub-dialog shows most entries in the font's Private dictionary. 
+The interesting things in this dictionary are mostly concerned with hints
+appropriate for the entire font. I shall not go into detail about 
+the meanings of the various entries, that is best understood by reading 
+[Adobe's Type1 specification](http://partners.adobe.com/asn/developer/PDFS/TN/T1_SPEC.PDF).
 
 Don't try to change these until you understand what they mean.
 
@@ -241,8 +223,10 @@ UniqueID. They perform the same function but are formatted differently).
 Some of these entries are only meaningful for PostScript fonts, others
 will be used by the truetype autoinstructor.
 
-![](img/fontinfo-ttfvals.png)OS/2
------------------------------
+
+### OS/2
+
+![](/assets/img/dialogs1-fontinfo-ttfvals.png)
 
 This sub dialog contains settings important for Windows platforms, most
 of these settings live in the 'OS/2' table of a truetype or opentype
@@ -283,7 +267,10 @@ These entries are only meaningful in TrueType and OpenType fonts (though
 the Embeddable entry (generally called FSType) will be set on CID keyed
 fonts even if they are not in an OpenType wrapper.
 
-### `GSUB/morx` Ordering
+
+#### GSUB/morx Ordering
+
+![](/assets/img/dialogs1-GSUB-Order.png)
 
 This dialog allows you to control the order features in which are to be
 executed by the word processing program. If you have loaded an opentype
@@ -293,14 +280,16 @@ be appropriate). You may select a feature name and use the buttons to
 move it up and down in the list. Things at the top of the list are
 executed first, things at the bottom last.
 
-**Caveat:**Although the OpenType spec claims that the execution of
+**Caveat:** Although the OpenType spec claims that the execution of
 features (actually lookups) will be ordered by their appearence in the
 lookup table, MicroSoft claims that they will apply features in the
 order that they think best. So the order specified in the font may be
 ignored.
 
-![](img/fontinfo-ttfmetrics.png)OS/2 Metrics
-----------------------------------------
+
+#### OS/2 Metrics
+
+![](/assets/img/dialogs1-fontinfo-ttfmetrics.png)
 
 The Windows Ascent and Descent fields are badly defined in the OpenType
 spec, which says that they should express the maximum range of the
@@ -352,17 +341,18 @@ spacing. They behave very much the way the Win Ascent & Descent behave
 (they are based on bounding box values). And the 'hhea' table has its
 own line gap field.
 
-And if your font has vertical metrics enabled (See
-[General](#PS-General) above) you will be able to set the
-default spacing between vertical columns of text. (the equivalent to
-LineGap in vertical text).
+And if your font has vertical metrics enabled (See [General](#PS-General)
+above) you will be able to set the default spacing between vertical 
+columns of text. (the equivalent to LineGap in vertical text).
 
-[See the FAQ](/about/faq/#linespace)for a discussion on the complexities
+[See the FAQ](/about/faq/#linespace) for a discussion on the complexities
 involved in setting the line spacing. [The 'BASE' table](../baseline/)
 provides a more precise method for setting line spacing.
 
-![](img/fontinfo-subsup.png)OS/2 Sub/Superscripts
----------------------------------------------
+
+#### OS/2 Sub/Superscripts
+
+![](/assets/img/dialogs1-fontinfo-subsup.png)
 
 The OS/2 table also contain information on scaling and positioning
 subscripts and superscripts.
@@ -373,8 +363,10 @@ output (if nothing significant changes, it will use the values shown
 here). If you want control of these values, turn off the checkbox and
 the text fields will be enabled for you to change.
 
-![](img/fontinfo-panose.png)Panose
-------------------------------
+
+#### Panose
+
+![](/assets/img/dialogs1-fontinfo-panose.png)
 
 This sub-dialog allows you to describe your font in 10 different
 dimensions. The exact meanings of many of these entries vary from script
@@ -392,8 +384,10 @@ values manually.
 
 These entries are only meaningful for TrueType, OpenType and SVG fonts.
 
-![](img/fontinfo-charsets.png)Charsets
-----------------------------------
+
+### Charsets
+
+![](/assets/img/dialogs1-fontinfo-charsets.png)
 
 The OS/2 table contains two fields which give some information about the
 characters in the font. Windows is very picky about using fonts if the
@@ -404,8 +398,10 @@ Windows to use a font with an incomplete code page.
 
 These entries are only meaningful for TrueType, and OpenType fonts.
 
-![](img/fontinfo-ttfname.png)TTF Names
-----------------------------------
+
+### TTF Names
+
+![](/assets/img/dialogs1-fontinfo-ttfname.png)
 
 TrueType (and OpenType) fonts are allowed to have different names in
 different languages. So a French user might see CaslonItalic displayed
@@ -440,6 +436,8 @@ language of the special English strings mentioned above).
 You may change the string type in a similar manner, again you may not
 change the special English strings.
 
+![](/assets/img/dialogs1-fontinfo-ttfname-bigedit.png)
+
 If you click with the right button on a string you will bring up a
 different popup menu which will allow you to:
 
@@ -450,8 +448,7 @@ different popup menu which will allow you to:
 -   Edit a string in a larger window.
 
 If you click with the left button on a string value you may edit that
-string in line, if it is small enough,
-![](img/fontinfo-ttfname-bigedit.png)otherwise in a larger window.
+string in line, if it is small enough, otherwise in a larger window.
 
 If you wish to add a new string, click on the \<New\> entry at the
 bottom. You will be given the standard language popup and it will create
@@ -459,100 +456,60 @@ a new string for you.
 
 The various strings and a brief description of their meanings are:
 
-Copyright
+- **Copyright**  
+    Allows you to specify the copyright message
+- **Family**  
+    The font's family name
+- **Styles (SubFamily)**  
+    This should (in English) have values like "BoldItalicCondensed". This is
+    the most likely string to change in different languages.
+- **Fullname**  
+    The concatenation of the Family name and the Styles name
+- **UniqueID**  
+    This is a string that uniquely identifies the font in a human readable
+    fashion. Its format is quite different from postscript's UniqueID and
+    FontForge will create an appropriate string if you don't specify one
+    (rather than copying from postscript).
+- **Version**  
+    A string containing the version number of the font.
+- **PostScript Name**  
+    (FontForge will not let you set this directly. It will be set
+    automatically to the postscript fontname, only one instance of this tag
+    is allowed in the font and it must be ASCII)
+- **Trademark**  
+    A string containing any trademark information for the font.
+- **Manufacturer**  
+    The name of the company that distributes the font.
+- **Designer**  
+    The name of the person who designed the font.
+- **Descriptor**  
+    A description of the font and its characteristics.
+- **VendorURL**  
+    An URL pointing to the font's vendor.
+- **DesignerURL**  
+    An URL (often an e-mail address) pointing to the font's designer
+- **License**  
+    A string describing the license terms under which the font is marketed.
+    If you want to use the [SIL Open Font License](http://scripts.sil.org/OFL/),
+    there is a button at the bottom of the dialog which will add that directly
+    (so you don't need to type it in).
+- **License URL**  
+    An URL pointing to a page describing the terms of the license
+- **Preferred Family**  
+    This is to get around a quirk of windows where only four Style names are
+    allowed per family, so font families with more than four styles would
+    get different family names above, but the preferred family name would be
+    the same. This should only be specified if it differs from the family
+- **Preferred Style**  
+    This is similar to the above, except it applies to the style.
+- **Compatible Full**  
+    This is to get around a quirk on the Mac.
+- **Sample Text**  
+    Whatever.
 
-Allows you to specify the copyright message
-
-Family
-
-The font's family name
-
-Styles (SubFamily)
-
-This should (in English) have values like "BoldItalicCondensed". This is
-the most likely string to change in different languages.
-
-Fullname
-
-The concatenation of the Family name and the Styles name
-
-UniqueID
-
-This is a string that uniquely identifies the font in a human readable
-fashion. Its format is quite different from postscript's UniqueID and
-FontForge will create an appropriate string if you don't specify one
-(rather than copying from postscript).
-
-Version
-
-A string containing the version number of the font.
-
-PostScript Name
-
-(FontForge will not let you set this directly. It will be set
-automatically to the postscript fontname, only one instance of this tag
-is allowed in the font and it must be ASCII)
-
-Trademark
-
-A string containing any trademark information for the font.
-
-Manufacturer
-
-The name of the company that distributes the font.
-
-Designer
-
-The name of the person who designed the font.
-
-Descriptor
-
-A description of the font and its characteristics.
-
-VendorURL
-
-An URL pointing to the font's vendor.
-
-DesignerURL
-
-An URL (often an e-mail address) pointing to the font's designer
-
-License
-
-A string describing the license terms under which the font is marketed.
- If you want to use the [SIL Open Font
-License](http://scripts.sil.org/OFL/), there is a button at the bottom
-of the dialog which will add that directly (so you don't need to type it
-in).
-
-License URL
-
-An URL pointing to a page describing the terms of the license
-
-Preferred Family
-
-This is to get around a quirk of windows where only four Style names are
-allowed per family, so font families with more than four styles would
-get different family names above, but the preferred family name would be
-the same. This should only be specified if it differs from the family
-
-Preferred Style
-
-This is similar to the above, except it applies to the style.
-
-Compatible Full
-
-This is to get around a quirk on the Mac.
-
-Sample Text
-
-Whatever.
-
-These are described in the [original true type
-docs](http://fonts.apple.com/TTRefMan/RM06/Chap6name.html), but they
-apply to [open
-type](http://partners.adobe.com/asn/tech/type/opentype/recom.jsp) as
-well.
+These are described in the [original true type docs](http://fonts.apple.com/TTRefMan/RM06/Chap6name.html), 
+but they apply to [opentype](http://partners.adobe.com/asn/tech/type/opentype/recom.jsp)
+as well.
 
 These settings specify strings for the windows platform with unicode
 encoding.
@@ -572,8 +529,10 @@ for French, "FettKursiv" for German, "NigritaCursiva" for Spanish, etc.
 
 These names are only meaningful for TrueType and OpenType fonts.
 
-![](img/fontinfo-ssnames.png)StyleSet Names
----------------------------------------
+
+### StyleSet Names
+
+![](/assets/img/dialogs1-fontinfo-ssnames.png)
 
 The OpenType features 'ss01'-'ss20' are magic, and you are allowed to
 provide more interesting names for them than the default "Style Set
@@ -581,8 +540,10 @@ provide more interesting names for them than the default "Style Set
 the various features. It is very similar to, though less complicated
 than, the previous pane.
 
-![](img/fontinfo-gasp.png)Grid Fit ('gasp' table)
----------------------------------------------
+
+### Grid Fit ('gasp' table)
+
+![](/assets/img/dialogs1-fontinfo-gasp.png)
 
 The TrueType 'gasp' table gives you control over whether the rasterizer
 should do grid-fitting or anti-aliasing at any given pixel size. Note
@@ -613,8 +574,10 @@ In the table above:
 -   All pixel sizes above 16 will be both grid-fit and anti-aliased, and
     will have Cleartype Symetric Smoothing done.
 
-![](img/fontinfo-tex.png)TeX
-------------------------
+
+### TeX
+
+![](/assets/img/dialogs1-fontinfo-tex.png)
 
 This allows you to set the TeX font parameters (which are described in
 Appendix F, pp 98-100 of the MetaFont Book). There seem to be 3
@@ -628,8 +591,10 @@ unreasonable**.
 These values are stored in tfm files (should you generate a tfm file
 with your font).
 
-![](img/fontinfo-size.png)Size
---------------------------
+
+### Size
+
+![](/assets/img/dialogs1-fontinfo-size.png)
 
 This allows you to set the design size of a font, the design range, and
 provide a style name for this class of font.
@@ -645,12 +610,10 @@ space around them, otherwise the letters would appear too far apart.
 this problem. This dialog provides another. Suppose you have a series of
 font-faces designed for different point-sizes.
 
-  -------------------------- ---------
-  Ambrosia-Regular-Small     \<9pt
-  Ambrosia-Regular-Text      9-13pt
-  Ambrosia-Regular-Heading   14-23pt
-  Ambrosia-Regular-Display   \>=24pt
-  -------------------------- ---------
+    Ambrosia-Regular-Small     \<9pt
+    Ambrosia-Regular-Text      9-13pt
+    Ambrosia-Regular-Heading   14-23pt
+    Ambrosia-Regular-Display   \>=24pt
 
 Then you would fill in this dialog to allow the font system to figure
 out which font was appropriate for which point size. The dialog displays
@@ -673,8 +636,10 @@ field is specified, in the other all the fields must be specified. This
 means that if you want to supply a design range you are also required to
 provide a style id and name.
 
-![](img/fontinfo-comment.png)Comment
---------------------------------
+
+### Comment
+
+![](/assets/img/dialogs1-fontinfo-comment.png)
 
 This allows you to keep track of arbitrary comments inside your font
 database. It does not correspond to any postscript or truetype entity.
@@ -685,20 +650,18 @@ Various font formats allow a random comment to be placed in the font,
 but no format makes use of it. This is primarily to be used inside
 FontForge. The comment should be in ASCII.
 
-FONTLOG
--------
+
+### FONTLOG
 
 This has the same interface as the Comment above. The FONTLOG is an idea
 stolen from the Open Font License. It is description of the font and a
 log of changes made to it over time and includes some more information
-about the font as well (see the [OFL
-FAQ)](http://scripts.sil.org/OFL-FAQ_web). This pane allows you to store
-this information within the font itself where it won't get lost.
+about the font as well (see the [OFL FAQ)](http://scripts.sil.org/OFL-FAQ_web).
+This pane allows you to store this information within the font itself
+where it won't get lost.
 
 
-
-Mark Classes & Mark Sets
-------------------------
+### Mark Classes & Mark Sets
 
 ![Font Info Mark Classes](fontinfo-markclasses.png) The various marks in
 your font may be divided into classes or sets. As I write (spring 2009)
@@ -732,8 +695,8 @@ The Mark Set pane looks almost exactly like the Mark Class pane, and
 functions similarly. From these panes you may add new classes, or edit
 old ones.
 
-Lookups
--------
+
+### Lookups
 
 ![Font Info Anchors](fontinfo-lookups.png) This pane is so complex that
 it merits its [own section](../lookups/).
@@ -763,43 +726,39 @@ loaded into fontforge.
 
 It is possible to drag and drop lookups to reorder them, or to copy them
 from one font to another (by dragging them into the other font's
-`Font   Info->Lookups `pane).
+`Font Info->Lookups` pane).
 
 There is a popup menu, available by right clicking on an entry, which
 provides these functions as well as:
 
-Save Lookup
+- Save Lookup
+    Saves the currently selected lookup to an [Adobe Feature
+    File](../../reference/featurefile/) of its very own.
 
-Saves the currently selected lookup to an [Adobe Feature
-File](../../reference/featurefile/) of its very own.
+- Add 'aalt' features
+    FontForge can automagically generate an 'aalt' feature consisting of
+    every single and alternate substitution of each glyph.
 
-Add 'aalt' features
+- Add 'DFLT' script
+    Add the DFLT script to all selected lookups
 
-FontForge can automagically generate an 'aalt' feature consisting of
-every single and alternate substitution of each glyph.
+- Add language to script
+    Add the specified language to the specified script in all selected
+    lookups.
 
-Add 'DFLT' script
+- Remove Language from script
+    Removes the specified language from the specified script in all selected
+    lookups.
 
-Add the DFLT script to all selected lookups
-
-Add language to script
-
-Add the specified language to the specified script in all selected
-lookups.
-
-Remove Language from script
-
-Removes the specified language from the specified script in all selected
-lookups.
-
-Save Feature File
-
-Saves all lookups (both GSUB and GPOS) to an [Adobe Feature
-File](../../reference/featurefile/).
+- Save Feature File
+    Saves all lookups (both GSUB and GPOS) to an [Adobe Feature
+    File](../../reference/featurefile/).
  
 
-![Font Info WOFF](fontinfo-woff.png) WOFF (Web Open Font Format)
-----------------------------------------------------------------
+
+### WOFF (Web Open Font Format)
+
+![Font Info WOFF](fontinfo-woff.png)
 
 This sub-dialog allows you to specify additional information which may
 be stored in a woff file. A woff file is very similar to a standard sfnt
@@ -814,8 +773,10 @@ does not currently parse), stored in utf8. Its internal format is
 specified in [a document from
 Mozilla](http://people.mozilla.com/~jkew/woff/woff-2009-09-16.html). 
 
-![Font Info Mac Styles](fontinfo-macstyle.png) Mac Style & FOND
----------------------------------------------------------------
+
+### Mac Style & FOND
+
+![Font Info Mac Styles](fontinfo-macstyle.png)
 
 This sub-dialog allows you to set the mac style of your font. Normally
 FontForge will be able to guess the style from the fontname (and various
@@ -839,16 +800,18 @@ The FOND name is only used for generating mac families. It is a grouping
 level underneath the family level. See the [FAQ](/about/faq/#How-family)
 for a discussion on when to use this.
 
-![Font Info Mac Features](fontinfo-macfeat.png) Mac Features
-------------------------------------------------------------
+
+### Mac Features
+
+![Font Info Mac Features](fontinfo-macfeat.png)
 
 This sub-dialog allows you to create and remove Mac features from your
 font. This will override the Mac features specified in the [preferences
 dialog](../prefs/#Mac)for this particular font (for example to give a
 more appropriate but local name to a certain feature setting).
 
-Dates
------
+
+### Dates
 
 Displays what fontforge thinks is the create date and modification date
 of the font data. FontForge started retaining those dates in August of
@@ -857,8 +820,9 @@ usually from the modification time of the sfd file. When loading a font
 from somthing other than an sfd file, FontForge will again make the best
 guess it can.
 
-![](img/fontinfo-unicode.png)Unicode Ranges
----------------------------------------
+
+### Unicode Ranges
+![](/assets/img/dialogs1-fontinfo-unicode.png)
 
 Displays information about the various unicode character ranges included
 in the font.
@@ -868,12 +832,3 @@ that range and scroll to one of them.
 
 If you double click on a range, the font view will select any characters
 not defined in the font within that range, and scroll to one of them.
-
-See Also:
-
--   [The char info dialog](../charinfo/)
--   [The get info dialogs](../getinfo/)
--   [The contextual / chaining dialog](../contextchain/)
-
--- [Prev](../elementmenu/) -- [TOC](/en-US/tutorials/overview/) --
-[Next](../elementmenu/) --
