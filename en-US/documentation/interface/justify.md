@@ -1,11 +1,13 @@
 ---
 published: true
 layout: default
-title: The Justify dialog
+title: The Justification Information
 ---
 
 
-![](img/JustifyDlg.png)Text justification is handled differently in
+![](/assets/img/dialogs1-JustifyDlg.png)
+
+Text justification is handled differently in
 different scripts and in different languages within those scripts.
 
 In arabic special glyphs (called kashidas) are inserted into the text to
@@ -20,7 +22,9 @@ a special kerning lookup might be invoked.
 OpenType allows a fairly general approach to this. Information is
 organized by script, and then by language within the script.
 
-![](img/JustifyExtenderDlg.png)The extender list is specified at the script
+![](/assets/img/dialogs1-JustifyExtenderDlg.png)
+
+The extender list is specified at the script
 level. You may either enter a series of glyph names into the space
 provided in the dialog above, or click on the little box to the right
 and a dialog will pop up giving a more convenient entry mechanism.
@@ -32,7 +36,7 @@ will be invoked (in addition to the first, I believe). If the second
 level is not enough then third, fourth, fifth... levels will be invoked
 in turn until the line can be justified.
 
-![](img/JustifyLangDlg.png)
+![](/assets/img/dialogs1-JustifyLangDlg.png)
 
 Each priority level consists of two parts, a series of behaviors for
 when the line is too long (and needs to be make smaller) and another
@@ -42,10 +46,12 @@ to turn on, a set of lookups to turn off, and finally a special lookup
 which specifies the maximum amount the advance width of a glyph can
 change.
 
-![](img/JustifyLookupDlg.png)So if you want to make a line shorter you might
-turn on ligatures and turn on kerning. Both of which (usually) make text
-shorter. On the other hand if you want to make a line longer you might
-want to turn those same lookups off.
+![](/assets/img/dialogs1-JustifyLookupDlg.png)
+
+So if you want to make a line shorter you might turn on ligatures and 
+turn on kerning. Both of which (usually) make text shorter. On the other
+hand if you want to make a line longer you might want to turn those same
+lookups off.
 
 The maximum advance width lookups are a little different from normal
 lookups. These may be either single positioning GPOS-style lookups or

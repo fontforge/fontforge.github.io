@@ -35,3 +35,5 @@ title: FontForge Interface
     - [Type3 Layer Information](multilayer#The+Layer+Info+dialog)
     - [Bitmap Properties](bdfinfo)
     - [Baseline Information](baseline)
+    - [Justification Information](justify)
+    - [Math information](math)
