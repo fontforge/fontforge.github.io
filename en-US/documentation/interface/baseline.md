@@ -5,15 +5,17 @@ title: The baseline dialog, and the OpenType BASE table.
 ---
 
 
-![](img/BASEdlg.png)This dialog may be invoked by
-`Element->Other Info->Horizontal Baselines`(or `Vertical Baselines`). It
-allows you to control the baseline (in either horizontal or vertical
-orientation) on which the glyphs of a particular script line up. You may
-also control the spacing between baselines, and the interline (or
-intercolumn) spacing on a per-script, or even per-language basis.
+![](/assets/img/dialogs1-BASEdlg.png)
 
-See the [Baseline section](/en-US/tutorials/overview/#Baseline)in the overview for a
-description of why this is important.
+This dialog may be invoked by `Element->Other Info->Horizontal Baselines`
+(or `Vertical Baselines`). It allows you to control the baseline
+(in either horizontal or vertical orientation) on which the glyphs of
+a particular script line up. You may also control the spacing between
+baselines, and the interline (or intercolumn) spacing on a per-script,
+or even per-language basis.
+
+See the [Baseline section](/en-US/tutorials/overview/#Baseline) in 
+the overview for a description of why this is important.
 
 There are currently seven standard baselines. The distinctions between
 them are described in the OpenType standard. (See the [baseline tags
@@ -41,8 +43,10 @@ glyphs in that script will be drawn with their vertical origin (If you
 are working on horizontal baselines, that is) on that baseline. You then
 should specify how other baselines are offset from this one.
 
-![](img/BASElang.png)You may also set the minimum and maximum extent of the
-font for each script (by pressing the `[Set Extents] `button). This
+![](/assets/img/dialogs1-BASElang.png)
+
+You may also set the minimum and maximum extent of the
+font for each script (by pressing the `[Set Extents]` button). This
 corresponds roughly to a per-script line spacing (or column spacing).
 
 You may specify a default spacing for the script in general, and then
@@ -60,20 +64,20 @@ with capital accented letters, but sometimes a "À" will be drawn just as
 "A" with no accent. So you might create at feature that maps capital
 accented letters to their unaccented forms:
 
->     feature NoAc {
->       sub Agrave by A;
->       sub Aacute by A;
->       ...
->       sub Egrave by E;
->       ...
->     } NoAc;
+    feature NoAc {
+      sub Agrave by A;
+      sub Aacute by A;
+      ...
+      sub Egrave by E;
+      ...
+    } NoAc;
 
 Then it would be convenient to be change the baseline spacing if these
 feature were active. And, indeed you can. Simply select the line for
 French (in this case the default language works for French) and press
 the [Set Feature Extents] button.
 
-![](img/BASEfeat.png)
+![](/assets/img/dialogs1-BASEfeat.png)
 
 It is possible to set Extent information even if you do not provide
 baseline
