@@ -662,10 +662,12 @@ where it won't get lost.
 
 ### Mark Classes & Mark Sets
 
-![Font Info Mark Classes](fontinfo-markclasses.png) The various marks in
-your font may be divided into classes or sets. As I write (spring 2009)
-there is essentially no support for mark sets, but that will change
-(Both Adobe and MicroSoft say their next releases will support it).
+![Font Info Mark Classes](/assets/img/dialogs1-fontinfo-markclasses.png)
+
+The various marks in your font may be divided into classes or sets. 
+As I write (spring 2009) there is essentially no support for mark sets, 
+but that will change (Both Adobe and MicroSoft say their next releases 
+will support it).
 
 The idea behind both is similar: In many lookups it is important to be
 able to ignore some mark glyphs, but not others. For example when
@@ -697,8 +699,9 @@ old ones.
 
 ### Lookups
 
-![Font Info Anchors](fontinfo-lookups.png) This pane is so complex that
-it merits its [own section](../lookups/).
+![Font Info Anchors](/assets/img/dialogs1-fontinfo-lookups.png) 
+
+This pane is so complex that it merits its [own section](../lookups/).
 
 Briefly, lookups contain the data to do the work needed for complex
 typography. There are two main classes of lookups, those which
@@ -757,7 +760,7 @@ provides these functions as well as:
 
 ### WOFF (Web Open Font Format)
 
-![Font Info WOFF](fontinfo-woff.png)
+![Font Info WOFF](/assets/img/dialogs1-fontinfo-woff.png)
 
 This sub-dialog allows you to specify additional information which may
 be stored in a woff file. A woff file is very similar to a standard sfnt
@@ -775,7 +778,7 @@ Mozilla](http://people.mozilla.com/~jkew/woff/woff-2009-09-16.html).
 
 ### Mac Style & FOND
 
-![Font Info Mac Styles](fontinfo-macstyle.png)
+![Font Info Mac Styles](/assets/img/dialogs1-fontinfo-macstyle.png)
 
 This sub-dialog allows you to set the mac style of your font. Normally
 FontForge will be able to guess the style from the fontname (and various
@@ -802,7 +805,7 @@ for a discussion on when to use this.
 
 ### Mac Features
 
-![Font Info Mac Features](fontinfo-macfeat.png)
+![Font Info Mac Features](/assets/img/dialogs1-fontinfo-macfeat.png)
 
 This sub-dialog allows you to create and remove Mac features from your
 font. This will override the Mac features specified in the [preferences
