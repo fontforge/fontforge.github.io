@@ -1,27 +1,16 @@
 ---
 published: true
 layout: default
-title: Char Info
+title: Glyph Information
 ---
 
+[table_of_contents]
 
-![](img/charinfo.png) Glyph Info
-----------------------------
 
--   [Encoding and Unicode data](#Unicode)
--   [Glyph Comment](#comment)
--   [Simple Glyph Positioning](#position)(GPOS)
--   [Pair-wise Glyph Positioning
-    (kerning)](#pairwise)(GPOS)
--   [Glyph Simple Substitution](#substitution) (GSUB, morx)
--   [Glyph Alternate Substitution](#multiple) (GSUB)
--   [Glyph Multiple Substitution](#multiple) (GSUB)
--   [Glyph Ligature Substitution](#ligature)(GSUB, morx)
--   [Components](#components)
--   [Counter Masks](#CounterMasks)
--   [TeX & Math](#TeX)
--   [Variants](#Variants)
--   [Tile Size](#TileSize)
+
+### Encoding and Unicode data
+
+![](/assets/img/dialogs1-charinfo.png)
 
 This dialog allows you to set the name and unicode encoding of a given
 glyph. If you know the name of the glyph then FontForge can tell you the
@@ -47,7 +36,7 @@ point and add an entry with the same code point and the appropriate
 variation selector (as in the example above).
 
 However if this glyph is not going to be the default glyph for this code
-point, then set the `Unicode Value `field to -1, while entering the
+point, then set the `Unicode Value` field to -1, while entering the
 appropriate code point and variation selector below.
 
 The Glyph class field is for the opentype 'GDEF' table. You can usually
@@ -70,17 +59,26 @@ simply check this box. Then when it comes time to save the font, ff will
 perform the unlink and then run remove overlap, save the font, and then
 restore the glyph to its original condition.
 
-![](img/charinfo-comment.png)You can assign an arbitrary (unicode) comment
-to the glyph. Simply type any text into this field. The comment is for
-your use, it will not go into any generated fonts. You may also assign a
-color to a glyph to make it stand out in the font view.
 
-![](img/charinfo-pos.png)There are 6 separate sub-dialogs to help you edit
-the [lookups](../lookups/) of the [GPOS and GSUB](../gposgsub/) tables
-(some of these data can be converted into various of Apple's AAT tables,
-particularly 'morx'). Lookups and their subtables are described in some
-detail [here](/en-US/tutorials/overview/#Lookups), and may be manipulated and created
-with the [Element-\>Font Info](../fontinfo/#Lookups) commmand.
+### Glyph Comment
+
+![](/assets/img/dialogs1-charinfo-comment.png)
+
+You can assign an arbitrary (unicode) comment to the glyph. Simply type any text 
+into this field. The comment is for your use, it will not go into any generated 
+fonts. You may also assign a color to a glyph to make it stand out in the font view.
+
+
+### Simple Glyph Positioning (GPOS)
+
+![](/assets/img/dialogs1-charinfo-pos.png)
+
+There are 6 separate sub-dialogs to help you edit the [lookups](../lookups/) 
+of the [GPOS and GSUB](../gposgsub/) tables (some of these data can be 
+converted into various of Apple's AAT tables, particularly 'morx'). Lookups
+and their subtables are described in some detail [here](/en-US/tutorials/overview/#Lookups), 
+and may be manipulated and created with the [Element-\>Font Info](../fontinfo/#Lookups) 
+commmand.
 
 The first of sub-dialogs is the alternate position pane which allows you
 to associate certain modifications to a glyph's metrics with a feature
@@ -101,14 +99,25 @@ A new entry in the list may be created by pressing the \<New\> button
 and a popup menu will appear with all possible lookup subtables you
 could add data to.
 
+
+### Pair-wise Glyph Positioning (kerning) (GPOS)
+
 The pairwise positioning sub-dialog allows you to change the positions
 of two glyphs when they occur next to one another -- better know as
 kerning. I think the [Metrics View](../metricsview/)provides a better
 place to do kerning, but you can do it here if you wish.
 
-![](img/charinfo-subs.png) A simple substitution replaces one glyph with
-another. Here the glyph "one" has a series of substitutions to various
-glyphs depending on what lookup subtable is invoked.
+
+### Glyph Simple Substitution (GSUB, morx)
+
+![](/assets/img/dialogs1-charinfo-subs.png)
+
+A simple substitution replaces one glyph with another. Here the glyph "one" 
+has a series of substitutions to various glyphs depending on what lookup
+subtable is invoked.
+
+
+### Glyph Alternate Substitution (GSUB) / Glyph Multiple Substitution (GSUB)
 
 The multiple and alternate substitution sub-dialogs are very similar to
 this one except that they can take multiple glyph names. In a multiple
@@ -123,42 +132,55 @@ and the user is to be given a choice as to which glyph is to be chosen.
 >  A. A. Milne, 1926
 
 
+### Glyph Ligature Substitution (GSUB, morx)
 
-![](img/charinfo-lig.png) The ligature pane allows you to tell FontForge
-that the current glyph is a ligature composed of several other glyphs.
-FontForge will sometimes be able to fill this in with the right default
-value, but not always. The value should be a list of postscript glyph
-names separated by spaces. If a glyph may be viewed as two different
-ligatures then they may both be specified in different lines. For
-example "ffi" may be viewed as a ligature of "f" "f" and "i" or of "ff"
-and "i".
+![](/assets/img/dialogs1-charinfo-lig.png)
+
+The ligature pane allows you to tell FontForge that the current glyph is 
+a ligature composed of several other glyphs. FontForge will sometimes be 
+able to fill this in with the right default value, but not always. The value 
+should be a list of postscript glyph names separated by spaces. If a glyph 
+may be viewed as two different ligatures then they may both be specified 
+in different lines. For example "ffi" may be viewed as a ligature of "f" 
+"f" and "i" or of "ff" and "i".
 
 
+### Counter Masks
 
-![](img/charinfo-counters.png) In complicated Asian glyphs, postscript has a
-mechanism for controlling the width of counters between stems. These are
-called counter mask hints![](img/newcountermask.png). In Latin, Cyrillic,
-Greek fonts only glyphs like "m" are allowed to have counter masks, and
-only in very controlled conditions. See the description of [counter
-masks](../hinting/#Counter).
+![](/assets/img/dialogs1-charinfo-counters.png)
 
-![](img/charinfo-counters.png) Some glyphs (ligatures, accented glyphs,
-Hangul syllables, etc.) are built up out of other glyphs (at least
-according to unicode). This pane of the dlg shows the components that
-Unicode says make up the current glyph, if those components are in the
-font then you can use FontForge's Element-\>Build-\>Build Accented or
-Element-\>Build-\>Build Composite commands to create the current glyph.
-The information displayed here is informative only, you may not change
-this field directly (it changes when you change the unicode value or
-glyph name associated with this glyph).
+In complicated Asian glyphs, postscript has a mechanism for controlling 
+the width of counters between stems. These are called counter mask 
+hints.
 
-![](img/charinfo-tex.png) The TeX pane allows you to specify glyph specific
-information used in TeX tmf files. The height and depth fields are often
-the same as the glyph's bounding box (if you don't fill these in that's
-what fontforge will use by default), but they should be corrected for
-optical distortion, so in glyphs like "o" these fields should be clipped
-to the x-height and baseline (ff will attempt to do this when you press
-`[Guess]`).
+![](/assets/img/dialogs1-newcountermask.png)
+
+In Latin, Cyrillic, Greek fonts only glyphs like "m" are allowed to have 
+counter masks, and only in very controlled conditions. See the description 
+of [counter masks](../hinting/#Counter).
+
+
+### Components
+
+![](/assets/img/dialogs1-charinfo-counters.png)
+
+Some glyphs (ligatures, accented glyphs, Hangul syllables, etc.) are built up 
+out of other glyphs (at least according to unicode). This pane of the dlg shows
+the components that Unicode says make up the current glyph, if those components
+are in the font then you can use FontForge's `Element->Build->Build Accented` or
+`Element->Build->Build Composite` commands to create the current glyph.
+The information displayed here is informative only, you may not change this field
+directly (it changes when you change the unicode value or glyph name associated
+with this glyph).
+
+![](/assets/img/dialogs1-charinfo-tex.png)
+
+The TeX pane allows you to specify glyph specific information used in TeX
+tmf files. The height and depth fields are often the same as the glyph's 
+bounding box (if you don't fill these in that's what fontforge will use 
+by default), but they should be corrected for optical distortion, so in glyphs
+like "o" these fields should be clipped to the x-height and baseline (ff 
+will attempt to do this when you press `[Guess]`).
 
 The Italic correction is used by both TeX and the new OpenType
 [MATH](../../reference/math/#Italic) table. In the MATH table you may also specify a
@@ -177,9 +199,10 @@ The [Math Kerning] button brings up the [Math Kerning
 dialog](../../reference/math/#MathKern) which gives you fine control over the
 placement of subscripts and superscripts near the glyph.
 
+
 ### Variants
 
-![](img/charinfo-variants.png)There are two panes for variants, one for
+![](/assets/img/dialogs1-charinfo-variants.png)There are two panes for variants, one for
 glyphs that get longer horizontally and one for glyphs that get longer
 vertically.
 
@@ -196,7 +219,10 @@ Underneath you may specify a way of building really big parentheses by
 combining several component glyphs. See the description of this in the
 [MATH Info dialog](../../reference/math/#GlyphConstruction)for more details.
 
-### ![](img/charinfo-tilesize.png)Tile Size
+
+### Tile Size
+
+![](/assets/img/dialogs1-charinfo-tilesize.png)
 
 This only applies when editing type3 fonts. Even then it is only
 meaningful if the current glyph is used as a
@@ -217,13 +243,3 @@ The Next and Prev buttons allow you to move from one glyph to the next
 
 The Cancel button now cancels all changes made with this instance of the
 dialog.
- 
-
-See Also:
-
--   [The font info dialog](../fontinfo/)
--   [The get info dialogs](../getinfo/)
--   [The MATH info dialog](../../reference/math/)
-
--- [Prev](../elementmenu/) -- [TOC](/en-US/tutorials/overview/) --
-[Next](../elementmenu/) --
