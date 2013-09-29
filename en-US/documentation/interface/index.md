@@ -37,3 +37,4 @@ title: FontForge Interface
     - [Baseline Information](baseline)
     - [Justification Information](justify)
     - [Math information](math)
+    - [Multiple Master Information](multiplemaster)

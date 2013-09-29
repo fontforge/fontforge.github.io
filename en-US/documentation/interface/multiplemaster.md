@@ -6,8 +6,8 @@ title: Multiple Master Dialog
 
 Allows you to create or modify a multiple master font
 
-What is a multiple master font?
--------------------------------
+
+### What is a multiple master font?
 
 A multiple master font is a ([PostScript
 Type1](http://partners.adobe.com/asn/developer/pdfs/tn/5015.Type1_Supp.pdf))
@@ -76,26 +76,26 @@ Then s/he provides information about each axis, specifically:
     normalized range. (Apple maps to [-1,1] with the default design
     mapped to 0)
      This mapping is piecewise linear. Generally it will just be the
-    obvious (1=\>0.0, 999=\>1.0) but it is possible to add intermediate
-    points so that 500=\>.3 which would give a different scaling between
+    obvious (1=>0.0, 999=>1.0) but it is possible to add intermediate
+    points so that 500=>.3 which would give a different scaling between
     1&500 than between 500&999.
 -   In an apple distortable font, each axis must be given a name which
     may be translated into multiple languages.
 
 Then s/he determines the number of designs needed. In a Type1 font there
-may be at most 16, and at least 2\^axis-count. So in a 3 axis font there
+may be at most 16, and at least 2^axis-count. So in a 3 axis font there
 must be at least 8 designs, one for each extreme.
 
 For Type1 fonts s/he needs to write two postscript functions
 
-NormalizeDesignVector
+**NormalizeDesignVector**
 
 FontForge is always able to generate this function for the user (unless
 the user wants something non-linear). This maps a vector of design
 values to their normalized values (in our three axis case above it might
 map [400 500 12] to [.4 .5 .09])
 
-ConvertDesignVector
+**ConvertDesignVector**
 
 In the usual cases FontForge is able to create this function for the
 user (but in more complicated cases, with intermediate designs it is
@@ -126,26 +126,33 @@ Corresponding glyphs in each design must have certain similarities:
     (and 'fpgm' and 'prep' tables), but may have different 'cvt '
     tables.
 
-The Dialog
-----------
+
+### The Dialog
+
 
 This dialog is used for creating and modifying multiple master fonts. It
 contains several sub-dialogs which must be processed in sequence, and
 follows pretty closely to the process described above. I will first show
 the sequence for Adobe's fonts, and then explain Apple's fonts.
 
-![](img/mmcounts.png)The first screen allows you to choose the type of
+![](/assets/img/dialogs1-mmcounts.png)
+
+The first screen allows you to choose the type of
 distortable font you wish to generate (Adobe Multiple Master, or Apple),
 the number of axes in your font, and the number of master designs, and a
 family name (which will be used for creating new fonts, if you need any
 new ones).
 
-![](img/mmaxes.png)The second screen gives you control of each axis. There
+![](/assets/img/dialogs1-mmaxes.png)
+
+The second screen gives you control of each axis. There
 are a few standard axis types defined by Adobe (and by Apple), but you
 could define your own. Note that there are fields which are disabled
 here, they only apply to Apple's fonts.
 
-![](img/mmdesigns.png)Then you must assign a font to each of the master
+![](/assets/img/dialogs1-mmdesigns.png)
+
+Then you must assign a font to each of the master
 designs. You can either have FontForge create a new font for you (as
 here), or use an already loaded font, or browse your disk for a font
 (don't try to use the same font twice).
@@ -156,7 +163,9 @@ coordinate values will be either 0 or 1. Unless you are working with
 intermediate designs it is best to let FontForge initialize this field
 for you.
 
-![](img/mmfuncs.png)This screen shows the postscript functions needed to map
+![](/assets/img/dialogs1-mmfuncs.png)
+
+This screen shows the postscript functions needed to map
 a design vector to a weight vector (ie. given positions on each of the
 design axes, these produce blending coefficients for each master
 design). In most useful case FontForge is able to generate these
@@ -164,23 +173,31 @@ functions automatically, but if you use intermediate designs things get
 too complicated for FontForge and you must enter the functions
 manually.
 
-![](img/mmfinal.png)The last screen shows the default weights (which you may
+![](/assets/img/dialogs1-mmfinal.png)
+
+The last screen shows the default weights (which you may
 either enter directly or as coordinates along the design axes), the
 ForceBoldThreshold private dictionary entry).
 
-### An Apple distortable font.
+#### An Apple distortable font
 
-![](img/mmappleaxes.png)The dialog looks very similar, but there are a few
+![](/assets/img/dialogs1-mmappleaxes.png)
+
+The dialog looks very similar, but there are a few
 differences. In the Axis pane of the dlg, you must also specify a
 default value for the axis, and a translatable name.
 
-![](img/mmnamedstyles.png)Apple allows coordinates in design space to be
-named. Here the name "Black" is given to the location where Weight=3.2
-(the darkest value) and ![](img/mmnamingastyle.png)Width=1 (the default
-value). Again these names can be translated into multiple languages.
+![](/assets/img/dialogs1-mmnamedstyles.png)
 
-A suggestion
-------------
+Apple allows coordinates in design space to be
+named. Here the name "Black" is given to the location where Weight=3.2
+(the darkest value) and Width=1 (the default value). Again these names
+can be translated into multiple languages.
+
+![](/assets/img/dialogs1-mmnamingastyle.png)
+
+
+### A suggestion
 
 Adobe's Type1 fonts require all the extreme designs to be specified, so
 that for a 3 axis multiple master font, you need 8 designs. This is
@@ -196,10 +213,10 @@ created fonts for Weight=50,Width=100 & Weight=50, Width=100 &
 Weight=900,Width=100. Call these designs 0, 1 and 2. We wish to produce
 a design, 3, with Weight=900, Width=1000.
 
-![](img/mmextrapolate2.png)
+![](/assets/img/dialogs1-mmextrapolate2.png)
 
 First we must produce an intermediate design (which we will delete
-later), call it "I". Use FontForge's Element-\>Interpolate Fonts command
+later), call it "I". Use FontForge's Element->Interpolate Fonts command
 to produce a design which is 50% of the way from design 1 to design 2
 (This will be Weight=475, Width=550). Then produce another design with
 is 200% of the way from design 0 to design "I". This will be the desired
@@ -208,7 +225,3 @@ extreme design.
 Adobe's Type2 designs appear to have been prepared to allow this
 approach, but the multiple master operators were dropped from the Type2
 spec, and the question is moot.
-
--- [Up](../mmmenu/) -- [TOC](/en-US/tutorials/overview/) --
-
-
