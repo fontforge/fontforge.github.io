@@ -28,7 +28,7 @@ tacked on to the end. The FullName is designed to be read by humans,
 while the others are for machines, this name can contain spaces (like
 "New Century Schoolbook-Bold Condensed"). Finally there is the weight
 name. All of these names should be in ASCII. If you wish to enter names
-with characters outside this range look at the [TTF Names](#TTF-Names)
+with characters outside this range look at the [TTF Names](#TTF+Names)
 Section.
 
 The copyright field can contain whatever you want to put there, but it's
@@ -44,7 +44,7 @@ you may leave this field blank. If you leave it blank FontForge will
 generate a default value based on other version information specified
 elsewhere.
 
-Normally when [generating a font,](../generate/) FontForge will use the
+Normally when [generating a font](../generate/), FontForge will use the
 fontname as the base for the default filename of the font file (the base
 to which the extension is added). But that is not always what you want.
 You may wish to attach a version string to the fontname, or abbreviate
@@ -52,7 +52,7 @@ it, etc. The `Base Filename` field allows you to specify this to
 fontforge.
 
 Many of these names are similar to the english names of the [TTF
-Names](#TTF-Names) section. If nothing is specified in that
+Names](#TTF+Names) section. If nothing is specified in that
 section then the names specified here will be used by default in ttf
 files.
 
@@ -320,10 +320,9 @@ Windows Ascent/Descent described above).
 
 In traditional (Latin) typography, the unleaded line spacing should be
 1em, and that is what Adobe recommends for these fields (they should sum
-to the Em-Size specified in the [General](#PS-General)
-pane). The Typographic Ascent should be the same as the font's Ascent,
-and the Typographic Descent should be the (negative) of the font's
-descent.
+to the Em-Size specified in the [General](#General) pane). The Typographic
+Ascent should be the same as the font's Ascent, and the Typographic 
+Descent should be the (negative) of the font's descent.
 
 The "[\*] Is Offset" checkboxes behave much as they do above, except
 they specify offsets from the font's ascent and descent rather than its
@@ -341,7 +340,7 @@ spacing. They behave very much the way the Win Ascent & Descent behave
 (they are based on bounding box values). And the 'hhea' table has its
 own line gap field.
 
-And if your font has vertical metrics enabled (See [General](#PS-General)
+And if your font has vertical metrics enabled (See [General](#General)
 above) you will be able to set the default spacing between vertical 
 columns of text. (the equivalent to LineGap in vertical text).
 
@@ -688,8 +687,8 @@ hand classes can be stored more compactly in the font file (a slight
 advantage).
 
 Once you have created your classes (or sets, or both) you may use them
-in the [Add Lookup](../lookups/#Add-Lookup)dialog from the
-[Lookup](#Lookups) pane.
+in the [Add Lookup](../lookups/#Add-Lookup) dialog from the
+[Lookups](#Lookups) pane.
 
 The Mark Set pane looks almost exactly like the Mark Class pane, and
 functions similarly. From these panes you may add new classes, or edit
