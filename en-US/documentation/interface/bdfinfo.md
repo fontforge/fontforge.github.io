@@ -4,8 +4,10 @@ layout: default
 title: BDF Info (Properties) Dialog
 ---
 
-![BDF Info dialog](bdfinfo.png)If your font contains bitmaps you may
-want control over the BDF Properties associated with those bitmaps. Each
+![BDF Info dialog](/assets/img/dialogs1-bdfinfo.png)
+
+If your font contains bitmaps you may want control over 
+the BDF Properties associated with those bitmaps. Each
 pixel size (bitmap strike) has its own set of properties.
 
 The X11 consortium has defined certain conventional properties and
@@ -13,21 +15,21 @@ defines their meaning in the [X Long Font
 Descriptor](http://ftp.xfree86.org/pub/XFree86/4.5.0/doc/xlfd.txt)
 specification.
 
-When you first create a bitmap strike (with [Element-\>Bitmaps
-Available](../elementmenu/#Bitmaps)) it will have no properties
-associated with it. If you then generate a bdf file based on that
-FontForge will give you some default properties.
+When you first create a bitmap strike (with [Element->Bitmaps
+Available](../elementmenu/#Bitmap+Strikes+Available...)) it will 
+have no properties associated with it. If you then generate a bdf file
+based on that FontForge will give you some default properties.
 
 You may view these default properties in this dialog by pressing the
-`[Default All] `button -- this will remove any current properties
+`[Default All]` button -- this will remove any current properties
 (except for `RESOLUTION_Y`) and replace them with the defaults that
 FontForge calculates).
 
-You may select any property and press the `[Default This] `button to
+You may select any property and press the `[Default This]` button to
 find its default value (There are some properties that FontForge cannot
 default, you'll have to figure these out yourself).
 
-You may use the `[Delete] `button to remove a property.
+You may use the `[Delete]` button to remove a property.
 
 You may use the up and down arrows buttons to move the selected property
 up or down in the list (as far as I know, there is no functional reason
@@ -47,5 +49,5 @@ field, click on the extreme left of the property.
 
 The one essential property that FontForge can't always guess correctly
 is the resolution (in particular `RESOLUTION_Y`). When you press
-`[Default All] `FontForge will retain the current value of this property
+`[Default All]` FontForge will retain the current value of this property
 and base the others on it.

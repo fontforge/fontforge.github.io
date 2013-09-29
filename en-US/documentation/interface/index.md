@@ -33,3 +33,4 @@ title: FontForge Interface
     - [Glyph Information](charinfo)
     - [Point, Reference Information](getinfo)
     - [Type3 Layer Information](multilayer#The+Layer+Info+dialog)
+    - [Bitmap Properties](bdfinfo)
