@@ -26,9 +26,9 @@ by using the left or right arrows, each alters the kerning by one unit
 kerning is altered by 10 units).
 
 You may double click on a kern pair to get the [Kern Pair
-Closeup](../metricsview/#kernpair) dlg.
+Closeup](../metricsview/#Kern+Pair+Closeup) dlg.
 
-You may undo the last change by pressing \^Z. You may revert the
+You may undo the last change by pressing ^Z. You may revert the
 currently selected pair to its original value by pressing Meta-Z
 (Alt-Z).
 
@@ -40,10 +40,6 @@ may be sorted by:
 -   The (absolute value of the) kerning offset
 
 If you type a character (or use [F12 to get characters you can't
-type](../metricsview/#Entering)), then the dlg will scroll to display
-the pairs associated with that character. The behavior depends in an
-obvious way on how the dlg is sorted.
-
--- [Prev](../viewmenu/) -- [TOC](/en-US/tutorials/overview/) --
-
-
+type](../metricsview/#Entering+non-ASCII+characters)), then the dlg will 
+scroll to display the pairs associated with that character. The behavior
+depends in an obvious way on how the dlg is sorted.

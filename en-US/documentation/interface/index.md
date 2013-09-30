@@ -39,4 +39,5 @@ title: FontForge Interface
     - [Math information](math)
     - [Multiple Master Information](multiplemaster)
     - [Lookups and Subtables](lookups)
-    - [Kerning Glyph Pairs](metricsview)
+    - [The Metric View](metricsview)
+    - [The Kerning Pairs dialog](kernpairs)
