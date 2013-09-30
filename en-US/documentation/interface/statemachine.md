@@ -4,7 +4,13 @@ layout: default
 title: The Mac State Machine dialog
 ---
 
-![](img/statemachine-context.png)The mac uses state machines where opentype
+
+[table_of_contents]
+
+
+![](/assets/img/dialogs1-statemachine-context.png)
+
+The mac uses state machines where opentype
 would use a contextual lookup. The example at right (with appropriate
 substitutions attached to it) will convert an initial or medial short-s
 into a long-s (for doing renaissance printing).
@@ -15,7 +21,7 @@ contextual kerning. The example at right is of contextual glyph
 substitution.
 
 An example conditional substitution state machine is provided in the
-[tutorial](editexample6-5.html#Apple).
+[tutorial](editexample6-5#Apple).
 
 On the mac there are four predefined classes, one meaning the end of
 input, one for all glyphs not specified elsewhere, one for the magic
@@ -41,27 +47,29 @@ when it starts at the beginning of a new line.
 The transitions look slightly differently depending on the type of state
 machine:
 
-Indic
 
-Contextual
+- Indic
 
-Insertion
+    ![](/assets/img/dialogs1-transition-indic.png)
 
-Kerning
+- Contextual
 
-![](img/transition-indic.png)
+    ![](/assets/img/dialogs1-transition-context.png)
 
-![](img/transition-context.png)
+- Insertion
 
-![](img/transition-insert.png)
+    ![](/assets/img/dialogs1-transition-insert.png)
 
-![](img/transition-kern.png)
+- Kerning
+
+    ![](/assets/img/dialogs1-transition-kern.png)
+
 
 The first line of all transitions shows the next state. The next line
-contains a set of flags where "M" =\> the current glyph should be marked
-(the meaning of this becomes apparent later), "A" =\> processing should
+contains a set of flags where "M" => the current glyph should be marked
+(the meaning of this becomes apparent later), "A" => processing should
 advance to the next glyph. For indic tables there is a third flag shown,
-"L" =\> the current glyph is the last glyph of the indic rearrangement,
+"L" => the current glyph is the last glyph of the indic rearrangement,
 while for kerning tables there is a "P" flag indicating that the current
 glyph should be pushed onto the kerning stack.
 
@@ -69,7 +77,7 @@ The last two lines have varied meanings depending on the type of the
 state machine.
 
 -   For Indic transitions the two lines should be appended to get the
-    indic rearrangement verb (in the example above that would be "Ax =\>
+    indic rearrangement verb (in the example above that would be "Ax =>
     xA" meaning that the first glyph marked should be moved after the
     last glyph marked)
 -   For contextual transitions the two lines specify the lookup names of
@@ -134,66 +142,65 @@ follow it. In that case when we reach an interesting glyph we "mark" it,
 and then, after reading a few more glyphs when we know what to do, we
 apply a transformation to the marked glyph.
 
-Indic
+- Indic
 
-Contextual
+    In addition to a "mark"ed glyph, indic transformations also have a the
+    concept of a "last" glyph. There are 16 transformations which may be
+    applied the the glyphs between the "mark"ed and "last" glyphs. Suppose
+    the glyph stream looks like `abcdef`
 
-Insertion
+    And "a" was "mark"ed and "d" was "last" then a transition "AxD => DxA"
+    refers to the marked glyph as "A", the last glyph as "D" and everything
+    in between as "x", so this would change the glyph stream to `dbcaef`
 
-Kerning
+- Contextual
 
-In addition to a "mark"ed glyph, indic transformations also have a the
-concept of a "last" glyph. There are 16 transformations which may be
-applied the the glyphs between the "mark"ed and "last" glyphs. Suppose
-the glyph stream looks like
-     abcdef
- And "a" was "mark"ed and "d" was "last" then a transition "AxD =\> DxA"
-refers to the marked glyph as "A", the last glyph as "D" and everything
-in between as "x", so this would change the glyph stream to
-     dbcaef
+    This can apply a substitution to the current glyph, a different
+    substitution to the marked glyph, and it may mark the current glyph. The
+    substitutions are indicated by 4 character tags and should be "Nested"
+    substitutions which may be created by the Element->Char Info dialog.
 
-This can apply a substitution to the current glyph, a different
-substitution to the marked glyph, and it may mark the current glyph. The
-substitutions are indicated by 4 character tags and should be "Nested"
-substitutions which may be created by the Element-\>Char Info dialog.
+- Insertion
 
-This can insert a string (up to 31 glyphs) before or after the current
-and the marked glyphs.
+    This can insert a string (up to 31 glyphs) before or after the current
+    and the marked glyphs.
 
-Kerning does not have a single "mark"ed glyph, instead it can push up to
-8 glyphs onto a stack, and at a later point a set of kerning values may
-be applied to those glyphs (so the flag which is usually indicated as
-"M" for mark, is here "P" for push). Once all the glyphs have been
-pushed, a set of kerning values may be applied. One value for each
-pushed glyph. This is a number which indicates how much the glyph in
-question should be kerned. If the glyph stream looks like:
-     F."
- and you want to kern "." by -300, and """ by 0 em-units, then you would
-enter
-     -300 0
- as kerning values.
+- Kerning
 
-Editing Transitions
--------------------
+    Kerning does not have a single "mark"ed glyph, instead it can push up to
+    8 glyphs onto a stack, and at a later point a set of kerning values may
+    be applied to those glyphs (so the flag which is usually indicated as
+    "M" for mark, is here "P" for push). Once all the glyphs have been
+    pushed, a set of kerning values may be applied. One value for each
+    pushed glyph. This is a number which indicates how much the glyph in
+    question should be kerned. If the glyph stream looks like: F." and you want 
+    to kern "." by -300, and """ by 0 em-units, then you would enter `-300 0`
+    as kerning values.
+
+
+### Editing Transitions
 
 To edit a transition, simply click on it and a dialog will pop up,
 appropriate to the type of state machine.
 
-Indic
 
-Contextual
+- Indic
 
-Insertion
+    ![](/assets/img/dialogs1-edittransition-indic.png)
 
-Kerning
 
-![](img/edittransition-indic.png)
+- Contextual
 
-![](img/edittransition-context.png)
+    ![](/assets/img/dialogs1-edittransition-context.png)
 
-![](img/edittransition-insert.png)
+- Insertion
 
-![](img/edittransition-kern.png)
+    ![](/assets/img/dialogs1-edittransition-insert.png)
+
+- Kerning
+
+    ![](/assets/img/dialogs1-edittransition-kern.png)
+
 
 See [above](#transitions) for a description of what the
 fields mean.
@@ -201,5 +208,3 @@ fields mean.
 If you wish to add a new state, simply edit a transition so that its
 next state field is the state number desired. FontForge will
 automatically create the state for you.
-
--- [Up](../fontinfo/) -- [TOC](/en-US/tutorials/overview/) --

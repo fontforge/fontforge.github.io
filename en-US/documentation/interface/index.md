@@ -44,3 +44,4 @@ title: FontForge Interface
     - [Kerning By Classes](metricsview#Kerning+By+Class)
     - [Anchor Control Dialog](anchorcontrol)
     - [Contextual Lookup Dialog](contextchain)
+    - [The Mac State Machine Dialog](statemachine)
