@@ -45,3 +45,4 @@ title: FontForge Interface
     - [Anchor Control Dialog](anchorcontrol)
     - [Contextual Lookup Dialog](contextchain)
     - [The Mac State Machine Dialog](statemachine)
+    - [Show Advanced Typographic Features](showatt)

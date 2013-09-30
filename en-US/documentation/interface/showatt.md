@@ -4,7 +4,9 @@ layout: default
 title: Show Advanced Typographic Features
 ---
 
-![](img/showatt.png)This dialog shows the contents of some advanced
+![](/assets/img/dialogs1-showatt.png)
+
+This dialog shows the contents of some advanced
 typography tables (GDEF, GPOS and GSUB for opentype fonts, kern, lcar,
 morx, opbd and prop for Apple fonts) as far as fontforge understands
 them. The dialog is hierarchical with the typical boxed +/- signs used
@@ -26,5 +28,3 @@ tables will be based on data for the default language).
 
 Pressing the right mouse button will bring up a popup menu which will
 allow you to save the contents of the dlg (as utf8 text).
-
-
