@@ -41,3 +41,6 @@ title: FontForge Interface
     - [Lookups and Subtables](lookups)
     - [The Metric View](metricsview)
     - [The Kerning Pairs dialog](kernpairs)
+    - [Kerning By Classes](metricsview#Kerning+By+Class)
+    - [Anchor Control Dialog](anchorcontrol)
+    

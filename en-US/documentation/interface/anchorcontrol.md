@@ -4,7 +4,9 @@ layout: default
 title: The Anchor Control dialog
 ---
 
-![](img/anchorcontrol-base.png)You invoke this dialog from the outline glyph
+![](/assets/img/dialogs1-anchorcontrol-base.png)
+
+You invoke this dialog from the outline glyph
 view by selecting an anchor point in that glyph and selecting
 `Metrics->Anchor Control`. In the example at right, the arabic letter
 Hamza was chosen. In the first pane of the dialog are various controls,
@@ -15,8 +17,11 @@ around to position it as you wish.
 After this there is a scrollable region containing multiple sub-panes.
 Each sub-pane contains one combination of Hamza and a mark that fits on
 top of it. If you click in one of these sub-panes, FontForge changes the
-dialog to look at the mark you selected.![](img/anchorcontrol-mark.png) Here
-we clicked on the Fathatan mark, and we now see all the base letters
+dialog to look at the mark you selected.
+
+![](/assets/img/dialogs1-anchorcontrol-mark.png)
+
+Here we clicked on the Fathatan mark, and we now see all the base letters
 that fit underneath it. This dialog now gives you control of the anchor
 point in the Fathatan mark.
 
@@ -33,8 +38,8 @@ the Magnification field allows for this.
 You can also enter the anchor point's location by manual typing in the
 X,Y textfields at right.
 
-Device Tables
--------------
+
+### Device Tables
 
 You can also create something called a "Device Table", a name which is
 not very informative. When a font is rasterized at small pixel sizes
@@ -57,5 +62,3 @@ display size (and no other).
 Note it may sometimes be better to define a correction in the matching
 glyph rather than the current one. Corrections will apply to all glyphs
 matched with the current one.
-
--- [Back](../metricsmenu/) --
