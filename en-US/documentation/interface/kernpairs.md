@@ -4,6 +4,8 @@ layout: default
 title: The Kerning Pairs dialog
 ---
 
+![](/assets/img/dialogs1-KernPairs.png)
+
 This dialog either displays all kerning pairs in the entire font, or all
 kerning pairs associated with a character (if it is invoked from the
 outline view).
