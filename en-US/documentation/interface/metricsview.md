@@ -4,6 +4,7 @@ layout: default
 title: The Metrics View
 ---
 
+
 ![](img/MetricsView.png)
 
 The metrics view allows you to examine how glyphs look together and to
@@ -65,11 +66,11 @@ left by dragging the green line around. (If you wish to create a [Device
 Table](#DeviceTable) for small pixel sizes you must use the [Kern Pair
 Closeup dialog](#kernpair))
 
-  ------------------------ ----------------------
-  ![](img/To-unkerned.png) ![](img/To-kerned.png)
-  ------------------------ ----------------------
+![](img/To-unkerned.png)
 
-  :  Kerning
+![](img/To-kerned.png)
+
+Kerning
 
 The active glyph may be changed by clicking on any of the glyphs.
 

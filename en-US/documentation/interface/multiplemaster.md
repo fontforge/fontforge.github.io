@@ -14,7 +14,7 @@ Type1](http://partners.adobe.com/asn/developer/pdfs/tn/5015.Type1_Supp.pdf))
 font which contains, in one font description several extreme styles of a
 font family and code for interpolating between them to produce
 intermediate designs. Apple has a [similar
-concept](http://developer.apple.com/fonts/TTRefMan/RM06/Chap6fvar.html)for
+concept](http://developer.apple.com/fonts/TTRefMan/RM06/Chap6fvar.html) for
 TrueType -- The only name I've seen given to this is "Apple Distortable
 Font" -- I call both multiple master.
 
@@ -129,7 +129,6 @@ Corresponding glyphs in each design must have certain similarities:
 
 ### The Dialog
 
-
 This dialog is used for creating and modifying multiple master fonts. It
 contains several sub-dialogs which must be processed in sequence, and
 follows pretty closely to the process described above. I will first show
@@ -178,6 +177,7 @@ manually.
 The last screen shows the default weights (which you may
 either enter directly or as coordinates along the design axes), the
 ForceBoldThreshold private dictionary entry).
+
 
 #### An Apple distortable font
 

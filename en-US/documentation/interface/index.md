@@ -38,3 +38,5 @@ title: FontForge Interface
     - [Justification Information](justify)
     - [Math information](math)
     - [Multiple Master Information](multiplemaster)
+    - [Lookups and Subtables](lookups)
+    - [Kerning Glyph Pairs](metricsview)

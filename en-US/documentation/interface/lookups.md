@@ -10,9 +10,12 @@ title: Manipulating OpenType Lookups
 > -- Lewis Carroll
 >  *Through the Looking-Glass*
 
+[table_of_contents]
 
-![](img/fontinfo-lookups.png)You use the Lookups pane of the [Element-\>Font
-Info](../fontinfo/) command to control OpenType lookups.
+![](/assets/img/dialogs1-fontinfo-lookups.png)
+
+You use the Lookups pane of the [Element->Font Info](../fontinfo/) command
+to control OpenType lookups.
 
 A lookup is a collection of commands that provide a text layout program
 with a transformation to apply on the input glyph stream. A lookup might
@@ -63,94 +66,80 @@ On the other hand if you put the pairs in one lookup, and the kerning
 class in another lookup, then both would be applied. And the resultant
 motion would be the sum of the two.
 
-![](img/lookup-metadata.png)The `[Add Lookup]` and `[Edit Metadata]` buttons
-will bring up a dialog that allows you to control the attributes of the
-lookup. Every lookup has a lookup type (here "Single Substitution")
-which specifies broadly what kinds of things this lookup can do.
+![](/assets/img/dialogs1-lookup-metadata.png)
 
-[Single Substitution](#basic-subs)
+The `[Add Lookup]` and `[Edit Metadata]` buttons will bring up a dialog 
+that allows you to control the attributes of the lookup. Every lookup has
+a lookup type (here "Single Substitution") which specifies broadly what
+kinds of things this lookup can do.
+
+[Single Substitution](#Basic+substitutions)
 
 Substitute exactly one glyph with another.
 
-[Multiple Substitution](#basic-subs)
+[Multiple Substitution](#Basic+substitutions)
 
 Substitutes exactly one glyph with several others.
 
-[Alternate Substitution](#basic-subs)
+[Alternate Substitution](#Basic+substitutions)
 
 Provides the user with a choice of substitute glyphs for each glyph.
 
-[Ligature Substitution](#basic-subs)
+[Ligature Substitution](#Basic+substitutions)
 
 Substitutes multiple glyphs with a single one
 
-[Contextual Substitution](#contextual-subs)
+[Contextual Substitution](#Contextual+substitutions)
 
 Performs substitutions depending on the glyphs around the current one
 
-[Contextual Chaining Substitutions](#contextual-subs)
+[Contextual Chaining Substitutions](#Contextual+substitutions)
 
 A more complicated way of performing contextual substitutions
 
-[Reverse Contextual Chaining
-Substitutions](#contextual-subs)
+[Reverse Contextual Chaining Substitutions](#Contextual+substitutions)
 
 For arabic scripts where substitutions need to be done backwards.
 
-[Mac Indic State Machine](#sm-subs)
+[Mac Indic State Machine](#Substitution+by+State+Machine)
 
 (Not an OpenType lookup at all, but one for Apple's Advanced typography
 tables -- rearranges indic glyphs)
 
-[Mac Contextual State Machine](#sm-subs)
+[Mac Contextual State Machine](#Substitution+by+State+Machine)
 
 (Not an OpenType lookup at all, but one for Apple's Advanced typography
 tables -- contextual substitutions)
 
-[Mac Insertion State Machine](#sm-subs)
+[Mac Insertion State Machine](#Substitution+by+State+Machine)
 
 (Not an OpenType lookup at all, but one for Apple's Advanced typography
 tables -- contextually inserts glyphs)
 
-* * * * *
-
-[Single Positioning](#Single-pos)
+[Single Positioning](#Single+Positioning)
 
 Moves a single glyph around
 
-[Pair Positioning (kerning)](#Pair)
+[Pair Positioning (kerning)](#Pair+Positioning+(kerning))
 
 Moves two glyphs relative to each other
 
-[Cursive Positioning](#Anchor)
+[Cursive Positioning](#Anchor+Positioning)
 
 For Urdu and other similar scripts. Positions one glyph at the
 appropriate anchor point relative to another.
 
-[Mark to Base Positioning](#Anchor)
+[Mark to Base Positioning](#Anchor+Positioning)
 
 Positions a mark (or accent) relative to a base letter
 
-[Mark to Ligature Positioning](#Anchor)
+[Mark to Ligature Positioning](#Anchor+Positioning)
 
 Positions a mark relative to ta ligature
 
-[Mark to Mark Positioning](#Anchor)
+[Mark to Mark Positioning](#Anchor+Positioning)
 
 Positions a mark relative to another mark.
-
-[Contextual Positioning](#contextual-pos)
-
-Positions glyphs depending on other glyphs around them
-
-[Contextual chaining Positioning](#contextual-pos)
-
-A more complex form of the above.
-
-[Mac Kerning State Machine](#sm-kern)
-
-(Not an OpenType lookup at all, but one for Apple's Advanced typography
-tables -- contextual kerning)
 
 A lookup may be associated with one or more feature tags each of which
 may be active for various scripts and languages. You may edit the
@@ -160,12 +149,12 @@ of feature tags identified by their "friendly names" (so instead of
 
 Similarly you may edit the script and language list directly, or you may
 press on the rectangle to get a friendlier dialog (see
-[below](#scripts-dlg)).
+[below](#Script+dialog)).
 
 Every lookup is associated with a set of flags which control its
 behavior. The "Mark Class:" field is only active if there are [Mark
-Classes](../fontinfo/#MarkClass)defined, and the "Mark Set:" field is
-active if there are [Mark Sets](../fontinfo/#MarkSet)defined. Mark
+Classes](../fontinfo/#MarkClass) defined, and the "Mark Set:" field is
+active if there are [Mark Sets](../fontinfo/#MarkSet) defined. Mark
 classes and sets are very similar, with mark sets being the newer
 (largely unsupported as I write in spring 2009) but more versatile of
 the two. These provide an extension of the Ignore Marks flag -- if you
@@ -181,31 +170,41 @@ alphanumerics, underscores and periods -- no spaces).
 For ligatures you have the option of specifying whether you want these
 ligatures output in an afm file.
 
-![](img/lang-dlg.png)![](img/script-lang-dlg.png)The script dialog allows you to
-enter scripts and languages. Again you may edit these directly or press
-on the little rectangles to get a list of friendly names. If you choose
-to bring up the language dialog you may choose more than one language in
-it (use the control key to make disjoint selections).
+![](/assets/img/dialogs1-lang-dlg.png)
+
+
+#### Script dialog
+
+![](/assets/img/dialogs1-script-lang-dlg.png)
+
+The script dialog allows you to enter scripts and languages. Again you may
+edit these directly or press on the little rectangles to get a list of
+friendly names. If you choose to bring up the language dialog you may
+choose more than one language in it (use the control key to make disjoint
+selections).
 
 After you have created a lookup you may add subtables to it. In most
 cases you will only need to create one subtable, but for contextual or
 kerning lookups you may need two or more (the second would contain a set
 of kerning classes, while the first would contain any special cases).
 
-The `[Add Subtable] `button will prompt you to name the new subtable,
+The `[Add Subtable]` button will prompt you to name the new subtable,
 and will then bring up a dialog to allow you to edit the commands, the
 data, of that subtable. You may also bring up this dialog by selecting
 an existing subtable and double clicking on it (or by pressing the
 `[Edit Data]` button). The format of the dialog will depend on the
 lookup type.
 
-Basic substitutions
+
+#### Basic substitutions
 
 ![GSUB single glyph substitution](subtable-gsub-single.png)
- GSUB single glyph substitution dialog
 
-![](img/subtable-gsub-ligature.png)
- GSUB ligature substitution dialog
+GSUB single glyph substitution dialog
+
+![](/assets/img/dialogs1-subtable-gsub-ligature.png)
+
+GSUB ligature substitution dialog
 
 Many of the basic substitution dialogs are very similar. Most of the
 dialog contains a list glyph names (one per line) on the left, and a
@@ -228,43 +227,46 @@ a default replacement glyph then it will in provide that as the default
 value (if it can't figure out a good replacement it will just leave the
 right side blank).
 
-The `[Add Selected] `button works in much the same way, but will only
+The `[Add Selected]` button works in much the same way, but will only
 add glyphs selected in the font view.
 
-The `[Default Using Suffix:] `button will behave similarly (except it
+The `[Default Using Suffix]` button will behave similarly (except it
 will only insert entries for which FontForge can find a replacement, and
 glyph name of that replacement will be found by appending the specified
 suffix to the glyph name of the base glyph).
 
-The `[Remove Empty] `button will remove any entries with no replacement
+The `[Remove Empty]` button will remove any entries with no replacement
 glyph(s). The `[Delete]` button will delete the currently selected row.
 
 The various radio buttons and check boxes at the top of the dialog
 control how the base glyphs are ordered in the display -- either in
-\<\>Alphabetic order (by glyph name) or in Unicode code point order. If
+<> Alphabetic order (by glyph name) or in Unicode code point order. If
 [] By Base Char is checked then composed characters like "Egrave" will
 be ordered closer to "E" than to "Eth". If [] By Scripts is checked then
 glyphs of one script system will be grouped together no matter how they
 are ordered alphabetically or unicodally, thus "A" would be grouped with
 "B" and not with "Alpha".
 
-### Contextual substitutions
+
+#### Contextual substitutions
 
 The contextual substitution dialog is quite complicated and is discussed
 in its [own section](../contextchain/). These lookups can only live in
 an OpenType font, not in an Apple Advanced Typography font.
 
-### Substitution by State Machine
+
+#### Substitution by State Machine
 
 The state machine substitution dialog is quite complicated and is
 discussed in its [own section](../statemachine/). These lookups can
 only live in an Apple Advanced Typography font.
 
-  ----------------------------------- -----------------------------------
-  ![](img/subtable-gpos-singlehide.png)   ![](img/subtable-gpos-singlefull.png)
-  ----------------------------------- -----------------------------------
+![](/assets/img/dialogs1-subtable-gpos-singlehide.png)
 
-  :  Single Positioning
+![](/assets/img/dialogs1-subtable-gpos-singlefull.png)
+
+
+### Single Positioning
 
 The single glyph positionioning lookup can potentially be quite complex,
 but generally in any specific case very little of that complexity is
@@ -294,12 +296,16 @@ image on the right, so the adjustment column would remain after checking
 the checkbox).
 
 Often all the adjustments in a subtable will be the same (the ones here
-are) so the [\*] Default new entries to first check box will give all
+are) so the [*] Default new entries to first check box will give all
 new entries the same value as the first line.
+
 
 ### Pair Positioning (kerning)
 
-#### ![](img/kerningformat.png)Kerning format dialog
+
+#### Kerning format dialog
+
+![](/assets/img/dialogs1-kerningformat.png)
 
 When you create a kerning subtable you will first be asked whether you
 want to create a kerning class subtable, or a kerning subtable with a
@@ -350,9 +356,12 @@ capital, but that is rare and if you want to save space in your font
 tables you can ignore it). Similarly the closing quote character will
 almost never be on the left side of a kerning pair.
 
+
 #### Kerning pairs
 
-![](img/subtable-gpos-kernpair.png) The kerning class dialog is described in
+![](/assets/img/dialogs1-subtable-gpos-kernpair.png)
+
+The kerning class dialog is described in
 its [own section](../metricsview/#kernclass), while the kerning pair
 subtable dialog is described below.
 
@@ -363,9 +372,9 @@ potential adjustments (and possibly device tables for each of those).
 
 In practice kerning tends to use only one of those 8 adjustments. For
 left to right text this is generally the horizontal advance of the first
-glyph (x\_adv\#1), for right to left kerning the horizontal advance of
+glyph (x_adv#1), for right to left kerning the horizontal advance of
 the second glyph is used instead, and for vertical top to bottom text
-the vertical advance of the first glyph (y\_adv\#1). Again, the [] Hide
+the vertical advance of the first glyph (y_adv#1). Again, the [] Hide
 Unused Columns may be used to simplify the dialog.
 
 Each time you enter a new combination, FontForge will try to guess a
@@ -391,9 +400,12 @@ be twice as big and the effects of rounding errors will be more
 obvious). Magnification is probably only useful if you are working on
 device tables for screen pixelsizes.
 
+
 ### Anchor Positioning
 
-![](img/subtable-gpos-anchor.png)Marks (diacritical accents, vowel marks,
+![](/assets/img/dialogs1-subtable-gpos-anchor.png)
+
+Marks (diacritical accents, vowel marks,
 etc.) may be attached to base glyphs using anchors. In the latin script,
 the grave, accute and circumflex accents might all attach to their base
 glyph at the same point, so these would all live in one anchor class.
@@ -414,7 +426,9 @@ on top of one another.
 Finally, ligatures may have several attachment sites, one for each
 ligature component.
 
-![](img/anchorcontrol-base.png)The above dialog may be used to create a set
+![](/assets/img/dialogs1-anchorcontrol-base.png)
+
+The above dialog may be used to create a set
 of classes for each type of anchor subtable, then click on the
 `[Anchor Control...]` button to view the marks anchored to bases glyphs.
 
@@ -428,11 +442,13 @@ small pixelsizes.
 
 You may provide device table adjustments for each pixelsize.
 
+
 ### Contextual Positioning
 
 The contextual substitution dialog is quite complicated and is discussed
 in its [own section](../contextchain/). These lookups can only live in
 an OpenType font, not in an Apple Advanced Typography font.
+
 
 ### Kerning by State Machine
 
