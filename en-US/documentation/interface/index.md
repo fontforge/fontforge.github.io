@@ -43,4 +43,4 @@ title: FontForge Interface
     - [The Kerning Pairs dialog](kernpairs)
     - [Kerning By Classes](metricsview#Kerning+By+Class)
     - [Anchor Control Dialog](anchorcontrol)
-    
+    - [Contextual Lookup Dialog](contextchain)

@@ -4,19 +4,19 @@ layout: default
 title: The dialog for editing Contextual or Chaining Contextual lookups
 ---
 
-What is a Contextual Positioning lookup?
-----------------------------------------
+
+[table_of_contents]
+
+
+### What is a Contextual Positioning lookup?
 
 There are two types of contextual positioning modes: Contextual
 Positioning and Chained Contextual Positioning. In the simplest form of
 the first you may specify a list glyphs and specify repositioning to
 occur if that sequence is matched. For example you might specify (in
-English)
- `      5 t h`
- and if that sequence were found raise the "t" and "h" to 5^th^. You can
-also specify classes of glyphs so you could say something like:
- `      [0-9] t h`
- to raise "t" and "h" after any digit.
+English) `5 t h` and if that sequence were found raise the "t" and 
+"h" to 5^th^. You can also specify classes of glyphs so you could say
+something like: `[0-9] t h` to raise "t" and "h" after any digit.
 
 After applying this lookup, a word processor will skip over the three
 glyphs matched by the pattern, at least it will in a simple "Contextual
@@ -28,8 +28,8 @@ lookahead). Positioning changes may only be made to the part including
 the current glyph, and the word processor will advance by the number of
 glyphs in that subset of the pattern.
 
-What is a Contextual Substitution lookup?
------------------------------------------
+
+### What is a Contextual Substitution lookup?
 
 Substitutions come in three types. The first two are similar to the two
 types for positioning, the third is designed to handle a very specific
@@ -39,19 +39,18 @@ Suppose you had a script font where most letters join at the base line,
 but after some letters (b,o,v,w) the join is near the x-height, so a
 special version of each lower case letter needs to be created designed
 for a left side join near the x-height. You would want to be able to
-say:
- `      [bovw] [a-z]`
- Note that this just specifies the cases in which the substitution may
+say: `[bovw] [a-z]`.
+
+Note that this just specifies the cases in which the substitution may
 be applied. It does not specify the substitution itself, that is done in
 a separate lookup.
 
 You may pull down an example script font with this substitution from
 [FormalScript.tgz](http://fontforge.sf.net/sfds/FormalScript.tgz), this
-example is worked out in detail in the
-[tutorial](editexample6-5.html#Conditional).
+example is worked out in detail in the [tutorial](editexample6-5.html#Conditional).
 
-More complete descriptions
---------------------------
+
+### More complete descriptions
 
 For more information on contextual lookups see Adobe's Docs:
 
@@ -64,49 +63,58 @@ For more information on contextual lookups see Adobe's Docs:
 -   [The feature tag
     registry](http://partners.adobe.com/public/developer/opentype/index_tag3.html).
 
-How do these relate to Apple Advanced Typography features?
-----------------------------------------------------------
+
+### How do these relate to Apple Advanced Typography features?
 
 In some cases a contextual or chaining contextual substitution can be
 converted into one of Apple's contextual glyph substitution subtables.
-See the page on [Apple Advanced Typography](../gposgsub/#sometimes)for
+See the page on [Apple Advanced Typography](../gposgsub/#sometimes) for
 more information as to when and caveats about how.
 
-Creating a contextual lookup
-----------------------------
 
-First you must create a contextual lookup with the [Element-\>Font
-Info-\>Lookups dialog](../fontinfo/#Lookups), then in that same dialog
+### Creating a contextual lookup
+
+First you must create a contextual lookup with the [Element->Font
+Info->Lookups dialog](../fontinfo/#Lookups), then in that same dialog
 create and name a subtable in that lookup. Then the contextual editor
 will open.
 
-Editing a lookup
-----------------
 
-### ![](img/contextchain-format.png)Format
+### Editing a lookup
+
+#### Format
+
+![](/assets/img/dialogs1-contextchain-format.png)
 
 Except for the reverse chaining features, any of these may come in one
 of three formats.
 
 The simplest format is a list of [glyphs](#Glyphs). You may specify
 several glyph sequences in a single feature. So the script example above
-could be specified (quite inefficiently) by 4\*26 lines like:
- `      b a`
- `      b b`
- `      ...         o a`
- `      ...`
+could be specified (quite inefficiently) by 4*26 lines like:
+
+	b a
+	b b
+	...        
+	o a
+	...
 
 The next format allows you to specify a list of [classes](#Classes). In
 the script example we would define 2 classes:
- `      [bovw]`
- `      [ac-np-ux-z]`
- and define two patterns as:
- `      class1 [class2]         class1 [class1]`
+
+	[bovw]
+	[ac-np-ux-z]
+
+and define two patterns as:
+
+    class1 [class2]         
+	class1 [class1]
 
 The third format is the most general and allows you to specify your
-pattern by a [separate list of glyphs](#Coverage) for each glyph
+pattern by a [separate list of glyphs](#Simple+Coverage) for each glyph
 position:
- `      [bovw] [a-z]`
+
+	[bovw] [a-z]
 
 Most contextual specifications are fairly simple, FontForge has two
 dialog formats, one for simpler specifications and one for more
@@ -116,13 +124,16 @@ understand, but allows for greater generality.
 In both the glyph and the class format you are allowed to specify
 multiple matching rules (in the coverage format you may only specify one
 rule. I know this sounds odd, I did not design the system).
+
 **UNFORTUNATELY** the OpenType interpreters do not seem to support
 multiple rules within a single subtable. Instead I suggest you use
 multiple subtables. It will have the same effect but is less efficient.
 FontForge still supports multiple rules because the spec says it should.
 
 
-### ![](img/contextchain-simplecoverage.png)Simple Coverage
+#### Simple Coverage
+
+![](/assets/img/dialogs1-contextchain-simplecoverage.png)
 
 This display shows a list of three items, the first column consists of
 coverage tables -- that is lists of glyphs. A match occurs if the
@@ -153,7 +164,8 @@ nested lookup "To-TopJoin" (which will convert the glyph into an
 alternate format). Here there is no need for a lookahead list (and there
 is none).
 
-### Setting a coverage table
+
+#### Setting a coverage table
 
 You can change a coverage table by editing it. You may enter either
 glyph names or unicode characters (which will be converted to a glyph
@@ -163,7 +175,9 @@ on the little box on the right you will get a dialog containing a font
 view. In this view you may select glyphs to your heart's content, when
 you press OK these glyphs become your table.
 
-### ![](img/contextchain-coverage.png) Coverage
+#### Coverage
+
+![](/assets/img/dialogs1-contextchain-coverage.png)
 
 This display shows a list whose entries are coverage tables -- that is
 lists of glyphs. A match occurs if the current glyph matches one of the
@@ -182,7 +196,8 @@ buttons under the sequence lookup list allow you to add, change, remove
 or reorder these transformations. (And yes, the order the
 transformations are applied can matter in complex situations).
 
-#### Creating or editing a lookup position pair
+
+##### Creating or editing a lookup position pair
 
 You can change a lookup by clicking on it, this will produce a pull down
 menu of all lookups that can be applied. You can change the position by
@@ -191,7 +206,10 @@ editing it.
 You can add a new entry by pressing the \<New\> button, and then
 selecting a lookup.
 
-### ![](img/contextchain-simpleglyph.png)Simple Glyphs
+
+#### Simple Glyphs
+
+![](/assets/img/dialogs1-contextchain-simpleglyph.png)
 
 In the glyph format each rule allows you to specify a list of glyphs
 that need to be matched along with lookups that should be applied to
@@ -209,7 +227,10 @@ combination of letters must be spelled out as a separate rule.
 At the bottom of the list are two buttons, one to add a lookup reference
 after a glyph, and the other to start a new section. 
 
-### ![](img/contextchain-glyphlists.png) Glyphs
+
+#### Glyphs
+
+![](/assets/img/dialogs1-contextchain-glyphlists.png)
 
 This format allows you to specify several glyph lists to match. In the
 example at right the string "A,B,C" will be matched in the glyphs before
@@ -220,16 +241,23 @@ finally "F G H" after them. If everything matched then the lookup
 
 The order is significant, word processors will stop at the first match
 they find so in the following pattern strings:
- `      b a`
- `      b a f`
- the second entry would never be matched because "b a" would be applied
+
+	b a
+	b a f
+
+the second entry would never be matched because "b a" would be applied
 first. While:
- `      b a f`
- `      b a`
- would apply match "b a f" when an "f" was present, and "b a"
+
+	b a f
+	b a
+
+would apply match "b a f" when an "f" was present, and "b a"
 otherwise.
 
-### ![](img/contextchain-pickglyph.png)Selecting glyphs
+
+### Selecting glyphs
+
+![](/assets/img/dialogs1-contextchain-pickglyph.png)
 
 The text field may be manipulated as above. However here we are
 specifying a string of glyphs each of which must be matched, rather than
@@ -238,7 +266,9 @@ a class of glyphs any of which could match. So in the example at right,
 
 As above a set of lookups can be applied after the match occurs.
 
-### ![](img/contextchain-simpleclasses.png)Simple Classes
+#### Simple Classes
+
+![](/assets/img/dialogs1-contextchain-simpleclasses.png)
 
 When specifying a class match, you must specify at least one set of
 glyph classes. If you only specify one set these classes will be used in
@@ -267,11 +297,15 @@ needs to be a second rule that looks like
 multiple rules don't actually work, so that rule is in a separate
 subtable (which is in the same lookup) and isn't displayed here.
 
-### ![](img/contextchain-class.png) Classes
+
+#### Classes
+
+![](/assets/img/dialogs1-contextchain-class.png)
 
 
+#### A list of Class numbers
 
-### ![](img/contextchain-classlist.png)A list of Class numbers
+![](/assets/img/dialogs1-contextchain-classlist.png)
 
 Once you have set up your classes, you may then edit the patterns you
 want to match. To remind you of what your classes are, FontForge
@@ -280,5 +314,3 @@ insert that class's index into the pattern.
 
 Finally you must set the nested lookups. This is exactly the same as
 previous sequence / lookup settings.
-
--- [Up](../fontinfo/) -- [TOC](/en-US/tutorials/overview/) --
