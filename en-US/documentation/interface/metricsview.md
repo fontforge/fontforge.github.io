@@ -5,7 +5,10 @@ title: The Metrics View
 ---
 
 
-![](img/MetricsView.png)
+[table_of_contents]
+
+
+![](/assets/img/dialogs1-MetricsView.png)
 
 The metrics view allows you to examine how glyphs look together and to
 alter the spacing between them. You may apply various OpenType features
@@ -37,11 +40,11 @@ If you wish to enter characters you cannot type:
 1.  Select the character (or glyph) in the fontview and then drag and
     drop it into the metrics view at the appropriate place
 2.  Use the View menu to change or insert a character or glyph
-    (View-\>Insert Glyph After)
+    (View->Insert Glyph After)
 3.  Select the characters individually and in order in the font view
     before you open the metrics view, when you do open it the characters
     will appear in the order you selected them
-4.  FontForge has its own funky [input method](#Entering)
+4.  FontForge has its own funky [input method](#Entering+non-ASCII+characters)
 
 The mid portion of the view is taken up with the displayed glyphs. For
 outline glyphs these are sized so that the em-height of the font just
@@ -49,7 +52,7 @@ fits in this region. There are grey lines between the glyphs marking the
 origin of the glyph on the right and the width of the glyph on the left.
 The baseline is also drawn in grey.
 
-A metrics view may be in one of three modes (Metrics-\>Window Type)
+A metrics view may be in one of three modes (Metrics->Window Type)
 
 -   Kerning only -- you may adjust the kerning between any pairs of
     glyphs shown, but you may not set any advance widths
@@ -63,14 +66,13 @@ width by dragging this line. You may change the left side bearing
 (lbearing) of the glyph by clicking on the glyph and dragging it left or
 right. You may change the kerning between this glyph and the one to its
 left by dragging the green line around. (If you wish to create a [Device
-Table](#DeviceTable) for small pixel sizes you must use the [Kern Pair
-Closeup dialog](#kernpair))
+Table](#Device+Table) for small pixel sizes you must use the [Kern Pair
+Closeup dialog](#Kern+Pair+Closeup))
 
-![](img/To-unkerned.png)
-
-![](img/To-kerned.png)
 
 Kerning
+
+![](/assets/img/dialogs1-To-unkerned.png) ![](/assets/img/dialogs1-To-kerned.png)
 
 The active glyph may be changed by clicking on any of the glyphs.
 
@@ -94,19 +96,19 @@ for displaying mixed right to left and left to right passages. This is
 not followed here. The direction determination is done by the first
 glyph alone.
 
-![](img/VerticalMetrics.png)
+![](/assets/img/dialogs1-VerticalMetrics.png)
 
-![](img/HebrewMetrics.png)
+![](/assets/img/dialogs1-HebrewMetrics.png)
 
 You can make the window display vertical metrics and kerning by
-View-\>Vertical. (This is only available if your font has vertical
-metrics enabled, Element-\>Font Info-\>General-\>Has Vertical Metrics).
+View->Vertical. (This is only available if your font has vertical
+metrics enabled, Element->Font Info->General->Has Vertical Metrics).
 In this mode you can change vertical width, vertical kerning, etc.
 
 If you double click on one of the displayed glyphs then FontForge will
 bring up a outline glyph view to allow you to edit that glyph.
 
-![](img/MetricsView-features.png)
+![](/assets/img/dialogs1-MetricsView-features.png)
 
 In the example at left, the input text is an "f" followed by an "i",
 and as the 'liga' feature is turned on, this becomes the "fi" ligature.
@@ -120,16 +122,16 @@ Note: This window is not a full blown layout engine. All the glyphs will
 be treated as if they were in the same script, and all features will be
 applied to all glyphs. Baseline alignment will not be done.
 
-Entering non-ASCII characters
------------------------------
+
+### Entering non-ASCII characters
 
 Most of us are stuck with keyboards that only have ASCII characters on
 them. Or at best some sub-set of ISO 8859-1 characters. How can the full
 range of unicode characters be entered?
 
 X supplies a sophisticated mechanism for entering characters via
-stand-alone [input method servers](../../reference/xim/). FontForge supports this to
-some extent now.
+stand-alone [input method servers](../../reference/xim/). FontForge supports
+this to some extent now.
 
 Aside from that, many versions of X supply a "Compose Character" key, or
 something equivalent. The X software will map a sequence of keystrokes
@@ -141,13 +143,21 @@ expensive keyboards. If you are in a mode where text entry is possible
 then press the F12 key and follow it by a series of keystrokes. Accented
 characters may be built using the following:
 
-  ------ ---- -------------------- ------ ---- -------- ------ --- -------------------------
-         \`   grave accent                0    ring            "   double grave (or tonos)
-         '    acute accent                /    slash           .   dot above
-         :    diaeresis (umlaut)          7    breve           ,   dot below
-         \^   circumflex                  6    caron           5   cedilla
-         \~   tilde                       \_   macron          4   ogonec
-  ------ ---- -------------------- ------ ---- -------- ------ --- -------------------------
+    `   grave accent                
+    0   ring           
+    "   double grave (or tonos)
+    '   acute accent                
+    /   slash           
+    .   dot above
+    :   diaeresis (umlaut)          
+    7   breve           
+    ,   dot below
+    ^   circumflex                  
+    6   caron           
+    5   cedilla
+    ~   tilde                       
+    _   macron          
+    4   ogonec
 
 So Â may be built by [F12] \^ A, and A with diaeresis and macron may be
 built with [F12] : \_ A.
@@ -155,17 +165,32 @@ built with [F12] : \_ A.
 Greek letters may also be created. If you start with [F12] @ and follow
 with:
 
-  ----- --- ------------------- ----- --- --------- ----- --- ---------
-        A   Alpha                     B   Beta            C   Chi
-        D   Delta                     E   Epsilon         F   Phi
-        G   Gamma                     H   Eta             I   Iota
-        J   (technical) Theta         K   Kappa           L   Lamda
-        M   Mu                        N   Nu              O   Omicron
-        P   Pi                        Q   Theta           R   Rho
-        S   Sigma                     T   Tau             U   Upsilon
-        V   final sigma               W   Omega           X   Xi
-        Y   Psi                       Z   Zeta                
-  ----- --- ------------------- ----- --- --------- ----- --- ---------
+    A   Alpha                     
+    B   Beta            
+    C   Chi
+    D   Delta                     
+    E   Epsilon         
+    F   Phi
+    G   Gamma                     
+    H   Eta             
+    I   Iota
+    J   (technical) Theta         
+    K   Kappa           
+    L   Lamda
+    M   Mu                        
+    N   Nu              
+    O   Omicron
+    P   Pi                        
+    Q   Theta           
+    R   Rho
+    S   Sigma                     
+    T   Tau             
+    U   Upsilon
+    V   final sigma               
+    W   Omega           
+    X   Xi
+    Y   Psi                       
+    Z   Zeta                
 
 This is the mapping used by the Symbol font. (Lower case letters are
 created similarly so [F12] @ a yields a lower case alpha). Accented
@@ -173,23 +198,51 @@ greek letters may also be built up, [F12] @ " A yields Alpha tonos.
 
 Finally the following special characters may be built:
 
-  ----- ------------------- --------------------- ----- ------------ ------------------------ ----- ------------ ----------------------------
-        [F12] \<space\>     \<no break space\>          [F12] \*     °                              [F12] @ \*   \<bullet\>
-        [F12] @ \<space\>   \<em space\>                [F12] \#     £                              [F12] @ \#   ¥
-        [F12] \$            \<euro\>                    [F12] @ \$   ¢                              [F12] !      ¡
-        [F12] +             ±                           [F12] -      \<soft-hyphen\>                [F12] @ -    \<en dash\>
-        [F12] @ .           ·                           [F12] 7 2    ½                              [F12] ;      . . .
-        [F12] \<            \<less or equal\>           [F12] \>     \<greater or equal\>           [F12] @ \>   \<triangle bullet\>
-        [F12] =             \<quote dash\>              [F12] ?      ¿                              [F12] A      Å
-        [F12] C             Ç                           [F12] H      \<right index\>                [F12] O      \<OE lig\>
-        [F12] P             §                           [F12] [      \<single right quote\>         [F12] ]      \<single right quote\>
-        [F12] \\            «                           [F12] @ \\   \<single guillemot\>           [F12] a      å
-        [F12] c             ç                           [F12] f      \<female sign\>                [F12] g      ©
-        [F12] h             \<left index\>              [F12] m      \<male sign\>                  [F12] o      \<oe lig\>
-        [F12] p             ¶                           [F12] r      ®                              [F12] s      ß
-        [F12] t             TM                          [F12] z      \<long s\>                     [F12] {      \<left dbl quote\>
-        [F12] }             \<right dbl quote\>         [F12] |      »                              [F12] @ |    \<right single guillemot\>
-  ----- ------------------- --------------------- ----- ------------ ------------------------ ----- ------------ ----------------------------
+    [F12] <space>   <no break space>          
+    [F12] *         °                              
+    [F12] @ *       <bullet>
+    [F12] @ <space> <em space>
+    [F12] #         £
+    [F12] @ #       ¥
+    [F12] $         <euro>
+    [F12] @ $       ¢                              
+    [F12] !         ¡
+    [F12] +         ±                         
+    [F12] -         <soft-hyphen>
+    [F12] @ -       <en dash>
+    [F12] @ .       ·                           
+    [F12] 7 2       ½                              
+    [F12] ;         . . .
+    [F12] <         <less or equal>
+    [F12] >         <greater or equal>           
+    [F12] @ >       <triangle bullet>
+    [F12] =         <quote dash>              
+    [F12] ?         ¿                              
+    [F12] A         Å
+    [F12] C         Ç                           
+    [F12] H         <right index>                
+    [F12] O         <OE lig>
+    [F12] P         §                           
+    [F12] [         <single right quote>         
+    [F12] ]         <single right quote>
+    [F12] \         «                           
+    [F12] @         <single guillemot>           
+    [F12] a         å
+    [F12] c         ç                           
+    [F12] f         <female sign>                
+    [F12] g         ©
+    [F12] h         <left index>              
+    [F12] m         <male sign>                  
+    [F12] o         <oe lig>
+    [F12] p         ¶                           
+    [F12] r         ®                              
+    [F12] s         ß
+    [F12] t         TM                          
+    [F12] z         <long s>                     
+    [F12] {         <left dbl quote>
+    [F12] }         <right dbl quote>         
+    [F12] |         »                              
+    [F12] @ |       <right single guillemot>
 
 This still misses most unicode characters. But pressing [F12] twice will
 bring up a dialog which will allow you to select any character in
@@ -198,8 +251,8 @@ unicode.
 If you type [F12] by mistake then an Escape will get you out of accent
 mode.
 
-Kerning By Class
-----------------
+
+### Kerning By Class
 
 Often it is a good idea to create classes of glyphs which kern alike.
 For example A, À, Á, Â, Â, Ã and Ä probably all kern alike (but note
@@ -207,10 +260,10 @@ that o and ô probably kern quite differently after a T), and rather than
 create separate kerning pairs for each of the "A"s above, they could all
 be placed in a class of glyphs which kern alike.
 
-The [Element-\>Font Info-\>Lookups](../lookups/) provides an interface
+The [Element->Font Info->Lookups](../lookups/) provides an interface
 to this.
 
-![](img/kerningformat.png)
+![](/assets/img/dialogs1-kerningformat.png)
 
 It brings up a dialog showing all the
 GPOS lookups (of which kerning is one) and their subtables. Each set of
@@ -244,7 +297,7 @@ one another). The `[] Only kern glyphs closer `flag means that FontForge
 will only generate negative kerning offsets, that is, offsets which will
 move glyphs closer together.
 
-![](img/kerningclass.png)
+![](/assets/img/dialogs1-kerningclass.png)
 
 Each kerning class belongs to a [lookup
 subtable](../lookups/) and the subtable name is displayed at the top of
@@ -289,6 +342,9 @@ pulldown menus. You can enter a new kerning offset by typing in a value,
 or you can click on the second glyph of the kern pair and drag it
 around.
 
+
+### Device Table
+
 You can also create something called a "Device Table", a name which is
 not very informative. When a font is rasterized at small pixel sizes
 rounding errors become important, and this is particularly true of
@@ -298,10 +354,12 @@ glyphs, and the kerning value itself. The result is that something which
 looks perfectly kerned at 150pixels may be either too close or too far
 apart at 12pixels
 
-![](img/kern-We-150.png)
+![](/assets/img/dialogs1-kern-We-150.png)
+
 Kerning at 150 pixels
 
-![](img/kern-We-12.png)
+![](/assets/img/dialogs1-kern-We-12.png)
+
 Kerning at 12 pixels (magnified by 2)
 
 You could adjust the kerning value slightly until it looked right at
@@ -318,15 +376,13 @@ Because small pixel sizes can be hard to examine, you can change the
 magnification (rasterized at the same size, but each pixel made twice as
 big).
 
-[Device Tables](#DeviceTable) may also be created in a
+
+### Kern Pair Closeup
+
+[Device Tables](#Device+Table) may also be created in a
 number of other cases. The example above was for a kerning class.
 Kerning pairs may also have tables attached to them with the
-Metrics-\>Kern Pair Closeup dialog, which looks similar to the Kerning
+Metrics->Kern Pair Closeup dialog, which looks similar to the Kerning
 Class dialog above.
 
-![](img/kernpairclose.png)
-
-
-
--- [Prev](../bitmapview/) -- [TOC](/en-US/tutorials/overview/) --
-[Next](../filemenu/) --
+![](/assets/img/dialogs1-kernpairclose.png)
