@@ -5,7 +5,7 @@ title: The font validation window
 ---
 
 
-![](img/validation.png)
+![](/assets/img/dialogs1-validation.png)
 
 Both PostScript and TrueType impose some restrictions
 on the data that define a font. Before you save a font you should do a

@@ -48,4 +48,4 @@ title: FontForge Interface
     - [Show Advanced Typographic Features](showatt)
     - * * * * *
     - [Potential Problems Dialog](problems)
-    - [Font Validation Dialog]()
+    - [Font Validation Dialog](validation)
