@@ -90,6 +90,71 @@ title: Download FontForge
 
 {% include snippet-paid-already.html %}
 
+## Download FAQ
+
+<dl class="faq">
+
+<dt>I thought FontForge was free software?</dt>
+<dd>
+  <p>FontForge is free in the sense that you are free
+    to do anything with it that you want (including use
+    it on as many machines as you wish, make copies of
+    it for friends and so forth.) Some people like to
+    explain this with the phrase "free as in free speech, not
+    free as in free beer". It also helps to say "libre software"
+    instead of "free software" to help distinguish these
+    two different meanings in the ambiguous English language.</p>
+
+  <p>It is also free in the sense that you can get the source code at any time and build
+    it yourself. This can be a complicated and difficult task, especially on Mac OS X
+    and Windows.</p>
+
+  <p>This is a big, complex
+    software project, and without revenue to support
+    its development, it grinds to a halt. 
+    Our download system is one way that we try
+    to raise revenue. Please consider being a part of the
+    wonderful group of people who help to make this continued
+    development of FontForge possible.</p>
+</dd>
+<!--
+<dt>I gave a donation, but I'm still asked to pay to download?</dt>
+
+<dd>The donation system is entirely separate from the download system, and exists for a couple of reasons:
+
+  <ul>
+    <li>our GNU+Linux users generally get FontForge without payment via their distributions' repositories, so they like to make donations instead.</li>
+    <li>some people who already bought a copy or a subscription just feel like being extra generous</li>
+  </ul>
+
+  <p>Either way, it allows people to make a simple
+  one-time payment. It is not part of the download
+  system, and any payment you make via the donation
+  system does not apply to the download
+  system. Remember that you may choose to pay as little
+  as US$1 for a download.</p>
+  </dd>
+
+<dt>I paid for a download but can't see a download link anywhere</dt>
+<dd>You probably have page forwarding disabled in your web browser.
+  Point it at <a href="">http://fontforge/download_revisit</a>, enter your invoice ID
+  (not transaction ID) from the your payment confirmation email, and your
+  download will start.
+</dd>
+
+<dt>My download links say that the timer has expired</dt>
+<dd>Email <a href="mailto:">x@y.z</a> with your Invoice ID
+  (not transaction ID) and we'll reset things.
+</dd>
+
+<dt>I tried to download 3 times and they all failed</dt>
+<dd>Email <a href="mailto:">x@y.z</a> with your Invoice ID
+  (not transaction ID) and we'll reset things.
+</dd>
+-->
+
+</dl>
+
 ### Uninstalling
 
 Learn [how to uninstall FontForge](uninstalling/) for all systems.
