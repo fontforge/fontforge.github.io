@@ -46,3 +46,6 @@ title: FontForge Interface
     - [Contextual Lookup Dialog](contextchain)
     - [The Mac State Machine Dialog](statemachine)
     - [Show Advanced Typographic Features](showatt)
+    - * * * * *
+    - [Potential Problems Dialog](problems)
+    - [Font Validation Dialog]()

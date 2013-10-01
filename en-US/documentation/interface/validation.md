@@ -5,7 +5,9 @@ title: The font validation window
 ---
 
 
-![](img/validation.png)Both PostScript and TrueType impose some restrictions
+![](img/validation.png)
+
+Both PostScript and TrueType impose some restrictions
 on the data that define a font. Before you save a font you should do a
 quick check (well... it's not always quick) to insure that you are not
 breaking any rules.
@@ -74,7 +76,7 @@ window and out of it as you create and fix problems.
 
 If you double click on a line in the window then FontForge will open an
 outline glyph editing window for that glyph, and run a small version of
-[Element-\>Find Problems](../problems/)to help you track down exactly
+[Element->Find Problems](../problems/)to help you track down exactly
 where in the glyph the error(s) occurred.
 
 If you right click, you will get a popup menu which has various options
@@ -116,9 +118,9 @@ Frequently these glyphs are designed so that the accent will overlap the
 base letter. One would like to leave the glyph as being made up of
 references, but one would like to get rid of the overlap when the font
 is generated. There is a special flag in
-[`Element->Glyph   Info->Unicode->Mark for Unlink, Remove Overlap before Save`](../charinfo/)which
-will make fontforge unlink a glyph's references, and then run
-Element-\>Remove Overlap on them just before saving them. Then after
+[`Element->Glyph Info->Unicode->Mark for Unlink, Remove Overlap before Save`](../charinfo/)
+which will make fontforge unlink a glyph's references, and then run
+Element->Remove Overlap on them just before saving them. Then after
 saving it will reverse the operation and leave you with the original
 references.
 

@@ -166,7 +166,7 @@ leave it blank. (The UniqueID field is only meaningful in PostScript
 fonts)
 
 
-### Private -- (font-wide postscript hinting)
+### Private -- font-wide postscript hinting
 
 
 ![](/assets/img/dialogs1-fontinfo-private.png)
