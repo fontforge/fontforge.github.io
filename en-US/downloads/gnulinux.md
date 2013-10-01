@@ -4,11 +4,13 @@ layout: default
 title: Install FontForge on GNU+Linux
 ---
 
-#### Daily Build Service Packages
+#### Daily Development Version
 
 Ben Martin has developed a daily package building system on OpenSUSE Build Service:
 
-> https://build.opensuse.org/project/repositories?project=home%3Amonkeyiq%3Afontforge
+[Daily packages](https://build.opensuse.org/project/show?project=home%3Amonkeyiq%3Afontforge) are created from the git repository:
+
+    $ git clone git://github.com/fontforge/fontforge.git
 
 #### Distro Packages 
 

@@ -56,7 +56,7 @@ This will make a file with the required lines.
 How to build the site
 -----------------------
 
-This site uses [Jeykll](https://github.com/mojombo/jekyll/wiki/Usage) and is hosted on Github Pages, which uses an older version of Jeykll. Fortunately there is a gem, `github-pages`, to conveniently install it. 
+This site uses [Jeykll](https://github.com/mojombo/jekyll/wiki/Usage) and is hosted on Github Pages, which uses an older version of Jeykll. Fortunately there is a gem, [github-pages](https://help.github.com/articles/using-jekyll-with-pages#troubleshooting), to conveniently install it. 
 
 On Mac OS X you will need to install GNU GCC with HomeBrew:
 

@@ -1,16 +1,31 @@
 ---
 published: true
 layout: default
-title: Uninstalling
+title: How To Uninstall FontForge
 ---
 
+Mac OS X
+--------------
 
-I've never bothered to make this easy.
+Open Terminal and copy and paste this command, then hit Enter:
 
-If you installed in /usr/local (the default) then you type either:
+>     sudo rm -rf /usr/local/bin/{fontforge,sfddiff,fontimage,fontlint} \
+>     /usr/local/lib/{libgdraw,libgunicode,libuninameslist,libspiro,libfontforge,libgutils,libgioftp}* \
+>     /usr/local/lib/pkgconfig/fontforge.pc \
+>     /usr/local/man/man1/{fontforge,sfddiff,fontimage,fontlint}.1 \
+>     /usr/local/share/doc/fontforge \
+>     /usr/local/share/fontforge \
+>     /usr/local/share/locale/*/LC_MESSAGES/FontForge.mo \
+>     /usr/local/include/fontforge \
+>     /Applications/FontForge.app;
 
->     $ su
->     password:
+Windows
+----------------
+
+You should find an "Uninstall" shortcut in the Start Menu. 
+
+If not (perhaps you are on cygwin):
+
 >     $ rm -rf /usr/local/bin/{fontforge,sfddiff,fontimage,fontlint} \
 >     /usr/local/lib/{libgdraw,libgunicode,libuninameslist,libspiro,libfontforge,libgutils,libgioftp}* \
 >     /usr/local/lib/pkgconfig/fontforge.pc \
@@ -20,21 +35,13 @@ If you installed in /usr/local (the default) then you type either:
 >     /usr/local/share/locale/*/LC_MESSAGES/FontForge.mo \
 >     /usr/local/include/fontforge
 
-or if you are on a mac:
+GNU+Linux
+-------------
 
->     $ sudo rm -rf /usr/local/bin/{fontforge,sfddiff,fontimage,fontlint} \
->     /usr/local/lib/{libgdraw,libgunicode,libuninameslist,libspiro,libfontforge,libgutils,libgioftp}* \
->     /usr/local/lib/pkgconfig/fontforge.pc \
->     /usr/local/man/man1/{fontforge,sfddiff,fontimage,fontlint}.1 \
->     /usr/local/share/doc/fontforge \
->     /usr/local/share/fontforge \
->     /usr/local/share/locale/*/LC_MESSAGES/FontForge.mo \
->     /usr/local/include/fontforge \
->     /Applications/FontForge.app
+If you installed in /usr/local (the default) then you type either:
+
+>     $ su
 >     password:
-
-or if you are on cygwin:
-
 >     $ rm -rf /usr/local/bin/{fontforge,sfddiff,fontimage,fontlint} \
 >     /usr/local/lib/{libgdraw,libgunicode,libuninameslist,libspiro,libfontforge,libgutils,libgioftp}* \
 >     /usr/local/lib/pkgconfig/fontforge.pc \
