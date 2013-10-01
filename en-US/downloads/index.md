@@ -4,8 +4,6 @@ layout: default
 title: Download FontForge
 ---
 
-{% include snippet-paid-already.html %}
-
 <table class="table table-bordered table-striped">
 
   <thead>
@@ -89,6 +87,8 @@ title: Download FontForge
   </tr>
 </tbody>
 </table>
+
+{% include snippet-paid-already.html %}
 
 ### Uninstalling
 
