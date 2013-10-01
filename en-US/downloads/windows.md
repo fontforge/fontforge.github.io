@@ -4,8 +4,6 @@ layout: default
 title: Install FontForge on Windows
 ---
 
-Matthew Petroff offers an unoffical Windows installer:
+Download the Windows installer by purchasing a one-time copy or a subscription. 
 
-[www.mpetroff.net/software/fontforge-windows/](http://www.mpetroff.net/software/fontforge-windows/)
-
-You may find installing a GNU+Linux OS in [Virtual Box](http://www.virtualbox.org) offers a better experience, however.
+TODO: Make screencast to show install process

@@ -1,8 +1,10 @@
 ---
 published: true
 layout: default
-title: Building FontForge from source
+title: Download FontForge Source Code
 ---
+
+{% include snippet-paid-already.html %}
 
 
 -   [Installing from a pre-built unix

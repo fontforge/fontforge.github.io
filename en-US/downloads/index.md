@@ -4,21 +4,92 @@ layout: default
 title: Download FontForge
 ---
 
-Installation Packages
-------------------------------
+{% include snippet-paid-already.html %}
 
-Easily install FontForge on [Mac](mac/), [Windows](windows/) and [GNU+Linux](gnulinux/).
+<table class="table table-bordered table-striped">
 
-### Source Code
+  <thead>
+    <th></th>
+    <th><div class="top-feature">Source&nbsp;Code</div><div class="top-feature-description">to compile</div></th>
+    <th colspan="3">
+        <div class="top-feature">
+            Download Package
+        </div>
+        <div class="top-feature description">
+            ready to run, no need to build from source code
+        </div>
+    </th>
+  </thead>
 
-Please see the [Installing From Source Code](source/) page for full details on compiling from source. 
+<tbody>
+  <tr>
+    <th>
+      <div class="feature">
+        Program Features
+      </div>
+      <div class="feature description">
+          Format Conversion, OpenType Layout, Scripting
+      </div>
+    </th>
+    <td>All</td>
+    <td>Limited</td>
+    <td>All</td>
+    <td>All</td>
+  </tr>
 
-#### Release Version
+  <tr>
+    <th>
+      <div class="install">
+        Install Process
+      </div>
+      <div class="install description">
+          
+      </div>
+    </th>
+    <td>Hard <i class="icon-thumbs-down"></i>   </td>
+    <td>Easy <i class="icon-thumbs-up"></i> </td>
+    <td>Easy <i class="icon-thumbs-up"></i> </td>
+    <td>Easy <i class="icon-thumbs-up"></i>   </td>
+  </tr>
 
-[fontforge_full-20120731-b.tar.bz2 (5.5 MB)](http://sourceforge.net/projects/fontforge/files/latest/download)
+  <tr>
+    <th>
+      <div class="feature" rel="tooltip"
+           title="If you pay for 2.8 but 3.0 is released during your subscription, you will get that free of charge">
+        Updates
+      </div>
+      <div class="feature description">
+        
+      </div>
+    </th>
+    <td>Yes <i class="icon-thumbs-up"></i>   </td>
+	<td>No  <i class="icon-thumbs-down"></i> </td>
+	<td>No  <i class="icon-thumbs-down"></i> </td>
+    <td>Yes <i class="icon-thumbs-up"></i> 
+        <div class="feature description">
+        while your subscription lasts
+        </div>
+    </td>
+  </tr>
 
-#### Daily Development Version
+  <tr class="cost">
+    <th>Transaction</th>
+    <td>None Required</td>
+    <td>Email Registration</td>
+    <td>1-Time Purchase</td>
+    <td>Annual Subscription</td>
+  </tr>
 
-[Daily packages](https://build.opensuse.org/project/show?project=home%3Amonkeyiq%3Afontforge) are created from the git repository:
+  <tr class="actions">
+    <th></th>
+    <td><a href="source/" class="btn">Free Code</a></td>
+    <td><a href="demo/" class="btn">Free Demo</a></td>
+    <td class="primary-action"><a href="buy/" class="btn btn-success btn-large"><i class="icon-shopping-cart icon-white"></i> <br>$120</a></td>
+    <td class="primary-action"><a href="subscribe/" class="btn btn-success btn-large"><i class="icon-shopping-cart icon-white"></i> <br>$240</a></td>
+  </tr>
+</tbody>
+</table>
 
-    $ git clone git://github.com/fontforge/fontforge.git
+### Uninstalling
+
+Learn [how to uninstall FontForge](uninstalling/) for all systems.
