@@ -1,11 +1,39 @@
 ---
 published: true
 layout: default
-title: Download FontForge Source Code
+title: How To Compile FontForge
 ---
 
 {% include snippet-paid-already.html %}
 
+
+Mac OS X
+============
+
+## Installing from Package Managers
+
+These Mac package managers all have FontForge:
+
+* [Homebrew](http://www.brew.sh) (recommended)
+* [MacPorts](http://www.macports.org/)
+* [Fink](http://www.finkproject.org/) 
+
+## Installing from Source Code
+
+Build with source using [Homebrew](http://www.brew.sh) in the normal way:
+
+```sh
+brew install python;
+brew install gettext libpng jpeg libtiff giflib cairo pango libspiro czmq fontconfig automake libtool pkg-config glib pango;
+brew install fontforge --with-x --HEAD --debug;
+```
+
+
+
+Old Information
+-----------------
+
+TODO: Modernise this
 
 -   [Installing from a pre-built unix
     package](nix-install.html#Installing)
