@@ -292,7 +292,7 @@ OpenType have diverged, but which both still support).
 #### Uploads to Open Font Library
 
 It is possible to upload a font to the [Open Font Library](http://openfontlibrary.org/), please see
-[that section](../../reference/oflib/#Uploading)for more information.
+[that section](../../reference/oflib/#Uploading) for more information.
 
 
 ### Generate Mac Family

@@ -15,8 +15,11 @@ FontForge has commands to make it easy to
     fonts.](#Browsing)
 -   [Upload a completed font to the library.](#Uploading)
 
-![](img/OFLibBrowse.png)Browsing the Library
-----------------------------------------
+
+
+### Browsing the Library
+
+![](/assets/img/dialogs2-OFLibBrowse.png)
 
 The first time this dialog starts it will download a list of all fonts
 on the library. This is an incremental process which can take a while.
@@ -30,7 +33,7 @@ files you may download.
 
 In the example at right the font "NotCourier-Sans" from Open Source
 Publishing is selected. This font is released under the [Open Font
-License](http://scripts.sil.org/OFL)designed by SIL with the help of the
+License](http://scripts.sil.org/OFL) designed by SIL with the help of the
 community. The package just contains a truetype file (which is 104Kb in
 size).
 
@@ -50,8 +53,10 @@ first in the list.
 You may restrict the list so that it only shows fonts by a certain
 designer, with a specified license, with certain tags, ...
 
-![](img/generate-upload.png)Uploading Fonts
----------------------------------------
+
+### Uploading Fonts
+
+![](/assets/img/dialogs2-generate-upload.png)
 
 When you are generating a font you have the option of uploading it to
 the open font library. Only do this to a release version of the font --
@@ -61,9 +66,9 @@ Before doing this you must [register with the Open Font
 Library](http://openfontlibrary.org/media/register) and acquire a
 username/password combination.
 
-Checking the [\*] Upload to Open Font Library will expand the [Generate
-Fonts](../../interface/generate/) dialog with fields containing the information
-needed to upload a font to the library.
+Checking the [*] Upload to Open Font Library will expand the
+[Generate Fonts](../../interface/generate/) dialog with fields
+containing the information needed to upload a font to the library.
 
 First (obviously) you need the username/password combination you
 acquired earlier. FontForge will remember these for you if you want, but
@@ -80,7 +85,7 @@ list these people in "Artists".
 The OFLib identifies fonts by keyword tags. You may list as many comma
 separated tags as you wish, and you may use pretty much anything as a
 tag. It should be something that will help identify your font of course.
-So "sans\_serif", "bold", "condensed", "italic", might all be good tags.
+So "sans_serif", "bold", "condensed", "italic", might all be good tags.
 The server will automagically add tags containing the font type
 (otf/ttf/etc.) and the license.
 
@@ -91,15 +96,15 @@ licenses (Open Font License and Public Domain). If your font is not
 licensed with either of these you should not upload it.
 
 Linux packagers appreciate it if you also include the license in a
-separate text file. If your font contains a license (see [Element-\>Font
-Info-\>TTF Names-\>License](../../interface/fontinfo/#TTF-Names)) then FontForge
-will extract this information and send it up as a separate file.
+separate text file. If your font contains a license (see 
+[Element->Font Info->TTF Names->License](../../interface/fontinfo/#TTF+Names)) 
+then FontForge will extract this information and send it up as a separate file.
 (Currently the OFLib does not accept this information. I hope that will
 change).
 
 It your font is released under the Open Font License then you should
 also upload a FontLog file. Again FontForge will do that for you if your
-font has FONTLOG information (Element-\>Font Info-\>FontLog). (Currently
+font has FONTLOG information (Element->Font Info->FontLog). (Currently
 the OFLib does not accept this information either).
 
 You should also submit a font preview, an image of your font in use. You
@@ -109,7 +114,7 @@ you. FontForge searches the font for all the scripts in it and then
 displays the alphabets of those scripts (at least that's what it does
 for alphabets, for CJK it will display a small selection of the defined
 glyphs). You can see an example of a fontforge generated preview for
-NotCourier-Sans [above](#Browsing)
+NotCourier-Sans [above](#Browsing+the+Library).
 
 Finally you may mark that your font is "Not safe for use in a work
 environment" I'm not sure what font would fall into that catagory (I

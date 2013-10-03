@@ -50,3 +50,4 @@ title: FontForge Interface
     - [Font Validation Dialog](validation)
 - [Dialogs 2](generate)
     - [Open Font dialog](filemenu#Open)
+    - [Browsing OFLib dialog](../reference/oflib/)
