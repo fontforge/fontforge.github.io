@@ -51,3 +51,8 @@ title: FontForge Interface
 - [Dialogs 2](generate)
     - [Open Font dialog](filemenu#Open)
     - [Browsing OFLib dialog](../reference/oflib/)
+    - [Generate Font dialog](generate)
+    - [Generate Mac Family dialog](generate#Generate+Mac+Family)
+    - [Print & Display dialogs](display)
+    - [Preferences dialog](prefs)
+    - [Groups dialog](groups)
