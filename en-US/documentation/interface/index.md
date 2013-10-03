@@ -59,3 +59,4 @@ title: FontForge Interface
     - [Manage Bitmap Strike](elementmenu/#Bitmap+Strikes+Available...)
     - [Re-rasterize Bitmap Strike](elementmenu/#Regenerate+Bitmap+Glyphs...)
     - [Search & Replace dialog](search)
+    - [Style Transformation dialogs](Styles)

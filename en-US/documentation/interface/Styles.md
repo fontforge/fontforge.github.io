@@ -5,33 +5,27 @@ title: Stylistic Transformations on Fonts
 ---
 
 
--   [Change Weight dialog](#Embolden)
--   [Italic dialog](#Italic)
--   [Condense/Extend dialog](#Condense)
--   [Change X-Height](#xheight)
--   [Change Glyphs](#changeglyph)
--   [Small Caps dialog](#Smallcaps)
--   [Subscripts/superscripts dialog](#SubSuper)
+[table_of_contents]
+
 
 The Style sub-menu provides a series of dialogs which allow you to
 create some common stylistic variations of latin fonts.
 
--   Stems and their widths
-     Modification of a Stem's width makes the font appear Bolder or
+-   Stems and their widths  
+    Modification of a Stem's width makes the font appear Bolder or
     Lighter
 -   Counters and their widths (a counter is the white space between
-    stems)
-     Modification of a Counter's width makes the font appear Expanded or
+    stems)  
+    Modification of a Counter's width makes the font appear Expanded or
     Condensed
--   Left and Right Side Bearings
-     Behavior similar to Counter's
+-   Left and Right Side Bearings  
+    Behavior similar to Counter's
 
 The results will probably always need to be examined and fixed up by the
 human eye, but they may provide a help in changing a font's attributes.
 
 It "works" best on sans serif, non-Oblique fonts.
 
-* * * * *
 
 ### Bold
 
@@ -46,16 +40,14 @@ In Knuth's Computer Modern Bold Extended Roman, the "m" glyph is
 extended to 1.15 times the width of the "m" in Computer Modern Roman,
 and the x-height is 1.03 times higher.
 
-  ----------------------- ----------------------------- --------------------------- ----------- --------------------------------- --------------------------
-  Font                    Ratio of Bold/Regular Stems   Ratio of DemiBold/Regular   Expansion   Bold serif height/Regular serif   Bold serif width/regular
-  Arial                   1.5                                                       1                                             
-  Times New Roman         1.7                                                       1           1                                 .98
-  Computer Modern Roman   1.68(at 12pt) - 1.5(at 5pt)                               1.15                                          
-  Adobe Helvetica         1.6                                                                                                     
-  Adobe Times             1.56                                                      1.17        1.10                              .97
-  Garamond Antiqua                                      1.5                                     1.05                              .90
-                                                                                                                                  
-  ----------------------- ----------------------------- --------------------------- ----------- --------------------------------- --------------------------
+    Font                    Ratio of Bold/Regular Stems   Ratio of DemiBold/Regular   Expansion   Bold serif height/Regular serif   Bold serif width/regular
+    Arial                   1.5                                                       1                                             
+    Times New Roman         1.7                                                       1           1                                 .98
+    Computer Modern Roman   1.68(at 12pt) - 1.5(at 5pt)                               1.15                                          
+    Adobe Helvetica         1.6                                                                                                     
+    Adobe Times             1.56                                                      1.17        1.10                              .97
+    Garamond Antiqua                                      1.5                                     1.05                              .90
+
 
 ### Point Size
 
@@ -71,113 +63,15 @@ Computer Modern fonts have a continuum:
 
 Stem width, scaled by point size, made relative to 12pt
 
-17pt
+            17pt    12pt    10pt    9pt     8pt     7pt     6pt     5pt                                     (12pt compared to cmr 12pt)
 
-12pt
+    cmr     83%     100%    109%    116%    120%    124%    130%    139%    Computer Modern Roman           100%
+    cmti            100%    106%    112%    115%    122%                    Computer Modern Text Italic     94%
+    cmbx            100%    105%    108%    112%    117%    120%    123%    Computer Modern Bold Extended   170%
+    cmtt            100%    109%    116%    120%                            Computer Modern Typewriter      100%
+    cmss    99%     100%    102%    109%    113%                            Computer Modern Sans Serif      120%
 
-10pt
-
-9pt
-
-8pt
-
-7pt
-
-6pt
-
-5pt
-
-(12pt compared to cmr 12pt)
-
-cmr
-
-83%
-
-100%
-
-109%
-
-116%
-
-120%
-
-124%
-
-130%
-
-139%
-
-Computer Modern Roman
-
-100%
-
-cmti
-
-100%
-
-106%
-
-112%
-
-115%
-
-122%
-
-Computer Modern Text Italic
-
-94%
-
-cmbx
-
-100%
-
-105%
-
-108%
-
-112%
-
-117%
-
-120%
-
-123%
-
-Computer Modern Bold Extended
-
-170%
-
-cmtt
-
-100%
-
-109%
-
-116%
-
-120%
-
-Computer Modern Typewriter
-
-100%
-
-cmss
-
-99%
-
-100%
-
-102%
-
-109%
-
-113%
-
-Computer Modern Sans Serif
-
-120%
-
-![](img/CaslonOriginality.png)
+![](/assets/img/dialogs2-CaslonOriginality.png)
 
 To the left is an example of the same word (taken from a font specimen
 sheet) printed at 3 different point sizes (8,12 and 24) and then scaled
@@ -185,36 +79,11 @@ up to the same size. The most obvious difference is that the glyphs are
 proportionally wider at the smaller pointsizes. It is less apparent that
 the stems of the letters are different:
 
-24pt
+                                                24pt    12pt    8pt
 
-12pt
-
-8pt
-
-stem of the "n" (compared to 12pt)
-
-89%
-
-100%
-
-117%
-
-counter of the "n" (compared to 12pt)
-
-104%
-
-100%
-
-89%
-
-width of "originality" (compared to 12pt)    
-
-93%
-
-100%
-
-104%
-
+    stem of the "n" (compared to 12pt)          89%     100%    117%
+    counter of the "n" (compared to 12pt)       104%    100%    89%
+    width of "originality" (compared to 12pt)   93%     100%    104%
 
 
 ### SmallCaps
@@ -225,6 +94,7 @@ as lower case letters without ascenders) and then adjusting the stem
 widths (emboldening) so that they too will match stem widths of the
 lower case.
 
+
 ### Italic
 
 The Italic transformation contains at least five parts: A change in the
@@ -232,35 +102,33 @@ letterforms of the lowercase letters, a slight decrease in x-height, a
 [skew](../transform/), and a condensation and a narrowing of the
 vertical stems..
 
-  ----------------------------- -------------- -------------- ------------------- -----------------
                                 Italic Angle   Condensation   Stem width change   X-Height change
-  Computer Modern Text Italic   14º            91%            94%                 100%
-  Times New Roman               16º            100%           91%                 96%
-  Adobe Times                   15             100%           92%                 95%
-  ----------------------------- -------------- -------------- ------------------- -----------------
+    Computer Modern Text Italic   14º            91%            94%                 100%
+    Times New Roman               16º            100%           91%                 96%
+    Adobe Times                   15             100%           92%                 95%
 
-Letterform changes in Galliard: ![](img/ItalicCompGalliard.png)
 
-Letterform changes in Caslon:![](img/ItalicCompCaslon.png) 
- (These glyphs have been deskewed to display the shape transformation
+Letterform changes in Galliard: ![](/assets/img/dialogs2-ItalicCompGalliard.png)
+
+Letterform changes in Caslon:![](/assets/img/dialogs2-ItalicCompCaslon.png)  
+(These glyphs have been deskewed to display the shape transformation
 better.)
 
-Cyrillic Letterform changes:![](img/CyrilItalicComp.png) 
- (These glyphs are also deskewed.)
+Cyrillic Letterform changes:![](/assets/img/dialogs2-CyrilItalicComp.png)  
+(These glyphs are also deskewed.)
 
 This is not a complete list, but it shows most of the salient features
 of such a transformation.
+
 
 ### Oblique
 
 The Oblique transformation is a simple [skew](../transform/),
 
-  ------------------------------------ ------
   Computer Modern Slanted Sans Serif   9.5º
   Arial Italic (actually an oblique)   12º
   Adobe Helvetica Oblique              12º
-                                       
-  ------------------------------------ ------
+
 
 ### Extended/Condensed
 
@@ -268,22 +136,26 @@ In these two transformations the stem width is held constant but the
 horizontal counter sizes and side bearings are increased (or decreased
 for condensed).
 
-### The Change Weight dialog![](img/ChangeWeight.png)
+
+### The Change Weight dialog
+
+![](/assets/img/dialogs2-ChangeWeight.png)
 
 The Change Weight dialog starts out by stroking the glyph
-(Element-\>Expand Stroke) and removing the internal contour. This means
+(Element->Expand Stroke) and removing the internal contour. This means
 that each stem in the glyph will now be wider by the number of em units
 specified at the top of the dialog. Of course, this number may be
 negative, in which case you will be making a lighter, rather than a
 bolder variant of the glyph.
 
-You may find that in some cases the [Change
-Glyph](#changeglyph)dialog will do a better job of
-emboldening or thinning a font. Instead of increasing all stems by the
-same fixed amount it will increase the thickness of each stem
-proportionate to its current thickness.
+You may find that in some cases the [Change Glyph](#Change+Glyphs+dialog)
+dialog will do a better job of emboldening or thinning a font. Instead of
+increasing all stems by the same fixed amount it will increase the thickness
+of each stem proportionate to its current thickness.
 
-![](img/BoldHiraDA.png)For CJK fonts, with complex shapes but without the
+![](/assets/img/dialogs2-BoldHiraDA.png)
+
+For CJK fonts, with complex shapes but without the
 constraint of the latin baseline and cap height, this expansion is
 probably enough. The image at right shows the Hiragana DA syllable --
 the original glyph shape is in the background, and the expanded shape is
@@ -294,17 +166,13 @@ result is rather odd because the glyph no longer rests on the baseline,
 and also extends above the cap-height (or x-height, or whatever line
 bounds this particular glyph).
 
-![](img/BexpandCJK.png)
-
-![](img/BexpandLCGsquish.png)
-
-![](img/BexpandLCG.png)
-
-![](img/BexpandBigSerifs.png)
+![](/assets/img/dialogs2-BexpandCJK.png)
 
 Here the glyph has been expanded as if it were a CJK glyph. Note that it
 now extends below the baseline and above the cap height. That is not
 good.
+
+![](/assets/img/dialogs2-BexpandLCGsquish.png)
 
 Here the glyph has been expanded as before, but the bottom stem has been
 moved up just enough so that it now rides on the base line, and the top
@@ -313,16 +181,22 @@ stem has been moved down so it sits on the cap height.
 But the counters are now much narrower than they were in the original
 glyph, and the left and right side bearings have become squeezed.
 
+![](/assets/img/dialogs2-BexpandLCG.png)
+
 In the final example, the glyph is expanded, the top and bottom stems
 moved appropriately, the side bearings restored to their original size,
 and the internal counters expanded to be closer to their original size.
+
+![](/assets/img/dialogs2-BexpandBigSerifs.png)
 
 Now consider the case of a serifed font. The serifs on the B above have
 become huge, disproportionally bigger than they were in the original
 glyph.
 
-![](img/ChangeWeight.png)Going back to the original dialog. The first field
-specifies the amount by which each stem should get bigger.
+![](/assets/img/dialogs2-ChangeWeight.png)
+
+Going back to the original dialog. The first field specifies the amount
+by which each stem should get bigger.
 
 The radio buttons let you choose which method to use. CJK simply expands
 the glyph and leaves it at that. LCG expands the glyph and then forces
@@ -354,13 +228,13 @@ making a glyph bolder is very like instructing a glyph).
 [] Cleanup Self Intersect has the same meaning as the same field in the
 Expand Stroke dialog.
 
-And for the counters, \<\> Squish will result in the small counters that
+And for the counters, <> Squish will result in the small counters that
 come from expanding the glyph without doing anything to the counters,
-\<\>Retain will attempt to retain the counters, and \<\>Auto will Squish
+<> Retain will attempt to retain the counters, and <> Auto will Squish
 CJK glyphs and Retain LCG glyphs.
 
-Italic dialog
--------------
+
+## Italic dialog
 
 Let me reiterate that the italic transformation is quite different and
 much more complex than the oblique transformation. Oblique fonts are
@@ -406,26 +280,31 @@ The italic lower case is
     will generally be a little lower than the xheight of its companion
     roman font. Note -- if the xheight changes, you should adjust the
     BlueValues (and perhaps the FamilyBlues) with the [Font Info
-    dialog](../fontinfo/#Private).
--   more flowing -- This may be extremely obvious![](img/wItalic.png)or more
+    dialog](../fontinfo/#Private+--+font-wide+postscript+hinting).
+-   more flowing -- This may be extremely obvious ![](/assets/img/dialogs2-wItalic.png) or more
     subtle -- in some fonts even the apparently straight sides of "l"
     will have a slight curve to them.
 -   different serifs -- The baseline serifs for the last stem on a glyph
-    change ![](img/BottomSerif.png), while those of intermediate stems
-    become degenerate![](img/FlatSerif.png)
+    change ![](/assets/img/dialogs2-BottomSerif.png), while those of intermediate stems
+    become degenerate![](/assets/img/dialogs2-FlatSerif.png)
 -   different letterforms -- Some letters simply have different shapes
     in italic:
-    ![](img/fItalic.png)![](img/aItalic.png)![](img/u433Italic.png)![](img/u432Italic.png)
+    ![](/assets/img/dialogs2-fItalic.png)
+    ![](/assets/img/dialogs2-aItalic.png)
+    ![](/assets/img/dialogs2-u433Italic.png)
+    ![](/assets/img/dialogs2-u432Italic.png)
 
 The italic upper case is also slanted (and by the same angle), generally
 condensed (but often less so than the lower case), and usually its
 serifs and letter forms do not change significantly (though there can be
-exceptions: ![](img/ucEItalic.png))
+exceptions: ![](/assets/img/dialogs2-ucEItalic.png))
 
 In typographic tradition serifed fonts have a paired italic font, while
 sans-serif fonts have an oblique font.
 
-![](img/ItalicDlg.png)The italic dialog attempts to give you control over as
+![](/assets/img/dialogs2-ItalicDlg.png) 
+
+The italic dialog attempts to give you control over as
 much of this as fontforge thinks it can do. The dialog displays the
 steps mentioned above, but backwards.
 
@@ -441,21 +320,25 @@ isn't up to such subtleties however.
 
 The [] f checkboxes control additional characters which are similar to
 "f", "long-s" for example, also the "fi", "fl", "ff", "ffi", "ffl",
-"longs\_longs", "longs\_t", etc. ligatures. FontForge determines what
+"longs_longs", "longs_t", etc. ligatures. FontForge determines what
 glyphs it applies to by examining the glyph name and unicode encoding;
 it does NOT do a sophisticated analysis of the glyph's shape.
 
 This does not exhaust the list of changes that could or should be done
 -- Merely the list of what FontForge thinks it can do. There should also
 be checkboxes for:
-![](img/eItalic.png)![](img/vItalic.png)![](img/wItalic.png)![](img/u432Italic.png)![](img/u433Italic.png)
+![](/assets/img/dialogs2-eItalic.png)
+![](/assets/img/dialogs2-vItalic.png)
+![](/assets/img/dialogs2-wItalic.png)
+![](/assets/img/dialogs2-u432Italic.png)
+![](/assets/img/dialogs2-u433Italic.png)
 and many more.
 
 FontForge will change serifs in various places.
 
 -   baseline serifs -- The final stem of a glyph almost always undergoes
     a serif transformation at the baseline. Previous stems generally
-    have their serifs become degenerate (flat lines)![](img/mItalic.png).
+    have their serifs become degenerate (flat lines) ![](/assets/img/dialogs2-mItalic.png).
     This transformation almost always happens.
 -   xheight serifs -- This transformation frequently happens.
 -   ascender serifs -- This transformation happens occasionally.
@@ -463,7 +346,7 @@ FontForge will change serifs in various places.
 -   descender serifs -- Usually serifs on descenders degenerate into
     flat lines.
 -   diagonal serifs -- This transformation usually happens
-    ![](img/xItalic.png)
+    ![](/assets/img/dialogs2-xItalic.png)
 
 When a serif becomes degenerate (as the first two do in the "m" above)
 they often become flat with the baseline, but sometimes they will have a
@@ -477,8 +360,9 @@ symbols.
 Finally we come to the italic angle. This will generally be between -10
 and -15 degrees.
 
-Condense/Extend dialog![](img/CondenseExtend.png)
----------------------------------------------
+## Condense/Extend dialog
+
+![](/assets/img/dialogs2-CondenseExtend.png)
 
 This dialog allows you to change counter sizes without changing stem
 sizes (in theory. It doesn't work too well with diagonal stems). You can
@@ -489,8 +373,10 @@ If the font has and Italic Angle specified in Font Info, then fontforge
 will first unskew the glyph in the hopes of getting some vertical stems,
 then Condense it, and the reskew it.
 
-Change X-Height dialog![](img/ChangeXHeightDlg.png)
------------------------------------------------
+
+## Change X-Height dialog
+
+![](/assets/img/dialogs2-ChangeXHeightDlg.png)
 
 This changes the x-height of a font. The dialog shows the current
 x-height (or what it thinks is the current x-height), and you can chose
@@ -498,8 +384,10 @@ an new value for it. If the font has serifs and you don't want the
 serifs to change in height then specify the current serif height. If you
 do want the serifs to change, then set this field to 0.
 
-Change Glyphs dialog![](img/ChangeGlyph1Dlg.png)
---------------------------------------------
+
+## Change Glyphs dialog
+
+![](/assets/img/dialogs2-ChangeGlyph1Dlg.png)
 
 The change glyphs dialog allows you to do a number of changes to all the
 currently selected glyphs. It can
@@ -531,14 +419,18 @@ be more than 4.
 
 * * * * *
 
-![](img/ChangeGlyph2Dlg.png)You have various options for controlling
+![](/assets/img/dialogs2-ChangeGlyph2Dlg.png)
+
+You have various options for controlling
 horizontal contours. For monospace fonts (or CJK fonts) you probably
 want to select the first option. For proportional Latin fonts, select
 one of the other two.
 
 * * * * *
 
-![](img/ChangeGlyph3Dlg.png)Latin glyphs are asymetric in their behavior
+![](/assets/img/dialogs2-ChangeGlyph3Dlg.png)
+
+Latin glyphs are asymetric in their behavior
 along the horizontal and vertical axes. Vertically glyphs are aligned at
 certain fixed heights (baseline, x-height, cap-height, etc.), while
 horizontally there are no corresponding alignment zones. So the vertical
@@ -551,8 +443,10 @@ overall (default) scaling factor. If you don't adjust the zones yourself
 then changing the scale factor will change the "Resultant Y Position" by
 the obvious amount.
 
-Small Capitals dialog![](img/SmallcapsDlg.png)
-------------------------------------------
+
+## Small Capitals dialog
+
+![](/assets/img/dialogs2-SmallcapsDlg.png)
 
 This dialog allows you to create a series of small caps glyphs. As the
 dialog says, it is unlike most commands in that it does not change the
@@ -591,15 +485,17 @@ scaling the stems so that the upper case stem width becomes the lower
 case stem width. Often the small cap height will be a little taller than
 the x-height -- though the exact value will change from font to font --
 the x-height is as good a default as any. If you do not like the default
-behavior you have all the options of the [Change
-Glyphs](#changeglyph)dialog to play with.
+behavior you have all the options of the [Change Glyphs](#Change+Glyphs+dialog)
+dialog to play with.
 
 **Note:**The default sizes are the same for both small caps and petite
 caps. If you want both features you will need to change settings for at
 least one of them!
 
-Subscipt/Superscript dialog![](img/SubSuperDlg.png)
------------------------------------------------
+
+## Subscipt/Superscript dialog
+
+![](/assets/img/dialogs2-SubSuperDlg.png)
 
 There are several OpenType features which produce small variants of
 standard glyphs. Often the stems are scaled differently (made bolder)
@@ -618,7 +514,8 @@ default each new glyph will be scaled down to be 2/3^rd^s the original
 size, but the stems would only be scaled by 3/4 (so the glyph will look
 proportionately darker). Finally each new glyph will be moved up by 450
 em-units. Again if you don't like these defaults you have all the
-options of the [Change Glyphs](#changeglyph) dialog to play with.
+options of the [Change Glyphs](#Change+Glyphs+dialog) dialog to play with.
+
 
 ### Caveat
 
@@ -628,6 +525,8 @@ options of the [Change Glyphs](#changeglyph) dialog to play with.
 >  When a vessel is, so to speak, "Snarked".
 > *The Hunting of the Snark*, Lewis Carroll
 
-![](img/ka-change.png)These commands are not perfect. If there just isn't
-room in the glyph for the desired transformation contours may overlap.
-Do look at your results and be prepared to fix them up.
+![](/assets/img/dialogs2-ka-change.png)
+
+These commands are not perfect. If there just isn't room in the glyph for
+the desired transformation contours may overlap. Do look at your results
+and be prepared to fix them up.
