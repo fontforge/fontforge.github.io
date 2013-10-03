@@ -64,3 +64,6 @@ title: FontForge Interface
     - [Expand Stroke dialog](elementmenu#Expand+Stroke...)
     - [Tile Path dialog](tilepath)
     - [Insert Text dialog](InsertTextDlg)
+    - [Set Width dialog](metricsmenu#Set+Width...)
+    - [Set left/right bearings](metricsmenu#Set+LBearing...)
+    - [Auto Width dialog](../reference/autowidth)

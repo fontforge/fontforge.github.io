@@ -5,8 +5,13 @@ title: Auto Width and Auto Kern
 ---
 
 
-Auto Width![](img/autowidth.png)
-----------------------------
+[table_of_contents]
+
+
+### Auto Width
+
+![](/assets/img/dialogs2-autowidth.png)
+
 
 The Auto Width command will attempt to guess reasonable widths (more
 accurately reasonable left and right side bearings) for your font. The
@@ -24,14 +29,13 @@ left and right bearings of all accented letters based (by reference) on
 it. You should not try to use AutoWidth on accented letters directly
 (unless those glyphs do not use references).
 
-Auto Kern
----------
+### Auto Kern
 
 There used to be an Auto Kern dialog. There is no longer, this is now
-done in the [kerning subtable](../../interface/lookups/#Pair) dialog and the
-[kerning class](../../interface/metricsview/#kernclass)dialog.
+done in the [kerning subtable](../../interface/lookups/#Pair+Positioning+\(kerning\))
+dialog and the [kerning class](../../interface/metricsview/#Kern+By+Classes...)
+dialog.
 
-* * * * *
 
 ### The python `GlyphSeparationHook`
 
@@ -50,9 +54,7 @@ For two rectangles (where the bounding box is the same as the glyph
 itself) the separation will be 0 as the two glyphs will be touching. For
 a combination like "To" the optical separation will be quite large.
 
-  ------------------------------ ----------------------
-  ![](img/GlyphSep-rectangles.png)   ![](img/GlyphSep-To.png)
-  ------------------------------ ----------------------
+  ![](/assets/img/dialogs2-GlyphSep-rectangles.png)   ![](/assets/img/dialogs2-GlyphSep-To.png)
 
 The GlyphSeparationHook is a python routine which will be called with a
 bunch of information about two glyphs, and is expected to return an
@@ -63,49 +65,49 @@ information those higher level routines need. Of course, if you don't
 provide a routine, FontForge has a built-in routine which will provide a
 default behavior. Here is a python version of that default routine:
 
->     import fontforge;
->
->     def GlyphSeparation(onLeft,onRight,context) :
->         # the goal is to give a weighted average that expresses the visual 
->         #  separation between two glyphs when they are placed so their bounding 
->         #  boxes are adjacent. The separation between two rectangles would be 0 
->         #  While the separation between "T" and "o" would be fairly large 
->         # The trick is to guess a good weighting function. My guess is that 
->         #  things that look close are more important than those which look far 
->         #  So "T" and "O" should be dominated by the crossbar of the "T"...
->         #
->         # Find the area the two glyphs have in common (so when comparing "o" and
->         #  "l" or "g", ignore the ascenders and descenders since that's outside
->         #  the range of "o" and won't affect its visual proximity.
->         imin_y = max(onRight.iminY,onLeft.iminY);
->         imax_y = min(onRight.imaxY,onLeft.imaxY);
->         #
->         # Some glyph combinations will have no overlap -- the grave accent and the
->         # letter "a" will have none. So they don't interact visually.
->         if imax_y < imin_y :
->         return( 0 )
->         #
->         # Otherwise compute some sort of weighted average of the separations between
->         # the two glyphs at various heights.
->         tot,cnt = 0,0
->         j = imin_y
->         while j<=imax_y :
->         if onRight.left[j] < 32767 and onLeft.right[j] > -32767 :
->             # beware of gaps such as those in "i" or "aaccute" 
->             # a gap has a left or right value which is huge
->             # so ignore any such, again it doesn't contribute to the
->             # visual separation.
->             sep = onRight.left[j] - onLeft.right[j]
->             weight = 1.0/(sep + context.denom)
->             weight *= weight
->             tot += weight*sep
->             cnt += weight
->         j += 1
->         if cnt!=0 :
->         tot /= cnt
->         return( int(round( tot )) );
->
->     fontforge.registerGlyphSeparationHook(GlyphSeparation)
+    import fontforge;
+
+    def GlyphSeparation(onLeft,onRight,context):
+        # the goal is to give a weighted average that expresses the visual 
+        #  separation between two glyphs when they are placed so their bounding 
+        #  boxes are adjacent. The separation between two rectangles would be 0 
+        #  While the separation between "T" and "o" would be fairly large 
+        # The trick is to guess a good weighting function. My guess is that 
+        #  things that look close are more important than those which look far 
+        #  So "T" and "O" should be dominated by the crossbar of the "T"...
+        #
+        # Find the area the two glyphs have in common (so when comparing "o" and
+        #  "l" or "g", ignore the ascenders and descenders since that's outside
+        #  the range of "o" and won't affect its visual proximity.
+        imin_y = max(onRight.iminY,onLeft.iminY);
+        imax_y = min(onRight.imaxY,onLeft.imaxY);
+        #
+        # Some glyph combinations will have no overlap -- the grave accent and the
+        # letter "a" will have none. So they don't interact visually.
+        if imax_y < imin_y :
+        return( 0 )
+        #
+        # Otherwise compute some sort of weighted average of the separations between
+        # the two glyphs at various heights.
+        tot,cnt = 0,0
+        j = imin_y
+        while j<=imax_y :
+        if onRight.left[j] < 32767 and onLeft.right[j] > -32767 :
+            # beware of gaps such as those in "i" or "aaccute" 
+            # a gap has a left or right value which is huge
+            # so ignore any such, again it doesn't contribute to the
+            # visual separation.
+            sep = onRight.left[j] - onLeft.right[j]
+            weight = 1.0/(sep + context.denom)
+            weight *= weight
+            tot += weight*sep
+            cnt += weight
+        j += 1
+        if cnt!=0 :
+        tot /= cnt
+        return( int(round( tot )) );
+
+    fontforge.registerGlyphSeparationHook(GlyphSeparation)
 
 The hook will be called with three arguments, a structure with
 information about the glyph on the left, a structure with information
@@ -114,13 +116,11 @@ information about the operation as a whole.
 
 The context argument contains the following fields:
 
-  -------------- -----------------------------------------------
-  font           The font being worked on
-  emSize         The emsize of the font
-  layer          The active layer for this operation
-  regionHeight   (explained below) by default emSize/100
-  denom          1/50th of the emSize. A number I found handy.
-  -------------- -----------------------------------------------
+    font           The font being worked on
+    emSize         The emsize of the font
+    layer          The active layer for this operation
+    regionHeight   (explained below) by default emSize/100
+    denom          1/50th of the emSize. A number I found handy.
 
 FontForge preprocess all the glyphs, extracting pertinant information
 from each and storing it in a separate per-glyph structure than the
@@ -156,14 +156,12 @@ called `left` and `right`. The structure also contains the upper and
 lower bounds of the arrays (both arrays have the same bounds). The glyph
 structures contain the following members:
 
-  ------------- -------------------------------------------------------------------------------------------------------------------------------------------------------
-  glyph         This is the standard python glyph object. This can (rarely) be None.
-  boundingbox   A tuple of 4 values (minx,miny,maxx,maxy) for the glyph
-  iminY         The low bound of the arrays.
-  imaxY         The high bound of the arrays
-  left          an array of integers representing the separation between the left edge of the bounding box and the leftmost contour at that height (never negative)
-  right         an array of integers representing the separation between the right edge of the bounding box and the rightmost contour at that height (never positive)
-  ------------- -------------------------------------------------------------------------------------------------------------------------------------------------------
+    glyph         This is the standard python glyph object. This can (rarely) be None.
+    boundingbox   A tuple of 4 values (minx,miny,maxx,maxy) for the glyph
+    iminY         The low bound of the arrays.
+    imaxY         The high bound of the arrays
+    left          an array of integers representing the separation between the left edge of the bounding box and the leftmost contour at that height (never negative)
+    right         an array of integers representing the separation between the right edge of the bounding box and the rightmost contour at that height (never positive)
 
 `iminY` and `imaxY` are scaled by `regionHeight` from the y units in the
 glyph itself. The value contain at left[0] would represent minimum
@@ -172,26 +170,26 @@ contour when the y location was between 0 and regionHeight. Similarly
 left[1] would be the minimum separation with the y location between
 regionHeight and 2\*regionHeight. And so forth.
 
->         imin_y = max(onRight.iminY,onLeft.iminY);
->         imax_y = min(onRight.imaxY,onLeft.imaxY);
->         if imax_y < imin_y :
->         return( 0 )
+    imin_y = max(onRight.iminY,onLeft.iminY);
+    imax_y = min(onRight.imaxY,onLeft.imaxY);
+    if imax_y < imin_y :
+    return( 0 )
 
 Here we figure out the range along the y axis where the glyphs both
 exist. If the two glyphs don't share any area along the y axis (as, for
 example, the glyph "a" and the grave accent might not) then we assume
 they do not interact and return a visual separation of 0.
 
->         tot,cnt = 0,0
->         j = imin_y
->         while j<=imax_y :
->         if onRight.left[j] < 32767 and onLeft.right[j] > -32767 :
->             sep = onRight.left[j] - onLeft.right[j]
->             weight = 1.0/(sep + context.denom)
->             weight *= weight
->             tot += weight*sep
->             cnt += weight
->         j += 1
+    tot,cnt = 0,0
+    j = imin_y
+    while j<=imax_y :
+    if onRight.left[j] < 32767 and onLeft.right[j] > -32767 :
+        sep = onRight.left[j] - onLeft.right[j]
+        weight = 1.0/(sep + context.denom)
+        weight *= weight
+        tot += weight*sep
+        cnt += weight
+    j += 1
 
 Otherwise loop over the y range where both glyphs are active. Checking
 to make sure there are no holes.
@@ -201,13 +199,13 @@ We find the actual separation between the two glyphs at this y value.
 Then we calculate some magic weighting function (this is handwaving.
 your routine will have a better weighting function)
 
->         if cnt!=0 :
->         tot /= cnt
->         return( int(round( tot )) );
+    if cnt!=0 :
+    tot /= cnt
+    return( int(round( tot )) );
 
 And finally we take the weighted average of those separations, and
 return that as the optical separation.
 
->     fontforge.registerGlyphSeparationHook(GlyphSeparation)
+    fontforge.registerGlyphSeparationHook(GlyphSeparation)
 
 And this routine will tell FontForge to use the hook you provide.
