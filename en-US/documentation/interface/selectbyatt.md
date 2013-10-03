@@ -19,12 +19,7 @@ There are three variants on how the search behaves:
     match
      So if you want to search for all ligatures containing both "f" and
     "i"...
-     Search for ligatures containing "f" with "\<\*\> Select Results"
+     Search for ligatures containing "f" with "<\*> Select Results"
     set
-     Then Search for ligatures containing "i" with \<\*\> Restrict
+     Then Search for ligatures containing "i" with <\*> Restrict
     Selection" set
-
--- [Prev](../editmenu/) -- [TOC](/en-US/tutorials/overview/) --
-[Next](../editmenu/) --
-
-

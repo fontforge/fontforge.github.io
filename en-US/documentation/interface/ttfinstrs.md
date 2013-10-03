@@ -5,10 +5,11 @@ title: Viewing and Editing truetype instructions in FontForge.
 ---
 
 
-  --------------------------
-  ![](img/ttfinstrs-view.png)
-   ![](img/ttfinstrs-edit.png)
-  --------------------------
+[table_of_contents]
+
+
+![](/assets/img/dialogs2-ttfinstrs-view.png)
+![](/assets/img/dialogs2-ttfinstrs-edit.png)
 
 
 -   [Apple's overview on instructing
@@ -21,10 +22,9 @@ title: Viewing and Editing truetype instructions in FontForge.
     instructions](http://developer.apple.com/fonts/TTRefMan/RM07/appendixA.html)
 
 I shall not attempt to describe the mechanics of instructing truetype,
-if you want to understand it I refer you to the above links. ([Microsoft
-has a similar
-set](http://www.microsoft.com/typography/OTSPEC/ttinst.htm)in but they
-are in word format).
+if you want to understand it I refer you to the above links.
+([Microsoft has a similar set](http://www.microsoft.com/typography/OTSPEC/ttinst.htm)
+in but they are in word format).
 
 This dialog shows the instructions associated with a glyph or truetype
 table (like fpgm or prep). If you move your mouse cursor over one of the
@@ -43,30 +43,31 @@ You may also include an stack arguments on the same line as the
 instruction and FontForge will convert them into the appropriate pushes.
 So...
 
->     5 SRP0
+    5 SRP0
 
 is equivalent to
 
->     PUSHB_1
->     5
->     SRP0
+    PUSHB_1
+    5
+    SRP0
 
 You may also use the expression `cvt(<val>)` instead of a number. This
 will be replaced by the index in the 'cvt ' table of an entry which is
-(within one em-unit of) \<val\>. So `cvt(100)` would return the index in
+(within one em-unit of) <val>. So `cvt(100)` would return the index in
 'cvt ' of 100. If there is no such entry, FontForge will create one.
 
-When editing DELTA\* instructions you might want to use the syntax:
+When editing DELTA* instructions you might want to use the syntax:
 
->     PUSHB_3 6@12 8 1 DELTAP2
+	PUSHB_3 6@12 8 1 DELTAP2
 
 This means: Move point 8 by six delta-steps at 37 ppem (that's not clear
-at first glance - assuming delta\_base is 9, DELTAP2 works from 25 ppem
+at first glance - assuming delta_base is 9, DELTAP2 works from 25 ppem
 to 25+15 ppem, in this example it's 25+12 ppem). So it's just a way of
 constructing an argument byte for DELTAP/C.
 
-![](img/editcvt.png)Editing the 'cvt ' table directly
--------------------------------------------------
+### Editing the 'cvt ' table directly
+
+![](/assets/img/dialogs2-editcvt.png)
 
 This dialog shows the initial contents of the 'cvt ' table (before it
 has been modified by the 'prep' program). It is simply a list of signed
