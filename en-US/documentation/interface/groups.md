@@ -4,6 +4,9 @@ layout: default
 title: Groups of Glyphs
 ---
 
+[table_of_contents]
+
+
 A group is a collection of glyphs. It may be any collection that appeals
 to you. My expectation is that groups will be used to collect glyphs
 which are visually associated (in some way) close together so that they
@@ -12,7 +15,9 @@ the font. So you might make a group that consisted of "b d p q" which
 often have similar shapes, or in a Korean font you might wish to look at
 all sylables with a give cho-sung.
 
-![](img/fontview-grouped.png)FontForge treats groups like baby encodings. In
+![](/assets/img/dialogs2-fontview-grouped.png)
+
+FontForge treats groups like baby encodings. In
 the image at left, it is displaying a font showing only the glyphs "b d
 p q". The order the glyphs are mentioned in the group is the order in
 which they will be displayed in the fontview -- and, like an encoding
@@ -20,7 +25,8 @@ the group may be compaced so there are no empty holes for missing glyphs
 (so if the group had contained "b d p uniAC00 q" and the font was
 missing uniAC00, the display would be exactly the same) or uncompacted
 with holes.
- Glyphs in a group may be specified by glyph name, by unicode code point
+
+Glyphs in a group may be specified by glyph name, by unicode code point
 or by a range of unicode values. The examples above all used glyph
 names. A unicode code point looks like "U+XXXX" (where XXXX indicates a
 hex number). Occasionally fonts will use this notation to name their
@@ -38,8 +44,10 @@ why you'd want to do that, but you could). As you design your groups you
 can ask fontforge to check so that you do not inadvertently put the same
 glyph in more that one group (or in the same group twice).
 
-![](img/displaygroups.png)Display by Groups
----------------------------------------
+
+### Display by Groups
+
+![](/assets/img/dialogs2-displaygroups.png)
 
 The Display by Groups dialog is shown in the screen shot at right. The
 top-level group is called "Groups" it has two children, one called
@@ -60,8 +68,10 @@ to press `[OK] `then the fontview would show the glyphs associated with
 Underneath everything is a check box you may use to specify whether you
 want the results compacted or not.
 
-![](img/definegroups.png)Define Groups
-----------------------------------
+
+### Define Groups
+
+![](/assets/img/dialogs2-definegroups.png)
 
 This dialog is a bit more complicated than the previous one. It again
 contains the group list at the top of the dialog, but here only one
@@ -84,5 +94,3 @@ entering the same glyph name (or unicode code point) twice (ff will
 allow you to enter "A" and U+0041 -- because I'm lazy and this is harder
 to check for and less likely to occur). If you set this in a parent
 group then there can be no glyph duplicates among any of its children.
-
--- [Up](../encodingmenu/) -- [TOC](/en-US/tutorials/overview/) --
