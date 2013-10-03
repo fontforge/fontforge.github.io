@@ -4,7 +4,13 @@ layout: default
 title: Generate Font Dialog
 ---
 
-![](img/generate.png)This generates font files, both outline and bitmap. You
+
+[table_of_contents]
+
+
+![](/assets/img/dialogs2-generate.png)
+
+This generates font files, both outline and bitmap. You
 may choose not to generate either, you may generate an afm file or a pfm
 file, you may select the type of postscript output, you may select which
 pixelsizes of bitmap to generate.
@@ -24,7 +30,7 @@ The outline types are:
     **NOTE:** The mac will not recognize a PostScript font unless you
     also generate a bitmap font in NFNT format and place it in the same
     directory. If you haven't created any bitmap fonts yet, cancel this
-    dlg and use [Element-\>Bitmaps Available](../elementmenu/#Bitmaps)
+    dlg and use [Element->Bitmaps Available](../elementmenu/#Bitmap+Strikes+Available...)
     to generate a bitmap font, and then retry this dlg.
 
     **NOTE:** Apple implies that this format is deprecated and therefore
@@ -66,8 +72,8 @@ The outline types are:
     use this mode.
 -   True Type macbinary format, a truetype font wrapped up in a mac
     resource, wrapped up in a macbinary file. Designed to be used for a
-    mac.
-     If you are on a mac, then a file with a resource fork will be
+    mac.  
+    If you are on a mac, then a file with a resource fork will be
     generated directly (macbinary will not be used).
 -   True Type dfont format, a truetype font wrapped up in a mac dfont
     (data fork resource file). Mac OS/X font.
@@ -79,7 +85,7 @@ The outline types are:
     (data fork resource file). Mac OS/X font.
 -   OpenType CID, This is only available if your font is a [CID
     font](../cidmenu/). It produces an OpenType CID-keyed font.
--   [SVG font](#svg)
+-   [SVG font](#SVG+fonts)
 -   None
 
 The bitmap types are:
@@ -119,7 +125,9 @@ The bitmap types are:
     imagemask operator to display each glyph's bitmap.
 -   None
 
-![](img/GenerateOptions.png)The options dialog provides the following check
+![](/assets/img/dialogs2-GenerateOptions.png)
+
+The options dialog provides the following check
 boxes. Not all are enabled at all times.
 
 -   [] Round -- Round all coordinates to integral values. If this is not
@@ -142,13 +150,9 @@ boxes. Not all are enabled at all times.
 -   [] PFM -- Generate a windows printer font metrics file
 -   [] TFM -- Generate a TeX font metrics file (and a TeX enc encoding
     file)
-
-    * * * * *
-
 -   [] Hints -- Include truetype hints in a truetype font.
     -   R C van Dalen's [truetype hinting utilities may be helpful
         here.](http://home.kabelfoon.nl/~slam/fonts/)
-
 -   [] PSNames -- Include the full 'post' (postscript name) table in the
     font
 -   [] Apple -- Apple and MS/Adobe disagree on the format of a ttf font.
@@ -167,9 +171,8 @@ boxes. Not all are enabled at all times.
         tables. Apple does not support GPOS/GSUB tables. MicroSoft still
         supports kern tables for some fonts but requires GPOS for
         others.
-
 -   [] OpenType -- If this is checked the font will be generated with
-    the tables used by OpenType. If both this and [] Apple are checked
+    the tables used by OpenType. If both this and `[] Apple` are checked
     the font will have two sets of tables, Apple will look at one set,
     and everyone else will look at the other. (**CAVEAT**: The above
     statement was true up to 10.4 ("Tiger") after 10.4, Apple can use a
@@ -202,9 +205,6 @@ boxes. Not all are enabled at all times.
     TrueType (OpenType) glyph IDs to glyphnames (and possibly to unicode
     values)
 -   [] Output OFM & CFG -- Output metrics files for Omega
-
-    * * * * *
-
 -   [] Output Font Log -- if the font contains [font
     log](../fontinfo/#FontLog)information then write it out into a
     separate file "FontLog.txt".
@@ -253,7 +253,7 @@ fonts can be indicated by following the pixelsize by "@\<depth\>" (ie.
 If you are generating a bdf font then you will be prompted for a
 resolution later.
 
-See the section on [namelists](../encodingmenu/#namelist) for a
+See the section on [namelists](../encodingmenu/#NameLists) for a
 discussion of the "Force glyph names to" field.
 
 If you leave [] Validate Before Saving checked then FontForge will
@@ -288,19 +288,18 @@ classes, no kerning by state machine). This is the kind of kerning
 available in the original truetype spec (from which both Apple and
 OpenType have diverged, but which both still support).
 
-* * * * *
 
-### Uploads to [Open Font Library](http://openfontlibrary.org/)
+#### Uploads to Open Font Library
 
-It is possible to upload a font to the Open Font Library, please see
+It is possible to upload a font to the [Open Font Library](http://openfontlibrary.org/), please see
 [that section](../../reference/oflib/#Uploading)for more information.
 
-* * * * *
 
-Generate Mac Family
--------------------
+### Generate Mac Family
 
-![](img/GenerateFamily.png)This brings up a dialog very similar to the
+![](/assets/img/dialogs2-GenerateFamily.png)
+
+This brings up a dialog very similar to the
 generate fonts dialog above, but with a few added fields. Because this
 dialog is for Mac families, only Mac formats are supported.
 
@@ -315,23 +314,21 @@ given type and does not support the concepts of "Light", "Black" (if
 there is already a "Bold" style), "Oblique" (if there is already an
 "Italic" style), etc. Generally FontForge will be able to figure out a
 font's style from its fontname, but in some cases you may wish to
-override this by setting the [mac
-style](../fontinfo/#Mac-Style)directly in fontinfo.
+override this by setting the [mac style](../fontinfo/#Mac+Style+++FOND)
+directly in fontinfo.
 
 As of Mac OS/X 10.6 Apple appears to be deprecating this format and
-moving toward [TTC files (see below](#GenerateTTC)).
+moving toward [TTC files (see below](#Generate+TTC)).
 
 For information on creating mac font families beyond the capabilities of
-this dialog look at the [FAQ](/about/faq/#How-family).
+this dialog look at the [FAQ](../../../about/faq/#How+do+I+create+a+mac+font+family?+\(How+do+I+get+the+mac+to+group+my+fonts+so+that+the+italic+and+bold+styles+work\)?).
 
 
+### Generate TTC
 
-* * * * *
+![](/assets/img/dialogs2-GenerateTTC.png)
 
-Generate TTC
-------------
-
-![](img/GenerateTTC.png)A TrueType Collection file can contain many fonts.
+A TrueType Collection file can contain many fonts.
 They need not be all in the same family (though, of course, they can
 be).
 
@@ -371,11 +368,7 @@ will fail if:
 -   (or something else goes wrong)
 
 
-
-* * * * *
-
-SVG fonts
----------
+### SVG fonts
 
 SVG (Scalable Vector Graphics) fonts, come in two forms, one corresponds
 roughly to a PostScript Type1 font, and one to a PostScript Type 3 font.
@@ -390,6 +383,3 @@ needed to draw it.
 
 FontForge usually generates the first format, but for multi layered or
 stroked fonts it will generate the second format.
-
--- [Prev](../filemenu/) -- [TOC](/en-US/tutorials/overview/) --
-[Next](../filemenu/) --

@@ -48,3 +48,5 @@ title: FontForge Interface
     - [Show Advanced Typographic Features](showatt)
     - [Potential Problems Dialog](problems)
     - [Font Validation Dialog](validation)
+- [Dialogs 2](generate)
+    - [Open Font dialog](filemenu#Open)
