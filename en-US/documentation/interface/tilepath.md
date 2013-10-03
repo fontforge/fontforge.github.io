@@ -12,16 +12,21 @@ tile fit to the curve.
 
 Consider the following:
 
-  ------------------------------ ------------------------- --------------------------
-  ![](img/tilepath-selection.png)\   ![](img/tilepath-orig.png)\   ![](img/tilepath-final.png)
-   The tile                       Two paths to be tiled.    The result.
-  ------------------------------ ------------------------- --------------------------
+-   The tile  
+![](/assets/img/dialogs2-tilepath-selection.png)
+
+-   Two paths to be tiled  
+![](/assets/img/dialogs2-tilepath-final.png)
+
+-   The result  
+![](/assets/img/dialogs2-tilepath-orig.png)
 
 The tile has been replicated (and warped) to follow the original
 contours.
 
-![](img/TilePath.png)
- As you can see above there are several different tiles you can specify.
+![](/assets/img/dialogs2-TilePath.png)
+
+As you can see above there are several different tiles you can specify.
 You must specify the tile called Medial; you may specify the other
 three. There meanings are:
 
@@ -38,7 +43,7 @@ automatically closed, so the first and final tiles might look just like
 the medial tile except with their respective edges closed, while the
 isolated tile would have both edges closed.
 
-![](img/TilePath2.png)
+![](/assets/img/dialogs2-TilePath2.png)
 
 The Tile Path dialog gives you several choices to control how the tile
 is placed. The tile can be either centered on the path, or be tangent to
@@ -46,10 +51,15 @@ the left edge of the path (for a clockwise path, the left edge is
 outside the path), or be tangent to the right edge (for a clockwise path
 the right edge is inside the path).
 
-  ------------------------- --------------------------- --------------------------
-  ![](img/tilepath-left.png)\   ![](img/tilepath-center.png)\   ![](img/tilepath-right.png)
-   left (outside)            center                      right (inside)
-  ------------------------- --------------------------- --------------------------
+
+-  left (outside)  
+![](/assets/img/dialogs2-tilepath-left.png)
+
+-   center  
+![](/assets/img/dialogs2-tilepath-center.png)
+
+-   right (inside)  
+![](/assets/img/dialogs2-tilepath-right.png)
 
 You can also chose whether you want the tile to be tiled without scaling
 (in which case you will probably be left with a fraction of the tile at
@@ -58,17 +68,21 @@ the path an integral number of times), or simply scaled (in which case
 there will be exactly one tile and it will be scaled to be as long as
 the path.
 
-  ------------------------- ----------------------- --------------------------
-  ![](img/tilepath-tile.png)\   ![](img/tilepath-ts.png)\   ![](img/tilepath-scale.png)
-   tile                      tile & scale            scale
-  ------------------------- ----------------------- --------------------------
+-   tile   
+![](/assets/img/dialogs2-tilepath-tile.png)
 
-* * * * *
+-   tile & scale  
+![](/assets/img/dialogs2-tilepath-ts.png)
 
-Tile Pattern
-------------
+-   scale  
+![](/assets/img/dialogs2-tilepath-scale.png)
 
-![](img/TilePattern.png)The Tile Pattern dialog allows you to design a
+
+### Tile Pattern
+
+![](/assets/img/dialogs2-TilePattern.png)
+
+The Tile Pattern dialog allows you to design a
 pattern which will be tiled (both horizontally and vertically across the
 current layer.
 
@@ -81,11 +95,6 @@ directions.
 
 The tiling will start at the origin. After the pattern has been tiled
 you may apply other transformations to distort it into a non-rectangular
-shape, or use the Element-\>Overlap-\>Intersect command to clip it to
+shape, or use the Element->Overlap->Intersect command to clip it to
 some contour. Thus you can simulate some of the capabilities of a true
 pattern tile as is available in a type3 font.
-
--- [Prev](../elementmenu/) -- [TOC](/en-US/tutorials/overview/) --
-[Next](../elementmenu/) --
-
-

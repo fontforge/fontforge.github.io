@@ -60,3 +60,7 @@ title: FontForge Interface
     - [Re-rasterize Bitmap Strike](elementmenu/#Regenerate+Bitmap+Glyphs...)
     - [Search & Replace dialog](search)
     - [Style Transformation dialogs](Styles)
+    - [Transformation dialog](transform)
+    - [Expand Stroke dialog](elementmenu#Expand+Stroke...)
+    - [Tile Path dialog](tilepath)
+    - [Insert Text dialog](InsertTextDlg)

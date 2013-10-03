@@ -4,9 +4,11 @@ layout: default
 title: The Insert Text Dialog
 ---
 
-![](img/InsertTxtDlg.png)Generally when designing a font you will not want
-to use this dialog. What is the point of a glyph which is made up of
-precomposed text?
+
+![](/assets/img/dialogs2-InsertTxtDlg.png)
+
+Generally when designing a font you will not want to use this dialog. What
+is the point of a glyph which is made up of precomposed text?
 
 But occasionally it is useful. A company's logo might want to live in a
 single glyph.
@@ -20,12 +22,12 @@ text will be insert as the outlines of the characters you entered. In
 the simplest case, the text will much as you entered them at the origin
 of the glyph.
 
-![](img/TextUnbound.png)
+![](/assets/img/dialogs2-TextUnbound.png)
 
 The text will be scaled. If you entered the text with a pointsize of 12,
 then the outlines will be scaled so that the em-size is 12. If you use a
 font where the em-size is 1000, and the character "H" is 662, then after
-scaling the "H" will be 12\*662/1000 = 7.9 units high.
+scaling the "H" will be 12*662/1000 = 7.9 units high.
 
 (You can, of course, rescale the outlines once they are in the glyph).
 
@@ -51,8 +53,14 @@ of the glyph as is appropriate for where that bit aligns on the path. In
 the first aproach the letters are cleaner individually but the text as a
 whole is more jagged.
 
-  path                  Glyphs bound as a unit           Glyphs distorted by binding
-  --------------------- -------------------------------- -----------------------------------
-  ![](img/PathToBind.png)   ![](img/TextBoundUnitaryGlyph.png)   ![](img/TextBoundDistortedGlyphs.png)
+
+-   Path  
+![](/assets/img/dialogs2-PathToBind.png)
+
+-   Glyphs bound as a unit  
+![](/assets/img/dialogs2-TextBoundUnitaryGlyph.png)
+
+-   Glyphs distorted by binding  
+![](/assets/img/dialogs2-TextBoundDistortedGlyphs.png)
 
 
