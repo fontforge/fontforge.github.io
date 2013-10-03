@@ -56,3 +56,6 @@ title: FontForge Interface
     - [Print & Display dialogs](display)
     - [Preferences dialog](prefs)
     - [Groups dialog](groups)
+    - [Manage Bitmap Strike](elementmenu/#Bitmap+Strikes+Available...)
+    - [Re-rasterize Bitmap Strike](elementmenu/#Regenerate+Bitmap+Glyphs...)
+    - [Search & Replace dialog](search)

@@ -4,6 +4,8 @@ layout: default
 title: Searching for shapes within characters...
 ---
 
+![](/assets/img/dialogs2-rplref.png)
+
 FontForge will allow you to search a font for all glyphs containing a
 certain shape and optionally replace that shape with another shape.
 
@@ -84,9 +86,9 @@ The way a replacement happens will depend on the type of search.
     to figure out where the real replacement points should go. It's hard
     to explain in words, but fairly obvious in a picture:
 
-      ------------------------ ---------------------
-      ![](img/rplsansserifs.png)   ![](img/rplprocess.png)
-      ------------------------ ---------------------
+    ![](/assets/img/dialogs2-rplsansserifs.png)
+
+    ![](/assets/img/dialogs2-rplprocess.png)
 
     The above could be used to convert a san-serif font into a serifed
     one (simplifying grossly). The end point of the search pattern is
@@ -113,4 +115,4 @@ At the moment I see two possible uses for the replace feature:
     replace feature to fix up all things that look like "A" with a
     reference to A. (see the first example above)
 
-![](img/rplserifs.png)
+![](/assets/img/dialogs2-rplserifs.png)
