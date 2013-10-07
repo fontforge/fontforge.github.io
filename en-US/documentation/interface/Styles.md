@@ -40,13 +40,68 @@ In Knuth's Computer Modern Bold Extended Roman, the "m" glyph is
 extended to 1.15 times the width of the "m" in Computer Modern Roman,
 and the x-height is 1.03 times higher.
 
-    Font                    Ratio of Bold/Regular Stems   Ratio of DemiBold/Regular   Expansion   Bold serif height/Regular serif   Bold serif width/regular
-    Arial                   1.5                                                       1                                             
-    Times New Roman         1.7                                                       1           1                                 .98
-    Computer Modern Roman   1.68(at 12pt) - 1.5(at 5pt)                               1.15                                          
-    Adobe Helvetica         1.6                                                                                                     
-    Adobe Times             1.56                                                      1.17        1.10                              .97
-    Garamond Antiqua                                      1.5                                     1.05                              .90
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Font</th>
+            <th>Ratio of Bold/Regular Stems</th>
+            <th>Ratio of DemiBold/Regular</th>
+            <th>Expansion</th>
+            <th>Bold serif height/Regular serif</th>
+            <th>Bold serif width/regular</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Arial</td>
+            <td>1.5</td>
+            <td></td>
+            <td>1</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Times New Roman</td>
+            <td>1.7</td>
+            <td></td>
+            <td>1</td>
+            <td>1</td>
+            <td>.98</td>
+        </tr>
+        <tr>
+            <td>Computer Modern Roman</td>
+            <td><nobr>1.68(at 12pt) - 1.5(at 5pt)</nobr></td>
+            <td></td>
+            <td>1.15</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Adobe Helvetica</td>
+            <td>1.6</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Adobe Times</td>
+            <td>1.56</td>
+            <td></td>
+            <td>1.17</td>
+            <td>1.10</td>
+            <td>.97</td>
+        </tr>
+        <tr>
+            <td>Garamond Antiqua</td>
+            <td></td>
+            <td>1.5</td>
+            <td></td>
+            <td>1.05</td>
+            <td>.90</td>
+        </tr>
+    </tbody>
+</table>
 
 
 ### Point Size
@@ -63,13 +118,90 @@ Computer Modern fonts have a continuum:
 
 Stem width, scaled by point size, made relative to 12pt
 
-            17pt    12pt    10pt    9pt     8pt     7pt     6pt     5pt                                     (12pt compared to cmr 12pt)
-
-    cmr     83%     100%    109%    116%    120%    124%    130%    139%    Computer Modern Roman           100%
-    cmti            100%    106%    112%    115%    122%                    Computer Modern Text Italic     94%
-    cmbx            100%    105%    108%    112%    117%    120%    123%    Computer Modern Bold Extended   170%
-    cmtt            100%    109%    116%    120%                            Computer Modern Typewriter      100%
-    cmss    99%     100%    102%    109%    113%                            Computer Modern Sans Serif      120%
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th></th>
+            <th>17pt</th>
+            <th>12pt</th>
+            <th>10pt</th>
+            <th>9pt</th>
+            <th>8pt</th>
+            <th>7pt</th>
+            <th>6pt</th>
+            <th>5pt</th>
+            <th></th>
+            <th>(12pt compared to cmr 12pt)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>cmr</td>
+            <td>83%</td>
+            <td>100%</td>
+            <td>109%</td>
+            <td>116%</td>
+            <td>120%</td>
+            <td>124%</td>
+            <td>130%</td>
+            <td>139%</td>
+            <td>Computer Modern Roman</td>
+            <td>100%</td>
+        </tr>
+        <tr>
+            <td>cmti</td>
+            <td></td>
+            <td>100%</td>
+            <td>106%</td>
+            <td>112%</td>
+            <td>115%</td>
+            <td>122%</td>
+            <td></td>
+            <td></td>
+            <td>Computer Modern Text Italic</td>
+            <td>94%</td>
+        </tr>
+        <tr>
+            <td>cmbx</td>
+            <td></td>
+            <td>100%</td>
+            <td>105%</td>
+            <td>108%</td>
+            <td>112%</td>
+            <td>117%</td>
+            <td>120%</td>
+            <td>123%</td>
+            <td>Computer Modern Bold Extended</td>
+            <td>170%</td>
+        </tr>
+        <tr>
+            <td>cmtt</td>
+            <td></td>
+            <td>100%</td>
+            <td>109%</td>
+            <td>116%</td>
+            <td>120%</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Computer Modern Typewriter</td>
+            <td>100%</td>
+        </tr>
+        <tr>
+            <td>cmss</td>
+            <td>99%</td>
+            <td>100%</td>
+            <td>102%</td>
+            <td>109%</td>
+            <td>113%</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Computer Modern Sans Serif</td>
+            <td>120%</td>
+        </tr>
+    </tbody>
+</table>
 
 ![](/assets/img/dialogs2-CaslonOriginality.png)
 
@@ -79,11 +211,37 @@ up to the same size. The most obvious difference is that the glyphs are
 proportionally wider at the smaller pointsizes. It is less apparent that
 the stems of the letters are different:
 
-                                                24pt    12pt    8pt
 
-    stem of the "n" (compared to 12pt)          89%     100%    117%
-    counter of the "n" (compared to 12pt)       104%    100%    89%
-    width of "originality" (compared to 12pt)   93%     100%    104%
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th></th>
+            <th>24pt</th>
+            <th>12pt</th>
+            <th>8pt</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>stem of the "n" (compared to 12pt)</td>
+            <td>89%</td>
+            <td>100%</td>
+            <td>117%</td>
+        </tr>
+        <tr>
+            <td>counter of the "n" (compared to 12pt)</td>
+            <td>104%</td>
+            <td>100%</td>
+            <td>89%</td>
+        </tr>
+        <tr>
+            <td>width of "originality" (compared to 12pt)</td>
+            <td>93%</td>
+            <td>100%</td>
+            <td>104%</td>
+        </tr>
+    </tbody>
+</table>
 
 
 ### SmallCaps
@@ -102,11 +260,40 @@ letterforms of the lowercase letters, a slight decrease in x-height, a
 [skew](../transform/), and a condensation and a narrowing of the
 vertical stems..
 
-                                Italic Angle   Condensation   Stem width change   X-Height change
-    Computer Modern Text Italic   14º            91%            94%                 100%
-    Times New Roman               16º            100%           91%                 96%
-    Adobe Times                   15             100%           92%                 95%
-
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Italic Angle</th>
+            <th>Condensation</th>
+            <th>Stem width change</th>
+            <th>X-Height change</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Computer Modern Text Italic</td>
+            <td>14º</td>
+            <td>91%</td>
+            <td>94%</td>
+            <td>100%</td>
+        </tr>
+        <tr>
+            <td>Times New Roman</td>
+            <td>16º</td>
+            <td>100%</td>
+            <td>91%</td>
+            <td>96%</td>
+        </tr>
+        <tr>
+            <td>Adobe Times</td>
+            <td>15º</td>
+            <td>100%</td>
+            <td>92%</td>
+            <td>95%</td>
+        </tr>
+    </tbody>
+</table>
 
 Letterform changes in Galliard: ![](/assets/img/dialogs2-ItalicCompGalliard.png)
 
