@@ -25,7 +25,7 @@ Build with source using [Homebrew](http://www.brew.sh) in the normal way:
 ```sh
 brew install python;
 brew install gettext libpng jpeg libtiff giflib cairo pango libspiro czmq fontconfig automake libtool pkg-config glib pango;
-brew install fontforge --with-x --HEAD --debug;
+brew -v install fontforge --HEAD --with-cairo --with-czmq --with-gif --with-x --with-libspiro --with-pango --enable-pyextension --debug
 ```
 
 
