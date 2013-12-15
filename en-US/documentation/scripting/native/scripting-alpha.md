@@ -2477,6 +2477,11 @@ Skew(angle[,ox,oy])
 
 All selected glyphs will be skewed by the given angle.
 
+SmallCaps([v-scale[,h-scale[,stemw-scale[,stemh-scale]]]])
+
+Creates small caps out of the selected glyphs.  (See the
+[Add Small Caps](../../interface/elementmenu#Add+Small+Caps) menu item.)
+
 Sqrt(val)
 
 Returns the square root. It can execute with no current font.

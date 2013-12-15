@@ -549,6 +549,7 @@ more information.
 -   [Shadow(angle,outline-width,shadow-width)](scripting-alpha/#Shadow)
 -   [Simplify()](scripting-alpha/#Simplify)
 -   [Skew(angle[,ox,oy])](scripting-alpha/#Skew)
+-   [SmallCaps([v-scale[,h-scale[,stemw-scale[,stemh-scale]]]])](scripting-alpha/#SmallCaps)
 -   [Transform(t1,t2,t3,t4,t5,t6)](scripting-alpha/#Transform)
 -   [VFlip([about-y])](scripting-alpha/#VFlip)
 -   [Wireframe(angle,outline-width,shadow-width)](scripting-alpha/#Wireframe)
