@@ -62,15 +62,20 @@ On Mac OS X you will need to install GNU GCC with HomeBrew:
 
 1. [Install XCode](http://guide.macports.org/chunked/installing.xcode.html) and the [Command Line Tools](https://www.googlecom/search?q=how+to+install+command+line+tools)
 
-2. Install HomeBrew 
-    ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)";
+2. Install HomeBrew:
+
+```
+    ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)";
     brew update;
+```
 
 3. Install GNU GCC
 
+```
     brew tap homebrew/dupes;
     brew install apple-gcc42;
     sudo ln -s /usr/local/bin/gcc-4.2 /usr/bin/gcc-4.2;
+```
 
 You can then install version 1.9.3 or later of Ruby with RVM:
 
