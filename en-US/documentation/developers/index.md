@@ -14,15 +14,15 @@ If you would like to suggest a new interface, http://pencil.evolus.vn is a usefu
 
 ### Coding Style
 
-TODO: Add a clear explanation of the FontForge coding style. 
+TODO: Add a clear explanation of the FontForge coding style. (Some elements of the style of existing code are not encouraged; see below!)
 
-Note: `false` should be used, not `FALSE` ([reference](https://github.com/fontforge/fontforge/issues/724)
+1. For booleans, use `<stdbool.h>`'s names `true` and `false` ([reference](https://github.com/fontforge/fontforge/issues/724])
+2. Indent `return` statements normally; don't put them at the left margin as in much existing code ([reference][https://github.com/fontforge/fontforge/issues/1208])
 
 #### Git Commit Messages
 
 When committing changes, please follow the [git commit message guidelines](http://git.kernel.org/?p=git/git.git;a=blob;f=Documentation/SubmittingPatches;hb=HEAD
 ).
-
 
 When making a pull request on GitHub, please include the long description to the commit messages themselves, not only in the pull request.
 
@@ -50,4 +50,3 @@ be closer to the FontForge style (by monkeyiq):
 	  (dolist (path ff-style-path-alist)
 	   (if (string-match path (buffer-file-name))
 	     (my-fontforge-style-hook)))))
-
