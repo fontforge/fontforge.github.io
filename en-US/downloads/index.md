@@ -1,7 +1,7 @@
 ---
 published: true
 layout: default
-title: Download FontForge
+title: Download FontForge Index
 ---
 
 <table class="table table-bordered table-striped">
