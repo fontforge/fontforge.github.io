@@ -23,6 +23,6 @@ Some elements of the style of existing code are not encouraged.
 
 #### Git Commit Messages
 
-When committing changes, please follow the [git commit message guidelines](http://git.kernel.org/?p=git/git.git;a=blob;f=Documentation/SubmittingPatches;hb=HEAD).
+When committing changes, please follow the ['conventional-changelog' commit message guidelines](https://github.com/ajoslin/conventional-changelog/blob/master/CONVENTIONS.md) so that we can easily generate a CHANGELOG file when making a release :)
 
 When making a pull request on GitHub, please include the long description to the commit messages themselves, not only in the pull request.
