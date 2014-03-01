@@ -21,6 +21,7 @@ Some elements of the style of existing code are not encouraged.
 1. Only one statement per line. This makes semi-automatic processing and reading of diffs much easier.
 2. For booleans, use `stdbool.h`'s names `true` and `false` ([reference](https://github.com/fontforge/fontforge/issues/724)).
 3. Indent `return` statements normally; don't put them at the left margin as in much existing code ([reference](https://github.com/fontforge/fontforge/issues/1208)).
+4. Use POSIX/gnulib APIs in preference to glib, e.g. `strdup` instead of `g_strdup` and `xvasprintf` instead of `g_printf_strdup`. This minimizes the impact of non-standard types and functions, and simplifies memory management (glib-allocated memory needs freeing; non-glib-allocated memory is garbage-collected).
 
 #### Git Commit Messages
 
