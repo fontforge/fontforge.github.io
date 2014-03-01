@@ -4,9 +4,11 @@ layout: default
 title: FontForge Developer Documentation
 ---
 
-# Crash Reporting
+# Bug reporting
 
-To report a crash, please make a screencast of the series of actions that cause the crash, upload it to youtube, and file an issue with a link to the video on youtube.
+To report a bug, please file an issue on [github](https://github.com/fontforge/fontforge/issues), and give a precise description of what you think should happen, and what actually does happen; or if you prefer, make a screencast of the series of actions that cause the crash, upload it somewhere (e.g. YouTube), and put a link to the video in the issue.
+
+If you're able to build Fontforge from source, it's really helpful if you can find where the bug was introduced, using [`git bisect`](http://webchick.net/node/99), but don't worry if not.
 
 ### Interface
 
