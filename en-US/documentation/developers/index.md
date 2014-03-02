@@ -4,17 +4,25 @@ layout: default
 title: FontForge Developer Documentation
 ---
 
-# Bug reporting
+# Development
+
+## Building Fontforge from git
+
+To build Fontforge from git, check out the [repository](http://github.com/fontforge/fontforge/) and read `.travis.yml`, which is a recipe for building it on Debian, Ubuntu and similar apt-based systems. For GNU systems with other package managers (e.g. Fedora and other yum-based systems), and for non-GNU systems, you'll have to install the dependencies appropriately.
+
+TODO: Add and maintain Fedora, brew, Cygwin and Mingw recipes for installing dependencies.
+
+## Bug reporting
 
 To report a bug, please file an issue on [github](https://github.com/fontforge/fontforge/issues), and give a precise description of what you think should happen, and what actually does happen; or if you prefer, make a screencast of the series of actions that cause the crash, upload it somewhere (e.g. YouTube), and put a link to the video in the issue.
 
 If you're able to build Fontforge from source, it's really helpful if you can find where the bug was introduced, using [`git bisect`](http://webchick.net/node/99), but don't worry if not.
 
-### Interface
+# Interface
 
 If you would like to suggest a new interface, http://pencil.evolus.vn is a useful tool for making mockups.
 
-### Coding Style
+## Coding Style
 
 TODO: Add a clear explanation of the FontForge coding style. 
 
