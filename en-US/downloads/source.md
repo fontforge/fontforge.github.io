@@ -211,14 +211,14 @@ description](http://sourceforge.net/cvs/?group_id=103338)for more
 information, or read the [CVS
 manual](http://www.cvshome.org/docs/manual/).~~
 
-### Building & installing it
+### Building & installing from github sources
 
 Now you have the source installed on your system and you should be
 positioned at the top directory of that tree. You need to configure your
 package (this is a little program that figures out how to use your
 system), and then build it (do not type the "\$"):
 
->     $ ./autogen.sh
+>     $ ./bootstrap
 >     $ ./configure
 >     $ make
 
