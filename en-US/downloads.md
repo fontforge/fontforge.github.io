@@ -117,6 +117,11 @@ title: Download FontForge
     wonderful group of people who help to make this continued
     development of FontForge possible.</p>
 </dd>
+
+<dt>Do I get any updates with the one-time download?</dt>
+<dd>
+  <p>Yes, you will the minor updates (e.g. 2.3.1 to 2.3.2) since there might be critical bugs, but not 2.3.1 to 2.4. </p>
+ </dd>
 <!--
 <dt>I gave a donation, but I'm still asked to pay to download?</dt>
 
