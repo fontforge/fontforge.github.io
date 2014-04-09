@@ -11,10 +11,10 @@ title: Download FontForge
     <th><div class="top-feature">Source&nbsp;Code</div><div class="top-feature-description">to compile</div></th>
     <th colspan="3">
         <div class="top-feature">
-            Download Package
+            Download Package, ready to run
         </div>
         <div class="top-feature description">
-            ready to run, no need to build from source code
+            no need to build from source code
         </div>
     </th>
   </thead>
@@ -79,14 +79,25 @@ title: Download FontForge
   </tr>
 
   <tr class="actions">
-    <th></th>
+    <th>Professionals</th>
     <td><a href="source/" class="btn">Free Code</a></td>
     <td><a href="demo/" class="btn">Free Demo</a></td>
     <td class="primary-action"><a href="buy/" class="btn btn-success btn-large"><i class="icon-shopping-cart icon-white"></i> <br>$120</a></td>
     <td class="primary-action"><a href="subscribe/" class="btn btn-success btn-large"><i class="icon-shopping-cart icon-white"></i> <br>$240</a></td>
   </tr>
+
+  <tr class="actions">
+    <th>Students</th>
+    <td></td>
+    <td></td>
+    <td><a href="buy/"       class="btn btn-mini"><i class="icon-shopping-cart"></i> $60</a></td>
+    <td><a href="subscribe/" class="btn btn-mini"><i class="icon-shopping-cart"></i> $90</a></td>
+  </tr>
+
 </tbody>
 </table>
+
+TODO: Make Student pricing
 
 {% include snippet-paid-already.html %}
 
@@ -160,6 +171,6 @@ title: Download FontForge
 
 </dl>
 
-### Uninstalling
+## Uninstalling
 
 Learn [how to uninstall FontForge](uninstalling/) for all systems.
