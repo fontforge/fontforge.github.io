@@ -6,6 +6,11 @@ title: FontForge Developer Documentation
 
 # Development
 
+There are some graphs about how development of FontForge works, thanks to a complete version control history of development (now with Git):
+
+* <https://github.com/fontforge/fontforge.github.com/graphs>
+* <http://ghtorrent.org/pullreq-perf/fontforge-fontforge/> 
+
 ## Building Fontforge from git
 
 To build Fontforge from git, check out the [repository](http://github.com/fontforge/fontforge/) and read `.travis.yml`, which is a recipe for building it on Debian, Ubuntu and similar apt-based systems. For GNU systems with other package managers (e.g. Fedora and other yum-based systems), and for non-GNU systems, you'll have to install the dependencies appropriately.
