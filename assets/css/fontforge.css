@@ -26,7 +26,7 @@ pre {
 
 /* Site footer */
 
-.footer {
+footer {
 	background: #fafafa;
 	min-height: 100px;
 	margin: 60px 0 0 0;
@@ -34,77 +34,80 @@ pre {
 	border-top: 8px solid #181818;
 }
 
-.footer .container {
+footer .container {
 	padding-top: 20px;
 }
 
-.footer ul {
+footer ul {
 	margin: 0 0 0 0;
 }
 
-.footer ul li {
+footer ul li {
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
 }
 
-.footer h4, .footer h4 a {
+footer h4, footer h4 a {
 	color: rgb(210, 102, 39);
 }
 
-.footer ul li a {
+footer ul li a {
 	color: #999;
 	font-size: 0.85em;
 	font-weight: bold;
 }
 
-.footer .brand {
+footer .brand {
 	background: url(../img/logo-transparent-48px.png) no-repeat 0 0;
 	padding-top: 68px;
 	margin-top: 28px;
 }
 
-.footer h3.brand img {
+footer h3.brand img {
 	margin-top: 3px;
 	margin-bottom: 23px;
 }
 
-.footer .roundel {
+footer .roundel {
 	margin-top: 20px;
 	line-height: 0.75;
 }
 
-.footer .roundel h3 {
+footer .roundel h3 {
 	color: #000;
 	font-size: 2.2em;
 	line-height: 1.2;
-	margin: 0;
+	margin: 0 auto;
 	padding: 0;
+	text-transform: uppercase;
+	width: 120px;
+	text-align: center;
 }
 
-.footer .roundel h3 a {
+footer .roundel h3 a {
 	color: #000;
 }
 
-.footer .roundel p a {
+footer .roundel p a {
 	font-size:0.75em;
 	margin: 0;
 	padding: 0;
 }
 
-.footer .roundel h2,.roundel h3,.roundel h4,.roundel h5, .roundel h6 {
+footer .roundel h2,.roundel h3,.roundel h4,.roundel h5, .roundel h6 {
 	margin-top: 6px;
 	margin-bottom: 6px;
 	position: relative;
 	z-index: 50;
 }
 
-.footer .copyright {
+footer .copyright {
 	color: #999;
 	margin-bottom: 24px;
 }
 
-.footer .copyright a {
+footer .copyright a {
 	font-weight: bold;
 	color: #999;
 }
@@ -273,10 +276,9 @@ pre {
 .hero-unit p {
 	color: #fff;
 	font-weight: bold;
-	margin-bottom: 40px;
+	margin-top: 26px;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
 	font-size: 19px;
-	-webkit-font-smoothing: antialiased;
 	padding-right: 40px;
 }
 
@@ -908,6 +910,7 @@ h2.blackbar span {
 	background: #E9E8E6;
 	padding: 0 25px 0 25px;
 	display: inline-block;
+	vertical-align: -.4ex;
  }
 
 /* Block Row 6 items */
@@ -936,7 +939,7 @@ h2.blackbar span {
 	-webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.25);
 	-moz-box-shadow: 0px 0px 3px rgba(0,0,0,0.25);
 	box-shadow: 0px 0px 3px rgba(0,0,0,0.25);
-	border: 7px solid #fff;
+	border: 7px solid transparent;
 	float: left;
 	margin: 0 12px 12px 0;
 }

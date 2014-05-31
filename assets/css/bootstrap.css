@@ -70,10 +70,6 @@ a:hover,
 a:active {
   outline: 0;
 }
-a:active {
-  position: relative;
-  top: 1px;
-}
 sub,
 sup {
   position: relative;
