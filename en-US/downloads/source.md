@@ -4,9 +4,6 @@ layout: default
 title: How To Compile FontForge
 ---
 
-{% include snippet-paid-already.html %}
-
-
 Mac OS X
 ============
 
