@@ -15,7 +15,7 @@ look at the description of [Bézier curves](../../reference/bezier/).*
 -   [Rasterizing a Glyph](#Rasterizing)
     -   finding intersections
     -   removing overlap
-
+-   [Removing overlap (new algorithm proposal)](../../reference/overlap/)
 -   [Approximating a spline](#Approximating)
 -   [Stroking a spline](#Stroke)
 -   [Approximating a cubic spline by a series of quadratic
