@@ -32,8 +32,8 @@ then the cubic spline used by PostScript.
 
 A cubic Bézier curve may be viewed as:
 
-> x = a~x~\*t^3^ + b~x~\*t^2^ + c~x~\*t +d~x~
->  y = a~y~\*t^3^ + b~y~\*t^2^ + c~y~\*t +d~y~
+\[[x = ax*t^3 + bx*t^2 + cx*t + dx
+  y = ay*t^3 + by*t^2^ + cy*t + dy \]]
 
 Where
 
