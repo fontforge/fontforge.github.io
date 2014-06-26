@@ -1,4 +1,4 @@
-markdown: kramdown
+markdown: redcarpet
 pygments: false
 permalink: pretty
 url: http://fontforge.github.io
