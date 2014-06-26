@@ -23,8 +23,8 @@ determining the slope at the nearest end point, while the example at
 right shows a quadratic spline with one control point used to determine
 the slopes at both end points.
 
-In general if there are n+1 points labeled P~0~, P~1~, ... P~n~, with
-P~0~ and P~n~ the end points (and all the others control points) then
+In general if there are \\(n+1\\) points labeled \\(P_0, P_1, ..., P_n\\), with
+\\(P_0\\) and \\(P_n\\) the end points (and all the others control points) then
 the equation of the Bézier spline between them is: ![](img/bezier.gif). If
 there are two points then this is just the line between the two end
 points, if three then the quadratic spline used by TrueType, if four
@@ -32,37 +32,51 @@ then the cubic spline used by PostScript.
 
 A cubic Bézier curve may be viewed as:
 
-> x = a~x~\*t^3^ + b~x~\*t^2^ + c~x~\*t +d~x~
->  y = a~y~\*t^3^ + b~y~\*t^2^ + c~y~\*t +d~y~
+$$
+\begin{aligned}
+x & = ax*t^3 + bx*t^2 + cx*t + dx\\
+y & = ay*t^3 + by*t^2 + cy*t + dy
+\end{aligned}
+$$
 
 Where
 
-  ------- ---------------------------------- ----------------------------------
-          d~x~= P0.x                         d~y~ = P0.y
-          c~x~ = 3\*P1.x-3\*P0.x             c~y~ = 3\*P1.y-3\*P0.y
-          b~x~ = 3\*P2.x-6\*P1.x+3\*P0.x     b~y~ = 3\*P2.y-6\*P1.y+3\*P0.y
-          a~x~ = P3.x-3\*P2.x+3\*P1.x-P0.x   a~y~ = P3.y-3\*P2.y+3\*P1.y-P0.y
-  ------- ---------------------------------- ----------------------------------
+$$
+\begin{array}{ll}
+dx = P_{0x}              & dy = P_{0y}\\
+cx = 3 P_{1x} - 3 P_{0x} & cy = 3 P_{1y} - 3 P_{0y}\\
+bx = 3 P_{2x} - 6 P_{1x} + 3 P_{0x} & by = 3 P_{2y} - 6 P_{1y}+3 P_{0y}\\
+ax = P_{3x} - 3 P_{2x} + 3 P_{1x} - P_{0x} & ay = P_{3y} - 3 P_{2y}+3 P_{1y} - P_{0y}\\
+\end{array}
+$$
 
 And a quadratic Bézier curve:
 
-> x = b~x~\*t^2^ + c~x~\*t +d~x~
->  y = b~y~\*t^2^ + c~y~\*t +d~y~
+$$
+\begin{aligned}
+x & = bx*t^2 + cx*t + dx\\
+y & = by*t^2 + cy*t +dy
+\end{aligned}
+$$
 
 with
 
-  ------- -------------------------- --------------------------
-          d~x~ = P0.x                d~y~ = P0.y
-          c~x~ = 2\*P1.x-2\*P0.x     c~y~ = 2\*P1.y-2\*P0.y
-          b~x~ = P2.x-2\*P1.x+P0.x   b~y~ = P2.y-2\*P1.y+P0.y
-  ------- -------------------------- --------------------------
+$$
+\begin{array}{ll}
+dx = P_{0x}              & dy = P_{0y}\\
+cx = 2 P_{1x} - 2 P_{0x} & cy = 2 P_{1y} - 2 P_{0y}\\
+bx = P_{2x} - 2 P_{1x} + P_{0x} & by = P_{2y} - 2 P_{1y} + P_{0y}\\
+\end{array}
+$$
 
 And a line:
 
-  ------- ------------------ ------------------
-          d~x~= P0.x         d~y~ = P0.y
-          c~x~ = P1.x-P0.x   c~y~ = P1.y-P0.y
-  ------- ------------------ ------------------
+$$
+\begin{array}{ll}
+dx = P_{0x}          & dy = P_{0y}\\
+cx = P_{1x} - P_{0x} & cy = P_{1y} - P_{0y}\\
+\end{array}
+$$
 
 Converting TrueType to PostScript
 ---------------------------------
@@ -73,13 +87,21 @@ Any quadratic spline can be expressed as a cubic (where the cubic term
 is zero). The end points of the cubic will be the same as the
 quadratic's.
 
-> CP~0~ = QP~0~
->  CP~3~ = QP~2~
+$$
+\begin{aligned}
+CP_0 & = QP_0\\
+CP_3 & = QP_2
+\end{aligned}
+$$
 
 The two control points for the cubic are:
 
-> CP~1~ = QP~0~ + 2/3 \*(QP~1~-QP~0~)
->  CP~2~ = QP~2~ + 2/3 \*(QP~1~-QP~2~)
+$$
+\begin{aligned}
+CP_1 & = QP_0 + {2\over3} (QP_1-QP_0)\\
+CP_2 & = QP_2 + {2\over3} (QP_1-QP_2)
+\end{aligned}
+$$
 
 So converting from TrueType to PostScript is trivial. There is a slight
 error introduced due to rounding, but it is usually not noticeable.
@@ -153,7 +175,11 @@ quadratic (if its third degree term is 0), the most likely cause is that
 the font came from a truetype source. In that case the control point for
 the quadratic is at:
 
-> QP~1~ = CP~0~ + 3/2 \* (CP~1~ - CP~0~)
+$$
+\begin{equation}
+QP_1 = CP_0 + {3\over2} (CP_1 - CP_0)
+\end{equation}
+$$
 
 Other sources I have read on the net suggest checking the cubic spline
 for points of inflection (which quadratic splines cannot have) and
