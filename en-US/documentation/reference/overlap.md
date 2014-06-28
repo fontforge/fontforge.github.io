@@ -23,8 +23,8 @@ semiformal way:
 #### Input:
 
 A set of closed paths consisting of cubic bezier segments.  We can see
-each curve as an directed edge, being directed from it's first control
-point to it's last.  The following properties should be present:
+each curve as an directed edge, being directed from its first control
+point to its last.  The following properties should be present:
 
 - for every bezier segment endpoint (first or last control point) the
   number of curves going in and out should be exactly the same.
