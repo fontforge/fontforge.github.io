@@ -40,7 +40,7 @@ following properties should be present:
   number](http://en.wikipedia.org/wiki/Winding_number) is nonzero.
 
 #### Output:
-A set of bézier curves, such that:
+A set of curves, such that:
 
 - No curves overlap except in the endpoints.
 - Every offcurve point has a winding number of either zero or one.
@@ -50,7 +50,7 @@ winding number of one in the output, otherwise zero.
 as the deviation is small, and has no visual artifacts.
 
 It is possible to give more requirements, like to minimize the number of
-bézier curves used.
+curves used.
   
 ### Overview
 
