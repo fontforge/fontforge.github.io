@@ -4,107 +4,89 @@ layout: default
 title: removing overlap (proposal)
 ---
 
-*This is a proposal for an algorithm to remove overlap.  It is
-intended to replace the old algorithm in fontforge and to give better
-stability and correctness.  Removing overlap in cubic beziers involves
-many corner cases and numeric accuracy issues which have to be
-accounted for.  This doesn't claim to be complete, but is intended as
-a starting point for an implementation, and meant to evolve.  Any
-improvements are welcome.  Feel free to fill in any gaps which aren't
-obvious.*
+*This is a proposal for an algorithm to remove overlap.  It was
+suggested as a replacement for the old algorithm in fontforge to give
+better stability and correctness.  Since work is being done to
+incorporate the geometry library
+[lib2geom](http://lib2geom.sourceforge.net) into fontforge, the
+following algorithm is kept for reference purposes.*
+
+**disclaimer:** *Currently this is work in progress.  While the author
+is positive that this information is helpful for anyone implementing
+the algorithm, no guarantee is made for completeness or correctness.*
 
 ### The problem
 
-This algorithm works on closed paths using the [nonzero winding
-rule](http://en.wikipedia.org/wiki/Nonzero-rule).  If another rule is
-used it should be converted first.  We can put the problem in a
-semiformal way:
+The goal is to remove any overlapping regions from a set of closed
+paths.  To determine if a point is on the interior or exterior of a
+path, the [nonzero winding
+rule](http://en.wikipedia.org/wiki/Nonzero-rule) is used.  The
+algorithm doesn't depend on the type of curve used, as long as the
+following operations are supported:
+
+- Given two curves, return all overlapping points
+- Split a curve at a certain point into two curves.
 
 #### Input:
 
-A set of closed paths consisting of cubic bezier segments.  We can see
-each curve as an directed edge, being directed from it's first control
-point to it's last.  The following properties should be present:
+A set of closed paths.  We can see each curve as an directed edge,
+being directed from it's first control point to it's last.  The
+following properties should be present:
 
-- for every bezier segment endpoint (first or last control point) the
-  number of curves going in and out should be exactly the same.
-- A point is *filled* if the [winding
+- For every curve endpoint (first or last control point) the number of
+  curves going in and out should be exactly the same.
+- A point is on
+  the inside of the path if the [winding
   number](http://en.wikipedia.org/wiki/Winding_number) is nonzero.
 
 #### Output:
-A set of bezier curves, such that:
+A set of curves, such that:
 
 - No curves overlap except in the endpoints.
 - Every offcurve point has a winding number of either zero or one.
 - If a point has a nonzero winding number in the input, it will have a
-  winding number of one in the output, otherwise zero.
-- For the last property, a small amount of inaccuracy is allowed due
-  to rounding of floating point numbers.  However the deviation
-  shouldn't be too large.
+winding number of one in the output, otherwise zero.
+- Some error may be acceptable due to floating point errors, as long
+as the deviation is small, and has no visual artifacts.
 
 It is possible to give more requirements, like to minimize the number of
-bezier curves used.
+curves used.
   
 ### Overview
 
-The algorithm can be broken down in several parts:
+The technique used is a plane sweep similar to the [Bentley Ottman
+Algorithm](http://en.wikipedia.org/wiki/Bentley%E2%80%93Ottmann_algorithm)
+for calculating intersections of line segments.  This algorithm has a
+running time of \\(O((n+k) log(n))\\).  This is not theoretically
+optimal, but it has a good trade-off between ease of implementation
+and efficiency.
 
-1. Find all intersections of all curves.
-2. Each curve will be split at those intersections.
-3. This gives a one or more graphs of points which are connected by the curves.
-   We walk over each graph, eliminating edges based on the winding number.  We keep edges
-   when the winding number is positive on one side, and zero or negative on the other side.
-4. Finally we check if a graph is completely contained in another, in which case it can be
-   removed.
+The basic idea is to sweep a vertical line from left to right over all
+the elements.  During the sweep information about adjacency and
+winding numbers is kept about all the segments that intersect the
+line.  New intersections are calculated and inside curves are
+discarded.
 
-### Finding an intersection between two bezier curves
+### Detailed algorithm
 
-To find an intersection between two bezier curves, a fast and stable
-algorithm is *bezier clipping*.  A good explanation can be found in
-[Computer Aided Geometry
+*To be written.*
+
+### Finding an intersection between two bézier curves
+
+The most used curves in CAGD are bézier curves and NURBS.  Good
+algorithms exist for finding intersections between two bézier curves
+of any degree.  A fast and stable algorithm is *bézier clipping*.  For
+general information consult [Computer Aided Geometry
 Design](http://tom.cs.byu.edu/~557/text/cagd.pdf) by Thomas Sederberg,
-paragraph 7.7.  It's implemented in lib2geom, which could be used as a
-reference implementation.  I also have an [implementation in
+paragraph 7.7.  The paper [Curve intersection by beziér
+clipping](http://nishitalab.org/user/nis/cdrom/cad/CAGD90Curve.pdf)
+has more in-depth information about this algorithm.
+
+It's implemented in [lib2geom](http://lib2geom.sourceforge.net), which
+can be used as a reference implementation.  I also have an
+[implementation in
 haskell](https://github.com/kuribas/cubicbezier/blob/master/Geom2D/CubicBezier/Intersection.hs).
 
-#### Checking for similar curves.
-
-The number of intersections between two different bezier curves should
-at most 9, however when the segments are part of the same curve, the
-number of intersections can be infinite.  This special case should be
-checked before running the algorithm.
-
-When the endpoints are the same, we have the same curve, and it's
-enough to compare the control points agains each other. The endpoints
-may lie on different parts of the curve.  Finding if curves overlap
-can be done by considering the following: A bezier curve \\(B(t)\\)
-can be *reparametrized* with another parameter \\(u\\) by using
-\\(B(e*u + f)\\), with any constants \\(e \neq 0\\) and \\(f\\).  If
-we can find such constants that transform one bezier curve into the
-other, we known the segments lie on the same curve.  The two curves
-will overlap if the intervals \\([0, 1\\) and \\([f, e+f]\\) overlap.
-
-Consider two bezier curves \\(P\\) and \\(Q\\) in power basis form.
-We want to find \\(e\\) and \\(f\\) such that \\(P(t) = Q(e*t+f)\\).
-
-Note that two overlapping segments may intersect in another point.
-
-### Finding all intersections
-
-Finding all intersections can be done by checking every curve against
-every other curve.  This has complexity \\(O(n^2)\\), but it should be
-good enough when \\(n\\) is low, like in fonts.  When the number of
-curves is large, for example in generated graphics, it's better to use
-a line sweep algorihm, such as [Bentley
-Ottman](http://en.wikipedia.org/wiki/Bentley%E2%80%93Ottmann_algorithm),
-modified for bezier curves.
-
-#### self intersections
-
-Self intersections aren't found by this method.  A simple way to find
-a self intersection would be to split the bezier curve at horizontal
-extrema, and use the bezier clipping algorithm to find any
-intersections.  The horizontal extrema can be found by finding points
-where the x coordinate of the first derivative is zero.  For a cubic
-bezier this requires solving a quadratic equation.
-
+A faster, but more involved algorithm is implicitization, which can be
+found in [Computer Aided Geometry
+Design](http://tom.cs.byu.edu/~557/text/cagd.pdf).
