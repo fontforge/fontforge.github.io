@@ -21,13 +21,14 @@ If you installed from source to /usr/local (the default) then you may type:
 
 >     $ su
 >     password:
->     $ rm -rf /usr/local/bin/{fontforge,sfddiff,fontimage,fontlint} \
->     /usr/local/lib/{libgdraw,libgunicode,libuninameslist,libspiro,libfontforge,libgutils,libgioftp}* \
->     /usr/local/lib/pkgconfig/fontforge.pc \
->     /usr/local/man/man1/{fontforge,sfddiff,fontimage,fontlint}.1 \
->     /usr/local/share/doc/fontforge \
->     /usr/local/share/fontforge \
->     /usr/local/share/locale/*/LC_MESSAGES/FontForge.mo \
->     /usr/local/include/fontforge
+>     prefix="/usr/local"
+>     $ rm -rf ${prefix}bin/{fontforge,sfddiff,fontimage,fontlint} \
+>     ${prefix}/lib/{libgdraw,libgunicode,libuninameslist,libspiro,libfontforge,libgutils,libgioftp}* \
+>     ${prefix}/lib/pkgconfig/fontforge.pc \
+>     ${prefix}/man/man1/{fontforge,sfddiff,fontimage,fontlint}.1 \
+>     ${prefix}/share/doc/fontforge \
+>     ${prefix}/share/fontforge \
+>     ${prefix}/share/locale/*/LC_MESSAGES/FontForge.mo \
+>     ${prefix}/include/fontforge
 
 If you installed from a package manager, use the package manager commands.
