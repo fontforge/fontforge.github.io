@@ -21,8 +21,8 @@ If you installed from source to /usr/local (the default) then you may type:
 
 >     $ su
 >     password:
->     prefix="/usr/local"
->     $ rm -rf ${prefix}bin/{fontforge,sfddiff,fontimage,fontlint} \
+>     # prefix="/usr/local"
+>     # rm -rf ${prefix}bin/{fontforge,sfddiff,fontimage,fontlint} \
 >     ${prefix}/lib/{libgdraw,libgunicode,libuninameslist,libspiro,libfontforge,libgutils,libgioftp}* \
 >     ${prefix}/lib/pkgconfig/fontforge.pc \
 >     ${prefix}/man/man1/{fontforge,sfddiff,fontimage,fontlint}.1 \
