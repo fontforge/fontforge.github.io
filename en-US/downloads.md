@@ -10,4 +10,4 @@ title: Download FontForge
 <li><a href="/en-US/downloads/source/">Source Code</a>, and
 <li><a href="/en-US/downloads/vms/">VMS</a>
 
-Uninstalling: [How to uninstall FontForge](uninstalling/)
+Uninstalling: [How to uninstall FontForge](/en-US/downloads/uninstalling/)
