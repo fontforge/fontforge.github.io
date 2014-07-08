@@ -29,3 +29,5 @@ If you installed from source to /usr/local (the default) then you may type:
 >     /usr/local/share/fontforge \
 >     /usr/local/share/locale/*/LC_MESSAGES/FontForge.mo \
 >     /usr/local/include/fontforge
+
+If you installed from a package manager, use the package manager commands.
