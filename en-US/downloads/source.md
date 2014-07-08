@@ -62,9 +62,9 @@ TODO: Modernise this
 Before you build (on a mac)
 ---------------------------
 
-You must insure that you have the both the X11 server and the Xcode
-toolchain installed on your system. This process is slightly different
-on OS/X 10.3 & 10.4
+You must insure that you have the both the [X11](http://xquartz.macosforge.org/landing/)
+server and the Xcode toolchain installed on your system.
+This process is slightly different on OS/X 10.3 & 10.4
 
 10.4
 
@@ -144,21 +144,27 @@ using the git utility to maintain a source tree on your machine which
 will be as up to date as possible. The former solution provides more
 stability, the latter provides access to cutting edge bugs.
 
-#### tarball
+#### tarball or zip
 
-[Sourceforge's file release
-system](http://sourceforge.net/projects/fontforge/files/)will contain a
-tarball (a file with the extension for .tar.bz2).
+Fontforge uses the tarball release system provided by GitHub:
 
-After you have downloaded one of these packages, either copy the tarball
-to where you are, or move to the directory containing the tarball (I
+[Fontforge Releases](https://github.com/fontforge/fontforge/releases).
+
+Or you can use the snapshots generated directly from the git repo:
+
+[Github Zip](https://github.com/fontforge/fontforge/archive/master.zip).
+
+After you have downloaded one of these packages, either copy the file
+to where you are, or move to the directory containing the file (I
 can't provide explicit instructions here, because I don't know where
 your browser put the file) and type (do not type "\$"):
 
->     $ bunzip2 fontforge*.tar.bz2
->     $ tar xf fontforge*.tar
+>     $ tar xf fontforge*.tar.gz
 >     $ cd fontforge-*
 
+It should be almost the same if you use the zip archive.
+Just unpack it and cd into it, then follow the instructions in 
+`README.md` .
 #### from the git repository
 
 git is another version control system. To set up your own (local,
@@ -166,14 +172,11 @@ read-only) copy of the git repository (including documentation), create
 a new directory, cd into it and type the following (do not type "\$",
 when it asks for a password, just hit return):
 
->     $ git clone git://fontforge.git.sourceforge.net/gitroot/fontforge/fontforge
+>     $ git clone https://github.com/fontforge/fontforge
 
-You can also [browse the git
-repository](http://fontforge.git.sourceforge.net/git/gitweb.cgi?p=fontforge/fontforge;a=summary)
-online. Or see [about using git on
-sourceforge](http://sourceforge.net/apps/trac/sourceforge/wiki/Git) for
-more information, or read the [git
-documentation](http://git-scm.com/documentation).
+You can also [browse the git repository](https://github.com/fontforge/fontforge)
+online. Or see [GitHub Help](http://help.github.com) for more information,
+or read the [git documentation](http://git-scm.com/documentation).
 
 #### ~~from the cvs tree~~
 
@@ -215,7 +218,7 @@ positioned at the top directory of that tree. You need to configure your
 package (this is a little program that figures out how to use your
 system), and then build it (do not type the "\$"):
 
->     $ ./bootstrap
+>     $ ./bootstrap # if there is no bootstrap, read README.md
 >     $ ./configure
 >     $ make
 
@@ -226,7 +229,7 @@ This should be done as root:
 >     password: ******
 >     # make install
 
-On the mac the process is slightly different:
+Or if you can't use root (e.g. when you are on a mac), try `sudo`:
 
 >     $ sudo make install
 >     password: ******
@@ -327,8 +330,7 @@ will already have been applied (so you don't need to do anything with
 it). But if you download one of my tarballs then you will need to apply
 the patch:
 
->     $ bunzip2 fontforge*.tar.bz2
->     $ tar xf fontforge*.tar
+>     $ tar xf fontforge*.tar.gz
 >     $ cd fontforge-*/fontforge
 >     $ patch <foobar.patch 
 >     $ cd ..
@@ -373,7 +375,7 @@ from:
 
 -   [libxml2](http://xmlsoft.org/)
      To parse SVG files and fonts
--   [libspiro](http://libspiro.sf.net/)
+-   [libspiro](https://github.com/fonrforge/libspiro)
      Raph Levien's clothoid to bezier spline conversion routines. If
     this is available fontforge will allow you to edit with clothoid
     splines (spiro).
@@ -384,7 +386,7 @@ from:
     FontForge contains a minimal version of the library which allows it
     to work. But if you want to use libiconv you must configure it with
     `--enable-extra-encodings`, as FontForge requires Shift-JIS.
--   [freetype](http://freetype.sf.net/)
+-   [freetype](http://freetype.org/)
      To do a better job rasterizing bitmaps, and to enable the truetype
     debugger.
     Some of FontForge's commands depend on you compiling freetype with
@@ -416,6 +418,8 @@ from:
     are just interested in the scripting engines (with no user
     interface), it may be built on systems without X (the configure
     script should figure this out).
+
+     If you use a Mac, use [XQuartz](http://xquartz.macosforge.org/landing/)
 -   [libcairo](http://www.cairographics.org/)
      Cairo handles drawing anti-aliased splines in the outline glyph
     view. It is dependent on libfontconfig, libXft and perhaps other
@@ -423,9 +427,9 @@ from:
 -   [libpango](http://www.pango.org/)
      Pango draws text for complex scripts. It depends on glib-2.0,
     libfontconfig, libfreetype, libXft, and perhaps other libraries.
--   Under Mac OS/X these libraries are available from the [fink
-    project](http://fink.sourceforge.net/) and from
-    [macports](http://www.macports.org/).
+-    Under Mac OS/X these libraries are available
+    from the [fink project](http://fink.sourceforge.net/),
+    from [macports](http://www.macports.org/) and from [Homebrew](http://brew.sh).
 
     * * * * *
 
