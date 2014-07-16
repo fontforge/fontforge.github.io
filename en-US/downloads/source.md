@@ -25,7 +25,7 @@ brew install gettext libpng jpeg libtiff giflib cairo pango libspiro czmq fontco
 brew -v install fontforge --HEAD --with-cairo --with-czmq --with-gif --with-x --with-libspiro --with-pango --enable-pyextension --debug
 ```
 
-
+Fedora: `autoconf-archive` package now needed
 
 Old Information
 -----------------
