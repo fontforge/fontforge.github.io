@@ -4,18 +4,20 @@ layout: default
 title: Install FontForge on GNU+Linux
 ---
 
-#### Daily Development Version
+### Building from source
 
-Ben Martin has developed a daily package building system on OpenSUSE Build Service:
+Building FontForge from source is a three-steps job described in [INSTALL-git.md], on the main repo.
 
-[Daily packages](https://build.opensuse.org/project/show?project=home%3Amonkeyiq%3Afontforge) are created from the git repository:
+[INSTALL-git.md]: https://github.com/fontforge/fontforge/blob/master/INSTALL-git.md
+
+The repository can be cloned with this command:
 
     $ git clone git://github.com/fontforge/fontforge.git
 
-#### Distro Packages 
+### Distro Packages 
 
 Most of the GNU+Linux distributions have packages for fontforge. These will
-often be a little old, but perhaps more stable. This is not a complete list, but there are packages for:
+often be a quite old. This is not a complete list, but there are packages for:
 
 -   [debian](http://packages.debian.org/unstable/x11/fontforge.html) --
     has builds for (alpha, amd64, arm, hppa, hurd-i386, i386, ia64,
@@ -39,12 +41,12 @@ Installing an rpm package is relatively straight forward. You will need
 to be root. Move to the directory containing the downloaded rpm, and
 then type (do not type the "\$" or "\#"):
 
->     # rpm -i fontforge-*.rpm
+     # rpm -i fontforge-*.rpm
 
 If you've already installed fontforge and are updating an earlier
 version then you should type:
 
->     # rpm -U fontforge-*.rpm
+     # rpm -U fontforge-*.rpm
 
 ### Installing from an executable tarball
 
@@ -53,11 +55,11 @@ extension of ".tar.bz2"). You will probably need to be root for some of
 this process. Move to the directory containing the downloaded tarball
 and type (do not type the "\$" or "\#"):
 
->     $ bunzip2 fontforge-*.tar.bz2
->     $ tar xf fontforge-*.tar
->     $ cd fontforge
->     $ su
->     # ./doinstall
+     $ bunzip2 fontforge-*.tar.bz2
+     $ tar xf fontforge-*.tar
+     $ cd fontforge
+     $ su
+     # ./doinstall
 
 (Older versions may have an extension of .tgz. In this case you would
 replace the first two lines with "`$ tar xfz   fontforge-*.tgz`")
@@ -65,21 +67,6 @@ replace the first two lines with "`$ tar xfz   fontforge-*.tgz`")
 **Caveat:** My packages generally install to /usr/local, and this may
 not be in your default PATH. You may need to add a line like
 
->     PATH=$PATH:/usr/local/bin ; export PATH
+     PATH=$PATH:/usr/local/bin ; export PATH
 
 to your \~/.bashrc file (or equivalent if you use a different shell).
-
-### Ports that I am aware of
-
-FontForge has been ported to the following systems (at some point in its
-life)
-
--   Linux (obviously, (redhat, debian, suse, mandrake),
-    386,spark,arm,alpha,ia64,m68k,mips,mipsel,powerpc,s390)
--   Solaris
--   Irix
--   FreeBsd
--   NetBsd
--   Mac OS/X
--   OpenVMS7.3 for Alpha
--   [cygwin](http://cygwin.com/) with X running on top of MS windows.

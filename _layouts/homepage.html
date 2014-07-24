@@ -1,6 +1,9 @@
 {% include html-start.html %}
 
 <body class="home">
+<div style="height: 1.5em; padding: 0.25em; background: red; color:yellow; text-align:center; font-size:1em">
+	<a href="http://www.fontforge.org" style="color: yellow">UNDER CONSTRUCTION: Current site at www.fontforge.org</a>
+</div>
 	
 {% include nav-main.html %}
 
@@ -30,27 +33,28 @@
   			<div class="row-fluid">
   				
 				<ul class="masthead-links unstyled">
-					<li class="span4"><a href="downloads/" class="btn btn-primary btn-large" >Free Download</a></li>
+					<li class="span4 ff-download">
+						<a href="downloads/windows/" class="btn btn-primary btn-large dl windows" >Windows Install</a>
+						<a href="downloads/mac/" class="btn btn-primary btn-large dl macos" >Mac OS Install</a>
+						<a href="downloads/gnulinux/" class="btn btn-primary btn-large dl gnulinux" >Linux Install</a>
+						<a href="downloads/" class="btn btn-primary btn-large default" >Install</a>
+					</li>
 					<li class="span4 statistic downloads"><strong id="cnt-downloads">1,234</strong> <span>downloads<br> this week</span></li>
 					<li class="span4 statistic contributors"><strong id="cnt-contributors">987</strong> <span>changes<br> this month</span></li>
 				</ul>
 			</div>
 		</div>
 	</div>
-	
-	<!-- roundel goes here? -->
 
 	<!-- MAIN CONTENT CONTAINER -->
 	<div class="content">
 		<div class="container">
-			
-			<!-- CHROME FRAME -->
+
 			<!--[if lt IE 7]>
 			<div class="row-fluid">
 				<section class="span8">
 					<p class="chromeframe">Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">
-					Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">
-					install Google Chrome Frame</a> to experience this site.</p>
+					Upgrade to a different browser</a> to experience this site.</p>
 				</section>
 			</div>
 			<![endif]-->
@@ -75,10 +79,11 @@
 			<div class="row-fluid">
 				<section class="screenshots blockrow3 span12">
 					<h2 class="blackbar"><span>Screenshots</span></h2>
-					<ul>
-						<li class="span4"><a class="orange" href="#">sshot a</a></li>
-						<li class="span4"><a class="red" href="#">sshot b</a></li>
-						<li class="span4"><a class="green" href="#">sshot c</a></li>
+					<ul-->
+					    <!-- TODO: view screenshots through a carousel -->
+						<li class="span4"><a class="orange" href="{{ site.url }}/assets/img/samples/screenshot-1.png"></a></li>
+						<li class="span4"><a class="red" href="{{ site.url }}/assets/img/samples/screenshot-2.png"></a></li>
+						<li class="span4"><a class="green" href="{{ site.url }}/assets/img/samples/screenshot-3.png"></a></li>
 					</ul>
 				 </section>
 			</div>
@@ -88,12 +93,11 @@
 				<section class="downloads blockrow6 span12">
 					<h2 class="blackbar"><span>Downloads</span></h2>
 					<ul class="supported-systems">
-						<li class="span2"><a class="gnulinux" href="downloads/gnulinux/"><span>GNU+Linux</span></a></li>
-						<li class="span2"><a class="mac" href="downloads/mac/"><span>Mac OS X</span></a></li>
-						<li class="span2"><a class="windows" href="downloads/windows/"><span>Windows</span></a></li>
-						<li class="span2"><a class="vms" href="downloads/vms/"><span>VMS</span></a></li>
-						<li class="span2"><a class="source" href="downloads/source/"><span>Source Code</span></a></li>
-						<li class="span2"><a class="uninstalling" href="downloads/uninstalling/"><span>Uninstalling</span></a></li>
+						<li class="span2"><a class="gnulinux" href="downloads/gnulinux/" title="GNU+Linux"></a></li>
+						<li class="span2"><a class="mac" href="downloads/mac/" title="Mac OS X"></a></li>
+						<li class="span2"><a class="windows" href="downloads/windows/" title="Windows"></a></li>
+						<li class="span2 offset2"><a class="source" href="downloads/source/" title="Source code"></a></li>
+						<li class="span2"><a class="uninstalling" href="downloads/uninstalling/" title="Uninstalling"></a></li>
 					</ul>
 				</section>  
 			</div>
@@ -117,14 +121,13 @@
 							<ul class="link-list">
 							<li class="active"><a href="#">Interpolate Control Points</a></li>
 							<li><a href="http://www.youtube.com/watch?v=x_RVbQzJy5k">Build Accents Automatically</a></li>
-							<li><a href="#">Simplepolation</a></li>
+							<li><!--a href="#">Simplepolation</a--></li>
 							<li><a href="http://www.youtube.com/watch?v=0LxHkp8Bf8o#t=45">Scripting test texts</a></li>
-							<li><a href="#">Something cooler</a></li>
-							<li><a href="#">OpenType Features</a></li>
+							<li><!--a href="#">Something cooler</a--></li>
+							<li><!--a href="#">OpenType Features</a--></li>
 							</ul>
-							<p >Designers post video tutorials on YouTube, and we highlight the best on this site. <a href="tutorials/videos/">Learn more...</a></p>
 						</div>
-				
+				    </div>
 			</section>
 			
 			
@@ -132,22 +135,16 @@
 			<div class="row-fluid"> 
 				<section class="span5">
 						<h2>Community Development</h2>
-					 
-						<p >Most of FontForge was created by a single person, George Williams, as a
-						retirement project from 2000 until 2011. You can read the full story on the
-						<a href="about/project/history/">history</a> page.</p>
+
+						<p>FontForge is maintained by the community
+						<a href="https://github.com/fontforge/fontforge">on GitHub.</a>
+						It was originally created by George Williams, as a
+						retirement project from 2000 until 2012.
+						<a href="about/project/history/">History...</a></p>
 						
-						<p >Currently a community of 
-						active users maintains the project, including 
-						Some One, Someone Else, The Third Man, and Another Person.</p>
-						
-						<p >Since FontForge is under active development, it is essentially (and eternally)
-						beta software. Expect to find bugs.</p>
-						
-						<p >When you do, please become an active user
-						yourself and take 5 minutes to <a href="documentation/developers/bugs/">report 
-						a bug</a>, so it can be fixed.
-						<a href="documentation/developers/">Learn more...</a></p>
+						<p >If you find a bug, please <a href="documentation/developers/bugs/">open-up
+						an issue</a> on the repository.
+						<a href="documentation/developers/">Guidelines...</a></p>
 				 </section>
 			
 			
@@ -165,9 +162,7 @@
 									<button type="submit" class="btn btn-small">Go</button>
 								</form>
 					 	 		<h2>Mailing Lists</h2>
-								
-					 	 		<p>The FontForge community gathers on two mailing lists, 
-								one for users and one for developers.</p>
+
 					 		</hgroup>
 				 	 		<div class="users">
 					 	 		<h3>Users</h3>
@@ -196,6 +191,7 @@
 	</div>
 		
 	<script type="text/javascript" src="/assets/js/header_animation.js"></script>
+	<script type="text/javascript" src="/assets/js/site.js"></script>
 	
 	<!-- END MAIN CONTENT CONTAINER -->
 

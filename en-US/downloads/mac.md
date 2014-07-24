@@ -40,6 +40,72 @@ The first time you run FontForge it may pop up a dialog box saying "Choose Appli
 
 If you have any problems with installation or upgrading, ask for help on the [FontForge Users](/) mailing list.
 
+## Installing from Package Managers
+
+These Mac package managers all have FontForge:
+
+* [Homebrew](http://www.brew.sh) (recommended)
+* [MacPorts](http://www.macports.org/)
+* [Fink](http://www.finkproject.org/) 
+
+## Installing from Source Code
+
+Build with source using [Homebrew](http://www.brew.sh) in the normal way:
+
+```sh
+brew install python;
+brew install gettext libpng jpeg libtiff giflib cairo pango libspiro czmq fontconfig automake libtool pkg-config glib pango;
+brew -v install fontforge --HEAD --with-cairo --with-czmq --with-gif --with-x --with-libspiro --with-pango --enable-pyextension --debug
+```
+
+## Building from source
+
+You must ensure that you have the both the X11 server and the XCode
+toolchain installed on your system. This process is slightly different
+on OS/X 10.3 & 10.4
+
+10.4
+
+-   Open the Install DVD that came with your system.
+-   Scroll down to "Optional Installs" and open it.
+-   Keep clicking `Continue` until you get to the pane "Custom Install
+    on "Macintosh HD""
+-   Press the arrow beside "Applications" so you get a list of them.
+-   Select X11
+-   Keep pressing `Continue`
+
+    * * * * *
+
+-   The Xcode toolchain is optional software on the install DVD. Simply
+    insert the disk and click on the XCode install icon.
+
+10.3
+
+-   The X server lives in a package called X11User on the third install
+    CD.
+-   You must also install the X11SDK package on the XCode CD
+-   And you must install the XCode tools themselves.
+
+You may also want to install the [fink](http://fink.sourceforge.net/)
+package which includes many useful libraries (see the
+[dependencies](#Dependencies) section below for more info on this)
+
+You must then start up a Terminal window (the Terminal Application also
+lives in the Utilities sub-folder of the Applications folder) and be
+prepared to type commands in that window (I know, it's very
+un-mac-like).
+
+### Special note for building prior to 10.3
+
+OS/X has evolved over time. Certain system calls have changed. The
+current source distribution should work on any 10.3+ system.
+
+If you wish to build on a 10.2 system you must say
+
+>     $ ./configure --with-regular-link
+
+(Rather than just saying `./configure`)
+
 ## Advanced Configuration
 
 To make FontForge more pleasant to use, you can change some aspects of the way it works on Macs. **These steps are optional.** 
@@ -64,7 +130,7 @@ If the UI appears very big or very small, you can change the way the UI is sized
 5. start FontForge again
 6. if the scaling is still not right, play with the value until it is
 
-#### If you use a real mouse
+#### If you use a three-button mouse
 
 FontForge is designed to make use of a three button mouse. It is also designed to make use of modifier keys on mouse clicks (eg, Control-left-click can mean something different than left-click.) 
 
