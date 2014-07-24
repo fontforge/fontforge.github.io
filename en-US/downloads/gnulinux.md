@@ -8,11 +8,12 @@ title: Install FontForge on GNU+Linux
 
 Building FontForge from source is a three-steps job described in [INSTALL-git.md], on the main repo.
 
-[INSTALL-git.md]: https://github.com/fontforge/fontforge/blob/master/INSTALL-git.md
-
-The repository can be cloned with this command:
+You can [download a .zip snapshot] of the repository or clone it with this command:
 
     $ git clone git://github.com/fontforge/fontforge.git
+
+[INSTALL-git.md]: https://github.com/fontforge/fontforge/blob/master/INSTALL-git.md
+[download a .zip snapshot]: https://github.com/fontforge/fontforge/archive/master.zip
 
 ### Distro Packages 
 
