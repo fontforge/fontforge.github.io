@@ -1833,7 +1833,25 @@ with the same height, then an average is used.
 If you make all your stems be the same height then the accent should be
 properly centered.
 
+## I made all the letters, but the font is still printing missing glyph characters!
 
+Some font viewers require that all the A–Z letters are made, plus all the numbers and punctuation marks like & or " and etc.
+
+## How do I set the space character?
+
+The space character is found right before the exclamation point. It's marked with a black diamond with a question mark inside. You set the space width by dragging the advance width just like with any other glyph.
+
+## Where's the euro symbol?
+
+By default, fontforge starts a new project with a Latin-1 encoding (ISO 8859-1). This covers the entire english alphabet, west European accents, and a few nordic glyphs, plus various symbols and fractions. The euro symbol was invented after ISO 8859-1 was, so they stuck it all the way down in position 8,364 along with some other miscellaneous currency symbols. The euro symbol is also found right with the other Latin-1 glyphs if you set the encoding mode to Latin-0 (ISO 8859-15).
+
+## What happened to the French Œ?
+
+Œ is for some reason found Latin Extended-A, the block below Latin-1, if you set your encoding mode to something like Unicode BMP (ISO 10646-1).
+
+## Why is the glyph table so long when I turn on Unicode BMP/Full???
+
+Because Unicode is long. It contains over a hundred thousand glyph slots. Most of them are Chinese and Japanese characters, and there's also blocks of Greek, Cyrillic ("Russian"), Cherokee, and even Egyptian hieroglyphic characters. That doesn't mean you can just ignore everything after the þ character though. Many English punctuation marks like —, –, †, the quotation marks, and mathematical operators like the minus sign are found 'beneath the fold'. An easy way to access them is to set your encoding mode to something like the Adobe Standard or Macintosh Latin.
 
 ## Why does ttf2afm crash on FontForge ttf files?
 
