@@ -1847,7 +1847,7 @@ By default, fontforge starts a new project with a Latin-1 encoding (ISO 8859-1).
 
 ## What happened to the French Œ?
 
-Œ is for some reason found Latin Extended-A, the block below Latin-1, if you set your encoding mode to something like Unicode BMP (ISO 10646-1).
+Œ is for some reason found in Latin Extended-A, the block below Latin-1, if you set your encoding mode to something like Unicode BMP (ISO 10646-1).
 
 ## Why is the glyph table so long when I turn on Unicode BMP/Full???
 
