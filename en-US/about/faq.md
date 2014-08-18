@@ -1833,9 +1833,9 @@ with the same height, then an average is used.
 If you make all your stems be the same height then the accent should be
 properly centered.
 
-## I made all the letters, but the font is still printing missing glyph characters!
+## I made all the letters, but the font is still printing missing glyph characters/gibberish!
 
-Some font viewers require that all the A–Z letters are made, plus all the numbers and punctuation marks like & or " and etc.
+Some font viewers (like the default Ubuntu font viewer) require that all the A–Z letters are made, plus all the numbers and punctuation marks like & or " and etc—otherwise they just spit out gibberish.
 
 ## How do I set the space character?
 
