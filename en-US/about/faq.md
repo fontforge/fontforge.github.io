@@ -158,7 +158,7 @@ are far better at unicode support than mine. These are
         I can't figure out how to modify it to make it look nice (by my
         standards, that is).
     -   I also can't figure out how to modify the file chooser to make
-        it behave the way the fontforge's file chooser currently behaves
+        it behave the way the FontForge's file chooser currently behaves
         (popup windows showing FontNames as you move the mouse over
         fontfiles, a pull down list of recently used files attached to
         the filename input box, etc.)
@@ -169,7 +169,7 @@ are far better at unicode support than mine. These are
         forced to used a far more complex widget instead.
     -   So I tend to wrestle with it for a while and then decide than my
         current widgets are better after all.
-    -   I did get a limited version of fontforge running under gtk. I
+    -   I did get a limited version of FontForge running under gtk. I
         would be greatful if someone else would choose to extend and
         maintain it.
 
@@ -230,20 +230,20 @@ I just don't like GPL. It's partly prejudice, partly real.
 
 I don't like forcing restrictions on people.
 
-I'm giving away fontforge, so I do.
+I'm giving away FontForge, so I do.
 
 The [BSD license](../project/license/) says "Don't sue me, and include my
 copyright notice if you use my code" and that's all I care about.
 
 Perhaps I am naif, but I don't believe that anyone is going to start
-selling fontforge. Why would they? It makes no sense for someone to try
-to sell what I give away freely. If they add functionality to fontforge,
+selling FontForge. Why would they? It makes no sense for someone to try
+to sell what I give away freely. If they add functionality to FontForge,
 then that's a different matter, but in a sense they aren't charging for
-fontforge, they are charging for the code they have added to it. It
+FontForge, they are charging for the code they have added to it. It
 would be annoying if someone did that, a bit rude in my eyes, but I'm
 not going to say "no".
 
-Now someone might take a small piece of fontforge and use it in
+Now someone might take a small piece of FontForge and use it in
 something else. That doesn't bother me. I know that some of my OpenType
 code has been snagged by some TeX packages. And I have snagged code for
 generating checksums from some other packages.
@@ -268,11 +268,11 @@ looking for disparate parts.
 
 When I can't figure out how to do something myself I will use an
 external library if I must. Even then I will try to insure that
-fontforge will run if the library is not present on a system. When I
+FontForge will run if the library is not present on a system. When I
 release a binary package I don't want to have to release 32 packages per
 host depending on the possible presence or absence of 5 different
 libraries. But I also don't want to force someone to install a library
-that s/he will never use just to get fontforge to start.
+that s/he will never use just to get FontForge to start.
 
 If a user will never look at an svg glyph then they don't need to
 install libxml2. If the user will never import a jpeg image (and there's
@@ -281,9 +281,9 @@ libjpeg.
 
 Instead, the binaries I release will try to load a library dynamically
 (dlopen) *when they need it* and not before. This will also speed up
-starting fontforge. If the library is on the system then all is happy
+starting FontForge. If the library is on the system then all is happy
 and nice. If the library is not, then that functionality is lost--but
-the rest of fontforge continues to work.
+the rest of FontForge continues to work.
 
 
 
@@ -300,14 +300,14 @@ the rest of fontforge continues to work.
 Mostly because I don't think that way. I don't plan things out, I have a
 vague idea where I want to go and I explore in that direction.
 
-Consider python scripting. I decided to add python to fontforge. I found
+Consider python scripting. I decided to add python to FontForge. I found
 that meant it became easier to design a mechanism so users could create
 their own scripts to add import/export file formats. And then startup
 scripts, and scripts when certain standard "events" happened. And then I
 could allow users to define their own menu items. And then I figured out
-how to add fontforge to python (as opposed to the reverse). And now I
+how to add FontForge to python (as opposed to the reverse). And now I
 realize that there is no reason I couldn't define a set of c-bindings so
-that people could call fontforge as a library from within C programs.
+that people could call FontForge as a library from within C programs.
 And who knows where that will lead--if anywhere.
 
 Each stage means I can see a little further, and go a little further,
@@ -374,7 +374,7 @@ has to say on this issue.
 TrueType (and OpenType and potentially CID-keyed fonts) have a field in
 the OS/2 table called FSType which allows the font designer to place
 restrictions on what other people can do with the font. If this field
-prohibits modification fontforge will ask you to make sure you have an
+prohibits modification FontForge will ask you to make sure you have an
 agreement with the font designer which supersedes this field.
 
 My understanding of US law (but check with a lawyer before relying on
@@ -538,7 +538,7 @@ distance). Generally the em-size will be 1000 or 2048. This gives you
 the number of internal units (also called em-units) used to represent
 em.
 
-Within fontforge outline glyphs are displayed using the coordinate
+Within FontForge outline glyphs are displayed using the coordinate
 system established here. See also the [section on em-units in the
 overview.](/en-US/documentation/tutorials/overview/#em-unit)
 
@@ -619,7 +619,7 @@ of font you've got:
 
 Outline fonts and fontconfig
 
-Many programs now use fontconfig to find fonts (including fontforge). To
+Many programs now use fontconfig to find fonts (including FontForge). To
 install a font for fontconfig, simply copy the file into your ~/.fonts
 directory.
 
@@ -820,7 +820,7 @@ So to edit a font on your mac:
     moved to Fonts)
 
 **Note:** make sure you either replace the original font files, or that
-you rename the font within fontforge and (for postscript fonts) that you
+you rename the font within FontForge and (for postscript fonts) that you
 give it a new unique id. See the [Font Info](/en-US/documentation/interface/fontinfo/) dlg.
 
 **Caveat:** A postscript font is useless on a macintosh unless it is
@@ -870,7 +870,7 @@ method was to produce mac font families.
 
 ** Snow Leopard (10.6) and after **
 
-First open all the fonts that make up your family in fontforge.
+First open all the fonts that make up your family in FontForge.
  Then choose `File->Generate TTC`
  This should be simpler than the old method.
 
@@ -1408,7 +1408,7 @@ Info](/en-US/documentation/interface/filemenu/#Merge-feature) menu command.
 ** Adobe Feature files **
 
 Adobe has a textual representation for OpenType features and lookups,
-and fontforge can read these files with the [File-\>Merge Feature
+and FontForge can read these files with the [File-\>Merge Feature
 Info](/en-US/documentation/interface/filemenu/#Merge-feature) menu command.
 
 
@@ -1491,7 +1491,7 @@ Image file questions
 
 
 
-## Why does fontforge say "Error loading dynamic library" when trying to import an image file?
+## Why does FontForge say "Error loading dynamic library" when trying to import an image file?
 
 FontForge depends on certain dynamic libraries to load images. It does
 not check for the existance of these libraries until you actually try to
@@ -1507,7 +1507,7 @@ library in question (On the mac this is DYLD\_LIBRARY\_PATH).
 
 
 
-## Why does fontforge say "EPS file is too complex to be understood"?
+## Why does FontForge say "EPS file is too complex to be understood"?
 
 (Well because it is a misquotation of Shakespeare, and how could I pass
 that up? *Much Ado About Nothing, V . i. 217*)
@@ -1530,14 +1530,14 @@ blog](http://ospublish.constantvzw.org/?p=340) and rewritten by Dave
 Crossland)
 
 How to design a glyph in Inkscape so it can readily be imported into
-fontforge.
+FontForge.
 
 -   Open Inkscape
 -   From the File menu, select Document Properties.
 -   Set units to pixels (px) and document dimensions to 1000 x 1000,
     click OK
      Or if your font has a different number of units per em use that,
-    but 1000 is fontforge's default)
+    but 1000 is FontForge's default)
 -   Set a horizontal guide at 200px
 -   Draw a glyph - the hardest part! :-)
 -   Save the drawing as an SVG file
@@ -1566,9 +1566,9 @@ page](/en-US/documentation/customizing/xres/).
 ## The fonts FontForge uses in its GUI are too small (too big). How do I change them?
 
 The X server does not have a good idea about screen resolution, and when
-fontforge asks it, the answer is often wrong. The result is that ff may
+FontForge asks it, the answer is often wrong. The result is that ff may
 use fonts that are too small (potentially too big too, but no one has
-complained about that one yet). You can tell fontforge the true screen
+complained about that one yet). You can tell FontForge the true screen
 size by adding a line like
 
     Gdraw.ScreenWidthInches: 14.7
@@ -1604,7 +1604,7 @@ else. MicroSoft suggests that GPOS be used to do accent combination
 
 
 
-## How I do tell fontforge about a new encoding
+## How I do tell FontForge about a new encoding
 
 First ask yourself if you really need a new encoding? If you are using
 OpenType or TrueType fonts you can usually get by with the standard
@@ -1843,7 +1843,7 @@ The space character is found right before the exclamation point. It's marked wit
 
 ## Where's the euro symbol?
 
-By default, fontforge starts a new project with a Latin-1 encoding (ISO 8859-1). This covers the entire english alphabet, west European accents, and a few nordic glyphs, plus various symbols and fractions. The euro symbol was invented after ISO 8859-1 was, so they stuck it all the way down in position 8,364 along with some other miscellaneous currency symbols. The euro symbol is also found right with the other Latin-1 glyphs if you set the encoding mode to Latin-0 (ISO 8859-15).
+By default, FontForge starts a new project with a Latin-1 encoding (ISO 8859-1). This covers the entire english alphabet, west European accents, and a few nordic glyphs, plus various symbols and fractions. The euro symbol was invented after ISO 8859-1 was, so they stuck it all the way down in position 8,364 along with some other miscellaneous currency symbols. The euro symbol is also found right with the other Latin-1 glyphs if you set the encoding mode to Latin-0 (ISO 8859-15).
 
 ## What happened to the French Œ?
 
@@ -1898,7 +1898,7 @@ The family name is the name of a family of related fonts. In the above
 example "ITC New Century Schoolbook" would probably be the family name.
 
 "Base Filename" isn't really a name associated with the font itself.
-It's just there to make your life easier when using fontforge. When you
+It's just there to make your life easier when using FontForge. When you
 generate a font, ff will pick a default filename for you (you can always
 change it, of course, but it is handy if the default name is the one you
 want to use).
