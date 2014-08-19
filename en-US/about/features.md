@@ -32,7 +32,7 @@ FontForge lets you to open, edit, and convert
 -   Macintosh formats, including dfont and bin
 -   Bitmap formats (bdf, FON, NFNT)
 
-And it's own SFD format. FontForge can also extract fonts fom PDFs.
+And its own SFD format. FontForge can also extract fonts fom PDFs.
 
 Localization
 ------------
