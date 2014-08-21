@@ -43,12 +43,12 @@ packages to be built.
 To have Travis CI build OSX packages, first create a branch with your username 
 as the first part and push it to the main repository using the following setup:
 
-   $ cat .git/config
-   ...
-   [remote "upstreampush"]
-           url = git@github.com:fontforge/fontforge.git
-   ...
-   $ git push --verbose upstreampush johndoe/2014/aug/this-will-help-because-of-yyy
+    $ cat .git/config
+    ...
+    [remote "upstreampush"]
+            url = git@github.com:fontforge/fontforge.git
+    ...
+    $ git push --verbose upstreampush johndoe/2014/aug/this-will-help-because-of-yyy
 
 That will make a branch this-will-help-because-of-yyy in the
 fontforge/fontforge repository which you can then create a pull
@@ -68,8 +68,8 @@ all has gone well you should see a FontForge.app.zip file in that
 subdirectory which is around 60mb in size. If you have access to OSX
 10.9.3 or later you can install that app.zip and test it out.
 
-   2014-08-20-1664-0d986d9242da9e741d50c5f543faba2f37b7723d
-   yyyy-mm-dd-PRnum-githash
+    2014-08-20-1664-0d986d9242da9e741d50c5f543faba2f37b7723d
+    yyyy-mm-dd-PRnum-githash
 
 ## Travis SSH keys
 
@@ -81,7 +81,7 @@ reconstitute the SSH key.
 Usage of encrypt-key.sh is as follows, where fontforge/fontforge is
 the github repository that you want to encrypt the SSH key for.
 
-   ./encrypt-key.sh the-ssh-private-key-filename fontforge/fontforge
+    ./encrypt-key.sh the-ssh-private-key-filename fontforge/fontforge
 
 The Linux and OSX Travis build scripts have been updated to
 reconstitute the SSH key. See the travis-scripts/common.sh file for
@@ -109,7 +109,7 @@ to create the daily bundle for FontForge. Both the bundle scripts
 expect to be run from the root directory of where FontForge was
 compiled. For example, doing the below command to install fontforge on OSX:
 
-sudo port -v -k install fontforge
+    sudo port -v -k install fontforge
 
 and then move to
 the/opt/local/var/macports/build/.../work/fontforge-2.0.0_beta1 and
