@@ -9,16 +9,32 @@ pre {
 	overflow: auto;
 }
 
-
-/* Page content container*/
-.content {
-	background: url('/assets/img/twister.gif') no-repeat top center;
+.ff-download .dl {
+	display: none;
 }
-
+html.js.linux .ff-download .default {
+	display: none;
+}
+html.js.linux .ff-download .gnulinux {
+    display: inline-block;
+}
+html.js.osx .ff-download .default {
+	display: none;
+}
+html.js.osx .ff-download .macos {
+    display: inline-block;
+}
+html.js.windows .ff-download .default {
+	display: none;
+}
+html.js.windows .ff-download .windows {
+    display: inline-block;
+}
 
 /* Page heading */
 .page-heading {	margin-top: 36px;	margin-bottom: 24px;	}
 
+/* TODO: real small caps... we are a font editor */
 .small-caps {
 	font-size: 0.8em;
 	letter-spacing: 0.2em;
@@ -447,7 +463,6 @@ footer .copyright a {
 	background: #171717;
 	color: #b3b3b3;
 	padding: 15px 0;
-	-webkit-font-smoothing: antialiased;
 	-webkit-box-shadow: 0 -1px 0 rgba(255,255,255,0.15);
 	-moz-box-shadow: 0 -1px 0 rgba(255,255,255,0.15);
 	box-shadow: 0 -1px 0 rgba(255,255,255,0.15);
@@ -462,7 +477,6 @@ footer .copyright a {
 .download-bar p.intro {
 	margin: 6px 0 24px 0;
 	color: rgba(255,255,255,0.9);
-	-webkit-font-smoothing: antialiased;
 }
 
 .download-bar .btn-large {
@@ -669,12 +683,6 @@ figcaption {
 	.thumb-grid figcaption {
 		text-align: left;
 	}
-
-}
-
-/* Introduction style */
-
-.intro {
 
 }
 
@@ -907,7 +915,7 @@ h2.blackbar {
 }
 
 h2.blackbar span {
-	background: #E9E8E6;
+	background: #EEE;
 	padding: 0 25px 0 25px;
 	display: inline-block;
 	vertical-align: -.4ex;
@@ -999,9 +1007,9 @@ h2.blackbar span {
 
 }
 
-.blockrow3 li a.orange { background: #F6C20B;}
-.blockrow3 li a.red { background: #EA8142;}
-.blockrow3 li a.green { background: #5FC78F;}
+.blockrow3 li a.orange { background: url('../img/samples/screenshot-1.png') no-repeat scroll 0% 0% #F6C20B; }
+.blockrow3 li a.red { background: url('../img/samples/screenshot-2.png') no-repeat scroll 0% 0% #EA8142;}
+.blockrow3 li a.green { background: url('../img/samples/screenshot-3.png') no-repeat scroll 0% 0% #5FC78F;}
 
 .blockrow3 li a:hover {
 	-webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.65);

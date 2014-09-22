@@ -6,17 +6,14 @@ title: How To Uninstall FontForge
 
 Mac OS X
 --------------
-
 Move the FontForge.app in your Applications folder to the Trash.  
 
 Windows
 ----------------
-
 Go to Start, Programs, FontForge, Uninstall and run the uninstaller.
 
 GNU+Linux
 -------------
-
 If you installed from source to /usr/local (the default) then you may type:
 
 >     $ su

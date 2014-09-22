@@ -25,6 +25,7 @@ If that sounds unfamiliar, GitHub has excellent [bootcamp tutorials](https://hel
 > [https://github.com/fontforge/fontforge.github.com](https://github.com/fontforge/fontforge.github.com)
 
 <a id="translations"></a>
+
 ### Translations
 
 The website is under active development in US English. 
