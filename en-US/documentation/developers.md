@@ -87,6 +87,82 @@ The Linux and OSX Travis build scripts have been updated to
 reconstitute the SSH key. See the travis-scripts/common.sh file for
 how to easily use the key to upload information to the server.
 
+## Building a Debian source package
+
+A Debian source package consists of a source tarball (with specific
+metadata) and several accompanying files and allows one to build a
+product in a neutral build environment.
+
+A source package is specific to the distribution (but not the
+architecture) that it targets. The most common build target is
+currely Ubuntu Precise, a long-term support release with Launchpad
+build support. A binary package built on and for Precise also
+installs and functions correctly on Debian testing and on Ubuntu
+Trusty.
+
+After downloading the FontForge source, change into the source
+directory and run
+```
+./bootstrap; ./configure; make F_METADATA_REGENERATE=1 \
+UBUNTU_RELEASE=precise deb-src;
+```
+.
+
+One can omit the `UBUNTU_RELEASE` argument and use an arbitrary
+`DEB_OS_RELEASE` argument instead in order to target a Debian
+distribution. One can use a custom debian directory by populating
+it and omitting the `F_METADATA_REGENERATE` option.
+
+Upon successful completion, building of the source package will
+leave several files in the parent directory, with names like this:
+```
+fontforge_20140813-92-g203bca8-0ubuntu1~precise.dsc
+fontforge_20140813-92-g203bca8-0ubuntu1~precise_source.build
+fontforge_20140813-92-g203bca8-0ubuntu1~precise_source.changes
+fontforge_20140813-92-g203bca8-0ubuntu1~precise.tar.gz
+```
+.
+
+In order to upload to a Launchpad repository for building, one can
+then run dput on the `.changes` file with the target repository as
+the first argument, like this:
+```
+dput ppa:fontforge/fontforge fontforge_20140813-92-g203bca8-0ubuntu1~precise_source.changes
+```
+. This will, upon success, leave a file named something like
+`fontforge_20140813-92-g203bca8-0ubuntu1~precise_source.ppa.upload`,
+which blocks duplicate uploads.
+
+Upon validation of the uploaded package, Launchpad will build the
+package for all supported architectures. One can then copy the
+binary packages from precise to other Ubuntu versions via the
+Launchpad web interface.
+
+See [here] (https://help.launchpad.net/Packaging/PPA) for more
+information about Launchpad.
+
+One can also build a binary package from the source package locally.
+Simply extract the `tar.gz` file generated previously into a new
+directory, enter the directory, and run `debuild`.
+
+## Building a Red Hat source package
+
+One can build a Red Hat source package by entering a clean FontForge
+source tree and running
+```
+./bootstrap; ./configure; make F_METADATA_REGENERATE=1 rpm-src;
+```
+.
+
+This will leave a `tar.gz` file and a `.spec` file in the parent
+directory.
+
+In order to build the binary package locally, copy the source file to
+`~/rpmbuild/SOURCES` and the spec file to `~/rpmbuild/SPECS`, and run
+`rpmbuild -ba ~/rpmbuild/SPECS/(name of spec file)`. Upon success,
+this will leave binary packages in `~/rpmbuild/RPMS` and source packages
+in `~/rpmbuild/SRPMS`.
+
 ## Building an OSX app bundle
 
 There are two scripts to build an app bundle, which one you use will
