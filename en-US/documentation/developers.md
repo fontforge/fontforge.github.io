@@ -73,7 +73,7 @@ subdirectory which is around 60mb in size. If you have access to OSX
 
 ## Travis SSH keys
 
-Inside the tracis-scripts subdirectory you will see a encrypt-key.sh
+Inside the travis-scripts subdirectory you will see a encrypt-key.sh
 script which can be used to marshal and carve up an SSH key to setup
 Travis CI secure environment variables that allow the CI system to
 reconstitute the SSH key.
