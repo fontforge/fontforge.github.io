@@ -15,6 +15,7 @@ For release versions, use `git checkout tags/foo` in the clones git repository o
 go to the [Release Page](https://github.com/fontforge/fontforge/Releases).
 
 ### More complicated installs
+
 __Parts of this chapter can be somehow outdated.__
 
 The configure script allows you to turn off and on various features of
@@ -79,7 +80,7 @@ If you want to install FontForge in a different directory (say in
 
      $ ./configure --prefix=/usr
 
-#### Installing documentation from the cvs tree
+#### Installing documentation from the source tree
 
 If you have a copy of the git repository on your system then you should
 be able to type
@@ -87,7 +88,7 @@ be able to type
      # make install_docs
 
 Again you will probably need to be root to do this install too. Use
-either "su" or "sudo" as appropriate for your system ([see above](#su)).
+either `su -c` or `sudo` as appropriate for your system (Just try both.)
 
 Applying a patch
 ----------------
