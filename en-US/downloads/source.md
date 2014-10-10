@@ -91,6 +91,7 @@ either "su" or "sudo" as appropriate for your system ([see above](#su)).
 
 Applying a patch
 ----------------
+
 From time to time someone will report a bug or request a feature and I
 will reply by sending a patch which purports to fix the bug or implement
 the feature. But how do you use the patch file I sent?
@@ -118,6 +119,7 @@ can't do it for you.
 
 Dependencies (external libraries/helper programs)
 -------------------------------------------------
+
 FontForge tries to avoid hard dependencies. If a library is missing then
 FontForge will (in most cases, but not on cygwin) be able to continue to
 run, it will just lack whatever functionality the library provides. So
