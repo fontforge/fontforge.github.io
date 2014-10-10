@@ -143,4 +143,4 @@ FontForge is designed to make use of a three button mouse. It is also designed t
 
 If you have a standard one button mouse, then you have the option of having the Mac simulate a three button mouse (for instance Option-left-click behaves like clicking the middle mouse button). Unfortunately this means you can no longer use the Option key to change the behavior of the left (only) button click. To enable this, click the XQuartz app in the Dock, and then go to X11 menu in the top left, Preferences, Input, and turn on `Emulate three button mouse`
 
-If you have a two or three button mouse, then use it (and turn off `Emulate three button mouse` in the X11 preferences). 
+If you have a two or three button mouse, then use it (and turn off `Emulate three button mouse` in the X11 preferences.)
