@@ -4,14 +4,19 @@ layout: default
 title: Building from source
 ---
 
-Download the source .zip package, or clone the repository with git:
+Download the source .zip or .tar.gz package, or clone the repository with git:
 
      $ git clone https://github.com/fontforge/fontforge.git
 
 Detailed instructions for each supported Operating System are to be
 found on their respective page.
 
+For release versions, use `git checkout tags/foo` in the clones git repository or
+go to the [Release Page](https://github.com/fontforge/fontforge/Releases).
+
 ### More complicated installs
+
+__Parts of this chapter can be somehow outdated.__
 
 The configure script allows you to turn off and on various features of
 FontForge that might not be appropriate for your system. Type
@@ -75,7 +80,7 @@ If you want to install FontForge in a different directory (say in
 
      $ ./configure --prefix=/usr
 
-#### Installing documentation from the cvs tree
+#### Installing documentation from the source tree
 
 If you have a copy of the git repository on your system then you should
 be able to type
@@ -83,7 +88,7 @@ be able to type
      # make install_docs
 
 Again you will probably need to be root to do this install too. Use
-either "su" or "sudo" as appropriate for your system ([see above](#su)).
+either `su -c` or `sudo` as appropriate for your system (Just try both.)
 
 Applying a patch
 ----------------
@@ -100,17 +105,18 @@ So before you can apply the patch you must [have the source
 code](source-build.html#src-distribution)available to you. If you choose
 to download from the git repository, then, in all probability, the patch
 will already have been applied (so you don't need to do anything with
-it). But if you download one of my tarballs then you will need to apply
+it). But if you download one of the tarballs then you will need to apply
 the patch:
-
-     $ bunzip2 fontforge*.tar.bz2
-     $ tar xf fontforge*.tar
-     $ cd fontforge-*/fontforge
-     $ patch <foobar.patch 
-     $ cd ..
-     $ ./configure
-     $ make
-     $ make install
+```sh
+tar xf fontforge*.tar.*
+cd fontforge-*/fontforge
+patch <foobar.patch 
+cd ..
+./configure
+make && make install
+```
+Use things like `gunzip`, `bunzip2` to uncompress the tarball if your `tar`
+can't do it for you.
 
 Dependencies (external libraries/helper programs)
 -------------------------------------------------
@@ -131,7 +137,6 @@ download either
     program.](http://sourceforge.net/projects/autotrace/)
 
 ### Libraries
-
 None is required for the proper compilation/execution of FontForge, if
 the libraries are not present they will not be used. (If the machine on
 which your executable was build didn't have them, then you must not only
@@ -149,24 +154,24 @@ from:
 
 -   [libxml2](http://xmlsoft.org/)
      To parse SVG files and fonts
--   [libspiro](http://libspiro.sf.net/)
+-   [libspiro](https://github.com/fonrforge/libspiro)
      Raph Levien's clothoid to bezier spline conversion routines. If
     this is available FontForge will allow you to edit with clothoid
     splines (spiro).
--   [libuninameslist](http://libuninameslist.sf.net)
+-   [libuninameslist](https://github.com/fontforge/libuninameslist)
      To display unicode names and annotations.
 -   [libiconv](http://www.gnu.org/software/libiconv/)
      Only important for systems with no built-in iconv(). If not present
     FontForge contains a minimal version of the library which allows it
     to work. But if you want to use libiconv you must configure it with
     `--enable-extra-encodings`, as FontForge requires Shift-JIS.
--   [freetype](http://freetype.sf.net/)
+-   [freetype](http://freetype.org/)
      To do a better job rasterizing bitmaps, and to enable the truetype
     debugger.
     Some of FontForge's commands depend on you compiling freetype with
     the byte code interpreter enabled. It used to be disabled by default
     because of some [patents granted to
-    Apple](http://freetype.sourceforge.net/patents.html). Now that they
+    Apple](http://freetype.org/patents.html). Now that they
     have expired, you no longer need to worry about this, unless your
     setup happens to use an old library version. Then you may enable the
     interpreter by setting the appropriate macro in
@@ -196,11 +201,10 @@ from:
 -   [libpango](http://www.pango.org/)
      Pango draws text for complex scripts. It depends on glib-2.0,
     libfontconfig, libfreetype, libXft, and perhaps other libraries.
--   Under Mac OS/X these libraries are available from the [fink
-    project](http://fink.sourceforge.net/) and from
-    [macports](http://www.macports.org/).
 
     * * * * *
+If your system comes with a package manager, use it to make installing
+the libraries easier.
 
 ### Extra Files
 
@@ -252,4 +256,3 @@ You should make sure that the xset line happens whenever X is started on
 your machine (put it in your .xsession file).
 
 -   [Running FontForge](running.html)
-

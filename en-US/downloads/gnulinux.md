@@ -15,6 +15,8 @@ You can [download a .zip snapshot] of the repository or clone it with this comma
 [INSTALL-git.md]: https://github.com/fontforge/fontforge/blob/master/INSTALL-git.md
 [download a .zip snapshot]: https://github.com/fontforge/fontforge/archive/master.zip
 
+You may want to read [Building from source](../source.md) for more information.
+
 ### Distro Packages 
 
 Most of the GNU+Linux distributions have packages for fontforge. These will
