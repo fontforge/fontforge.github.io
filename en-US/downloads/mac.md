@@ -4,12 +4,13 @@ layout: default
 title: Install FontForge on Mac OS X
 ---
 
-FontForge is not a regular Mac application. It was developed since 2001 as a UNIX application, so don't expect it to look and behave like a normal Mac
-Application. It runs on Macs thanks to a X11 graphics compatibility layer called XQuartz.
+FontForge is not a regular Mac application. 
+It was developed since 2001 as a UNIX application, so don't expect it to look and behave like a normal Mac Application. 
+It runs on Macs thanks to XQuartz, a X11 graphics compatibility layer.
 
 ## Install Beta packages for Mac OS X 10.6+
 
-First you need to install the X11 compatibility system:
+First you need to install XQuartz:
 
 1. With Finder, look in your `/Applications/Utilities/` folder and check if you have the `X11` or `XQuartz` apps installed on your computer. 
 2. If you don't have one of these, [download XQuartz](http://xquartz.macosforge.org)
@@ -21,14 +22,16 @@ First you need to install the X11 compatibility system:
 
 Then install FontForge:
 
-1. Download this ZIP file: [FontForge.app.zip](http://fuuko.libferris.com/osx/packages/201410/07_1052/FontForge.app.zip) (release made on 2014-10-07)
-2. Unzip it, move the `FontForge.app` file to `/Applications` and only there. **Do not move it anywhere else.**
-3. If you use 10.8+, you may need to go to System Preferences, Security, unlock, and allow Mac apps from `Everywhere`. You can also right-click/double-tap on the icon, and click `Open` while holding down the `Command` key.
-4. Open it in the normal way - double click it, drag it to the dock, use Launcher, Spotlight or Quicksilver...
+1. [Download 2014-10 Release App (.zip)](https://github.com/fontforge/fontforge/releases/download/20141014/FontForge-Mac-2014-10-14.zip)
+2. Unzip it, move the `FontForge.app` file to `/Applications` - **do not move it anywhere else**
+3. Right Click (or hold the `Command` key and click once) and choose `Open` from the menu, and confirm you want to open the app
+4. You may seee a dialog box saying "Choose Application. Where is X11?" with a sort of Finder window. Find XQuartz in `Applications/Utilities` and click OK
+4. Be patient while it runs a first-time setup process
+5. Next time, see it open fast and in the normal ways - double clicking it, drag it to the dock, using Launcher, Spotlight or Quicksilver...
 
-### Update Beta Package
+### Daily Development Snapshots
 
-New beta packages are released every few days. [Check this directory](http://fuuko.libferris.com/osx/packages/) by date. To install an update:
+New development versions are released every few days. [Check this directory](http://fuuko.libferris.com/osx/packages/) by date. To install an update:
 
 1. quit FontForge and X11
 2. drag and drop the new FontForge.app into `/Applications` and replace it
@@ -36,9 +39,7 @@ New beta packages are released every few days. [Check this directory](http://fuu
 
 ### If things go wrong
 
-The first time you run FontForge it may pop up a dialog box saying "Choose Application. Where is X11?" with a sort of Finder window. Find XQuartz in `Applications/Utilities` and click OK. 
-
-If you have any problems with installation or upgrading, ask for help on the [FontForge Users](/) mailing list.
+If you have any problems with installation or upgrading, create a [Github Issue](https://guides.github.com/features/issues/) to discuss with our community.
 
 ## Installing from Package Managers
 
@@ -49,12 +50,6 @@ These Mac package managers all have FontForge:
 * [Fink](http://www.finkproject.org/) 
 
 ## Building from source
-You must ensure that you have the both the X11 server and the XCode
-toolchain installed on your system. Normally you can just type
-`./configure && make -j3 && sudo make install` and wait if you have
-all the [dependencies](../source.html#Dependencies) ready.
-
-### Building with Homebrew
 
 Build with source using [Homebrew](http://www.brew.sh) in the normal way:
 
@@ -66,52 +61,11 @@ brew -v install fontforge --HEAD --with-cairo --with-czmq --with-gif --with-x --
 If anything go wrong, just create a ticket for the package manager or try to use non-HEAD versions
 (These versions are still outdated sourceforge releases on 2014-10-07.)
 
-### Building for Older OS X
+If you build from sources with Homebrew assistance, you may be lucky if you run 
 
-This process is slightly different
-on OS/X 10.3 & 10.4.
-
-__10.4__
-
--   Open the Install DVD that came with your system.
--   Scroll down to "Optional Installs" and open it.
--   Keep clicking `Continue` until you get to the pane "Custom Install
-    on "Macintosh HD""
--   Press the arrow beside "Applications" so you get a list of them.
--   Select X11
--   Keep pressing `Continue`
-
-    * * * * *
-
--   The Xcode toolchain is optional software on the install DVD. Simply
-    insert the disk and click on the XCode install icon.
-
-__10.3__
-
--   The X server lives in a package called X11User on the third install
-    CD.
--   You must also install the X11SDK package on the XCode CD
--   And you must install the XCode tools themselves.
-
-You may also want to install the [fink](http://fink.sourceforge.net/)
-package which includes many useful libraries (see the
-[dependencies](../source.html#Dependencies) section below for more info on this.)
-
-You must then start up a Terminal window (the Terminal Application also
-lives in the Utilities sub-folder of the Applications folder) and be
-prepared to type commands in that window (I know, it's very
-un-mac-like.)
-
-#### Special note for building prior to 10.3
-
-OS/X has evolved over time. Certain system calls have changed. The
-current source distribution should work on any 10.3+ system.
-
-If you wish to build on a 10.2 system you must say
-
->     $ ./configure --with-regular-link
-
-(Rather than just saying `./configure`)
+    ./configure && make -j3 && sudo make install;
+    
+(You'll need to have all the [dependencies](../source.html#Dependencies) already installed.)
 
 ## Advanced Configuration
 
