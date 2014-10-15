@@ -7,6 +7,8 @@ title: FontForge is a font editor
 Welcome
 =======
 
+__NEW RELEASE!__ We are happy to announce our latest version, the 2014 October release, with full UFO support. [Download now!](http://fontforge.github.io/en-US/downloads/)
+
 Learning FontForge is easy &ndash; get started designing your own fonts with the [tutorial](/en-US/tutorials/). The entire [interface](/en-US/documentation/interface/) is fully documented.
 
 Scripting allows designers to get repetitive tasks done quickly, and FontForge has excellent [scripting support](/en-US/documentation/scripting/) with both its own scripting language and [Python](/en-US/documentation/scripting/python/).
