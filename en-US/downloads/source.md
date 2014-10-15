@@ -4,6 +4,22 @@ layout: default
 title: Building FontForge From Source
 ---
 
+### Building from source
+
+Building FontForge from source is a three-steps job described in [INSTALL-git.md](https://github.com/fontforge/fontforge/blob/master/INSTALL-git.md), on the main repo.
+
+You can [download a .zip snapshot](https://github.com/fontforge/fontforge/archive/master.zip) of the repository or clone it with this command:
+
+    git clone git://github.com/fontforge/fontforge.git
+
+Download the source .zip or .tar.gz package, or clone the repository with git:
+
+     git clone https://github.com/fontforge/fontforge.git
+
+Detailed instructions for each supported Operating System are to be found on their respective page.
+
+For release versions, use `git checkout tags/foo` in the clones git repository or go to the [Release Page](https://github.com/fontforge/fontforge/Releases).
+
 Building FontForge from source is a three-step job, described in [INSTALL-git.md], on the main repo.
 
 If you're not familiar with compiling source code, the follow provides some introductory guidance.
@@ -12,16 +28,12 @@ The configure script allows you to turn off and on various features of FontForge
 
      ./configure --help
 
-for a complete list of options. Some of the most useful are described
-below.
+for a complete list of options. Some of the most useful are described below.
 
 #### Building FontForge without X
 
-If you don't want to install X11 on your system, you can use FontForge
-as a command line tool which can execute scripts to manipulate fonts.
-FontForge's scripting language is described in detail [in the section on
-scripting](scripting.html), or the [section on python
-scripting](python.html).
+If you don't want to install X11 on your system, you can use FontForge as a command line tool which can execute scripts to manipulate fonts.
+FontForge's scripting language is described in detail [in the section on scripting](scripting.html), or the [section on python scripting](python.html).
 
      ./configure --without-x
 
@@ -30,14 +42,13 @@ scripting](python.html).
 If you want to write python scripts in normal python (as opposed to
 within the python embedded in FontForge)
 
-     $ ./configure --enable-pyextension
+     ./configure --enable-pyextension
 
 #### Installing FontForge somewhere other than `/usr/local`
 
-If you want to install FontForge in a different directory (say in
-/usr/bin)
+If you want to install FontForge in a different directory (say in `/usr/bin`)
 
-     $ ./configure --prefix=/usr
+     ./configure --prefix=/usr
 
 ## Dependencies (External Libraries/Helper Programs)
 
