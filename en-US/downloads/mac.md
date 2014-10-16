@@ -31,7 +31,9 @@ Then install FontForge:
 
 ### Daily Development Snapshots
 
-New development versions are released every few days. [Check this directory](http://fuuko.libferris.com/osx/packages/) by date. To install an update:
+New development versions are released every few days, and the latest is always available as [FontForge_latest-HEAD.app.zip](http://fuuko.libferris.com/osx/packages/FontForge_latest-HEAD.app.zip). 
+
+To install an update:
 
 1. quit FontForge and X11
 2. drag and drop the new FontForge.app into `/Applications` and replace it
