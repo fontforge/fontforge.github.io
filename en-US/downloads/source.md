@@ -59,9 +59,20 @@ Use these commands:
 
 Use these commands:
 
+    # Install dependencies
+    rpm-devel rpm-build git perl autoconf automake tar libtool glibc-devel m4 gcc cpp python-devel libjpeg-turbo-devel libtiff-devel libpng-devel giflib-devel freetype-devel uuid-devel libtool-ltdl-devel bzip2-devel libxml2-devel libuninameslist-devel libspiro-devel pango-devel cairo-devel chrpath;
     ./bootstrap;
     ./configure;
     make rpm-src;
+    # That produced a tarball and a spec file in the parent directory
+    mkdir -p ~/rpmbuild/SOURCES/;
+    cp TARBALL ~/rpmbuild/SOURCES/;
+    rpmbuild -ba --nodeps SPECFILE
+
+
+
+
+
 
 ## Dependencies (External Libraries/Helper Programs)
 
