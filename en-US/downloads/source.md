@@ -4,8 +4,6 @@ layout: default
 title: Building FontForge From Source
 ---
 
-### Building from source
-
 Building FontForge from source is a three-steps job described in [INSTALL-git.md](https://github.com/fontforge/fontforge/blob/master/INSTALL-git.md), on the main repo.
 
 You can [download a .zip snapshot](https://github.com/fontforge/fontforge/archive/master.zip) of the repository or clone it with this command:
@@ -16,39 +14,46 @@ Download the source .zip or .tar.gz package, or clone the repository with git:
 
      git clone https://github.com/fontforge/fontforge.git
 
-Detailed instructions for each supported Operating System are to be found on their respective page.
+For building from source for a release versions, go to the [Release Page](https://github.com/fontforge/fontforge/Releases) to find out your release tag, and in your cloned copy of the repo use `git checkout tags/20141014` (for example)
 
-For release versions, use `git checkout tags/foo` in the clones git repository or go to the [Release Page](https://github.com/fontforge/fontforge/Releases).
 
 Building FontForge from source is a three-step job, described in [INSTALL-git.md], on the main repo.
 
 If you're not familiar with compiling source code, the follow provides some introductory guidance.
 
-The configure script allows you to turn off and on various features of FontForge that might not be appropriate for your system. Type
+The configure script allows you to turn off and on various features of FontForge that might not be appropriate for your system. For a complete list of options, type
 
      ./configure --help
 
-for a complete list of options. Some of the most useful are described below.
+Some of the most useful options are:
 
-#### Building FontForge without X
-
-If you don't want to install X11 on your system, you can use FontForge as a command line tool which can execute scripts to manipulate fonts.
-FontForge's scripting language is described in detail [in the section on scripting](scripting.html), or the [section on python scripting](python.html).
+- **Building FontForge without X.**  
+  If you don't want to install X11 on your system, you can use FontForge as a command line tool which can execute scripts to manipulate fonts.
+  FontForge's scripting language is described in detail [in the section on scripting](scripting.html), or the [section on python scripting](python.html).
 
      ./configure --without-x
 
-#### Building FontForge (also) as a python extension
-
-If you want to write python scripts in normal python (as opposed to
-within the python embedded in FontForge)
+- **Building FontForge (also) as a python extension**  
+  If you want to write python scripts in normal python (as opposed to within the python embedded in FontForge)
 
      ./configure --enable-pyextension
 
-#### Installing FontForge somewhere other than `/usr/local`
-
-If you want to install FontForge in a different directory (say in `/usr/bin`)
+- **Installing FontForge somewhere other than `/usr/local`**  
+  If you want to install FontForge in a different directory (say in `/usr/bin`)
 
      ./configure --prefix=/usr
+
+## Building a Debian package (.deb)
+
+Use these commands:
+
+    ./bootstrap ; 
+    ./configure ; 
+    make F_PACKAGER_NAME="Name" \
+      F_PACKAGER_MAIL="somebody@somewhere.com" \
+      F_METADATA_REGENERATE=1 \
+      UBUNTU_RELEASE="precise" \
+      deb-src ;
 
 ## Dependencies (External Libraries/Helper Programs)
 
