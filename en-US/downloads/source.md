@@ -55,6 +55,14 @@ Use these commands:
       UBUNTU_RELEASE="precise" \
       deb-src ;
 
+## Building a Red Hat Package (.rpm)
+
+Use these commands:
+
+    ./bootstrap;
+    ./configure;
+    make rpm-src;
+
 ## Dependencies (External Libraries/Helper Programs)
 
 FontForge tries to avoid hard dependencies.
