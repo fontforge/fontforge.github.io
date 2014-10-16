@@ -9,7 +9,7 @@ often be a quite old. We provide these packages:
 
 - [Ubuntu PPA](https://launchpad.net/%7Efontforge/+archive/ubuntu/fontforge)
 
-Check out [Building From Source](../source.md) for more information on using the bleeding edge.
+Check out [Building From Source](../source) for more information on using the bleeding edge.
 
 ### Installing from an rpm
 
