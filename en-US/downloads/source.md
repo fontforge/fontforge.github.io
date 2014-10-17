@@ -1,7 +1,8 @@
 ---
 published: true
-layout: default
+layout: downloads
 title: Building FontForge From Source
+contenttype: application/x-gzip
 ---
 
 Building FontForge from source is a three-steps job described in [INSTALL-git.md](https://github.com/fontforge/fontforge/blob/master/INSTALL-git.md), on the main repo.
@@ -27,18 +28,18 @@ The configure script allows you to turn off and on various features of FontForge
 
 Some of the most useful options are:
 
-- **Building FontForge without X.**  
+- **Building FontForge without X.**
   If you don't want to install X11 on your system, you can use FontForge as a command line tool which can execute scripts to manipulate fonts.
   FontForge's scripting language is described in detail [in the section on scripting](scripting.html), or the [section on python scripting](python.html).
 
      ./configure --without-x
 
-- **Building FontForge (also) as a python extension**  
+- **Building FontForge (also) as a python extension**
   If you want to write python scripts in normal python (as opposed to within the python embedded in FontForge)
 
      ./configure --enable-pyextension
 
-- **Installing FontForge somewhere other than `/usr/local`**  
+- **Installing FontForge somewhere other than `/usr/local`**
   If you want to install FontForge in a different directory (say in `/usr/bin`)
 
      ./configure --prefix=/usr
@@ -47,8 +48,8 @@ Some of the most useful options are:
 
 Use these commands:
 
-    ./bootstrap ; 
-    ./configure ; 
+    ./bootstrap ;
+    ./configure ;
     make F_PACKAGER_NAME="Name" \
       F_PACKAGER_MAIL="somebody@somewhere.com" \
       F_METADATA_REGENERATE=1 \
@@ -78,7 +79,7 @@ Use these commands:
 
 FontForge tries to avoid hard dependencies.
 If a library is missing then FontForge will (in most cases, but not on cygwin) be able to continue to run, it will just lack whatever functionality the library provides.
-So if you don't need to import tiff images, you don't need libtiff. 
+So if you don't need to import tiff images, you don't need libtiff.
 If you don't need to handle SVG fonts you don't need libxml2, etc.
 
 ### Executables
@@ -92,8 +93,8 @@ If you want to do autotracing around character images you should also download e
 
 If your system comes with a package manager, use it. It makes installing thee libraries easier.
 
-None are required for the proper compilation/execution of FontForge, if the libraries are not present they will not be used. 
-(If the machine on which your executable was build didn't have them, then you must not only install the libraries, but [rebuild FontForge from source](#source)) 
+None are required for the proper compilation/execution of FontForge, if the libraries are not present they will not be used.
+(If the machine on which your executable was build didn't have them, then you must not only install the libraries, but [rebuild FontForge from source](#source))
 If your machine doesn't have them and you want them they are available from:
 
 -   Image Libraries (to allow FontForge to import images in those
@@ -105,12 +106,12 @@ If your machine doesn't have them and you want them they are available from:
 -   [libxml2](http://xmlsoft.org/) To parse SVG files and fonts
 -   [libspiro](https://github.com/fonrforge/libspiro) Raph Levien's clothoid to bezier spline conversion routines. If this is available FontForge will allow you to edit with clothoid splines (spiro).
 -   [libuninameslist](https://github.com/fontforge/libuninameslist) To display unicode names and annotations.
--   [libiconv](http://www.gnu.org/software/libiconv/) Only important for systems with no built-in iconv(). 
-    If not present FontForge contains a minimal version of the library which allows it to work. 
+-   [libiconv](http://www.gnu.org/software/libiconv/) Only important for systems with no built-in iconv().
+    If not present FontForge contains a minimal version of the library which allows it to work.
     But if you want to use libiconv you must configure it with `--enable-extra-encodings`, as FontForge requires Shift-JIS.
 -   [freetype](http://freetype.org/)
     To do a better job rasterizing bitmaps, and to enable the truetype debugger.
-    Some of FontForge's commands depend on you compiling freetype with the byte code interpreter enabled. 
+    Some of FontForge's commands depend on you compiling freetype with the byte code interpreter enabled.
     It used to be disabled by default because of some [patents granted to Apple](http://freetype.org/patents.html).
     Now that they have expired, you no longer need to worry about this, unless your setup happens to use an old library version.
     Then you may enable the interpreter by setting the appropriate macro in `*.../include/freetype/config/ftoption.h*` before you build the library (see the README.UNX file on the top level of the freetype distribution).

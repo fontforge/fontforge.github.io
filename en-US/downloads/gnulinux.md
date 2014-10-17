@@ -1,7 +1,8 @@
 ---
 published: true
-layout: default
+layout: downloads
 title: Install FontForge on GNU+Linux
+contenttype: application/x-rpm
 ---
 
 Most of the GNU+Linux distributions have packages for fontforge, but these will
@@ -14,7 +15,7 @@ Check out [Building From Source](../source) for more information on using the bl
 ### Installing from an rpm
 
 Installing an rpm package is relatively straight forward.
-You will need root access. 
+You will need root access.
 Download the RPM files on the [release page](https://github.com/fontforge/fontforge/releases)
 
 Move to the directory containing the downloaded rpm, and then type

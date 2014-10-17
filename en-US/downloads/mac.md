@@ -1,18 +1,19 @@
 ---
 published: true
-layout: default
+layout: downloads
 title: Install FontForge on Mac OS X
+contenttype: application/zip
 ---
 
-FontForge is not a regular Mac application. 
-It was developed since 2001 as a UNIX application, so don't expect it to look and behave like a normal Mac Application. 
+FontForge is not a regular Mac application.
+It was developed since 2001 as a UNIX application, so don't expect it to look and behave like a normal Mac Application.
 It runs on Macs thanks to XQuartz, a X11 graphics compatibility layer.
 
 ## Install Beta packages for Mac OS X 10.6+
 
 First you need to install XQuartz:
 
-1. With Finder, look in your `/Applications/Utilities/` folder and check if you have the `X11` or `XQuartz` apps installed on your computer. 
+1. With Finder, look in your `/Applications/Utilities/` folder and check if you have the `X11` or `XQuartz` apps installed on your computer.
 2. If you don't have one of these, [download XQuartz](http://xquartz.macosforge.org)
 3. Install it in the normal way
 4. Log out and log back in to ensure it works correctly
@@ -31,7 +32,7 @@ Then install FontForge:
 
 ### Daily Development Snapshots
 
-New development versions are released every few days, and the latest is always available as [FontForge_latest-HEAD.app.zip](http://fuuko.libferris.com/osx/packages/FontForge_latest-HEAD.app.zip). 
+New development versions are released every few days, and the latest is always available as [FontForge_latest-HEAD.app.zip](http://fuuko.libferris.com/osx/packages/FontForge_latest-HEAD.app.zip).
 
 To install an update:
 
@@ -49,7 +50,7 @@ These Mac package managers all have FontForge:
 
 * [Homebrew](http://www.brew.sh) (recommended)
 * [MacPorts](http://www.macports.org/)
-* [Fink](http://www.finkproject.org/) 
+* [Fink](http://www.finkproject.org/)
 
 ## Building from source
 
@@ -63,15 +64,15 @@ brew -v install fontforge --HEAD --with-cairo --with-czmq --with-gif --with-x --
 If anything go wrong, just create a ticket for the package manager or try to use non-HEAD versions
 (These versions are still outdated sourceforge releases on 2014-10-07.)
 
-If you build from sources with Homebrew assistance, you may be lucky if you run 
+If you build from sources with Homebrew assistance, you may be lucky if you run
 
     ./configure && make -j3 && sudo make install;
-    
+
 (You'll need to have all the [dependencies](../source.html#Dependencies) already installed.)
 
 ## Advanced Configuration
 
-To make FontForge more pleasant to use, you can change some aspects of the way it works on Macs. **These steps are optional.** 
+To make FontForge more pleasant to use, you can change some aspects of the way it works on Macs. **These steps are optional.**
 
 ### Changing Hot Keys
 
@@ -84,7 +85,7 @@ If the hotkeys are unfamiliar, you can change them!
 
 ### Changing UI Size
 
-If the UI appears very big or very small, you can change the way the UI is sized. 
+If the UI appears very big or very small, you can change the way the UI is sized.
 
 1. quit FontForge and X11
 2. with your text editor, open `/Applications/FontForge.app/Contents/Resources/opt/local/share/fontforge/pixmaps/resources`
@@ -95,7 +96,7 @@ If the UI appears very big or very small, you can change the way the UI is sized
 
 ### If you use a three-button mouse
 
-FontForge is designed to make use of a three button mouse. It is also designed to make use of modifier keys on mouse clicks (eg, Control-left-click can mean something different than left-click.) 
+FontForge is designed to make use of a three button mouse. It is also designed to make use of modifier keys on mouse clicks (eg, Control-left-click can mean something different than left-click.)
 
 If you have a standard one button mouse, then you have the option of having the Mac simulate a three button mouse (for instance Option-left-click behaves like clicking the middle mouse button). Unfortunately this means you can no longer use the Option key to change the behavior of the left (only) button click. To enable this, click the XQuartz app in the Dock, and then go to X11 menu in the top left, Preferences, Input, and turn on `Emulate three button mouse`
 
