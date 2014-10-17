@@ -16,8 +16,13 @@
     };
 
     $(document).ready(function(){
-        $.getJSON("http://sfbadge.herokuapp.com/sf/fontforge/json", function(json) {
-            $('#cnt-downloads').html(humanise(json.total));
+        $.getJSON("https://api.github.com/repos/fontforge/fontforge/releases/624073", function(json) {
+            var assetlist = json.assets;
+            total = 0;
+            $(assetlist).each(function(i, asset){
+                total += asset.download_count;
+            });
+            $('#cnt-downloads').html(humanise(total));
         });
         $.getJSON("http://sfbadge.herokuapp.com/commits/fontforge/fontforge/json", function(json) {
             $('#cnt-contributors').html(humanise(json.commits));
