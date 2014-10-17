@@ -14,7 +14,7 @@ Download the source .zip or .tar.gz package, or clone the repository with git:
 
      git clone https://github.com/fontforge/fontforge.git
 
-For building from source for a release versions, go to the [Release Page](https://github.com/fontforge/fontforge/Releases) to find out your release tag, and in your cloned copy of the repo use `git checkout tags/20141014` (for example)
+For building from source for a release versions, go to the [Release Page](https://github.com/fontforge/fontforge/releases) to find out your release tag, and in your cloned copy of the repo use `git checkout tags/20141014` (for example)
 
 
 Building FontForge from source is a three-step job, described in [INSTALL-git.md], on the main repo.
