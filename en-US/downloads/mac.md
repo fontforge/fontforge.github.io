@@ -9,7 +9,7 @@ FontForge is not a regular Mac application.
 It was developed since 2001 as a UNIX application, so don't expect it to look and behave like a normal Mac Application.
 It runs on Macs thanks to XQuartz, a X11 graphics compatibility layer.
 
-## Install Beta packages for Mac OS X 10.6+
+## How To Install 
 
 First you need to install XQuartz:
 
