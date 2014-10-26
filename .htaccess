@@ -1,5 +1,5 @@
 Options +FollowSymlinks
 RewriteEngine on
 RewriteBase /
-RewriteCond %{HTTP_HOST} !fontforge.org$ [NC]
-RewriteRule ^(.*)$ http://fontforge.org/$1 [L,R=301]
+RewriteCond %{HTTP_HOST} !fontforge.github.io$ [NC]
+RewriteRule ^(.*)$ http://fontforge.github.io/$1 [L,R=301]
