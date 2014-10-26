@@ -1,0 +1,15 @@
+navidoc 1.0
+graph=1
+nametype=2
+title=
+style=
+template=
+Pages:
+"index.html" Up="" Style="" Title="Font database files for pfaedit" Type="text/html" 1
+Ghosts:
+Refs:
+"index.html"
+	1 "MonospaceRegular.sfd.gz"
+	1 "Caliban.sfd.gz"
+	1 "CaslonRoman.sfd.gz"
+	1 "MonospaceBold.sfd.gz"
