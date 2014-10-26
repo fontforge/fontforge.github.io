@@ -1,0 +1,25 @@
+navidoc 1.0
+graph=1
+nametype=2
+title=
+style=
+template=
+Pages:
+"index.html" Up="" Style="" Title="TrueType composites: Apple & MicroSoft differences." Type="text/html" 1
+Ghosts:
+Refs:
+"index.html"
+	0 "CompositeAmbiguous.dfont"
+	0 "CompositeMS.dfont"
+	0 "CompositeMac.dfont"
+	0 "CompositeAmbiguous.ttf.bin"
+	0 "CompositeMS.ttf.bin"
+	0 "CompositeMac.ttf.bin"
+	0 "CompositeAmbiguous.ttf"
+	0 "CompositeMS.ttf"
+	0 "CompositeMac.ttf"
+	0 "http://partners.adobe.com/asn/developer/opentype/glyf.html"
+	0 "http://developer.apple.com/fonts/TTRefMan/RM06/Chap6glyf.html"
+	0 "http://www.microsoft.com/typography/tools/tools.htm"
+	2 "wincomposite.png"
+	2 "maccomposite.png"
