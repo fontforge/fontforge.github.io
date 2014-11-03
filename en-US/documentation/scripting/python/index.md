@@ -3118,6 +3118,10 @@ A 4 element tuple containing the OS/2 Unicode Ranges field
 
 `os2_width`
 
+`os2_capheight`
+
+`os2_xheight`
+
 `os2_winascent`
 
 `os2_winascent_add`
