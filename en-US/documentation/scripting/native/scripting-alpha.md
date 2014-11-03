@@ -2320,7 +2320,7 @@ The field-name must be a string and one of:
 This sets one of the fields of the OS/2 table to the given value. The
 field-name must be one of the strings listed below:
 
-`Weight, Width, FSType, IBMFamily, VendorID, Panose,         WinAscent, WinAscentIsOffset`
+`Weight, Width, XHeight, CapHeight, FSType, IBMFamily, VendorID, Panose,         WinAscent, WinAscentIsOffset`
 
 These are equivalent to the WinAscent field & []Offset check box in
 [Font Info-\>OS/2-\>Misc.](../../../interface/fontinfo/#TTF-Values)Where
