@@ -344,6 +344,13 @@ And if your font has vertical metrics enabled (See [General](#General)
 above) you will be able to set the default spacing between vertical 
 columns of text. (the equivalent to LineGap in vertical text).
 
+The Capital Height describes the height of the capital X (or of any other
+non-rounded capital letter that starts at the base line). The X Height
+describes the height of the lowercase x. These values presently have no
+bearing on how FontForge displays or processes the typeface, but they
+do get exported to certain file formats. These values are accessible via
+native and Python scripting.
+
 [See the FAQ](/about/faq/#linespace) for a discussion on the complexities
 involved in setting the line spacing. [The 'BASE' table](../baseline/)
 provides a more precise method for setting line spacing.
