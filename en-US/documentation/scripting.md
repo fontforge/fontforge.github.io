@@ -30,7 +30,7 @@ If you were doing this with the UI you would first [File-\>Open](filemenu.html#O
 
 ### Intial Solution
 
-```
+```sh
 Open($1)
 Generate($1:r + ".ttf")
 ```
@@ -51,14 +51,14 @@ So that's what the script looks like. To be useful it should probably live in a 
 
 But to be even more useful you should add a comment line to the beginning of the script (a comment line is one that starts with the '\#' character:
 
-```
+```sh
 #!/usr/local/bin/fontforge
 Open($1)
 Generate($1:r + ".ttf")
 ```
 Having done that type:
 
-```
+```sh
 $ chmod +x convert.pe
 ```
 
@@ -70,13 +70,13 @@ Ok, now we've got basic script. How do we use it?
 
 Well we can pass it to FontForge directly by typing
 
-```
+```sh
 $ fontforge -script convert.pe foo.pfb
 ```
 
 But if you added the comment above you can also type:
 
-```
+```sh
 $ convert.pe foo.pfb
 ```
 
@@ -86,7 +86,7 @@ And the shell knows to call fontforge to process the script.
 
 That's all well and good, but if you have lots of fonts to convert this might get tedious. So let's change our script so it will take lots of filenames which we can then process one at a time.
 
-```
+```sh
 #!/usr/local/bin/fontforge
 i=1
 while ( i<$argc )
@@ -100,7 +100,7 @@ Here we have introduced the variables `$argc `and `$argv`. The first  is simple 
 
 Then we have:
 
-```
+```sh
 i=1
 ```
 
@@ -110,7 +110,7 @@ The while loop will execute all statements between the "`while`" keyword and the
 
 And we can invoke this script with
 
-```
+```sh
 $ convert.pe *.pfb
 ```
 
@@ -120,7 +120,7 @@ Or something similar.
 
 Now suppose that you wanted a script that could convert a truetype font to an opentype font as well as a type1 font to a truetype. Well let's make our script even more complex:
 
-```
+```sh
 #!/usr/local/bin/fontforge
 i=1
 format=".ttf"
@@ -138,7 +138,7 @@ endloop
 
 And this could be invoked with something like:
 
-```
+```sh
 $ convert.pe --format ".ttf" *.pfb --format ".otf" *.ttf
 ```
 
@@ -152,7 +152,7 @@ We really should do some error checking to make sure:
 -   The argument contained a reasonable value (.ttf, .pfb, .otf, .svg,
     ...)
 
-```
+```sh
 #!/usr/local/bin/fontforge
 i=1
 format=".ttf"
@@ -178,7 +178,7 @@ Note that when we had a long line we broke it in two by using a backslash. Norma
 
 Now that will produce a valid postscript font from a truetype one if we want... But we can improve on that conversion:
 
-```
+```sh
 #!/usr/local/bin/fontforge
 i=1
 format=".ttf"
@@ -218,7 +218,7 @@ Other Examples
 
 Very few Type1 fonts have the full unicode range of accented characters. With FontForge it is fairly easy to load a Type1 font, add as many possible accented characters as the font permits (If the font does not contain ogonek, then FF won't be able to create Aogonek).
 
-```
+```sh
 #!/usr/local/bin/fontforge
 Open($1)
 Reencode("unicode")
@@ -232,7 +232,7 @@ Generate($1:r + ".otf")
 
 Adobe used to ship font packs containing a normal font and an "expert" font which included small caps, lower case numbers, etc. Now-a-days that should all be stuffed into one otf font with appropriate GSUB entries linking the glyphs.
 
-```
+```sh
 #!/usr/local/bin/fontforge
 Open($1)
 MergeFonts($2)
@@ -240,7 +240,3 @@ RenameGlyphs("AGL with PUA")
 SelectAll()
 DefaultATT("*")
 ```
-
-### More examples
-
-See the [page on scripting](scripting.html#Example).
