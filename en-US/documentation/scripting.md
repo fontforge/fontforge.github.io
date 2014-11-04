@@ -28,7 +28,7 @@ Suppose you have a Type1 PostScript font (a pfb/afm combination) and you would l
 
 If you were doing this with the UI you would first [File-\>Open](filemenu.html#Open) the font and then [File-\>Generate](filemenu.html#Generate) a truetype font. You do essentially the same thing when writing a script:
 
-### Intial Solution
+### Initial Solution
 
 ```sh
 Open($1)
