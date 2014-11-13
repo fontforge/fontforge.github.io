@@ -49,7 +49,7 @@ If you have any problems with installation or upgrading, create a [Github Issue]
 These Mac package managers all have FontForge:
 
 * [Homebrew](http://www.brew.sh) (recommended)
-* [MacPorts](http://www.macports.org/)
+* [MacPorts](https://www.macports.org/)
 * [Fink](http://www.finkproject.org/)
 
 ## Building from source
@@ -57,12 +57,10 @@ These Mac package managers all have FontForge:
 Build with source using [Homebrew](http://www.brew.sh) in the normal way:
 
 ```Bash
-brew install python
-brew install gettext libpng jpeg libtiff giflib cairo pango libspiro czmq fontconfig automake libtool pkg-config glib pango
-brew -v install fontforge --HEAD --with-cairo --with-czmq --with-gif --with-x --with-libspiro --with-pango --enable-pyextension --debug
+brew install python gettext libpng jpeg libtiff giflib cairo pango libspiro czmq fontconfig automake libtool pkg-config glib pango
+brew install -v --debug fontforge --HEAD  --with-giflib --with-x11 --with-libspiro
 ```
-If anything go wrong, just create a ticket for the package manager or try to use non-HEAD versions
-(These versions are still outdated sourceforge releases on 2014-10-07.)
+If anything go wrong, just create a ticket for the package manager or try to use non-HEAD versions.
 
 If you build from sources with Homebrew assistance, you may be lucky if you run
 
