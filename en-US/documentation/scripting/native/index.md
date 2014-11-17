@@ -998,6 +998,29 @@ Examples
 >     Save($1:r+"-koi8-r.sfd");
 >     Quit(0);
 
+Example 4: Remove all blank glyphs but not space
+---------------
+
+By Mike Anderson (logotripping a gmail.com)
+
+```
+Open($1);
+Reencode("Latin1");
+
+i=0
+while ( i < CharCnt() )
+	Select(i);
+	if ( GlyphInfo("PointCount") == 0 && GlyphInfo("Name") != "space")
+
+		Clear();
+	endif
+	i = i + 1
+endloop
+
+Reencode("unicode");
+Generate("FIXED/"+$1);
+```
+
 The Execute Script dialog
 -------------------------
 
