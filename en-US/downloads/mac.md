@@ -23,7 +23,7 @@ First you need to install XQuartz:
 
 Then install FontForge:
 
-1. [Download 2014-10 Release App (.zip)](https://github.com/fontforge/fontforge/releases/download/20141014/FontForge-Mac-2014-10-14.zip)
+1. [Download 2014-11 Release App (.zip)](https://github.com/fontforge/fontforge/releases/download/20141126/FontForge-2014-11-26-Mac.zip)
 2. Unzip it, move the `FontForge.app` file to `/Applications` - **do not move it anywhere else**
 3. Right Click (or hold the `Command` key and click once) and choose `Open` from the menu, and confirm you want to open the app
 4. You may see a dialog box saying "Choose Application. Where is X11?" with a sort of Finder window. Find XQuartz in `Applications/Utilities` and click OK
