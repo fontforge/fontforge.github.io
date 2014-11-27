@@ -5,7 +5,7 @@ title: FontForge Windows Edition
 contenttype: application/octet-stream
 ---
 
-1. [Download 2014-10-18 Release Installer (.zip)](https://github.com/fontforge/fontforge/releases/download/20141014/FontForgeSetup-18-10-2014_prerelease2.exe)
+1. [Download 2014-11-27 Release Installer (.exe)](https://github.com/fontforge/fontforge/releases/download/20141126/FontForgeSetup-27-11-2014.exe)
 2. Right click, select `Run as Administrative User`
 3. After installation, right click FontForge shortcut and select `Run as Administrative User`
 
