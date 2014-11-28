@@ -25,3 +25,9 @@ python -c "import urllib; import json; print [(x['id'], x['name']) for x in json
 
 Then edit the [downloads.html(https://github.com/fontforge/fontforge.github.io/edit/master/_layouts/downloads.html#L39) and `_includes/homepage-end.html` files and replace the current ID with the latest
 (Example [part 1](https://github.com/fontforge/fontforge.github.io/commit/23667bd00510df8ff8285a524d87b7ac13da05ee) and [part 2](https://github.com/fontforge/fontforge.github.io/commit/b8d8d8b0ae1c9a9bc1c3b356243d28db8d306eac))
+
+### Announce
+
+Email the fontforge-users email list ([example](http://fontforge.10959.n7.nabble.com/fontforge-users-Release-Announcement-td14554.html))
+
+Tweet the release from @fontforge
