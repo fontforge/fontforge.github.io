@@ -5,30 +5,36 @@ title: Install FontForge on Mac OS X
 contenttype: application/zip
 ---
 
-FontForge is not a regular Mac application.
-It was developed since 2001 as a UNIX application, so don't expect it to look and behave like a normal Mac Application.
+FontForge is a UNIX application, so don't expect it to look and behave like a normal Mac Application.
 It runs on Macs thanks to XQuartz, a X11 graphics compatibility layer.
 
 ## How To Install 
 
-First you need to install XQuartz:
+### XQuartz
 
-1. With Finder, look in your `/Applications/Utilities/` folder and check if you have the `X11` or `XQuartz` apps installed on your computer.
-2. If you don't have one of these, [download XQuartz](http://xquartz.macosforge.org)
-3. Install it in the normal way
-4. Log out and log back in to ensure it works correctly
-5. Start XQuartz or X11 from `Applications/Utilities/`, go to X11 menu, Preferences, Input, and **turn off** the `Enable keyboard shortcuts under X11` or `Enable key equivalents under X11` preference item.
+1. Open Finder and look in your `/Applications/Utilities/` folder for `X11` or `XQuartz` apps
+2. If you don't have one of these then [download](http://xquartz.macosforge.org) and install Xquartz
+3. Log out and log back in to ensure it works correctly
+4. Start XQuartz or X11 from `Applications/Utilities/`, go to X11 menu, Preferences, Input, and **turn off** the `Enable keyboard shortcuts under X11` or `Enable key equivalents under X11` preference item.
 
 ![X11.app Preferences Window set correctly](../x11prefs.png)
 
-Then install FontForge:
+### FontForge
 
 1. [Download 2014-11 Release App (.zip)](https://github.com/fontforge/fontforge/releases/download/20141126/FontForge-2014-11-26-0425-Mac.zip)
 2. Unzip it, move the `FontForge.app` file to `/Applications` - **do not move it anywhere else**
 3. Right Click (or hold the `Command` key and click once) and choose `Open` from the menu, and confirm you want to open the app
 4. You may see a dialog box saying "Choose Application. Where is X11?" with a sort of Finder window. Find XQuartz in `Applications/Utilities` and click OK
-4. Be patient while it runs a first-time setup process
-5. Next time, see it open fast and in the normal ways - double clicking it, drag it to the dock, using Launcher, Spotlight or Quicksilver...
+5. Be patient while it runs a first-time setup process
+6. Next time, see it open fast and in the normal ways - double clicking it, drag it to the dock, using Launcher, Spotlight or Quicksilver...
+
+## If things go wrong
+
+If you have any problems with installation or upgrading, create a [Github Issue](https://guides.github.com/features/issues/) to discuss with our community.
+
+## Other sources and versions
+
+You can also install Daily Development Snapshots, install using Package Managers or build from source
 
 ### Daily Development Snapshots
 
@@ -40,11 +46,7 @@ To install an update:
 2. drag and drop the new FontForge.app into `/Applications` and replace it
 3. start FontForge again
 
-### If things go wrong
-
-If you have any problems with installation or upgrading, create a [Github Issue](https://guides.github.com/features/issues/) to discuss with our community.
-
-## Installing from Package Managers
+### Installing from Package Managers
 
 These Mac package managers all have FontForge:
 
@@ -52,7 +54,7 @@ These Mac package managers all have FontForge:
 * [MacPorts](https://www.macports.org/)
 * [Fink](http://www.finkproject.org/)
 
-## Building from source
+### Building from source
 
 Build with source using [Homebrew](http://www.brew.sh) in the normal way:
 
@@ -60,7 +62,8 @@ Build with source using [Homebrew](http://www.brew.sh) in the normal way:
 brew install python gettext libpng jpeg libtiff giflib cairo pango libspiro czmq fontconfig automake libtool pkg-config glib pango
 brew install -v --debug fontforge --HEAD  --with-giflib --with-x11 --with-libspiro
 ```
-If anything go wrong, just create a ticket for the package manager or try to use non-HEAD versions.
+
+If anything goes wrong, just create a ticket for the package manager or try to use non-HEAD versions.
 
 If you build from sources with Homebrew assistance, you may be lucky if you run
 
