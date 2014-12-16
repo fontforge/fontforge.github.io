@@ -8,6 +8,9 @@ pre {
 	white-space: pre;
 	overflow: auto;
 }
+code {
+	word-wrap: break-word;
+}
 
 .ff-download .dl {
 	display: none;
