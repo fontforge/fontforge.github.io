@@ -22,7 +22,7 @@ To contribute to the site beyond simply editing the text, such as to adjust the 
 
 If that sounds unfamiliar, GitHub has excellent [bootcamp tutorials](https://help.github.com/categories/54/articles) (that really are excellent) to get you going. Here's the project link on GitHub:
 
-> [https://github.com/fontforge/fontforge.github.com](https://github.com/fontforge/fontforge.github.com)
+> [https://github.com/fontforge/fontforge.github.io](https://github.com/fontforge/fontforge.github.io)
 
 <a id="translations"></a>
 
