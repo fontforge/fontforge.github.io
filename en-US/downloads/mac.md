@@ -21,7 +21,7 @@ It runs on Macs thanks to XQuartz, a X11 graphics compatibility layer.
 
 ### FontForge
 
-1. [Download 2014-11 Release App (.zip)](https://github.com/fontforge/fontforge/releases/download/20141126/FontForge-2014-11-26-0425-Mac.zip)
+1. [Download 2014-12 Release App (.dmg)](https://github.com/fontforge/fontforge/releases/download/20141230/FontForge-2015-01-07-Mac.app.dmg)
 2. Unzip it, move the `FontForge.app` file to `/Applications` - **do not move it anywhere else**
 3. Right Click (or hold the `Command` key and click once) and choose `Open` from the menu, and confirm you want to open the app
 4. You may see a dialog box saying "Choose Application. Where is X11?" with a sort of Finder window. Find XQuartz in `Applications/Utilities` and click OK
