@@ -50,7 +50,7 @@ To install an update:
 
 These Mac package managers all have FontForge:
 
-* [Homebrew](http://www.brew.sh) (recommended)
+* [Homebrew](http://brew.sh) (recommended)
 * [MacPorts](https://www.macports.org/)
 * [Fink](http://www.finkproject.org/)
 
