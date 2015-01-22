@@ -38,7 +38,7 @@ You can also install Daily Development Snapshots, install using Package Managers
 
 ### Daily Development Snapshots
 
-New development versions are released every few days, and the latest is always available as [FontForge_latest-HEAD.app.zip](http://fuuko.libferris.com/osx/packages/FontForge_latest-HEAD.app.zip).
+New development versions are released every few days, and the latest is always available as [FontForge_latest-HEAD.app.zip](http://fuuko.libferris.com/osx/packages/FontForge_latest-HEAD.app.dmg).
 
 To install an update:
 
