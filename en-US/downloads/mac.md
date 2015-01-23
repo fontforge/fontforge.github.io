@@ -12,17 +12,17 @@ It runs on Macs thanks to XQuartz, a X11 graphics compatibility layer.
 
 ### XQuartz
 
-1. Open Finder and look in your `/Applications/Utilities/` folder for `X11` or `XQuartz` apps
-2. If you don't have one of these then [download](http://xquartz.macosforge.org) and install Xquartz
+1. Open Finder and look in your `/Applications/Utilities/` folder for the `XQuartz` app
+2. If you don't have it then download and install [XQuartz](http://xquartz.macosforge.org) ([direct link to XQuartz-2.7.7.dmg](http://xquartz.macosforge.org/downloads/SL/XQuartz-2.7.7.dmg))
 3. Log out and log back in to ensure it works correctly
-4. Start XQuartz or X11 from `Applications/Utilities/`, go to X11 menu, Preferences, Input, and **turn off** the `Enable keyboard shortcuts under X11` or `Enable key equivalents under X11` preference item.
+4. Start XQuartz from `Applications/Utilities/XQuartz.app`, go to the X11 menu, Preferences, Input, and **turn off** the `Enable keyboard shortcuts under X11` or `Enable key equivalents under X11` preference item.
 
 ![X11.app Preferences Window set correctly](../x11prefs.png)
 
 ### FontForge
 
 1. [Download 2014-12 Release App (.dmg)](https://github.com/fontforge/fontforge/releases/download/20141230/FontForge-2015-01-07-Mac.app.dmg)
-2. Unzip it, move the `FontForge.app` file to `/Applications` - **do not move it anywhere else**
+2. Open it and move the `FontForge.app` file to `/Applications` - **do not move it anywhere else**
 3. Right Click (or hold the `Command` key and click once) and choose `Open` from the menu, and confirm you want to open the app
 4. You may see a dialog box saying "Choose Application. Where is X11?" with a sort of Finder window. Find XQuartz in `Applications/Utilities` and click OK
 5. Be patient while it runs a first-time setup process
