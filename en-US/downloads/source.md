@@ -24,7 +24,7 @@ If you're not familiar with compiling source code, the follow provides some intr
 
 The configure script allows you to turn off and on various features of FontForge that might not be appropriate for your system. For a complete list of options, type
 
-     `./configure --help`
+     ./configure --help
 
 Some of the most useful options are:
 
