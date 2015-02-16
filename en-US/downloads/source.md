@@ -24,7 +24,7 @@ If you're not familiar with compiling source code, the follow provides some intr
 
 The configure script allows you to turn off and on various features of FontForge that might not be appropriate for your system. For a complete list of options, type
 
-     ./configure --help
+     `./configure --help`
 
 Some of the most useful options are:
 
@@ -32,17 +32,17 @@ Some of the most useful options are:
   If you don't want to install X11 on your system, you can use FontForge as a command line tool which can execute scripts to manipulate fonts.
   FontForge's scripting language is described in detail [in the section on scripting](scripting.html), or the [section on python scripting](python.html).
 
-     ./configure --without-x
+     `./configure --without-x`
 
 - **Building FontForge (also) as a python extension**
   If you want to write python scripts in normal python (as opposed to within the python embedded in FontForge)
 
-     ./configure --enable-pyextension
+     `./configure --enable-pyextension`
 
 - **Installing FontForge somewhere other than `/usr/local`**
   If you want to install FontForge in a different directory (say in `/usr/bin`)
 
-     ./configure --prefix=/usr
+     `./configure --prefix=/usr`
 
 ## Building a Debian package (.deb)
 
