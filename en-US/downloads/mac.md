@@ -5,12 +5,14 @@ title: Install FontForge on Mac OS X
 contenttype: application/zip
 ---
 
-FontForge is a UNIX application, so don't expect it to look and behave like a normal Mac Application.
-It runs on Macs thanks to XQuartz, a X11 graphics compatibility layer.
+FontForge is a UNIX application, so it does not look and behave like a normal Mac Application.
+It runs on Macs thanks to XQuartz, a graphics compatibility layer for the UNIX X Window System.
 
 ## How To Install 
 
-### XQuartz
+### 1. Install XQuartz
+
+Without XQuartz, FontForge will open a Dock icon but not load any further.
 
 1. Open Finder and look in your `/Applications/Utilities/` folder for the `XQuartz` app
 2. If you don't have it then download and install [XQuartz](http://xquartz.macosforge.org) ([direct link to XQuartz-2.7.7.dmg](http://xquartz.macosforge.org/downloads/SL/XQuartz-2.7.7.dmg))
@@ -19,7 +21,7 @@ It runs on Macs thanks to XQuartz, a X11 graphics compatibility layer.
 
 ![X11.app Preferences Window set correctly](../x11prefs.png)
 
-### FontForge
+### 2. Install FontForge
 
 1. [Download 2014-12 Release App (.dmg)](https://github.com/fontforge/fontforge/releases/download/20141230/FontForge-2015-01-07-Mac.app.dmg)
 2. Open it and move the `FontForge.app` file to `/Applications` - **do not move it anywhere else**
