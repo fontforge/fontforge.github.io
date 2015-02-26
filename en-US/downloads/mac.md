@@ -12,11 +12,11 @@ It runs on Macs thanks to XQuartz, a graphics compatibility layer for the UNIX X
 
 ### 1. Install XQuartz
 
-Without XQuartz, FontForge will open a Dock icon but not load any further.
+Without [XQuartz](http://xquartz.macosforge.org), FontForge will open a Dock icon but not load any further.
 
 Open Finder and look in your `/Applications/Utilities/` folder for the `XQuartz` app. 
 
-If you don't have it then download and install [XQuartz](http://xquartz.macosforge.org) ([direct link to XQuartz-2.7.7.dmg](http://xquartz.macosforge.org/downloads/SL/XQuartz-2.7.7.dmg)) 
+If you don't have it then download and install: **[direct link to XQuartz-2.7.7.dmg](http://xquartz.macosforge.org/downloads/SL/XQuartz-2.7.7.dmg)**
 
 ![X11.app Preferences Window set correctly](../mac-xquarz-1-installer.png)
 
@@ -32,7 +32,7 @@ Just this first time, start XQuartz from `Applications/Utilities/XQuartz.app`, g
 
 ### 2. Install FontForge
 
-[Download 2014-12 Release App (.dmg)](https://github.com/fontforge/fontforge/releases/download/20141230/FontForge-2015-01-07-Mac.app.dmg)
+**[Download 2014-12 Release App (.dmg)](https://github.com/fontforge/fontforge/releases/download/20141230/FontForge-2015-01-07-Mac.app.dmg)**
 
 ![Download files](../mac-download-files.png)
 
