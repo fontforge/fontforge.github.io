@@ -14,56 +14,57 @@ It runs on Macs thanks to XQuartz, a graphics compatibility layer for the UNIX X
 
 Without XQuartz, FontForge will open a Dock icon but not load any further.
 
-1. Open Finder and look in your `/Applications/Utilities/` folder for the `XQuartz` app
-2. If you don't have it then download and install [XQuartz](http://xquartz.macosforge.org) ([direct link to XQuartz-2.7.7.dmg](http://xquartz.macosforge.org/downloads/SL/XQuartz-2.7.7.dmg)) 
+Open Finder and look in your `/Applications/Utilities/` folder for the `XQuartz` app. 
+
+If you don't have it then download and install [XQuartz](http://xquartz.macosforge.org) ([direct link to XQuartz-2.7.7.dmg](http://xquartz.macosforge.org/downloads/SL/XQuartz-2.7.7.dmg)) 
 
 ![X11.app Preferences Window set correctly](../mac-xquarz-1-installer.png)
 
-![X11.app Preferences Window set correctly](../mac-xquart-2-finished.png)
+![X11.app Preferences Window set correctly](../mac-xquartz-2-start.png)
 
-![X11.app Preferences Window set correctly](../mac-xquartz-3-start.png)
+![X11.app Preferences Window set correctly](../mac-xquart-3-finished.png)
 
-3. Log out and log back in to ensure it works correctly
-4. Start XQuartz from `Applications/Utilities/XQuartz.app`, go to the X11 menu, Preferences, Input, and **turn off** the `Enable keyboard shortcuts under X11` or `Enable key equivalents under X11` preference item.
+Log out and log back in to ensure it works correctly
+
+Just this first time, start XQuartz from `Applications/Utilities/XQuartz.app`, go to the X11 menu, Preferences, Input, and **turn off** the `Enable keyboard shortcuts under X11` or `Enable key equivalents under X11` preference item. FontForge will start XQuartz automatically for you next time. 
 
 ![X11.app Preferences Window set correctly](../x11prefs.png)
 
 ### 2. Install FontForge
 
-1. [Download 2014-12 Release App (.dmg)](https://github.com/fontforge/fontforge/releases/download/20141230/FontForge-2015-01-07-Mac.app.dmg)
+[Download 2014-12 Release App (.dmg)](https://github.com/fontforge/fontforge/releases/download/20141230/FontForge-2015-01-07-Mac.app.dmg)
 
 ![Download files](../mac-download-files.png)
 
-2. Open it and move the `FontForge.app` file to `/Applications` - **do not move it anywhere else**
+Open it and move the `FontForge.app` file to `/Applications` - **do not move it anywhere else**
 
 ![Move it](../mac-drag.png)
 
-3. Right Click (or hold the `Command` key and click once) and choose `Open` from the menu, and confirm you want to open the app
+Right Click (or hold the `Command` key and click once) and choose `Open` from the menu, and confirm you want to open the app
 
 ![Right Click](../mac-open-2-right-click.png)
 
 ![Confirm](../mac-open-3-confirm.png)
 
-4. You may see a dialog box saying "Choose Application. Where is X11?" with a sort of Finder window. Find XQuartz in `Applications/Utilities` and click OK
-5. Be patient while it runs a first-time setup process
+You may see a dialog box saying "Choose Application. Where is X11?" with a sort of Finder window. Find XQuartz in `Applications/Utilities` and click OK
+
+Be patient while it runs a first-time setup process
 
 ![Wait](../mac-first-time.png)
 
-6. FontForge will create a new font and show you its glyphs in a table:
+FontForge will create a new font and show you its glyphs in a table:
 
 ![First Run](../mac-running-fontforge.png)
 
-7. Next time, see it open fast and in the normal ways - double clicking it, drag it to the dock, using Launcher, Spotlight or Quicksilver...
+Next time, it will open fast and in any typical way: double clicking it, drag it to the dock, using Launcher, Spotlight or Quicksilver...
 
-## If things go wrong
+### If things go wrong
 
 If you have any problems with installation or upgrading, create a [Github Issue](https://guides.github.com/features/issues/) to discuss with our community.
 
-## Other sources and versions
+### Other sources and versions
 
 You can also install Daily Development Snapshots, install using Package Managers or build from source
-
-### Daily Development Snapshots
 
 New development versions are released every few days, and the latest is always available as [FontForge_latest-HEAD.app.zip](http://fuuko.libferris.com/osx/packages/FontForge_latest-HEAD.app.dmg).
 
@@ -73,7 +74,7 @@ To install an update:
 2. drag and drop the new FontForge.app into `/Applications` and replace it
 3. start FontForge again
 
-### Installing from Package Managers
+#### Installing from Package Managers
 
 These Mac package managers all have FontForge:
 
@@ -81,7 +82,7 @@ These Mac package managers all have FontForge:
 * [MacPorts](https://www.macports.org/)
 * [Fink](http://www.finkproject.org/)
 
-### Building from source
+#### Building from source
 
 Build with source using [Homebrew](http://www.brew.sh) in the normal way:
 
