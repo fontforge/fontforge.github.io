@@ -15,7 +15,14 @@ It runs on Macs thanks to XQuartz, a graphics compatibility layer for the UNIX X
 Without XQuartz, FontForge will open a Dock icon but not load any further.
 
 1. Open Finder and look in your `/Applications/Utilities/` folder for the `XQuartz` app
-2. If you don't have it then download and install [XQuartz](http://xquartz.macosforge.org) ([direct link to XQuartz-2.7.7.dmg](http://xquartz.macosforge.org/downloads/SL/XQuartz-2.7.7.dmg))
+2. If you don't have it then download and install [XQuartz](http://xquartz.macosforge.org) ([direct link to XQuartz-2.7.7.dmg](http://xquartz.macosforge.org/downloads/SL/XQuartz-2.7.7.dmg)) 
+
+![X11.app Preferences Window set correctly](../mac-xquarz-1-installer.png)
+
+![X11.app Preferences Window set correctly](../mac-xquart-2-finished.png)
+
+![X11.app Preferences Window set correctly](../mac-xquartz-3-start.png)
+
 3. Log out and log back in to ensure it works correctly
 4. Start XQuartz from `Applications/Utilities/XQuartz.app`, go to the X11 menu, Preferences, Input, and **turn off** the `Enable keyboard shortcuts under X11` or `Enable key equivalents under X11` preference item.
 
@@ -24,11 +31,29 @@ Without XQuartz, FontForge will open a Dock icon but not load any further.
 ### 2. Install FontForge
 
 1. [Download 2014-12 Release App (.dmg)](https://github.com/fontforge/fontforge/releases/download/20141230/FontForge-2015-01-07-Mac.app.dmg)
+
+![Download files](../mac-download-files.png)
+
 2. Open it and move the `FontForge.app` file to `/Applications` - **do not move it anywhere else**
+
+![Move it](../mac-drag.png)
+
 3. Right Click (or hold the `Command` key and click once) and choose `Open` from the menu, and confirm you want to open the app
+
+![Right Click](../mac-open-2-right-click.png)
+
+![Confirm](../mac-open-3-confirm.png)
+
 4. You may see a dialog box saying "Choose Application. Where is X11?" with a sort of Finder window. Find XQuartz in `Applications/Utilities` and click OK
 5. Be patient while it runs a first-time setup process
-6. Next time, see it open fast and in the normal ways - double clicking it, drag it to the dock, using Launcher, Spotlight or Quicksilver...
+
+![Wait](../mac-first-time.png)
+
+6. FontForge will create a new font and show you its glyphs in a table:
+
+![First Run](../mac-running-fontforge.png)
+
+7. Next time, see it open fast and in the normal ways - double clicking it, drag it to the dock, using Launcher, Spotlight or Quicksilver...
 
 ## If things go wrong
 
