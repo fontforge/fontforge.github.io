@@ -32,7 +32,7 @@ Just this first time, start XQuartz from `Applications/Utilities/XQuartz.app`, g
 
 ### 2. Install FontForge
 
-**[Download 2014-12 Release App (.dmg)](https://github.com/fontforge/fontforge/releases/download/20141230/FontForge-2015-01-07-Mac.app.dmg)**
+**[Download 2015-03-04 Release App (.dmg)](https://github.com/fontforge/fontforge/releases/download/20150228/FontForge.20150304.app.dmg)**
 
 ![Download files](../mac-download-files.png)
 
