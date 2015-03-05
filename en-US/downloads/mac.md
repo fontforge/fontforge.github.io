@@ -60,7 +60,9 @@ Next time, it will open fast and in any typical way: double clicking it, drag it
 
 ### Tips
 
-To bring fontforge's windows to the font, click the XQuartz icon.
+When you run FontForge, its dock icon will disappear after it is launched, because it is controlled by XQuartz. 
+
+To bring fontforge's windows to the font, click the XQuartz icon, or use Alt+Tab to switch to it. 
 
 ### If things go wrong
 
