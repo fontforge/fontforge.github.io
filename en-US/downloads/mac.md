@@ -58,6 +58,10 @@ FontForge will create a new font and show you its glyphs in a table:
 
 Next time, it will open fast and in any typical way: double clicking it, drag it to the dock, using Launcher, Spotlight or Quicksilver...
 
+### Tips
+
+To bring fontforge's windows to the font, click the XQuartz icon.
+
 ### If things go wrong
 
 If you have any problems with installation or upgrading, create a [Github Issue](https://guides.github.com/features/issues/) to discuss with our community.
