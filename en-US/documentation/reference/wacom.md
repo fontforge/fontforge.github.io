@@ -4,16 +4,13 @@ layout: default
 title: Wacom graphics tablets and FontForge
 ---
 
+Some support was added to FontForge for the wacom graphics tablet in the early 2000s.
 
-I have added support to FontForge for the wacom graphics tablet.
-Eventually I will write some drawing tools that depend on pressure (and
-tilt perhaps).
-
-To install a wacom tablet on your (linux) machine you must do two
+To install a wacom tablet on your (gnu+linux) machine you must do two
 things:
 
 -   Install a kernel module "wacom.o" into your system
-     Unfortunately the module which ships with linux (Nov 2002) does not
+     Unfortunately the module which ships with gnu+linux (Nov 2002) does not
     work but John Joganic has [an excellent
     website](http://linuxwacom.sf.net/) that will help you install a
     working driver.
