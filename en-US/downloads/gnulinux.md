@@ -5,10 +5,19 @@ title: Install FontForge on GNU+Linux
 contenttype: application/x-rpm
 ---
 
-Most of the GNU+Linux distributions have packages for fontforge, but these will
-often be a quite old. We provide these packages:
+Most of the GNU+Linux distributions have packages for fontforge, but these will often be a quite old. 
 
-- [Ubuntu PPA](https://launchpad.net/%7Efontforge/+archive/ubuntu/fontforge)
+### Ubuntu
+
+Installing on Ubuntu is easy with our [Ubuntu PPA](https://launchpad.net/%7Efontforge/+archive/ubuntu/fontforge)
+
+```sh
+sudo add-apt-repository ppa:fontforge/fontforge;
+sudo apt-get update;
+sudo apt-get install fontforge;
+```
+
+### Compiling from Github
 
 Check out [Building From Source](../source) for more information on using the bleeding edge.
 
