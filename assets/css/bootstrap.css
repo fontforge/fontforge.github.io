@@ -144,6 +144,7 @@ textarea {
 body {
   margin: 0;
   font-family: 'Merriweather', Georgia, "Times New Roman", Times, serif;
+  font-weight: 300;
   font-size: 15px;
   line-height: 24px;
   color: #3E3E3E;
@@ -488,7 +489,7 @@ p {
 .lead, .big-text .lead {
   margin-bottom: 24px;
   font-size: 22.5px;
-  font-weight: 200;
+  font-weight: 300;
   line-height: 36px;
   font-weight: bold;
   color: #4CAA79;
@@ -529,7 +530,7 @@ h5,
 h6 {
   margin: 26px 0 12px 0;
   font-family: inherit;
-  font-weight: bold;
+  font-weight: 700;
   line-height: 1;
   color: inherit;
 }
@@ -539,7 +540,7 @@ h3 small,
 h4 small,
 h5 small,
 h6 small {
-  font-weight: normal;
+  font-weight: 300;
   line-height: 1;
   color: #999999;
 }
@@ -551,7 +552,6 @@ h1 {
 h2 {
   font-size: 32px;
   line-height: 36px;
-  font-weight: 900;
   border-bottom: 1px solid #ccc;
   padding-bottom: 11px;
   margin-top: 36px;
@@ -1152,7 +1152,7 @@ button,
 select,
 textarea {
   font-size: 15px;
-  font-weight: normal;
+  font-weight: 300;
   line-height: 24px;
 }
 input,
@@ -1919,7 +1919,7 @@ legend + .control-group {
   padding: 6px 22px 3px 22px;
   margin-bottom: 0;
   font-size: 15px;
-  font-weight: bold;
+  font-weight: 400;
   line-height: 24px;
   *line-height: 24px;
   text-align: center;
@@ -1947,7 +1947,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dfe3e8', end
   -moz-border-radius: 3px;
   border-radius: 3px;
   *margin-left: .3em;
-  
+
 }
 .btn:hover,
 .btn:active,
@@ -1975,7 +1975,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dfe3e8', end
   *background-color: #d9d9d9;
   /* Buttons in IE7 don't get borders, so darken on hover */
 
-  
+
   -webkit-transition: background-position 0.1s linear;
   -moz-transition: background-position 0.1s linear;
   -o-transition: background-position 0.1s linear;
@@ -4706,7 +4706,7 @@ a.thumbnail:hover {
 }
 .accordion-group {
   margin-bottom: 0px;
-  
+
 }
 .accordion-heading {
   border-bottom: 0;
@@ -5874,11 +5874,11 @@ x@media (min-width: 1200px) {
   .navbar .nav {
     float: right;
   }
-  
-  .navbar .nav > li > a { 
+
+  .navbar .nav > li > a {
     -webkit-box-shadow:inset 1px 0px 0 rgba(255,255,255,0.13);
     -moz-box-shadow:inset 1px 0px 0 rgba(255,255,255,0.13);
-    box-shadow:inset 1px 0px 0 rgba(255,255,255,0.13); 
+    box-shadow:inset 1px 0px 0 rgba(255,255,255,0.13);
     width: 120px;
     border-top:6px solid #FFE101;
     position: relative;
@@ -5888,7 +5888,7 @@ x@media (min-width: 1200px) {
        -o-transition: color 0.2s ease-out;  /* Opera 10.5-12.00 */
           transition: color 0.2s ease-out;  /* Firefox 16+, Opera 12.50+ */
   }
-  
+
   .navbar .nav > li > a:after {
     content: " ";
     display: block;
@@ -5906,21 +5906,21 @@ x@media (min-width: 1200px) {
   background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33ffffff', endColorstr='#33000000',GradientType=0 ); /* IE6-9 */
   }
-  
-  
+
+
 
   .navbar .nav{
-    -webkit-box-shadow:inset -1px 0px 0 rgba(70,70,70,0.5); 
-    -moz-box-shadow:inset -1px 0px 0 rgba(70,70,70,0.5); 
-    box-shadow:inset -1px 0px 0 rgba(70,70,70,0.5); 
+    -webkit-box-shadow:inset -1px 0px 0 rgba(70,70,70,0.5);
+    -moz-box-shadow:inset -1px 0px 0 rgba(70,70,70,0.5);
+    box-shadow:inset -1px 0px 0 rgba(70,70,70,0.5);
   }
-  
+
   .navbar .nav > li.downloads a { border-top:6px solid #FFE101; }
   .navbar .nav > li.tutorials a { border-top:6px solid #FFC800; }
   .navbar .nav > li.docs a {  border-top:6px solid #FF7D32; }
   .navbar .nav > li.about a { border-top:6px solid #5BDC96; }
-  
-  
+
+
    .navbar .nav > li.active > a, .navbar .nav > li.active > a:hover {
       background: -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.2)), color-stop(100%,rgba(0,0,0,0.2))); /*     Chrome,Safari4+ */
@@ -5930,5 +5930,5 @@ x@media (min-width: 1200px) {
     background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33ffffff', endColorstr='#33000000',GradientType=0 ); /* IE6-9 */
    }
-  
+
 }
