@@ -2,7 +2,7 @@
 published: true
 layout: downloads
 title: Install FontForge on Mac OS X
-contenttype: application/x-apple-diskimage
+archive_extension: ".dmg"
 ---
 
 FontForge is a UNIX application, so it doesn't behave 100% like a normal Mac Application and it needs XQuartz to run.

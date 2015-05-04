@@ -2,7 +2,7 @@
 published: true
 layout: downloads
 title: Building FontForge From Source
-contenttype: application/gzip
+archive_extension: .tar.gz
 ---
 
 Building FontForge from source is a three-steps job described in [INSTALL-git.md](https://github.com/fontforge/fontforge/blob/master/INSTALL-git.md), on the main repo.

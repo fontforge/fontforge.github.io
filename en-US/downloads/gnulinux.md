@@ -2,7 +2,7 @@
 published: true
 layout: downloads
 title: Install FontForge on GNU+Linux
-contenttype: application/gzip
+archive_extension: .tar.gz|.zip
 ---
 
 Most of the GNU+Linux distributions have packages for fontforge, but these will often be a quite old. 

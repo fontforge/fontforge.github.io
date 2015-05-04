@@ -42,14 +42,16 @@
             individual = 0;
             $(assetlist).each(function(i, asset){
                 total += asset.download_count;
-                if (asset.content_type == "{{ page.contenttype }}") {
+                if (/({{ page.archive_extension }})$/i.test(asset.name)) {
                     individual += asset.download_count;
                 }
             });
-            drawpiechart(individual, total);
 
-            $('#cnt-individual').text(humanise(individual));
-            $('#cnt-total').text(humanise(total));
+            if (individual) {
+                drawpiechart(individual, total);
+                $('#cnt-individual').text(humanise(individual));
+                $('#cnt-total').text(humanise(total));
+            }
         });
     });
 

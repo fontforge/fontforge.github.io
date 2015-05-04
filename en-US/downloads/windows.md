@@ -2,7 +2,7 @@
 published: true
 layout: downloads
 title: FontForge Windows Edition
-contenttype: application/octet-stream
+archive_extension: .exe
 ---
 
 1. [Download 2015-03-30 Release Installer (.exe)](https://github.com/fontforge/fontforge/releases/download/20150330/FontForgeSetup-2015-03-30.exe)
