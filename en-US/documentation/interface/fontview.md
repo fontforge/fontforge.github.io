@@ -4,11 +4,16 @@ layout: default
 title: The Font View
 ---
 
+__Contents__
 
-[table_of_contents]
+*    [Overview](#overview)
+*    [Encodings and Character Sets](#encodings-and-character-sets)
+*    [CID keyed fonts](#cid-keyed-fonts)
+*    [Multiple Master Fonts](#multiple-master-fonts)
+*    [Vertical Metrics](#vertical-metrics)
 
-
-![](/assets/img/windows-ambrosiafv.png)
+### Overview
+![Sample image of a font seen in Font View](/assets/img/windows-ambrosiafv.png "Font View sample")
 
 The font view is a list of all the glyphs available in the given font.
 
@@ -30,7 +35,7 @@ show the glyph's name, unicode code point or encoding (in hex). In small
 views (24 pixel view for instance) there may not be room for the entire
 label, and it will appear truncated.
 
-![](/assets/img/windows-fvOutOfDateHinting.png)
+![Close-up of glyphs with red and blue bars](/assets/img/windows-fvOutOfDateHinting.png "The instructions for glyph A are out of date. Glyph B has changed.")
 
 If a glyph has been changed since it was last hinted (PostScript), or if
 a glyph contains contours but has no instructions (TrueType), then its label
@@ -77,10 +82,10 @@ confusing.
 <table class="table" border>
     <tr>
         <td>
-            <img src="/assets/img/windows-FVHMetrics.png" alt="">
+            <img src="/assets/img/windows-FVHMetrics.png" alt="Sample of a glyph with horizontal metrics shown">
         </td>
         <td>
-            <img src="/assets/img/windows-FVVMetrics.png" alt="">
+            <img src="/assets/img/windows-FVVMetrics.png" alt="Sample of a glyph with vertical metrics shown">
         </td>
     </tr>
     <tr>
@@ -88,8 +93,8 @@ confusing.
 A 96 pixel display showing the various horizontal metric lines.<br />
  The blue line is the baseline<br />
  The small red tick on the left marks the glyph origin.<br />
- The green line on the right shows where the advance width is while the
-bottom green line shows how long it is. (normally you will not display
+ The green line on the right shows where the advance width is while the
+bottom green line shows how long it is. (normally you will not display
 both at once)<br />
  The glyph is centered horizontally, and the font ascent is the top of
 the box displaying it, while the descent is the bottom.
@@ -97,10 +102,10 @@ the box displaying it, while the descent is the bottom.
         <td>
 A 96 pixel display showing the various vertical metric lines.<br />
  The blue line down the center is the vertical baseline.<br />
- The red bar at the top (over writing the ascent line) is the vertical
+ The red bar at the top (over writing the ascent line) is the vertical
 origin.<br />
- The green line at the bottom shows where the vertical advance  is while
-the green line on the right shows how long it is.  (normally you will
+ The green line at the bottom shows where the vertical advance is while
+the green line on the right shows how long it is. (normally you will
 not display both at once)
         </td>
     </tr>
@@ -114,21 +119,21 @@ remembered and a few commands will make use of that.
 
 You may drag and drop selected glyphs into
 
-#### The metrics view
+* The metrics view
 
-Where they will be inserted into the display before the selected glyph
-(selected in the metrics view) in the order in which you selected them
-in the font view.
-
-
-#### The outline view
-
-Where they will appear as references
+    Where they will be inserted into the display before the selected glyph
+    (selected in the metrics view) in the order in which you selected them
+    in the font view.
 
 
-#### The glyph info substitutions/ligature dlg
+* The outline view
 
-Where they will appear as a substitution or ligature.
+    Where they will appear as references
+
+
+* The glyph info substitutions/ligature dlg
+
+    Where they will appear as a substitution or ligature.
 
 The [Tab] key will move to the next glyph with something in it, and
 Shift-[Tab] will move to the previous glyph with something interesting.
@@ -136,7 +141,7 @@ Shift-[Tab] will move to the previous glyph with something interesting.
 You can perform various operations on the selected glyphs:
 
 -   Apply a general transformation (ie. move 20 units right and then
-    rotate 180°)
+    rotate 180&deg;)
 -   Expand all paths to be stroked paths
 -   Clean up areas where several paths intersect
 -   Simplify paths
@@ -244,7 +249,7 @@ letters. They assigned the name "mu" to Micro Sign, "Delta" to Increment
 and "Omega" to Ohm Sign. So the Greek alphabet has ugly nameless holes
 in it.
 
-CID fonts (see [below](#CID)) have no encodings. Instead they are
+CID fonts (see [below](#cid-keyed-fonts)) have no encodings. Instead they are
 designed to be associated with one or several cmap files which provide
 encodings in a general way. cmap files are beyond the scope of
 FontForge. Adobe has defined many which are freely
@@ -255,7 +260,7 @@ the glyphs in the order in which they were read from the original font.
 
 ### Unicode (ISO 10646)
 
-PostScript® assigns a name to every unicode character. Some of these
+PostScript&reg; assigns a name to every unicode character. Some of these
 names are fairly obvious like "A" for the first letter of the latin
 alphabet, others are more obscure like "afii57664" for hebrew alef,
 while others are just "uni8765" for the unicode character at 0x8765.
@@ -277,16 +282,16 @@ than PostScript. So I include nobreak space and the soft-hyphen).
 
 FontForge supports two slightly different unicode encodings. The first
 contains only the first 65536 characters of unicode (those in the [Basic
-Multilingual Plane](http://www.unicode.org/roadmaps/bmp.html), or BMP),
+Multilingual Plane](http://unicode.org/roadmaps/bmp/), or BMP),
 while the second can contain as many characters as you have memory for.
 Character definitions are still sparse outside of the BMP so at the
 moment you probably want to use just the BMP. Currently there are only
 definitions for plane 0 (BMP, U+0000-U+ffff), Plane 1 ([SMP, Secondary
-Multilingual Plane](http://www.unicode.org/roadmaps/smp.html),
+Multilingual Plane](http://www.unicode.org/roadmaps/smp/),
 U+10000-U+1ffff), Plane 2 ([SIP, Supplementary Ideographic
-Plane](http://www.unicode.org/roadmaps/sip.html), U+20000-U+2ffff), and
+Plane](http://www.unicode.org/roadmaps/sip/), U+20000-U+2ffff), and
 Plane 14 ([SSP Supplementary Special-purpose
-Plane](http://www.unicode.org/roadmaps/ssp.html), U+e0000-U+effff).
+Plane](http://www.unicode.org/roadmaps/ssp/), U+e0000-U+effff).
 
 
 ### CID keyed fonts
@@ -295,7 +300,7 @@ The standard mechanisms that postscript provides work reasonably well
 for alphabets and syllabaries, but the massive number of characters
 needed for CJK (Chinese, Japanese or Korean) fonts require more complex
 machinations. Adobe's current solution is the [CID-keyed
-font](../cidmenu/), a font consisting of several subfonts each a
+font](../cidmenu/#er-what-is-a-cid-keyed-font), a font consisting of several subfonts each a
 collection of glyph descriptions with no encoding imposed on them and no
 names given to them.
 
@@ -320,7 +325,7 @@ glyph set that works for Unicode, but it is called "Identity" instead.
 FontForge does not have these glyph sets built in to it, each must be
 loaded the first time it is used. I provide one file for each of the
 above glyph sets, they have an extension of ".cidmap", and you may
-download them all [from here](cidmaps.tgz).
+download them all [from here](../../../../cidmaps.tgz).
 
 (There are also many other character sets floating around feel free to
 install them yourself).
@@ -334,14 +339,15 @@ be added to an ordering, never removed, so an old font will be perfectly
 described by a newer glyph set, while a new font described by an old
 glyph set will have some unavailable glyphs. So a full cidmap name will
 look like:
-                 Adobe-Japan1-4.cidmap
-                 Adobe-Korea1-2.cidmap
 
-**Warning:** CID keyed fonts (actually any CJK font) use massive amounts
+* Adobe-Japan1-4.cidmap
+* Adobe-Korea1-2.cidmap
+
+<strong class=".text-warning .label-warning">Warning:</strong> CID keyed fonts (actually any CJK font) use massive amounts
 of memory in FontForge. I am able to work on many of them on my 256M
 machine with 384M of swap space.
 
-The [Remove Undoes](../editmenu/#Remove+Undoes)command will allow you
+The [Remove Undoes](../editmenu/#remove-undoes) command will allow you
 to free up memory if you think you may be running short. FontForge is
 not always able to protect itself against running out of memory,
 sometimes the OS just sends it a SIGKILL signal.
@@ -349,7 +355,7 @@ sometimes the OS just sends it a SIGKILL signal.
 
 ### Multiple Master Fonts
 
-If the font is a [Multiple Master](../multiplemaster/#MM)Font there
+If the font is a [Multiple Master](../multiplemaster/#what-is-a-multiple-master-font) Font there
 will again be several subfonts only this time all the subfonts contain
 the same glyph set. Each subfont provides glyphs for one style of the
 font family. The [MM](../mmmenu/) menu allows you to control which
