@@ -1,7 +1,7 @@
 ---
 published: true
 layout: downloads
-title: FontForge Windows Edition
+title: FontForge Windows Free Download
 archive_extension: .exe
 ---
 
