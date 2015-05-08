@@ -7,7 +7,11 @@ archive_extension: ".dmg"
 
 FontForge is a UNIX application, so it doesn't behave 100% like a normal Mac Application and it needs XQuartz to run.
 
-Read either the short or detailed guide to get you started.
+We don't have an Apple developer account so FontForge is "unsigned". We recommend you change your gatekeeper settings to "Anywhere" - [this](https://support.apple.com/en-us/HT202491) Apple article explains how.
+
+Try the new [FontForge Installer](https://github.com/andreaslarsen/fontforge-installer/releases/download/v0.5/FontForgeInstaller.dmg) that guides you through the installment process. Please let us know if it works as intended on [GitHub](https://github.com/fontforge/fontforge/issues/2210#partial-new-comment-form-actions)
+
+You can also install FontForge the old manual way:
 
 <a class="btn btn-default" data-toggle="collapse" href="#collapseBasic" aria-expanded="false" aria-controls="collapseBasic">
   Short Guide
