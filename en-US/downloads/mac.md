@@ -7,7 +7,9 @@ contenttype: application/zip
 
 FontForge is a UNIX application, so it doesn't behave 100% like a normal Mac Application and it needs XQuartz to run.
 
-Read either the short or detailed guide to get you started.
+Install FontForge and, if needed, XQuartz using the [FontForge Installer](https://github.com/andreaslarsen/fontforge-installer/releases/download/v0.5/FontForgeInstaller.dmg). Please let us know if it works as intended on [GitHub](https://github.com/fontforge/fontforge/issues/2210#partial-new-comment-form-actions)
+
+You can also install FontForge the manual way:
 
 <a class="btn btn-default" data-toggle="collapse" href="#collapseBasic" aria-expanded="false" aria-controls="collapseBasic">
   Short Guide
