@@ -5,33 +5,14 @@ title: Install FontForge on Mac OS X
 archive_extension: ".dmg"
 ---
 
-FontForge is a UNIX application, so it doesn't behave 100% like a normal Mac Application and it needs XQuartz to run.
+FontForge runs on Mac thanks to XQuartz which means it doesn't behave 100% like a normal Mac App. It is unsigned so it's easiest if your [GateKeeper](https://support.apple.com/en-us/HT202491) settings are set to 'anywhere'.
 
-Read either the short or detailed guide to get you started.
-
-<a class="btn btn-default" data-toggle="collapse" href="#collapseBasic" aria-expanded="false" aria-controls="collapseBasic">
-  Short Guide
-</a>
+<a class="btn btn-default" href="https://github.com/andreaslarsen/fontforge-installer/releases/download/v0.6/FontForgeInstaller.dmg">
+  FontForge Installer
+</a> or 
 <a class="btn btn-default" data-toggle="collapse" href="#collapseDetail" aria-expanded="false" aria-controls="collapseDetail">
-  Detailed Guide
+  Manual installation
 </a>
-
-<div class="collapse" id="collapseBasic"><div class="well" markdown="1">
-#### XQuartz
-* Download and install [xQuartz](http://xquartz.macosforge.org/downloads/SL/XQuartz-2.7.7.dmg) if you don't already have it
-* Open XQuartz
-* Preferences (⌘,)
-* If checked, then uncheck `Enable keyboard shortcuts under X11` or `Enable key equivalents under X11` like shown below
-
-![X11.app Preferences Window set correctly](../x11prefs.png)
-
-#### FontForge
-
-* Download and install [FontForge 2015-04-30](https://github.com/fontforge/fontforge/releases/download/20150430/FontForge-2015-04-30-Mac.app.dmg) in `/Applications` - not anywhere else
-* Open FontForge
-* If asked where X11 is, then find and select XQuartz in `Applications/Utilities`
-* FontForge is now ready for you to use it like any other app.
-</div></div>
 
 <div class="collapse" id="collapseDetail"><div class="well" markdown="1">
 #### 1. Install XQuartz
@@ -81,57 +62,41 @@ FontForge will create a new font and show you its glyphs in a table:
 ![First Run](../mac-running-fontforge.png)
 
 Next time, it will open fast and in any typical way: double clicking it, drag it to the dock, using Launcher, Spotlight or Quicksilver...
-
-## Tips
-
-When you run FontForge, its dock icon will disappear after it is launched, because it is controlled by XQuartz.
-
-To bring fontforge's windows to the font, click the XQuartz icon, or use Alt+Tab to switch to it.
-
 </div></div>
 
-## Problems?
+#### Design With FontForge
 
-If you have any problems with installation or upgrading, create a [Github Issue](https://guides.github.com/features/issues/) to discuss with our community.
+[DesignWithFontForge.com](http://designwithfontforge.com/) is a free online book to get you started with FontForge and typeface creation. It also has tips/tricks to get the most out of FontForge on Mac.
 
-## Other sources and versions
+#### Problems, ideas, contributions etc.
 
-You can also install Daily Development Snapshots, install using Package Managers or build from source
+Create a [Github Issue](https://guides.github.com/features/issues/) to discuss with our community.
+
+#### Other Sources
 
 <a class="btn btn-default" data-toggle="collapse" href="#collapseDev" aria-expanded="false" aria-controls="collapseBasic">
-  Daily dev
+  Dev Version
 </a>
 <a class="btn btn-default" data-toggle="collapse" href="#collapsePkg" aria-expanded="false" aria-controls="collapseDetail">
-  Pkg manager
+  Pkg Manager
 </a>
 <a class="btn btn-default" data-toggle="collapse" href="#collapseSrc" aria-expanded="false" aria-controls="collapseBasic">
-  Source
+  Build From Source
 </a>
 
 <div class="collapse" id="collapseDev"><div class="well" markdown="1">
-New development versions are released every few days, and the latest is always available as [FontForge_latest-HEAD.app.zip](http://fuuko.libferris.com/osx/packages/FontForge_latest-HEAD.app.dmg).
+Released every few days as [FontForge_latest-HEAD.app.zip](http://fuuko.libferris.com/osx/packages/FontForge_latest-HEAD.app.dmg). 
 
-To install an update:
-
-1. quit FontForge and X11
-2. drag and drop the new FontForge.app into `/Applications` and replace it
-3. start FontForge again
+Follow the manual install guide above to install it.
 </div></div>
-
 <div class="collapse" id="collapsePkg"><div class="well" markdown="1">
-Installing from Package Managers
+These Mac package managers have FontForge:
 
-These Mac package managers all have FontForge:
-
-* [Homebrew](http://brew.sh) (recommended)
-* [MacPorts](https://www.macports.org/)
-* [Fink](http://www.finkproject.org/)
+[Homebrew](http://brew.sh) (recommended), [MacPorts](https://www.macports.org/)
+and [Fink](http://www.finkproject.org/)
 </div></div>
-
 <div class="collapse" id="collapseSrc"><div class="well" markdown="1">
-Building from source
-
-Build with source using [Homebrew](http://www.brew.sh) in the normal way:
+Use [Homebrew](http://www.brew.sh) in the normal way:
 
 ```Bash
 brew install python gettext libpng jpeg libtiff giflib cairo pango libspiro czmq fontconfig automake libtool pkg-config glib pango
@@ -140,51 +105,9 @@ brew install -v --debug fontforge --HEAD  --with-giflib --with-x11 --with-libspi
 
 If anything goes wrong, just create a ticket for the package manager or try to use non-HEAD versions.
 
-If you build from sources with Homebrew assistance, you may be lucky if you run
+Building from sources with Homebrew assistance, you may be able to run:
 
     ./configure && make -j3 && sudo make install;
 
 (You'll need to have all the [dependencies](../source.html#Dependencies) already installed.)
-</div></div>
-
-## Advanced Configuration
-
-To make FontForge more pleasant to use, you can change some aspects of the way it works on Macs. **These steps are optional.**
-
-<a class="btn btn-default" data-toggle="collapse" href="#collapseHot" aria-expanded="false" aria-controls="collapseBasic">
-  Hot keys
-</a>
-<a class="btn btn-default" data-toggle="collapse" href="#collapseUI" aria-expanded="false" aria-controls="collapseDetail">
-  UI size
-</a>
-<a class="btn btn-default" data-toggle="collapse" href="#collapseMouse" aria-expanded="false" aria-controls="collapseBasic">
-  3-button mouse
-</a>
-
-<div class="collapse" id="collapseHot"><div class="well" markdown="1">
-If the hotkeys are unfamiliar, you can change them!
-
-1. quit FontForge and X11
-2. with your text editor, open `/Applications/FontForge.app/Contents/Resources/opt/local/share/fontforge/hotkeys/default`
-3. change the hotkeys and save the file
-4. start FontForge again
-</div></div>
-
-<div class="collapse" id="collapseUI"><div class="well" markdown="1">
-If the UI appears very big or very small, you can change the way the UI is sized.
-
-1. quit FontForge and X11
-2. with your text editor, open `/Applications/FontForge.app/Contents/Resources/opt/local/share/fontforge/pixmaps/resources`
-3. measure the physical width of your screen in centimeters. In this example, it is 34cm wide.
-4. add a new line, `Gdraw.ScreenWidthCentimeters: 34` and save the file
-5. start FontForge again
-6. if the scaling is still not right, play with the value until it is
-</div></div>
-
-<div class="collapse" id="collapseMouse"><div class="well" markdown="1">
-FontForge is designed to make use of a three button mouse. It is also designed to make use of modifier keys on mouse clicks (eg, Control-left-click can mean something different than left-click.)
-
-If you have a standard one button mouse, then you have the option of having the Mac simulate a three button mouse (for instance Option-left-click behaves like clicking the middle mouse button). Unfortunately this means you can no longer use the Option key to change the behavior of the left (only) button click. To enable this, click the XQuartz app in the Dock, and then go to X11 menu in the top left, Preferences, Input, and turn on `Emulate three button mouse`
-
-If you have a two or three button mouse, then use it (and turn off `Emulate three button mouse` in the X11 preferences.)
 </div></div>
