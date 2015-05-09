@@ -4925,13 +4925,6 @@ button.close {
     display: inline-block;
     float: left;
   }
-
-  .hero-unit h1 {
-    margin-top: 15px !important;
-  }
-  .hero-unit p {
-    margin-bottom: 40px !important;
-  }
   .content {
     padding-left: 20px;
     padding-right: 20px;
@@ -5065,6 +5058,14 @@ button.close {
   }
   .carousel-caption {
     position: static;
+  }
+}
+@media (max-width: 979px) {
+  .home .hero-unit h1 {
+    margin-top: 0px !important;
+  }  
+  .hero-unit p {
+    margin-bottom: 40px !important;
   }
 }
 @media (min-width: 768px) and (max-width: 979px) {
@@ -5754,8 +5755,6 @@ x@media (min-width: 1200px) {
   .nav-collapse .nav > li > a,
   .nav-collapse .dropdown-menu a {
     padding: 9px 15px;
-    font-weight: bold;
-    color: #c7c7c7;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
@@ -5769,14 +5768,6 @@ x@media (min-width: 1200px) {
   }
   .nav-collapse .dropdown-menu li + li a {
     margin-bottom: 2px;
-  }
-  .nav-collapse .nav > li > a:hover,
-  .nav-collapse .dropdown-menu a:hover {
-    background-color: #131313;
-  }
-  .navbar-inverse .nav-collapse .nav > li > a:hover,
-  .navbar-inverse .nav-collapse .dropdown-menu a:hover {
-    background-color: #111111;
   }
   .nav-collapse.in .btn-group {
     margin-top: 5px;
