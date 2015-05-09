@@ -4915,6 +4915,17 @@ button.close {
   }
 }
 @media (max-width: 767px) {
+  .download-bar .statistic,
+  section.license.span3, 
+  footer .roundel {
+    display: none !important;
+  }
+  .hero-unit h1 {
+    margin-top: 15px !important;
+  }
+  .hero-unit p {
+    margin-bottom: 40px !important;
+  }
   .content {
     padding-left: 20px;
     padding-right: 20px;
@@ -5185,6 +5196,9 @@ button.close {
     width: 74.30939226519337%;
     *width: 74.25620077583166%;
   }
+  #content .row-fluid .span9 {
+    width: 100%;
+  }  
   .row-fluid .span8 {
     width: 65.74585635359117%;
     *width: 65.69266486422946%;
