@@ -1,7 +1,7 @@
 ---
 published: true
 layout: homepage
-title: FontForge is a font editor
+title: FontForge Open Source Font Editor
 ---
 
 ## Welcome
