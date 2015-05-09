@@ -4,8 +4,7 @@ layout: homepage
 title: FontForge is a font editor
 ---
 
-Welcome
-=======
+## Welcome
 
 Learning FontForge is easy &ndash; get started designing your own fonts with the [tutorial](/en-US/tutorials/). The entire [interface](/en-US/documentation/interface/) is fully documented.
 
@@ -13,6 +12,4 @@ Scripting allows designers to get repetitive tasks done quickly, and FontForge h
 
 FontForge can be [customized](/en-US/documentation/customizing/) so it feels familiar, from hotkeys to visual themes and a translatable interface.
 
-You can share copies of FontForge freely and make changes under a [libre license](/en-US/about/project/license/). You are invited to participate in this project; your bug reports, feature suggestions, [donations](https://www.tug.org/fonts/librefontfund.html), tutorial ideas and code contributions are all welcome! [Learn more...](/en-US/documentation/developers/)
-
-[tutorial]: http://designwithfontforge.com/
+FontForge is an open source project and you are invited to participate. Your bug reports, feature suggestions, [donations](https://www.tug.org/fonts/librefontfund.html), tutorial ideas and code contributions are all welcome! [Learn more.](/en-US/documentation/developers/)
