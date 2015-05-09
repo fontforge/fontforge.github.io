@@ -882,6 +882,7 @@ figcaption {
   border: 1px solid #474747;
   box-sizing: border-box;
   border-radius: 10px;
+  margin-bottom: 20px;
 }
 
 @media (min-width: 980px) {

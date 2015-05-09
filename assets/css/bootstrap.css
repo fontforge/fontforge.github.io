@@ -4917,6 +4917,15 @@ button.close {
   footer .roundel {
     display: none !important;
   }
+  .blockrow3 li a {
+    width: 100% !important;
+  }
+  footer .row-fluid .span2 {
+    width: 33% !important;
+    display: inline-block;
+    float: left;
+  }
+
   .hero-unit h1 {
     margin-top: 15px !important;
   }
@@ -5016,6 +5025,11 @@ button.close {
   .nav-collapse {
     -webkit-transform: translate3d(0, 0, 0);
   }
+  footer .row-fluid .span2 {
+    width: 50% !important;
+    display: inline-block;
+    float: left;
+  }  
   .page-header h1 small {
     display: block;
     line-height: 24px;
