@@ -1,18 +1,13 @@
 ---
 published: true
 layout: homepage
-title: FontForge is a font editor
+title: FontForge Open Source Font Editor
 ---
 
-Welcome
-=======
+## Welcome
 
-Learning FontForge is easy &ndash; get started designing your own fonts with the [tutorial](/en-US/tutorials/). The entire [interface](/en-US/documentation/interface/) is fully documented.
+Learning FontForge is easy &ndash; we recommend that you start by reading [Design With FontForge](http://designwithfontforge.com/). The entire [interface](/en-US/documentation/interface/) is also fully documented.
 
-Scripting allows designers to get repetitive tasks done quickly, and FontForge has excellent [scripting support](/en-US/documentation/scripting/) with both its own scripting language and [Python](/en-US/documentation/scripting/python/).
+FontForge has excellent [scripting support](/en-US/documentation/scripting/) that allows designers to get repetitive tasks done quickly.
 
-FontForge can be [customized](/en-US/documentation/customizing/) so it feels familiar, from hotkeys to visual themes and a translatable interface.
-
-You can share copies of FontForge freely and make changes under a [libre license](/en-US/about/project/license/). You are invited to participate in this project; your bug reports, feature suggestions, [donations](https://www.tug.org/fonts/librefontfund.html), tutorial ideas and code contributions are all welcome! [Learn more...](/en-US/documentation/developers/)
-
-[tutorial]: http://designwithfontforge.com/
+FontForge is an open source project and you can contribute. Your bug reports, feature suggestions, [donations](https://www.tug.org/fonts/librefontfund.html), tutorial ideas and code contributions are needed for FontForge to improve! Learn more about FontForge development [here.](/en-US/documentation/developers/)

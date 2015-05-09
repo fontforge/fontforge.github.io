@@ -5,9 +5,12 @@ title: FontForge Windows Edition
 archive_extension: .exe
 ---
 
-1. [Download 2015-04-30 Release Installer (.exe)](https://github.com/fontforge/fontforge/releases/download/20150430/FontForge-2015-04-30-Windows.exe)
-2. Right click, select `Run as Administrative User`
-3. After installation, right click FontForge shortcut and select `Run as Administrative User`
+<a class="btn btn-primary btn-large default" href="#https://github.com/fontforge/fontforge/releases/download/20150430/FontForge-2015-04-30-Windows.exe">
+  Download 2015-04-30 Release Installer (.exe)
+</a>
+
+1. Right click, select `Run as Administrative User`
+2. After installation, right click FontForge shortcut and select `Run as Administrative User`
 
 You may find more recent development snapshots at the [fontforgebuilds] project.
 Developers can get the "MSYS" Windows build system there too.

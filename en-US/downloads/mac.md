@@ -9,10 +9,10 @@ FontForge is a UNIX application, so it doesn't behave 100% like a normal Mac App
 
 Read either the short or detailed guide to get you started.
 
-<a class="btn btn-default" data-toggle="collapse" href="#collapseBasic" aria-expanded="false" aria-controls="collapseBasic">
+<a class="btn btn-primary btn-large default" data-toggle="collapse" href="#collapseBasic" aria-expanded="false" aria-controls="collapseBasic">
   Short Guide
 </a>
-<a class="btn btn-default" data-toggle="collapse" href="#collapseDetail" aria-expanded="false" aria-controls="collapseDetail">
+<a class="btn btn-primary btn-large default" data-toggle="collapse" href="#collapseDetail" aria-expanded="false" aria-controls="collapseDetail">
   Detailed Guide
 </a>
 
@@ -98,13 +98,13 @@ If you have any problems with installation or upgrading, create a [Github Issue]
 
 You can also install Daily Development Snapshots, install using Package Managers or build from source
 
-<a class="btn btn-default" data-toggle="collapse" href="#collapseDev" aria-expanded="false" aria-controls="collapseBasic">
+<a class="btn btn-primary btn-large default" data-toggle="collapse" href="#collapseDev" aria-expanded="false" aria-controls="collapseBasic">
   Daily dev
 </a>
-<a class="btn btn-default" data-toggle="collapse" href="#collapsePkg" aria-expanded="false" aria-controls="collapseDetail">
+<a class="btn btn-primary btn-large default" data-toggle="collapse" href="#collapsePkg" aria-expanded="false" aria-controls="collapseDetail">
   Pkg manager
 </a>
-<a class="btn btn-default" data-toggle="collapse" href="#collapseSrc" aria-expanded="false" aria-controls="collapseBasic">
+<a class="btn btn-primary btn-large default" data-toggle="collapse" href="#collapseSrc" aria-expanded="false" aria-controls="collapseBasic">
   Source
 </a>
 
@@ -151,13 +151,13 @@ If you build from sources with Homebrew assistance, you may be lucky if you run
 
 To make FontForge more pleasant to use, you can change some aspects of the way it works on Macs. **These steps are optional.**
 
-<a class="btn btn-default" data-toggle="collapse" href="#collapseHot" aria-expanded="false" aria-controls="collapseBasic">
+<a class="btn btn-primary btn-large default" data-toggle="collapse" href="#collapseHot" aria-expanded="false" aria-controls="collapseBasic">
   Hot keys
 </a>
-<a class="btn btn-default" data-toggle="collapse" href="#collapseUI" aria-expanded="false" aria-controls="collapseDetail">
+<a class="btn btn-primary btn-large default" data-toggle="collapse" href="#collapseUI" aria-expanded="false" aria-controls="collapseDetail">
   UI size
 </a>
-<a class="btn btn-default" data-toggle="collapse" href="#collapseMouse" aria-expanded="false" aria-controls="collapseBasic">
+<a class="btn btn-primary btn-large default" data-toggle="collapse" href="#collapseMouse" aria-expanded="false" aria-controls="collapseBasic">
   3-button mouse
 </a>
 

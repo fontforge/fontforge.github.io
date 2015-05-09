@@ -13,9 +13,7 @@
                         {% if page.toc %}
                         <div id="toc" class="toc"></div>
                         {% endif %}
-                        <div id="chart"></div>
-                        <div><span id="cnt-individual"></span> of <span id="cnt-total"></span> downloads</div>
-{{ content }}
+                        {{ content }}
                     </div>
                 </div>
                 <!-- END CONTENT ROW WITH BIG TEXT -->
@@ -25,72 +23,3 @@
     {% include footer.html %}
 
 {% include html-end.html %}
-<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.13/d3.min.js"></script>
-<script>
-    function humanise(n){
-      var d = ',';
-      var s = '.';
-      n = n.toString().split('.');
-      n[0] = n[0].replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1' + d);
-      return n.join(s);
-    };
-
-    $(function(){
-        $.getJSON("https://api.github.com/repos/fontforge/fontforge/releases/latest", function(json) {
-            var assetlist = json.assets;
-            total = 0;
-            individual = 0;
-            $(assetlist).each(function(i, asset){
-                total += asset.download_count;
-                if (/({{ page.archive_extension }})$/i.test(asset.name)) {
-                    individual += asset.download_count;
-                }
-            });
-
-            if (individual) {
-                drawpiechart(individual, total);
-                $('#cnt-individual').text(humanise(individual));
-                $('#cnt-total').text(humanise(total));
-            }
-        });
-    });
-
-    function drawpiechart(individual, total) {
-        var w = 100;
-        var h = 100;
-        var r = h / 2;
-        var color = d3.scale.category20c();
-
-        var data = [{"label":"Total", "value": total},
-                    {"label":"Individual", "value": individual}];
-
-
-        var vis = d3.select('#chart').append("svg:svg").data([data])
-                    .attr("width", w).attr("height", h).append("svg:g")
-                    .attr("transform", "translate(" + r + "," + r + ")");
-        var pie = d3.layout.pie().value(function(d){return d.value;});
-
-        // declare an arc generator function
-        var arc = d3.svg.arc().outerRadius(r);
-
-        // select paths, use arc generator to draw
-        var arcs = vis.selectAll("g.slice").data(pie).enter()
-            .append("svg:g").attr("class", "slice")
-            .append("svg:path")
-            .attr("fill", function(d, i){
-                return color(i);
-            })
-            .attr("d", function (d) {
-                return arc(d);
-            });
-
-        // add the text
-        arcs.append("svg:text").attr("transform", function(d){
-            d.innerRadius = 0;
-            d.outerRadius = r;
-            return "translate(" + arc.centroid(d) + ")";}).attr("text-anchor", "middle").text( function(d, i) {
-                return data[i].label;
-            }
-        );
-    }
-</script>
