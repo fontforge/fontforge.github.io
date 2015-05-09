@@ -4,4 +4,4 @@ layout: default
 title: Customizing FontForge
 ---
 
-Table of contents for this section.
+The Design With FontForge manual has a page, [Configuring FontForge](http://designwithfontforge.com/en-US/Configuring_FontForge.html)
