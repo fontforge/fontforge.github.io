@@ -5,7 +5,8 @@ title: Install FontForge on Mac OS X
 archive_extension: ".dmg"
 ---
 
-FontForge runs on Mac thanks to XQuartz which means it doesn't behave 100% like a normal Mac App. It is unsigned so it's easiest if your [GateKeeper](https://support.apple.com/en-us/HT202491) settings are set to 'anywhere'.
+FontForge runs on Mac thanks to XQuartz which means it doesn't behave 100% like a normal Mac App. 
+It is unsigned so it's easiest if your [GateKeeper](https://support.apple.com/en-us/HT202491) settings are set to 'anywhere'.
 
 <a class="btn btn-default" href="https://github.com/andreaslarsen/fontforge-installer/releases/download/v0.6/FontForgeInstaller.dmg">
   FontForge Installer
@@ -31,7 +32,8 @@ If you don't have it then download and install: **[direct link to XQuartz-2.7.7.
 
 Log out and log back in to ensure it works correctly
 
-Just this first time, start XQuartz from `Applications/Utilities/XQuartz.app`, go to the X11 menu, Preferences, Input, and **turn off** the `Enable keyboard shortcuts under X11` or `Enable key equivalents under X11` preference item. FontForge will start XQuartz automatically for you next time.
+Just this first time, start XQuartz from `Applications/Utilities/XQuartz.app`, go to the X11 menu, Preferences, Input, and **turn off** the `Enable keyboard shortcuts under X11` or `Enable key equivalents under X11` preference item. 
+FontForge will start XQuartz automatically for you next time.
 
 ![X11.app Preferences Window set correctly](../x11prefs.png)
 
@@ -51,7 +53,8 @@ Right Click (or hold the `Command` key and click once) and choose `Open` from th
 
 ![Confirm](../mac-open-3-confirm.png)
 
-You may see a dialog box saying "Choose Application. Where is X11?" with a sort of Finder window. Find XQuartz in `Applications/Utilities` and click OK
+You may see a dialog box saying "Choose Application. Where is X11?" with a sort of Finder window. 
+Find XQuartz in `Applications/Utilities` and click OK
 
 Be patient while it runs a first-time setup process
 
@@ -66,7 +69,8 @@ Next time, it will open fast and in any typical way: double clicking it, drag it
 
 #### Design With FontForge
 
-[DesignWithFontForge.com](http://designwithfontforge.com/) is a free online book to get you started with FontForge and typeface creation. It also has tips/tricks to get the most out of FontForge on Mac.
+[DesignWithFontForge.com](http://designwithfontforge.com/) is a free online book to get you started with FontForge and typeface creation. 
+It also has configuration tips and tricks to customize your installation and get the most out of FontForge on Mac.
 
 #### Problems, ideas, contributions etc.
 
