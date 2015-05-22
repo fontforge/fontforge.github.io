@@ -6,11 +6,11 @@ title: Scripting
 
 -   [A simple example](#a-simple-example)
     -   [Stating the problem](#a-simple-example)
--   [Initial solution](#initial-solution)
+    -   [Initial solution](#initial-solution)
     -   [Real world considerations](#real-world-considerations)
     -   [Invoking a script and passing it arguments](#invoking-a-script-and-passing-it-arguments)
--   [Using loops](#using-loops)
--   [Complexities](#complexities)
+    -   [Using loops](#using-loops)
+    -   [Complexities](#complexities)
 -   [Other Examples](#other-examples)
     -   [Adding accented characters to a type1 font](#adding-accented-characters)
     -   [Merging a type1 and type1 expert font and creating appropriate
