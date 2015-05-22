@@ -10,10 +10,10 @@ title: Glossary of (some) typographical terms
   ---------------------------
 
 
-- [A](#A) - [B](#B) - [C](#C) - [D](#D) - [E](#E) - [F](#F) - [G](#G) -
-[H](#H) - [I](#I)- [J](#J)- [K](#K) - [L](#L) - [M](#M) - [N](#N) -
-[O](#O) - [P](#P) - [Q](#Q) - [R](#R) - [S](#S) - [T](#T)- [U](#U)-
-[V](#V)- [W](#W) - [X](#X)- [Y](#Y) - [Z](#Z)-
+- [A](#a) - [B](#b) - [C](#c) - [D](#d) - [E](#e) - [F](#f) - [G](#g) -
+[H](#h) - [I](#i)- [J](#j)- [K](#k) - [L](#l) - [M](#m) - [N](#n) -
+[O](#o) - [P](#p) - [Q](#q) - [R](#r) - [S](#s) - [T](#t)- [U](#u)-
+[V](#v)- [W](#w) - [X](#x)- [Y](#y) - [Z](#z)-
 
                         
 
@@ -26,7 +26,7 @@ title: Glossary of (some) typographical terms
 > The Walrus and the Carpenter
 >  Lewis Carroll
 
-A
+## A
 
 Abjad
 
@@ -113,7 +113,7 @@ ATSUI
 Apple's advanced typographical system. Also called Apple Advanced
 Typography.
 
-B
+## B
 
 Baseline
 
@@ -183,7 +183,7 @@ to right ones. As far as I know, no modern writing system uses this
 method (nor does OpenType have any support for it). See Also
 [Bidi](#Bidi).
 
-C
+## C
 
 Cap-height![](img/cap-height.png)
 
@@ -252,7 +252,7 @@ If a glyph contains two hints where the start or end point of one is
 within the range of the other then these hints conflict. They may not be
 active simultaneously.
 
-D
+## D
 
 Descender
 
@@ -289,7 +289,7 @@ Distortable font
 
 See [Multi-Master](#Multi-Master)
 
-E
+## E
 
 em
 
@@ -357,7 +357,7 @@ A point on a curve where the curve attains its maximum or minimum value.
 On a continuous curve this can happen at the endpoints (which is dull)
 or where dx/dt=0 or dy/dt=0.
 
-F
+## F
 
 Features (OpenType)
 
@@ -421,7 +421,7 @@ Fuþark (Futhark)
 
 The old germanic runic script
 
-G
+## G
 
 Ghost Hint
 
@@ -490,7 +490,7 @@ Grotesque
 
 See also [sans-serif](#serif).
 
-H
+## H
 
 Han characters
 
@@ -529,7 +529,7 @@ Hiragana
 One of the two Japanese syllabaries. Both Hiragana and
 [Katakana](#Katakana) have the same sounds.
 
-I
+## I
 
 Ideographic character
 
@@ -546,7 +546,7 @@ letterforms. Generally the lower-case a changes to *a*, the serifs on
 lower-case letters like i (*i*) change, and the font generally gains a
 freer look to it.
 
-J
+## J
 
 Jamo
 
@@ -560,7 +560,7 @@ choseong glyph in the upper left of an em-square, a jungseong in the
 upper right, and optionally a jongseong in the lower portion of the
 square.
 
-K
+## K
 
 Kanji
 
@@ -602,7 +602,7 @@ A mathematician who got so fed up with bad typesetting back in the
 1970&80s that he created his own font design system and typographical
 layout program called, respectively, MetaFont and [TeX](#TeX).
 
-L
+## L
 
 ![](img/sidebearings.png)Left side bearing
 
@@ -630,7 +630,7 @@ some letters are shared). Many concepts such as "lower case", "italic"
 are applicable to these three alphabets and not to any others. (OK,
 Armenian also has lower case letters).
 
-M
+## M
 
 Manyogana
 
@@ -683,7 +683,7 @@ Adobe is no longer developing this format. Apple has a format which
 acheives the same effect but has not produced many examples. FontForge
 [supports both](../../interface/multiplemaster/).
 
-N
+## N
 
 Namelist
 
@@ -701,7 +701,7 @@ This method is used for rasterizing fonts by truetype and older (before
 version 2) postscript.
  See Also [Even-Odd Fill Rule](#Even-Odd)
 
-O
+## O
 
 Ogham
 
@@ -757,7 +757,7 @@ case the overshoot will probably vary from face to face.
  See also [X-height](#x-height), [Cap-height](#cap-height),
 [Ascender](#ascender), [Descender](#descender), [Baseline](#baseline)
 
-P
+## P
 
 Panose
 
@@ -891,9 +891,9 @@ TrueType](/en-US/tutorials/overview/#PT).
     from CID (a number) to glyph. An set of external CMAP files are used
     to provide appropriate encodings as needed.
 
-Q
+## Q
 
-R
+## R
 
 Reference
 
@@ -906,7 +906,7 @@ called a "componant".
 The horizontal distance from a glyph's rightmost extent to the glyph's
 advance width. This may be positive or negative.
 
-S
+## S
 
 Sans Serif
 
@@ -1083,7 +1083,7 @@ See Also: [abjad](#abjad), [abugida](#abugida), [alphabet](#alphabet)
 and the relevant [Wikipedia
 article](http://en.wikipedia.org/wiki/S%20yllabary).
 
-T
+## T
 
 TeX
 
@@ -1142,7 +1142,7 @@ Typewriter
 
 See [Monospace.](#monospace)
 
-U
+## U
 
 Unicode
 
@@ -1175,7 +1175,7 @@ This is a truetype concept which forces the width of an composite glyph
 (for example an accented letter) to be the same as the width of one of
 its components (for example the base letter being accented).
 
-V
+## V
 
 Vertical Advance Width
 
@@ -1183,7 +1183,7 @@ CJK text is often written vertically (and sometimes horizontally), so
 each CJK glyph has a vertical advance as well as a [horizontal
 advance](#advance-width).
 
-W
+## W
 
 Weight
 
@@ -1201,8 +1201,8 @@ weights.
   Bold          700
   Heavy         800
   Black         900
-  Nord          
-  Ultra         
+  Nord
+  Ultra
   ------------- -----
 
 Width
@@ -1212,7 +1212,7 @@ This is a slightly ambiguous term and is sometimes used to mean the
 glyph to the start of the next glyph), and sometimes used to mean the
 distance from the left side bearing to the right side bearing.
 
-X
+## X
 
 X-height![](img/x-height.png)
 
@@ -1227,9 +1227,9 @@ XUID
 Extended Unique ID in a PostScript font. Now somewhat obsolete. See the
 explanation at [Unique ID](#UniqueID).
 
-Y
+## Y
 
-Z
+## Z
 
 Zapf, Hermann
 
