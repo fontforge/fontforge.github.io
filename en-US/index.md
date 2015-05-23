@@ -1,13 +1,15 @@
 ---
 published: true
 layout: homepage
-title: FontForge Open Source Font Editor
+title: FontForge, Free Font Editor For Windows, Mac, GNU+Linux
 ---
 
 ## Welcome
 
-Learning FontForge is easy &ndash; we recommend that you start by reading [Design With FontForge](http://designwithfontforge.com/). The entire [interface](/en-US/documentation/interface/) is also fully documented.
+FontForge is a free (libre) font editor for Windows, Mac OS X and GNU+Linux that is developed by us, the user community.
 
-FontForge has excellent [scripting support](/en-US/documentation/scripting/) that allows designers to get repetitive tasks done quickly.
+Learning to use FontForge is easy &ndash; check out the [Design With FontForge](http://designwithfontforge.com/) font design manual, and browse our comprehensive [documentation](/en-US/documentation/) that covered everything from each piece of the interface to scripting with Python.
 
-FontForge is an open source project and you can contribute. Your bug reports, feature suggestions, [donations](https://www.tug.org/fonts/librefontfund.html), tutorial ideas and code contributions are needed for FontForge to improve! Learn more about FontForge development [here.](/en-US/documentation/developers/)
+FontForge is libre licensed and organized as an open source community project, so you are invited to contribute. 
+Your bug reports, feature suggestions, [donations](https://www.tug.org/fonts/librefontfund.html), tutorial ideas and (if you are a software developer) code contributions are welcome! 
+By co-operating together we make FontForge better and better. [Learn more...](/en-US/documentation/developers/)
