@@ -1,7 +1,7 @@
 ---
 published: true
 layout: default
-title: Funding
+title: Funding FontForge
 ---
 
 FontForge is a community project, without a single source of funding. 
