@@ -9,4 +9,4 @@ FontForge is available for <a href="/en-US/downloads/windows/">Windows</a>, <a h
 
 Uninstalling: [How to uninstall FontForge](/en-US/downloads/uninstalling/)
 
-We also provide the <a href="/en-US/downloads/source/">source code</a>.
+We also provide the <a href="/en-US/downloads/source/">source code</a> under a [libre license](https://github.com/fontforge/fontforge/blob/master/LICENSE)
