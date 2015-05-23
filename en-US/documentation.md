@@ -11,4 +11,4 @@ title: Documentation
 * [General Reference](reference) &mdash; grab bag of other information related to FontForge and creating fonts
 * [Scripting](scripting) &mdash; how to automate tasks within FontForge
 * [Utilities](utilities) &mdash; links to auxiliary utilites that can complement FontForge
-* [Wish List](https://docs.google.com/document/d/10bOfbJvykm_CUN-nV4FgFn9R7cYWSEEfLm0JnJD3FSU/edit#) &mdash; brainstorming document for future fontforge features
+* [Roadmap](../about/roadmap) &mdash; see the future of Fontforge's features
