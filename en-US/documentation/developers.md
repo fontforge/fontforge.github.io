@@ -10,4 +10,8 @@ See [When Things Go Wrong With FontForge Itself](http://designwithfontforge.com/
 
 ## Contributing Code
 
-See the [CONTRIBUTING](https://github.com/fontforge/fontforge/blob/master/CONTRIBUTING.md) file in the source code tree.
+See the [`CONTRIBUTING.md`](https://github.com/fontforge/fontforge/blob/master/CONTRIBUTING.md) file in the source code tree
+
+## Compiling From Source
+
+See the [`INSTALL-git.md`](https://github.com/fontforge/fontforge/blob/master/INSTALL-git.md) file in the source code tree
