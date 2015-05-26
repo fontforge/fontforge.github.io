@@ -5,6 +5,7 @@ title: Documentation
 ---
 
 <!-- this was an empty page and we have the about in the footer * [About FontForge](../about/) &mdash; about the FontForge project-->
+* [Design With FontForge](http://designwithfontforge.com/) &mdash; an online book to get you started
 * [Customization](http://designwithfontforge.com/en-US/Configuring_FontForge.html) &mdash; how to customize your FontForge installation
 * [Developer Documentation](developers) &mdash; information for FontForge developers
 * [User Interface](interface) &mdash; guide to the views and menus in FontForge
