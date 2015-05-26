@@ -4,7 +4,34 @@ layout: default
 title: The File Menu
 ---
 
-[table_of_contents]
+* [New](#new)
+* [Open](#open)
+* [Browse Web](#browse-web)
+    * [Browse Open Font Library](#browse-open-font-library)
+* [Recent](#recent)
+* [Close](#close)
+* [Close Tab](#close)
+<p style="border: 1px solid black>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"></p>
+* [Save](#save)
+* [Save As&hellip;](#save-as)
+* [Save All](#save-all)
+* [Generate Fonts&hellip;](#generate-fonts)
+* [Generate Mac Family&hellip;](#generate-mac-family)
+* [Generate TTC&hellip;](#generate-ttc)
+* [Export&hellip;](#export) <br/>
+* [Import&hellip;](#import)
+* [Merge Feature Info&hellip;](#merge-feature-info)
+* [Revert File](#revert)
+* [Revert to Backup](#revert-to-backup)
+* [Revert Glyph](#revert-glyph)
+* [Clear Special Data](#clear-special-data) <br/>
+* [Load Word List&hellip;](#load-word-list) <br/>
+* [Print&hellip;](#print) <br/>
+* [Execute Script&hellip;](#execute-script) <br/>
+* [Preferences&hellip;](#preferences)
+* [Script Menu](#script-menu)
+* [X Resource Editor&hellip;](x-resource-editor) <br/>
+* [Quit](#quit)
 
 
 * * * * *
@@ -13,12 +40,12 @@ title: The File Menu
 #### New
 
 Creates a new font with (by default) ISO 8859-1 (Latin1) encoding. The
-default encoding may be changed in the preference dlg.
+default encoding may be changed in the preference dialog.
 
 
 #### Open
 
-![](/assets/img/filemenu-openfont.png)
+![example of the dialog to open a font file](/assets/img/filemenu-openfont.png)
 
 Brings up a file chooser and allows you to open a font in any of the
 formats FontForge understands.
@@ -84,9 +111,11 @@ for pdf files).
 
 You can also force fontforge to rename all the glyphs in the font being
 read in to fit some standard naming convention. See the section on
-[namelists](../encodingmenu/#NameLists) for more information.
+[namelists](../encodingmenu/#namelists) for more information.
 
-**The dialog has several buttons at the top, one takes you to your home
+****
+
+The dialog has several buttons at the top, one takes you to your home
 directory, one to the directory above the current one and the other two
 produce menus. The bookmark menu allows you to pick a directory from
 your list of bookmarks, and to add to or remove from your list of
@@ -95,7 +124,9 @@ stack. The tools menu allows you to rearrange how the dialog works. You
 may set it to show hidden files (on unix files beginning with "." are
 "hidden"), you may set it so that directories are displayed amid other
 files, in alphabetical order, so that directories precede normal files,
-or so that there is a separate pane for directories.**
+or so that there is a separate pane for directories.
+
+****
 
 
 #### Browse Web
@@ -129,7 +160,7 @@ font, or if the font has been read from a font file, then a Save As
 dialog will pop up.
 
 If you are editing a font "Ambrosia.sfd" then the backup file will be
-called "Ambrosia.sfd\~".
+called "Ambrosia.sfd&tilde;".
 
 
 #### Save As...
@@ -162,7 +193,7 @@ This is only available if there are multiple fonts open in the same
 family, and if the current font is the "Plain" style of that family. It
 generates a mac FOND structure containing references to all family
 members, sfnt, and POST resources for all selected faces. It brings up a
-[dlg](../generate/#Mac-Family) very similar to the Generate fonts
+[dialog](../generate/#generate-mac-family) very similar to the Generate fonts
 dialog, but one that includes a list of all potential faces for family
 members.
 
@@ -170,7 +201,7 @@ members.
 #### Generate TTC...
 
 This is only available if there are multiple fonts open (they need not
-be the same family). It opens a [dialog](../generate/#GenerateTTC)
+be the same family). It opens a [dialog](../generate/#generate-ttc)
 similar to the above listing all open fonts. You select which fonts go
 into the ttc file and how they should be stored.
 
@@ -183,9 +214,9 @@ Rereads the font from the file on the disk. All changes are lost.
 #### Revert To Backup
 
 Only available in the font view. When FontForge saves an sfd file (with
-the [Save](#Save) command, not the [Save As](#Save.As...) command) it
+the [Save](#save) command, not the [Save As](#save-as) command) it
 creates a backup version of the file containing the old data (this file
-has the same name as the main branch with a "\~" character appended to
+has the same name as the main branch with a "&tilde;" character appended to
 it). This command will revert to the backuped version of the file (if
 there is one).
 
@@ -208,6 +239,11 @@ command may fail.
 If you have made a global change to the font (like scaling it to a new
 em-size) then the results may not be appropriate.
 
+#### Clear Special Data
+
+This function removes extra information in a font file that FontForge
+cannot use.  The program that originally generated the font may have placed
+information in the font file that is of no use to FontForge.
 
 #### Export...
 
@@ -234,16 +270,17 @@ in the database. You may also load one bitmap font into the backgrounds
 of the outline glyphs (So "A" from the bitmap font goes into the
 background of the "A" outline glyph), this is to make tracing glyphs
 easier. Be careful, you need to load a big bitmap for autotrace to be
-useful. **NOTE:**FontForge is unable to read an encoding from pk files,
+useful. **NOTE:** FontForge is unable to read an encoding from pk files,
 you will may need to set it with "Force Encoding" after you've loaded
 the pk file.
- You may also load images into the glyph backgrounds. There are two ways
+
+You may also load images into the glyph backgrounds. There are two ways
 to do this, you may either select several image files and they will be
 loaded consecutively into selected glyphs, or you may select an image
 template and all images whose filename match that template will be
 loaded into the backgrounds of the appropriate glyphs. Image templates
 look like "uni\*.png" or "enc\*.gif" or "cid\*.tiff". You select the
-template by selecting a filename which matches that template-- So if you
+template by selecting a filename which matches that template -- So if you
 select "uni1100.gif" then all image files which start with "uni" and end
 with ".gif" and contain a valid unicode number will be loaded and placed
 in the appropriate place. Files named "enc\*" or "cid\*" are handled
@@ -271,7 +308,7 @@ import svg files. As with postscript, only a subset of svg is
 understood).
 
 In the Outline View this allows you to import an image into the
-background (see the above remark about [bitmaps](#bitmapfiles), or
+background (see the above remark about [bitmaps](#bitmapfiles)), or
 import eps or fig files into the foreground (the xfig conversion is
 really bad, the eps conversion is very limited).
 
@@ -279,7 +316,7 @@ In the Bitmap View this allows you to import a bitmap image into the
 glyph.
 
 This menu item is not available in the Metrics View
-  
+
 In the font view you may select multiple files (by holding down the
 shift or control keys when clicking on them), and all selected bitmap
 fonts will be imported into the sfd.
@@ -307,6 +344,13 @@ font for this face. FontForge can't guess the name of this file when
 loading the font. You must figure it out yourself.
 
 
+#### Load Word List...
+
+It can be helpful to create a set of words that demonstrate how specific
+glyphs of the font look when placed next to each other.  This function allows
+you to import a saved list of these words, instead of having to retype them.
+
+
 #### Print...
 
 Not available in the bitmap view. Allows you to print out all the glyphs
@@ -319,7 +363,7 @@ See the section on [printing](../display/) for more information.
 #### Execute Script...
 
 Only in the font view. Brings up a dlg and allows you to enter a
-[script](../../scripting/native/scripting/), which could be just calling a prewritten
+[script](../../scripting/native/), which could be just calling a prewritten
 script file. There is a [Call] button in the dlg to help you locate any
 such files. The default extension is "\*.pe" (postscript edit) but you
 can change that with the [Filter] button if you use something else.
@@ -328,11 +372,11 @@ can change that with the [Filter] button if you use something else.
 #### Script Menu
 
 Only in the font view. You may define up to 10
-[scripts](../../scripting/native/scripting/#menu) that you want to execute frequently and
+[scripts](../../scripting/native/#menu) that you want to execute frequently and
 place them in this menu. The scripts may also be invoked by short cut
 with the first one being invoked by Control-Meta(Alt)-1, the second
 Control-Meta-2, and the tenth by Control-Meta-0. The scripts are set in
-the [preferences dialog](../prefs/#scripts)
+the [preferences dialog](../prefs/#script-menu)
 
 
 #### Preferences...
@@ -342,7 +386,7 @@ of fontforge](../prefs/).
 
 A number of things, like the colors used in FontForge, that might be
 controlled from a preference window are controlled by [X
-Resources](../xres/) below.
+Resources](../../customizing/xres/) below.
 
 
 #### X Resource Editor...
