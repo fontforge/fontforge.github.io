@@ -293,11 +293,10 @@ body {
   padding-right: 20px;
   margin-left: 20px;
   margin-bottom: 5px;
-  background-color: #50990f;
 }
 
 .download-bar .btn-large:hover {
-  background-color: #43820D;
+  background-color: #d94c00;
   color: white;
 }
 
