@@ -2,96 +2,65 @@
 
 <body class="home">
 
-{% include nav-main.html %}
+  {% include nav-main.html %}
 
-	<!-- HERO UNIT -->
-	<div class="hero-unit noise">
-		<div class="screen">
-	  		<div class="container">
-	  			<div class="row-fluid">
+  <!-- HERO UNIT -->
+  <div class="hero-unit">
+    <div class="container">
+      <img src="/assets/img/hero.png" />
+    </div>
+  </div>
 
-					<div class="span6">
-						<h1>FontForge</h1>
-							<p>Create and edit fonts in many formats:
-							OpenType, TrueType, AAT, PostScript, Multiple Master,
-							CID-Keyed, SVG and various bitmap formats</p>
-					</div>
+  <!-- DOWNLOAD BAR  -->
+  <div class="download-bar">
+    <div class="container">
+      <div class="row-fluid">
+        <ul class="masthead-links unstyled">
+          <li class="span3 ff-download">
+            <a href="downloads/windows/" class="btn btn-primary btn-large dl windows">Windows Install</a>
+            <a href="downloads/mac/" class="btn btn-primary btn-large dl macos">Mac OS Install</a>
+            <a href="downloads/gnulinux/" class="btn btn-primary btn-large dl gnulinux">\GNU+Linux Install</a>
+            <a href="downloads/" class="btn btn-primary btn-large default">Install</a>
+          </li>
+          <li class="span5 statistic hide downloads"><span><strong id="cnt-downloads"></strong> <span>downloads of<br> this release</span></span>
+          </li>
+          <li class="span4 statistic hide contributors"><span><strong id="cnt-contributors"></strong> <span>code changes<br> this month</span></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
+  <!-- MAIN CONTENT CONTAINER -->
+  <div class="content">
+    <div class="container">
 
-				</div>
+      <!-- WELCOME TEXT -->
+      <div class="row-fluid welcome">
+        <section class="span6">
+          <h3>Get started</h3>
+          <p>We recommend that you start by reading <a href="http://designwithfontforge.com/">Design With FontForge</a>. The entire <a href="/en-US/documentation/interface/">interface</a> is also fully documented.</p>
+        </section>
+        <section class="span6">
+          <h3>Get help</h3>
+          <p>Post a <a href="https://github.com/fontforge/fontforge/issues/new">new issue</a> on GitHub if you're stuck and the documentation and Google didn't provide any answers.</p>
+        </section>
+      </div>
+      <div class="row-fluid">
+        <section class="span6">
+          <h3>Get libre</h3>
+          <p>FontForge is an open source font editor brought to you by a community of fellow type lovers. You can <a href="https://www.tug.org/fonts/librefontfund.html">donate</a> to support the project financially.</p>
+        </section>
+        <section class="span6">
+          <h3>Get involved</h3>
+          <p>Anyone can help! You don't have to be a programmer. If you want to help but don't know where then post a <a href="https://github.com/fontforge/fontforge/issues/new">new issue</a> and introduce yourself.</p>
+        </section>
+      </div>
+    </div>
+  </div>
 
-	  		</div>
-	  	</div>
-	</div>
+  <script type="text/javascript" src="/assets/js/site.js"></script>
 
-	<!-- DOWNLOAD BAR  -->
-  	<div class="download-bar">
-  		<div class="container">
-  			<div class="row-fluid">
+  <!-- END MAIN CONTENT CONTAINER -->
 
-				<ul class="masthead-links unstyled">
-					<li class="span3 ff-download">
-						<a href="downloads/windows/" class="btn btn-primary btn-large dl windows" >Windows Install</a>
-						<a href="downloads/mac/" class="btn btn-primary btn-large dl macos" >Mac OS Install</a>
-						<a href="downloads/gnulinux/" class="btn btn-primary btn-large dl gnulinux" >\GNU+Linux Install</a>
-						<a href="downloads/" class="btn btn-primary btn-large default" >Install</a>
-					</li>
-					<li class="span5 statistic hide downloads"><span><strong id="cnt-downloads"></strong> <span>downloads of<br> this release</span></span></li>
-					<li class="span4 statistic hide contributors"><span><strong id="cnt-contributors"></strong> <span>code changes<br> this month</span></span></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-
-	<!-- MAIN CONTENT CONTAINER -->
-	<div class="content">
-		<div class="container">
-
-			<!--[if lt IE 7]>
-			<div class="row-fluid">
-				<section class="span8">
-					<p class="chromeframe">Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">
-					Upgrade to a different browser</a> to experience this site.</p>
-				</section>
-			</div>
-			<![endif]-->
-
-			<!-- WELCOME TEXT -->
-			<div class="row-fluid">
-				<section class="welcome span9">
-				{{ content }}
-				</section>
-
-				<!-- LICENSE -->
-				<section class="license span3">
-					<div class="roundel">
-						<h6>License</h6>
-						<h3><span>FontForge<br>is FREE!</span></h3>
-						<a href="about/project/license/">Find out more &raquo;</a>
-					</div>
-				</section>
-			</div>
-
-			<!-- SCREENSHOTS -->
-			<div class="row-fluid">
-				<section class="screenshots blockrow3 span12">
-					<h2 class="blackbar"><span>Screenshots</span></h2>
-					<ul>
-						<li class="span4"><a class="orange" href="{{ site.url }}/assets/img/samples/screenshot-1.png" data-lightbox="screenshots" data-title="Open Any Font Format" ></a></li>
-						<li class="span4"><a class="red" href="{{ site.url }}/assets/img/samples/screenshot-2.png" data-lightbox="screenshots" data-title="Edit several glyphs on one canvas" ></a></li>
-						<li class="span4"><a class="green" href="{{ site.url }}/assets/img/samples/screenshot-3.png" data-lightbox="screenshots" data-title="Add OpenType Features" > </a></li>
-					</ul>
-				 </section>
-			</div>
-
-		</div>
-	</div>
-
-<!--	<script type="text/javascript" src="/assets/js/header_animation.js"></script>-->
-	<script type="text/javascript" src="/assets/js/site.js"></script>
-
-	<!-- END MAIN CONTENT CONTAINER -->
-
-{% include footer.html %}
-
-{% include homepage-end.html %}
+  {% include footer.html %} {% include homepage-end.html %}
