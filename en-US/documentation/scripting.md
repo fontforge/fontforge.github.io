@@ -4,20 +4,19 @@ layout: default
 title: Scripting
 ---
 
--   [A simple example](scripting-tutorial.html#simple)
-    -   [Stating the problem](scripting-tutorial.html#simple)
-    -   [Initial solution](scripting-tutorial.html#Intial)
-    -   [Real world considerations](#RealWorld)
-    -   [Invoking a script and passing it arguments](#Invoking)
-    -   [Using loops](scripting-tutorial.html#loops)
-    -   [Complexities](scripting-tutorial.html#Complexities)
--   [Other Examples](scripting-tutorial.html#OtherExamples)
-    -   [Adding accented characters to a type1 font](#Accented)
+-   [A simple example](#a-simple-example)
+    -   [Stating the problem](#a-simple-example)
+    -   [Initial solution](#initial-solution)
+    -   [Real world considerations](#real-world-considerations)
+    -   [Invoking a script and passing it arguments](#invoking-a-script-and-passing-it-arguments)
+    -   [Using loops](#using-loops)
+    -   [Complexities](#complexities)
+-   [Other Examples](#other-examples)
+    -   [Adding accented characters to a type1 font](#adding-accented-characters)
     -   [Merging a type1 and type1 expert font and creating appropriate
-        GSUB tables.](#GSUB)
--   [Examples elsewhere](scripting.html#Example)
+        GSUB tables.](#merging-a-type1-and-type1-expert-font-and-creating-appropriate-gsub-tables)
 
-Note: *FontForge now provides python scripting. If you are familiar with python that is probably a better choice. There is a lot of information available on [python](http://www.python.org/doc/), I shan't repeat it. FontForge's own additions to python are documented [here](python.html).*
+Note: *FontForge now provides python scripting. If you are familiar with python that is probably a better choice. There is a lot of information available on [python](http://www.python.org/doc/), I shan't repeat it. FontForge's own additions to python are documented [here](python/).*
 
 I try to keep things at a fairly elementary level, but this is *not* an attempt to teach programming.
 

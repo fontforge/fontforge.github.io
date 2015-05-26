@@ -10,10 +10,10 @@ title: Glossary of (some) typographical terms
   ---------------------------
 
 
-- [A](#A) - [B](#B) - [C](#C) - [D](#D) - [E](#E) - [F](#F) - [G](#G) -
-[H](#H) - [I](#I)- [J](#J)- [K](#K) - [L](#L) - [M](#M) - [N](#N) -
-[O](#O) - [P](#P) - [Q](#Q) - [R](#R) - [S](#S) - [T](#T)- [U](#U)-
-[V](#V)- [W](#W) - [X](#X)- [Y](#Y) - [Z](#Z)-
+- [A](#a) - [B](#b) - [C](#c) - [D](#d) - [E](#e) - [F](#f) - [G](#g) -
+[H](#h) - [I](#i)- [J](#j)- [K](#k) - [L](#l) - [M](#m) - [N](#n) -
+[O](#o) - [P](#p) - [Q](#q) - [R](#r) - [S](#s) - [T](#t)- [U](#u)-
+[V](#v)- [W](#w) - [X](#x)- [Y](#y) - [Z](#z)-
 
                         
 
@@ -26,9 +26,9 @@ title: Glossary of (some) typographical terms
 > The Walrus and the Carpenter
 >  Lewis Carroll
 
-A
+## A
 
-Abjad
+###### Abjad
 
 Abjad is the technical term for the type of writing system used by
 Semitic languages (Hebrew, Arabic, etc.), where there are glyphs for all
@@ -43,7 +43,7 @@ See Also: [alphabet](#alphabet), [abugida](#abugida),
 [syllabary](#syllabary) and the relevant [Wikipedia
 article](http://en.wikipedia.org/wiki/Abjad).
 
-Abugida
+###### Abugida
 
 An abugida is somewhere in between an [alphabet](#alphabet) and a
 [syllabary](#syllabary). The Indic writing systems are probably the best
@@ -66,13 +66,13 @@ See Also: [alphabet](#alphabet), [abjad](#abjad),
 [syllabary](#syllabary) and the relevant [Wikipedia
 article](http://en.wikipedia.org/wiki/Abugida).
 
-![](img/sidebearings.png)Advance Width
+###### ![](/sidebearings.png)Advance Width
 
 The distance between the start of this glyph and the start of the next
 glyph. Sometimes called the glyph's width. See also [Vertical Advance
 Width.](#Vertical-Advance)
 
-Alphabet
+###### Alphabet
 
 A writing system where there are glyphs for all phonemes -- consonants
 and vowels alike -- and (in theory anyway) all phonemes in a word will
@@ -82,25 +82,25 @@ See Also: [abjad](#abjad), [abugida](#abugida), [syllabary](#syllabary)
 and the relevant [Wikipedia
 article](http://en.wikipedia.org/wiki/Alphabet).
 
-Apple Advanced Typography
+###### Apple Advanced Typography
 
 Apple's extension to basic TrueType fonts. Includes contextual
 substitutions, ligatures, kerning, etc. Also includes [distortable
 fonts](#Multi-Master).
 
-Ascender
+###### Ascender
 
 A stem on a lower case letter which extends above the x-height. "l" has
 an ascender.
  See also [X-height](#x-height), [Cap-height](#cap-height),
 [Descender](#descender), [Overshoot](#overshoot), [Baseline](#baseline)
 
-Anchor Class
+###### Anchor Class
 
 Used to specify mark-to-base and cursive GPOS subtables. See
 [overview](/en-US/tutorials/overview/#Anchors).
 
-Ascent
+###### Ascent
 
 In traditional typography the ascent of a font was the distance from the
 top of a block of type to the [baseline](#baseline).
@@ -108,14 +108,14 @@ top of a block of type to the [baseline](#baseline).
 Its precise meaning in modern typography seems to vary with different
 definers.
 
-ATSUI
+###### ATSUI
 
 Apple's advanced typographical system. Also called Apple Advanced
 Typography.
 
-B
+## B
 
-Baseline
+###### Baseline
 
 The [baseline](/en-US/tutorials/overview/#Baseline) is the horizontal line on which
 the (latin, greek, cyrillic) letters sit. The baseline will probably be
@@ -127,12 +127,12 @@ different scripts should be aligned with respect to each other.
  See also [X-height](#x-height), [Cap-height](#cap-height),
 [Ascender](#ascender), [Descender](#descender), [Overshoot](#overshoot)
 
-Bézier curve or Bézier splines
+###### Bézier curve or Bézier splines
 
 Bézier curves are described in detail in the [Bézier section of the main
 manual.](../bezier/)
 
-Bidi
+###### Bidi
 
 > He looked thoughtful and grave- but the orders he gave
 >  Were enough to bewilder the crew.
@@ -147,12 +147,12 @@ for example. Things get even more complex with nested quotations. The
 [Unicode](#Unicode) standard contains an algorithm for laying out Bidi
 text. See also: [Boustrophedon](#Boustrophedon).
 
-Black letter
+###### Black letter
 
 Any of various type families based on medieval handwriting.
  See also [gothic](#gothic).
 
-BMP (Basic Multilingual Plane)
+###### BMP (Basic Multilingual Plane)
 
 The first 65536 code points of [Unicode](#Unicode). These contain most
 of the ordinary characters in the modern world. See Also
@@ -161,19 +161,19 @@ of the ordinary characters in the modern world. See Also
 -   [SIP](#SIP) -- Supplementary Ideographic Plane (0x20000-0x2FFFF)
 -   [SSP](#SSP) -- Supplementary Special-purpose Plane (0xE0000-0xEFFFF)
 
-Bold
+###### Bold
 
 A common font [style](#style). The stems of the glyphs are wider than in
 the normal font, giving the letters a darker impression. Bold is one of
 the few [LGC](#LGC) styles that translate readily to other scripts.
 
-Bopomofo
+###### Bopomofo
 
 A (modern\~1911) Chinese (Mandarin) [alphabet](#alphabet)
 used to provide phonetic transliteration of Han ideographs in
 dictionaries.
 
-![](img/boustrophedon.png)Boustrophedon
+###### ![](/boustrophedon.png)Boustrophedon
 
 Writing "as the ox plows", that is alternating between left to right and
 right to left writing directions. Early alphabets (Old Canaanite, and
@@ -183,23 +183,23 @@ to right ones. As far as I know, no modern writing system uses this
 method (nor does OpenType have any support for it). See Also
 [Bidi](#Bidi).
 
-C
+## C
 
-Cap-height![](img/cap-height.png)
+###### Cap-height![](/cap-height.png)
 
 The height of a capital letter above the baseline (a letter with a flat
 top like "I" as opposed to one with a curved one like "O").
  See also [X-height](#x-height), [Ascender](#ascender),
 [Descender](#descender), [Overshoot](#overshoot), [Baseline](#baseline)
 
-CFF
+###### CFF
 
 Compact Font Format most commonly used within
 [OpenType](#opentype) postscript fonts, but is a valid font
 format even without a [SFNT](#SFNT) wrapper. This is the native font
 format for fonts with PostScript Type2 charstrings.
 
-Character
+###### Character
 
 A character is a Platonic ideal reified into at least one
 [glyph](#glyph). For example the letter "s" is a character which is
@@ -208,22 +208,22 @@ Note that these glyphs can look fairly different from each other,
 however although the glyph for an integral sign might be the same as the
 long-s glyph, these are in fact different characters.
 
-Character set
+###### Character set
 
 A character set is an unordered set of [characters](#character)
 
-CID
+###### CID
 
 Character Identifier, a number. In some [CJK](#CJK)
 [PostScript](#postscript) fonts the glyphs are not named but are refered
 to by a CID number.
 
-CID-keyed font
+###### CID-keyed font
 
 A [PostScript](#postscript) font in which the glyphs are index by CID
 and not by name.
 
-CJK
+###### CJK
 
 Chinese, Japanese, Korean. These three languages require fonts with a
 huge number of glyphs. All three share a writing system based on Chinese
@@ -236,32 +236,32 @@ two syllabaries, Hiragana and katakana which have about 60 syllables.
 The Koreans have one syllabary, hangul with tens of thousands of
 syllables.
 
-CJKV
+###### CJKV
 
 Chinese, Japanese, Korean, Vietnamese. These four languages require
 fonts with a huge number of glyphs.
 
-Condensed
+###### Condensed
 
 A condensed font is one where the space between the stems of the glyphs,
 and the distance between glyphs themselves has been reduced.
 
-Conflicting hints
+###### Conflicting hints
 
 If a glyph contains two hints where the start or end point of one is
 within the range of the other then these hints conflict. They may not be
 active simultaneously.
 
-D
+## D
 
-Descender
+###### Descender
 
 A stem on a lower case letter which extends below the baseline. "p" has
 a descender.
  See also [X-height](#x-height), [Cap-height](#cap-height),
 [Ascender](#ascender), [Overshoot](#overshoot), [Baseline](#baseline)
 
-Descent
+###### Descent
 
 In traditional typography the descent of a font was the distance from
 the bottom of a block of type to the [baseline](#baseline).
@@ -269,7 +269,7 @@ the bottom of a block of type to the [baseline](#baseline).
 Its precise meaning in modern typography seems to vary with different
 definers.
 
-Device Table
+###### Device Table
 
 A concept in OpenType which allows you to enter spacing adjustments
 geared to rasterization at particular pixel sizes. If a kerning value
@@ -280,18 +280,18 @@ pixels (and another one at 14 and 18, or whatever is needed). Similar
 functionality is needed for [anchored
 marks](../../interface/anchorcontrol/#DeviceTable).
 
-Didot point
+###### Didot point
 
 The European [point](#point). 62 ^2^/3 points per 23.566mm ( 2.66pt/mm
 or 67.55pt/inch ). There is also a "metric" didiot point: .4mm.
 
-Distortable font
+###### Distortable font
 
 See [Multi-Master](#Multi-Master)
 
-E
+## E
 
-em
+###### em
 
 A linear unit equal to the point size of the font. In a 10 point font,
 the em will be 10 points. An em-space is white-space that is as wide as
@@ -302,7 +302,7 @@ An em-square is a square one em to each side. In traditional typography
 (when each letter was cast in metal) the glyph had to be drawn within
 the em-square.
 
-em unit
+###### em unit
 
 In a scalable font the "em" is subdivided into units. In a postscript
 font there are usually 1000 units to the em. In a TrueType font there
@@ -310,11 +310,11 @@ might be 512, 1024 or 2048 units to the em. In an Ikarus font there are
 15,000 units. FontForge uses these units as the basis of its coordinate
 system.
 
-en
+###### en
 
 One half of an "[em](#em)"
 
-Encoding
+###### Encoding
 
 An encoding is a mapping from a set of bytes onto a [character
 set](#character-set). It is what determines which byte
@@ -329,14 +329,14 @@ associated with each character (as in arabic where most characters have
 at least 4 different glyphs) and the client program must pick the
 appropriate glyph for the character in the current context.
 
-Eth -- Edh
+###### Eth -- Edh
 
 The old germanic letter "ð" for the voiced (English) "th" sound (the
 sound in "this" -- most English speakers aren't even aware that "th" in
 English has two sounds associated with it, but it does, see also
 [Thorn](#Thorn))
 
-Even-Odd Fill rule
+###### Even-Odd Fill rule
 
 To determine if a pixel should be [filled using this
 rule](editexample2.html#even-odd), draw a line from the pixel to
@@ -346,20 +346,20 @@ even then do not fill the point. This method is used for fonts by
 postscript rasterizers after level 2.0 of PostScript. See Also [Non-Zero
 Winding Number Fill](#Non-Zero).
 
-Extended
+###### Extended
 
 An extended font is one where the space between the stems of the glyphs,
 and the distance between glyphs themselves has been increased.
 
-Extremum
+###### Extremum
 
 A point on a curve where the curve attains its maximum or minimum value.
 On a continuous curve this can happen at the endpoints (which is dull)
 or where dx/dt=0 or dy/dt=0.
 
-F
+## F
 
-Features (OpenType)
+###### Features (OpenType)
 
 When creating fonts for complex scripts (and even for less complex
 scripts) various transformations (like ligatures) must be applied to the
@@ -370,19 +370,19 @@ features are predefined by MicroSoft and Apple. FontForge allows you to
 tag each lookup with one or several features [when you create
 it](../../interface/lookups/#Add-Lookup) (or later).
 
-Feature File
+###### Feature File
 
 This is a text syntax designed by Adobe to describe OpenType features.
 It can be used to move feature and lookup information from one font to
 another.
 
-Feature/Settings (Apple)
+###### Feature/Settings (Apple)
 
 These are roughly equivalent to OpenType's
 [Features](#Features) above, they are [defined by
 Apple](http://developer.apple.com/fonts/Registry/index.html).
 
-Font
+###### Font
 
 A collection of [glyphs](#glyph), generally with at least one glyph
 associated with each character in the font's [character
@@ -396,34 +396,34 @@ In traditional typesetting a font was a collection of little blocks of
 metal each with a graven image of a letter on it. Traditionally there
 was a different font for each point-size.
 
-Font Family, or just Family
+###### Font Family, or just Family
 
 A collection of related [fonts](#font). Often including plain, italic
 and bold [styles](#style).
 
-FontForge
+###### FontForge
 
 This.
 
-[FreeType](http://freetype.sf.net/)
+###### [FreeType](http://freetype.sf.net/)
 
 A library for rasterizing fonts. Used extensively in FontForge to
 understand the behavior of truetype fonts and to do better rasterization
 than FontForge could unaided.
 
-Fractur
+###### Fractur
 
 The old black letter writing style used in Germany up until world war
 II.
  See also [gothic](#gothic).
 
-Fuþark (Futhark)
+###### Fuþark (Futhark)
 
 The old germanic runic script
 
-G
+## G
 
-Ghost Hint
+###### Ghost Hint
 
 Sometimes it is important to indicate that a horizontal edge is indeed
 horizontal. But the edge has no corresponding edge with which to make a
@@ -435,7 +435,7 @@ bottom use -21. Ghost hints should also lie within BlueZones.
 (The spec also mentions vertical ghost hints, but as there are no
 vertical bluezones it is not clear how these should be used).
 
-Glyph
+###### Glyph
 
 A glyph is an image, often associated with one or several
 [characters](#character). So the glyph used to draw "f" is associated
@@ -451,14 +451,14 @@ ligatures one glyph is associated with two or more characters.
 [Fonts](#font) are collections of glyphs with some form of mapping from
 character to glyph.
 
-Grid Fitting
+###### Grid Fitting
 
 Before TrueType glyphs are rasterized they go through a process called
 [grid fitting](/en-US/tutorials/overview/#TrueType) where a tiny program (associated
 with each glyph) is run which moves the points on the glyph's outlines
 around until they fit the pixel grid better.
 
-Gothic
+###### Gothic
 
 The German monks at the time of Gutenberg used a black-letter writing
 style, and he copied their handwriting in his typefaces for printing.
@@ -467,7 +467,7 @@ style, preferring the type designs left by the Romans. As a term of
 contempt they used the word gothic, the style of the goths who helped
 destroy the roman empire.
 
-Graphite tables
+###### Graphite tables
 
 [Graphite](http://scripts.sil.org/RenderingGraphite) is an extension to
 TrueType which embeds several tables into a font containing rules for
@@ -486,37 +486,37 @@ tables are supposed to be easier to build.
 SIL International provides a free [Graphite
 compiler](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&item_id=GraphiteCompilerDownload).
 
-Grotesque
+###### Grotesque
 
 See also [sans-serif](#serif).
 
-H
+## H
 
-Han characters
+###### Han characters
 
 The ideographic characters used in China, [Japan](#Kanji)
 and [Korea](#Hanja) (and, I believe, in various other asian
 countries as well (Vietnam?)), all based on the writing style that
 evolved in China.
 
-Hangul
+###### Hangul
 
 The Korean [syllabary](#syllabary). The only syllabary
 (that I'm aware of anway) based on an alphabet -- the letters of the
 alphabet never appear alone, but only as groups of two or three making
 up a syllable.
 
-Hanja
+###### Hanja
 
 The Korean name for the [Han](#Han) characters
 
-Hints
+###### Hints
 
 These are described in detail in [the main manual](/en-US/tutorials/overview/#Hints).
 They help the rasterizer to draw a [glyph](#glyph) well at small
 pointsizes.
 
-Hint Masks
+###### Hint Masks
 
 At any given point on a contour [hints](#hints) may not
 [conflict](#Conflicting-hints). However different points in
@@ -524,19 +524,19 @@ a glyph may need conflicting hints. So every now and then a contour will
 change which hints are active. Each list of active hints is called a
 hint mask.
 
-Hiragana
+###### Hiragana
 
 One of the two Japanese syllabaries. Both Hiragana and
 [Katakana](#Katakana) have the same sounds.
 
-I
+## I
 
-Ideographic character
+###### Ideographic character
 
 A single character which represents a concept without spelling it out.
 Generally used to mean Han (Chinese) characters.
 
-Italic
+###### Italic
 
 A slanted [style](#style) of a font, generally used for emphasis.
 
@@ -546,9 +546,9 @@ letterforms. Generally the lower-case a changes to *a*, the serifs on
 lower-case letters like i (*i*) change, and the font generally gains a
 freer look to it.
 
-J
+## J
 
-Jamo
+###### Jamo
 
 The letters of the Korean alphabet. These are almost never seen alone,
 generally appearing in groups of three as part of a
@@ -560,20 +560,20 @@ choseong glyph in the upper left of an em-square, a jungseong in the
 upper right, and optionally a jongseong in the lower portion of the
 square.
 
-K
+## K
 
-Kanji
+###### Kanji
 
 The Japanese name for the [Han](#Han) characters.
 
-Katakana
+###### Katakana
 
 One of the two (modern) Japanese syllabaries. Both
 [Hiragana](#Hiragana) and Katakana have the same sounds.
 
-Kerning
+###### Kerning
 
-![](img/MetalType.jpeg)When the default spacing between two glyphs is
+![](/MetalType.jpeg)When the default spacing between two glyphs is
 inappropriate the font may include extra information to indicate that
 when a given glyph (say "T") is followed by another glyph (say "o") then
 the advance width of the "T" should be adjusted by a certain amount to
@@ -584,7 +584,7 @@ of type to provide a snugger fit. In the image on the side, the "F" on
 the left has had some metal removed so that a lower case letter could
 snuggle closer to it.
 
-Kern pair
+###### Kern pair
 
 A pair of glyphs for which [kerning](#kerning) information has been
 specified.
@@ -596,33 +596,33 @@ large table which specifies kerning for every possible combination of
 classes. Generally this will be smaller than the equivalent set of
 kerning pairs because each class will usually contain several glyphs.
 
-Knuth, Donald
+###### Knuth, Donald
 
 A mathematician who got so fed up with bad typesetting back in the
 1970&80s that he created his own font design system and typographical
 layout program called, respectively, MetaFont and [TeX](#TeX).
 
-L
+## L
 
-![](img/sidebearings.png)Left side bearing
+###### ![](/sidebearings.png)Left side bearing
 
 The horizontal distance from a glyph's origin to its leftmost extent.
 This may be negative or positive.
 
-Lemur
+###### Lemur
 
-[![](img/lcani.gif)](http://bibliofile.duhs.duke.edu/gww/Berenty/Mammals/Lemur-catta/)A
+[![](/lcani.gif)](http://bibliofile.duhs.duke.edu/gww/Berenty/Mammals/Lemur-catta/)A
 monotypic genus of prosimian primates, now found only on Madagascar but
 formally (about 50 million years ago) members of this family were much
 more wide spread.
 
-Ligature
+###### Ligature
 
 A single glyph which is composed of two adjacent glyphs. A common
-example in the latin script is the "fi" ligature ![](img/fi.png) which has a
-nicer feel to it than the sequence![](img/f+i.png).
+example in the latin script is the "fi" ligature ![](/fi.png) which has a
+nicer feel to it than the sequence![](/f+i.png).
 
-LGC
+###### LGC
 
 Latin, Greek, Cyrillic. These three alphabets have evolved side by side
 over the last few thousand years. The letter forms are very similar (and
@@ -630,9 +630,9 @@ some letters are shared). Many concepts such as "lower case", "italic"
 are applicable to these three alphabets and not to any others. (OK,
 Armenian also has lower case letters).
 
-M
+## M
 
-Manyogana
+###### Manyogana
 
 An early Japanese script, ancestral to both [hiragana](#hiragana) and
 [katakana](#katakana).
@@ -640,17 +640,17 @@ An early Japanese script, ancestral to both [hiragana](#hiragana) and
 [kanji](#Kanji) for their phontic sounds, and over the
 years these kanji were simplified into hiragana and katahana.
 
-![](img/MetalType.jpeg)Metal Type
+###### ![](/MetalType.jpeg)Metal Type
 
 Once upon a time, printing presses smashed plates full of slugs of metal
 against paper.
 
-Monospace
+###### Monospace
 
 A font in which all glyphs have the same advance width. These are
 sometimes called typewriter fonts.
 
-Multi-layered fonts
+###### Multi-layered fonts
 
 (FontForge's own term) PostScript type3 fonts and SVG fonts allow for
 more drawing possibilities than normal fonts. Normal fonts may only be
@@ -670,7 +670,7 @@ See [Also](../../interface/multilayer/)
 -   Setting font type with [Element-\>Font
     Info-\>Layers](../../interface/fontinfo/#Layers)
 
-Multiple Master Font
+###### Multiple Master Font
 
 A multiple master font is a PostScript font schema which defines an
 infinite number of related fonts. Multiple master fonts can vary along
@@ -683,13 +683,13 @@ Adobe is no longer developing this format. Apple has a format which
 acheives the same effect but has not produced many examples. FontForge
 [supports both](../../interface/multiplemaster/).
 
-N
+## N
 
-Namelist
+###### Namelist
 
 A mapping from unicode code point to glyph name.
 
-Non-Zero Winding Number Fill rule
+###### Non-Zero Winding Number Fill rule
 
 To determine if a pixel should be [filled using this
 rule](editexample2.html#non-zero) draw a line from here to infinity (in
@@ -701,13 +701,13 @@ This method is used for rasterizing fonts by truetype and older (before
 version 2) postscript.
  See Also [Even-Odd Fill Rule](#Even-Odd)
 
-O
+## O
 
-Ogham
+###### Ogham
 
 The old Celtic inscription script.
 
-OpenType
+###### OpenType
 
 A type of font. It is an attempt to merge postscript and truetype fonts
 into one specification.
@@ -726,20 +726,20 @@ substitution, etc.
 And MS Windows uses it to mean a font with a 'DSIG' (Digital Signature)
 table.
 
-OpenType Tables
+###### OpenType Tables
 
 Each opentype font contains a collection of tables each of which
 contains a certain kind of information. See [here for the tables used by
 FontForge](../TrueOpenTables/).
 
-Oblique
+###### Oblique
 
 A slanted [style](#style) of a font, generally used for emphasis.
 
 Oblique differs from [Italic](#italic) in that the transformation from
 the plain to the slanted form involves just skewing the letterforms.
 
-Overshoot     ![](img/overshoot.png)
+###### Overshoot     ![](/overshoot.png)
 
 In order for the curved shape of the "O" to appear to be the same height
 as the flat top of the "I" it tends to "overshoot" the cap-height (or
@@ -757,9 +757,9 @@ case the overshoot will probably vary from face to face.
  See also [X-height](#x-height), [Cap-height](#cap-height),
 [Ascender](#ascender), [Descender](#descender), [Baseline](#baseline)
 
-P
+## P
 
-Panose
+###### Panose
 
 A system for describing fonts. See HP's [PANOSE classification metrics
 guide](http://www.panose.com/), AGFA's [PANOSE classification metrics
@@ -772,14 +772,14 @@ There is also an extension called [Panose
 FontForge only knows about the classification scheme for Latin fonts.
 Other schemes exist for other scripts.
 
-PfaEdit
+###### PfaEdit
 
 This was the early name for FontForge. The original conception was that
 it would only edit type1 ASCII fonts (hence the name), it quickly
 metamorphosed beyond that point, but it took me three years to rename
 it.
 
-Phantom points
+###### Phantom points
 
 In a truetype font there are a few points added to each glyph which are
 not specified by the contours that make up the glyph. These are called
@@ -793,7 +793,7 @@ versions](http://www.microsoft.com/typography/otspec/instgly.doc)also
 supply a phantom for the top sidebearing and a phantom for the vertical
 advance width.
 
-Pica
+###### Pica
 
 A unit of length defined (in the US at least) to be 35/83cm (or
 approximately 1/6th of an inch). This was used for measuring the length
@@ -807,12 +807,12 @@ Pica", "Great Primer", "English", "Pica", "Primer", "Small Pica",
 progressively smaller size of type). and [See Caslon's type specimen
 sheet on Wikipedia.](http://en.wikipedia.org/wiki/Alphabet)
 
-Pica point
+###### Pica point
 
 The Anglo-American [point](#point). With 72.27 points per inch ( 2.85pt
 /mm ).
 
-Point
+###### Point
 
 A point is a unit of measurement. There were three (at least) different
 definitions for "point" in common usage before the advent of computers.
@@ -845,13 +845,13 @@ point). In 1878 the Chicago Type Foundry first used a point system in
 the US. In 1886 the US point was standardized -- the pica was defined to
 be 35/83cm, and the pica point defined to be 1/12th of that.
 
-Point Size
+###### Point Size
 
 In traditional typography a 10pt font was one where the block of metal
 for each glyph was 10 points high. The point size of a font is the
 unleaded baseline to baseline distance.
 
-Point of inflection
+###### Point of inflection
 
 A point on a curve where it changes from being concave downwards to
 concave upwards (or vice versa). Or in mathematical terms (for
@@ -859,7 +859,7 @@ continuous curves) where d^2^ y/dx^2^=0 or infinity.
 
 Cubic splines may contain inflection points, quadratic splines may not.
 
-PostScript
+###### PostScript
 
 PostScript is a page-layout language used by many printers. The language
 contains the specifications of several different font formats. The main
@@ -891,42 +891,42 @@ TrueType](/en-US/tutorials/overview/#PT).
     from CID (a number) to glyph. An set of external CMAP files are used
     to provide appropriate encodings as needed.
 
-Q
+## Q
 
-R
+## R
 
-Reference
+###### Reference
 
 A [reference](/en-US/tutorials/overview/#References) is a way of storing the outlines
 of one glyph in another (for example in accented glyphs). Sometimes
 called a "componant".
 
-![](img/sidebearings.png)Right side bearing
+###### ![](/sidebearings.png)Right side bearing
 
 The horizontal distance from a glyph's rightmost extent to the glyph's
 advance width. This may be positive or negative.
 
-S
+## S
 
-Sans Serif
+###### Sans Serif
 
 See the section on [serifs](#serif).
 
-Script
+###### Script
 
 A [script](/en-US/tutorials/overview/#Scripts) is a character set and associated
 rules for putting characters together. Latin, arabic, katakana and hanja
 are all scripts.
 
-Serif
+###### Serif
 
 latin
  greek
  cyrillic
 
-![](img/serif-def.png)
+![](/serif-def.png)
 
-![](img/sans-serif-def.png)
+![](/sans-serif-def.png)
 
 a serif
 
@@ -934,9 +934,9 @@ sans serif
 
 hebrew
 
-![](img/BethSerif.png)
+![](/BethSerif.png)
 
-![](img/BethSans.png)
+![](/BethSans.png)
 
 bet serif
 
@@ -963,7 +963,7 @@ don't know their history. Hebrew serifs only occur at the top of a glyph
 I would welcome examples from other scripts of serifed and sans-serifed
 glyphs.
 
-SFD
+###### SFD
 
 SplineFont DataBase. These are FontForge's own personal font
 representation. The files are ASCII and vaguely readable, the format is
@@ -982,7 +982,7 @@ Other people use sfd too. (Unfortunately)
     older versions of TeX) needed.
 -   [Others...](http://filext.com/file-extension/SFD)
 
-SFNT
+###### SFNT
 
 The name for the generic font format which contains TrueType, OpenType,
 Apple's bitmap only, X11's bitmap only, obsolete 'typ1' fonts and
@@ -991,7 +991,7 @@ font tables should be laid out within a file. Each of the above formats
 follow this general idea but include more specific requirements (such as
 what tables are needed, and the format of each table).
 
-SIP
+###### SIP
 
 Supplementary Ideographic Plane (0x20000-0x2FFFF) of unicode. Used for
 rare Han characters (most are no longer in common use) See Also
@@ -1000,7 +1000,7 @@ rare Han characters (most are no longer in common use) See Also
 -   [SMP](#SMP) -- Supplementary Multilingual Plane (0x10000-0x1FFFF)
 -   [SSP](#SSP) -- Supplementary Special-purpose Plane (0xE0000-0xEFFFF)
 
-SMP
+###### SMP
 
 Supplementary Multilingual Plane (0x10000-0x1FFFF) of unicode. Used for
 ancient and artificial alphabets and syllabaries -- like Linear B,
@@ -1010,14 +1010,14 @@ Gothic, and Shavian. See Also
 -   [SIP](#SIP) -- Supplementary Ideographic Plane (0x20000-0x2FFFF)
 -   [SSP](#SSP) -- Supplementary Special-purpose Plane (0xE0000-0xEFFFF)
 
-Spline
+###### Spline
 
 A curved line segment. See the [section in the manual on
 splines](/en-US/tutorials/overview/#intro). The splines used in FontForge are all
 second or third order [Bézier](#bezier) splines (quadratic or cubic),
 and [Raph Levien's](http://www.levien.com/) clothoid splines.
 
-SSP
+###### SSP
 
 Supplementary Special-purpose Plane (0xE0000-0xEFFFF) of unicode. Not
 used for much of anything. See Also
@@ -1026,7 +1026,7 @@ used for much of anything. See Also
 -   [SMP](#SMP) -- Supplementary Multilingual Plane (0x10000-0x1FFFF)
 -   [SIP](#SIP) -- Supplementary Ideographic Plane (0x20000-0x2FFFF)
 
-State machine
+###### State machine
 
 A state machine is like a very simple little program, they are used on
 the mac for performing contextual substitutions and kerning. The [state
@@ -1044,12 +1044,12 @@ kerning).
 
 [Example](editexample6-5.html#Apple)
 
-Strike
+###### Strike
 
 A particular instance of a font. Most commonly a bitmap strike is a
 particular pixelsize of a font.
 
-Style
+###### Style
 
 There are various conventional variants of a font. In probably any
 writing system the thickness of the stems of the glyphs may be varied,
@@ -1065,12 +1065,12 @@ expanded out into an [extended style](#extended).
 Various other styles are in occasional use: underline, overstrike,
 outline, shadow.
 
-SVG
+###### SVG
 
 Scalable Vector Graphics. An XML format used for drawing vector images.
 It includes a [font format](../../interface/generate/#svg).
 
-Syllabary
+###### Syllabary
 
 A syllabary is a phonetic writing system like an alphabet. Unlike an
 alphabet the sound-unit which is written is a syllable rather than a
@@ -1083,20 +1083,20 @@ See Also: [abjad](#abjad), [abugida](#abugida), [alphabet](#alphabet)
 and the relevant [Wikipedia
 article](http://en.wikipedia.org/wiki/S%20yllabary).
 
-T
+## T
 
-TeX
+###### TeX
 
 [A typesetting package](http://www.ctan.org/).
 
-Thorn
+###### Thorn
 
 The germanic letter "þ" used for the unvoiced (English) "th" sound (as
 in the word "thorn"), I believe this is approximately the same sound
 value as Greek Theta. Currently a corrupt version of this glyph survives
 as "y^e^" for "the". See also [Eth](#Eth).
 
-True Type
+###### True Type
 
 A type of font invented by Apple and shared with MicroSoft. It specifies
 outlines with second degree (quadratic) [Bézier](#bezier) curves,
@@ -1109,7 +1109,7 @@ to include for advanced typographic features needed for non-latin
 scripts (or for complex latin scripts). See [Apple Advanced
 Typography](#AAT)and [OpenType](#opentype).
 
-TrueType Tables
+###### TrueType Tables
 
 Each truetype font contains a collection of tables each of which
 contains a certain kind of information. See [here for the tables used by
@@ -1138,13 +1138,13 @@ In the days of metal type this was the height of the piece of metal --
 the distance from the printing surface to the platform on which it
 rested.
 
-Typewriter
+###### Typewriter
 
 See [Monospace.](#monospace)
 
-U
+## U
 
-Unicode
+###### Unicode
 
 A character set/encoding which tries to contain all the characters
 currently used in the world, and many historical ones as well. See the
@@ -1157,11 +1157,11 @@ currently used in the world, and many historical ones as well. See the
     (0xE0000-0xEFFFF)
      [More info.](../bibliography/#Unicode)
 
-Undershoot
+###### Undershoot
 
 See the explanation at [Overshoot](#overshoot).
 
-UniqueID
+###### UniqueID
 
 This is a field in a PostScript font, it was formerly used as a
 mechanism for identifying fonts uniquely, then Adobe decided it was not
@@ -1169,23 +1169,23 @@ sufficient and created the XUID (extended Unique ID) field. Adobe has
 now decided that both are unneeded.
  There is a very similar field in the TrueType 'name' table.
 
-UseMyMetrics
+###### UseMyMetrics
 
 This is a truetype concept which forces the width of an composite glyph
 (for example an accented letter) to be the same as the width of one of
 its components (for example the base letter being accented).
 
-V
+## V
 
-Vertical Advance Width
+###### Vertical Advance Width
 
 CJK text is often written vertically (and sometimes horizontally), so
 each CJK glyph has a vertical advance as well as a [horizontal
 advance](#advance-width).
 
-W
+## W
 
-Weight
+###### Weight
 
 The weight of a font is how thick (dark) the stems of the glyphs are.
 Traditionally weight is named, but recently numbers have been applied to
@@ -1201,20 +1201,20 @@ weights.
   Bold          700
   Heavy         800
   Black         900
-  Nord          
-  Ultra         
+  Nord
+  Ultra
   ------------- -----
 
-Width
+###### Width
 
 This is a slightly ambiguous term and is sometimes used to mean the
 [advance width](#advance-width)(the distance from the start of this
 glyph to the start of the next glyph), and sometimes used to mean the
 distance from the left side bearing to the right side bearing.
 
-X
+## X
 
-X-height![](img/x-height.png)
+###### X-height![](/x-height.png)
 
 The height of a lower case letter above the base line (with a flat top
 like "x" or "z" or "v" as opposed to one with a curved top like "o" or
@@ -1222,16 +1222,16 @@ one with an ascender like "l") .
  See also [Cap-height](#cap-height), [Ascender](#ascender),
 [Descender](#descender), [Overshoot](#overshoot), [Baseline](#baseline)
 
-XUID
+###### XUID
 
 Extended Unique ID in a PostScript font. Now somewhat obsolete. See the
 explanation at [Unique ID](#UniqueID).
 
-Y
+## Y
 
-Z
+## Z
 
-Zapf, Hermann
+###### Zapf, Hermann
 
 Outstanding modern font designer.
 
