@@ -52,10 +52,13 @@ footer {
   min-height: 100px;
   margin: 100px 0 0 0;
   padding: 0px 20px 40px 20px;
-  background-color: #F2F2F3;
+  background-color: #313335;
 }
 footer a {
   font-weight: 400;
+}
+footer a:hover {
+  color: white
 }
 
 footer .container {
@@ -72,8 +75,8 @@ footer ul li {
   margin: 0;
 }
 
-footer h4, footer h4 a {
-  color: #d87540;
+footer h4, footer h4 a, footer p {
+  color: #b8bbbc;
   font-weight: 400;
 }
 
@@ -134,6 +137,21 @@ body {
 .hero-unit img {
   width: 100%;
   padding-top: 72px;
+}
+
+/* Social */ 
+.social {
+  text-align: center;
+}
+.social a {
+  background: none;  
+}
+.social .nobg:hover {
+  background: none;
+}
+.social svg {
+  max-width: 80px;
+  margin-top: 40px;
 }
 
 
@@ -271,8 +289,7 @@ body {
   padding: 15px 0;
   position: relative;
   z-index: 20;
-  background-color: #A7CFA3;
-  color: #313435;
+  background-color: #d3ebfd;
 }
 
 .download-bar ul {
@@ -295,10 +312,6 @@ body {
   margin-left: 20px;
   opacity: 0.9;
   margin-bottom: 5px;  
-}
-
-.download-bar .btn-primary {
-  background-color: #43820D;
 }
 
 .download-bar .btn-large:hover {
@@ -810,7 +823,7 @@ figcaption {
 }
 
 .home .welcome {
-  margin-top: 40px;
+  margin-top: 80px;
 }
 
 .home .screenshots {
