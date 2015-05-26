@@ -158,7 +158,7 @@ body {
 /* Sub-nav bar */
 
 .subnav {
-  background: #84BF7D;
+  background: #529EE0;
   padding: 25px 0 0px 0;
   position: relative;
 }
@@ -179,29 +179,11 @@ body {
     margin-left: 0;
     margin-right: 100px;
   }
-
-  .subnav:after {
-    content: " ";
-    display: block;
-    position: absolute;
-    top:0px;
-    left: 0;
-    right: 0;
-    bottom: 0px; /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.2)), color-stop(100%,rgba(0,0,0,0.2))); /*		Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, rgba(255,255,255,0.2) 10%,rgba(0,0,0,0.2) 100%); /* Chrome10+,Safari5.1+ */ /* Opera 11.10+ */ /* IE10+ */
-    background: -webkit-linear-gradient(top, rgba(255,255,255,0.2) 10%, rgba(0,0,0,0.2) 100%);
-    background: linear-gradient(to bottom, rgba(255,255,255,0.2) 10%,rgba(0,0,0,0.2) 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33ffffff', endColorstr='#33000000',GradientType=0 ); /* IE6-9 */
-    opacity: 0.6;
-    z-index: 1;
-   }
 }
 
 /* Breadcrumbs */
 
 .breadcrumbs {
-  background: rgba(0,0,0,0.1);
   margin: 10px 0 0 0;
   font-weight: normal;
   text-transform: capitalize;
@@ -310,12 +292,13 @@ body {
   padding-left: 20px;
   padding-right: 20px;
   margin-left: 20px;
-  opacity: 0.9;
-  margin-bottom: 5px;  
+  margin-bottom: 5px;
+  background-color: #50990f;
 }
 
 .download-bar .btn-large:hover {
-  opacity: 1;
+  background-color: #43820D;
+  color: white;
 }
 
 .download-bar .statistic {
