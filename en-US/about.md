@@ -1,5 +1,5 @@
 ---
-published: true
+published: false
 layout: default
 title: About FontForge
 ---
