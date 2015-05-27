@@ -3980,6 +3980,7 @@ input[type="submit"].btn.btn-mini {
 .navbar-inverse a.brand {
   color: #232C31;
   background: url(../img/logo-transparent.png) no-repeat center left;
+  background-size: 48px;
   padding-left: 60px;
   padding-top: 26px;
   font-size: 30px;
