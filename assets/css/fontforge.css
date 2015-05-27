@@ -52,7 +52,7 @@ footer {
   min-height: 100px;
   margin: 100px 0 0 0;
   padding: 0px 20px 40px 20px;
-  background-color: #313335;
+  background-color: #414345;
 }
 footer a {
   font-weight: 400;
@@ -156,6 +156,7 @@ body {
   max-width: 60px;
   margin: 60px auto 0;
   display: block;
+  fill: #3D4143;
 }
 
 
