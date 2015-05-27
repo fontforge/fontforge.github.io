@@ -143,15 +143,19 @@ body {
 .social {
   text-align: center;
 }
-.social a {
-  background: none;  
-}
-.social .nobg:hover {
+.content .social a {
   background: none;
+  padding: 0;
+  margin: 0;
+}
+.content .social a:hover {
+  background: #ff6a1a;
+  color: white;
 }
 .social svg {
-  max-width: 80px;
-  margin-top: 40px;
+  max-width: 60px;
+  margin: 60px auto 0;
+  display: block;
 }
 
 
@@ -310,6 +314,10 @@ body {
   margin: 20px 0;
   white-space: nowrap;
   text-align: right;
+}
+
+.download-bar .statistic.hide.downloads {
+  margin-left: 40px;
 }
 
 .download-bar .statistic strong {

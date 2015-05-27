@@ -185,12 +185,15 @@ a {
   text-decoration: none;
   background: -webkit-linear-gradient(top, transparent 80%, #ff6a1a 80.1%, #ff6a1a 99.9%, transparent 100%);
   background: linear-gradient(to bottom, transparent 80%, #ff6a1a 80.1%, #ff6a1a 99.9%, transparent 100%);
-  -webkit-transition: background .2s ease;
-  transition: background .2s ease;
+  -webkit-transition: background .4s ease;
+  transition: background .4s ease;
+  padding: 0 2px;
+  margin: 0 -2px;
 }
 
 .content a:hover {
-  background-color: #ff6a1a;
+  background: -webkit-linear-gradient(top, transparent 0%, #ff6a1a 0.1%, #ff6a1a 99.9%, transparent 100%);
+  background: linear-gradient(to bottom, transparent 0%, #ff6a1a 0.1%, #ff6a1a 99.9%, transparent 100%);
   color: white;
 }
 
@@ -3979,7 +3982,7 @@ input[type="submit"].btn.btn-mini {
   background: url(../img/logo-transparent.png) no-repeat center left;
   padding-left: 60px;
   padding-top: 26px;
-  font-size: 1.5em;
+  font-size: 30px;
 }
 
 .navbar .brand:hover {
@@ -6808,6 +6811,7 @@ x@media (min-width: 1200px) {
   }
   .navbar .nav > li > a {
     position: relative;
+    font-size: 18px;
     padding: 28px 0px 22px 30px;
     -webkit-transition: color 0.2s ease-out;
     /* Safari 3.2+, Chrome */
