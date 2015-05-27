@@ -158,6 +158,9 @@ body {
   display: block;
   fill: #3D4143;
 }
+.social a:hover svg {
+  fill: #ff6a1a;
+}
 
 
 /* Sub-nav bar */
