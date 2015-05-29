@@ -1,66 +1,20 @@
 	<!-- SUBNAV  -->
 	<div class="subnav noise">
-	
-		<div class="container">
-		
-			<!-- PILL NAV -->
-			{% assign crumbs = page.url | split: '/' %}
-			{% if crumbs[2] == 'downloads' %}
-			<ul class="nav nav-pills">
-				<li><a href="/en-US/downloads/windows/">Windows</a></li>
-				<li><a href="/en-US/downloads/mac/">Mac</a></li>
-				<li><a href="/en-US/downloads/gnulinux/">GNU+Linux</a></li>
-				<li><a href="/en-US/downloads/source/">Source Code</a></li>
-
-			</ul>
-			{% elsif crumbs[2] == 'tutorials' %}
-			<ul class="nav nav-pills">
-				<li><a href="/en-US/tutorials/broken/">Broken</a></li>
-				<li><a href="/en-US/tutorials/broken/">Broken</a></li>
-				<li><a href="/en-US/tutorials/broken/">Broken</a></li>
-				<li><a href="/en-US/tutorials/broken/">Broken</a></li>
-				<li><a href="/en-US/tutorials/broken/">Broken</a></li>
-				<li><a href="/en-US/tutorials/broken/">Broken</a></li>
-			</ul>
-			{% elsif crumbs[2] == 'documentation' %}
-			<ul class="nav nav-pills">
-				<li><a href="/en-US/documentation/customizing/">Customize</a></li>
-				<li><a href="/en-US/documentation/developers/">Develop</a></li>
-				<li><a href="/en-US/documentation/interface/">Interface</a></li>
-				<li><a href="/en-US/documentation/reference/">Reference</a></li>
-				<li><a href="/en-US/documentation/scripting/">Scripting</a></li>
-				<li><a href="/en-US/documentation/utilities/">Utilities</a></li>
-			</ul>
-			{% else %}
-			<ul class="nav nav-pills">
-				<li><a href="/en-US/about/faq/">FAQ</a></li>
-				<li><a href="/en-US/about/screenshots/">Screenshots</a></li>
-				<li><a href="/en-US/about/donate/">Donate</a></li>
-				<li><a href="/en-US/about/helpout/">Volunteer</a></li>
-				<li><a href="/en-US/about/project/">The project</a></li>
-				<li><a href="/en-US/about/site/">This site</a></li>
-			</ul>
-			{% endif %}
-
-		
-		</div>
-	
-		
 		<div class="breadcrumbs">
 			<div class="container">
 
 				<form class="form-search doc-search-form" method="get" action="//www.google.com/search">
-				     <input type="text" class="input-medium search-query" name="q" placeholder="Search this site...">
-				     <button type="submit" class="btn">Go</button>
+				     <input type="text" class="input-medium search-query" name="q">
+				     <button type="submit" class="btn">Search</button>
 				     <input name="sitesearch" value="fontforge.github.com" type="hidden">
 				</form>
 
 				<ul class="breadcrumb">
-				<!-- TODO redo this in jQuery so it links. I've installed https://github.com/tombonner/jurlp in the site, 
+				<!-- TODO redo this in jQuery so it links. I've installed https://github.com/tombonner/jurlp in the site,
 				$(document).jurlp("path"); //  [["en-US", "about", "index.html"]]
 				$(document).jurlp("path").toString(); // /en-US/about/index.html
 				-->
-					<li><a href="/"><i class="icon-home"></i>Home</a> </li>
+					<li><a href="/">Home</a> </li>
 					{% assign crumbs = page.url | split: '/' %}
 					{% for crumb in crumbs limit:1 offset:1 %}
 						{% capture previous %}/{{ crumb }}/{% endcapture %}
@@ -72,11 +26,11 @@
 						{% endunless %}
 					{% endfor %}
 				</ul>
-				
+
 				<div id="breadcrumbs" class="breadcrumb"></div>
-				
+
 			</div>
-		</div>	
+		</div>
 
 
 	</div>
