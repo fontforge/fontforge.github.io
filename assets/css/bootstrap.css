@@ -187,17 +187,18 @@ a {
 .content a:not(.btn) {
   color: inherit;
   text-decoration: none;
-  background: -webkit-linear-gradient(top, transparent 80%, #ff6a1a 80.1%, #ff6a1a 99.9%, transparent 100%);
-  background: linear-gradient(to bottom, transparent 80%, #ff6a1a 80.1%, #ff6a1a 99.9%, transparent 100%);
+  background: -webkit-linear-gradient(top, transparent 80%, #ff772f 80.1%, #ff772f 99.9%, transparent 100%);
+  background: linear-gradient(to bottom, transparent 80%, #ff772f 80.1%, #ff772f 99.9%, transparent 100%);
   -webkit-transition: background .4s ease;
   transition: background .4s ease;
   padding: 0 2px;
   margin: 0 -2px;
+  display: inline-block;
 }
 
 .content a:hover {
-  background: -webkit-linear-gradient(top, transparent 0%, #ff6a1a 0.1%, #ff6a1a 99.9%, transparent 100%);
-  background: linear-gradient(to bottom, transparent 0%, #ff6a1a 0.1%, #ff6a1a 99.9%, transparent 100%);
+  background: -webkit-linear-gradient(top, transparent 0%, #ff772f 0.1%, #ff772f 99.9%, transparent 100%);
+  background: linear-gradient(to bottom, transparent 0%, #ff772f 0.1%, #ff772f 99.9%, transparent 100%);
   color: white;
 }
 
@@ -2455,7 +2456,7 @@ input[type="button"].btn-block {
 
 .btn-primary {
   color: #ffffff;
-  background-color: #ff6a1a;
+  background-color: #ff6f22;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.4);
 }
 

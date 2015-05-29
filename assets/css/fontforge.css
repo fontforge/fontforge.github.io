@@ -156,6 +156,7 @@ footer .copyright a {
   background: none;
   padding: 0;
   margin: 0;
+  display: inline;
 }
 .content .social a:hover {
   background: #ff6a1a;
