@@ -52,6 +52,12 @@ html.js.windows .ff-download .windows {
 .navbar-inverse .nav > li > a:hover {
   color: #000;
 }
+.navbar-inverse .btn-navbar {
+  background-color: none !important;
+}
+.navbar-inverse .btn-navbar:hover {
+  color: #000;
+}
 
 /* Page heading */
 .page-heading {	margin-top: 36px;	margin-bottom: 24px;	}
@@ -67,7 +73,7 @@ html.js.windows .ff-download .windows {
 footer {
   min-height: 100px;
   margin: 0;
-  padding: 0px 20px 40px 20px;
+  padding: 0px 0px 40px;
 }
 footer a {
   font-weight: 400;
@@ -117,6 +123,10 @@ footer .copyright a {
 
   .big-text.span10{
     width: 100%;
+  }
+  
+  .container {
+    padding: 0 4%;
   }
 }
 
@@ -300,7 +310,6 @@ footer .copyright a {
   font-size: 15px;
   padding-left: 20px;
   padding-right: 20px;
-  margin-left: 20px;
   margin-bottom: 5px;
 }
 
