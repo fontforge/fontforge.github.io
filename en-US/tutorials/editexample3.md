@@ -48,13 +48,13 @@ discrepancies.
 Let us start with the letter "l" and go through the familiar process of
 importing a bitmap and defining its outline.
 
-![](img/l1.png)
+![](/assets/img/old/l1.png)
 
-![](img/l2.png)
+![](/assets/img/old/l2.png)
 
-![](img/l3.png)
+![](/assets/img/old/l3.png)
 
-![](img/l4.png)
+![](/assets/img/old/l4.png)
 
 The imported image
 
@@ -67,13 +67,13 @@ select the outline, invoke `Edit -> Copy` then `Edit     -> Paste`, and
 finally `Element -> Transform` `-> Transform` and select `Flip` (from
 the pull down list) and `check Horizontal`
 
-![](img/l5.png)
+![](/assets/img/old/l5.png)
 
-![](img/l6.png)
+![](/assets/img/old/l6.png)
 
-![](img/l7.png)
+![](/assets/img/old/l7.png)
 
-![](img/l8.png)
+![](/assets/img/old/l8.png)
 
 Drag the flipped serif over to the left until it snuggles up against the
 left edge of the glyph
@@ -83,9 +83,9 @@ top of the end point of the other half
 
 Finish off the glyph
 
-![](img/l9.png)
+![](/assets/img/old/l9.png)
 
-![](img/l10.png)
+![](/assets/img/old/l10.png)
 
 But let's do two more things. First let's measure the stem width, and
 second let's mark the height of the "l"
@@ -109,13 +109,13 @@ done either in the font view (by selecting the "i" square and pressing
 `Edit->Paste`) or the outline view (by opening the "i" glyph and
 pressing `Edit->Paste`).
 
-![](img/i1.png)
+![](/assets/img/old/i1.png)
 
-![](img/i2.png)
+![](/assets/img/old/i2.png)
 
-![](img/i3.png)
+![](/assets/img/old/i3.png)
 
-![](img/i4.png)
+![](/assets/img/old/i4.png)
 
 Import the "i" image, and copy the "l" glyph.
 
@@ -125,7 +125,7 @@ drag it down to the right height
 
 go to the guide layer and add a line at the x-height
 
-![](img/o5.png)Let's look briefly back at the "o" we built before. You may
+![](/assets/img/old/o5.png)Let's look briefly back at the "o" we built before. You may
 notice that the "o" reaches a little above the guide line we put in to
 mark the x-height (and a little below the baseline). This is called
 overshoot and is an attempt to remedy an optical illusion. A curve
@@ -135,11 +135,11 @@ it to appear on the x-height.
 Let's look at "k". Again we will copy an "l" into it and import an
 appropriate image.
 
-![](img/k1.png)
+![](/assets/img/old/k1.png)
 
-![](img/k2.png)
+![](/assets/img/old/k2.png)
 
-![](img/k3.png)
+![](/assets/img/old/k3.png)
 
 Import the "k" image and copy the "l" glyph. Note that the x-height line
 matches the "k" (as we would hope). Also note that the width of the "l"
@@ -152,11 +152,11 @@ Remove the splines between the cut points. An easy way to do this is to
 grab the spline itself, (which selects its end points) and then do
 `Edit -> Clear`.
 
-![](img/k4.png)
+![](/assets/img/old/k4.png)
 
-![](img/k5.png)
+![](/assets/img/old/k5.png)
 
-![](img/k6.png)
+![](/assets/img/old/k6.png)
 
 Select the end points and convert them into corner points with
 `Point     -> Corner`.

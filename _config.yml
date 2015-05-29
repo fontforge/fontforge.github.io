@@ -1,4 +1,4 @@
 markdown: kramdown
-pygments: false
+highlighter: null
 permalink: pretty
 url: http://fontforge.github.io

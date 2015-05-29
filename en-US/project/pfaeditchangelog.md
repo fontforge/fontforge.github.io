@@ -2597,7 +2597,7 @@ title: Changes to pfaedit (predecessor to fontforge)
 
 -   13-July-2002
     -   I think I've finally worked out Apple's scaled offset
-        [composite](Composites/index.html) glyphs (and they do not
+        [composite](/assets/old/Composites/index.html) glyphs (and they do not
         behave as Apple documents)
     -   FontForge was not setting the maxCompositePoints and
         maxCompositeContours fields of the maxp table of truetype fonts.

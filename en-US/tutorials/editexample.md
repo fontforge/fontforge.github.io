@@ -59,7 +59,7 @@ Font creation
 First create a new font with the `New` command in the `File` menu (or by
 using the -new argument at startup).
 
-![](img/newfont.png)
+![](/assets/img/old/newfont.png)
 
 Give the font a name with the `Font   Info` command from the `Element`
 menu. You use this same command to set the copyright message and change
@@ -70,7 +70,7 @@ Ikarus fonts). (Also if you are planning on making a truetype font you
 might want to check the Quadratic Splines checkbox to use the native
 truetype format. Editing is a little more difficult in this mode though)
 
-![](img/fontinfo.png)
+![](/assets/img/old/fontinfo.png)
 
 You may also wish to use Encoding-\>Reencode to change what characters
 are available in your font. FontForge generally creates new fonts with
@@ -85,7 +85,7 @@ Once you have done that you are ready to start editing glyphs. Double
 click on the entry for "C" in the font view above. You should now have
 an empty Outline Glyph window:
 
-![](img/C1.png)
+![](/assets/img/old/C1.png)
 
 The outline glyph window contains two palettes snuggled up on the left
 side of the window. The top palette contains a set of editing tools, and
@@ -113,7 +113,7 @@ Let us assume you already have a bitmap image of the glyph you are
 working on. Select the Import command from the File menu and import that
 image. It will be scaled so that it is as high as the em-square.
 
-![](img/C2.png)
+![](/assets/img/old/C2.png)
 
 Select the background layer as editable from the layers palette, move
 the mouse pointer to one of the edges of the image, hold down the shift
@@ -121,7 +121,7 @@ key, depress and drag the corner until the image is a reasonable size,
 then move the pointer onto the dark part of the image, depress the mouse
 and drag until the image is properly positioned.
 
-![](img/C3.png)
+![](/assets/img/old/C3.png)
 
 If you have downloaded the [autotrace
 program](http://sourceforge.net/projects/autotrace/) you can invoke
@@ -135,7 +135,7 @@ inflection (A change of inflection occurs in a curve like "S" where the
 curve changes from being open to the left to being open on the right. If
 you follow these rules hinting will work better.
 
-![](img/C4.png)
+![](/assets/img/old/C4.png)
 
 It is best to enter a curve in a clockwise fashion, so the next point
 should be added up at the top of the image on the flat section. Because
@@ -145,7 +145,7 @@ palette). A tangent point makes a nice transition from curves to
 straight lines because the curve leaves the point with the same slope
 the line had when it entered.
 
-![](img/C5.png)
+![](/assets/img/old/C5.png)
 
 At the moment this "curve" doesn't match the image at all, don't worry
 about that we'll fix it later, and anyway it will change on its own as
@@ -155,30 +155,30 @@ image changes direction abruptly. Neither a curve nor a tangent point is
 appropriate here, instead we must use a corner point (one of the little
 squares on the tools palette).
 
-![](img/C6.png)
+![](/assets/img/old/C6.png)
 
 As you see the old curve now follows the image a bit more closely. We
 continue adding points until we are ready to close the path.
 
-![](img/C7.png)
+![](/assets/img/old/C7.png)
 
 Then we close the path just by adding a new point on top of the old
 start point
 
-![](img/C8.png)
+![](/assets/img/old/C8.png)
 
 Now we must make the curve track the image more closely, to do this we
 must adjust the control points (the blue "x"es). To make all the control
 points visible select the pointer tool and double-click on the curve and
 then move the control points around until the curve looks right.
 
-![](img/C9.png)
+![](/assets/img/old/C9.png)
 
 Finally we set width. Again with the pointer tool, move the mouse to the
 width line on the right edge of the screen, depress and drag the line
 back to a reasonable location.
 
-![](img/C10.png)
+![](/assets/img/old/C10.png)
 
 And we are done with this glyph.
 

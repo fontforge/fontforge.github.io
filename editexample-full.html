@@ -5,7 +5,7 @@
   <!-- AP: Last modified: 24-Mar-2007 -->
   <TITLE>Steps to creating a font...</TITLE>
   <LINK REL="icon" href="ffanvil16.png">
-  <LINK REL="stylesheet" TYPE="text/css" HREF="FontForge.css">
+  <LINK REL="stylesheet" TYPE="text/css" HREF="/assets/css/old/FontForge.css">
 </HEAD>
 >
 <div style="margin:0; height: 4	em; padding: 0.5em; background: red; color:yellow; text-align:center; font-size:1em; font-family: sans-serif;">
@@ -15,11 +15,11 @@
 <DIV id="in">
   <H1 ALIGN=Center>
     Tutorial<BR>
-    <A HREF="ja/editexample.html"><IMG SRC="flags/Nisshoki-Japan.png" WIDTH="39"
+    <A HREF="ja/editexample.html"><IMG SRC="/assets/img/old/flags/Nisshoki-Japan.png" WIDTH="39"
 	HEIGHT="26"></A>
-    <A HREF="http://edt1023.sayya.org/fontforge/editexample.html"><IMG SRC="flags/taiwan.png"
+    <A HREF="http://edt1023.sayya.org/fontforge/editexample.html"><IMG SRC="/assets/img/old/flags/taiwan.png"
 	WIDTH="39" HEIGHT="26"></A>
-    <A HREF="de/editexample.html"><IMG SRC="flags/GermanFlag.png" WIDTH="39"
+    <A HREF="de/editexample.html"><IMG SRC="/assets/img/old/flags/GermanFlag.png" WIDTH="39"
 	HEIGHT="26"></A>
   </H1>
   <P>
@@ -98,7 +98,7 @@
   First create a new font with the <CODE>New</CODE> command in the
   <CODE>File</CODE> menu (or by using the <KBD>-new</KBD> argument at startup).
   <P>
-  <IMG SRC="newfont.png" WIDTH="419" HEIGHT="189">
+  <IMG SRC="/assets/img/old/newfont.png" WIDTH="419" HEIGHT="189">
   <P>
   Give the font a name with the <CODE><A HREF="fontinfo.html">Font
   Info</A></CODE> command from the <CODE>Element</CODE> menu. You use this
@@ -110,7 +110,7 @@
   Splines checkbox to use the native truetype format. Editing is a little more
   difficult in this mode though)</SMALL>
   <P>
-  <IMG SRC="fontinfo.png" WIDTH="602" HEIGHT="534">
+  <IMG SRC="/assets/img/old/fontinfo.png" WIDTH="602" HEIGHT="534">
   <P>
   You may also wish to use Encoding-&gt;Reencode to change what characters
   are available in your font. FontForge generally creates new fonts with an
@@ -124,7 +124,7 @@
   on the entry for "C" in the font view above. You should now have an empty
   Outline Glyph window:
   <P>
-  <IMG SRC="C1.png" WIDTH="272" HEIGHT="283">
+  <IMG SRC="/assets/img/old/C1.png" WIDTH="272" HEIGHT="283">
   <P>
   The outline glyph window contains two palettes snuggled up on the left side
   of the window. The top palette contains a set of editing tools, and the bottom
@@ -144,7 +144,7 @@
   Select the Import command from the File menu and import an image of the glyph
   you are creating. It will be scaled so that it is as high as the em-square.
   <P>
-  <IMG SRC="C2.png" WIDTH="272" HEIGHT="283">
+  <IMG SRC="/assets/img/old/C2.png" WIDTH="272" HEIGHT="283">
   <P>
   Select the background layer as editable from the layers palette, move the
   mouse pointer to one of the edges of the image, hold down the shift key,
@@ -152,7 +152,7 @@
   the pointer onto the dark part of the image, depress the mouse and drag until
   the image is properly positioned.
   <P>
-  <IMG SRC="C3.png" WIDTH="272" HEIGHT="283">
+  <IMG SRC="/assets/img/old/C3.png" WIDTH="272" HEIGHT="283">
   <P>
   If you have downloaded the
   <A HREF="http://sourceforge.net/projects/autotrace/">autotrace program</A>
@@ -166,7 +166,7 @@
   changes from being open to the left to being open on the right. If you follow
   these rules hinting will work better.
   <P>
-  <IMG SRC="C4.png" WIDTH="272" HEIGHT="283">
+  <IMG SRC="/assets/img/old/C4.png" WIDTH="272" HEIGHT="283">
   <P>
   It is best to enter a curve in a clockwise fashion, so the next point should
   be added up at the top of the image on the flat section. Because the shape
@@ -175,7 +175,7 @@
   makes a nice transition from curves to straight lines because the curve leaves
   the point with the same slope the line had when it entered.
   <P>
-  <IMG SRC="C5.png" WIDTH="272" HEIGHT="283">
+  <IMG SRC="/assets/img/old/C5.png" WIDTH="272" HEIGHT="283">
   <P>
   At the moment this "curve" doesn't match the image at all, don't worry about
   that we'll fix it later, and anyway it will change on its own as we continue.
@@ -184,30 +184,30 @@
   abruptly. Neither a curve nor a tangent point is appropriate here, instead
   we must use a corner point (one of the little squares on the tools palette).
   <P>
-  <IMG SRC="C6.png" WIDTH="272" HEIGHT="283">
+  <IMG SRC="/assets/img/old/C6.png" WIDTH="272" HEIGHT="283">
   <P>
   As you see the old curve now follows the image a bit more closely. We continue
   adding points until we are ready to close the path.
   <P>
-  <IMG SRC="C7.png" WIDTH="272" HEIGHT="283">
+  <IMG SRC="/assets/img/old/C7.png" WIDTH="272" HEIGHT="283">
   <P>
   Then we close the path just by adding a new point on top of the old start
   point
   <P>
-  <IMG SRC="C8.png" WIDTH="272" HEIGHT="283">
+  <IMG SRC="/assets/img/old/C8.png" WIDTH="272" HEIGHT="283">
   <P>
   Now we must make the curve track the image more closely, to do this we must
   adjust the control points (the blue "x"es). To make all the control points
   visible select the pointer tool and double-click on the curve and then move
   the control points around until the curve looks right.
   <P>
-  <IMG SRC="C9.png" WIDTH="266" HEIGHT="279">
+  <IMG SRC="/assets/img/old/C9.png" WIDTH="266" HEIGHT="279">
   <P>
   Finally we set width. Again with the pointer tool, move the mouse to the
   width line on the right edge of the screen, depress and drag the line back
   to a reasonable location.
   <P>
-  <IMG SRC="C10.png" WIDTH="266" HEIGHT="279">
+  <IMG SRC="/assets/img/old/C10.png" WIDTH="266" HEIGHT="279">
   <P>
   And we are done with this glyph.
   <P>
@@ -326,10 +326,10 @@
       Stages in editing "o"
     </CAPTION>
     <TR>
-      <TD><IMG SRC="o1.png" WIDTH="190" HEIGHT="287"></TD>
-      <TD><IMG SRC="o2.png" WIDTH="190" HEIGHT="287"></TD>
-      <TD><IMG SRC="o3.png" WIDTH="190" HEIGHT="287"></TD>
-      <TD><IMG SRC="o4.png" WIDTH="190" HEIGHT="287"></TD>
+      <TD><IMG SRC="/assets/img/old/o1.png" WIDTH="190" HEIGHT="287"></TD>
+      <TD><IMG SRC="/assets/img/old/o2.png" WIDTH="190" HEIGHT="287"></TD>
+      <TD><IMG SRC="/assets/img/old/o3.png" WIDTH="190" HEIGHT="287"></TD>
+      <TD><IMG SRC="/assets/img/old/o4.png" WIDTH="190" HEIGHT="287"></TD>
     </TR>
   </TABLE>
   <P>
@@ -342,7 +342,7 @@
   <P>
   If you fail to alternate directions between outer and inner boundaries you
   may get results like the one on the left
-  <IMG SRC="o-baddir.png" WIDTH="51" HEIGHT="28">. If you fail to draw the
+  <IMG SRC="/assets/img/old/o-baddir.png" WIDTH="51" HEIGHT="28">. If you fail to draw the
   outer contour in a clockwise fashion the errors are more subtle, but will
   generally result in a less pleasing result once the glyph has been rasterized.
   <P>
@@ -386,10 +386,10 @@
   <TABLE BORDER CELLPADDING="2" WIDTH=600>
     <TR VALIGN="Bottom">
       <TD WIDTH=140><P ALIGN=Center>
-	<IMG SRC="l1.png" WIDTH="35" HEIGHT="153"></TD>
-      <TD WIDTH=140><IMG SRC="l2.png" WIDTH="134" HEIGHT="101"></TD>
-      <TD WIDTH=140><IMG SRC="l3.png" WIDTH="134" HEIGHT="101"></TD>
-      <TD WIDTH=140><IMG SRC="l4.png" WIDTH="134" HEIGHT="101"></TD>
+	<IMG SRC="/assets/img/old/l1.png" WIDTH="35" HEIGHT="153"></TD>
+      <TD WIDTH=140><IMG SRC="/assets/img/old/l2.png" WIDTH="134" HEIGHT="101"></TD>
+      <TD WIDTH=140><IMG SRC="/assets/img/old/l3.png" WIDTH="134" HEIGHT="101"></TD>
+      <TD WIDTH=140><IMG SRC="/assets/img/old/l4.png" WIDTH="134" HEIGHT="101"></TD>
     </TR>
     <TR VALIGN="Top">
       <TD>The imported image</TD>
@@ -402,11 +402,11 @@
 	down list) and <CODE>check Horizontal</CODE></TD>
     </TR>
     <TR VALIGN="Bottom">
-      <TD><IMG SRC="l5.png" WIDTH="134" HEIGHT="101"></TD>
-      <TD><IMG SRC="l6.png" WIDTH="134" HEIGHT="101"></TD>
-      <TD><IMG SRC="l7.png" WIDTH="134" HEIGHT="101"></TD>
+      <TD><IMG SRC="/assets/img/old/l5.png" WIDTH="134" HEIGHT="101"></TD>
+      <TD><IMG SRC="/assets/img/old/l6.png" WIDTH="134" HEIGHT="101"></TD>
+      <TD><IMG SRC="/assets/img/old/l7.png" WIDTH="134" HEIGHT="101"></TD>
       <TD><P ALIGN=Center>
-	<IMG SRC="l8.png" WIDTH="35" HEIGHT="153"></TD>
+	<IMG SRC="/assets/img/old/l8.png" WIDTH="35" HEIGHT="153"></TD>
     </TR>
     <TR VALIGN="Top">
       <TD>Drag the flipped serif over to the left until it snuggles up against
@@ -417,8 +417,8 @@
     </TR>
     <TR VALIGN="Bottom">
       <TD></TD>
-      <TD><IMG SRC="l9.png" WIDTH="134" HEIGHT="101"></TD>
-      <TD><IMG SRC="l10.png" WIDTH="134" HEIGHT="101"></TD>
+      <TD><IMG SRC="/assets/img/old/l9.png" WIDTH="134" HEIGHT="101"></TD>
+      <TD><IMG SRC="/assets/img/old/l10.png" WIDTH="134" HEIGHT="101"></TD>
       <TD></TD>
     </TR>
     <TR VALIGN="Top">
@@ -448,13 +448,13 @@
   <TABLE BORDER CELLPADDING="2" WIDTH=600>
     <TR>
       <TD><P ALIGN=Center>
-	<IMG SRC="i1.png" WIDTH="50" HEIGHT="170"></TD>
+	<IMG SRC="/assets/img/old/i1.png" WIDTH="50" HEIGHT="170"></TD>
       <TD><P ALIGN=Center>
-	<IMG SRC="i2.png" WIDTH="111" HEIGHT="170"></TD>
+	<IMG SRC="/assets/img/old/i2.png" WIDTH="111" HEIGHT="170"></TD>
       <TD><P ALIGN=Center>
-	<IMG SRC="i3.png" WIDTH="111" HEIGHT="170"></TD>
+	<IMG SRC="/assets/img/old/i3.png" WIDTH="111" HEIGHT="170"></TD>
       <TD><P ALIGN=Center>
-	<IMG SRC="i4.png" WIDTH="111" HEIGHT="170"></TD>
+	<IMG SRC="/assets/img/old/i4.png" WIDTH="111" HEIGHT="170"></TD>
     </TR>
     <TR VALIGN="Top">
       <TD>Import the "i" image, and copy the "l" glyph.</TD>
@@ -464,7 +464,7 @@
     </TR>
   </TABLE>
   <P>
-  <IMG SRC="o5.png" WIDTH="85" HEIGHT="101" ALIGN="Right">Let's look briefly
+  <IMG SRC="/assets/img/old/o5.png" WIDTH="85" HEIGHT="101" ALIGN="Right">Let's look briefly
   back at the "o" we built before. You may notice that the "o" reaches a little
   above the guide line we put in to mark the x-height (and a little below the
   baseline). This is called overshoot and is an attempt to remedy an optical
@@ -476,11 +476,11 @@
   <TABLE BORDER CELLPADDING="2" WIDTH=600>
     <TR>
       <TD><P ALIGN=Center>
-	<IMG SRC="k1.png" WIDTH="87" HEIGHT="151"></TD>
+	<IMG SRC="/assets/img/old/k1.png" WIDTH="87" HEIGHT="151"></TD>
       <TD><P ALIGN=Center>
-	<IMG SRC="k2.png" WIDTH="87" HEIGHT="151"></TD>
+	<IMG SRC="/assets/img/old/k2.png" WIDTH="87" HEIGHT="151"></TD>
       <TD><P ALIGN=Center>
-	<IMG SRC="k3.png" WIDTH="87" HEIGHT="151"></TD>
+	<IMG SRC="/assets/img/old/k3.png" WIDTH="87" HEIGHT="151"></TD>
     </TR>
     <TR VALIGN="Top">
       <TD>Import the "k" image and copy the "l" glyph. Note that the x-height line
@@ -494,11 +494,11 @@
     </TR>
     <TR>
       <TD><P ALIGN=Center>
-	<IMG SRC="k4.png" WIDTH="87" HEIGHT="151"></TD>
+	<IMG SRC="/assets/img/old/k4.png" WIDTH="87" HEIGHT="151"></TD>
       <TD><P ALIGN=Center>
-	<IMG SRC="k5.png" WIDTH="87" HEIGHT="151"></TD>
+	<IMG SRC="/assets/img/old/k5.png" WIDTH="87" HEIGHT="151"></TD>
       <TD><P ALIGN=Center>
-	<IMG SRC="k6.png" WIDTH="87" HEIGHT="151"></TD>
+	<IMG SRC="/assets/img/old/k6.png" WIDTH="87" HEIGHT="151"></TD>
     </TR>
     <TR VALIGN="Top">
       <TD>Select the end points and convert them into corner points with <CODE>Point
@@ -574,16 +574,16 @@
     </CAPTION>
     <TR>
       <TD><P ALIGN=Center>
-	<IMG SRC="ffi-refs.png" ALT="ffi ligature as references" WIDTH="154" HEIGHT="277"></TD>
+	<IMG SRC="/assets/img/old/ffi-refs.png" ALT="ffi ligature as references" WIDTH="154" HEIGHT="277"></TD>
       <TD><P ALIGN=Center>
-	<IMG SRC="ffi-unlink.png" WIDTH="154" HEIGHT="277" ALT="ffi after unlinking references"></TD>
+	<IMG SRC="/assets/img/old/ffi-unlink.png" WIDTH="154" HEIGHT="277" ALT="ffi after unlinking references"></TD>
       <TD><P ALIGN=Center>
-	<IMG SRC="ffi-moved.png" WIDTH="154" HEIGHT="277" ALT="ffi after lowering first f"></TD>
+	<IMG SRC="/assets/img/old/ffi-moved.png" WIDTH="154" HEIGHT="277" ALT="ffi after lowering first f"></TD>
       <TD><P ALIGN=Center>
-	<IMG SRC="ffi-rmoverlap.png" ALT="ffi after doing remove overlap" WIDTH="154"
+	<IMG SRC="/assets/img/old/ffi-rmoverlap.png" ALT="ffi after doing remove overlap" WIDTH="154"
 	    HEIGHT="277"></TD>
       <TD><P ALIGN=Center>
-	<IMG SRC="ffi-caret.png" ALT="ffi after adjusting ligature carets" WIDTH="154"
+	<IMG SRC="/assets/img/old/ffi-caret.png" ALT="ffi after adjusting ligature carets" WIDTH="154"
 	    HEIGHT="277"></TD>
     </TR>
     <TR VALIGN="Top">
@@ -635,7 +635,7 @@
     <A NAME="lookups">Lookups and Features</A>
   </H2>
   <P>
-  <IMG SRC="fontinfo-lookups.png" WIDTH="602" HEIGHT="534" ALIGN="Right">Unfortunately
+  <IMG SRC="/assets/img/old/fontinfo-lookups.png" WIDTH="602" HEIGHT="534" ALIGN="Right">Unfortunately
   simply creating a ligature glyph is not enough. You must also include information
   in the font to say that the glyph is a ligature, and to say what components
   it is built from.
@@ -660,7 +660,7 @@
   the <CODE>[Add Lookup] </CODE>button. This will give you a new dialog in
   which you can fill in the attributes of your new lookup.
   <P>
-  <IMG SRC="AddLookup-Liga.png" WIDTH="439" HEIGHT="427" ALIGN="Left">You must
+  <IMG SRC="/assets/img/old/AddLookup-Liga.png" WIDTH="439" HEIGHT="427" ALIGN="Left">You must
   first choose the lookup type. For ligatures this should be "Ligature
   Substitution". You may then bind this lookup to a feature, script and language
   set. The "ffi" ligature is a standard ligature in latin typesetting so it
@@ -690,7 +690,7 @@
   Finally you get to decide whether you want the ligatures in this lookup to
   be stored in afm files.
   <P>
-  <IMG SRC="subtable-ffi.png" WIDTH="421" HEIGHT="215" ALIGN="Right">Once you
+  <IMG SRC="/assets/img/old/subtable-ffi.png" WIDTH="421" HEIGHT="215" ALIGN="Right">Once you
   have created a lookup, you must create a subtable in that lookup. Select
   the lookup line (in the Lookups pane of Font Info) and press <CODE>[Add
   Subtable]</CODE>. This is a fairly simple dialog... you simply provide a
@@ -711,7 +711,7 @@
     <A NAME="metrics">Examining</A> and controlling metrics
   </H2>
   <P>
-  <IMG SRC="sidebearings.png" WIDTH="111" HEIGHT="191" ALIGN="Right">After
+  <IMG SRC="/assets/img/old/sidebearings.png" WIDTH="111" HEIGHT="191" ALIGN="Right">After
   you have created the shapes of your glyphs you must next figure out the spacing
   between glyphs. The space between any two glyph has two components, the space
   after the first glyph, and the space before the second glyph. In a left to
@@ -728,7 +728,7 @@
   isolation, you should see the glyph in the context of other glyphs and set
   it from that perspective. Use the <CODE>Window-&gt;Open
   <A HREF="metricsview.html">Metrics Window </A></CODE>command.<BR>
-  <IMG SRC="MetricsView.png" WIDTH="479" HEIGHT="331"><BR>
+  <IMG SRC="/assets/img/old/MetricsView.png" WIDTH="479" HEIGHT="331"><BR>
   Any glyphs selected in the fontview (when you invoke the metrics view) will
   be displayed in the metrics view. You may change which glyphs are displayed
   by either typing new ones in to the text field at the top of the view, or
@@ -746,7 +746,7 @@
   <CODE>Metrics-&gt;Center in Width</CODE> to even out the left and right spacing
   on each glyph.
   <P>
-  <I><IMG SRC="autowidth.png" WIDTH="276" HEIGHT="268" ALIGN="Right"></I>If
+  <I><IMG SRC="/assets/img/old/autowidth.png" WIDTH="276" HEIGHT="268" ALIGN="Right"></I>If
   all this manual operation seems too complicated, try
   <CODE><A HREF="autowidth.html#AutoWidth">Metrics-&gt;Auto Width</A></CODE>.
   This will automagically assign widths to glyphs. These widths are not up
@@ -834,12 +834,12 @@
       Kerning
     </CAPTION>
     <TR>
-      <TD><IMG SRC="To-unkerned.png" WIDTH="204" HEIGHT="323"></TD>
-      <TD><IMG SRC="To-kerned.png" WIDTH="204" HEIGHT="323"></TD>
+      <TD><IMG SRC="/assets/img/old/To-unkerned.png" WIDTH="204" HEIGHT="323"></TD>
+      <TD><IMG SRC="/assets/img/old/To-kerned.png" WIDTH="204" HEIGHT="323"></TD>
     </TR>
   </TABLE>
   <P>
-  <IMG SRC="addlookup-kern.png" WIDTH="439" HEIGHT="408" ALIGN="Right">In the
+  <IMG SRC="/assets/img/old/addlookup-kern.png" WIDTH="439" HEIGHT="408" ALIGN="Right">In the
   above example the left image shows the unkerned text, the right shows the
   kerned text. To create a kerned pair in the metrics window, simply click
   on the right glyph of the pair, the line (normally the horizontal advance)
@@ -865,7 +865,7 @@
   &Auml; all kern alike). However for this example you want a kerning pair
   subtable.<BR CLEAR=RIGHT>
   <P>
-  <IMG SRC="subtable-to.png" WIDTH="415" HEIGHT="441" ALIGN="Left">Then FontForge
+  <IMG SRC="/assets/img/old/subtable-to.png" WIDTH="415" HEIGHT="441" ALIGN="Left">Then FontForge
   will popup a dialog allowing you to set the kerning subtable directly. You
   may set your kerning pairs from here, though I prefer the metrics view myself
   because you can see more glyphs and so get a better feel for the "color"
@@ -904,7 +904,7 @@
   have the same advance width so that tables of numbers don't look ragged),
   proportional digits (where each digit has a width appropriate to its shape)
   and old-style or lower case digits
-  (<IMG SRC="lcdigits.png" WIDTH="76" HEIGHT="18" ALIGN="Middle">) where some
+  (<IMG SRC="/assets/img/old/lcdigits.png" WIDTH="76" HEIGHT="18" ALIGN="Middle">) where some
   digits have descenders and others have ascenders.
   <P>
   Some of these variants are built into the encodings (the upper and lower
@@ -913,7 +913,7 @@
   is midway between the two, the various forms are in the encoding, but you
   need to provide extra information as well).
   <P>
-  <IMG SRC="subtable-oldstyle.png" WIDTH="421" HEIGHT="287" ALIGN="Right">Let
+  <IMG SRC="/assets/img/old/subtable-oldstyle.png" WIDTH="421" HEIGHT="287" ALIGN="Right">Let
   us consider the case of the digits mentioned above. Assume that the glyph
   called "one" contains the tabular variant of one, the glyph "one.prop" contains
   the proportional variant and "one.oldstyle" contains the lower-case variant,
@@ -930,7 +930,7 @@
   button. It will search through all glyphs in all the scripts of the feature
   and find any "oldstyle" variants of them and populate the table with them.
   <P>
-  <IMG SRC="glyphinfo-one.png" WIDTH="431" HEIGHT="310" ALIGN="Left">Sometimes
+  <IMG SRC="/assets/img/old/glyphinfo-one.png" WIDTH="431" HEIGHT="310" ALIGN="Left">Sometimes
   it makes more sense to think of all the substitutions available for a specific
   glyph (rather than all substitutions in a specific lookup). So instead if
   filling up the subtable dialog for "Proportional Numbers" let us instead
@@ -970,11 +970,11 @@
   so that it rides above the "a".
   <TABLE>
     <TR>
-      <TD><IMG SRC="a_with_anchor.png" WIDTH=104 HEIGHT=208></TD>
+      <TD><IMG SRC="/assets/img/old/a_with_anchor.png" WIDTH=104 HEIGHT=208></TD>
       <TD>+</TD>
-      <TD><IMG SRC="grave_with_anchor.png" WIDTH=66 HEIGHT=208></TD>
+      <TD><IMG SRC="/assets/img/old/grave_with_anchor.png" WIDTH=66 HEIGHT=208></TD>
       <TD>=&gt;</TD>
-      <TD><IMG SRC="agrave_anchored.png" WIDTH=104 HEIGHT=208></TD>
+      <TD><IMG SRC="/assets/img/old/agrave_anchored.png" WIDTH=104 HEIGHT=208></TD>
     </TR>
   </TABLE>
   <P>
@@ -1027,7 +1027,7 @@
   substitution, later of <A HREF="editexample6-5.html#Greek">contextual
   ligatures</A>.
   <P>
-  <IMG SRC="bed-script.png" WIDTH="259" HEIGHT="81" ALIGN="Right">Instead of
+  <IMG SRC="/assets/img/old/bed-script.png" WIDTH="259" HEIGHT="81" ALIGN="Right">Instead of
   an Indic or Arabic example, let us take something I'm more familiar with,
   the problem of typesetting a latin script font where the letters ``b,'' ``o,''
   ``v'' and ``w'' join their following letter near the x-height, while all
@@ -1093,12 +1093,12 @@
   feature. And of course we want an associated subtable). This will pop up
   a series of dialogs to edit a contextual subtable
   <P>
-  <IMG SRC="ott2_5.png" WIDTH="329" HEIGHT="263" ALIGN="Left">The first dialog
+  <IMG SRC="/assets/img/old/ott2_5.png" WIDTH="329" HEIGHT="263" ALIGN="Left">The first dialog
   allows you to specify the overall format of the substitution. We want a class
   based system -- we've already mentioned what the glyph classes will
   be.<BR CLEAR=ALL>
   <P>
-  <IMG SRC="ott3.png" WIDTH="330" HEIGHT="357" ALIGN="Right">The next dialog
+  <IMG SRC="/assets/img/old/ott3.png" WIDTH="330" HEIGHT="357" ALIGN="Right">The next dialog
   finally shows something interesting. At the top are a series of patterns
   to match and substitutions that will be applied if the string matches. Underneath
   that are the glyph classes that this substitution uses. A contextual chaining
@@ -1125,7 +1125,7 @@
   so these two lines mean that if any letter follows one of ``bovw'' then that
   letter should be converted to its `high' variant. <BR CLEAR=ALL>
   <P>
-  <IMG SRC="ott4.png" WIDTH="330" HEIGHT="357" ALIGN="Left">To edit a glyph
+  <IMG SRC="/assets/img/old/ott4.png" WIDTH="330" HEIGHT="357" ALIGN="Left">To edit a glyph
   class simply double click on it. To create a new one press the [New] button
   (under the class list). This produces another dialog showing all the names
   of all the glyphs in the current class. Pressing the [Select] button will
@@ -1136,10 +1136,10 @@
   Pressing the [Next] button defines the class and returns to the overview
   dialog. <BR CLEAR=ALL>
   <P>
-  <IMG SRC="ott3.png" WIDTH="330" HEIGHT="357" ALIGN="Right">To edit a pattern
+  <IMG SRC="/assets/img/old/ott3.png" WIDTH="330" HEIGHT="357" ALIGN="Right">To edit a pattern
   double click on it, or to create a new one press the [New] button (under
   the List of lists). Again the pattern string is divided into three categories,
-  <IMG SRC="ott5.png" WIDTH="330" HEIGHT="357" ALIGN="Left">those glyphs before
+  <IMG SRC="/assets/img/old/ott5.png" WIDTH="330" HEIGHT="357" ALIGN="Left">those glyphs before
   the current one, the current one itself, and any glyphs after the current
   one. You choose which category of the pattern you are editing with the tabs
   at the top of the dialog.
@@ -1172,7 +1172,7 @@
   a substitution to either the current glyph or a previous one (the ``marked''
   glyph).
   <P>
-  <IMG SRC="sm-picture.png" WIDTH="386" HEIGHT="130" ALIGN="Right">Using the
+  <IMG SRC="/assets/img/old/sm-picture.png" WIDTH="386" HEIGHT="130" ALIGN="Right">Using the
   same example of a latin script font... We again need a simple substitution
   to convert each letter into its high alternate. The process is the same as
   it was for OpenType, and indeed we can use the same substitution. Again we
@@ -1183,7 +1183,7 @@
   state (the base state -- where nothing changes), and the other is the state
   where we've just read a glyph from the ``bovw'' class. <BR CLEAR=ALL>
   <P>
-  <IMG SRC="asm1.png" WIDTH="439" HEIGHT="427" ALIGN="Left"> Apple Advanced
+  <IMG SRC="/assets/img/old/asm1.png" WIDTH="439" HEIGHT="427" ALIGN="Left"> Apple Advanced
   Typography does not quite fit into the OpentType concepts of lookups and
   features, but it is close enough that I sort of force it to. So once again
   we create a GSUB lookup. This time the lookup type is "Mac Contextual State
@@ -1191,14 +1191,14 @@
   When we create a new subtable of this type we get a state machine dialog,
   as shown below.
   <P>
-  <IMG SRC="asm2.png" WIDTH="309" HEIGHT="381" ALIGN="Right"> At the top of
+  <IMG SRC="/assets/img/old/asm2.png" WIDTH="309" HEIGHT="381" ALIGN="Right"> At the top of
   the dialog we see a set of class definitions, and at the bottom is a
   representation of the state machine itself. <BR CLEAR=Left>
   <P>
-  <IMG SRC="asm3.png" WIDTH="309" HEIGHT="206" ALIGN="Left">Double clicking
+  <IMG SRC="/assets/img/old/asm3.png" WIDTH="309" HEIGHT="206" ALIGN="Left">Double clicking
   on a class brings up a dialog similar to that used in OpenType<BR CLEAR=Right>
   <P>
-  <IMG SRC="asm4.png" WIDTH="196" HEIGHT="307" ALIGN="Right"> Clicking on a
+  <IMG SRC="/assets/img/old/asm4.png" WIDTH="196" HEIGHT="307" ALIGN="Right"> Clicking on a
   transition in the state machine (there is a transition for each state / class
   combination) produces a transition dialog. This controls how the state machine
   behaves when it is in a given state and receives a glyph in a given class.
@@ -1223,14 +1223,14 @@
   used if "kappa" and "iota" make up a word unto themselves, it should not
   be used for more normal occurances of the two within a longer word.
   <P>
-  <IMG SRC="kappa_iota-lookup.png" WIDTH="239" HEIGHT="315" ALIGN="Right">So
+  <IMG SRC="/assets/img/old/kappa_iota-lookup.png" WIDTH="239" HEIGHT="315" ALIGN="Right">So
   the first thing to do is create the ligature itself. Add the glyph for U+03D7,
   and then create a ligature lookup and subtable (with
   <CODE><A HREF="fontinfo.html#Lookups">Element-&gt;Font
   Info-&gt;Lookups)</A></CODE> to bind U+03D7 to be a ligature of "kappa" and
   "iota". This lookup will never be used directly -- only under the control
   of another, a conditional feature -- so we don't give it a feature tag.<BR>
-  <IMG SRC="kappa_iota-subtable.png" WIDTH="292" HEIGHT="172">
+  <IMG SRC="/assets/img/old/kappa_iota-subtable.png" WIDTH="292" HEIGHT="172">
   <P>
   Next the conditional bit.
   <P>
@@ -1253,28 +1253,28 @@
   <P>
   These rules will be executed in order, and the first one that matches the
   input text will be the (one and only) rule applied. Consider these three
-  strings, <IMG SRC="alphakappaiota.png" WIDTH="23" HEIGHT="12">,
-  <IMG SRC="kappaiotatheta.png" WIDTH="24" HEIGHT="12">,
-  <IMG SRC="alphakappaiotatheta.png" WIDTH="30" HEIGHT="12"> all contain kappa
+  strings, <IMG SRC="/assets/img/old/alphakappaiota.png" WIDTH="23" HEIGHT="12">,
+  <IMG SRC="/assets/img/old/kappaiotatheta.png" WIDTH="24" HEIGHT="12">,
+  <IMG SRC="/assets/img/old/alphakappaiotatheta.png" WIDTH="30" HEIGHT="12"> all contain kappa
   and iota but each contains more letters around them, so none should be replaced
   by the ligature.
   <UL>
     <LI>
-      The first string, <IMG SRC="alphakappaiota.png" WIDTH="23" HEIGHT="12">,
+      The first string, <IMG SRC="/assets/img/old/alphakappaiota.png" WIDTH="23" HEIGHT="12">,
       will match the first rule above (it contains letters before the kappa iota
       sequence) and no substitution will be done. It also matches the third rule,
       but we never get that far.
     <LI>
-      The second string, <IMG SRC="kappaiotatheta.png" WIDTH="24" HEIGHT="12">,
+      The second string, <IMG SRC="/assets/img/old/kappaiotatheta.png" WIDTH="24" HEIGHT="12">,
       will match the second rule above (it contains letters after the sequence)
       and again no substitution will be done. It would match the third rule, but
       we stop with the first match.
     <LI>
-      The third string, <IMG SRC="alphakappaiotatheta.png" WIDTH="30" HEIGHT="12">,
+      The third string, <IMG SRC="/assets/img/old/alphakappaiotatheta.png" WIDTH="30" HEIGHT="12">,
       matches all the rules, but since the search stops at the first match, only
       the first rule will be applied, and no substitution will be done.
     <LI>
-      The string, <IMG SRC="spacekappaiotaspace.png" WIDTH="29" HEIGHT="12">, matches
+      The string, <IMG SRC="/assets/img/old/spacekappaiotaspace.png" WIDTH="29" HEIGHT="12">, matches
       neither of the first two rules but does match the last, so here the ligature
       will be formed.
   </UL>
@@ -1298,7 +1298,7 @@
   <P>
   Now how do we convert these rules into a contextual lookup?
   <P>
-  <IMG SRC="kappa_iota-context.png" WIDTH="246" HEIGHT="315" ALIGN="Left">We
+  <IMG SRC="/assets/img/old/kappa_iota-context.png" WIDTH="246" HEIGHT="315" ALIGN="Left">We
   use <CODE><A HREF="fontinfo.html#Contextual">Element-&gt;Font
   Info-&gt;Lookups-&gt;Add Lookup</A></CODE> to create a new contextual chaining
   lookup. This is the top level lookup and should be bound to a feature tag
@@ -1312,50 +1312,50 @@
   list).<BR CLEAR=ALL>
   <TABLE BORDER CELLPADDING="2">
     <TR VALIGN="Top">
-      <TD><IMG SRC="hligbyclasses.png" WIDTH="330" HEIGHT="248"><BR>
+      <TD><IMG SRC="/assets/img/old/hligbyclasses.png" WIDTH="330" HEIGHT="248"><BR>
 	Since we are planning on using the class of all greek letters we will want
 	to use a class format for this feature. Then we press the <CODE>[Next&gt;]
 	</CODE>button.</TD>
-      <TD><IMG SRC="emptyhlig.png" WIDTH="330" HEIGHT="337"><BR>
+      <TD><IMG SRC="/assets/img/old/emptyhlig.png" WIDTH="330" HEIGHT="337"><BR>
 	The main match will be on the letters kappa and iota in all three rules,
 	so we need one class for each of them. So in the Match Classes area we press
 	the <CODE>[New]</CODE> button...</TD>
     </TR>
     <TR VALIGN="Top">
-      <TD><IMG SRC="hligkappaclass.png" WIDTH="330" HEIGHT="195"><BR>
+      <TD><IMG SRC="/assets/img/old/hligkappaclass.png" WIDTH="330" HEIGHT="195"><BR>
 	And type in the word "kappa" and press <CODE>[Next&gt;]</CODE></TD>
-      <TD><IMG SRC="hligkappa.png" WIDTH="330" HEIGHT="362"><BR>
+      <TD><IMG SRC="/assets/img/old/hligkappa.png" WIDTH="330" HEIGHT="362"><BR>
 	Now we have a class containing the single glyph "kappa". We want to do the
 	same thing for "iota" so we press <CODE>[New] </CODE>again.</TD>
     </TR>
     <TR VALIGN="Top">
-      <TD><IMG SRC="hligiotaclass.png" WIDTH="330" HEIGHT="195"><BR>
+      <TD><IMG SRC="/assets/img/old/hligiotaclass.png" WIDTH="330" HEIGHT="195"><BR>
 	Again type in "iota" and press <CODE>[Next&gt;]</CODE></TD>
-      <TD><IMG SRC="hligkappaiota.png" WIDTH="330" HEIGHT="362"><BR>
+      <TD><IMG SRC="/assets/img/old/hligkappaiota.png" WIDTH="330" HEIGHT="362"><BR>
 	Now we have all the classes we need here. We still need to create classes
 	for the lookahead and backtrack. We only need one class for these groups
 	and that class will consist of all greek letters.</TD>
     </TR>
     <TR VALIGN="Top">
-      <TD><IMG SRC="hligback.png" WIDTH="330" HEIGHT="362"><BR>
+      <TD><IMG SRC="/assets/img/old/hligback.png" WIDTH="330" HEIGHT="362"><BR>
 	The check box <CODE>[*] Same as Match Classes</CODE> is set, but we don't
 	want that, we want our own classes here. So uncheck it.</TD>
-      <TD><IMG SRC="hligbacknomatch.png" WIDTH="330" HEIGHT="362"><BR>
+      <TD><IMG SRC="/assets/img/old/hligbacknomatch.png" WIDTH="330" HEIGHT="362"><BR>
 	Now the buttons become active and we can create a new class by pressing
 	<CODE>[New]</CODE></TD>
     </TR>
     <TR VALIGN="Top">
-      <TD><IMG SRC="allgreek.png" WIDTH="313" HEIGHT="276"><BR>
+      <TD><IMG SRC="/assets/img/old/allgreek.png" WIDTH="313" HEIGHT="276"><BR>
 	Now you could go back to the font view and select all of the greek letters,
 	and then press the [Set From Font] button in the class dialog.</TD>
-      <TD><IMG SRC="hliggreekclass.png" WIDTH="330" HEIGHT="228"><BR>
+      <TD><IMG SRC="/assets/img/old/hliggreekclass.png" WIDTH="330" HEIGHT="228"><BR>
 	But in this case the class we are interested in (all the greek letters) is
 	built it, and you can select it from the Standard Class pulldown list (Letters
 	in script(s)) Then press <CODE>[Next&gt;]</CODE>.</TD>
     </TR>
     <TR VALIGN="Top">
-      <TD><IMG SRC="hliggreekback.png" WIDTH="330" HEIGHT="357"></TD>
-      <TD VALIGN="Top"><IMG SRC="hliggreekahead.png" WIDTH="330" HEIGHT="357"><BR>
+      <TD><IMG SRC="/assets/img/old/hliggreekback.png" WIDTH="330" HEIGHT="357"></TD>
+      <TD VALIGN="Top"><IMG SRC="/assets/img/old/hliggreekahead.png" WIDTH="330" HEIGHT="357"><BR>
 	Then go through the same process for the look ahead classes (adding one class
 	which consists of all the greek letters.</TD>
     </TR>
@@ -1363,17 +1363,17 @@
       <TD>Now we have all our classes defined and are finally ready to create the
 	patterns for our rules. So underneath "List of lists of class numbers" press
 	the <CODE>[New] </CODE>button.<BR>
-	<IMG SRC="hlignewrule.png" WIDTH="330" HEIGHT="357"></TD>
+	<IMG SRC="/assets/img/old/hlignewrule.png" WIDTH="330" HEIGHT="357"></TD>
       <TD>The first rule begins with all the greek letters in the backtrack area,
 	so click on the "Backtrack" tab, and then press on the class consisting of
 	all the greek letters. This puts the class number into the pattern area (the
 	List of class numbers)<BR>
-	<IMG SRC="hligbackrule.png" WIDTH="330" HEIGHT="357"></TD>
+	<IMG SRC="/assets/img/old/hligbackrule.png" WIDTH="330" HEIGHT="357"></TD>
     </TR>
     <TR VALIGN="Top">
       <TD>In the match area we want to match kappa and then iota, so click on the
 	Match tab, and then on the entries for "kappa" and "iota".<BR>
-	<IMG SRC="hligrule.png" WIDTH="330" HEIGHT="357"><BR>
+	<IMG SRC="/assets/img/old/hligrule.png" WIDTH="330" HEIGHT="357"><BR>
 	This rule has no substitutions, so leave the bottom area blank and press
 	<CODE>[Next&gt;]</CODE>.</TD>
       <TD>We are done with the first rule. It says:
@@ -1390,7 +1390,7 @@
 	    And if the match is successful, do absolutely nothing.
 	</UL>
 	<P>
-	<IMG SRC="hligbackruledone.png" WIDTH="330" HEIGHT="357"><BR>
+	<IMG SRC="/assets/img/old/hligbackruledone.png" WIDTH="330" HEIGHT="357"><BR>
 	We've got two more rules though, so press <CODE>[OK] </CODE>and then <CODE>[Add
 	Subtable]</CODE>. Then go through the process of adding all the classes,
 	and then add the match string for this rule.</TD>
@@ -1410,30 +1410,30 @@
 	    And if the match is successful, do absolutely nothing.
 	</UL>
 	<P>
-	<IMG SRC="hligaheadruledone.png"><BR>
+	<IMG SRC="/assets/img/old/hligaheadruledone.png"><BR>
 	Press <CODE>[OK] </CODE>and<CODE> [Add Subtable] </CODE>for the final rule.</TD>
-      <TD><IMG SRC="hligrule.png" WIDTH="330" HEIGHT="357"><BR>
+      <TD><IMG SRC="/assets/img/old/hligrule.png" WIDTH="330" HEIGHT="357"><BR>
 	This rule does have substitutions -- we want to take the two characters and
 	convert them into a ligature. So Press <CODE>[New] </CODE>under the sequence
 	position list, we want to start at the first character (sequence position
 	0) and apply the ligature we called "WORD":<BR>
-	<IMG SRC="hligseqdlg.png" WIDTH="177" HEIGHT="156"></TD>
+	<IMG SRC="/assets/img/old/hligseqdlg.png" WIDTH="177" HEIGHT="156"></TD>
     </TR>
     <TR VALIGN="Top">
       <TD>So if anything doesn't match the first two rules, and does contain a
 	kappa followed by an iota, it must be a two letter stand-alone greek word.
 	And we want to apply our ligature to it.<BR>
-	<IMG SRC="hligallrulesdone.png" WIDTH="330" HEIGHT="357"></TD>
+	<IMG SRC="/assets/img/old/hligallrulesdone.png" WIDTH="330" HEIGHT="357"></TD>
       <TD>Now we are done. Press a series of <CODE>[OK]</CODE>s until all the dialogs
 	have been accepted.
 	<P>
-	<IMG SRC="kappaiota-lookups.png" WIDTH="422" HEIGHT="380"></TD>
+	<IMG SRC="/assets/img/old/kappaiota-lookups.png" WIDTH="422" HEIGHT="380"></TD>
     </TR>
   </TABLE>
   <P>
   Once you have created your lookups you may test the result in the
   <A HREF="metricsview.html">metrics view</A>.<BR>
-  <IMG SRC="metrics-kappa_iota.png" WIDTH="527" HEIGHT="331">
+  <IMG SRC="/assets/img/old/metrics-kappa_iota.png" WIDTH="527" HEIGHT="331">
   <P>
   (This example was provided by Apostolos Syropoulos) 
     <HR>
@@ -1482,7 +1482,7 @@
   fonts and then <A HREF="http://clr.nmsu.edu/~mleisher/download.html">use
   someone else's bitmap editor to clean them up</A>.
   <P>
-  <IMG SRC="BitmapView.png" WIDTH="254" HEIGHT="273">
+  <IMG SRC="/assets/img/old/BitmapView.png" WIDTH="254" HEIGHT="273">
   <P>
   Bitmaps are discussed in more detail in the <A HREF="editexample8.html">next
   section.</A>
@@ -1494,7 +1494,7 @@
   understands (as far as I know anyway). This is not very helpful if you want
   to use the font.
   <P>
-  <IMG SRC="generate.png" WIDTH="406" HEIGHT="411" ALIGN="Right">Instead you
+  <IMG SRC="/assets/img/old/generate.png" WIDTH="406" HEIGHT="411" ALIGN="Right">Instead you
   must use <A HREF="generate.html">File-&gt;Generate</A> to convert your font
   into one of the standard font formats. FontForge presents what looks like
   a vast array of font formats, but in reality there are just several variants
@@ -1547,7 +1547,7 @@
   being at 400 or 500, and Bold at 700). TrueType fonts also support a range
   of widths (while the Mac only supports condensed, plain and expanded).
   <P>
-  <IMG SRC="GenerateFamily.png" WIDTH="414" HEIGHT="552" ALT="Dialog for Generate Mac Family"
+  <IMG SRC="/assets/img/old/GenerateFamily.png" WIDTH="414" HEIGHT="552" ALT="Dialog for Generate Mac Family"
       ALIGN="Right">On Windows machines, as long as you get the names right, the
   system should be able to figure out what fonts go into what families. But
   on the Mac the situation is (or was, it is changing and I don't understand

@@ -3,52 +3,35 @@
 
 		<div class="row-fluid">
 			<div class="span2">
-				<a href="/en-US/">
-				<h4>
-					<span>FontForge</span>
-			 	</h4>
-			 	</a>
+				<h4>FontForge</h4>
 				<ul>
-					<li><a href="/en-US/">Home</a></li>
-					<li><a href="/en-US/downloads/">Download</a></li>
-					<li><a href="/en-US/tutorials/">Tutorials</a></li>
-					<li><a href="/en-US/documentation/">Documentation</a></li>
-					<li><a href="/en-US/about/site/siteindex/">Site Index</a></li>
-					<li><a href="/en-US/about/site/sitemap/">Site Map</a></li>
+<!--	is already in nav 				<li><a href="/en-US/downloads/">Download</a></li>-->
+<!-- broken link					<li><a href="/en-US/tutorials/">Tutorials</a></li>-->
+<!--	is already in nav 				<li><a href="/en-US/documentation/">Documentation</a></li>-->
+					<li><a href="/en-US/site/siteindex/">Site Index</a></li>
+<!-- feature not implemented yet					<li><a href="/en-US/site/sitemap/">Site Map</a></li>-->
+					<li><a href="/en-US/project/">Project</a></li>
+					<li><a href="/en-US/history/">History</a></li>
+					<li><a href="https://github.com/fontforge/fontforge/blob/master/LICENSE" target="_blank">License</a></li>
 				</ul>
 			</div>
 
 			<div class="span2">
 				<h4>About</h4>
 				<ul>
-					<li><a href="/en-US/about/faq/">FAQ</a></li>
-					<li><a href="/en-US/about/features/">Features</a></li>
-					<li><a href="/en-US/about/roadmap/">Roadmap</a></li>
-					<li><a href="/en-US/about/funding/">Funding</a></li>
-					<li><a href="/en-US/about/project/license/">License</a></li>
-					<li><a href="/en-US/about/project/acknowledgements/">Contributors</a></li>
-					<li><a href="/en-US/about/project/history/">History</a></li>
+					<li><a href="/en-US/faq/">FAQ</a></li>
+<!-- The list is very incomplete anyways					<li><a href="/en-US/features/">Features</a></li>-->
+					<li><a href="/en-US/roadmap/">Roadmap+Log</a></li>
+					<li><a href="/en-US/funding/">Funding</a></li>
+					<li><a href="/en-US/acknowledgements/">Contributors</a></li>
 				</ul>
 			</div>
 
 			<div class="span2">
-				<h4>Reference</h4>
+				<h4>Develop</h4>
 				<ul>
-					<li><a href="/en-US/documentation/reference/glossary">Glossary</a></li>
-					<li><a href="#">Font Formats</a></li>
-					<li><a href="#">Unicode</a></li>
-					<li><a href="#">Encodings</a></li>
-					<li><a href="#">OpenType</a></li>
-					<li><a href="/en-US/documentation/reference/bibliography/">Bibliography</a></li>
-					<li><a href="#">Related Sites</a></li>
-				</ul>
-			</div>
-
-			<div class="span2">
-				<h4><a href="/en-US/documentation/developers/">Develop</a></h4>
-				<ul>
-					<li><a href="#">Changelog</a></li>
-					<li><a href="#">How To</a></li>
+					<!-- <li><a href="#">Changelog</a></li>
+					<li><a href="#">How To</a></li> -->
 					<li><a href="/en-US/documentation/developers/sfdformat/">SFD Spec</a></li>
 					<li><a href="/en-US/documentation/developers/plugins/">Plugins</a></li>
 					<li><a href="/en-US/documentation/developers/splinefont/">Splines</a></li>
@@ -59,12 +42,13 @@
 			</div>
 
 			<div class="span2">
-				<h4><a href="/en-US/documentation/utilities/">Utilities</a></h4>
+				<h4>Utilities</h4>
 				<ul>
 					<li><a href="/en-US/documentation/utilities/fontlint/">fontlint</a></li>
 					<li><a href="/en-US/documentation/utilities/sfddiff/">sfddiff</a></li>
 					<li><a href="/en-US/documentation/utilities/fontimage/">fontimage</a></li>
 					<li><a href="/en-US/documentation/utilities/acorn2sfd/">acorn2sfd</a></li>
+          <li><a href="/en-US/documentation/utilities/">Other</a></li>
 				</ul>
 
       </div>
@@ -81,13 +65,28 @@
 				</ul>
       </div>
 
+<!-- Couldn't be col number 3 => error on smaller displays -->      
+			<div class="span2">
+				<h4>Reference</h4>
+				<ul>
+					<li><a href="/en-US/documentation/reference/glossary">Glossary</a></li>
+					<!-- <li><a href="#">Font Formats</a></li>
+					<li><a href="#">Unicode</a></li>
+					<li><a href="#">Encodings</a></li>
+					<li><a href="#">OpenType</a></li> -->
+					<li><a href="/en-US/documentation/reference/bibliography/">Bibliography</a></li>
+					<!-- <li><a href="#">Related Sites</a></li> -->
+				</ul>
+			</div>
 
 		</div>
 
 	  <div class="row-fluid">
+<!--
         <p><a href="https://github.com/fontforge/fontforge.github.io/blob/master
-					{{ page.url | split: '/' | join: '/' }}.md">Edit this page</a> - <a href="/en-US/about/site/">Learn how</a></p>
-	  	<small class="copyright">Copyright &copy; 2000 &ndash; 2015, <a href="/en-US/about/site/">George Williams and the FontForge Project contributors</a>. Shared freely under the <a href="/en-US/about/project/license/">project license</a>.</small>
+					{{ page.url | split: '/' | join: '/' }}.md">Edit this page</a> - <a href="/en-US/site/">Learn how</a></p>
+-->
+	  	<small class="copyright">Copyright &copy; 2000 &ndash; 2015, George Williams and the FontForge Project contributors. Shared freely under the project license.</small>
 	  </div>
 	</div>
 	</footer>
