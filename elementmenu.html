@@ -5,7 +5,7 @@
   <!-- AP: Last modified: 5-Apr-2010 -->
   <TITLE>The Element Menu</TITLE>
   <LINK REL="icon" href="fftype16.png">
-  <LINK REL="stylesheet" TYPE="text/css" HREF="FontForge.css">
+  <LINK REL="stylesheet" TYPE="text/css" HREF="/assets/css/old/FontForge.css">
 </HEAD>
 <BODY id="menued">
 <div style="margin:0; height: 4	em; padding: 0.5em; background: red; color:yellow; text-align:center; font-size:1em; font-family: sans-serif;">
@@ -13,7 +13,7 @@
 	<p><a href="https://github.com/fontforge/fontforge.github.com" style="padding: 0.5em; color: yellow; font-weight: bold; text-decoration: none;" onmouseover="this.style.background='black';" onmouseout="this.style.background='red';" >Are you a web developer? Help us migrate this page on Github</a></p>
 </div>
 <P ALIGN=CENTER>
-<IMG SRC="fontforge-banner-420.jpeg" WIDTH=420 HEIGHT=80>
+<IMG SRC="/assets/img/old/fontforge-banner-420.jpeg" WIDTH=420 HEIGHT=80>
 <DIV class="menucontainer">
   <UL class="menubar">
     <LI class="menu">
@@ -471,7 +471,7 @@
     <DT>
       <A NAME="MassRename">Mass Glyph Rename...</A>
     <DD>
-      <IMG SRC="MassRename.png" WIDTH="429" HEIGHT="288" ALIGN="Right">This allows
+      <IMG SRC="/assets/img/old/MassRename.png" WIDTH="429" HEIGHT="288" ALIGN="Right">This allows
       you to rename a bunch of selected glyphs. It can be used in two ways, either:
       <UL>
 	<LI>
@@ -509,7 +509,7 @@
       <A NAME="Bitmaps">Bitmap Strikes</A> Available...
     <DD>
       This brings up a list of pixel sizes for bitmap fonts.<BR>
-      <IMG SRC="bitmapsavail.png" WIDTH="317" HEIGHT="365" ALIGN="Right"> If you
+      <IMG SRC="/assets/img/old/bitmapsavail.png" WIDTH="317" HEIGHT="365" ALIGN="Right"> If you
       have bitmap fonts this will show their pixel sizes. If you remove a size
       that is in the list then that font will be deleted from the sfd file. If
       you add a size then that size font will be created and stored in the sfd
@@ -594,7 +594,7 @@
       In CID keyed fonts there will not be a set of bitmaps for each sub font,
       instead the entire complex of sub-fonts share bitmaps. <BR Clear=Right>
       <P>
-      <IMG SRC="greymapsavail.png" WIDTH="263" HEIGHT="366" ALIGN="Right">FontForge
+      <IMG SRC="/assets/img/old/greymapsavail.png" WIDTH="263" HEIGHT="366" ALIGN="Right">FontForge
       also supports anti-aliased bitmap fonts, and you can use this dialog to generate
       them. If you want to generate a 12 point anti-aliased font with 8 bits per
       pixel you would type 12@8 into the dialog above. FontForge supports 1, 2,
@@ -696,7 +696,7 @@
 	<DT>
 	  <A NAME="Outline">Outline</A>
 	<DD>
-	  <IMG SRC="OutlineInline.png" WIDTH="146" HEIGHT="70" ALIGN="Right">Changes
+	  <IMG SRC="/assets/img/old/OutlineInline.png" WIDTH="146" HEIGHT="70" ALIGN="Right">Changes
 	  the selected glyphs so that instead of being a solid block, only the outline
 	  of the glyph is visible. The glyphs' bounding boxes will not change.
 	<DT>
@@ -708,7 +708,7 @@
 	  <A NAME="Shadow">Shadow</A>
 	<DD>
 	  Changes the selected glyphs to give them each a
-	  shadow.<IMG SRC="ShadowWireframe.png" WIDTH="171" HEIGHT="69" ALIGN="Right">
+	  shadow.<IMG SRC="/assets/img/old/ShadowWireframe.png" WIDTH="171" HEIGHT="69" ALIGN="Right">
 	  The user has control over the shadow size and angle.
 	<DT>
 	  <A NAME="Wireframe">Wireframe</A>
@@ -783,11 +783,11 @@
       in all selected glyphs. In the outline view it applies to all paths that
       have at least one point selected (or if no points are selected then it applies
       to all paths).<BR>
-      <IMG SRC="twolines.png" WIDTH="247" HEIGHT="247">
-      <IMG SRC="expandedlines.png" WIDTH="247" HEIGHT="247"><BR>
+      <IMG SRC="/assets/img/old/twolines.png" WIDTH="247" HEIGHT="247">
+      <IMG SRC="/assets/img/old/expandedlines.png" WIDTH="247" HEIGHT="247"><BR>
       Above is a simple example of what expand stroke can do. It takes the two
       open paths above left and turns them into the two closed paths right.<BR>
-      <IMG SRC="expandstroke.png" WIDTH="358" HEIGHT="663" ALIGN="Left"><BR>
+      <IMG SRC="/assets/img/old/expandstroke.png" WIDTH="358" HEIGHT="663" ALIGN="Left"><BR>
       The Expand Stroke dialog gives you control over various aspects of the expansion
       process. First you can specify three types of pen nibs:
       <UL>
@@ -848,8 +848,8 @@
 	  Things get very strange if you have intersecting paths with different
 	  orientations.
 	  <P>
-	  <IMG SRC="expandedlines.png" WIDTH="247" HEIGHT="247">
-	  <IMG SRC="overlappedlines.png" WIDTH="247" HEIGHT="247"><BR>
+	  <IMG SRC="/assets/img/old/expandedlines.png" WIDTH="247" HEIGHT="247">
+	  <IMG SRC="/assets/img/old/overlappedlines.png" WIDTH="247" HEIGHT="247"><BR>
 	  This command is probably the buggiest in FontForge. So before FontForge invokes
 	  the command it will save the state to the error recovery file.<BR>
 	  Warning: Splines which are tangent (or nearly so) cause problems. Points
@@ -859,8 +859,8 @@
 	<DD>
 	  <TABLE CELLPADDING="2">
 	    <TR>
-	      <TD><IMG SRC="exclude-pre.png" WIDTH="174" HEIGHT="174"></TD>
-	      <TD><IMG SRC="intersect-post.png" WIDTH="174" HEIGHT="174"></TD>
+	      <TD><IMG SRC="/assets/img/old/exclude-pre.png" WIDTH="174" HEIGHT="174"></TD>
+	      <TD><IMG SRC="/assets/img/old/intersect-post.png" WIDTH="174" HEIGHT="174"></TD>
 	    </TR>
 	  </TABLE>
 	  <P>
@@ -870,8 +870,8 @@
 	<DD>
 	  <TABLE CELLPADDING="2">
 	    <TR>
-	      <TD><IMG SRC="exclude-pre.png" WIDTH="174" HEIGHT="174"></TD>
-	      <TD><IMG SRC="exclude-post.png" WIDTH="174" HEIGHT="174"></TD>
+	      <TD><IMG SRC="/assets/img/old/exclude-pre.png" WIDTH="174" HEIGHT="174"></TD>
+	      <TD><IMG SRC="/assets/img/old/exclude-post.png" WIDTH="174" HEIGHT="174"></TD>
 	    </TR>
 	  </TABLE>
 	  <P>
@@ -988,8 +988,8 @@
 	  So if you have a line which is almost horizontal, and select its endpoints
 	  and apply this command it will be horizontal.<BR>
 	  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-	  <IMG SRC="Constrain2_1.png" WIDTH="122" HEIGHT="90">&nbsp; &nbsp; &nbsp;
-	  &nbsp; <IMG SRC="Constrain2_2.png" WIDTH="122" HEIGHT="90"><BR>
+	  <IMG SRC="/assets/img/old/Constrain2_1.png" WIDTH="122" HEIGHT="90">&nbsp; &nbsp; &nbsp;
+	  &nbsp; <IMG SRC="/assets/img/old/Constrain2_2.png" WIDTH="122" HEIGHT="90"><BR>
 	  (if you select exactly two points, and they lie close to a 45 diagonal, then
 	  they will be forced to the diagonal rather than to horizontal/vertical)
 	<DT>
@@ -1009,8 +1009,8 @@
 	  coordinate will be midway between the two, while its y coordinate remains
 	  unchanged.<BR>
 	  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-	  <IMG SRC="Constrain1_1.png" WIDTH="122" HEIGHT="90">&nbsp; &nbsp; &nbsp;
-	  &nbsp; <IMG SRC="Constrain1_2.png" WIDTH="122" HEIGHT="90">
+	  <IMG SRC="/assets/img/old/Constrain1_1.png" WIDTH="122" HEIGHT="90">&nbsp; &nbsp; &nbsp;
+	  &nbsp; <IMG SRC="/assets/img/old/Constrain1_2.png" WIDTH="122" HEIGHT="90">
 	<DT>
 	  <A NAME="Space-Regions">Space Regions</A>
 	<DD>
@@ -1024,8 +1024,8 @@
 	  because in a serifed font the serifs will often be closer to each other than
 	  to their respective stems.<BR>
 	  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-	  <IMG SRC="Spacem_1.png" WIDTH="140" HEIGHT="108"> &nbsp; &nbsp; &nbsp; &nbsp;
-	  <IMG SRC="Spacem_2.png" WIDTH="145" HEIGHT="108">
+	  <IMG SRC="/assets/img/old/Spacem_1.png" WIDTH="140" HEIGHT="108"> &nbsp; &nbsp; &nbsp; &nbsp;
+	  <IMG SRC="/assets/img/old/Spacem_2.png" WIDTH="145" HEIGHT="108">
 	<DT>
 	  Make <A NAME="Parallel">Parallel</A>
 	<DD>
@@ -1204,7 +1204,7 @@
     <DT>
       <A NAME="CompareFonts">Compare Fonts...</A>
     <DD>
-      <IMG SRC="fontcompdlg.png" WIDTH="254" HEIGHT="448" ALIGN="Right">Sometimes
+      <IMG SRC="/assets/img/old/fontcompdlg.png" WIDTH="254" HEIGHT="448" ALIGN="Right">Sometimes
       it is useful to compare two versions of a font and see what has changed.
       This command will allow you to check:
       <UL>
@@ -1238,7 +1238,7 @@
       second font into the background of the corresponding glyph in the first font.
       This can be helpful in correcting discrepancies.
       <P>
-      <IMG SRC="fontcompresults.png" WIDTH="497" HEIGHT="349">
+      <IMG SRC="/assets/img/old/fontcompresults.png" WIDTH="497" HEIGHT="349">
     <DT>
       <A NAME="CompareL2L">Compare Layer To Layer...</A>
     <DD>

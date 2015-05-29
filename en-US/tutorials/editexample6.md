@@ -50,7 +50,7 @@ isolated).
 The digits often have several variants: tabular digits (where all digits
 have the same advance width so that tables of numbers don't look
 ragged), proportional digits (where each digit has a width appropriate
-to its shape) and old-style or lower case digits (![](img/lcdigits.png))
+to its shape) and old-style or lower case digits (![](/assets/img/old/lcdigits.png))
 where some digits have descenders and others have ascenders.
 
 Some of these variants are built into the encodings (the upper and lower
@@ -59,7 +59,7 @@ information in the font so that the word processor can be aware of the
 variants (Arabic is midway between the two, the various forms are in the
 encoding, but you need to provide extra information as well).
 
-![](img/subtable-oldstyle.png)
+![](/assets/img/old/subtable-oldstyle.png)
 
 Let us consider the case of the digits
 mentioned above. Assume that the glyph called "one" contains the tabular
@@ -79,7 +79,7 @@ and press the button. It will search through all glyphs in all the
 scripts of the feature and find any "oldstyle" variants of them and
 populate the table with them.
 
-![](img/glyphinfo-one.png)
+![](/assets/img/old/glyphinfo-one.png)
 
 Sometimes it makes more sense to think of all the
 substitutions available for a specific glyph (rather than all
@@ -119,7 +119,7 @@ that when the two glyphs are adjacent in the text the word-processor
 will know where to place the accent so that it rides above the "a".
 
 --------------------------- - ------------------------------- --- ----------------------
-![](img/a_with_anchor.png)  + ![](img/grave_with_anchor.png)  =\> ![](img/agrave_anchored.png)
+![](/assets/img/old/a_with_anchor.png)  + ![](/assets/img/old/grave_with_anchor.png)  =\> ![](/assets/img/old/agrave_anchored.png)
 --------------------------- - ------------------------------- --- ----------------------
 
 Not all accents ride centered above the letter (the dot and ogonek ride

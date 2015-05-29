@@ -93,15 +93,15 @@ makes it slightly easier (at least in latin) to design a ligature.
 
 Steps to building a ligature
 
-![ffi ligature as references](img/ffi-refs.png)
+![ffi ligature as references](/assets/img/old/ffi-refs.png)
 
-![ffi after unlinking references](img/ffi-unlink.png)
+![ffi after unlinking references](/assets/img/old/ffi-unlink.png)
 
-![ffi after lowering first f](img/ffi-moved.png)
+![ffi after lowering first f](/assets/img/old/ffi-moved.png)
 
-![ffi after doing remove overlap](img/ffi-rmoverlap.png)
+![ffi after doing remove overlap](/assets/img/old/ffi-rmoverlap.png)
 
-![ffi after adjusting ligature carets](img/ffi-caret.png)
+![ffi after adjusting ligature carets](/assets/img/old/ffi-caret.png)
 
 Use the [Element -\> Glyph Info](../../documentation/interface/elementmenu/#CharInfo) dialog to
 name the glyph and mark it as a ligature. Then use [Element -\> Build
@@ -155,7 +155,7 @@ References](../../documentation/interface/editmenu/#Unlink) and edit them to mak
 Lookups and Features
 --------------------
 
-![](img/fontinfo-lookups.png)Unfortunately simply creating a ligature glyph
+![](/assets/img/old/fontinfo-lookups.png)Unfortunately simply creating a ligature glyph
 is not enough. You must also include information in the font to say that
 the glyph is a ligature, and to say what components it is built from.
 
@@ -181,7 +181,7 @@ You would open the Lookups pane of the
 `[Add Lookup] `button. This will give you a new dialog in which you can
 fill in the attributes of your new lookup.
 
-![](img/AddLookup-Liga.png)You must first choose the lookup type. For
+![](/assets/img/old/AddLookup-Liga.png)You must first choose the lookup type. For
 ligatures this should be "Ligature Substitution". You may then bind this
 lookup to a feature, script and language set. The "ffi" ligature is a
 standard ligature in latin typesetting so it should be bound to the
@@ -211,7 +211,7 @@ of any other lookup however.
 Finally you get to decide whether you want the ligatures in this lookup
 to be stored in afm files.
 
-![](img/subtable-ffi.png)Once you have created a lookup, you must create a
+![](/assets/img/old/subtable-ffi.png)Once you have created a lookup, you must create a
 subtable in that lookup. Select the lookup line (in the Lookups pane of
 Font Info) and press `[Add   Subtable]`. This is a fairly simple
 dialog... you simply provide a name for the sub-table, and then another

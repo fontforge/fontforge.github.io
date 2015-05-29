@@ -96,7 +96,7 @@ unless you have a large (100+ pixel) font to trace.
 Creating Bitmap strikes
 -----------------------
 
-![](img/bitmapsavail.png)If you want to add a bitmap strike with a given
+![](/assets/img/old/bitmapsavail.png)If you want to add a bitmap strike with a given
 pixel size to a font then use `Element->Bitmap Strikes   Available`.
 Simply add the pixel size you are interested in to the list at the
 bottom of the screen.
@@ -176,7 +176,7 @@ one by rasterizing the outline version of the font.
 Editing Bitmaps
 ---------------
 
-![](img/BitmapView.png)The bitmap editing window should be fairly self
+![](/assets/img/old/BitmapView.png)The bitmap editing window should be fairly self
 explanatory. The window is a simple bitmap editor. With the pencil tool,
 clicking on a pixel will make it change. The line tool will draw a
 straight line between the start and end points.
