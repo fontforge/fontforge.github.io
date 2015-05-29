@@ -48,18 +48,18 @@ that program into either eps (Encapsulated PostScript) or svg (Scalable
 Vector Graphics). If you use Illustrator or FreeHand you should probably
 chose "eps" if you use Inkscape you probably want to use "svg".
 
-![](img/emptyfont-A-sel.png)Then in FontForge, open the glyph slot where you
+![](/assets/img/old/emptyfont-A-sel.png)Then in FontForge, open the glyph slot where you
 want to add the glyph you just designed (by double clicking on it), and
 within that window select File-\>Import.
 
-![](img/import.png)This will bring up the import dialog, initially it
+![](/assets/img/old/import.png)This will bring up the import dialog, initially it
 displays all bitmap images. Change the Format to EPS or SVG (depending
 on which you used). Then find the glyph you just created and import it.
 
 You should now have the outlines of a glyph in the fontforge editing
 window.
 
-![](img/floating-A.png)But it may be the wrong size. It may be at the wrong
+![](/assets/img/old/floating-A.png)But it may be the wrong size. It may be at the wrong
 place.
 
 The example at right is both in the wrong place (the bottom part of the

@@ -187,15 +187,15 @@ require them.
 What's the difference between a character and a glyph?
 
 A character is a concept and a glyph is a reification of that concept.
-The letter "A" is a character, while![](img/As.png) are all glyphs that
+The letter "A" is a character, while![](/assets/img/old/As.png) are all glyphs that
 represent an "A". In latin fonts there is often a single glyph for every
 character and a single character for every glyph, but not always -- in
 renaissance printing there were two glyphs for a lower-case s,
-![](img/short-long-s.png)the short and the long s. Whereas a ligature is an
+![](/assets/img/old/short-long-s.png)the short and the long s. Whereas a ligature is an
 example of a glyph that represents two (or more) characters. In arabic
 most of the letters (characters) have at least four different glyphs,
 the appropriate glyph being determined by the letters around it. Here
-are four forms of the arabic character "seen" ![](img/arabic-seen.png).
+are four forms of the arabic character "seen" ![](/assets/img/old/arabic-seen.png).
 
 What is an outline font? What is a bitmap font?
 
@@ -212,13 +212,13 @@ fonts directly (the [Expand Stroke](../../documentation/interface/elementmenu/#E
 be used to turn them into outlines), but if you wish to edit stroked
 fonts, see the section on [multi-layered editing](../../documentation/interface/multilayer/).
 
-*![](img/outlinechar.png)*
+*![](/assets/img/old/outlinechar.png)*
  A glyph's outline
 
-![](img/bitmapchar.png)
+![](/assets/img/old/bitmapchar.png)
  A glyph's bitmap
 
-![](img/strokechar.png)
+![](/assets/img/old/strokechar.png)
  A stroked glyph
  (showing the equiv. outline in grey)
 
@@ -235,14 +235,14 @@ points of the spline and two more to describe the slope of the spline at
 those end points. Here are [two cubic splines](../../documentation/reference/bezier/) with all
 their points shown:
 
-![](img/splines.gif)
+![](/assets/img/old/splines.gif)
 
 The points which describe the slope are called control points. They are
 represented here (and in fontforge) by little colored x's. Moving a
 control point will change the shape of the spline, but it will not alter
 where the spline begins or ends.
 
-![](img/pnts.gif)A series of splines and lines are joined together to make a
+![](/assets/img/old/pnts.gif)A series of splines and lines are joined together to make a
 path. There are several possible ways to make these joins as is shown in
 the example to the right. In each case we have three points in
 approximately the same relative positions. The three points are joined
@@ -260,7 +260,7 @@ fontforge by a square box. In the second case the point of intersection
 is called a tangent point, it is represented by a triangle. The third
 case is a curved point and is represented by a circle.
 
-![](img/quadraticspline.gif)FontForge can also edit quadratic splines (the
+![](/assets/img/old/quadraticspline.gif)FontForge can also edit quadratic splines (the
 splines used in truetype fonts), here there is only one control point
 and it controls the slopes at both end-points. Because of this quadratic
 splines cannot bend in as many ways as cubic splines (the first spline
@@ -352,7 +352,7 @@ that dash at 12 points. Then that dash will be drawn with a length of
 500/1000 \* 12 = 6 points. On a 72 dot per inch screen where a pixel is
 almost exactly one point, the dash will be 6 pixels long.
 
-![](img/sidebearings.png)Every glyph has its own coördinate system. The
+![](/assets/img/old/sidebearings.png)Every glyph has its own coördinate system. The
 font's [baseline](#Baseline) (the line upon which most latin glyphs will
 rest) is 0 in the vertical direction. The horizontal origin is where the
 glyph will start being drawn (what is "drawn" will usually be empty
@@ -498,10 +498,10 @@ Rasterization improvements
  18pt font rasterized by Windows
  (scaled by a factor of 2)
 
-  ![](img/HI.nohints.png)  
+  ![](/assets/img/old/HI.nohints.png)  
  no hints
 
-  ![](img/HI.hints.png)  
+  ![](/assets/img/old/HI.hints.png)  
  hints
 
 #### PostScript
@@ -565,7 +565,7 @@ Element-\> FontInfo-\> Private).
 #### True Type
 
   --------------------
-  ![](img/GridFitM.png)
+  ![](/assets/img/old/GridFitM.png)
    Grid Fit M
   --------------------
 
@@ -924,7 +924,7 @@ That is badly said. Consider the following two glyphs and how they are
 joined to make the final result:
 
   --------------------------- ----------------------------------- --------------------------
-  ![](img/a_with_anchor.png)   +   ![](img/grave_with_anchor.png)   =\>   ![](img/agrave_anchored.png)
+  ![](/assets/img/old/a_with_anchor.png)   +   ![](/assets/img/old/grave_with_anchor.png)   =\>   ![](/assets/img/old/agrave_anchored.png)
   --------------------------- ----------------------------------- --------------------------
 
 The grave accent has been raised and moved to the right so that its
@@ -983,7 +983,7 @@ point, the second mark over the second and so on (this is a gross
 simplification).
 
 Finally you may need to position two marks based on the same anchor
-point, for example the glyph ![](img/a_dieresis_macron.png) has a diaeresis
+point, for example the glyph ![](/assets/img/old/a_dieresis_macron.png) has a diaeresis
 and a macron over it. Both of which might normally be positioned with
 the Top anchor class. Instead we define a special class for positioning
 one mark with respect to another. When creating the anchor class specify
@@ -1004,12 +1004,12 @@ pasted.
 
 To a user of the latin alphabet it makes sense for the vertical origin
 of a glyph to be the baseline on which most letters
-rest![](img/latinBaseline.png). This means that if you change the pointsize
-of a glyph it will still line up properly![](img/latinNormalBaseline.png).
+rest![](/assets/img/old/latinBaseline.png). This means that if you change the pointsize
+of a glyph it will still line up properly![](/assets/img/old/latinNormalBaseline.png).
 This is so obvious we don't even think about it. But if you put the
 vertical origin at the top of the letter then the letters will be
 aligned quite differently, and to our eyes,
-unexpectedly![](img/latinHangBaseline.png).
+unexpectedly![](/assets/img/old/latinHangBaseline.png).
 
 Different scripts have different expectations of how glyphs should be
 aligned. In latin (cyrillic, greek, arabic, hebrew, etc.) the alignment
@@ -1019,19 +1019,19 @@ and descenders below it.
 
 But not all scripts are like that. In Devanagari the alignment point is
 near the top of the glyph -- indeed most glyphs will draw in the
-baseline explicitly![](img/devaBaseline.png). If you change the pointsize
-you want glyphs to line up on this line![](img/devaHangBaseline.png), and
-not down at the bottom of the glyph ![](img/devaLatinBaseline.png).
+baseline explicitly![](/assets/img/old/devaBaseline.png). If you change the pointsize
+you want glyphs to line up on this line![](/assets/img/old/devaHangBaseline.png), and
+not down at the bottom of the glyph ![](/assets/img/old/devaLatinBaseline.png).
 
 In CJK ideographs the baseline is usually drawn at the bottom edge of
 the square which contains the glyph.
 
 However if you try and typeset these different scripts together with
 their baselines in the same place you get a mess:
-![](img/misalignedBaselines.png). It would be much nicer if it were possible
+![](/assets/img/old/misalignedBaselines.png). It would be much nicer if it were possible
 to say that these different scripts have their baselines in different
 places so that the glyphs can fit together
-reasonably:![](img/alignedBaselines.png). Both Apple Typography and OpenType
+reasonably:![](/assets/img/old/alignedBaselines.png). Both Apple Typography and OpenType
 allow for this. There is a [baseline table](../../documentation/interface/baseline/)which says how
 the baselines for each script (or each glyph) should be aligned with
 respect to other baselines.
@@ -1051,17 +1051,17 @@ glyph which will allow you to edit it.
 Selecting several glyphs will allow you to apply various operations to
 all of them, or to cut and paste them.
 
-![](img/AmbrosiaFV.png)
+![](/assets/img/old/AmbrosiaFV.png)
 
 Fonts do not need to be for the latin alphabet alone. Below is a view of
 one of [Wadalab](ftp://ftp.ipl.t.u-tokyo.ac.jp/Font/)'s public domain
 Kanji fonts...
 
-![](img/kanjifont.png)
+![](/assets/img/old/kanjifont.png)
 
 Another Wadalab font encapsulated in a CID keyed font
 
-![](img/fontview-cid.png)
+![](/assets/img/old/fontview-cid.png)
 
 ### Outline Glyph View
 
@@ -1087,7 +1087,7 @@ around) are two palettes, one a palette of tools, and the other a
 palette controlling what layers (foreground, background, grid, hints)
 are visible and editable.
 
-![](img/charview2.png)
+![](/assets/img/old/charview2.png)
 
 ### Bitmap View
 
@@ -1103,7 +1103,7 @@ which bits should be set by pressing the "Recalculate button", the
 results usually need to be tweaked by hand. In the upper left corner is
 a full sized image of your bitmap glyph.
 
-![](img/BitmapView.png)
+![](/assets/img/old/BitmapView.png)
 
 ### Metrics View
 
@@ -1118,16 +1118,16 @@ You can also provide kerning information for any two adjacent glyphs.
 You can view how various OpenType features affect the glyph stream
 
   ------------------------ ---------------------------------
-  ![](img/MetricsView.png) ![](img/MetricsView-features.png)
+  ![](/assets/img/old/MetricsView.png) ![](/assets/img/old/MetricsView-features.png)
   ------------------------ ---------------------------------
 
-![](img/VerticalMetrics.png)
+![](/assets/img/old/VerticalMetrics.png)
 
 Note that in Hebrew, or Arabic (or any other
 right to left alphabet) the glyphs will start on the right and run to
 the left. While in CJK fonts you may want to see things arranged
 vertically.
 
-![](img/HebrewMetrics.png)
+![](/assets/img/old/HebrewMetrics.png)
 
 -- [Next](../editexample/) --

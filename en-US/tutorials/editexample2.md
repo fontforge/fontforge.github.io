@@ -69,7 +69,7 @@ For the next example double click on the square in the font view that
 should contain "o", and import "o\_Ambrosia.png" into it.
 
   --------------- --------------- --------------- ---------------
-  ![](img/o1.png) ![](img/o2.png) ![](img/o3.png) ![](img/o4.png)
+  ![](/assets/img/old/o1.png) ![](/assets/img/old/o2.png) ![](/assets/img/old/o3.png) ![](/assets/img/old/o4.png)
   --------------- --------------- --------------- ---------------
 
   :  Stages in editing "o"
@@ -83,7 +83,7 @@ must be drawn clockwise, while all inner boundaries must be drawn
 counter-clockwise.
 
 If you fail to alternate directions between outer and inner boundaries
-you may get results like the one on the left ![](img/o-baddir.png). If you
+you may get results like the one on the left ![](/assets/img/old/o-baddir.png). If you
 fail to draw the outer contour in a clockwise fashion the errors are
 more subtle, but will generally result in a less pleasing result once
 the glyph has been rasterized.

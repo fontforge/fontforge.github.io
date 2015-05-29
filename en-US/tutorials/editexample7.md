@@ -69,7 +69,7 @@ bitmaps, or you can generate your bitmap fonts and then [use someone
 else's bitmap editor to clean them
 up](http://clr.nmsu.edu/~mleisher/download.html).
 
-![](img/BitmapView.png)
+![](/assets/img/old/BitmapView.png)
 
 Bitmaps are discussed in more detail in the [next
 section.](../editexample8/)
@@ -81,7 +81,7 @@ If you save your file it will be saved in a format that only FontForge
 understands (as far as I know anyway). This is not very helpful if you
 want to use the font.
 
-![](img/generate.png)
+![](/assets/img/old/generate.png)
 
 Instead you must use [File-\>Generate](../../documentation/interface/generate/)
 to convert your font into one of the standard font formats. FontForge
@@ -134,7 +134,7 @@ the weight to be any value between 0 and 999 (with plain generally being
 at 400 or 500, and Bold at 700). TrueType fonts also support a range of
 widths (while the Mac only supports condensed, plain and expanded).
 
-![Dialog for Generate Mac Family](img/GenerateFamily.png)
+![Dialog for Generate Mac Family](/assets/img/old/GenerateFamily.png)
 
 On Windows
 machines, as long as you get the names right, the system should be able

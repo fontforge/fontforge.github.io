@@ -55,7 +55,7 @@ Conditional features may involve substitutions, ligatures or kerning
 contextual substitution, later of [contextual
 ligatures](#Greek).
 
-![](img/bed-script.png)
+![](/assets/img/old/bed-script.png)
 
 Instead of an Indic or Arabic example, let us take
 something I'm more familiar with, the problem of typesetting a latin
@@ -112,13 +112,13 @@ another lookup, a contextual chaining lookup which should be associated
 with a 'calt' feature. And of course we want an associated subtable).
 This will pop up a series of dialogs to edit a contextual subtable
 
-![](img/contextchain-format.png)
+![](/assets/img/old/contextchain-format.png)
 
 The first dialog allows you to specify the
 overall format of the substitution. We want a class based system --
 we've already mentioned what the glyph classes will be.
 
-![](img/contextchain-simpleclasses.png)
+![](/assets/img/old/contextchain-simpleclasses.png)
 
 The next dialog finally shows
 something interesting. At the top is a pattern to match and
@@ -178,7 +178,7 @@ class. The behavior includes the ability to change to a different state,
 advancing the input to the next glyph, applying a substitution to either
 the current glyph or a previous one (the \`\`marked'' glyph).
 
-![](img/sm-picture.png)
+![](/assets/img/old/sm-picture.png)
 
 Using the same example of a latin script font... We
 again need a simple substitution to convert each letter into its high
@@ -191,7 +191,7 @@ an extra state for free, but we shall ignore that), one is the start
 state (the base state -- where nothing changes), and the other is the
 state where we've just read a glyph from the \`\`bovw'' class.
 
-![](img/asm1.png)
+![](/assets/img/old/asm1.png)
 
 Apple Advanced Typography does not quite fit into the
 OpentType concepts of lookups and features, but it is close enough that
@@ -200,18 +200,18 @@ the lookup type is "Mac Contextual State Machine", and the feature is
 actually a mac feature/setting, two numbers. When we create a new
 subtable of this type we get a state machine dialog, as shown below.
 
-![](img/asm2.png)
+![](/assets/img/old/asm2.png)
 
 At the top of the dialog we see a set of class
 definitions, and at the bottom is a representation of the state machine
 itself.
 
-![](img/asm3.png)
+![](/assets/img/old/asm3.png)
 
 Double clicking on a class brings up a dialog similar to
 that used in OpenType.
 
-![](img/asm4.png)
+![](/assets/img/old/asm4.png)
 
 Clicking on a transition in the state machine (there is a
 transition for each state / class combination) produces a transition
@@ -239,7 +239,7 @@ ligature should only be used if "kappa" and "iota" make up a word unto
 themselves, it should not be used for more normal occurances of the two
 within a longer word.
 
-![](img/kappa_iota-lookup.png)
+![](/assets/img/old/kappa_iota-lookup.png)
 
 So the first thing to do is create the
 ligature itself. Add the glyph for U+03D7, and then create a ligature
@@ -248,7 +248,7 @@ U+03D7 to be a ligature of "kappa" and "iota". This lookup will never be
 used directly -- only under the control of another, a conditional
 feature -- so we don't give it a feature tag.
 
-![](img/kappa_iota-subtable.png)
+![](/assets/img/old/kappa_iota-subtable.png)
 
 Next the conditional bit.
 
@@ -267,23 +267,23 @@ defined in each subtable) but it seems to work.)
 
 These rules will be executed in order, and the first one that matches
 the input text will be the (one and only) rule applied. Consider these
-three strings, ![](img/alphakappaiota.png), ![](img/kappaiotatheta.png),
-![](img/alphakappaiotatheta.png) all contain kappa and iota but each
+three strings, ![](/assets/img/old/alphakappaiota.png), ![](/assets/img/old/kappaiotatheta.png),
+![](/assets/img/old/alphakappaiotatheta.png) all contain kappa and iota but each
 contains more letters around them, so none should be replaced by the
 ligature.
 
--   The first string, ![](img/alphakappaiota.png), will match the first rule
+-   The first string, ![](/assets/img/old/alphakappaiota.png), will match the first rule
     above (it contains letters before the kappa iota sequence) and no
     substitution will be done. It also matches the third rule, but we
     never get that far.
--   The second string, ![](img/kappaiotatheta.png), will match the second
+-   The second string, ![](/assets/img/old/kappaiotatheta.png), will match the second
     rule above (it contains letters after the sequence) and again no
     substitution will be done. It would match the third rule, but we
     stop with the first match.
--   The third string, ![](img/alphakappaiotatheta.png), matches all the
+-   The third string, ![](/assets/img/old/alphakappaiotatheta.png), matches all the
     rules, but since the search stops at the first match, only the first
     rule will be applied, and no substitution will be done.
--   The string, ![](img/spacekappaiotaspace.png), matches neither of the
+-   The string, ![](/assets/img/old/spacekappaiotaspace.png), matches neither of the
     first two rules but does match the last, so here the ligature will
     be formed.
 
@@ -302,7 +302,7 @@ Well there's one main reason:
 
 Now how do we convert these rules into a contextual lookup?
 
-![](img/kappa_iota-context.png)
+![](/assets/img/old/kappa_iota-context.png)
 
 We use
 `Element->Font   Info->Lookups->Add Lookup` to create a new contextual
@@ -316,61 +316,61 @@ rules they contain will be executed. We must insure that that final rule
 which actually invokes the ligature is the last one executed (and the
 last one in the list).
 
-![](img/hligbyclasses.png)
+![](/assets/img/old/hligbyclasses.png)
 
 Since we are planning on using the class of all greek letters we will
 want to use a class format for this feature. Then we press the
 `[Next>]` button.
 
-![](img/emptyhlig.png)
+![](/assets/img/old/emptyhlig.png)
 
 The main match will be on the letters kappa and iota in all three
 rules, so we need one class for each of them. So in the Match Classes
 area we press the `[New]` button...
 
-![](img/hligkappaclass.png)
+![](/assets/img/old/hligkappaclass.png)
 
 And type in the word "kappa" and press `[Next>]`
 
-![](img/hligkappa.png)
+![](/assets/img/old/hligkappa.png)
 
 Now we have a class containing the single glyph "kappa". We want to do
 the same thing for "iota" so we press `[New] `again.
 
-![](img/hligiotaclass.png)
+![](/assets/img/old/hligiotaclass.png)
 
 Again type in "iota" and press `[Next>]`
 
-![](img/hligkappaiota.png)
+![](/assets/img/old/hligkappaiota.png)
 
 Now we have all the classes we need here. We still need to create
 classes for the lookahead and backtrack. We only need one class for
 these groups and that class will consist of all greek letters.
 
-![](img/hligback.png)
+![](/assets/img/old/hligback.png)
 
 The check box `[*] Same as Match Classes` is set, but we don't want
 that, we want our own classes here. So uncheck it.
 
-![](img/hligbacknomatch.png)
+![](/assets/img/old/hligbacknomatch.png)
 
 Now the buttons become active and we can create a new class by pressing
 `[New]`
 
-![](img/allgreek.png)
+![](/assets/img/old/allgreek.png)
 
 Now you could go back to the font view and select all of the greek
 letters, and then press the [Set From Font] button in the class dialog.
 
-![](img/hliggreekclass.png)
+![](/assets/img/old/hliggreekclass.png)
 
 But in this case the class we are interested in (all the greek letters)
 is built it, and you can select it from the Standard Class pulldown list
 (Letters in script(s)) Then press `[Next>]`.
 
-![](img/hliggreekback.png)
+![](/assets/img/old/hliggreekback.png)
 
-![](img/hliggreekahead.png)
+![](/assets/img/old/hliggreekahead.png)
 
 Then go through the same process for the look ahead classes (adding one
 class which consists of all the greek letters.
@@ -379,19 +379,19 @@ Now we have all our classes defined and are finally ready to create the
 patterns for our rules. So underneath "List of lists of class numbers"
 press the `[New] `button.
 
-![](img/hlignewrule.png)
+![](/assets/img/old/hlignewrule.png)
 
 The first rule begins with all the greek letters in the backtrack area,
 so click on the "Backtrack" tab, and then press on the class consisting
 of all the greek letters. This puts the class number into the pattern
 area (the List of class numbers)
 
-![](img/hligbackrule.png)
+![](/assets/img/old/hligbackrule.png)
 
 In the match area we want to match kappa and then iota, so click on the
 Match tab, and then on the entries for "kappa" and "iota".
 
-![](img/hligrule.png)
+![](/assets/img/old/hligrule.png)
 
 This rule has no substitutions, so leave the bottom area blank and
 press `[Next>]`.
@@ -406,7 +406,7 @@ We are done with the first rule. It says:
     is iota)
 -   And if the match is successful, do absolutely nothing.
 
-![](img/hligbackruledone.png)
+![](/assets/img/old/hligbackruledone.png)
 
 We've got two more rules though, so press `[OK]` and then
 `[Add Subtable]`. Then go through the process of adding all the
@@ -422,34 +422,34 @@ We are done with the second rule. It says:
     classes (and that class contains all the greek letters)
 -   And if the match is successful, do absolutely nothing.
 
-![](img/hligaheadruledone.png)
+![](/assets/img/old/hligaheadruledone.png)
 
 Press `[OK] `and` [Add Subtable] `for the final rule.
 
-![](img/hligrule.png)
+![](/assets/img/old/hligrule.png)
 
 This rule does have substitutions -- we want to take the two characters
 and convert them into a ligature. So Press `[New] `under the sequence
 position list, we want to start at the first character (sequence
 position 0) and apply the ligature we called "WORD":
 
-![](img/hligseqdlg.png)
+![](/assets/img/old/hligseqdlg.png)
 
 So if anything doesn't match the first two rules, and does contain a
 kappa followed by an iota, it must be a two letter stand-alone greek
 word. And we want to apply our ligature to it.
 
-![](img/hligallrulesdone.png)
+![](/assets/img/old/hligallrulesdone.png)
 
 Now we are done. Press a series of `[OK]`s until all the dialogs have
 been accepted.
 
-![](img/kappaiota-lookups.png)
+![](/assets/img/old/kappaiota-lookups.png)
 
 Once you have created your lookups you may test the result in the
 [metrics view](../../documentation/interface/metricsview/).
 
-![](img/metrics-kappa_iota.png)
+![](/assets/img/old/metrics-kappa_iota.png)
 
 (This example was provided by Apostolos Syropoulos)
 
