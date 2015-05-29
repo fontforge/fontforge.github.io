@@ -3,7 +3,14 @@
     FontForge Modules
 ============================================================ */
 
-
+/* Make font look less thick on mac */
+body, * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.content {
+  padding: 80px 0 100px;
+}
 pre {
   white-space: pre;
   overflow: auto;
@@ -34,6 +41,18 @@ html.js.windows .ff-download .windows {
     display: inline-block;
 }
 
+/* NavBar */
+.navbar-inverse {
+  background-color: #529EE0;
+}
+.navbar-inverse a.brand,
+.navbar-inverse .nav > li > a {
+  color: #fff;
+}
+.navbar-inverse .nav > li > a:hover {
+  color: #000;
+}
+
 /* Page heading */
 .page-heading {	margin-top: 36px;	margin-bottom: 24px;	}
 
@@ -42,23 +61,19 @@ html.js.windows .ff-download .windows {
   font-size: 0.8em;
   letter-spacing: 0.2em;
 }
-.brand:hover {
-  text-decoration: none !important;
-}
 
 /* Site footer */
 
 footer {
   min-height: 100px;
-  margin: 100px 0 0 0;
+  margin: 0;
   padding: 0px 20px 40px 20px;
-  background-color: #393b3c;
 }
 footer a {
   font-weight: 400;
 }
 footer a:hover {
-  color: white
+  color: black;
 }
 
 footer .container {
@@ -76,7 +91,7 @@ footer ul li {
 }
 
 footer h4, footer h4 a, footer p {
-  color: #b8bbbc;
+  color: #707580;
   font-weight: 400;
 }
 
@@ -92,12 +107,6 @@ footer .copyright {
 
 footer .copyright a {
   color: #84898C;
-}
-
-/* Make font look less thick on mac */
-body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
 @media (max-width: 980px) {
@@ -136,10 +145,10 @@ body {
 
 .hero-unit img {
   width: 100%;
-  padding-top: 72px;
+  padding-top: 40px;
 }
 
-/* Social */ 
+/* Social */
 .social {
   text-align: center;
 }
@@ -154,7 +163,7 @@ body {
 }
 .social svg {
   max-width: 60px;
-  margin: 60px auto 0;
+  margin: 80px auto 0;
   display: block;
   fill: #3D4143;
 }
@@ -202,32 +211,15 @@ body {
   margin-left: 20px;
 }
 
-.breadcrumb li {
+.breadcrumb, 
+.breadcrumb li a,
+.breadcrumb .divider {
   text-shadow: none;
-  color: rgba(255,255,255,0.7);
-}
-
-.breadcrumb li a {
-  color: rgba(255,255,255,0.8);
+  color: #fff;
 }
 
 .breadcrumb li a:hover {
-  color: rgba(255,255,255,1);
-  text-decoration: none;
-}
-
-.breadcrumb li a .icon-home {
-  opacity: 0.3;
-  padding-right: 6px;
-  margin-top: 4px;
-}
-
-.breadcrumb .divider {
-  color: rgba(255,255,255,0.6);
-}
-
-.breadcrumb li.active {
-  color: rgba(255,255,255,1.0);
+  color: #000;
 }
 
 .breadcrumbs .doc-search-form {
@@ -235,30 +227,37 @@ body {
 }
 
 .breadcrumbs .doc-search-form .input-medium {
-  background: rgba(255,255,255,0.5);
+  background: none;
   border: none;
-  color: rgba(0,0,0,0.5);
-  padding: 6px 15px 3px 15px;
+  border-bottom: 2px solid white;
+  border-radius: 0;
+  padding: 5px 2px 0;
   margin-right: 5px;
+  box-shadow: none;
+  color: #fff;
 }
 
 .breadcrumbs .doc-search-form .input-medium:-ms-input-placeholder,
 .breadcrumbs .doc-search-form .input-medium:-webkit-input-placeholder,
 .breadcrumbs .doc-search-form .input-medium:-moz-input-placeholder {
-  color: rgba(0,0,0,0.5);
+  color: rgba(255, 255, 255, 0.5);
 
 }
 
 .breadcrumbs .doc-search-form .btn {
-  background: rgba(0,0,0,0.2);
+  background: none;
   border: none;
   color: rgba(255,255,255,0.9);
   text-shadow: none;
+  padding: 0;
+  vertical-align: bottom;
+  font-size: 1em;
+  font-weight: 400;
 }
 
 .breadcrumbs .doc-search-form .btn:hover {
-  background: rgba(0,0,0,0.7);
   box-shadow: none;
+  color: #000;
 }
 
 @media (min-width: 768px) {
@@ -280,6 +279,7 @@ body {
   position: relative;
   z-index: 20;
   background-color: #d3ebfd;
+  color: hsl(200, 5%, 23%);
 }
 
 .download-bar ul {
@@ -797,7 +797,15 @@ figcaption {
   padding: 0px 25px 30px 25px;
 }
 
-
+@media print {
+  * {
+    color: #000 !important;
+    background: none !important;
+  }
+  .brand {
+    background: url(../img/logo-transparent.png) no-repeat bottom left !important;
+  }
+}
 
 /* ============================================================
     Page specific styles
@@ -814,11 +822,8 @@ figcaption {
   display: block;
 }
 
-.home .welcome {
-  margin-top: 80px;
-}
-
 .home .screenshots {
   margin-left: 0;
 }
+
 
