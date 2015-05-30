@@ -15,7 +15,7 @@ to the center point then results are questionable
 2.  Another rasterizer might round things differently and place the
     curve on the wrong side.
 
-![](img/QGDlg.png)So it might be helpful to have a command which would
+![](/assets/img/old/QGDlg.png)So it might be helpful to have a command which would
 search the glyph for places and pixelsizes where splines are close to
 the center points of pixels.
 
@@ -26,11 +26,11 @@ The dialog opposite will check the glyph at pointsizes 7-40, 72, 80, ...
 where the screen resolution is 100 for places where a spline comes
 within .01 (in pixel units) of the center of a pixel.
 
-![](img/QGList.png)The results will look like those at right. Clicking on an
+![](/assets/img/old/QGList.png)The results will look like those at right. Clicking on an
 entry will toggle whether that entry is open (and its children visible)
 or not.
 
-![](img/JustOutside.png)If you click on one of the bottom level entries then
+![](/assets/img/old/JustOutside.png)If you click on one of the bottom level entries then
 fontforge will open a glyph view on that glyph, rasterize it at the
 current pointsize and resolution, and indicate the offending pixel by
 drawing a red box around it. As you can see, the pixel center point lies

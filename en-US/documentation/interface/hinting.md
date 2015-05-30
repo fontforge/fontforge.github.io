@@ -13,7 +13,7 @@ not only the position and width of the stem being hinted, but also where
 the stem should be active. And it needs to know what stems overlap which
 other stems.
 
-![](img/Hints.png) The horizontal stems are drawn in light green. The
+![](/assets/img/old/Hints.png) The horizontal stems are drawn in light green. The
 vertical stems are drawn in light blue. The areas where the stems are
 active are filled in as rectangles, outside of that area the stems'
 outlines are drawn with dotted lines. Most of these stems do not
@@ -38,12 +38,12 @@ FontForge would output one counter group for the vertical stems.
 Serifs
 ------
 
-![](img/serif.png)One of the major advantages of hint substitution is that
+![](/assets/img/old/serif.png)One of the major advantages of hint substitution is that
 it allows certain standard serif situations to be described. In the
 example at right, the serif one the left is smaller than the stem a bit
 further right.
 
-![](img/serif2.png)But it doesn't solve all problems (or I don't know how to
+![](/assets/img/old/serif2.png)But it doesn't solve all problems (or I don't know how to
 use it to do so). Consider the serif on the right. Hint substitution
 would allow us to define a hint for the main vertical stem and for the
 short vertical stem that corresponds to the serif. But the problem that
@@ -132,7 +132,7 @@ may) have a hintmask.
 The hintmask specifies what hints should be active when that point is
 positioned, and will control all subsequent points until a new hintmask
 is established. So in the
-following![](img/charwithhintmask.png)![](img/hintmaskinfo.png) example, the
+following![](/assets/img/old/charwithhintmask.png)![](/assets/img/old/hintmaskinfo.png) example, the
 selected point (on left) has the highlit hints active at it, In the
 glyph view the currently active stems are drawn much darker than the
 inactive ones. Points with hintmasks attached to them have circles drawn
@@ -209,7 +209,7 @@ hinting.
     is it ok to use Counter mask if LanguageGroup is not 1 and the stems
     don't fit into a \*stem3 pattern? Or can cntrmask only be used for
     \*stem3 in latin letters?
--   ![](img/NoPointHint.png)How do hints work? Is a hint meaningful if there
+-   ![](/assets/img/old/NoPointHint.png)How do hints work? Is a hint meaningful if there
     are no points associated with it? As in the "O" at right, where the
     two vertical stems have no points associated with them.
 -   Is it meaningful for a hint to have points only on one side of it?

@@ -5,7 +5,7 @@ title: X Resource Editor
 ---
 
 
-![](img/resedit.png)
+![](/assets/img/old/resedit.png)
 
 This dialog allows you to control the look and feel of FontForge. You
 can control (most of) the same resources described in the [X Resource
@@ -73,11 +73,11 @@ enabled and disabled controls. The border has four different colors, for
 the brightest, mid bright, mid dark and darkest edges of the control.
 Where each of the border colors is used depends on the border type.
 
-The peculiar button, ![](img/colorbutton.png), is a color button. It
+The peculiar button, ![](/assets/img/old/colorbutton.png), is a color button. It
 displays the current color in a rectangle, and, if pressed, invokes a
 color picker dialog.
 
-![](img/colorpicker.jpeg)
+![](/assets/img/old/colorpicker.jpeg)
 
 The color picker displays a Hue/Saturation/Value color wheel. A vertical
 bar on the right shows the Value, the wheel shows Hue and Saturation.

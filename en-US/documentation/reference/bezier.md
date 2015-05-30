@@ -5,14 +5,14 @@ title: B&eacute;zier Splines
 ---
 
 
-![](img/splines.gif)Technically PostScript uses cubic Bézier splines. Each
+![](/assets/img/old/splines.gif)Technically PostScript uses cubic Bézier splines. Each
 control point determines the slope of the spline at the corresponding
 end point. TrueType uses quadratic Bézier splines, in these there is
 only one control point between two end points and that point determines
 the slope of the spline at both end points. Both formats also use lines
 (which are linear Bézier splines).
 
-![](img/quadbezier.gif)It is also possible to have other degree Bézier
+![](/assets/img/old/quadbezier.gif)It is also possible to have other degree Bézier
 splines. For a quartic spline there would be 3 control points, for a
 quintic 4 control points, etc. Of these only the linear, quadratic and
 cubic splines are interesting to us-- those used by TrueType and
@@ -25,7 +25,7 @@ the slopes at both end points.
 
 In general if there are \\(n+1\\) points labeled \\(P_0, P_1, ..., P_n\\), with
 \\(P_0\\) and \\(P_n\\) the end points (and all the others control points) then
-the equation of the Bézier spline between them is: ![](img/bezier.gif). If
+the equation of the Bézier spline between them is: ![](/assets/img/old/bezier.gif). If
 there are two points then this is just the line between the two end
 points, if three then the quadratic spline used by TrueType, if four
 then the cubic spline used by PostScript.
@@ -126,7 +126,7 @@ points as the end points of the interval, and its control point is
 determined by the intersections of the lines tangent to the cubic at the
 start and end of the interval).
 
-![](img/cubic2quad.png)I cannot prove this, but have determined empirically
+![](/assets/img/old/cubic2quad.png)I cannot prove this, but have determined empirically
 (after being told it worked) that if a cubic spline -- like the quarter
 ellipse at right -- is divided "evenly" into n quadratic splines (here
 n==3) then the control points will have the nice property that the

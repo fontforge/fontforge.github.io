@@ -243,7 +243,7 @@ To get the latest changes, for now, take a look at:
         at all!
     -   Fixed handling of HV Group Box (actually GGroup) in X resource
         editor.
-    -   ![](img/fftype32.png)
+    -   ![](/assets/img/old/fftype32.png)
         New application icons by Severin Meyer.
     -   Layers palette changes by Tom Lechner. It's now possible to
         manage layers without leaving the glyph view.
@@ -1982,7 +1982,7 @@ To get the latest changes, for now, take a look at:
     -   Change the menu handler so it can draw mac menu icons
         (cloverleaf for command, up arrow for shift, \^ for control and
         weird squiggly for option).
-         ![](img/MenuWithMacIcons.png) ![](img/MenuWithoutMacIcons.png)
+         ![](/assets/img/old/MenuWithMacIcons.png) ![](/assets/img/old/MenuWithoutMacIcons.png)
 
         Remove the hack that if the modifier mask for the command key
         was set then we'd also set the control mask (this meant that the

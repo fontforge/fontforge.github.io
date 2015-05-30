@@ -14,11 +14,11 @@ and drink tea") is courtesy of Valek Filipov.
 Various other pangrams from
 [http://shair.net/misc/txt/pangram.en](http://shair.net/misc/txt/pangram.en).
 
-The Russian text is from *Anna Karenina*(![](img/Anna.gif)) by Tolstoy.
+The Russian text is from *Anna Karenina*(![](/assets/img/old/Anna.gif)) by Tolstoy.
 
 The Spanish text is *Don Quijote de la Mancha* by Miguel de Cervantes.
 
-The classical Greek text is *Antigone* (![](img/Antigone.gif)) by Sophocles.
+The classical Greek text is *Antigone* (![](/assets/img/old/Antigone.gif)) by Sophocles.
 
 The French text is *Phèdre* by Racine.
 

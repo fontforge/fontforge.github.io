@@ -265,7 +265,7 @@ Unicode
         mapping from byte to glyph with no meaning attached to the
         mapping)
 
--   [Unicode en français![](img/Tricolor.png)](http://hapax.qc.ca/)
+-   [Unicode en français![](/assets/img/old/Tricolor.png)](http://hapax.qc.ca/)
 -   [Pictures of the characters](http://www.unicode.org/charts/)
 -   [Unicode script
     assignments](http://www.unicode.org/Public/UNIDATA/Scripts.txt)

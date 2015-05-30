@@ -811,7 +811,7 @@ height need not be specified, if omitted (or specified as -1) it will be
 just long enough to contain all the lines.
      `FontImage("FontImage.png",[17,"abcd",38,"ABCD"])`
  produces
- ![](img/FontImage.png)
+ ![](/assets/img/old/FontImage.png)
 
 FontsInFile(filename)
 

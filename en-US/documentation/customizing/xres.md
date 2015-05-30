@@ -67,21 +67,21 @@ should be drawn with a serif font.
 
 `fontforge.FontView.ScriptFamily`
 
-![](img/script-A.png)A list of font family names to be used in the font view
+![](/assets/img/old/script-A.png)A list of font family names to be used in the font view
 to display an example character over each user character when the
 character is one of the stylized variants in U+1D400-U+1D7FF. Used for
 characters that should be drawn with a script font.
 
 `fontforge.FontView.FrakturFamily`
 
-![](img/fraktur-A.png)A list of font family names to be used in the font
+![](/assets/img/old/fraktur-A.png)A list of font family names to be used in the font
 view to display an example character over each user character when the
 character is one of the stylized variants in U+1D400-U+1D7FF. Used for
 characters that should be drawn with a fraktur font.
 
 `fontforge.FontView.DoubleStruckFamily`
 
-![](img/doublestruck-B.png)A list of font family names to be used in the
+![](/assets/img/old/doublestruck-B.png)A list of font family names to be used in the
 font view to display an example character over each user character when
 the character is one of the stylized variants in U+1D400-U+1D7FF. Used
 for characters that should be drawn with a double-struck font.
@@ -854,7 +854,7 @@ wierd squiggle for Option(Meta/Alt)) or as text ("Cnt-Shft-A"). Default
 is True on the mac and False elsewhere.
 
   ---------------------------- -------------------------------
-  ![](img/MenuWithMacIcons.png)\   ![](img/MenuWithoutMacIcons.png)
+  ![](/assets/img/old/MenuWithMacIcons.png)\   ![](/assets/img/old/MenuWithoutMacIcons.png)
    True                         False
   ---------------------------- -------------------------------
 

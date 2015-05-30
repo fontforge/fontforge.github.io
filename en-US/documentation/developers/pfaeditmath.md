@@ -6,7 +6,7 @@ title: FontForge's math
 
 
 *Being a brief description of the mathematics underlying various of
-FontForge's commands 
+FontForge's commands
  It is presumed that you understand about parameterized splines, if not
 look at the description of [Bézier curves](../../reference/bezier/).*
 
@@ -30,11 +30,10 @@ A linear transformation is one where the spline described by
 transforming the end and control points will match the transformed
 spline. This includes most of the common transformations you might wish:
 
--   translation
-      ------ --- ----------
-      *x'*   =   *x + dx*
-      *y'*   =   *y + dy*
-      ------ --- ----------
+**Translation**  
+$$x' = x + dx$$  
+$$y' = y + dy$$  
+
 
 -   scaling
       ------ --- -------------
@@ -70,7 +69,7 @@ and we wish to find the maximum point with respect to the x axis we set:
 
 >         dx/dt = 0
 >         3*ax*t2 + 2*bx*t + cx = 0
->      
+>
 
 and then using the quadratic formula we can solve for t:
 
@@ -99,8 +98,8 @@ Unfortunately this does not mean that d^2^y/dt^2^==0 or d^2^x/dt^2^==0.
 After a lot of algebra this boils down to the quadratic in t:
 
   --------------------------------- ------------------------------------ --
-                                    3\*(a~x~\*b~y~-a~y~\*b~x~)\*t^2^ +   
-  3\*(c~x~\*a~y~-c~y~\*a~x~)\*t +   
+                                    3\*(a~x~\*b~y~-a~y~\*b~x~)\*t^2^ +
+  3\*(c~x~\*a~y~-c~y~\*a~x~)\*t +
   c~x~\*b~y~-c~y~\*b~x~             = 0
   --------------------------------- ------------------------------------ --
 
@@ -124,7 +123,7 @@ the case of the Merge command, suppose we have the following splines and
 we wish to remove the middle point and generate a new spline that
 approximates the original two:
 
-      ![](img/mergepre.png) =\> ![](img/mergepost.png)
+      ![](/assets/img/old/mergepre.png) =\> ![](/assets/img/old/mergepost.png)
 
 FontForge uses a least squares approximation to determine the new
 spline. It calculates the locations of several points along the old
@@ -158,7 +157,7 @@ the value we approximate with the new spline, S(t~i~), and the actual
 value we were given, P~i~.
 
   --------- --------------------- ----------------------
-            ![](img/Sigma28x33.png)   [ S(t~i~) - P~i~]^2^
+            ![](/assets/img/old/Sigma28x33.png)   [ S(t~i~) - P~i~]^2^
   --------- --------------------- ----------------------
 
 Now we have four unknown variables, the x and y coordinates of the two
@@ -168,10 +167,10 @@ we have four equations with four unknowns and we can solve for each
 variable.
 
   --------- --------------------- ------------------------------------------------------------
-            ![](img/Sigma28x33.png)   2\* (-3\*t^3^ + 3\*t^2^)\*[ S~x~(t~i~) - P~i.x~] = 0
-            ![](img/Sigma28x33.png)   2\* (-3\*t^3^ + 3\*t^2^)\*[ S~y~(t~i~) - P~i.y~] = 0
-            ![](img/Sigma28x33.png)   2\* (3\*t^3^ - 6\*t^2^ + 3\*t)\*[ S~x~(t~i~) - P~i.x~] = 0
-            ![](img/Sigma28x33.png)   2\* (3\*t^3^ - 6\*t^2^ + 3\*t)\*[ S~y~(t~i~) - P~i.y~] = 0
+            ![](/assets/img/old/Sigma28x33.png)   2\* (-3\*t^3^ + 3\*t^2^)\*[ S~x~(t~i~) - P~i.x~] = 0
+            ![](/assets/img/old/Sigma28x33.png)   2\* (-3\*t^3^ + 3\*t^2^)\*[ S~y~(t~i~) - P~i.y~] = 0
+            ![](/assets/img/old/Sigma28x33.png)   2\* (3\*t^3^ - 6\*t^2^ + 3\*t)\*[ S~x~(t~i~) - P~i.x~] = 0
+            ![](/assets/img/old/Sigma28x33.png)   2\* (3\*t^3^ - 6\*t^2^ + 3\*t)\*[ S~y~(t~i~) - P~i.y~] = 0
   --------- --------------------- ------------------------------------------------------------
 
 Happily for us, the x and y terms do not interact and my be solved
@@ -179,19 +178,19 @@ separately. The procedure is the same for each coordinate, so I shall
 only show one:
 
   --------- --------------------- ------------------------------------------------------------ -------------------------------------------------------------------------- -----
-            ![](img/Sigma28x33.png)   2\* (-3\*t^3^ + 3\*t^2^)\*[ S~x~(t~i~) - P~i.x~] = 0
+            ![](/assets/img/old/Sigma28x33.png)   2\* (-3\*t^3^ + 3\*t^2^)\*[ S~x~(t~i~) - P~i.x~] = 0
 
-            ![](img/Sigma28x33.png)   2\* (3\*t^3^ - 6\*t^2^ + 3\*t)\*[ S~x~(t~i~) - P~i.x~] = 0
+            ![](/assets/img/old/Sigma28x33.png)   2\* (3\*t^3^ - 6\*t^2^ + 3\*t)\*[ S~x~(t~i~) - P~i.x~] = 0
 
   =\>
 
-            ![](img/Sigma28x33.png)   (-3\*t^3^ + 3\*t^2^)\*                                       [ (-3\*t^3^ + 3\*t^2^) \* CP1~x~ +\                                        = 0
-                                                                                                  (3\*t^3^ - 6\*t^2^ + 3\*t) \* CP0~x~ +\                                 
-                                                                                                  (P1~x~-P0~x~)\*t^3^ + 3\*P0~x~\*t^2^ - 3\*P0~x~\*t + P0~x~ - P~i.x~ ]   
+            ![](/assets/img/old/Sigma28x33.png)   (-3\*t^3^ + 3\*t^2^)\*                                       [ (-3\*t^3^ + 3\*t^2^) \* CP1~x~ +\                                        = 0
+                                                                                                  (3\*t^3^ - 6\*t^2^ + 3\*t) \* CP0~x~ +\
+                                                                                                  (P1~x~-P0~x~)\*t^3^ + 3\*P0~x~\*t^2^ - 3\*P0~x~\*t + P0~x~ - P~i.x~ ]
   --------- --------------------- ------------------------------------------------------------ -------------------------------------------------------------------------- -----
 
   --------- -------- --------------------- -------------------------------------------- --- --- --------------------- ------------------------ --------------------------------------------------------------------------
-            CP1~x~   ![](img/Sigma28x33.png)   (-3\*t^3^ + 3\*t^2^)\*(-3\*t^3^ + 3\*t^2^)   =   -   ![](img/Sigma28x33.png)   (-3\*t^3^ + 3\*t^2^)\*   [ (3\*t^3^ - 6\*t^2^ + 3\*t) \* CP0~x~ +
+            CP1~x~   ![](/assets/img/old/Sigma28x33.png)   (-3\*t^3^ + 3\*t^2^)\*(-3\*t^3^ + 3\*t^2^)   =   -   ![](/assets/img/old/Sigma28x33.png)   (-3\*t^3^ + 3\*t^2^)\*   [ (3\*t^3^ - 6\*t^2^ + 3\*t) \* CP0~x~ +
                                                                                                                                                   (P1~x~-P0~x~)\*t^3^ + 3\*P0~x~\*t^2^ - 3\*P0~x~\*t + P0~x~ - P~i.x~ ]
   --------- -------- --------------------- -------------------------------------------- --- --- --------------------- ------------------------ --------------------------------------------------------------------------
 
@@ -203,7 +202,7 @@ CP1~x~
 
 -
 
-![](img/Sigma28x33.png)
+![](/assets/img/old/Sigma28x33.png)
 
 (-3\*t^3^ + 3\*t^2^)\*
 
@@ -213,15 +212,15 @@ CP1~x~
 * * * * *
 
   --------------------- --------------------------------------------
-  ![](img/Sigma28x33.png)   (-3\*t^3^ + 3\*t^2^)\*(-3\*t^3^ + 3\*t^2^)
+  ![](/assets/img/old/Sigma28x33.png)   (-3\*t^3^ + 3\*t^2^)\*(-3\*t^3^ + 3\*t^2^)
   --------------------- --------------------------------------------
 
 Now this can be plugged into the other equation
 
   --------- --------------------- ------------------------------ -------------------------------------------------------------------------- -----
-            ![](img/Sigma28x33.png)   (3\*t^3^ - 6\*t^2^ + 3\*t)\*   [ (-3\*t^3^ + 3\*t^2^) \* CP1~x~ +\                                        = 0
-                                                                    (3\*t^3^ - 6\*t^2^ + 3\*t) \* CP0~x~ +\                                 
-                                                                    (P1~x~-P0~x~)\*t^3^ + 3\*P0~x~\*t^2^ - 3\*P0~x~\*t + P0~x~ - P~i.x~ ]   
+            ![](/assets/img/old/Sigma28x33.png)   (3\*t^3^ - 6\*t^2^ + 3\*t)\*   [ (-3\*t^3^ + 3\*t^2^) \* CP1~x~ +\                                        = 0
+                                                                    (3\*t^3^ - 6\*t^2^ + 3\*t) \* CP0~x~ +\
+                                                                    (P1~x~-P0~x~)\*t^3^ + 3\*P0~x~\*t^2^ - 3\*P0~x~\*t + P0~x~ - P~i.x~ ]
   --------- --------------------- ------------------------------ -------------------------------------------------------------------------- -----
 
 And we can solve for CP0~x~ and then CP1~x~. The algebra becomes very
@@ -256,9 +255,9 @@ point may be anywhere along the line through the start point in that
 direction, and each position will give a different curve.
 
 So we can express the control point by saying it is CP~0~ = P~0~ + r~0~
-![](img/delta0.png) where ![](img/delta0.png) is a vector in the direction of
+![](/assets/img/old/delta0.png) where ![](/assets/img/old/delta0.png) is a vector in the direction of
 the slope, and r~0~ is the distance in that direction. Similarly for the
-end point: CP~1~ = P~1~ + r~1~ ![](img/delta1.png)
+end point: CP~1~ = P~1~ + r~1~ ![](/assets/img/old/delta1.png)
 
 We want to find r~0~ and r~1~.
 
@@ -273,21 +272,21 @@ Converting from bezier control points into a polynomial gives us
 Substituting we get
 
 -   d = P~0~
--   c = 3\*r~0~\*![](img/delta0.png)
--   b = 3\*(P~1~-P~0~+r~1~\*![](img/delta1.png)-2\*r~0~![](img/delta0.png))
--   a = 2\*(P~0~-P~1~) + 3\*(r~0~![](img/delta0.png) -
-    r~1~\*![](img/delta1.png))
+-   c = 3\*r~0~\*![](/assets/img/old/delta0.png)
+-   b = 3\*(P~1~-P~0~+r~1~\*![](/assets/img/old/delta1.png)-2\*r~0~![](/assets/img/old/delta0.png))
+-   a = 2\*(P~0~-P~1~) + 3\*(r~0~![](/assets/img/old/delta0.png) -
+    r~1~\*![](/assets/img/old/delta1.png))
 
-For least squares we want to minimize ![](img/Sigma13x16.png)(S(t~i~) -
+For least squares we want to minimize ![](/assets/img/old/Sigma13x16.png)(S(t~i~) -
 P~i~)^2^.
  taking derivatives with both r0 and r1 we get:
 
   --------- --------------------- ------------------------------------------------------------------------ ------------------------------------------------ --------- --------------------- ------------------------------- ------------------------------------------------------------------- ------- --------- --------------------- ------------------------- ------------------------------------------------------------------- -------
-            ![](img/Sigma28x33.png)   2\* (3\*t^3^ - 6\*t^2^ + 3\*t)\*![](img/delta0.png)\*[ S(t~i~) - P~i~] = 0
+            ![](/assets/img/old/Sigma28x33.png)   2\* (3\*t^3^ - 6\*t^2^ + 3\*t)\*![](/assets/img/old/delta0.png)\*[ S(t~i~) - P~i~] = 0
 
-            ![](img/Sigma28x33.png)   2\* (-3\*t^3^ + 3\*t^2^)\*![](img/delta1.png)\*[ S(t~i~) - P~i~] = 0         dividing by constants and substituting, we get             ![](img/Sigma28x33.png)   (3\*t^3^ - 6\*t^2^ + 3\*t)\*[   P~0~ - P~i~ + 3 \* (P~1~-P~0~\*t^2^ + 2 \* (P~0~ - P~1~)\*t^3^ +\   ] = 0             ![](img/Sigma28x33.png)   (-3\*t^3^ + 3\*t^2^)\*[   P~0~ - P~i~ + 3 \* (P~1~-P~0~\*t^2^ + 2 \* (P~0~ - P~1~)\*t^3^ +\   ] = 0
-                                                                                                                                                                                                                             ![](img/delta0.png)\*(3\*t - 6\*t^2^ + 3\*t^3^) \* r~0~ + \                                                                               ![](img/delta0.png)\*(3\*t - 6\*t^2^ + 3\*t^3^) \* r~0~ + \            
-                                                                                                                                                                                                                             ![](img/delta1.png)\*(3\*t^2^ - 3\*t^3^) \* r~1~ +                                                                                        ![](img/delta1.png)\*(3\*t^2^ - 3\*t^3^) \* r~1~ +                     
+            ![](/assets/img/old/Sigma28x33.png)   2\* (-3\*t^3^ + 3\*t^2^)\*![](/assets/img/old/delta1.png)\*[ S(t~i~) - P~i~] = 0         dividing by constants and substituting, we get             ![](/assets/img/old/Sigma28x33.png)   (3\*t^3^ - 6\*t^2^ + 3\*t)\*[   P~0~ - P~i~ + 3 \* (P~1~-P~0~\*t^2^ + 2 \* (P~0~ - P~1~)\*t^3^ +\   ] = 0             ![](/assets/img/old/Sigma28x33.png)   (-3\*t^3^ + 3\*t^2^)\*[   P~0~ - P~i~ + 3 \* (P~1~-P~0~\*t^2^ + 2 \* (P~0~ - P~1~)\*t^3^ +\   ] = 0
+                                                                                                                                                                                                                             ![](/assets/img/old/delta0.png)\*(3\*t - 6\*t^2^ + 3\*t^3^) \* r~0~ + \                                                                               ![](/assets/img/old/delta0.png)\*(3\*t - 6\*t^2^ + 3\*t^3^) \* r~0~ + \
+                                                                                                                                                                                                                             ![](/assets/img/old/delta1.png)\*(3\*t^2^ - 3\*t^3^) \* r~1~ +                                                                                        ![](/assets/img/old/delta1.png)\*(3\*t^2^ - 3\*t^3^) \* r~1~ +
   --------- --------------------- ------------------------------------------------------------------------ ------------------------------------------------ --------- --------------------- ------------------------------- ------------------------------------------------------------------- ------- --------- --------------------- ------------------------- ------------------------------------------------------------------- -------
 
 Again we have two linear equations in two unknowns (r0, and r1), and
@@ -340,7 +339,7 @@ appear at the end-points of a contour, or at points where two splines
 join but their slopes are not continuous. PostScript allows the user to
 specify the behavior at joints and at end-points.
 
-    ![](img/expand-pre.png) =\> ![](img/expand-post.png)
+    ![](/assets/img/old/expand-pre.png) =\> ![](/assets/img/old/expand-post.png)
 
 FontForge can't deal with an infinite number of locations, so it samples
 the curve (approximately every em unit), and finds the two normal
@@ -358,8 +357,8 @@ PostScript pens can end in
     with the same slope and width/2 units long, and then join those
     end-points with a straight line.
 
-Things are a bit more complex at a joint ![](img/expand-joint-pre.png) =\>
-![](img/expand-joint-post.png), the green lines in the right image show
+Things are a bit more complex at a joint ![](/assets/img/old/expand-joint-pre.png) =\>
+![](/assets/img/old/expand-joint-post.png), the green lines in the right image show
 where the path would have gone had it not been constrained by a joint,
 so on the inside of the joint FontForge must figure out where this
 intersection occurs. While on the outside FontForge must figure out
@@ -427,5 +426,3 @@ behind this algorithm are broken if the pen changes shape too rapidly).
 ### A pen at a varying angle
 
 FontForge does not support this.
-
-

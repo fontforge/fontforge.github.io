@@ -651,7 +651,7 @@ figcaption {
 }
 
  .table-of-contents .toc-toggle span {
-  background: url(../img/toc-icon.png) no-repeat left center;
+  background: url(/assets/img/toc-icon.png) no-repeat left center;
   padding-left: 30px;
   letter-spacing: 0.3em;
   font-size: 13px;
@@ -737,7 +737,7 @@ figcaption {
 
 
 .blockrow6 li a {
-  background: #FBE635 url(../img/systems-sprite.png) no-repeat;
+  background: #FBE635 url(/assets/img/systems-sprite.png) no-repeat;
   display: block;
   width: 126px;
   height: 106px;
@@ -751,12 +751,12 @@ figcaption {
   margin-right: 0;
 }
 
-.blockrow6 li a.gnulinux { background: #FBE635 url(../img/systems-sprite.png) no-repeat 26px 17px;	}
-.blockrow6 li a.mac { background: #F6C20B url(../img/systems-sprite.png) no-repeat -99px 17px;	}
-.blockrow6 li a.windows { background: #EA8142 url(../img/systems-sprite.png) no-repeat -211px 17px;	}
-.blockrow6 li a.vms { background: #5FC78F url(../img/systems-sprite.png) no-repeat -331px 17px;	}
-.blockrow6 li a.source { background: #FBE635 url(../img/systems-sprite.png) no-repeat -453px 17px;	}
-.blockrow6 li a.uninstalling { background: #F6C20B url(../img/systems-sprite.png) no-repeat -572px 17px;	}
+.blockrow6 li a.gnulinux { background: #FBE635 url(/assets/img/systems-sprite.png) no-repeat 26px 17px;	}
+.blockrow6 li a.mac { background: #F6C20B url(/assets/img/systems-sprite.png) no-repeat -99px 17px;	}
+.blockrow6 li a.windows { background: #EA8142 url(/assets/img/systems-sprite.png) no-repeat -211px 17px;	}
+.blockrow6 li a.vms { background: #5FC78F url(/assets/img/systems-sprite.png) no-repeat -331px 17px;	}
+.blockrow6 li a.source { background: #FBE635 url(/assets/img/systems-sprite.png) no-repeat -453px 17px;	}
+.blockrow6 li a.uninstalling { background: #F6C20B url(/assets/img/systems-sprite.png) no-repeat -572px 17px;	}
 
 /* Block Row 3 items */
 
@@ -770,7 +770,7 @@ figcaption {
 }
 
 .blockrow3 li a {
-  background: #FBE635 url(../img/systems-sprite.png) no-repeat;
+  background: #FBE635 url(/assets/img/systems-sprite.png) no-repeat;
   display: block;
   width: 252px;
   height: 212px;
@@ -793,9 +793,9 @@ figcaption {
 
 }
 
-.blockrow3 li a.orange { background: url('../img/samples/screenshot-1.png') no-repeat scroll 0% 0% #F6C20B; }
-.blockrow3 li a.red { background: url('../img/samples/screenshot-2.png') no-repeat scroll 0% 0% #EA8142;}
-.blockrow3 li a.green { background: url('../img/samples/screenshot-3.png') no-repeat scroll 0% 0% #5FC78F;}
+.blockrow3 li a.orange { background: url('/assets/img/samples/screenshot-1.png') no-repeat scroll 0% 0% #F6C20B; }
+.blockrow3 li a.red { background: url('/assets/img/samples/screenshot-2.png') no-repeat scroll 0% 0% #EA8142;}
+.blockrow3 li a.green { background: url('/assets/img/samples/screenshot-3.png') no-repeat scroll 0% 0% #5FC78F;}
 
 
 /* Link Sets */
@@ -829,7 +829,7 @@ figcaption {
     background: none !important;
   }
   .brand {
-    background: url(../img/logo-transparent.png) no-repeat bottom left !important;
+    background: url(/assets/img/logo-transparent.png) no-repeat bottom left !important;
   }
 }
 

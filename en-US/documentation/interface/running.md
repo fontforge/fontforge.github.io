@@ -173,7 +173,7 @@ double clicking on it, dragging files to it, etc.
 **Caveat:**`FontForge` and `Font Book` may fight over which will open
 standard fonts if you double click on the font file. Both claim they can
 open these files, neither claims to be the prefered application for
-them. If an .otf file shows a fontforge icon (![](img/FFmacotfIcon.png)) it
+them. If an .otf file shows a fontforge icon (![](/assets/img/old/FFmacotfIcon.png)) it
 will be opened by fontforge, if a font book icon it will be opened by
 font book. Dragging a font file to the desired application will always
 work. Or you can select the font, and invoke `File->Get Info` (in the
