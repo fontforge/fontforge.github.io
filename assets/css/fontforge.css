@@ -41,23 +41,49 @@ html.js.windows .ff-download .windows {
     display: inline-block;
 }
 
+* {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);  
+}
+a, .breadcrumbs .doc-search-form .btn {
+  color: inherit !important;
+  text-decoration: none;
+  -webkit-transition: .3s cubic-bezier(.33,.66,.66,1) !important;
+  transition: .3s cubic-bezier(.33,.66,.66,1) !important;
+}
+.btn { 
+  color: white !important;
+}
+.content a:not(.btn) {
+  box-shadow: inset 0 -5px 0 #ff772f;
+  color: inherit;
+  padding: 0 2px;
+  margin: 0 -2px;
+  display: inline-block;
+}
+footer a, .social span, .breadcrumb li a {
+  padding: 0 2px;
+  margin: 0 -2px;
+  display: inline-block;  
+}
+.social span {
+  margin: 0;
+}
+a:not(.btn):not(.brand):hover,
+.breadcrumbs .doc-search-form .btn:hover {
+  color: white !important;
+  background: #ff772f !important;
+}
+
+
 /* NavBar */
 .navbar-inverse {
   background-color: #529EE0;
-}
-.navbar-inverse a.brand,
-.navbar-inverse .nav > li > a {
   color: #fff;
 }
-.navbar-inverse .nav > li > a:hover {
-  color: #000;
+.navbar .nav > li > a {
+  line-height: 28px;
 }
-.navbar-inverse .btn-navbar {
-  background-color: none !important;
-}
-.navbar-inverse .btn-navbar:hover {
-  color: #000;
-}
+
 
 /* Page heading */
 .page-heading {	margin-top: 36px;	margin-bottom: 24px;	}
@@ -77,9 +103,6 @@ footer {
 }
 footer a {
   font-weight: 400;
-}
-footer a:hover {
-  color: black;
 }
 
 footer .container {
@@ -163,14 +186,10 @@ footer .copyright a {
   text-align: center;
 }
 .content .social a {
-  background: none;
+  box-shadow: none;
   padding: 0;
   margin: 0;
   display: inline;
-}
-.content .social a:hover {
-  background: #ff6a1a;
-  color: white;
 }
 .social svg {
   max-width: 60px;
@@ -178,10 +197,6 @@ footer .copyright a {
   display: block;
   fill: #3D4143;
 }
-.social a:hover svg {
-  fill: #ff6a1a;
-}
-
 
 /* Sub-nav bar */
 
@@ -224,14 +239,16 @@ footer .copyright a {
 
 .breadcrumb, 
 .breadcrumb li a,
-.breadcrumb .divider {
+.breadcrumb .divider,
+.breadcrumb .active {
   text-shadow: none;
   color: #fff;
 }
 
-.breadcrumb li a:hover {
-  color: #000;
+.breadcrumb .divider {
+  padding: 0 8px 0 5px;
 }
+
 
 .breadcrumbs .doc-search-form {
   margin: 12px 20px 0 20px;
@@ -258,17 +275,13 @@ footer .copyright a {
 .breadcrumbs .doc-search-form .btn {
   background: none;
   border: none;
-  color: rgba(255,255,255,0.9);
   text-shadow: none;
-  padding: 0;
+  border-radius: 0;
+  padding: 0 2px;
+  margin: 0 -2px;
   vertical-align: bottom;
   font-size: 1em;
-  font-weight: 400;
-}
-
-.breadcrumbs .doc-search-form .btn:hover {
-  box-shadow: none;
-  color: #000;
+  color: white !important;
 }
 
 @media (min-width: 768px) {
@@ -311,11 +324,11 @@ footer .copyright a {
   padding-left: 20px;
   padding-right: 20px;
   margin-bottom: 5px;
+  color: white !important;
 }
 
 .download-bar .btn-large:hover {
   background-color: #d94c00;
-  color: white;
 }
 
 .download-bar .statistic {

@@ -175,33 +175,6 @@ body {
   background-color: #f7f7f8;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.content {
-  padding-bottom: 100px;
-}
-
-.content a:not(.btn) {
-  color: inherit;
-  text-decoration: none;
-  background: -webkit-linear-gradient(top, transparent 80%, #ff772f 80.1%, #ff772f 99.9%, transparent 100%);
-  background: linear-gradient(to bottom, transparent 80%, #ff772f 80.1%, #ff772f 99.9%, transparent 100%);
-  -webkit-transition: background .4s ease;
-  transition: background .4s ease;
-  padding: 0 2px;
-  margin: 0 -2px;
-  display: inline-block;
-}
-
-.content a:hover {
-  background: -webkit-linear-gradient(top, transparent 0%, #ff772f 0.1%, #ff772f 99.9%, transparent 100%);
-  background: linear-gradient(to bottom, transparent 0%, #ff772f 0.1%, #ff772f 99.9%, transparent 100%);
-  color: white;
-}
-
 .img-rounded {
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
@@ -3983,19 +3956,12 @@ input[type="submit"].btn.btn-mini {
 }
 
 .navbar-inverse a.brand {
-  color: #232C31;
   background: url(../img/logo-transparent.png) no-repeat bottom left;
   background-size: 80px;
   padding-left: 90px;
   padding-top: 40px;
   font-size: 30px;
 }
-
-.navbar .brand:hover {
-  text-decoration: none;
-  color: #000000;
-}
-
 .navbar-text {
   margin-bottom: 0;
   line-height: 75px;
@@ -4178,7 +4144,7 @@ input[type="submit"].btn.btn-mini {
 
 .navbar .nav > li > a {
   float: none;
-  padding: 25.5px 15px 25.5px;
+  padding: 25px 15px;
   color: #c7c7c7;
   text-decoration: none;
   text-align: center;
@@ -6793,17 +6759,7 @@ x@media (min-width: 1200px) {
   .navbar .nav > li > a {
     position: relative;
     font-size: 18px;
-    padding: 44px 0px 22px 30px;
-    -webkit-transition: color 0.2s ease-out;
-    /* Safari 3.2+, Chrome */
-    
-    -moz-transition: color 0.2s ease-out;
-    /* Firefox 4-15 */
-    
-    -o-transition: color 0.2s ease-out;
-    /* Opera 10.5-12.00 */
-    
-    transition: color 0.2s ease-out;
-    /* Firefox 16+, Opera 12.50+ */
+    padding: 0px 2px 0px 2px;
+    margin: 42px -2px 22px 28px;
   }
 }
