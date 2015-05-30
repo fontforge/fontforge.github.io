@@ -127,10 +127,10 @@ more baroque. FontForge knows many oddities of accent placement, but it
 will never know all of them (some letters have multiple forms depending
 on the font, or perhaps on the humidity and phase of the moon).
 
-![](img/acenter.png)
+![](/assets/img/old/acenter.png)
  Center point of the glyph
 
-![](img/ahighest.png)
+![](/assets/img/old/ahighest.png)
  Highest point of the glyph
 
 And how accents are centered depends on the accents themselves. Usually
@@ -139,10 +139,10 @@ over the base glyph's "center". But that doesn't always work either. The
 grave and acute accents are usually (but not always) centered only on
 the bottom part of the glyph.
 
-![](img/aacutemid.png)
+![](/assets/img/old/aacutemid.png)
  Midpoint of accent
 
-![](img/aacutebase.png)
+![](/assets/img/old/aacutebase.png)
  Centered on base of accent
 
 FontForge gives you a minuscule amount of control over where it puts

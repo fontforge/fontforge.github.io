@@ -5,10 +5,10 @@ title: Anti-Alias Comparison
 ---
 
 
-![](img/AmbrosiaFV-bm.png)
+![](/assets/img/old/AmbrosiaFV-bm.png)
  Bitmap display in font view.
 
-![](img/AmbrosiaFV.png)
+![](/assets/img/old/AmbrosiaFV.png)
  Anti-Aliased (Greymap) display in font view.
 
 At screen pixel sizes the rasterizer has trouble rendering some of the
@@ -18,7 +18,7 @@ double horizontal bar of the H very well, while it is well rendered in
 the one on the right. The results are more extreme in the example above.
 
   --------------- ---------------
-  ![](img/H-bm.png)   ![](img/H-gm.png)
+  ![](/assets/img/old/H-bm.png)   ![](/assets/img/old/H-gm.png)
   --------------- ---------------
 
 -- [TOC](/en-US/tutorials/overview/) -- [Back](../fontview/) --

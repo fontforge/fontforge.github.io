@@ -4532,9 +4532,9 @@ title: Changes to pfaedit (predecessor to fontforge)
 
 -   5 Mar 2001
     -   Minimal truetype instructing (hinting) is now in place.
-        ![](img/HI.nohints.png)
+        ![](/assets/img/old/HI.nohints.png)
          no hints
-        ![](img/HI.hints.png)
+        ![](/assets/img/old/HI.hints.png)
          hints
     -   This includes applying instructions to all points that lie on
         the Hints generated for PostScript, a certain amount of extra

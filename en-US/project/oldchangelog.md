@@ -20,7 +20,7 @@ title: Older changes to FontForge
 
 -   24-August-2008
     -   --------------- ------------------
-          ![](img/FF32.png)   ![](img/FFsfd32.png)
+          ![](/assets/img/old/FF32.png)   ![](/assets/img/old/FFsfd32.png)
           --------------- ------------------
 
         Changes to create a stub Mac application. Add an apple event

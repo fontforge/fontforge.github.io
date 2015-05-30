@@ -78,7 +78,7 @@ Blocks of real type
 banner image of blocks of real type. The type face is Imprint, created
 by Monotype (UK).
 
-![](img/fontforge-banner-420.jpeg)
+![](/assets/img/old/fontforge-banner-420.jpeg)
 
 SourceForge
 -----------

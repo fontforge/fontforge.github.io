@@ -1,24 +1,15 @@
-	<!-- JAVASCRIPT -->
-<!--
-	<script type="text/javascript" 
-	        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-	</script>
--->
-	<script type="text/javascript" src="/assets/js/jquery.js"></script>
-  <script type="text/javascript" src="/assets/js/jurlp.min.js"></script>
-<!-- Used for the menu + accordion -->	
-  <script type="text/javascript" src="/assets/js/bootstrap.js"></script>
-<!-- Used for breadcrumbs and others -->	
-  <script type="text/javascript" src="/assets/js/plugins.min.js"></script>
+<!-- JAVASCRIPT -->
+{% if page.title == "FontForge's math" %}
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+{% endif %}
+<script type="text/javascript" src="/assets/js/jquery.js"></script>
+<script type="text/javascript" src="/assets/js/jurlp.min.js"></script>
+<!-- Used for the menu + accordion -->
+<script type="text/javascript" src="/assets/js/bootstrap.js"></script>
+<!-- Used for breadcrumbs and others -->
+<!-- Copied fontforge.js into plugins.js - no need to two files -->
+<script type="text/javascript" src="/assets/js/plugins.min.js"></script>
 
-<!-- Copied into plugins.js - no need to two files -->
-<!--  <script type="text/javascript" src="/assets/js/fontforge.js"></script>-->
-
-<!-- We don't use this do we?	<script type="text/javascript" src="/assets/js/jquery-ui-1.10.0.custom.min.js"></script>
-  <script type="text/javascript" src="https://gumroad.com/js/gumroad.js"></script>-->
-
-	<!-- CHROME FRAME -->
-	<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
-
-	</body>
+</body>
 </html>
