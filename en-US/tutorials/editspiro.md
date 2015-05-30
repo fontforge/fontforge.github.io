@@ -50,17 +50,17 @@ There are 5 different types of spiro points
     would call for a G4.
 -   Corner Points
 -   Prev Constraint points (to be used when the contour changes from a
-    curve to a straight line)![](img/spiroprevconstraint.png)
+    curve to a straight line)![](/assets/img/old/spiroprevconstraint.png)
 -   Next Constraint points (to be used when the contour changes from a
-    straight line to a curve) ![](img/spironextconstraint.png)
+    straight line to a curve) ![](/assets/img/old/spironextconstraint.png)
 
 As before let us try to edit the "C" glyph from Ambrosia.
 
-![](img/Cspiro0.png)
+![](/assets/img/old/Cspiro0.png)
 
-![](img/Cspiro1.png)
+![](/assets/img/old/Cspiro1.png)
 
-![](img/Cspiro2.png)
+![](/assets/img/old/Cspiro2.png)
 
 Again we start with a blank glyph. Note that there is a button in the
 shape of a spiral in the tool pane. If you press this button you go into
@@ -89,11 +89,11 @@ obvious later when the contour looks distorted here), then select the
 constraint point and use [Element-\>Get Info](../../documentation/interface/getinfo/#Spiro)to
 change the point type -- or use the [Point menu](../../documentation/interface/pointmenu/).
 
-![](img/Cspiro3.png)
+![](/assets/img/old/Cspiro3.png)
 
-![](img/Cspiro4.png)
+![](/assets/img/old/Cspiro4.png)
 
-![](img/Cspiro5.png)
+![](/assets/img/old/Cspiro5.png)
 
 Now select the corner point from the tool menu (the one that looks like
 a square).
@@ -120,11 +120,11 @@ point on either side of it, so we need to pick another constraint. In
 this case the contour will change from a straight line to a curve, so
 that means a "prev constraint" point.
 
-![](img/Cspiro6.png)
+![](/assets/img/old/Cspiro6.png)
 
-![](img/Cspiro6_5.png)
+![](/assets/img/old/Cspiro6_5.png)
 
-![](img/Cspiro7.png)
+![](/assets/img/old/Cspiro7.png)
 
 Then proceeding to fill in the other points needed to make for a smooth
 curve of the serif.
@@ -138,11 +138,11 @@ out.
 
 Then fill in the remainder of the points on this side.
 
-![](img/Cspiro8.png)
+![](/assets/img/old/Cspiro8.png)
 
-![](img/Cspiro9.png)
+![](/assets/img/old/Cspiro9.png)
 
-![](img/Cspirals.png)
+![](/assets/img/old/Cspirals.png)
 
 As we approach the lower tip of the C we again need to zoom in
 
@@ -177,7 +177,7 @@ created.
 (Raph is working on this, and at some point we may lose the spirals
 entirely, but they have a certain charm -- I'll be sorry to see them go)
 
-![](img/Cspiro10.png)
+![](/assets/img/old/Cspiro10.png)
 
 This is probably not the best way to edit with spiros. Raph Levien uses
 an approach where he puts points at the major features of the glyph,

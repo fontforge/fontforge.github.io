@@ -40,7 +40,7 @@ title: Examining and controling metrics and kerning
 Examining and controlling metrics
 ---------------------------------
 
-![](img/sidebearings.png)
+![](/assets/img/old/sidebearings.png)
 
 After you have created the shapes of your glyphs
 you must next figure out the spacing between glyphs. The space between
@@ -59,7 +59,7 @@ in isolation, you should see the glyph in the context of other glyphs
 and set it from that perspective. Use the
 `Window->Open Metrics Window` command.
 
-![](img/MetricsView.png)
+![](/assets/img/old/MetricsView.png)
 
 Any glyphs selected in the fontview (when you invoke the metrics view)
 will be displayed in the metrics view. You may change which glyphs are
@@ -78,7 +78,7 @@ value. After doing that you might also want to execute
 `Metrics->Center in Width` to even out the left and right spacing on
 each glyph.
 
-![](img/autowidth.png)
+![](/assets/img/old/autowidth.png)
 
 If all this manual operation seems too complicated,
 try `Metrics->Auto Width`. This will automagically assign widths to
@@ -160,7 +160,7 @@ the top bar of the "T". This is called kerning, and it is used to
 control inter-glyph spacing on a pair-by-pair basis.
 
   ------------------------ ----------------------
-  ![](img/To-unkerned.png) ![](img/To-kerned.png)
+  ![](/assets/img/old/To-unkerned.png) ![](/assets/img/old/To-kerned.png)
   ------------------------ ----------------------
 
 
@@ -173,7 +173,7 @@ line (normally the horizontal advance) between the two should go green
 (and becomes the kerned advance). Drag this line around until the
 spacing looks nice.
 
-![](img/addlookup-kern.png)
+![](/assets/img/old/addlookup-kern.png)
 
 Sadly that statement is a simplification... Before you can create a
 kerning pair you must create a kerning lookup (see [the section on
@@ -199,7 +199,7 @@ set the kerning subtable directly. You may set your kerning pairs from
 here, though I prefer the metrics view myself because you can see more
 glyphs and so get a better feel for the "color" of the font.
 
-![](img/subtable-to.png)
+![](/assets/img/old/subtable-to.png)
 
 **NOTE**: Some glyph combinations are better treated by [creating a
 ligature](../editexample4/#ligature) than by kerning the letters.

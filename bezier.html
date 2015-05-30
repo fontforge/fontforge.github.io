@@ -5,7 +5,7 @@
   <!-- AP: Last modified: 20-Feb-2011 -->
   <TITLE>B&eacute;zier Splines</TITLE>
   <LINK REL="icon" href="fftype16.png">
-  <LINK REL="stylesheet" TYPE="text/css" HREF="FontForge.css">
+  <LINK REL="stylesheet" TYPE="text/css" HREF="/assets/css/old/FontForge.css">
 </HEAD>
 >
 <div style="margin:0; height: 4	em; padding: 0.5em; background: red; color:yellow; text-align:center; font-size:1em; font-family: sans-serif;">
@@ -17,14 +17,14 @@
     B&eacute;zier<SUP><SMALL><A HREF="#bezier">1</A></SMALL></SUP> Splines
   </H1>
   <P>
-  <IMG SRC="splines.gif" WIDTH="172" HEIGHT="179" ALIGN="Left">Technically
+  <IMG SRC="/assets/img/old/splines.gif" WIDTH="172" HEIGHT="179" ALIGN="Left">Technically
   PostScript uses cubic B&eacute;zier splines. Each control point determines
   the slope of the spline at the corresponding end point. TrueType uses quadratic
   B&eacute;zier splines, in these there is only one control point between two
   end points and that point determines the slope of the spline at both end
   points. Both formats also use lines (which are linear B&eacute;zier splines).
   <P>
-  <IMG SRC="quadbezier.gif" WIDTH="113" HEIGHT="88" ALIGN="Right">It is also
+  <IMG SRC="/assets/img/old/quadbezier.gif" WIDTH="113" HEIGHT="88" ALIGN="Right">It is also
   possible to have other degree B&eacute;zier splines. For a quartic spline
   there would be 3 control points, for a quintic 4 control points, etc. Of
   these only the linear, quadratic and cubic splines are interesting to us--
@@ -37,7 +37,7 @@
   In general if there are n+1 points labeled P<SUB>0</SUB>, P<SUB>1</SUB>,
   ... P<SUB>n</SUB>, with P<SUB>0</SUB> and P<SUB>n</SUB> the end points (and
   all the others control points) then the equation of the B&eacute;zier spline
-  between them is: <IMG SRC="bezier.gif" WIDTH="137" HEIGHT="56" ALIGN="Middle">.
+  between them is: <IMG SRC="/assets/img/old/bezier.gif" WIDTH="137" HEIGHT="56" ALIGN="Middle">.
   If there are two points then this is just the line between the two end points,
   if three then the quadratic spline used by TrueType, if four then the cubic
   spline used by PostScript.
@@ -154,7 +154,7 @@
   points of the interval, and its control point is determined by the intersections
   of the lines tangent to the cubic at the start and end of the interval).
   <P>
-  <IMG SRC="cubic2quad.png" WIDTH="482" HEIGHT="180" ALIGN="Right">I cannot
+  <IMG SRC="/assets/img/old/cubic2quad.png" WIDTH="482" HEIGHT="180" ALIGN="Right">I cannot
   prove this, but have determined empirically (after being told it worked)
   that if a cubic spline -- like the quarter ellipse at right -- is divided
   "evenly" into n quadratic splines (here n==3) then the control points will

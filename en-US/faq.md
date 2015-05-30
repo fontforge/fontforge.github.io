@@ -328,7 +328,7 @@ an adventure. We'll just have to wait and see.
 
 ## Does working on FontForge provide the same kind of pleasure as working on pots or baking bread?
 
-![](img/bowlweb.gif)**From an interview with [Open Source
+![](/assets/img/old/bowlweb.gif)**From an interview with [Open Source
 Publishing](http://ospublish.constantvzw.org/?p=221), done at
 [LGM](http://www.libregraphicsmeeting.org/)2007**
 
@@ -424,7 +424,7 @@ embedding](http://www.fontembeddng.com/fonts-and-the-law) website.
 
 ## What is a 12 point font? (What measurement of the font determines the point size?)
 
-![](img/pointsize.png)A font is 12 points high if the distance between the
+![](/assets/img/old/pointsize.png)A font is 12 points high if the distance between the
 baselines of two adjacent lines of (unleaded) text is 12 points.
 
 The pointsize is not based on the sizes of any of the glyphs of the

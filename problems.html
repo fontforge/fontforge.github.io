@@ -5,7 +5,7 @@
   <!-- AP: Last modified: 5-Sep-2009 -->
   <TITLE>Finding common font problems automagically</TITLE>
   <LINK REL="icon" href="fftype16.png">
-  <LINK REL="stylesheet" TYPE="text/css" HREF="FontForge.css">
+  <LINK REL="stylesheet" TYPE="text/css" HREF="/assets/css/old/FontForge.css">
 </HEAD>
 >
 <div style="margin:0; height: 4	em; padding: 0.5em; background: red; color:yellow; text-align:center; font-size:1em; font-family: sans-serif;">
@@ -61,7 +61,7 @@
   (<A HREF="mailto:fontforge-users@lists.sourceforge.net">fontforge-users@lists.sourceforge.net</A>
   this is a public mailing list).
   <P>
-  <IMG SRC="findprobs.png" WIDTH="314" HEIGHT="479" ALIGN="Right">FontForge
+  <IMG SRC="/assets/img/old/findprobs.png" WIDTH="314" HEIGHT="479" ALIGN="Right">FontForge
   can detect the following potential problems:
   <P>
   <STRONG><BIG>Non-Integral Coordinates</BIG></STRONG>
@@ -114,7 +114,7 @@
   lines that begin or end near horizontal (vertical, italic angle).
   <P>
   <STRONG><BIG>Control points beyond
-  spline</BIG></STRONG><IMG SRC="cpodd.png" WIDTH="210" HEIGHT="215" ALIGN="Right">
+  spline</BIG></STRONG><IMG SRC="/assets/img/old/cpodd.png" WIDTH="210" HEIGHT="215" ALIGN="Right">
   <P>
   Consider the glyph at right, the selected point has a control point that
   is far outside of what is reasonable and is probably not where it should
@@ -151,7 +151,7 @@
   a glyph must be within 32767 of the origin, if it is further, only the first
   point will be selected), stop and let you fix things.<BR Clear=Right>
   <P>
-  <IMG SRC="findprobs-paths.png" WIDTH="307" HEIGHT="439" ALIGN="Right"><STRONG><BIG>Open
+  <IMG SRC="/assets/img/old/findprobs-paths.png" WIDTH="307" HEIGHT="439" ALIGN="Right"><STRONG><BIG>Open
   Paths</BIG></STRONG>
   <P>
   All of your paths should be closed, that is they shouldn't have any end points
@@ -210,7 +210,7 @@
   to PostScript there will be two. FontForge currently counts this as one point).
   TrueType has no such limit.<BR Clear=all>
   <H3>
-    <STRONG><IMG SRC="findprobs-refs.png" WIDTH="307" HEIGHT="431" ALIGN="Right">Flipped
+    <STRONG><IMG SRC="/assets/img/old/findprobs-refs.png" WIDTH="307" HEIGHT="431" ALIGN="Right">Flipped
     References</STRONG>
   </H3>
   <P>
@@ -275,16 +275,16 @@
   then you will need to fix up these references to match the new point
   count.<BR Clear=all>
   <P>
-  <BIG><STRONG><IMG SRC="findprobs-hint.png" WIDTH="314" HEIGHT="489" ALIGN="Right">Hints
+  <BIG><STRONG><IMG SRC="/assets/img/old/findprobs-hint.png" WIDTH="314" HEIGHT="489" ALIGN="Right">Hints
   controlling no points</STRONG></BIG>
   <P>
   This is a bit esoteric, and is present to provide a work-around for (what
   I think is) a bug in ghostview. Consider the following glyph
   <P>
-  <IMG SRC="phi-nohints-outline.png" WIDTH="89" HEIGHT="151">
-  <IMG SRC="phi-nohints-filled.png" WIDTH="93" HEIGHT="121">
-  <IMG SRC="phi-hints-outline.png" WIDTH="72" HEIGHT="133">
-  <IMG SRC="phi-hints-filled.png" WIDTH="93" HEIGHT="125"><BR>
+  <IMG SRC="/assets/img/old/phi-nohints-outline.png" WIDTH="89" HEIGHT="151">
+  <IMG SRC="/assets/img/old/phi-nohints-filled.png" WIDTH="93" HEIGHT="121">
+  <IMG SRC="/assets/img/old/phi-hints-outline.png" WIDTH="72" HEIGHT="133">
+  <IMG SRC="/assets/img/old/phi-hints-filled.png" WIDTH="93" HEIGHT="125"><BR>
   The first two images show the glyph with no hints, first as seen in FontForge,
   then as displayed by ghostview. The result looks good. If we add hints to
   the two curved stems then ghostview gets very confused. I don't know enough
@@ -342,7 +342,7 @@
   or it may have a set of hint masks, and each mask specifies a set of hints
   which do not overlap.
   <H3>
-    <IMG SRC="findprobs-random.png" WIDTH="314" HEIGHT="331" ALIGN="Right"><STRONG>Missing
+    <IMG SRC="/assets/img/old/findprobs-random.png" WIDTH="314" HEIGHT="331" ALIGN="Right"><STRONG>Missing
     Bitmaps</STRONG>
   </H3>
   <P>
@@ -374,7 +374,7 @@
   attached to a glyph. So if a glyph were named "A" but had Unicode code point
   U+0020 (space) FontForge would complain about it.<BR Clear=ALL>
   <P>
-  <IMG SRC="findprobs-bb.png" ALIGN="Right" WIDTH="307" HEIGHT="413"><BIG><STRONG>Glyph
+  <IMG SRC="/assets/img/old/findprobs-bb.png" ALIGN="Right" WIDTH="307" HEIGHT="413"><BIG><STRONG>Glyph
   BB Above</STRONG></BIG>
   <P>
   Find all glyphs whose bounding box extends above the indicated value
@@ -404,7 +404,7 @@
   Check for any glyphs whose vertical advance (for fonts with vertical metrics)
   differs from the specified value. <BR Clear=ALL>
   <P>
-  <IMG SRC="findprobs-att.png" WIDTH="347" HEIGHT="304" ALIGN="Right"><BIG><STRONG>Missing
+  <IMG SRC="/assets/img/old/findprobs-att.png" WIDTH="347" HEIGHT="304" ALIGN="Right"><BIG><STRONG>Missing
   Glyph Names</STRONG></BIG>
   <P>
   It is possible to create a substitution, ligature, etc. which refers to a
@@ -439,7 +439,7 @@
   <P>
     <HR Clear=all>
   <P>
-  <IMG SRC="findprobs-cid.png" WIDTH="301" HEIGHT="418" ALIGN="Right">If your
+  <IMG SRC="/assets/img/old/findprobs-cid.png" WIDTH="301" HEIGHT="418" ALIGN="Right">If your
   font is a CID keyed font you will also get:
   <P>
   <STRONG><BIG>Check for CIDs defined twice</BIG></STRONG>
