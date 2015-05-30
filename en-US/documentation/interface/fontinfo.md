@@ -122,7 +122,7 @@ there are radio buttons to make that easy), but it isn't required each
 layer may be in its own format.
 
 If you mark a layer as quadratic (or check `[*] All layers Quadratic`)
-then FontForge will use quadratic [Bézier](tutorials/overview/#spline) 
+then FontForge will use quadratic [Bézier](/en-US/tutorials/overview/#spline) 
 splines for this layer rather than cubic Béziers, this means that 
 FontForge will be using the native spline format of truetype rather than 
 postscript (or opentype). When FontForge generates a font it will convert 
@@ -381,7 +381,7 @@ typed them in as specified in the [true type
 docs](http://fonts.apple.com/TTRefMan/RM06/Chap6OS2.html). Better
 information is available from [HP](http://www.panose.com/),
 [AGFA](http://www.agfamonotype.com/hardware/pan1.asp) and
-[MS](http://msdn.microsoft.com/library/default.asp?url=/librarygdi/fontext_48aa.asp),
+[MS](http://msdn.microsoft.com/library/default.asp?url=/library/en-us/gdi/fontext_48aa.asp),
 [discussion](http://forum.high-logic.com/viewtopic.php?f=4&t=941).
 
 If you leave the [\*] Default checkbox set then FontForge will generate

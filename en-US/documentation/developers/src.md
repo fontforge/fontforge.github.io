@@ -365,5 +365,5 @@ windowmenu.c
 
 Builds and dispatches the window menu.
 
--- [Prev](files.html) -- [TOC](tutorials/overview/) -- [Next](sfdformat.html)
+-- [Prev](files.html) -- [TOC](/en-US/tutorials/overview/) -- [Next](sfdformat.html)
 --

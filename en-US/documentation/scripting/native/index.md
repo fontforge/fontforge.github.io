@@ -12,9 +12,9 @@ or both of these. If configured with both then fontforge will make a
 guess at which to use based on the script file's extension ("py" means
 use the python interpreter, "ff" or "pe" means use the old interpreter)
 
--   [Invoking a script](#Starting)[](tutorials/scripting/)
+-   [Invoking a script](#Starting)[](/en-US/tutorials/scripting/)
 -   [Python scripting](../python/)
--   [Native Scripting tutorial](tutorials/scripting/)
+-   [Native Scripting tutorial](/en-US/tutorials/scripting/)
 -   [Native Scripting language](#Language)
     -   [Built in variables](#variables)
     -   [Built in procedures](#procedures)
@@ -834,7 +834,7 @@ Examples
 -   Scripts used in other projects
     -   [x-symbol](http://sourceforge.net/projects/x-symbol/)
 
--   [the scripting tutorial](tutorials/scripting/)
+-   [the scripting tutorial](/en-US/tutorials/scripting/)
 
 ### Example 1:
 
@@ -1058,5 +1058,5 @@ Cnt-Alt-1, then second by Cnt-Alt-2, and the tenth by Cnt-Alt-0.
 The current font of the script will be set to whatever font you invoked
 it from.
 
--- [Prev](documentation/interface/hotkeys/) -- [TOC](tutorials/overview/) --
-[Next](documentation/reference/PfaEdit-TeX/) --
+-- [Prev](/en-US/documentation/interface/hotkeys/) -- [TOC](/en-US/tutorials/overview/) --
+[Next](/en-US/documentation/reference/PfaEdit-TeX/) --

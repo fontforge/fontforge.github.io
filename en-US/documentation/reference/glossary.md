@@ -98,7 +98,7 @@ an ascender.
 ###### Anchor Class
 
 Used to specify mark-to-base and cursive GPOS subtables. See
-[overview](tutorials/overview/#Anchors).
+[overview](/en-US/tutorials/overview/#Anchors).
 
 ###### Ascent
 
@@ -117,7 +117,7 @@ Typography.
 
 ###### Baseline
 
-The [baseline](tutorials/overview/#Baseline) is the horizontal line on which
+The [baseline](/en-US/tutorials/overview/#Baseline) is the horizontal line on which
 the (latin, greek, cyrillic) letters sit. The baseline will probably be
 in a different place for different scripts. In Indic scripts most
 letters descend below the baseline. In CJK scripts there is also a
@@ -454,7 +454,7 @@ character to glyph.
 ###### Grid Fitting
 
 Before TrueType glyphs are rasterized they go through a process called
-[grid fitting](tutorials/overview/#TrueType) where a tiny program (associated
+[grid fitting](/en-US/tutorials/overview/#TrueType) where a tiny program (associated
 with each glyph) is run which moves the points on the glyph's outlines
 around until they fit the pixel grid better.
 
@@ -512,7 +512,7 @@ The Korean name for the [Han](#Han) characters
 
 ###### Hints
 
-These are described in detail in [the main manual](tutorials/overview/#Hints).
+These are described in detail in [the main manual](/en-US/tutorials/overview/#Hints).
 They help the rasterizer to draw a [glyph](#glyph) well at small
 pointsizes.
 
@@ -765,7 +765,7 @@ A system for describing fonts. See HP's [PANOSE classification metrics
 guide](http://www.panose.com/), AGFA's [PANOSE classification metrics
 guide](http://www.agfamonotype.com/hardware/pan1.asp)and MicroSoft's
 [PANOSE classification in
-Windows](http://msdn.microsoft.com/library/default.asp?url=/librarygdi/fontext_48aa.asp).
+Windows](http://msdn.microsoft.com/library/default.asp?url=/library/en-us/gdi/fontext_48aa.asp).
 There is also an extension called [Panose
 2](http://www.w3.org/Fonts/Panose/pan2.html).
 
@@ -864,7 +864,7 @@ Cubic splines may contain inflection points, quadratic splines may not.
 PostScript is a page-layout language used by many printers. The language
 contains the specifications of several different font formats. The main
 (FontForge) manual has a section describing how [PostScript differs from
-TrueType](tutorials/overview/#PT).
+TrueType](/en-US/tutorials/overview/#PT).
 
 -   Type 1 -- This is the old standard for PostScript fonts. Such a font
     generally has the extension .pfb (or .pfa). A type 1 font is limited
@@ -897,7 +897,7 @@ TrueType](tutorials/overview/#PT).
 
 ###### Reference
 
-A [reference](tutorials/overview/#References) is a way of storing the outlines
+A [reference](/en-US/tutorials/overview/#References) is a way of storing the outlines
 of one glyph in another (for example in accented glyphs). Sometimes
 called a "componant".
 
@@ -914,7 +914,7 @@ See the section on [serifs](#serif).
 
 ###### Script
 
-A [script](tutorials/overview/#Scripts) is a character set and associated
+A [script](/en-US/tutorials/overview/#Scripts) is a character set and associated
 rules for putting characters together. Latin, arabic, katakana and hanja
 are all scripts.
 
@@ -1013,7 +1013,7 @@ Gothic, and Shavian. See Also
 ###### Spline
 
 A curved line segment. See the [section in the manual on
-splines](tutorials/overview/#intro). The splines used in FontForge are all
+splines](/en-US/tutorials/overview/#intro). The splines used in FontForge are all
 second or third order [Bézier](#bezier) splines (quadratic or cubic),
 and [Raph Levien's](http://www.levien.com/) clothoid splines.
 
@@ -1235,4 +1235,4 @@ explanation at [Unique ID](#UniqueID).
 
 Outstanding modern font designer.
 
--- [Prev](faqFS.html) -- [TOC](tutorials/overview/) -- [Next](IndexFS.html) --
+-- [Prev](faqFS.html) -- [TOC](/en-US/tutorials/overview/) -- [Next](IndexFS.html) --

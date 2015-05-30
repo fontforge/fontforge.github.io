@@ -8,13 +8,13 @@ title: acorn2sfd -- A program for comparing fonts
 `acorn2sfd [-version] [-help] {acorndir ...}`
 
 *acorn2sfd* will take several Acorn RISC/OS font directories and convert
-them into [FontForge](tutorials/overview/)'s sfd files.
+them into [FontForge](/en-US/tutorials/overview/)'s sfd files.
 
 An Acorn RISC/OS font directory should contain two or three files, one
 named `Outlines*` and one named `Intmetric?` (the `Intmetrics` file may
 be omitted, in which case the advance widths will not be known).
 *acorn2sfd* will read both files and generate an sfd file from them
-(which [FontForge](tutorials/overview/) can turn into TrueType or PostScript).
+(which [FontForge](/en-US/tutorials/overview/) can turn into TrueType or PostScript).
 
 If the `Outlines` file ends in a digit (`Outlines0`) then a third file
 named `Base<digit>*` will be searched for in the directory (if not found
@@ -46,7 +46,7 @@ string containing the date stamp of the source files).
 
 ### See Also
 
-[FontForge](tutorials/overview/)
+[FontForge](/en-US/tutorials/overview/)
 
 [Acorn Font
 Documentation](http://www.pinknoise.demon.co.uk/Docs/Arc/Fonts/Formats.html)

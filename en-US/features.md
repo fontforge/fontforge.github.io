@@ -13,7 +13,7 @@ FontForge allows [scripting via python](http://dmtr.org/ff.php), or with it's le
 Auto-save
 ---------
 
-FontForge has built-in [error recovery](documentation/reference/errrecovery/).
+FontForge has built-in [error recovery](/en-US/documentation/reference/errrecovery/).
 
 
 Edit Many Formats

@@ -5,9 +5,9 @@ title: Frequently Asked Questions
 ---
 
 > Sir Toby: Thy most exquisite reason, dear knight?
-> 
+>
 > Sir Andrew: I have no exquisite reason for't, but I have reason good enough.
-> 
+>
 > --*Twelfth Night*, Shakespeare
 
 [table_of_contents]
@@ -29,7 +29,7 @@ General questions about FontForge
 > "This writing business. Pencils
 > and whatnot. Over-rated, if you
 > ask me. Silly stuff. Nothing in it."
-> 
+>
 > --*Winnie-the-Pooh*, A.A. Milne
 
 Well... no. Otherwise I wouldn't be writing this, and, more to the
@@ -72,7 +72,7 @@ having to install it.
 ## Why did I write it?
 
 > Why not?
-> 
+>
 > --*The Phantom Tollbooth*, Juster
 
 -   Because it was fun
@@ -294,7 +294,7 @@ the rest of FontForge continues to work.
 >   Bewildered. As a matter of fact a plan
 >   Is almost certainly forming itself in my head
 >   At this very moment. It may even be adequate.
-> 
+>
 > --*The Lady's not for Burning*, Christopher Fry
 
 Mostly because I don't think that way. I don't plan things out, I have a
@@ -470,7 +470,7 @@ under which you are running, and luck.
         the 'hhea' table. These in turn are set to the bounding box
         values of the font. Not a good choice. You can control these
         values from [Element-\>Font
-        Info-\>OS/2-\>Metrics](documentation/interface/fontinfo/#TTF-Metrics).
+        Info-\>OS/2-\>Metrics](/en-US/documentation/interface/fontinfo/#TTF-Metrics).
     -   On Windows, line spacing is supposed to be set to the Typo Ascent/Typo
         Desent values specified in the OS/2 table. And these in turn are
         supposed to sum to the emsize. (FontForge sets these values to
@@ -481,7 +481,7 @@ under which you are running, and luck.
         region for the font (not line spacing). The clipping region
         should be as big as the font's bounding box, but in some cases
         needs to be bigger. Again these may be set from [Element-\>Font
-        Info-\>OS/2-\>Metrics](documentation/interface/fontinfo/#TTF-Metrics).
+        Info-\>OS/2-\>Metrics](/en-US/documentation/interface/fontinfo/#TTF-Metrics).
     -   (The clipping region should be bigger than the bounding box if a
         GPOS lookup could move a glyph so that it extended beyond the
         bounding box (mark to base is likely to cause problems). I'm not
@@ -505,7 +505,7 @@ set more densely than German).
 Instead of having one global measurement which controls the line spacing
 for all uses of the font, it is better to have more specific measures
 which control the line spacing dependent on conditions. The OpenType
-['BASE' table](documentation/interface/baseline/) does this. It allows you to specify extent
+['BASE' table](/en-US/documentation/interface/baseline/) does this. It allows you to specify extent
 data depending on script, language and active feature (for example, a
 'mkmk' feature might increase the line spacing). I don't know whether
 any applications actually make use of these data
@@ -531,7 +531,7 @@ pixels long.
 ### What are em-units? (internal units?)
 
 When you create your font you can use [Element-\>Font
-Info-\>General](documentation/interface/fontinfo/#PS-General) to provide an em-size for your
+Info-\>General](/en-US/documentation/interface/fontinfo/#PS-General) to provide an em-size for your
 font. This is the sum of the typographic ascent and descent (in the days
 of metal fonts, the height of the metal slugs, the baseline to baseline
 distance). Generally the em-size will be 1000 or 2048. This gives you
@@ -540,7 +540,7 @@ em.
 
 Within FontForge outline glyphs are displayed using the coordinate
 system established here. See also the [section on em-units in the
-overview.](documentation/tutorials/overview/#em-unit)
+overview.](/en-US/documentation/tutorials/overview/#em-unit)
 
 
 
@@ -709,7 +709,7 @@ experimented with version 0.9.2)
 
 TeX has its own (platform independent) system for installing fonts. I've
 described my experiences so far [elsewhere in this
-document](documentation/reference/PfaEdit-TeX/#TeX-Install).
+document](/en-US/documentation/reference/PfaEdit-TeX/#TeX-Install).
 
 ** Windows **
 
@@ -821,7 +821,7 @@ So to edit a font on your mac:
 
 **Note:** make sure you either replace the original font files, or that
 you rename the font within FontForge and (for postscript fonts) that you
-give it a new unique id. See the [Font Info](documentation/interface/fontinfo/) dlg.
+give it a new unique id. See the [Font Info](/en-US/documentation/interface/fontinfo/) dlg.
 
 **Caveat:** A postscript font is useless on a macintosh unless it is
 accompanied by at least one bitmap font. If you generate a postscript
@@ -845,8 +845,8 @@ transformation. Don't try to rename this file. Basically the rules are
 
 ** Mac OS/X **
 
-On Mac OS/X you can run [FontForge directly](documentation/interface/running/#mac) (if
-you've got [X11 installed](downloads/mac/)). OS/X has several
+On Mac OS/X you can run [FontForge directly](/en-US/documentation/interface/running/#mac) (if
+you've got [X11 installed](/en-US/downloads/mac/)). OS/X has several
 font formats, some fonts are stored in the old format (see above), while
 others are stored as data fork resources. The data fork font files
 generally have the extension ".dfont". On a Mac FontForge is able to
@@ -878,10 +878,10 @@ First open all the fonts that make up your family in FontForge.
 
 For the Style menu in most mac applications to work on your fonts, you
 must create a font family. You do this with the [File-\>Generate Mac
-Family](documentation/interface/filemenu/#GenerateMac) command.
+Family](/en-US/documentation/interface/filemenu/#GenerateMac) command.
 
 All the fonts in a family must have the same Family name (See the [font
-info](documentation/interface/fontinfo/) dialog). Font Families are handled rather
+info](/en-US/documentation/interface/fontinfo/) dialog). Font Families are handled rather
 differently under Carbon (the old font handling mechanism used in OS 9)
 and under ATSUI (on OS/X).
 
@@ -919,19 +919,19 @@ support, which in this case would be:
 Regular, Bold, Italic, Bold-Italic, Condense, Condense-Italic
 
 For each of these use [Element-\>Font
-Info-\>Mac](documentation/interface/fontinfo/#FONDName) to set the FondName field to the
+Info-\>Mac](/en-US/documentation/interface/fontinfo/#FONDName) to set the FondName field to the
 font's family name.
 
 Change the fondname of the other styles, so that the Oblique style has
 Oblique in the fond name, the two Light styles have Light in the fond
-name, and so on. Set the [Mac Style](documentation/interface/fontinfo/#Mac-Style) on the
+name, and so on. Set the [Mac Style](/en-US/documentation/interface/fontinfo/#Mac-Style) on the
 "Light" variant of the font to be Regular (everything unselected) and
 set the style of the "Light-Italic" variant to be "Italic"--that is,
 forget about the "Light", the FOND can't handle it, that's why we moved
 it into its own FOND.
 
 Having done this setup, the [Generate Mac
-Family](documentation/interface/filemenu/#GenerateMac)command should be able to put all the
+Family](/en-US/documentation/interface/filemenu/#GenerateMac)command should be able to put all the
 fonts into appropriate FONDs, and then place all the FONDs into one
 file, which the Mac should interpret correctly.
 
@@ -954,7 +954,7 @@ off, but if it is turned off then ATM won't work at all.
 
 ## How do I edit fonts on MS windows?
 
-See the [MS Windows install instructions](downloads/windows/).
+See the [MS Windows install instructions](/en-US/downloads/windows/).
 
 
 
@@ -963,7 +963,7 @@ See the [MS Windows install instructions](downloads/windows/).
 Here's one possibility: Windows sometimes (and I don't know when)
 insists on having a name for the font in the appropriate language (ie. a
 Japanese entry for a SJIS font). Try going to [Element-\>Font Info-\>TTF
-Names](documentation/interface/fontinfo/#TTF-Names)and adding a set of strings for your
+Names](/en-US/documentation/interface/fontinfo/#TTF-Names)and adding a set of strings for your
 language.
 
 Another possibility is discussed [here](#Bad-Windows-Install).
@@ -999,7 +999,7 @@ not produce digital signatures (I think they are of negative utility,
 and anyway I don't know how to create them).
 
 However, it is possible to [ask FontForge to create a 'DSIG'
-table](documentation/interface/generate/#Options)which contains no signatures. That seems
+table](/en-US/documentation/interface/generate/#Options)which contains no signatures. That seems
 enough to make windows happy.
 
 
@@ -1015,7 +1015,7 @@ The simple answer that will work if you want something quick is:
 
 1.  File-\>Open
     -   an existing font
-2.  [Element-\>Generate Fonts](documentation/interface/generate/)
+2.  [Element-\>Generate Fonts](/en-US/documentation/interface/generate/)
     -   to generate the desired output.
 
 If you are converting from one PostScript format to another (pfb to otf,
@@ -1028,44 +1028,44 @@ Converting from TrueType (quadratic splines, ttf files) to PostScript
 
 1.  File-\>Open
     -   (the truetype font)
-2.  [Element-\>Font Info-\>Layers](documentation/interface/fontinfo/#Layers)
+2.  [Element-\>Font Info-\>Layers](/en-US/documentation/interface/fontinfo/#Layers)
     -   Check \<\*\> All layers cubic
     -   [OK]
 3.  Edit-\>Select-\>Select All
-4.  [Element-\>Simplify-\>Simplify](documentation/interface/elementmenu/#Simplify)
-5.  [Hints-\>Auto Hint](documentation/interface/hintsmenu/#AutoHint)
-6.  [Element-\>Generate Fonts](documentation/interface/generate/)
+4.  [Element-\>Simplify-\>Simplify](/en-US/documentation/interface/elementmenu/#Simplify)
+5.  [Hints-\>Auto Hint](/en-US/documentation/interface/hintsmenu/#AutoHint)
+6.  [Element-\>Generate Fonts](/en-US/documentation/interface/generate/)
 
 Converting from PostScript (cubic splines, otf and pfb files) to
 TrueType (quadratic splines, ttf files):
 
 1.  File-\>Open
-2.  [Element-\>Font Info-\>Layers](documentation/interface/fontinfo/#Layers)
+2.  [Element-\>Font Info-\>Layers](/en-US/documentation/interface/fontinfo/#Layers)
     -   Check \<\*\> All layers quadratic
     -   [OK]
 3.  Edit-\>Select-\>Select All
-4.  [Hints-\>AutoInstr](documentation/interface/hintsmenu/#AutoInstr)
-5.  [Element-\>Generate Fonts](documentation/interface/generate/)
+4.  [Hints-\>AutoInstr](/en-US/documentation/interface/hintsmenu/#AutoInstr)
+5.  [Element-\>Generate Fonts](/en-US/documentation/interface/generate/)
 
 
 
 ## How do I convert from one bitmap format to another?
 
 This is also easy, open a bitmap font, and then use [Element-\>Generate
-Fonts](documentation/interface/generate/) to generate the desired output.
+Fonts](/en-US/documentation/interface/generate/) to generate the desired output.
 
 
 
 ## How do I convert from an outline format to a bitmap format?
 
 Load the outline font. Then use [Element-\>Bitmaps
-Available](documentation/interface/elementmenu/#Bitmaps) to generate bitmap strike(s) of the
+Available](/en-US/documentation/interface/elementmenu/#Bitmaps) to generate bitmap strike(s) of the
 appropriate size(s). This process is called rasterization, at small
 pixel sizes it is difficult for a computer to do well. You might be
 advised to examine the results of the rasterization in the [bitmap
-window](documentation/interface/bitmapview/) (with [Window-\>Open Bitmap
-Window](documentation/interface/windowmenu/#Bitmap)), and possibly fixup the bitmap as you
-go. Then when done select [Element-\>Generate Fonts](documentation/interface/generate/),
+window](/en-US/documentation/interface/bitmapview/) (with [Window-\>Open Bitmap
+Window](/en-US/documentation/interface/windowmenu/#Bitmap)), and possibly fixup the bitmap as you
+go. Then when done select [Element-\>Generate Fonts](/en-US/documentation/interface/generate/),
 turn off outline font generation (unless you also want an outline font,
 of course), and select the desired bitmap format.
 
@@ -1077,9 +1077,9 @@ Unless you have a very large bitmap font (such as a TeX font) the
 following procedure will not produce good results.
 
 -   Before you do anything else make sure you have either the [potrace
-    or autotrace programs](documentation/interface/autotrace/)installed on your system
+    or autotrace programs](/en-US/documentation/interface/autotrace/)installed on your system
 -   Create a new font
--   Use the [File-\>Import](documentation/interface/filemenu/#Import)command to import your
+-   Use the [File-\>Import](/en-US/documentation/interface/filemenu/#Import)command to import your
     bitmap font into this new font
     -   Be sure to check the `[] Into Background` checkbox
 -   Edit-\>Select-\>Select All
@@ -1102,7 +1102,7 @@ OpenType checkbox checked in the Options dialog. FontForge will convert any
 non-contextual features where Apple's feature/setting matches an OpenType
 feature. (This includes non-contextual ligatures even though they live in a
 contextual format). For more information see the section on this
-[interconversion](documentation/interface/gposgsub/#Conversion).
+[interconversion](/en-US/documentation/interface/gposgsub/#Conversion).
 
 
 
@@ -1113,7 +1113,7 @@ equivalent font with the [\*] Apple checkbox checked in the Options
 dialog. FontForge is capable of converting some contextual OpenType tables to
 AAT. Non-contextual features which match an Apple feature/setting will
 be converted too. For more information see the section on this
-[interconversion](documentation/interface/gposgsub/#Conversion).
+[interconversion](/en-US/documentation/interface/gposgsub/#Conversion).
 
 
 
@@ -1126,7 +1126,7 @@ Questions about Hints and TrueType Instructions
 
 It happens automagically. Or you can control the place where hint sets change
 by selecting a point and choosing
-[Element-\>Get Info](documentation/interface/getinfo/#HintMask)-\>Hint Mask.
+[Element-\>Get Info](/en-US/documentation/interface/getinfo/#HintMask)-\>Hint Mask.
 
 
 
@@ -1143,7 +1143,7 @@ be added.
 ### How can I tell if it is going to use flex hints?
 
 If you want to see whether FontForge is going to use flex hints, turn on
-the [UpdateFlex](documentation/interface/prefs/#UpdateFlex) preference item and open a view
+the [UpdateFlex](/en-US/documentation/interface/prefs/#UpdateFlex) preference item and open a view
 on the glyph. FontForge displays a green halo around the center point of
 a flex hint.
 
@@ -1214,8 +1214,8 @@ powers so that neither format can be converted to the other without the
 possibility for some loss of information. I discuss this in greater
 detail
 
--   [In the tutorial](tutorials/editexample6-5/#Conditional)
--   [In the section on advanced typography](documentation/interface/gposgsub/)
+-   [In the tutorial](/en-US/tutorials/editexample6-5/#Conditional)
+-   [In the section on advanced typography](/en-US/documentation/interface/gposgsub/)
 
 
 
@@ -1354,7 +1354,7 @@ lot more space than normal integers.
 
 It is very difficult to figure out old references when loading
 postscript fonts. Instead FontForge has a special command,
-[Edit-\>Replace With Reference](documentation/interface/editmenu/#ReplaceRef), that will
+[Edit-\>Replace With Reference](/en-US/documentation/interface/editmenu/#ReplaceRef), that will
 search for potential reference candidates in the font and replace them
 with references.
 
@@ -1384,7 +1384,7 @@ information from it.
 No. Again the kerning information is not stored in the font file (it is
 stored in a bitmap font file), but on the mac it is impossible to guess
 what name to use for the associated bitmap file, and FontForge does not
-even try. 
+even try.
 
 See the info below on how to load kerning from a
 [FOND](#FOND-kern).
@@ -1393,7 +1393,7 @@ See the info below on how to load kerning from a
 
 FontForge can read kerning information directly from these files and
 apply those data to a font. See the [File-\>Merge Feature
-Info](documentation/interface/filemenu/#Merge-feature) menu command.
+Info](/en-US/documentation/interface/filemenu/#Merge-feature) menu command.
 
 ** Mac resource files containing FOND resources. **
 
@@ -1403,13 +1403,13 @@ If you wish kerning data for a mac postscript font, you must find a font
 file containing a bitmap font with the same family and style as the
 postscript. FontForge can read kerning information directly from these
 files and apply those data to a font. See the [File-\>Merge Feature
-Info](documentation/interface/filemenu/#Merge-feature) menu command.
+Info](/en-US/documentation/interface/filemenu/#Merge-feature) menu command.
 
 ** Adobe Feature files **
 
 Adobe has a textual representation for OpenType features and lookups,
 and FontForge can read these files with the [File-\>Merge Feature
-Info](documentation/interface/filemenu/#Merge-feature) menu command.
+Info](/en-US/documentation/interface/filemenu/#Merge-feature) menu command.
 
 
 
@@ -1430,7 +1430,7 @@ characters which means it should not be distorted by old mail programs
 if sent around the internet (it's a registered MIME type
 `application/vnd.font-fontforge-sfd`).
 
-[An overview of the format.](documentation/developers/sfdformat/)
+[An overview of the format.](/en-US/documentation/developers/sfdformat/)
 
 
 
@@ -1498,7 +1498,7 @@ not check for the existance of these libraries until you actually try to
 load an image. If the library has not been installed on your system it
 will give the above error (and fail to load the image).
 
-The [Dependencies](downloads/source/#Dependencies) section of the main
+The [Dependencies](/en-US/downloads/source/#Dependencies) section of the main
 page describes how to find these libraries.
 
 If the libraries are installed and you still get this message try
@@ -1557,9 +1557,9 @@ Random questions
 ## FontForge's grey background distresses me. How do I change it?
 
 The general mechanism is discussed on the [X Resources
-page](documentation/customizing/xres/).
+page](/en-US/documentation/customizing/xres/).
 
-[Here are some combinations you might try](documentation/customizing/themes/).
+[Here are some combinations you might try](/en-US/documentation/customizing/themes/).
 
 
 
@@ -1575,7 +1575,7 @@ size by adding a line like
     Gdraw.ScreenWidthCentimeters: 37.3
 
 to your `~/.Xdefaults` file (The general mechanism is discussed on the
-[X Resources page](documentation/customizing/xres/)). If the GUI fonts are still too small you
+[X Resources page](/en-US/documentation/customizing/xres/)). If the GUI fonts are still too small you
 can lie about the screen size. If you claim the screen is smaller (in
 inches or centimeters) than it actually is, ff will use a bigger font.
 
@@ -1589,13 +1589,13 @@ you. (If you mark it as monospaced incorrectly some rasterizers will
 give strange results).
 
 If you want to set a font's panose values yourself ([Element-\>Font
-Info-\>OS/2-\>Panose](documentation/interface/fontinfo/#Panose)) then set the Proportion
+Info-\>OS/2-\>Panose](/en-US/documentation/interface/fontinfo/#Panose)) then set the Proportion
 field to Monospaced. This is necessary but not sufficient to mark the
 font as a whole as monospaced.
 
 If you are unsure whether all the glyphs in your font have the same
 advance width use [Element-\>Find Problems-\>Random-\>Check
-Advance.](documentation/interface/problems/#Advance)
+Advance.](/en-US/documentation/interface/problems/#Advance)
 
 When I say "all glyphs" I really mean *all* glyphs. Even glyphs which
 unicode says should be 0 width must have the same width as everything
@@ -1772,12 +1772,12 @@ consortium to refer to "GREEK PI SYMBOL") should be named "omega1", when
 
 Firstly because I believe that any attempt to copy a glyph's name will
 almost certainly be better done by defining a custom
-[encoding](documentation/interface/encodingmenu/).
+[encoding](/en-US/documentation/interface/encodingmenu/).
 Secondly because most of the time you don't want the name copied.
 Thirdly because it is esthetically better that copy should only work
 with data and not meta-data.
 HOWEVER... enough people have asked this question that I've enabled a
-mode in [Edit-\>Copy From-\>Char Name](documentation/interface/editmenu/#CharName) which
+mode in [Edit-\>Copy From-\>Char Name](/en-US/documentation/interface/editmenu/#CharName) which
 allows you to change the default behavior.
 
 
@@ -2027,7 +2027,7 @@ Because I have nothing to say.
 >   You can knock, but I shall give you no reply.
 >   I wish to be alone with my convictions.
 >   Good night. *[Exit]*
-> 
+>
 > --*The Lady's not for Burning*, Christopher Fry
 
 
@@ -2048,7 +2048,7 @@ Because I have nothing to say.
 >  "I checked it very thoroughly," said the computer, "and that quite
 > definitely is the answer. I think the problem, to be quite honest with
 > you, is that you've never actually known what the question is."
-> 
+>
 > --*The Hitchhiker's Guide to the Galaxy*, Douglas Adams
 
                         
@@ -2064,5 +2064,5 @@ Because I have nothing to say.
 >  Said his father, "Don't give yourself airs!
 >  Do you think I can listen all day to such stuff?
 >  Be off, or I'll kick you down stairs."
-> 
+>
 > --*You are old, Father William*, Lewis Carroll

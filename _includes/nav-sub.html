@@ -1,36 +1,31 @@
-	<!-- SUBNAV  -->
-	<div class="subnav noise">
-		<div class="breadcrumbs">
-			<div class="container">
+<!-- SUBNAV  -->
+<div class="subnav noise">
+	<div class="breadcrumbs">
+		<div class="container">
 
-				<form class="form-search doc-search-form" method="get" action="//www.google.com/search">
-				     <input type="text" class="input-medium search-query" name="q">
-				     <button type="submit" class="btn">Search</button>
-				     <input name="sitesearch" value="fontforge.github.com" type="hidden">
-				</form>
+			<form class="form-search doc-search-form" method="get" action="//www.google.com/search">
+				<input type="text" class="input-medium search-query" name="q">
+				<button type="submit" class="btn">Search</button>
+				<input name="sitesearch" value="fontforge.github.com" type="hidden">
+			</form>
 
-				<ul class="breadcrumb">
+			<ul class="breadcrumb">
 				<!-- TODO redo this in jQuery so it links. I've installed https://github.com/tombonner/jurlp in the site,
-				$(document).jurlp("path"); //  [["en-US", "about", "index.html"]]
-				$(document).jurlp("path").toString(); // about/index.html
+					$(document).jurlp("path").toString(); // /en-US/about/index.html
+					$(document).jurlp("path").toString(); // about/index.html
 				-->
-					<li><a href="/">Home</a> </li>
-					{% assign crumbs = page.url | split: '/' %}
-					{% for crumb in crumbs limit:1 offset:1 %}
-						{% capture previous %}/{{ crumb }}/{% endcapture %}
-					{% endfor %}
-					{% for crumb in crumbs offset:2 %}
-						{% capture previous %}{{ previous }}{{ crumb }}/{% endcapture %}
-						{% unless crumb == 'index.html' %}
-							<li><span class="divider">&#187;</span><a href="{{ previous }}">{{ crumb | remove: '.html' }}</a></li>
-						{% endunless %}
-					{% endfor %}
-				</ul>
+				<li><a href="/">Home</a> </li>
+				{% assign crumbs = page.url | split: '/' %} {% for crumb in crumbs limit:1 offset:1 %} {% capture previous %}/{{ crumb }}/{% endcapture %} {% endfor %} {% for crumb in crumbs offset:2 %} {% capture previous %}{{ previous }}{{ crumb }}/{% endcapture %}
+				{% unless crumb == 'index.html' %}
+				<li>
+					<span class="divider">&#187;</span><a href="{{ previous }}">{{ crumb | remove: '.html' }}</a></li>
+				{% endunless %} {% endfor %}
+			</ul>
 
-				<div id="breadcrumbs" class="breadcrumb"></div>
+			<div id="breadcrumbs" class="breadcrumb"></div>
 
-			</div>
 		</div>
-
-
 	</div>
+
+
+</div>

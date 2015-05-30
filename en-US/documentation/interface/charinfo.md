@@ -76,7 +76,7 @@ fonts. You may also assign a color to a glyph to make it stand out in the font v
 There are 6 separate sub-dialogs to help you edit the [lookups](../lookups/) 
 of the [GPOS and GSUB](../gposgsub/) tables (some of these data can be 
 converted into various of Apple's AAT tables, particularly 'morx'). Lookups
-and their subtables are described in some detail [here](tutorials/overview/#Lookups), 
+and their subtables are described in some detail [here](/en-US/tutorials/overview/#Lookups), 
 and may be manipulated and created with the [Element-\>Font Info](../fontinfo/#Lookups) 
 commmand.
 
