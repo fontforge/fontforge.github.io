@@ -2439,7 +2439,7 @@ input[type="button"].btn-block {
 .content .btn-primary.disabled,
 .content .btn-primary[disabled] {
   color: #ffffff;
-  background-color: #d94c00;
+  background-color: #ff5900;
 }
 
 .btn-warning {

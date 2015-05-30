@@ -74,7 +74,9 @@ a:not(.btn):not(.brand):hover,
   color: white !important;
   background: #ff772f !important;
 }
-
+.navbar .nav > li > a:hover {
+  background: #ff6f22 !important;
+}
 
 /* NavBar */
 .navbar-inverse {
@@ -329,7 +331,7 @@ footer .copyright a {
 }
 
 .download-bar .btn-large:hover {
-  background-color: #d94c00;
+  background-color: #ff5900;
 }
 
 .download-bar .statistic {
