@@ -17,9 +17,9 @@
       <div class="row-fluid">
         <ul class="masthead-links unstyled">
           <li class="span4 ff-download">
-            <a href="{{ site.windownload }}" class="btn btn-primary btn-large dl windows">Download (Win)</a>
+            <a id="windl" href="{{ site.windownload }}" class="btn btn-primary btn-large dl windows">Download (Win)</a>
             <a id="macdl" href="{{ site.macdownload }}" class="btn btn-primary btn-large dl macos">Download (Mac)</a>
-            <a href="install/#install-fontforge-on-gnulinux" class="btn btn-primary btn-large dl gnulinux">Install on UNIX</a>
+            <a href="install/#gnulinux" class="btn btn-primary btn-large dl gnulinux">Install on UNIX</a>
             <a href="install/" class="btn btn-primary btn-large default">Install</a>
           </li>
           <li class="span4 statistic hide downloads"><span><strong id="cnt-downloads"></strong> <span>downloads<br>this release</span></span>
@@ -40,7 +40,7 @@
       <div class="row-fluid" id="after-download">
         <section class="span12">
           <h1>Thanks for downloading</h1>
-          <p>You can find further instructions <a href="downloads/">here</a>. Please report any <a target="_blank" href="https://github.com/fontforge/fontforge/issues/new">issues</a> on GitHub. Follow <a target="_blank" href="https://twitter.com/fontforge">@fontforge</a> on Twitter to get notified about updates.</p>
+          <p>You can find further instructions <a href="install/">here</a>. Please report any <a target="_blank" href="{{ site.githubissue }}">issues</a> on GitHub. Follow <a target="_blank" href="https://twitter.com/fontforge">@fontforge</a> on Twitter to get notified about updates.</p>
         </section>
       </div>
       <div class="row-fluid">
@@ -50,7 +50,7 @@
         </section>
         <section class="span6">
           <h3>Get help</h3>
-          <p>Post a <a href="https://github.com/fontforge/fontforge/issues/new" target="_blank">new issue</a> on GitHub if you're stuck and the documentation and a websearch didn't provide any answers.</p>
+          <p>Post a <a href="{{ site.githubissue }}/new" target="_blank">new issue</a> on GitHub if you're stuck and the documentation and a websearch didn't provide any answers.</p>
         </section>
       </div>
       <div class="row-fluid">
@@ -60,7 +60,7 @@
         </section>
         <section class="span6">
           <h3>Get involved</h3>
-          <p>Anyone can help! You don't have to be a programmer. If you want to help but don't know where then post a <a href="https://github.com/fontforge/fontforge/issues/new" target="_blank">new issue</a> and introduce yourself.</p>
+          <p>Anyone can help! You don't have to be a programmer. If you want to help but don't know where then post a <a href="{{ site.githubissue }}/new" target="_blank">new issue</a> and introduce yourself.</p>
         </section>
       </div>
       <div class="row-fluid social">

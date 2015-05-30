@@ -1,48 +1,50 @@
 ---
 published: true
 layout: default
-title: Download FontForge
+title: Install FontForge
 ---
 
-FontForge is available for <a href="downloads/windows/">Windows</a>, <a href="downloads/mac/">Mac</a> and
-<a href="downloads/gnulinux/">GNU+Linux</a>.
+`Latest version: {{ site.releasedate }}`
 
-Uninstalling: [How to uninstall FontForge](downloads/uninstalling/)
+FontForge works on almost every desktop operating system. Prepackaged installers are available for Windows + Mac and we have our own PPA. You can also [build](https://github.com/fontforge/fontforge/blob/master/CONTRIBUTING.md) from source.
 
-We also provide the <a href="downloads/source/">source code</a> under a [libre license](https://github.com/fontforge/fontforge/blob/master/LICENSE)
+Please post any [issues]({{ site.githubissue }}) you might have.
 
+-----
 
-Most of the GNU+Linux distributions have packages for FontForge, but these will often be a quite old. 
+## Installers
 
-## Ubuntu
+<a class="btn btn-primary btn-large default" href="{{ site.windownload }}">Windows</a>
+<a class="btn btn-primary btn-large default" href="{{ site.macdownload }}">Mac</a>
 
-Installing on Ubuntu is easy with our [Ubuntu PPA](https://launchpad.net/%7Efontforge/+archive/ubuntu/fontforge)
+#### Windows
 
-```sh
+1. Right click and select `Run as Administrative User`
+2. Installing...
+3. Right click FontForge icon and select `Run as Administrative User`
+
+Dev. snapshots and "MSYS" Windows build system at the [fontforgebuilds](http://sourceforge.net/projects/fontforgebuilds/) project.
+
+#### Mac
+
+FontForge runs on Mac thanks to XQuartz (included in the installer) which means it doesn't behave 100% like a normal Mac App. Read [this](http://osxdaily.com/2012/07/27/app-cant-be-opened-because-it-is-from-an-unidentified-developer/) if you get a warning about `unidentified developer`
+
+-----
+
+## GNU+Linux
+
+Most of the GNU+Linux distributions have packages for FontForge, but these will often be a quite old.
+
+```
+sh
 sudo add-apt-repository ppa:fontforge/fontforge;
 sudo apt-get update;
 sudo apt-get install fontforge;
 ```
 
-#### Compiling from Github
+-----
 
-Check out [Building From Source](../source) for more information on using the bleeding edge.
-
-#### Installing from an rpm
-
-Installing an rpm package is relatively straight forward.
-You will need root access.
-Download the RPM files on the [release page](https://github.com/fontforge/fontforge/releases)
-
-Move to the directory containing the downloaded rpm, and then type
-
-     rpm -i fontforge-*.rpm
-
-If you've already installed fontforge and are updating an earlier version then you should type:
-
-     rpm -U fontforge-*.rpm
-
-#### Other UNIX Systems
+## Other UNIX Systems
 
 [netbsd](ftp://ftp.netbsd.org/pub/NetBSD/packages/pkgsrc/fonts/fontforge/README.html) builds for various architectures (alpha, i386, ppc, sparc, x86\_64) are available.
 

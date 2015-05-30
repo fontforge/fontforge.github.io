@@ -7,3 +7,4 @@ releasedate: 2015-04-30
 macdownload: https://github.com/fontforge/fontforge/releases/download/20150430/FontForge-2015-04-30-Mac.app.dmg
 windownload: https://github.com/fontforge/fontforge/releases/download/20150430/FontForge-2015-04-30-Windows.exe
 srcdownload: https://github.com/fontforge/fontforge/archive/20150430.zip
+githubissue: https://github.com/fontforge/fontforge/issues/

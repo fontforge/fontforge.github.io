@@ -21,15 +21,15 @@
     $.getJSON("http://sfbadge.herokuapp.com/commits/fontforge/fontforge/json", function(json) {
       $('#cnt-contributors').html(humanise(json.commits));
     });
-    $("#macdl").click(
-      function(e) {
-        e.preventDefault();
-        $('body').addClass('downloaded');
-        // window.open($(this).attr("href"));
-        // window.location = "downloads/mac/";
-        // window.focus();
-      }
-    );
+    $("#macdl, #windl").on("click touch", function() {
+      var href = this.href;
+      $('body').addClass('downloaded').delay(1000).queue(function(next) {
+        location.href = href;
+        next();
+        return false;
+      });
+      return false;
+    });
   });
 </script>
 
