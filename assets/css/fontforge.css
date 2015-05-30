@@ -67,6 +67,7 @@ footer a, .social span, .breadcrumb li a {
 }
 .social span {
   margin: 0;
+  padding: 2px;
 }
 a:not(.btn):not(.brand):hover,
 .breadcrumbs .doc-search-form .btn:hover {
