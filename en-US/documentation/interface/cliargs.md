@@ -252,4 +252,4 @@ user preferences and the recovery files.
 Used to create comments in new fonts about who created the font, or who
 saved it.
 
--- [Prev](../xres/) -- [TOC](/en-US/tutorials/overview/) -- [Next](../files/) --
+-- [Prev](../xres/) -- [TOC](tutorials/overview/) -- [Next](../files/) --

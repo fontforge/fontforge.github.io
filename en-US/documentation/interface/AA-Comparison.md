@@ -21,4 +21,4 @@ the one on the right. The results are more extreme in the example above.
   ![](/assets/img/old/H-bm.png)   ![](/assets/img/old/H-gm.png)
   --------------- ---------------
 
--- [TOC](/en-US/tutorials/overview/) -- [Back](../fontview/) --
+-- [TOC](tutorials/overview/) -- [Back](../fontview/) --

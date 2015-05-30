@@ -80,7 +80,7 @@ FontForge will read the following sub tables of the GPOS table:
 
   3     cursive attachment                This sub-table allows the font designer to force adjacent glyphs to join at specific points. It can be used to generate the slanted script style needed for Urdu.                                                                                                                                                                                                                                                      Only the 'curs' feature is supported for this sub-table. These may be created with the [Points-\>Add Anchor](../pointmenu/#AddAnchor) command
 
-  4     mark to base                      This sub-table allows the font designer to specify how mark glyphs (accents, vowel signs, etc.) are positioned over base glyphs. Every glyph can have an attachment point and the mark's attachment point will be placed on the base's attachment point so the two join properly. See my [example](/en-US/tutorials/overview/#Anchors) in the overview.                                                                             These may be created with the [Points-\>Add Anchor](../pointmenu/#AddAnchor) command
+  4     mark to base                      This sub-table allows the font designer to specify how mark glyphs (accents, vowel signs, etc.) are positioned over base glyphs. Every glyph can have an attachment point and the mark's attachment point will be placed on the base's attachment point so the two join properly. See my [example](tutorials/overview/#Anchors) in the overview.                                                                             These may be created with the [Points-\>Add Anchor](../pointmenu/#AddAnchor) command
 
   5     mark to ligature                  This sub-table is very similar to the previous one except that the base glyph is a ligature and may have several different points at which the same type of accent may be placed.                                                                                                                                                                                                                                      These may be created with the [Points-\>Add Anchor](../pointmenu/#AddAnchor) command
 
@@ -918,5 +918,5 @@ available in either opentype or apple advanced typography.
 
 [See here for a complete list of supported tables](../../reference/TrueOpenTables/).
 
--- [Prev](../generate/) -- [TOC](/en-US/tutorials/overview/) --
+-- [Prev](../generate/) -- [TOC](tutorials/overview/) --
 [Next](../filemenu/) --

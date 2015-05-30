@@ -4,7 +4,7 @@ layout: default
 title: Documentation
 ---
 
-[About FontForge](/en-US/project) &mdash; about the FontForge project  
+[About FontForge](project) &mdash; about the FontForge project  
 [Design With FontForge](http://designwithfontforge.com) &mdash; online book to get you started  
 [Developer](developers) &mdash; information for FontForge developers  
 [User Interface](interface) &mdash; guide to the views and menus in FontForge  

@@ -8,7 +8,7 @@ title: sfddiff -- A program for comparing fonts
 `sfddiff [-merge outfile] [-ignorehints] [-ignorenames] [-ignoregpos]   [-ignoregsub] [-ignorebitmaps] [-exact] [-warn] [-version] [-help] fontfile1   fontfile2`
 
 *Sfddiff* compares (or merges) two font files (in any format
-[fontforge](/en-US/tutorials/overview/) can read) and checks for differences.
+[fontforge](tutorials/overview/) can read) and checks for differences.
 
 It will notice:
 
@@ -48,4 +48,4 @@ options.
 
 ### See Also
 
-[FontForge](/en-US/tutorials/overview/)
+[FontForge](tutorials/overview/)

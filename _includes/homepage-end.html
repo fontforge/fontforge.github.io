@@ -1,28 +1,38 @@
-    <!-- JAVASCRIPT -->
-    <script src="/assets/js/jquery.js"></script>
-    <script type="text/javascript">
-    function humanise(n){
+<!-- JAVASCRIPT -->
+<script src="/assets/js/jquery.js"></script>
+<script type="text/javascript">
+  $(function() {
+    function humanise(n) {
       var d = ',';
       var s = '.';
       n = n.toString().split('.');
       n[0] = n[0].replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1' + d);
       return n.join(s);
     };
-
-    $(document).ready(function(){
-        $.getJSON("https://api.github.com/repos/fontforge/fontforge/releases/latest", function(json) {
-            var assetlist = json.assets;
-            total = 0;
-            $(assetlist).each(function(i, asset){
-                total += asset.download_count;
-            });
-            $('#cnt-downloads').html(humanise(total));
-            $('.statistic').fadeIn();
-        });
-        $.getJSON("http://sfbadge.herokuapp.com/commits/fontforge/fontforge/json", function(json) {
-            $('#cnt-contributors').html(humanise(json.commits));
-        });
+    $.getJSON("https://api.github.com/repos/fontforge/fontforge/releases/latest", function(json) {
+      var assetlist = json.assets;
+      total = 0;
+      $(assetlist).each(function(i, asset) {
+        total += asset.download_count;
+      });
+      $('#cnt-downloads').html(humanise(total));
+      $('.statistic').fadeIn();
     });
-    </script>
-    </body>
+    $.getJSON("http://sfbadge.herokuapp.com/commits/fontforge/fontforge/json", function(json) {
+      $('#cnt-contributors').html(humanise(json.commits));
+    });
+    $("#macdl").click(
+      function(e) {
+        e.preventDefault();
+        $('body').addClass('downloaded');
+        // window.open($(this).attr("href"));
+        // window.location = "downloads/mac/";
+        // window.focus();
+      }
+    );
+  });
+</script>
+
+</body>
+
 </html>

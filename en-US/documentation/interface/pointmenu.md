@@ -52,11 +52,11 @@ off this interpolation.
 
 ![](/assets/img/filemenu-agetinfo.png)
 
-This command adds a new [anchorpoint](/en-US/tutorials/overview/#Anchors)
+This command adds a new [anchorpoint](tutorials/overview/#Anchors)
 to the glyph. The last click in the window provides a default location
 for the point.
 
-See [the overview](/en-US/tutorials/overview/#Anchors) and
+See [the overview](tutorials/overview/#Anchors) and
 the [Element-\>Get Info command](../getinfo/#Anchors) for more info.
 
 

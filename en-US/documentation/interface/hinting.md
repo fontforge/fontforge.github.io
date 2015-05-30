@@ -215,5 +215,5 @@ hinting.
 -   Is it meaningful for a hint to have points only on one side of it?
     Can reasonable hints be written for the serif cap above left?
 
-[Overview of Hinting in PostScript and TrueType](/en-US/tutorials/overview/#Hints).
+[Overview of Hinting in PostScript and TrueType](tutorials/overview/#Hints).
  [Hinting menu.](../hintsmenu/)

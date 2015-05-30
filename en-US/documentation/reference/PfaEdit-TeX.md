@@ -253,5 +253,5 @@ I did the following:
     >     echo "p +$BASE.map"
     >     echo at the appropriate place in it too.
 
--- [Prev](../../scripting/native/scripting/) -- [TOC](/en-US/tutorials/overview/) --
+-- [Prev](../../scripting/native/scripting/) -- [TOC](tutorials/overview/) --
 [Next](../errrecovery/) --

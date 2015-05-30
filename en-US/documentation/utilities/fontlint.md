@@ -94,4 +94,4 @@ In any sfnt (True or OpenType font):
 
 ### See Also
 
-[FontForge](/en-US/tutorials/overview/)
+[FontForge](tutorials/overview/)

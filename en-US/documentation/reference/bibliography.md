@@ -81,7 +81,7 @@ Font File Formats
     -   [Third Party
         description](http://homepages.muenchen.org/bm134751/pfm_fmt_en.html)
 
--   [NTF](http://msdn.microsoft.com/library/default.asp?url=/library/en-us/graphics/hh/graphics/pscript_7twn.asp)
+-   [NTF](http://msdn.microsoft.com/library/default.asp?url=/librarygraphics/hh/graphics/pscript_7twn.asp)
     -   This format is supposed to replace the pfm files above in
         windows \>2000. I can't find any docs on it.
 
@@ -238,7 +238,7 @@ Other font links
 -   PANOSE
     -   [From AGFA](http://www.agfamonotype.com/hardware/pan1.asp)
     -   [From
-        MS](http://msdn.microsoft.com/library/default.asp?url=/library/en-us/gdi/fontext_48aa.asp)
+        MS](http://msdn.microsoft.com/library/default.asp?url=/librarygdi/fontext_48aa.asp)
     -   [Panose font classification
         scheme](http://www.fonts.com/hp/panose/greybook/frame.htm)
 
@@ -348,4 +348,4 @@ I was interviewed by the Open Source Publishing people at
 the interview available on their
 site.](http://ospublish.constantvzw.org/?p=221)
 
--- [Prev](../nvd/) -- [TOC](/en-US/tutorials/overview/) --
+-- [Prev](../nvd/) -- [TOC](tutorials/overview/) --

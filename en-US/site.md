@@ -4,7 +4,7 @@ layout: default
 title: About This Website
 ---
 
-Like FontForge itself, this website is developed as a [collaborative project](/en-US/about/project/)--everyone is invited to contribute. 
+Like FontForge itself, this website is developed as a [collaborative project](about/project/)--everyone is invited to contribute. 
 
 To help out, join the [FontForge Users Mailing List](https://lists.sourceforge.net/lists/listinfo/fontforge-users) and say hello. To make direct changes, sign up to [GitHub](http://github.com) and let us know your github username, and we'll add you to the Website team.
 

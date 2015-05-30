@@ -203,5 +203,5 @@ PostScript and True Type.
 
 ^1^Bézier splines were developed by Pierre Bézier (1910-1999).
 
--- [Prev](../../developers/sfdformat/) -- [TOC](/en-US/tutorials/overview/) --
+-- [Prev](../../developers/sfdformat/) -- [TOC](tutorials/overview/) --
 [Next](../corpchar/) --

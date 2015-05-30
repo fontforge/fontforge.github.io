@@ -119,7 +119,7 @@ simpler. Just the location of the point and the point type.
 
 ![](/assets/img/dialogs1-agetinfo.png)
 
-This dialog shows the selected [anchor point](/en-US/tutorials/overview/#Anchors)
+This dialog shows the selected [anchor point](tutorials/overview/#Anchors)
 with the anchor class, location, type and (for ligatures) the ligature
 index. You may change any of these attributes (as long as your changes
 are reasonable). You may create new points or delete the current one. As

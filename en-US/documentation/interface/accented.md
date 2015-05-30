@@ -176,5 +176,5 @@ If all else fails you can build your own accented glyphs with
 [Edit-\>Copy Reference](../editmenu/#Reference) and
 [Edit-\>Paste](../editmenu/#Paste)
 
--- [Element Menu](../elementmenu/) -- [TOC](/en-US/tutorials/overview/) --
+-- [Element Menu](../elementmenu/) -- [TOC](tutorials/overview/) --
 [Tutorial](editexample.html) --
