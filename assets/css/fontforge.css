@@ -5,12 +5,14 @@
 
 /* Make font look less thick on mac */
 
-body, * {
+body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #fff;
 }
 .content {
-  padding: 80px 0 100px;
+  padding: 30px 0 50px;
+  position: relative;
 }
 pre {
   white-space: pre;
@@ -106,6 +108,7 @@ footer {
   min-height: 100px;
   margin: 0;
   padding: 0px 0px 40px;
+  position: relative;
 }
 footer a {
   font-weight: 400;
@@ -122,7 +125,7 @@ footer ul li {
   margin: 0;
 }
 footer h4, footer h4 a, footer p {
-  color: #707580;
+  color: #5d616b;
   font-weight: 400;
 }
 footer ul li a {
@@ -166,28 +169,90 @@ footer .copyright a {
   border-radius: 0;
   padding: 0;
   margin: 0;
+  text-align: center;
+}
+.hero-unit .btn {
+  background-color: #fff;
+  margin: 95px auto 0;
+  font-size: 18px;
+  display: inline-block;
+  border: none;
+  color: #3D4143 !important;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3), 0px 0px 2px rgba(0, 0, 0, 0.3);
+}
+.hero-unit p {
+  display: block;
+  margin: 5px 0 30px;
+  line-height: 22px;
+  font-size: 0.8em;
+}
+.hero-unit a {
+  color: white !important;
 }
 .hero-unit img {
   width: 100%;
+  -webkit-filter: drop-shadow(0px 0px 50px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0px 0px 50px rgba(0, 0, 0, 0.3));
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  -webkit-transition: all 1000ms cubic-bezier(0.730, 0, 0.595, 1); /* older webkit */
+  -webkit-transition: all 1000ms cubic-bezier(0.730, 0, 0.595, 1.270);
+     -moz-transition: all 1000ms cubic-bezier(0.730, 0, 0.595, 1.270);
+       -o-transition: all 1000ms cubic-bezier(0.730, 0, 0.595, 1.270);
+          transition: all 1000ms cubic-bezier(0.730, 0, 0.595, 1.270); /* custom */
+}
+.downloaded .hero-unit img {
+  -webkit-transform: translate3d(0,220px,0);
+  transform: translate3d(0,220px,0);
+  -webkit-filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.1));
+  filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.1));  
+}
+.hero-wrap {
+  position: relative;
   margin-top: 40px;
-  -webkit-filter: drop-shadow(0px 0px 50px rgba(0,0,0,0.3));
-  filter: drop-shadow(0px 0px 50px rgba(0,0,0,0.3));}
+}
+.hero-wrap > div {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 600ms cubic-bezier(0.550, 0.085, 0.680, 0.530);
+     -moz-transition: all 600ms cubic-bezier(0.550, 0.085, 0.680, 0.530);
+       -o-transition: all 600ms cubic-bezier(0.550, 0.085, 0.680, 0.530);
+          transition: all 600ms cubic-bezier(0.550, 0.085, 0.680, 0.530); /* easeInQuad */
+}
+.downloaded .hero-wrap > div {
+  visibility: visible;
+  opacity: 1;
+}
+.hero-wrap h1 {
+  font-size: 36px;
+}
+.hero-wrap p {
+  font-size: 17px;
+  line-height: 28px;
+}
 
 /* Social */
 
 .social {
-  text-align: center;
+  margin-top: 60px;
+}
+.social * {
+  line-height: 3rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+.count {
+  font-weight: 700;
+  font-size: 3rem;
 }
 .content .social a {
   box-shadow: none;
   padding: 0;
   margin: 0;
-  display: inline;
 }
 .social svg {
-  max-width: 60px;
-  margin: 80px auto 0;
-  display: block;
+  height: 3rem;
   fill: #3D4143;
 }
 
@@ -200,15 +265,14 @@ footer .copyright a {
 }
 .subnav::after {
   position: absolute;
-	bottom: 0px;
-	left: 0;
-	width: 100%;
-	height: 20px;
-	background: -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.08));
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.08));
-	content: '';
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05));
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.05));
+  content: '';
 }
-
 .subnav .container {
   position: relative;
   z-index: 10;
@@ -281,22 +345,21 @@ footer .copyright a {
 
 /* Download bar */
 
-.download-bar {
-  padding: 15px 0;
+.shadow-hide {
+  height: 600px;
+  margin-bottom: -600px;
+  background-color: #fff;
   position: relative;
-  z-index: 20;
-  background-color: #d3ebfd;
-  color: hsl(200, 5%, 23%);
 }
-.download-bar::before {
+.shadow-hide::before {
   position: absolute;
-	top: -20px;
-	left: 0;
-	width: 100%;
-	height: 20px;
-	background: -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.08));
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.08));
-	content: '';
+  top: -20px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05));
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.05));
+  content: '';
 }
 .download-bar ul {
   margin: 0;
@@ -613,115 +676,6 @@ figcaption {
   text-align: right;
 }
 
-/* Roundel */
-
-.roundel {
-  width: 180px;
-  height: 180px;
-  border-radius: 110px;
-  background: #fff;
-  text-align: center;
-  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.15);
-  padding: 40px 20px 0 20px;
-  position: relative;
-}
-.roundel h2, .roundel h3, .roundel h4, .roundel h5, .roundel h6, .roundel p, .roundel a {
-  margin-top: 6px;
-  margin-bottom: 6px;
-  position: relative;
-  z-index: 50;
-}
-.roundel h6 {
-  font-size: 0.8em;
-}
-.roundel h3 {
-  font-size: 2.2em;
-  line-height: 1.2;
-}
-
-/* Block Row 6 items */
-
-.blockrow6 {
-  margin-bottom: 12px;
-}
-.blockrow6 ul {
-  padding: 0;
-  margin: 0;
-}
-.blockrow6 ul li {
-  display: inline;
-  min-height: 0 !important;
-}
-.blockrow6 li a {
-  background: #FBE635 url(/assets/img/systems-sprite.png) no-repeat;
-  display: block;
-  width: 126px;
-  height: 106px;
-  text-indent: -9999px;
-  border: 7px solid transparent;
-  float: left;
-  margin: 0 12px 12px 0;
-}
-.blockrow6 li:last-child a {
-  margin-right: 0;
-}
-.blockrow6 li a.gnulinux {
-  background: #FBE635 url(/assets/img/systems-sprite.png) no-repeat 26px 17px;
-}
-.blockrow6 li a.mac {
-  background: #F6C20B url(/assets/img/systems-sprite.png) no-repeat -99px 17px;
-}
-.blockrow6 li a.windows {
-  background: #EA8142 url(/assets/img/systems-sprite.png) no-repeat -211px 17px;
-}
-.blockrow6 li a.vms {
-  background: #5FC78F url(/assets/img/systems-sprite.png) no-repeat -331px 17px;
-}
-.blockrow6 li a.source {
-  background: #FBE635 url(/assets/img/systems-sprite.png) no-repeat -453px 17px;
-}
-.blockrow6 li a.uninstalling {
-  background: #F6C20B url(/assets/img/systems-sprite.png) no-repeat -572px 17px;
-}
-
-/* Block Row 3 items */
-
-.blockrow3 {
-  margin-bottom: 12px;
-}
-.blockrow3 ul {
-  padding: 0;
-  margin: 0;
-}
-.blockrow3 li a {
-  background: #FBE635 url(/assets/img/systems-sprite.png) no-repeat;
-  display: block;
-  width: 252px;
-  height: 212px;
-  text-indent: -9999px;
-  border: 1px solid #474747;
-  box-sizing: border-box;
-  margin-bottom: 20px;
-}
-@media (min-width: 980px) {
-  .blockrow3 li: nth-child(2) a {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .blockrow3 li:nth-child(3) a {
-    float: right;
-  }
-}
-.blockrow3 li a.orange {
-  background: url('/assets/img/samples/screenshot-1.png') no-repeat scroll 0% 0% #F6C20B;
-}
-.blockrow3 li a.red {
-  background: url('/assets/img/samples/screenshot-2.png') no-repeat scroll 0% 0% #EA8142;
-}
-.blockrow3 li a.green {
-  background: url('/assets/img/samples/screenshot-3.png') no-repeat scroll 0% 0% #5FC78F;
-}
-
 /* Link Sets */
 
 .link-set h2 {
@@ -751,44 +705,4 @@ figcaption {
   .brand {
     background: url(/assets/img/logo-transparent.png) no-repeat bottom left !important;
   }
-}
-
-/* ============================================================
-    Page specific styles
-============================================================ */
-
-
-/* Home page */
-
-.home .license .roundel {
-  margin-top: 80px;
-}
-.home .license .roundel h3 span {
-  font-size: 0.7em;
-  display: block;
-}
-.home .screenshots {
-  margin-left: 0;
-}
-#after-download * {
-  -webkit-transition: 1s ease, margin 1s linear, visibility 1s ease 0.3s, opacity 1s ease 0.3s;
-  transition: 1s ease, margin 1s linear, visibility 1s ease 0.3s, opacity 1s ease 0.3s;
-  max-height: 0;
-  visibility: hidden;
-  opacity: 0;
-  -webkit-transform: translate3d(0,0,1px);
-  transform: translate3d(0,0,1px);
-}
-#after-download p {
-  margin-bottom: 0px
-}
-.downloaded #after-download * {
-  max-height: 1000px;
-  visibility: visible;
-  opacity: 1;
-  -webkit-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-.downloaded #after-download p {
-  margin-bottom: 80px
 }

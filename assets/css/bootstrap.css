@@ -806,7 +806,6 @@ blockquote {
   border-left: 8px solid #5BDC96;
   margin-bottom: 24px;
   font-size: 22.5px;
-  font-weight: 200;
   line-height: 36px;
   font-weight: bold;
   color: #4CAA79;
@@ -2433,11 +2432,12 @@ input[type="button"].btn-block {
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.4);
 }
 
-.content .btn-primary:hover,
-.content .btn-primary:active,
-.content .btn-primary.active,
-.content .btn-primary.disabled,
-.content .btn-primary[disabled] {
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary.active,
+.btn-primary.disabled,
+.btn-primary[disabled] {
   color: #ffffff;
   background-color: #ff5900;
 }
@@ -3952,7 +3952,6 @@ input[type="submit"].btn.btn-mini {
   float: left;
   display: block;
   padding: 25.5px 20px 25.5px;
-  font-weight: 200;
 }
 
 .navbar-inverse a.brand {
@@ -4888,7 +4887,6 @@ a.thumbnail:hover {
 
 .hero-unit p {
   font-size: 18px;
-  font-weight: 200;
   line-height: 36px;
   color: inherit;
 }
