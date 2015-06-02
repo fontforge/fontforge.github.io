@@ -3,11 +3,34 @@
 
 <head>
   <meta charset="utf-8">
-  <title>{{ page.title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="FontForge is free and open-source outline font editor.">
+  <html itemscope itemtype="http://schema.org/Product">
+
+  <title>{{ page.title }}</title>
   <meta name="author" content="The FontForge Project Contributors">
+  <meta name="description" content="{{ socialDescription }}" />
   <meta name="keywords" content="FontForge,font,typeface,design,create,opentype,truetype,UFO,SFD">
+
+  <!-- Schema.org markup for Google+ -->
+  <meta itemprop="name" content="{{ page.title }}">
+  <meta itemprop="description" content="{{ socialDescription }}">
+  <meta itemprop="image" content="{{ socialImage }}">
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="{{ socialAuthor }}">
+  <meta name="twitter:title" content="{{ socialTitle }}">
+  <meta name="twitter:description" content="{{ socialDescription }}">
+  <meta name="twitter:creator" content="{{ socialAuthor }}">
+  <meta name="twitter:image" content="{{ socialImage }}">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="{{ socialTitle }}" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://fontforge.github.io/" />
+  <meta property="og:image" content="{{ socialImage }}" />
+  <meta property="og:description" content="{{ socialDescription }}" />
+  <meta property="og:site_name" content="{{ socialTitle }}" />
 
   <!-- CSS -->
   <link href='http://fonts.googleapis.com/css?family=Merriweather:400,700' rel='stylesheet' type='text/css'>
