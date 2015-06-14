@@ -10,7 +10,7 @@ title: Glossary of (some) typographical terms
   ---------------------------
 
 
-- [A](#a) - [B](#b) - [C](#c) - [D](#d) - [E](#e) - [F](#f) - [G](#g) -
+[A](#a) - [B](#b) - [C](#c) - [D](#d) - [E](#e) - [F](#f) - [G](#g) -
 [H](#h) - [I](#i)- [J](#j)- [K](#k) - [L](#l) - [M](#m) - [N](#n) -
 [O](#o) - [P](#p) - [Q](#q) - [R](#r) - [S](#s) - [T](#t)- [U](#u)-
 [V](#v)- [W](#w) - [X](#x)- [Y](#y) - [Z](#z)-
@@ -66,11 +66,14 @@ See Also: [alphabet](#alphabet), [abjad](#abjad),
 [syllabary](#syllabary) and the relevant [Wikipedia
 article](http://en.wikipedia.org/wiki/Abugida).
 
-###### ![](/sidebearings.png)Advance Width
+###### Advance Width
+![sidebearings](/assets/img/old/sidebearings.png)
+{:.image-left}
 
 The distance between the start of this glyph and the start of the next
 glyph. Sometimes called the glyph's width. See also [Vertical Advance
 Width.](#Vertical-Advance)
+{:.clearfix}
 
 ###### Alphabet
 
@@ -173,7 +176,10 @@ A (modern\~1911) Chinese (Mandarin) [alphabet](#alphabet)
 used to provide phonetic transliteration of Han ideographs in
 dictionaries.
 
-###### ![](/boustrophedon.png)Boustrophedon
+###### Boustrophedon
+
+![Boustrophedon](/assets/img/old/boustrophedon.png)
+{:.image-left}
 
 Writing "as the ox plows", that is alternating between left to right and
 right to left writing directions. Early alphabets (Old Canaanite, and
@@ -185,12 +191,16 @@ method (nor does OpenType have any support for it). See Also
 
 ## C
 
-###### Cap-height![](/cap-height.png)
+###### Cap-height
+
+![cap-height](/assets/img/old/cap-height.png)
+{:.image-left}
 
 The height of a capital letter above the baseline (a letter with a flat
 top like "I" as opposed to one with a curved one like "O").
  See also [X-height](#x-height), [Ascender](#ascender),
 [Descender](#descender), [Overshoot](#overshoot), [Baseline](#baseline)
+{:.clearfix}
 
 ###### CFF
 
@@ -572,8 +582,10 @@ One of the two (modern) Japanese syllabaries. Both
 [Hiragana](#Hiragana) and Katakana have the same sounds.
 
 ###### Kerning
+![](/assets/img/old/MetalType.jpeg)
+{:.image-left}
 
-![](/MetalType.jpeg)When the default spacing between two glyphs is
+When the default spacing between two glyphs is
 inappropriate the font may include extra information to indicate that
 when a given glyph (say "T") is followed by another glyph (say "o") then
 the advance width of the "T" should be adjusted by a certain amount to
@@ -604,23 +616,27 @@ layout program called, respectively, MetaFont and [TeX](#TeX).
 
 ## L
 
-###### ![](/sidebearings.png)Left side bearing
+###### Left side bearing
+![sidebearings](/assets/img/old/sidebearings.png)
+{:.image-left}
 
 The horizontal distance from a glyph's origin to its leftmost extent.
 This may be negative or positive.
+{:.clearfix}
 
 ###### Lemur
+[![lemur](/assets/img/old/lcani.gif)](http://bibliofile.duhs.duke.edu/gww/Berenty/Mammals/Lemur-catta/)
+{:.image-left}
 
-[![](/lcani.gif)](http://bibliofile.duhs.duke.edu/gww/Berenty/Mammals/Lemur-catta/)A
-monotypic genus of prosimian primates, now found only on Madagascar but
+A monotypic genus of prosimian primates, now found only on Madagascar but
 formally (about 50 million years ago) members of this family were much
 more wide spread.
 
 ###### Ligature
 
 A single glyph which is composed of two adjacent glyphs. A common
-example in the latin script is the "fi" ligature ![](/fi.png) which has a
-nicer feel to it than the sequence![](/f+i.png).
+example in the latin script is the "fi" ligature ![](/assets/img/old/fi.png) which has a
+nicer feel to it than the sequence![](/assets/img/old/f+i.png).
 
 ###### LGC
 
@@ -640,10 +656,13 @@ An early Japanese script, ancestral to both [hiragana](#hiragana) and
 [kanji](#Kanji) for their phontic sounds, and over the
 years these kanji were simplified into hiragana and katahana.
 
-###### ![](/MetalType.jpeg)Metal Type
+###### Metal Type
+![metaltype](/assets/img/old/MetalType.jpeg)
+{:.image-left}
 
 Once upon a time, printing presses smashed plates full of slugs of metal
 against paper.
+{:.clearfix}
 
 ###### Monospace
 
@@ -739,7 +758,9 @@ A slanted [style](#style) of a font, generally used for emphasis.
 Oblique differs from [Italic](#italic) in that the transformation from
 the plain to the slanted form involves just skewing the letterforms.
 
-###### Overshoot     ![](/overshoot.png)
+###### Overshoot
+![overshoot](/assets/img/old/overshoot.png)
+{:.image-left}
 
 In order for the curved shape of the "O" to appear to be the same height
 as the flat top of the "I" it tends to "overshoot" the cap-height (or
@@ -901,10 +922,13 @@ A [reference](/en-US/tutorials/overview/#References) is a way of storing the out
 of one glyph in another (for example in accented glyphs). Sometimes
 called a "componant".
 
-###### ![](/sidebearings.png)Right side bearing
+###### Right side bearing
+![sidebearings](/assets/img/old/sidebearings.png)
+{:.image-left}
 
 The horizontal distance from a glyph's rightmost extent to the glyph's
 advance width. This may be positive or negative.
+{:.clearfix}
 
 ## S
 
@@ -924,9 +948,9 @@ latin
  greek
  cyrillic
 
-![](/serif-def.png)
+![](/assets/img/old/serif-def.png)
 
-![](/sans-serif-def.png)
+![](/assets/img/old/sans-serif-def.png)
 
 a serif
 
@@ -934,9 +958,9 @@ sans serif
 
 hebrew
 
-![](/BethSerif.png)
+![](/assets/img/old/BethSerif.png)
 
-![](/BethSans.png)
+![](/assets/img/old/BethSans.png)
 
 bet serif
 
@@ -1214,13 +1238,16 @@ distance from the left side bearing to the right side bearing.
 
 ## X
 
-###### X-height![](/x-height.png)
+###### X-height
+![x-height](/assets/img/old/x-height.png)
+{:.image-left}
 
 The height of a lower case letter above the base line (with a flat top
 like "x" or "z" or "v" as opposed to one with a curved top like "o" or
 one with an ascender like "l") .
  See also [Cap-height](#cap-height), [Ascender](#ascender),
 [Descender](#descender), [Overshoot](#overshoot), [Baseline](#baseline)
+{:.clearfix}
 
 ###### XUID
 
