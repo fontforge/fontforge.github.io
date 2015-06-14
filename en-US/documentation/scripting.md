@@ -25,7 +25,7 @@ A simple example
 
 Suppose you have a Type1 PostScript font (a pfb/afm combination) and you would like to convert it into a TrueType font. What would a script look like that could do this?
 
-If you were doing this with the UI you would first [File-\>Open](filemenu.html#Open) the font and then [File-\>Generate](filemenu.html#Generate) a truetype font. You do essentially the same thing when writing a script:
+If you were doing this with the UI you would first [File-\>Open](../interface/filemenu/#open) the font and then [File-\>Generate](../interface/filemenu/#generate-fonts) a truetype font. You do essentially the same thing when writing a script:
 
 ### Initial Solution
 
