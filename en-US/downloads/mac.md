@@ -27,7 +27,7 @@ Read either the short or detailed guide to get you started.
 
 #### FontForge
 
-* Download and install [FontForge 2015-08-24]https://github.com/fontforge/fontforge/releases/download/20150824/Fontforge-20150824.dmg) in `/Applications` - not anywhere else
+* Download and install [FontForge 2015-08-24](https://github.com/fontforge/fontforge/releases/download/20150824/Fontforge-20150824.dmg) in `/Applications` - not anywhere else
 * Open FontForge
 * If asked where X11 is, then find and select XQuartz in `Applications/Utilities`
 * FontForge is now ready for you to use it like any other app.
