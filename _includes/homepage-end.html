@@ -21,7 +21,7 @@
             $('#cnt-downloads').html(humanise(total));
             $('.statistic').fadeIn();
         });
-        $.getJSON("http://sfbadge.herokuapp.com/commits/fontforge/fontforge/json", function(json) {
+        $.getJSON("https://sfbadge.herokuapp.com/commits/fontforge/fontforge/json", function(json) {
             $('#cnt-contributors').html(humanise(json.commits));
         });
     });
