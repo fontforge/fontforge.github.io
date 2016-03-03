@@ -4,7 +4,7 @@ layout: default
 title: About This Website
 ---
 
-Like FontForge itself, this website is developed as a [collaborative project](/en-US/about/project/)--everyone is invited to contribute. 
+Like FontForge itself, this website is developed as a [collaborative project](/en-US/project/)--everyone is invited to contribute.
 
 To help out, join the [FontForge Users Mailing List](https://lists.sourceforge.net/lists/listinfo/fontforge-users) and say hello. To make direct changes, sign up to [GitHub](http://github.com) and let us know your github username, and we'll add you to the Website team.
 
@@ -28,7 +28,7 @@ If that sounds unfamiliar, GitHub has excellent [bootcamp tutorials](https://hel
 
 ### Translations
 
-The website is under active development in US English. 
+The website is under active development in US English.
 
 If you'd like to start translating it, make a copy of the `/en-US` directory
 and rename it with your language code, and start translating. When you think
@@ -37,7 +37,7 @@ the site is ready, make a pull request :-)
 When a translation is ready, we'll have to make a modification to the language dropdown in `_includes/nav-main.html` so
 that it will work to switch the URL (with the JS library `jurlp`)
 
-(If you're interested in translating FontForge itself, please refer to the [FontForge User Interface Translations](/documentation/customizing/translations.html) page.)
+(If you're interested in translating FontForge itself, please refer to the [FontForge User Interface Translations](/en-US/documentation/customizing/uitranslationnotes) page.)
 
 ## Contributors
 
@@ -46,6 +46,6 @@ Massive thanks to those kind souls who have contributed to this website:
 1. __George Williams__, primary author of all of FontForge and most of the site's contents
 2. __Bevan Stephens__, primary visual designer of this website
 3. __Brian Zick__, helped with the information architecture of the new site and scripts to convert the old content to markdown
-4. __Dave Crossland__, initiated the new site project, implemented Bevan's mockups as Jekyll, wrote some of new website content 
+4. __Dave Crossland__, initiated the new site project, implemented Bevan's mockups as Jekyll, wrote some of new website content
 5. __Vera Lobatcheva__, helped migrate the old content to the new site
 6. Your name here? :-)
