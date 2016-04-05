@@ -27,7 +27,9 @@ Read either the short or detailed guide to get you started.
 
 #### FontForge
 
-* Download and install [FontForge 2015-04-30](https://github.com/fontforge/fontforge/releases/download/20150430/FontForge-2015-04-30-Mac.app.dmg) in `/Applications` - not anywhere else
+* For users of Mac OS X 10.10 and later, download and install [FontForge 2016-04-04](https://github.com/fontforge/fontforge/releases/download/20160404/FontForge-2016-04-04-Mac.app.dmg.zip)
+* For users of Mac OS X 10.09, download and install [FontForge 2015-04-30](https://github.com/fontforge/fontforge/releases/download/20150430/FontForge-2015-04-30-Mac.app.dmg) 
+* Extract the FontForge app and move it to `/Applications` - not anywhere else
 * Open FontForge
 * If asked where X11 is, then find and select XQuartz in `Applications/Utilities`
 * FontForge is now ready for you to use it like any other app.
@@ -56,7 +58,9 @@ Just this first time, start XQuartz from `Applications/Utilities/XQuartz.app`, g
 
 #### 2. Install FontForge
 
-**[Download FontForge 2015-04-30](https://github.com/fontforge/fontforge/releases/download/20150430/FontForge-2015-04-30-Mac.app.dmg)**
+For users of Mac OS X 10.10 and later, download and install [FontForge 2016-04-04](https://github.com/fontforge/fontforge/releases/download/20160404/FontForge-2016-04-04-Mac.app.dmg.zip)
+
+For users of Mac OS X 10.09, download and install [FontForge 2015-04-30](https://github.com/fontforge/fontforge/releases/download/20150430/FontForge-2015-04-30-Mac.app.dmg) 
 
 ![Download files](../mac-download-files.png)
 
