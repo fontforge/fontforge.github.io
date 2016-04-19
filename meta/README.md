@@ -16,9 +16,9 @@ Note: on importexample.html there is a nice, sane list of links, which is more w
 - editexample6-5.html
 - editexample7.html
 - scriptnotes.html
-- 
-- [then it starts into ui pages]
-- 
+
+then it starts into ui pages
+
 - fontview.html
 - charview.html
 - bitmapview.html
@@ -37,7 +37,9 @@ Note: on importexample.html there is a nice, sane list of links, which is more w
 - windowmenu.html
 - helpmenu.html
 - HotKeys.html
-- 
+
+Then
+
 - scripting.html
 - PfaEdit-TeX.html
 - errrecovery.html
@@ -48,7 +50,9 @@ Note: on importexample.html there is a nice, sane list of links, which is more w
 - sfdformat.html
 - bezier.html
 - corpchar.html
-- 
+
+Then
+
 - Breaks at ./sfds/index.html
 - but, the next one is
 - faq.html		FAQ
