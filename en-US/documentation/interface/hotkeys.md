@@ -23,6 +23,7 @@ title: Hot Keys
     <tr><td>Ctl-G</td>
         <td><a href="../editmenu/#copy-reference">Copy Reference</a></td></tr>
     <tr><td>Ctl-H</td>
+        <!-- TODO: figure out where this link is supposed to go -->
         <td><a href="../filemenu/#outline">Open Outline</a></td></tr>
     <tr><td>Ctl-I</td>
         <td><a href="../elementmenu/#get-info">Get Info</a></td></tr>
