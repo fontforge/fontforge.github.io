@@ -284,6 +284,7 @@ line argument.
             <td rowspan="3">pointer</td>
             <td>Shift</td>
             <td>Constrain horizontal/vert or italic angle/45&deg;</td>
+	</tr>
         <tr>
             <td>Alt</td>
             <td>Select control points before normal points</td>
