@@ -24,16 +24,13 @@ title: Hot Keys
     <tr><td>Ctl-G</td>
         <td><a href="../editmenu/#copy-reference">Copy Reference</a></td></tr>
     <tr><td>Ctl-H</td>
-        <!-- TODO: will probably link to outline glyph view when page is migrated. /charview.html -->
-        <td><a href="../filemenu/#outline">Open Outline</a></td></tr>
+        <td><a href="../charview/">Open Outline</a></td></tr>
     <tr><td>Ctl-I</td>
         <td><a href="../elementmenu/#get-info">Get Info</a></td></tr>
     <tr><td>Ctl-J</td>
-        <!-- TODO: will probably link to bitmap glyph view when page is migrated. /bitmapview.html -->
-        <td><a href="../filemenu/#bitmap">Open Bitmap</a></td></tr>
+        <td><a href="../bitmapview">Open Bitmap</a></td></tr>
     <tr><td>Ctl-K</td>
-	<!-- TODO: will link to metrics view when migrated /metricsview.html -->
-        <td><a href="../metricsview.html">Open Metrics</a></td></tr>
+        <td><a href="../metricsview">Open Metrics</a></td></tr>
     <tr><td>Ctl-L</td>
         <td><a href="../metricsmenu/#set-lbearing">Set LBearing</a></td></tr>
     <tr><td>Ctl-M</td>
@@ -194,7 +191,6 @@ title: Hot Keys
     <tr><td>Ctl-Alt-R</td>
         <td><a href="../filemenu/#revert-glyph">Revert Glyph</a></td></tr>
     <tr><td>Alt-Ctl-1</td>
-	<!-- TODO: The user scripts will be linking all to the same place, probably this page once it's migrated /scripting.html#Starting -->
         <td><a href="../filemenu/#execute-Script">Invokes user script</a></td></tr>
     <tr><td>Alt-Ctl-2</td>
         <td><a href="../filemenu/#execute-Script">Invokes user script</a></td></tr>
