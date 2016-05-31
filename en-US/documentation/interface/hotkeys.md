@@ -387,7 +387,6 @@ line argument.
 
 #### Modifer keys for arrow keys in the Outline Glyph Window
 
-<!-- TODO: This is not rendering correctly -->
 <table class="table" border="">
     <tbody>
         <tr>
