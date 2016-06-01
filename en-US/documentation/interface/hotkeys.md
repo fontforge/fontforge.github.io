@@ -120,9 +120,6 @@ title: Hot Keys
         <td><a href="../filemenu/#import">Import</a></td></tr>
     <tr><td>Ctl-Shft-J</td>
         <td><a href="../editmenu/#join">Join</a></td></tr>
-    <tr><td>Ctl-Shft-K</td>
-	<!-- TODO: This might not be needed anymore it might be named kerning subtle or kerning class -->
-        <td><a href="../metricsmenu/#kern">Auto Kern</a></td></tr>
     <tr><td>Ctl-Shft-L</td>
         <td><a href="../metricsmenu/#set-width">Set Width</a></td></tr>
     <tr><td>Ctl-Shft-M</td>
@@ -184,7 +181,7 @@ title: Hot Keys
     <tr><td>Alt-Ctl-I</td>
         <td><a href="../elementmenu/#show-dependencies">Show Dependencies...</a></td></tr>
     <tr><td>Alt-Ctl-M</td>
-	<!-- TODO: figure out where this should go -->
+	<!-- TOFIX: figure out where this should link to -->
         <td><a href="../editmenu/#elide">Elide Point</a></td></tr>
     <tr><td>Alt-Ctl-P</td>
         <td><a href="../display/">Display</a></td></tr>
