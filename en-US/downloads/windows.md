@@ -5,6 +5,15 @@ title: FontForge Windows Edition
 archive_extension: .exe
 ---
 
+If FontForge is useful to you and you would like to see it continue to improve, please consider donating $5 or $10.
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="AGTDH5AVRLSBN">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
 <a class="btn btn-primary btn-large default" href="https://github.com/fontforge/fontforge/releases/download/20160404/FontForge-2016-04-04-Windows-r2.exe">
   Download 2016-04-04 (Rev 2.) Release Installer (.exe)
 </a>
