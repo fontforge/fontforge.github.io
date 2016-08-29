@@ -15,5 +15,5 @@ title: FontForge on Windows, Almost There
 <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 </form>
 
-...or, if you've already given as much as this release of FontForge is worth to you, pardon the interruption and [continue this way](./windows-dl).
+...or, if you've already given as much as this release of FontForge is worth to you, pardon the interruption and [continue this way](../windows-dl).
 
