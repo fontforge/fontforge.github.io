@@ -1,0 +1,31 @@
+---
+published: true
+layout: downloads
+title: FontForge on Windows
+archive_extension: .exe
+---
+
+<a class="btn btn-primary btn-large default" href="https://github.com/fontforge/fontforge/releases/download/20160404/FontForge-2016-04-04-Windows-r2.exe">
+  Download 2016-04-04 (Rev 2.) Release Installer (.exe)
+</a>
+
+1. Right click, select `Run as Administrative User`
+2. After installation, right click FontForge shortcut and select `Run as Administrative User`
+
+You may find more recent development snapshots at the [fontforgebuilds] project.
+Developers can get the "MSYS" Windows build system there too.
+
+Please post your Windows Build bug reports on our [GitHub Issue Tracker].
+
+[fontforgebuilds]: http://sourceforge.net/projects/fontforgebuilds/
+[GitHub Issue Tracker]: https://github.com/fontforge/fontforge/issues/
+
+## Making it better
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="PQ7ZAY45WTYWA">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
