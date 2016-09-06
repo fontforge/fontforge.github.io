@@ -20,6 +20,19 @@ Please post your Windows Build bug reports on our [GitHub Issue Tracker].
 [fontforgebuilds]: http://sourceforge.net/projects/fontforgebuilds/
 [GitHub Issue Tracker]: https://github.com/fontforge/fontforge/issues/
 
+## Don't miss an update!
+
+Subscribe to the FontForge announcement list.
+<form action="https://lists.sourceforge.net/lists/subscribe/fontforge-announce" method="POST">
+Name: <input name="fullname" type="text"/><br/>
+E-Mail Address: <input name="email" type="text"/><br/>
+<input type="hidden" name="pw" value=""/> <input type="hidden" name="pw-conf" value=""/> <input type="hidden" name="digest" value="0"/>
+<input type="Submit" name="email-button" value="Subscribe"/>
+</form>
+
+You can also subscribe to the [user](https://lists.sourceforge.net/lists/listinfo/fontforge-users) and [developer](https://lists.sourceforge.net/lists/listinfo/fontforge-devel) lists.
+
+
 ## Making it better
 
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
