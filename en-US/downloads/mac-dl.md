@@ -7,7 +7,7 @@ archive_extension: ".dmg"
 
 FontForge is a UNIX application, so it doesn't behave 100% like a normal Mac Application and it needs XQuartz to run.
 
-Read either the short or detailed guide to get you started.
+Read either the short or detailed guide (each with appropriate download links) to get you started.
 
 <a class="btn btn-primary btn-large default" data-toggle="collapse" href="#collapseBasic" aria-expanded="false" aria-controls="collapseBasic">
   Short Guide
