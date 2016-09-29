@@ -16,7 +16,7 @@ If you really like FontForge and want to see it continue to improve...
 
 ...or, if you've already given as much as this release of FontForge is worth to you, no worries.
 
-All we ask is that you subscribe to the FontForge announcement list. If you don't want to hear about new FontForge releases, you can simply ignore the confirmation e-mail. If you're already signed up, just resubmit with the same address.
+All we ask is that you subscribe to the FontForge announcement list so that we can keep you in the loop and using the latest version of the software. If you don't want to hear about new FontForge releases, you can simply ignore the subscription confirmation e-mail. If you're already signed up, just resubmit with the same address.
 
 <div id="emls_box">
 <form id="emls_vform" style="display: inline;" name="emls_vform" onsubmit="subscribeClicked()">
