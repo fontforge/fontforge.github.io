@@ -7,22 +7,13 @@ title: Multi Layered Editing of Type3 and SVG fonts
 
 [table_of_contents]
 
-
-Normal builds of fontforge do not have this mode enabled (it can eat up
-a lot of memory), if you wish to edit type3 fonts then configure
-fontforge with
-
-    $ configure --enable-type3
-    $ make
-    $ make install
-
-If you have done this, then loading a type3 font (or an svg font
+Loading a type3 font (or an svg font
 organized in a similar fashion) will cause FontForge to retain
 information on each stroke and fill command. Each command is placed in a
 separate layer and may be edited in isolation.
 
 A new font may be converted to a multi-layered font by selecting
-Element->Font Info->Layers->Multi Layered Font.
+Element->Font Info->Layers->All layers cubic and Type3 Multi Layered Font.
 
 ![](/assets/img/windows-charview-multilayer.png)
 
