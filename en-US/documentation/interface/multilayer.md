@@ -7,13 +7,13 @@ title: Multi Layered Editing of Type3 and SVG fonts
 
 [table_of_contents]
 
-Loading a type3 font (or an svg font
-organized in a similar fashion) will cause FontForge to retain
-information on each stroke and fill command. Each command is placed in a
-separate layer and may be edited in isolation.
+When loading a type3 font (or an svg font organized in a similar fashion)
+FontForge will retain information on each stroke and fill command. Each
+command is placed in a separate layer and may be edited in isolation.
 
-A new font may be converted to a multi-layered font by selecting
-Element->Font Info->Layers->All layers cubic and Type3 Multi Layered Font.
+A new font may be converted to a multi-layered font by navigating to
+Element->Font Info->Layers, then setting the splines option to **All layers
+cubic** and the font type option to **Type3 Multi Layered Font**.
 
 ![](/assets/img/windows-charview-multilayer.png)
 
