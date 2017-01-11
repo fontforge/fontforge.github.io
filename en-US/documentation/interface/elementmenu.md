@@ -130,7 +130,7 @@ problems found in all glyphs of the font. See the [validation
 page](../validation/) for more info.
 
 
-####Bitmap Strikes Available...
+#### Bitmap Strikes Available...
 
 This brings up a list of pixel sizes for bitmap fonts.
 
@@ -500,9 +500,6 @@ available in the outline glyph view.
 
 This finds the places where overlapping contours intersect and inserts
 points at those locations.
-
-
-#### Simplify
 
 
 ##### Simplify
