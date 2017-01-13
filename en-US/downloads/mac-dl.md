@@ -42,7 +42,7 @@ Without [XQuartz](http://xquartz.macosforge.org), FontForge will open a Dock ico
 
 Open Finder and look in your `/Applications/Utilities/` folder for the `XQuartz` app.
 
-If you don't have it then download and install: **[direct link to XQuartz-2.7.7.dmg](https://dl.bintray.com/xquartz/downloads/XQuartz-2.7.11.dmg)**
+If you don't have it then download and install: **[direct link to XQuartz-2.7.11.dmg](https://dl.bintray.com/xquartz/downloads/XQuartz-2.7.11.dmg)**
 
 ![X11.app Preferences Window set correctly](../mac-xquarz-1-installer.png)
 
