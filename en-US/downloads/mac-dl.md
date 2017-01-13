@@ -18,7 +18,7 @@ Read either the short or detailed guide (each with appropriate download links) t
 
 <div class="collapse" id="collapseBasic"><div class="well" markdown="1">
 ## XQuartz
-* Download and install [xQuartz](http://xquartz.macosforge.org/downloads/SL/XQuartz-2.7.7.dmg) if you don't already have it
+* Download and install [xQuartz](https://dl.bintray.com/xquartz/downloads/XQuartz-2.7.11.dmg) if you don't already have it
 * Open XQuartz
 * Preferences (⌘,)
 * If checked, then uncheck `Enable keyboard shortcuts under X11` or `Enable key equivalents under X11` like shown below
@@ -42,7 +42,7 @@ Without [XQuartz](http://xquartz.macosforge.org), FontForge will open a Dock ico
 
 Open Finder and look in your `/Applications/Utilities/` folder for the `XQuartz` app.
 
-If you don't have it then download and install: **[direct link to XQuartz-2.7.7.dmg](http://xquartz.macosforge.org/downloads/SL/XQuartz-2.7.7.dmg)**
+If you don't have it then download and install: **[direct link to XQuartz-2.7.7.dmg](https://dl.bintray.com/xquartz/downloads/XQuartz-2.7.11.dmg)**
 
 ![X11.app Preferences Window set correctly](../mac-xquarz-1-installer.png)
 
