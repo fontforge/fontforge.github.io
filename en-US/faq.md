@@ -1594,8 +1594,8 @@ field to Monospaced. This is necessary but not sufficient to mark the
 font as a whole as monospaced.
 
 If you are unsure whether all the glyphs in your font have the same
-advance width use [Element-\>Find Problems-\>Random-\>Check
-Advance.](/en-US/documentation/interface/problems/#Advance)
+advance width, select all the glyphs, then use [Element-\>Validation-\>Find Problems-\>BB-\>Check
+Advance](/en-US/documentation/interface/problems/).
 
 When I say "all glyphs" I really mean *all* glyphs. Even glyphs which
 unicode says should be 0 width must have the same width as everything
