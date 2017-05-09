@@ -27,7 +27,7 @@ The default and hotkeys files locations depend upon which OS FontForge is instal
     <td>~/.config/fontforge/hotkeys</td>
   </tr>
   <tr>
-    <td>Mac OS</td>
+    <td>Mac OS/X</td>
     <td>/Applications/FontForge.app/Contents/Resources/opt/local/share/fontforge/hotkeys/default</td>
     <td>~/.config/fontforge/hotkeys</td>
   </tr>

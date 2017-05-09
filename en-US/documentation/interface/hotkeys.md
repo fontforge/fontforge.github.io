@@ -231,8 +231,7 @@ title: Hot Keys
     </tbody>
 </table>
 
-[Hot Keys are now configurable](../../customizing/hotkeysassignment) by editing]
-a hotkeys file.
+[Hot Keys are now configurable](../../customizing/hotkeysassignment) by editing a hotkeys file.
 
 
 #### Different Keyboards
