@@ -4,9 +4,6 @@ layout: default
 title: Hot Keys
 ---
 
-[table_of_contents]
-
-
 <table class="table" border>
     <tbody>
     <tr><td>Ctl-A</td>
@@ -234,9 +231,8 @@ title: Hot Keys
     </tbody>
 </table>
 
-[Hot Keys are now configurable
-through](../../customizing/uitranslationnotes/#HotKeys)
-a [gettext](http://www.gnu.org/software/gettext/manual/) based mechanism.
+[Hot Keys are now configurable](../../customizing/hotkeysassignment) by editing]
+a hotkeys file.
 
 
 #### Different Keyboards

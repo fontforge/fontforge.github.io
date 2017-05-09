@@ -4,146 +4,71 @@ layout: default
 title: HotKeys assignment
 ---
 
-## Changing the assignment of Hot Keys
+FontForge has a [default assignment of hot key](/en-US/documentation/interface/hotkeys) (menu shortcuts, whatever term you wish to use). This assignment can be difficult to use on non-English keyboards. Even users with English keyboards might find reasons to disagree with it. So FontForge allows you to redefine the hot keys. 
 
-FontForge has a [default assignment of hot key](/en-US/documentation/interface/hotkeys) (menu shortcuts, whatever term you wish to use). This assignment can be difficult to use on non-English keyboards. Even users with English keyboards might find reasons to disagree with it. So FontForge allows you to redefine the hot keys. This is done using a gettext mechanism, but in a different pot file from the normal set of translation strings (which means it uses a different gettext "text domain").
+Default hotkeys are provided for the menus in all windows which follow familiar key assignments such as Control+O to open a file and Control+c to "copy" something. The current hotkey for each menu item are shown in the menu itself to help you learn existing bindings and see if your modification to the bindings are as you expect.
 
-The hot key pot file is called: **FontForge-MenuShortCuts.pot**
+The hotkey system allows you to customize the hotkey for anything that appears in the menus. You can freely change the hotkey for a menu item or add one if you find you are using a menu item frequently. Your settings for hotkeys are read from and stored in the hotkeys file. In it's most basic form this file is a sequence of lines of the form action:key. A large default hotkeys file is provided with FontForge in hotkeys/default file.  Its content can be copied to the hotkeys file and be edited to suit your needs.
 
-On the Mac, FontForge allows for two different key bindings. X11 can be configured to pass the command key on to FontForge, or X11 may use the command key in its own menubar. If FontForge doesn't get the command key then it will do normal processing using normal keybindings. Otherwise FontForge will first look for a file called Mac-FontForge-MenuShortCuts.po if this is found (and if it rebinds the string "Flag0x10+" (which should become "Cmd+" -- or whatever is appropriate in your language)) then it will be used. Otherwise it falls back to normal processing.
+The default and hotkeys files locations depend upon which OS FontForge is installed on:
 
-This file consists of a sequence of entries that look like:
+<table class="table" border>
 
-```
-#: bitmapview.c:1720 charview.c:7833 charview.c:9079 fontview.c:6521
-msgid "New|Ctl+N"
-msgstr ""
- 
-#: bitmapview.c:1721 charview.c:7834 charview.c:9080 fontview.c:6525
-msgid "Open|Ctl+O"
-msgstr ""
- 
-#: bitmapview.c:1723 charview.c:7836 charview.c:9082 fontview.c:6527
-msgid "Close|Ctl+Shft+Q"
-msgstr ""
+<tbody>
 
-#: bitmapview.c:1729 charview.c:7842
-msgid "Export...|No Shortcut"
-msgstr ""
+  <tr>
+    <th>OS</th>
+    <th>Source</th>
+    <th>Destination</th>
+  </tr>
+  <tr>
+    <td>Linux</td>
+    <td>/usr/local/share/fontforge/hotkeys/default</td>
+    <td>~/.config/fontforge/hotkeys</td>
+  </tr>
+  <tr>
+    <td>Mac OS</td>
+    <td>/Applications/FontForge.app/Contents/Resources/opt/local/share/fontforge/hotkeys/default</td>
+    <td>~/.config/fontforge/hotkeys</td>
+  </tr>
+  <tr>
+    <td>Windows</td>
+    <td>%programfiles(x86)%\FontForgeBuilds\share\fontforge\hotkeys\default</td>
+    <td>%userprofile%\AppData\Roaming\FontForge\hotkeys</td>
+  </tr>
 
-#: fontview.c:7798
-msgid "Help|F1"
-msgstr ""
-```
+</tbody>
 
-Each entry (msgid) is formatted as follows
+</table>
 
-*   First is the command name as it appears in the (English) menu.
-*   Then there is the special character "\|" which separates the command name from the hot key specification.
-*   Then a list of key modifiers separated by "+"
-*   And finally the key itself
+The below fragment of hotkeys will hopefully provide a nice example to get you started creating your own hotkey bindings. As you can see the action part starts with "CharView.Menu.", meaning that this action is to invoke a menu on a specific window type. You can assign a different hotkey to the same menu item in two different window types. For example, the glyph window might have control+o to show font information, whereas the fontview might retain control+o to mean open a font.
 
-So in the first example above `New|Ctl+N` means that this is the hot key for the New command, and that the default definition of that hot key is Control N.
-
-Modifier lists can be more complex `Close|Ctl+Shft+Q` means that the hot key for the Close command is Control Shift Q.
-
-Not all commands have hot keys in the default assignment, but since some users might want to assign keys to them they still have entries. Thus `Export...|No Shortcut` means that the Export command has no shortcut (no hot key) in English.
-
-It is also possible to use keys with no modifiers. Generally you will not want to do that for a normal, alphabetic key, but for special keys, like the function keys, it is perfectly acceptable. `Help|F1` means that the Help command is bound to the first function key.
-
-* * *
-
-So that's what the msgid field means. The above information describes the default key bindings. You want to know how to change them. The format is almost the same (the only exception is that you will not include the command name nor the "\|" separator), but you need to change the msgstr field.
-
-Suppose that you wanted to remove the shortcut for the open command, and add one to the Export command: You might create a po file which looks like:
+The first action in the below file, Point.Tools.Ruler, will invoke the Ruler menu item which is in the Tools menu, which is itself in the Point top level menu of the charview window (Glyph window). Notice that the key does not need to have a qualifier such as control or alt. Having no modifier for a hotkey is currently limited to the glyph window.
 
 ```
-#: bitmapview.c:1721 charview.c:7834 charview.c:9080 fontview.c:6525
-msgid "Open|Ctl+O"
-msgstr "No Shortcut"
-
-#: bitmapview.c:1729 charview.c:7842
-msgid "Export...|No Shortcut"
-msgstr "Alt+Cntl+Shft+E"
+CharView.Menu.Point.Tools.Ruler: r
+CharView.Menu.Point.Tools.Pointer: v
+CharView.Menu.View.Show.Tab.Tab0: Ctl+1
+CharView.Menu.View.Show.Tab.Tab1: Ctl+2
+CharView.Menu.View.Zoom in: Shft++
+CharView.Menu.View.Zoom in: z
+CharView.Menu.View.Zoom in: =
+CharView.Menu.Point.Tools.HVCurve: 1
++CharView.Menu.Point.Tools.G2: 1
 ```
 
-NOTE: **Omitting a string will not remove the shortcut**. Instead FontForge will use the default shortcut. If you want to remove a shortcut you must add an explicit assignment to `"No Shortcut"`.
+Continuing down the list you see the use of Ctl+1 to select a specific tab in the glyph window. This is followed by three key bindings, any of which will zoom the display to a higher magnification level.
 
-FontForge recognizes the following standard modifiers: `Alt+, Ctl+, Shft+, CapsLock+, Opt+` (the last corresponds to the Option key on the mac keyboard, `Cmd+` for the mac Command key **Note:** This can only be used by an X program if the X11 application does not appropriate it -- this can be configured in the X11 Preferences).
-
-Some keyboards have additional modifier keys, X maps them to a flag bit in the keyboard state mask of the XKeyEvent. If you want to use these modifiers you need to know what that bit is. FontForge will also recognize:  
-`Flag0x01+, Flag0x02+, Flag0x04+, Flag0x08+,  
-Flag0x10+, Flag0x20+, Flag0x40+, Flag0x80+`
-
-The hot key itself should be entered in UTF-8\.
-
-* * *
-
-There are a few other strings in this file.
-
-When FF displays a shortcut in the menu it will use a similar syntax.  
-That may not be appropriate for non-English terminals. On a French system it might be better to show the Shift modifier as _Majuscule_. At the bottom of this file are several entries which are not used to set shortcuts but are used in displaying the shortcuts in the menu, thus
+When reading hotkeys files at startup, FontForge will first load many system defaults and then your hotkeys file. Each file is processed from the first line to the last line. When reading these hotkey files, it might be the case that two or more lines have the exact same hotkey. For example, the system default is Control+o to open a file. You might like to override that hotkey to open the font info dialog instead. When FontForge is reading hotkeys files, if a hotkey is encountered that is already in use, the current action for that hotkey is replaced with the new action. So if you have the below line in your hotkeys file then Control+o will open the font info dialog instead of trying to open a font.
 
 ```
-#: ../gdraw/gmenu.c:120
-msgid "Shft+"
-msgstr "Maj+"
-msgid "Flag0x80+"
-msgstr "AltGr+"
+CharView.Menu.Element.Font Info...:Ctl+o
 ```
 
-(These changes only affect what FontForge _displays_ in the menu. If you try to specify a keybinding as `msgstr "Ctl+Maj+E"` it will **NOT** work)
+If you want to add an action for a hotkey rather than replace the current action, prefix the line with a "+" character as the Tools.G2 line does in the above example. This allows the "1" key to invoke both the Tools.HVCurve and Tools.G2 menu items. In this case only one menu will perform a task depending on if spiro mode is active.
 
-Even though not obvious from this file, it is also possible to add names for special keys. So you could add:
+There are many modifiers that FontForge recognizes which are listed in the next paragraph. These are always the English name for the modifier regardless of your locale. The names are fully case insensitive; you can write Control, conTROL, or control and they will have the same effect. The non modifier key, for example 's' without the quotes undergoes an internal case modification. If you specify control+S this will be interpreted as control being held while the 's' key is pressed. If you are wanting the Shift key to be held too, you need to explicitly specify that as with control+shift+s as the key definition.
 
-```
-msgid "Escape"
-msgstr "Échappe"
-msgid "Delete"
-msgstr "Efface"
-```
+FontForge recognizes the following standard modifiers: Alt, Esc Ctl, Control, Ctrl, Shft, Shift, CapsLock, Opt (the last corresponds to the Option key on the mac keyboard, Cmd+ for the mac Command key Note: This can only be used by an X program if the X11 application does not appropriate it -- this can be configured in the X11 Preferences).
 
-The English names accepted for special keys are those defined under XK_MISCELLANY in keysymdef.h of the X11 header files -- without the initial XK_
-
-* * *
-
-You can obtain a `FontForge-MenuShortCuts.pot` file in pretty much the same way you [obtain a FontForge.pot file](/en-US/documentation/customizing/uitranslationnotes#Obtaining) -- download the source and then type:
-
-```bash
-$ cd fontforge/po
-$ make FontForge-MenuShortCuts.pot
-```
-
-Again you will want to [rename this file before working on it](/en-US/documentation/customizing/uitranslationnotes#Modifying):
-
-```
-$ mv FontForge-MenuShortCuts.pot fr-MenuShortCuts.po
-```
-
-Then edit the file to insert your short cuts.
-
-If you want to install your new short cuts:
-
-*   First you need to compile it:
-```
-$ msgfmt -o fr-MenuShortCuts.mo fr-MenuShortCuts.po
-```
-
-    and create an "mo" file.
-
-*   This file you will want to rename and move to the appropriate directory. If fontforge is installed in /usr/local/bin then you would say
-
-```
-$ sudo mv fr-MenuShortCuts.mo /usr/local/share/locale/fr/LC_MESSAGES/FontForge-MenuShortCuts.mo
-```
-
-The above example assumes you have FontForge installed in `/usr/local`. If you installed it elsewhere (`/usr` for instance) simply replace `/usr/local/share` with `/usr/share`, or whatever is appropriate.
-
-Currently there are no examples of these files, and there is nothing in the Makefile to install them.
-
-Creating a Mac file is similar. There is one example of this in the git repository under `mackeys/en.po`. It should be the same as the default key bindings except that the Control key has been replaced everywhere with the Command key. You can install it
-
-```
-$ mv en.mo /usr/local/share/locale/en/LC_MESSAGES/Mac-FontForge-MenuShortCuts.mo
-```
-
+Other than the CharView window type, there are FontView and MetricsView.

@@ -130,7 +130,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n>1;\n"
 ```
 
-Most of these are pretty self-explanatory. Fill in your name and email address where appropriate, and the date on which you last worked on the file. The plurals line is a little more complex, and I'll describe it [later](#plurals).
+Most of these are pretty self-explanatory. Fill in your name and email address where appropriate, and the date on which you last worked on the file. The plurals line is a little more complex, and we will describe it [later](#plurals).
 
 Next there are thousands of string entries. They look something like this:
 
