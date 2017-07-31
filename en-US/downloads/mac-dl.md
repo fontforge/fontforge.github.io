@@ -113,7 +113,7 @@ You can also install Daily Development Snapshots, install using Package Managers
 </a>
 
 <div class="collapse" id="collapseDev"><div class="well" markdown="1">
-New development versions are released every few days, and the latest is always available as [FontForge_latest-HEAD.app.zip](http://fuuko.libferris.com/osx/packages/FontForge_latest-HEAD.app.dmg).
+New development versions are released every few days, and the latest is always available from <http://dl.bintray.com/fontforge/fontforge/>.
 
 To install an update:
 
