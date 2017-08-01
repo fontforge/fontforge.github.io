@@ -35,7 +35,7 @@ Thanks. Continue <a href="../windows-dl">this way</a>.
 <input type="hidden" name="pw" value=""/> <input type="hidden" name="pw-conf" value=""/> <input type="hidden" name="digest" value="0"/>
 <input type="hidden" name="email-button" value="Subscribe"/>
 </form>
-<form id="emls_sform2" name="emls_sform2" action="http://mm.fontforge.org:3000/presubscribe" method="POST" target="emls_dummyframe">
+<form id="emls_sform2" name="emls_sform2" action="http://mm.fontforge.org/ffml/presubscribe.php" method="POST" target="emls_dummyframe">
 <input name="email" type="hidden"/>
 <input type="hidden" name="pw" value=""/> <input type="hidden" name="pw-conf" value=""/> <input type="hidden" name="digest" value="0"/>
 <input type="hidden" name="email-button" value="Subscribe"/>
