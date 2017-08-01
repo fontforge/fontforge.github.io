@@ -5,7 +5,7 @@ title: FontForge on Windows
 archive_extension: .exe
 ---
 
-<a class="btn btn-primary btn-large default" href="https://github.com/fontforge/fontforge/releases/download/20161005/FontForge-2016-10-04-Windows.exe">
+<a class="btn btn-primary btn-large default" href="https://github.com/fontforge/fontforge/releases/download/20170731/FontForge-2017-07-31-Windows-r2.exe">
   Download 2016-10-04 Release Installer (.exe)
 </a>
 
