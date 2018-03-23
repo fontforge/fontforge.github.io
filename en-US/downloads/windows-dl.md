@@ -15,7 +15,7 @@ archive_extension: .exe
 You may find more recent development snapshots at the [fontforgebuilds] project.
 Developers can get the "MSYS" Windows build system there too.
 
-Note that the collaboration feature in FontForge may upset some antivirus and firewall applications. Users can ignore these warnings, but it is important to allow download FontForge only from trusted publishers.
+Note that the collaboration feature in FontForge may upset some antivirus and firewall applications. Users can ignore these warnings, but it is important to download FontForge only from trusted publishers.
 
 Please post your Windows Build bug reports on our [GitHub Issue Tracker].
 
