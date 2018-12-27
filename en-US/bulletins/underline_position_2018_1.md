@@ -1,8 +1,10 @@
 ---
 published: true
 layout: default
-title: Technical Bulletin: Incorrect handling of underline position in FontForge.
+title: Technical Bulletin&#58; Incorrect handling of underline position in FontForge.
 ---
+
+## Overview
 
 Recent bug reports have revealed present and historical problems with FontForge's handling of underline position. The next release will fix the software problem, but users may need to fix their existing files.
 
