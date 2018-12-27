@@ -4,15 +4,13 @@ layout: default
 title: Technical Bulletin: Incorrect handling of underline position in FontForge.
 ---
 
-## Overview
-
 Recent bug reports have revealed present and historical problems with FontForge's handling of underline position. The next release will fix the software problem, but users may need to fix their existing files.
 
 ## Technical Details
 
 FontForge generally follows PostScript conventions. Under these conventions, the underline position is an up-positive offset from baseline to the center of the underline. (Usually negative.) In TrueType's `post` table, the underline position is an up-positive offset from the baseline to the top of the underline.
 
-For about three years, from commits fontforge/fontforge@211463509c94cb98d5def5315da69560061e8a4b and fontforge/fontforge@5aa59fb77c642ee80b4ed16f9136182a3220576b in 2015 to commits fontforge/fontforge@9e9278c66ecc47290accb4e9e4aff82e8578ce1e and fontforge/fontforge@9f667c9c1e13104bcb612e4d28f8ec18ba967f50 in 2018, FontForge incorrectly computed the underline position on import, on export, or on both operations to/from TrueType by adjusting in the wrong direction for the thickness of the underline. The underline was thus positioned too high in FontForge. This additionally affected SFD resulting from bad imports and any files exported from those bad imports. See also commit fontforge/fontforge@5aa59fb77c642ee80b4ed16f9136182a3220576b from 2017.
+For about three years, from commits [2114635](https://github.com/fontforge/fontforge/commit/211463509c94cb98d5def5315da69560061e8a4b) and [5aa59fb](https://github.com/fontforge/fontforge/commit/5aa59fb77c642ee80b4ed16f9136182a3220576b) in 2015 to commits [9e9278c](https://github.com/fontforge/fontforge/commit/9e9278c66ecc47290accb4e9e4aff82e8578ce1e) and [9f667c9](https://github.com/fontforge/fontforge/commit/9f667c9c1e13104bcb612e4d28f8ec18ba967f50) in 2018, FontForge incorrectly computed the underline position on import, on export, or on both operations to/from TrueType by adjusting in the wrong direction for the thickness of the underline. The underline was thus positioned too high in FontForge. This additionally affected SFD resulting from bad imports and any files exported from those bad imports. See also commit [5aa59fb](https://github.com/fontforge/fontforge/commit/5aa59fb77c642ee80b4ed16f9136182a3220576b) from 2017.
 
 The issues are now corrected. But files generated in the last three years may have incorrect underline positions requiring manual adjustment.
 
