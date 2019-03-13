@@ -103,7 +103,7 @@
   -->
   条件つき機能には置換・合字またはカーニング (およびさらに不明瞭なふるまい) を含めることができます。ここでは<A HREF="../editexample6-5.html#Greek">条件つき置換</A>の一例を示したいと思います。
   <P>
-  <IMG SRC="../bed-script.png" WIDTH="259" HEIGHT="81" ALIGN="Right">
+  <IMG SRC="../assets/img/old/bed-script.png" WIDTH="259" HEIGHT="81" ALIGN="Right">
   <!--
   Instead of
   an Indic or Arabic example, let us take something I'm more familiar with,
@@ -196,7 +196,7 @@
   -->
   注意を要する部分は、文脈定義のやりかたです。これには既に定義済みの他のLookup(訳注:この場合'aalt')を、文脈連鎖依存の置換('calt')機能と繋げてやる必要があります。(そしてもちろん、subtableを繋げる必要があります)。文脈依存機能のsubtableを設定する一連のダイアログにより、設定を記述することが可能です。
   <P>
-  <IMG SRC="../contextchain-format.png" WIDTH="476" HEIGHT="503" ALIGN="Left">
+  <IMG SRC="../assets/img/old/contextchain-format.png" WIDTH="476" HEIGHT="503" ALIGN="Left">
   <!--
   The first dialog
   allows you to specify the overall format of the substitution. We want a class
@@ -206,7 +206,7 @@
   最初のダイアログでは、置換の全体的なフォーマットを指定することができます。私達が使いたいのはクラスベースのシステムです——どのようなグリフクラスを用いるかは、既に述べたとおりです。
   <BR CLEAR=ALL>
   <P>
-  <IMG SRC="../contextchain-simpleclasses.png" WIDTH="476" HEIGHT="503" ALIGN="Right">
+  <IMG SRC="../assets/img/old/contextchain-simpleclasses.png" WIDTH="476" HEIGHT="503" ALIGN="Right">
   <!--
   The next dialog
   finally shows something interesting. At the top is a pattern
@@ -295,7 +295,7 @@
   glyph). -->
   Apple は有限状態機械で文脈を指定します。これは、本質的にはグリフのストリームを調べて、どの置換を適用するかを決定する小さなプログラムです。各状態機械には、グリフクラス定義 (OpenType の例で示したのとちょうど同じような) の集合と状態の集合があります。処理は、グリフストリームの先頭から、状態 0 で始まります。計算機は、現在のグリフがどのクラスに含まれるかを決定し、次に現在の状態を参照して、そのクラスからの入力が与えられたときにどのように振舞うかを調べます。振舞いの中には、別の状態への遷移可能性、入力を次のグリフへ進めること、置換を現在のグリフに適用するか以前のグリフ (“マークつき”グリフ) に適用するかが含まれます。
   <P>
-  <IMG SRC="../sm-picture.png" WIDTH="386" HEIGHT="130" ALIGN="Right"><!-- Using the
+  <IMG SRC="../assets/img/old/sm-picture.png" WIDTH="386" HEIGHT="130" ALIGN="Right"><!-- Using the
   same example of a latin script font... We again need a simple substitution
   to convert each letter into its high alternate. The process is the same as
   it was for OpenType, and indeed we can use the same substitution. Again we
@@ -307,7 +307,7 @@
   where we've just read a glyph from the ``bovw'' class. <BR CLEAR=ALL> -->
   前と同じ、ラテン文字の筆記体フォントの例を使うことにしましょう……今回も各文字をその“高い”別字形に置換する単純置換が必要となります。この処理は OpenType で行ったのと同じで、実際に同じ置換を使用することができます。今回もグリフを 3 つのクラスに分類します (Apple は、使用するかしないかにかかわらずいくつかの追加クラスを定義していますが、概念上 OpenType の例と同じ 3 つのクラスを使用します)。この場合、状態機械には 2 つの状態が必要で (これも追加の状態が Apple により定義済みですが、これも無視しましょう)、具体的には開始状態 (基本状態——変更は行いません) と、もう一つ、“bovw”クラスからグリフを読み込んだ直後の状態です。<BR CLEAR=ALL>
   <P>
-  <IMG SRC="../asm1.png" WIDTH="261" HEIGHT="323" ALIGN="Left"><!-- Again we use the
+  <IMG SRC="../assets/img/old/asm1.png" WIDTH="261" HEIGHT="323" ALIGN="Left"><!-- Again we use the
   <A HREF="fontinfo.html#Mac-SM">Element -&gt; Font Info </A>dialog and the
   Mac SM tag to look at the contextual substitutions available. Again there
   are several types of contextual behavior, and we are interested in contextual
@@ -315,18 +315,18 @@
   button provides an overview of the given state machine. -->
   ここでも <A HREF="fontinfo.html#Mac-SM"><CODE>エレメント(<U>L</U>)</CODE>→<CODE>フォント情報(<U>F</U>)...</CODE></A> ダイアログの <CODE>[Macの状態機械]</CODE> タブをクリックして、文脈依存の置換が利用できるようにします。前と同様、文脈依存の振舞いにはいくつかのタイプがあり、ここで興味があるのは文脈依存の置換です。状態機械の上でダブルクリックするか、<CODE>[新規(<U>N</U>)...]</CODE> ボタンを押すと、指定した状態機械の概要が表示されます。
   <P>
-  <IMG SRC="../asm2.png" WIDTH="309" HEIGHT="381" ALIGN="Right"><!-- At the top of
+  <IMG SRC="../assets/img/old/asm2.png" WIDTH="309" HEIGHT="381" ALIGN="Right"><!-- At the top of
   the dialog we see a field specifying the feature / setting of the machine,
   this is Apple's equivalent of the OpenType 4 character feature tag. Under
   this is a set of class definitions, and at the bottom is a representation
   of the state machine itself. <BR CLEAR=Left> -->
   ダイアログのいちばん上には、状態機械の機能/設定を指定するフィールドが表示されています。これは Apple の方式では OpenType の 4 文字の機能タグと等価です。その下にあるのはクラス定義のセットで、いちばん下にあるのは状態機械そのものです。<BR CLEAR=Left>
   <P>
-  <IMG SRC="../asm3.png" WIDTH="309" HEIGHT="206" ALIGN="Left"><!--Double clicking
+  <IMG SRC="../assets/img/old/asm3.png" WIDTH="309" HEIGHT="206" ALIGN="Left"><!--Double clicking
   on a class brings up a dialog similar to that used in OpenType<BR CLEAR=Right> -->
   クラスの上でダブルクリックすると、OpenType で使用しているのと似たダイアログが立ち上がります。<BR CLEAR=Right>
   <P>
-  <IMG SRC="../asm4.png" WIDTH="196" HEIGHT="307" ALIGN="Right"><!-- Clicking on a
+  <IMG SRC="../assets/img/old/asm4.png" WIDTH="196" HEIGHT="307" ALIGN="Right"><!-- Clicking on a
   transition in the state machine (there is a transition for each state / class
   combination) produces a transition dialog. This controls how the state machine
   behaves when it is in a given state and receives a glyph in a given class.
