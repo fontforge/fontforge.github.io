@@ -15,7 +15,7 @@ bitmap from that, autotrace it and generate an outline font.
 It can read ligature, kerning information from a ".tfm" file. It can
 create a tfm file.
 
-The [encodings](Encodings.ps.gz) file has a number of standard TeX
+The [encodings](/assets/old/Encodings.ps.gz) file has a number of standard TeX
 encodings built in to it.
 
 For large CJK truetype fonts it can read a sub-font definition file as

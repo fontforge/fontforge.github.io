@@ -4,10 +4,11 @@
   <!-- AP: Created on: 27-Aug-2002 -->
   <!-- AP: Last modified: 21-Feb-2011 -->
   <TITLE>Change log for FontForge</TITLE>
-  <LINK REL="icon" href="fftype16.png">
+  <LINK REL="icon" href="/assets/img/old/fftype16.png">
   <LINK REL="stylesheet" TYPE="text/css" HREF="/assets/css/old/FontForge.css">
+  <META http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </HEAD>
->
+<BODY>
 <div style="margin:0; height: 4	em; padding: 0.5em; background: red; color:yellow; text-align:center; font-size:1em; font-family: sans-serif;">
 	<p><a href="http://fontforge.github.io" style="padding: 0.5em; color: yellow; font-weight: bold; text-decoration: none;" onmouseover="this.style.background='black';" onmouseout="this.style.background='red';" >This is part of the old website. New website begins at fontforge.github.io</a></p>
 	<p><a href="https://github.com/fontforge/fontforge.github.io" style="padding: 0.5em; color: yellow; font-weight: bold; text-decoration: none;" onmouseover="this.style.background='black';" onmouseout="this.style.background='red';" >Are you a web developer? Help us migrate this page on Github</a></p>
@@ -50,6 +51,92 @@
     </TABLE>
   </BLOCKQUOTE>
   <UL>
+    <LI>
+      Git HEAD
+      <UL>
+        <LI>
+          <B>General:</B>
+        <LI>
+          Fix bug that caused incorrectly dumping some context substitution format 1
+          lookups to feature files. We were also accepting the broken lookups we were
+          generated and FontForge would crash later, now they are rejected, too.
+        <LI>
+          "TeX Names" is now accepted internally as an alias for "ΤεΧ Names" when
+          specifying a name list by name.
+        <LI>
+          Typo in hhead generation code caused descent offset setting to be ignored and
+          the ascent offset setting to be used instead.
+        <LI>
+          A new glyph name list based Adobe Glyph List For New Fonts, it is now the
+          default when creating new fonts.
+        <LI>
+          No longer warns about using the names Omega, Delta and mu for ohm, increment and
+          mu, respectively. Adobe fixed the names to point to the Greek letters, then
+          later changed their mind and reverted back to the old names, so now we do the
+          same.
+        <LI>
+          Fixed a crash in EPS import.
+        <LI>
+          FontForge is internally using doubles by default now, but can be still
+          configured to use floats. Support for log doubles have been removed.
+        <LI>
+          Thanks to Lu Wang, fonts can now be loaded from PDF files using
+          <CODE>filename(fontname)</CODE> notation from command line too.
+        <LI>
+          Increase the limit of entries read from encoding files to 65536 instead of
+          1024.
+        <LI>
+          Support for v1.6 feature file syntax for mark classes have been dropped, v1.8
+          syntax should be always used.
+        <LI>
+          <B>UI fixes and additions:</B>
+        <LI>
+          It is now possible to style vertical tabset layout differently than horizontal
+          by means of dummy GGadget <CODE>GVTabSet</CODE>.
+        <LI>
+          Type3/multilayer, device tables and the paste after command are always enabled
+          now.
+        <LI>
+          Cairo is now used for drawing all windows (when enabled) which improves the
+          rendering overall.
+        <LI>
+          Char view palettes are now docked by default.
+        <LI>
+          A default resource file will be loaded at startup from
+          <CODE>$prefix/share/fontforge/resources/fontforge.resource</CODE>.
+        <LI>
+          There is now a possibility to have a quick preview in glyph window
+          by holding [`] key down. This doesn't work if quick navigation is
+          turned on, but can also be toggled with [Ctrl]+[`] shortcut.
+        <LI>
+          There is now an option in Generate Font dialog to prepend a timestamp
+          to the font family name. This is for font development only ant it
+          enables simultaneous testing of different font versions in production
+          environment.
+        <LI>
+          Improved translation coverage for error messages.
+        <LI>
+          Improved rendering of GTabSet.
+        <LI>
+          Fixed mnemonics clash (<I><U>N</U>ext</I> &amp; <I>Glyph <U>N</U>ame</I>)
+          in glyph info dialog.
+        <LI>
+          Fixed mnemonics in contextual menu of layers palette and in problem detector.
+        <LI>
+          New and updated translations:
+          <UL>
+            <LI>
+              Updated Polish translation from Michał Nowakowski.
+            <LI>
+              Updated Russian translation from Alexandre Proukodine.
+          </UL>
+        <LI>
+          <B>Python scripting fixes and additions:</B>
+        <LI>
+          Thanks to Lu Wang, <CODE>LoadEncodingFile</CODE> now takes an optional encoding
+          name parameter that is useful for loading Unicode consortium format encoding
+          files, which were just ignored before.
+      </UL>
     <LI>
       31-Jul-2012
       <UL>
@@ -297,7 +384,7 @@
         <LI>
           Fixed handling of HV Group Box (actually GGroup) in X resource editor.
         <LI>
-          <img src="fftype32.png" height="32" width="32" style="display:inline"></td></tr>
+          <img src="/assets/img/old/fftype32.png" height="32" width="32" style="display:inline"></td></tr>
           New application icons by Severin Meyer.
         <LI>
           Layers palette changes by Tom Lechner. It's now possible to manage
@@ -2046,7 +2133,7 @@
 	  from the list of features. This omitted feature should have been the required
 	  one (which is marked specially), but wasn't always.
 	<LI>
-	  In my eternal vigilence against rounding errors I failed to report some
+	  In my eternal vigilance against rounding errors I failed to report some
 	  intersections which were very close to the end points.
 	<LI>
 	  Change the contour direction tester so that instead of looking at the first
@@ -2076,7 +2163,7 @@
 	  Background too", that should be changed to "Transform all layers".
 	<LI>
 	  When doing a "Scale Emsize", glyphs containing references with UseMyMetrics
-	  set were not set to the correct width if the refered glyph occured later
+	  set were not set to the correct width if the referred glyph occurred later
 	  in the encoding.
 	<LI>
 	  Change the definition of FontView.FontSize. Used to be in pixels. Make it

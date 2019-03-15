@@ -6,8 +6,8 @@ title: Steps to creating a font...
 
 
 This tutorial is also available as a [pdf
-version](fontforge-tutorial.pdf). If you wish to follow along with the
-tutorial, [this bundle](tutorial.tgz) should provide you with the basic
+version](/assets/old/fontforge-tutorial.pdf). If you wish to follow along with the
+tutorial, [this bundle](/assets/old/tutorial.tgz) should provide you with the basic
 files you need.
  I shall not presume to teach aesthetics, I concentrate solely on the
 mechanics here.

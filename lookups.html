@@ -5,7 +5,7 @@
   <!-- AP: Last modified: 28-Oct-2009 -->
   <TITLE>Manipulating OpenType Lookups</TITLE>
 </HEAD>
->
+<BODY>
 <div style="margin:0; height: 4	em; padding: 0.5em; background: red; color:yellow; text-align:center; font-size:1em; font-family: sans-serif;">
 	<p><a href="http://fontforge.github.io" style="padding: 0.5em; color: yellow; font-weight: bold; text-decoration: none;" onmouseover="this.style.background='black';" onmouseout="this.style.background='red';" >This is part of the old website. New website begins at fontforge.github.io</a></p>
 	<p><a href="https://github.com/fontforge/fontforge.github.io" style="padding: 0.5em; color: yellow; font-weight: bold; text-decoration: none;" onmouseover="this.style.background='black';" onmouseout="this.style.background='red';" >Are you a web developer? Help us migrate this page on Github</a></p>
@@ -306,7 +306,7 @@ to each glyph:
     by a certain number of em-units
 </OL>
 <P>
-In addition to this, if you have configured fontforge to support device tables,
+In addition to this
 you may provide pixel adjustments that apply to specific point sizes. At
 small pixel sizes (such as those used for screen fonts) the rounding error
 introduced by converting from em-units to pixels may be as large as the movement
@@ -420,6 +420,35 @@ just rasterizing at twice the pixelsize, each pixel will be twice as big
 and the effects of rounding errors will be more obvious). Magnification is
 probably only useful if you are working on device tables for screen
 pixelsizes.<BR CLEAR=ALL>
+
+<H4>
+  <A NAME="lookups-undoes">Undo System Interaction</A>
+</H4>
+<P>
+  Changes made to kerning pairs are tracked by a font level undo
+  system. If you have made no changes to the lookup then no new undo
+  record will be created. The undo system will track only the minimal
+  amount of information needed to recreate the old kerning table. This
+  is useful when you are editing a very complex kerning table which
+  might have thousands of kerning pairs and requires many megabytes of
+  storage just for the kerning table.
+<P>
+The font level undo system will allow you to undo all of the edits you
+have made in a single interaction with the kerning class dialog. For
+simplicitly, let us consider the scenario where you open the kerning
+class dialog and edit a few kerning pairs, then select the OK button.
+We will refer to this as a single "round" of editing.
+<p>
+If you have only changed two pairs in a round of edting then only two
+pairs are remembered by the undo system so that the kerning table can
+be restored to how it was before your performed this last round of
+edits.
+<P>
+To undo the changes you have made in a round, select the Undo Font
+Level menu option from the edit menu in the font view window.
+
+
+
 <H3>
   <A NAME="Anchor">Anchor Positioning</A>
 </H3>
@@ -472,4 +501,5 @@ live in an OpenType font, not in an Apple Advanced Typography font.
 The state machine substitution dialog is quite complicated and is discussed
 in its <A HREF="statemachine.html">own section</A>. These lookups can only
 live in an Apple Advanced Typography font.
+
 </BODY></HTML>

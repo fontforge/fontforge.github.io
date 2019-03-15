@@ -4,10 +4,10 @@
   <!-- AP: Created on: 21-Jan-2001 -->
   <!-- AP: Last modified: 5-Dec-2008 -->
   <TITLE>X Resources</TITLE>
-  <LINK REL="icon" href="fftype16.png">
+  <LINK REL="icon" href="/assets/img/old/fftype16.png">
   <LINK REL="stylesheet" TYPE="text/css" HREF="/assets/css/old/FontForge.css">
 </HEAD>
->
+<BODY>
 <div style="margin:0; height: 4	em; padding: 0.5em; background: red; color:yellow; text-align:center; font-size:1em; font-family: sans-serif;">
 	<p><a href="http://fontforge.github.io" style="padding: 0.5em; color: yellow; font-weight: bold; text-decoration: none;" onmouseover="this.style.background='black';" onmouseout="this.style.background='red';" >This is part of the old website. New website begins at fontforge.github.io</a></p>
 	<p><a href="https://github.com/fontforge/fontforge.github.io" style="padding: 0.5em; color: yellow; font-weight: bold; text-decoration: none;" onmouseover="this.style.background='black';" onmouseout="this.style.background='red';" >Are you a web developer? Help us migrate this page on Github</a></p>
@@ -67,56 +67,6 @@ fontforge.FontView.FontFamily: Helvetica, GillSans
       <CODE>fontforge.FontView.HintingNeededColor</CODE>
     <DD>
       Sets the color of markings for glyphs that need hinting or instructing.
-    <DT>
-      <CODE>fontforge.FontView.FontFamily</CODE>
-    <DD>
-      A list of font family names to be used in the font view to display an example
-      character over each user character.
-    <DT>
-      <CODE>fontforge.FontView.SerifFamily</CODE>
-    <DD>
-      A list of font family names to be used in the font view to display an example
-      character over each user character when the character is one of the stylized
-      variants in U+1D400-U+1D7FF. Used for characters that should be drawn with
-      a serif font.
-    <DT>
-      <CODE>fontforge.FontView.ScriptFamily</CODE>
-    <DD>
-      <IMG SRC="/assets/img/old/script-A.png" WIDTH="29" HEIGHT="25" ALIGN="Right">A list of font
-      family names to be used in the font view to display an example character
-      over each user character when the character is one of the stylized variants
-      in U+1D400-U+1D7FF. Used for characters that should be drawn with a script
-      font.
-    <DT>
-      <CODE>fontforge.FontView.FrakturFamily</CODE>
-    <DD>
-      <IMG SRC="/assets/img/old/fraktur-A.png" WIDTH="25" HEIGHT="21" ALIGN="Right">A list of font
-      family names to be used in the font view to display an example character
-      over each user character when the character is one of the stylized variants
-      in U+1D400-U+1D7FF. Used for characters that should be drawn with a fraktur
-      font.
-    <DT>
-      <CODE>fontforge.FontView.DoubleStruckFamily</CODE>
-    <DD>
-      <IMG SRC="/assets/img/old/doublestruck-B.png" WIDTH="20" HEIGHT="21" ALIGN="Right">A list
-      of font family names to be used in the font view to display an example character
-      over each user character when the character is one of the stylized variants
-      in U+1D400-U+1D7FF. Used for characters that should be drawn with a double-struck
-      font.
-    <DT>
-      <CODE>fontforge.FontView.SansFamily</CODE>
-    <DD>
-      A list of font family names to be used in the font view to display an example
-      character over each user character when the character is one of the stylized
-      variants in U+1D400-U+1D7FF. Used for characters that should be drawn with
-      a sans-serif font.
-    <DT>
-      <CODE>fontforge.FontView.MonoFamily</CODE>
-    <DD>
-      A list of font family names to be used in the font view to display an example
-      character over each user character when the character is one of the stylized
-      variants in U+1D400-U+1D7FF. Used for characters that should be drawn with
-      a monospaced font.
     <DT>
       <CODE>fontforge.FontView.FontSize</CODE>
     <DD>
@@ -319,6 +269,12 @@ fontforge.FontView.FontFamily: Helvetica, GillSans
     <DD>
       Sets the color used to draw a character's fill
     <DT>
+      <CODE>fontforge.CharView.PreviewFillColor</CODE>
+    <DD>
+      The color to use when performing a preview fill. If this is not set then
+      FontForge will fallback to using fontforge.CharView.FillColor. Neither of these
+      resources are set then black will be used.
+    <DT>
       <CODE>fontforge.CharView.TraceColor</CODE>
     <DD>
       Sets the color used to draw the trace of the freehand tool.
@@ -332,6 +288,75 @@ fontforge.FontView.FontFamily: Helvetica, GillSans
     <DD>
       Select the font used to display the information shown in the window associated
       with the measure tool.
+    <DT>
+      <CODE>fontforge.CharView.Hotkey.Tool.Zoom</CODE>
+    <DD>
+      The keyboard shortcut that you desire to switch to the zoom tool. For example:
+fontforge.CharView.Hotkey.Tool.Zoom: z
+    <DT>
+      <CODE>fontforge.CharView.Hotkey.Tool.Ruler</CODE>
+    <DD>
+      The keyboard shortcut to select the ruler tool.
+    <DT>
+      <CODE>fontforge.CharView.Hotkey.Tool.Pointer</CODE>
+    <DD>
+      The keyboard shortcut to select the pointer tool.
+    <DT>
+      <CODE>fontforge.CharView.Hotkey.Tool.Hand</CODE>
+    <DD>
+      The keyboard shortcut to select the hand tool.
+    <DT>
+      <CODE>fontforge.CharView.Hotkey.Tool.PointCurve</CODE>
+    <DD>
+      The keyboard shortcut to select the point curve tool.
+    <DT>
+      <CODE>fontforge.CharView.Hotkey.Tool.PointHVCurve</CODE>
+    <DD>
+      The keyboard shortcut to select the point hv curve tool.
+    <DT>
+      <CODE>fontforge.CharView.Hotkey.Tool.PointCorner</CODE>
+    <DD>
+      The keyboard shortcut to select the point corner tool.
+    <DT>
+      <CODE>fontforge.CharView.Hotkey.Tool.PointTangent</CODE>
+    <DD>
+      The keyboard shortcut to select the point tangent tool.
+    <DT>
+      <CODE>fontforge.CharView.Hotkey.Tool.Freehand</CODE>
+    <DD>
+      The keyboard shortcut to select the point Freehand tool.
+    <DT>
+      <CODE>fontforge.CharView.Hotkey.Tool.PointTangent</CODE>
+    <DD>
+      The keyboard shortcut to select the point tangent tool.
+    <DT>
+      <CODE>fontforge.CharView.Hotkey.Tool.Pen</CODE>
+    <DD>
+      The keyboard shortcut to select the point Pen tool.
+    <DT>
+      <CODE>fontforge.CharView.Hotkey.Tool.SpiroToggle</CODE>
+    <DD>
+      Toggle spiro mode on if it is available.
+    <DT>
+      <CODE>fontforge.CharView.Hotkey.Tool.SpiroG4</CODE>
+    <DD>
+      SpiroG4 tool.
+    <DT>
+      <CODE>fontforge.CharView.Hotkey.Tool.SpiroCorner</CODE>
+    <DD>
+      SpiroCorner tool.
+    <DT>
+      <CODE>fontforge.CharView.Hotkey.Tool.SpiroLeft</CODE>
+    <DD>
+      SpiroLeft tool.
+    <DT>
+      <CODE>fontforge.CharView.Hotkey.Tool.SpiroRight</CODE>
+    <DD>
+      SpiroRight tool.
+    <DT>
+      <CODE>fontforge.CharView.Hotkey.Tool.Knife</CODE>
+    <DD>
+      Knife tool.
     <DT>
       <CODE>fontforge.DebugView.Font</CODE>
     <DD>
@@ -839,19 +864,11 @@ fontforge.FontView.FontFamily: Helvetica, GillSans
       Gdraw.GLine...<BR>
       Gdraw.GMenu...<BR>
       Gdraw.GMenuBar...<BR>
-      Gdraw.GTabSet...</CODE>
+      Gdraw.GTabSet...<BR>
+      Gdraw.GVTabSet...</CODE>
     <DD>
       As above.<BR>
       Specifies the box, font, color, etc. for this particular type of ggadget.
-    <DT>
-      <CODE>Gdraw.GHVGroupBox</CODE>
-    <DD>
-      <B>Don't use it!</B> Old versions of X resource editor saved
-      <CODE>Gdraw.GGroup</CODE> under this name. That was wrong, as it was never
-      actually recognized by X Resource loader and had no effect. The confusion
-      is because we actually have two gadgets: <CODE>GGroup</CODE> and
-      <CODE>GHVBox</CODE>, that are supposed to work in tandem. Actually,
-      only <CODE>GGroup</CODE> is worth styling.
     <DT>
       <CODE>Gdraw.GHVBox</CODE>
     <DD>
@@ -1052,6 +1069,23 @@ fontforge.FontView.FontFamily: Helvetica, GillSans
       "&lt;New&gt;" entry).
     <DT>
       ...
+  </DL>
+  <P>
+  <DL>
+    <DT>
+      <A NAME="deprecated">Deprecated</A>
+    <DD>
+      The following resources are deprecated and will be silently ignored.
+      <UL>
+	<LI><CODE>fontforge.FontView.FontFamily</CODE>
+	<LI><CODE>fontforge.FontView.SerifFamily</CODE>
+	<LI><CODE>fontforge.FontView.ScriptFamily</CODE>
+	<LI><CODE>fontforge.FontView.FrakturFamily</CODE>
+	<LI><CODE>fontforge.FontView.DoubleStruckFamily</CODE>
+	<LI><CODE>fontforge.FontView.SansFamily</CODE>
+	<LI><CODE>fontforge.FontView.MonoFamily</CODE>
+        <LI><CODE>Gdraw.GHVGroupBox</CODE>
+      </UL>
   </DL>
   <P>
   <DL>

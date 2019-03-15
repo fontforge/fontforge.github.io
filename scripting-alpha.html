@@ -4,10 +4,10 @@
   <!-- AP: Created on: 9-Apr-2006 -->
   <!-- AP: Last modified: 27-Dec-2009 -->
   <TITLE>Scripting functions</TITLE>
-  <LINK REL="icon" href="fftype16.png">
+  <LINK REL="icon" href="/assets/img/old/fftype16.png">
   <LINK REL="stylesheet" TYPE="text/css" HREF="/assets/css/old/FontForge.css">
 </HEAD>
-<BODY id=framed>
+<BODY id="framed">
 <div style="margin:0; height: 4	em; padding: 0.5em; background: red; color:yellow; text-align:center; font-size:1em; font-family: sans-serif;">
 	<p><a href="http://fontforge.github.io" style="padding: 0.5em; color: yellow; font-weight: bold; text-decoration: none;" onmouseover="this.style.background='black';" onmouseout="this.style.background='red';" >This is part of the old website. New website begins at fontforge.github.io</a></p>
 	<p><a href="https://github.com/fontforge/fontforge.github.io" style="padding: 0.5em; color: yellow; font-weight: bold; text-decoration: none;" onmouseover="this.style.background='black';" onmouseout="this.style.background='red';" >Are you a web developer? Help us migrate this page on Github</a></p>
@@ -135,14 +135,18 @@ Generate(filename[,bitmaptype[,fmflags[,res[,mult-sfd-file[,namelist-name]]]]])
 	    Adds a diagonal hint. A diagonal hint requires two points on oposite sides
 	    of the stem and a unit vector in the direction of the stem.
 	  <DT>
-	    <A NAME="AddExtrema" HREF="elementmenu.html#Add-Extrema">AddExtrema</A>()
+	    <A NAME="AddExtrema"
+	    HREF="elementmenu.html#Add-Extrema">AddExtrema</A>([all])
 	  <DD>
 	    If a spline in a glyph reaches a maximum or minimum x or y value within a
 	    spline then break the spline so that there will be a point at all significant
 	    extrema. (If this point is too close to an end-point then the end-point itself
 	    may be moved. There are various other caveats. See
 	    Element-&gt;<A NAME="AddExtrema" HREF="elementmenu.html#Add-Extrema">AddExtrema</A>
-	    for more information).
+	    for more information).  If the "all" argument is specified and
+	    is a nonzero integer, then all extrema will be added; otherwise,
+	    some that would be very close to existing endpoints will not be
+	    added.
 	  <DT>
 	    <A NAME="AddHHint" HREF="hintsmenu.html#HHint">AddHHint</A>(start,width)
 	  <DD>
@@ -205,6 +209,23 @@ Generate(filename[,bitmaptype[,fmflags[,res[,mult-sfd-file[,namelist-name]]]]])
 	      <LI>
 		kern_statemachine
 	    </UL>
+	    <P>
+      The lookup flags define what glyphs to include or ignore.
+	    <TABLE BORDER CELLPADDING="2">
+	      <TR>
+          <TD>0</TD>
+          <TD>Include all glyphs</TD>
+	      </TR>
+	      <TR>
+          <TD>8</TD>
+          <TD>Ignore mark_class_cnt</TD>
+	      </TR>
+	      <TR>
+          <TD>16</TD>
+          <TD>Ignore mark_set_cnt</TD>
+	      </TR>
+	      <TR>
+      </TABLE>
 	    <P>
 	    A feature-script-lang array is an array with one entry for each feature (there
 	    may be no entries if there are no features). Each entry is itself a two element
@@ -454,6 +475,12 @@ a[4][0] = "Nested array";
 	    indexed by key. (all values must be strings even if they represent numbers
 	    in PostScript)
 	  <DT>
+	    <A NAME="ChangeWeight">ChangeWeight</A>(em-units)<DT>
+	  <DD>
+	    <A HREF="elementmenu.html#Embolden">Emboldens</A> the selected glyphs by the given amount in em units.
+	    If em-units is a negative number, the glyphs are made less bold.
+	  </DD>
+	  <DT>
 	    <A NAME="CharCnt">C</A>harCnt()
 	  <DD>
 	    Returns the number of encoding slots (or encoding slots + unencoded glyphs)
@@ -471,11 +498,14 @@ a[4][0] = "Nested array";
 	    <A NAME="Chr">C</A>hr(int)<BR>
 	    Chr(array)
 	  <DD>
-	    Takes an integer [0,255] and returns a single character string containing
-	    that code point. Internally FontForge interprets strings as if they were
-	    in utf8 (well really, FontForge almost always just uses ASCII-US internally).
-	    If passed an array, it should be an array of integers and the result is the
-	    string. It can execute with no current font.
+	    Takes an integer [-128,255] and returns a single character
+	    string containing that byte.  Negative numbers are treated as
+	    signed bytes in two's complement.  Internally FontForge interprets
+	    strings as if they were in UTF-8, so it is possible to construct
+	    higher code points and strings that are not valid UTF-8 by
+	    passing in appropriate values.  If passed an array, it
+	    should be an array of integers and the result is the string.  It
+	    can execute with no current font.
 	  <DT>
 	    <A NAME="CIDChangeSubFont">C</A>IDChangeSubFont(new-sub-font-name)
 	  <DD>
@@ -812,7 +842,7 @@ a[4][0] = "Nested array";
 	  <DT>
 	    <A NAME="CorrectDirection" HREF="elementmenu.html#Correct">CorrectDirection</A>([unlinkrefs])
 	  <DD>
-	    If the an argument is present it must be integral and is treated as a flag
+	    If an argument is present it must be integral and is treated as a flag
 	    controlling whether flipped references should be unlinked before the
 	    CorrectDirection code runs. If the argument is not present, or if it has
 	    a non-zero value then flipped references will be unlinked.
@@ -1492,11 +1522,14 @@ GenerateFamily("All.otf.dfont","dfont",16,a)
 		vertical positions on the contours of the glyph at the given horizontal position.
 		If the position is beyond the glyph's bounding box the minimum value will
 		be set to 1 and the max to 0 (ie. max&lt;min which is impossible).
+              <LI>
+		"Class" returns the glyph's class as one of the following strings:
+		"automatic", "none", "base", "ligature", "mark", "component", or "unknown".
 	      <LI>
 		"Color" returns the glyph's color as a 24bit rgb value (or -2 if no color
 		has been assigned to the glyph).
 	      <LI>
-		"Comment" returns the glyph's comment (it will be converted from unicode
+p		"Comment" returns the glyph's comment (it will be converted from unicode
 		into the default encoding).
 	      <LI>
 		"Changed" returns whether the glyph has been changed since the last save
@@ -1584,6 +1617,10 @@ SetLBearing(lbearing)
 	    <A NAME="HasPrivateEntry">H</A>asPrivateEntry(key)
 	  <DD>
 	    Returns whether key exists in the private dictionary.
+	  <DT>
+	    <A NAME="HasSpiro">H</A>asSpiro()
+	  <DD>
+	    Returns true if Raph Levien's spiro package is available in FontForge.
 	  <DT>
 	    <A NAME="HFlip">H</A>Flip([about-x])
 	  <DD>
@@ -1712,12 +1749,24 @@ SetLBearing(lbearing)
 	    Returns whether the value is finite (not infinite and not a nan). It can
 	    execute with no current font.
 	  <DT>
+	    <A NAME="IsFraction">IsFraction</A>(val)
+	  <DD>
+	    Return 1 if n is a unicode fraction (either a vulgar fraction or other
+	    fraction) as described by www.unicode.org. Return 0 if there is no
+	    fraction for this value. It can execute with no current font.
+	  <DT>
 	    <A NAME="IsHexDigit">IsHexDigit</A>(val)
 	  <DD>
 	    Returns whether val is a hex-digit. Val may be either an integer, a unicode
 	    or a string. The first two cases are treated as unicode code points, the
 	    third looks at the first (utf8) character in the string. It can execute with
 	    no current font.
+	  <DT>
+	    <A NAME="IsLigature">IsLigature</A>(val)
+	  <DD>
+	    Return 1 if n is a ligature as described by www.unicode.org. Return 0
+	    if there is no unicode ligature for this value. It can execute with no
+	    current font.
 	  <DT>
 	    <A NAME="IsLower">IsLower</A>(val)
 	  <DD>
@@ -1730,12 +1779,85 @@ SetLBearing(lbearing)
 	  <DD>
 	    Returns whether the value is a nan. It can execute with no current font.
 	  <DT>
+	    <A NAME="IsOtherFraction">IsOtherFraction</A>(val)
+	  <DD>
+	    Return 1 if n is a unicode fraction (not defined as vulgar fraction)
+	    as described by www.unicode.org. Return 0 if there is no fraction for
+	    this value. It can execute with no current font.
+	  <DT>
 	    <A NAME="IsUpper">IsUpper</A>(val)
 	  <DD>
 	    Returns whether val is an upper case letter. Val may be either an integer,
 	    a unicode or a string. The first two cases are treated as unicode code points,
 	    the third looks at the first (utf8) character in the string. It can execute
 	    with no current font.
+	  <DT>
+	    <A NAME="IsVulgarFraction">IsVulgarFraction</A>(val)
+	  <DD>
+	    Return 1 if n is a unicode vulgar fraction as described by
+	    www.unicode.org. Return 0 if there is no fraction for this value.
+	    It can execute with no current font.
+	  <DT>
+	    <A NAME="Italic">Italic</A>([angle[,[xscale[,flags[,serif[,bearings[,stems[,counters[,lcstems[,lccounters]]]]]]]]]])</DT>
+	  <DD>
+	    Converts the selected glyphs to italics, similar to the <A HREF="elementmenu.html#Italic">Italic</A> menu command.<BR>
+	    The following optional arguments are accepted:
+	    <DL>
+	      <DT>angle</DT>
+	      <DD>
+		Glyphs are slanted by the given angle in degrees.  If unspecified, defaults to -13.
+	      </DD>
+	      <DT>xscale</DT>
+	      <DD>
+		Points at the x-height of the font are scaled by this factor.
+	      </DD>
+	      <DT>flags</DT>
+	      <DD>
+		Flags controlling various italic features, composed of the following bit values:
+		<TABLE BORDER CELLPADDING="2">
+		  <TR><TD>0x0001</TD><TD>Transform bottom serifs</TD></TR>
+		  <TR><TD>0x0002</TD><TD>Transform serifs at x-height</TD></TR>
+		  <TR><TD>0x0004</TD><TD>Transform serifs on ascenders</TD></TR>
+		  <TR><TD>0x0008</TD><TD>Transform diagonal serifs</TD></TR>
+		  <TR><TD>0x0010</TD><TD>Create italic <I>a</I> from the bottom half of italic <I>d</I></TD></TR>
+		  <TR><TD>0x0020</TD><TD>Give italic <I>f</I> a long tail</TD></TR>
+		  <TR><TD>0x0040</TD><TD>Give italic <I>f</I> a hooked tail</TD></TR>
+		  <TR><TD>0x0080</TD><TD>Remove serifs from descenders</TD></TR>
+		  <TR><TD>0x0100</TD><TD>Special handling for Cyrillic <I>phi</I></TD></TR>
+		  <TR><TD>0x0200</TD><TD>Special handling for Cyrillic <I>i</I></TD></TR>
+		  <TR><TD>0x0400</TD><TD>Special handling for Cyrillic <I>pi</I></TD></TR>
+		  <TR><TD>0x0800</TD><TD>Special handling for Cyrillic <I>te</I></TD></TR>
+		  <TR><TD>0x1000</TD><TD>Special handling for Cyrillic <I>sha</I></TD></TR>
+		  <TR><TD>0x2000</TD><TD>Special handling for Cyrillic <I>dje</I></TD></TR>
+		  <TR><TD>0x4000</TD><TD>Special handling for Cyrillic <I>dzhe</I></TD></TR>
+		</TABLE>
+	      </DD>
+	      <DT>serif</DT>
+	      <DD>
+		Specifies the type of italic serif: 1=flat, 2=simple slant, 3=complex slant.  Defaults to 1.
+	      </DD>
+	      <DT>bearings</DT>
+	      <DD>
+		Side bearings are scaled by this amount.
+	      </DD>
+	      <DT>stems</DT>
+	      <DD>
+		Stem widths are scaled by this amount.
+	      </DD>
+	      <DT>counters</DT>
+	      <DD>
+		Counters are scaled by this amount.
+	      </DD>
+	      <DT>lcstems</DT>
+	      <DD>
+		Stem widths of lowercase letters are scaled by this amount, overriding the amount specified for stems, above.
+	      </DD>
+	      <DT>lccounters</DT>
+	      <DD>
+		Counters of lowercase letters are scaled by this amount, overriding the amount specified for counters, above.
+	      </DD>
+	    </DL>
+	  </DD>
 	</DL>
       </TD>
     </TR>
@@ -1758,11 +1880,13 @@ SetLBearing(lbearing)
       <TD BGCOLOR=yellow><A NAME="L">L</A></TD>
       <TD><DL>
 	  <DT>
-	    <A NAME="LoadEncodingFile">L</A>oadEncodingFile(filename)
+	    <A NAME="LoadEncodingFile">L</A>oadEncodingFile(filename[,encname])
 	  <DD>
 	    Reads an encoding file and stores it in FontForge's list of possible encodings.
 	    See Encoding-&gt;<A HREF="encodingmenu.html#Load">LoadEncoding</A> for more
 	    info.
+	    When loading encodings in Unicode consortium format, an encname has to
+	    be specefied or the encoding will be ignored.
 	  <DT>
 	    <A NAME="LoadNamelist">L</A>oadNamelist(filename)
 	  <DD>
@@ -2005,16 +2129,16 @@ SetLBearing(lbearing)
 	    y and transforms all selected glyphs using those expressions.
 	    <BLOCKQUOTE>
 	      <PRE>&lt;e0&gt; := "x" | "y" | "-" &lt;e0&gt; | "!" &lt;e0&gt; | "(" &lt;expr&gt; ")" |
-	"sin" "(" &lt;expr&gt; ")" | "cos" "(" &lt;expr&gt; ")" | "tan" "(" &lt;expr&gt; ")" | 
+	"sin" "(" &lt;expr&gt; ")" | "cos" "(" &lt;expr&gt; ")" | "tan" "(" &lt;expr&gt; ")" |
 	"log" "(" &lt;expr&gt; ")" | "exp" "(" &lt;expr&gt; ")" | "sqrt" "(" &lt;expr&gt; ")" |
-	"abs" "(" &lt;expr&gt; ")" | 
+	"abs" "(" &lt;expr&gt; ")" |
 	"rint" "(" &lt;expr&gt; ")" | "float" "(" &lt;expr&gt; ")" | "ceil" "(" &lt;expr&gt; ")"
 &lt;e1&gt; := &lt;e0&gt; "^" &lt;e1&gt;
-&lt;e2&gt; := &lt;e1&gt; "*" &lt;e2&gt; | &lt;e1&gt; "/" &lt;e2&gt; | &lt;e1&gt; "%" &lt;e2&gt; 
+&lt;e2&gt; := &lt;e1&gt; "*" &lt;e2&gt; | &lt;e1&gt; "/" &lt;e2&gt; | &lt;e1&gt; "%" &lt;e2&gt;
 &lt;e3&gt; := &lt;e2&gt; "+" &lt;e3&gt; | &lt;e2&gt; "-" &lt;e3&gt;
 &lt;e4&gt; := &lt;e3&gt; "==" &lt;e4&gt; | &lt;e3&gt; "!=" &lt;e4&gt; |
 	&lt;e3&gt; "&gt;=" &lt;e4&gt; | &lt;e3&gt; "&gt;" &lt;e4&gt; |
-	&lt;e3&gt; "&lt;=" &lt;e4&gt; | &lt;e3&gt; "&lt;" &lt;e4&gt; 
+	&lt;e3&gt; "&lt;=" &lt;e4&gt; | &lt;e3&gt; "&lt;" &lt;e4&gt;
 &lt;e5&gt; := &lt;e4&gt; "&amp;&amp;" &lt;e5&gt; | &lt;e4&gt; "||" &lt;e5&gt;
 &lt;expr&gt; := &lt;e5&gt; "?" &lt;expr&gt; ":"
 
@@ -2307,13 +2431,14 @@ SetLBearing(lbearing)
 	    See <A HREF="#RemoveLookupSubtable">RemoveLookupSubtable</A> or
 	    <A HREF="#RemovePosSub">RemovePosSub</A>
 	  <DT>
-	    <A NAME="RemoveLookup">R</A>emoveLookup(lookup-name)
+	    <A NAME="RemoveLookup">R</A>emoveLookup(lookup-name[,remove_acs])
 	  <DD>
-	    Remove the lookup (and any subtables within it).
+	    Remove the lookup (and any subtables within it). remove_acs specifies to remove
+        associated anchor classes and points.
 	  <DT>
-	    <A NAME="RemoveLookupSubtable">R</A>emoveLookupSubtable(subtable-name)
+	    <A NAME="RemoveLookupSubtable">R</A>emoveLookupSubtable(subtable-name[,remove_acs])
 	  <DD>
-	    Remove the subtable.
+	    Remove the subtable. remove_acs specifies to remove associated anchor classes and points.
 	  <DT>
 	    <A NAME="RemovePosSub">R</A>emovePosSub(subtable-name)
 	  <DD>
@@ -2551,9 +2676,17 @@ SetLBearing(lbearing)
 	    Same as <A HREF="scripting-alpha.html#SelectSingletons">SelectSingletons</A>
 	    except it removes single glyphs from the current selection.
 	  <DT>
-	    SelectGlyphsBoth()
+	    <A NAME="SelectGlyphsBoth">SelectGlyphsBoth</A>()
 	  <DD>
 	    Selects glyphs with both references and contours.
+	  <DT>
+	    <A NAME="SelectGlyphsReferences">SelectGlyphsReferences</A>()
+	  <DD>
+	    Selects glyphs with only references.
+	  <DT>
+	    <A NAME="SelectGlyphsSplines">SelectGlyphsSplines</A>()
+	  <DD>
+	    Selects glyphs with only contours.
 	  <DT>
 	    <A NAME="SelectHintingNeeded" HREF="editmenu.html#SelHinting">SelectHintingNeeded</A>([merge])
 	  <DD>
@@ -2734,6 +2867,8 @@ SetGasp([8,2,16,1,65535,3])
 	    will be incremented by the first, and if the argument is 2 then the left
 	    bearing will be scaled by &lt;first argument&gt;/100.0 . In bitmap only fonts
 	    see the comment at <A HREF="#SelectBitmap">SelectBitmap</A> about units.
+	    Setting this value will adjust all layers
+	    so that guides in the background etc will be adjusted with the rest of the glyph.
 	  <DT>
 	    <A NAME="SetMacStyle">S</A>etMacStyle(val)<BR>
 	    SetMacStyle(str)
@@ -2963,6 +3098,43 @@ SetGasp([8,2,16,1,65535,3])
 	  <DD>
 	    All selected glyphs will be skewed by the given angle.
 	  <DT>
+	    <A NAME="SmallCaps"></A>SmallCaps([v-scale[,h-scale[,stemw-scale[,stemh-scale]]]])
+	  <DD>
+	    Create small capitals from the selected glyphs.  The
+	    following optional arguments are accepted:
+	    <DL>
+	      <DT>v-scale</DT>
+	      <DD>
+	        The height of the small caps will be this fraction of the height of normal caps.
+	      </DD>
+	      <DT>h-scale</DT>
+	      <DD>
+		The width of the small caps will be this fraction of the width of normal caps.
+	        If unspecified or zero, defaults to the value of v-scale.
+	      </DD>
+	      <DT>stemw-scale</DT>
+	      <DD>
+	        Vertical stems will be scaled by this factor
+	      </DD>
+	      <DT>stemh-scale</DT>
+	      <DD>
+		Horizontal stems will be scaled by this factor.
+		If unspecified or zero, defaults to the value of stemw-scale.
+	      </DD>
+	    </DL>
+	  <DT>
+	    <A NAME="SpiroVersion">S</A>piroVersion()
+	  <DD>
+	    Returns the version of LibSpiro available to FontForge.<BR>
+	    Versions 0.1 to 0.5 do not have a method to indicate version numbers,
+	    but there is a limited method to estimate versions {'0.0'..'0.5'}.
+	    <DL>
+	    <DD>'0.0' if FontForge has no LibSpiro available.</DD>
+	    <DD>'0.1' if LibSpiro 20071029 is available.</DD>
+	    <DD>'0.2' if LibSpiro 0.2 to 0.5 is available.</DD>
+	    <DD>LibSpiro 0.6 and higher reports back it's version available.</DD>
+	    </DL>
+	  <DT>
 	    <A NAME="Sqrt">S</A>qrt(val)
 	  <DD>
 	    Returns the square root. It can execute with no current font.
@@ -3057,7 +3229,7 @@ SetGasp([8,2,16,1,65535,3])
 	  <DT>
 	    <A NAME="ToLower">ToLower</A>(val)
 	  <DD>
-	    Converts value to a lower case letter. Val may be either an integer, a unicode
+	    Returns value converted to a lower case letter. Val may be either an integer, a unicode
 	    or a string. The first two cases are treated as unicode code points, in the
 	    third the entire string will be converted. It can execute with no current
 	    font.
@@ -3077,7 +3249,7 @@ SetGasp([8,2,16,1,65535,3])
 	  <DT>
 	    <A NAME="ToUpper">ToUpper</A>(val)
 	  <DD>
-	    Converts value to an upper case letter. Val may be either an integer, a unicode
+	    Returns value converted to an upper case letter. Val may be either an integer, a unicode
 	    or a string. The first two cases are treated as unicode code points, in the
 	    third the entire string will be converted. It can execute with no current
 	    font.
@@ -3150,10 +3322,108 @@ SetGasp([8,2,16,1,65535,3])
       <TD BGCOLOR=yellow><A NAME="U">U</A></TD>
       <TD><DL>
 	  <DT>
+	    <A NAME="ucFracChartGetCnt">u</A>cFracChartGetCnt()
+	  <DD>
+	    Returns total count of Fractions found in the Unicode chart as
+	    described by www.unicode.org. It can execute with no current font.
+	    <BR>Note: Count depends on chart version built into FontForge.
+	  <DT>
+	    <A NAME="ucLigChartGetCnt">u</A>cLigChartGetCnt()
+	  <DD>
+	    Returns total count of Ligatures found in the Unicode chart as
+	    described by www.unicode.org. It can execute with no current font.
+	    <BR>Note: Count depends on chart version built into FontForge.
+	  <DT>
+	    <A NAME="ucLigChartGetLoc">u</A>cLigChartGetLoc(val)
+	  <DD>
+	    Returns n for FontForge internal table Unicode val=Ligature[n]. If
+	    val does not exist in table, then return -1. Can execute with no
+	    current font.
+	    <BR>Note: Count depends on chart version built into FontForge.
+	  <DT>
+	    <A NAME="ucLigChartGetNxt">u</A>cLigChartGetNxt(int)
+	  <DD>
+	    Returns FontForge internal table Unicode Ligature[n]. Return -1 if
+	    n<0 or n>=ucLigChartGetCnt(). It can execute with no current font.
+	    <BR>Note: Count depends on chart version built into FontForge.
+	  <DT>
 	    <A NAME="UCodePoint">U</A>CodePoint(int)
 	  <DD>
 	    Converts the argument to a unicode code point (a special type used in several
 	    commands). It can execute with no current font.
+	  <DT>
+	    <A NAME="ucOFracChartGetCnt">u</A>cOFracChartGetCnt()
+	  <DD>
+	    Returns total count of non-Vulgar Fractions found in the Unicode
+	    chart as described by www.unicode.org. It can execute with no current
+	    font.<BR>Note: Count depends on chart version built into FontForge.
+	  <DT>
+	    <A NAME="ucOFracChartGetLoc">u</A>cOFracChartGetLoc(val)
+	  <DD>
+	    Returns n for FontForge internal table Unicode val=OtherFraction[n].
+	    If val does not exist in table, then return -1. Can execute with no
+	    current font.
+	    <BR>Note: Count depends on chart version built into FontForge.
+	  <DT>
+	    <A NAME="ucOFracChartGetNxt">u</A>cOFracChartGetNxt(int)
+	  <DD>
+	    Returns FontForge internal table Unicode (non-vulgar) Fraction[n].
+	    Return -1 if n&lt;0 or n&gt;=ucOFracChartGetCnt(). Can execute with no
+	    current font.
+	    <BR>Note: Count depends on chart version built into FontForge.
+	  <DT>
+	    <A NAME="ucVulChartGetCnt">u</A>cVulChartGetCnt()
+	  <DD>
+	    Returns total count of Vulgar Fractions found in the Unicode chart
+	    as described by www.unicode.org. It can execute with no current font.
+	    <BR>Note: Count depends on chart version built into FontForge.
+	  <DT>
+	    <A NAME="ucVulChartGetLoc">u</A>cVulChartGetLoc(val)
+	  <DD>
+	    Returns n for FontForge internal table Unicode val=VulgarFraction[n].
+	    If val does not exist in table, then return -1. Can execute with no
+	    current font.
+	    <BR>Note: Count depends on chart version built into FontForge.
+	  <DT>
+	    <A NAME="ucVulChartGetNxt">u</A>cVulChartGetNxt(int)
+	  <DD>
+	    Returns FontForge internal table Unicode Vulgar Fraction[n]. Returns
+	    -1 if n<0 or n>=ucVulChartGetCnt(). Can execute with no current font.
+	    <BR>Note: Count depends on chart version built into FontForge.
+	  <DT>
+	    <A NAME="UnicodeAnnotationFromLib">U</A>nicodeAnnotationFromLib(val)
+	  <DD>
+	    Returns the Unicode Annotations for this value as described by www.unicode.org.
+	    If there is no unicode annotation for this value, or no library available,
+	    then return empty string "". It can execute with no current font.
+	  <DT>
+	    <A NAME="UnicodeBlockCountFromLib">U</A>nicodeBlockCountFromLib()
+	  <DD>
+	    Return the number of Unicode Blocks for this list as described by www.unicode.org.
+	    Currently, the blocks are {0..233}, spanning unicode values {uni0..uni10FFFF}.
+	    If there is no library available, then return -1.
+	    This can execute with no current font.
+	  <DT>
+	    <A NAME="UnicodeBlockEndFromLib">U</A>nicodeBlockEndFromLib(val)
+	  <DD>
+	    Returns the Unicode Block end value as described by www.unicode.org.
+	    Currently, the blocks are {0..233}, spanning unicode values {uni0..uni10FFFF}.
+	    If there is no value, or no library available, then return -1.
+	    This can execute with no current font.
+	  <DT>
+	    <A NAME="UnicodeBlockNameFromLib">U</A>nicodeBlockNameFromLib(val)
+	  <DD>
+	    Returns the Unicode Block Name as described by www.unicode.org.
+	    Currently, the blocks are {0..233}, spanning unicode values {uni0..uni10FFFF}.
+	    If there is no value, or no library available, then return empty string "".
+	    This can execute with no current font.
+	  <DT>
+	    <A NAME="UnicodeBlockStartFromLib">U</A>nicodeBlockStartFromLib(val)
+	  <DD>
+	    Returns the Unicode Block start value as described by www.unicode.org.
+	    Currently, the blocks are {0..233}, spanning unicode values {uni0..uni10FFFF}.
+	    If there is no value, or no library available, then return -1.
+	    This can execute with no current font.
 	  <DT>
 	    <A NAME="UnicodeFromName">U</A>nicodeFromName(name)
 	  <DD>
@@ -3161,6 +3431,61 @@ SetGasp([8,2,16,1,65535,3])
 	    names and returns the unicode value associated with that name, or -1 if not
 	    found. This does <EM>not</EM> check the current font (if any). It can execute
 	    with no current font.
+	  <DT>
+	    <A NAME="UnicodeNameFromLib">U</A>nicodeNameFromLib(val)
+	  <DD>
+	    Returns the Unicode Name for this value as described by www.unicode.org.
+	    If there is no unicode name for this value, or no library available,
+	    then return empty string "". It can execute with no current font.
+	  <DT>
+	    <A NAME="UnicodeNamesListVersion">U</A>nicodeNamesListVersion()
+	  <DD>
+	    Return the Unicode Nameslist Version (as described by www.unicode.org).
+	    libuninameslist is released on a schedule that depends on
+	    when www.unicode.org releases new information. These dates do not match
+	    FontForge release dates, therefore users might not keep this optional library
+	    upto current updates. This instruction can be used to test if the Nameslist
+	    library is recent for your script. This function currently works only for
+	    libuninameslist ver_0.3.20130501 or later, else it returns empty string "".
+	    This can execute with no current font.
+	  <DT>
+	    <A NAME="UnicodeNames2GetCntFromLib">U</A>nicodeNames2GetCntFromLib()
+	  <DD>
+	    Return the Total Count of all Names that were corrected with a new name.
+	    Errors and corrections happen, therefore names can be corrected in the
+	    next Unicode Nameslist version.
+	    If there is no libuninameslist ver 0.5 or later available, then return -1
+	  <DT>
+	    <A NAME="UnicodeNames2GetNxtFromLib">U</A>nicodeNames2GetNxtFromLib(val)
+	  <DD>
+	    Errors and corrections happen, therefore names can be corrected in the
+	    next Unicode Nameslist version. With val==unicode value, this function
+	    returns -1 if no Names2 exists, or the Nth table location for this
+	    unicode value listed in libuninameslist that was corrected to a new name.
+	    If there is no libuninameslist ver 0.5 or later, then return -1.
+	  <DT>
+	    <A NAME="UnicodeNames2NxtUniFromLib">U</A>nicodeNames2NxtUniFromLib(val)
+	  <DD>
+	    Errors and corrections happen, therefore names can be corrected in the
+	    next Unicode Nameslist version. This function returns the Next Unicode value
+	    listed in libuninameslist internal table that was corrected to a new name.
+	    The internal table of Unicode values is of size UnicodeNames2GetCntFromLib().
+	    If there is no libuninameslist ver 0.5 or later, then return -1.
+	  <DT>
+	    <A NAME="UnicodeNames2FrmTabFromLib">U</A>nicodeNames2FrmTabFromLib(val)
+	  <DD>
+	    Errors and corrections happen, therefore names can be corrected in the
+	    next Unicode Nameslist version. This function returns the Next Names2
+	    listed in libuninameslist internal table that was corrected to a new name.
+	    The internal table of Unicode values is of size UnicodeNames2GetCntFromLib().
+	    If there is no libuninameslist ver 0.5 or later, then return NULL.
+	  <DT>
+	    <A NAME="UnicodeNames2FromLib">U</A>nicodeNames2FromLib(val)
+	  <DD>
+	    Errors and corrections happen, therefore names can be corrected in the
+	    next Unicode Nameslist version. This function returns the Names2 or NULL
+	    based on the unicode value given.
+	    If there is no libuninameslist ver 0.5 or later, then return NULL.
 	  <DT>
 	    <A NAME="UnlinkReference" HREF="editmenu.html#Unlink">UnlinkReference</A>
 	  <DD>

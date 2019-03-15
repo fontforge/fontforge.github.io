@@ -10,7 +10,7 @@ title: How you can help with FontForge
     more flexable format, KANOU has a [Japanese version](ja/index.html))
 
 -   *I also have a brief tutorial in [pdf
-    format](fontforge-tutorial.pdf) and in [html](editexample.html).*
+    format](/assets/old/fontforge-tutorial.pdf) and in [html](editexample.html).*
     This could also be translated into other languages (and would be a
     simpler job than trying to translate the entire website). The html
     has been translated into [German](de/editexample.html) and
