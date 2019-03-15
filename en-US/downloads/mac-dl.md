@@ -27,7 +27,7 @@ Read either the short or detailed guide (each with appropriate download links) t
 
 ## FontForge
 
-* For users of OS X 10.10 and later, download and install [FontForge 2016-10-04](https://github.com/fontforge/fontforge/releases/download/20161005/FontForge-20161004-Mac.zip)
+* For users of OS X 10.10 and later, download and install [FontForge 2017-07-31](https://github.com/fontforge/fontforge/releases/download/20170731/FontForge-20170730-Mac.dmg)
 * For users of OS X 10.9, download and install [FontForge 2015-04-30](https://github.com/fontforge/fontforge/releases/download/20150430/FontForge-2015-04-30-Mac.app.dmg) 
 * Extract the FontForge app and move it to `/Applications` - not anywhere else
 * Open FontForge
@@ -58,7 +58,7 @@ Just this first time, start XQuartz from `Applications/Utilities/XQuartz.app`, g
 
 #### 2. Install FontForge
 
-For users of Mac OS X 10.10 and later, download and install [FontForge 2016-10-04](https://github.com/fontforge/fontforge/releases/download/20161005/FontForge-20161004-Mac.zip)
+For users of Mac OS X 10.10 and later, download and install [FontForge 2017-07-30](https://github.com/fontforge/fontforge/releases/download/20170731/FontForge-20170730-Mac.dmg)
 
 For users of Mac OS X 10.09, download and install [FontForge 2015-04-30](https://github.com/fontforge/fontforge/releases/download/20150430/FontForge-2015-04-30-Mac.app.dmg) 
 
@@ -113,7 +113,7 @@ You can also install Daily Development Snapshots, install using Package Managers
 </a>
 
 <div class="collapse" id="collapseDev"><div class="well" markdown="1">
-New development versions are released every few days, and the latest is always available as [FontForge_latest-HEAD.app.zip](http://fuuko.libferris.com/osx/packages/FontForge_latest-HEAD.app.dmg).
+New development versions are released every few days, and the latest is always available from <http://dl.bintray.com/fontforge/fontforge/>.
 
 To install an update:
 

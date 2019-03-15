@@ -16,7 +16,7 @@
       グリフ情報
   </H1>
   <H2>
-    <IMG SRC="../charinfo.png" WIDTH="307" HEIGHT="409" ALIGN="Right">
+    <IMG SRC="../assets/img/old/charinfo.png" WIDTH="307" HEIGHT="409" ALIGN="Right">
 <!--  <A NAME="Character">Glyph</A> Info-->
       <A NAME="Character">グリフ</A>情報
   </H2>
@@ -74,14 +74,14 @@
   <A HREF="showatt.html">View-&gt;Show ATT</A>.<BR CLEAR=ALL> -->
   <CODE>OTFグリフクラス(<U>G</U>)</CODE> フィールドは OpenType の&lsquo;GDEF&rsquo;テーブルのためのものです。通常は、自動設定のままにしておいてかまいません。その場合、FontForge はクラスを推測し、GDEF にそれを出力する必要があるかどうかを判断します。FontForge が何を行うかについては、<A HREF="showatt.html"><CODE>表示(<U>V</U>)</CODE>→<CODE>ATTを表示(<U>S</U>)</CODE></A>で調べることができます。<BR CLEAR=ALL>
   <P>
-  <IMG SRC="../charinfo-comment.png" WIDTH="307" HEIGHT="359" ALIGN="Right"><!--You
+  <IMG SRC="../assets/img/old/charinfo-comment.png" WIDTH="307" HEIGHT="359" ALIGN="Right"><!--You
   can assign an arbitrary (unicode) <A NAME="comment">comment</A> to the glyph.
   Simply type any text into this field. The comment is for your use, it will
   not go into any generated fonts. You may also assign a color to a glyph to
   make it stand out in the font view.<BR CLEAR=ALL> -->
   グリフに対して、任意の (Unicode の) <A NAME="comment">コメント</A>をつけることができます。単純にこのフィールドで任意のテキストをタイプしてください。コメントはあなたのためのもので、出力されるフォントには含まれません。また、フォントビューの中で目立って見えるようにグリフに色を割り当てることもできます。<BR CLEAR=ALL>
   <P>
-  <IMG SRC="../charinfo-pos.png" WIDTH="305" HEIGHT="400" ALIGN="Right"><!-- There
+  <IMG SRC="../assets/img/old/charinfo-pos.png" WIDTH="305" HEIGHT="400" ALIGN="Right"><!-- There
   are 6 separate sub-dialogs to help you edit the
   <A NAME="features">features</A> of the <A HREF="gposgsub.html">GPOS and
   GSUB</A> tables (some of these data can be converted into various of Apple's
@@ -118,7 +118,7 @@
   that).<BR Clear=Right> -->
   <A NAME="pairwise">ペア単位</A>の位置指定サブダイアログでは、2 個のグリフが決まった順番で表れたときの位置を変更することができます。最も一般的な例はカーニングです (もっと変更しやすい方法が、例えばメトリックビューなどでありますが、それを本当にやりたい場合はここで行うこともできます。<BR Clear=Right>
   <P>
-  <IMG SRC="../charinfo-subs.png" WIDTH="305" HEIGHT="400" ALIGN="Right"><!-- A simple
+  <IMG SRC="../assets/img/old/charinfo-subs.png" WIDTH="305" HEIGHT="400" ALIGN="Right"><!-- A simple
   <A NAME="substitution">substitution</A> replaces one glyph with another.
   Here the glyph "one" has a substitution to "onesuperior" when the 'sups'
   (Superscript) feature is invoked. -->
@@ -147,7 +147,7 @@
   [<CODE><A NAME="multiple">複数</A>の置換先</CODE>] および <CODE>[選択型置換]</CODE> サブダイアログもそれと似ていますが、これらは複数のグリフ名をとることができる点が異なります。<CODE>[複数の置換先]</CODE> サブテーブルでは各グリフはいくつかの他のグリフによって置き換えられ (ある意味、合字の反対です)、<CODE>[選択型の置換]</CODE> サブダイアログでは、各グリフはリスト内に含まれるちょうど 1 個の文字によって置き換えられ、どのグリフを使うかについてはユーザが選ぶことができます。
   <BR Clear=Right>
   <P>
-  <IMG SRC="../charinfo-lig.png" WIDTH="305" HEIGHT="400" ALIGN="Right"><!-- The
+  <IMG SRC="../assets/img/old/charinfo-lig.png" WIDTH="305" HEIGHT="400" ALIGN="Right"><!-- The
   <A NAME="ligature">ligature</A> field allows you to tell FontForge that the
   current glyph is a ligature composed of several other glyphs. FontForge will
   often be able to fill this in with the right default value, but occasionally
@@ -172,7 +172,7 @@
   you to pick what type of ligature this should be. <BR Clear=Right> -->
   <A HREF="gposgsub.html">GPOS および GSUB</A> テーブルでは、合字の更なる改良が可能です。合字は、標準・必須・任意・歴史的または分数のいずれかに分類することができます。必須の合字は常に置き換えられなければならず、標準合字は置き換えるべき物で、任意使用の合字は置き換えてもよいもので、歴史的合字は適切な状況でのみ用いるべきものです。タグフィールドのプルダウンリストでは、この合字がどのタイプであるかを選択することができます。<BR Clear=Right>
   <P>
-  <IMG SRC="../charinfo-counters.png" WIDTH="307" HEIGHT="409" ALIGN="Right">
+  <IMG SRC="../assets/img/old/charinfo-counters.png" WIDTH="307" HEIGHT="409" ALIGN="Right">
 <!--
   In complicated Asian glyphs, postscript has a mechanism for controlling the
   width of <A NAME="CounterMasks">counters</A> between stems. These are called
@@ -181,10 +181,10 @@
   In Latin, Cyrillic, Greek fonts only glyphs like "m" are allowed to have
   counter masks, and only in very controlled conditions. See the description
   of <A HREF="hinting.html#Counter">counter masks</A>.<BR CLEAR=ALL> -->
-  アジアの複雑なグリフでは、PostScript はステムの間の<A NAME="CounterMasks">カウンタ</A>を制御するメカニズムを提供しています。それらはカウンタマスクヒントと呼ばれます。<IMG SRC="../newcountermask.png" WIDTH="282" HEIGHT="392" ALIGN="Left">
+  アジアの複雑なグリフでは、PostScript はステムの間の<A NAME="CounterMasks">カウンタ</A>を制御するメカニズムを提供しています。それらはカウンタマスクヒントと呼ばれます。<IMG SRC="../assets/img/old/newcountermask.png" WIDTH="282" HEIGHT="392" ALIGN="Left">
   ラテン文字・キリル文字・ギリシャ文字のフォントではカウンタマスクを使用することができる文字は“m”など、非常に限られており、使用できる状況も非常に限られています。<A HREF="hinting.html#Counter">カウンタマスク</A>に関する説明を参照してください。<BR CLEAR=ALL>
   <P>
-  <IMG SRC="../charinfo-counters.png" WIDTH="305" HEIGHT="400" ALIGN="Right">
+  <IMG SRC="../assets/img/old/charinfo-counters.png" WIDTH="305" HEIGHT="400" ALIGN="Right">
 <!--
   Some <A NAME="components">glyphs</A> (ligatures, accented glyphs, Hangul
   syllables, etc.) are built up out of other glyphs (at least according to
@@ -215,8 +215,8 @@
   </H3>
   <TABLE ALIGN=Right>
     <TR>
-      <TD><IMG SRC="../feature-tag-sub.png" WIDTH="226" HEIGHT="399" ALIGN="Top">
-	<IMG SRC="../feature-tag-pos.png" WIDTH="226" HEIGHT="489" ALIGN="Top"></TD>
+      <TD><IMG SRC="../assets/img/old/feature-tag-sub.png" WIDTH="226" HEIGHT="399" ALIGN="Top">
+	<IMG SRC="../assets/img/old/feature-tag-pos.png" WIDTH="226" HEIGHT="489" ALIGN="Top"></TD>
     </TR>
   </TABLE>
   <P>
@@ -276,7 +276,7 @@
   language, and the latin script and several languages. -->
   それと、置換が有効になる用字系・言語の集まりがあります。上に示す例では、置換はギリシャ文字とデフォルト言語 (これは、特別な扱いをするように選ばれていないすべての言語を意味します)、キリル文字とデフォルト言語、そしてラテン文字といくつかの言語の組合せで有効になっています。
   <P>
-  <IMG SRC="../scriptlist-pulldown.png" WIDTH="243" HEIGHT="118">
+  <IMG SRC="../assets/img/old/scriptlist-pulldown.png" WIDTH="243" HEIGHT="118">
   <P>
 <!--
   Clicking on the pulldown list produces a list of choices that are currently
@@ -320,7 +320,7 @@
       <A NAME="ScriptLang">用字系・言語ダイアログ</A>
   </H3>
   <P>
-  <IMG SRC="../scriptlist.png" WIDTH="296" HEIGHT="205" ALIGN="Left"><!--This dialog
+  <IMG SRC="../assets/img/old/scriptlist.png" WIDTH="296" HEIGHT="205" ALIGN="Left"><!--This dialog
   shows all the script and language combinations which are in use in the current
   font. You may add a new combination or change an old one by pressing the
   obvious buttons. -->
@@ -354,7 +354,7 @@
   <H3>
 <!--  <A NAME="Script"><IMG SRC="scriptsdlg.png" WIDTH="152" HEIGHT="215" ALIGN="Right">The
     Script Dialog</A> -->
-    <A NAME="Script"><IMG SRC="../scriptsdlg.png" WIDTH="152" HEIGHT="215" ALIGN="Right">用字系ダイアログ</A>
+    <A NAME="Script"><IMG SRC="../assets/img/old/scriptsdlg.png" WIDTH="152" HEIGHT="215" ALIGN="Right">用字系ダイアログ</A>
   </H3>
   <P>
 <!--
@@ -366,7 +366,7 @@
   you will get a dialog of languages. -->
   このダイアログは、この用字系-言語集合において現在有効になっているすべての用字系を一覧表示します。集合に新しい用字系を追加したい場合、Control キーを押しながら用字系の名前をクリックしてください。新しい用字系は“デフォルト”言語との組合せで選択されます。言語に対するより詳細な制御を行いたい場合 (例えば、デフォルト以外の言語を指定したい場合)、用字系の名前の上でダブルクリックすれば言語ダイアログが表示されます。
   <H3>
-    <IMG SRC="../langdlg.png" WIDTH="152" HEIGHT="215" ALIGN="Left"><!--The
+    <IMG SRC="../assets/img/old/langdlg.png" WIDTH="152" HEIGHT="215" ALIGN="Left"><!--The
     <A NAME="Language">Language</A> Dialog -->
     <A NAME="Language">言語</A>ダイアログ
   </H3>

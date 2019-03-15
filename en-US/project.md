@@ -10,7 +10,7 @@ each user has an equal amount of power as the developers over what the
 software does: everyone who has a copy has access to the source code, and is 
 free to modify the code to change what the program does. 
 
-Additionally,each user has an equal amount of power as the developers over when and how
+Additionally, each user has an equal amount of power as the developers over when and how
 copies of the work are distributed. Everyone can redistribute copies,
 unchanged or with their improvements, with or without a fee.
 

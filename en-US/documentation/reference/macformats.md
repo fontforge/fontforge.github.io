@@ -12,42 +12,42 @@ stores them in data forks.
 Apple (and Adobe) provide some documentation on the mac's formats:
 
 -   [Mac Resource
-    Fork](http://developer.apple.com/documentation/mac/MoreToolbox/MoreToolbox-9.html)
+    Fork](https://developer.apple.com/legacy/library/documentation/mac/MoreToolbox/MoreToolbox-9.html)
 -   Mac
-    [NFNT/FONT](http://developer.apple.com/documentation/mac/Text/Text-250.html)
+    [NFNT/FONT](https://developer.apple.com/legacy/library/documentation/mac/Text/Text-250.html)
     resource
 -   Mac
-    [FOND](http://developer.apple.com/documentation/mac/Text/Text-269.html)
+    [FOND](https://developer.apple.com/legacy/library/documentation/mac/Text/Text-269.html)
     resource
 -   Mac
-    [sfnt](http://developer.apple.com/documentation/mac/Text/Text-253.html)
+    [sfnt](https://developer.apple.com/legacy/library/documentation/mac/Text/Text-253.html)
     resource
-    -   This is basically a [truetype](http://fonts.apple.com/TTRefMan/)
+    -   This is basically a [truetype](https://developer.apple.com/fonts/TrueType-Reference-Manual/)
         font file stuffed into a resource
 
 -   The POST resource
     -   The connection between postscript file and FOND is described in
         the [Style Mapping
-        Table](http://developer.apple.com/documentation/mac/Text/Text-275.html)
+        Table](https://developer.apple.com/legacy/library/documentation/mac/Text/Text-275.html)
         of the FOND
     -   [Type1 postscript
-        fonts](http://partners.adobe.com/asn/developer/PDFS/TN/T1_SPEC.PDF)are
+        fonts](https://www.adobe.com/content/dam/Adobe/en/devnet/font/pdfs/T1_SPEC.pdf)are
         described by Adobe
     -   Adobe also describes how they are [wrapped up on the
-        mac.](http://partners.adobe.com/asn/developer/PDFS/TN/0091.Mac_Fond.pdf)
+        mac.](https://www.adobe.com/content/dam/Adobe/en/devnet/font/pdfs/0091.Mac_Fond.pdf)
 
 -   [Macintosh
-    scripts](http://developer.apple.com/documentation/mac/Text/Text-354.html)
+    scripts](https://developer.apple.com/legacy/library/documentation/mac/Text/Text-354.html)
     -   [Script
-        codes](http://developer.apple.com/documentation/mac/Text/Text-367.html#HEADING367-0)
+        codes](https://developer.apple.com/legacy/library/documentation/mac/Text/Text-367.html#HEADING367-0)
 
 -   [Carbon (Mac OS/X)
-    docs](http://developer.apple.com/documentation/macosx/Carbon/carbon.html)
+    docs](https://developer.apple.com/legacy/library/documentation/Carbon/Conceptual/newtocarbon/Introduction.html)
 
 I have not yet found a description of a data fork resource file. I have
 determined empirically that they look almost the same as [resource fork
 resource
-files](http://developer.apple.com/documentation/mac/MoreToolbox/MoreToolbox-9.html)
+files](https://developer.apple.com/legacy/library/documentation/mac/MoreToolbox/MoreToolbox-9.html)
 except that the map table begins with 16 bytes of zeros rather than a
 copy of the first 16 bytes of the file. To date I have only seen sfnt
 (and FOND) resources in a data fork resource file (often called a .dfont

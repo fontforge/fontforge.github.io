@@ -5,8 +5,8 @@ title: FontForge on Windows
 archive_extension: .exe
 ---
 
-<a class="btn btn-primary btn-large default" href="https://github.com/fontforge/fontforge/releases/download/20161005/FontForge-2016-10-04-Windows.exe">
-  Download 2016-10-04 Release Installer (.exe)
+<a class="btn btn-primary btn-large default" href="https://github.com/fontforge/fontforge/releases/download/20170731/FontForge-2017-07-31-Windows-r2.exe">
+  Download 2017-07-31 Release Installer (.exe)
 </a>
 
 1. Right click, select `Run as Administrative User`
@@ -14,6 +14,8 @@ archive_extension: .exe
 
 You may find more recent development snapshots at the [fontforgebuilds] project.
 Developers can get the "MSYS" Windows build system there too.
+
+Note that the collaboration feature in FontForge may upset some antivirus and firewall applications. Users can ignore these warnings, but it is important to download FontForge only from trusted publishers.
 
 Please post your Windows Build bug reports on our [GitHub Issue Tracker].
 
