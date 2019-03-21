@@ -5,37 +5,16 @@ title: FontForge on Mac OS X
 archive_extension: ".dmg"
 ---
 
-FontForge is a UNIX application, so it doesn't behave 100% like a normal Mac Application and it needs XQuartz to run.
+FontForge is a UNIX application, so it doesn't behave 100% like a normal Mac Application.
+OS X 10.10 or later is required.
 
-Read either the short or detailed guide (each with appropriate download links) to get you started.
+Download and install [FontForge 2019-03-17](https://github.com/fontforge/fontforge/releases/download/20190317/FontForge-2019-03-17-1d421d1.app.dmg)
 
-<a class="btn btn-primary btn-large default" data-toggle="collapse" href="#collapseBasic" aria-expanded="false" aria-controls="collapseBasic">
-  Short Guide
-</a>
-<a class="btn btn-primary btn-large default" data-toggle="collapse" href="#collapseDetail" aria-expanded="false" aria-controls="collapseDetail">
-  Detailed Guide
+<a class="btn btn-primary btn-large default" data-toggle="collapse" href="#collapseOld" aria-expanded="false" aria-controls="collapseOld">
+  For releases before 2019-03-17
 </a>
 
-<div class="collapse" id="collapseBasic"><div class="well" markdown="1">
-## XQuartz
-* Download and install [xQuartz](https://dl.bintray.com/xquartz/downloads/XQuartz-2.7.11.dmg) if you don't already have it
-* Open XQuartz
-* Preferences (⌘,)
-* If checked, then uncheck `Enable keyboard shortcuts under X11` or `Enable key equivalents under X11` like shown below
-
-![X11.app Preferences Window set correctly](../x11prefs.png)
-
-## FontForge
-
-* For users of OS X 10.10 and later, download and install [FontForge 2017-07-31](https://github.com/fontforge/fontforge/releases/download/20170731/FontForge-20170730-Mac.dmg)
-* For users of OS X 10.9, download and install [FontForge 2015-04-30](https://github.com/fontforge/fontforge/releases/download/20150430/FontForge-2015-04-30-Mac.app.dmg) 
-* Extract the FontForge app and move it to `/Applications` - not anywhere else
-* Open FontForge
-* If asked where X11 is, then find and select XQuartz in `Applications/Utilities`
-* FontForge is now ready for you to use it like any other app.
-</div></div>
-
-<div class="collapse" id="collapseDetail"><div class="well" markdown="1">
+<div class="collapse" id="collapseOld"><div class="well" markdown="1">
 #### 1. Install XQuartz
 
 Without [XQuartz](http://xquartz.macosforge.org), FontForge will open a Dock icon but not load any further.
@@ -58,9 +37,9 @@ Just this first time, start XQuartz from `Applications/Utilities/XQuartz.app`, g
 
 #### 2. Install FontForge
 
-For users of Mac OS X 10.10 and later, download and install [FontForge 2017-07-30](https://github.com/fontforge/fontforge/releases/download/20170731/FontForge-20170730-Mac.dmg)
+For users of OS X 10.10 and later, download and install [FontForge 2017-07-31](https://github.com/fontforge/fontforge/releases/download/20170731/FontForge-20170730-Mac.dmg)
 
-For users of Mac OS X 10.09, download and install [FontForge 2015-04-30](https://github.com/fontforge/fontforge/releases/download/20150430/FontForge-2015-04-30-Mac.app.dmg) 
+For users of OS X 10.09, download and install [FontForge 2015-04-30](https://github.com/fontforge/fontforge/releases/download/20150430/FontForge-2015-04-30-Mac.app.dmg) 
 
 ![Download files](../mac-download-files.png)
 
@@ -100,26 +79,25 @@ If you have any problems with installation or upgrading, create a [Github Issue]
 
 ## Other sources and versions
 
-You can also install Daily Development Snapshots, install using Package Managers or build from source
+You can also install Development Snapshots, install using Package Managers or build from source
 
-<a class="btn btn-primary btn-large default" data-toggle="collapse" href="#collapseDev" aria-expanded="false" aria-controls="collapseBasic">
-  Daily dev
+<a class="btn btn-primary btn-large default" data-toggle="collapse" href="#collapseDev" aria-expanded="false" aria-controls="collapseDev">
+  Development builds
 </a>
-<a class="btn btn-primary btn-large default" data-toggle="collapse" href="#collapsePkg" aria-expanded="false" aria-controls="collapseDetail">
+<a class="btn btn-primary btn-large default" data-toggle="collapse" href="#collapsePkg" aria-expanded="false" aria-controls="collapsePkg">
   Pkg manager
 </a>
-<a class="btn btn-primary btn-large default" data-toggle="collapse" href="#collapseSrc" aria-expanded="false" aria-controls="collapseBasic">
+<a class="btn btn-primary btn-large default" data-toggle="collapse" href="#collapseSrc" aria-expanded="false" aria-controls="collapseSrc">
   Source
 </a>
 
 <div class="collapse" id="collapseDev"><div class="well" markdown="1">
-New development versions are released every few days, and the latest is always available from <http://dl.bintray.com/fontforge/fontforge/>.
+New development versions are created whenever changes are made, and the latest is always available from <http://dl.bintray.com/fontforge/fontforge/>.
 
 To install an update:
 
-1. quit FontForge and X11
-2. drag and drop the new FontForge.app into `/Applications` and replace it
-3. start FontForge again
+1. Drag and drop the new FontForge.app into `/Applications` and replace it
+2. Start FontForge again
 </div></div>
 
 <div class="collapse" id="collapsePkg"><div class="well" markdown="1">
@@ -127,7 +105,7 @@ Installing from Package Managers
 
 These Mac package managers all have FontForge:
 
-* [Homebrew](http://brew.sh) (recommended)
+* [Homebrew](http://brew.sh) (command-line only)
 * [MacPorts](https://www.macports.org/)
 * [Fink](http://www.finkproject.org/)
 </div></div>
@@ -135,20 +113,13 @@ These Mac package managers all have FontForge:
 <div class="collapse" id="collapseSrc"><div class="well" markdown="1">
 Building from source
 
-Build with source using [Homebrew](http://www.brew.sh) in the normal way:
+Build with source using [Homebrew](http://www.brew.sh):
 
 ```Bash
-brew install python gettext libpng jpeg libtiff giflib cairo pango libspiro czmq fontconfig automake libtool pkg-config glib pango
-brew install -v --debug fontforge --HEAD  --with-giflib --with-x11 --with-libspiro
+brew install python gettext libpng jpeg libtiff giflib cairo pango libspiro czmq fontconfig automake libtool pkg-config glib pango gtk+3
+./configure --enable-gdk=gdk3
+make -j4 && make install
 ```
-
-If anything goes wrong, just create a ticket for the package manager or try to use non-HEAD versions.
-
-If you build from sources with Homebrew assistance, you may be lucky if you run
-
-    ./configure && make -j3 && sudo make install;
-
-(You'll need to have all the [dependencies](../source.html#Dependencies) already installed.)
 </div></div>
 
 ## Advanced Configuration
@@ -158,7 +129,7 @@ To make FontForge more pleasant to use, you can change some aspects of the way i
 <a class="btn btn-primary btn-large default" data-toggle="collapse" href="#collapseHot" aria-expanded="false" aria-controls="collapseBasic">
   Hot keys
 </a>
-<a class="btn btn-primary btn-large default" data-toggle="collapse" href="#collapseUI" aria-expanded="false" aria-controls="collapseDetail">
+<a class="btn btn-primary btn-large default" data-toggle="collapse" href="#collapseUI" aria-expanded="false" aria-controls="collapseOld">
   UI size
 </a>
 <a class="btn btn-primary btn-large default" data-toggle="collapse" href="#collapseMouse" aria-expanded="false" aria-controls="collapseBasic">
@@ -168,7 +139,7 @@ To make FontForge more pleasant to use, you can change some aspects of the way i
 <div class="collapse" id="collapseHot"><div class="well" markdown="1">
 If the hotkeys are unfamiliar, you can change them!
 
-1. quit FontForge and X11
+1. quit FontForge (and X11, for versions prior to 2019-03-17)
 2. with your text editor, open `/Applications/FontForge.app/Contents/Resources/opt/local/share/fontforge/hotkeys/default`
 3. change the hotkeys and save the file
 4. start FontForge again
@@ -177,7 +148,7 @@ If the hotkeys are unfamiliar, you can change them!
 <div class="collapse" id="collapseUI"><div class="well" markdown="1">
 If the UI appears very big or very small, you can change the way the UI is sized.
 
-1. quit FontForge and X11
+1. quit FontForge (and X11, for versions prior to 2019-03-17)
 2. with your text editor, open `/Applications/FontForge.app/Contents/Resources/opt/local/share/fontforge/pixmaps/resources`
 3. measure the physical width of your screen in centimeters. In this example, it is 34cm wide.
 4. add a new line, `Gdraw.ScreenWidthCentimeters: 34` and save the file
