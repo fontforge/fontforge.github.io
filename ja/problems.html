@@ -3,13 +3,17 @@
   <!-- Created with AOLpress/2.0 -->
   <!-- AP: Created on: 28-Jun-2001 -->
   <!-- AP: Last modified: 12-Jun-2006 -->
-  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
 <!--<TITLE>Finding common font problems automagically</TITLE>-->
     <TITLE>よくあるフォントの問題点を自動的に検出する方法</TITLE>
-  <LINK REL="icon" href="../fftype16.png">
-  <LINK REL="stylesheet" TYPE="text/css" HREF="FontForge.css">
+  <LINK REL="icon" href="/assets/img/old/fftype16.png">
+  <LINK REL="stylesheet" TYPE="text/css" HREF="/assets/css/old/ja/FontForge.css">
 </HEAD>
->
+<BODY>
+<div style="margin:0; height: 4	em; padding: 0.5em; background: red; color:yellow; text-align:center; font-size:1em; font-family: sans-serif;">
+	<p><a href="http://fontforge.github.io" style="padding: 0.5em; color: yellow; font-weight: bold; text-decoration: none;" onmouseover="this.style.background='black';" onmouseout="this.style.background='red';" >This is part of the old website. New website begins at fontforge.github.io</a></p>
+	<p><a href="https://github.com/fontforge/fontforge.github.io" style="padding: 0.5em; color: yellow; font-weight: bold; text-decoration: none;" onmouseover="this.style.background='black';" onmouseout="this.style.background='red';" >Are you a web developer? Help us migrate this page on Github</a></p>
+</div>
 <DIV id="in">
   <H1 ALIGN=Center>
 <!--Finding common font problems automagically-->
@@ -75,7 +79,7 @@
   (<A HREF="mailto:fontforge-users@lists.sourceforge.net">fontforge-users@lists.sourceforge.net</A>). -->
   注意: これらの問題点のいくつかは、ラテン・ギリシャ・キリル文字のフォントの問題点に特化したものです。これらを他の用字系に拡張する方法や、他の用字系に特化した問題点についてお聞かせ頂ければ幸いです (<A HREF="mailto:fontforge-users@lists.sourceforge.net">fontforge-users@lists.sourceforge.net</A> まで)。
   <P>
-  <IMG SRC="../assets/img/old/findprobs.png" WIDTH="307" HEIGHT="431" ALIGN="Right"><!--FontForge
+  <IMG SRC="/assets/img/old/findprobs.png" WIDTH="307" HEIGHT="431" ALIGN="Right"><!--FontForge
   can detect the following potential problems: -->
   FontForge は以下の潜在的な問題点を検出することができます:
   <P>
@@ -149,8 +153,8 @@
   <P>
 <!--
   <STRONG><BIG>Control points beyond
-  spline</BIG></STRONG><IMG SRC="cpodd.png" WIDTH="210" HEIGHT="215" ALIGN="Right"> -->
-  <STRONG><BIG>端点の外にはみ出す制御点(<U>B</U>)</BIG></STRONG><IMG SRC="../assets/img/old/cpodd.png" WIDTH="210" HEIGHT="215" ALIGN="Right">
+  spline</BIG></STRONG><IMG SRC="/assets/img/old/cpodd.png" WIDTH="210" HEIGHT="215" ALIGN="Right"> -->
+  <STRONG><BIG>端点の外にはみ出す制御点(<U>B</U>)</BIG></STRONG><IMG SRC="/assets/img/old/cpodd.png" WIDTH="210" HEIGHT="215" ALIGN="Right">
   <P>
 <!--
   Consider the glyph at right, the selected point has a control point that
@@ -177,9 +181,9 @@
   これは、制御点が変形の対象となる端点に近すぎてほとんど曲線の形に影響を与えていないことがないか探します。制御点が近すぎると見なされるのは、影響を与える点との距離が、その制御点が調節するスプラインの両端点の距離に「無意味と見なす比率」を掛けた距離よりも短い場合です。<BR Clear=Right>
   <P>
 <!--
-  <IMG SRC="findprobs-paths.png" WIDTH="307" HEIGHT="431" ALIGN="Right"><STRONG><BIG>Open
+  <IMG SRC="/assets/img/old/findprobs-paths.png" WIDTH="307" HEIGHT="431" ALIGN="Right"><STRONG><BIG>Open
   Paths</BIG></STRONG>-->
-  <IMG SRC="../assets/img/old/findprobs-paths.png" WIDTH="307" HEIGHT="431" ALIGN="Right"><STRONG><BIG>開いたパス(P)</BIG></STRONG>
+  <IMG SRC="/assets/img/old/findprobs-paths.png" WIDTH="307" HEIGHT="431" ALIGN="Right"><STRONG><BIG>開いたパス(P)</BIG></STRONG>
   <P>
 <!--
   All of your paths should be closed, that is they shouldn't have any end points
@@ -249,9 +253,9 @@
   PostScript 言語リファレンスマニュアルの付録 B には、インタプリタは 1500 個までの点を含むパスが処理できればよいと書かれています。ほとんどのインタプリタでは実際の制限値はそれよりはるかに大きな値なので、あなたの要求に合うような上限値に変更できるべきでしょう。私は、制御点も個数に含まれると考えています。2 次曲線をもつフォント (つまり TrueType フォント) を検査するときには、2 個の端点の間には最大 1 個の制御点しか存在しなくても、PostScript に変換したときには 2 個になるだろうことにご注意ください。FontForge は現在のところこれを 1 個の点として勘定します。TrueType にはそのような制限はありません。<BR Clear=all>
   <H3>
 <!--
-  <STRONG><IMG SRC="findprobs-refs.png" WIDTH="307" HEIGHT="431" ALIGN="Right">Flipped
+  <STRONG><IMG SRC="/assets/img/old/findprobs-refs.png" WIDTH="307" HEIGHT="431" ALIGN="Right">Flipped
     References</STRONG> -->
-  <STRONG><IMG SRC="../assets/img/old/findprobs-refs.png" WIDTH="307" HEIGHT="431" ALIGN="Right">反転した参照をチェック(<U>R</U>)</STRONG>
+  <STRONG><IMG SRC="/assets/img/old/findprobs-refs.png" WIDTH="307" HEIGHT="431" ALIGN="Right">反転した参照をチェック(<U>R</U>)</STRONG>
   </H3>
   <P>
 <!--
@@ -323,19 +327,19 @@
   <A HREF="http://partners.adobe.com/asn/developer/pdfs/tn/5177.Type2.pdf">Type2</A> 仕様書の付録 B には、インタプリタは参照の入れ子を 10 重までしかサポートしなくても良いと書かれています。FontForge は参照されたグリフの処理と、ヒントの処理の一部のケースでサブルーチン呼び出しを使用します。ヒントづけは最大 1 重のサブルーチン呼び出しを消費するので、参照に使用できるのは残り 9 重となります。TrueType にはそのような制限はありません。<BR Clear=All>
   <P>
 <!--
-  <BIG><STRONG><IMG SRC="findprobs-hint.png" WIDTH="307" HEIGHT="431" ALIGN="Right">Hints
+  <BIG><STRONG><IMG SRC="/assets/img/old/findprobs-hint.png" WIDTH="307" HEIGHT="431" ALIGN="Right">Hints
   controlling no points</STRONG></BIG>-->
-  <BIG><STRONG><IMG SRC="../assets/img/old/findprobs-hint.png" WIDTH="307" HEIGHT="431" ALIGN="Right">点を制御しないヒント(<U>H</U>)</STRONG></BIG>
+  <BIG><STRONG><IMG SRC="/assets/img/old/findprobs-hint.png" WIDTH="307" HEIGHT="431" ALIGN="Right">点を制御しないヒント(<U>H</U>)</STRONG></BIG>
   <P>
 <!--
   This is a bit esoteric, and is present to provide a work-around for (what
   I think is) a bug in ghostview. Consider the following glyph -->
   このオプションはちょっと秘教的で、ghostview のあるバグ (と私が考えている動作) に対する彌縫策を提供するために用意されています。以下のようなグリフがあったとします。
   <P>
-  <IMG SRC="../assets/img/old/phi-nohints-outline.png" WIDTH="89" HEIGHT="151">
-  <IMG SRC="../assets/img/old/phi-nohints-filled.png" WIDTH="93" HEIGHT="121">
-  <IMG SRC="../assets/img/old/phi-hints-outline.png" WIDTH="72" HEIGHT="133">
-  <IMG SRC="../assets/img/old/phi-hints-filled.png" WIDTH="93" HEIGHT="125"><BR>
+  <IMG SRC="/assets/img/old/phi-nohints-outline.png" WIDTH="89" HEIGHT="151">
+  <IMG SRC="/assets/img/old/phi-nohints-filled.png" WIDTH="93" HEIGHT="121">
+  <IMG SRC="/assets/img/old/phi-hints-outline.png" WIDTH="72" HEIGHT="133">
+  <IMG SRC="/assets/img/old/phi-hints-filled.png" WIDTH="93" HEIGHT="125"><BR>
 <!--
   The first two images show the glyph with no hints, first as seen in FontForge,
   then as displayed by ghostview. The result looks good. If we add hints to
@@ -408,9 +412,9 @@
   horizontal and vertical hints. -->
   <A HREF="http://partners.adobe.com/asn/developer/pdfs/tn/5177.Type2.pdf">Type2</A> 仕様書の付録 B には、インタプリタは 96 個までの水平・垂直ヒントをサポートすればよいと書かれています。
   <H3>
-<!--  <IMG SRC="findprobs-random.png" WIDTH="307" HEIGHT="431" ALIGN="Right"><STRONG>Missing
+<!--  <IMG SRC="/assets/img/old/findprobs-random.png" WIDTH="307" HEIGHT="431" ALIGN="Right"><STRONG>Missing
     Bitmaps</STRONG>-->
-  <IMG SRC="../assets/img/old/findprobs-random.png" WIDTH="307" HEIGHT="431" ALIGN="Right"><STRONG>ビットマップの欠落をチェック(<U>B</U>)</STRONG>
+  <IMG SRC="/assets/img/old/findprobs-random.png" WIDTH="307" HEIGHT="431" ALIGN="Right"><STRONG>ビットマップの欠落をチェック(<U>B</U>)</STRONG>
   </H3>
   <P>
 <!--
@@ -469,9 +473,9 @@
   すべての 'GSUB' 置換、選択型置換、複数置換および現在のグリフに接続するすべての合字項目を通覧し、名前のついた構成要素がフォント内に存在するか (そして何らかの内容が存在するか) どうかをチェックします。<BR Clear=ALL>
   <P>
 <!--
-  <IMG SRC="findprobs-att.png" WIDTH="307" HEIGHT="431" ALIGN="Right"><BIG><STRONG>Missing
+  <IMG SRC="/assets/img/old/findprobs-att.png" WIDTH="307" HEIGHT="431" ALIGN="Right"><BIG><STRONG>Missing
   Glyph Names</STRONG></BIG> -->
-  <IMG SRC="../assets/img/old/findprobs-att.png" WIDTH="307" HEIGHT="431" ALIGN="Right"><BIG><STRONG>存在しないグリフ名をチェック(<U>M</U>)</STRONG></BIG>
+  <IMG SRC="/assets/img/old/findprobs-att.png" WIDTH="307" HEIGHT="431" ALIGN="Right"><BIG><STRONG>存在しないグリフ名をチェック(<U>M</U>)</STRONG></BIG>
   <P>
 <!--
   It is possible to create a substitution, ligature, etc. which refers to a
@@ -501,9 +505,9 @@
     <HR Clear=all>
   <P>
 <!--
-  <IMG SRC="findprobs-cid.png" WIDTH="301" HEIGHT="418" ALIGN="Right">If your
+  <IMG SRC="/assets/img/old/findprobs-cid.png" WIDTH="301" HEIGHT="418" ALIGN="Right">If your
   font is a CID keyed font you will also get: -->
-  <IMG SRC="../assets/img/old/findprobs-cid.png" WIDTH="301" HEIGHT="418" ALIGN="Right">CID フォントを編集している場合、以下の項目も表示されます:
+  <IMG SRC="/assets/img/old/findprobs-cid.png" WIDTH="301" HEIGHT="418" ALIGN="Right">CID フォントを編集している場合、以下の項目も表示されます:
   <P>
 <!--
   <STRONG><BIG>Check for CIDs defined twice</BIG></STRONG> -->

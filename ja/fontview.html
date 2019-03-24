@@ -3,20 +3,24 @@
   <!-- Created with AOLpress/2.0 -->
   <!-- AP: Created on: 6-Dec-2000 -->
   <!-- AP: Last modified: 17-Jun-2006 -->
-  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
 <!--<TITLE>The Font View</TITLE>-->
     <TITLE>フォントビュー</TITLE>
-  <LINK REL="icon" href="../fftype16.png">
-  <LINK REL="stylesheet" TYPE="text/css" HREF="FontForge.css">
+  <LINK REL="icon" href="/assets/img/old/fftype16.png">
+  <LINK REL="stylesheet" TYPE="text/css" HREF="/assets/css/old/ja/FontForge.css">
 </HEAD>
->
+<BODY>
+<div style="margin:0; height: 4	em; padding: 0.5em; background: red; color:yellow; text-align:center; font-size:1em; font-family: sans-serif;">
+	<p><a href="http://fontforge.github.io" style="padding: 0.5em; color: yellow; font-weight: bold; text-decoration: none;" onmouseover="this.style.background='black';" onmouseout="this.style.background='red';" >This is part of the old website. New website begins at fontforge.github.io</a></p>
+	<p><a href="https://github.com/fontforge/fontforge.github.io" style="padding: 0.5em; color: yellow; font-weight: bold; text-decoration: none;" onmouseover="this.style.background='black';" onmouseout="this.style.background='red';" >Are you a web developer? Help us migrate this page on Github</a></p>
+</div>
 <DIV id="in">
   <H1 ALIGN=Center>
 <!--   Font View -->
        フォントビュー
   </H1>
   <P>
-  <IMG SRC="AmbrosiaFV.png" WIDTH="423" HEIGHT="234">
+  <IMG SRC="/assets/img/old/ja/AmbrosiaFV.png" WIDTH="423" HEIGHT="234">
   <P>
 <!--
   The font view is a list of all the glyph available in the given font. -->
@@ -50,12 +54,12 @@
   フォント内の各グリフの画像の上には、グリフをある伝統的な書式で表示しているラベルがあります。通常はこれは単に、標準フォントで表示した小さなグリフの画像です (上の図のように) が、グリフ名や Unicode のコードポイントまたはエンコーディングを (16 進数で) 表示するように変更することができます。小さなビューでは (例えば 24 ピクセル表示では)ラベル全体を表示する余地がないので、それらは切り詰められるでしょう。
   <P>
 <!--
-  <IMG SRC="fvOutOfDateHinting.png" WIDTH="99" HEIGHT="66" ALIGN="Left">If
+  <IMG SRC="/assets/img/old/fvOutOfDateHinting.png" WIDTH="99" HEIGHT="66" ALIGN="Left">If
   a glyph has been changed since it was last hinted (PostScript), or if a glyph
   contains contours but has no instructions (TrueType), then its label will
   be edged with blue bars. If the glyph has out of date instructions (TrueType),
   then its label will be edged with red. -->
-  <IMG SRC="../assets/img/old/fvOutOfDateHinting.png" WIDTH="99" HEIGHT="66" ALIGN="Left">あるグリフに最後の (PostScript) ヒントを付け加えた後にグリフを変更しているか、グリフに輪郭が含まれているのに (TrueType) 命令が含まれていないならば、そのラベルは青い枠線で縁取り表示されます。グリフの (TrueType) ヒントが今のアウトラインよりも古いものであれば、ラベルは赤い枠線で縁取り表示されます。
+  <IMG SRC="/assets/img/old/fvOutOfDateHinting.png" WIDTH="99" HEIGHT="66" ALIGN="Left">あるグリフに最後の (PostScript) ヒントを付け加えた後にグリフを変更しているか、グリフに輪郭が含まれているのに (TrueType) 命令が含まれていないならば、そのラベルは青い枠線で縁取り表示されます。グリフの (TrueType) ヒントが今のアウトラインよりも古いものであれば、ラベルは赤い枠線で縁取り表示されます。
   <P>
 <!--
   If one of your glyphs has something in its background layer then this will
@@ -112,9 +116,9 @@
   <TABLE BORDER CELLPADDING="2">
     <TR>
       <TD><P ALIGN=Center>
-	<IMG SRC="../assets/img/old/FVHMetrics.png" WIDTH="100" HEIGHT="116"></TD>
+	<IMG SRC="/assets/img/old/FVHMetrics.png" WIDTH="100" HEIGHT="116"></TD>
       <TD><P ALIGN=Center>
-	<IMG SRC="../assets/img/old/FVVMetrics.png" WIDTH="100" HEIGHT="116"></TD>
+	<IMG SRC="/assets/img/old/FVVMetrics.png" WIDTH="100" HEIGHT="116"></TD>
     </TR>
     <TR VALIGN="Top">
 <!--  <TD>A 96 pixel display showing the various horizontal metric lines.<BR>
@@ -439,10 +443,10 @@
   instead. FontForge does not have these glyph sets built in to it, each must
   be loaded the first time it is used. I provide one file for each of the above
   glyph sets, they have an extension of ".cidmap", and you may download them
-  all <A HREF="cidmaps.tgz">from here</A>.
+  all <A HREF="/assets/old/ja/cidmaps.tgz">from here</A>.
   -->
   CID メニューでは、通常のフォントを CID キー指定フォントに変換することもできます。それはオリジナルフォント 1 個のみを含むコレクションを作成します (後で他のフォントを追加したり、空のフォントを挿入したりできます)。しかし、コレクションを作成する前に、FontForge はどのグリフセットを使うのか知っていなければなりません。グリフセットは単なるグリフの集まりで、もし新しいセットを定義したいならそうすることもできます (ただし、その場合は自分自身の CMap ファイル等を定義する必要があり、恐らくそうするだけの価値はないでしょう)。Adobe は日本語用のグリフセット (実際には 2 種類あります。一つは JIS X 0208 に対応し、もう一つは JIS X 0212 です)、韓国語用 (Wansung と Johab)、繁体字中国語 (Big5) と簡体字中国語 (GB2312) を既に定義しています。これらのグリフセットは上に挙げた規格に基づいていますが、それぞれのセットには追加のグリフがたくさんあります。Adobe は Unicode 用に動作するグリフセットも定義していますが、ただしそれは“Identity”と呼ばれています。FontForge はこれらのグリフセットを組み込んでいないので、それを最初に使用するときに読み込まなければなりません。
-  以上のグリフセットのそれぞれに 1 個ずつの定義ファイルが用意されていて、“.cidmap”という拡張子が付けられています。これらは全部<A HREF="cidmaps.tgz">ここから</A>ダウンロードすることができます。
+  以上のグリフセットのそれぞれに 1 個ずつの定義ファイルが用意されていて、“.cidmap”という拡張子が付けられています。これらは全部<A HREF="/assets/old/ja/cidmaps.tgz">ここから</A>ダウンロードすることができます。
   <P>
 <!--
   (There are also many other character sets floating around but they aren't

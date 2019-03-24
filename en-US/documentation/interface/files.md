@@ -68,7 +68,7 @@ Contain translations of the ui for various locales. (used after November
 /usr/local/share/fontforge/\*.cidmap
 
 "Encoding" files for Adobe's cid formats. [You can pull down a
-compressed archive from here.](cidmaps.tgz)
+compressed archive from here.](/assets/old/cidmaps.tgz)
 
 /usr/local/share/fontforge/plugins
 

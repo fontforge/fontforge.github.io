@@ -3,14 +3,18 @@
   <!-- Created with AOLpress/2.0 -->
   <!-- AP: Created on: 27-Jan-2003 -->
   <!-- AP: Last modified: 21-Apr-2006 -->
-  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
 <!--<TITLE>Final cleanup</TITLE> -->
     <TITLE>最終的な調整</TITLE>
   <!-- AP: Last modified: 2-Mar-2004 -->
-  <LINK REL="icon" href="../fftype16.png">
-  <LINK REL="stylesheet" TYPE="text/css" HREF="FontForge.css">
+  <LINK REL="icon" href="/assets/img/old/fftype16.png">
+  <LINK REL="stylesheet" TYPE="text/css" HREF="/assets/css/old/ja/FontForge.css">
 </HEAD>
->
+<BODY>
+<div style="margin:0; height: 4	em; padding: 0.5em; background: red; color:yellow; text-align:center; font-size:1em; font-family: sans-serif;">
+	<p><a href="http://fontforge.github.io" style="padding: 0.5em; color: yellow; font-weight: bold; text-decoration: none;" onmouseover="this.style.background='black';" onmouseout="this.style.background='red';" >This is part of the old website. New website begins at fontforge.github.io</a></p>
+	<p><a href="https://github.com/fontforge/fontforge.github.io" style="padding: 0.5em; color: yellow; font-weight: bold; text-decoration: none;" onmouseover="this.style.background='black';" onmouseout="this.style.background='red';" >Are you a web developer? Help us migrate this page on Github</a></p>
+</div>
 <DIV id="in">
   <H1 ALIGN=Center>
 <!--Tutorial #8 -->
@@ -139,13 +143,13 @@
   pixel sizes often do not correspond exactly to point sizes. You can then
   use the bitmap editor (<CODE>Window-&gt;Open Bitmap</CODE>) to clean up the
   bitmaps, or you can generate your bitmap fonts and then
-  <A HREF="http://clr.nmsu.edu/~mleisher/download.html">use someone else's
+  <A HREF="http://math.nmsu.edu/~mleisher/Software/gbdfed/">use someone else's
   bitmap editor to clean them up</A>. -->
   この段階で、PostScript フォントに加えてビットマップも欲しくなるかも知れません (これは必須ではありません)。
   <CODE>エレメント(<U>L</U>)</CODE>→<CODE>使用するビットマップ(<U>A</U>)...</CODE> を呼び出し、ビットマップを組み込みたいサイズを選択します (X と MS Windows ではピクセル数がポイントサイズと正確に一致しない場合があることにご注意ください)。
-  それからビットマップエディタ (<CODE>ウィンドウ(<U>W</U>)</CODE>→<CODE>ビットマップウィンドウを開く(<U>B</U>)</CODE> でビットマップを修整するか、ビットマップフォントを書き出してから<A HREF="http://clr.nmsu.edu/~mleisher/download.html">誰か他の人のビットマップエディタ</A>を使用して修整することができます。
+  それからビットマップエディタ (<CODE>ウィンドウ(<U>W</U>)</CODE>→<CODE>ビットマップウィンドウを開く(<U>B</U>)</CODE> でビットマップを修整するか、ビットマップフォントを書き出してから<A HREF="http://math.nmsu.edu/~mleisher/Software/gbdfed/">誰か他の人のビットマップエディタ</A>を使用して修整することができます。
   <P>
-  <IMG SRC="BitmapView.png" WIDTH="271" HEIGHT="319">
+  <IMG SRC="/assets/img/old/ja/BitmapView.png" WIDTH="271" HEIGHT="319">
   <H2>
 <!--<A NAME="generating">Generating</A> a font-->
     フォントの<A NAME="generating">出力方法</A>
@@ -159,13 +163,13 @@
   フォントを使いたい時にはこれは役立たないでしょう。
   <P>
 <!--
-  <IMG SRC="generate.png" WIDTH="406" HEIGHT="411" ALIGN="Right">Instead you
+  <IMG SRC="/assets/img/old/ja/generate.png" WIDTH="406" HEIGHT="411" ALIGN="Right">Instead you
   must use <A HREF="generate.html">File-&gt;Generate</A> to convert your font
   into one of the standard font formats. FontForge presents what looks like
   a vast array of font formats, but in reality there are just several variants
   on a few basic font formats: PostScript Type 1, TrueType, OpenType (and for
   CJK fonts, also CID-keyed fonts). -->
-  <IMG SRC="../assets/img/old/generate.png" WIDTH="406" HEIGHT="411" ALIGN="Right">
+  <IMG SRC="/assets/img/old/generate.png" WIDTH="406" HEIGHT="411" ALIGN="Right">
   作成したフォントを標準的フォントフォーマットのどれかに変換したい場合は、<CODE>保存(<U>S</U>)</CODE> ではなくて <A HREF="generate.html"><CODE>ファイル(<U>F</U>)</CODE>→<CODE>フォントを出力(<U>G</U>)...</CODE></A> を使用しなければなりません。
   FontForge が表示するのはフォントフォーマットの膨大な羅列のように見えますが、実際には数種類の基本的なフォントフォーマット: PostScript Type1, TrueType, OpenType の変種があるだけです (CJK フォントでは、CID フォントもあります)。
   <P>
@@ -240,7 +244,7 @@
   TrueType は、幅の値も広範囲にサポートしています (Mac では condensed, plain と expanded しかサポートされてないのですが)。
   <P>
 <!--
-  <IMG SRC="GenerateFamily.png" WIDTH="414" HEIGHT="552" ALT="Dialog for Generate Mac Family"
+  <IMG SRC="/assets/img/old/ja/GenerateFamily.png" WIDTH="414" HEIGHT="552" ALT="Dialog for Generate Mac Family"
       ALIGN="Right">On Windows machines, as long as you get the names right, the
   system should be able to figure out what fonts go into what families. But
   on the Mac the situation is (or was, it is changing and I don't understand
@@ -256,7 +260,7 @@
   current font and will allow you to generate a FOND structure as well as font
   files for all family members (sometimes all the fonts live in one file, sometimes
   they don't, it depends on the font format chosen). -->
-  <IMG SRC="../assets/img/old/GenerateFamily.png" WIDTH="414" HEIGHT="552" ALT="Mac ファミリーを生成するためのダイアログ"
+  <IMG SRC="/assets/img/old/GenerateFamily.png" WIDTH="414" HEIGHT="552" ALT="Mac ファミリーを生成するためのダイアログ"
       ALIGN="Right">Windows 機では、名前が正しければ、システムはフォントがどのファミリーに属するかを導き出すすることができます。
   しかし Mac では現状は (これはもう過去の話かもしれません。現状は変化しつつあり新しい拡張について筆者はまだ理解していません) より複雑です。
   Mac は限られた範囲のスタイル (plain, italic, bold, outline, condensed, expanded とこれらの組み合わせ) のみをサポートし、これから外れる全ての物は別個のファミリーに分けられてしまいます。

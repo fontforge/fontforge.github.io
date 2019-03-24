@@ -4,10 +4,10 @@
   <!-- AP: Created on: 26-Oct-2005 -->
   <!-- AP: Last modified: 8-Dec-2008 -->
   <TITLE>Building FontForge from source</TITLE>
-  <LINK REL="icon" href="fftype16.png">
+  <LINK REL="icon" href="/assets/img/old/fftype16.png">
   <LINK REL="stylesheet" TYPE="text/css" HREF="/assets/css/old/FontForge.css">
 </HEAD>
->
+<BODY>
 <div style="margin:0; height: 4	em; padding: 0.5em; background: red; color:yellow; text-align:center; font-size:1em; font-family: sans-serif;">
 	<p><a href="http://fontforge.github.io" style="padding: 0.5em; color: yellow; font-weight: bold; text-decoration: none;" onmouseover="this.style.background='black';" onmouseout="this.style.background='red';" >This is part of the old website. New website begins at fontforge.github.io</a></p>
 	<p><a href="https://github.com/fontforge/fontforge.github.io" style="padding: 0.5em; color: yellow; font-weight: bold; text-decoration: none;" onmouseover="this.style.background='black';" onmouseout="this.style.background='red';" >Are you a web developer? Help us migrate this page on Github</a></p>
@@ -24,6 +24,8 @@
       <A HREF="mac-install.html#Installing">Installing on a Mac</A>
     <LI>
       <A HREF="ms-install.html#Installing">Installing on MS/Windows</A>
+    <LI>
+      <A HREF="#src-unix">Before you build (on unix/linux based systems)</A>
     <LI>
       <A HREF="#src-mac">Before you build (on a mac)</A>
     <LI>
@@ -67,6 +69,23 @@
       <A HREF="running.html">Running FontForge</A>
     <LI>
       <A HREF="uninstall.html">Uninstalling</A>
+  </UL>
+  <H2>
+    Before you build (on  <A NAME="src-unix">unix/linux</A> based systems)
+  </H2>
+  <P>
+  You must have the following packages installed before you can build:
+  <UL>
+    <LI><A HREF="http://gcc.gnu.org/">gcc</a> (version 4.5 or newer)
+    <LI><A HREF="http://www.freedesktop.org/wiki/Software/pkg-config">pkg-config</a>
+    <LI><A HREF="http://www.gnu.org/software/automake/">automake</a> (version 1.6.0 or newer)
+    <LI><A HREF="http://www.gnu.org/software/autoconf/">autoconf</a>
+    <LI><A HREF="http://www.gnu.org/software/m4/">m4</a>
+    <LI><A HREF="http://www.gnu.org/software/libtool/">libtool</a> (version 1.4.2 or newer)
+    <LI><A HREF="http://developer.gnome.org/glib/">glib</a> (version 2.16 or newer)
+    <LI><A HREF="http://sourceware.org/libffi/">libffi</a> (version 3.0.0 or newer)
+    <LI><A HREF="http://www.zlib.net/">zlib</a>
+    <LI><A HREF="http://www.freetype.org/download.html">freetype2</a>
   </UL>
   <H2>
     Before you build (on a <A NAME="src-mac">mac</A>)
@@ -259,7 +278,8 @@ CVS password:
   is a little program that figures out how to use your system), and then build
   it (do not type the "$"):
   <BLOCKQUOTE id="shell">
-    <PRE><FONT COLOR="Gray">$ </FONT>./configure
+    <PRE><FONT COLOR="Gray">$ </FONT>./autogen.sh
+<FONT COLOR="Gray">$ </FONT>./configure
 <FONT COLOR="Gray">$ </FONT>make
 </PRE>
   </BLOCKQUOTE>
@@ -514,7 +534,7 @@ CVS password:
   </H3>
   <P>
   If you want to edit <A NAME="cidmaps">CID keyed </A>fonts you need these
-  <A HREF="cidmaps.tgz">character set descriptions</A>. (These were last updated
+  <A HREF="/assets/old/cidmaps.tgz">character set descriptions</A>. (These were last updated
   22-Dec-2004)
   <P>
   <A NAME="suggested-fonts">Once</A> upon a time, fontforge only used X11 bitmap
@@ -543,7 +563,7 @@ CVS password:
     <LI>
       <A HREF="http://czyborra.com/unifont/">The unifont</A>
     <LI>
-      <A HREF="http://clr.nmsu.edu/~mleisher/cu.html">ClearlyU's font</A>
+      <A HREF="http://math.nmsu.edu/~mleisher/Software/cu/">ClearlyU's font</A>
     <LI>
       <A HREF="http://www.nongnu.org/freefont/">The FreeFont project</A>
     <LI>
@@ -602,9 +622,9 @@ CVS password:
 	  <A HREF="de/editexample.html"><IMG SRC="/assets/img/old/flags/GermanFlag.png" WIDTH="39"
 	      HEIGHT="26" BORDER="0"></A><STRONG>Out of Date!</STRONG>
 	<LI>
-	  <A HREF="fontforge-tutorial.pdf">Can be downloaded as pdf</A>
+	  <A HREF="/assets/old/fontforge-tutorial.pdf">Can be downloaded as pdf</A>
 	<LI>
-	  <A HREF="tutorial.tgz">example files </A>(to work through the tutorial yourself)
+	  <A HREF="/assets/old/tutorial.tgz">example files </A>(to work through the tutorial yourself)
       </UL>
     <LI>
       The git repository contains a sub-directory called htdocs containing the

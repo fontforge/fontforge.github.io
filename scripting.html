@@ -4,10 +4,10 @@
   <!-- AP: Created on: 18-Jan-2002 -->
   <!-- AP: Last modified: 11-Sep-2009 -->
   <TITLE>Writing scripts to change fonts in FontForge</TITLE>
-  <LINK REL="icon" href="fftype16.png">
+  <LINK REL="icon" href="/assets/img/old/fftype16.png">
   <LINK REL="stylesheet" TYPE="text/css" HREF="/assets/css/old/FontForge.css">
 </HEAD>
->
+<BODY>
 <div style="margin:0; height: 4	em; padding: 0.5em; background: red; color:yellow; text-align:center; font-size:1em; font-family: sans-serif;">
 	<p><a href="http://fontforge.github.io" style="padding: 0.5em; color: yellow; font-weight: bold; text-decoration: none;" onmouseover="this.style.background='black';" onmouseout="this.style.background='red';" >This is part of the old website. New website begins at fontforge.github.io</a></p>
 	<p><a href="https://github.com/fontforge/fontforge.github.io" style="padding: 0.5em; color: yellow; font-weight: bold; text-decoration: none;" onmouseover="this.style.background='black';" onmouseout="this.style.background='red';" >Are you a web developer? Help us migrate this page on Github</a></p>
@@ -214,7 +214,9 @@ $ fontforge -lang={ff|py} -c "script-string"
   can contain characters not legal in name tokens it is important to allow
   general strings to specify filenames). If the procedure name does not contain
   a directory then it is assumed to be in the same directory as the current
-  script file. At most 25 arguments can be passed to a procedure.
+  script file.  As a convenience, it is not necessary to include the
+  script's extension if it is either ".ff" or ".pe".  At most 25 arguments can be
+  passed to a procedure.
   <P>
   Arrays are passed by reference, strings and integers are passed by value.
   <P>
@@ -543,17 +545,25 @@ endloop
     <LI>
       <A HREF="scripting-alpha.html#IsFinite">IsFinite(real)</A>
     <LI>
+      <A HREF="scripting-alpha.html#IsFraction">IsFraction(val)</A>
+    <LI>
       <A HREF="scripting-alpha.html#IsHexDigit">IsHexDigit(val)</A>
+    <LI>
+      <A HREF="scripting-alpha.html#IsLigature">IsLigature(val)</A>
     <LI>
       <A HREF="scripting-alpha.html#IsLower">IsLower(val)</A>
     <LI>
       <A HREF="scripting-alpha.html#IsNan">IsNan(real)</A>
     <LI>
+      <A HREF="scripting-alpha.html#IsOtherFraction">IsOtherFraction(val)</A>
+    <LI>
       <A HREF="scripting-alpha.html#IsSpace">IsSpace(val)</A>
     <LI>
       <A HREF="scripting-alpha.html#IsUpper">IsUpper(val)</A>
     <LI>
-      <A HREF="scripting-alpha.html#LoadEncodingFile">LoadEncodingFile(filename)</A>
+      <A HREF="scripting-alpha.html#IsVulgarFraction">IsVulgarFraction(val)</A>
+    <LI>
+      <A HREF="scripting-alpha.html#LoadEncodingFile">LoadEncodingFile(filename,[encname])</A>
     <LI>
       <A HREF="scripting-alpha.html#LoadNamelist">LoadNamelist(filename)</A>
     <LI>
@@ -770,6 +780,12 @@ endloop
       <A HREF="scripting-alpha.html#SelectFewerSingletons">SelectFewerSingletons(arg1,
       ...)</A>
     <LI>
+      <A HREF="scripting-alpha.html#SelectGlyphsBoth">SelectGlyphsBoth()</A>
+    <LI>
+      <A HREF="scripting-alpha.html#SelectGlyphsReferences">SelectGlyphsReferences()</A>
+    <LI>
+      <A HREF="scripting-alpha.html#SelectGlyphsSplines">SelectGlyphsSplines()</A>
+    <LI>
       <A HREF="scripting-alpha.html#SelectHintingNeeded">SelectHintingNeeded([merge])</A>
     <LI>
       <A HREF="scripting-alpha.html#SelectIf">SelectIf(arg1,arg2, ...)</A>
@@ -803,7 +819,7 @@ endloop
     <LI>
       <A HREF="scripting-alpha.html#AddAccent">AddAccent(accent[,pos])</A>
     <LI>
-      <A HREF="scripting-alpha.html#AddExtrema">AddExtrema()</A>
+      <A HREF="scripting-alpha.html#AddExtrema">AddExtrema([all])</A>
     <LI>
       <A HREF="scripting-alpha.html#ApplySubstitution">ApplySubstitution(script,lang,tag)</A>
     <LI>
@@ -822,6 +838,8 @@ endloop
       <A HREF="scripting-alpha.html#CanonicalContours">CanonicalContours</A>()
     <LI>
       <A HREF="scripting-alpha.html#CanonicalStart">CanonicalStart</A>()
+    <LI>
+      <A HREF="scripting-alpha.html#ChangeWeight">ChangeWeight</A>(em-units)
     <LI>
       <A HREF="scripting-alpha.html#CompareFonts">CompareFonts(other-font-filename,output-filename,flags)</A>
     <LI>
@@ -842,6 +860,8 @@ endloop
       <A HREF="scripting-alpha.html#Inline">Inline(width,gap)</A>
     <LI>
       <A HREF="scripting-alpha.html#InterpolateFonts">InterpolateFonts(percentage,other-font-name[,flags])</A>
+    <LI>
+      <A HREF="scripting-alpha.html#Italic">Italic([angle[,[xscale[,flags[,serif[,bearings[,stems[,counters[,lcstems[,lccounters]]]]]]]]]])</A>
     <LI>
       <A HREF="scripting-alpha.html#MergeFonts">MergeFonts(other-font-name[,flags])</A>
     <LI>
@@ -880,6 +900,8 @@ endloop
       <A HREF="scripting-alpha.html#Simplify">Simplify()</A>
     <LI>
       <A HREF="scripting-alpha.html#Skew">Skew(angle[,ox,oy])</A>
+    <LI>
+      <A HREF="scripting-alpha.html#SmallCaps">SmallCaps([v-scale[,h-scale[,stemw-scale[,stemh-scale]]]])</A>
     <LI>
       <A HREF="scripting-alpha.html#Transform">Transform(t1,t2,t3,t4,t5,t6)</A>
     <LI>
@@ -1050,7 +1072,7 @@ endloop
     <LI>
       <A HREF="scripting-alpha.html#DetachAndRemoveGlyphs">DetachAndRemoveGlyphs</A>
     <LI>
-      <A HREF="scripting-alpha.html#LoadEncodingFile">LoadEncodingFile(filename)</A>
+      <A HREF="scripting-alpha.html#LoadEncodingFile">LoadEncodingFile(filename,[encname])</A>
     <LI>
       <A HREF="scripting-alpha.html#MultipleEncodingsToReferences">MultipleEncodingsToReferences()</A>
     <LI>
@@ -1203,7 +1225,7 @@ endloop
     <LI>
       <A HREF="scripting-alpha.html#GetPref">GetPref(str)</A>
     <LI>
-      <A HREF="scripting-alpha.html#LoadEncodingFile">LoadEncodingFile(filename)</A>
+      <A HREF="scripting-alpha.html#LoadEncodingFile">LoadEncodingFile(filename,[encname])</A>
     <LI>
       <A HREF="scripting-alpha.html#LoadNamelist">LoadNamelist(filename)</A>
     <LI>
@@ -1346,13 +1368,21 @@ endloop
     <LI>
       <A HREF="scripting-alpha.html#IsDigit">IsDigit(val)</A>
     <LI>
+      <A HREF="scripting-alpha.html#IsFraction">IsFraction(val)</A>
+    <LI>
       <A HREF="scripting-alpha.html#IsHexDigit">IsHexDigit(val)</A>
     <LI>
       <A HREF="scripting-alpha.html#IsLower">IsLower(val)</A>
     <LI>
+      <A HREF="scripting-alpha.html#IsLigature">IsLigature(val)</A>
+    <LI>
+      <A HREF="scripting-alpha.html#IsOtherFraction">IsOtherFraction(val)</A>
+    <LI>
       <A HREF="scripting-alpha.html#IsSpace">IsSpace(val)</A>
     <LI>
       <A HREF="scripting-alpha.html#IsUpper">IsUpper(val)</A>
+    <LI>
+      <A HREF="scripting-alpha.html#IsVulgarFraction">IsVulgarFraction(val)</A>
     <LI>
       <A HREF="scripting-alpha.html#ToLower">ToLower(val)</A>
     <LI>

@@ -3,20 +3,24 @@
   <!-- Created with AOLpress/2.0 -->
   <!-- AP: Created on: 18-Dec-2000 -->
   <!-- AP: Last modified: 5-Apr-2006 -->
-  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
 <!--<TITLE>B&eacute;zier Splines</TITLE>-->
     <TITLE>B&eacute;zier スプライン</TITLE>
-  <LINK REL="icon" href="../fftype16.png">
-  <LINK REL="stylesheet" TYPE="text/css" HREF="FontForge.css">
+  <LINK REL="icon" href="/assets/img/old/fftype16.png">
+  <LINK REL="stylesheet" TYPE="text/css" HREF="/assets/css/old/ja/FontForge.css">
 </HEAD>
->
+<BODY>
+<div style="margin:0; height: 4	em; padding: 0.5em; background: red; color:yellow; text-align:center; font-size:1em; font-family: sans-serif;">
+	<p><a href="http://fontforge.github.io" style="padding: 0.5em; color: yellow; font-weight: bold; text-decoration: none;" onmouseover="this.style.background='black';" onmouseout="this.style.background='red';" >This is part of the old website. New website begins at fontforge.github.io</a></p>
+	<p><a href="https://github.com/fontforge/fontforge.github.io" style="padding: 0.5em; color: yellow; font-weight: bold; text-decoration: none;" onmouseover="this.style.background='black';" onmouseout="this.style.background='red';" >Are you a web developer? Help us migrate this page on Github</a></p>
+</div>
 <DIV id="in">
   <H1 ALIGN=Center>
 <!--  B&eacute;zier<SUP><SMALL><A HREF="#bezier">1</A></SMALL></SUP> Splines -->
       B&eacute;zier<SUP><SMALL><A HREF="#bezier">1</A></SMALL></SUP> スプライン
   </H1>
   <P>
-  <IMG SRC="../assets/img/old/splines.gif" WIDTH="172" HEIGHT="179" ALIGN="Left"><!-- Technically
+  <IMG SRC="/assets/img/old/splines.gif" WIDTH="172" HEIGHT="179" ALIGN="Left"><!-- Technically
   PostScript uses cubic B&eacute;zier splines. Each control point determines
   the slope of the spline at the corresponding end point. TrueType uses quadratic
   B&eacute;zier splines, in these there is only one control point between two
@@ -25,7 +29,7 @@
    -->
   技術的には、PostScript は 3 次 B&eacute;zier スプラインを使用します。各制御点は、対応する端点におけるスプラインの傾きを決定します。TrueType が使用している 2 次 B&eacute;zier スプラインでは、2 個の端点の間には 1 個の制御点しかなく、その点が隣接する両方の端点における傾きを決定します。両フォーマットとも直線 (これは線形な B&eacute;zier スプラインです) も併用します。
   <P>
-  <IMG SRC="../assets/img/old/quadbezier.gif" WIDTH="113" HEIGHT="88" ALIGN="Right"><!--It is also
+  <IMG SRC="/assets/img/old/quadbezier.gif" WIDTH="113" HEIGHT="88" ALIGN="Right"><!--It is also
   possible to have other degree B&eacute;zier splines. For a quartic spline
   there would be 3 control points, for a quintic 4 control points, etc. Of
   these only the linear, quadratic and cubic splines are interesting to us--
@@ -43,11 +47,11 @@
   In general if there are n+1 points labeled P<SUB>0</SUB>, P<SUB>1</SUB>,
   ... P<SUB>n</SUB>, with P<SUB>0</SUB> and P<SUB>n</SUB> the end points (and
   all the others control points) then the equation of the B&eacute;zier spline
-  between them is: <IMG SRC="Bezier.gif" WIDTH="137" HEIGHT="56" ALIGN="Middle">.
+  between them is: <IMG SRC="/assets/img/old/ja/Bezier.gif" WIDTH="137" HEIGHT="56" ALIGN="Middle">.
   If there are two points then this is just the line between the two end points,
   if three then the quadratic spline used by TrueType, if four then the cubic
   spline used by PostScript. -->
-  一般的に、P<SUB>0</SUB>, P<SUB>1</SUB>,... P<SUB>n</SUB> というラベルのついた (n+1) 個の点がある場合、P<SUB>0</SUB> と P<SUB>n</SUB> が端点となり (その他はすべて制御点です)、B&eacute;zier スプラインを定義する等式は、<IMG SRC="../assets/img/old/bezier.gif" WIDTH="137" HEIGHT="56" ALIGN="Middle"> となります。点が 2 個のときは、これは単に 2 個の端点を結ぶ線分となります。点が 3 個のときは TrueType で用いられている 2 次スプラインで、4 個のときは PostScript で用いられている 3 次スプラインです。
+  一般的に、P<SUB>0</SUB>, P<SUB>1</SUB>,... P<SUB>n</SUB> というラベルのついた (n+1) 個の点がある場合、P<SUB>0</SUB> と P<SUB>n</SUB> が端点となり (その他はすべて制御点です)、B&eacute;zier スプラインを定義する等式は、<IMG SRC="/assets/img/old/bezier.gif" WIDTH="137" HEIGHT="56" ALIGN="Middle"> となります。点が 2 個のときは、これは単に 2 個の端点を結ぶ線分となります。点が 3 個のときは TrueType で用いられている 2 次スプラインで、4 個のときは PostScript で用いられている 3 次スプラインです。
   <P>
 <!--
   A cubic B&eacute;zier curve may be viewed as: -->
@@ -181,7 +185,7 @@
   3 次スプラインが与えられたとしましょう。スプライン上の 2 個の点に注目しましょう。その場合、それらの 2 点における傾きが求める値であるスプラインは、それら 2 個の点の間に 1 本しか引くことができません。(その 2 次曲線は、その区間の端点を端点とし、その制御点は、3 次曲線のその区間の始点と終点における接線の交点です)。
   <P>
 <!--
-  <IMG SRC="cubic2quad.png" WIDTH="482" HEIGHT="180" ALIGN="Right">I cannot
+  <IMG SRC="/assets/img/old/cubic2quad.png" WIDTH="482" HEIGHT="180" ALIGN="Right">I cannot
   prove this, but have determined empirically (after being told it worked)
   that if a cubic spline - - like the quarter ellipse at right - - is divided
   "evenly" into n quadratic splines (here n==3) then the control points will
@@ -189,7 +193,7 @@
   control points - - this means that truetype can represent them as interpolated
   points. An even division means means that each sub-point is placed where
   t=i/n (where 0&lt;i&lt;n). -->
-  <IMG SRC="../assets/img/old/cubic2quad.png" WIDTH="482" HEIGHT="180" ALIGN="Right">私はこれを証明できていませんが、3 次スプラインを——右図の 4 分の 1 楕円のごとく、n 本の 2 次スプライン (図では、n=3) へと——「均等に」分割すれば、その制御点同士の中点が曲線上の点となるのにちょうどよい比率になるということが (そう教えられて) 経験的な測定結果により知られています。これはつまり、TrueType ではそれらが補間された点として表現できるということになります。(「均等な」分割とは、t=i/n (ただし 0&lt;i&lt;n) の位置に点を置くことを指します。)
+  <IMG SRC="/assets/img/old/cubic2quad.png" WIDTH="482" HEIGHT="180" ALIGN="Right">私はこれを証明できていませんが、3 次スプラインを——右図の 4 分の 1 楕円のごとく、n 本の 2 次スプライン (図では、n=3) へと——「均等に」分割すれば、その制御点同士の中点が曲線上の点となるのにちょうどよい比率になるということが (そう教えられて) 経験的な測定結果により知られています。これはつまり、TrueType ではそれらが補間された点として表現できるということになります。(「均等な」分割とは、t=i/n (ただし 0&lt;i&lt;n) の位置に点を置くことを指します。)
   <P>
 <!--
   FontForge first checks to see if the curve is already a quadratic - - this

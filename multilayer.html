@@ -4,10 +4,10 @@
   <!-- AP: Created on: 23-Feb-2004 -->
   <!-- AP: Last modified: 21-Aug-2008 -->
   <TITLE>Multi Layered Editing of Type3 and SVG fonts</TITLE>
-  <LINK REL="icon" href="fftype16.png">
+  <LINK REL="icon" href="/assets/img/old/fftype16.png">
   <LINK REL="stylesheet" TYPE="text/css" HREF="/assets/css/old/FontForge.css">
 </HEAD>
->
+<BODY>
 <div style="margin:0; height: 4	em; padding: 0.5em; background: red; color:yellow; text-align:center; font-size:1em; font-family: sans-serif;">
 	<p><a href="http://fontforge.github.io" style="padding: 0.5em; color: yellow; font-weight: bold; text-decoration: none;" onmouseover="this.style.background='black';" onmouseout="this.style.background='red';" >This is part of the old website. New website begins at fontforge.github.io</a></p>
 	<p><a href="https://github.com/fontforge/fontforge.github.io" style="padding: 0.5em; color: yellow; font-weight: bold; text-decoration: none;" onmouseover="this.style.background='black';" onmouseout="this.style.background='red';" >Are you a web developer? Help us migrate this page on Github</a></p>
@@ -17,23 +17,13 @@
     Multi Layered Editing of Type3 and SVG fonts
   </H1>
   <P>
-  Normal builds of fontforge do not have this mode enabled (it can eat up a
-  lot of memory), if you wish to edit type3 fonts then configure fontforge
-  with
-  <BLOCKQUOTE>
-    <PRE>$ configure --enable-type3
-$ make
-$ make install
-</PRE>
-  </BLOCKQUOTE>
+  When loading a type3 font (or an svg font organized in a similar fashion)
+  FontForge will retain information on each stroke and fill command. Each
+  command is placed in a separate layer and may be edited in isolation.
   <P>
-  If you have done this, then loading a type3 font (or an svg font organized
-  in a similar fashion) will cause FontForge to retain information on each
-  stroke and fill command. Each command is placed in a separate layer and may
-  be edited in isolation.
-  <P>
-  A new font may be converted to a multi-layered font by selecting
-  Element-&gt;Font Info-&gt;Layers-&gt;Multi Layered Font.
+  A new font may be converted to a multi-layered font by navigating to
+  Element-&gt;Font Info-&gt;Layers, then setting the splines option to <strong>All layers
+  cubic</strong> and the font type option to <strong>Type3 Multi Layered Font</strong>.
   <H2>
     <IMG SRC="/assets/img/old/charview-multilayer.png" WIDTH="348" HEIGHT="571" ALIGN="Right">Multi
     Layered editing in the outline view

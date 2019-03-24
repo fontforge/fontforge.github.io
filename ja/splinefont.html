@@ -3,13 +3,17 @@
   <!-- Created with AOLpress/2.0 -->
   <!-- AP: Created on: 11-Feb-2001 -->
   <!-- AP: Last modified: 16-Apr-2004 -->
-  <LINK REL="icon" href="../fftype16.png">
-  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+  <LINK REL="icon" href="/assets/img/old/fftype16.png">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
 <!--<TITLE>The basic spline data structures of FontForge</TITLE>-->
     <TITLE>FontForge の基本的なスプラインデータ構造</TITLE>
-  <LINK REL="stylesheet" TYPE="text/css" HREF="FontForge.css">
+  <LINK REL="stylesheet" TYPE="text/css" HREF="/assets/css/old/ja/FontForge.css">
 </HEAD>
->
+<BODY>
+<div style="margin:0; height: 4	em; padding: 0.5em; background: red; color:yellow; text-align:center; font-size:1em; font-family: sans-serif;">
+	<p><a href="http://fontforge.github.io" style="padding: 0.5em; color: yellow; font-weight: bold; text-decoration: none;" onmouseover="this.style.background='black';" onmouseout="this.style.background='red';" >This is part of the old website. New website begins at fontforge.github.io</a></p>
+	<p><a href="https://github.com/fontforge/fontforge.github.io" style="padding: 0.5em; color: yellow; font-weight: bold; text-decoration: none;" onmouseover="this.style.background='black';" onmouseout="this.style.background='red';" >Are you a web developer? Help us migrate this page on Github</a></p>
+</div>
 <DIV id="in">
 <H2>
 <!--Data Types-->
@@ -893,8 +897,8 @@ extern int SplinePointListIsClockwise(SplineSet *spl);
 extern void SplineSetFindBounds(SplinePointList *spl, DBounds *bounds);
 extern void SplineCharFindBounds(SplineChar *sc,DBounds *bounds);
 extern void SplineFontFindBounds(SplineFont *sf,DBounds *bounds);
-extern void SplinePointCatagorize(SplinePoint *sp);
-extern void SCCatagorizePoints(SplineChar *sc);
+extern void SplinePointCategorize(SplinePoint *sp);
+extern void SCCategorizePoints(SplineChar *sc);
 extern SplinePointList *SplinePointListCopy(SplinePointList *base);
 extern SplinePointList *SplinePointListCopySelected(SplinePointList *base);
 extern SplinePointList *SplinePointListTransform(SplinePointList *base, double transform[6], int allpoints );

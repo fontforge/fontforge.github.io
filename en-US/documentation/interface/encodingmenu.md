@@ -258,7 +258,7 @@ current font.
 The `Remove Encoding` menu item brings up a list showing all the custom
 encodings and allows you to delete them.
 
-Here's an [example of a postscript encoding file](Encodings.ps.gz). It
+Here's an [example of a postscript encoding file](/assets/old/Encodings.ps.gz). It
 contains:
 
 -   TeXMathItalicEncoding

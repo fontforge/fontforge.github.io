@@ -4,10 +4,10 @@
   <!-- AP: Created on: 7-Dec-2000 -->
   <!-- AP: Last modified: 3-Feb-2010 -->
   <TITLE>Spline Font Database File Format</TITLE>
-  <LINK REL="icon" href="fftype16.png">
+  <LINK REL="icon" href="/assets/img/old/fftype16.png">
   <LINK REL="stylesheet" TYPE="text/css" HREF="/assets/css/old/FontForge.css">
 </HEAD>
->
+<BODY>
 <div style="margin:0; height: 4	em; padding: 0.5em; background: red; color:yellow; text-align:center; font-size:1em; font-family: sans-serif;">
 	<p><a href="http://fontforge.github.io" style="padding: 0.5em; color: yellow; font-weight: bold; text-decoration: none;" onmouseover="this.style.background='black';" onmouseout="this.style.background='red';" >This is part of the old website. New website begins at fontforge.github.io</a></p>
 	<p><a href="https://github.com/fontforge/fontforge.github.io" style="padding: 0.5em; color: yellow; font-weight: bold; text-decoration: none;" onmouseover="this.style.background='black';" onmouseout="this.style.background='red';" >Are you a web developer? Help us migrate this page on Github</a></p>
@@ -38,7 +38,7 @@
   <A HREF="sfdchangelog.html">changelog</A> file is available. Even if out
   of date it should be helpful, but if you really need to know the current
   format look at
-  <A HREF="http://fontforge.git.sourceforge.net/git/gitweb.cgi?p=fontforge/fontforge;a=summary">fontforge/sfd.c</A>
+  <A HREF="https://github.com/fontforge/fontforge/blob/master/fontforge/sfd.c">fontforge/sfd.c</A>
   and see what it parses. Some descriptions of esoteric features are not complete,
   but I hope they give you enough hints that you can figure the format out
   (especially after looking it up in sfd.c)
@@ -50,7 +50,7 @@
   lookups and features changed radically (and I bumped the SFD file version
   number for the first time) and sfd files created before then are better
   understood if you look at an
-  <A href="http://fontforge.git.sourceforge.net/git/gitweb.cgi?p=fontforge/fontforge;a=summary">older
+  <A href="https://github.com/fontforge/fontforge/commits/master/htdocs/sfdformat.html">older
   version of this document</A>.
   <P>
   FontForge's <A HREF="sfd.html">sfd</A> files are ASCII files (so they can
@@ -484,7 +484,7 @@ Lookup: 258 0 0 "'kern' Horizontal Kerning in Latin lookup 0"  {"'kern' Horizont
   will be a plus sign after the count of classes for the first glyph. Then
   the first list of names will be class 0.
   <P>
-  If your fontforge has been configured with device table support you may find
+  You may find
   <A HREF="#device-table">device</A> tables interspersed among the kerning
   offsets array:
   <BLOCKQUOTE>
@@ -889,7 +889,25 @@ MATH:ScriptScriptPercentScaleDown: 60
   <P>
   This means that the font's encoding has room for 285 characters and that
   there are a total of 253 glyphs defined (usually control characters are not
-  defined). A character looks like:
+  defined).
+  <P>
+  Most encodings entail specific constraints on how many encoding slots
+  must exist and how they must be used (which glyphs where, and in what
+  order).  That is what an encoding means.  For instance, in the UnicodeBmp
+  encoding, there must be at least 65536 slots numbered 0 to 65535
+  for the Unicode characters U+0000 to U+FFFF.  Glyphs with Unicode code
+  points in that range must be encoded in those slots in order according
+  to their code points.  Glyphs without Unicode code points must be encoded
+  in additional slots numbered consecutively starting from 65536.  A file
+  with a BeginChars: line inconsistent with its encoding or inconsistent
+  with the number of glyphs it actually contains is not an SFD file.
+  FontForge may, but does not promise to, treat attempts to load
+  invalid files as fatal errors, or renumber or reorder glyphs to make them
+  match the requirements of the encoding.  Consider using "Custom"
+  or "Original" encodings if the requirements of other encodings are
+  not appropriate; these encodings are less restrictive than the others.
+  <P>
+  A character looks like:
   <BLOCKQUOTE>
     <PRE>StartChar: exclam
 Encoding: 33 33 3
@@ -1313,7 +1331,7 @@ AnchorPoint: "top" 803 1487 basechar 0
   the point names the anchor class it belongs to (in UTF-7), its location,
   what type of point it is (basechar, mark, baselig, basemark, entry, exit),
   and for ligatures a number indicating which ligature component it refers
-  to. If you have configured fontforge with support for device tables, you
+  to. You
   may also see:
   <BLOCKQUOTE>
     <PRE>AnchorPoint: "bottom" 780 -60 basechar 0 {12-13 -1,-1} {8-14 1,0,-1,-1,-2,-2,-2}
@@ -1465,9 +1483,6 @@ TopRightVertex: 2 0,0{13-15 1,0,1} 100,10
   <H4>
     Outline character extensions for multilayered fonts (type3)
   </H4>
-  <P>
-  (these are only supported if FontForge has been configured for multi-layered
-  editing)
   <P>
   Instead of having a single "Fore"ground layer, multilayered type3 fonts have
   (potentially) several layers, each one introduced by a Layer line which specifies

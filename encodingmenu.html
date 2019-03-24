@@ -4,7 +4,7 @@
   <!-- AP: Created on: 27-Jun-2005 -->
   <!-- AP: Last modified: 23-Jul-2008 -->
   <TITLE>Encoding Menu</TITLE>
-  <LINK REL="icon" href="fftype16.png">
+  <LINK REL="icon" href="/assets/img/old/fftype16.png">
   <LINK REL="stylesheet" TYPE="text/css" HREF="/assets/css/old/FontForge.css">
 </HEAD>
 <BODY id="menued">
@@ -525,7 +525,7 @@
   The <CODE>Remove Encoding</CODE> menu item brings up a list showing all the
   custom encodings and allows you to delete them.
   <P>
-  Here's an <A HREF="Encodings.ps.gz">example of a postscript encoding file</A>.
+  Here's an <A HREF="/assets/old/Encodings.ps.gz">example of a postscript encoding file</A>.
   It contains:
   <UL>
     <LI>
@@ -597,9 +597,14 @@
       Adobe Glyph List<BR>
       This is the set of names that Adobe publishes on the web.
     <LI>
+      AGL For New Fonts<BR>
+      This is set of the names that Adobe recommends for the new fonts, without
+      the odd afiiXXXXX or the wrong commaaccent names.
+    <LI>
       AGL without afii<BR>
       The cyrillic and hebrew glyphs have been assigned some very odd names (afiiXXXXX)
-      and some people prefer not to use them.
+      and some people prefer not to use them. This is now redundant that we
+      have AGL for new fonts which should be used instead.
     <LI>
       AGL with PUA<BR>
       Adobe has assigned part of the unicode public use area to hold some standard
@@ -652,7 +657,7 @@
   but if you go to File-&gt;Preferences-&gt;Generic-&gt;UnicodeGlyphNames and
   set it on you can use unicode.
   <P>
-  I've created a <A HREF="ListeDesGlyphs.nam">french namelist</A> which uses
+  I've created a <A HREF="/assets/old/ListeDesGlyphs.nam">french namelist</A> which uses
   accented letters. This will work fine within fontforge, and most rasterizers
   will parse fonts generated using such names -- but they are non-standard
   and may cause problems. Best to do a rename just before generating your font.

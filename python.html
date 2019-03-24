@@ -4,10 +4,10 @@
   <!-- AP: Created on: 6-Apr-2007 -->
   <!-- AP: Last modified: 28-Apr-2010 -->
   <TITLE>Writing python scripts to change fonts in FontForge</TITLE>
-  <LINK REL="icon" href="fftype16.png">
+  <LINK REL="icon" href="/assets/img/old/fftype16.png">
   <LINK REL="stylesheet" TYPE="text/css" HREF="/assets/css/old/FontForge.css">
 </HEAD>
->
+<BODY>
 <div style="margin:0; height: 4	em; padding: 0.5em; background: red; color:yellow; text-align:center; font-size:1em; font-family: sans-serif;">
 	<p><a href="http://fontforge.github.io" style="padding: 0.5em; color: yellow; font-weight: bold; text-decoration: none;" onmouseover="this.style.background='black';" onmouseout="this.style.background='red';" >This is part of the old website. New website begins at fontforge.github.io</a></p>
 	<p><a href="https://github.com/fontforge/fontforge.github.io" style="padding: 0.5em; color: yellow; font-weight: bold; text-decoration: none;" onmouseover="this.style.background='black';" onmouseout="this.style.background='red';" >Are you a web developer? Help us migrate this page on Github</a></p>
@@ -17,9 +17,8 @@
     Writing python scripts to change fonts in FontForge
   </H1>
   <P>
-  I assume you have a working knowledge of python (because I do not).
-  <A href="http://www.python.org/doc/">Python documentation may be found on
-  the web.</A> FontForge implements two python modules -- one great huge one
+  I assume you have a working knowledge of <A href="http://www.python.org/doc/">Python</A>.
+  FontForge implements two Python modules -- one great huge one
   called <CODE><A HREF="python.html#fontforge">fontforge</A></CODE> which provides
   access to as much of FontForge's functionality as I've had time to write,
   and one tiny one called
@@ -51,6 +50,15 @@
     <LI>
       <A href="#Font">font</A>
   </UL>
+  <H2>Command line convenience</H2>
+  <P>For convenience, Python commands given as a <CODE>-c</CODE> argument on the command line have the following code prepended:
+<BLOCKQUOTE>
+<PRE>from sys import argv; from fontforge import *</PRE>
+</BLOCKQUOTE>
+<P>Hence, the trivial script to convert a font can be written:
+<BLOCKQUOTE>
+<PRE>fontforge -c 'open(argv[1]).generate(argv[2])'</PRE>
+</BLOCKQUOTE>
   <TABLE id="module" border=1>
     <CAPTION>
       <A NAME="psMat">psMat</A>
@@ -196,8 +204,11 @@
     </TR>
     <TR>
       <TD><CODE>loadEncodingFile</CODE></TD>
-      <TD><CODE>(filename)</CODE></TD>
-      <TD>Loads an encoding file, returns the name of the encoding or None.</TD>
+      <TD><CODE>(filename[,encname])</CODE></TD>
+      <TD>Loads an encoding file, returns the name of the encoding or None.
+        When loading encodings in Unicode consortium format, an encname has to
+        be specefied or the encoding will be ignored and None will be
+        reterned.</TD>
     </TR>
     <TR>
       <TD><CODE>loadNamelist</CODE></TD>
@@ -274,16 +285,242 @@
 	namelist is specified the name will be taken from that.</TD>
     </TR>
     <TR>
+      <TD><CODE>UnicodeAnnotationFromLib</CODE></TD>
+      <TD><CODE>(n)</CODE></TD>
+      <TD>Returns the Unicode Annotations for this value as described by www.unicode.org.
+	If there is no unicode annotation for this value, or no library available,
+	then return empty string "". It can execute with no current font.</TD>
+    </TR>
+    <TR>
+      <TD><CODE>UnicodeBlockCountFromLib</CODE></TD>
+      <TD><CODE>(n)</CODE></TD>
+      <TD>Return the number of Unicode Blocks as described by www.unicode.org.
+	Currently, the blocks are {0..233}, spanning unicode values {uni0..uni10FFFF}.
+	If there is no value, or no library available, then return -1.
+	This can execute with no current font.</TD>
+    </TR>
+    <TR>
+      <TD><CODE>UnicodeBlockEndFromLib</CODE></TD>
+      <TD><CODE>(n)</CODE></TD>
+      <TD>Returns the Unicode Block end value as described by www.unicode.org.
+	Currently, the blocks are {0..233}, spanning unicode values {uni0..uni10FFFF}.
+	If there is no value, or no library available, then return -1.
+	This can execute with no current font.</TD>
+    </TR>
+    <TR>
+      <TD><CODE>UnicodeBlockNameFromLib</CODE></TD>
+      <TD><CODE>(n)</CODE></TD>
+      <TD>Returns the Unicode Block Name as described by www.unicode.org.
+	Currently, the blocks are {0..233}, spanning unicode values {uni0..uni10FFFF}.
+	If there is no value, or no library available, then return empty string "".
+	This can execute with no current font.</TD>
+    </TR>
+    <TR>
+      <TD><CODE>UnicodeBlockStartFromLib</CODE></TD>
+      <TD><CODE>(n)</CODE></TD>
+      <TD>Returns the Unicode Block start value as described by www.unicode.org.
+	Currently, the blocks are {0..233}, spanning unicode values {uni0..uni10FFFF}.
+	If there is no value, or no library available, then return -1.
+	This can execute with no current font.</TD>
+    </TR>
+    <TR>
       <TD><CODE>unicodeFromName</CODE></TD>
       <TD><CODE>(glyphname)</CODE></TD>
       <TD>Looks up glyph name in its dictionary and if it is associated with a
 	unicode code point returns that number. Otherwise it returns -1</TD>
     </TR>
     <TR>
+      <TD><CODE>UnicodeNameFromLib</CODE></TD>
+      <TD><CODE>(n)</CODE></TD>
+      <TD>Returns the Unicode Name for this value as described by www.unicode.org.
+	If there is no unicode name for this value, or no library available,
+	then return empty string "". It can execute with no current font.</TD>
+    </TR>
+    <TR>
+      <TD><CODE>UnicodeNamesListVersion</CODE></TD>
+      <TD><CODE>()</CODE></TD>
+      <TD>Return the Unicode Nameslist Version (as described by www.unicode.org).
+	libuninameslist is released on a schedule that depends on
+	when www.unicode.org releases new information. These dates do not match
+	FontForge release dates, therefore users might not keep this optional library
+	upto current updates. This instruction can be used to test if the Nameslist
+	library is recent for your script. This function currently works only for
+	libuninameslist ver_0.3.20130501 or later, else it returns empty string "".
+	This can execute with no current font.</TD>
+    </TR>
+    <TR>
+      <TD><CODE>UnicodeNames2GetCntFromLib</CODE></TD>
+      <TD><CODE>()</CODE></TD>
+	Return the Total Count of all Names that were corrected with a new name.
+	Errors and corrections happen, therefore names can be corrected in the
+	next Unicode Nameslist version.
+	If there is no libuninameslist ver 0.5 or later available, then return -1
+    </TR>
+    <TR>
+      <TD><CODE>UnicodeNames2GetNxtFromLib</CODE></TD>
+      <TD><CODE>(n)</CODE></TD>
+	Errors and corrections happen, therefore names can be corrected in the
+	next Unicode Nameslist version. With val==unicode value, this function
+	returns -1 if no Names2 exists, or the Nth table location for this
+	unicode value listed in libuninameslist that was corrected to a new name.
+	If there is no libuninameslist ver 0.5 or later, then return -1.
+    </TR>
+    <TR>
+      <TD><CODE>UnicodeNames2NxtUniFromLib</CODE></TD>
+      <TD><CODE>(n)</CODE></TD>
+	Errors and corrections happen, therefore names can be corrected in the
+	next Unicode Nameslist version. This function returns the Next Names2
+	listed in libuninameslist internal table that was corrected to a new name.
+	The internal table of Unicode values is of size UnicodeNames2GetCntFromLib().
+	If there is no libuninameslist ver 0.5 or later, then return -1.
+    </TR>
+    <TR>
+      <TD><CODE>UnicodeNames2FrmTabFromLib</CODE></TD>
+      <TD><CODE>(n)</CODE></TD>
+	Errors and corrections happen, therefore names can be corrected in the
+	next Unicode Nameslist version. This function returns the Next Names2
+	listed in libuninameslist internal table that was corrected to a new name.
+	The internal table of Unicode values is of size UnicodeNames2GetCntFromLib().
+	If there is no libuninameslist ver 0.5 or later, then return NULL.
+    <TR>
+    </TR>
+      <TD><CODE>UnicodeNames2FromLib</CODE></TD>
+      <TD><CODE>(val)</CODE></TD>
+	Errors and corrections happen, therefore names can be corrected in the
+	next Unicode Nameslist version. This function returns the Names2 or NULL
+	based on the unicode value given.
+	If there is no libuninameslist ver 0.5 or later, then return NULL.
+    </TR>
+    <TR>
+      <TD><CODE>IsFraction</CODE></TD>
+      <TD><CODE>(n)</CODE></TD>
+      <TD>Return 1 if n is a unicode fraction (either a vulgar fraction or other
+	fraction) as described by www.unicode.org. Return 0 if there is no
+	fraction for this value. It can execute with no current font.</TD>
+    </TR>
+    <TR>
+      <TD><CODE>IsLigature</CODE></TD>
+      <TD><CODE>(n)</CODE></TD>
+      <TD>Return 1 if n is a ligature as described by www.unicode.org. Return 0
+	if there is no unicode ligature for this value. It can execute with no
+	current font.</TD>
+    </TR>
+    <TR>
+      <TD><CODE>IsOtherFraction</CODE></TD>
+      <TD><CODE>(n)</CODE></TD>
+      <TD>Return 1 if n is a unicode fraction (not defined as vulgar fraction)
+	as described by www.unicode.org. Return 0 if there is no fraction for
+	this value. It can execute with no current font.</TD>
+    </TR>
+    <TR>
+      <TD><CODE>IsVulgarFraction</CODE></TD>
+      <TD><CODE>(n)</CODE></TD>
+      <TD>Return 1 if n is a unicode vulgar fraction as described by
+	www.unicode.org. Return 0 if there is no fraction for this value.
+	It can execute with no current font.</TD>
+    </TR>
+    <TR>
+      <TD><CODE>ucFracChartGetCnt</CODE></TD>
+      <TD><CODE>()</CODE></TD>
+      <TD>Returns total count of Fractions found in the Unicode chart as
+	described by www.unicode.org. It can execute with no current font.
+	<BR>Note: Count depends on chart version built into FontForge.</TD>
+    </TR>
+    <TR>
+      <TD><CODE>ucLigChartGetCnt</CODE></TD>
+      <TD><CODE>()</CODE></TD>
+      <TD>Returns total count of Ligatures found in the Unicode chart as
+	described by www.unicode.org. It can execute with no current font.
+	<BR>Note: Count depends on chart version built into FontForge.</TD>
+    </TR>
+    <TR>
+      <TD><CODE>ucLigChartGetLoc</CODE></TD>
+      <TD><CODE>(val)</CODE></TD>
+      <TD>Returns n for FontForge internal table Unicode val=Ligature[n]. If
+	val does not exist in table, then return -1. Can execute with no
+	current font.
+	<BR>Note: Count depends on chart version built into FontForge.</TD>
+    </TR>
+    <TR>
+      <TD><CODE>ucLigChartGetNxt</CODE></TD>
+      <TD><CODE>(n)</CODE></TD>
+      <TD>Returns FontForge internal table Unicode Ligature[n]. Return -1 if
+	n<0 or n>=ucLigChartGetCnt(). It can execute with no current font.
+	<BR>Note: Count depends on chart version built into FontForge.</TD>
+    </TR>
+    <TR>
+      <TD><CODE>ucOFracChartGetCnt</CODE></TD>
+      <TD><CODE>()</CODE></TD>
+      <TD>Returns total count of non-Vulgar Fractions found in the Unicode
+	chart as described by www.unicode.org. It can execute with no current
+	font.
+	<BR>Note: Count depends on chart version built into FontForge.</TD>
+    </TR>
+    <TR>
+      <TD><CODE>ucOFracChartGetLoc</CODE></TD>
+      <TD><CODE>(val)</CODE></TD>
+      <TD>Returns n for FontForge internal table Unicode val=OtherFraction[n].
+	If val does not exist in table, then return -1. Can execute with no
+	current font.
+	<BR>Note: Count depends on chart version built into FontForge.</TD>
+    </TR>
+    <TR>
+      <TD><CODE>ucOFracChartGetNxt</CODE></TD>
+      <TD><CODE>(n)</CODE></TD>
+      <TD>Returns FontForge internal table Unicode (non-vulgar) Fraction[n].
+	Return -1 if n&lt;0 or n&gt;=ucOFracChartGetCnt(). Can execute with no
+	current font.
+	<BR>Note: Count depends on chart version built into FontForge.</TD>
+    </TR>
+    <TR>
+      <TD><CODE>ucVulChartGetCnt</CODE></TD>
+      <TD><CODE>()</CODE></TD>
+      <TD>Returns total count of Vulgar Fractions found in the Unicode chart
+	as described by www.unicode.org. It can execute with no current font.
+	<BR>Note: Count depends on chart version built into FontForge.</TD>
+    </TR>
+    <TR>
+      <TD><CODE>ucVulChartGetLoc</CODE></TD>
+      <TD><CODE>(val)</CODE></TD>
+      <TD>Returns n for FontForge internal table Unicode val=VulgarFraction[n].
+	If val does not exist in table, then return -1. Can execute with no
+	current font.
+	<BR>Note: Count depends on chart version built into FontForge.</TD>
+    </TR>
+    <TR>
+      <TD><CODE>ucVulChartGetNxt</CODE></TD>
+      <TD><CODE>(n)</CODE></TD>
+      <TD>Returns FontForge internal table Unicode Vulgar Fraction[n]. Returns
+	-1 if n<0 or n>=ucVulChartGetCnt(). Can execute with no current font.
+	<BR>Note: Count depends on chart version built into FontForge.</TD>
+    </TR>
+    <TR>
+      <TD><CODE>SpiroVersion</CODE></TD>
+      <TD><CODE>()</CODE></TD>
+      <TD>Returns the version of LibSpiro available to FontForge.<BR>
+	Versions 0.1 to 0.5 do not have a method to indicate version numbers,
+	but there is a limited method to estimate versions {'0.0'..'0.5'}.
+	<P>
+	'0.0' if FontForge has no LibSpiro available.<BR>
+	'0.1' if LibSpiro 20071029 is available.<BR>
+	'0.2' if LibSpiro 0.2 to 0.5 is available.<BR>
+	LibSpiro 0.6 and higher reports back it's version available.</TD>
+    </TR>
+    <TR>
       <TD><CODE>version</CODE></TD>
       <TD><CODE>()</CODE></TD>
       <TD>Returns fontforge's version number. This will be a large number like
 	20070406.</TD>
+    </TR>
+    <TR>
+      <TD><CODE>runInitScripts</CODE></TD>
+      <TD><CODE>()</CODE></TD>
+      <TD>Runs the system or user initialization scripts, if not already run.  This is primarily intended when importing FontForge into a python process.</TD>
+    </TR>
+    <TR>
+      <TD><CODE>scriptPath</CODE></TD>
+      <TD><CODE>()</CODE></TD>
+      <TD>Returns a tuple listing the directory paths which are searched for python scripts during FontForge initialization.</TD>
     </TR>
     <TR>
       <TD><CODE>fonts</CODE></TD>
@@ -386,26 +623,26 @@
 	  Example
 	</H3>
 	<BLOCKQUOTE>
-	  <PRE>import fontforge;
+	  <PRE>import fontforge
 
 def nameGlyph(junk,glyph):
-  print glyph.glyphname;
+  print glyph.glyphname
 
-fontforge.registerMenuItem(nameGlyph,None,None,"Glyph",None,"Print Glyph Name");
+fontforge.registerMenuItem(nameGlyph,None,None,"Glyph",None,"Print Glyph Name")
 
 def neverEnableMe(junk,glyph):
-  return False;
+  return False
 
-fontforge.registerMenuItem(nameGlyph,neverEnableMe,None,"Glyph",None,"SubMenu","Print Glyph Name");
+fontforge.registerMenuItem(nameGlyph,neverEnableMe,None,"Glyph",None,"SubMenu","Print Glyph Name")
 
 def importGlyph(junk,glyph,filename,toback):
-  print "Import";
-  print glyph.glyphname;
-  print filename;
+  print "Import"
+  print glyph.glyphname
+  print filename
 def exportGlyph(junk,glyph,filename):
-  print "Import";
-  print glyph.glyphname;
-  print filename;
+  print "Import"
+  print glyph.glyphname
+  print filename
 
 fontforge.registerImportExport(importGlyph,exportGlyph,None,"foosball","foo","foo,foobar")
 </PRE>
@@ -682,8 +919,10 @@ fontforge.registerImportExport(importGlyph,exportGlyph,None,"foosball","foo","fo
     </TR>
     <TR>
       <TD><CODE>fontforge.point</CODE></TD>
-      <TD><CODE>([x,y,on-curve])</CODE></TD>
-      <TD>Creates a new point. Optionally specifying its location</TD>
+      <TD><CODE>([x,y,on-curve,selected])</CODE></TD>
+      <TD>Creates a new point. Optionally specifying its x,y
+         location, on-curve status and selected status. x and y
+         must be supplied together</TD>
     </TR>
     <TR>
       <TH colspan=3>Members</TH>
@@ -709,6 +948,10 @@ fontforge.registerImportExport(importGlyph,exportGlyph,None,"foosball","foo","fo
       <TD><CODE>selected</CODE></TD>
       <TD colspan=2>Whether this point is selected in the UI. If an off-curve point
 	is selected in means the preceding (interpolated) on-curve point is selected.</TD>
+    </TR>
+    <TR>
+      <TD><CODE>name</CODE></TD>
+      <TD colspan=2>The point name (generally there is no name)</TD>
     </TR>
     <TR>
     </TR>
@@ -870,25 +1113,35 @@ fontforge.registerImportExport(importGlyph,exportGlyph,None,"foosball","foo","fo
     </TR>
     <TR>
       <TD colspan=2><CODE>c[i]</CODE></TD>
-      <TD>The <EM>i</EM>th point on the contour. You may assign to this</TD>
+      <TD>The <EM>i</EM>th point on the contour. You may assign a point or
+	 point initializer to this (keeping the number of points constant) or
+         use "del c[i]" to remove the entry (reducing the number by one)</TD>
     </TR>
     <TR>
       <TD colspan=2><CODE>c[i:j]</CODE></TD>
-      <TD>The contour containing points between i and j. You may assign to this</TD>
+      <TD>The contour containing points between i and j; i must be &gt;= j. 
+	Alternatively, c[j:i:-1] returns those points in reverse order 
+	(larger strides are not supported).</TD>
+    </TR>
+    <TR>
+      <TD colspan=2><CODE>c[i:j] = d</CODE></TD>
+      <TD>The points between i and j are replaced by those in d; i must be &gt;= j.
+        d can be a contour or a sequence of point initializers, as in [(1,1,False),(2,1)].
+        If c[j:i:-1] is used instead the points of d are assigned in reverse order.</TD>
     </TR>
     <TR>
       <TD colspan=2><CODE>c + d</CODE></TD>
-      <TD>A contour concatenating c and d. D may be either another contour or a
+      <TD>A contour concatenating c and d. d may be or encode either another contour or a
 	point.</TD>
     </TR>
     <TR>
       <TD colspan=2><CODE>c += d</CODE></TD>
-      <TD>Appends d to c. D may be either another contour or a point.</TD>
+      <TD>Appends d to c. d may be or encode either another contour or a point.</TD>
     </TR>
     <TR>
       <TD colspan=2><CODE>p in c</CODE></TD>
-      <TD>Returns whether the point p is in the contour c. p may be either a point
-	or a tuple of two numbers</TD>
+      <TD>When p i sa point returns whether some point (p.x,p.y) is in the contour c. 
+        p can also be a tuple of two numbers</TD>
     </TR>
     <TR>
       <TD colspan=3>Does not support the repeat concept</TD>
@@ -1180,20 +1433,22 @@ fontforge.registerImportExport(importGlyph,exportGlyph,None,"foosball","foo","fo
       <TH colspan=3>Sequence Protocol</TH>
     </TR>
     <TR>
-      <TD colspan=2><CODE>len(c)</CODE></TD>
+      <TD colspan=2><CODE>len(l)</CODE></TD>
       <TD>The number of contours in the layer</TD>
     </TR>
     <TR>
-      <TD colspan=2><CODE>c[i]</CODE></TD>
-      <TD>The <EM>i</EM>th contour on the layer. You may assign to this</TD>
+      <TD colspan=2><CODE>l[i]</CODE></TD>
+      <TD>The <EM>i</EM>th contour in the layer. You may assign a contour 
+	 to this (keeping the number of contours constant) or use "del l[i]"
+	 to remove the entry (reducing the number by one)</TD>
     </TR>
     <TR>
-      <TD colspan=2><CODE>c + d</CODE></TD>
-      <TD>A layer concatenating c and d. D may be either another layer or a contour.</TD>
+      <TD colspan=2><CODE>l + m</CODE></TD>
+      <TD>A layer concatenating l and m. m may be either another layer or a contour.</TD>
     </TR>
     <TR>
-      <TD colspan=2><CODE>c += d</CODE></TD>
-      <TD>Appends d to c. D may be either another layer or a contour.</TD>
+      <TD colspan=2><CODE>l += m</CODE></TD>
+      <TD>Appends m to l. m may be either another layer or a contour.</TD>
     </TR>
     <TR>
       <TD colspan=3>Does not support the repeat, slice and contains concepts</TD>
@@ -1628,7 +1883,7 @@ pen = None;				# Finalize the pen. This tells FontForge
         if not used. The third is an empty field reserved for future use
         and currently must be set to zero.
         <P>
-        <CODE>glyph.altuni<?CODE> can be set to None to clear all alternates,
+        <CODE>glyph.altuni</CODE> can be set to None to clear all alternates,
         or to a tuple. The elements of the tuple may be either integers
     	(an alternate unicode value with no variation selector)
 	or a tuple with up to 3 values in it as explained above.</TD>
@@ -1779,7 +2034,7 @@ pen = None;				# Finalize the pen. This tells FontForge
     <TR>
       <TD><CODE>italicCorrection</CODE></TD>
       <TD colspan=2>The glyph's italic correction field. Used by both TeX and MATH.
-	The special value of -32768 (0x8000) means the value is unspecified (An
+	The special value fontforge.unspecifiedMathValue means the value is unspecified (An
 	unspecified value will not go into the output tables, a value of 0 will)</TD>
     </TR>
     <TR>
@@ -1809,7 +2064,8 @@ pen = None;				# Finalize the pen. This tells FontForge
     </TR>
     <TR>
       <TD><CODE>left_side_bearing</CODE></TD>
-      <TD colspan=2>The left side bearing of the glyph</TD>
+      <TD colspan=2>The left side bearing of the glyph. Setting this value will adjust all layers
+       so that guides in the background etc will be adjusted with the rest of the glyph</TD>
     </TR>
     <TR>
       <TD><CODE>manualHints</CODE></TD>
@@ -1878,20 +2134,20 @@ pen = None;				# Finalize the pen. This tells FontForge
     </TR>
     <TR>
       <TD><CODE>texheight</CODE></TD>
-      <TD colspan=2>The Tex height. The special value of -32768 (0x8000) means
+      <TD colspan=2>The Tex height. The special value fontforge.unspecifiedMathValue means
 	the field is unspecified (An unspecified value will not go into the output
 	tables, a value of 0 will)</TD>
     </TR>
     <TR>
       <TD><CODE>texdepth</CODE></TD>
-      <TD colspan=2>The Tex depth. The special value of -32768 (0x8000) means the
+      <TD colspan=2>The Tex depth. The special value fontforge.unspecifiedMathValue means the
 	field is unspecified (An unspecified value will not go into the output tables,
 	a value of 0 will)</TD>
     </TR>
     <TR>
       <TD><CODE>topaccent</CODE></TD>
       <TD colspan=2>The glyph's top accent position field. Used by MATH. The special
-	value of -32768 (0x8000) means the field is unspecified (An unspecified value
+	value fontforge.unspecifiedMathValue means the field is unspecified (An unspecified value
 	will not go into the output tables, a value of 0 will)</TD>
     </TR>
     <TR>
@@ -2668,7 +2924,7 @@ pen = None;				# Finalize the pen. This tells FontForge
     <TR>
       <TD><CODE>select</CODE></TD>
       <TD><CODE>(args)</CODE></TD>
-      <TD>There may be an arbetrary number of arguments. Each argument may be either:
+      <TD>There may be an arbitrary number of arguments. Each argument may be either:
 	<UL>
 	  <LI>
 	    A glyph name<BR>
@@ -2684,7 +2940,7 @@ pen = None;				# Finalize the pen. This tells FontForge
 	    A tuple of flags.<BR>
 	    (If you wish to specify a single flag it must still be in a tuple, and you
 	    must append a trailing comma to the flag (so <CODE>("more",) </CODE>rather
-	    than just <CODE><STRIKE>("more")</STRIKE></CODE>). FF needs the flags to
+	    than just <CODE>("more")</CODE>). FF needs the flags to
 	    be in a tuple otherwise it can't distinguish them from glyph names)
 	    <DL>
 	      <DT>
@@ -2782,8 +3038,8 @@ pen = None;				# Finalize the pen. This tells FontForge
 	ScriptScriptPercentScaleDown<BR>
 	DelimitedSubFormulaMinHeight<BR>
 	...</CODE><BR>
-	(These names begin with capital letters, not python's conventions but
-	MicroSoft's)<BR>
+	(These names begin with capital letters, not Python's conventions but
+	Microsoft's)<BR>
 	These all take (16 bit) integer values.<BR>
 	I do not currently provide python access to any associated device tables.</TD>
     </TR>
@@ -3088,8 +3344,7 @@ pen = None;				# Finalize the pen. This tells FontForge
 	extent</CODE> tuples.
 	<P>
 	A <CODE>feature extent</CODE> tuple is<BR>
-	<CODE>(feature-tag,min-extent,max-extent, (tuple of feature
-	extents))</CODE><BR>
+	<CODE>(feature-tag,min-extent,max-extent)</CODE><BR>
 	<CODE>feature-tag</CODE> is a 4 letter string specifying an opentype (GPOS
 	or GSUB) feature tag,<CODE>min</CODE>/<CODE>max-extent</CODE> are numbers
 	specifying how far above and below the baseline characters go in this
@@ -3101,14 +3356,18 @@ pen = None;				# Finalize the pen. This tells FontForge
   (("cyrl","romn",(1405,-288,0),()),
    ("grek","romn",(1405,-288,0),()),
    ("latn","romn",(1405,-288,0),
-    ("dflt",-576,1913,
-     ("NoAc",-576,1482))
-    ("ENG ",-576,1482,())
+    (("dflt",-576,1913,
+      (("NoAc",-576,1482),
+       ("ENG ",-576,1482))
+     ),
+    )
    )
   )
 )
 </PRE>
 	</BLOCKQUOTE>
+	(Note: The comma after the <CODE>dflt</CODE> tuple puts it into a
+	one-element tuple.)
       </TD>
     </TR>
     <TR>
@@ -3133,6 +3392,17 @@ pen = None;				# Finalize the pen. This tells FontForge
     </TR>
     <TR>
       <TD><CODE>macstyle</CODE></TD>
+      <TD COLSPAN=2><pre>
+          Bit 0: Bold (if set to 1);
+          Bit 1: Italic (if set to 1)
+          Bit 2: Underline (if set to 1)
+          Bit 3: Outline (if set to 1)
+          Bit 4: Shadow (if set to 1)
+          Bit 5: Condensed (if set to 1)
+          Bit 6: Extended (if set to 1)
+          Bits 7-15: Reserved (set to 0).
+          </pre>
+      (<a href="http://www.microsoft.com/typography/otspec/head.htm">source</a>)</TD>
     </TR>
     <TR>
       <TD><CODE>layer_cnt</CODE></TD>
@@ -4148,7 +4418,7 @@ pen = None;				# Finalize the pen. This tells FontForge
       <TD>Create (and return) a character at the specified unicode codepoint in
 	this font and optionally name it. If you wish to create an glyph with no
 	unicode codepoint set the first argument to -1 and specify a name. If there
-	is already a character there, return it (it will not be renamed).</TD>
+        is already a character there, return it<!-- (it will not be renamed) – this seems to be wrong -->.</TD>
     </TR>
     <TR>
       <TD><CODE>createInterpolatedGlyph</CODE></TD>
@@ -4260,6 +4530,10 @@ pen = None;				# Finalize the pen. This tells FontForge
 	    old-kern
 	  <DD>
 	    output an old style 'kern' with opentype tables
+	  <DT>
+	    winkern
+	  <DD>
+	    only add kern pairs for mapped glyphs (required for kerning in some/all versions of Windows)
 	  <DT>
 	    dummy-dsig
 	  <DD>
@@ -4583,8 +4857,8 @@ pen = None;				# Finalize the pen. This tells FontForge
     </TR>
     <TR>
       <TD><CODE>mergeFonts</CODE></TD>
-      <TD><CODE>(filename[,<BR>
-	preserveCrossFontKerning])</CODE></TD>
+      <TD><CODE>(filename[,preserveCrossFontKerning])<BR>
+                (font[,preserveCrossFontKerning])</CODE></TD>
       <TD>Merges the font in the file into the current font.</TD>
     </TR>
     <TR>
@@ -4674,13 +4948,15 @@ pen = None;				# Finalize the pen. This tells FontForge
     </TR>
     <TR>
       <TD><CODE>removeLookup</CODE></TD>
-      <TD><CODE>(lookup-name)</CODE></TD>
-      <TD>Remove the lookup (and any subtables within it).</TD>
+      <TD><CODE>(lookup-name[,remove_acs])</CODE></TD>
+      <TD>Remove the lookup (and any subtables within it). remove_acs (0 or 1),
+        specifies whether to remove associated anchor classes and points.</TD>
     </TR>
     <TR>
       <TD><CODE>removeLookupSubtable</CODE></TD>
-      <TD><CODE>(subtable-name)</CODE></TD>
-      <TD>Remove the subtable (and all data associated with it).</TD>
+      <TD><CODE>(subtable-name[,remove_acs])</CODE></TD>
+      <TD>Remove the subtable (and all data associated with it). remove_acs (0 or 1),
+        specifies whether to remove associated anchor classes and points</TD>
     </TR>
     <TR>
       <TD><CODE>removeGlyph</CODE></TD>
@@ -4806,7 +5082,7 @@ pen = None;				# Finalize the pen. This tells FontForge
     </TR>
     <TR>
       <TD><CODE>autoWidth</CODE></TD>
-      <TD><CODE>(separation [,minBearing=,maxBearing=])</CODE></TD>
+      <TD><CODE>(separation [,minBearing=,maxBearing=,height=,loopCnt=])</CODE></TD>
       <TD>Guesses at reasonable horizontal advance widths for the selected glyphs</TD>
     </TR>
     <TR>
@@ -5098,19 +5374,7 @@ n.save("NewFont.sfd")                            #and save it.
     FontForge as a python <A NAME="extension">extension</A>
   </H2>
   <P>
-  If you have configured fontforge with the <CODE>--enable-pyextension</CODE>
-  argument, then when fontforge installs itself it will also set itself up
-  as something that can be used inside of python (up until now we have been
-  talking about using python inside of fontforge).
-  <BLOCKQUOTE id="shell">
-    <PRE><FONT COLOR="Gray">$ </FONT>./configure --enable-pyextension
-<FONT COLOR="Gray">$ </FONT>make
-<FONT COLOR="Gray">$ </FONT>sudo make install
-</PRE>
-  </BLOCKQUOTE>
-  <P>
-  once you do that you can invoke all of the above fontforge commands from
-  inside of python by saying:
+  When Fontforge is installed, it also installs a Python module, which can be accessed from Python using:
   <BLOCKQUOTE id="shell">
     <PRE><FONT COLOR="Gray">&gt;&gt;&gt; </FONT>import fontforge
 </PRE>

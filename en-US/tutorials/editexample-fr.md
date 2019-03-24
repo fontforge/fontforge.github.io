@@ -30,7 +30,7 @@ mechanics here.
 -   [FontForge and TeX](../../documentation/reference/PfaEdit-TeX/#TeX)
 
 If you wish to follow along with the tutorial, [this
-bundle](tutorial.tgz) should provide you with the basic files you need.
+bundle](/assets/old/tutorial.tgz) should provide you with the basic files you need.
 
 Font creation
 -------------
