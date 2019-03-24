@@ -442,8 +442,7 @@ kerning by classes entry (but not class 0 of the second glyph). In this
 case there will be a plus sign after the count of classes for the first
 glyph. Then the first list of names will be class 0.
 
-If your fontforge has been configured with device table support you may
-find [device](#device-table) tables interspersed among the kerning
+You may find [device](#device-table) tables interspersed among the kerning
 offsets array:
 
 >     ...
@@ -808,7 +807,26 @@ Then for non-CID fonts you should find a line like:
 
 This means that the font's encoding has room for 285 characters and that
 there are a total of 253 glyphs defined (usually control characters are
-not defined). A character looks like:
+not defined). 
+
+Most encodings entail specific constraints on how many encoding slots
+must exist and how they must be used (which glyphs where, and in what
+order).  That is what an encoding means.  For instance, in the UnicodeBmp
+encoding, there must be at least 65536 slots numbered 0 to 65535
+for the Unicode characters U+0000 to U+FFFF.  Glyphs with Unicode code
+points in that range must be encoded in those slots in order according
+to their code points.  Glyphs without Unicode code points must be encoded
+in additional slots numbered consecutively starting from 65536.  A file
+with a BeginChars: line inconsistent with its encoding or inconsistent
+with the number of glyphs it actually contains is not an SFD file.
+FontForge may, but does not promise to, treat attempts to load
+invalid files as fatal errors, or renumber or reorder glyphs to make them
+match the requirements of the encoding.  Consider using "Custom"
+or "Original" encodings if the requirements of other encodings are
+not appropriate; these encodings are less restrictive than the others.
+
+
+A character looks like:
 
 >     StartChar: exclam
 >     Encoding: 33 33 3
@@ -1173,8 +1191,7 @@ If the character contains Anchor Points these will be included:
 the point names the anchor class it belongs to (in UTF-7), its location,
 what type of point it is (basechar, mark, baselig, basemark, entry,
 exit), and for ligatures a number indicating which ligature component it
-refers to. If you have configured fontforge with support for device
-tables, you may also see:
+refers to. You may also see:
 
 >     AnchorPoint: "bottom" 780 -60 basechar 0 {12-13 -1,-1} {8-14 1,0,-1,-1,-2,-2,-2}
 
@@ -1306,9 +1323,6 @@ are permitted and may follow directly after either the height or the
 kerning value.
 
 #### Outline character extensions for multilayered fonts (type3)
-
-(these are only supported if FontForge has been configured for
-multi-layered editing)
 
 Instead of having a single "Fore"ground layer, multilayered type3 fonts
 have (potentially) several layers, each one introduced by a Layer line

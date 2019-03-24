@@ -236,11 +236,18 @@ Other font links
 -   [Most recent cid2code tables that I'm aware
     of](ftp://ftp.oreilly.com/pub/examples/nutshell/cjkv/adobe)
 -   PANOSE
-    -   [From AGFA](http://www.agfamonotype.com/hardware/pan1.asp)
-    -   [From
-        MS](http://msdn.microsoft.com/library/default.asp?url=/library/en-us/gdi/fontext_48aa.asp)
-    -   [Panose font classification
-        scheme](http://www.fonts.com/hp/panose/greybook/frame.htm)
+    -   [PANOSE Classification Metrics Guide](http://panose.com) by
+	Hewlett-Packard Corporation, 1991 - 1997
+    -   [PANOSE structure
+	(Windows)](https://msdn.microsoft.com/en-us/library/windows/desktop/dd162774(v=vs.85).aspx)
+    -   [PANOSE: An Ideal Typeface Matching System for the
+	Web](https://www.w3.org/Printing/stevahn.html) by Robert Stevahn, 1996
+    -   [PANOSE 2.0 White Paper](https://www.w3.org/Fonts/Panose/pan2.html) by
+	Hewlett-Packard Corporation, 1993
+    -   [PANOSE](https://en.wikipedia.org/wiki/PANOSE) on Wikipedia
+    -   [Classifying Arabic Fonts Based on Design Characteristics:
+	PANOSE-APANOSE](http://spectrum.library.concordia.ca/981753/) by Jehan
+	Janbi, 2016
 
 Unicode
 -------

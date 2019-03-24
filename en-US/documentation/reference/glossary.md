@@ -776,16 +776,18 @@ case the overshoot will probably vary from face to face.
 
 ###### Panose
 
-A system for describing fonts. See HP's [PANOSE classification metrics
-guide](http://www.panose.com/), AGFA's [PANOSE classification metrics
-guide](http://www.agfamonotype.com/hardware/pan1.asp)and MicroSoft's
-[PANOSE classification in
-Windows](http://msdn.microsoft.com/library/default.asp?url=/library/en-us/gdi/fontext_48aa.asp).
-There is also an extension called [Panose
-2](http://www.w3.org/Fonts/Panose/pan2.html).
+A system for describing fonts. See HP's [PANOSE Classification Metrics
+Guide](http://panose.com/), MicroSoft's [PANOSE structure
+(Windows)](https://msdn.microsoft.com/en-us/library/windows/desktop/dd162774(v=vs.85).aspx)</A>
+and Robert Stevahn's [PANOSE: An Ideal Typeface Matching System for the
+Web](https://www.w3.org/Printing/stevahn.html). There is also an extension
+called [PANOSE 2.0](http://www.w3.org/Fonts/Panose/pan2.html) and an online
+[discussion](http://forum.high-logic.com/viewtopic.php?t=941).
 
-FontForge only knows about the classification scheme for Latin fonts.
-Other schemes exist for other scripts.
+FontForge only knows about the classification scheme for Latin fonts. Other
+schemes exist for other scripts, such as [Classifying Arabic Fonts Based on
+Design Characteristics:
+PANOSE](http://spectrum.library.concordia.ca/981753/).
 
 ###### PfaEdit
 

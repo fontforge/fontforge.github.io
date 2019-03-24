@@ -258,7 +258,7 @@ current font.
 The `Remove Encoding` menu item brings up a list showing all the custom
 encodings and allows you to delete them.
 
-Here's an [example of a postscript encoding file](/assets/old/Encodings.ps.gz). It
+Here's an [example of a postscript encoding file](Encodings.ps.gz). It
 contains:
 
 -   TeXMathItalicEncoding
@@ -320,9 +320,14 @@ FontForge provides a series of standard namelists:
 -   Adobe Glyph List  
     This is the set of names that Adobe publishes on the web.
 
+-   AGL For New Fonts
+    This is the set of names that Adobe recommends for new fonts, without
+    odd names like `"afiiXXXXX" or incorrect commaaccent names. 
+
 -   AGL without afii  
     The cyrillic and hebrew glyphs have been assigned some very odd
-    names (afiiXXXXX) and some people prefer not to use them.
+    names (afiiXXXXX) and some people prefer not to use them. This 
+    is now redundant; AGL for New Fonts should be used instead.
 
 -   AGL with PUA  
     Adobe has assigned part of the unicode public use area to hold some

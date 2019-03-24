@@ -460,6 +460,15 @@ In the Outline view this fills in the glyph outline as you edit it.
 (this can be very slow. If the glyph is too big (too magnified) then
 filling will not be done).
 
+##### Preview
+
+A preview mode hides points, hints, various other stuff and fills the outline
+to give a better feel of the glyph's looks. Besides usual shortcut toggling it
+on and off — **Ctrl+[*key above Tab*]** (eg, **Ctrl+\`** on a US keyboard)
+— it can be also used by holding that **[*key above Tab*]** down (unless quick
+navigation is enabled).
+
+
 
 ##### Palettes
 

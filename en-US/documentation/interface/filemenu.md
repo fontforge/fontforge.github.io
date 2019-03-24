@@ -287,9 +287,8 @@ in the appropriate place. Files named "enc\*" or "cid\*" are handled
 similarly except that they specify the current encoding (and the number
 must be in decimal rather than hex).
 
-If you are editing a [multi-layered font](../multilayer/) (and have a
-version of FontForge configured for it) then you can also import an
-image into one of the foreground layers.
+If you are editing a [multi-layered font](../multilayer/) then you can also
+import an image into one of the foreground layers.
 
 <a name="bitmapfiles"></a>
 *FontForge does best when given bitmap images. It will grey out the

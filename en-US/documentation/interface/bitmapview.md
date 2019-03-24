@@ -32,9 +32,8 @@ result in the window for editing).
 Underneath is the main display, showing the bits in the image, the
 outline of the glyph and a grid.
 
-As in the outline view you may choose to dock the palettes in the window
-with View-\>Palettes-\>Dock Palettes.
-
+As in the outline view you may choose to make the palettes free floating
+windows by unchecking View-\>Palettes-\>Dock Palettes.
 
 ### Layers
 

@@ -76,6 +76,11 @@ Kerning
 
 The active glyph may be changed by clicking on any of the glyphs.
 
+The up and down arrow keys will increase and decrease the field's value by
+a single unit. Holding Shift-up or -down will accelerate this by 10 and
+Ctrl-Shift-up or -down by 5. Holding Alt-up, -down, -left or -right will move
+the cursor to the field above, below, left or right.
+
 Underneath the display area are a set of text fields. You may type in
 new numbers for any of these fields to change the corresponding metrics
 of the glyph.
