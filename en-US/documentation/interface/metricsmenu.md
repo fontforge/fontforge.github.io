@@ -18,6 +18,8 @@ its lbearing be the same as its rbearing) within the current width.
 
 In the Font View the same thing is done for all selected glyphs.
 
+Setting this value will adjust all layers so that guides in the background etc.
+will be adjusted with the rest of the glyph.
 
 #### Thirds in Width
 
@@ -26,6 +28,8 @@ prefer having a bit more white space after my glyphs than before them.
 So this command makes the rbearing twice the lbearing (instead of making
 them be the same).
 
+Setting this value will adjust all layers so that guides in the background etc.
+will be adjusted with the rest of the glyph.
 
 #### Window Type
 
@@ -66,6 +70,8 @@ The Set LBearing command is similar to the Set Width command above, the
 dialog is pretty much the same except that it applies to the left side
 bearing rather than to the width.
 
+Setting this value will adjust all layers so that guides in the background etc.
+will be adjusted with the rest of the glyph.
 
 #### Set RBearing...
 

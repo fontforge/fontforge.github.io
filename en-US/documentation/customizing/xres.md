@@ -34,7 +34,7 @@ Sets the color used to mark changed glyphs.
 
 `fontforge.FontView.GlyphInfoColor`
 
-Sets the color used to dislpay information about selected glyph, betwen
+Sets the color used to display information about selected glyph, between
 the FontView menu bar and the glyph array.
 
 `fontforge.FontView.SelectedColor`
@@ -52,53 +52,6 @@ Sets the color of crosses marking empty code points.
 `fontforge.FontView.HintingNeededColor`
 
 Sets the color of markings for glyphs that need hinting or instructing.
-
-`fontforge.FontView.FontFamily`
-
-A list of font family names to be used in the font view to display an
-example character over each user character.
-
-`fontforge.FontView.SerifFamily`
-
-A list of font family names to be used in the font view to display an
-example character over each user character when the character is one of
-the stylized variants in U+1D400-U+1D7FF. Used for characters that
-should be drawn with a serif font.
-
-`fontforge.FontView.ScriptFamily`
-
-![](/assets/img/old/script-A.png)A list of font family names to be used in the font view
-to display an example character over each user character when the
-character is one of the stylized variants in U+1D400-U+1D7FF. Used for
-characters that should be drawn with a script font.
-
-`fontforge.FontView.FrakturFamily`
-
-![](/assets/img/old/fraktur-A.png)A list of font family names to be used in the font
-view to display an example character over each user character when the
-character is one of the stylized variants in U+1D400-U+1D7FF. Used for
-characters that should be drawn with a fraktur font.
-
-`fontforge.FontView.DoubleStruckFamily`
-
-![](/assets/img/old/doublestruck-B.png)A list of font family names to be used in the
-font view to display an example character over each user character when
-the character is one of the stylized variants in U+1D400-U+1D7FF. Used
-for characters that should be drawn with a double-struck font.
-
-`fontforge.FontView.SansFamily`
-
-A list of font family names to be used in the font view to display an
-example character over each user character when the character is one of
-the stylized variants in U+1D400-U+1D7FF. Used for characters that
-should be drawn with a sans-serif font.
-
-`fontforge.FontView.MonoFamily`
-
-A list of font family names to be used in the font view to display an
-example character over each user character when the character is one of
-the stylized variants in U+1D400-U+1D7FF. Used for characters that
-should be drawn with a monospaced font.
 
 `fontforge.FontView.FontSize`
 
@@ -304,6 +257,12 @@ Sets the color used to draw background images.
 
 Sets the color used to draw a character's fill
 
+`fontforge.CharView.PreviewFillColor`
+
+The color to use when performing a preview fill. If this is not set then
+FontForge will fallback to using `fontforge.CharView.FillColor`. Neither of
+these resources are set then black will be used.
+
 `fontforge.CharView.TraceColor`
 
 Sets the color used to draw the trace of the freehand tool.
@@ -317,6 +276,77 @@ the font is too big text will be clipped.
 
 Select the font used to display the information shown in the window
 associated with the measure tool.
+
+'fontforge.CharView.Hotkey.Tool.Zoom'
+
+The keyboard shortcut that you desire to switch to the zoom tool. For example:
+
+fontforge.CharView.Hotkey.Tool.Zoom: z
+
+'fontforge.CharView.Hotkey.Tool.Ruler'
+
+The keyboard shortcut to select the ruler tool.
+
+'fontforge.CharView.Hotkey.Tool.Pointer'
+
+The keyboard shortcut to select the pointer tool.
+
+'fontforge.CharView.Hotkey.Tool.Hand'
+
+The keyboard shortcut to select the hand tool.
+
+'fontforge.CharView.Hotkey.Tool.PointCurve'
+
+The keyboard shortcut to select the point curve tool.
+
+'fontforge.CharView.Hotkey.Tool.PointHVCurve'
+
+The keyboard shortcut to select the point hv curve tool.
+
+'fontforge.CharView.Hotkey.Tool.PointCorner'
+
+The keyboard shortcut to select the point corner tool.
+
+'fontforge.CharView.Hotkey.Tool.PointTangent'
+
+The keyboard shortcut to select the point tangent tool.
+
+'fontforge.CharView.Hotkey.Tool.Freehand'
+
+The keyboard shortcut to select the point Freehand tool.
+
+'fontforge.CharView.Hotkey.Tool.PointTangent'
+
+The keyboard shortcut to select the point tangent tool.
+
+'fontforge.CharView.Hotkey.Tool.Pen'
+
+The keyboard shortcut to select the point Pen tool.
+
+'fontforge.CharView.Hotkey.Tool.SpiroToggle'
+
+Toggle spiro mode on if it is available.
+
+'fontforge.CharView.Hotkey.Tool.SpiroG4'
+
+SpiroG4 tool.
+
+'fontforge.CharView.Hotkey.Tool.SpiroCorner'
+
+SpiroCorner tool.
+
+'fontforge.CharView.Hotkey.Tool.SpiroLeft'
+
+SpiroLeft tool.
+
+'fontforge.CharView.Hotkey.Tool.SpiroRight'
+
+SpiroRight tool.
+
+'fontforge.CharView.Hotkey.Tool.Knife'
+
+Knife tool.
+
 
 `fontforge.DebugView.Font`
 
@@ -792,19 +822,37 @@ it.
 A [font](#font)
  Specifies the default font for a ggadget.
 
-`Gdraw.GButton...       Gdraw.GDefaultButton...       Inherits from GButton       Gdraw.GCancelButton...       Inherits from GButton       Gdraw.GLabel...       Gdraw.GDropList...       Gdraw.GListMark... controls       the shape of the mark used to show the menu of a combo box.       Gdraw.GRadio... affects the       text of the radio       GDraw.GRadioOn... -- affects the shape used (above, the diamond to the left       of the text) of an on radio button        GDraw.GRadioOff... -- affects the shape used of an off radio button        Gdraw.GCheckBox...       GDraw.GCheckBoxOn...       GDraw.GCheckBoxOff...       Gdraw.GTextField...       Gdraw.GComboBox... Inherits       from GTextField       Gdraw.GComboBoxMenu...       Inherits from GComboBox (This is the box drawn around the GListMark in a       ComboBox)       Gdraw.GNumericField...        Inherits from GTextField       Gdraw.GNumericFieldSpinner...        Inherits from       GNumericField       Gdraw.GList...       Gdraw.GScrollBar...       Gdraw.GScrollBarThumb...       Gdraw.GGroup... -- a frame around groups of gadgets.       Gdraw.GLine...       Gdraw.GMenu...       Gdraw.GMenuBar...       Gdraw.GTabSet...`
+~~~
+Gdraw.GButton...
+Gdraw.GDefaultButton...  Inherits from GButton
+Gdraw.GCancelButton...   Inherits from GButton
+Gdraw.GLabel...
+Gdraw.GDropList...
+Gdraw.GListMark...   controls the shape of the mark used to show the menu of a combo box.
+Gdraw.GRadio...      affects the text of the radio
+GDraw.GRadioOn...    affects the shape used (above, the diamond to the left of the text) of an on radio button
+GDraw.GRadioOff...   affects the shape used of an off radio button
+Gdraw.GCheckBox...
+GDraw.GCheckBoxOn...
+GDraw.GCheckBoxOff...
+Gdraw.GTextField...
+Gdraw.GComboBox...             Inherits from GTextField
+Gdraw.GComboBoxMenu...         Inherits from GComboBox (This is the box drawn around the GListMark in a ComboBox)
+Gdraw.GNumericField...         Inherits from GTextField
+Gdraw.GNumericFieldSpinner...  Inherits from GNumericField
+Gdraw.GList...
+Gdraw.GScrollBar...
+Gdraw.GScrollBarThumb...
+Gdraw.GGroup...                a frame around groups of gadgets.
+Gdraw.GLine...
+Gdraw.GMenu...
+Gdraw.GMenuBar...
+Gdraw.GTabSet...`
+~~~
 
 As above.
  Specifies the box, font, color, etc. for this particular type of
 ggadget.
-
-`Gdraw.GHVGroupBox`
-
-**Don't use it!** Old versions of X resource editor saved `Gdraw.GGroup`
-under this name. That was wrong, as it was never actually recognized by
-X Resource loader and had no effect. The confusion is because we
-actually have two gadgets: `GGroup` and `GHVBox`, that are supposed to
-work in tandem. Actually, only `GGroup` is worth styling.
 
 `Gdraw.GHVBox`
 
@@ -1001,7 +1049,19 @@ A color.
  Used to draw text in the cell which is active (and used for the
 "\<New\>" entry).
 
-...
+Deprecated 
+
+The following resources are deprecated and will be silently ignored.
+
+-   `fontforge.FontView.FontFamily`
+-   `fontforge.FontView.SerifFamily`
+-   `fontforge.FontView.ScriptFamily`
+-   `fontforge.FontView.FrakturFamily`
+-   `fontforge.FontView.DoubleStruckFamily`
+-   `fontforge.FontView.SansFamily`
+-   `fontforge.FontView.MonoFamily`
+-   `Gdraw.GHVGroupBox`
+
 
 Colors
 

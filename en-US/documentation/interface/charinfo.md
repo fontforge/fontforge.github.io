@@ -88,8 +88,8 @@ In the example at right the first lookup subtable (which is associated
 with the Scientific Inferiors feature) will move the y position of the
 glyph down by 900 em-units, while the second subtable will move it down
 by 560 em-units. Positioning subtables can also move glyphs horizontally
-and can adjust the horizontal and vertical advances of the glyph. If you
-have configured FontForge to support them you can also add device tables
+and can adjust the horizontal and vertical advances of the glyph.
+You can also add device tables
 for pixel level corrections to these adjustments. Most subtables will
 use only a few of the possibilities open to them and FontForge generally
 hides unused columns -- but if you want to see them just turn off [\*]

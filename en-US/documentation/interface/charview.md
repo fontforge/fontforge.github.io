@@ -63,9 +63,9 @@ internal extrema will also be marked.
 
 There are also two palettes, one, a layer palette, allowing you to
 control [which layers are visible](#Layers), and one, a tool palette,
-from which you [may pick editing tools](#Tools). Normally these are free
-floating windows, but you may choose to dock them in the window with
-View-\>Palettes-\>Dock Palettes.
+from which you [may pick editing tools](#Tools). Normally these are 
+docked in the window, but you may choose to make them free floating
+windows by unchecking View-\>Palettes-\>Dock Palettes.
 
 You select an editing tool by clicking on the appropriate button on the
 tools palette, or you may depress the right mouse button and select a
@@ -435,16 +435,25 @@ open (or if it were previously open, it is now cut in two).
 
 ![](/assets/img/windows-ruler.png)
 
-This tool tells you current position of the mouse. If the
+This tool tells you the current position of the mouse. If the
 mouse is near the outline it will give the slope and curvature there. If
 the mouse is near a point on the outline will give the slope and
 curvature on each side of the point.
 
-If you depress the button and drag, the tool will show the x-y offsets,
-distance and angle from the point where you depressed the mouse to the
-mouse's current location. If you depress the tool at one end point of a
-spline and move it to the other endpoint then it will also show the
-length of that spline.
+If you depress the button and drag, the first line of the tool's pop-up shows
+the distance, angle and (x-y) offsets from the first point where you depressed
+the mouse to the last point, the mouse's current location. The next lines in
+the pop-up show information about points along the line that intersect splines,
+including the start and end points of the line itself. If there are more than
+two intersections then the x, y, and total distance between the first and last
+intersections are shown before the point list.
+
+\[0\] indicates the starting point of the measure line, and the (x-y)
+co-ordinates of that point. Initially \[1\] is the end point; when it
+intersects with one spline then \[1\] becomes the first intersection point and
+\[2\] becomes the end point, and so on. The co-ordinates are followed by the x
+and y distances and then the final number is the length of the section ending
+at that point; which is also shown directly on the canvas.
 
 If you hold down the [Meta/Alt/CapsLock](#alt-meta-capslock) key then 
 information will only be shown when the mouse is depressed.
@@ -705,7 +714,7 @@ The points may have some flags associated with them: 'P' means the point
 is an on curve point, 'C' means the point is an off curve point (a
 control point), 'I' means the point is an on-curve point interpolated
 between two control points, 'F' means a phantom point, 'T' means a
-twilight point, 'H' means the horizontal touch flag has been set, 'V'
+twilight point, 'X' means the horizontal touch flag has been set, 'Y'
 means the vertical touch flag has been set.
 
 A small stop sign indicates the point is being watched (that is
@@ -816,6 +825,6 @@ distortable fonts ("\*var" fonts, like Skia).
 
 ![](/assets/img/windows-charview-multilayer.png)
 
-If you wish to [edit type3 fonts](../multilayer/), and you have configured
-FontForge correctly, the FontForge can display a glyph broken down into
-a series of strokes and fills and allow you to edit each one.
+If you wish to [edit type3 fonts](../multilayer/), FontForge can display a
+glyph broken down into a series of strokes and fills and allow you to edit each
+one.

@@ -4,6 +4,12 @@ layout: default
 title: Hot Keys
 ---
 
+As noted in [HotKeys assignment](../customizing/hotkeyassignment) you can
+nominate the hotkeys which you prefer for all items in any menu of FontForge.
+Some default hotkeys are shipped with FontForge so that you do not have to
+assign any keys yourself unless you want to make changes. The defaults are
+shown below:
+
 <table class="table" border>
     <tbody>
     <tr><td>Ctl-A</td>

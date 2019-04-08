@@ -112,8 +112,7 @@ based on the current [NameLists](../encodingmenu/#NameLists).
 You may control how many and what types of layers are available in your
 font.
 
-Fonts may be either outlined or stroked, or (if you configured FontForge
-for [multi-layered editing](../multilayer/)) type3. You may choose
+Fonts may be either outlined or stroked, or type3. You may choose
 which kind of font you want.
 
 You may also decide what kind of splines you want in the font in
@@ -370,7 +369,7 @@ here). If you want control of these values, turn off the checkbox and
 the text fields will be enabled for you to change.
 
 
-#### Panose
+#### PANOSE
 
 ![](/assets/img/dialogs1-fontinfo-panose.png)
 
@@ -378,11 +377,13 @@ This sub-dialog allows you to describe your font in 10 different
 dimensions. The exact meanings of many of these entries vary from script
 to script, and even the Latin ones are not clear to me, I have merely
 typed them in as specified in the [true type
-docs](http://fonts.apple.com/TTRefMan/RM06/Chap6OS2.html). Better
-information is available from [HP](http://www.panose.com/),
-[AGFA](http://www.agfamonotype.com/hardware/pan1.asp) and
+docs](http://fonts.apple.com/TTRefMan/RM06/Chap6OS2.html). 
+Better information is available from 
+[HP](http://www.panose.com/),
 [MS](http://msdn.microsoft.com/library/default.asp?url=/library/en-us/gdi/fontext_48aa.asp),
-[discussion](http://forum.high-logic.com/viewtopic.php?f=4&t=941).
+[RS](https://www.w3.org/Printing/stevahn.html), 
+[JJ](http://spectrum.library.concordia.ca/981753/) and
+[this discussion](http://forum.high-logic.com/viewtopic.php?f=4&t=941).
 
 If you leave the [\*] Default checkbox set then FontForge will generate
 reasonable values when the font is output, otherwise you may set these

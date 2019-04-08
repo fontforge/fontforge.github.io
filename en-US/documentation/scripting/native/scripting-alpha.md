@@ -35,20 +35,31 @@ argument, if present indicates how the accent should be positioned... if
 omitted a default position will be chosen from the unicode value for the
 accent, this argument is the or of the following flags:
 
-  ---------- ------------------
-  0x100      Above
-  0x200      Below
-  0x400      Overstrike
-  0x800      Left
-  0x1000     Right
-  0x4000     Center Left
-  0x8000     Center Right
-  0x10000    Centered Outside
-  0x20000    Outside
-  0x40000    Left Edge
-  0x80000    Right Edge
-  0x100000   Touching
-  ---------- ------------------
+|---
+| 0x100    | Above
+|---
+| 0x200    | Below
+|---
+| 0x400    | Overstrike
+|---
+| 0x800    | Left
+|---
+| 0x1000   | Right
+|---
+| 0x4000   | Center Left
+|---
+| 0x8000   | Center Right
+|---
+| 0x10000  | Centered Outside
+|---
+| 0x20000  | Outside
+|---
+| 0x40000  | Left Edge
+|---
+| 0x80000  | Right Edge
+|---
+| 0x100000 | Touching
+|---
 
 AddAnchorClass(name,type,lookup-subtable-name)
  ~~AddAnchorClass(name,type,script-lang,tag,flags,merge-with)~~
@@ -72,7 +83,7 @@ present for things of type "baselig".
 
 AddATT("Position",script-lang,tag,flags,xoff,yoff,h\_adv\_off,v\_adv\_off)
 
-AddATT("Pair",script-lang,tag,flags,name,xoff,yoff,h\_adv\_off,v\_adv\_off,xoff2,yoff2,h\_adv\_off2,v\_adv\_off2)~~
+AddATT("Pair",script-lang,tag,flags,name,xoff,yoff,h\_adv\_off,v\_adv\_off,xoff2,yoff2,h\_adv\_off2,v\_adv\_off2)
 
 See [AddPosSub](#AddPosSub)
 
@@ -81,14 +92,16 @@ AddDHint(x1,y1,x2,y2,unit.x,unit.y)
 Adds a diagonal hint. A diagonal hint requires two points on oposite
 sides of the stem and a unit vector in the direction of the stem.
 
-[AddExtrema](../../../interface/elementmenu/#Add-Extrema)()
+[AddExtrema](../../../interface/elementmenu/#Add-Extrema)([all])
 
 If a spline in a glyph reaches a maximum or minimum x or y value within
 a spline then break the spline so that there will be a point at all
 significant extrema. (If this point is too close to an end-point then
 the end-point itself may be moved. There are various other caveats. See
 Element-\>[AddExtrema](../../../interface/elementmenu/#Add-Extrema) for more
-information).
+information). If the "all" argument is specified and is a nonzero integer, then
+all extrema will be added; otherwise, some that would be very close to existing
+endpoints will not be added.
 
 [AddHHint](../../../interface/hintsmenu/#HHint)(start,width)
 
@@ -108,7 +121,7 @@ replace those already present.
  And instrs is a string containing fontforge's human readable version of
 tt instructions, as "`IUP[x]\nIUP[y]`"
 
-AddLookup(name,type,flags,features-script-lang-array[,after-lookup-name)
+AddLookup(name,type,flags,features-script-lang-array[,after-lookup-name])
 
 Creates a new lookup with the given name, type and flags. It will tag it
 with any indicated features. The type of one of
@@ -133,6 +146,16 @@ with any indicated features. The type of one of
 -   gpos\_contextchain
 -   kern\_statemachine
 
+The lookup flags define what glyphs to include or ignore:
+
+|---
+| 0 | Include all glyphs
+|---
+| 8 | Ignore mark\_class\_cnt
+|---
+| 16 | Ignore mark\_set\_cnt
+|---
+
 A feature-script-lang array is an array with one entry for each feature
 (there may be no entries if there are no features). Each entry is itself
 a two element array, the first entry is a string containing a 4 letter
@@ -141,7 +164,7 @@ with an entry for each script for which the feature is active. Each
 entry here is itself a two element array. The first element is a 4
 letter script tag and the second is an array of languages. Each entry in
 the language array is a four letter language. Example:
-[["liga",[["latn",["dflt"]]]]]
+`[["liga",[["latn",["dflt"]]]]]`
  The optional final argument allows you to specify the ordering of the
 lookup. If not specified the lookup will be come the first lookup in its
 table.
@@ -353,6 +376,11 @@ Changes (or adds if the key is not already present) the value in the
 dictionary indexed by key. (all values must be strings even if they
 represent numbers in PostScript)
 
+ChangeWeight(em-units)
+
+Emboldens the selected glyphs by the given amount in em units. If em-units is
+a negative number, the glyphs are made less bold.
+
 CharCnt()
 
 Returns the number of encoding slots (or encoding slots + unencoded
@@ -370,12 +398,12 @@ name (which must be in utf8).
 Chr(int)
  Chr(array)
 
-Takes an integer [0,255] and returns a single character string
-containing that code point. Internally FontForge interprets strings as
-if they were in utf8 (well really, FontForge almost always just uses
-ASCII-US internally). If passed an array, it should be an array of
-integers and the result is the string. It can execute with no current
-font.
+Takes an integer [-128,255] and returns a single character string containing
+that byte.  Negative numbers are treated as signed bytes in two's complement.
+Internally FontForge interprets strings as if they were in UTF-8, so it is
+possible to construct higher code points and strings that are not valid UTF-8
+by passing in appropriate values.  If passed an array, it should be an array of
+integers and the result is the string.  It can execute with no current font.
 
 CIDChangeSubFont(new-sub-font-name)
 
@@ -1176,6 +1204,8 @@ obvious meanings:
     at the given horizontal position. If the position is beyond the
     glyph's bounding box the minimum value will be set to 1 and the max
     to 0 (ie. max\<min which is impossible).
+-   "Class" returns the glyph's class as one of the following strings:
+    "automatic", "none", "base", "ligature", "mark", "component", or "unknown".
 -   "Color" returns the glyph's color as a 24bit rgb value (or -2 if no
     color has been assigned to the glyph).
 -   "Comment" returns the glyph's comment (it will be converted from
@@ -1245,6 +1275,10 @@ Returns true if the font contains a preserved table with the given tag.
 HasPrivateEntry(key)
 
 Returns whether key exists in the private dictionary.
+
+HasSprio()
+
+Returns true if Raph Levien's spiro package is available in FontForge.
 
 HFlip([about-x])
 
@@ -1355,6 +1389,12 @@ IsFinite(real)
 Returns whether the value is finite (not infinite and not a nan). It can
 execute with no current font.
 
+IsFraction(val)
+
+Return 1 if n is a unicode fraction (either a vulgar fraction or other
+fraction) as described by www.unicode.org. Return 0 if there is no
+fraction for this value. It can execute with no current font.
+
 IsHexDigit(val)
 
 Returns whether val is a hex-digit. Val may be either an integer, a
@@ -1362,12 +1402,24 @@ unicode or a string. The first two cases are treated as unicode code
 points, the third looks at the first (utf8) character in the string. It
 can execute with no current font.
 
+IsLigature(val)
+
+Return 1 if n is a ligature as described by www.unicode.org. Return 0
+if there is no unicode ligature for this value. It can execute with no
+current font.
+
 IsLower(val)
 
 Returns whether val is a lower case letter. Val may be either an
 integer, a unicode or a string. The first two cases are treated as
 unicode code points, the third looks at the first (utf8) character in
 the string. It can execute with no current font.
+
+IsOtherFraction(val)
+
+Return 1 if n is a unicode fraction (not defined as vulgar fraction)
+as described by www.unicode.org. Return 0 if there is no fraction for
+this value. It can execute with no current font.
 
 IsNan(real)
 
@@ -1379,6 +1431,72 @@ Returns whether val is an upper case letter. Val may be either an
 integer, a unicode or a string. The first two cases are treated as
 unicode code points, the third looks at the first (utf8) character in
 the string. It can execute with no current font.
+
+IsVulgarFraction(val)
+Return 1 if n is a unicode vulgar fraction as described by
+www.unicode.org. Return 0 if there is no fraction for this value.
+It can execute with no current font.
+
+Italic([angle[,[xscale[,flags[,serif[,bearings[,stems[,counters[,lcstems[,lccounters]]]]]]]]]])
+
+Converts the selected glyphs to italics, similar to the
+[Italic](../../../interface/elementmenu/#Italic) menu command.
+
+The following optional arguments are accepted:
+
+|--- 
+| angle | Glyphs are slanted by the given angle in degrees.  If unspecified, defaults to -13.
+|--- 
+| xscale | Points at the x-height of the font are scaled by this factor.
+|--- 
+| flags | Flags controlling various italic features, see below.
+|--- 
+| serif | Specifies the type of italic serif: 1=flat, 2=simple slant, 3=complex slant.  Defaults to 1.
+|--- 
+| bearings | Side bearings are scaled by this amount.
+|--- 
+| stems | Stem widths are scaled by this amount.
+|--- 
+| counters | Counters are scaled by this amount.
+|--- 
+| lcstems | Stem widths of lowercase letters are scaled by this amount, overriding the amount specified for stems, above.
+|--- 
+| lccounters | Counters of lowercase letters are scaled by this amount, overriding the amount specified for counters, above.
+|--- 
+
+flags are composed of the following bit values:
+
+|---
+| 0x0001 | Transform bottom serifs
+|---
+| 0x0002 | Transform serifs at x-height
+|---
+| 0x0004 | Transform serifs on ascenders
+|---
+| 0x0008 | Transform diagonal serifs
+|---
+| 0x0010 | Create italic *a* from the bottom half of italic *d*
+|---
+| 0x0020 | Give italic *f* a long tail
+|---
+| 0x0040 | Give italic *f* a hooked tail
+|---
+| 0x0080 | Remove serifs from descenders
+|---
+| 0x0100 | Special handling for Cyrillic *phi*
+|---
+| 0x0200 | Special handling for Cyrillic *i*
+|---
+| 0x0400 | Special handling for Cyrillic *pi*
+|---
+| 0x0800 | Special handling for Cyrillic *te*
+|---
+| 0x1000 | Special handling for Cyrillic *sha*
+|---
+| 0x2000 | Special handling for Cyrillic *dje*
+|---
+| 0x4000 | Special handling for Cyrillic *dzhe*
+|---
 
 J
 
@@ -1392,11 +1510,12 @@ K
 
 L
 
-LoadEncodingFile(filename)
+LoadEncodingFile(filename[,encname])
 
 Reads an encoding file and stores it in FontForge's list of possible
 encodings. See Encoding-\>[LoadEncoding](../../../interface/encodingmenu/#Load) for
-more info.
+more info. When loading encodings in Unicode consortium format an `encname` has
+to be specified or the encoding will be ignored.
 
 LoadNamelist(filename)
 
@@ -1878,19 +1997,21 @@ Removes the named AnchorClass (and all associated points) from the font.
 See [RemoveLookupSubtable](#RemoveLookupSubtable) or
 [RemovePosSub](#RemovePosSub)
 
-RemoveLookup(lookup-name)
+RemoveLookup(lookup-name[,remove`_acs])
 
-Remove the lookup (and any subtables within it).
+Remove the lookup (and any subtables within it). Specifying `remove\_acs`
+will also remove associated anchor classes and points.
 
-RemoveLookupSubtable(subtable-name)
+RemoveLookupSubtable(subtable-name[,remove`_acs])
 
 Remove the subtable.
 
 RemovePosSub(subtable-name)
 
 Remove any positionings or substitutions from the selected glyphs that
-are controlled by the named subtable. If the subtable name is "\*" then
-all are removed.
+are controlled by the named subtable. If the subtable name is "\*" then all are
+removed. Specifying `remove\_acs` will also remove associated anchor classes
+and points.
 
 RemoveDetachedGlyphs()
 
@@ -2112,6 +2233,14 @@ it removes single glyphs from the current selection.
 SelectGlyphsBoth()
 
 Selects glyphs with both references and contours.
+
+SelectGlyphsReferences()
+
+Selects glyphs with only references.
+
+SelectGlyphsSplines()
+
+Selects glyphs with only contours. 
 
 [SelectHintingNeeded](../../../interface/editmenu/#SelHinting)([merge])
 
@@ -2422,7 +2551,10 @@ If the second argument is absent or zero then the width will be set to
 the first argument, if the second argument is 1 then the width will be
 incremented by the first, and if the argument is 2 then the width will
 be scaled by \<first argument\>/100.0 . In bitmap only fonts see the
-comment at [SelectBitmap](#SelectBitmap) about units.
+comment at [SelectBitmap](#SelectBitmap) about units. Setting this value will
+adjust all layers so that guides in the background etc will be adjusted with
+the rest of the glyph.
+
 
 [Shadow](../../../interface/elementmenu/#Shadow)(angle,outline-width,shadow-width)
 
@@ -2481,6 +2613,28 @@ SmallCaps([v-scale[,h-scale[,stemw-scale[,stemh-scale]]]])
 
 Creates small caps out of the selected glyphs.  (See the
 [Add Small Caps](../../interface/elementmenu#Add+Small+Caps) menu item.)
+The following optional arguments are accepted:
+
+|---
+| `v-scale` | The height of the small caps will be this fraction of the height of normal caps.
+|---
+| `h-scale` | The width of the small caps will be this fraction of the width of normal caps. If unspecified or zero, defaults to the value of `v-scale`.
+|---
+| `stemw-scale` | Vertical stems will be scaled by this factor
+|---
+| `stemh-scale` | Horizontal stems will be scaled by this factor. If unspecified or zero, defaults to the value of `stemw-scale`.
+|---
+
+SpiroVersion()
+
+Returns the version of LibSpiro available to FontForge.<BR>
+Versions 0.1 to 0.5 do not have a method to indicate version numbers,
+but there is a limited method to estimate versions {'0.0'..'0.5'}.
+
+-   '0.0' if FontForge has no LibSpiro available.
+-   '0.1' if LibSpiro 20071029 is available.
+-   '0.2' if LibSpiro 0.2 to 0.5 is available.
+-   LibSpiro 0.6 and higher reports back it's version available.
 
 Sqrt(val)
 
@@ -2576,10 +2730,10 @@ Returns the tangent of val. It can execute with no current font.
 
 ToLower(val)
 
-Converts value to a lower case letter. Val may be either an integer, a
-unicode or a string. The first two cases are treated as unicode code
-points, in the third the entire string will be converted. It can execute
-with no current font.
+Returns value converted to a lower case letter. Val may be either an integer,
+a unicode or a string. The first two cases are treated as unicode code points,
+in the third the entire string will be converted. It can execute with no
+current font.
 
 ToMirror(val)
 
@@ -2641,10 +2795,111 @@ It can execute with no current font.
 
 U
 
+ucFracChartGetCnt()
+
+Returns total count of Fractions found in the Unicode chart as
+described by www.unicode.org. It can execute with no current font.
+Note: Count depends on chart version built into FontForge.
+
+ucLigChartGetCnt()
+
+Returns total count of Ligatures found in the Unicode chart as
+described by www.unicode.org. It can execute with no current font.
+
+Note: Count depends on chart version built into FontForge.
+
+ucLigChartGetLoc(val)
+
+Returns n for FontForge internal table Unicode val=Ligature[n]. If
+val does not exist in table, then return -1. Can execute with no
+current font.
+
+Note: Count depends on chart version built into FontForge.
+
+ucLigChartGetNxt(int)
+
+Returns FontForge internal table Unicode Ligature[n]. Return -1 if
+n<0 or n>=ucLigChartGetCnt(). It can execute with no current font.
+
+Note: Count depends on chart version built into FontForge.
+
 UCodePoint(int)
 
 Converts the argument to a unicode code point (a special type used in
 several commands). It can execute with no current font.
+
+ucOFracChartGetCnt()
+
+Returns total count of non-Vulgar Fractions found in the Unicode
+chart as described by www.unicode.org. It can execute with no current
+Note: Count depends on chart version built into FontForge.
+
+ucOFracChartGetLoc(val)
+
+Returns n for FontForge internal table Unicode val=OtherFraction[n].
+If val does not exist in table, then return -1. Can execute with no
+current font.
+Note: Count depends on chart version built into FontForge.
+
+ucOFracChartGetNxt(int)
+
+Returns FontForge internal table Unicode (non-vulgar) Fraction[n].
+Return -1 if n&lt;0 or n&gt;=ucOFracChartGetCnt(). Can execute with no
+current font.
+Note: Count depends on chart version built into FontForge.
+
+ucVulChartGetCnt()
+
+Returns total count of Vulgar Fractions found in the Unicode chart
+as described by www.unicode.org. It can execute with no current font.
+Note: Count depends on chart version built into FontForge.
+
+ucVulChartGetLoc(val)
+
+Returns n for FontForge internal table Unicode val=VulgarFraction[n].
+If val does not exist in table, then return -1. Can execute with no
+current font.
+Note: Count depends on chart version built into FontForge.
+
+ucVulChartGetNxt(int)
+
+Returns FontForge internal table Unicode Vulgar Fraction[n]. Returns
+=ucVulChartGetCnt(). Can execute with no current font.
+Note: Count depends on chart version built into FontForge.
+
+UnicodeAnnotationFromLib(val)
+
+Returns the Unicode Annotations for this value as described by www.unicode.org.
+If there is no unicode annotation for this value, or no library available,
+then return empty string "". It can execute with no current font.
+
+UnicodeBlockCountFromLib()
+
+Return the number of Unicode Blocks for this list as described by www.unicode.org.
+Currently, the blocks are {0..233}, spanning unicode values {uni0..uni10FFFF}.
+If there is no library available, then return -1.
+This can execute with no current font.
+
+UnicodeBlockEndFromLib(val)
+
+Returns the Unicode Block end value as described by www.unicode.org.
+Currently, the blocks are {0..233}, spanning unicode values {uni0..uni10FFFF}.
+If there is no value, or no library available, then return -1.
+This can execute with no current font.
+
+UnicodeBlockNameFromLib(val)
+
+Returns the Unicode Block Name as described by www.unicode.org.
+Currently, the blocks are {0..233}, spanning unicode values {uni0..uni10FFFF}.
+If there is no value, or no library available, then return empty string "".
+This can execute with no current font.
+
+UnicodeBlockStartFromLib(val)
+
+Returns the Unicode Block start value as described by www.unicode.org.
+Currently, the blocks are {0..233}, spanning unicode values {uni0..uni10FFFF}.
+If there is no value, or no library available, then return -1.
+This can execute with no current font.
 
 UnicodeFromName(name)
 
@@ -2652,6 +2907,61 @@ Looks the string "name" up in FontForge's database of commonly used
 glyph names and returns the unicode value associated with that name, or
 -1 if not found. This does *not* check the current font (if any). It can
 execute with no current font.
+
+UnicodeNameFromLib(val)
+
+Returns the Unicode Name for this value as described by www.unicode.org.
+If there is no unicode name for this value, or no library available,
+then return empty string "". It can execute with no current font.
+
+UnicodeNamesListVersion()
+
+Return the Unicode Nameslist Version (as described by www.unicode.org).
+libuninameslist is released on a schedule that depends on
+when www.unicode.org releases new information. These dates do not match
+FontForge release dates, therefore users might not keep this optional library
+upto current updates. This instruction can be used to test if the Nameslist
+library is recent for your script. This function currently works only for
+libuninameslist ver_0.3.20130501 or later, else it returns empty string "".
+This can execute with no current font.
+
+UnicodeNames2GetCntFromLib()
+
+Return the Total Count of all Names that were corrected with a new name.
+Errors and corrections happen, therefore names can be corrected in the
+next Unicode Nameslist version.
+If there is no libuninameslist ver 0.5 or later available, then return -1
+
+UnicodeNames2GetNxtFromLib(val)
+
+Errors and corrections happen, therefore names can be corrected in the
+next Unicode Nameslist version. With val==unicode value, this function
+returns -1 if no Names2 exists, or the Nth table location for this
+unicode value listed in libuninameslist that was corrected to a new name.
+If there is no libuninameslist ver 0.5 or later, then return -1.
+
+UnicodeNames2NxtUniFromLib(val)
+
+Errors and corrections happen, therefore names can be corrected in the
+next Unicode Nameslist version. This function returns the Next Unicode value
+listed in libuninameslist internal table that was corrected to a new name.
+The internal table of Unicode values is of size UnicodeNames2GetCntFromLib().
+If there is no libuninameslist ver 0.5 or later, then return -1.
+
+UnicodeNames2FrmTabFromLib(val)
+
+Errors and corrections happen, therefore names can be corrected in the
+next Unicode Nameslist version. This function returns the Next Names2
+listed in libuninameslist internal table that was corrected to a new name.
+The internal table of Unicode values is of size UnicodeNames2GetCntFromLib().
+If there is no libuninameslist ver 0.5 or later, then return NULL.
+
+UnicodeNames2FromLib(val)
+
+Errors and corrections happen, therefore names can be corrected in the
+next Unicode Nameslist version. This function returns the Names2 or NULL
+based on the unicode value given.
+If there is no libuninameslist ver 0.5 or later, then return NULL.
 
 [UnlinkReference](../../../interface/editmenu/#Unlink)
 

@@ -7,6 +7,25 @@ title: Preferences Dialog
 
 [table_of_contents]    
 
+## Configuration Files
+
+FontForge will load its preferences from multiple places, and the last
+definition of any preference will win. First, system defaults are loaded from
+your system wide `$sharedir/fontforge/prefs`. On a typical installation this
+might be `/usr/local/share/fontforge/prefs` or
+`/Applications/FontForge.app/Contents/Resources/opt/local/share/fontforge/prefs`
+on a Mac OSX installation.
+
+After the system wide prefs file is read your personal preferences
+are loaded from `~/.FontForge/prefs` and will always override the system
+defaults. Any settings you make will be saved back into `~/.FontForge/prefs`.
+
+The format of these prefs files is identical. So if you are distributing
+FontForge for a group of new users, you might like to configure your FontForge
+with settings you wish for everybody to start with and replace the default
+prefs file in the distribution with your own personal preferences.
+
+## The Preferences Window...
 
 ![](/assets/img/dialogs2-prefs-generic.png)
 
@@ -51,14 +70,20 @@ the [outline glyph view](../charview/). Using Cairo is slower, but
 gives smooth curves, and subpixel display precision. New setting applies
 only to windows created afterwards.
 
+### EnsureCorrectSaveExtension
 
-### UsePangoDrawing
+When inputting a name in the Save or SaveAs dialogs, FontForge
+can ensure that the correct filename extension (SFD or SFDIR) is
+always used. This prevents you from accidentally naming your
+source file with a binary extension (such as .otf), out of
+habit.
 
-Controls whether FontForge uses its own interface text drawing routines,
-or relies on Pango library. Using Pango slows down older machines, but
-gives antialiased text, exotic Unicode support, and complex script
-support. New setting applies only to windows created afterwards.
-
+Most of the time, you will want to leave this preference set to
+"On" because it does not get in the way and will ensure that the
+correct extension is given to your font files as you work on
+them. This makes it much harder to accidentally ship a
+Fontforge SFD file as as binary file or try to use an SFD format
+file as a binary font file.
 
 ## New Font
 
@@ -143,8 +168,10 @@ compact or not).
 
 In the glyph window this controls how ff behaves when the user types a
 normal character. If this is On then when a normal character is typed
-the glyph window will shift to display that character, if Off typed
-characters will be ignored.
+the glyph window will shift to display that character, if Off typed characters
+will trigger actions associated with that character as a hotkey or be ignored.
+For example the default action associated with `\`` (backquote) as a hotkey is
+to trigger Preview mode while that key is pressed.
 
 
 ### OpenCharsInNewWindow
@@ -176,6 +203,18 @@ glyph view.
 When holding down the Alt (Meta) key, the arrow keys will move faster.
 This preference item says how much faster.
 
+### DrawOpenPathsWithHighlight
+
+When drawing a foreground layer, render the outline of open
+paths in a specific color to highlight a potential mistake.
+When drawing a new path, the incremental stages will be shown in
+a red, and when the path is closed it will revert back to the
+normal color.
+
+By default this open path highlight color is a red, it can be
+changed using the OpenPathColor resource. To do this see the
+Outline View 2 section of the X Resource Editor available
+through the File menu.
 
 ### SnapDistance
 

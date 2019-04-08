@@ -280,8 +280,8 @@ adjustments to each glyph:
 4.  In fonts with vertical metrics a glyph's vertical advance may be
     altered by a certain number of em-units
 
-In addition to this, if you have configured fontforge to support device
-tables, you may provide pixel adjustments that apply to specific point
+In addition to this
+you may provide pixel adjustments that apply to specific point
 sizes. At small pixel sizes (such as those used for screen fonts) the
 rounding error introduced by converting from em-units to pixels may be
 as large as the movement itself. In the example at right, if the 'subs'
@@ -400,6 +400,28 @@ be twice as big and the effects of rounding errors will be more
 obvious). Magnification is probably only useful if you are working on
 device tables for screen pixelsizes.
 
+#### Undo System Interaction
+
+Changes made to kerning pairs are tracked by a font level undo system. If you
+have made no changes to the lookup then no new undo record will be created. The
+undo system will track only the minimal amount of information needed to
+recreate the old kerning table. This is useful when you are editing a very
+complex kerning table which might have thousands of kerning pairs and requires
+many megabytes of storage just for the kerning table.
+
+The font level undo system will allow you to undo all of the edits you have
+made in a single interaction with the kerning class dialog. For simplicity,
+let us consider the scenario where you open the kerning class dialog and edit a
+few kerning pairs, then select the OK button. We will refer to this as a single
+"round" of editing.
+
+If you have only changed two pairs in a round of editing then only two
+pairs are remembered by the undo system so that the kerning table can
+be restored to how it was before your performed this last round of
+edits.
+
+To undo the changes you have made in a round, select the Undo Font
+Level menu option from the edit menu in the font view window.
 
 ### Anchor Positioning
 
