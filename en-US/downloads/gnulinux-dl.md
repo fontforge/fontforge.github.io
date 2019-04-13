@@ -5,7 +5,11 @@ title: FontForge on GNU+Linux and other UNIXes
 archive_extension: .tar.gz|.zip
 ---
 
-Most of the GNU+Linux distributions have packages for fontforge, but these will often be a quite old. 
+Most of the GNU+Linux distributions have packages for fontforge, but these will often be a quite old.
+
+### AppImage
+
+Use the precompiled AppImage: [2019-04-13](https://github.com/fontforge/fontforge/releases/download/20190413/FontForge-2019-04-13-7f6f1d0-x86_64.AppImage)
 
 ### Ubuntu
 

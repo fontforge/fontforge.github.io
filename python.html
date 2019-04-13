@@ -59,10 +59,9 @@
 <BLOCKQUOTE>
 <PRE>fontforge -c 'open(argv[1]).generate(argv[2])'</PRE>
 </BLOCKQUOTE>
-  <TABLE id="module" border=1>
-    <CAPTION>
-      <A NAME="psMat">psMat</A>
-    </CAPTION>
+
+<H2 id="psMat">psMat</H2>
+  <TABLE class="module" border=1>
     <TR>
       <TH span=3>Methods</TH>
     </TR>
@@ -103,7 +102,7 @@
     <TR>
       <TD><CODE>skew</CODE></TD>
       <TD><CODE>(theta)</CODE></TD>
-      <TD>returns a matrix which will skew by <CODE>theta</CODE> (to produce a
+      <TD>returns a matrix which will skew by <CODE>theta</CODE> (to produce an
 	oblique font). <CODE>Theta</CODE> is expressed in radians</TD>
     </TR>
     <TR>
@@ -119,11 +118,9 @@
       <TD colspan=3>None</TD>
     </TR>
   </TABLE>
-  <P>
-  <TABLE id="module" border=1>
-    <CAPTION>
-      <A NAME="fontforge">fontforge</A>
-    </CAPTION>
+
+<H2 id="fontforge">fontforge</H2>
+  <TABLE class="module" border=1>
     <TR>
       <TH colspan=3>Global Variables</TH>
     </TR>
@@ -208,7 +205,7 @@
       <TD>Loads an encoding file, returns the name of the encoding or None.
         When loading encodings in Unicode consortium format, an encname has to
         be specefied or the encoding will be ignored and None will be
-        reterned.</TD>
+        returned.</TD>
     </TR>
     <TR>
       <TD><CODE>loadNamelist</CODE></TD>
@@ -219,16 +216,6 @@
       <TD><CODE>loadNamelistDir</CODE></TD>
       <TD><CODE>(dirname)</CODE></TD>
       <TD>Loads all namelist files in the directory</TD>
-    </TR>
-    <TR>
-      <TD><CODE>loadPlugin</CODE></TD>
-      <TD><CODE>(filename)</CODE></TD>
-      <TD>Loads a fontforge plugin</TD>
-    </TR>
-    <TR>
-      <TD><CODE>loadPluginDir</CODE></TD>
-      <TD><CODE>(dirname)</CODE></TD>
-      <TD>Loads all fontforge plugins in the directory</TD>
     </TR>
     <TR>
       <TD><CODE>preloadCidmap</CODE></TD>
@@ -351,45 +338,45 @@
     <TR>
       <TD><CODE>UnicodeNames2GetCntFromLib</CODE></TD>
       <TD><CODE>()</CODE></TD>
-	Return the Total Count of all Names that were corrected with a new name.
+      <TD>Return the Total Count of all Names that were corrected with a new name.
 	Errors and corrections happen, therefore names can be corrected in the
 	next Unicode Nameslist version.
-	If there is no libuninameslist ver 0.5 or later available, then return -1
+	If there is no libuninameslist ver 0.5 or later available, then return -1.</TD>
     </TR>
     <TR>
       <TD><CODE>UnicodeNames2GetNxtFromLib</CODE></TD>
       <TD><CODE>(n)</CODE></TD>
-	Errors and corrections happen, therefore names can be corrected in the
+      <TD>Errors and corrections happen, therefore names can be corrected in the
 	next Unicode Nameslist version. With val==unicode value, this function
 	returns -1 if no Names2 exists, or the Nth table location for this
 	unicode value listed in libuninameslist that was corrected to a new name.
-	If there is no libuninameslist ver 0.5 or later, then return -1.
+	If there is no libuninameslist ver 0.5 or later, then return -1.</TD>
     </TR>
     <TR>
       <TD><CODE>UnicodeNames2NxtUniFromLib</CODE></TD>
       <TD><CODE>(n)</CODE></TD>
-	Errors and corrections happen, therefore names can be corrected in the
+      <TD>Errors and corrections happen, therefore names can be corrected in the
 	next Unicode Nameslist version. This function returns the Next Names2
 	listed in libuninameslist internal table that was corrected to a new name.
 	The internal table of Unicode values is of size UnicodeNames2GetCntFromLib().
-	If there is no libuninameslist ver 0.5 or later, then return -1.
+	If there is no libuninameslist ver 0.5 or later, then return -1.</TD>
     </TR>
     <TR>
       <TD><CODE>UnicodeNames2FrmTabFromLib</CODE></TD>
       <TD><CODE>(n)</CODE></TD>
-	Errors and corrections happen, therefore names can be corrected in the
+      <TD>Errors and corrections happen, therefore names can be corrected in the
 	next Unicode Nameslist version. This function returns the Next Names2
 	listed in libuninameslist internal table that was corrected to a new name.
 	The internal table of Unicode values is of size UnicodeNames2GetCntFromLib().
-	If there is no libuninameslist ver 0.5 or later, then return NULL.
+	If there is no libuninameslist ver 0.5 or later, then return NULL.</TD>
     <TR>
     </TR>
       <TD><CODE>UnicodeNames2FromLib</CODE></TD>
       <TD><CODE>(val)</CODE></TD>
-	Errors and corrections happen, therefore names can be corrected in the
+      <TD>Errors and corrections happen, therefore names can be corrected in the
 	next Unicode Nameslist version. This function returns the Names2 or NULL
 	based on the unicode value given.
-	If there is no libuninameslist ver 0.5 or later, then return NULL.
+	If there is no libuninameslist ver 0.5 or later, then return NULL.</TD>
     </TR>
     <TR>
       <TD><CODE>IsFraction</CODE></TD>
@@ -558,7 +545,7 @@
     <TR>
       <TD><CODE>open</CODE></TD>
       <TD><CODE>(filename[,flags])</CODE></TD>
-      <TD>Opens a filename and returns the font it contains. If it does.
+      <TD>Opens a filename and returns the font it contains (if any).
 	<P>
 	If the flags argument is 4, then ff will load all glyphs in the 'glyf' table
 	of a ttc file (rather than just the glyphs used in the font picked). This
@@ -590,7 +577,7 @@
     <TR>
       <TD><CODE>registerGlyphSeparationHook</CODE></TD>
       <TD><CODE>(hook)</CODE></TD>
-      <TD>The GlpyphSeparationHook is a python routine which FontForge will call
+      <TD>The GlyphSeparationHook is a python routine which FontForge will call
 	when it wants to figure out the optical separation between two glyphs. If
 	you neve call this, or if you call it with a value of <CODE>None</CODE> FontForge
 	will use a built-in default. This routine gets called during AutoWidth, AutoKern,
@@ -884,45 +871,25 @@ fontforge.registerImportExport(importGlyph,exportGlyph,None,"foosball","foo","fo
 	<P>
 	Throws an exception if there is no user interface.</TD>
     </TR>
-    <TR>
-      <TH colspan=3>Types</TH>
-    </TR>
-    <TR>
-      <TD colspan=3><A href="#Point">point</A></TD>
-    </TR>
-    <TR>
-      <TD colspan=3><A href="#Contour">contour</A></TD>
-    </TR>
-    <TR>
-      <TD colspan=3><A href="#Layer">layer</A></TD>
-    </TR>
-    <TR>
-      <TD colspan=3><A href="#GlyphPen">glyphPen</A></TD>
-    </TR>
-    <TR>
-      <TD colspan=3><A href="#Glyph">glyph</A></TD>
-    </TR>
-    <TR>
-      <TD colspan=3><A href="#selection">selection</A></TD>
-    </TR>
-    <TR>
-      <TD colspan=3><A href="#Font">font</A></TD>
-    </TR>
   </TABLE>
-  <P>
-  <TABLE id="type" border=1>
-    <CAPTION>
-      <A name="Point">point</A>
-    </CAPTION>
+
+<H2 id="Point">point</H2>
+
+  <TABLE class="type" border=1>
     <TR>
       <TH colspan=3>Creation</TH>
     </TR>
     <TR>
       <TD><CODE>fontforge.point</CODE></TD>
-      <TD><CODE>([x,y,on-curve,selected])</CODE></TD>
+      <TD><CODE>([x,y,on-curve,type,selected])</CODE></TD>
       <TD>Creates a new point. Optionally specifying its x,y
          location, on-curve status and selected status. x and y
-         must be supplied together</TD>
+         must be supplied together.
+	<P>A "point initializer tuple" is any tuple
+	<CODE>(x,y[,True|False[,0|1|2|3[,True|False]]])</CODE>, where
+	<CODE>x</CODE> and <CODE>y</CODE> are numbers, the third value
+	corresponds to <CODE>on-curve</CODE>, the fourth to <CODE>type</CODE>,
+	and the fifth to <CODE>selected</CODE>.</TD>
     </TR>
     <TR>
       <TH colspan=3>Members</TH>
@@ -946,8 +913,46 @@ fontforge.registerImportExport(importGlyph,exportGlyph,None,"foosball","foo","fo
     </TR>
     <TR>
       <TD><CODE>selected</CODE></TD>
-      <TD colspan=2>Whether this point is selected in the UI. If an off-curve point
-	is selected in means the preceding (interpolated) on-curve point is selected.</TD>
+      <TD colspan=2>Whether this point is selected in the UI.</TD>
+	<P>
+	The value of this member also determines the selected status in the UI
+	on setting a layer.  FontForge usually retains the selection status of
+	any point between and that of an on-curve point when saving, whether or
+	not a UI is present.
+      </TD>
+    </TR>
+    <TR>
+      <TD><CODE>type</CODE></TD>
+      <TD colspan=2>For an on-curve point, its FontForge point type.
+	<P>
+	There are four types: <CODE>fontforge.splineCorner</CODE>==0,
+	<CODE>fontforge.splineCurve</CODE>==1,
+	<CODE>fontforge.splineHVCurve</CODE>==2, and
+	<CODE>fontforge.splineTangent</CODE>==3. A new point will have
+	type <CODE>splineCorner</CODE>. When assigning a layer to
+	<CODE>glyph.layers</CODE>, <CODE>glyph.background</CODE> or
+	<CODE>glyph.foreground</CODE> the type value is ignored. To
+	influence the type FontForge will associate with an on-curve point
+	use <CODE><A HREF="python.html#g-setLayer">glyph.setLayer</A></CODE>
+      </TD>
+    </TR>
+    <TR>
+      <TD><CODE>interpolated</CODE></TD>
+      <TD colspan=2>True if FontForge treats this (quadratic, on-curve) point as
+        interpolated. All interpolated points should be mid-way between their off-curve
+        points, but some such points are not treated as interpolated. This flag is
+        ignored when setting a layer.
+        <P>
+        Older versions of FontForge omitted interpolated points. This
+	was equivalent to executing the following on a contour:
+	<P>
+	<TT>c[:] = [ p for p in c if not p.interpolated ]</TT> </TD>
+	<P>
+	This member will be false for a point marked "Never interpolate" in FontForge
+	but there is currently no way of setting or preserving that mark when a
+	layer is replaced using the Python interfaces. A "round trip" through a Python
+	contour therefore clears that mark on any points that have it, and FontForge
+	treats mid-placed and omitted on_curve points as equivalent.
     </TR>
     <TR>
       <TD><CODE>name</CODE></TD>
@@ -983,46 +988,41 @@ fontforge.registerImportExport(importGlyph,exportGlyph,None,"foosball","foo","fo
 	it is useful for anything else.</TD>
     </TR>
   </TABLE>
-  <P>
-  <TABLE id="type" border=1>
-    <CAPTION>
-      <A name="Contour">contour</A>
-    </CAPTION>
-    <TR>
-      <TH colspan=3>Description</TH>
-    </TR>
-    <TR>
-      <TD colspan=3>A contour is a collection of points. A contour may be either
-	based on cubic or quadratic splines.
-	<P>
-	If based on cubic splines there should be either 0 or 2 off-curve points
-	between every two on-curve points. If there are no off-curve points then
-	we have a line between those two points. If there are 2 off-curve points
-	we have a cubic bezier curve between the two end points.
-	<P>
-	If based on quadratic splines things are more complex. Again, two adjacent
-	on-curve points yield a line between those points. Two on-curve points with
-	an off-curve point between them yields a quadratic bezier curve. However
-	if there are two adjacent off-curve points then an on-curve point will be
-	interpolated between them. (This should be familiar to anyone who has read
-	the truetype 'glyf' table docs).
-	<P>
-	For examples of what these splines can look like see the
-	<A HREF="bezier.html">section on bezier curves</A>.
-	<P>
-	A contour may be open in which case it is just a long wiggly line, or closed
-	when it is more like a circle with an inside and an outside. Unless you are
-	making stroked fonts all your contours should eventually be closed.
-	<P>
-	Contours may also be expressed in terms of Raph Levien's spiro points. This
-	is an alternate representation for the contour, and is not always available
-	(Only if <CODE><A HREF="python.html#ff-hasSpiro">fontforge.hasSpiro</A>()
-	</CODE>is<CODE> True</CODE>. If available the spiro member will return a
-	tuple of spiro control points, while assigning to this member will change
-	the shape of the contour to match the new spiros.
-	<P>
-	Two contours may be compared to see if they describe similar paths.</TD>
-    </TR>
+
+<H2 id="Contour">contour</H2>
+
+A contour is a collection of points. A contour may be either
+based on cubic or quadratic splines.
+<P>
+If based on cubic splines there should be either 0 or 2 off-curve points
+between every two on-curve points. If there are no off-curve points then
+we have a line between those two points. If there are 2 off-curve points
+we have a cubic bezier curve between the two end points.
+<P>
+If based on quadratic splines things are more complex. Again, two adjacent
+on-curve points yield a line between those points. Two on-curve points with
+an off-curve point between them yields a quadratic bezier curve. However
+if there are two adjacent off-curve points then an on-curve point will be
+interpolated between them. (This should be familiar to anyone who has read
+the truetype 'glyf' table docs).
+<P>
+For examples of what these splines can look like see the
+<A HREF="bezier.html">section on bezier curves</A>.
+<P>
+A contour may be open in which case it is just a long wiggly line, or closed
+when it is more like a circle with an inside and an outside. Unless you are
+making stroked fonts all your contours should eventually be closed.
+<P>
+Contours may also be expressed in terms of Raph Levien's spiro points. This
+is an alternate representation for the contour, and is not always available
+(Only if <CODE><A HREF="python.html#ff-hasSpiro">fontforge.hasSpiro</A>()
+</CODE>is<CODE> True</CODE>. If available the spiro member will return a
+tuple of spiro control points, while assigning to this member will change
+the shape of the contour to match the new spiros.
+<P>
+Two contours may be compared to see if they describe similar paths.
+
+  <TABLE class="type" border=1>
     <TR>
       <TH colspan=3>Creation</TH>
     </TR>
@@ -1115,19 +1115,19 @@ fontforge.registerImportExport(importGlyph,exportGlyph,None,"foosball","foo","fo
       <TD colspan=2><CODE>c[i]</CODE></TD>
       <TD>The <EM>i</EM>th point on the contour. You may assign a point or
 	 point initializer to this (keeping the number of points constant) or
-         use "del c[i]" to remove the entry (reducing the number by one)</TD>
+	 use "<CODE>del c[i]</CODE>" to remove the entry (reducing the number by one)</TD>
     </TR>
     <TR>
       <TD colspan=2><CODE>c[i:j]</CODE></TD>
-      <TD>The contour containing points between i and j; i must be &gt;= j. 
-	Alternatively, c[j:i:-1] returns those points in reverse order 
+      <TD>The contour containing points between i and j; i must be &gt;= j.
+	Alternatively, <CODE>c[j:i:-1]</CODE> returns those points in reverse order
 	(larger strides are not supported).</TD>
     </TR>
     <TR>
       <TD colspan=2><CODE>c[i:j] = d</CODE></TD>
       <TD>The points between i and j are replaced by those in d; i must be &gt;= j.
-        d can be a contour or a sequence of point initializers, as in [(1,1,False),(2,1)].
-        If c[j:i:-1] is used instead the points of d are assigned in reverse order.</TD>
+      d can be a contour or a sequence of point initializer tuples, as in <CODE>[(1,1,False),(2,1)]</CODE>.
+      If <CODE>c[j:i:-1]</CODE> is used instead the points of d are assigned in reverse order.</TD>
     </TR>
     <TR>
       <TD colspan=2><CODE>c + d</CODE></TD>
@@ -1140,8 +1140,8 @@ fontforge.registerImportExport(importGlyph,exportGlyph,None,"foosball","foo","fo
     </TR>
     <TR>
       <TD colspan=2><CODE>p in c</CODE></TD>
-      <TD>When p i sa point returns whether some point (p.x,p.y) is in the contour c. 
-        p can also be a tuple of two numbers</TD>
+      <TD>When p is a point, returns whether some point (p.x,p.y) is in the contour c.
+        p can also be a tuple of two numbers.</TD>
     </TR>
     <TR>
       <TD colspan=3>Does not support the repeat concept</TD>
@@ -1208,8 +1208,8 @@ fontforge.registerImportExport(importGlyph,exportGlyph,None,"foosball","foo","fo
       <TD><CODE>(point[,pos])</CODE></TD>
       <TD>Adds point to the contour. If the optional third argument is give, the
 	line will be added after the pos'th point, otherwise it will be at the end
-	of the contour. The point may be either a point or a tuple with three members
-	(x,y,on_curve)</TD>
+	of the contour. The point may be either a point or a point initializer tuple.
+	</TD>
     </TR>
     <TR>
       <TD><CODE>makeFirst</CODE></TD>
@@ -1393,21 +1393,15 @@ fontforge.registerImportExport(importGlyph,exportGlyph,None,"foosball","foo","fo
 	it is useful for anything else.</TD>
     </TR>
   </TABLE>
-  <P>
-  <TABLE id="type" border=1>
-    <CAPTION>
-      <A name="Layer">layer</A>
-    </CAPTION>
-    <TR>
-      <TH colspan=3>Description</TH>
-    </TR>
-    <TR>
-      <TD colspan=3>A layer is a collection of contours. All the contours must
-	be the same order (all quadratic or all cubic). Currently layers do not contain
-	references.
-	<P>
-	Layers may be compared to see if their contours are similar.</TD>
-    </TR>
+
+<H2 id="Layer">layer</H2>
+A layer is a collection of contours. All the contours must
+be the same order (all quadratic or all cubic). Currently layers do not contain
+references.
+<P>
+Layers may be compared to see if their contours are similar.
+
+  <TABLE class="type" border=1>
     <TR>
       <TH colspan=3>Creation</TH>
     </TR>
@@ -1438,9 +1432,9 @@ fontforge.registerImportExport(importGlyph,exportGlyph,None,"foosball","foo","fo
     </TR>
     <TR>
       <TD colspan=2><CODE>l[i]</CODE></TD>
-      <TD>The <EM>i</EM>th contour in the layer. You may assign a contour 
-	 to this (keeping the number of contours constant) or use "del l[i]"
-	 to remove the entry (reducing the number by one)</TD>
+      <TD>The <EM>i</EM>th contour in the layer. You may assign a contour
+	to this (keeping the number of contours constant) or use "<CODE>del l[i]</CODE>"
+	to remove the entry (reducing the number by one)</TD>
     </TR>
     <TR>
       <TD colspan=2><CODE>l + m</CODE></TD>
@@ -1728,19 +1722,16 @@ fontforge.registerImportExport(importGlyph,exportGlyph,None,"foosball","foo","fo
 	it is useful for anything else.</TD>
     </TR>
   </TABLE>
-  <P>
-  <TABLE id="type" border=1>
-    <CAPTION>
-      <A name="GlyphPen">glyphPen</A>
-    </CAPTION>
-    <TR>
-      <TD colspan=3>This implements the
-	<A href="http://www.robofab.org/objects/pen.html">Pen Protocol</A> to draw
-	into a FontForge glyph. You create a glyphPen with the
-	<A href="#glyph-glyphPen">glyphPen</A> attribute of a glyph. You then draw
-	into it with the operators below.
-	<BLOCKQUOTE>
-	  <PRE>
+
+<H2 id="GlyphPen">glyphPen</H2>
+
+This implements the <A href="http://www.robofab.org/objects/pen.html">Pen
+Protocol</A> to draw into a FontForge glyph. You create a glyphPen with
+the <A href="#glyph-glyphPen">glyphPen</A> attribute of a glyph. You then draw
+into it with the operators below.
+
+<BLOCKQUOTE>
+<PRE>
 import fontforge;
 font = fontforge.open("Ambrosia.sfd");	#Open a font
 pen = font["B"].glyphPen();		# Create a pen to draw into glyph "B"
@@ -1756,10 +1747,11 @@ pen = None;				# Finalize the pen. This tells FontForge
 					# that the drawing is done and causes
 			                # it to refresh the display (if a UI is active).
 </PRE>
-	</BLOCKQUOTE>
-	<P>
-	This type may not be pickled.</TD>
-    </TR>
+</BLOCKQUOTE>
+<P>
+This type may not be pickled.
+
+  <TABLE class="type" border=1>
     <TR>
       <TH colspan=3>Members</TH>
     </TR>
@@ -1839,25 +1831,20 @@ pen = None;				# Finalize the pen. This tells FontForge
 	matrix is a 6 element tuple.</TD>
     </TR>
   </TABLE>
-  <P>
-  <TABLE id="type" border=1>
-    <CAPTION>
-      <A name="Glyph">glyph</A>
-    </CAPTION>
-    <TR>
-      <TH colspan=3>Description</TH>
-    </TR>
-    <TR>
-      <TD colspan=3>The glyph type refers to a fontforge Glyph object. It has no
-	independent life of its own, it always lives within a font. It has all the
-	things you expect to be associated with a glyph: a glyph name, a unicode
-	encoding, a drawing layer, GPOS/GSUB features...
-	<P>
-	This type may not be pickled.
-	<P>
-	This type may not be created directly -- all glyphs are bound to a font and
-	must be created through the font.</TD>
-    </TR>
+
+<H2 id="Glyph">glyph</H2>
+
+The glyph type refers to a fontforge Glyph object. It has no
+independent life of its own, it always lives within a font. It has all the
+things you expect to be associated with a glyph: a glyph name, a unicode
+encoding, a drawing layer, GPOS/GSUB features...
+<P>
+This type may not be pickled.
+<P>
+This type may not be created directly -- all glyphs are bound to a font and
+must be created through the font.
+
+  <TABLE class="type" border=1>
     <TR>
       <TH colspan=3>Members</TH>
     </TR>
@@ -2686,6 +2673,64 @@ pen = None;				# Finalize the pen. This tells FontForge
 	contour in the glyph (including itself).</TD>
     </TR>
     <TR>
+      <TD><CODE><A name="g-setLayer">setLayer</A></CODE></TD>
+      <TD><CODE>(layer,layer-index[,flags])</CODE></TD>
+      <TD>An alternative to assigning to <CODE>layers</CODE>, <CODE>background</CODE>,
+	or <CODE>foreground</CODE>, and equivalent to those when not using the optional
+	<CODE>flags</CODE> argument. When present <CODE>flags</CODE> can be used to
+	influence the types FontForge will assign to on-curve points. It
+	should be a tuple of up to three of the following strings. (In the following
+	descriptions "<em>selected</em>" refers to points picked out by the
+	chosen "select_" flag, which is unrelated to the <CODE>point.selected</CODE>
+	field. At most one "select_" flag and one mode flag should be included.)
+	<DL>
+	  <DT>select_none
+	  <DD>Each (on-curve) point will be assigned a type corresponding to its
+	  <CODE>point.type</CODE> value.
+	  <DT>select_all
+	  <DD>(default) Each point will have a type assigned according to the
+	  chosen mode.
+	  <DT>select_smooth
+	  <DD>Each point with the type <CODE>splineCorner</CODE> will retain
+	  that type, others will be assigned a type according to the chosen 
+	  mode. This makes the <CODE>point.type</CODE> field function like
+	  the <CODE>smooth</CODE> tag in the UFO glif format and some other
+	  spline storage formats. 
+	  <DT>select_incompat
+	  <DD>Each point with a type compatible with its current geometry will
+	  retain that type, others will be assigned a type according to the chosen
+	  mode.
+	  <DT>by_geom
+	  <DD>(default) In this mode, each <EM>selected</EM> point will be assigned
+	  a type based on only its geometry. (However, see "hvcurve" below.)
+	  <DT>downgrade
+	  <DD>In this mode, each <EM>selected</EM> point will be assigned the 
+	  most specific type compatible with its geometry and its <CODE>point.type</CODE>.
+	  A point marked <CODE>splineHVCurve</CODE> can keep that type or be 
+	  downgraded to <CODE>splineCurve</CODE> or <CODE>splineCorner</CODE>, while
+	  a <CODE>splineCurve</CODE> or <CODE>splineTangent</CODE> can keep that 
+	  (respective) type or be downgraded to <CODE>splineCorner</CODE>. 
+	  (<CODE>splineCorner</CODE> is compatible with any geometry.)
+	  <DT>check
+	  <DD>In this mode, the type of each <EM>selected</EM> point is verified to be 
+	  compatible with its geometry. If it is not compatible the function
+	  raises an exception. (At present this exception is
+	  not very informative. However, to identify the specific problem
+	  one can duplicate the layer, use <CODE>setLayer</CODE> with 'downgrade', 
+	  and then retrieve the layer and compare it with the original.)
+	  <DT>force
+	  <DD>In this mode, the geometry of each <EM>selected</EM> point is 
+	  altered to match its <CODE>point.type</CODE>, similar to changing a 
+	  point's type using the UI. Note that FontForge's point conversion
+	  algorithm is not sophisticated and may not have the desired result.
+	  <DT>hvcurve
+	  <DD>This extra flag can be used to include <CODE>splineHVCurve</CODE>
+	  among the types that can be assigned "by geometry". Normally FontForge
+	  assigns <CODE>splineCurve</CODE> to on-curve points with strictly 
+	  horizontal or vertical off-curve points. 
+	</DL></TD>
+    </TR>
+    <TR>
       <TD><CODE>simplify</CODE></TD>
       <TD><CODE>([error-bound,flags,tan_bounds,<BR>
 	linefixup,linelenmax])</CODE></TD>
@@ -2850,26 +2895,24 @@ pen = None;				# Finalize the pen. This tells FontForge
 	context of a font. See <A href="#f-createChar">font.createChar</A></TD>
     </TR>
   </TABLE>
-  <P>
-  <TABLE id="type" border=1>
-    <CAPTION>
-      <A name="selection">selection</A>
-    </CAPTION>
-    <TR>
-      <TD colspan=3>This represents a font's selection. You may index it with an
-	encoding value (in the encoding ISO-646-US (ASCII) the character "A" has
-	encoding index 65), or with a glyph's name, or with a string like "uXXXXX"
-	where XXXXX represent the glyph's unicode codepoint in hex, or with a fontforge
-	glyph object. The value of indexing into a selection will be either True
-	or False.
-	<BLOCKQUOTE>
-	  <PRE><FONT COLOR="Gray">&gt;&gt;&gt;</FONT> print fontforge.activeFont().selection[65]
+
+<H2 id="selection">selection</H2>
+
+This represents a font's selection. You may index it with an
+encoding value (in the encoding ISO-646-US (ASCII) the character "A" has
+encoding index 65), or with a glyph's name, or with a string like "uXXXXX"
+where XXXXX represent the glyph's unicode codepoint in hex, or with a fontforge
+glyph object. The value of indexing into a selection will be either True
+or False.
+<BLOCKQUOTE>
+<PRE><FONT COLOR="Gray">&gt;&gt;&gt;</FONT> print fontforge.activeFont().selection[65]
 <FONT COLOR="Gray">True</FONT>
 </PRE>
-	</BLOCKQUOTE>
-	<P>
-	This type may not be pickled.</TD>
-    </TR>
+</BLOCKQUOTE>
+<P>
+This type may not be pickled.
+
+  <TABLE class="type" border=1>
     <TR>
       <TH colspan=3>Members</TH>
     </TR>
@@ -2981,18 +3024,15 @@ pen = None;				# Finalize the pen. This tells FontForge
 	selection.</TD>
     </TR>
   </TABLE>
-  <P>
-  <TABLE id="type" border=1>
-    <CAPTION>
-      <A NAME="private">private</A>
-    </CAPTION>
-    <TR>
-      <TD colspan=3>This represents a font's postscript private dictionary. You
-	may index it with one of the standard names of things that live in the private
-	dictionary.
-	<P>
-	This type may not be pickled.</TD>
-    </TR>
+
+<H2 id="private">private</H2>
+This represents a font's postscript private dictionary. You
+may index it with one of the standard names of things that live in the private
+dictionary.
+<P>
+This type may not be pickled.
+
+  <TABLE class="type" border=1>
     <TR>
       <TH colspan=3>Iterator Protocol</TH>
     </TR>
@@ -3016,18 +3056,15 @@ pen = None;				# Finalize the pen. This tells FontForge
 	can't make a guess it will simply ignore the request.</TD>
     </TR>
   </TABLE>
-  <P>
-  <TABLE id="type" border=1>
-    <CAPTION>
-      <A NAME="math">math</A>
-    </CAPTION>
-    <TR>
-      <TD colspan=3>This represents a font's math constant table. Not all fonts
-	have math tables, and checking this field will not create the underlying
-	object, but examining or assigning to its members will create it..
-	<P>
-	This type may not be pickled.</TD>
-    </TR>
+<H2 id="math">math</H2>
+
+This represents a font's math constant table. Not all fonts
+have math tables, and checking this field will not create the underlying
+object, but examining or assigning to its members will create it..
+<P>
+This type may not be pickled.
+
+  <TABLE class="type" border=1>
     <TR>
       <TH colspan=3>Members</TH>
     </TR>
@@ -3064,21 +3101,16 @@ pen = None;				# Finalize the pen. This tells FontForge
       <TD>Removes any underlying math table from the font.</TD>
     </TR>
   </TABLE>
-  <P>
-  <TABLE id="type" border=1>
-    <CAPTION>
-      <A name="Font">font</A>
-    </CAPTION>
-    <TR>
-      <TH colspan=3>Description</TH>
-    </TR>
-    <TR>
-      <TD colspan=3>The font type refers to a fontforge Font object. It generally
-	contains a list of glyphs, an encoding to order those glyphs, a fontname,
-	a list of GPOS/GSUB lookups and many other things.
-	<P>
-	This type may not be pickled.</TD>
-    </TR>
+
+<H2 id="Font">font</H2>
+
+The font type refers to a fontforge Font object. It generally
+contains a list of glyphs, an encoding to order those glyphs, a fontname,
+a list of GPOS/GSUB lookups and many other things.
+<P>
+This type may not be pickled.
+
+  <TABLE class="type" border=1>
     <TR>
       <TH colspan=3>Creation</TH>
     </TR>
@@ -4119,8 +4151,8 @@ pen = None;				# Finalize the pen. This tells FontForge
     <TR>
       <TD><a name="addContextualSubtable"><CODE>addContextualSubtable</CODE></a></TD>
       <TD><CODE>(lookup-name,<BR>
-	&nbsp;new-subtable-name<BR>
-	&nbsp;type<BR>
+	&nbsp;new-subtable-name,<BR>
+	&nbsp;type,<BR>
 	&nbsp;rule<BR>
 	&nbsp;[,afterSubtable=]
 	&nbsp;[,bclasses=]
@@ -5350,7 +5382,7 @@ pen = None;				# Finalize the pen. This tells FontForge
     </TR>
   </TABLE>
   <H3>
-    Stupid example
+    Trivial example
   </H3>
   <TABLE BORDER=1>
     <TR>
@@ -5374,7 +5406,9 @@ n.save("NewFont.sfd")                            #and save it.
     FontForge as a python <A NAME="extension">extension</A>
   </H2>
   <P>
-  When Fontforge is installed, it also installs a Python module, which can be accessed from Python using:
+  In addition to embedding Python, FontForge typically installs a Python module
+  accessible to the system's <code>python</code> executable, which can be
+  accessed using:
   <BLOCKQUOTE id="shell">
     <PRE><FONT COLOR="Gray">&gt;&gt;&gt; </FONT>import fontforge
 </PRE>

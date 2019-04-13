@@ -1885,8 +1885,8 @@ SetLBearing(lbearing)
 	    Reads an encoding file and stores it in FontForge's list of possible encodings.
 	    See Encoding-&gt;<A HREF="encodingmenu.html#Load">LoadEncoding</A> for more
 	    info.
-	    When loading encodings in Unicode consortium format, an encname has to
-	    be specefied or the encoding will be ignored.
+	    When loading encodings in Unicode consortium format an encname has to
+	    be specified or the encoding will be ignored.
 	  <DT>
 	    <A NAME="LoadNamelist">L</A>oadNamelist(filename)
 	  <DD>
@@ -1897,25 +1897,6 @@ SetLBearing(lbearing)
 	  <DD>
 	    Searches the given directory for things that look like fontforge namelists
 	    and loads them. If directory is omitted then it will load the default directory.
-	    It can execute with no current font.
-	  <DT>
-	    <A NAME="LoadPlugin">L</A>oadPlugin(filename)
-	  <DD>
-	    Will load the <A HREF="plugins.html">fontforge plugin </A>stored in the given
-	    file (this should be a shared library). It can execute with no current font.
-	  <DT>
-	    <A NAME="LoadPluginDir">L</A>oadPluginDir([directory-name])
-	  <DD>
-	    Searches the given directory for things that look like fontforge plugins
-	    and loads them. If directory is omitted then it will load the two default
-	    directories:
-	    <UL>
-	      <LI>
-		/usr/local/share/fontforge/plugins
-	      <LI>
-		~/.FontForge/plugins
-	    </UL>
-	    <P>
 	    It can execute with no current font.
 	  <DT>
 	    <A NAME="LoadPrefs">L</A>oadPrefs()
