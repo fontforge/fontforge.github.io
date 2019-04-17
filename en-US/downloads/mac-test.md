@@ -48,7 +48,7 @@ Thanks. Continue <a href="../mac-dl">this way</a>.
 function downloadClicked() {
 	document.getElementById("emls_box").style.display = "none";
 	document.getElementById("dl_continue_box").style.display = "inline";
-  window.location.href = "http://fontforge.github.io/en-US/downloads/mac-dl/";
+	window.setTimeout(function () { window.location.href = "http://fontforge.github.io/en-US/downloads/mac-dl/"; }, 500);
 }
 function subscribeClicked() {
 	document.forms["emls_sform"]["email"].value = document.forms["emls_vform"]["email"].value;
