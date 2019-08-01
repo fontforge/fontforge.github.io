@@ -9,7 +9,7 @@ Most of the GNU+Linux distributions have packages for fontforge, but these will 
 
 ### AppImage
 
-Use the precompiled AppImage: [2019-04-13](https://github.com/fontforge/fontforge/releases/download/20190413/FontForge-2019-04-13-7f6f1d0-x86_64.AppImage)
+Use the precompiled AppImage: [2019-08-01](https://github.com/fontforge/fontforge/releases/download/20190801/FontForge-2019-08-01-ac635b8-x86_64.AppImage)
 
 ### Ubuntu
 

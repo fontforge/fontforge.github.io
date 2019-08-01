@@ -6,15 +6,16 @@ archive_extension: ".dmg"
 ---
 
 FontForge is a UNIX application, so it doesn't behave 100% like a normal Mac Application.
-OS X 10.10 or later is required.
+OS X 10.12 or later is required.
 
-Download and install [FontForge 2019-04-13](https://github.com/fontforge/fontforge/releases/download/20190413/FontForge-2019-04-13-7f6f1d0.app.dmg)
+Download and install [FontForge 2019-08-01](https://github.com/fontforge/fontforge/releases/download/20190801/FontForge-2019-08-01-ac635b8.app.dmg)
 
 <a class="btn btn-primary btn-large default" data-toggle="collapse" href="#collapseOld" aria-expanded="false" aria-controls="collapseOld">
   For releases before 2019-03-17
 </a>
 
 <div class="collapse" id="collapseOld"><div class="well" markdown="1">
+
 #### 1. Install XQuartz
 
 Without [XQuartz](http://xquartz.macosforge.org), FontForge will open a Dock icon but not load any further.
