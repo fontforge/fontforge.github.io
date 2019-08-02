@@ -20,7 +20,7 @@ All we ask is that you subscribe to the FontForge announcement list so that we c
 
 <div id="emls_box">
 <form id="emls_vform" style="display: inline;" name="emls_vform" target="emls_dummyframe" onsubmit="subscribeClicked()">
-Consider subscribing to <a href="https://sourceforge.net/projects/fontforge/lists/fontforge-announce">the mailing list</a>.m<button onclick="downloadClicked()" type="button">Confirm and Download</button>
+Consider subscribing to <a href="https://sourceforge.net/projects/fontforge/lists/fontforge-announce">the mailing list</a>. <button onclick="downloadClicked()" type="button">Confirm and Download</button>
 </form>
 </div>
 <div id="dl_continue_box" style="display: none;">
