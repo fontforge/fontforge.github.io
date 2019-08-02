@@ -24,7 +24,7 @@ Consider subscribing to <a href="https://sourceforge.net/projects/fontforge/list
 </form>
 </div>
 <div id="dl_continue_box" style="display: none;">
-Continue <a href="../mac-dl">this way</a>.
+Continue <a href="../windows-dl">this way</a>.
 </div>
 
 <div style="height: 0, width:0, border: 0, visibility: hidden;">
