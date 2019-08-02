@@ -20,11 +20,11 @@ All we ask is that you subscribe to the FontForge announcement list so that we c
 
 <div id="emls_box">
 <form id="emls_vform" style="display: inline;" name="emls_vform" target="emls_dummyframe" onsubmit="subscribeClicked()">
-<input name="email" type="text"/><button onclick="subscribeClicked()" type="button">Subscribe/Confirm and Download</button>
+Consider subscribing to <a href="https://sourceforge.net/projects/fontforge/lists/fontforge-announce">the mailing list</a>.m<button onclick="downloadClicked()" type="button">Confirm and Download</button>
 </form>
 </div>
 <div id="dl_continue_box" style="display: none;">
-Thanks. Continue <a href="../gnulinux-dl">this way</a>.
+Continue <a href="../mac-dl">this way</a>.
 </div>
 
 <div style="height: 0, width:0, border: 0, visibility: hidden;">
