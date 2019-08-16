@@ -24,6 +24,15 @@ title: Font Styles in various languages
       <td>书体</td>
      </tr>
     <tr align="CENTER">
+      <th>Croatian</th>
+      <td>Normalni</td>
+      <td>Debeli</td>
+      <td>Polu-Debeli</td>
+      <td>Svijetli</td>
+      <td>Srednji</td>
+      <td>Knjižni</td>
+    </tr>
+    <tr align="CENTER">
       <th>Danish</th>
       <td>Normal</td>
       <td>Fed</td>
@@ -159,6 +168,15 @@ title: Font Styles in various languages
       <td>压缩</td>
       <td>加宽</td>
       <td>轮廓</td>
+    </tr>
+    <tr align="CENTER">
+      <th>Croatian</th>
+      <td>Tamni</td>
+      <td>Kurziv</td>
+      <td>Ukošeni</td>
+      <td>Suženi</td>
+      <td>Prošireni</td>
+      <td>Konturni</td>
     </tr>
     <tr align="CENTER">
       <th>Danish</th>
