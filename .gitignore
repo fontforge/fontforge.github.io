@@ -1,4 +1,3 @@
+_site/
 .DS_Store
 *.lock
-_site/*
-!_site/docs/
