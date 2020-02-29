@@ -1,0 +1,324 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Building Accented and other Composite Glyphs &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Bézier Splines" href="bezier.html" />
+    <link rel="prev" title="Autotracing bitmaps in FontForge" href="autotrace.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="building-accented-and-other-composite-glyphs">
+<h1>Building Accented and other Composite Glyphs<a class="headerlink" href="#building-accented-and-other-composite-glyphs" title="Permalink to this headline">¶</a></h1>
+<p>You can use the <span class="menuselection">Element ‣ Build ‣ Build Accented Glyph</span>
+command to build up accented glyphs. Or you can use
+<span class="menuselection">Element ‣ Build ‣ Build Composite</span> and build slightly more
+general composite glyphs (ligatures and so forth). The accented version will not
+create ligatures and will not replace Alpha with A. The composite version will
+do both these things. My assumption is that ligatures (like the “fi” ligature)
+usually need a bit of work on the user’s part to get them to look good, in the
+case of “fi” the dot on the “i” needs to be fused into the hook of the “f”, and
+if you are careless with the command you might destroy your work inadvertently.</p>
+<p>What can be built?</p>
+<ul>
+<li><p>Unicode specifies various normative glyph decompositions. So “Aacute” is defined
+to be an “A” with an “acute” accent centered on top. Any of these can be built
+(though if the glyph contains no accents it will need to be built with the build
+composite command).</p>
+<p>Sometimes Unicode’s normative definition is not as informative as it might be
+(many of the greek accents are “unified” with latin accents that they don’t
+really look like, the result is that following Unicode slavishly will yield the
+wrong glyph). So in some cases FontForge will use a slightly different set of
+glyphs than the normative decomposition.</p>
+<p>This includes:</p>
+<ul class="simple">
+<li><p>Latin accented characters</p></li>
+<li><p>Latin ligatures (ae, oe, fi, fl, etc)</p></li>
+<li><p>Greek accented characters</p></li>
+<li><p>Cyrillic accented characters</p></li>
+<li><p>Hebrew ligatures</p></li>
+<li><p>Arabic ligatures</p></li>
+<li><p>Fractions, digits inside parens, roman numerals, etc.</p></li>
+<li><p>The predefined Hangul characters (0xac00-0xdfaf)</p></li>
+</ul>
+</li>
+<li><p>Many of the Korean Jamo are actually ligatures of other Jamo (ssangkiyoeok
+(0x1101) is composed of two kiyoeok (0x1100)). For some reason this information
+is not normative unicode, but FontForge is aware of it anyway and will build
+those glyphs if you ask it to.</p></li>
+<li><p>The glyphs “i” and “j” can be built by adding a dot accent to the dotlessi and
+dotlessj glyphs</p></li>
+<li><p>The dotlessi and dotlessj glyphs can be built by removing the dot from an “i” or
+“j” glyph</p></li>
+<li><p>If a glyph name has an extension, as “agrave.sc”, then it will be built out of
+the same components as “agrave”, except FontForge will use the variants of those
+components named with the same extension. So “agrave.sc” would be built out of
+“a.sc” and “grave.sc”. If the accent variant does not exist then FontForge will
+also try the bare accent “grave”.</p></li>
+<li><p>FontForge knows a few other things. It knows that Greek “Alpha” and Cyrillic A
+both look like the Latin “A” and will replace either if you ask. (as well as all
+the other similar glyphs in latin, greek, cyrillic, cherokee, etc.)</p></li>
+<li><p>Some glyphs are just extremely simple to build. There are a whole slew of glyphs
+which correspond to zero-width spaces. FontForge will build any of them. More
+usefully it will build any of the fixed size spaces 0x2000-0x200f, and the fixed
+sized rules 0x2010-0x2015).</p></li>
+<li><p>You may use the <span class="menuselection">Element ‣ Char Info</span> dialog to define a
+ligature yourself, and FontForge will build it for you.</p></li>
+<li><p>In Adobe’s CID glyph sets there are some pre-rotated versions of latin glyphs.
+When CJK text is written vertically the convention is that any text in western
+alphabets should be displayed rotated 90º clockwise. If you apply Build Accented
+Glyph to one of these slots it will find the appropriate latin letter and rotate
+it properly.</p>
+<p>If a glyph’s name is “vertcid_&lt;cid&gt;” where &lt;cid&gt; is a decimal number, then it is
+assumed to be a vertically rotated version of the glyph at &lt;cid&gt;. In
+non-cid-keyed fonts, if a glyph’s name is “vertuni&lt;uni&gt;” where &lt;uni&gt; is a four
+digit hex number, then it is assumed to be a vertically rotated version of that
+unicode glyph.</p>
+</li>
+</ul>
+<p>So for each selected glyph in the font view (or for the current glyph in the
+outline view), and if all the base glyphs and accents needed by the glyph have
+already been created then this command will delete anything that is in the
+current layerand put a reference to the base glyph and another reference to the
+accent glyph into the foreground. So if the current glyph were “À” then a
+reference to “A” would be added to it, and a reference to</p>
+<p>If <a class="reference internal" href="../ui/menus/editmenu.html#editmenu-from"><span class="std std-ref">Copy From</span></a> is set to All Fonts then any bitmaps will
+have a similar process done – that is to say, bitmap references will be created
+(even in the outline glyph view).</p>
+<p>Choosing accents can be a slightly tricky process. Unicode says that accented
+letters are logically built out of the accents in the range 0x300-0x340, but
+this does not work too well in postscript. A Type1 font works better if the
+accented glyph is in the Adobe Standard Encoding, which means either using
+accents around 0x2d0 or ascii glyphs. FontForge will first attempt to find an
+accent around 0x2d0, then in ascii and finally in the 0x300-0x340 range. Even
+worse, Unicode unifies the greek and latin accents, so for greek letters
+FontForge will look for accents around 0x1fbd (FontForge will also require the
+presence of the double accents like 0x1fdd).</p>
+<p>Some of Adobe’s fonts have accents designed for use over upper case letters (the
+nomal accents are designed for lower case), and accents designed for use over
+cyrillic letters. So in such a font, if you attempt to build “Agrave” FontForge
+will build it out of “A” and “Grave” (or “grave.cap”, not the standard “grave”).</p>
+<p>Not all accents should be centered above the base glyph, a cedilla is (usually)
+centered underneath the base, while other accents need to be placed to the left
+or right, or even overstruck. FontForge should know about proper placement of
+most accents (or at least a rough approximation thereto).</p>
+<p>Some Unicode glyphs contain more than one accent. Additional accents will be
+treated similarly. This command can also be used to generate more general
+composite glyphs .</p>
+<p>Some accents (for example cedilla) are treated unexpectedly on certain letters
+(different ways in different languages), so be careful of g-cedilla. Å often
+merges the ring into the top of the A, but here it will float above it. <strong>Be
+alert</strong>.</p>
+<p>Placing an accent above a glyph is surprisingly tricky. Centered accents (like
+grave, acute, etc.) should not really be placed in the exact center of the
+glyph. For instance when placing an acute accent on top of an “a” the accent
+should actually go above the highest part of the “a” which is almost but not
+quite in the center of the glyph. And when placing an acute on top of a “k” (a
+rare combination, but still used) the accent is centered on the stem of the “k”.
+Greek accents are even more baroque. FontForge knows many oddities of accent
+placement, but it will never know all of them (some letters have multiple forms
+depending on the font, or perhaps on the humidity and phase of the moon).</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default">
+<img alt="../_images/acenter.png" src="../_images/acenter.png" />
+</div>
+<p>Center point of the glyph</p>
+</td>
+<td><div class="figure align-default">
+<img alt="../_images/ahighest.png" src="../_images/ahighest.png" />
+</div>
+<p>Highest point of the glyph</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>And how accents are centered depends on the accents themselves. Usually
+FontForge will try to center an accent so that the accent’s center is over the
+base glyph’s “center”. But that doesn’t always work either. The grave and acute
+accents are usually (but not always) centered only on the bottom part of the
+glyph.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default">
+<img alt="../_images/aacutemid.png" src="../_images/aacutemid.png" />
+</div>
+<p>Midpoint of accent</p>
+</td>
+<td><div class="figure align-default">
+<img alt="../_images/aacutebase.png" src="../_images/aacutebase.png" />
+</div>
+<p>Centered on base of accent</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>FontForge gives you a minuscule amount of control over where it puts accents.
+There are two preference items you can set
+(<a class="reference internal" href="../ui/menus/filemenu.html#filemenu-prefs"><span class="std std-ref">File-&gt;Preferences</span></a>)</p>
+<ul class="simple">
+<li><p>AccentOffsetPercent – This allows you to control the amount of space between
+the top of the letter and the bottom of the accent (or the bottom of the letter
+and the top of the accent for accents that sink under their letters). This is
+expressed as a percentage of the em size and defaults to 6%. (In some cases
+there will be a little bit more space above the accent than that. All the
+accents from all the lower case letters should be at the same height, but the
+letter “o” is usually slightly higher than the letter “u”. So all the lower case
+accents will be placed at the appropriate height for “o”, even those over “u”. A
+similar trick is done for upper case letters).</p></li>
+<li><p>AcuteCenterBottom – This controls whether acute and grave (and double acute and
+grave) accents are centered on the entire glyph, or just on the bottom.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>So FontForge is going to do something wrong. There are just too many areas
+where I am ignorant or my taste doesn’t match yours or the program has a bug.
+I strongly recommend that you examine all your accented glyphs after building
+them and be prepared to adjust things.</p>
+</div>
+<p>The algorithms take some account of the italicangle, but when working on an
+italic (or oblique) font FontForge is even more likely to do something you don’t
+like.</p>
+<p>If all else fails you can build your own accented glyphs with
+<a class="reference internal" href="../ui/menus/editmenu.html#editmenu-reference"><span class="std std-ref">Edit-&gt;Copy Reference</span></a> and
+<a class="reference internal" href="../ui/menus/editmenu.html#editmenu-paste"><span class="std std-ref">Edit-&gt;Paste</span></a></p>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui.html">FontForge’s User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../techref.html">Technical References</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gposgsub.html">Advanced Typography Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AA-Comparison.html">Anti-Alias Comparison</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autotrace.html">Autotracing bitmaps in FontForge</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Building Accented and other Composite Glyphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bezier.html">Bézier Splines </a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref-caveats.html">Caveats about References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfdchangelog.html">Changes to the sfd format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cidmapformat.html">Cidmap files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cliargs.html">Command Line Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="splinefont.html">Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SuggestDeltas.html">Delta Instruction Suggestions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stroke.html">Expand Stroke Facility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BDFGrey.html">Extensions to Adobe’s BDF  for greymap fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PfaEdit-TeX.html">FontForge and TeX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pfaeditmath.html">FontForge’s math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hinting.html">Hinting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macformats.html">Macintosh font formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="featurefile.html">Major differences between FontForge’s and Adobe’s interpretation of feature files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="non-standard.html">Non standard extensions used FontForge in True/Open Type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="palmfonts.html">Palm fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bitmaponlysfnt.html">Several formats for bitmap only sfnts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfdformat.html">Spline Font Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pcf-format.html">The X11 PCF bitmap font file format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TrueOpenTables.html">TrueType and OpenType tables supported by FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corpchar.html">Unicode Corporate Characters used by FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UniqueID.html">UniqueID and XUID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selections.html">X Selections and the X Clipboard</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../techref.html">Technical References</a><ul>
+      <li>Previous: <a href="autotrace.html" title="previous chapter">Autotracing bitmaps in FontForge</a></li>
+      <li>Next: <a href="bezier.html" title="next chapter">Bézier Splines </a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

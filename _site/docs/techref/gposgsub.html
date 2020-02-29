@@ -1,0 +1,1438 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Advanced Typography Tables &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Anti-Alias Comparison" href="AA-Comparison.html" />
+    <link rel="prev" title="Technical References" href="../techref.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="advanced-typography-tables">
+<h1>Advanced Typography Tables<a class="headerlink" href="#advanced-typography-tables" title="Permalink to this headline">¶</a></h1>
+<p>These differ between OpenType (originally called TrueType Open) and Apple (GX or
+Apple Advanced Typography). My support for both OpenType and Apple is
+incomplete.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#gposgsub-opentype"><span class="std std-ref">The GPOS, GSUB and GDEF OpenType tables</span></a></p></li>
+<li><p><a class="reference internal" href="#gposgsub-aat"><span class="std std-ref">Apple Advanced Typography</span></a></p></li>
+<li><p><a class="reference internal" href="#gposgsub-conversion"><span class="std std-ref">What features can be converted between OpenType and AAT?</span></a></p></li>
+<li><p><a class="reference internal" href="TrueOpenTables.html"><span class="doc">other true type and open type tables</span></a></p></li>
+<li><p><a class="reference internal" href="#gposgsub-unsupported"><span class="std std-ref">What is unsupported</span></a></p></li>
+<li><p><a class="reference internal" href="non-standard.html"><span class="doc">FontForge’s non-standard extensions</span></a></p></li>
+</ul>
+<div class="section" id="the-gpos-gsub-gdef-and-base-opentype-tables">
+<span id="gposgsub-opentype"></span><h2>The <code class="docutils literal notranslate"><span class="pre">GPOS</span></code>, <code class="docutils literal notranslate"><span class="pre">GSUB</span></code>, <code class="docutils literal notranslate"><span class="pre">GDEF</span></code> and <code class="docutils literal notranslate"><span class="pre">BASE</span></code> OpenType tables<a class="headerlink" href="#the-gpos-gsub-gdef-and-base-opentype-tables" title="Permalink to this headline">¶</a></h2>
+<p>The first two tables are used for positioning and substituting glyphs. The GPOS
+table can control things like: kerning, accent positioning, cursive joining,
+etc. The GSUB table can control things like: ligatures, arabic forms, vertical
+rotation, conversion to small caps, indic glyph rearrangement, etc. GDEF
+contains some rather esoteric glyph information, ligature carets, etc. BASE
+contains information on baseline placement and line heights.</p>
+<p>This page assumes basic familiarity with the abilities of the tables, for more
+information on them read, study and inwardly digest the OpenType docs on:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://partners.adobe.com/public/developer/opentype/index_table_formats.html">The header for both GPOS and GSUB</a></p></li>
+<li><p><a class="reference external" href="http://partners.adobe.com/public/developer/opentype/index_table_formats2.html">The GPOS table</a>,
+for positioning glyphs</p></li>
+<li><p><a class="reference external" href="http://partners.adobe.com/public/developer/opentype/index_table_formats1.html">The GSUB table</a>,
+for substituting glyphs</p></li>
+<li><p><a class="reference external" href="http://partners.adobe.com/public/developer/opentype/index_table_formats5.html">The GDEF table</a>,
+for classifying glyphs and for providing a ligature caret table</p></li>
+<li><p><a class="reference external" href="http://partners.adobe.com/public/developer/opentype/index_base.html">The BASE table</a>,
+for baseline placement</p></li>
+<li><p><a class="reference external" href="http://partners.adobe.com/public/developer/opentype/index_tag3.html">The list of feature tags supported by OpenType</a></p></li>
+<li><p><a class="reference external" href="http://partners.adobe.com/public/developer/opentype/index_tag1.html">The list of script tags supported by OpenType</a></p></li>
+<li><p><a class="reference external" href="http://partners.adobe.com/public/developer/opentype/index_tag2.html">The list of language tags supported by OpenType</a></p></li>
+<li><p><a class="reference external" href="http://partners.adobe.com/public/developer/opentype/index_tag4.html">The list of baseline tags supported by OpenType</a></p></li>
+</ul>
+<p>The basic idea of the GPOS and GSUB tables is that each script (or language
+within a script) has a set of “features” that are available to it. A feature in
+turn is associated with a lookup which contains data for the feature. An example
+of a script is ‘latn’ for latin, ‘arab’ for arabic, ‘hani’ for chinese
+ideographs. Two examples of features are ‘kern’ which provides kerning
+information between pairs of glyphs and ‘init’ which will transform one set of
+glyphs to another when those glyphs are at the beginning of a word.</p>
+<p>FontForge <a class="reference internal" href="#gposgsub-unsupported"><span class="std std-ref">does not support</span></a> the full range of
+possibilities inherent in these tables.</p>
+<div class="section" id="the-gpos-table">
+<span id="gposgsub-gpos"></span><h3>The <strong>GPOS</strong> table<a class="headerlink" href="#the-gpos-table" title="Permalink to this headline">¶</a></h3>
+<p>FontForge will read the following sub tables of the GPOS table:</p>
+<dl class="object">
+<dt>
+<code class="sig-name descname">single adjustment</code></dt>
+<dd><dl class="object">
+<dt>
+<code class="sig-name descname">Reading support</code></dt>
+<dd><p>This sub-table allows the font designer to change the metrics of a
+specific glyph. The feature tag will provide a context in which the change
+should occur. For instance the ‘tnum’ (tabular numbers) feature could
+change a proportionally spaced digit by adjusting its advance width to be
+some set value and then centering the digit (by adjusting the left side
+bearing) within the new width.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Writing support</code></dt>
+<dd><p>These can be created with the
+<a class="reference internal" href="../ui/dialogs/charinfo.html"><span class="doc">Element-&gt;Char Info</span></a>-&gt;Position command.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">pair adjustment</code></dt>
+<dd><dl class="object">
+<dt>
+<code class="sig-name descname">Reading support</code></dt>
+<dd><p>This sub-table allows the font designer to change the metrics of a
+specific pair of glyph. The most common use of this is for kerning where
+the advance width of the first glyph is altered depending on which glyph
+follows it. But the table is more general than that and could support mark
+(accent, vowel) positioning over a base glyph (though that is more
+efficiently done with the mark to base subtable).</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Writing support</code></dt>
+<dd><p>‘kern’ feature s may be created from the
+<a class="reference internal" href="../ui/mainviews/metricsview.html"><span class="doc">Metrics View</span></a>. ‘vkrn’ with
+<a class="reference internal" href="../ui/menus/metricsmenu.html#metricsmenu-vkernfromhkern"><span class="std std-ref">Metrics-&gt;VKern From HKern</span></a>.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">cursive attachment</code></dt>
+<dd><dl class="object">
+<dt>
+<code class="sig-name descname">Reading support</code></dt>
+<dd><p>This sub-table allows the font designer to force adjacent glyphs to join
+at specific points. It can be used to generate the slanted script style
+needed for Urdu.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Writing support</code></dt>
+<dd><p>Only the ‘curs’ feature is supported for this sub-table. These may be
+created with the <a class="reference internal" href="../ui/menus/pointmenu.html#pointmenu-addanchor"><span class="std std-ref">Points-&gt;Add Anchor</span></a> command</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">mark to base</code></dt>
+<dd><dl class="object">
+<dt>
+<code class="sig-name descname">Reading support</code></dt>
+<dd><p>This sub-table allows the font designer to specify how mark glyphs
+(accents, vowel signs, etc.) are positioned over base glyphs. Every glyph
+can have an attachment point and the mark’s attachment point will be
+placed on the base’s attachment point so the two join properly. See my
+<a class="reference internal" href="../index.html#overview-anchors"><span class="std std-ref">example</span></a> in the overview.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Writing support</code></dt>
+<dd><p>These may be created with the
+<a class="reference internal" href="../ui/menus/pointmenu.html#pointmenu-addanchor"><span class="std std-ref">Points-&gt;Add Anchor</span></a> command</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">mark to ligature</code></dt>
+<dd><dl class="object">
+<dt>
+<code class="sig-name descname">Reading support</code></dt>
+<dd><p>This sub-table is very similar to the previous one except that the base
+glyph is a ligature and may have several different points at which the
+same type of accent may be placed.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Writing support</code></dt>
+<dd><p>These may be created with the
+<a class="reference internal" href="../ui/menus/pointmenu.html#pointmenu-addanchor"><span class="std std-ref">Points-&gt;Add Anchor</span></a> command</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">mark to mark</code></dt>
+<dd><dl class="object">
+<dt>
+<code class="sig-name descname">Reading support</code></dt>
+<dd><p>This sub-table is very similar to the previous two except that the base
+glyph is itself a mark. This may be used when a glyph has two accents each
+of which would normally be placed at the same attachment point on a base
+glyph. The second accent will be place relative to the first accent rather
+than to the base glyph.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Writing support</code></dt>
+<dd><p>These may be created with the
+<a class="reference internal" href="../ui/menus/pointmenu.html#pointmenu-addanchor"><span class="std std-ref">Points-&gt;Add Anchor</span></a> command</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">contextual positioning</code></dt>
+<dd><dl class="object">
+<dt>
+<code class="sig-name descname">Reading support</code></dt>
+<dd><p>This sub-table allows the font designer to control the positioning of
+glyphs when they occur within a specific string (or class of strings). For
+instance this table could say “when you see a digit followed by the string
+“th” then raise the “th” into a superscript position”</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Writing support</code></dt>
+<dd><p>These may be created with the
+<a class="reference internal" href="../ui/dialogs/lookups.html#lookups-contextual-subs"><span class="std std-ref">Element-&gt;Font Info-&gt;Contextual</span></a> command</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">chaining contextual positioning</code></dt>
+<dd><dl class="object">
+<dt>
+<code class="sig-name descname">Reading support</code></dt>
+<dd><p>This is a slightly more complex version of the above, it doesn’t really
+add new capabilities, but it does provide a more logical approach to the
+issue.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Writing support</code></dt>
+<dd><p>These may be created with the
+<a class="reference internal" href="../ui/dialogs/lookups.html#lookups-contextual-subs"><span class="std std-ref">Element-&gt;Font Info-&gt;Contextual</span></a> command</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">extension positioning</code></dt>
+<dd><dl class="object">
+<dt>
+<code class="sig-name descname">Reading support</code></dt>
+<dd><p>This is used to allow for a GPOS table which is bigger than 64k. Its use
+should be quite invisible to the font designer</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Writing support</code></dt>
+<dd><p>FontForge uses this sub-table when needed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">reserved for future use</code></dt>
+<dd><dl class="object">
+<dt>
+<code class="sig-name descname">Writing support</code></dt>
+<dd><p>FontForge does not support these sub-tables yet.</p>
+<p>(nor does anyone)</p>
+</dd></dl>
+
+</dd></dl>
+
+<p>FontForge also has built into it knowledge on how to provide default values for
+some features that use these tables.</p>
+<p>FontForge will retain the order of features in the GPOS table and when a font is
+generated the order should be the same as it was before.</p>
+</div>
+<div class="section" id="the-gsub-table">
+<span id="gposgsub-gsub"></span><h3>The <strong>GSUB</strong> table<a class="headerlink" href="#the-gsub-table" title="Permalink to this headline">¶</a></h3>
+<p>FontForge will read the following sub tables of the GSUB table:</p>
+<dl class="object">
+<dt>
+<code class="sig-name descname">single substitution</code></dt>
+<dd><dl class="object">
+<dt>
+<code class="sig-name descname">Reading support</code></dt>
+<dd><p>This sub-table allows the font designer to change from one glyph to
+another, with a context provided by the feature tag. For example many
+scripts have letters which have a different form at the end of a word than
+they do within (this is true of every letter in arabic, several in hebrew,
+lower case sigma in greek, and the long-s/short-s pair in renaissance
+latin). So the ‘fina’ feature would map the normal form into the final
+form, and the word processing program would do a lookup at the end of each
+word to see if a transformation was needed.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Writing support</code></dt>
+<dd><p>These can be created with the
+<a class="reference internal" href="../ui/dialogs/charinfo.html"><span class="doc">Element-&gt;Char Info</span></a>-&gt;Substitution command.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">multiple substitution</code></dt>
+<dd><dl class="object">
+<dt>
+<code class="sig-name descname">Reading support</code></dt>
+<dd><p>This sub-table allows the font designer to replace one glyph by a series
+of others. This is generally used for rather technical layout issues.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Writing support</code></dt>
+<dd><p>These can be created with the
+<a class="reference internal" href="../ui/dialogs/charinfo.html"><span class="doc">Element-&gt;Char Info</span></a>-&gt;Multiple Substitution command.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">alternate substitution</code></dt>
+<dd><dl class="object">
+<dt>
+<code class="sig-name descname">Reading support</code></dt>
+<dd><p>This sub-table allows the font designer to have a series of “alternates”
+for each glyph. One common example would be an italic font which had
+several swash variants for each capital letter. The word processing
+program would allow the user to choose which variant was appropriate</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Writing support</code></dt>
+<dd><p>These can be created with the
+<a class="reference internal" href="../ui/dialogs/charinfo.html"><span class="doc">Element-&gt;Char Info</span></a>-&gt;Alternate Substitution command.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">ligature substitution</code></dt>
+<dd><dl class="object">
+<dt>
+<code class="sig-name descname">Reading support</code></dt>
+<dd><p>This sub-table allows the font designer to replace a string of glyphs with
+another glyph. A common example is a ligature where the string <img alt="f+i" src="../_images/f+i.png" /> is
+replaced by the <img alt="fi" src="../_images/fi.png" /> ligature.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Writing support</code></dt>
+<dd><p>These can be created with the
+<a class="reference internal" href="../ui/dialogs/charinfo.html"><span class="doc">Element-&gt;Char Info</span></a>-&gt;Ligature command.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">contextual substitution</code></dt>
+<dd><dl class="object">
+<dt>
+<code class="sig-name descname">Reading support</code></dt>
+<dd><p>This subtable allows for a string of glyphs to replace another string of
+glyphs (or class of strings of glyphs)</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Writing support</code></dt>
+<dd><p>These may be created with the
+<a class="reference internal" href="../ui/dialogs/lookups.html#lookups-contextual-subs"><span class="std std-ref">Element-&gt;Font Info-&gt;Contextual</span></a> command</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">chaining contextual substitution</code></dt>
+<dd><dl class="object">
+<dt>
+<code class="sig-name descname">Reading support</code></dt>
+<dd><p>This is a slightly more complex version of the above, it doesn’t really
+add new capabilities, but it does provide a more logical approach to the
+issue.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Writing support</code></dt>
+<dd><p>These may be created with the
+<a class="reference internal" href="../ui/dialogs/lookups.html#lookups-contextual-subs"><span class="std std-ref">Element-&gt;Font Info-&gt;Contextual</span></a> command</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">extension positioning</code></dt>
+<dd><dl class="object">
+<dt>
+<code class="sig-name descname">Reading support</code></dt>
+<dd><p>This is used to allow for a GSUB table which is bigger than 64k. Its use
+should be quite invisible to the font designer</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Writing support</code></dt>
+<dd><p>FontForge uses this sub-table when needed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">reverse chaining contextual single substitution</code></dt>
+<dd><dl class="object">
+<dt>
+<code class="sig-name descname">Reading support</code></dt>
+<dd><p>This allows glyph substitutions to happen in reverse order, and it a
+variant of the chaining contextual subtable.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Writing support</code></dt>
+<dd><p>These may be created with the
+<a class="reference internal" href="../ui/dialogs/lookups.html#lookups-contextual-subs"><span class="std std-ref">Element-&gt;Font Info-&gt;Contextual</span></a> command</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">reserved for future use</code></dt>
+<dd><dl class="object">
+<dt>
+<code class="sig-name descname">Writing support</code></dt>
+<dd><p>FontForge does not support these sub-tables yet.</p>
+<p>(nor does anyone)</p>
+</dd></dl>
+
+</dd></dl>
+
+<p>FontForge also has built into it knowledge on how to provide default values for
+some features that use these tables. See the [Populate] button of the various
+<a class="reference internal" href="../ui/dialogs/lookups.html"><span class="doc">lookup subtable</span></a> dialogs.</p>
+<p>FontForge can produce some of these tables, but the text layout/word processing
+program used has to look up the tables and do the actual work of rearranging the
+glyphs.</p>
+<p>FontForge will retain the order of features in the GSUB table, and the user may
+adjust it with the <a class="reference internal" href="../ui/dialogs/lookups.html"><span class="doc">Element-&gt;Font Info</span></a> command.</p>
+</div>
+<div class="section" id="the-gdef-table">
+<span id="gposgsub-gdef"></span><h3>The <strong>GDEF</strong> table<a class="headerlink" href="#the-gdef-table" title="Permalink to this headline">¶</a></h3>
+<p>FontForge will read ligature carets out of a GDEF table.</p>
+<p>It will generate a GDEF table containing a glyph class definition sub-table (if
+needed) or a ligature caret sub-table (if needed).</p>
+</div>
+</div>
+<div class="section" id="apple-advanced-typography">
+<span id="gposgsub-aat"></span><h2>Apple Advanced Typography<a class="headerlink" href="#apple-advanced-typography" title="Permalink to this headline">¶</a></h2>
+<p>As above I do not go deeply into the abilities of these tables, for more
+information see Apple’s docs:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://developer.apple.com/fonts/TTRefMan/RM06/Chap6bsln.html">The ‘bsln’ (baseline) table</a></p></li>
+<li><p><a class="reference external" href="http://developer.apple.com/fonts/TTRefMan/RM06/Chap6kern.html">The ‘kern’ table</a></p></li>
+<li><p><a class="reference external" href="http://developer.apple.com/fonts/TTRefMan/RM06/Chap6lcar.html">The ‘lcar’ (ligature caret) table</a></p></li>
+<li><p><a class="reference external" href="http://developer.apple.com/fonts/TTRefMan/RM06/Chap6morx.html">The ‘morx’ (extended glyph metamorphosis) table</a></p>
+<ul>
+<li><p><a class="reference external" href="http://developer.apple.com/fonts/TTRefMan/RM06/Chap6mort.html">The ‘mort’ (older version of ‘morx’) table</a></p></li>
+<li><p><a class="reference external" href="http://developer.apple.com/fonts/TTRefMan/RM06/Chap6feat.html">The ‘feat’ (feature) table</a></p></li>
+<li><p><a class="reference external" href="http://developer.apple.com/fonts/Registry/index.html">Apple’s Font Feature registry</a></p></li>
+<li><p><a class="reference external" href="http://developer.apple.com/fonts/TTRefMan/RM06/Chap6Tables.html">Description of the subtables of the ‘mort’/’morx’ tables</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="http://developer.apple.com/fonts/TTRefMan/RM06/Chap6opbd.html">The ‘opbd’ (optical bounds) table</a></p></li>
+<li><p><a class="reference external" href="http://developer.apple.com/fonts/TTRefMan/RM06/Chap6prop.html">The ‘prop’ (glyph properties) table</a></p></li>
+</ul>
+<p>FontForge will currently read and produce (if Apple mode is set in font
+generation) the following tables:</p>
+<p class="rubric">Apple tables corresponding vaguely to BASE</p>
+<dl class="object">
+<dt>
+<code class="sig-name descname">baseline table</code></dt>
+<dd><dl class="object">
+<dt>
+<code class="sig-name descname">Reading support</code></dt>
+<dd><p>FontForge will read baseline data (except for Apple’s ideographic centered
+baseline, for which there is no OpenType equivalent)</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Writing support</code></dt>
+<dd><p>FontForge will produce this table if the user has specified baseline data
+which apple supports</p>
+</dd></dl>
+
+</dd></dl>
+
+<p class="rubric">Apple tables corresponding vaguely to GDEF</p>
+<dl class="object">
+<dt>
+<code class="sig-name descname">ligature caret table</code></dt>
+<dd><dl class="object">
+<dt>
+<code class="sig-name descname">Reading support</code></dt>
+<dd><p>FontForge will read ligature carets</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Writing support</code></dt>
+<dd><p>FontForge will produce this table if the user has specified ligature
+carets</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">glyph properties table</code></dt>
+<dd><dl class="object">
+<dt>
+<code class="sig-name descname">Reading support</code></dt>
+<dd><p>FontForge will read this table to figure out which glyphs are hebrew and
+arabic, and which have ‘r2la’ substitutions.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Writing support</code></dt>
+<dd><p>FontForge will generate this table if the font contains some right to left
+glyphs.</p>
+</dd></dl>
+
+</dd></dl>
+
+<p class="rubric">Apple tables corresponding vaguely to GPOS</p>
+<dl class="object">
+<dt>
+<code class="sig-name descname">kerning table</code></dt>
+<dd><dl class="object">
+<dt>
+<code class="sig-name descname">Reading support</code></dt>
+<dd><p>FontForge will read horizontal/vertical kerning pairs and classes.
+FontForge can read contextual kerning information too into a state
+machine.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Writing support</code></dt>
+<dd><p>FontForge will produce this if the font contains kerning data – kerning
+pairs, kerning by classes, and kerning by state machine.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Optical bounds table</code></dt>
+<dd><dl class="object">
+<dt>
+<code class="sig-name descname">Reading support</code></dt>
+<dd><p>FontForge will read optical bounds</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Writing support</code></dt>
+<dd><p>FontForge will produce this table if the user has specified right and left
+bounds as simple positions (‘lfbd’ and ‘rtbd’).</p>
+</dd></dl>
+
+</dd></dl>
+
+<p id="gposgsub-morx">FontForge has support for the <code class="docutils literal notranslate"><span class="pre">'mort'</span></code> and <code class="docutils literal notranslate"><span class="pre">'morx'</span></code> tables (Glyph
+metamorphosis and extended glyph metamorphosis tables). These correspond vaguely
+to the <a class="reference internal" href="#gposgsub-gsub"><span class="std std-ref">GSUB</span></a> table. Note: Any feature type/setting
+combinations which correspond directly to an open type feature will be converted
+to the OpenType tag when read in. It will be converted back to a feature/setting
+when an apple font is generated (use <a class="reference internal" href="../ui/dialogs/prefs.html#prefs-mac"><span class="std std-ref">File-&gt;Preferences</span></a> to
+extend FontForge’s mapping from feature type/setting to OpenType tags).</p>
+<p class="rubric">Sub tables of ‘mort’ or ‘morx’</p>
+<dl class="object">
+<dt>
+<code class="sig-name descname">Indic style rearrangement</code></dt>
+<dd><dl class="object">
+<dt>
+<code class="sig-name descname">Reading support</code></dt>
+<dd><p>FontForge can read these and stores them as state machines (which can be
+edited with <a class="reference internal" href="../ui/dialogs/lookups.html#lookups-sm-subs"><span class="std std-ref">Font Info</span></a>)</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Writing support</code></dt>
+<dd><p>Any indic state machines will be output in the generated font.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">contextual glyph substitution</code></dt>
+<dd><dl class="object">
+<dt>
+<code class="sig-name descname">Reading support</code></dt>
+<dd><p>FontForge can read these and stores them as state machines (which can be
+edited with <a class="reference internal" href="../ui/dialogs/lookups.html#lookups-sm-subs"><span class="std std-ref">Font Info</span></a>)</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Writing support</code></dt>
+<dd><p>If the font contains any state machines they will be output here. If there
+are no state machines then the following conversions of OpenType features
+will be done:</p>
+<ul class="simple" id="gposgsub-cursive-connection">
+<li><p>FontForge will generate a cursive connection feature using this subtable
+type if the font contains ‘init’, ‘medi’, ‘fina’ or ‘isol’ simple
+substitutions.</p></li>
+<li><p>In <a class="reference internal" href="#gposgsub-sometimes"><span class="std std-ref">some cases</span></a> FontForge is able to convert an
+OpenType Contextual/Chaining substitution table into an Apple contextual
+glyph substitution table.</p></li>
+</ul>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">ligature substitution</code></dt>
+<dd><dl class="object">
+<dt>
+<code class="sig-name descname">Reading support</code></dt>
+<dd><p>FontForge can read the unconditional information from these and stores
+them as OpenType ligatures (which can be edited with
+<a class="reference internal" href="../ui/dialogs/lookups.html"><span class="doc">Font Info</span></a> or <a class="reference internal" href="../ui/dialogs/charinfo.html"><span class="doc">Char Info</span></a>).</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Writing support</code></dt>
+<dd><p>If there are any ligatures with an apple feature/setting (or which have an
+OpenType tag which can be converted to an apple feature/setting) then this
+table will be output.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">non-contextual glyph substitution</code></dt>
+<dd><dl class="object">
+<dt>
+<code class="sig-name descname">Reading support</code></dt>
+<dd><p>FontForge can read these and stores them as OpenType simple substitutions
+(which can be edited with <a class="reference internal" href="../ui/dialogs/lookups.html"><span class="doc">Font Info</span></a> or
+<a class="reference internal" href="../ui/dialogs/charinfo.html"><span class="doc">Char Info</span></a>)</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Writing support</code></dt>
+<dd><p>If there are any substitutions with an apple feature/setting (or which
+have an OpenType tag which can be converted to an apple feature/setting)
+then this table will be output.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">contextual glyph insertion</code></dt>
+<dd><dl class="object">
+<dt>
+<code class="sig-name descname">Reading support</code></dt>
+<dd><p>FontForge can read these and stores them as state machines (which can be
+edited with <a class="reference internal" href="../ui/dialogs/lookups.html#lookups-sm-subs"><span class="std std-ref">Font Info</span></a>)</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Writing support</code></dt>
+<dd><p>Any glyph insertion state machines will be output in the generated font.</p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="what-features-can-be-interconverted-between-opentype-and-aat">
+<span id="gposgsub-conversion"></span><h3>What features can be interconverted between OpenType and AAT?<a class="headerlink" href="#what-features-can-be-interconverted-between-opentype-and-aat" title="Permalink to this headline">¶</a></h3>
+<p>Some features have almost the same meaning in OpenType and AAT (although they
+are expressed quite differently), others are similar enough that they can
+sometimes be converted, and others have essentially no common ground.</p>
+<dl class="object">
+<dt>
+<code class="sig-name descname">GDEF -&gt; lcar</code></dt>
+<dd></dd></dl>
+
+<p>The ligature caret information in both ‘GDEF’ and ‘lcar’ is essentially
+identical and FontForge has no trouble reading both and converting from one
+to the other.</p>
+<dl class="object">
+<dt>
+<code class="sig-name descname">BASE -&gt; bsln</code></dt>
+<dd></dd></dl>
+
+<p>There is slightly different baseline data in the two formats. ‘bsln’ does not
+provide extent information. ‘bsln’ provides a baseline for every glyph, while
+‘BASE’ provides a baseline for every script – one hopes all glyphs in a
+script will have the same baseline, but it isn’t guaranteed. Finally ‘bsln’
+and ‘BASE’ provide a slightly different set of baseline tags, and FontForge
+only supports the OpenType ones. In particular Apple’s ideographic centered
+baseline will be lost.</p>
+<dl class="object">
+<dt>
+<code class="sig-name descname">GPOS -&gt; kern</code></dt>
+<dd></dd></dl>
+
+<p>In most cases kerning information can be converted from one format to
+another. Both provide support for vertical kerning and right to left kerning.
+Both provide support for kerning by glyph pair and kerning by classes.</p>
+<p>OpenType allows kerning commands to be supplied via a contextual chaining
+feature, Apple allows them to be controlled by a state machine. FontForge
+supports both, but does not interconvert.</p>
+<dl class="object">
+<dt>
+<code class="sig-name descname">GPOS -&gt; opbd</code></dt>
+<dd></dd></dl>
+
+<p>The GPOS features ‘lfbd’ and ‘rtbd’ provide the information needed to
+generate an Apple opbd table. If FontForge reads a font with an opbd table it
+will generate appropriate ‘lfbd’ and ‘rtbd’ features. If FontForge generates
+a font in apple mode that has these features it will create an opbd table.
+Similarly when FontForge reads an opbd table it will create ‘lfbd’ and ‘rtbd’
+features.</p>
+<dl class="object">
+<dt>
+<code class="sig-name descname">GPOS -&gt; other</code></dt>
+<dd></dd></dl>
+
+<p>I am not aware of any way to convert other GPOS features to AAT.</p>
+<dl class="object">
+<dt>
+<code class="sig-name descname">GSUB -&gt; morx / mort</code></dt>
+<dd></dd></dl>
+
+<p>The ‘mort’ and ‘morx’ tables have the same capabilities (‘mort’ tables are an
+old format and Apple currently encourages that ‘morx’ tables be used
+instead). FontForge can read either one, but only generates ‘morx’ tables.
+Interconversion depends on specific feature types and the sub-table formats,
+see below</p>
+<div class="section" id="an-analysis-of-gsub-and-morx-sub-tables-and-feature-tags">
+<h4>An analysis of GSUB and morx sub-tables and feature tags<a class="headerlink" href="#an-analysis-of-gsub-and-morx-sub-tables-and-feature-tags" title="Permalink to this headline">¶</a></h4>
+<p>OpenType uses a four character feature tag (like ‘liga’) while Apple uses two
+numbers to represent a feature setting (&lt;1,2&gt;). For FontForge to be able to
+inter-convert an OpenType feature into an Apple feature there must first be a
+correspondence between the two naming conventions. Sometimes there is an easy
+direct conversion (above ‘liga’ and &lt;1,2&gt; both represent “Common Ligatures”) but
+far more often there is none. See <a class="reference internal" href="#gposgsub-ot-mac-features"><span class="std std-ref">below</span></a> for a
+list of the tags and feature settings that FontForge considers similar enough to
+interconvert.</p>
+<p>GSUB tables have 7 sub-table formats, while morx tables have 5.</p>
+<dl class="object">
+<dt>
+<code class="sig-name descname">Single -&gt; Non-Contextual Glyph</code></dt>
+<dd></dd></dl>
+
+<p>These two sub-tables have almost exactly the same capabilities. Each allows
+one glyph to be substituted for another. The morx sub-table also allows a
+glyph to be deleted, while the GSUB sub-table does not.</p>
+<dl class="object">
+<dt>
+<code class="sig-name descname">Multiple -&gt; N/A</code></dt>
+<dd></dd></dl>
+
+<p>This GSUB subtable allows a single glyph to be replaced by multiple glyphs.
+It has some similarities to Apple’s Glyph Insertion sub-table except:</p>
+<ul class="simple">
+<li><p>the ‘morx’ sub-table always leaves the current glyph in the glyph stream,
+while this sub-table need not</p></li>
+<li><p>the ‘morx’ sub-table is contextual while this sub-table is never. (But if
+this sub-table is wrapped inside a Context or Chaining Context subtable the
+result can be contextual).</p></li>
+</ul>
+<dl class="object">
+<dt>
+<code class="sig-name descname">N/A -&gt; Glyph Insertion</code></dt>
+<dd></dd></dl>
+
+<p>This morx subtable allows a string of glyphs to be inserted before or after
+the current glyph (the current glyph always remains). This sub-table is
+contextual (ie. the insertion can be restricted to certain contexts). It
+bears some similarities to the GSUB Multiple subtable above.</p>
+<dl class="object">
+<dt>
+<code class="sig-name descname">Alternate -&gt; N/A</code></dt>
+<dd></dd></dl>
+
+<p>This GSUB subtable allows a single glyph to be replaced by any one of several
+alternatives (presumably with help from a word processor’s UI). An example of
+this would be a character which had several swash variants. There is nothing
+like this in the ‘morx’ table.</p>
+<blockquote>
+<div><dl class="object">
+<dt>
+<code class="sig-name descname">Ligature -&gt; Ligature</code></dt>
+<dd></dd></dl>
+
+</div></blockquote>
+<p>Both formats have ligature sub-tables. The ‘GSUB’ version is unconditional
+(the ligature is always applied – though a ligature substitution could be
+embedded in an OpenType contextual substitution to make it condtional). The
+‘morx’ version can be contextual (though in fonts I have examined it is
+usually uncontextual). FontForge only supports unconditional ligatures.</p>
+<p>FontForge can read all the unconditional ligatures from a ‘morx’ sub-table.
+FontForge loses all contextual ligatures.</p>
+<p>In OpenType, contextual ligatures can be built by wrapping a ligature
+sub-table inside a Context or Chaining Context subtable.</p>
+<dl class="object">
+<dt>
+<code class="sig-name descname">N/A -&gt; Contextual Glyph</code></dt>
+<dd></dd></dl>
+
+<p>This morx subtable allows single glyph substitutions to be applied within
+certain contexts. At first glance it seems that this could be converted into
+an OpenType Context subtable,
+<a class="reference internal" href="#gposgsub-sometimes"><span class="std std-ref">but this is rarely the case</span></a>.</p>
+<dl class="object">
+<dt>
+<code class="sig-name descname">Chaining / Chaining Context -&gt; N/A</code></dt>
+<dd></dd></dl>
+
+<p>These GSUB subtables allow any collection of other substitutions to be applied
+contextually. At first glance one might think that these (with appropriate
+nested substitutions) might be converted to ‘morx’ contextual glyph
+substitutions, contextual ligatures, or even glyph insertion.
+<a class="reference internal" href="#gposgsub-sometimes"><span class="std std-ref">Unfortunately this is rarely the case</span></a>.</p>
+<dl class="object">
+<dt>
+<code class="sig-name descname">Reverse Chaining Context -&gt; N/A</code></dt>
+<dd></dd></dl>
+
+<p>This GSUB subtable is applied backwards to the stream of glyphs, it allows a
+single glyph substitution per contextual match. There is nothing like it in
+‘morx’.</p>
+<dl class="object">
+<dt>
+<code class="sig-name descname">N/A -&gt; Indic Rearrangement</code></dt>
+<dd></dd></dl>
+
+<p>This ‘morx’ subtable allows for several glyphs to interchange their positions
+in the glyph stream. There is nothing like it in GSUB (or GPOS for that
+matter).</p>
+</div>
+<div class="section" id="why-do-contextual-glyph-substitutions-only-sometimes-get-generated-in-aat">
+<span id="gposgsub-sometimes"></span><h4>Why do contextual glyph substitutions only sometimes get generated in AAT?<a class="headerlink" href="#why-do-contextual-glyph-substitutions-only-sometimes-get-generated-in-aat" title="Permalink to this headline">¶</a></h4>
+<p>Sadly OpenType and AAT provide disjoint capabilities when it comes to contextual
+matching. AAT is more capable in some areas, OpenType more capable in others.
+FontForge is able to convert an OpenType contextual substitution into an AAT one
+if FontForge can detect that the OpenType substitution does not use capabilities
+beyond those of AAT. Currently this means:</p>
+<ul>
+<li><p>There is an apple feature which matches the otf tag</p></li>
+<li><p>And one of the following is true:</p>
+<ol class="arabic">
+<li><p>Either</p>
+<ul>
+<li><p>The sub-table is in coverage format</p></li>
+<li><p>The sub-table contains either exactly one nested single glyph replacement
+substitution, or</p>
+<p>it contains exactly two single glyph replacements and one of them refers to the
+last glyph matched (and the other does not)</p>
+</li>
+</ul>
+</li>
+<li><p>or</p>
+<ul>
+<li><p>The sub-table is in either glyph or class format</p></li>
+<li><p>If in class format then either the backtrack and lookahead classes must be the
+same as the main class, or they must not be used.</p></li>
+<li><p>If a rule has a substitution at a given glyph position, then all rules which
+match the current rule up to that glyph position must also have a substitution
+at that position.</p></li>
+<li><p>A rule with exactly one substitution is acceptable</p>
+<p>A rule with one substitution in the middle and one substitution on the last
+glyph is acceptable.</p>
+<p>A rule may contain more substitutions only if there is another rule which
+matches it exactly up to the internal substitution.</p>
+<p>So the following rule set is valid:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><th class="stub"><p>Rule</p></th>
+<td><p>a</p></td>
+<td><p>b</p></td>
+<td><p>c</p></td>
+<td><p>d</p></td>
+<td><p>e</p></td>
+<td><p>f</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Rule</p></th>
+<td><p>a</p></td>
+<td><p>b</p></td>
+<td><p>c</p></td>
+<td><p>d</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>Rule</p></th>
+<td><p>a</p></td>
+<td><p>b</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Substitutions</p></th>
+<td><p>A</p></td>
+<td><p>B</p></td>
+<td><p>C</p></td>
+<td><p>D</p></td>
+<td><p>E</p></td>
+<td><p>F</p></td>
+</tr>
+</tbody>
+</table>
+<p>So the third rule will match an “ab” and convert them to “AB” (and this is valid
+because we have one internal and one final substitution and that’s ok), then if
+that “ab” is followed by “cd” then rule 2 kicks in and will replace the “cd”
+with “CD” (again this has one internal and one final substitution, which is ok),
+and if that is followed by “ef” then they will be converted to “EF”.</p>
+<p>The following is not valid:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><th class="stub"><p>Substitution</p></th>
+<td></td>
+<td><p>B</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Rule</p></th>
+<td><p>a</p></td>
+<td><p>b</p></td>
+<td><p>c</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"></th>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Rule</p></th>
+<td><p>a</p></td>
+<td><p>b</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>Substitution</p></th>
+<td><p>A</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The two rules have substitutions at different places and that can’t be expressed
+in an Apple state machine given that they have the same glyphs.</p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<p>FontForge does not even try to convert an AAT contextual glyph substitution
+sub-table, too few of these can be expressed in OpenType to make it worth while.</p>
+<p>NOTE: It would be possible to convert more lookups to state machines if
+FontForge were willing to:</p>
+<ol class="arabic simple">
+<li><p>Use several state machines to represent complicated lookups</p></li>
+<li><p>Add additional glyphs to the font to be used as temporary state flags.</p></li>
+</ol>
+<p>FontForge will do neither of these.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>There is a subtle bug involved in converting a chaining contextual
+substitution into an Apple contextual glyph substitution. AAT does not have
+the concept of a backtrack list, this means that substitutions may occur in a
+different order.</p>
+</div>
+</div>
+<div class="section" id="why-can-t-all-contextual-chaining-tables-be-converted">
+<span id="gposgsub-not-converted"></span><h4>Why can’t all contextual/chaining tables be converted?<a class="headerlink" href="#why-can-t-all-contextual-chaining-tables-be-converted" title="Permalink to this headline">¶</a></h4>
+<p>Well, obviously there are some thing that just aren’t present. The concept of
+contextual positioning is missing from AAT, while Indic rearrangement is missing
+from OpenType. So let’s concentrate on contextual substitutions, which both
+appear to support. The argument that follows is based on the capabilities of
+contextual matching, it applies equally to contextual ligatures, glyph
+insertion, glyph substitution and kerning, the examples given are only of glyph
+substitution because it is easier to represent (and because FontForge is only
+willing to convert contextual glyph substitutions) But even here, there is a
+very basic mismatch in concepts between the way OpenType and Apple specify
+contextual substitutions. Consider the following contextual substitution in a
+glyph list format:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><th class="stub"><p>Initial Sequence</p></th>
+<td><p>a</p></td>
+<td><p>b</p></td>
+<td><p>c</p></td>
+<td><p>d</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Replace With</p></th>
+<td></td>
+<td><p>B</p></td>
+<td><p>C</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Now in OpenType this means if you find the sequence “abcd” then replace the “b”
+with “B” and the “c” with “C”. But this can’t be expressed in an Apple state
+machine. In OpenType the match is done first, and then the substitutions occur.
+In a state machine the substitutions have to be done (almost) concurrently with
+the match and so must happen whether the final “d” is present or not. (Note I’m
+using a glyph sequence because it is easier to display in an example. The same
+problem applies if the substitution is expressed by classes or by coverage
+tables)</p>
+<p>Consider the following table with two glyph strings</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><th class="stub"><p>Initial Sequence</p></th>
+<td><p>a</p></td>
+<td><p>b</p></td>
+<td><p>c</p></td>
+<td><p>d</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Replace With</p></th>
+<td></td>
+<td><p>B</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>Initial Sequence</p></th>
+<td><p>a</p></td>
+<td><p>b</p></td>
+<td><p>c</p></td>
+<td><p>e</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Replace With</p></th>
+<td></td>
+<td></td>
+<td><p>C</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>So replace the “b” if the final “d” is present, otherwise replace the “c”. Again
+this cannot be expressed in Apple’s state machines.</p>
+<p>Finally consider</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><th class="stub"><p>Initial Sequence</p></th>
+<td><p>a</p></td>
+<td><p>b</p></td>
+<td><p>c</p></td>
+<td><p>d</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Replace With</p></th>
+<td></td>
+<td></td>
+<td><p>C</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>Initial Sequence</p></th>
+<td><p>b</p></td>
+<td><p>c</p></td>
+<td><p>e</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Replace With</p></th>
+<td><p>B</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>If this substitution is given the sequence “abce” it cannot work in AAT. When it
+reads the “a” it will start down the “abcd” branch, the match will not fail
+until it looks for the “d” and finds “e” instead. At that point it is too late
+to switch to the “bce” substitution (which does match) because the “b” glyph
+will not have been marked as a substitution location.</p>
+<hr class="docutils" />
+<p>On the other hand, Apple’s state machines can express things that OpenType
+tables cannot (again I’m restricting myself to contextual glyph substitutions).
+Consider the case of a swash glyph at the beginning (or end) of a word. Let us
+say that a word begins when a letter appears at the start of input or following
+a whitespace character. But OpenType has no way of expressing “start of input”
+(or end of input) in a contextual/chaining context, whereas Apple’s state
+machines do.</p>
+<p>Since Apple’s glyph substitutions can delete glyphs a contextual glyph
+substitution table can create two character ligatures (one glyph is converted to
+the ligature and the other is deleted), while OpenType tables must use a
+ligature substitution to do this.</p>
+<p>Finally an AAT state machine can match a general regular expression, while
+OpenType tables can only match fixed length strings. Suppose you were
+typesetting mathematics and wanted a substitution which would convert an
+arbitrary digit string following a variable into a subscript (so x23 should
+become x<sub>23</sub>). It is easy to write a state machine which will keep
+substituting as long as it gets more digits, but you’d need an infinite
+number of OpenType rules to have the same expressive power.</p>
+<p>These examples probably seem fairly contrived, and (except for the swash one)
+they are. But they illustrate the point that the two formats have very different
+expressive capabilities and it is NOT possible to write a converter which will
+take any input in one format and produce an equivalent output in the other.</p>
+</div>
+</div>
+<div class="section" id="apple-and-opentype-features">
+<h3>Apple and OpenType features<a class="headerlink" href="#apple-and-opentype-features" title="Permalink to this headline">¶</a></h3>
+<table class="docutils align-default" id="gposgsub-ot-mac-features">
+<caption><span class="caption-text">Correspondences between Apple and OpenType features (that I support)</span><a class="headerlink" href="#gposgsub-ot-mac-features" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Apple Feature Setting</p></th>
+<th class="head"><p>OpenType Feature Name</p></th>
+<th class="head"><p>OpenType Tag</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Required Ligatures</p></td>
+<td><p>Required Ligatures</p></td>
+<td><p>rlig</p></td>
+</tr>
+<tr class="row-odd"><td><p>Common Ligatures</p></td>
+<td><p>Standard Ligatures</p></td>
+<td><p>liga</p></td>
+</tr>
+<tr class="row-even"><td><p>Rare Ligatures</p></td>
+<td><p>Discretionary</p></td>
+<td><p>dlig</p></td>
+</tr>
+<tr class="row-odd"><td><p>Fractions</p></td>
+<td><p>Fractions</p></td>
+<td><p>frac</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Contextual Alternatives</p></td>
+<td><p>Cursive connection</p></td>
+<td><p>calt</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Vertical Forms</p></td>
+<td><p>Vertical Rotation 2</p></td>
+<td><p>vrt2</p></td>
+</tr>
+<tr class="row-even"><td><p>Monospace numbers</p></td>
+<td><p>Tabular numbers</p></td>
+<td><p>tnum</p></td>
+</tr>
+<tr class="row-odd"><td><p>Superscript</p></td>
+<td><p>Superscript</p></td>
+<td><p>sups</p></td>
+</tr>
+<tr class="row-even"><td><p>Subscript</p></td>
+<td><p>Subscript</p></td>
+<td><p>subs</p></td>
+</tr>
+<tr class="row-odd"><td><p>Proportional Text</p></td>
+<td><p>Proportional Widths</p></td>
+<td><p>pwid</p></td>
+</tr>
+<tr class="row-even"><td><p>Half-width Text</p></td>
+<td><p>Half Width</p></td>
+<td><p>hwid</p></td>
+</tr>
+<tr class="row-odd"><td><p>Full-width Text</p></td>
+<td><p>Full Width</p></td>
+<td><p>fwid</p></td>
+</tr>
+<tr class="row-even"><td><p>Traditional Characters</p></td>
+<td><p>Traditional</p></td>
+<td><p>trad</p></td>
+</tr>
+<tr class="row-odd"><td><p>Simplified Characters</p></td>
+<td><p>Simplified</p></td>
+<td><p>smpl</p></td>
+</tr>
+<tr class="row-even"><td><p>JIS 1978 Characters</p></td>
+<td><p>JIS 1978 Characters</p></td>
+<td><p>jp78</p></td>
+</tr>
+<tr class="row-odd"><td><p>JIS 1983 Characters</p></td>
+<td><p>JIS 1983 Characters</p></td>
+<td><p>jp83</p></td>
+</tr>
+<tr class="row-even"><td><p>JIS 1990 Characters</p></td>
+<td><p>JIS 1990 Characters</p></td>
+<td><p>jp90</p></td>
+</tr>
+</tbody>
+</table>
+<p>FontForge will retain the order of features in the morx table, and the user may
+adjust it with the <a class="reference internal" href="../ui/dialogs/fontinfo.html#fontinfo-lookups"><span class="std std-ref">Element-&gt;Font Info</span></a> command. (this
+is the same list as that used for GSUB table. GSUB features that don’t
+correspond to mac features will be ignored).</p>
+</div>
+</div>
+<div class="section" id="what-is-unsupported">
+<span id="gposgsub-unsupported"></span><h2>What is Unsupported?<a class="headerlink" href="#what-is-unsupported" title="Permalink to this headline">¶</a></h2>
+<p>FontForge does not (yet) support all the advanced typographic features available
+in either OpenType or apple advanced typography.</p>
+<div class="section" id="opentype">
+<h3>OpenType<a class="headerlink" href="#opentype" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>FontForge does not provide an attachment list subtable nor a MarkAttachClassDef
+subtable of the GDEF table.</p></li>
+<li><p>FontForge does not support the VORG and JUST tables</p></li>
+</ul>
+<p><a class="reference internal" href="TrueOpenTables.html"><span class="doc">See here for a complete list of supported tables</span></a>.</p>
+</div>
+<div class="section" id="id1">
+<h3>Apple Advanced Typography<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>FontForge will never generate a ‘mort’ table. It can read ‘mort’ tables, but it
+will only produce ‘morx’ tables.</p></li>
+<li><p>FontForge is unable to parse contextual ligatures. It can find ligatures which
+start from state 0, but it will not find ligatures which start from other states
+(that is, which are contextual)</p></li>
+<li><p>FontForge does not support the following Apple specific tables</p>
+<ul>
+<li><p>acnt (accent attachment)</p></li>
+<li><p>bsln (baseline)</p></li>
+<li><p>fdsc (font descriptor)</p></li>
+<li><p>fmtx (font metrics)</p></li>
+<li><p>hsty (horizontal style)</p></li>
+<li><p>just (justification)</p></li>
+<li><p>trak (tracking)</p></li>
+<li><p>Zapf (glyph reference)</p></li>
+</ul>
+</li>
+</ul>
+<p><a class="reference internal" href="TrueOpenTables.html"><span class="doc">See here for a complete list of supported tables</span></a>.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui.html">FontForge’s User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../techref.html">Technical References</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Advanced Typography Tables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-gpos-gsub-gdef-and-base-opentype-tables">The <code class="docutils literal notranslate"><span class="pre">GPOS</span></code>, <code class="docutils literal notranslate"><span class="pre">GSUB</span></code>, <code class="docutils literal notranslate"><span class="pre">GDEF</span></code> and <code class="docutils literal notranslate"><span class="pre">BASE</span></code> OpenType tables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#the-gpos-table">The <strong>GPOS</strong> table</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-gsub-table">The <strong>GSUB</strong> table</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-gdef-table">The <strong>GDEF</strong> table</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#apple-advanced-typography">Apple Advanced Typography</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#what-features-can-be-interconverted-between-opentype-and-aat">What features can be interconverted between OpenType and AAT?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#apple-and-opentype-features">Apple and OpenType features</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-unsupported">What is Unsupported?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#opentype">OpenType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Apple Advanced Typography</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="AA-Comparison.html">Anti-Alias Comparison</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autotrace.html">Autotracing bitmaps in FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accented.html">Building Accented and other Composite Glyphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bezier.html">Bézier Splines </a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref-caveats.html">Caveats about References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfdchangelog.html">Changes to the sfd format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cidmapformat.html">Cidmap files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cliargs.html">Command Line Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="splinefont.html">Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SuggestDeltas.html">Delta Instruction Suggestions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stroke.html">Expand Stroke Facility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BDFGrey.html">Extensions to Adobe’s BDF  for greymap fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PfaEdit-TeX.html">FontForge and TeX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pfaeditmath.html">FontForge’s math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hinting.html">Hinting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macformats.html">Macintosh font formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="featurefile.html">Major differences between FontForge’s and Adobe’s interpretation of feature files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="non-standard.html">Non standard extensions used FontForge in True/Open Type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="palmfonts.html">Palm fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bitmaponlysfnt.html">Several formats for bitmap only sfnts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfdformat.html">Spline Font Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pcf-format.html">The X11 PCF bitmap font file format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TrueOpenTables.html">TrueType and OpenType tables supported by FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corpchar.html">Unicode Corporate Characters used by FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UniqueID.html">UniqueID and XUID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selections.html">X Selections and the X Clipboard</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../techref.html">Technical References</a><ul>
+      <li>Previous: <a href="../techref.html" title="previous chapter">Technical References</a></li>
+      <li>Next: <a href="AA-Comparison.html" title="next chapter">Anti-Alias Comparison</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

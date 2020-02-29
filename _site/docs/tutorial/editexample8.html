@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>11. Working with Bitmap Fonts &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="12. FontForge Scripting Tutorial" href="scripting-tutorial.html" />
+    <link rel="prev" title="10. Checking and generating a font" href="editexample7.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="working-with-bitmap-fonts">
+<h1><span class="section-number">11. </span>Working with Bitmap Fonts<a class="headerlink" href="#working-with-bitmap-fonts" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="opening-importing-bitmap-strikes">
+<h2><span class="section-number">11.1. </span>Opening &amp; Importing Bitmap strikes<a class="headerlink" href="#opening-importing-bitmap-strikes" title="Permalink to this headline">¶</a></h2>
+<p>FontForge is primarily an outline font editor, but it does have some facility
+for editing bitmap (and greymap, or anti-aliased) fonts. A useful term here is a
+“strike”; a strike is one particular size of a bitmap font. When FontForge
+displays a font, that font will contain at most one outline but potentially many
+bitmap (or greymap) strikes (for several different pixel sizes).</p>
+<p>You might wonder if it is really necessary to provide bitmaps along with
+outlines given the high quality results of modern rasterizers, and for Latin
+(Greek, Cyrillic) fonts it may not be, but for CJK fonts at small pixel sizes a
+human eye can still make a better choice than even the best rasterizer. Back in
+the 1980s when Apple first adopted PostScript fonts they felt it was essential
+to have bitmaps to go with the outline – so much so that it was not even
+possible to use a PostScript font without also providing at least one bitmap
+with it. Even today, when using a Type1 font on a mac there must be a bitmap
+font to point to it.</p>
+<p>Of course Type1 fonts are a bit old-fashioned now, but the sfnt file format (the
+format used for both OpenType and TrueType fonts) supports embedded bitmap
+strikes along with the outline version of the font. These strikes will be used
+in preference to rasterizing the outline in any pixel sizes for which they are
+present.</p>
+<p>If you have an sfnt with both an outline font and bitmap strikes you can open it
+directly with the <a class="reference internal" href="../ui/menus/filemenu.html#filemenu-open"><span class="std std-ref">File-&gt;Open</span></a> command and FontForge will
+load all the bits and pieces.</p>
+<p>You can also open a bitmap only font directly with the
+<a class="reference internal" href="../ui/menus/filemenu.html#filemenu-open"><span class="std std-ref">File-&gt;Open</span></a> command, however if you have multiple strikes
+of the same underlying font in separate files, you will probably want to open
+only the first (or only the outline version) with Open, and use
+<a class="reference internal" href="../ui/menus/filemenu.html#filemenu-import"><span class="std std-ref">File-&gt;Import</span></a> to merge the other strikes into one
+FontForge font.</p>
+<p>Suppose you have <code class="docutils literal notranslate"><span class="pre">Ambrosia.pfb</span></code> (an outline font), <code class="docutils literal notranslate"><span class="pre">Ambrosia-12.bdf</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">Ambrosia-24.bdf</span></code> (two bitmap strikes, one 12 pixels high, one 24), and you
+want them all in one font. First use <a class="reference internal" href="../ui/menus/filemenu.html#filemenu-open"><span class="std std-ref">File-&gt;Open</span></a> to open
+Ambrosia.pfb, then <a class="reference internal" href="../ui/menus/filemenu.html#filemenu-import"><span class="std std-ref">File-&gt;Import</span></a> and select both of the
+bitmap strikes (hold down the shift key).</p>
+<p>On the other hand, if you have only two bitmaps: <code class="docutils literal notranslate"><span class="pre">Ambrosia-12.bdf</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">Ambrosia-24.bdf</span></code>, then use <a class="reference internal" href="../ui/menus/filemenu.html#filemenu-open"><span class="std std-ref">File-&gt;Open</span></a> to open either
+strike, and use <a class="reference internal" href="../ui/menus/filemenu.html#filemenu-import"><span class="std std-ref">File-&gt;Import</span></a> and import the other.</p>
+<p>You may have noticed that Import has a checkbox labeled <code class="docutils literal notranslate"><span class="pre">[]</span> <span class="pre">As</span> <span class="pre">Background</span></code>. If
+you check this, then your bitmap font will not be loaded as a font itself, but
+will be loaded into the background of the outline font whence you can
+<a class="reference internal" href="../ui/menus/elementmenu.html#elementmenu-autotrace"><span class="std std-ref">Element-&gt;Autotrace</span></a> it to provide an outline font
+from a bitmap. Be warned: This produces fairly bad results unless you have a
+large (100+ pixel) font to trace.</p>
+</div>
+<div class="section" id="creating-bitmap-strikes">
+<h2><span class="section-number">11.2. </span>Creating Bitmap strikes<a class="headerlink" href="#creating-bitmap-strikes" title="Permalink to this headline">¶</a></h2>
+<img alt="../_images/bitmapsavail.png" class="align-right" src="../_images/bitmapsavail.png" />
+<p>If you want to add a bitmap strike with a given pixel size to a font then use
+<a class="reference internal" href="../ui/menus/elementmenu.html#elementmenu-bitmaps"><span class="std std-ref">Element-&gt;Bitmap Strikes Available</span></a>. Simply add the
+pixel size you are interested in to the list at the bottom of the screen.</p>
+<p>If you are more comfortable dealing in point sizes, be aware that those depend
+on screen resolution. This dialog shows you the conversion between point and
+pixel sizes for two standard resolutions. The resolutions differ depending on
+what windowing system you use.</p>
+<p>You may add more than one pixel size, of course. You may also remove pixel sizes
+if you no longer want them.</p>
+<p>Normally when you create a new strike it will be rasterized from the outline
+font – if there is no outline font then FontForge will attempt to scale the
+biggest strike available to the new size (in most cases this will be fairly
+ugly, but it may be better than nothing.</p>
+<p>There is also a checkbox <code class="docutils literal notranslate"><span class="pre">[*]</span> <span class="pre">Create</span> <span class="pre">Rasterized</span> <span class="pre">Strikes</span> <span class="pre">(Not</span> <span class="pre">empty</span> <span class="pre">ones)</span></code> at
+the bottom of the dialog. If you turn this off, then the rasterization process
+described above will not happen, and any new strikes will be created containing
+no glyphs (you can add glyphs later, of course).</p>
+</div>
+<div class="section" id="bitmap-properties">
+<h2><span class="section-number">11.3. </span>Bitmap Properties<a class="headerlink" href="#bitmap-properties" title="Permalink to this headline">¶</a></h2>
+<p>In the old days of bdf and pcf fonts on X11 each font had a set of properties
+attached to it. It is not clear to me whether these properties are still useful
+as X11 moves to OpenType Bitmaps. They may be. At any rate FontForge will store
+them both in BDF fonts and in OpenType Bitmap fonts. Each strike may have its
+own set of properties. FontForge will generate them automatically when you
+create a strike (and will retain them when it reads in a font that has them).
+You may override the current values with the
+<a class="reference internal" href="../ui/menus/elementmenu.html#elementmenu-bdf-info"><span class="std std-ref">Element-Bdf Info</span></a> dialog.</p>
+</div>
+<div class="section" id="creating-a-new-bitmap-only-font">
+<h2><span class="section-number">11.4. </span>Creating a new bitmap only font<a class="headerlink" href="#creating-a-new-bitmap-only-font" title="Permalink to this headline">¶</a></h2>
+<p>If you want to create a new font with no outlines, only bitmap strikes, you
+would use <a class="reference internal" href="../ui/menus/filemenu.html#filemenu-new"><span class="std std-ref">File-&gt;New</span></a> to create a new font, and then
+<a class="reference internal" href="../ui/menus/elementmenu.html#elementmenu-bitmaps"><span class="std std-ref">Element-&gt;Bitmap Strikes Available</span></a> to add some
+(empty) strikes to it. As soon as you add a strike to a new font, the font will
+become a bitmap only font.</p>
+<p>Apple has a bitmap only version of the sfnt file format, and X11 does too. Of
+course the two formats are slightly different. Windows has no support for a
+bitmap only sfnt format.</p>
+</div>
+<div class="section" id="bitmaps-in-the-font-view">
+<h2><span class="section-number">11.5. </span>Bitmaps in the Font View<a class="headerlink" href="#bitmaps-in-the-font-view" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="../ui/menus/viewmenu.html#viewmenu-bitmaps"><span class="std std-ref">View</span></a> menu of the Font View (and the Metrics View)
+contains a list of all bitmap strikes in the font. You may select which one will
+be displayed in the Font View. You may also change the magnification at which a
+strike is displayed with
+<a class="reference internal" href="../ui/menus/viewmenu.html#viewmenu-bitmapmag"><span class="std std-ref">View-&gt;Bitmap Magnification…</span></a> (it can be hard to see
+the details of an 8 pixel font on a high resolution screen, so you might want to
+display it at 3 times its actual size).</p>
+<p>Many commands in the Font View will apply to all strikes (and the outline) in
+the font. For instance <a class="reference internal" href="../ui/menus/editmenu.html#editmenu-copy"><span class="std std-ref">Edit-&gt;Copy</span></a> will copy the outline
+glyph and all bitmap glyphs. Sometimes you only want to affect one strike, if so
+then deselect <a class="reference internal" href="../ui/menus/editmenu.html#editmenu-fonts"><span class="std std-ref">Edit-&gt;Copy From-&gt;All Fonts</span></a>.</p>
+<p>The <a class="reference internal" href="../ui/menus/elementmenu.html#elementmenu-accented"><span class="std std-ref">Element-&gt;Build</span></a> commands will build accented
+bitmap glyphs just as it builds accented outline glyphs.</p>
+<p>If the Font View is displaying a bitmap strike and you double click on a
+character, then FontForge will bring up a
+<a class="reference internal" href="../ui/mainviews/bitmapview.html"><span class="doc">bitmap editing window</span></a> displaying that character in the
+current strike (rather than opening an outline editing window). If the character
+does not have a matching glyph in the current strike FontForge will create one
+by rasterizing the outline version of the font.</p>
+</div>
+<div class="section" id="editing-bitmaps">
+<h2><span class="section-number">11.6. </span>Editing Bitmaps<a class="headerlink" href="#editing-bitmaps" title="Permalink to this headline">¶</a></h2>
+<img alt="../_images/BitmapView.png" class="align-left" src="../_images/BitmapView.png" />
+<p>The bitmap editing window should be fairly self explanatory. The window is a
+simple bitmap editor. With the pencil tool, clicking on a pixel will make it
+change. The line tool will draw a straight line between the start and end
+points.</p>
+<p>You can see the outline glyph in the background of the bitmap.</p>
+<p>You can regenerate the bitmap (by rasterizing the outline) by pressing the
+<code class="docutils literal notranslate"><span class="pre">[Recalculate</span> <span class="pre">Bitmaps]</span></code> button.</p>
+<p>Editing an anti-aliased greymap has the added complexity that you need to select
+a color (actually a level of greyness) to be applied with the pencil. There will
+be an additional palette with all possible greys for this.</p>
+</div>
+<div class="section" id="sparse-bitmap-strikes">
+<h2><span class="section-number">11.7. </span>Sparse Bitmap Strikes<a class="headerlink" href="#sparse-bitmap-strikes" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes you don’t need a complete set of bitmap glyphs in a strike. Perhaps
+the rasterizer does a good job for all glyphs except one. Then you can create an
+empty strike (with
+<a class="reference internal" href="../ui/menus/elementmenu.html#elementmenu-bitmaps"><span class="std std-ref">Element-&gt;Bitmap Strikes Available</span></a> unchecking the
+<code class="docutils literal notranslate"><span class="pre">[*]</span> <span class="pre">Create</span> <span class="pre">Rasterized</span> <span class="pre">Strikes</span></code> checkbox) and then select the one glyph you
+care about and say
+<a class="reference internal" href="../ui/menus/elementmenu.html#elementmenu-regenerate"><span class="std std-ref">Element-&gt;Regenerate Bitmap Glyphs</span></a>.</p>
+<p>Alternately you could create a fully rasterized strike and then select the
+glyphs you don’t need and say
+<a class="reference internal" href="../ui/menus/elementmenu.html#elementmenu-removebitmaps"><span class="std std-ref">Element-&gt;Remove Bitmap Glyphs</span></a>.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../tutorial.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="editexample.html">1. Font and glyph creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editspiro.html">2. Creating a glyph using spiros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="importexample.html">3. Importing Outline Glyphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample2.html">4. More on glyphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample3.html">5. Creating letters with consistent stem widths, serifs and heights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample4.html">6. Accented glyphs, ligatures, lookups and features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample5.html">7. Metrics, spacing and kerning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample6.html">8. Glyph variants and anchoring marks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample6-5.html">9. Conditional Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample7.html">10. Checking and generating a font</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">11. Working with Bitmap Fonts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#opening-importing-bitmap-strikes">11.1. Opening &amp; Importing Bitmap strikes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-bitmap-strikes">11.2. Creating Bitmap strikes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bitmap-properties">11.3. Bitmap Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-a-new-bitmap-only-font">11.4. Creating a new bitmap only font</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bitmaps-in-the-font-view">11.5. Bitmaps in the Font View</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#editing-bitmaps">11.6. Editing Bitmaps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sparse-bitmap-strikes">11.7. Sparse Bitmap Strikes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="scripting-tutorial.html">12. FontForge Scripting Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scriptnotes.html">13. Special thoughts for special scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial.html#tutorial-in-other-languages">Tutorial in other languages</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ui.html">FontForge’s User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techref.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../tutorial.html">Tutorial</a><ul>
+      <li>Previous: <a href="editexample7.html" title="previous chapter"><span class="section-number">10. </span>Checking and generating a font</a></li>
+      <li>Next: <a href="scripting-tutorial.html" title="next chapter"><span class="section-number">12. </span>FontForge Scripting Tutorial</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

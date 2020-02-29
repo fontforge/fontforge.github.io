@@ -1,0 +1,285 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>5. Creating letters with consistent stem widths, serifs and heights &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="6. Accented glyphs, ligatures, lookups and features" href="editexample4.html" />
+    <link rel="prev" title="4. More on glyphs" href="editexample2.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="creating-letters-with-consistent-stem-widths-serifs-and-heights">
+<h1><span class="section-number">5. </span>Creating letters with consistent stem widths, serifs and heights<a class="headerlink" href="#creating-letters-with-consistent-stem-widths-serifs-and-heights" title="Permalink to this headline">¶</a></h1>
+<p>Many Latin (Greek, Cyrillic) fonts have serifs, special terminators at the end
+of stems. And in almost all LGC fonts there should only be a small number of
+stem widths used (ie. the vertical stem of “l” and “i” should probably be the
+same).</p>
+<p>FontForge does not have a good way to enforce consistency, but it does have
+various commands to help you check for it, and to find discrepancies.</p>
+<p>Let us start with the letter “l” and go through the familiar process of
+importing a bitmap and defining its outline.</p>
+<div class="flex-container">
+<div class="flex-row">
+<div class="flex-col">
+<img alt="../_images/l1.png" src="../_images/l1.png" />
+<p>The imported image</p>
+</div>
+<div class="flex-col">
+<img alt="../_images/l2.png" src="../_images/l2.png" />
+<p>Use the magnify tool to examine the bottom serif, and note that it is
+symmetric left to right.</p>
+</div>
+<div class="flex-col">
+<img alt="../_images/l3.png" src="../_images/l3.png" />
+<p>Outline the right half of the serif</p>
+</div>
+<div class="flex-col">
+<img alt="../_images/l4.png" src="../_images/l4.png" />
+<p>select the outline, invoke <span class="menuselection">Edit ‣ Copy</span> then
+<span class="menuselection">Edit ‣ Paste</span>, and finally
+<span class="menuselection">Element ‣ Transformations ‣ Transform</span> and select
+<code class="docutils literal notranslate"><span class="pre">Flip</span></code> (from the pull down list) and <code class="docutils literal notranslate"><span class="pre">check</span> <span class="pre">Horizontal</span></code></p>
+</div>
+</div>
+<div class="flex-row">
+<div class="flex-col">
+<img alt="../_images/l5.png" src="../_images/l5.png" />
+<p>Drag the flipped serif over to the left until it snuggles up against the left
+edge of the glyph</p>
+</div>
+<div class="flex-col flex-2">
+<div class="flex-container">
+<div class="flex-row">
+<div class="flex-col">
+<img alt="../_images/l6.png" src="../_images/l6.png" />
+</div>
+<div class="flex-col">
+<img alt="../_images/l7.png" src="../_images/l7.png" />
+</div>
+</div>
+</div>
+<p>Deselect the path, and select one end point and drag it until it is on top of
+the end point of the other half</p>
+</div>
+<div class="flex-col">
+<img alt="../_images/l8.png" src="../_images/l8.png" />
+<p>Finish off the glyph</p>
+</div>
+</div>
+<div class="flex-row">
+<div class="flex-col">
+<p>But let’s do two more things. First let’s measure the stem width, and second
+let’s mark the height of the “l”</p>
+</div>
+<div class="flex-col">
+<img alt="../_images/l9.png" src="../_images/l9.png" />
+<p>Select the ruler tool from the tool palette, and drag it from one edge of the
+stem to the other. A little window pops up showing the width is 58 units, the
+drag direction is 180 degrees, and the drag was -58 units horizontally, and 0
+units vertically.</p>
+</div>
+<div class="flex-col">
+<img alt="../_images/l10.png" src="../_images/l10.png" />
+<p>Go to the layers palette and select the Guide radio box (this makes the guide
+layer editable). Then draw a line at the top of the “l”, this line will be
+visible in all glyphs and marks the ascent height of this font.</p>
+</div>
+<div class="flex-col">
+</div>
+</div>
+</div>
+<p>Now let’s do “i”. This glyph looks very much like a short “l” with a dot on top.
+So let’s copy the “l” into the “i”; this will automatically give us the right
+stem width and the correct advance width. The copy may be done either from the
+font view (by selecting the square with the “l” in it and pressing
+<span class="menuselection">Edit ‣ Copy</span>) or from the outline view (by
+<span class="menuselection">Edit ‣ Select ‣ Select All</span> and
+<span class="menuselection">Edit ‣ Copy</span>). Similarly the Paste may be done either in the
+font view (by selecting the “i” square and pressing
+<span class="menuselection">Edit ‣ Paste</span>) or the outline view (by opening the “i” glyph
+and pressing <span class="menuselection">Edit ‣ Paste</span>).</p>
+<div class="flex-container">
+<div class="flex-row">
+<div class="flex-col">
+<img alt="../_images/i1.png" src="../_images/i1.png" />
+<p>Import the “i” image, and copy the “l” glyph.</p>
+</div>
+<div class="flex-col">
+<img alt="../_images/i2.png" src="../_images/i2.png" />
+<p>Select the top serif of the l</p>
+</div>
+<div class="flex-col">
+<img alt="../_images/i3.png" src="../_images/i3.png" />
+<p>drag it down to the right height</p>
+</div>
+<div class="flex-col">
+<img alt="../_images/i4.png" src="../_images/i4.png" />
+<p>go to the guide layer and add a line at the x-height</p>
+</div>
+</div>
+</div>
+<img alt="../_images/o5.png" class="align-right" src="../_images/o5.png" />
+<p>Let’s look briefly back at the “o” we built before. You may notice that the “o”
+reaches a little above the guide line we put in to mark the x-height (and a
+little below the baseline). This is called overshoot and is an attempt to remedy
+an optical illusion. A curve actually needs to rise about 3% (of its diameter)
+above the x-height for it to appear on the x-height.</p>
+<p>Let’s look at “k”. Again we will copy an “l” into it and import an appropriate
+image.</p>
+<div class="flex-container">
+<div class="flex-row">
+<div class="flex-col">
+<img alt="../_images/k1.png" src="../_images/k1.png" />
+<p>Import the “k” image and copy the “l” glyph. Note that the x-height line
+matches the “k” (as we would hope). Also note that the width of the “l” is
+inappropriate for “k” so we’ll have to select it and drag it over.</p>
+</div>
+<div class="flex-col">
+<img alt="../_images/k2.png" src="../_images/k2.png" />
+<p>Select the knife tool from the palette, and cut the stem of the “l” shape at
+appropriate points for “k”.</p>
+</div>
+<div class="flex-col">
+<img alt="../_images/k3.png" src="../_images/k3.png" />
+<p>Remove the splines between the cut points. An easy way to do this is to grab
+the spline itself, (which selects its end points) and then do
+<span class="menuselection">Edit ‣ Clear</span>.</p>
+</div>
+</div>
+<div class="flex-row">
+<div class="flex-col">
+<img alt="../_images/k4.png" src="../_images/k4.png" />
+<p>Select the end points and convert them into corner points with
+<span class="menuselection">Point ‣ Corner</span>.</p>
+</div>
+<div class="flex-col">
+<img alt="../_images/k5.png" src="../_images/k5.png" />
+<p>Then draw in the outer contour.</p>
+</div>
+<div class="flex-col">
+<img alt="../_images/k6.png" src="../_images/k6.png" />
+<p>And the inner contour. Finally do an
+<span class="menuselection">Edit ‣ Select ‣ Select All</span> and an
+<span class="menuselection">Element ‣ Correct Direction</span>.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../tutorial.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="editexample.html">1. Font and glyph creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editspiro.html">2. Creating a glyph using spiros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="importexample.html">3. Importing Outline Glyphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample2.html">4. More on glyphs</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5. Creating letters with consistent stem widths, serifs and heights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample4.html">6. Accented glyphs, ligatures, lookups and features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample5.html">7. Metrics, spacing and kerning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample6.html">8. Glyph variants and anchoring marks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample6-5.html">9. Conditional Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample7.html">10. Checking and generating a font</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample8.html">11. Working with Bitmap Fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripting-tutorial.html">12. FontForge Scripting Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scriptnotes.html">13. Special thoughts for special scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial.html#tutorial-in-other-languages">Tutorial in other languages</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ui.html">FontForge’s User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techref.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../tutorial.html">Tutorial</a><ul>
+      <li>Previous: <a href="editexample2.html" title="previous chapter"><span class="section-number">4. </span>More on glyphs</a></li>
+      <li>Next: <a href="editexample4.html" title="next chapter"><span class="section-number">6. </span>Accented glyphs, ligatures, lookups and features</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

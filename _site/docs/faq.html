@@ -1,0 +1,1975 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Frequently Asked Questions &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="_static/fftype16.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Appendices" href="appendices.html" />
+    <link rel="prev" title="sfddiff" href="fontutils/sfddiff.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="frequently-asked-questions">
+<h1>Frequently Asked Questions<a class="headerlink" href="#frequently-asked-questions" title="Permalink to this headline">¶</a></h1>
+<blockquote class="epigraph">
+<div><div class="line-block">
+<div class="line"><strong>Sir Toby:</strong> Thy most exquisite reason, dear knight?</div>
+<div class="line"><strong>Sir Andrew</strong> I have no exquisite reason for’t,</div>
+<div class="line">but I have reason good enough</div>
+</div>
+<p class="attribution">—Twelfth Night, II, iii, 130 – Shakespeare</p>
+</div></blockquote>
+<p>(or many of the questions I’ve been asked so far)</p>
+<div class="section" id="general-questions-about-fontforge">
+<h2>General questions about FontForge<a class="headerlink" href="#general-questions-about-fontforge" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="#faq-font-editor"><span class="std std-ref">Why a font editor, aren’t there enough fonts already?</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#faq-write"><span class="std std-ref">Why did I write it?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-give"><span class="std std-ref">Why do I give it away?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-pots"><span class="std std-ref">Does working on FontForge provide the same kind of pleasure as working on pots or baking bread?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-native"><span class="std std-ref">Why doesn’t it use the native MS Windows or Mac windowing system?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-widget-set"><span class="std std-ref">Why is FontForge based on a non-standard widget set?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-c-plus-plus"><span class="std std-ref">Why isn’t FontForge written in C++? (or Why C++ is not my favorite language)</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-bsd-license"><span class="std std-ref">Why do I release FontForge under the BSD license and not GPL?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-libraries"><span class="std std-ref">Why does FontForge load libraries at run time rather than being linked with them?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-roadmap"><span class="std std-ref">Why is there no future roadmap for FontForge?</span></a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="general-questions-about-fonts">
+<h2>General questions about fonts<a class="headerlink" href="#general-questions-about-fonts" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="#faq-legal"><span class="std std-ref">Is it legal to modify a font? Is it ethical?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-pointsize"><span class="std std-ref">What is a 12point font?</span></a> (What measurement of the font
+determines the point size)</p>
+<ul>
+<li><p><a class="reference internal" href="#faq-linespace"><span class="std std-ref">How do I set the line spacing on a font?</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#faq-em-units"><span class="std std-ref">How big will my glyph be? (What are em-units?)</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-license"><span class="std std-ref">What’s a good license to use on an open source font?</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="using-fontforge-installing-fonts-on-various-systems">
+<h2>Using FontForge &amp; Installing fonts on various systems<a class="headerlink" href="#using-fontforge-installing-fonts-on-various-systems" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://fontforge.org/en-US/downloads/">How do I install FontForge?</a></p></li>
+<li><p><a class="reference internal" href="#faq-minimum"><span class="std std-ref">Minimum requirements</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#faq-excessive-memory"><span class="std std-ref">Why does FontForge use so much memory?</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#faq-font-install"><span class="std std-ref">How do I install the fonts once I’ve made them?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-bad-windows-install"><span class="std std-ref">Why won’t FontForge’s fonts install on some MS Windows systems</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-how-mac"><span class="std std-ref">How do I edit fonts from my macintoy?</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#faq-how-family"><span class="std std-ref">How do I create a mac font family? (How do I get the mac to group my fonts so that the italic and bold styles work)?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-mac-atm"><span class="std std-ref">Why doesn’t ATM work with my fonts?</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#faq-windows"><span class="std std-ref">How do I edit fonts on MS windows?</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#faq-bad-windows-fonts"><span class="std std-ref">Why don’t my fonts work on windows?</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#faq-otf-diffs"><span class="std std-ref">I generated an opentype (or truetype) font and windows wouldn’t install it. Why not?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-dsig"><span class="std std-ref">I have a truetype font with opentype tables, but windows displays the “TT” (truetype) icon and not the “O” icon. Why?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-names"><span class="std std-ref">What do all the different font names mean?</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="font-conversions">
+<h2>Font Conversions<a class="headerlink" href="#font-conversions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="#faq-outline-conversion"><span class="std std-ref">Converting from one outline format to another</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-bitmap-conversion"><span class="std std-ref">Converting from one bitmap format to another</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-outline-bitmap"><span class="std std-ref">Converting from an outline format to a bitmap</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-bitmap-outline"><span class="std std-ref">Converting from a bitmap format to an outline</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-aat2ot"><span class="std std-ref">Converting from Apple’s Advanced Typography to OpenType</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-ot2aat"><span class="std std-ref">Converting from OT to AAT</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-inkscape"><span class="std std-ref">Importing glyphs from Inkscape</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="questions-about-hints-and-truetype-instructions">
+<h2>Questions about Hints and TrueType Instructions<a class="headerlink" href="#questions-about-hints-and-truetype-instructions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="#faq-hint-subs"><span class="std std-ref">How do I make it use hint substitution?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-flex-hints"><span class="std std-ref">How do I make it use flex hints?</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#faq-flex2"><span class="std std-ref">How can I tell if it is going to use flex hints?</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#faq-fuzzy"><span class="std std-ref">My glyphs are all perfectly hinted, why do some stems have different widths (or appear fuzzy, or fade away completely)?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-ttf-degrade"><span class="std std-ref">I loaded a ttf font, made a few changes and generated a new font. The changed glyphs don’t look anywhere near as nice as the originals. Why?</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="questions-about-font-formats">
+<h2>Questions about <a class="reference internal" href="appendices/bibliography.html"><span class="doc">Font Formats</span></a><a class="headerlink" href="#questions-about-font-formats" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="#faq-open-difference"><span class="std std-ref">What’s the difference between OpenType and PostScript (or TrueType) fonts?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-aat-open"><span class="std std-ref">What is the difference between AAT (Apple Advanced Typography) and OpenType?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-tiger-open"><span class="std std-ref">Why does a font, which worked fine under 10.3 fail on Mac 10.4 (Tiger)?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-cidmaps"><span class="std std-ref">What on earth are the cidmap files, and should I care about them?</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="ui/menus/cidmenu.html#cidmenu-cid"><span class="std std-ref">(What is a CID-keyed font?)</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#faq-tex"><span class="std std-ref">Why doesn’t TeX work with my fonts?</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#faq-mf-files"><span class="std std-ref">Why doesn’t FontForge let me edit an ‘.mf’ file?</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#faq-non-integral"><span class="std std-ref">Is it safe to use non-integral coordinates? Will it screw up in Word or anything?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-open-size"><span class="std std-ref">Why isn’t my Open Type font much smaller than the .pfb file?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-missing-refs"><span class="std std-ref">When I load an otf or a type1 font most of my references have been replaced by inline copies. How do I get my references back?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-kern-info"><span class="std std-ref">Does FontForge read in the old kerning information from fonts?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-mensis"><span class="std std-ref">How do I set a particular bit in the OS/2 table (or any other)?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-sfd"><span class="std std-ref">What’s an sfd file?</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#faq-excessive-memory"><span class="std std-ref">Why are they so big?</span></a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="mathematical-questions">
+<h2>Mathematical questions<a class="headerlink" href="#mathematical-questions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="#faq-simplify"><span class="std std-ref">Does the simplify command lose accuracy?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-cubic-quadratic"><span class="std std-ref">How does FontForge convert a cubic spline into a quadratic spline for truetype?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-quadratic-cubic"><span class="std std-ref">How does FontForge convert a quadratic spline into a cubic (when reading truetype)?</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="image-file-questions">
+<h2>Image file questions<a class="headerlink" href="#image-file-questions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="#faq-complex-eps"><span class="std std-ref">Why does fontforge say “EPS file is too complex to be understood”?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-inkscape"><span class="std std-ref">Importing glyphs from Inkscape</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="random-questions">
+<h2>Random questions<a class="headerlink" href="#random-questions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="#faq-background"><span class="std std-ref">FontForge’s grey background distesses me. How do I change it?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-fontsize"><span class="std std-ref">The fonts FontForge uses in its GUI are too small (too big) how do I change them?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-monospace"><span class="std std-ref">How do I mark a font as monospaced?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-new-encoding"><span class="std std-ref">How do I tell fontforge about a new encoding?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-new-name"><span class="std std-ref">How do I add a glyph with a new name?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-glyphnames"><span class="std std-ref">Why does fontforge give some glyphs the wrong name?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-save-no-change"><span class="std std-ref">After I generate a font and quit, why does FontForge ask if I want to save the font? I didn’t change anything.</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-minify-iconify"><span class="std std-ref">Why does my window get iconified when I want to minify the view?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-no-mu"><span class="std std-ref">Why isn’t there a character named “mu” in my greek font?</span></a> (or
+“Delta”, or “Omega”, or “pi1”)</p></li>
+<li><p><a class="reference internal" href="#faq-no-copy-names"><span class="std std-ref">Why doesn’t Edit-&gt;Copy copy glyph names as well as glyph info?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-copy-names"><span class="std std-ref">Why does Edit-&gt;Paste complain about name duplication?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-default-char"><span class="std std-ref">How do I set the default glyph of a font?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-mingliu"><span class="std std-ref">I looked at kaiu.ttf or mingliu.ttf and the outlines looked nothing like the correct glyphs. What’s wrong?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-greek-accents"><span class="std std-ref">When I use Element-&gt;Build-&gt;Build Accented Glyph to build one of the Extended Greek glyphs (U+1F00-U+1FFF) FontForge picks the wrong accents. Why?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-u-accents"><span class="std std-ref">When I use Element-&gt;Build-&gt;Build Accented Glyph to build accents over “u” or “y” I get the accent over one of the stems not centered on the glyph. Why?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-ttf2afm"><span class="std std-ref">Why does ttf2afm crash on FontForge ttf files?</span></a></p></li>
+<li><p><a class="reference external" href="https://github.com/fontforge/fontforge/issues">Where can I find a list of known bugs in FontForge?</a></p></li>
+<li><p><a class="reference internal" href="#faq-memory"><span class="std std-ref">My system keeps crashing because FontForge keeps running out of memory. What can I do about it?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-unstable"><span class="std std-ref">Why is FontForge so unstable?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-compiz"><span class="std std-ref">Why does FontForge look ugly under Xgl/Compiz?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-talk"><span class="std std-ref">Why don’t I talk at conferences?</span></a></p></li>
+</ul>
+<hr class="docutils" />
+<blockquote class="epigraph" id="faq-font-editor">
+<div><div class="line-block">
+<div class="line">But Eeyore was saying to himself,</div>
+<div class="line">“This writing business. Pencils</div>
+<div class="line">and whatnot. Over-rated, if you</div>
+<div class="line">ask me. Silly stuff. Nothing in it</div>
+</div>
+<p class="attribution">—Winnie-the-Pooh – A.A. Milne</p>
+</div></blockquote>
+<dl>
+<dt><strong>Why a font editor, aren’t there enough fonts already?</strong></dt><dd><p>Well… no. Otherwise I wouldn’t be writing this, and. more to the point,
+there wouldn’t be thousands of people downloading it every month.</p>
+<p>I am often asked this question; to me it represents a misapprehension. You
+wouldn’t go up to a paintbrush maker and ask if he thought there were already
+enough watercolor paintings. A font is a work of art and represents the
+individual genius of its creator. It is no more redundant than a watercolor.</p>
+<p>However, accepting the question at face value, here are my attempts to answer
+it… er, pragmatically.</p>
+<ol class="arabic simple">
+<li><p>There are lots of latin fonts. There are far fewer greek, cyrillic, indic,
+thai, chinese, japanese, korean, unicode…</p></li>
+<li><p>There aren’t many good quality free fonts available.</p></li>
+<li><p>Researchers into old writing systems often need to design their own fonts</p></li>
+<li><p>Even for latin, traditionally each new style of art and architecture has an
+associated style of fonts. New fonts are always being created to reflect the
+esthetics of the times.</p></li>
+<li><p>Computer font technology is constantly changing. A font-format that was
+useful 10 years ago may not be so now.</p></li>
+<li><p>Even if you are satisfied with the fonts that do exist they may not be
+complete</p>
+<ul class="simple">
+<li><p>Missing ligatures</p></li>
+<li><p>Missing accented glyphs</p></li>
+<li><p>No matching cyrillic or greek glyphs</p></li>
+</ul>
+</li>
+<li><p>Everybody wants a font of his/her own handwriting.</p></li>
+<li><p>Playing with fonts is fun.</p></li>
+</ol>
+<p>FontForge has uses beyond simply creating and modifying fonts. It can convert
+from one format to another. It can extract information from the font file. Or
+it can simply show you what the font looks like without having to install it.</p>
+</dd>
+</dl>
+<dl id="faq-write">
+<dt><strong>Why did I write it?</strong></dt><dd><blockquote class="epigraph">
+<div><p>Why not?</p>
+<p class="attribution">—The Phantom Tollbooth – Juster</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Because it was fun</p></li>
+<li><p>Because MacroMedia stopped development on Fontographer, and Fontographer was
+lacking features that I wanted.</p></li>
+<li><p>To learn</p></li>
+</ul>
+<p>For a more complete description see the <a class="reference internal" href="appendices/ff-history.html"><span class="doc">FontForge history</span></a>
+page.</p>
+</dd>
+</dl>
+<dl class="simple" id="faq-give">
+<dt><strong>Why do I give it away?</strong></dt><dd><ul class="simple">
+<li><p>Because I approve of free software and hope that the availability of good
+products on a good operating system will encourage people not to use
+proprietary systems.</p></li>
+<li><p>Because programming is a lot more fun than marketing and giving things away
+is easier than selling them.</p></li>
+<li><p>Because I’d have to spend more time doing QA if I sold it (and QA isn’t much
+fun).</p></li>
+</ul>
+</dd>
+</dl>
+<dl id="faq-native">
+<dt><strong>Why doesn’t it use the native MS Windows or Mac windowing system?</strong></dt><dd><ul class="simple">
+<li><p>FontForge is not a commercial product and is not bound by the constraints of
+the market.</p></li>
+<li><p>Doing that port doesn’t interest me.</p></li>
+<li><p>I don’t have time nor do I have the skill to take that task on.</p></li>
+<li><p>I’d like to encourage people to use Linux/unix</p></li>
+</ul>
+<p>Of course, if I were to use either <a class="reference internal" href="#faq-widget-set"><span class="std std-ref">gtk or qt</span></a> some of
+the difficulties of porting would vanish. But unfortunately I don’t like
+either of those widget sets.</p>
+<p>Now… if <em>you</em> would like to do the port, that would be wonderful. I
+encourage you to do so.</p>
+</dd>
+</dl>
+<dl id="faq-widget-set">
+<dt><strong>Why is FontForge based on a non-standard widget set?</strong></dt><dd><p>I wanted a widget set that would handle Unicode reasonably well. In
+particular I thought support for bidi text was important for hebrew and
+arabic typography. As I was unaware of any widget sets that did that, I wrote
+my own.</p>
+<p>I also wanted a widget set where I could actually figure out whether the
+checkbox was checked or not checked. In far too many cases my eyes can’t work
+out which is which… (Ironically the most frequent complaint I get is from
+people who can’t tell whether my checkboxes are checked. I don’t know what to
+make of that).</p>
+<p>I realize now that that there are essentially two free widget sets that are
+far better at unicode support than mine. These are
+<a class="reference external" href="http://www.trolltech.com/developer/downloads/qt">QT</a> and
+<a class="reference external" href="http://www.gtk.org/">gtk</a>. I’m still not using either because:</p>
+<ul class="simple">
+<li><p>Converting from one set of widgets to another is tedious. And people send me
+bugs which distract me.</p></li>
+<li><p>If I spend my time doing that conversion I won’t be making FontForge more
+functional.</p></li>
+<li><p>QT is written in C++, and, <a class="reference internal" href="#faq-c-plus-plus"><span class="std std-ref">as I explain below</span></a>, I
+don’t like C++, so that’s out.</p></li>
+<li><p>The more I look at gtk the less I like it.</p>
+<ul>
+<li><p>The support for images is atrocious (which is odd, since it was written for
+gimp):</p>
+<ul>
+<li><p>There is no support whatsoever for client side bitmaps (and I want to support
+bitmap fonts)</p></li>
+<li><p>Colors are ordered RGB in color tables for index images, but BGR for 24bit
+color images</p></li>
+<li><p>No simple support for transparent images without resorting to full RGBA
+images, which is a bit of overkill when I want to draw a simple bitmap.</p></li>
+<li><p>There is no overarching format for images, so I can’t have an image which
+itself knows whether it’s bitmap, index or truecolor.</p></li>
+<li><p>Fixing these was possible, but it involved a lot of very low level work on my
+part – and I only know how to do that work on X.</p></li>
+</ul>
+</li>
+<li><p>I find the file chooser dialog really ugly. And it’s so complex I can’t
+figure out how to modify it to make it look nice (by my standards, that is).</p></li>
+<li><p>I also can’t figure out how to modify the file chooser to make it behave the
+way the fontforge’s file chooser currently behaves (popup windows showing
+FontNames as you move the mouse over fontfiles, a pull down list of recently
+used files attached to the filename input box, etc.)</p></li>
+<li><p>gtk+2 doesn’t run natively on Mac OS, and the only people porting gtk to the
+mac seem to be working on gtk-1</p></li>
+<li><p>Many of the widgets I want to use have been deprecated. Sometimes I can’t
+figure out what replaces them, sometimes I am forced to used a far more
+complex widget instead.</p></li>
+<li><p>So I tend to wrestle with it for a while and then decide than my current
+widgets are better after all.</p></li>
+<li><p>I did get a limited version of fontforge running under gtk. I would be
+greatful if someone else would choose to extend and maintain it.</p></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+<dl id="faq-c-plus-plus">
+<dt><strong>Why isn’t FontForge written in C++ (or *Why C++ is not my favorite language*)?</strong></dt><dd><p>I’ve been a little surprised to be asked this question, I had not realized my
+choice of language needed justification, but it appears to do so…</p>
+<p>Basically because I don’t find object-oriented practices helpful in most
+cases, because I find C++ far too complex and badly designed, and because I
+can’t debug it easily.</p>
+<ul>
+<li><p>I grew up with SIMULA and dabbled with SmallTalk and found after a few years
+that there were very few problems where an object oriented approach seemed
+natural to me. In most cases it just seemed to impose unneeded complexities
+on the problem.</p></li>
+<li><p>The semantics of a C++ program cannot be specified. The compiler is free to
+generate temporaries as it wishes. In C this is not a problem, but in C++ the
+creation of a temporary can involve calling a constructor and a destructor
+which may have untold side-effects. I find this frightening.</p></li>
+<li><p>The order of execution of external constructors is unspecified. I have seen
+many inexplicable bugs caused by this</p></li>
+<li><p>I find it extremely difficult to debug C++. Stepping through a statement
+often involves many unexpected procedure calls (some of which are inlined and
+not obvious). This distracts from my main purpose in debugging.</p></li>
+<li><p>Finally I find the language badly specified and too complex. Its various
+concepts do not fit well together. Each compiler seems to do things slightly
+differently.</p>
+<p>I first met C++ in about 1981 when it was called C with Classes. I wrote the
+C++ front end for Green Hills Software’s compiler suite from 1987 to 1994 and
+I tracked each new version of the language from 1.1 to ANSI.</p>
+<p>Each version added new features which did not sit well with the old ones.
+Each version was badly specified. The reference implementation was wildly
+different from the specification. For example the behavior of virtual
+functions inside constructors was not specified until version 2 of the
+language and since this behavior was different from naive expectations this
+caused bugs. My favorite confusion occurred in (I think it was) the version
+2.1 specification where on one page, within a few paragraphs, the following
+two sentences occurred: “Unions may contain member functions.” and “Unions
+may not contain member functions.”.</p>
+</li>
+</ul>
+<p>The above are my personal opinions based on my experience and explain why <em>I</em>
+do not use C++. Your opinions probably differ, few people have spent 5 years
+writing C++ compilers.</p>
+</dd>
+</dl>
+<dl id="faq-bsd-license">
+<dt><strong>Why do I release FontForge with the BSD license and not GPL?</strong></dt><dd><p>I just don’t like GPL. It’s partly prejudice, partly real.</p>
+<p>I don’t like forcing restrictions on people.</p>
+<p>I’m giving away fontforge, so I do.</p>
+<p>The <a class="reference external" href="https://raw.githubusercontent.com/fontforge/fontforge/master/LICENSE">BSD license</a>
+says “Don’t sue me, and include my copyright notice if you use my code” and
+that’s all I care about.</p>
+<p>Perhaps I am naif, but I don’t believe that anyone is going to start selling
+fontforge. Why would they? It makes no sense for someone to try to sell what
+I give away freely. If they add functionality to fontforge, then that’s a
+different matter, but in a sense they aren’t charging for fontforge, they are
+charging for the code they have added to it. It would be annoying if someone
+did that, a bit rude in my eyes, but I’m not going to say “no”.</p>
+<p>Now someone might take a small piece of fontforge and use it in something
+else. That doesn’t bother me. I know that some of my OpenType code has been
+snagged by some TeX packages. And I have snagged code for generating
+checksums from some other packages.</p>
+<p>I rather like helping other people. And people have helped me.</p>
+</dd>
+</dl>
+<dl id="faq-libraries">
+<dt><strong>Why does FontForge load libraries at run time rather than being linked with them?</strong></dt><dd><p>I dislike dependencies. The fewer the better.</p>
+<p>I hate when I download a package and discover it won’t work unless I download
+half a dozen other packages (which, in their turn may demand that I download
+yet more packages).</p>
+<p>I want to download a package and just have it work.</p>
+<p>So I try to write as much code myself as I can and release it all together in
+a lump and not force people to wander all over the web looking for disparate
+parts.</p>
+<p>When I can’t figure out how to do something myself I will use an external
+library if I must. Even then I will try to insure that fontforge will run if
+the library is not present on a system. When I release a binary package I
+don’t want to have to release 32 packages per host depending on the possible
+presence or absence of 5 different libraries. But I also don’t want to force
+someone to install a library that s/he will never use just to get fontforge
+to start.</p>
+<p>If a user will never look at an svg glyph then they don’t need to install
+libxml2. If the user will never import a jpeg image (and there’s really no
+reason to want to do that) then they don’t need to install libjpeg.</p>
+<p>Instead, the binaries I release will try to load a library dynamically
+(dlopen) <em>when they need it</em> and not before. This will also speed up starting
+fontforge. If the library is on the system then all is happy and nice. If the
+library is not, then that functionality is lost – but the rest of fontforge
+continues to work.</p>
+</dd>
+</dl>
+<dl id="faq-roadmap">
+<dt><strong>Why is there no future roadmap for FontForge?</strong></dt><dd><blockquote class="epigraph">
+<div><div class="line-block">
+<div class="line"><strong>TYSON:</strong></div>
+<div class="line">I’m not bewildered, I assure you I’m not</div>
+<div class="line">Bewildered. As a matter of fact a plan</div>
+<div class="line">Is almost certainly forming itself in my head</div>
+<div class="line">At this very moment. It may even be adequate.</div>
+</div>
+<p class="attribution">—<em>The Lady’s not for Burning</em> – Christopher Fry</p>
+</div></blockquote>
+<p>Mostly because I don’t thnk that way. I don’t plan things out, I have a vague
+idea where I want to go and I explore in that direction.</p>
+<p>Consider python scripting. I decided to add python to fontforge. I found that
+meant it became easier to design a mechanism so users could create their own
+scripts to add import/export file formats. And then startup scripts, and
+scripts when certain standard “events” happened. And then I could allow users
+to define their own menu items. And then I figured out how to add fontforge
+to python (as opposed to the reverse). And now I realize that there is no
+reason I couldn’t define a set of c-bindings so that people could call
+fontforge as a library from within C programs. And who knows where that will
+lead – if anywhere.</p>
+<p>Each stage means I can see a little further, and go a little further, and
+then see a little more.</p>
+<p>And often ideas will come from users, someone will ask for functionality I
+had not thought of.</p>
+<p>I did maintain such a page for a while. I found that half the things I wrote
+never happened, and most of the time I didn’t bother to update the page. I’d
+forget about it. It was dull. Far better to <em>do</em> that to simply speculate on
+what I might do were I not speculating.</p>
+<p>So don’t ask me what will happen next, because I don’t know either. It’s an
+adventure. We’ll just have to wait and see.</p>
+</dd>
+</dl>
+<p id="faq-pots"><strong>Does working on FontForge provide the same kind of pleasure as working on pots or baking bread?</strong></p>
+<blockquote>
+<div><img alt="_images/bowlweb.gif" class="align-right" src="_images/bowlweb.gif" />
+<p>From an interview with
+<a class="reference external" href="http://ospublish.constantvzw.org/?p=221">Open Source Publishing</a>, done at
+<a class="reference external" href="http://www.libregraphicsmeeting.org/">LGM</a> 2007</p>
+<p>I like to make things. I like to make things that – in some strange
+definition are beautiful. I’m not sure how that applies to making bread, but
+my pots – I think I make beautiful pots. And I really like the glazing I put
+onto them.</p>
+<p>It’s harder to say that a font editor is beautiful. But I think the ideas
+behind it are beautiful in my mind – and in some sense <em>I</em> find the user
+interface beautiful. I’m not sure that anyone else in the world does, because
+it’s what I want, but I think it’s beautiful.</p>
+<p>And there’s a satisfaction in making something – in making something that’s
+beautiful.</p>
+<p>And there’s a satisfaction too (as far as the bread goes) in making something
+I need. I eat my own bread – that’s all the bread I eat.</p>
+<p>So it’s just – I like making beautiful things.</p>
+</div></blockquote>
+<dl id="faq-legal">
+<dt><strong>Is it legal to modify a font? Is it ethical?</strong></dt><dd><p>Many current fonts are based on the work of great designers from centuries
+past – so reusing other people’s designs has a long history. On the other
+hand, no matter what the law, it is clearly unethical to steal the work of a
+living designer.</p>
+<p>Legal matters vary from country to country (and perhaps within countries).
+You really should consult a lawyer for a definitive answer. Here are some
+guidelines:</p>
+<p>Look at the license agreement you received with the font and see what it has
+to say on this issue.</p>
+<p>TrueType (and OpenType and potentially CID-keyed fonts) have a field in the
+OS/2 table called FSType which allows the font designer to place restrictions
+on what other people can do with the font. If this field prohibits
+modification fontforge will ask you to make sure you have an agreement with
+the font designer which supersedes this field.</p>
+<p>My understanding of US law (but check with a lawyer before relying on this)
+is that:</p>
+<ul>
+<li><p>There is minimal legal protection for font designs. Ages ago some legal
+figure claimed “The alphabet is public.” This meant a type design could not
+be copyrighted.</p>
+<p>However (I’m told) a designer may register (with the government) for a design
+patent which protects the design for 14 years (if granted). I don’t believe
+it can be renewed, but I may be wrong.</p>
+<p>Registering for a patent is an expensive and time-consuming process and is
+often outside the ability of a small design firm. As far as I know the law
+has never been tested in the US so the protection may be questionable.</p>
+</li>
+<li><p>Font <em>programs</em> (such as a postscript or truetype font file, but not a bitmap
+font file) may be copyrighted. This means the design itself is not protected,
+but the mechanism for creating it is.</p></li>
+<li><p>Font names may be trademarked.</p></li>
+</ul>
+<p>My understanding is that in the UK:</p>
+<ul class="simple">
+<li><p>There is something called a “design right” which is somewhat like a copyright
+and protects a design for 5 years. A designer may also register the design
+with the government up to 5 times to extend this protection to 25 years.</p></li>
+</ul>
+<p>Throughout the EU:</p>
+<ul class="simple">
+<li><p>There are EU design rights. I’m not sure about the specifics of these, nor
+how they interact with country specific laws (as the British design rights
+above).</p></li>
+</ul>
+<p>In Canada:</p>
+<ul class="simple">
+<li><p>Font designs may be registered as “industrial designs” for a limited time
+(~15 years)</p></li>
+</ul>
+<p>I would welcome any additions or corrections here, as well as info on the
+laws governing fonts in other countries. There is a
+<a class="reference external" href="http://typophile.com/node/42709">thread on typophile</a> which discusses
+this.</p>
+<p>There is a good summary at the
+<a class="reference external" href="http://www.fontembeddng.com/fonts-and-the-law">font embedding</a> website.</p>
+</dd>
+</dl>
+<dl id="faq-pointsize">
+<dt><strong>What is a 12 point font?</strong> <strong>(What measurement of the font determines the point size?)</strong></dt><dd><img alt="_images/pointsize.png" class="align-right" src="_images/pointsize.png" />
+<p>A font is 12 points high if the distance between the baselines of two
+adjacent lines of (unleaded) text is 12 points.</p>
+<p>The pointsize is not based on the sizes of any of the glyphs of the font.</p>
+<p>Back when fonts were made out of metal, the pointsize of the font was the
+height of the metal slugs used for that font.</p>
+<p>In some sense this is not a very good measure of the size of a font (some
+fonts may allow more room for accents or ascenders or descenders than others
+meaning that the height of the actual glyphs will be smaller).</p>
+<p>There is also a measurement scheme based on the x-height of the glyphs.</p>
+<p>In England and the US a point has traditionally meant the pica point
+(1/72.27:sup:<cite>th</cite> of an inch), while in Europe the point has been the didot
+point (1/67.54:sup:<cite>th</cite> of an inch). The Europeans have a slightly larger
+point, but the glyphs of English and European fonts appear the same size.
+English does not use accents (except in very rare cases) while most European
+languages do, and the slight increase in the size of the point allows more
+room for accents.</p>
+<p>(Of course now most Europeans are probably forced to use the pica point by
+their desktop software, while most computer fonts now contain accented
+glyphs, so the distinction and the reason for it may have vanished).</p>
+</dd>
+</dl>
+<dl id="faq-linespace">
+<dt><strong>How do I set the line spacing on a font?</strong></dt><dd><p>It depends on the kind of font you are generating, the operating system under
+which you are running, and luck.</p>
+<ul>
+<li><p>For Type1 fonts there is no way to set the line spacing. Applications will
+often take the values specified in the font’s bounding box and use those to
+set the line spacing. This is a really bad idea on their part, but it is
+common practice.</p></li>
+<li><p>For True/Open Type fonts the answer is complicated.</p>
+<ul>
+<li><p>On the mac</p>
+<p>The line spacing is set by the ascender and descender values of the ‘hhea’
+table. These in turn are set to the bounding box values of the font. Not a
+good choice. You can control these values from
+<a class="reference internal" href="ui/dialogs/fontinfo.html#fontinfo-ttf-metrics"><span class="std std-ref">Element-&gt;Font Info-&gt;OS/2-&gt;Metrics</span></a>.</p>
+</li>
+<li><p>On windows</p>
+<p>Line spacing is supposed to be set to the Typo Ascent/Typo Desent values
+specified in the OS/2 table. And these in turn are supposed to sum to the
+emsize. (FontForge sets these values to the ascent/descent values you specify
+for your font). Unfortunately most windows applications don’t follow this
+rule, and instead base linespacing on the Win Ascent/Descent values of the
+OS/2 table. These values are supposed to specify a clipping region for the
+font (not line spacing). The clipping region should be as big as the font’s
+bounding box, but in some cases needs to be bigger. Again these may be set
+from <a class="reference internal" href="ui/dialogs/fontinfo.html#fontinfo-ttf-metrics"><span class="std std-ref">Element-&gt;Font Info-&gt;OS/2-&gt;Metrics</span></a>.</p>
+<p>(The clipping region should be bigger than the bounding box if a GPOS lookup
+could move a glyph so that it extended beyond the bounding box (mark to base
+is likely to cause problems). I’m not sure how this applies to cursive
+positioning in Urdu where GPOS lookups can make lines arbetrarily tall)</p>
+<p>MicroSoft has added a redundant bit to the OS/2 table, which essentially
+tells applications they should follow the standard and use the Typographic
+linespacing fields. This bit is called UseTypoMetrics in OpenType, and in
+FontForge it is available as
+<span class="menuselection">Element ‣ Font Info ‣ OS/2 ‣ Metrics ‣ Really Use Typo Metrics</span>.</p>
+</li>
+<li><p>On linux</p>
+<p>I don’t know that there is a general consensus. An application will probably
+use one of the above methods.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>Actually this is not a very useful question any more. Modern fonts tend to
+have several different scripts in them and the different scripts may have
+different line spacing requirements. Even within one script there may be
+differences (English uses no (or extremely few) accented letters, while most
+other European languages use accents, thus English could be set more densely
+than German).</p>
+<p>Instead of having one global measurement which controls the line spacing for
+all uses of the font, it is better to have more specific measures which
+control the line spacing dependent on conditions. The OpenType
+<a class="reference internal" href="ui/dialogs/baseline.html"><span class="doc">‘BASE’ table</span></a> does this. It allows you to specify extent
+data depending on script, language and active feature (for example, a ‘mkmk’
+feature might increase the line spacing). I don’t know whether any
+applications actually make use of these data</p>
+</dd>
+</dl>
+<dl id="faq-em-units">
+<dt><strong>How big will my glyphs be?</strong></dt><dd><p>Unfortunately this seemingly simple question cannot be answered. Your glyphs
+may be any size. Outline glyphs may be scaled and even bitmap glyphs will be
+different sizes depending on the screen resolution.</p>
+<p>Suppose instead that you have an outline font that you draw at 12 points.
+Then we can answer the question.</p>
+<p>Suppose you have a dash glyph that is 500 internal units long, and the font
+has an em-size of 1000 units. Then your glyph will be 500/1000 * 12 = 6points
+long. On a 72 dpi screen this will mean the dash is 6 pixels long.</p>
+<dl>
+<dt><strong>What are em-units? (internal units?)</strong></dt><dd><p>When you create your font you can use
+<a class="reference internal" href="ui/dialogs/fontinfo.html#fontinfo-ps-general"><span class="std std-ref">Element-&gt;Font Info-&gt;General</span></a> to provide an
+em-size for your font. This is the sum of the typographic ascent and descent
+(in the days of metal fonts, the height of the metal slugs, the baseline to
+baseline distance). Generally the em-size will be 1000 or 2048. This gives
+you the number of internal units (also called em-units) used to represent em.</p>
+<p>Within fontforge outline glyphs are displayed using the coordinate system
+established here. See also the
+<a class="reference internal" href="index.html#overview-em-unit"><span class="std std-ref">section on em-units in the overview.</span></a></p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl id="faq-license">
+<dt><strong>What’s a good license to use on an open source font?</strong></dt><dd><p>Many fonts have been released under one of the licenses designed for open
+source programs –
+<a class="reference external" href="http://www.opensource.org/licenses">see the Open Source Initiative list of approved licenses</a>
+– but these generally do not meet the specific needs of font designers. I
+know of two licenses specifically produced for fonts:</p>
+<ul>
+<li><p><a class="reference external" href="http://scripts.sil.org/OFL">The Open Font License from SIL</a> (and its
+<a class="reference external" href="http://scripts.sil.org/OFL-FAQ_web">FAQ</a>)</p>
+<p>The above is the license I would
+recommend.:doc:<cite>A collection of unofficial translations of the OFL &lt;/appendices/OFL-Unofficial&gt;</cite>.
+These are not legally binding but may help non-English speakers get the
+intent of the license.</p>
+</li>
+<li><p><a class="reference external" href="http://www.gnome.org/fonts/#Final_Bitstream_Vera_fonts">The license Bitstream used to release the Vera fonts</a></p></li>
+</ul>
+<p>The <a class="reference external" href="http://www.gnu.org/licenses/gpl.html">GNU General Public License</a> is
+also often used.</p>
+</dd>
+</dl>
+<dl id="faq-minimum">
+<dt><strong>Minimum requirements</strong></dt><dd><p>This depends heavily on what you want to do. FontForge is mainly limited by
+memory (though screen real estate can be a problem too)</p>
+<ul class="simple">
+<li><p>If you are interested in scripts with no more than few hundred simple glyphs
+(like the latin alphabet) then 192Mb is more than enough.</p></li>
+<li><p>If you are doing serious editing of CJK fonts then 512Mb is on the low end of
+useablity.</p></li>
+</ul>
+<p>FontForge requires a color (or grey-scale) monitor – black &amp; white will not
+suffice.</p>
+</dd>
+</dl>
+<dl id="faq-excessive-memory">
+<dt><strong>Why does FontForge use so much memory?</strong></dt><dd><p>Fonts are generally stored in a very compact representation. Font formats are
+designed to be small and easily rasterized. They are not designed to be
+edited.</p>
+<p>When it loads a font FontForge expands it into a more intuitive (well
+intuitive to me) format which is much easier to edit. But is much bigger.</p>
+<p>It would probably be possible to rewrite FontForge to use a more efficient
+memory representation. But this would be an enormous amount of work and
+doesn’t interest me.</p>
+<p>Sfd files are large because they are an ASCII representation of this same
+expanded format. They weren’t designed to be compact but to be legible.</p>
+<p>See also:
+<a class="reference internal" href="#faq-memory"><span class="std std-ref">My system keeps crashing because FontForge keeps running out of memory. What can I do about it?</span></a></p>
+</dd>
+</dl>
+<dl id="faq-font-install">
+<dt><strong>How do I install the fonts once I’ve made them?</strong></dt><dd><p>Well it rather depends on what system you are working on, and what type of
+font you’ve got:</p>
+<dl id="faq-x-install">
+<dt><strong>Unix &amp; X</strong></dt><dd><dl>
+<dt>Outline fonts and fontconfig</dt><dd><p>Many programs now use fontconfig to find fonts (including fontforge).
+To install a font for fontconfig, simply copy the file into your
+~/.fonts directory.</p>
+</dd>
+<dt>Bitmap fonts, and vanilla X11 installs</dt><dd><p>I’d suggest that you look at the
+<a class="reference external" href="http://www.linuxdoc.org/HOWTO/Font-HOWTO.html">linux font HOWTO file</a>,
+and the
+<a class="reference external" href="http://www.linuxdoc.org/HOWTO/mini/FDU/">font deuglification HOWTO</a>
+as good starting points. But I’ll run over the highlights</p>
+<p>Essentially you designate one (or several) directories as a “font
+directory”. You move your fonts to that directory. You build up certain
+data structures that X needs, and you tell X to include this directory
+in your font path. Sadly different versions of X and the X font server
+use slightly different conventions. You may need to alter these
+procedures a bit.</p>
+<p>For example, if you want to install a <em>bdf font</em> called frabnuts-13.bdf
+then you might:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mkdir my_fonts
+$ mv frabnuts-13.bdf my_fonts
+$ cd my_fonts
+$ bdftopcf frabnuts-13.bdf &gt;frabnuts-13.pcf
+$ mkfontdir
+$ xset fp+ `pwd`
+</pre></div>
+</div>
+<p>and your fonts should be installed. After that, whenever you start X
+you need to remind it of where your fonts live, so you should add</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ xset fp+ /home/me/my_fonts
+</pre></div>
+</div>
+<p>to your .xsession (or equivalent).</p>
+<p>If you want to install <em>postscript fonts</em></p>
+<p>You should generate them as postscript binary (.pfb) files, then move
+both the .pfb and the .afm file into (one of) your font directory(ies)
+and run
+<a class="reference external" href="http://rpmfind.net/linux/rpm2html/search.php?query=type1inst">type1inst</a>
+in it.</p>
+<p>type1inst will probably complain that your font doesn’t have a foundry
+and will probably get the encoding wrong. You can either:</p>
+<ul class="simple">
+<li><p>Ignore it and nothing bad will happen</p></li>
+<li><p>Manually edit fonts.scale after running type1inst to fix these entries</p></li>
+<li><p>Make your font’s Copyright be reasonable, and then edit type1inst and
+add your foundry (directions for this are in type1inst itself)</p></li>
+</ul>
+<p>If you want to install <em>truetype fonts</em></p>
+<p>You move the .ttf file into your font directory and run mkttfdir and
+mkfontdir.</p>
+<p>(<a class="reference external" href="http://rpmfind.net/linux/rpm2html/search.php?query=mkttfdir">mkttfdir</a>
+has a small problem with fonts created by FontForge, it will almost
+invariably complain that it doesn’t recognize the foundry. You can
+safely ignore this, but if it bothers you then add a line to ttmkfdir.c
+at 936</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span> <span class="s2">&quot;PFED&quot;</span><span class="p">,</span> <span class="s2">&quot;FontForge&quot;</span> <span class="p">},</span>
+</pre></div>
+</div>
+<p>Some versions of X (ie, those shipped by redhat) rely on the x font
+server to do font work rather than the X server itself. You may need to
+use chkfontpath to add your new directory to the font server’s font
+path (rather than xset fp).</p>
+<p>You may also need to insure that the font directory (and all its parent
+directories) are readable to world. (the font server runs as a
+non-privileged user)</p>
+<p>I haven’t seen anything that says X supports <em>opentype</em> fonts yet, but
+since freetype does (and I think X’s rasterizer uses freetype) then X
+might support them too. Installing them will require manual editing of
+fonts.scale though (mkttfdir uses freetype1 which doesn’t support otf
+files).</p>
+<p>That sounds really confusing. I apologize, I’m not a good writer and
+there are too many choices in configuring X…</p>
+</dd>
+<dt><strong>KDE</strong></dt><dd><p>(I don’t know KDE very well, so take my experience with a grain of
+salt) Under KDE there is a tool called
+<a class="reference external" href="http://www.cpdrummond.uklinux.net/kfontinst/">kfontinst</a> which is
+supposed to do all the configuration work for you. I was only able to
+get it to work as root and had to reconfigure my system to follow its
+conventions, but once that was done it installed X fonts quite handily.
+I never did figure out how to get it to install ghostview fonts. (I
+experimented with version 0.9.2)</p>
+</dd>
+</dl>
+</dd>
+<dt><strong>TeX</strong></dt><dd><p>TeX has its own (platform independent) system for installing fonts. I’ve
+described my experiences so far
+<a class="reference internal" href="techref/PfaEdit-TeX.html#pfaedit-tex-tex-install"><span class="std std-ref">elsewhere in this document</span></a>.</p>
+</dd>
+</dl>
+<dl id="faq-windows-install">
+<dt><strong>Windows</strong></dt><dd><p>You install truetype fonts on windows by dropping them into the
+\Windows\Fonts directory on your machine. You may need to set the execute
+permission bit on the font before installing it.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do <strong>NOT</strong> generate the font directly into \Windows\Fonts
+This doesn’t seem to work (at least on under my XP machine). You must
+generate the font into another directory and drag &amp; drop it to
+\Windows\Fonts .</p>
+</div>
+<p>If you want to use type1 fonts you will need to install adobe type manager
+and follow its instructions.</p>
+<p>If you want to install opentype fonts then on old systems (before windows
+2000, I think) you need to install ATM, on more recent systems opentype
+should work the same way truetype does.</p>
+</dd>
+</dl>
+<dl id="faq-os9-install">
+<dt><strong>Macintosh OS 9</strong></dt><dd><p>Oh dear. The mac sticks fonts into resource forks and wraps them up in its
+own headers. Mac fonts aren’t compatible with anybody else’s. FontForge
+can create a resource fork if it wraps the font up in a macbinary
+encoding. See the <a class="reference internal" href="#faq-how-mac"><span class="std std-ref">following question</span></a> for more
+information.</p>
+<p>I’ve also written <a class="reference external" href="http://fondu.sourceforge.net/">some utilities</a>
+designed to convert from one format to another and they may prove useful.</p>
+<p><a class="reference external" href="http://babel.uoregon.edu/yamada/fontconversionfaq.html">University of Oregon has some links that might be helpful</a>.</p>
+<p>Once you’ve converted your fonts you just drop them into the System Folder
+and they should be available after that.</p>
+</dd>
+</dl>
+<dl id="faq-osx-install">
+<dt><strong>Macintosh OS X</strong></dt><dd><p>On OS/X fonts should be placed either in the top-level Library/Fonts
+directory (By default <code class="docutils literal notranslate"><span class="pre">/Mac</span> <span class="pre">OS</span> <span class="pre">X/Library/Fonts/</span></code>), in the
+System/Library/Fonts directory, or in the user’s appropriate fonts
+sub-directory (<code class="docutils literal notranslate"><span class="pre">~/Library/Fonts</span></code>).</p>
+<p>Either a resource font (unwrapped from its macbinary wrapper) or a dfont
+may be used. You can also use straight ttf and otf files (ie. the same
+file you might use on Unix or MS).</p>
+<p>As far as I can tell the old NFNT bitmap resources do not work on my OS
+10.2. If you want to use bitmap fonts wrap them up in a ttf file or an
+sfnt. However if you want to use a Type1 resource font, you must generate
+a (useless) bitmap font and install them both.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl id="faq-bad-windows-install">
+<dt><strong>Why won’t FontForge’s fonts install on some MS Windows machines?</strong></dt><dd><p>Do <strong>NOT</strong> generate a font directly into the \windows\fonts directory.
+Generate the font into a different directory and then use windows drag and
+drop to install the font. (Windows appears to do magic when it moves the font
+into that directory).</p>
+<p>Recently (2009) a windows security patch decided that fonts with a ‘name’
+table bigger than 5K were insecure and refused to install them. Frequently
+this is caused by having the full text of a license included in the font.</p>
+<p>I am told that fonts produced by old versions of FontForge will not install
+on Windows 2000 (and XP) systems.</p>
+<p>I believe this problem is fixed now (as of 20-Oct-2003). If you have an older
+version please upgrade.</p>
+<p>If you are copying a font from another machine make sure the execute bit is
+set in the permissions of the font file (I don’t know how to do this with the
+Windows UI, under cygwin you say <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">chmod</span> <span class="pre">+x</span> <span class="pre">foo.ttf</span></code></p>
+</dd>
+</dl>
+<dl id="faq-how-mac">
+<dt><strong>How do I edit fonts from my macintoy?</strong></dt><dd><dl>
+<dt>Mac OS/9 (or less)</dt><dd><p>Traditionally the macintosh has stored fonts in the resource fork of files
+(after about OS/8.5 I believe the mac also supported bare .ttf files).
+This causes problems for any machine other than a mac, because the very
+concept of a resource fork is lacking.</p>
+<p>There are several programs whose job it is to store all of a macintosh
+file in one package that can be manipulated on other systems (mac binary
+and binhex are the most common). FontForge knows how to read both of these
+formats and can extract a postscript or truetype font from either.
+FontForge can also create fonts in macbinary format (I see no reason to
+support both output formats, and macbinary is slightly simpler).</p>
+<p>So to edit a font on your mac:</p>
+<ol class="arabic simple">
+<li><p>Find the file in the <code class="docutils literal notranslate"><span class="pre">System</span> <span class="pre">Folder:Fonts</span></code> folder</p></li>
+<li><p>Copy the file over to your unix machine</p>
+<ul class="simple">
+<li><p>Use Fetch and specify macbinary format</p></li>
+<li><p>Or use some tool like binhex which can create the file directly</p></li>
+</ul>
+</li>
+<li><p>Open it in FontForge</p></li>
+<li><p>Edit it</p></li>
+<li><p>Save it back in macbinary format</p></li>
+<li><p>Copy it back to your mac</p>
+<ul class="simple">
+<li><p>Fetch will automatically undo the macbinary wrappers and make it be
+correct</p></li>
+<li><p>Or various other tools can unwrap it.</p></li>
+</ul>
+</li>
+<li><p>Drop it back into your system folder (where it is automagically moved to
+Fonts)</p></li>
+</ol>
+<p><strong>Note:</strong> make sure you either replace the original font files, or that
+you rename the font within fontforge and (for postscript fonts) that you
+give it a new unique id. See the <a class="reference internal" href="ui/dialogs/fontinfo.html"><span class="doc">Font Info</span></a> dlg.</p>
+<p><strong>Caveat:</strong> A postscript font is useless on a macintosh unless it is
+accompanied by at least one bitmap font. If you generate a postscript font
+make sure you also generate an NFNT as well (this has the FOND).</p>
+<p><strong>Caveat:</strong> The mac is picky about the filename used to contain a
+postscript file. It is based on the postscript font name but suffers a
+transformation. Don’t try to rename this file. Basically the rules are
+(see
+<a class="reference external" href="http://partners.adobe.com/asn/developer/pdfs/tn/0091.Mac_Fond.pdf">Adobe Technical Note 0091</a>):</p>
+<ul>
+<li><p>The fontname is broken into chunks where each chunk starts with a capital
+letter.</p></li>
+<li><p>The first chunk may have four lower case letters following the initial
+capital</p></li>
+<li><p>Subsequent chunks may only have two lower case letters following the
+capital.</p></li>
+<li><p>Non-letter glyphs (or at least hyphens) vanish.</p>
+<p>So TimesBold =&gt; TimesBol, Helvetica-BoldItalic =&gt; HelveBolIta,
+NCenturySchoolbook =&gt; NCenSch</p>
+</li>
+</ul>
+</dd>
+<dt>Mac OS/X</dt><dd><p>On Mac OS/X you can run FontForge directly. OS/X has several font
+formats, some fonts are stored in the old format (see above), while others
+are stored as data fork resources. The data fork font files generally have
+the extension “.dfont”. On a Mac FontForge is able to edit both formats
+directly. OS/X also supports normal .otf and .ttf font files.</p>
+<p>Mac OS/X does not seem to support the old NFNT bitmap format, but it still
+requires that a bitmap font in NFNT format be present before it will use a
+resource-based postscript font. (It is probably not the NFNT resource
+which is required, but the FOND which goes along with it. But I’m not
+going to write something to produce a bare FOND resource – nothing else
+does either).</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl id="faq-how-family">
+<dt><strong>How do I create a mac font family? (How do I get the mac to group my fonts so that the italic and bold styles work)?</strong></dt><dd><p>I am told that in 10.6 the prefered method of grouping fonts is to use ttc
+files, prior to 10.6 ttc files didn’t work (well) and the prefered method was
+to produce mac font families.</p>
+<dl>
+<dt>Snow Leopard (10.6) and after</dt><dd><p>First open all the fonts that make up your family in fontforge.</p>
+<p>Then choose <span class="menuselection">File ‣ Generate TTC</span></p>
+<p>This should be simpler than the old method.</p>
+</dd>
+<dt>Leopard (10.5) and before</dt><dd><p>For the Style menu in most mac applications to work on your fonts, you
+must create a font family. You do this with the
+<a class="reference internal" href="ui/menus/filemenu.html#filemenu-generatemac"><span class="std std-ref">File-&gt;Generate Mac Family</span></a> command.</p>
+<p>All the fonts in a family must have the same Family name (See the
+<a class="reference internal" href="ui/dialogs/fontinfo.html"><span class="doc">font info</span></a> dialog). Font Families are handled rather
+differently under Carbon (the old font handling mechanism used in OS 9)
+and under ATSUI (on OS/X).</p>
+<p>Under Carbon, the font family is limited by the design of the Mac ‘FOND’
+resource, which reflects the computer font technology of the early 1980s.
+Modern computer fonts often have variants that can’t be expressed in it.
+FONDs support any combination (except one containing both Extend and
+Condense) of the following styles:</p>
+<ul class="simple">
+<li><p>Bold</p></li>
+<li><p>Italic</p></li>
+<li><p>Condense</p></li>
+<li><p>Extend</p></li>
+<li><p>Underline</p></li>
+<li><p>Shadow</p></li>
+<li><p>Outline</p></li>
+</ul>
+<p>Mac FONDS do not support “Black”, “DemiBold”, “Light”, “Thin” or
+“Extra-Condensed” variants.</p>
+<p>Under ATSUI, on the other hand, a family seems to consist of all fonts in
+a given resources file which have the same FamilyName.</p>
+<p>In order that a family be useful under both systems, Apple appears to
+place several FONDs inside such a font file. Each FOND contains a
+sub-family of related fonts. The ‘FOND’s appear to be distributed as
+follows:</p>
+<p>Suppose you have a family of fonts with the following styles:</p>
+<p>Regular, Bold, Italic, Bold-Italic, Condense, Condense-Italic, Oblique,
+Light, Light-Italic, Black</p>
+<p>Then you should create a font family with the styles that the FOND does
+support, which in this case would be</p>
+<p>Regular, Bold, Italic, Bold-Italic, Condense, Condense-Italic</p>
+<p>For each of these use <a class="reference internal" href="ui/dialogs/fontinfo.html#fontinfo-fondname"><span class="std std-ref">Element-&gt;Font Info-&gt;Mac</span></a>
+to set the FondName field to the font’s family name.</p>
+<p>Change the fondname of the other styles, so that the Oblique style has
+Oblique in the fond name, the two Light styles have Light in the fond
+name, and so on. Set the <a class="reference internal" href="ui/dialogs/fontinfo.html#fontinfo-mac-style"><span class="std std-ref">Mac Style</span></a> on the
+“Light” variant of the font to be Regular (everything unselected) and set
+the style of the “Light-Italic” variant to be “Italic” – that is, forget
+about the “Light”, the FOND can’t handle it, that’s why we moved it into
+its own FOND.</p>
+<p>Having done this setup, the
+<a class="reference internal" href="ui/menus/filemenu.html#filemenu-generatemac"><span class="std std-ref">Generate Mac Family</span></a> command should be able
+to put all the fonts into appropriate FONDs, and then place all the FONDs
+into one file, which the Mac should interpret correctly.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl id="faq-mac-atm">
+<dt><strong>Why doesn’t ATM work on my (mac) fonts?</strong></dt><dd><p>Insure that the font has an encoding of Macintosh Latin when you generate it.</p>
+<p>This is really a limitation on ATM’s part and there’s nothing FontForge can
+do about it.</p>
+<p>If you generate a font with an encoding other than Macintosh Latin, then the
+Mac’s default behavior is to force the postscript font to have a Macintosh
+Latin encoding. There is a mechanism to turn this behavior off, but if it is
+turned off then ATM won’t work at all.</p>
+</dd>
+</dl>
+<dl class="simple" id="faq-windows">
+<dt><strong>How do I edit fonts on MS windows?</strong></dt><dd><p>See the <a class="reference external" href="https://fontforge.org/en-US/downloads/windows-dl/">MS Windows install instructions</a>.</p>
+</dd>
+</dl>
+<dl id="faq-bad-windows-fonts">
+<dt><strong>Why don’t my fonts work on windows?</strong></dt><dd><p>Here’s one possibility: Windows sometimes (and I don’t know when) insists on
+having a name for the font in the appropriate language (ie. a Japanese entry
+for a SJIS font). Try going to
+<a class="reference internal" href="ui/dialogs/fontinfo.html#fontinfo-ttf-names"><span class="std std-ref">Element-&gt;Font Info-&gt;TTF Names</span></a> and adding a set of
+strings for your language.</p>
+<p>Another possibility is discussed <a class="reference internal" href="#faq-bad-windows-install"><span class="std std-ref">here</span></a>.</p>
+</dd>
+</dl>
+<dl class="simple" id="faq-missing-refs">
+<dt><strong>When I load an otf or a type1 font most of my references have been replaced by inline copies. How do I get my references back?</strong></dt><dd><p>It is very difficult to figure out old references when loading postscript
+fonts. Instead FontForge has a special command,
+<a class="reference internal" href="ui/menus/editmenu.html#editmenu-replaceref"><span class="std std-ref">Edit-&gt;Replace With Reference</span></a>, that will search
+for potential reference candidates in the font and replace them with
+references.</p>
+</dd>
+</dl>
+<dl id="faq-kern-info">
+<dt><strong>Does FontForge read in the old kerning information from fonts?</strong></dt><dd><p>This question needs to be broken down into cases:</p>
+<dl>
+<dt><strong>TrueType and OpenType fonts</strong></dt><dd><p>Yes. The kerning information is stored in either the ‘kern’ or ‘GPOS’
+tables of these fonts and FontForge can read them (Apple has made a number
+of extensions beyond the original truetype spec, FontForge can read these
+too).</p>
+</dd>
+<dt><strong>PostScript Type1 fonts anywhere other than the Mac.</strong></dt><dd><p>The kerning information is not stored in a Type 1 font file. Instead it is
+stored in a file with the same filename as the font file but with the
+extension “.afm”. When FontForge reads a PostScript font it will check for
+an associated afm file, and if found will read the kerning information
+from it.</p>
+</dd>
+<dt><strong>PostScript Type1 fonts on the Mac.</strong></dt><dd><p>No. Again the kerning information is not stored in the font file (it is
+stored in a bitmap font file), but on the mac it is impossible to guess
+what name to use for the associated bitmap file, and FontForge does not
+even try.</p>
+<p>See the info below on how to load kerning from a
+<a class="reference internal" href="#faq-fond-kern"><span class="std std-ref">FOND</span></a>.</p>
+</dd>
+<dt><strong>AFM and TFM files.</strong></dt><dd><p>FontForge can read kerning information directly from these files and apply
+those data to a font. See the
+<a class="reference internal" href="ui/menus/filemenu.html#filemenu-merge-feature"><span class="std std-ref">File-&gt;Merge Feature Info</span></a> menu command.</p>
+</dd>
+</dl>
+<dl class="simple" id="faq-fond-kern">
+<dt><strong>Mac resource files containing FOND resources.</strong></dt><dd><p>The mac stored kerning information in the FOND resource associated with a
+bitmap font (it is not stored in the file with the postscript font). If
+you wish kerning data for a mac postscript font, you must find a font file
+containing a bitmap font with the same family and style as the postscript.
+FontForge can read kerning information directly from these files and apply
+those data to a font. See the
+<a class="reference internal" href="ui/menus/filemenu.html#filemenu-merge-feature"><span class="std std-ref">File-&gt;Merge Feature Info</span></a> menu command.</p>
+</dd>
+<dt><strong>Adobe Feature files</strong></dt><dd><p>Adobe has a textual representation for OpenType features and lookups, and
+fontforge can read these files with the
+<a class="reference internal" href="ui/menus/filemenu.html#filemenu-merge-feature"><span class="std std-ref">File-&gt;Merge Feature Info</span></a> menu command.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl id="faq-outline-conversion">
+<dt><strong>How do I convert from one outline format to another?</strong></dt><dd><p>The simple answer that will work if you want something quick is:</p>
+<ol class="arabic simple">
+<li><p>File-&gt;Open</p>
+<ul class="simple">
+<li><p>an existing font</p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="ui/dialogs/generate.html"><span class="doc">Element-&gt;Generate Fonts</span></a></p>
+<ul class="simple">
+<li><p>to generate the desired output.</p></li>
+</ul>
+</li>
+</ol>
+<p>If you are converting from one PostScript format to another (pfb to otf, for
+example) that’s all you need to do. If you are converting between PostScript
+and TrueType, you can improve matters if you do a little more work.</p>
+<p>Converting from TrueType (quadratic splines, ttf files) to PostScript (cubic
+splines, otf and pfb files):</p>
+<ol class="arabic simple">
+<li><p>File-&gt;Open</p>
+<ul class="simple">
+<li><p>(the truetype font)</p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="ui/dialogs/fontinfo.html#fontinfo-layers"><span class="std std-ref">Element-&gt;Font Info-&gt;Layers</span></a></p>
+<ul class="simple">
+<li><p>Check &lt;*&gt; All layers cubic</p></li>
+<li><p>[OK]</p></li>
+</ul>
+</li>
+<li><p><span class="menuselection">Edit ‣ Select ‣ Select All</span></p></li>
+<li><p><a class="reference internal" href="ui/menus/elementmenu.html#elementmenu-simplify"><span class="std std-ref">Element-&gt;Simplify-&gt;Simplify</span></a></p></li>
+<li><p><a class="reference internal" href="ui/menus/hintsmenu.html#hintsmenu-autohint"><span class="std std-ref">Hints-&gt;Auto Hint</span></a></p></li>
+<li><p><a class="reference internal" href="ui/dialogs/generate.html"><span class="doc">Element-&gt;Generate Fonts</span></a></p></li>
+</ol>
+<p>Converting from PostScript (cubic splines, otf and pfb files) to TrueType
+(quadratic splines, ttf files):</p>
+<ol class="arabic simple">
+<li><p><span class="menuselection">File ‣ Open</span></p></li>
+<li><p><a class="reference internal" href="ui/dialogs/fontinfo.html#fontinfo-layers"><span class="std std-ref">Element-&gt;Font Info-&gt;Layers</span></a></p>
+<ul class="simple">
+<li><p>Check &lt;*&gt; All layers quadratic</p></li>
+<li><p>[OK]</p></li>
+</ul>
+</li>
+<li><p><span class="menuselection">Edit ‣ Select ‣ Select All</span></p></li>
+<li><p><a class="reference internal" href="ui/menus/hintsmenu.html#hintsmenu-autoinstr"><span class="std std-ref">Hints-&gt;AutoInstr</span></a></p></li>
+<li><p><a class="reference internal" href="ui/dialogs/generate.html"><span class="doc">Element-&gt;Generate Fonts</span></a></p></li>
+</ol>
+</dd>
+</dl>
+<dl class="simple" id="faq-bitmap-conversion">
+<dt><strong>How do I convert from one bitmap format to another?</strong></dt><dd><p>This is also easy, open a bitmap font, and then use
+<a class="reference internal" href="ui/dialogs/generate.html"><span class="doc">Element-&gt;Generate Fonts</span></a> to generate the desired output.</p>
+</dd>
+</dl>
+<dl class="simple" id="faq-outline-bitmap">
+<dt><strong>How do I convert from an outline format to a bitmap format?</strong></dt><dd><p>Load the outline font. Then use
+<a class="reference internal" href="ui/menus/elementmenu.html#elementmenu-bitmaps"><span class="std std-ref">Element-&gt;Bitmaps Available</span></a> to generate bitmap
+strike(s) of the appropriate size(s). This process is called rasterization,
+at small pixel sizes it is difficult for a computer to do well. You might be
+advised to examine the results of the rasterization in the
+<a class="reference internal" href="ui/mainviews/bitmapview.html"><span class="doc">bitmap window</span></a> (with
+<a class="reference internal" href="ui/menus/windowmenu.html#windowmenu-bitmap"><span class="std std-ref">Window-&gt;Open Bitmap Window</span></a>), and possibly fixup
+the bitmap as you go. Then when done select
+<a class="reference internal" href="ui/dialogs/generate.html"><span class="doc">Element-&gt;Generate Fonts</span></a>, turn off outline font generation
+(unless you also want an outline font, of course), and select the desired
+bitmap format.</p>
+</dd>
+</dl>
+<dl class="simple" id="faq-bitmap-outline">
+<dt><strong>How do I convert from a bitmap format to an outline format?</strong></dt><dd><p>Unless you have a very large bitmap font (such as a TeX font) the following
+procedure will not produce good results.</p>
+<ul class="simple">
+<li><p>Before you do anything else make sure you have either the
+<a class="reference internal" href="techref/autotrace.html"><span class="doc">potrace or autotrace programs</span></a> installed on your system</p></li>
+</ul>
+</dd>
+</dl>
+<hr class="docutils" />
+<blockquote>
+<div><ul>
+<li><p>Create a new font</p></li>
+<li><p>Use the <a class="reference internal" href="ui/menus/filemenu.html#filemenu-import"><span class="std std-ref">File-&gt;Import</span></a> command to import your bitmap
+font into this new font</p>
+<ul class="simple">
+<li><p>Be sure to check the <code class="docutils literal notranslate"><span class="pre">[]</span> <span class="pre">Into</span> <span class="pre">Background</span></code> checkbox</p></li>
+</ul>
+</li>
+<li><p><span class="menuselection">Edit ‣ Select ‣ Select All</span></p></li>
+<li><p><span class="menuselection">Element ‣ Autotrace</span></p></li>
+<li><p><span class="menuselection">Element ‣ Add Extrema</span></p></li>
+<li><p><span class="menuselection">Element ‣ Simplify</span></p>
+<p>At this point you will probably want to look at your outline glyphs and clean
+them up.</p>
+</li>
+<li><p><span class="menuselection">File ‣ Generate Fonts</span></p></li>
+</ul>
+</div></blockquote>
+<dl id="faq-aat2ot">
+<dt><strong>Converting from Apple’s Advanced Typography to OpenType</strong></dt><dd><p>There are a number of similarities between the results achieved by these
+formats, but the overlap is not total. Most conversions will lose some
+information.</p>
+<p>The simple answer is that this is pretty much automatic. You load an apple
+font, and then Generate an equivalent font with the [*] OpenType checkbox
+checked in the Options dialog.</p>
+<p>FontForge will convert any non-contextual features where Apple’s
+feature/setting matches an OpenType feature. (This includes non-contextual
+ligatures even though they live in a contextual format). For more information
+see the section on this <a class="reference internal" href="techref/gposgsub.html#gposgsub-conversion"><span class="std std-ref">interconversion</span></a>.</p>
+</dd>
+</dl>
+<dl id="faq-ot2aat">
+<dt><strong>Converting from OpenType to AAT</strong></dt><dd><p>Again this is mostly automatic. Load an OpenType font, and Generate an
+equivalent font with the [*] Apple checkbox checked in the Options dialog.</p>
+<p>FontForge is capable of converting some contextual OpenType tables to AAT.
+Non-contextual features which match an Apple feature/setting will be
+converted too. For more information see the section on this
+<a class="reference internal" href="techref/gposgsub.html#gposgsub-conversion"><span class="std std-ref">interconversion</span></a>.</p>
+</dd>
+</dl>
+<dl id="faq-hint-subs">
+<dt><strong>How do I make FontForge use hint substitution?</strong></dt><dd><p>It happens automagically.</p>
+<p>Or you can control the place where hint sets change by selecting a point and
+choosing <a class="reference internal" href="ui/dialogs/getinfo.html#getinfo-hintmask"><span class="std std-ref">Element-&gt;Get Info</span></a>-&gt;Hint Mask.</p>
+</dd>
+</dl>
+<dl class="simple" id="faq-flex-hints">
+<dt><strong>How do I make FontForge use flex hints?</strong></dt><dd><p>It happens automagically. FontForge will generate flex hints in situations
+where it is appropriate to do so. You don’t need to do anything. If flex
+hints are used then the necessary subroutines will be added to the font. If
+they are not needed then the subroutines will not be added.</p>
+</dd>
+</dl>
+<dl class="simple" id="faq-flex2">
+<dt><strong>How can I tell if it is going to use flex hints?</strong></dt><dd><p>If you want to see whether FontForge is going to use flex hints, turn on the
+<a class="reference internal" href="ui/dialogs/prefs.html#prefs-updateflex"><span class="std std-ref">UpdateFlex</span></a> preference item and open a view on the
+glyph. FontForge displays a green halo around the center point of a flex
+hint.</p>
+</dd>
+</dl>
+<dl id="faq-fuzzy">
+<dt><strong>My glyphs are all perfectly hinted, why do some stems have different widths (or appear fuzzy, or fade away completely)?</strong></dt><dd><p>Both PostScript and TrueType require that glyphs be drawn in a clockwise
+fashion. Some rasterizers don’t care. But other rasterizers will have
+difficulties with counter-clockwise paths and produced stems of different
+widths when they should be the same, or fuzzy stems, or even nothing at all.
+The solution to this is to run <span class="menuselection">Element ‣ Correct Direction</span>
+on all your glyphs before generating a font.</p>
+<p>But sometimes the poor rasterizer just can’t do the right thing…</p>
+</dd>
+</dl>
+<dl class="simple" id="faq-mensis">
+<dt><strong>How do I set a particular bit in the OS/2 table (or any other)?</strong></dt><dd><p>FontForge does not do this, but I have written a companion program,
+<a class="reference external" href="http://mensis.sf.net/">mensis</a> (Latin for: “to or for, by, with or from
+tables”) which gives you bit access to tables. It provides both UI and
+scripting access.</p>
+</dd>
+</dl>
+<dl id="faq-sfd">
+<dt><strong>What’s an sfd file?</strong></dt><dd><p>This is FontForge’s own format. It a text file, which means it is large but
+readable to a human (OK, by a determined human). It only uses ASCII
+characters which means it should not be distorted by old mail programs if
+sent around the internet (it’s a registered MIME type
+<code class="docutils literal notranslate"><span class="pre">application/vnd.font-fontforge-sfd</span></code>).</p>
+<p><a class="reference internal" href="techref/sfdformat.html"><span class="doc">An overview of the format.</span></a></p>
+</dd>
+</dl>
+<dl id="faq-background">
+<dt><strong>FontForge’s grey background distresses me. How do I change it?</strong></dt><dd><p>The general mechanism is discussed on the <a class="reference internal" href="ui/misc/xres.html"><span class="doc">X Resources page</span></a>.</p>
+<p><a class="reference internal" href="ui/misc/fontforge-themes.html"><span class="doc">Here are some combinations you might try</span></a>.</p>
+</dd>
+</dl>
+<dl id="faq-fontsize">
+<dt><strong>The fonts FontForge uses in its GUI are too small (too big) how do I change them?</strong></dt><dd><p>The X server does not have a good idea about screen resolution, and when
+fontforge asks it, the answer is often wrong. The result is that ff may use
+fonts that are too small (potentially too big too, but no one has complained
+about that one yet). You can tell fontforge the true screen size by adding a
+line like</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Gdraw</span><span class="o">.</span><span class="n">ScreenWidthInches</span><span class="p">:</span> <span class="mf">14.7</span>
+<span class="n">Gdraw</span><span class="o">.</span><span class="n">ScreenWidthCentimeters</span><span class="p">:</span> <span class="mf">37.3</span>
+</pre></div>
+</div>
+<p>to your <code class="docutils literal notranslate"><span class="pre">~/.Xdefaults</span></code> file (The general mechanism is discussed on the
+<a class="reference internal" href="ui/misc/xres.html"><span class="doc">X Resources page</span></a>). If the GUI fonts are still too small you can
+lie about the screen size. If you claim the screen is smaller (in inches or
+centimeters) than it actually is, ff will use a bigger font.</p>
+</dd>
+</dl>
+<dl id="faq-monospace">
+<dt><strong>How do I mark a font as monospaced?</strong></dt><dd><p>You don’t. Just insure that all the glyphs in the font have the same width
+and then FontForge will automatically mark it as monospaced for you. (If you
+mark it as monospaced incorrectly some rasterizers will give strange
+results).</p>
+<p>If you want to set a font’s panose values yourself
+(<a class="reference internal" href="ui/dialogs/fontinfo.html#fontinfo-panose"><span class="std std-ref">Element-&gt;Font Info-&gt;OS/2-&gt;Panose</span></a>) then set the
+Proportion field to Monospaced. This is necessary but not sufficient to mark
+the font as a whole as monospaced.</p>
+<p>If you are unsure whether all the glyphs in your font have the same advance
+width use
+<a class="reference internal" href="ui/dialogs/problems.html#problems-advance"><span class="std std-ref">Element-&gt;Find Problems-&gt;Random-&gt;Check Advance.</span></a></p>
+<p>When I say “all glyphs” I really mean <em>all</em> glyphs. Even glyphs which unicode
+says should be 0 width must have the same width as everything else. MicroSoft
+suggests that GPOS be used to do accent combination (etc.) and then change
+the advance width on any marks (accents) to be 0.</p>
+</dd>
+</dl>
+<dl id="faq-new-encoding">
+<dt><strong>How I do tell fontforge about a new encoding</strong></dt><dd><p>First ask yourself if you really need a new encoding? If you are using
+OpenType or TrueType fonts you can usually get by with the standard unicode
+encoding. But if you really need a new one here is a rough idea of what to
+do:</p>
+<p>Figure out what your encoding looks like. Often this will involve searching
+around the web to find an example of that encoding. For instance if you want
+a devanagari encoding you might look at
+<a class="reference external" href="http://www.cwi.nl/~dik/english/codes/indic.html">a site which shows the ISCII encodings</a></p>
+<p>These encodings only show the top 96 characters, presumably the others are
+the same as US ASCII. Look at the images and figure out how they map to
+unicode (or more precisely what the appropriate postscript names are for
+those characters).</p>
+<p>Create a file (call it “Devanagari.ps” in this case). It should start with a
+line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">Devanagari</span> <span class="p">{</span>
+</pre></div>
+</div>
+<p>This tells FontForge that the encoding is called “Devanagari”, then follow
+this with a list of all the character names (preceded by a slash). We start
+with ASCII which starts with 32 .notdef characters, then space, etc.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">Devanagari</span> <span class="p">{</span>
+ <span class="o">/.</span><span class="n">notdef</span>
+ <span class="o">/.</span><span class="n">notdef</span>
+ <span class="o">...</span>
+ <span class="o">/.</span><span class="n">notdef</span>
+ <span class="o">/</span><span class="n">space</span>
+ <span class="o">/</span><span class="n">exclam</span>
+ <span class="o">/</span><span class="n">quotedbl</span>
+ <span class="o">...</span>
+ <span class="o">/</span><span class="n">braceright</span>
+ <span class="o">/</span><span class="n">asciitilde</span>
+ <span class="o">/.</span><span class="n">notdef</span>
+ <span class="o">...</span>
+ <span class="o">/.</span><span class="n">notdef</span>
+ <span class="o">/</span><span class="n">uni0901</span>
+ <span class="o">/</span><span class="n">uni0902</span>
+ <span class="o">...</span>
+ <span class="o">/</span><span class="n">uni096F</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Now load this file into FontForge’s list of encodings with Encoding-&gt;Load
+Encoding, and then apply it to whatever fonts you want.</p>
+</dd>
+</dl>
+<dl id="faq-new-name">
+<dt><strong>How do I add a glyph with a new name?</strong></dt><dd><p>Let’s say you wanted to add a “dotlessi” glyph to an ISO-8859-1 font (this
+encoding does not include dotlessi). There are two ways to approach the
+problem:</p>
+<ol class="arabic">
+<li><p>Bring up <span class="menuselection">Encoding ‣ Add Encoding Slots…</span></p>
+<p>Type in the number of extra glyphs you want (probably 1)</p>
+<p>Press <code class="docutils literal notranslate"><span class="pre">OK</span></code></p>
+<p>Scroll down to the end of the font and find the new slot</p>
+<p>Select it</p>
+<p>Bring up <span class="menuselection">Element ‣ Glyph Info</span></p>
+<p>Type your new name into the <code class="docutils literal notranslate"><span class="pre">Unicode</span> <span class="pre">Name</span></code> field (in this example you’d
+type in <code class="docutils literal notranslate"><span class="pre">dotlessi</span></code>)</p>
+<p>Press the <code class="docutils literal notranslate"><span class="pre">Set</span> <span class="pre">From</span> <span class="pre">Name</span></code> button</p>
+<p>Press <code class="docutils literal notranslate"><span class="pre">OK</span></code></p>
+<p>Now draw a dotlessi in the glyph.</p>
+</li>
+<li><p>Bring up <span class="menuselection">Encoding ‣ Reencode ‣ ISO-10646-1</span></p>
+<p>Bring up <span class="menuselection">View ‣ Goto</span></p>
+<p>Type in <code class="docutils literal notranslate"><span class="pre">dotlessi</span></code></p>
+<p>Press <code class="docutils literal notranslate"><span class="pre">OK</span></code></p>
+<p>Now draw the dotlessi glyph in the selected glyph slot</p>
+<p>Bring up <span class="menuselection">Encoding ‣ Reencode</span> again</p>
+<p>Change the encoding back to whatever it was</p>
+</li>
+</ol>
+</dd>
+</dl>
+<dl id="faq-glyphnames">
+<dt><strong>Why does FontForge give some of my glyphs the wrong name?</strong></dt><dd><p>FontForge’s naming conventions are those specified in
+<a class="reference external" href="http://partners.adobe.com/public/developer/opentype/index_glyph.html">Adobe’s glyph naming conventions</a>,
+and, unfortunately, there are some problems here (generally for compatibility
+with old encodings). I am aware of the following issues:</p>
+<dl class="simple">
+<dt>Delta</dt><dd><p>is assigned to U+2206, “INCREMENT” rather than U+0394, “GREEK CAPITAL
+LETTER DELTA”, probably because Increment was part of the old MacRoman
+encoding.</p>
+</dd>
+<dt>Omega</dt><dd><p>is assigned to U+2126, “OHM SIGN”, rather than U+03A9, “GREEK CAPITAL
+LETTER OMEGA”.</p>
+</dd>
+<dt>mu</dt><dd><p>is assigned to U+00B5, “MICRO SIGN”, rather than U+03BC, “GREEK SMALL
+LETTER MU”, probably because Micro Sign was part of ISO-Latin1 and
+MacRoman</p>
+</dd>
+<dt>omega1</dt><dd><p>Unicode calls this glyph “GREEK PI SYMBOL”. It looks like an omega though.</p>
+</dd>
+<dt>Tcommaaccent, tcommaaccent</dt><dd><p>are assigned to U+0162,U+0163 “LATIN CAPITAL/SMALL LETTER T WITH CEDILLA”,
+rather than U+021A,U+021B “LATIN CAPITAL/SMALL LETTER T WITH COMMA BELOW”,
+probably because of a confusion in the early Unicode spec.</p>
+</dd>
+<dt>dotlessj</dt><dd><p>is assigned to U+F6BE (in the private use area) rather than U+0237 “LATIN
+SMALL LETTER DOTLESS J”, because Adobe saw the need for a dotlessj glyph
+before Unicode did and assigned a slot in the private use area. Then in
+4.1 Unicode added the glyph to the standard.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl id="faq-non-integral">
+<dt><strong>Is it safe to use non-integral coordinates?</strong></dt><dd><p>FontForge allows you to edit with non-integral coordinates. Many font editors
+don’t and some have wondered if the use of non-integral coordinates will it
+distort their fonts when they are rasterized?</p>
+<p>The answer depends on the font format and how you save the font.</p>
+<p>TrueType fonts can only express integral coordinates. When FontForge creates
+a TrueType font it will round all coordinates to integers. This rounding will
+introduce a slight distortion in the curve.</p>
+<p>PostScript (type1, PostScript OpenType, type2, etc.) fonts can express
+non-integral coordinates in the font format – but it takes a lot more space
+in the font file. Type1 fonts tend to take more space to express this than
+type2 (opentype) fonts. By default FontForge will round to int on these as
+well, BUT you can change that in the Generate Options dialog.</p>
+<p>If your font is rounded then there will be some distortion. If it is not
+rounded there should be no distortion. In PostScript fonts it should be safe
+to use non-integral coordinates provided you turn off rounding when you
+generate the font. The font file will be bigger, but more accurate.</p>
+<p>If you feel you need more accuracy in TrueType you can change the em-size to
+8096.</p>
+<p>You can do this on PostScript Type1 fonts too, however, there are some
+applications which assume that all OpenType postscript fonts have an em-size
+of 1000, so it is best not to do this for OpenType output.</p>
+</dd>
+</dl>
+<dl class="simple" id="faq-open-size">
+<dt><strong>Why isn’t my Open Type font much smaller than the .pfb file?</strong></dt><dd><p>This is probably because you didn’t round to int before saving the font.
+FontForge will save the font using fixed point numbers which take up a lot
+more space than normal integers.</p>
+</dd>
+</dl>
+<dl id="faq-open-difference">
+<dt><strong>What’s the difference between OpenType and PostScript (or TrueType) fonts?</strong></dt><dd><p>Both PostScript and TrueType define a file format and a glyph format.
+OpenType uses the TrueType file format with a PostScript glyph format
+(actually OpenType includes the TrueType glyph format as well, but the
+OpenType definition says such fonts should still be called TrueType fonts so
+I ignore that aspect).</p>
+<p>The PostScript used in OpenType is slightly different from that used in .pfa
+and .pfb files. pfa/b files are Type1 fonts while OpenType uses Type2 fonts.
+Type2 is almost a superset of Type1 with a few minor changes and many
+extensions. Adobe’s subroutine based extensions to Type1 (flex hints, hint
+substitution, counter hints) have been added to Type2 as direct instructions.</p>
+<p>OpenType can also include additional information (see
+<a class="reference internal" href="#faq-aat-open"><span class="std std-ref">below</span></a>) that allows for the layout of complex scripts
+(Arabic, Indic, etc.) as when as support for glyph variants and other aspects
+of fine typography.</p>
+</dd>
+</dl>
+<dl class="simple" id="faq-aat-open">
+<dt><strong>What is the difference between AAT (Apple Advanced Typography) and OpenType?</strong></dt><dd><p>Both of these are extensions to the basic TrueType font which can contain
+information for laying out complex scripts (like Arabic or Indic scripts) as
+well as support for glyph variants and other aspects of fine typography. They
+use totally different internal formats for the more complex aspects of this
+task, formats which have different expressive powers so that neither format
+can be converted to the other without the possibility for some loss of
+information. I discuss this in greater detail</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="tutorial/editexample6-5.html"><span class="doc">In the tutorial</span></a></p></li>
+<li><p><a class="reference internal" href="techref/gposgsub.html"><span class="doc">In the section on advanced typography</span></a></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple" id="faq-tiger-open">
+<dt><strong>Why does a font, which worked fine under 10.3 fail on Mac 10.4 (Tiger)?</strong></dt><dd><p>With Tiger (Mac OS/X.4) Apple added some support for OpenType. Some OpenType
+features are converted (at runtime) into AAT features. This is good, but not
+all features have corresponding Apple feature/settings, and not all lookups
+can be converted (conditional lookups cannot be). Unfortunately if a font
+contains both OpenType and AAT features Apple now ignores the AAT features
+(or so I have been told). The result is that AAT features, which presumably
+work, will not be used, while OpenType features, which are not completely
+supported and so won’t work, are used instead.</p>
+</dd>
+</dl>
+<dl class="simple" id="faq-save-no-change">
+<dt><strong>After I generate a font and quit, why does FontForge ask if I want to save the font? I didn’t change anything.</strong></dt><dd><p>There are two reasons why this might be happening.</p>
+<ol class="arabic simple">
+<li><p>Even though you haven’t changed anything in this session, FontForge may need
+to (re)generate hinting information on one or several glyphs (if, for example
+those glyphs have been changed (in an earlier session) but no hints have been
+generated for them since). These new hints will mark the font as changed.</p></li>
+<li><p>If your font has an XUID field in the Font Info, then FontForge will
+increment the final number in the XUID each time a postscript font is
+generated – and this also counts as a change. (Why does FontForge do this?
+Because Adobe says it should. A minor annoyance, but it avoids some problems
+with font caching when you change an old version of the font for a new one).</p></li>
+</ol>
+</dd>
+</dl>
+<dl class="simple" id="faq-tex">
+<dt><strong>Why doesn’t TeX work with my fonts?</strong></dt><dd><p>I’m a total novice with TeX. I am told that TeX (or some part of the TeX
+chain, dvips perhaps) expects fonts to be encoded in TeX base Encoding –
+sometimes called “Adobe Standard” by the TeX docs, but it isn’t it’s TeX
+base. So if you are having printing problems, missing glyphs, etc. try
+changing the encoding of your font to TeX Base (Go to
+<span class="menuselection">Element ‣ Font Info</span>, select the Encoding tab, select TeX
+Base from the pulldown list).</p>
+</dd>
+</dl>
+<dl id="faq-mf-files">
+<dt><strong>Why doesn’t FontForge let me edit an ‘.mf’ file?</strong></dt><dd><p>As Knuth said “(the problem with WSYWYG is that…) What you see is <em>all</em> you
+get.” FontForge suffers from this.</p>
+<p>Let us take a simple example. Suppose we have a point defined by</p>
+<pre class="literal-block">top<sub>1</sub>y<sub>2</sub> = CapHeight</pre>
+<p>And the user tries to drag point 2 to a new y location. How should FontForge
+interpret this? It could:</p>
+<ul>
+<li><p>Change <code class="docutils literal notranslate"><span class="pre">CapHeight</span></code></p></li>
+<li><p>Change the width of pen 1</p></li>
+<li><p>Change the equation to something like:</p>
+<pre class="literal-block">top<sub>1</sub>y<sub>2</sub> = CapHeight - 30</pre>
+</li>
+<li><p>Or to something like:</p>
+<pre class="literal-block">top<sub>1</sub>y<sub>2</sub> = (CapHeight + XHeight)/2</pre>
+</li>
+<li><p>Or to half a dozen other things.</p></li>
+</ul>
+<p>So FontForge’s method for moving a point around is ambiguous. And I haven’t
+been able to come up with any reasonable way for disambiguating it.
+Suggestions are welcome (but there’s no guarantee they’ll be implemented).</p>
+</dd>
+</dl>
+<dl class="simple" id="faq-minify-iconify">
+<dt><strong>Why does my window get iconified when I want to minify the view?</strong></dt><dd><p>Some window managers (gnome-sawtooth for one) steal meta (alt) clicks from
+FontForge. So you can’t use meta-middle-click to minify a glyph, you have to
+use the <span class="menuselection">View menu ‣ Zoom Out</span> instead.</p>
+</dd>
+</dl>
+<dl id="faq-no-mu">
+<dt><strong>Why isn’t there a character named “mu” in my greek font?</strong></dt><dd><p>Adobe was thinking more of backwards compatibility than sense when they
+assigned the names of the greek letters in their unicode encoding. Thus the
+name “mu” refers to the Micro Sign (U+00B5) and not to the letter mu. They
+also assigned Delta to Increment, and Omega to Ohm Sign.</p>
+<p>Adobe has also decided that the character at U+03D6 (said by the Unicode
+consortium to refer to “GREEK PI SYMBOL”) should be named “omega1”, when
+“pi1” seems more appropriate.</p>
+</dd>
+</dl>
+<dl id="faq-no-copy-names">
+<dt><strong>Why doesn’t</strong> <span class="menuselection">Edit ‣ Copy</span> <strong>copy glyph names as well as glyph info?</strong></dt><dd><p>Firstly because I believe that any attempt to copy a glyph’s name will almost
+certainly be better done by defining a custom <a class="reference internal" href="ui/menus/encodingmenu.html"><span class="doc">encoding</span></a>.</p>
+<p>Secondly because most of the time you don’t want the name copied.</p>
+<p>Thirdly because it is esthetically better that copy should only work with
+data and not meta-data.</p>
+<p>HOWEVER… enough people have asked this question that I’ve enabled a mode in
+<a class="reference internal" href="ui/menus/editmenu.html#editmenu-charname"><span class="std std-ref">Edit-&gt;Copy From-&gt;Char Name</span></a> which allows you to
+change the default behavior.</p>
+</dd>
+</dl>
+<dl class="simple" id="faq-copy-names">
+<dt><strong>Why does</strong> <span class="menuselection">Edit ‣ Paste</span> <strong>complain about name duplication?</strong></dt><dd><p>Because you have <span class="menuselection">Edit ‣ Copy From ‣ Copy Metadata</span>
+checked. Uncheck it.</p>
+</dd>
+</dl>
+<dl id="faq-cidmaps">
+<dt><strong>What on earth are cidmap files and should I care about them?</strong></dt><dd><p>Some background:</p>
+<p>When postscript was invented every glyph in a font was given a name, and an
+encoding which was specified by a 256 element array mapping character codes
+to names.</p>
+<p>Then they started thinking about CJK fonts (and perhaps Unicode), which have
+huge glyph sets, and coming up with reasonable ASCII names for 10,000 glyphs
+was <span class="small">a)</span> a waste of space, <span class="small">b)</span> fairly meaningless. So then
+adobe created CID-keyed fonts which have no glyph names and no encodings.
+Every glyph has an index (a CID), which is just a number, and this is sort of
+treated as a name. Then external to the font is an additional resource (a
+cmap) which provides the encoding for the font (and can support really grungy
+encoding schemes like SJIS), by mapping a sequence of input bytes to a CID.</p>
+<p>Adobe provides certain standard cmap resources (ie. one for SJIS, one for
+JIS, one for Extended Unix whatever). Because these files are fairly painful
+to write Adobe has assigned standard meanings to CIDs so that everyone can
+use the same cmap file. – Well actually there are 5 or 6 different
+standards, Japanese (JIS208), Japanese (JIS212), Korean, Chinese (Hong Kong,
+Taiwan), Chinese (Mainland, Singapore), Identity (Unicode) – So CID 1 might
+be space, CID 2 might be “!”, CID 935 might be “Katakana ka”, etc.</p>
+<p>My cidmap files just give me a mapping between Adobe’s CIDs and Unicode. This
+allows FontForge to know what glyph it is working on. If they aren’t present
+things should work ok, but FontForge would fill the font view with “?” rather
+than the appropriate glyph. And FontForge wouldn’t be able to reencode the
+font into Unicode or anything else.</p>
+<p>So the cidmap files are only useful for people working on CID keyed CJK
+fonts. So many europeans/americans won’t need them.</p>
+</dd>
+</dl>
+<dl id="faq-simplify">
+<dt><strong>Does the simplify command lose accuracy?</strong></dt><dd><p>Yes it does.</p>
+<p>But not much.</p>
+<p>It is designed to replace a set of splines with another spline that nowhere
+differs from the original by more than one unit in the local coordinate
+system.</p>
+<p>If this level of accuracy is not good enough then (In the outline view):</p>
+<ul class="simple">
+<li><p><span class="menuselection">Edit ‣ Select ‣ Select All</span></p></li>
+<li><p><span class="menuselection">Element ‣ Transform ‣ Transform</span></p></li>
+<li><p>Scale Uniformly: 1000%</p></li>
+<li><p>OK</p></li>
+<li><p>Simplify</p></li>
+<li><p><span class="menuselection">Element ‣ Transform ‣ Transform</span></p></li>
+<li><p>Scale Uniformly: 10%</p></li>
+<li><p>OK</p></li>
+</ul>
+<p>This will replace a set of splines with a spline that differs from the
+original by no more than .1 unit.</p>
+</dd>
+</dl>
+<dl id="faq-cubic-quadratic">
+<dt><strong>How does FontForge convert a cubic spline into a quadratic spline for truetype?</strong></dt><dd><p>Again this can involve a loss of accuracy.</p>
+<p>First FontForge checks to see if the spline happens to be a quadratic already
+(this would happen if you’d just read in a truetype font, or if a miracle
+occurred when you generated the spline).</p>
+<p>Otherwise FontForge will divide the original spline into smaller chunks and
+try to find a set of quadratic splines that differ from the cubic by no more
+than one unit anywhere. (Once you have picked two end-points and know the
+slope at those end-points there is only one quadratic spline possible between
+the two).</p>
+</dd>
+</dl>
+<dl id="faq-quadratic-cubic">
+<dt><strong>How does FontForge convert a quadratic spline into a cubic (when reading truetype)?</strong></dt><dd><p>This is easy since any quadratic spline can already be represented as a
+cubic, it will just happen that the cubic term is always 0.</p>
+<p>Probably the control points will no longer be at integral coordinates and
+there will be some loss of precision when they are saved in a cubic format.</p>
+</dd>
+</dl>
+<dl id="faq-complex-eps">
+<dt><strong>Why does fontforge say “EPS file is too complex to be understood”?</strong></dt><dd><p>(Well because it is a misquotation of Shakespeare, and how could I pass that
+up? <em>Much Ado About Nothing, V . i. 217</em>)</p>
+<p>Most programs which load eps files treat them as black boxes. They will read
+the file into memory and output it, unchanged, to a postscript printer.
+Unfortunately FontForge cannot do this. FontForge needs to understand and
+then convert the eps file into a simpler format (fonts can use far fewer
+operations than an eps file). So unlike most programs FontForge must
+interpret each eps file – but interpretting all of PostScript is a huge job
+and ff is limited in what it understands. Sometimes it will find a file it
+can’t handle.</p>
+</dd>
+</dl>
+<dl id="faq-inkscape">
+<dt><strong>Importing glyphs from Inkscape</strong></dt><dd><p>(Taken from the <a class="reference external" href="http://ospublish.constantvzw.org/?p=340">OSPublish blog</a>
+and rewritten by Dave Crossland)</p>
+<p>How to design a glyph in Inkscape so it can readily be imported into
+fontforge.</p>
+<ul>
+<li><p>Open Inkscape</p></li>
+<li><p>From the File menu, select Document Properties.</p></li>
+<li><p>Set units to pixels (px) and document dimensions to 1000 x 1000, click OK</p>
+<p><span class="small">Or if your font has a different number of units per em use that, but 1000 is fontforge’s default)</span></p>
+</li>
+<li><p>Set a horizontal guide at 200px</p></li>
+<li><p>Draw a glyph - the hardest part! :-)</p></li>
+<li><p>Save the drawing as an SVG file</p></li>
+<li><p>Open FontForge</p></li>
+<li><p>From the File menu, select Import, chose SVG, find your drawing, click OK</p></li>
+<li><p>From the Element menu select Transform, set the Y value to -200, click OK</p></li>
+</ul>
+</dd>
+</dl>
+<dl id="faq-default-char">
+<dt><strong>How do I set the default glyph of a font?</strong></dt><dd><p>If the glyph named “.notdef” contains some splines (but no references) then
+it will be used as the default glyph (that is the glyph used when an
+unencoded glyph is called for).</p>
+<p>Except that in a OpenType font (that is, a PostScript OpenType font), the
+.notdef glyph is not used for the default glyph, instead the “space” glyph
+is. (Don’t look at me, I didn’t write the spec.)</p>
+</dd>
+</dl>
+<dl id="faq-ttf-degrade">
+<dt><strong>I loaded a ttf font, made a few changes and generated a new font. The changed glyphs don’t look anywhere near as nice as the originals. Why?</strong></dt><dd><p>When FontForge reads in a truetype font it saves all the hinting
+(instructions) that were present in the original. But if you change a glyph
+in any significant way those instructions are no longer valid (they depend
+intimately on the details of the outlines), so FontForge removes them when
+you make a change. The result is that changing a glyph with FontForge will
+degrade its appearance in most truetype fonts (not all, some have no hints).</p>
+<p>FontForge can generate truetype instructions for you itself, but you must ask
+it to do so – use the <span class="menuselection">Hints ‣ AutoInstr</span> command.</p>
+</dd>
+</dl>
+<dl id="faq-otf-diffs">
+<dt><strong>I generated an opentype font and windows wouldn’t install it. Why not?</strong></dt><dd><p>Unfortunately Apple and MicroSoft (and Adobe) do not agree on the proper
+format for open and truetype fonts. FontForge has a check box on the Generate
+Font Options dialog labelled [] Apple. Make sure this is checked when you are
+generating a font for the mac. Make sure this is not checked when generating
+a font for Windows (and probably for unix too, though unix tends to be less
+picky).</p>
+<p>The major differences I’ve stumbled onto so far are:</p>
+<ul>
+<li><p>The postscript name entry in the NAME table.</p>
+<p>(I am told that this is actually an error in Apple’s version of the spec, and
+the behavior of the Mac matches that of Windows).</p>
+</li>
+<li><p>The names of the tables containing bitmap fonts</p></li>
+<li><p>The way scaled references are stored</p></li>
+<li><p>And the tables containing advanced typographical features are completely
+different</p></li>
+</ul>
+</dd>
+</dl>
+<dl id="faq-dsig">
+<dt><strong>I have a truetype font with opentype tables, but windows displays the “TT” (truetype) icon and not the “O” icon. Why?</strong></dt><dd><p>As far as I can tell Windows will mark a truetype font with the “O” icon if
+that font contains a ‘DSIG’ (Digital Signature) table. FontForge does not
+produce digital signatures (I think they are of negative utility, and anyway
+I don’t know how to create them).</p>
+<p>However, it is possible to
+<a class="reference internal" href="ui/dialogs/generate.html#generate-options"><span class="std std-ref">ask FontForge to create a ‘DSIG’ table</span></a> which
+contains no signatures. That seems enough to make windows happy.</p>
+</dd>
+</dl>
+<dl id="faq-names">
+<dt><strong>What do all the different font names mean?</strong></dt><dd><p>When <span class="menuselection">Element ‣ Font Info</span> opens it shows a Names pane with
+several different fields. Why are there so many and what do they all mean?</p>
+<p>The Names pane contains names used in PostScript fonts. There is also a
+<code class="docutils literal notranslate"><span class="pre">TTF</span> <span class="pre">Names</span></code> pane which contains a similar set of names used in sfnts (an
+sfnt is a font file format which includes truetype, opentype, and a number of
+more obscure font formats).</p>
+<p>A font may be PostScript wrapped in an sfnt. In this case it can have both a
+set of PostScript names, and a set of sfnt (ttf) names. Those names could be
+different (that’s usually not a good idea, but they <em>could</em> be).</p>
+<p>The “name for humans” is the name traditionally associated with a font. It
+might be something like “ITC New Century Schoolbook Italic #4”. It’s a string
+which applications can use to display when they want humans to know what the
+font is.</p>
+<p>The fontname exists because PostScript is a programming language and this is
+the name used to identify the font <em>within PostScript</em>. It has restrictions
+on the characters which may be in the name (no spaces is the biggest. but it
+also can’t look like a number, no parentheses, etc.) and on the length of the
+name. It might look like “ITCNewCenturySchoolbook-Italic”.</p>
+<p>The family name is the name of a family of related fonts. In the above
+example “ITC New Century Schoolbook” would probably be the family name.</p>
+<p>“Base Filename” isn’t really a name associated with the font itself. It’s
+just there to make your life easier when using fontforge. When you generate a
+font, ff will pick a default filename for you (you can always change it, of
+course, but it is handy if the default name is the one you want to use).</p>
+<p>Normally the default name will be just the fontname with an extension added
+(ITCNewCenturySchoolbook-Italic.ttf). But sometimes people want a different
+name for the default, perhaps just NewCentSchlBk-Ital.ttf. This lets you do
+than.</p>
+<p>So it controls the default FILENAME for the file containing the font, and
+does not directly relate to anything in the font itself.</p>
+<p>The weight string is something like “Bold”, “Black”, “Thin”, etc. It does not
+include other stylistic variations (you would not put Italic or Condensed
+here).</p>
+<p>The copyright string should be self-explanatory.</p>
+</dd>
+</dl>
+<hr class="docutils" />
+<blockquote>
+<div><p>In addition to the “Names” pane of Font Info, there is also a TTF Names pane.</p>
+<p>In many ways this is a duplicate of the Names pane but with some differences.
+It is used to specify names for sfnts.</p>
+<p>Here you have</p>
+<ul>
+<li><p>Family</p>
+<p>This corresponds to the PostScript Family</p>
+</li>
+<li><p>SubFamily</p>
+<p>Vaguely like the weight field, but takes all stylistic varients not just
+weight.</p>
+<p>This might be “Bold”, “Italic”, “Bold Italic”, “SemiBold”, “Condensed”, …</p>
+<p>Whatever is appropriate for your font.</p>
+</li>
+<li><p>Fullname</p>
+<p>This corresponds to the “Name for humans”</p>
+</li>
+<li><p>Copyright</p></li>
+</ul>
+<p>Generally FontForge will set all these fields appropriately (ie. same as in
+the Names pane). If you don’t like the name ff chooses you can disassociate
+it from the PS name by right clicking on the entry and choosing from the
+popup menu.</p>
+</div></blockquote>
+<hr class="docutils" />
+<blockquote>
+<div><p>Further complicating things, there are fields</p>
+<ul class="simple">
+<li><p>WWS Family</p></li>
+<li><p>WWS SubFamily</p></li>
+</ul>
+<p>I don’t really understand why these are needed, but MicroSoft thinks they
+are. As far as I can tell they should (in most cases) be the same as Family
+and SubFamily above, and should therefore be omitted.</p>
+</div></blockquote>
+<hr class="docutils" />
+<blockquote>
+<div><p>CID fontname should be ignored unless you are building a CID keyed font
+(which usually means you are working on a CJK font).</p>
+</div></blockquote>
+<hr class="docutils" />
+<blockquote>
+<div><p>Compatible Fullname</p>
+<p>Is another name I don’t see the need for. I think it should be the same as
+Fullname, and should be omitted.</p>
+</div></blockquote>
+<hr class="docutils" />
+<blockquote>
+<div><p>TTF Names may be specified in more than one language and writing system. The
+entry which is translated most frequently is SubFamily. So for an Italic
+font, you would have an English entry “Italic”, and perhaps</p>
+<ul class="simple">
+<li><p>French, Italique</p></li>
+<li><p>German, Kursiv</p></li>
+<li><p>Dutch, Cursief</p></li>
+</ul>
+<p>etc.</p>
+</div></blockquote>
+<dl class="simple" id="faq-mingliu">
+<dt><strong>I looked at kaiu.ttf or mingliu.ttf and the outlines looked nothing like the correct glyphs. What’s wrong?</strong></dt><dd><p>Some truetype fonts (kaiu and mingliu are examples) do not store the correct
+outline. Instead they rely on using the instructions to move points around to
+generate the outline. The outline does not appear to be grid-fit at all, just
+positioned. FontForge will not process the instructions as it reads the font.
+In most fonts this would be the wrong thing to do, and I don’t know how I
+could tell when it needs to be done…</p>
+</dd>
+</dl>
+<dl class="simple" id="faq-greek-accents">
+<dt><strong>When I use</strong> <span class="menuselection">Element ‣ Build ‣ Build Accented Glyph</span> <strong>to build one of the Extended Greek glyphs (U+1F00-U+1FFF) FontForge picks the wrong accents. Why?</strong></dt><dd><p>For some reason Unicode has unified greek and latin accents even though they
+don’t look at all alike. When FontForge follows the simplistic unicode
+definitions it will probably pick a latin accent for greek glyphs.
+Fortunately Unicode also contains code points for the greek accents starting
+around U+1FBD, if you fill these code points with the appropriate accents
+then FontForge will use these rather than the latin accents.</p>
+</dd>
+</dl>
+<dl id="faq-u-accents">
+<dt><strong>When I use</strong> <span class="menuselection">Element ‣ Build ‣ Build Accented Glyph</span> <strong>to build accents over “u” or “y” I get the accent over one of the stems not centered on the glyph. Why?</strong></dt><dd><p>One of your stems is a little taller than the other. FontForge centers
+accents over the tallest point on the glyph. If there are several points with
+the same height, then an average is used.</p>
+<p>If you make all your stems be the same height then the accent should be
+properly centered.</p>
+</dd>
+</dl>
+<dl id="faq-ttf2afm">
+<dt><strong>Why does ttf2afm crash on FontForge ttf files?</strong></dt><dd><p>I don’t know. The ttf2afm that was distributed with my redhat 7.3 linux
+certainly did crash. When I downloaded the source from
+<a class="reference external" href="http://www.ctan.org/tex-archive/obsolete/systems/pdftex/">pdftex</a> area of
+ctan and built it (with debug) the resultant program did not crash. Therefore
+I believe this is a bug in ttf2afm and that bug has been fixed.</p>
+<p>The afm files produced by ttf2afm don’t conform to
+<a class="reference external" href="http://partners.adobe.com/asn/developer/PDFS/TN/5004.AFM_Spec.pdf">Adobe’s specifications</a>.</p>
+</dd>
+</dl>
+<dl id="faq-memory">
+<dt><strong>My system keeps crashing because FontForge keeps running out of memory. What can I do about it?</strong></dt><dd><p>Buy more memory?</p>
+<p>If you are editing large fonts, FontForge may run out of memory. All too
+often when FF runs out of memory, the kernel will crash rather than report an
+error condition. FontForge does check for failure to allocate and attempts to
+free up some chunks of memory when the system returns an error – I’ve never
+seen this code activated though.</p>
+<p>FontForge does provide a mechanism which might help you avoid this. FontForge
+generally wastes a lot of memory keeping undoes around. You can clear undoes
+associated with a glyph with the <span class="menuselection">Edit ‣ Remove Undoes</span>
+command. You can also limit the number of undoes that will be stored with
+each glyph with the
+<span class="menuselection">File ‣ Preferences ‣ Editing ‣ UndoDepth</span>.</p>
+</dd>
+</dl>
+<dl id="faq-unstable">
+<dt><strong>Why is FontForge so unstable?</strong></dt><dd><p>I don’t bother much with doing QA. This is a problem. I don’t enjoy doing it,
+and no one is paying me to do it, so little gets done.</p>
+<p>If you would like to volunteer to do
+<a class="reference external" href="mailto:fontforge-devel&#37;&#52;&#48;lists&#46;sourceforge&#46;net">QA let me know</a> (this is a
+public mailing list). It’s a thankless job, but important!</p>
+</dd>
+</dl>
+<dl id="faq-compiz">
+<dt><strong>Why does FontForge look ugly under Xgl/Compiz?</strong></dt><dd><p>I haven’t the foggiest idea, but I’m told you can fix it by setting:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">XLIB_SKIP_ARGB_VISUALS</span><span class="o">=</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>for FontForge.</p>
+</dd>
+</dl>
+<p id="faq-talk"><strong>Why don’t I talk at conferences?</strong></p>
+<blockquote>
+<div><blockquote class="epigraph">
+<div><div class="line-block">
+<div class="line"><strong>TYSON:</strong></div>
+<div class="line">I’m not</div>
+<div class="line">To be found. I’m fully occupied elsewhere.</div>
+<div class="line">If you wish to find me I shall be in my study.</div>
+<div class="line">You can knock, but I shall give you no reply.</div>
+<div class="line">I wish to be alone with my convictions.</div>
+<div class="line">Good night. <em>[Exit]</em></div>
+</div>
+<p class="attribution">—<em>The Lady’s not for Burning</em> – Christopher Fry</p>
+</div></blockquote>
+<p>Because I have nothing to say.</p>
+</div></blockquote>
+<div class="clearer docutils container">
+</div>
+<hr class="docutils" />
+<blockquote class="epigraph">
+<div><div class="line-block">
+<div class="line">The answer to the Great Question…?</div>
+<div class="line">Yes…!</div>
+<div class="line">Is…</div>
+<div class="line">Yes…!</div>
+<div class="line">Is…</div>
+<div class="line">Yes…!!!…?</div>
+<div class="line">“Forty-two,” said Deep Thought with infinite majesty and calm.</div>
+<div class="line">“Forty-two!” yelled Loonquawl, “Is that all you’ve got to show for seven and a half million years of work?”</div>
+</div>
+<p>“I checked it very thoroughly,” said the computer, “and that quite
+definitely is the answer. I think the problem, to be quite honest with
+you, is that you’ve never actually known what the question is.”</p>
+<p class="attribution">—The Hitchhiker’s Guide to the Galaxy</p>
+</div></blockquote>
+<blockquote class="epigraph">
+<div><p>It’s all in Plato, all in Plato: bless me, what do they teach them in these schools?</p>
+<p class="attribution">—<em>The Last Battle</em> – C.S. Lewis</p>
+</div></blockquote>
+<blockquote class="epigraph">
+<div><div class="line-block">
+<div class="line">“I have answered three questions, and that is enough,”</div>
+<div class="line">Said his father, “Don’t give yourself airs!</div>
+<div class="line">Do you think I can listen all day to such stuff?</div>
+<div class="line">Be off, or I’ll kick you down stairs.”</div>
+</div>
+<p class="attribution">—<em>You are old, Father William</em> – Lewis Carroll</p>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui.html">FontForge’s User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="techref.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Frequently Asked Questions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#general-questions-about-fontforge">General questions about FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#general-questions-about-fonts">General questions about fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-fontforge-installing-fonts-on-various-systems">Using FontForge &amp; Installing fonts on various systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#font-conversions">Font Conversions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#questions-about-hints-and-truetype-instructions">Questions about Hints and TrueType Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#questions-about-font-formats">Questions about <span class="xref std std-doc">Font Formats</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mathematical-questions">Mathematical questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#image-file-questions">Image file questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#random-questions">Random questions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="fontutils/sfddiff.html" title="previous chapter">sfddiff</a></li>
+      <li>Next: <a href="appendices.html" title="next chapter">Appendices</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

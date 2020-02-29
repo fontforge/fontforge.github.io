@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>psMat &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Technical References" href="../../techref.html" />
+    <link rel="prev" title="fontforge" href="fontforge.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-psMat">
+<span id="psmat"></span><h1>psMat<a class="headerlink" href="#module-psMat" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="psMat.identity">
+<code class="sig-prename descclassname">psMat.</code><code class="sig-name descname">identity</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psMat.identity" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns an identity matrix as a 6 element tuple</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="psMat.compose">
+<code class="sig-prename descclassname">psMat.</code><code class="sig-name descname">compose</code><span class="sig-paren">(</span><em class="sig-param">mat1</em>, <em class="sig-param">mat2</em><span class="sig-paren">)</span><a class="headerlink" href="#psMat.compose" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a matrix which is the composition of the two input transformations</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="psMat.inverse">
+<code class="sig-prename descclassname">psMat.</code><code class="sig-name descname">inverse</code><span class="sig-paren">(</span><em class="sig-param">mat</em><span class="sig-paren">)</span><a class="headerlink" href="#psMat.inverse" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a matrix which is the inverse of the input transformation.
+(Note: There will not always be an inverse)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="psMat.rotate">
+<code class="sig-prename descclassname">psMat.</code><code class="sig-name descname">rotate</code><span class="sig-paren">(</span><em class="sig-param">theta</em><span class="sig-paren">)</span><a class="headerlink" href="#psMat.rotate" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a matrix which will rotate by <code class="docutils literal notranslate"><span class="pre">theta</span></code>. <code class="docutils literal notranslate"><span class="pre">theta</span></code> is expressed
+in radians</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="psMat.scale">
+<code class="sig-prename descclassname">psMat.</code><code class="sig-name descname">scale</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="optional">[</span>, <em class="sig-param">y</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#psMat.scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a matrix which will scale by <code class="docutils literal notranslate"><span class="pre">x</span></code> in the horizontal direction and
+<code class="docutils literal notranslate"><span class="pre">y</span></code> in the vertical. If <code class="docutils literal notranslate"><span class="pre">y</span></code> is omitted, it will scale by the same
+amount (<code class="docutils literal notranslate"><span class="pre">x</span></code>) in both directions</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="psMat.skew">
+<code class="sig-prename descclassname">psMat.</code><code class="sig-name descname">skew</code><span class="sig-paren">(</span><em class="sig-param">theta</em><span class="sig-paren">)</span><a class="headerlink" href="#psMat.skew" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a matrix which will skew by <code class="docutils literal notranslate"><span class="pre">theta</span></code> (to produce an oblique font).
+<code class="docutils literal notranslate"><span class="pre">theta</span></code> is expressed in radians</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="psMat.translate">
+<code class="sig-prename descclassname">psMat.</code><code class="sig-name descname">translate</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#psMat.translate" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a matrix which will translate by <code class="docutils literal notranslate"><span class="pre">x</span></code> in the horizontal direction
+and <code class="docutils literal notranslate"><span class="pre">y</span></code> in the vertical</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ui.html">FontForge’s User Interface</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../scripting.html">Scripting FontForge</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../scripting-alpha.html">Scripting functions</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../python.html">Python Scripting</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../python.html#fontforge-modules">FontForge Modules</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="fontforge.html">fontforge</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">psMat</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../python.html#command-line-convenience">Command line convenience</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python.html#trivial-example">Trivial example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../python.html#fontforge-as-a-python-extension">FontForge as a python extension</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../scripting.html#invoking-scripts">Invoking scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripting.html#scripting-language">Scripting Language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripting.html#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripting.html#the-execute-script-dialog">The Execute Script dialog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripting.html#the-scripts-menu">The Scripts Menu</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../techref.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../scripting.html">Scripting FontForge</a><ul>
+  <li><a href="../python.html">Python Scripting</a><ul>
+      <li>Previous: <a href="fontforge.html" title="previous chapter">fontforge</a></li>
+      <li>Next: <a href="../../techref.html" title="next chapter">Technical References</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

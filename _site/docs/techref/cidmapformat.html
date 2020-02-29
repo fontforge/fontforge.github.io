@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Cidmap files &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Command Line Arguments" href="cliargs.html" />
+    <link rel="prev" title="Changes to the sfd format" href="sfdchangelog.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="cidmap-files">
+<h1>Cidmap files<a class="headerlink" href="#cidmap-files" title="Permalink to this headline">¶</a></h1>
+<p>These are FontForge’s own files which it uses to map from CIDs in one
+Registry-Ordering-Supplement to unicode code points.</p>
+<p>Cidmap files generally live in <code class="docutils literal notranslate"><span class="pre">$(PREFIX)/share/fontforge</span></code> (often
+<code class="docutils literal notranslate"><span class="pre">/usr/local/share/fontforge</span></code> or <code class="docutils literal notranslate"><span class="pre">/usr/share/fontforge</span></code>), though they will
+also be found if they are in the directory containing fontforge itself or the
+current directory. They are named <code class="docutils literal notranslate"><span class="pre">&lt;registry&gt;-&lt;Ordering&gt;-&lt;Supplement&gt;.cidmap</span></code>.
+So <code class="docutils literal notranslate"><span class="pre">&quot;Adobe-Japan1-6.cidmap&quot;</span></code>, or <code class="docutils literal notranslate"><span class="pre">&quot;Adobe-CNS1-4.cidmap&quot;</span></code>.</p>
+<p>The first line of the file consists of two numbers, usually the same, which are
+the total number of CIDs defined by this ROS.</p>
+<p>Subsequent lines have one of three formats</p>
+<ul class="simple">
+<li><p>&lt;cid&gt; &lt;unicode&gt;</p></li>
+<li><p>&lt;cid1&gt;..&lt;cid2&gt; &lt;unicode&gt;</p></li>
+<li><p>&lt;cid&gt; &lt;postscript-name&gt;</p></li>
+</ul>
+<p>A &lt;cid&gt; is just a decimal number, &lt;unicode&gt; is a hex number, and
+&lt;postscript-name&gt; is a PostScript name token preceded by a slash.</p>
+<p>The first few lines of Adobe-Japan1-6.cidmap look like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">23057</span> <span class="mi">23057</span>
+<span class="mi">0</span> <span class="o">/.</span><span class="n">notdef</span>
+<span class="mf">1.</span><span class="o">.</span><span class="mi">60</span> <span class="mi">0020</span>
+<span class="mi">61</span> <span class="mi">00</span><span class="n">a5</span>
+<span class="mf">62.</span><span class="o">.</span><span class="mi">92</span> <span class="mi">005</span><span class="n">d</span>
+<span class="mi">93</span> <span class="mi">00</span><span class="n">a6</span>
+</pre></div>
+</div>
+<p>So there are 23057 cids in this ROS. CID 0 is mapped to the postscript name
+“/.notdef”, cids 1-60 are mapped to space (U+0020), exclam (U+0021), …,
+lbracket (U+005b), CID 61 is mapped to yen (U+00a5), and so forth.</p>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui.html">FontForge’s User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../techref.html">Technical References</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gposgsub.html">Advanced Typography Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AA-Comparison.html">Anti-Alias Comparison</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autotrace.html">Autotracing bitmaps in FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accented.html">Building Accented and other Composite Glyphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bezier.html">Bézier Splines </a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref-caveats.html">Caveats about References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfdchangelog.html">Changes to the sfd format</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Cidmap files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cliargs.html">Command Line Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="splinefont.html">Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SuggestDeltas.html">Delta Instruction Suggestions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stroke.html">Expand Stroke Facility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BDFGrey.html">Extensions to Adobe’s BDF  for greymap fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PfaEdit-TeX.html">FontForge and TeX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pfaeditmath.html">FontForge’s math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hinting.html">Hinting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macformats.html">Macintosh font formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="featurefile.html">Major differences between FontForge’s and Adobe’s interpretation of feature files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="non-standard.html">Non standard extensions used FontForge in True/Open Type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="palmfonts.html">Palm fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bitmaponlysfnt.html">Several formats for bitmap only sfnts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfdformat.html">Spline Font Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pcf-format.html">The X11 PCF bitmap font file format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TrueOpenTables.html">TrueType and OpenType tables supported by FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corpchar.html">Unicode Corporate Characters used by FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UniqueID.html">UniqueID and XUID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selections.html">X Selections and the X Clipboard</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../techref.html">Technical References</a><ul>
+      <li>Previous: <a href="sfdchangelog.html" title="previous chapter">Changes to the sfd format</a></li>
+      <li>Next: <a href="cliargs.html" title="next chapter">Command Line Arguments</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

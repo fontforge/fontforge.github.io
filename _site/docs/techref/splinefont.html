@@ -1,0 +1,900 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Data Types &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Delta Instruction Suggestions" href="SuggestDeltas.html" />
+    <link rel="prev" title="Command Line Arguments" href="cliargs.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="data-types">
+<h1>Data Types<a class="headerlink" href="#data-types" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>While much of what is described remains relevant, it has <em>not</em> been kept up
+to date with recent code changes. Cross-reference this with the current
+state of affairs in the <a class="reference external" href="https://github.com/fontforge/fontforge">repository</a>.</p>
+</div>
+<p>This describes two different types of fonts, a SplineFont (which is a postscript
+or truetype font) and a BDFFont (bitmap font, essentially a bdf file). There are
+some similarities between the two data structures, each is basically an array
+(possibly with holes in it) of characters. Each font also contains information
+like the fontname.</p>
+<p>The <a class="reference internal" href="#splinefont-splinefont"><span class="std std-ref">SplineFont</span></a> consists of a bunch of
+<a class="reference internal" href="#splinefont-splinechar"><span class="std std-ref">SplineChars</span></a>, each containing four layers,</p>
+<ul class="simple">
+<li><p>A foreground layer which contains all the interesting stuff that gets put into
+the final font</p>
+<ul>
+<li><p>a series of paths (called <a class="reference internal" href="#splinefont-splinepointlist"><span class="std std-ref">SplineSet</span></a>s or
+<a class="reference internal" href="#splinefont-splinepointlist"><span class="std std-ref">SplinePointList</span></a> sorry, I gave the data
+structure two different names)</p></li>
+<li><p>a series of references to other characters (called
+<a class="reference internal" href="#splinefont-refchar"><span class="std std-ref">RefChar</span></a>s)</p></li>
+<li><p>a width</p></li>
+<li><p><a class="reference internal" href="#splinefont-undoes"><span class="std std-ref">undoes</span></a></p></li>
+</ul>
+</li>
+<li><p>A background layer (which is used to allow people to trace images of characters)
+and can contain</p>
+<ul>
+<li><p>a series of <a class="reference internal" href="#splinefont-splinepointlist"><span class="std std-ref">SplineSet</span></a>s</p></li>
+<li><p>A series of <a class="reference internal" href="#splinefont-imagelist"><span class="std std-ref">images</span></a></p></li>
+<li><p><a class="reference internal" href="#splinefont-undoes"><span class="std std-ref">undoes</span></a></p></li>
+</ul>
+</li>
+<li><p>A grid layer, which is shared by all the characters in a font and in which you
+can put lines to indicate the Cap Height, X Height, etc. Actually you can put
+anything there but those are the obviously useful things. It will be seen in all
+characters. It contains</p>
+<ul>
+<li><p>A series of <a class="reference internal" href="#splinefont-splinepointlist"><span class="std std-ref">SplineSet</span></a>s</p></li>
+<li><p><a class="reference internal" href="#splinefont-undoes"><span class="std std-ref">undoes</span></a></p></li>
+</ul>
+</li>
+<li><p>A hint layer, whose format is completely different from anything else and
+consists of horizontal and vertical hints, which in turn are just a starting
+location and a width (indicating the stem. The width can be negative.)</p>
+<ul>
+<li><p>A set of <a class="reference internal" href="#splinefont-hints"><span class="std std-ref">hints</span></a>. Hints need the special tools from the
+hint menu for editing them.</p></li>
+<li><p><strong>!!!! I do not have a way of undoing hint operations !!!!</strong></p></li>
+</ul>
+</li>
+</ul>
+<p>In multilayered mode there can be many foreground layers which can be stroked or
+filled. Bitmap images may also be included.</p>
+<p>Every SplineChar has a name associated with it, a unicode encoding and a its
+original position in the font.</p>
+<p>A SplineSet consists of a start point and an end point, and whatever splines
+connect them. The start point and the end point may be the same, this either
+indicates a closed path, or a degenerate path with only one point on it.</p>
+<p>A SplinePoint contains an x,y location of the point, and the locations of the
+two control points associated with that point. A control point may be coincident
+with the main point. SplinePoints may connect to two splines, a previous Spline
+and a next Spline. A Spline contains pointers to two SplinePoints (a start and
+an end point) it also contains the parameters of the Bézier curve that those two
+points describe (x = a*t^3+b*t^2+c*t+d, y=ditto). Splines are straight lines if
+the two control points that are meaningful to that spline are coincident with
+their respective SplinePoints. A spline contains a bit indicating whether it is
+order2 (truetype quadratic format) or order3 (postscript cubic format). If it is
+quadratic there is really only one control point, ff uses the convention that
+the control points on the start and end SplinePoints have the same location.</p>
+<p>A font’s encoding is stored in a separate data structure called an EncMap. This
+structure controls what glyph goes where and also contains a pointer to an
+Encoding structure which provides a name for the encoding. The EncMap contains
+two arrays, the <code class="docutils literal notranslate"><span class="pre">map</span></code> and the <code class="docutils literal notranslate"><span class="pre">backmap</span></code>. The map is indexed by the
+character’s encoding and provides the position (in the associated splinefont’s
+glyph list) of the associated glyph. The backmap provides the reverse mapping,
+it is indexed by a glyph’s position in the splinefont and provides an encoding
+for that glyph. (Note: the map array may map several encodings to one glyph, the
+backmap will only indicate one of those.)</p>
+<p>A <a class="reference internal" href="#splinefont-bdffont"><span class="std std-ref">BDFFont</span></a> is always associated with a (possibly
+empty) SplineFont and its EncMap, it consists of an array of
+<a class="reference internal" href="#splinefont-bdfchar"><span class="std std-ref">BDFChars</span></a>, each containing</p>
+<ul class="simple">
+<li><p>a bitmap</p></li>
+<li><p>possibly a floating selection</p></li>
+<li><p>a name</p></li>
+<li><p><a class="reference internal" href="#splinefont-undoes"><span class="std std-ref">undoes</span></a></p></li>
+<li><p>A pointer to the <a class="reference internal" href="#splinefont-splinechar"><span class="std std-ref">SplineChar</span></a> with which it is
+associated</p></li>
+</ul>
+<p>The array is ordered the same way the SplineFont’s array is ordered, and the
+same EncMap can be used for both.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* Copyright (C) 2000-2003 by George Williams */</span>
+<span class="cm">/*</span>
+<span class="cm"> * Redistribution and use in source and binary forms, with or without</span>
+<span class="cm"> * modification, are permitted provided that the following conditions are met:</span>
+
+<span class="cm"> * Redistributions of source code must retain the above copyright notice, this</span>
+<span class="cm"> * list of conditions and the following disclaimer.</span>
+
+<span class="cm"> * Redistributions in binary form must reproduce the above copyright notice,</span>
+<span class="cm"> * this list of conditions and the following disclaimer in the documentation</span>
+<span class="cm"> * and/or other materials provided with the distribution.</span>
+
+<span class="cm"> * The name of the author may not be used to endorse or promote products</span>
+<span class="cm"> * derived from this software without specific prior written permission.</span>
+
+<span class="cm"> * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS&#39;&#39; AND ANY EXPRESS OR IMPLIED</span>
+<span class="cm"> * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF</span>
+<span class="cm"> * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO</span>
+<span class="cm"> * EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,</span>
+<span class="cm"> * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,</span>
+<span class="cm"> * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;</span>
+<span class="cm"> * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,</span>
+<span class="cm"> * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR</span>
+<span class="cm"> * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF</span>
+<span class="cm"> * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</span>
+<span class="cm"> */</span>
+<span class="cp">#ifndef _SPLINEFONT_H</span>
+<span class="cp">#define _SPLINEFONT_H</span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;basics.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;charset.h&quot;</span><span class="cp"></span>
+
+<span class="k">enum</span> <span class="n">linejoin</span> <span class="p">{</span>
+    <span class="n">lj_miter</span><span class="p">,</span>           <span class="cm">/* Extend lines until they meet */</span>
+    <span class="n">lj_round</span><span class="p">,</span>           <span class="cm">/* circle centered at the join of expand radius */</span>
+    <span class="n">lj_bevel</span>            <span class="cm">/* Straight line between the ends of next and prev */</span>
+<span class="p">};</span>
+<span class="k">enum</span> <span class="n">linecap</span> <span class="p">{</span>
+    <span class="n">lc_butt</span><span class="p">,</span>            <span class="cm">/* equiv to lj_bevel, straight line extends from one side to other */</span>
+    <span class="n">lc_round</span><span class="p">,</span>           <span class="cm">/* semi-circle */</span>
+    <span class="n">lc_square</span>           <span class="cm">/* Extend lines by radius, then join them */</span>
+<span class="p">};</span>
+
+<span class="k">typedef</span> <span class="k">struct</span> <span class="n">strokeinfo</span> <span class="p">{</span>
+    <span class="kt">double</span> <span class="n">radius</span><span class="p">;</span>
+    <span class="k">enum</span> <span class="n">linejoin</span> <span class="n">join</span><span class="p">;</span>
+    <span class="k">enum</span> <span class="n">linecap</span> <span class="n">cap</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">calligraphic</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">penangle</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">thickness</span><span class="p">;</span>                   <span class="cm">/* doesn&#39;t work */</span>
+<span class="p">}</span> <span class="n">StrokeInfo</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The above data structure is used by the ExpandStroke routines which will turn a
+path into a filled shape. The information above provides the various controls
+for those routines. They mean essentially what you expect them to me in
+postscript.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="k">struct</span> <span class="n">ipoint</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">y</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">IPoint</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>An integer point.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="k">struct</span> <span class="n">basepoint</span> <span class="p">{</span>
+    <span class="kt">double</span> <span class="n">x</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">y</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">BasePoint</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>A double point. This provides the location of
+<a class="reference internal" href="#splinefont-splinepoint"><span class="std std-ref">SplinePoints</span></a> and their control points.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="k">struct</span> <span class="n">tpoint</span> <span class="p">{</span>
+    <span class="kt">double</span> <span class="n">x</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">y</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">t</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">TPoint</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>A double point with a “t” value. Indicates where that location occurs on a
+spline. (the start point itself is a t=0, the end point at t=1, intermediate
+points have intermediate values). Used when trying to approximate new splines.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="k">struct</span> <span class="n">dbounds</span> <span class="p">{</span>
+    <span class="kt">double</span> <span class="n">minx</span><span class="p">,</span> <span class="n">maxx</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">miny</span><span class="p">,</span> <span class="n">maxy</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">DBounds</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The bounding box of a <a class="reference internal" href="#splinefont-spline"><span class="std std-ref">Spline</span></a>,
+<a class="reference internal" href="#splinefont-splinechar"><span class="std std-ref">SplineChar</span></a>, <a class="reference internal" href="#splinefont-refchar"><span class="std std-ref">RefChar</span></a>,
+<a class="reference internal" href="#splinefont-imagelist"><span class="std std-ref">Image</span></a>, or whatever else needs a bounding box.</p>
+<div class="highlight-c notranslate" id="splinefont-bdffloat"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="k">struct</span> <span class="n">bdffloat</span> <span class="p">{</span>
+    <span class="n">int16</span> <span class="n">xmin</span><span class="p">,</span><span class="n">xmax</span><span class="p">,</span><span class="n">ymin</span><span class="p">,</span><span class="n">ymax</span><span class="p">;</span>
+    <span class="n">int16</span> <span class="n">bytes_per_line</span><span class="p">;</span>
+    <span class="n">uint8</span> <span class="o">*</span><span class="n">bitmap</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">BDFFloat</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The floating selection in a <a class="reference internal" href="#splinefont-bdfchar"><span class="std std-ref">BDFChar</span></a>.</p>
+<div class="highlight-c notranslate" id="splinefont-undoes"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="k">struct</span> <span class="n">undoes</span> <span class="p">{</span>
+    <span class="k">struct</span> <span class="n">undoes</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>
+    <span class="k">enum</span> <span class="n">undotype</span> <span class="p">{</span> <span class="n">ut_none</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ut_state</span><span class="p">,</span> <span class="n">ut_tstate</span><span class="p">,</span> <span class="n">ut_width</span><span class="p">,</span>
+            <span class="n">ut_bitmap</span><span class="p">,</span> <span class="n">ut_bitmapsel</span><span class="p">,</span> <span class="n">ut_composite</span><span class="p">,</span> <span class="n">ut_multiple</span> <span class="p">}</span> <span class="n">undotype</span><span class="p">;</span>
+    <span class="k">union</span> <span class="p">{</span>
+        <span class="k">struct</span> <span class="p">{</span>
+            <span class="n">int16</span> <span class="n">width</span><span class="p">;</span>
+            <span class="n">int16</span> <span class="n">lbearingchange</span><span class="p">;</span>
+            <span class="k">struct</span> <span class="n">splinepointlist</span> <span class="o">*</span><span class="n">splines</span><span class="p">;</span>
+            <span class="k">struct</span> <span class="n">refchar</span> <span class="o">*</span><span class="n">refs</span><span class="p">;</span>
+            <span class="k">struct</span> <span class="n">imagelist</span> <span class="o">*</span><span class="n">images</span><span class="p">;</span>
+        <span class="p">}</span> <span class="n">state</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">width</span><span class="p">;</span>
+        <span class="k">struct</span> <span class="p">{</span>
+            <span class="cm">/*int16 width;*/</span>    <span class="cm">/* width should be controlled by postscript */</span>
+            <span class="n">int16</span> <span class="n">xmin</span><span class="p">,</span><span class="n">xmax</span><span class="p">,</span><span class="n">ymin</span><span class="p">,</span><span class="n">ymax</span><span class="p">;</span>
+            <span class="n">int16</span> <span class="n">bytes_per_line</span><span class="p">;</span>
+            <span class="n">uint8</span> <span class="o">*</span><span class="n">bitmap</span><span class="p">;</span>
+            <span class="n">BDFFloat</span> <span class="o">*</span><span class="n">selection</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">pixelsize</span><span class="p">;</span>
+        <span class="p">}</span> <span class="n">bmpstate</span><span class="p">;</span>
+        <span class="k">struct</span> <span class="p">{</span>                <span class="cm">/* copy contains an outline state and a set of bitmap states */</span>
+            <span class="k">struct</span> <span class="n">undoes</span> <span class="o">*</span><span class="n">state</span><span class="p">;</span>
+            <span class="k">struct</span> <span class="n">undoes</span> <span class="o">*</span><span class="n">bitmaps</span><span class="p">;</span>
+        <span class="p">}</span> <span class="n">composite</span><span class="p">;</span>
+        <span class="k">struct</span> <span class="p">{</span>
+            <span class="k">struct</span> <span class="n">undoes</span> <span class="o">*</span><span class="n">mult</span><span class="p">;</span> <span class="cm">/* copy contains several sub copies (composites, or states or widths or...) */</span>
+        <span class="p">}</span> <span class="n">multiple</span><span class="p">;</span>
+    <span class="n">uint8</span> <span class="o">*</span><span class="n">bitmap</span><span class="p">;</span>
+    <span class="p">}</span> <span class="n">u</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">Undoes</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The undo data structure. Used by both <a class="reference internal" href="#splinefont-splinechar"><span class="std std-ref">SplineChar</span></a>
+and <a class="reference internal" href="#splinefont-bdfchar"><span class="std std-ref">BDFChar</span></a>. Also used to contain the local
+clipboard. Every character layer has several Undoes (up to about 10 or so, it’s
+configurable) that allow it to go back several operations, these are linked
+together on the next field (redos are handled similarly, of course).</p>
+<p>Undoes come in several types, ut_none is only used by the clipboard when it is
+empty.</p>
+<p>ut_state is used by SplineChars and it contains a dump of the current state of
+one layer of the character. Obviously things could be optimized a great deal
+here, but this is easy. ut_tstate has the same data structure as ut_state, it is
+used during transformations and is just a flag that tells the display to draw
+the original as well as the currently transformed thing (so you can see what
+you’ve done).</p>
+<p>ut_state is also used by the clipboard when copying a SplineChar or a piece of a
+SplineChar.</p>
+<p>ut_width is used by SplineChars when the width (and nothing else) changes.</p>
+<p>ut_bitmap is used by BDFChars and is a dump of the current state of the bitmap.
+Again there is room for optimization here, but this is easy.</p>
+<p>ut_bitmapsel is used when doing a copy of a BDFChar. If there is a selection it
+(and it alone) gets copied into the selection field of the bmpstate structure.
+If there is no selection the entire bitmap is converted into a
+<a class="reference internal" href="#splinefont-bdffloat"><span class="std std-ref">floating selection</span></a> and copied into the selection
+field.</p>
+<p>ut_composite is used when doing a copy from the FontView where you are copying
+both the splines and the bitmaps of a character.</p>
+<p>ut_mult is used when doing a copy from the FontView where you are copying more
+than one character.</p>
+<div class="highlight-c notranslate" id="splinefont-bdfchar"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="k">struct</span> <span class="n">bdfchar</span> <span class="p">{</span>
+    <span class="k">struct</span> <span class="n">splinechar</span> <span class="o">*</span><span class="n">sc</span><span class="p">;</span>
+    <span class="n">int16</span> <span class="n">xmin</span><span class="p">,</span><span class="n">xmax</span><span class="p">,</span><span class="n">ymin</span><span class="p">,</span><span class="n">ymax</span><span class="p">;</span>
+    <span class="n">int16</span> <span class="n">width</span><span class="p">;</span>
+    <span class="n">int16</span> <span class="n">bytes_per_line</span><span class="p">;</span>
+    <span class="n">uint8</span> <span class="o">*</span><span class="n">bitmap</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">orig_pos</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">bitmapview</span> <span class="o">*</span><span class="n">views</span><span class="p">;</span>
+    <span class="n">Undoes</span> <span class="o">*</span><span class="n">undoes</span><span class="p">;</span>
+    <span class="n">Undoes</span> <span class="o">*</span><span class="n">redoes</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">changed</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">byte_data</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>          <span class="cm">/* for anti-aliased chars entries are grey-scale bytes not bw bits */</span>
+    <span class="n">BDFFloat</span> <span class="o">*</span><span class="n">selection</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">BDFChar</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The basic bitmap character structure. There’s a link to the SplineChar used to
+create the bitmap. Then the bounding box of the bitmap, the character’s width
+(in pixels of course), the number of bytes per row of the bitmap array, a
+pointer to an array containing the bitmap. The bitmap is stored with 8bits
+packed into a byte, the high order bit is left most. Every row begins on a new
+byte boundary. There are (xmax-xmin+1) bits in each row and (xmax-xmin+8)/8
+bytes in each row. There are (ymax-ymin+1) rows. A bit-value of 1 means there
+bit should be drawn, 0 means it is transparent. Then the encoding in the current
+font. A linked list of BitmapView structures all of which look at this bitmap
+(so any changes to this bitmap need to cause a redraw in all views). A set of
+undoes and redoes. A flag indicating whether the thing has been changed since it
+was last saved to disk.</p>
+<p>Up to this point I’ve been talking about bitmaps. It is also possible to have a
+bytemap. The data structure is exactly the same, except that each pixel is
+represented by a byte rather than a bit. There is a clut for this in the BDFFont
+(it’s the same for every character), but basically 0=&gt;transparent, (2^n-1)
+=&gt;fully drawn, other values are shades of grey between. Can handle depths of
+1,2,4 and 8 bits/pixel.</p>
+<p>The last thing in the BDFChar is a (/an optional) floating selection. Only
+present if the user has made a selection or done a paste or something like that.</p>
+<div class="highlight-c notranslate" id="splinefont-bdffont"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="k">struct</span> <span class="n">bdffont</span> <span class="p">{</span>
+    <span class="k">struct</span> <span class="n">splinefont</span> <span class="o">*</span><span class="n">sf</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">glyphcnt</span><span class="p">;</span>
+    <span class="n">BDFChar</span> <span class="o">**</span><span class="n">glyphs</span><span class="p">;</span>            <span class="cm">/* an array of charcnt entries */</span>
+    <span class="kt">int</span> <span class="n">pixelsize</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">ascent</span><span class="p">,</span> <span class="n">descent</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">bdffont</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">clut</span> <span class="o">*</span><span class="n">clut</span><span class="p">;</span>          <span class="cm">/* Only for anti-aliased fonts */</span>
+<span class="p">}</span> <span class="n">BDFFont</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The basic bitmap font. Contains a reference to the
+<a class="reference internal" href="#splinefont-splinefont"><span class="std std-ref">SplineFont</span></a> to which it is attached. Then a size
+and an array of BDFChars (note there may be NULL entries in the array if no
+character is defined for that encoding). Then a temporary array which is used in
+one set of routines while reencoding the font. The pixelsize of the em-square.
+The ascent and descent (in pixels), these should sum to the em-square. A
+character set which will match that in the SplineFont. A pointer to the next
+bitmap font associated with this SplineFont.</p>
+<p>If we are dealing with a byte font, then there will also be a clut. This
+contains a count of the number of entries in the array, and then the array
+itself. Currently the number of entries here is always 16, but that could
+change.</p>
+<div class="highlight-c notranslate" id="splinefont-splinepoint"><div class="highlight"><pre><span></span><span class="k">enum</span> <span class="n">pointtype</span> <span class="p">{</span> <span class="n">pt_curve</span><span class="p">,</span> <span class="n">pt_corner</span><span class="p">,</span> <span class="n">pt_tangent</span> <span class="p">};</span>
+<span class="k">typedef</span> <span class="k">struct</span> <span class="n">splinepoint</span> <span class="p">{</span>
+    <span class="n">BasePoint</span> <span class="n">me</span><span class="p">;</span>
+    <span class="n">BasePoint</span> <span class="n">nextcp</span><span class="p">;</span>          <span class="cm">/* control point */</span>
+    <span class="n">BasePoint</span> <span class="n">prevcp</span><span class="p">;</span>          <span class="cm">/* control point */</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">nonextcp</span><span class="p">:</span><span class="mi">1</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">noprevcp</span><span class="p">:</span><span class="mi">1</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">nextcpdef</span><span class="p">:</span><span class="mi">1</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">prevcpdef</span><span class="p">:</span><span class="mi">1</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">selected</span><span class="p">:</span><span class="mi">1</span><span class="p">;</span>    <span class="cm">/* for UI */</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">pointtype</span><span class="p">:</span><span class="mi">2</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">isintersection</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">uint16</span> <span class="n">flex</span><span class="p">;</span>                <span class="cm">/* This is a flex serif have to go through icky flex output */</span>
+    <span class="k">struct</span> <span class="n">spline</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">spline</span> <span class="o">*</span><span class="n">prev</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">SplinePoint</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>A SplinePoint is located at the position specified by “me”. The control point
+associated with the next <a class="reference internal" href="#splinefont-spline"><span class="std std-ref">Spline</span></a> is positioned at
+nextcp, while that associated with the previous Spline is at prevcp. Then there
+are a couple of flags that simplify tests. If the nextcp is degenerate (ie. at
+the same place as me) then nonextcp is set, similarly for prevcp. If the user
+has not touched the control points then they will have their default values, and
+when the user moves the point around fontforge will update the control points
+appropriately, if they do not have default values then fontforge will only
+offset them.</p>
+<p>If the point is selected then that bit will be set.</p>
+<p>Every point is classified as a curve point, a corner point and a tangent point.</p>
+<p>The isintersection bit is used internally to the SplineOverlap routines. The
+flex value is for flex hints. It is read in from a type1 font and then ignored.
+Someday I may use it.</p>
+<p>Finally we have pointers to the two Splines than connect to this point.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="k">struct</span> <span class="n">linelist</span> <span class="p">{</span>
+    <span class="n">IPoint</span> <span class="n">here</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">linelist</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">LineList</span><span class="p">;</span>
+
+<span class="k">typedef</span> <span class="k">struct</span> <span class="n">linearapprox</span> <span class="p">{</span>
+    <span class="kt">double</span> <span class="n">scale</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">oneline</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">onepoint</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">linelist</span> <span class="o">*</span><span class="n">lines</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">linearapprox</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">LinearApprox</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>These are the lines used to approximate a <a class="reference internal" href="#splinefont-spline"><span class="std std-ref">Spline</span></a> when
+drawing it. They are cached so they don’t need to be regenerated each time.
+There’s a different set of lines for every scale (as there is a different amount
+of visible detail). They get freed and regenerated if the Spline changes.</p>
+<div class="highlight-c notranslate" id="splinefont-spline"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="k">struct</span> <span class="n">spline1d</span> <span class="p">{</span>
+    <span class="kt">double</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">Spline1D</span><span class="p">;</span>
+
+<span class="k">typedef</span> <span class="k">struct</span> <span class="n">spline</span> <span class="p">{</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">islinear</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">isticked</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">isneeded</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">isunneeded</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">ishorvert</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">order2</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">SplinePoint</span> <span class="o">*</span><span class="n">from</span><span class="p">,</span> <span class="o">*</span><span class="n">to</span><span class="p">;</span>
+    <span class="n">Spline1D</span> <span class="n">splines</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>                <span class="cm">/* splines[0] is the x spline, splines[1] is y */</span>
+    <span class="k">struct</span> <span class="n">linearapprox</span> <span class="o">*</span><span class="n">approx</span><span class="p">;</span>
+    <span class="cm">/* Possible optimizations:</span>
+<span class="cm">        Precalculate bounding box</span>
+<span class="cm">        Precalculate points of inflection</span>
+<span class="cm">    */</span>
+<span class="p">}</span> <span class="n">Spline</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>A spline runs from the <code class="docutils literal notranslate"><span class="pre">from</span></code> <a class="reference internal" href="#splinefont-splinepoint"><span class="std std-ref">SplinePoint</span></a> to
+the <code class="docutils literal notranslate"><span class="pre">to</span></code> SplinePoint. If both control points of a Spline are degenerate, then
+the Spline is linear (actually there are some other case that will lead to
+linear splines, sometimes these will be detected and turned into the canonical
+case, other times they will not be). The remaining bits are used when processing
+Splines in various functions. Most are used in the SplineOverlap routines, but
+some are used in other places too.</p>
+<p>The Spline1D structures give the equations for the x and y coordinates
+respectively (splines[0] is for x, splines[1] is for y).</p>
+<div class="highlight-c notranslate" id="splinefont-splinepointlist"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="k">struct</span> <span class="n">splinepointlist</span> <span class="p">{</span>
+    <span class="n">SplinePoint</span> <span class="o">*</span><span class="n">first</span><span class="p">,</span> <span class="o">*</span><span class="n">last</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">splinepointlist</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">SplinePointList</span><span class="p">,</span> <span class="n">SplineSet</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>A SplinePointList (or a SplineSet) is a collection of
+<a class="reference internal" href="#splinefont-spline"><span class="std std-ref">Spline</span></a>s and
+<a class="reference internal" href="#splinefont-splinepoint"><span class="std std-ref">SplinePoint</span></a>s. Every SplinePoint can connect to
+two Splines (next and prev). Every Spline connects to two SplinePoints (from and
+to). A SplinePointList is a connected path. There are three cases:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">first</span> <span class="pre">!=</span> <span class="pre">last</span></code> which means that we have an open path. Here first-&gt;prev==NULL
+and last-&gt;next==NULL.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">first</span> <span class="pre">==</span> <span class="pre">last</span></code> and <span class="menuselection">first ‣ prev==NULL</span> which means we have
+a degenerate path consisting of a single point, and last-&gt;next==NULL as well</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">first</span> <span class="pre">==</span> <span class="pre">last</span></code> and <span class="menuselection">first ‣ prev!=NULL</span> which means we have
+a closed path. This should be the most common case.</p></li>
+</ul>
+<p>Generally a series of paths will make up a character, and they are linked
+together on the next field.</p>
+<div class="highlight-c notranslate" id="splinefont-refchar"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="k">struct</span> <span class="n">refchar</span> <span class="p">{</span>
+    <span class="n">int16</span> <span class="n">adobe_enc</span><span class="p">,</span> <span class="n">orig_pos</span>
+    <span class="kt">int</span> <span class="n">unicode_enc</span><span class="p">;</span>            <span class="cm">/* used by paste */</span>
+    <span class="kt">double</span> <span class="n">transform</span><span class="p">[</span><span class="mi">6</span><span class="p">];</span>        <span class="cm">/* transformation matrix (first 2 rows of a 3x3 matrix, missing row is 0,0,1) */</span>
+    <span class="n">SplinePointList</span> <span class="o">*</span><span class="n">splines</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">refchar</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">checked</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">selected</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">DBounds</span> <span class="n">bb</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">splinechar</span> <span class="o">*</span><span class="n">sc</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">RefChar</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>A <a class="reference internal" href="#splinefont-splinechar"><span class="std std-ref">SplineChar</span></a> may contain a reference to another
+character. For instance “Agrave” might contain a reference to an “A” and a
+“grave”. There are three different encoding values, of which orig_pos is not
+always up to date. Adobe_enc gives the location in the Adobe Standard Encoding
+which is used by the seac command in type1 fonts. If this is -1 then the
+character isn’t in the adobe encoding and it won’t be possible to put a
+reference to it into a Type1 font (truetype doesn’t have this restriction, it
+has other ones). The transformation matrix is a standard postscript
+transformation matrix (3 rows of 2 columns. First 2 rows provide standard
+rotation/scaling/flipping/skewing/… transformations, last row provides for
+translations. (Both postscript and truetype have restrictions on what kinds of
+transformations are acceptable). The splines field provides a quick way of
+drawing the referred character, it is the result of applying the transformation
+matrix on all splines in the refered character. There may be several referred
+characters and they are linked together on the next field. The checked field is
+used to insure that we don’t have any loops (ie. on characters which refer to
+themselves). The selected field indicates that the reference is selected. The bb
+field provides a transformed bounding box. And the sc field points to the
+SplineChar we are referring to.</p>
+<div class="highlight-c notranslate" id="splinefont-kernpair"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="k">struct</span> <span class="n">kernpair</span> <span class="p">{</span>
+    <span class="k">struct</span> <span class="n">splinechar</span> <span class="o">*</span><span class="n">sc</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">off</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">kernpair</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">KernPair</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>If a character should be kerned with another, then this structure provides that
+info. Every SplineChar has a linked list of KernPairs attached to it. In that
+list the sc field indicates the other character in the pair, and off defines the
+offset between them (or rather the difference from what their respective left
+and right bearings would lead you to believe it should be). Next points to the
+next kernpair.</p>
+<div class="highlight-c notranslate" id="splinefont-hints"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="k">struct</span> <span class="n">hints</span> <span class="p">{</span>
+    <span class="kt">double</span> <span class="n">base</span><span class="p">,</span> <span class="n">width</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">b1</span><span class="p">,</span> <span class="n">b2</span><span class="p">,</span> <span class="n">e1</span><span class="p">,</span> <span class="n">e2</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">ab</span><span class="p">,</span> <span class="n">ae</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">adjustb</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">adjuste</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">hints</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">Hints</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The only important fields here are base, width and next. The others are used
+temporarily by the SplineFill routines. Base gives the location (in either x or
+y space) of where the stem starts, and width is how long it is. Width may be
+negative (in which case base is where the stem ends). Next points to the next
+hint for the character.</p>
+<div class="highlight-c notranslate" id="splinefont-imagelist"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="k">struct</span> <span class="n">imagelist</span> <span class="p">{</span>
+    <span class="k">struct</span> <span class="n">gimage</span> <span class="o">*</span><span class="n">image</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">xoff</span><span class="p">,</span> <span class="n">yoff</span><span class="p">;</span>          <span class="cm">/* position in character space of upper left corner of image */</span>
+    <span class="kt">double</span> <span class="n">xscale</span><span class="p">,</span> <span class="n">yscale</span><span class="p">;</span>      <span class="cm">/* scale to convert one pixel of image to one unit of character space */</span>
+    <span class="n">DBounds</span> <span class="n">bb</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">imagelist</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">selected</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">ImageList</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>SplineChars may have images in their backgrounds (or foregrounds for multilayer
+characters). This structure contains a pointer to the image to be displayed, an
+indication of where it should be positioned, and how it should be scaled (I do
+not support any other transformations on images). The bounding box is after the
+transformations have been applied. The next field points to the next image, and
+selected indicates whether this one is selected or not.</p>
+<div class="highlight-c notranslate" id="splinefont-splinechar"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="k">struct</span> <span class="n">splinechar</span> <span class="p">{</span>
+    <span class="kt">char</span> <span class="o">*</span><span class="n">name</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">enc</span><span class="p">,</span> <span class="n">unicodeenc</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">width</span><span class="p">;</span>
+    <span class="n">int16</span> <span class="n">lsidebearing</span><span class="p">;</span>         <span class="cm">/* only used when reading in a type1 font */</span>
+    <span class="n">int16</span> <span class="n">ttf_glyph</span><span class="p">;</span>            <span class="cm">/* only used when writing out a ttf font */</span>
+    <span class="n">SplinePointList</span> <span class="o">*</span><span class="n">splines</span><span class="p">;</span>
+    <span class="n">Hints</span> <span class="o">*</span><span class="n">hstem</span><span class="p">;</span>          <span class="cm">/* hstem hints have a vertical offset but run horizontally */</span>
+    <span class="n">Hints</span> <span class="o">*</span><span class="n">vstem</span><span class="p">;</span>          <span class="cm">/* vstem hints have a horizontal offset but run vertically */</span>
+    <span class="n">RefChar</span> <span class="o">*</span><span class="n">refs</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">charview</span> <span class="o">*</span><span class="n">views</span><span class="p">;</span>   <span class="cm">/* All CharViews that look at us */</span>
+    <span class="k">struct</span> <span class="n">splinefont</span> <span class="o">*</span><span class="n">parent</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">changed</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">changedsincelasthhinted</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">changedsincelastvhinted</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">manualhints</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">ticked</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>     <span class="cm">/* For reference character processing */</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">changed_since_autosave</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">widthset</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>   <span class="cm">/* needed so an emspace char doesn&#39;t disappear */</span>
+    <span class="k">struct</span> <span class="n">splinecharlist</span> <span class="p">{</span> <span class="k">struct</span> <span class="n">splinechar</span> <span class="o">*</span><span class="n">sc</span><span class="p">;</span> <span class="k">struct</span> <span class="n">splinecharlist</span> <span class="o">*</span><span class="n">next</span><span class="p">;}</span> <span class="o">*</span><span class="n">dependents</span><span class="p">;</span>
+            <span class="cm">/* The dependents list is a list of all characters which reference*/</span>
+            <span class="cm">/*  the current character directly */</span>
+    <span class="n">SplinePointList</span> <span class="o">*</span><span class="n">backgroundsplines</span><span class="p">;</span>
+    <span class="n">ImageList</span> <span class="o">*</span><span class="n">backimages</span><span class="p">;</span>
+    <span class="n">Undoes</span> <span class="o">*</span><span class="n">undoes</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+    <span class="n">Undoes</span> <span class="o">*</span><span class="n">redoes</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+    <span class="n">KernPair</span> <span class="o">*</span><span class="n">kerns</span><span class="p">;</span>
+    <span class="n">uint8</span> <span class="o">*</span><span class="n">origtype1</span><span class="p">;</span>           <span class="cm">/* The original type1 (unencoded) character string */</span>
+    <span class="kt">int</span> <span class="n">origlen</span><span class="p">;</span>                <span class="cm">/*  its length. These get freed once the user has changed */</span>
+                                <span class="cm">/*  the character. Until then the preserve things like */</span>
+                                <span class="cm">/*  hint substitution which we wouldn&#39;t otherwise understand */</span>
+<span class="p">}</span> <span class="n">SplineChar</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Every character has a name (sometimes it is “.notdef” but it’s there). A
+location (encoding) in the current font, a unicode code point (which may be -1
+if not in unicode). Every character has a width. The next two fields are only
+meaningful when loading or saving a font in the appropriate format. lbearing is
+needed to handle seac commands, and the ttf_glyph is needed for just about
+everything when writing a ttf font. The splines field gives all the foreground
+paths (<a class="reference internal" href="#splinefont-splinepointlist"><span class="std std-ref">SplinePointLists</span></a>). Hints for
+horizontal and vertical stems. A set of other characters referenced in this one,
+again only in the foreground. Then a linked list of all CharViews displaying this
+SplineChar (if this guy changes, all must be updated to reflect the change). A pointer
+to the <a class="reference internal" href="#splinefont-splinefont"><span class="std std-ref">SplineFont</span></a> that contains us. A set of bits:
+changed means the character has changed since the last save to disk,
+changedsincelasthhinted means that we need to run autohint on the horizontal
+stems, changedsincelastvhinted for vertical stems. Manual hints means the user
+has taken control of providing hints, and we should only run autohint if
+explicitly asked to. Ticked is a temporary field usually to avoid infinite loops
+of refered characters. changed_since_autosave indicates that the next time we
+update our autosave database we should write this character to it. Widthset
+means the user has changed the width. If we didn’t have this bit we might think
+that an em space had nothing in it (instead of having an em-space in it).</p>
+<p>If a SplineChar is refered to in another character, then when we change the
+original we must also update anything that refers to it (if we change A, we must
+also redisplay Agrave).</p>
+<p>Then backgroundsplines represent the SplinePointLists in the background layer,
+and backimages represent the images in the background layers.</p>
+<p>Undoes[0] contains undoes for the foreground and undoes[1] contains undoes for
+the background. Same for redoes.</p>
+<p>Finally kerns provides a list of kerning data for any special characters that
+follow this one. For instance the combination “VA” might need kerning, then the
+SplineChar representing “V” would have a pointer to a
+<a class="reference internal" href="#splinefont-kernpair"><span class="std std-ref">KernPair</span></a> with data on “A”.</p>
+<div class="highlight-c notranslate" id="splinefont-splinefont"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="k">struct</span> <span class="n">splinefont</span> <span class="p">{</span>
+    <span class="kt">char</span> <span class="o">*</span><span class="n">fontname</span><span class="p">,</span> <span class="o">*</span><span class="n">fullname</span><span class="p">,</span> <span class="o">*</span><span class="n">familyname</span><span class="p">,</span> <span class="o">*</span><span class="n">weight</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="o">*</span><span class="n">copyright</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="o">*</span><span class="n">filename</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="o">*</span><span class="n">version</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">italicangle</span><span class="p">,</span> <span class="n">upos</span><span class="p">,</span> <span class="n">uwidth</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">ascent</span><span class="p">,</span> <span class="n">descent</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">glyphcnt</span><span class="p">;</span>
+    <span class="n">SplineChar</span> <span class="o">**</span><span class="n">glyphs</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">changed</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">changed_since_autosave</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">display_antialias</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">dotlesswarn</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>                <span class="cm">/* User warned that font doesn&#39;t have a dotless i character */</span>
+    <span class="cm">/*unsigned int wasbinary: 1;*/</span>
+    <span class="k">struct</span> <span class="n">fontview</span> <span class="o">*</span><span class="n">fv</span><span class="p">;</span>
+    <span class="k">enum</span> <span class="n">charset</span> <span class="n">encoding_name</span><span class="p">;</span>
+    <span class="n">SplinePointList</span> <span class="o">*</span><span class="n">gridsplines</span><span class="p">;</span>
+    <span class="n">Undoes</span> <span class="o">*</span><span class="n">gundoes</span><span class="p">,</span> <span class="o">*</span><span class="n">gredoes</span><span class="p">;</span>
+    <span class="n">BDFFont</span> <span class="o">*</span><span class="n">bitmaps</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="o">*</span><span class="n">origname</span><span class="p">;</span>             <span class="cm">/* filename of font file (ie. if not an sfd) */</span>
+    <span class="kt">char</span> <span class="o">*</span><span class="n">autosavename</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">display_size</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">SplineFont</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The first four names are taken straight out of PostScript, as are copyright,
+version, italicangle, underlinepos, underlineweight. Ascent and descent together
+sum to make the em-square. Normally this will be 1000, but you can change that
+if you want.</p>
+<p>Charcnt says how big the chars array will be. There may be holes (ie. NULL
+values) in the array.</p>
+<p>Changed indicates that some character, bitmap, metric, something has changed
+since we last saved the file. changed_since_autosave means that something has
+changed since autosave last happened (so we should actually process this font
+the next time autosave rolls around).</p>
+<p>Display_antialias means we are displaying an antialias bytemap font in the
+FontView, rather than a bitmap font. These look better but are slower.</p>
+<p>Dotlesswarn means that we’ve warned the user when s/he attempted to create an
+accented character based on i or j and a dotless version of those characters was
+not present in the font (there’s no point in warning him again. The operation
+proceeded with a dotted version).</p>
+<p>There is only one FontView associated with a font (other
+data structures allowed for multiple views, but the font does not).</p>
+<p>The font has a characterset and an encoding.</p>
+<p>Gridsplines contains the <a class="reference internal" href="#splinefont-splinepointlist"><span class="std std-ref">SplinePointLists</span></a>
+for all the splines displayed as background grids for characters. And gundoes
+and gredoes are the un/redoes associated with them.</p>
+<p>Bitmaps contains all the bitmaps that have been generated for this SplineFont.</p>
+<p>Origname contains the name of the file we read in to get this one. Filename
+above contains the name of an .sfd file associated with this font, but origname
+can also contain random postscript or truetype fonts.</p>
+<p>Autosavename indicates the name currently being used to save crash recovery
+stuff to disk.</p>
+<p>Display_size indicates how big we’d like the FontView to display our font.</p>
+<div class="section" id="function-declarations">
+<h2>Function declarations<a class="headerlink" href="#function-declarations" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">fontdict</span><span class="p">;</span>         <span class="cm">/* the next four data structures are in psfont.h */</span>
+<span class="k">struct</span> <span class="n">chars</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">findsel</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">charprocs</span><span class="p">;</span>
+<span class="k">enum</span> <span class="n">charset</span><span class="p">;</span>                   <span class="cm">/* in charset.h */</span>
+
+<span class="k">extern</span> <span class="n">SplineFont</span> <span class="o">*</span><span class="nf">SplineFontFromPSFont</span><span class="p">(</span><span class="k">struct</span> <span class="n">fontdict</span> <span class="o">*</span><span class="n">fd</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">int</span> <span class="nf">SFOneWidth</span><span class="p">(</span><span class="n">SplineFont</span> <span class="o">*</span><span class="n">sf</span><span class="p">);</span>
+<span class="k">extern</span> <span class="k">struct</span> <span class="n">chars</span> <span class="o">*</span><span class="nf">SplineFont2Chrs</span><span class="p">(</span><span class="n">SplineFont</span> <span class="o">*</span><span class="n">sf</span><span class="p">,</span> <span class="kt">int</span> <span class="n">round</span><span class="p">);</span>
+<span class="k">enum</span> <span class="n">fontformat</span> <span class="p">{</span> <span class="n">ff_pfa</span><span class="p">,</span> <span class="n">ff_pfb</span><span class="p">,</span> <span class="n">ff_ptype3</span><span class="p">,</span> <span class="n">ff_ptype0</span><span class="p">,</span> <span class="n">ff_ttf</span><span class="p">,</span> <span class="n">ff_none</span> <span class="p">};</span>
+<span class="k">extern</span> <span class="kt">int</span> <span class="nf">WritePSFont</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">fontname</span><span class="p">,</span><span class="n">SplineFont</span> <span class="o">*</span><span class="n">sf</span><span class="p">,</span><span class="k">enum</span> <span class="n">fontformat</span> <span class="n">format</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">int</span> <span class="nf">WriteTTFFont</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">fontname</span><span class="p">,</span><span class="n">SplineFont</span> <span class="o">*</span><span class="n">sf</span><span class="p">);</span>
+<span class="kt">int</span> <span class="nf">SFReencodeFont</span><span class="p">(</span><span class="n">SplineFont</span> <span class="o">*</span><span class="n">sf</span><span class="p">,</span><span class="k">enum</span> <span class="n">charset</span> <span class="n">new_map</span><span class="p">);</span>
+
+<span class="k">extern</span> <span class="kt">int</span> <span class="nf">DoubleNear</span><span class="p">(</span><span class="kt">double</span> <span class="n">a</span><span class="p">,</span><span class="kt">double</span> <span class="n">b</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">int</span> <span class="nf">DoubleNearish</span><span class="p">(</span><span class="kt">double</span> <span class="n">a</span><span class="p">,</span><span class="kt">double</span> <span class="n">b</span><span class="p">);</span>
+
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">LineListFree</span><span class="p">(</span><span class="n">LineList</span> <span class="o">*</span><span class="n">ll</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">LinearApproxFree</span><span class="p">(</span><span class="n">LinearApprox</span> <span class="o">*</span><span class="n">la</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">SplineFree</span><span class="p">(</span><span class="n">Spline</span> <span class="o">*</span><span class="n">spline</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">SplinePointFree</span><span class="p">(</span><span class="n">SplinePoint</span> <span class="o">*</span><span class="n">sp</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">SplinePointListFree</span><span class="p">(</span><span class="n">SplinePointList</span> <span class="o">*</span><span class="n">spl</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">SplinePointListsFree</span><span class="p">(</span><span class="n">SplinePointList</span> <span class="o">*</span><span class="n">head</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">RefCharFree</span><span class="p">(</span><span class="n">RefChar</span> <span class="o">*</span><span class="n">ref</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">RefCharsFree</span><span class="p">(</span><span class="n">RefChar</span> <span class="o">*</span><span class="n">ref</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">UndoesFree</span><span class="p">(</span><span class="n">Undoes</span> <span class="o">*</span><span class="n">undo</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">HintsFree</span><span class="p">(</span><span class="n">Hints</span> <span class="o">*</span><span class="n">h</span><span class="p">);</span>
+<span class="k">extern</span> <span class="n">Hints</span> <span class="o">*</span><span class="nf">HintsCopy</span><span class="p">(</span><span class="n">Hints</span> <span class="o">*</span><span class="n">h</span><span class="p">);</span>
+<span class="k">extern</span> <span class="n">SplineChar</span> <span class="o">*</span><span class="nf">SplineCharCopy</span><span class="p">(</span><span class="n">SplineChar</span> <span class="o">*</span><span class="n">sc</span><span class="p">);</span>
+<span class="k">extern</span> <span class="n">BDFChar</span> <span class="o">*</span><span class="nf">BDFCharCopy</span><span class="p">(</span><span class="n">BDFChar</span> <span class="o">*</span><span class="n">bc</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">ImageListsFree</span><span class="p">(</span><span class="n">ImageList</span> <span class="o">*</span><span class="n">imgs</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">SplineCharFree</span><span class="p">(</span><span class="n">SplineChar</span> <span class="o">*</span><span class="n">sc</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">SplineFontFree</span><span class="p">(</span><span class="n">SplineFont</span> <span class="o">*</span><span class="n">sf</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">SplineRefigure</span><span class="p">(</span><span class="n">Spline</span> <span class="o">*</span><span class="n">spline</span><span class="p">);</span>
+<span class="k">extern</span> <span class="n">Spline</span> <span class="o">*</span><span class="nf">SplineMake</span><span class="p">(</span><span class="n">SplinePoint</span> <span class="o">*</span><span class="n">from</span><span class="p">,</span> <span class="n">SplinePoint</span> <span class="o">*</span><span class="n">to</span><span class="p">);</span>
+<span class="k">extern</span> <span class="n">LinearApprox</span> <span class="o">*</span><span class="nf">SplineApproximate</span><span class="p">(</span><span class="n">Spline</span> <span class="o">*</span><span class="n">spline</span><span class="p">,</span> <span class="kt">double</span> <span class="n">scale</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">int</span> <span class="nf">SplinePointListIsClockwise</span><span class="p">(</span><span class="n">SplineSet</span> <span class="o">*</span><span class="n">spl</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">SplineSetFindBounds</span><span class="p">(</span><span class="n">SplinePointList</span> <span class="o">*</span><span class="n">spl</span><span class="p">,</span> <span class="n">DBounds</span> <span class="o">*</span><span class="n">bounds</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">SplineCharFindBounds</span><span class="p">(</span><span class="n">SplineChar</span> <span class="o">*</span><span class="n">sc</span><span class="p">,</span><span class="n">DBounds</span> <span class="o">*</span><span class="n">bounds</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">SplineFontFindBounds</span><span class="p">(</span><span class="n">SplineFont</span> <span class="o">*</span><span class="n">sf</span><span class="p">,</span><span class="n">DBounds</span> <span class="o">*</span><span class="n">bounds</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">SplinePointCategorize</span><span class="p">(</span><span class="n">SplinePoint</span> <span class="o">*</span><span class="n">sp</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">SCCategorizePoints</span><span class="p">(</span><span class="n">SplineChar</span> <span class="o">*</span><span class="n">sc</span><span class="p">);</span>
+<span class="k">extern</span> <span class="n">SplinePointList</span> <span class="o">*</span><span class="nf">SplinePointListCopy</span><span class="p">(</span><span class="n">SplinePointList</span> <span class="o">*</span><span class="n">base</span><span class="p">);</span>
+<span class="k">extern</span> <span class="n">SplinePointList</span> <span class="o">*</span><span class="nf">SplinePointListCopySelected</span><span class="p">(</span><span class="n">SplinePointList</span> <span class="o">*</span><span class="n">base</span><span class="p">);</span>
+<span class="k">extern</span> <span class="n">SplinePointList</span> <span class="o">*</span><span class="nf">SplinePointListTransform</span><span class="p">(</span><span class="n">SplinePointList</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="kt">double</span> <span class="n">transform</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="kt">int</span> <span class="n">allpoints</span> <span class="p">);</span>
+<span class="k">extern</span> <span class="n">SplinePointList</span> <span class="o">*</span><span class="nf">SplinePointListShift</span><span class="p">(</span><span class="n">SplinePointList</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="kt">double</span> <span class="n">xoff</span><span class="p">,</span> <span class="kt">int</span> <span class="n">allpoints</span> <span class="p">);</span>
+<span class="k">extern</span> <span class="n">SplinePointList</span> <span class="o">*</span><span class="nf">SplinePointListRemoveSelected</span><span class="p">(</span><span class="n">SplinePointList</span> <span class="o">*</span><span class="n">base</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">SplinePointListSet</span><span class="p">(</span><span class="n">SplinePointList</span> <span class="o">*</span><span class="n">tobase</span><span class="p">,</span> <span class="n">SplinePointList</span> <span class="o">*</span><span class="n">frombase</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">SplinePointListSelect</span><span class="p">(</span><span class="n">SplinePointList</span> <span class="o">*</span><span class="n">spl</span><span class="p">,</span><span class="kt">int</span> <span class="n">sel</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">SCRefToSplines</span><span class="p">(</span><span class="n">SplineChar</span> <span class="o">*</span><span class="n">sc</span><span class="p">,</span><span class="n">RefChar</span> <span class="o">*</span><span class="n">rf</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">SCReinstanciateRefChar</span><span class="p">(</span><span class="n">SplineChar</span> <span class="o">*</span><span class="n">sc</span><span class="p">,</span><span class="n">RefChar</span> <span class="o">*</span><span class="n">rf</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">SCReinstanciateRef</span><span class="p">(</span><span class="n">SplineChar</span> <span class="o">*</span><span class="n">sc</span><span class="p">,</span><span class="n">SplineChar</span> <span class="o">*</span><span class="n">rsc</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">SCRemoveDependent</span><span class="p">(</span><span class="n">SplineChar</span> <span class="o">*</span><span class="n">dependent</span><span class="p">,</span><span class="n">RefChar</span> <span class="o">*</span><span class="n">rf</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">SCRemoveDependents</span><span class="p">(</span><span class="n">SplineChar</span> <span class="o">*</span><span class="n">dependent</span><span class="p">);</span>
+<span class="k">extern</span> <span class="n">RefChar</span> <span class="o">*</span><span class="nf">SCCanonicalRefs</span><span class="p">(</span><span class="n">SplineChar</span> <span class="o">*</span><span class="n">sc</span><span class="p">,</span> <span class="kt">int</span> <span class="n">isps</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">BCCompressBitmap</span><span class="p">(</span><span class="n">BDFChar</span> <span class="o">*</span><span class="n">bdfc</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">BCRegularizeBitmap</span><span class="p">(</span><span class="n">BDFChar</span> <span class="o">*</span><span class="n">bdfc</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">BCPasteInto</span><span class="p">(</span><span class="n">BDFChar</span> <span class="o">*</span><span class="n">bc</span><span class="p">,</span><span class="n">BDFChar</span> <span class="o">*</span><span class="n">rbc</span><span class="p">,</span><span class="kt">int</span> <span class="n">ixoff</span><span class="p">,</span><span class="kt">int</span> <span class="n">iyoff</span><span class="p">,</span> <span class="kt">int</span> <span class="n">invert</span><span class="p">);</span>
+<span class="k">extern</span> <span class="n">BDFChar</span> <span class="o">*</span><span class="nf">SplineCharRasterize</span><span class="p">(</span><span class="n">SplineChar</span> <span class="o">*</span><span class="n">sc</span><span class="p">,</span> <span class="kt">int</span> <span class="n">pixelsize</span><span class="p">);</span>
+<span class="k">extern</span> <span class="n">BDFFont</span> <span class="o">*</span><span class="nf">SplineFontRasterize</span><span class="p">(</span><span class="n">SplineFont</span> <span class="o">*</span><span class="n">sf</span><span class="p">,</span> <span class="kt">int</span> <span class="n">pixelsize</span><span class="p">);</span>
+<span class="k">extern</span> <span class="n">BDFChar</span> <span class="o">*</span><span class="nf">SplineCharAntiAlias</span><span class="p">(</span><span class="n">SplineChar</span> <span class="o">*</span><span class="n">sc</span><span class="p">,</span> <span class="kt">int</span> <span class="n">pixelsize</span><span class="p">,</span><span class="kt">int</span> <span class="n">linear_scale</span><span class="p">);</span>
+<span class="k">extern</span> <span class="n">BDFFont</span> <span class="o">*</span><span class="nf">SplineFontAntiAlias</span><span class="p">(</span><span class="n">SplineFont</span> <span class="o">*</span><span class="n">sf</span><span class="p">,</span> <span class="kt">int</span> <span class="n">pixelsize</span><span class="p">,</span><span class="kt">int</span> <span class="n">linear_scale</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">BDFCharFree</span><span class="p">(</span><span class="n">BDFChar</span> <span class="o">*</span><span class="n">bdfc</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">BDFFontFree</span><span class="p">(</span><span class="n">BDFFont</span> <span class="o">*</span><span class="n">bdf</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">BDFFontDump</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">filename</span><span class="p">,</span><span class="n">BDFFont</span> <span class="o">*</span><span class="n">font</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">encodingname</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">double</span> <span class="nf">SplineSolve</span><span class="p">(</span><span class="n">Spline1D</span> <span class="o">*</span><span class="n">sp</span><span class="p">,</span> <span class="kt">double</span> <span class="n">tmin</span><span class="p">,</span> <span class="kt">double</span> <span class="n">tmax</span><span class="p">,</span> <span class="kt">double</span> <span class="n">sought_y</span><span class="p">,</span> <span class="kt">double</span> <span class="n">err</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">SplineFindInflections</span><span class="p">(</span><span class="n">Spline1D</span> <span class="o">*</span><span class="n">sp</span><span class="p">,</span> <span class="kt">double</span> <span class="o">*</span><span class="n">_t1</span><span class="p">,</span> <span class="kt">double</span> <span class="o">*</span><span class="n">_t2</span> <span class="p">);</span>
+<span class="k">extern</span> <span class="kt">int</span> <span class="nf">NearSpline</span><span class="p">(</span><span class="k">struct</span> <span class="n">findsel</span> <span class="o">*</span><span class="n">fs</span><span class="p">,</span> <span class="n">Spline</span> <span class="o">*</span><span class="n">spline</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">double</span> <span class="nf">SplineNearPoint</span><span class="p">(</span><span class="n">Spline</span> <span class="o">*</span><span class="n">spline</span><span class="p">,</span> <span class="n">BasePoint</span> <span class="o">*</span><span class="n">bp</span><span class="p">,</span> <span class="kt">double</span> <span class="n">fudge</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">SCMakeDependent</span><span class="p">(</span><span class="n">SplineChar</span> <span class="o">*</span><span class="n">dependent</span><span class="p">,</span><span class="n">SplineChar</span> <span class="o">*</span><span class="n">base</span><span class="p">);</span>
+<span class="k">extern</span> <span class="n">SplinePoint</span> <span class="o">*</span><span class="nf">SplineBisect</span><span class="p">(</span><span class="n">Spline</span> <span class="o">*</span><span class="n">spline</span><span class="p">,</span> <span class="kt">double</span> <span class="n">t</span><span class="p">);</span>
+<span class="k">extern</span> <span class="n">Spline</span> <span class="o">*</span><span class="nf">ApproximateSplineFromPoints</span><span class="p">(</span><span class="n">SplinePoint</span> <span class="o">*</span><span class="n">from</span><span class="p">,</span> <span class="n">SplinePoint</span> <span class="o">*</span><span class="n">to</span><span class="p">,</span>
+        <span class="n">TPoint</span> <span class="o">*</span><span class="n">mid</span><span class="p">,</span> <span class="kt">int</span> <span class="n">cnt</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">int</span> <span class="nf">SplineIsLinear</span><span class="p">(</span><span class="n">Spline</span> <span class="o">*</span><span class="n">spline</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">int</span> <span class="nf">SplineInSplineSet</span><span class="p">(</span><span class="n">Spline</span> <span class="o">*</span><span class="n">spline</span><span class="p">,</span> <span class="n">SplineSet</span> <span class="o">*</span><span class="n">spl</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">SplineCharMerge</span><span class="p">(</span><span class="n">SplineSet</span> <span class="o">**</span><span class="n">head</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">SplineCharSimplify</span><span class="p">(</span><span class="n">SplineSet</span> <span class="o">*</span><span class="n">head</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">SplineCharRemoveTiny</span><span class="p">(</span><span class="n">SplineSet</span> <span class="o">*</span><span class="n">head</span><span class="p">);</span>
+<span class="k">extern</span> <span class="n">SplineFont</span> <span class="o">*</span><span class="nf">SplineFontNew</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+<span class="k">extern</span> <span class="n">SplineFont</span> <span class="o">*</span><span class="nf">SplineFontBlank</span><span class="p">(</span><span class="kt">int</span> <span class="n">enc</span><span class="p">,</span><span class="kt">int</span> <span class="n">charcnt</span><span class="p">);</span>
+<span class="k">extern</span> <span class="n">SplineSet</span> <span class="o">*</span><span class="nf">SplineSetReverse</span><span class="p">(</span><span class="n">SplineSet</span> <span class="o">*</span><span class="n">spl</span><span class="p">);</span>
+<span class="k">extern</span> <span class="n">SplineSet</span> <span class="o">*</span><span class="nf">SplineSetsExtractOpen</span><span class="p">(</span><span class="n">SplineSet</span> <span class="o">**</span><span class="n">tbase</span><span class="p">);</span>
+<span class="k">extern</span> <span class="n">SplineSet</span> <span class="o">*</span><span class="nf">SplineSetsCorrect</span><span class="p">(</span><span class="n">SplineSet</span> <span class="o">*</span><span class="n">base</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">SPAverageCps</span><span class="p">(</span><span class="n">SplinePoint</span> <span class="o">*</span><span class="n">sp</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">SplineCharDefaultPrevCP</span><span class="p">(</span><span class="n">SplinePoint</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">SplinePoint</span> <span class="o">*</span><span class="n">prev</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">SplineCharDefaultNextCP</span><span class="p">(</span><span class="n">SplinePoint</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">SplinePoint</span> <span class="o">*</span><span class="n">next</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">SplineCharTangentNextCP</span><span class="p">(</span><span class="n">SplinePoint</span> <span class="o">*</span><span class="n">sp</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">SplineCharTangentPrevCP</span><span class="p">(</span><span class="n">SplinePoint</span> <span class="o">*</span><span class="n">sp</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">int</span> <span class="nf">PointListIsSelected</span><span class="p">(</span><span class="n">SplinePointList</span> <span class="o">*</span><span class="n">spl</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">SplineSetsUntick</span><span class="p">(</span><span class="n">SplineSet</span> <span class="o">*</span><span class="n">spl</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">SFOrderBitmapList</span><span class="p">(</span><span class="n">SplineFont</span> <span class="o">*</span><span class="n">sf</span><span class="p">);</span>
+
+<span class="k">extern</span> <span class="n">SplineSet</span> <span class="o">*</span><span class="nf">SplineSetStroke</span><span class="p">(</span><span class="n">SplineSet</span> <span class="o">*</span><span class="n">spl</span><span class="p">,</span><span class="n">StrokeInfo</span> <span class="o">*</span><span class="n">si</span><span class="p">);</span>
+<span class="k">extern</span> <span class="n">SplineSet</span> <span class="o">*</span><span class="nf">SplineSetRemoveOverlap</span><span class="p">(</span><span class="n">SplineSet</span> <span class="o">*</span><span class="n">base</span><span class="p">);</span>
+
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">FindBlues</span><span class="p">(</span> <span class="n">SplineFont</span> <span class="o">*</span><span class="n">sf</span><span class="p">,</span> <span class="kt">double</span> <span class="n">blues</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="kt">double</span> <span class="n">otherblues</span><span class="p">[</span><span class="mi">10</span><span class="p">]);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">FindHStems</span><span class="p">(</span> <span class="n">SplineFont</span> <span class="o">*</span><span class="n">sf</span><span class="p">,</span> <span class="kt">double</span> <span class="n">snaps</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="kt">double</span> <span class="n">cnt</span><span class="p">[</span><span class="mi">12</span><span class="p">]);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">FindVStems</span><span class="p">(</span> <span class="n">SplineFont</span> <span class="o">*</span><span class="n">sf</span><span class="p">,</span> <span class="kt">double</span> <span class="n">snaps</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="kt">double</span> <span class="n">cnt</span><span class="p">[</span><span class="mi">12</span><span class="p">]);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">SplineCharAutoHint</span><span class="p">(</span> <span class="n">SplineChar</span> <span class="o">*</span><span class="n">sc</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">SplineFontAutoHint</span><span class="p">(</span> <span class="n">SplineFont</span> <span class="o">*</span><span class="n">sf</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">int</span> <span class="nf">AfmSplineFont</span><span class="p">(</span><span class="kt">FILE</span> <span class="o">*</span><span class="n">afm</span><span class="p">,</span> <span class="n">SplineFont</span> <span class="o">*</span><span class="n">sf</span><span class="p">,</span><span class="kt">int</span> <span class="n">type0</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">char</span> <span class="o">*</span><span class="nf">EncodingName</span><span class="p">(</span><span class="kt">int</span> <span class="n">map</span><span class="p">);</span>
+
+<span class="k">extern</span> <span class="kt">int</span> <span class="nf">SFDWrite</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">filename</span><span class="p">,</span><span class="n">SplineFont</span> <span class="o">*</span><span class="n">sf</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">int</span> <span class="nf">SFDWriteBak</span><span class="p">(</span><span class="n">SplineFont</span> <span class="o">*</span><span class="n">sf</span><span class="p">);</span>
+<span class="k">extern</span> <span class="n">SplineFont</span> <span class="o">*</span><span class="nf">SFDRead</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">filename</span><span class="p">);</span>
+<span class="k">extern</span> <span class="n">SplineFont</span> <span class="o">*</span><span class="nf">SFReadTTF</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">filename</span><span class="p">);</span>
+<span class="k">extern</span> <span class="n">SplineFont</span> <span class="o">*</span><span class="nf">LoadSplineFont</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">filename</span><span class="p">);</span>
+<span class="k">extern</span> <span class="n">SplineFont</span> <span class="o">*</span><span class="nf">ReadSplineFont</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">filename</span><span class="p">);</span>      <span class="cm">/* Don&#39;t use this, use LoadSF instead */</span>
+
+<span class="k">extern</span> <span class="n">SplineChar</span> <span class="o">*</span><span class="nf">SCBuildDummy</span><span class="p">(</span><span class="n">SplineChar</span> <span class="o">*</span><span class="n">dummy</span><span class="p">,</span><span class="n">SplineFont</span> <span class="o">*</span><span class="n">sf</span><span class="p">,</span><span class="kt">int</span> <span class="n">i</span><span class="p">);</span>
+<span class="k">extern</span> <span class="n">SplineChar</span> <span class="o">*</span><span class="nf">SFMakeChar</span><span class="p">(</span><span class="n">SplineFont</span> <span class="o">*</span><span class="n">sf</span><span class="p">,</span><span class="kt">int</span> <span class="n">i</span><span class="p">);</span>
+<span class="k">extern</span> <span class="n">BDFChar</span> <span class="o">*</span><span class="nf">BDFMakeChar</span><span class="p">(</span><span class="n">BDFFont</span> <span class="o">*</span><span class="n">bdf</span><span class="p">,</span><span class="kt">int</span> <span class="n">i</span><span class="p">);</span>
+
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">SCUndoSetLBearingChange</span><span class="p">(</span><span class="n">SplineChar</span> <span class="o">*</span><span class="n">sc</span><span class="p">,</span><span class="kt">int</span> <span class="n">lb</span><span class="p">);</span>
+<span class="k">extern</span> <span class="n">Undoes</span> <span class="o">*</span><span class="nf">SCPreserveState</span><span class="p">(</span><span class="n">SplineChar</span> <span class="o">*</span><span class="n">sc</span><span class="p">);</span>
+<span class="k">extern</span> <span class="n">Undoes</span> <span class="o">*</span><span class="nf">SCPreserveWidth</span><span class="p">(</span><span class="n">SplineChar</span> <span class="o">*</span><span class="n">sc</span><span class="p">);</span>
+<span class="k">extern</span> <span class="n">Undoes</span> <span class="o">*</span><span class="nf">BCPreserveState</span><span class="p">(</span><span class="n">BDFChar</span> <span class="o">*</span><span class="n">bc</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">BCDoRedo</span><span class="p">(</span><span class="n">BDFChar</span> <span class="o">*</span><span class="n">bc</span><span class="p">,</span><span class="k">struct</span> <span class="n">fontview</span> <span class="o">*</span><span class="n">fv</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">BCDoUndo</span><span class="p">(</span><span class="n">BDFChar</span> <span class="o">*</span><span class="n">bc</span><span class="p">,</span><span class="k">struct</span> <span class="n">fontview</span> <span class="o">*</span><span class="n">fv</span><span class="p">);</span>
+
+<span class="k">extern</span> <span class="kt">int</span> <span class="nf">SFIsCompositBuildable</span><span class="p">(</span><span class="n">SplineFont</span> <span class="o">*</span><span class="n">sf</span><span class="p">,</span><span class="kt">int</span> <span class="n">unicodeenc</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">SCBuildComposit</span><span class="p">(</span><span class="n">SplineFont</span> <span class="o">*</span><span class="n">sf</span><span class="p">,</span> <span class="n">SplineChar</span> <span class="o">*</span><span class="n">sc</span><span class="p">,</span> <span class="kt">int</span> <span class="n">copybmp</span><span class="p">,</span>
+        <span class="k">struct</span> <span class="n">fontview</span> <span class="o">*</span><span class="n">fv</span><span class="p">);</span>
+
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">BDFFontDump</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">filename</span><span class="p">,</span><span class="n">BDFFont</span> <span class="o">*</span><span class="n">font</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">encodingname</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">int</span> <span class="nf">getAdobeEnc</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">name</span><span class="p">);</span>
+
+<span class="k">extern</span> <span class="n">SplinePointList</span> <span class="o">*</span><span class="nf">SplinePointListInterpretPS</span><span class="p">(</span><span class="kt">FILE</span> <span class="o">*</span><span class="n">ps</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">PSFontInterpretPS</span><span class="p">(</span><span class="kt">FILE</span> <span class="o">*</span><span class="n">ps</span><span class="p">,</span><span class="k">struct</span> <span class="n">charprocs</span> <span class="o">*</span><span class="n">cp</span><span class="p">);</span>
+
+<span class="k">extern</span> <span class="kt">int</span> <span class="nf">SFFindChar</span><span class="p">(</span><span class="n">SplineFont</span> <span class="o">*</span><span class="n">sf</span><span class="p">,</span> <span class="kt">int</span> <span class="n">unienc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">name</span> <span class="p">);</span>
+
+<span class="k">extern</span> <span class="kt">char</span> <span class="o">*</span><span class="nf">getFontForgeDir</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">buffer</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">DoAutoSaves</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">int</span> <span class="nf">DoAutoRecovery</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+<span class="k">extern</span> <span class="n">SplineFont</span> <span class="o">*</span><span class="nf">SFRecoverFile</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">autosavename</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">SFAutoSave</span><span class="p">(</span><span class="n">SplineFont</span> <span class="o">*</span><span class="n">sf</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">SFClearAutoSave</span><span class="p">(</span><span class="n">SplineFont</span> <span class="o">*</span><span class="n">sf</span><span class="p">);</span>
+<span class="cp">#endif</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui.html">FontForge’s User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../techref.html">Technical References</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gposgsub.html">Advanced Typography Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AA-Comparison.html">Anti-Alias Comparison</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autotrace.html">Autotracing bitmaps in FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accented.html">Building Accented and other Composite Glyphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bezier.html">Bézier Splines </a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref-caveats.html">Caveats about References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfdchangelog.html">Changes to the sfd format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cidmapformat.html">Cidmap files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cliargs.html">Command Line Arguments</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Data Types</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#function-declarations">Function declarations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="SuggestDeltas.html">Delta Instruction Suggestions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stroke.html">Expand Stroke Facility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BDFGrey.html">Extensions to Adobe’s BDF  for greymap fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PfaEdit-TeX.html">FontForge and TeX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pfaeditmath.html">FontForge’s math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hinting.html">Hinting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macformats.html">Macintosh font formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="featurefile.html">Major differences between FontForge’s and Adobe’s interpretation of feature files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="non-standard.html">Non standard extensions used FontForge in True/Open Type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="palmfonts.html">Palm fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bitmaponlysfnt.html">Several formats for bitmap only sfnts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfdformat.html">Spline Font Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pcf-format.html">The X11 PCF bitmap font file format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TrueOpenTables.html">TrueType and OpenType tables supported by FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corpchar.html">Unicode Corporate Characters used by FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UniqueID.html">UniqueID and XUID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selections.html">X Selections and the X Clipboard</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../techref.html">Technical References</a><ul>
+      <li>Previous: <a href="cliargs.html" title="previous chapter">Command Line Arguments</a></li>
+      <li>Next: <a href="SuggestDeltas.html" title="next chapter">Delta Instruction Suggestions</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

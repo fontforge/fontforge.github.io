@@ -1,0 +1,389 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>12. FontForge Scripting Tutorial &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="13. Special thoughts for special scripts" href="scriptnotes.html" />
+    <link rel="prev" title="11. Working with Bitmap Fonts" href="editexample8.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="fontforge-scripting-tutorial">
+<h1><span class="section-number">12. </span>FontForge Scripting Tutorial<a class="headerlink" href="#fontforge-scripting-tutorial" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>FontForge now provides python scripting. If you are familiar with python
+that is probably a better choice. There is a lot of information available on
+<a class="reference external" href="http://www.python.org/doc/">python</a>, I shan’t repeat it. FontForge’s own
+additions to python are documented <a class="reference internal" href="../scripting/python.html"><span class="doc">here</span></a>.</p>
+</div>
+<p>I try to keep things at a fairly elementary level, but this is <em>not</em> an attempt
+to teach programming.</p>
+<div class="section" id="a-simple-example">
+<h2><span class="section-number">12.1. </span>A simple example<a class="headerlink" href="#a-simple-example" title="Permalink to this headline">¶</a></h2>
+<p>Suppose you have a Type1 PostScript font (a pfb/afm combination) and you would
+like to convert it into a TrueType font. What would a script look like that
+could do this?</p>
+<p>If you were doing this with the UI you would first
+<a class="reference internal" href="../ui/menus/filemenu.html#filemenu-open"><span class="std std-ref">File-&gt;Open</span></a> the font and then
+<a class="reference internal" href="../ui/menus/filemenu.html#filemenu-generate"><span class="std std-ref">File-&gt;Generate</span></a> a truetype font. You do essentially
+the same thing when writing a script:</p>
+<div class="section" id="initial-solution">
+<h3><span class="section-number">12.1.1. </span>Initial Solution<a class="headerlink" href="#initial-solution" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Open($1)
+Generate($1:r + &quot;.ttf&quot;)
+</pre></div>
+</div>
+<p>There is usually a scripting function with the same name as a menu command
+(well, the same as the English name of the menu command).</p>
+<p>‘<a class="reference internal" href="../scripting/scripting.html#scripting-variables"><span class="std std-ref">$1</span></a>’ is magic. It means the
+<a class="reference internal" href="#scripting-tutorial-invoking"><span class="std std-ref">first argument passed to the script</span></a>.</p>
+<p>‘<a class="reference internal" href="../scripting/scripting.html#scripting-expressions"><span class="std std-ref">$1:r + “.ttf”</span></a> ‘ is even more complicated magic.
+It means: ‘take the first argument ($1) and remove the extension (which is
+probably “.pfb”) and then append the string “.ttf” to the filename.’</p>
+<p>The Generate scripting command decides what type of font to generate depending
+on the extension of the filename you give it. Here we give it an extension of
+“ttf” which means truetype.</p>
+<p>Note that I make no attempt to load an afm file. That’s because the Open command
+will do this automagically if it is in the same directory as the pfb.</p>
+</div>
+<div class="section" id="real-world-considerations">
+<h3><span class="section-number">12.1.2. </span>Real World Considerations<a class="headerlink" href="#real-world-considerations" title="Permalink to this headline">¶</a></h3>
+<p>So that’s what the script looks like. To be useful it should probably live in a
+file of its own. So create a file called “convert.pe” and store the above script
+in it.</p>
+<p>But to be even more useful you should add a comment line to the beginning of the
+script (a comment line is one that starts with the ‘#’ character:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/usr/local/bin/fontforge
+Open($1)
+Generate($1:r + &quot;.ttf&quot;)
+</pre></div>
+</div>
+<p>Having done that type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ chmod +x convert.pe
+</pre></div>
+</div>
+<p>This comment is not important to fontforge, but it is meaningful to the unix
+shell, as we will see in the next section.</p>
+</div>
+<div class="section" id="invoking-a-script-and-passing-it-arguments">
+<span id="scripting-tutorial-invoking"></span><h3><span class="section-number">12.1.3. </span>Invoking a script and passing it arguments<a class="headerlink" href="#invoking-a-script-and-passing-it-arguments" title="Permalink to this headline">¶</a></h3>
+<p>Ok, now we’ve got basic script. How do we use it?</p>
+<p>Well we can pass it to FontForge directly by typing</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ fontforge -script convert.pe foo.pfb
+</pre></div>
+</div>
+<p>But if you added the comment above you can also type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ convert.pe foo.pfb
+</pre></div>
+</div>
+<p>And the shell knows to call fontforge to process the script.</p>
+</div>
+<div class="section" id="using-loops">
+<h3><span class="section-number">12.1.4. </span>Using loops<a class="headerlink" href="#using-loops" title="Permalink to this headline">¶</a></h3>
+<p>That’s all well and good, but if you have lots of fonts to convert this might
+get tedious. So let’s change our script so it will take lots of filenames which
+we can then process one at a time.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/usr/local/bin/fontforge
+i=1
+while ( i&lt;$argc )
+  Open($argv[i])
+  Generate($argv[i]:r + &quot;.ttf&quot;)
+  i = i+1
+endloop
+</pre></div>
+</div>
+<p>Here we have introduced the variables <code class="docutils literal notranslate"><span class="pre">$argc</span></code> and <code class="docutils literal notranslate"><span class="pre">$argv</span></code>. The first is
+simple the number of arguments passed to this script, while the second is an
+array containing all those arguments, and <code class="docutils literal notranslate"><span class="pre">$argv[i]</span></code> means the i’th argument
+passed.</p>
+<p>Then we have:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">i</span><span class="o">=</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>This declares that we have a local variable called “i” and assigns it the value
+1.</p>
+<p>The while loop will execute all statements between the “<code class="docutils literal notranslate"><span class="pre">while</span></code>” keyword and
+the “<code class="docutils literal notranslate"><span class="pre">endloop</span></code>” keyword as long as the condition <code class="docutils literal notranslate"><span class="pre">(</span> <span class="pre">i&lt;$argv</span> <span class="pre">)</span></code> is true. In
+other words as long as there are more arguments to convert the loop will keep
+going.</p>
+<p>And we can invoke this script with</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ convert.pe *.pfb
+</pre></div>
+</div>
+<p>Or something similar.</p>
+</div>
+<div class="section" id="complexities">
+<h3><span class="section-number">12.1.5. </span>Complexities<a class="headerlink" href="#complexities" title="Permalink to this headline">¶</a></h3>
+<p>Now suppose that you wanted a script that could convert a truetype font to an
+opentype font as well as a type1 font to a truetype. Well let’s make our script
+even more complex:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/usr/local/bin/fontforge
+i=1
+format=&quot;.ttf&quot;
+while ( i&lt;$argc )
+  if ( $argv[i]==&quot;-format&quot; || $argv[i]==&quot;--format&quot; )
+    i=i+1
+    format = $argv[i]
+  else
+    Open($argv[i])
+    Generate($argv[i]:r + format)
+  endif
+  i = i+1
+endloop
+</pre></div>
+</div>
+<p>And this could be invoked with something like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ convert.pe --format &quot;.ttf&quot; *.pfb --format &quot;.otf&quot; *.ttf
+</pre></div>
+</div>
+<p>So now we have a new variable, <code class="docutils literal notranslate"><span class="pre">format</span></code>, which contains the type of output we
+want to use from now on. We initialize it to truetype, “.ttf”, but if the user
+gives us an argument called “–format” (or “-format”) then we change the output
+to be whatever the user asked for.</p>
+<p>We’ve introduced the “<code class="docutils literal notranslate"><span class="pre">if</span></code>” statement here. This statement will execute the
+statements between “<code class="docutils literal notranslate"><span class="pre">if</span></code>” and “<code class="docutils literal notranslate"><span class="pre">else</span></code>” if the condition
+<code class="docutils literal notranslate"><span class="pre">(</span> <span class="pre">$argv[i]==&quot;-format&quot;</span> <span class="pre">||</span> <span class="pre">$argv[i]==&quot;--format&quot;</span> <span class="pre">)</span></code> is true, otherwise it will
+execute the statements between “<code class="docutils literal notranslate"><span class="pre">else</span></code>” and “<code class="docutils literal notranslate"><span class="pre">endif</span></code>”. The || operator means
+“or”, so the condition is true if $argv[i] is either “-format” or “–format”.</p>
+<p>We really should do some error checking to make sure:</p>
+<ul class="simple">
+<li><p>There was another argument to store into the <code class="docutils literal notranslate"><span class="pre">format</span></code> variable</p></li>
+<li><p>The argument contained a reasonable value (.ttf, .pfb, .otf, .svg, …)</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/usr/local/bin/fontforge
+i=1
+format=&quot;.ttf&quot;
+while ( i&lt;$argc )
+  if ( $argv[i]==&quot;-format&quot; || $argv[i]==&quot;--format&quot; )
+    i=i+1
+    if ( i&lt;$argc )
+      format = $argv[i]
+      if ( format!=&quot;.ttf&quot; &amp;&amp; format!=&quot;.otf&quot; &amp;&amp; \
+          format!=&quot;.pfb&quot; &amp;&amp; format!=&quot;.svg&quot; )
+        Error( &quot;Expected one of &#39;.ttf&#39;, &#39;.otf&#39;, &#39;.pfb&#39; or &#39;.svg&#39; for format&quot; )
+      endif
+    endif
+  else
+    Open($argv[i])
+    Generate($argv[i]:r + format)
+  endif
+  i = i+1
+endloop
+</pre></div>
+</div>
+<p>Note that when we had a long line we broke it in two by using a backslash.
+Normally the end of a line marks the end of a statement, so we need the
+backslash to indicate the statement continues onto the next line.</p>
+<p>Now that will produce a valid postscript font from a truetype one if we want…
+But we can improve on that conversion:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/usr/local/bin/fontforge
+i=1
+format=&quot;.ttf&quot;
+while ( i&lt;$argc )
+  if ( $argv[i]==&quot;-format&quot; || $argv[i]==&quot;--format&quot; )
+    i=i+1
+    if ( i&lt;$argc )
+      format = $argv[i]
+      if ( format!=&quot;.ttf&quot; &amp;&amp; format!=&quot;.otf&quot; &amp;&amp; \
+          format!=&quot;.pfb&quot; &amp;&amp; format!=&quot;.svg&quot; )
+        Error( &quot;Expected one of &#39;.ttf&#39;, &#39;.otf&#39;, &#39;.pfb&#39; or &#39;.svg&#39; for format&quot; )
+      endif
+    endif
+  else
+    Open($argv[i])
+    if ( $order==2 &amp;&amp; (format==&quot;.otf&quot; || format==&quot;.pfb&quot; ))
+      SetFontOrder(3)
+      SelectAll()
+      Simplify(128+32+8,1.5)
+      ScaleToEm(1000)
+    elseif ( $order==3 &amp;&amp; format==&quot;.ttf&quot; )
+      ScaleToEm(2048)
+      RoundToInt()
+    endif
+    Generate($argv[i]:r + format)
+  endif
+  i = i+1
+endloop
+</pre></div>
+</div>
+<p>By its nature a truetype font will contain more points than will a postscript
+font, but we can use the Simplify command to reduce that number when we convert
+from one format to another. Also PostScript fonts should have 1000 units to the
+em while TrueType fonts should have a power of 2 units/em (generally 2048 or
+1024), so enforce these conventions. Finally TrueType fonts only support
+integral (or in some cases half-integral) coordinates for points.</p>
+</div>
+</div>
+<div class="section" id="other-examples">
+<h2><span class="section-number">12.2. </span>Other Examples<a class="headerlink" href="#other-examples" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="adding-accented-characters">
+<h3><span class="section-number">12.2.1. </span>Adding Accented Characters<a class="headerlink" href="#adding-accented-characters" title="Permalink to this headline">¶</a></h3>
+<p>Very few Type1 fonts have the full unicode range of accented characters. With
+FontForge it is fairly easy to load a Type1 font, add as many possible accented
+characters as the font permits (If the font does not contain ogonek, then FF
+won’t be able to create Aogonek).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/usr/local/bin/fontforge
+Open($1)
+Reencode(&quot;unicode&quot;)
+SelectWorthOutputting()
+SelectInvert()
+BuildAccented()
+Generate($1:r + &quot;.otf&quot;)
+</pre></div>
+</div>
+</div>
+<div class="section" id="merging-a-type1-and-type1-expert-font-and-creating-appropriate-gsub-tables">
+<h3><span class="section-number">12.2.2. </span>Merging a type1 and type1 expert font and creating appropriate GSUB tables.<a class="headerlink" href="#merging-a-type1-and-type1-expert-font-and-creating-appropriate-gsub-tables" title="Permalink to this headline">¶</a></h3>
+<p>Adobe used to ship font packs containing a normal font and an “expert” font
+which included small caps, lower case numbers, etc. Now-a-days that should all
+be stuffed into one otf font with appropriate GSUB entries linking the glyphs.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/usr/local/bin/fontforge
+Open($1)
+MergeFonts($2)
+RenameGlyphs(&quot;AGL with PUA&quot;)
+SelectAll()
+DefaultATT(&quot;*&quot;)
+</pre></div>
+</div>
+</div>
+<div class="section" id="more-examples">
+<h3><span class="section-number">12.2.3. </span>More examples<a class="headerlink" href="#more-examples" title="Permalink to this headline">¶</a></h3>
+<p>See the <a class="reference internal" href="../scripting/scripting.html#scripting-example"><span class="std std-ref">page on scripting</span></a>.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../tutorial.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="editexample.html">1. Font and glyph creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editspiro.html">2. Creating a glyph using spiros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="importexample.html">3. Importing Outline Glyphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample2.html">4. More on glyphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample3.html">5. Creating letters with consistent stem widths, serifs and heights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample4.html">6. Accented glyphs, ligatures, lookups and features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample5.html">7. Metrics, spacing and kerning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample6.html">8. Glyph variants and anchoring marks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample6-5.html">9. Conditional Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample7.html">10. Checking and generating a font</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample8.html">11. Working with Bitmap Fonts</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">12. FontForge Scripting Tutorial</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#a-simple-example">12.1. A simple example</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#initial-solution">12.1.1. Initial Solution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#real-world-considerations">12.1.2. Real World Considerations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#invoking-a-script-and-passing-it-arguments">12.1.3. Invoking a script and passing it arguments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-loops">12.1.4. Using loops</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#complexities">12.1.5. Complexities</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#other-examples">12.2. Other Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#adding-accented-characters">12.2.1. Adding Accented Characters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#merging-a-type1-and-type1-expert-font-and-creating-appropriate-gsub-tables">12.2.2. Merging a type1 and type1 expert font and creating appropriate GSUB tables.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#more-examples">12.2.3. More examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="scriptnotes.html">13. Special thoughts for special scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial.html#tutorial-in-other-languages">Tutorial in other languages</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ui.html">FontForge’s User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techref.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../tutorial.html">Tutorial</a><ul>
+      <li>Previous: <a href="editexample8.html" title="previous chapter"><span class="section-number">11. </span>Working with Bitmap Fonts</a></li>
+      <li>Next: <a href="scriptnotes.html" title="next chapter"><span class="section-number">13. </span>Special thoughts for special scripts</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

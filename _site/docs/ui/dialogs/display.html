@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Display &amp; Print Fonts &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Groups of Glyphs" href="groups.html" />
+    <link rel="prev" title="Generate Font Dialog" href="generate.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="display-print-fonts">
+<h1>Display &amp; Print Fonts<a class="headerlink" href="#display-print-fonts" title="Permalink to this headline">¶</a></h1>
+<img alt="../../_images/DisplayFonts.png" class="align-right" src="../../_images/DisplayFonts.png" />
+<p>This dialog allows you to display text in any fonts you have loaded into
+FontForge and see how they look on the screen and together. Having done that to
+your satisfaction you may optionally print the result.</p>
+<p>The textarea should behave like any of FontForge’s textarea’s (except this one
+is a lot slower to respond than others), it also allows you to select any piece
+of text in it and change the font, point size and what OpenType features should
+be applied to that text.</p>
+<p>First make a selection (or type ^A to select everything), then choose which font
+you want and how you want it dsplayed.</p>
+<p>You may also select how the font is rasterized. The first three choices (pfb,
+ttf, otf) will be rasterized by freetype, and the display is very similar to
+that used by X (so this is an easy way of checking how your fonts will look on
+the screen without going to the bother of installing them.). The various options
+specify in what format the font is passed to freetype:</p>
+<ul class="simple">
+<li><p>pfb – PostScript Type 1 font</p></li>
+<li><p>ttf – Truetype font</p></li>
+<li><p>otf – OpenType (PostScript Type 2) font</p></li>
+</ul>
+<p>The “bitmap” option allows you to pick from any of the generated bitmap (or
+greymap) fonts that have already been generated and reside in the database.</p>
+<p>The “fontforge” option will invoke FontForge’s own rasterizer. FontForge’s
+rasterizer generates appallingly bad bitmaps.</p>
+<p>You can choose whether you want the font to be antialiased or not.</p>
+<p>And different bits of text can have different settings, so you can compare them
+and decide which is least worse. Also you can compare two different fonts and
+see how well they work together.</p>
+<p>As with the <a class="reference internal" href="../mainviews/metricsview.html"><span class="doc">metrics view</span></a> you may set the script and
+language of the selected text and then choose which features to apply. Note that
+if you start typing text in a different script you will probably have to change
+it manually – FontForge expects you to set the script explicitly. On the upper
+left is a list of OpenType features (and Apple feature/settings) which will be
+applied to the selected text.</p>
+<p>Unlike the metrics view, fontforge will attempt to do baseline alignment if the
+font being displayed has
+<a class="reference internal" href="../menus/elementmenu.html#elementmenu-hbase"><span class="std std-ref">horizontal baseline information.</span></a></p>
+<p>FontForge tries to guess the appropriate dots per inch for your display – it
+may not get it right (X doesn’t always know it either). If it doesn’t and the
+text looks too big or too small you may adjust it manually.</p>
+<p>This display is not modal, so you can edit your font while it is up. However
+FontForge does not update the display everytime you make a change, if you wish
+your changes to be reflected in the display you must press the <code class="docutils literal notranslate"><span class="pre">[Refresh]</span></code>
+button. (If you make a severe change, like removing a glyph from the font,
+please, please, please press this button or FontForge may crash if you try to
+display something which is no longer there).</p>
+<p>There is a popup menu on the right mouse button.</p>
+<p>You may Import text from a file. The file must either be in the current local
+encoding, or UCS4 (unicode) or UTF8 (unicode). If it is in unicode the first
+character in the file must be U+FEFF. You can also save the contents of the
+field into a file (it will be in UTF8 and preceded by U+FEFF) by typing ^S.</p>
+<p>You can also generate an image of this window by typing Ctl-Shft-S.</p>
+<p>Once you have edited in this window to your satisfaction you may print the
+result. FontForge will produce either PostScript or PDF output (If your fonts
+are originally truetype they will be output with a PostScript wrapper around
+them so PostScript can deal with them).</p>
+<img alt="../../_images/Print.png" class="align-right" src="../../_images/Print.png" />
+<p>There are other printing options too. At the top of the dialog are a set of tabs
+“Display” and “Print”. The “Print” pane allows you to print certain standard
+displays of a single font.</p>
+<div class="clearer docutils container">
+</div>
+<ul>
+<li><p>All the characters of your font, in a rectangular grid:</p>
+<img alt="../../_images/FontDisplay.png" src="../../_images/FontDisplay.png" />
+</li>
+<li><p>Certain selected characters, one per page, at a scale to fill up the page</p>
+<img alt="../../_images/CharPrint.png" src="../../_images/CharPrint.png" />
+</li>
+<li><p>Certain selected characters at various pointsizes (72, 48, 36, 24, 20, 18, 16,
+15, 14, 13, 12, 11, 10, 9, 8, 7.5, 7, 6.5, 6, 5.5, 5, 4.5, 4)</p>
+<img alt="../../_images/MultiPrint.png" src="../../_images/MultiPrint.png" />
+</li>
+<li><p>Or the edited display from the other pane.</p>
+<img alt="../../_images/FontSample.png" src="../../_images/FontSample.png" />
+</li>
+</ul>
+<img alt="../../_images/Print.png" class="align-right" src="../../_images/Print.png" />
+<p>The print pane appears again at right. The three choices are reflected by the
+radio buttons (the Full Page Character and Multi Size Character buttons will
+print any selected characters in the font view, the current character in the
+outline view, and any characters displayed in the metrics view – they will be
+greyed out if no characters are selected in the font view).</p>
+<p>The PointSize field applies to the Full Font Display.</p>
+<p>The Setup button allows you to pick a printer, pagesize, etc.</p>
+<img alt="../../_images/PageSetup.png" class="align-left" src="../../_images/PageSetup.png" />
+<p>You may choose to queue the result with lp or lpr, you may also direct it to
+ghostview, or simply print to a file. Files may be written in either postscript
+or pdf formats (if you send output to a file you will be prompted for a filename
+after you click OK in the Print (not the PageSetup) dialog). You can also direct
+the print run to any command you choose (the “Other” option). This command must
+expect to find a postscript file on its standard input, if the command needs any
+arguments (a common example might be the “-” used by many commands to make them
+read standard input) they should be placed in the text field with the command
+name.</p>
+<p>FontForge knows about certain standard sizes of paper. If you want to use a size
+which isn’t on the list then enter it as 8.5x11in or 21x29.7cm.</p>
+<p>FontForge will read your printcap file to get a list of printers. It also adds
+one magic entry “&lt;default&gt;” if you select this (or if you leave the printer
+blank) then lp or lpr will chose their default printer.</p>
+<p>The Printer and Copies arguments are not meaningful when using ghostview or
+printing to a file.</p>
+<hr class="docutils" />
+<p>Obviously my samples are based on european and CJK character sets. If anyone has
+a small section of text in any language not represented please send me a copy.
+Copyright free, of course, and preferably in a unicode encoding…</p>
+<p><a class="reference internal" href="../../appendices/quotations.html"><span class="doc">Sources of the samples</span></a>…</p>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../ui.html">FontForge’s User Interface</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../mainviews.html">Main Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../menus.html">Menus</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../dialogs.html">Dialogs</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../dialogs.html#general">General</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="generate.html">Generate Font Dialog</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Display &amp; Print Fonts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="groups.html">Groups of Glyphs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="search.html">Finding shapes within glyphs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="selectbyatt.html">Select By Lookup Subtable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="prefs.html">Preferences Dialog</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#info">Info</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#editing">Editing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#lookups-and-kerning">Lookups and Kerning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#validation">Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/HotKeys.html">Hot Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/fontforge-themes.html">FontForge color schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">X Resource Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xim.html">X Input Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">X Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../techref.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../../ui.html">FontForge’s User Interface</a><ul>
+  <li><a href="../dialogs.html">Dialogs</a><ul>
+      <li>Previous: <a href="generate.html" title="previous chapter">Generate Font Dialog</a></li>
+      <li>Next: <a href="groups.html" title="next chapter">Groups of Glyphs</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

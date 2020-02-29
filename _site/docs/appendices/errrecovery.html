@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Error Recovery &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Non-BMP Unicode bitmap fonts supported by FontForge" href="nonbmp.html" />
+    <link rel="prev" title="Files used by FontForge" href="files.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="error-recovery">
+<h1>Error Recovery<a class="headerlink" href="#error-recovery" title="Permalink to this headline">¶</a></h1>
+<p>All programs crash, and new programs (like this one) crash a lot.</p>
+<p>Every minute or so FontForge looks around and sees if anything has changed since
+the last time it checked. If it finds a font that has had changes, it will save
+a small file in its private directory (<code class="docutils literal notranslate"><span class="pre">~/.FontForge/autosave</span></code>) which
+consists of all changed glyphs in the changed font.</p>
+<p>When FontForge starts up it checks this directory, and if it finds anything
+there it attempts to apply those changes to the original font. So if FontForge
+crashes, or if your machine crashes, the next time you start FontForge it will
+figure out what you were doing and recover it as best it can.</p>
+<p>When editing CID-keyed fonts there are a few potential gotchas:</p>
+<ul class="simple">
+<li><p>FontForge does not keep track of gross changes (like adding or removing a sub
+font)</p></li>
+<li><p>FontForge does not keep track of which sub font a change occurred in, instead
+at recovery time it will look for a subfont that is contains a glyph at the
+CID that was changed. In almost all cases this will be right, but if you add
+glyphs or if you have two sub-fonts defining the same CID, FontForge may guess
+wrong.</p></li>
+</ul>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui.html">FontForge’s User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techref.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../appendices.html">Appendices</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ff-history.html">What on Earth Possessed me…</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diffs.html">Differences from Fontographer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files.html">Files used by FontForge</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Error Recovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nonbmp.html">Non-BMP Unicode bitmap fonts supported by FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quotations.html">Quotations used in the sample text for Printing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uitranslationnotes.html">User Interface Translation Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fontstyles.html">Font Styles in various languages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OFL-Unofficial.html">Unofficial translations of the OFL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bibliography.html">A meandering bibliography of font related things</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendices.html#japanese-documentation-outdated">Japanese documentation (outdated)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../appendices.html">Appendices</a><ul>
+      <li>Previous: <a href="files.html" title="previous chapter">Files used by FontForge</a></li>
+      <li>Next: <a href="nonbmp.html" title="next chapter">Non-BMP Unicode bitmap fonts supported by FontForge</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,4 +1,8 @@
 markdown: kramdown
 highlighter: null
 permalink: pretty
-url: http://fontforge.github.io
+url: https://fontforge.org/
+plugins:
+  - jekyll-redirect-from
+keep_files:
+  - docs

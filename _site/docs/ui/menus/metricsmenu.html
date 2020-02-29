@@ -1,0 +1,294 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>The Metrics Menu &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="The CID Menu" href="cidmenu.html" />
+    <link rel="prev" title="The View Menu" href="viewmenu.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="the-metrics-menu">
+<h1>The Metrics Menu<a class="headerlink" href="#the-metrics-menu" title="Permalink to this headline">¶</a></h1>
+<p>This menu is not present in the Bitmap View, and the Metrics View only contains
+“Center in Width” and “Thirds in Width”.</p>
+<span class="target" id="metricsmenu-center"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Center in Width</code></dt>
+<dd><p>In the Outline and Metrics Views this centers the current glyph (makes its
+lbearing be the same as its rbearing) within the current width.</p>
+<p>In the Font View the same thing is done for all selected glyphs.</p>
+<p>Setting this value will adjust all layers so that guides in the background
+etc. will be adjusted with the rest of the glyph.</p>
+</dd></dl>
+
+<span class="target" id="metricsmenu-thirds"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Thirds in Width</code></dt>
+<dd><p>This is very like Center in Width above… except that I happen to prefer
+having a bit more white space after my glyphs than before them. So this
+command makes the rbearing twice the lbearing (instead of making them be the
+same).</p>
+<p>Setting this value will adjust all layers so that guides in the background
+etc. will be adjusted with the rest of the glyph.</p>
+</dd></dl>
+
+<span class="target" id="metricsmenu-windowtype"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Window Type</code></dt>
+<dd><p>In the Metrics View, the window may behave in different ways.</p>
+<span class="target" id="metricsmenu-wt-kerning"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Kerning Only</code></dt>
+<dd><p>This metrics view may only be used to adjust kerning</p>
+</dd></dl>
+
+<span class="target" id="metricsmenu-wt-width"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Advance Width Only</code></dt>
+<dd><p>This metrics view may only be used to adjust the advance widths of glyphs</p>
+</dd></dl>
+
+<span class="target" id="metricsmenu-wt-both"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Both</code></dt>
+<dd><p>This metrics view will adjust either the advance width or kerning</p>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="metricsmenu-width"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Set Width...</code></dt>
+<dd><img alt="../../_images/setwidth.png" src="../../_images/setwidth.png" />
+<p>The Set Width command allows you to change the width of the current glyph (in
+the outline view) or all selected glyphs (in the font view). You may either
+set the width to an absolute value, change the width by adding a constant
+value to it, or multiply it by a scale factor. Normally the width will be
+expressed in em-units, but in a bitmap only font the width will be expressed
+as pixels in the current displayed font.</p>
+</dd></dl>
+
+<span class="target" id="metricsmenu-lbearing"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Set LBearing...</code></dt>
+<dd><p>The Set LBearing command is similar to the Set Width command above, the
+dialog is pretty much the same except that it applies to the left side
+bearing rather than to the width. Setting this value will adjust all layers
+so that guides in the background etc. will be adjusted with the rest of the
+glyph.</p>
+</dd></dl>
+
+<span class="target" id="metricsmenu-rbearing"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Set RBearing...</code></dt>
+<dd><p>The Set RBearing command is similar to the Set Width command above, the
+dialog is pretty much the same except that it applies to the right side
+bearing rather than to the width.</p>
+</dd></dl>
+
+<span class="target" id="metricsmenu-auto"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Auto Width...</code></dt>
+<dd><p>This command is only available in the font view.
+<a class="reference internal" href="../dialogs/autowidth.html#autowidth-autowidth"><span class="std std-ref">It attempts to guess reasonable values for the widths</span></a>
+(more accurately the left and right bearings) of the specified glyphs.</p>
+</dd></dl>
+
+<span class="target" id="metricsmenu-kernbyclasses"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Kern By Classes...</code></dt>
+<dd><p>This command is only available from the font and metrics views. It provides
+the user with a <a class="reference internal" href="../mainviews/metricsview.html#metricsview-kernclass"><span class="std std-ref">dialog</span></a> to manipulate kerning
+classes.</p>
+</dd></dl>
+
+<span class="target" id="metricsmenu-remove"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Remove All Kern Pairs</code></dt>
+<dd><p>In the font view removes all kern pairs (and kern classes) in the font.</p>
+<p>In the outline glyph view removes all kern pairs where the current glyph is
+the left hand glyph.</p>
+<p>Not present in the Metrics or Bitmap views.</p>
+</dd></dl>
+
+<span class="target" id="metricsmenu-kernpair"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Kern Pair Closeup...</code></dt>
+<dd><p>(Sorry about the name, I couldn’t think of a better).
+<a class="reference internal" href="../mainviews/metricsview.html#metricsview-kernpair"><span class="std std-ref">Allows</span></a> you to get a look at kerning between two
+glyphs at different point-sizes and to build a
+“<a class="reference internal" href="../mainviews/metricsview.html#metricsview-devicetable"><span class="std std-ref">Device Table</span></a>” (which allows small
+corrections from the standard behavior at specified point sizes)</p>
+<p>Not present in the Bitmap view.</p>
+</dd></dl>
+
+<span class="target" id="metricsmenu-vkernbyclasses"></span><dl class="object">
+<dt>
+<code class="sig-name descname">VKern By Classes...</code></dt>
+<dd><p>This command is only available from the font and metrics views. It provides
+the user with a <a class="reference internal" href="../mainviews/metricsview.html#metricsview-kernclass"><span class="std std-ref">dialog</span></a> to manipulate vertical
+kerning classes.</p>
+</dd></dl>
+
+<span class="target" id="metricsmenu-vkernfromhkern"></span><dl class="object">
+<dt>
+<code class="sig-name descname">VKern From HKern</code></dt>
+<dd><p>This command is only available from the font and metrics views. It removes
+all current vertical kerning information, then it looks through the font and
+for each pair of horizontally kerned glyphs where both have a ‘vert’ or
+‘vrt2’ feature it produces a vertical kerning pair for the vertical versions
+of those glyphs. (That is: If <code class="docutils literal notranslate"><span class="pre">A``+``V</span></code> are horizontally kerned by -50 and
+<code class="docutils literal notranslate"><span class="pre">A</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">A.vert</span></code> and <code class="docutils literal notranslate"><span class="pre">V</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">V.vert</span></code> then this command will produce a
+vertical kerning pair between <code class="docutils literal notranslate"><span class="pre">A.vert</span></code> + <code class="docutils literal notranslate"><span class="pre">V.vert</span></code> with a value of -50)</p>
+</dd></dl>
+
+<span class="target" id="metricsmenu-vremove"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Remove All VKern Pairs</code></dt>
+<dd><p>In the font view removes all vertical kern pairs (and kern classes) in the
+font.</p>
+<p>In the outline glyph view removes all kern pairs where the current glyph is
+the left hand glyph.</p>
+<p>Not present in the Metrics or Bitmap views.</p>
+</dd></dl>
+
+<span class="target" id="metricsmenu-vertical"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Set Vertical Advance...</code></dt>
+<dd><p>If vertical metrics are enabled for the font this will be active in the font
+and outline glyph view.</p>
+<p>It behaves exactly like Set Width… except it works on the vertical advance
+rather than the horizontal advance (width).</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../ui.html">FontForge’s User Interface</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../mainviews.html">Main Views</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../menus.html">Menus</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="filemenu.html">The File Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="editmenu.html">The Edit Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pointmenu.html">The Point Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elementmenu.html">The Element Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="toolsmenu.html">The Tools Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hintsmenu.html">The Hints Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encodingmenu.html">Encoding Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="viewmenu.html">The View Menu</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">The Metrics Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cidmenu.html">The CID Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mmmenu.html">The Multiple Master Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="windowmenu.html">The Window Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="helpmenu.html">Help Menu</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../dialogs.html">Dialogs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/HotKeys.html">Hot Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/fontforge-themes.html">FontForge color schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">X Resource Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xim.html">X Input Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">X Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../techref.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../../ui.html">FontForge’s User Interface</a><ul>
+  <li><a href="../menus.html">Menus</a><ul>
+      <li>Previous: <a href="viewmenu.html" title="previous chapter">The View Menu</a></li>
+      <li>Next: <a href="cidmenu.html" title="next chapter">The CID Menu</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>fontlint &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="sfddiff" href="sfddiff.html" />
+    <link rel="prev" title="fontimage" href="fontimage.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="fontlint">
+<h1>fontlint<a class="headerlink" href="#fontlint" title="Permalink to this headline">¶</a></h1>
+<p>A program for checking the validity of fonts</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fontlint</span> <span class="n">fontfile1</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p><em>fontlint</em> checks a font for certain standard problems</p>
+<p>It will notice:</p>
+<ul class="simple">
+<li><p>Any glyphs with intersecting (or self-intersecting) contours.</p></li>
+<li><p>Any contours drawn in the wrong orientation</p></li>
+<li><p>Any glyphs with a flipped reference</p></li>
+<li><p>Missing points at extrema.</p></li>
+</ul>
+<p>For sfd fonts it will also notice:</p>
+<ul class="simple">
+<li><p>Any open contours (more an issue in sfd files than in released fonts)</p></li>
+<li><p>Adjacent points too far apart in a glyph</p></li>
+<li><p>Unknown glyph referenced in GSUB/GPOS/MATH</p></li>
+</ul>
+<p>For PostScript fonts it will also notice:</p>
+<ul class="simple">
+<li><p>More points in a glyph than allowed by PostScript.</p></li>
+<li><p>Too many hints in a glyph.</p></li>
+<li><p>Invalid glyph name.</p></li>
+<li><p>Missing BlueValues entry in PostScript Private dictionary</p></li>
+<li><p>Odd number of elements in either the BlueValues or OtherBlues entries in the
+PostScript Private dictionary.</p></li>
+<li><p>Disordered elements in either the BlueValues or OtherBlues entries in the
+PostScript Private dictionary.</p></li>
+<li><p>Too many elements in either the BlueValues or OtherBlues entries in the
+PostScript Private dictionary.</p></li>
+<li><p>Elements too close in either the BlueValues or OtherBlues entries in the
+PostScript Private dictionary (must be at least 2*BlueFuzz+1 apart).</p></li>
+<li><p>Non-integral elements in either the BlueValues or OtherBlues entries in the
+PostScript Private dictionary.</p></li>
+<li><p>Alignment zone height in either the BlueValues or OtherBlues is too big for
+the BlueScale in the PostScript Private dictionary.</p></li>
+<li><p>Odd number of elements in either the FamilyBlues or FamilyOtherBlues entries
+in the PostScript Private dictionary.</p></li>
+<li><p>Disordered elements in either the FamilyBlues or FamilyOtherBlues entries in
+the PostScript Private dictionary.</p></li>
+<li><p>Too many elements in either the FamilyBlues or FamilyOtherBlues entries in the
+PostScript Private dictionary.</p></li>
+<li><p>Elements too close in either the FamilyBlues or FamilyOtherBlues entries in
+the PostScript Private dictionary (must be at least 2*BlueFuzz+1 apart).</p></li>
+<li><p>Non-integral elements in either the FamilyBlues or FamilyOtherBlues entries in
+the PostScript Private dictionary.</p></li>
+<li><p>Alignment zone height in either the FamilyBlues or FamilyOtherBlues is too big
+for the BlueScale in the PostScript Private dictionary.</p></li>
+<li><p>Bad BlueFuzz entry in PostScript Private dictionary.</p></li>
+<li><p>Bad BlueScale entry in PostScript Private dictionary.</p></li>
+<li><p>Bad StdHW entry in PostScript Private dictionary.</p></li>
+<li><p>Bad StdVW entry in PostScript Private dictionary.</p></li>
+<li><p>Bad StemSnapH entry in PostScript Private dictionary.</p></li>
+<li><p>Bad StemSnapV entry in PostScript Private dictionary.</p></li>
+<li><p>StemSnapH does not contain StdHW value in PostScript Private dictionary.</p></li>
+<li><p>StemSnapV does not contain StdVW value in PostScript Private dictionary.</p></li>
+<li><p>Bad BlueShift entry in PostScript Private dictionary.</p></li>
+<li><p>Bad ‘CFF ‘ table.</p></li>
+</ul>
+<p>For TrueType fonts it will also notice:</p>
+<ul class="simple">
+<li><p>More points in a glyph than specified in ‘maxp’</p></li>
+<li><p>More paths in a glyph than specified in ‘maxp’</p></li>
+<li><p>More points in a composite glyph than specified in ‘maxp’</p></li>
+<li><p>More paths in a composite glyph than specified in ‘maxp’</p></li>
+<li><p>Instructions longer than allowed in ‘maxp’</p></li>
+<li><p>More references in a glyph than specified in ‘maxp’</p></li>
+<li><p>References nested more deeply than specified in ‘maxp’</p></li>
+<li><p>Bad ‘glyf’ or ‘loca’ table</p></li>
+</ul>
+<p>In any sfnt (True or OpenType font):</p>
+<ul class="simple">
+<li><p>Bad sfnt table header, bad file/table checksums, overlapping tables, standard
+tables with incorrect lengths, etc.</p></li>
+<li><p>Bad PostScript fontname entry in the ‘name’ table</p></li>
+<li><p>Bad ‘hhea’, ‘hmtx’, ‘vhea’ or ‘vmtx’ table</p></li>
+<li><p>Bad ‘cmap’ table</p></li>
+<li><p>Bad ‘EBDT’, ‘bdat’, ‘EBLC’ or ‘bloc’ (embedded bitmap) table</p></li>
+<li><p>Bad Apple GX advanced typography table</p></li>
+<li><p>Bad OpenType advanced typography table</p></li>
+<li><p>Bad version number in OS/2 table (must be &gt;0, and must be &gt;1 for OT-CFF fonts)</p></li>
+</ul>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../index.html"><span class="doc">fontforge</span></a></p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui.html">FontForge’s User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techref.html">Technical References</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../fontutils.html">Utilities for examining fonts</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="acorn2sfd.html">acorn2sfd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fontimage.html">fontimage</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">fontlint</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#see-also">See Also</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sfddiff.html">sfddiff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fontutils.html#showttf">ShowTTF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fontutils.html#ttf2eps">Ttf2Eps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fontutils.html#pfadecrypt">PfaDecrypt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fontutils.html#pcl2ttf">Pcl2Ttf</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../fontutils.html">Utilities for examining fonts</a><ul>
+      <li>Previous: <a href="fontimage.html" title="previous chapter">fontimage</a></li>
+      <li>Next: <a href="sfddiff.html" title="next chapter">sfddiff</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

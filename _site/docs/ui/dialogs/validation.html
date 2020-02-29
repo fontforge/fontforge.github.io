@@ -1,0 +1,245 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Font Validation window &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Hot Keys" href="../misc/HotKeys.html" />
+    <link rel="prev" title="Finding common font problems automagically" href="problems.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="font-validation-window">
+<h1>Font Validation window<a class="headerlink" href="#font-validation-window" title="Permalink to this headline">¶</a></h1>
+<img alt="../../_images/validation.png" class="align-right" src="../../_images/validation.png" />
+<p>Both PostScript and TrueType impose some restrictions on the data that define a
+font. Before you save a font you should do a quick check (well… it’s not
+always quick) to insure that you are not breaking any rules.</p>
+<ul>
+<li><p>No open contours</p></li>
+<li><p>No paths may intersect.</p></li>
+<li><p>All paths must be drawn in a consistent direction. Clockwise for external paths,
+anti-clockwise for internal paths. (Actually PostScript requires the exact
+opposite, but FontForge reverses PostScript contours when it loads them so that
+everything is consistant internally – and reverses them again when it saves
+them, of course).</p></li>
+<li><p>There may be no flipped references (this is a special case of the above, a
+flipped reference will have its contours drawn in the wrong direction).</p></li>
+<li><p>There must be points everywhere a contour attains a local maximum or minimum,
+horizontally or vertically. (Actually there are exceptions to this rule, for
+small curved sections like serifs. The exception is not defined very well, and
+FontForge makes a guess and will not report errors if the spline is small – but
+the actual definition of “small” is somewhat arbetrary).</p></li>
+<li><p>The coordinate offsets between adjacent points (or control points) must not be
+greater than 32767.</p></li>
+<li><p>All opentype substitution commands must refer to real glyphs.</p></li>
+<li><p>In PostScript fonts there is a limit of 1500 points in a glyph.</p></li>
+<li><p>In PostScript fonts there is a limit of 96 hints in a glyph.</p></li>
+<li><p>In PostScript, non-cid-keyed fonts, glyph names may not be longer than 31
+characters and may contain only “A”-“Z”, “a”-“z”, “0”-“9”, “_” and “.”. (If you
+have the UnicodeGlyphNames preference item check, FontForge disables this check
+because it assumes you know what you are doing and you are planning to rename
+the glyphs before they get saved anyway).</p></li>
+<li><p>In a TrueType font, point coordinates must be integral.</p></li>
+<li><p>Missing anchor. According to the opentype spec, if a glyph contains an anchor
+point for one anchor class in a subtable, it must contain anchor points for all
+anchor classes in the subtable. Even it, logically, they do not apply and are
+unnecessary.</p></li>
+<li><p>Duplicate glyph name. Two (or more) glyphs in this font have the same name. When
+outputting a PostScript font only one of them will ever be seen.</p>
+<p>It’s a little hard to detect this in normal use, but if you change the encoding
+to “Glyph Order”, and then use <span class="menuselection">Edit ‣ Select ‣ Wildcard</span> and
+enter the glyph name, both of them should be selected.</p>
+</li>
+<li><p>Duplicate unicode code point. Two (or more) glyphs in this font have the code
+point. When outputting an sfnt (TrueType/OpenType) font only one of them will
+ever be seen.</p>
+<p>It’s a little hard to detect this in normal use, but if you change the encoding
+to “Glyph Order”, and then use Edit-&gt;Select-&gt;Wildcard and enter the code point,
+both of them should be selected.</p>
+</li>
+<li><p>Check that the OS/2 version number is valid.</p></li>
+</ul>
+<p>Validating a font can take a long time. So FontForge caches the validation state
+of each glyph (saving it to the sfd file so it is valid across invocations) and
+will only validate those glyphs which have changed since the last validation.
+This means that although the first validation may be slow, subsequent
+validations will probably be very fast – so don’t be discouraged by the time it
+takes to do this the first time.</p>
+<p>(If, for some reason, you need to revalidate, then right clicking in the window
+will give you a menu where “Revalidate All” is an option).</p>
+<p>The Validation window will recheck the state of the font as you edit it. So if
+you leave the window open you will see glyphs popping into the window and out of
+it as you create and fix problems.</p>
+<p>If you double click on a line in the window then FontForge will open an outline
+glyph editing window for that glyph, and run a small version of
+<a class="reference internal" href="problems.html"><span class="doc">Element-&gt;Find Problems</span></a> to help you track down exactly where in
+the glyph the error(s) occurred.</p>
+<p>If you right click, you will get a popup menu which has various options which
+may fix some of the problems in the glyph. There are also options to:</p>
+<ul class="simple">
+<li><p>scroll the window to display the errors of a particular glyph</p></li>
+<li><p>revalidate the glyph (usually this happens when needed… but just in case
+fontforge screws up this option is present)</p></li>
+<li><p>revalidate all glyphs (again, I hope this won’t be needed – but just in case)</p></li>
+<li><p>Select all glyphs with a particular error in the font view</p></li>
+<li><p>Try to do a batch fix of all glyphs with a particular error.</p></li>
+</ul>
+<p>I say that these options “may” fix problems. Let me give some examples where
+they can’t.</p>
+<ul>
+<li><p>If a glyph contains a reference which is drawn in the wrong direction then you
+can’t fix it in the refering glyph.</p></li>
+<li><p>If a glyph contains two references which intersect one another, then Remove
+Overlap can’t fix them. You must inline the references before you can correct
+them.</p></li>
+<li><p>The normal Add Extrema command is cautious about adding extrema which would be
+very close to the end-points of a spline (because when you round those points to
+integers they may end up lying right on top of the end points, or because
+rounding the control points may cause significant distortion of the spline’s
+shape). Unfortunately these are exactly the cases which are most likely to
+occur. So FontForge has two variants of Add Extrema, which which adds what it
+thinks are “Good” extrema, and one which will add all extrema even if they are
+likely to cause problems later.</p>
+<p>When the Add Good Extrema command does not fix your problem, you may be better
+off examining the glyph yourself and seeing if you can redesign it manually.</p>
+</li>
+</ul>
+<p>There is another pair of entries in the menu which sort of postpone dealing with
+the issue. Consider the glyphs Aring, Ccedilla and Oogonek. Frequently these
+glyphs are designed so that the accent will overlap the base letter. One would
+like to leave the glyph as being made up of references, but one would like to
+get rid of the overlap when the font is generated. There is a special flag in
+<a class="reference internal" href="charinfo.html"><span class="doc">Element-&gt;Glyph Info-&gt;Unicode-&gt;Mark for Unlink, Remove Overlap before Save</span></a>
+which will make fontforge unlink a glyph’s references, and then run
+Element-&gt;Remove Overlap on them just before saving them. Then after saving it
+will reverse the operation and leave you with the original references.</p>
+<p>So there are a pair of menu items (one for the current glyph, one for all glyphs
+that meet certain criteria) which will set this flag for the relevant glyph(s).
+Once this flag is set FontForge will no longer report that the glyph
+self-intersects.</p>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../ui.html">FontForge’s User Interface</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../mainviews.html">Main Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../menus.html">Menus</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../dialogs.html">Dialogs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#general">General</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#info">Info</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#editing">Editing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#lookups-and-kerning">Lookups and Kerning</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../dialogs.html#validation">Validation</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="problems.html">Finding common font problems automagically</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Font Validation window</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/HotKeys.html">Hot Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/fontforge-themes.html">FontForge color schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">X Resource Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xim.html">X Input Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">X Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../techref.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../../ui.html">FontForge’s User Interface</a><ul>
+  <li><a href="../dialogs.html">Dialogs</a><ul>
+      <li>Previous: <a href="problems.html" title="previous chapter">Finding common font problems automagically</a></li>
+      <li>Next: <a href="../misc/HotKeys.html" title="next chapter">Hot Keys</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

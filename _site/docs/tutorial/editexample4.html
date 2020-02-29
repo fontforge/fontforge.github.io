@@ -1,0 +1,305 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>6. Accented glyphs, ligatures, lookups and features &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="7. Metrics, spacing and kerning" href="editexample5.html" />
+    <link rel="prev" title="5. Creating letters with consistent stem widths, serifs and heights" href="editexample3.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="accented-glyphs-ligatures-lookups-and-features">
+<h1><span class="section-number">6. </span>Accented glyphs, ligatures, lookups and features<a class="headerlink" href="#accented-glyphs-ligatures-lookups-and-features" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="building-accented-glyphs">
+<h2><span class="section-number">6.1. </span>Building accented glyphs<a class="headerlink" href="#building-accented-glyphs" title="Permalink to this headline">¶</a></h2>
+<p>Latin, Greek and Cyrillic all have a large complement of accented glyphs.
+FontForge provides several ways to build accented glyphs out of base glyphs.</p>
+<p>The most obvious mechanism is simple copy and paste: <a class="reference internal" href="../ui/menus/editmenu.html#editmenu-copy"><span class="std std-ref">Copy</span></a>
+the letter “A” and <a class="reference internal" href="../ui/menus/editmenu.html#editmenu-paste"><span class="std std-ref">Paste</span></a> it to “Ã” then
+<a class="reference internal" href="../ui/menus/editmenu.html#editmenu-copy"><span class="std std-ref">copy</span></a> the tilde accent and
+<a class="reference internal" href="../ui/menus/editmenu.html#editmenu-pasteinto"><span class="std std-ref">Paste it Into</span></a> “Ã” (note Paste Into is subtly
+different from Paste. Paste clears out the glyph before pasting, while Paste
+Into merges what was in the glyph with the what is in the clipboard). Then you
+open up “Ã” and position the accent so that it appears properly centered over
+the A.</p>
+<p>This mechanism is not particularly efficient, if you change the shape of the
+letter “A” you will need to regenerate all the accented glyphs built from it.
+FontForge has the concept of a <a class="reference internal" href="../index.html#overview-references"><span class="std std-ref">Reference</span></a> to a
+glyph. So you can Copy a Reference to “A”, and Paste it, the Copy a Reference to
+tilde and Paste it Into, and then again adjust the position of the accent over
+the A.</p>
+<p>Then if you change the shape of the A the shape of the A in “Ã” will be updated
+automagically – as will the width of “Ã”.</p>
+<p>But FontForge knows that “Ã” is built out of “A” and the tilde accent, and it
+can easily create your accented glyphs itself by placing the references in “Ã”
+and then positioning the accent over the “A”. (The Unicode consortium provides a
+database which lists the components of every accented glyph in Unicode and
+FontForge uses this).</p>
+<p>As an example, open the file: tutorial/Ambrosia.sfd, then select all the glyphs
+at encodings 0xc0-0xff, and then press
+<a class="reference internal" href="../ui/menus/elementmenu.html#elementmenu-accented"><span class="std std-ref">Element-&gt;Build-&gt;Build Accented</span></a> all the accented
+glyphs will magically appear (there are a few glyphs in this range which are not
+accented, and they will remain blank).</p>
+<p>FontForge has a heuristic for positioning accents (most accents are centered
+over the highest point of the glyph), sometimes this will produce bad results
+(if the one of the two stems of “u” is slightly taller than the other the accent
+will be placed over it rather than being centered over the glyph), so you should
+be prepared to look at your accented glyphs after creating them. You may need to
+adjust one or two (or you may even want to redesign your base glyphs slightly).</p>
+</div>
+<div class="section" id="creating-a-ligature">
+<span id="editexample4-ligature"></span><h2><span class="section-number">6.2. </span>Creating a ligature<a class="headerlink" href="#creating-a-ligature" title="Permalink to this headline">¶</a></h2>
+<p>Unicode contains a number of ligature glyphs (in latin we have: Æ, OE, fi, etc.
+while in arabic there are hundreds). Again Unicode provides a database listing
+the components of each standard ligature.</p>
+<p>FontForge cannot create a nice ligature for you, but what it can do is put all
+the components of the ligature into the glyph with
+<a class="reference internal" href="../ui/menus/elementmenu.html#elementmenu-accented"><span class="std std-ref">Element-&gt;Build-&gt;Build Composite</span></a>. This makes it
+slightly easier (at least in latin) to design a ligature.</p>
+<p class="rubric">Steps to building a ligature</p>
+<div class="flex-container">
+<div class="flex-row">
+<div class="flex-col">
+<img alt="ffi ligature as references" src="../_images/ffi-refs.png" />
+<p>Use the <a class="reference internal" href="../ui/menus/elementmenu.html#elementmenu-charinfo"><span class="std std-ref">Element -&gt; Glyph Info</span></a> dialog to name
+the glyph and mark it as a ligature. Then use
+<a class="reference internal" href="../ui/menus/elementmenu.html#elementmenu-accented"><span class="std std-ref">Element -&gt; Build -&gt; Build Composite</span></a> to insert
+references to the ligature components.</p>
+</div>
+<div class="flex-col">
+<img alt="ffi after unlinking references" src="../_images/ffi-unlink.png" />
+<p>Use the <a class="reference internal" href="../ui/menus/editmenu.html#editmenu-unlink"><span class="std std-ref">Edit-&gt; Unlink References</span></a> command to turn the
+references into a set of contours.</p>
+</div>
+<div class="flex-col">
+<img alt="ffi after lowering first f" src="../_images/ffi-moved.png" />
+<p>Adjust the components so that they will look better together. Here the stem
+of the first f has been lowered.</p>
+</div>
+<div class="flex-col">
+<img alt="ffi after doing remove overlap" src="../_images/ffi-rmoverlap.png" />
+<p>Use the <a class="reference internal" href="../ui/menus/elementmenu.html#elementmenu-remove"><span class="std std-ref">Element -&gt; Remove Overlap</span></a> command to
+clean up the glyph.</p>
+</div>
+<div class="flex-col">
+<img alt="ffi after adjusting ligature carets" src="../_images/ffi-caret.png" />
+<p>Finally drag the ligature caret lines from the origin to more appropriate
+places between the components.</p>
+</div>
+</div>
+</div>
+<p>Some word processors will allow the editing caret to be placed inside a ligature
+(with a caret position between each component of the ligature). This means that
+the user of that word processor does not need to know s/he is dealing with a
+ligature and sees behavior very similar to what s/he would see if the components
+were present. But if the word processor is to be able to do this it must have
+some information from the font designer giving the locations of appropriate
+caret positions. As soon as FontForge notices that a glyph is a ligature it will
+insert in it enough caret location lines to fit between the ligature’s
+components. FontForge places these on the origin, if you leave them on the
+origin FontForge will ignore them. But once you have built your ligature you
+might want to move the pointer tool over to the origin line, press the button
+and drag one of the caret lines to its correct location. (Only Apple Advanced
+Typography and OpenType support this).</p>
+<p>There are a good many ligatures needed for the indic scripts, but Unicode does
+not provide an encoding for them. If you wish to build a ligature that is not
+part of Unicode you may do so. First
+<a class="reference internal" href="../faq.html#faq-new-name"><span class="std std-ref">add an unencoded glyph to your font</span></a> (or if your font is a
+Unicode font, you could use a code point in the private use area), and name the
+glyph. The name is important, if you name it correctly FontForge will be able to
+figure out that it is a ligature and what its components are. If you want to
+build a ligature out of the glyphs “longs”, “longs” and “l” then name it
+“longs_longs_l”, if you want to build a ligature out of Unicode 0D15, 0D4D and
+0D15 then name it “uni0D15_uni0D4D_uni0D15”.</p>
+<p>Once you have named your ligature, and inserted its components (with Build
+Composite), you probably want to open the glyph,
+<a class="reference internal" href="../ui/menus/editmenu.html#editmenu-unlink"><span class="std std-ref">Unlink your References</span></a> and edit them to make a pleasing
+shape (as above).</p>
+</div>
+<div class="section" id="lookups-and-features">
+<span id="editexample4-lookups"></span><h2><span class="section-number">6.3. </span>Lookups and Features<a class="headerlink" href="#lookups-and-features" title="Permalink to this headline">¶</a></h2>
+<img alt="../_images/fontinfo-lookups.png" class="align-right" src="../_images/fontinfo-lookups.png" />
+<p>Unfortunately simply creating a ligature glyph is not enough. You must also
+include information in the font to say that the glyph is a ligature, and to say
+what components it is built from.</p>
+<p>In OpenType this is handled by lookups and features. A lookup is a collection of
+tables in the font which contain transformation information. A feature is a
+collection of lookups and is a provides semantic information to the world
+outside the font about what that set of lookups can be expected to do. So in the
+example above the lookup would contain the information that “f” + “f” + “i”
+should turn into “ffi”, while the feature would say that this is a standard
+ligature for the latin script.</p>
+<p>So the first time you create a ligature glyph you will need to create a lookup
+(and a lookup subtable) in which the information for that glyph will reside. Any
+subsequent ligatures can probably share the same lookup and subtable.</p>
+<p>(This may seem like overkill for latin ligatures, and perhaps it is, bt the
+complexity is needed for more complex writing systems).</p>
+<p>You would open the Lookups pane of the
+<a class="reference internal" href="../ui/dialogs/fontinfo.html#fontinfo-lookups"><span class="std std-ref">Element-&gt;FontInfo</span></a> command and press the
+<code class="docutils literal notranslate"><span class="pre">[Add</span> <span class="pre">Lookup]</span></code> button. This will give you a new dialog in which you can fill
+in the attributes of your new lookup.</p>
+<img alt="../_images/AddLookup-Liga.png" class="align-left" src="../_images/AddLookup-Liga.png" />
+<p>You must first choose the lookup type. For ligatures this should be “Ligature
+Substitution”. You may then bind this lookup to a feature, script and language
+set. The “ffi” ligature is a standard ligature in latin typesetting so it should
+be bound to the ‘liga’ tag, and the ‘latn’ script. (If you click on the little
+box to the right of “liga” you will get a pulldown list of the so-called
+“friendly names” for the features. “liga” corresponds to “Standard Ligatures”).</p>
+<p>The language is a bit tricky. This ligature should probably be active for all
+languages except Turkish that use the latin script (Turkish uses a dotlessi and
+it is not clear whether the “i” in the “fi” and “ffi” ligatures has a dot over
+it). So we want to list all languages but Turkish. That’s a lot of languages.
+The convention instead is that if a language isn’t mentioned explicitly anywhere
+in the font then that language will be treated as the “default” language. So to
+make this feature not be active for Turkish, we’d have to create some other
+feature which specifically mentioned Turkish in its language list.</p>
+<p>Underneath the feature list is a set of flags. In latin ligatures none of these
+flags need be set. In Arabic one might want to set both “Right to Left” and
+“Ignore Combining Marks”.</p>
+<p>Next the lookup must be given a name. This name is for your use and will never
+be seen in the real font. The name must be distinct from the name of any other
+lookup however.</p>
+<p>Finally you get to decide whether you want the ligatures in this lookup to be
+stored in afm files.</p>
+<img alt="../_images/subtable-ffi.png" class="align-right" src="../_images/subtable-ffi.png" />
+<p>Once you have created a lookup, you must create a subtable in that lookup.
+Select the lookup line (in the Lookups pane of Font Info) and press
+<code class="docutils literal notranslate"><span class="pre">[Add</span> <span class="pre">Subtable]</span></code>. This is a fairly simple dialog… you simply provide a name
+for the sub-table, and then another dialog will pop up and you will (finally) be
+able to store your ligature information.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>OpenType engines will only apply features which they believe are appropriate
+for the current script (in Latin scripts, Uniscribe will apply ‘liga’). Even
+worse, some applications may choose not to apply any features ever (Word does
+not do ligatures in latin – though this may have changed with the 2007
+release?).
+<a class="reference external" href="http://www.microsoft.com/typography/specs/default.htm">Microsoft tries to document</a>
+what features they apply for which scripts in Uniscribe, but that isn’t very
+helpful since Word and Office have quite different behavior than the default.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../tutorial.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="editexample.html">1. Font and glyph creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editspiro.html">2. Creating a glyph using spiros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="importexample.html">3. Importing Outline Glyphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample2.html">4. More on glyphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample3.html">5. Creating letters with consistent stem widths, serifs and heights</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6. Accented glyphs, ligatures, lookups and features</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#building-accented-glyphs">6.1. Building accented glyphs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-a-ligature">6.2. Creating a ligature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lookups-and-features">6.3. Lookups and Features</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="editexample5.html">7. Metrics, spacing and kerning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample6.html">8. Glyph variants and anchoring marks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample6-5.html">9. Conditional Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample7.html">10. Checking and generating a font</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample8.html">11. Working with Bitmap Fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripting-tutorial.html">12. FontForge Scripting Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scriptnotes.html">13. Special thoughts for special scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial.html#tutorial-in-other-languages">Tutorial in other languages</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ui.html">FontForge’s User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techref.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../tutorial.html">Tutorial</a><ul>
+      <li>Previous: <a href="editexample3.html" title="previous chapter"><span class="section-number">5. </span>Creating letters with consistent stem widths, serifs and heights</a></li>
+      <li>Next: <a href="editexample5.html" title="next chapter"><span class="section-number">7. </span>Metrics, spacing and kerning</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

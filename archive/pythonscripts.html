@@ -1,0 +1,881 @@
+<HTML>
+<HEAD>
+  <!-- Created with AOLpress/2.0 -->
+  <!-- AP: Created on: 29-Nov-2006 -->
+  <!-- AP: Last modified: 30-Nov-2006 -->
+  <TITLE>Tentative python object model</TITLE>
+  <LINK REL="icon" href="ffanvil16.png">
+  <LINK REL="stylesheet" TYPE="text/css" HREF="/assets/css/old/FontForge.css">
+</HEAD>
+>
+<div style="margin:0; height: 4	em; padding: 0.5em; background: red; color:yellow; text-align:center; font-size:1em; font-family: sans-serif;">
+	<p><a href="http://fontforge.github.io" style="padding: 0.5em; color: yellow; font-weight: bold; text-decoration: none;" onmouseover="this.style.background='black';" onmouseout="this.style.background='red';" >This is part of the old website, it is no longer updated.</a></p>
+</div>
+<DIV id="in">
+  <H1>
+    Tentative python object model
+  </H1>
+  <P>
+  People seem to want a python interface. I'm not a python user myself and
+  probably don't understand its idioms. I envision something whose top levels
+  (the <CODE>FontForge</CODE> module and the <CODE>Font</CODE> type) will duplicate
+  the UI of the Font window.
+  <P>
+  I anticipate supporting both old and new (python) scripts. The execute scripts
+  dialog will allow you to chose which interpreter to apply. The command line
+  interface will have a new argument <CODE>-script=py
+  &lt;filename&gt;</CODE>
+  <P>
+  The module will be named "FontForge" and will expose the following
+  <TABLE BGCOLOR="#ffff80">
+    <CAPTION>
+      FontForge Module Methods
+    </CAPTION>
+    <TR>
+      <TD>GetPrefs</TD>
+      <TD>Get FontForge preference items</TD>
+    </TR>
+    <TR>
+      <TD>SetPrefs</TD>
+      <TD>Set FontForge preference items</TD>
+    </TR>
+    <TR>
+      <TD>SavePrefs</TD>
+      <TD>Save FontForge preference items</TD>
+    </TR>
+    <TR>
+      <TD>LoadPrefs</TD>
+      <TD>Load FontForge preference items</TD>
+    </TR>
+    <TR>
+      <TD>DefaultOtherSubrs</TD>
+      <TD>Use FontForge's default \"othersubrs\" functions for Type1 fonts</TD>
+    </TR>
+    <TR>
+      <TD>ReadOtherSubrsFile</TD>
+      <TD>Read from a file, \"othersubrs\" functions for Type1 fonts</TD>
+    </TR>
+    <TR>
+      <TD>LoadEncodingFile</TD>
+      <TD>Load an encoding file into the list of encodings</TD>
+    </TR>
+    <TR>
+      <TD>LoadNamelist</TD>
+      <TD>Load a namelist into the list of namelists</TD>
+    </TR>
+    <TR>
+      <TD>LoadNamelistDir</TD>
+      <TD>Load a directory of namelist files into the list of namelists</TD>
+    </TR>
+    <TR>
+      <TD>LoadPlugin</TD>
+      <TD>Load a FontForge plugin</TD>
+    </TR>
+    <TR>
+      <TD>LoadPluginDir</TD>
+      <TD>Load a directory of FontForge plugin files</TD>
+    </TR>
+    <TR>
+      <TD>PreloadCidmap</TD>
+      <TD>Load a cidmap file</TD>
+    </TR>
+    <TR>
+      <TD>UnicodeFromName</TD>
+      <TD>Given a name, look it up in the namelists and find what unicode code
+	point it maps to (returns -1 if not found)</TD>
+    </TR>
+    <TR>
+      <TD>ControlAfmLigatureOutput</TD>
+      <TD>Controls what ligatures get output to afm/tfm files</TD>
+    </TR>
+    <TR>
+      <TD>Version</TD>
+      <TD>Returns a string containing the current version of FontForge, as 20061116</TD>
+    </TR>
+    <TR>
+      <TD>Fonts</TD>
+      <TD>Returns a tuple of all loaded fonts</TD>
+    </TR>
+  </TABLE>
+  <P>
+  It will contain the following types:
+  <UL>
+    <LI>
+      <A HREF="#Font">Font</A>
+    <LI>
+      <A HREF="#Glyph">Glyph</A>
+    <LI>
+      <A HREF="#Reference">Reference</A>
+    <LI>
+      <A HREF="#Contour">Contour</A>
+    <LI>
+      <A HREF="#Point">Point</A>
+    <LI>
+      <A HREF="#Spline2D">Spline2D</A>
+    <LI>
+      <A HREF="#Spline">Spline</A>
+    <LI>
+      <A HREF="#Hint">Hint</A>
+    <LI>
+      <A HREF="#HintMask">HintMask</A>
+    <LI>
+      <A HREF="#TTInstructions">TTInstructions</A>
+    <LI>
+      Some method for manipulating GPOS/GSUB data which I'm not going to work out
+      yet because I expect FontForge's implementation of these will change soon.
+  </UL>
+  <H2>
+    FontForge <A NAME="Font">Font</A> Type
+  </H2>
+  <P>
+  The Font object is a pointer to FontForge's font data structure. Any changes
+  made to it will be made to those data.
+  <TABLE BGCOLOR="#ffff80">
+    <CAPTION>
+      Font Type Members
+    </CAPTION>
+    <TR>
+      <TD>userdata</TD>
+      <TD>arbitrary user data</TD>
+    </TR>
+    <TR>
+      <TD>fontname</TD>
+      <TD>font name</TD>
+    </TR>
+    <TR>
+      <TD>fullname</TD>
+      <TD>full name</TD>
+    </TR>
+    <TR>
+      <TD>familyname</TD>
+      <TD>family name</TD>
+    </TR>
+    <TR>
+      <TD>weight</TD>
+      <TD>weight</TD>
+    </TR>
+    <TR>
+      <TD>copyright</TD>
+      <TD>copyright</TD>
+    </TR>
+    <TR>
+      <TD>xuid</TD>
+      <TD>PostScript eXtended Unique ID</TD>
+    </TR>
+    <TR>
+      <TD>fondname</TD>
+      <TD>Mac FOND resource name</TD>
+    </TR>
+    <TR>
+      <TD>cidregistry</TD>
+      <TD>CID Registry</TD>
+    </TR>
+    <TR>
+      <TD>cidordering</TD>
+      <TD>CID Ordering</TD>
+    </TR>
+    <TR>
+      <TD>upos</TD>
+      <TD>Underline Position</TD>
+    </TR>
+    <TR>
+      <TD>uwidth</TD>
+      <TD>Underline Width</TD>
+    </TR>
+    <TR>
+      <TD>cidversion</TD>
+      <TD>CID Version</TD>
+    </TR>
+    <TR>
+      <TD>strokewidth</TD>
+      <TD>Stroke Width</TD>
+    </TR>
+    <TR>
+      <TD>ascent</TD>
+      <TD>Font Ascent</TD>
+    </TR>
+    <TR>
+      <TD>descent</TD>
+      <TD>Font Descent</TD>
+    </TR>
+    <TR>
+      <TD>vertical_origin</TD>
+      <TD>Vertical Origin</TD>
+    </TR>
+    <TR>
+      <TD>uniqueid</TD>
+      <TD>PostScript Unique ID</TD>
+    </TR>
+    <TR>
+      <TD>cidsupplement</TD>
+      <TD>CID Supplement</TD>
+    </TR>
+    <TR>
+      <TD>macstyle</TD>
+      <TD>Mac Style Bits</TD>
+    </TR>
+    <TR>
+      <TD>design_size</TD>
+      <TD>Point size for which this font was designed</TD>
+    </TR>
+    <TR>
+      <TD>fontstyle_id</TD>
+      <TD>Font Style ID for 'size' feature</TD>
+    </TR>
+    <TR>
+      <TD>design_range_bottom</TD>
+      <TD>Smallest point size for which this font is acceptable</TD>
+    </TR>
+    <TR>
+      <TD>design_range_top</TD>
+      <TD>Largest point size for which this font is acceptable</TD>
+    </TR>
+    <TR>
+      <TD>os2_version</TD>
+      <TD>OS/2 table version number</TD>
+    </TR>
+    <TR>
+      <TD>os2_version</TD>
+      <TD>OS/2 table version number</TD>
+    </TR>
+    <TR>
+      <TD>os2_weight</TD>
+      <TD>OS/2 weight</TD>
+    </TR>
+    <TR>
+      <TD>os2_width</TD>
+      <TD>OS/2 width</TD>
+    </TR>
+    <TR>
+      <TD>os2_fstype</TD>
+      <TD>OS/2 fstype</TD>
+    </TR>
+    <TR>
+      <TD>hhea_linegap</TD>
+      <TD>hhea linegap</TD>
+    </TR>
+    <TR>
+      <TD>hhea_ascent</TD>
+      <TD>hhea ascent</TD>
+    </TR>
+    <TR>
+      <TD>hhea_descent</TD>
+      <TD>hhea descent</TD>
+    </TR>
+    <TR>
+      <TD>hhea_ascent_add</TD>
+      <TD>Whether the hhea_ascent field is used as is, or as an offset applied
+	to the value FontForge thinks appropriate</TD>
+    </TR>
+    <TR>
+      <TD>hhea_descent_add</TD>
+      <TD>Whether the hhea_descent field is used as is, or as an offset applied
+	to the value FontForge thinks appropriate</TD>
+    </TR>
+    <TR>
+      <TD>vhea_linegap</TD>
+      <TD>vhea linegap</TD>
+    </TR>
+    <TR>
+      <TD>os2_typoascent</TD>
+      <TD>OS/2 Typographic Ascent</TD>
+    </TR>
+    <TR>
+      <TD>os2_typodescent</TD>
+      <TD>OS/2 Typographic Descent</TD>
+    </TR>
+    <TR>
+      <TD>os2_typolinegap</TD>
+      <TD>OS/2 Typographic Linegap</TD>
+    </TR>
+    <TR>
+      <TD>os2_typoascent_add</TD>
+      <TD>Whether the os2_typoascent field is used as is, or as an offset applied
+	to the value FontForge thinks appropriate</TD>
+    </TR>
+    <TR>
+      <TD>os2_typodescent_add</TD>
+      <TD>Whether the os2_typodescent field is used as is, or as an offset applied
+	to the value FontForge thinks appropriate</TD>
+    </TR>
+    <TR>
+      <TD>os2_winascent</TD>
+      <TD>OS/2 Windows Ascent</TD>
+    </TR>
+    <TR>
+      <TD>os2_windescent</TD>
+      <TD>OS/2 Windows Descent</TD>
+    </TR>
+    <TR>
+      <TD>os2_winascent_add</TD>
+      <TD>Whether the os2_winascent field is used as is, or as an offset applied
+	to the value FontForge thinks appropriate</TD>
+    </TR>
+    <TR>
+      <TD>os2_windescent_add</TD>
+      <TD>Whether the os2_windescent field is used as is, or as an offset applied
+	to the value FontForge thinks appropriate</TD>
+    </TR>
+    <TR>
+      <TD>os2_subxsize</TD>
+      <TD>OS/2 Subscript XSize</TD>
+    </TR>
+    <TR>
+      <TD>os2_subxoff</TD>
+      <TD>OS/2 Subscript XOffset</TD>
+    </TR>
+    <TR>
+      <TD>os2_subysize</TD>
+      <TD>OS/2 Subscript YSize</TD>
+    </TR>
+    <TR>
+      <TD>os2_subyoff</TD>
+      <TD>OS/2 Subscript YOffset</TD>
+    </TR>
+    <TR>
+      <TD>os2_supxsize</TD>
+      <TD>OS/2 Superscript XSize</TD>
+    </TR>
+    <TR>
+      <TD>os2_supxoff</TD>
+      <TD>OS/2 Superscript XOffset</TD>
+    </TR>
+    <TR>
+      <TD>os2_supysize</TD>
+      <TD>OS/2 Superscript YSize</TD>
+    </TR>
+    <TR>
+      <TD>os2_supyoff</TD>
+      <TD>OS/2 Superscript YOffset</TD>
+    </TR>
+    <TR>
+      <TD>os2_strikeysize</TD>
+      <TD>OS/2 Strikethrough YSize</TD>
+    </TR>
+    <TR>
+      <TD>os2_strikeyoff</TD>
+      <TD>OS/2 Strikethrough YOffset</TD>
+    </TR>
+    <TR>
+      <TD>os2_family_class</TD>
+      <TD>OS/2 Family Class</TD>
+    </TR>
+    <TR>
+      <TD>os2_version</TD>
+      <TD>OS/2 Version Number</TD>
+    </TR>
+    <TR>
+      <TD>os2_use_typo_metrics</TD>
+      <TD>OS/2 Flag MS thinks is necessary to encourage people to follow the standard
+	and use typographic metrics</TD>
+    </TR>
+    <TR>
+      <TD>os2_weight_width_slope_only</TD>
+      <TD>OS/2 Flag MS thinks is necessary</TD>
+    </TR>
+    <TR>
+      <TD>os2_panose</TD>
+      <TD>The 10 element OS/2 Panose tuple</TD>
+    </TR>
+    <TR>
+      <TD>os2_vendor</TD>
+      <TD>The 4 character OS/2 vendor string</TD>
+    </TR>
+    <TR>
+      <TD>changed</TD>
+      <TD>Flag indicating whether the font has been changed since it was loaded
+	(read only)</TD>
+    </TR>
+    <TR>
+      <TD>new</TD>
+      <TD>Flag indicating whether the font is new (read only)</TD>
+    </TR>
+    <TR>
+      <TD>hasvmetrics</TD>
+      <TD>Flag indicating whether the font contains vertical metrics</TD>
+    </TR>
+    <TR>
+      <TD>onlybitmaps</TD>
+      <TD>Flag indicating whether the font contains bitmap strikes but no outlines</TD>
+    </TR>
+    <TR>
+      <TD>is_quadratic</TD>
+      <TD>Flag indicating whether the font contains quadratic splines (truetype)
+	or cubic (postscript)</TD>
+    </TR>
+    <TR>
+      <TD>multilayer</TD>
+      <TD>Flag indicating whether the font is multilayered (type3) or not</TD>
+    </TR>
+    <TR>
+      <TD>strokedfont</TD>
+      <TD>Flag indicating whether the font is a stroked font or not</TD>
+    </TR>
+    <TR>
+      <TD>guide</TD>
+      <TD>The <A HREF="#Contour">Contours</A> that make up the guide layer of the
+	font</TD>
+    </TR>
+    <TR>
+      <TD COLSPAN=2>(some mechanism to control the private dictionary)</TD>
+    </TR>
+    <TR>
+      <TD COLSPAN=2>(some mechanism to get the selection)</TD>
+    </TR>
+  </TABLE>
+  <TABLE BGCOLOR="#ffff80">
+    <CAPTION>
+      Font Type Methods
+    </CAPTION>
+    <TR>
+      <TD COLSPAN=2>Pretty much all the commands in the old scripting language</TD>
+    </TR>
+    <TR>
+      <TD>FindOrMake</TD>
+      <TD>Passed an encoding returns the <A HREF="#Glyph">Glyph</A> at that encoding,
+	if there is none it will create one</TD>
+      <TD></TD>
+    </TR>
+    <TR>
+      <TD>FindEncoding</TD>
+      <TD>Passed an encoding returns the <A HREF="#Glyph">Glyph</A> at that encoding</TD>
+      <TD></TD>
+    </TR>
+    <TR>
+      <TD>FindUnicode</TD>
+      <TD>Passed an unicode codepoint returns the <A HREF="#Glyph">Glyph</A> with
+	that code point</TD>
+      <TD></TD>
+    </TR>
+    <TR>
+      <TD>FindName</TD>
+      <TD>Passed a glyph name returns the <A HREF="#Glyph">Glyph</A> with that
+	name</TD>
+      <TD></TD>
+    </TR>
+    <TR>
+      <TD>...</TD>
+      <TD></TD>
+      <TD></TD>
+    </TR>
+  </TABLE>
+  <H2>
+    FontForge <A NAME="Glyph">Glyph</A> Type
+  </H2>
+  <P>
+  The Glyph object is a pointer to FontForge's glyph data structure. Any changes
+  made here will be made directly to those data.
+  <TABLE BGCOLOR="#ffff80">
+    <CAPTION>
+      Glyph Type Members
+    </CAPTION>
+    <TR>
+      <TD>userdata</TD>
+      <TD>arbitrary python user data</TD>
+    </TR>
+    <TR>
+      <TD>name</TD>
+      <TD>glyph name</TD>
+    </TR>
+    <TR>
+      <TD>unicode</TD>
+      <TD>primary unicode codepoint</TD>
+    </TR>
+    <TR>
+      <TD>width</TD>
+      <TD>advance width</TD>
+    </TR>
+    <TR>
+      <TD>vwidth</TD>
+      <TD>vertical advance width</TD>
+    </TR>
+    <TR>
+      <TD>changed</TD>
+      <TD>Flag indicating whether the glyph has been changed</TD>
+    </TR>
+    <TR>
+      <TD>parent</TD>
+      <TD>The font containing us</TD>
+    </TR>
+    <TR>
+      <TD>hhints</TD>
+      <TD>Horizontal PostScript <A HREF="#Hint">Hints</A></TD>
+    </TR>
+    <TR>
+      <TD>vhints</TD>
+      <TD>Vertical PostScript <A HREF="#Hint">Hints</A></TD>
+    </TR>
+    <TR>
+      <TD>color</TD>
+      <TD>color</TD>
+    </TR>
+    <TR>
+      <TD>tex_height</TD>
+      <TD>TeX Height</TD>
+    </TR>
+    <TR>
+      <TD>tex_depth</TD>
+      <TD>TeX Depth</TD>
+    </TR>
+    <TR>
+      <TD>tex_sub_pos</TD>
+      <TD>TeX Subscript position</TD>
+    </TR>
+    <TR>
+      <TD>tex_super_pos</TD>
+      <TD>TeX Superscript position</TD>
+    </TR>
+    <TR>
+      <TD>layer_cnt</TD>
+      <TD>number of layers in this glyph</TD>
+    </TR>
+    <TR>
+      <TD>instructions</TD>
+      <TD><A HREF="#TTInstructions">TrueType instructions</A></TD>
+    </TR>
+    <TR>
+      <TD>counterhints</TD>
+      <TD>A <A HREF="#HintMask">HintMask</A> specifying counters</TD>
+    </TR>
+  </TABLE>
+  <TABLE BGCOLOR="#ffff80">
+    <CAPTION>
+      Glyph Type Methods
+    </CAPTION>
+    <TR>
+      <TD>GetLayerContours</TD>
+      <TD>Returns the contours in the specified layer</TD>
+    </TR>
+    <TR>
+      <TD>SetLayerContours</TD>
+      <TD>Sets the contours in the specified layer</TD>
+    </TR>
+    <TR>
+      <TD>GetLayerReferences</TD>
+      <TD>Returns the references in the specified layer</TD>
+    </TR>
+    <TR>
+      <TD>SetLayerReferences</TD>
+      <TD>Sets the references in the specified layer</TD>
+    </TR>
+    <TR>
+      <TD>if multilayer</TD>
+      <TD>methods to get/set fill/stroke color, stroke linewidth, etc.</TD>
+    </TR>
+  </TABLE>
+  <H2>
+    FontForge <A NAME="Contour">Contour</A> Type
+  </H2>
+  <P>
+  Contour objects are not pointers to FontForge's data, they are objects in
+  their own right. If you change a contour object you will have to assign it
+  back the glyph it came from before those changes are evident.
+  <P>
+  Contours are doubly linked lists of points. A contour may be either quadratic
+  (for truetype fonts) or cubic (for postscript fonts). SVG supports fonts
+  which are mixed cubic and quadratic, but FontForge does not. A point may
+  be either on curve or off. An off-curve point is also called a control point.
+  In a cubic contour there may be either
+  <UL>
+    <LI>
+      Two on-curve points adjacent (in which case a line will be drawn between
+      them)
+    <LI>
+      Two on-curve points separated by two off-curve points (in which case a cubic
+      spline will be drawn between them)
+  </UL>
+  <P>
+  In a quadratic contour there may be
+  <UL>
+    <LI>
+      Two on-curve points adjacent (in which case a line will be drawn between
+      them)
+    <LI>
+      Two on-curve points separated by one off-curve point (in which case a quadratic
+      spline will be drawn between them)
+    <LI>
+      Two off-curve points adjacent (in which case an on-curve point will be
+      interpolated between the two and a quadratic spline will be drawn)
+  </UL>
+  <P>
+  This is basically the format found in truetype fonts. In is not the format
+  used in sfd files (where interpolated points are specified directly)
+  <P>
+  Contours may be either open (a "line") or closed (a "circle"). In an open
+  contour the first and last points are specified in the data structure (each
+  point knows its own predecessor and successor) and more points may be added
+  after the last. In a closed contour the first and last points will be the
+  same; you may not add points to a closed contour, but you may cut it to make
+  an open contour (to which you may add points).
+  <P>
+  When you create a contour it is empty.
+  <UL>
+    <LI>
+      You may add an on-curve point to an empty contour with the Start(x,y) method.
+    <LI>
+      You may add an off-curve point to an empty quadratic contour with
+      QuadraticAddOff(x,y).
+    <LI>
+      You may add a line to an open, non-empty contour with LineTo(x,y) (more precisely
+      this adds an on-curve point, which usually means a line, but in a quadratic
+      contour which currently ends in an off-curve point it could finish a quadratic
+      spline).
+    <LI>
+      You may add a cubic spline to a cubic contour with
+      CubicTo(cp1x,cp1y,cp2x,cp2y,x,y)
+    <LI>
+      You may add a quadratic spline to a quadratic contour with
+      QuadraticTo(cpx,cpy,x,y)
+    <LI>
+      You may close a non-empty contour with Close()
+  </UL>
+  <TABLE BGCOLOR="#ffff80">
+    <CAPTION>
+      Contour Type Members
+    </CAPTION>
+    <TR>
+      <TD>first</TD>
+      <TD>First <A HREF="#Point">point</A> on the contour</TD>
+    </TR>
+    <TR>
+      <TD>last</TD>
+      <TD>Last <A HREF="#Point">point</A> on the contour (same as first for a closed
+	contour)</TD>
+    </TR>
+    <TR>
+      <TD>is_quadratic</TD>
+      <TD>Whether this is an quadratic (truetype) or cubic (postscript) contour<BR>
+	Assigning to this will change the point list as it is changed to approximate
+	the other format</TD>
+    </TR>
+    <TR>
+      <TD>next</TD>
+      <TD>Next contour</TD>
+    </TR>
+  </TABLE>
+  <TABLE BGCOLOR="#ffff80">
+    <CAPTION>
+      Contour Type Methods
+    </CAPTION>
+    <TR>
+      <TD>IsClosed</TD>
+      <TD>Returns whether a contour is closed or not</TD>
+    </TR>
+    <TR>
+      <TD>IsEmpty</TD>
+      <TD>Returns whether a contour contains no points</TD>
+    </TR>
+    <TR>
+      <TD>Close</TD>
+      <TD>Close an open contour</TD>
+    </TR>
+    <TR>
+      <TD>Cut</TD>
+      <TD>With no args, cut a closed contour before the first point, else cut a
+	contour before the specified point, returns a second contour if the original
+	was open</TD>
+    </TR>
+    <TR>
+      <TD>Start</TD>
+      <TD>Place an initial point on an empty contour</TD>
+    </TR>
+    <TR>
+      <TD>LineTo</TD>
+      <TD>Append a line to the end of an open contour</TD>
+    </TR>
+    <TR>
+      <TD>CubicTo</TD>
+      <TD>Append a cubic curve to the end of an open (cubic) contour</TD>
+    </TR>
+    <TR>
+      <TD>QuadraticTo</TD>
+      <TD>Append a quadratic curve to the end of an open (quadratic) contour</TD>
+    </TR>
+    <TR>
+      <TD>QuadraticAddOff</TD>
+      <TD>Append a quadratic off-curve point to the end of an open (quadratic)
+	contour</TD>
+    </TR>
+    <TR>
+      <TD>MakeFirst</TD>
+      <TD>Rotate a closed contour so that the specified point is first</TD>
+    </TR>
+    <TR>
+      <TD>Merge</TD>
+      <TD>Removes the specified on-curve point leaving the contour otherwise intact</TD>
+    </TR>
+    <TR>
+      <TD>Simplify</TD>
+      <TD>Smooths a contour</TD>
+    </TR>
+    <TR>
+      <TD>Simplifies</TD>
+      <TD>Smooths a contour set</TD>
+    </TR>
+    <TR>
+      <TD>ReverseDirection</TD>
+      <TD>Reverse a closed contour so that the second point on it is the penultimate
+	and vice versa.</TD>
+    </TR>
+    <TR>
+      <TD>IsClockwise</TD>
+      <TD>Determine if a contour is oriented in a clockwise direction. If the contour
+	intersects itself the results are indeterminate.</TD>
+    </TR>
+    <TR>
+      <TD>CorrectDirections</TD>
+      <TD>Orient a contour set so that external contours are clockwise and internal
+	counter clockwise.</TD>
+    </TR>
+    <TR>
+      <TD>Transform</TD>
+      <TD>Transform a contour by a 6 element matrix.</TD>
+    </TR>
+    <TR>
+      <TD>RemoveOverlaps</TD>
+      <TD>Remove overlapping areas from a contour set.</TD>
+    </TR>
+    <TR>
+      <TD>Intersects</TD>
+      <TD>Returns the areas where a contour set overlaps.</TD>
+    </TR>
+    <TR>
+      <TD>Exclude</TD>
+      <TD>Exclude the area of the argument (also a contour set) from the current
+	contour</TD>
+    </TR>
+    <TR>
+      <TD>AddExtrema</TD>
+      <TD>Add Extrema to a contour</TD>
+    </TR>
+    <TR>
+      <TD>AddExtremas</TD>
+      <TD>Add Extrema to a contour set</TD>
+    </TR>
+    <TR>
+      <TD>Round</TD>
+      <TD>Round points on a contour</TD>
+    </TR>
+    <TR>
+      <TD>Rounds</TD>
+      <TD>Round points on a contour set</TD>
+    </TR>
+    <TR>
+      <TD>Stroke</TD>
+      <TD>Strokes a contour</TD>
+    </TR>
+    <TR>
+      <TD>Strokes</TD>
+      <TD>Strokes a contour set</TD>
+    </TR>
+  </TABLE>
+  <H2>
+    FontForge <A NAME="Point">Point</A> Type
+  </H2>
+  <P>
+  Points are intended primarily to live in <A HREF="#Contour">contours</A>
+  and not to have independent existences -- hence the next and prev fields
+  are read only and may only be set by adding points to a contour.
+  <TABLE BGCOLOR="#ffff80">
+    <CAPTION>
+      Point Type Members
+    </CAPTION>
+    <TR>
+      <TD>x</TD>
+      <TD>x coordinate</TD>
+    </TR>
+    <TR>
+      <TD>y</TD>
+      <TD>y coordinate</TD>
+    </TR>
+    <TR>
+      <TD>on_curve</TD>
+      <TD>whether this point lies on the curve or is a control point</TD>
+    </TR>
+    <TR>
+      <TD>index</TD>
+      <TD>TrueType point number</TD>
+    </TR>
+    <TR>
+      <TD>hintmask</TD>
+      <TD>pointer to a PostScript hint mask</TD>
+    </TR>
+    <TR>
+      <TD>next</TD>
+      <TD>Next point on the contour (Read only)</TD>
+    </TR>
+    <TR>
+      <TD>prev</TD>
+      <TD>Previous point on the contour (Read only)</TD>
+    </TR>
+  </TABLE>
+  <TABLE BGCOLOR="#ffff80">
+    <CAPTION>
+      Point Type Methods
+    </CAPTION>
+    <TR>
+      <TD>Transform</TD>
+      <TD>Transforms the point by the transformation matrix (a 6 element tuple
+	of reals)</TD>
+    </TR>
+  </TABLE>
+  <H2>
+    FontForge <A NAME="Reference">Reference</A> Type
+  </H2>
+  <TABLE BGCOLOR="#ffff80">
+    <CAPTION>
+      Reference Type Members
+    </CAPTION>
+    <TR>
+      <TD>glyph</TD>
+      <TD>Glyph being refered to</TD>
+    </TR>
+    <TR>
+      <TD>matrix</TD>
+      <TD>A 6 element transformation matrix (at tuple of reals)</TD>
+    </TR>
+    <TR>
+      <TD>use_my_metrics</TD>
+      <TD>TrueType use my metrics bit</TD>
+    </TR>
+    <TR>
+      <TD>point_matching</TD>
+      <TD>Flag indicating whether the reference should be positioned by TrueType
+	point mapping</TD>
+    </TR>
+    <TR>
+      <TD>match_pt_base</TD>
+      <TD>Match point in previous references</TD>
+    </TR>
+    <TR>
+      <TD>match_pt_ref</TD>
+      <TD>Match point in this reference</TD>
+    </TR>
+  </TABLE>
+  <H2>
+    FontForge <A NAME="Hint">Hint</A> Type
+  </H2>
+  <P>
+  These are objects in their own right; they are intended to be linked together
+  to form either a horizontal or vertical hint set.
+  <TABLE BGCOLOR="#ffff80">
+    <CAPTION>
+      Hint Type Members
+    </CAPTION>
+    <TR>
+      <TD>start</TD>
+      <TD>Location at which the hint starts<BR>
+	This may be x or y depending on whether the hint is horizontal or vertical</TD>
+    </TR>
+    <TR>
+      <TD>width</TD>
+      <TD>Extent of the hint.<BR>
+	This will be negative for ghost hints</TD>
+    </TR>
+    <TR>
+      <TD>next</TD>
+      <TD>Pointer to the next hint</TD>
+    </TR>
+  </TABLE>
+</DIV>
+</BODY></HTML>

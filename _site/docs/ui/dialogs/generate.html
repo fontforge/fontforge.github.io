@@ -1,0 +1,479 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Generate Font Dialog &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Display &amp; Print Fonts" href="display.html" />
+    <link rel="prev" title="Dialogs" href="../dialogs.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="generate-font-dialog">
+<h1>Generate Font Dialog<a class="headerlink" href="#generate-font-dialog" title="Permalink to this headline">¶</a></h1>
+<img alt="../../_images/generate.png" class="align-right" src="../../_images/generate.png" />
+<p>This generates font files, both outline and bitmap. You may choose not to
+generate either, you may generate an afm file or a pfm file, you may select the
+type of postscript output, you may select which pixelsizes of bitmap to
+generate.</p>
+<p>The outline types are:</p>
+<ul>
+<li><p>PostScript Type1 font, binary format (a .pfb file, this may be used by most
+modern windowing systems)</p></li>
+<li><p>PostScript Type1 font, ascii format (a .pfa file, this is used by printers)</p></li>
+<li><p>PostScript Type1 font, macbinary format (a postscript font wrapped up in a set
+of mac resources wrapped up in a macbinary file, to be copied to a mac,
+unmacbinaried, and installed there)</p>
+<p>If you are on a mac then a resource fork will be generated directly, macbinary
+will not be used.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The mac will not recognize a PostScript font unless you also generate a
+bitmap font in NFNT format and place it in the same directory. If you haven’t
+created any bitmap fonts yet, cancel this dlg and use
+<a class="reference internal" href="../menus/elementmenu.html#elementmenu-bitmaps"><span class="std std-ref">Element-&gt;Bitmaps Available</span></a> to generate a bitmap
+font, and then retry this dlg.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Apple implies that this format is deprecated and therefore it may not work in
+future versions.</p>
+</div>
+</li>
+<li><p>Multiple Master(A), generates a multiple master font in ascii format (same as
+.pfa)</p></li>
+<li><p>Multiple Master(B), generates a multiple master font in binary format (same as
+.pfb)</p></li>
+<li><p>Multiple PostScript Type 1 binary fonts (this is used to convert a large font
+with a two byte encoding into a series of smaller pfb (or pfa) files with 256
+glyphs in each. You may be prompted for a file to specify the conversion. See
+the ttf2tfm man page for a description of these SUBFONT DEFINITION FILES.
+<a class="reference external" href="https://fontforge.org/downloads/Big5.txt">Here is an example of what the file should look like</a>)</p></li>
+<li><p>PostScript Type3 font (a .pt3 font, this is also used by printers and is not
+encrypted)</p></li>
+<li><p>PostScript Type0 font, this is only available if you have a font encoded with
+Unicode or one of the CJK encodings. Type0 fonts can have up to 65536 glyphs in
+them (as opposed to 256 for Type1s and Type3s).</p></li>
+<li><p>PostScript Type42 font (this is really a TrueType font wrapped up in PostScript)</p></li>
+<li><p>PostScript Type11 font (this is another format for wrapping a TrueType font in
+PostScript, it is a CID format)</p></li>
+<li><p>PostScript CID font, this is only available if your font is a
+<a class="reference internal" href="../menus/cidmenu.html"><span class="doc">CID font</span></a>. This produces a font in the old Type1 CID format. You
+probably want to use the OpenType CID format…</p></li>
+<li><p>PostScript CFF font, this is the format that lives inside the ‘CFF ‘ table of an
+opentype font. It is a valid font format in its own right.</p></li>
+<li><p>True Type.</p></li>
+<li><p>True Type Symbol. Same as True Type, except it uses the 1 byte encoding given in
+the font. This is important on windows as symbol and dingbat encodings often
+include characters (in the range 0x80-0x9f) which aren’t mapped in normal
+encodings. It is important on the Mac because I do not generate the correct
+encoding tables for any script other than MacRoman, so if you want a MacCyrillic
+font use this mode.</p></li>
+<li><p>True Type macbinary format, a truetype font wrapped up in a mac resource,
+wrapped up in a macbinary file. Designed to be used for a mac.</p>
+<p>If you are on a mac, then a file with a resource fork will be generated directly
+(macbinary will not be used).</p>
+</li>
+<li><p>True Type dfont format, a truetype font wrapped up in a mac dfont (data fork
+resource file). Mac OS/X font.</p></li>
+<li><p>OpenType (CFF). Officially OpenType includes True Type, but OpenType True Type
+fonts are no different from plain True Type fonts, so they might as well just be
+called True Type. So here when I say OpenType I mean OpenType with a CFF
+PostScript Type 2 font inside it.</p></li>
+<li><p>OpenType dfont format, an OpenType font wrapped up in a mac dfont (data fork
+resource file). Mac OS/X font.</p></li>
+<li><p>OpenType CID, This is only available if your font is a
+<a class="reference internal" href="../menus/cidmenu.html"><span class="doc">CID font</span></a>. It produces an OpenType CID-keyed font.</p></li>
+<li><p><a class="reference internal" href="#generate-svg"><span class="std std-ref">SVG font</span></a></p></li>
+<li><p>None</p></li>
+</ul>
+<p>The bitmap types are:</p>
+<ul>
+<li><p>BDF – The internal bitmap fonts will be saved in bdf format. You may only
+select sizes for which you have already generated fonts (you may output
+anti-aliased (greymap) fonts as well as bitmaps. A 12pixel high greymap font
+with 8 bits/pixel can be represented as 12&#64;8).</p></li>
+<li><p>In TTF/OTF – Store the bitmap fonts inside the ttf (or otf) file (the exact
+format will depend on the settings of the Apple and OpenType bits in the Options
+dlg).</p></li>
+<li><p>Apple bitmap only sfnt (dfont) – Only available if no outline font is
+generated.
+<a class="reference internal" href="../../techref/bitmaponlysfnt.html#bitmaponlysfnt-apple"><span class="std std-ref">Apple allows bitmaps to be stored within a truetype file (sfnt)</span></a>
+even if there is no outline font. So this generates a ttf file that just
+contains bitmaps and wraps it up in a dfont.</p></li>
+<li><p>(faked) MS bitmap only sfnt (ttf) –
+<a class="reference internal" href="../../techref/bitmaponlysfnt.html#bitmaponlysfnt-ms"><span class="std std-ref">Microsoft does not support a bitmap only format for an sfnt</span></a>,
+but this option attempts to fake one as best it can.</p></li>
+<li><p>X11 bitmap only sfnt (otb) – this is the new
+<a class="reference internal" href="../../techref/bitmaponlysfnt.html#bitmaponlysfnt-x11"><span class="std std-ref">X11 bitmap format with bitmaps embedded in an sfnt wrapper</span></a>
+(an opentype or truetype font) but with no outline data.</p></li>
+<li><p>NFNT (MacBin) – Converts the bitmap fonts into Macintosh NFNT resources and
+wraps them up in a mac binary file.</p>
+<p>NFNT (Resource) – On a mac the NFNT font will be generated in a resource fork
+directly.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Mac OS/X appears not to support NFNT bitmaps (at least I can’t get them to
+work). <em>However</em>, the mac still needs at least one NFNT in order to find an
+type1 font. Even though the bitmap is required, it will not be used. Odd.</p>
+</div>
+</li>
+<li><p>Windows FON – Windows resource based font format.</p></li>
+<li><p>Windows FNT – Windows format, one bitmap font per file.</p></li>
+<li><p>Palm fonts – support for <a class="reference internal" href="../../techref/palmfonts.html"><span class="doc">various palm bitmap font formats.</span></a></p></li>
+<li><p>PS Type3 Bitmap – create a PostScript Type3 font which uses the imagemask
+operator to display each glyph’s bitmap.</p></li>
+<li><p>None</p></li>
+</ul>
+<img alt="../../_images/GenerateOptions.png" class="align-right" id="generate-options" src="../../_images/GenerateOptions.png" />
+<p>The options dialog provides the following check boxes. Not all are enabled at
+all times.</p>
+<ul>
+<li><p>[] Round – Round all coordinates to integral values. If this is not checked
+then Type1 fonts will be output with 2 decimal digits of precision, and Type2
+fonts with 16 binary digits (~4 decimal digits) when needed.</p></li>
+<li><p>[] Hints – Include PostScript hints in the output file</p></li>
+<li><p>[] Flex Hints – Include PostScript flex hints in the output file</p></li>
+<li><p>[] AFM – Generate an adobe font metrics file (controls generation of .amfm
+files for multiple master fonts too)</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Normally only ‘liga’ and ‘rlig’ ligatures will be output in the AFM file.
+But you can control that in the lookup dialog off of
+<a class="reference internal" href="fontinfo.html"><span class="doc">Font Info</span></a>.</p>
+</div>
+</li>
+<li><p>[] Composites in AFM – the AFM format includes a mechanism for building
+composite glyphs out of components. It is roughly equivalent to the OpenType
+mark-to-base feature. Almost nobody uses these data, and they can increase the
+size of an AFM file enormously, but if you would like them check this box (if
+your font does not include any anchor classes, this will have no effect).</p></li>
+<li><p>[] PFM – Generate a windows printer font metrics file</p></li>
+</ul>
+<ul class="simple" id="generate-tfm">
+<li><p>[] TFM – Generate a TeX font metrics file (and a TeX enc encoding file)</p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>[] Hints – Include truetype hints in a truetype font.</p>
+<ul>
+<li><p>R C van Dalen’s
+<a class="reference external" href="http://home.kabelfoon.nl/~slam/fonts/">truetype hinting utilities may be helpful here.</a></p></li>
+</ul>
+</li>
+<li><p>[] PSNames – Include the full ‘post’ (postscript name) table in the font</p></li>
+</ul>
+<ul id="generate-applemode">
+<li><p>[] Apple – Apple and MS/Adobe disagree on the format of a ttf font. This is
+annoying. Checking this box means the font will be generated according to
+Apple’s desires, leaving it unchecked means according to MS/Adobe’s desires.
+Currently this controls:</p>
+<ul class="simple">
+<li><p>The bitmap tables (Apple calls it ‘bdat’, MS/Adobe ‘EBDT’. The data in them are
+the same)</p></li>
+<li><p>The PostScript name in the ‘name’ table (Apple says there must be either 0 or 1
+of them, MS/Adobe say any value other than 1)</p></li>
+<li><p>Apple and MS/Adobe also differ on the way references (components) are scaled.
+Luckily there is another way to disambiguate this case (and references are
+rarely scaled anyway).</p></li>
+<li><p>The GDEF, GPOS, GSUB and prop, lcar, kern, opbd, morx, feat tables. Apple does
+not support GPOS/GSUB tables. MicroSoft still supports kern tables for some
+fonts but requires GPOS for others.</p></li>
+</ul>
+</li>
+<li><p>[] OpenType – If this is checked the font will be generated with the tables
+used by OpenType. If both this and [] Apple are checked the font will have two
+sets of tables, Apple will look at one set, and everyone else will look at the
+other.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The above statement was true up to 10.4 (“Tiger”) after 10.4, Apple can use a
+few OpenType features.).</p>
+</div>
+</li>
+<li><p>[] Old style ‘kern’ – If this is checked along with OpenType then both an
+OpenType ‘GPOS’ and an old style ‘kern’ table will be generated (assuming there
+are any kern pairs, of course). The OpenType mailing list considers this a bad
+idea (some applications may add the kerning values from both tables they say),
+but it may be helpful for applications which don’t support ‘GPOS’ kerning.</p></li>
+<li><p>[] Dummy DSIG – On MS Windows, a font with extension “ttf” will be marked with
+an OpenType icon if it contains a ‘DSIG’ table. FontForge can’t generate a
+useful ‘DSIG’ table, but it can generate a useless, empty and valid one.</p></li>
+<li><p>[] Save Comments – I have added my own table
+(‘<a class="reference internal" href="../../techref/non-standard.html#non-standard-pfed"><span class="std std-ref">PfEd</span></a>’) in the truetype format in which I can store
+whatever data I want. Checking this box saves all the glyph comments into the
+output file.</p></li>
+<li><p>[] Save Colors – Save the glyph colors in the ‘<a class="reference internal" href="../../techref/non-standard.html#non-standard-pfed"><span class="std std-ref">PfEd</span></a>’
+table as well.</p></li>
+<li><p>[] Lookup Names – Preserve lookup, lookup subtable and anchor class names in
+the ‘PfEd’ table.</p></li>
+<li><p>[] Save Guides – Save information about where the font’s guidelines are into
+the ‘PfEd’ table.</p></li>
+<li><p>[] Save Layers – Save the background (and spiro) layers into the ‘PfEd’ table.</p></li>
+<li><p>[] TeX – Save TeX metrics in the ‘<a class="reference internal" href="../../techref/non-standard.html#non-standard-tex"><span class="std std-ref">TeX</span></a> ‘ table</p></li>
+<li><p>[] Output Glyph Map – Output a file (with extension .g2n) mapping TrueType
+(OpenType) glyph IDs to glyphnames (and possibly to unicode values)</p></li>
+<li><p>[] Output OFM &amp; CFG – Output metrics files for Omega</p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>[] Output Font Log – if the font contains <a class="reference internal" href="fontinfo.html#fontinfo-fontlog"><span class="std std-ref">font log</span></a>
+information then write it out into a separate file “FontLog.txt”.</p></li>
+</ul>
+<p>TTF (and OpenType) fonts are usually generated in Unicode encoding, there will
+also be a tiny macintosh encoding of MacRoman (and a macintosh copy of the
+unicode encoding) – the exceptions are: KSC5601 and Wansung fonts which will
+use Wansung, Johab fonts will use johab, JIS208 and SJIS fonts will use SJIS,
+Big5 will use big5 encoding. Fonts with a “Full Unicode” encoding will have both
+a 2 byte unicode encoding table and a 4 byte table. OpenType CID keyed fonts
+will be saved with Unicode encoding.</p>
+<p>PostScript fonts are generated in whatever encoding the font is using (except if
+you take a two byte encoding and generate a Type1 font (rather than a Type0)
+then only the first few (256) glyphs will be encoded). Type0 does not support a
+full Unicode (4 byte) encoding.</p>
+<p>PS CID (and OpenType CID in the CFF) are saved with no encoding. The encodings
+live in separate cmap files which are available from
+<a class="reference external" href="http://www.adobe.com/products/acrobat/acrrasianfontpack.html">adobe</a> (and
+perhaps other font vendors).</p>
+<p>If you save a CID font with a format other than PS CID or OpenType CID, then
+only the currently displayed subfont will be saved, with the current meaningless
+glyph ordering (I suppose this is useful if you wish to extract a sub-font from
+a CID font).</p>
+<p>SVG fonts don’t really have the concept of an encoding other than Unicode.</p>
+<p>TTF (and OpenType) fonts will produce vertical metrics tables if the font has
+vertical metrics enabled. PostScript type1 fonts will not produce Metrics2
+dictionaries (If someone actually wants this let me know, it can be done, but I
+get the impression that nobody uses this any more).</p>
+<p>On Mac OS/X, when generating a resource font containing a postscript font then
+the filename textfield will not be present (as the filename is determined by the
+fontname). You can still select a directory however.</p>
+<p>The bitmap sizes must all be present in the font database. AntiAliased fonts can
+be indicated by following the pixelsize by “&#64;&lt;depth&gt;” (ie. “&#64;8”).</p>
+<p>If you are generating a bdf font then you will be prompted for a resolution
+later.</p>
+<p>See the section on <a class="reference internal" href="../menus/encodingmenu.html#encodingmenu-namelist"><span class="std std-ref">namelists</span></a> for a discussion of
+the “Force glyph names to” field.</p>
+<p>If you leave [] Validate Before Saving checked then FontForge will attempt to
+validate your font. If it passes then FontForge will save it without bothering
+you further, but if it fails FontForge will give you the option of reviewing
+errors and fixing them. It will pop up a <a class="reference internal" href="validation.html"><span class="doc">validation window</span></a>.</p>
+<p>If you check [] Append a FONTLOG entry then a text area will open up in which
+you can create a new FONTLOG entry to be appended to the end of the FONTLOG.
+This will become part of the FONTLOG before it is saved (with [] Output Font Log
+in the [Options] dialog) <strong>BUT</strong> you must save the font if you wish to retain
+this entry in the sfd file itself.</p>
+<p>If you generate a TrueType or OpenType font with the OpenType mode set (note:
+the term “OpenType” means two things, a truetype wrapper around a postscript
+font, or a set of tables containing typographic information – here the OpenType
+mode refers to the typographic tables) then FontForge will generate
+<a class="reference internal" href="../../techref/gposgsub.html"><span class="doc">GPOS, GSUB, and GDEF tables</span></a>. These contain kerning, ligature
+information, arabic forms data, anchor points, etc.</p>
+<p>Apple does not completely support these OpenType layout tables. If you set Apple
+mode <a class="reference internal" href="../../techref/gposgsub.html#gposgsub-aat"><span class="std std-ref">‘kern’, ‘opbd’, ‘morx’, ‘feat’, ‘lcar’ and ‘prop’</span></a>
+tables may be generated instead. (and a couple of other small differences will
+appear).</p>
+<p>If you set both Apple and OpenType then both sets of tables will be generated.
+If you set neither, then only the ‘kern’ table will be generated, and it will
+only contain pair-wise kerning (no kerning classes, no kerning by state
+machine). This is the kind of kerning available in the original truetype spec
+(from which both Apple and OpenType have diverged, but which both still
+support).</p>
+<hr class="docutils" />
+<div class="section" id="generate-mac-family">
+<span id="id1"></span><h2>Generate Mac Family<a class="headerlink" href="#generate-mac-family" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/GenerateFamily.png" class="align-right" src="../../_images/GenerateFamily.png" />
+<p>This brings up a dialog very similar to the generate fonts dialog above, but
+with a few added fields. Because this dialog is for Mac families, only Mac
+formats are supported.</p>
+<p>Right above the [Save] button is a list of all fonts that FontForge thinks
+should be included in this family, along with their bitmap info. If you don’t
+want a font to be in the family simply uncheck its checkbox.</p>
+<p>The font styles that are allowed in a family are limited by the capabilities of
+the mac ‘FOND’ resource which only allows one style of a given type and does not
+support the concepts of “Light”, “Black” (if there is already a “Bold” style),
+“Oblique” (if there is already an “Italic” style), etc. Generally FontForge will
+be able to figure out a font’s style from its fontname, but in some cases you
+may wish to override this by setting the <a class="reference internal" href="fontinfo.html#fontinfo-mac-style"><span class="std std-ref">mac style</span></a>
+directly in fontinfo.</p>
+<p>As of Mac OS/X 10.6 Apple appears to be deprecating this format and moving
+toward <a class="reference internal" href="#generate-generatettc"><span class="std std-ref">TTC files (see below</span></a>).</p>
+<p>For information on creating mac font families beyond the capabilities of this
+dialog look at the <a class="reference internal" href="../../faq.html#faq-how-family"><span class="std std-ref">FAQ</span></a>.</p>
+<hr class="docutils" />
+</div>
+<div class="section" id="generate-ttc">
+<span id="generate-generatettc"></span><h2>Generate TTC<a class="headerlink" href="#generate-ttc" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/GenerateTTC.png" class="align-right" src="../../_images/GenerateTTC.png" />
+<p>A TrueType Collection file can contain many fonts. They need not be all in the
+same family (though, of course, they can be).</p>
+<p>The dialog lists all open fonts, you may choose any of them to go into the ttc
+file. No especial magic is needed to bind fonts into one family (at least I hope
+not).</p>
+<p>Traditionally ttc files have been used to contain variants of large CJK fonts
+(where most of the CJK glyphs remain the same across fonts with a few glyphs
+(often the latin letters) changing). The format allows glyphs to be shared
+across fonts, which can result in considerable space savings in some collections
+– but this can also take time.</p>
+<p>On the mac, however, ttc files are generally used to contain a font family where
+there is very little (often no) overlap of glyphs between fonts.</p>
+<p>FontForge can produce two kinds of ttc files, the first
+(<code class="docutils literal notranslate"><span class="pre">[*]</span> <span class="pre">Merge</span> <span class="pre">tables</span> <span class="pre">across</span> <span class="pre">fonts</span></code>) will try to use a single merged
+‘glyf’/’hmtx’/’hhea’/’vmtx’/’vhea’ tables for all fonts (and will try to share
+other tables if that is possible). The second, with merge tables turned off,
+will dump individual fonts into the collection with no attempt to optimize.</p>
+<p>FontForge can also produce ttc files which use the CFF font format. The OpenType
+documentation claims this will not work, but it does seem to on both the Mac and
+unix/linux.</p>
+<p>FontForge is not always able to produce merged tables … this process will fail
+if:</p>
+<ul class="simple">
+<li><p>The selected fonts have different emsizes</p></li>
+<li><p>Bitmaps are to be included in the collection</p></li>
+<li><p>More that 65534 glyphs would be needed in the merged table</p></li>
+<li><p>If you select the CFF format then the private dictionaries must match.</p></li>
+<li><p>(or something else goes wrong)</p></li>
+</ul>
+<hr class="docutils" />
+</div>
+<div class="section" id="svg-fonts">
+<span id="generate-svg"></span><h2>SVG fonts<a class="headerlink" href="#svg-fonts" title="Permalink to this headline">¶</a></h2>
+<p>SVG (Scalable Vector Graphics) fonts, come in two forms, one corresponds roughly
+to a PostScript Type1 font, and one to a PostScript Type 3 font.</p>
+<p>In the first format a set of contours is specified for each glyph. There is no
+indication given whether the font should be stroked or filled – that informaton
+will have inherited from the graphical environment when the font is used on
+text.</p>
+<p>In the second format each glyph may contain the stroke and fill commands needed
+to draw it.</p>
+<p>FontForge usually generates the first format, but for multi layered or stroked
+fonts it will generate the second format.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../ui.html">FontForge’s User Interface</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../mainviews.html">Main Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../menus.html">Menus</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../dialogs.html">Dialogs</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../dialogs.html#general">General</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Generate Font Dialog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="display.html">Display &amp; Print Fonts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="groups.html">Groups of Glyphs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="search.html">Finding shapes within glyphs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="selectbyatt.html">Select By Lookup Subtable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="prefs.html">Preferences Dialog</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#info">Info</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#editing">Editing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#lookups-and-kerning">Lookups and Kerning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#validation">Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/HotKeys.html">Hot Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/fontforge-themes.html">FontForge color schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">X Resource Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xim.html">X Input Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">X Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../techref.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../../ui.html">FontForge’s User Interface</a><ul>
+  <li><a href="../dialogs.html">Dialogs</a><ul>
+      <li>Previous: <a href="../dialogs.html" title="previous chapter">Dialogs</a></li>
+      <li>Next: <a href="display.html" title="next chapter">Display &amp; Print Fonts</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

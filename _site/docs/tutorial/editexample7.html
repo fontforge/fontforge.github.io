@@ -1,0 +1,245 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>10. Checking and generating a font &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="11. Working with Bitmap Fonts" href="editexample8.html" />
+    <link rel="prev" title="9. Conditional Features" href="editexample6-5.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="checking-and-generating-a-font">
+<h1><span class="section-number">10. </span>Checking and generating a font<a class="headerlink" href="#checking-and-generating-a-font" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="checking-a-font">
+<h2><span class="section-number">10.1. </span>Checking a font<a class="headerlink" href="#checking-a-font" title="Permalink to this headline">¶</a></h2>
+<p>After you have finished making all the glyphs in your font you should check it
+for inconsistencies. FontForge has a command,
+<a class="reference internal" href="../ui/dialogs/problems.html"><span class="doc">Element-&gt;Find Problems</span></a> which is designed to find many common
+problems.</p>
+<p>Simply select all the glyphs in the font and then bring up the Find Problems
+dialog. Be warned though: Not everything it reports as a problem is a real
+problem, some may be an element of the font’s design that FontForge does not
+expect.</p>
+<p>The dialog can search for problems like:</p>
+<ul class="simple">
+<li><p>Stems which are close to but not exactly some standard value.</p></li>
+<li><p>Points which are close to but not exactly some standard height</p></li>
+<li><p>Paths which are almost but not quite vertical or horizontal</p></li>
+<li><p>Control points which are in unlikely places</p></li>
+<li><p>Points which are almost but not quite on a hint</p></li>
+<li><p>…</p></li>
+</ul>
+<p>I find it best just to check for a similar problems at a time, otherwise
+switching between different kinds of problems can be distracting.</p>
+</div>
+<div class="section" id="bitmaps">
+<h2><span class="section-number">10.2. </span>Bitmaps<a class="headerlink" href="#bitmaps" title="Permalink to this headline">¶</a></h2>
+<p>At this point you might want some bitmaps to go with the outline font (this is
+not compulsory). Go to <span class="menuselection">Element ‣ Bitmap Strikes Available</span> and
+select the pixel sizes you want bitmaps in (Note, that on X and MS windows pixel
+sizes often do not correspond exactly to point sizes. You can then use the
+bitmap editor (<a class="reference internal" href="../ui/mainviews/bitmapview.html"><span class="doc">Window-&gt;Open Bitmap</span></a>) to clean up the bitmaps,
+or you can generate your bitmap fonts and then
+<a class="reference external" href="http://math.nmsu.edu/~mleisher/Software/gbdfed/">use someone else’s bitmap editor to clean them up</a>.</p>
+<img alt="../_images/BitmapView.png" src="../_images/BitmapView.png" />
+<p>Bitmaps are discussed in more detail in the <a class="reference internal" href="editexample8.html"><span class="doc">next section.</span></a></p>
+</div>
+<div class="section" id="generating-a-font">
+<h2><span class="section-number">10.3. </span>Generating a font<a class="headerlink" href="#generating-a-font" title="Permalink to this headline">¶</a></h2>
+<p>If you save your file it will be saved in a format that only FontForge
+understands (as far as I know anyway). This is not very helpful if you want to
+use the font.</p>
+<img alt="../_images/generate.png" class="align-right" src="../_images/generate.png" />
+<p>Instead you must use <a class="reference internal" href="../ui/dialogs/generate.html"><span class="doc">File-&gt;Generate</span></a> to convert your font into
+one of the standard font formats. FontForge presents what looks like a vast
+array of font formats, but in reality there are just several variants on a few
+basic font formats: PostScript Type 1, TrueType, OpenType (and for CJK fonts,
+also CID-keyed fonts).</p>
+<p>You also have a choice of bitmap formats. FontForge supports bdf (used by X),
+mac NFNT (used by the Mac), Windows FNT (used by Windows 2.0 I think) and
+storing bitmaps inside true (or open) type wrappers.</p>
+</div>
+<div class="section" id="font-families">
+<h2><span class="section-number">10.4. </span>Font Families<a class="headerlink" href="#font-families" title="Permalink to this headline">¶</a></h2>
+<p>After you have generated a font, you probably want to generate a sequence of
+similar fonts. In Latin, Greek and Cyrillic fonts italic (or oblique), bold,
+condensed, expanded styles are fairly common.</p>
+<p>Fonts with different styles in the same family should share the same Family Name
+(in the <a class="reference internal" href="../ui/dialogs/fontinfo.html"><span class="doc">Element-&gt;Font Info-&gt;Names</span></a> dialog). The Font Name
+should be the Family Name with the style name(s) appended to the end, often
+preceded by a hyphen. So in the font family “Helvetica” all fonts should have
+the Family Name set to “Helvetica”. The plain style could be called simply
+“Helvetica” or “Helvetica-Regular”, the bold style “Helvetica-Bold”, the oblique
+(Helvetica doesn’t have a true italic) “Helvetica-Oblique”, etc.</p>
+<p>FontForge has a menu <a class="reference internal" href="../ui/menus/elementmenu.html#elementmenu-style"><span class="std std-ref">Element-&gt;Style</span></a> which is designed
+to help you create different styles (bold, italic, oblique, condensed, extended,
+smallcaps,…) of a font a plain face. None of these transformations is perfect,
+be sure to check the results.</p>
+<p>The <a class="reference internal" href="../ui/dialogs/transform.html"><span class="doc">Element-&gt;Transform-&gt;Transform-&gt;Skew</span></a> command can turn a
+plain font into an Oblique one. Creating a true italic font is generally a bit
+more complex, the shape of the “a” changes dramatically to “<em>a</em>”, the “f” gains
+a descender as “<em>f</em>”, the serifs on “ilm” etc. become rounded as “<em>ilm</em>” and
+there will probably be other subtle differences. Also, after having skewed a
+font you should <a class="reference internal" href="../ui/menus/elementmenu.html#elementmenu-add-extrema"><span class="std std-ref">Element-&gt;Add Extrema</span></a>.</p>
+<p>If you already have a “Bold” and a “Plain” style of a font (and each glyph has
+the same number of points in the same order), you can use the
+<a class="reference internal" href="../ui/menus/elementmenu.html#elementmenu-interpolate"><span class="std std-ref">Element-&gt;Interpolate Font</span></a> command to generate a
+“DemiBold” style.</p>
+<p>TrueType fonts (and Windows) support a very fine gradation of stem thicknesses
+(the Mac really only understands Plain and Bold). If you go to
+<a class="reference internal" href="../ui/dialogs/fontinfo.html#fontinfo-ttf-values"><span class="std std-ref">Element-&gt;Font Info-&gt;OS/2</span></a> you can set the weight to
+be any value between 0 and 999 (with plain generally being at 400 or 500, and
+Bold at 700). TrueType fonts also support a range of widths (while the Mac only
+supports condensed, plain and expanded).</p>
+<img alt="Dialog for Generate Mac Family" class="align-right" src="../_images/GenerateFamily.png" />
+<p>On Windows machines, as long as you get the names right, the system should be
+able to figure out what fonts go into what families. But on the Mac the
+situation is (or was, it is changing and I don’t understand all the new
+extensions yet) more complicated. The Mac supports a limited range of styles
+(plain, italic, bold, outline, condensed, expanded and combinations of these)
+anything outside these must go into a separate family. Then a special table
+needs to be constructed (called the FOND) which holds pointers to the various
+fonts in the family. If you open all the fonts you want to be in a given family
+(and if they have been given the proper names) and then from the plain font
+select <a class="reference internal" href="../ui/menus/filemenu.html#filemenu-generatemac"><span class="std std-ref">File-&gt;Generate Family</span></a>. This will list all
+the fonts that FontForge thinks belong to the same family as the current font
+and will allow you to generate a FOND structure as well as font files for all
+family members (sometimes all the fonts live in one file, sometimes they don’t,
+it depends on the font format chosen).</p>
+</div>
+<div class="section" id="final-summary">
+<h2><span class="section-number">10.5. </span>Final Summary<a class="headerlink" href="#final-summary" title="Permalink to this headline">¶</a></h2>
+<p>So you have made a new font. But it does you no good just sitting on your disk,
+you must install it on your machine. On some systems this is as simple as just
+dragging the new font into your system Fonts folder, but on other systems there
+is a fair amount work involved still. See the
+<a class="reference internal" href="../faq.html#faq-font-install"><span class="std std-ref">Installing fonts FAQ</span></a>.</p>
+<p>For a tutorial about
+<a class="reference internal" href="scripting-tutorial.html"><span class="doc">FontForge’s scripting mechanism click here</span></a>.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../tutorial.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="editexample.html">1. Font and glyph creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editspiro.html">2. Creating a glyph using spiros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="importexample.html">3. Importing Outline Glyphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample2.html">4. More on glyphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample3.html">5. Creating letters with consistent stem widths, serifs and heights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample4.html">6. Accented glyphs, ligatures, lookups and features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample5.html">7. Metrics, spacing and kerning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample6.html">8. Glyph variants and anchoring marks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample6-5.html">9. Conditional Features</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">10. Checking and generating a font</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#checking-a-font">10.1. Checking a font</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bitmaps">10.2. Bitmaps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#generating-a-font">10.3. Generating a font</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#font-families">10.4. Font Families</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#final-summary">10.5. Final Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="editexample8.html">11. Working with Bitmap Fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripting-tutorial.html">12. FontForge Scripting Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scriptnotes.html">13. Special thoughts for special scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial.html#tutorial-in-other-languages">Tutorial in other languages</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ui.html">FontForge’s User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techref.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../tutorial.html">Tutorial</a><ul>
+      <li>Previous: <a href="editexample6-5.html" title="previous chapter"><span class="section-number">9. </span>Conditional Features</a></li>
+      <li>Next: <a href="editexample8.html" title="next chapter"><span class="section-number">11. </span>Working with Bitmap Fonts</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

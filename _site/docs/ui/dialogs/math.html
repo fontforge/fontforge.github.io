@@ -1,0 +1,308 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Math typesetting information &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Multiple Master Dialog" href="multiplemaster.html" />
+    <link rel="prev" title="The Justify dialog" href="justify.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="math-typesetting-information">
+<h1>Math typesetting information<a class="headerlink" href="#math-typesetting-information" title="Permalink to this headline">¶</a></h1>
+<p>In summer of 2007 (as I write) MicroSoft is proposing an extension to OpenType
+which will allow fonts to contain information useful for mathematical
+typesetting. The information all lives in a new <code class="docutils literal notranslate"><span class="pre">'MATH'</span></code> table. FontForge now
+allows you to perform basic editing on this table.</p>
+<div class="section" id="constants">
+<h2>Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default">
+<img alt="../../_images/MATH-Constants.png" src="../../_images/MATH-Constants.png" />
+</div>
+<p>The table is divided into several parts. One part provides information on
+font-wide constants (And I do not mean “pi” or 2.71828… when I say constant
+here). These have to do with the size of various elements of mathematical
+formulae with respect to one another, and the spacing between them. So
+<code class="docutils literal notranslate"><span class="pre">FractionNumeratorGapMin</span></code> specifies the minimum gap (white space) between the
+bottom of the numerator of a fraction and the fraction bar (the rule between the
+numerator and denominator.</p>
+<p>I will not describe all of these constants here, there are about 60 of them (and
+they take up 8 panes in the dialog). Most are fairly self-explanatory, but some
+I do not understand myself. FontForge has little popup messages plagerized from
+the specification which try to go into more detail.</p>
+<p>Some of these constants are stored as percentages of some other size
+(ScriptPercentScaleDown is and means that sub-elements should be drawn at a
+pointsize 73% of the current one – I think). But most constants are represented
+in em-units, and most of these may also have device table adjustments specified.
+(At small pixel sizes (such as those used for screen fonts) the rounding error
+introduced by converting from em-units to pixels may be as large as the movement
+itself. A device table allows you to specify that (in the case of AxisHeight
+above) when the font is rasterized to be 10 pixels high the Axis should be moved
+up by one pixel).</p>
+<p>FontForge is not always configured to support device tables, so if these columns
+are missing you just need to reconfigure and rebuild it.</p>
+</div>
+<div class="section" id="glyph-specific-information">
+<h2>Glyph specific information<a class="headerlink" href="#glyph-specific-information" title="Permalink to this headline">¶</a></h2>
+<p>In addition to the constants there are various bits of data that potentially
+pertain to each glyph.</p>
+<div class="section" id="extended-shapes">
+<h3>Extended Shapes<a class="headerlink" href="#extended-shapes" title="Permalink to this headline">¶</a></h3>
+<img alt="../../_images/MATH-Exten.png" class="align-right" src="../../_images/MATH-Exten.png" />
+<p>The simplest of these per-glyph data is a flag which indicates whether a glyph
+is an extended shape. Extended shapes tend to be taller than normal characters
+and need to have superscripts raised higher than normal shapes.</p>
+<p>This sub-table consists of a list of glyph names and an indication of whether
+this glyph is an extended shape (you may add additional glyphs at the bottom of
+the list, order is irrelevant here).</p>
+</div>
+<div class="section" id="italic-correction">
+<span id="math-italic"></span><h3>Italic Correction<a class="headerlink" href="#italic-correction" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-default">
+<img alt="../../_images/MATH-Italic.png" src="../../_images/MATH-Italic.png" />
+</div>
+<p>The concept of “Italic correction” will be familiar to users of TeX. Basically
+when an upright glyph is placed after an italic (or oblique) glyph the slanted
+glyph may overlap the upright one slightly (since it is designed to fit next to
+another slanted glyph). The italic correction is a small addition to the glyph’s
+advance width applied when followed by an upright glyph (and in some other cases
+too).</p>
+<p>If you allow the mouse cursor to hover over an entry a small window will pop up
+showing the glyph, the normal advance width (as a dotted line), and the
+corrected advance width.</p>
+<p>Here again you are allowed to specify a device table to adjust the correction.</p>
+</div>
+<div class="section" id="top-accent-attachment">
+<span id="math-topaccent"></span><h3>Top Accent Attachment<a class="headerlink" href="#top-accent-attachment" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-default">
+<img alt="../../_images/MATH-TopAccent.png" src="../../_images/MATH-TopAccent.png" />
+</div>
+<p>When positioning an accent above a glyph Mathmatical typesetting follows complex
+rules to determine how high about the glyph it should go. The standard Mark To
+Base GPOS lookup is inappropriate here.</p>
+<p>Instead all that needs to be specified is the horizontal position at which the
+glyph and accent should attach.</p>
+<p>This table can be used to specify that position in both the base glyph and the
+accent. In the example at right I show one of each. The vertical line indicates
+the attachment position in each, and the glyphs will be adjusted so the two
+lines match up.</p>
+<p>Again a device table may be specified to control positioning at small pixel
+sizes.</p>
+</div>
+<div class="section" id="math-kerning">
+<span id="math-mathkern"></span><h3>Math Kerning<a class="headerlink" href="#math-kerning" title="Permalink to this headline">¶</a></h3>
+<img alt="../../_images/MATH-MathKern.png" class="align-right" src="../../_images/MATH-MathKern.png" />
+<p>This subtable is used when positioning subscripts and superscripts at various
+corners of a glyph. A glyph may have a superscript attached to either its top
+left or top right edge (limits for integral signs use the same mechanism, and
+probably other concepts will as well), and a subscript at the bottom left or
+right.</p>
+<p>In a slanted glyph it is clear that the horizontal positioning of a subscript
+should be different from the horizontal positioning of a superscript – A
+problem similar to the italic correction. But this is more complex as the
+positioning point may depend on the size of the sub/superscript and exactly
+where it attaches vertically.</p>
+<p>This subtable allows you to specify a list of glyph kerning/height pairs for
+each corner of the glyph. Click on the word “Change” above to get a new dialog.
+These data may be specified textually:</p>
+<div class="figure align-default">
+<img alt="../../_images/MATH-MathKernText.png" src="../../_images/MATH-MathKernText.png" />
+</div>
+<p>At any given height a kerning value may be specified. This value is relative to
+the default position of the subscript (and I’m not entirely sure what that is).
+As always device table adjustments may be specified.</p>
+<p>FontForge also allows you to specify these data graphically</p>
+<div class="figure align-default">
+<img alt="../../_images/MATH-MathKernGraph.png" src="../../_images/MATH-MathKernGraph.png" />
+</div>
+<p>FontForge displays bottom right attachments relative to the advance width line
+of the glyph</p>
+<p>FontForge displays top right attachments relative to the advance width plus the
+italic correction.</p>
+<p>FontForge displays bottom left attachments relative to the origin of the glyph.</p>
+<p>FontForge displays top left attachments relative to the italic correction.</p>
+<p>Note: If you are familiar with the MATH table spec you will recall that the last
+kern value does not have a height attached to it. FontForge tries to guess a
+reasonable value for the unspecified height (because it makes editing easier if
+I let the user move a point around), but have no fears, that guessed at value
+will never show up in the MATH table itself.</p>
+</div>
+<div class="section" id="vertical-and-horizontal-glyph-variants">
+<span id="math-variants"></span><h3>Vertical and Horizontal Glyph Variants<a class="headerlink" href="#vertical-and-horizontal-glyph-variants" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-default">
+<img alt="../../_images/MATH-VertVariants.png" src="../../_images/MATH-VertVariants.png" />
+</div>
+<p>Some glyphs, like parentheses and brackets need to be drawn in many sizes
+depending on the size of the formula they are enclosing. One possibility is just
+to draw them at a larger pointsize, but that is non-optimal because then the
+glyph will be symetrically scaled and so much bolder than it should be. Another
+solution is to design several variants of these glyphs at steadily increasing
+sizes. A third solution (which we will come to in the next section) is to design
+the glyph in sections so that it can be composed at any size.</p>
+<p>In this sub-table you may specify a normal sized glyph (here “leftparen”) and
+then a list of variants in increasing sizes.</p>
+<p>Glyphs may be grow along either the vertical axis (as here) or the horizontal
+axis.</p>
+</div>
+<div class="section" id="vertical-and-horizontal-glyph-construction">
+<span id="math-glyphconstruction"></span><h3>Vertical and Horizontal Glyph Construction<a class="headerlink" href="#vertical-and-horizontal-glyph-construction" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-default">
+<img alt="../../_images/MATH-GlyphConstruction.png" src="../../_images/MATH-GlyphConstruction.png" />
+</div>
+<p>As I said above, it is also possible to build a glyph out of bits of other
+glyphs.</p>
+<p>Each such constructed glyph has (potentially) and Italic Correction (and device
+table adjustment). This value should be independent of the size of the glyph.</p>
+<p>The components are rather difficult to specify in this display, but if you
+scroll the dialog to the far right you will find a little rectanglular box, and
+clicking on this will produce the dialog below.</p>
+<img alt="../../_images/MATH-GlyphConstructionDlg.png" src="../../_images/MATH-GlyphConstructionDlg.png" />
+<img alt="../../_images/MATH-GlyphConstructed.png" class="align-right" src="../../_images/MATH-GlyphConstructed.png" />
+<p>Every component is either an “Extender” component – which means it may be stuck in
+the composed glyph as often as needed (or not at all) to make the glyph be as
+big as needed.</p>
+<p>Component glyphs may overlap one another. You may specify a maximum overlap for
+each end of each component. You may also specify how much the component adds to
+the total height (or width) of the composed glyph.</p>
+<p>Finally there is a font-wide constant (in the Connectors pane of the Constants
+section) called MinConnectorOverlap which specifies that glyphs must overlap by
+at least this amount.</p>
+<p>The per-glyph information may also be specified from the
+<a class="reference internal" href="charinfo.html"><span class="doc">Glyph Information dialog.</span></a></p>
+<p>I wish to thank Sergey Malkin at MicroSoft who provided me with a copy of the
+spec, and Apostolos Syropoulos who provided me with a test font containing a
+‘MATH’ table.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../ui.html">FontForge’s User Interface</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../mainviews.html">Main Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../menus.html">Menus</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../dialogs.html">Dialogs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#general">General</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../dialogs.html#info">Info</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="fontinfo.html">Font Info</a></li>
+<li class="toctree-l4"><a class="reference internal" href="charinfo.html">Glyph Info</a></li>
+<li class="toctree-l4"><a class="reference internal" href="getinfo.html">Get Info</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bdfinfo.html">BDF Info Dialog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="baseline.html">The baseline dialog, and the OpenType BASE table</a></li>
+<li class="toctree-l4"><a class="reference internal" href="justify.html">The Justify dialog</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Math typesetting information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="multiplemaster.html">Multiple Master Dialog</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#editing">Editing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#lookups-and-kerning">Lookups and Kerning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#validation">Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/HotKeys.html">Hot Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/fontforge-themes.html">FontForge color schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">X Resource Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xim.html">X Input Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">X Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../techref.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../../ui.html">FontForge’s User Interface</a><ul>
+  <li><a href="../dialogs.html">Dialogs</a><ul>
+      <li>Previous: <a href="justify.html" title="previous chapter">The Justify dialog</a></li>
+      <li>Next: <a href="multiplemaster.html" title="next chapter">Multiple Master Dialog</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,302 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Changes to the sfd format &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Cidmap files" href="cidmapformat.html" />
+    <link rel="prev" title="Caveats about References" href="ref-caveats.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="changes-to-the-sfd-format">
+<span id="sfdchangelog-change-log"></span><h1>Changes to the sfd format<a class="headerlink" href="#changes-to-the-sfd-format" title="Permalink to this headline">¶</a></h1>
+<p>FontForge’s <a class="reference internal" href="sfdformat.html"><span class="doc">sfd (spline font database) format</span></a> changes over
+time as fontforge supports more things. I have only recently started keeping
+track of these changes, so older changes are not listed here.</p>
+<ul>
+<li><p>14-Sep-2010</p>
+<ul class="simple">
+<li><p>Added gasp table version to GaspTable keyword.</p></li>
+</ul>
+</li>
+<li><p>03-Feb-2010</p>
+<ul class="simple">
+<li><p>Added woff keywords (woffMajor, woffMinor (for version #) and woffMetadata for
+unparsed xml metadata).</p></li>
+<li><p>Added sfntRevision keyword</p></li>
+</ul>
+</li>
+<li><p>22-Oct-2009</p>
+<ul class="simple">
+<li><p>Add WidthSeparation keyword</p></li>
+<li><p>Add extension to subtable specification to handle storing default separation,min
+kerning and touching values of the subtable in the sfd</p></li>
+<li><p>Hmm. Document how vertical kerning subtables are indicated</p></li>
+<li><p>Hmm. Document how default prefixes for single substitution subtables are stored.</p></li>
+</ul>
+</li>
+<li><p>12-May-2009</p>
+<ul class="simple">
+<li><p>Add MarkAttachmentSet entries</p></li>
+<li><p>Add names for features ‘ss01’-‘ss20’</p></li>
+</ul>
+</li>
+<li><p>15-Mar-2009</p>
+<ul class="simple">
+<li><p>Add a BDFRefChar keyword to support bitmap references (Alexey Kryukov)</p></li>
+</ul>
+</li>
+<li><p>5-Mar-2009</p>
+<ul class="simple">
+<li><p>Add support for the JSTF table in sfd.</p></li>
+</ul>
+</li>
+<li><p>12-Nov-2008</p>
+<ul class="simple">
+<li><p>Add a field to the font: ExtremaBound. Any spline where the distance between its
+end points is less than or equal to this will not be checked for extrema.</p></li>
+</ul>
+</li>
+<li><p>22-Aug-2008</p>
+<ul class="simple">
+<li><p>Add a flag to the Layer keyword (in the font) to say whether the layer is a
+background layer or not. As the flag is at the end of the line, previous
+versions of fontforge will just ignore it</p></li>
+</ul>
+</li>
+<li><p>10-July-2008</p>
+<ul class="simple">
+<li><p>Extend the image output format to support red/green/blue/alpha images. (not much
+of an extension – there’s just more data)</p></li>
+</ul>
+</li>
+<li><p>26-May-2008</p>
+<ul class="simple">
+<li><p>Adobe says UniqueID and XUID are deprecated. Add flags (UseXUID/UseUniqueID) to
+indicate we still want to include them in fonts in spite of that.</p></li>
+</ul>
+</li>
+<li><p>30-Mar-2008</p>
+<ul>
+<li><p>Bump the sfd version number to 3. This is a bit late, but better late than
+never. It should have happened with the Layers release on 2-Mar.</p></li>
+<li><p>Support for BASE table, new keywords</p>
+<ul class="simple">
+<li><p>BaseHoriz</p></li>
+<li><p>BaseVert</p></li>
+<li><p>BaseScript</p></li>
+</ul>
+<p>This also involved removing the old vertical origin keyword which is (I hope) a
+subset of the BASEline information.</p>
+</li>
+<li><p>Support for Gradient and Pattern Fills in Type3 fonts, new keywords</p>
+<ul class="simple">
+<li><p>FillGradient</p></li>
+<li><p>StrokeGradient</p></li>
+<li><p>FillPattern</p></li>
+<li><p>StrokePattern</p></li>
+</ul>
+</li>
+<li><p>Added support for clipping paths in Type3 fonts, new keyword</p>
+<ul class="simple">
+<li><p>PathFlags</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>2-Mar-2008</p>
+<ul>
+<li><p><strong>Layers</strong></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This turned out to be a change which was backwards incompatible. I did not
+realize that at the time</p>
+</div>
+<p>All fonts may now have multiple layers (before only Type3 fonts could). The
+Type3 format has not changed so the discussion that follows concentrates on
+normal fonts and should be understood not to refer to type3 fonts.</p>
+<p>All glyphs in a given (non-type3) font have the same number of layers so there
+is a LayerCount keyword in the font which provides that (there is also a
+LayerCount keyword now in each glyph. This provides redundant information, it
+should be the same as the font’s layer count (for non type3 fonts).</p>
+<p>Before this the foreground and background and Guide layers all had the same
+spline type (quadratic or cubic), now that can vary from layer to layer. There
+is a font level keyword “Layer” which provides the spline order and name of each
+layer. The old “Order2” keyword has been removed.</p>
+<p>Previously only the foreground layer of a glyph could contain references, now
+any layer can. Before the “Refer” keyword could appear with no layer name
+preceding it (as this unambiguously meant that the references would go into the
+foreground layer), now there must be a layer name preceding a “Refer” keyword.</p>
+<p>Each layer output is preceded by one of “Fore”, “Back” or “Layer: d” (where “d”
+is the layer number).</p>
+<p>Before the SplineSet keyword was not needed (and was usually omitted) after a
+“Fore” or “Back” layer name. It is now required, and this seems to render new
+sfd files incompatible with old.</p>
+<p>(If there is no layer tag before a Refer keyword then the parser will apply it
+to the foreground layer)</p>
+<p>Previously the validation status applied only to the foreground layer. Now every
+layer can have its own status, so again the “Validated” keyword must now be
+tagged with a layer.</p>
+<p>There is a font level keyword “DisplayFont” which indicates what layer should be
+displayed in the font view by default.</p>
+<p>There is a font level keyword “GridOrder2” which may appear before the “Grid”
+layer name in the font to set the spline order of the guideline semi-layer.</p>
+</li>
+</ul>
+</li>
+<li><p>3-Feb-2008</p>
+<ul>
+<li><p>The point flags bitmap in a SplineSet has been extended by</p>
+<p>0x200 – Any extrema on the preceding spline are marked as acceptable to the
+validator</p>
+</li>
+<li><p>Some sfnt tables are now output in text instead of binary.</p>
+<ul class="simple">
+<li><p>cvt,maxp – output as decimal numbers (with possibly with comments for cvt)</p></li>
+<li><p>prep,fpgm – output as ASCII instructions</p></li>
+</ul>
+</li>
+<li><p>Get diagonal hints working again</p></li>
+<li><p>Add a FontLog field</p></li>
+</ul>
+</li>
+<li><p>9-Nov-2007</p>
+<ul class="simple">
+<li><p>Add support for Raph Levien’s spiro curves.</p></li>
+<li><p>Add the ability to name contours</p></li>
+</ul>
+</li>
+<li><p>…</p></li>
+</ul>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui.html">FontForge’s User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../techref.html">Technical References</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gposgsub.html">Advanced Typography Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AA-Comparison.html">Anti-Alias Comparison</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autotrace.html">Autotracing bitmaps in FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accented.html">Building Accented and other Composite Glyphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bezier.html">Bézier Splines </a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref-caveats.html">Caveats about References</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Changes to the sfd format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cidmapformat.html">Cidmap files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cliargs.html">Command Line Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="splinefont.html">Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SuggestDeltas.html">Delta Instruction Suggestions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stroke.html">Expand Stroke Facility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BDFGrey.html">Extensions to Adobe’s BDF  for greymap fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PfaEdit-TeX.html">FontForge and TeX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pfaeditmath.html">FontForge’s math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hinting.html">Hinting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macformats.html">Macintosh font formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="featurefile.html">Major differences between FontForge’s and Adobe’s interpretation of feature files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="non-standard.html">Non standard extensions used FontForge in True/Open Type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="palmfonts.html">Palm fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bitmaponlysfnt.html">Several formats for bitmap only sfnts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfdformat.html">Spline Font Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pcf-format.html">The X11 PCF bitmap font file format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TrueOpenTables.html">TrueType and OpenType tables supported by FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corpchar.html">Unicode Corporate Characters used by FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UniqueID.html">UniqueID and XUID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selections.html">X Selections and the X Clipboard</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../techref.html">Technical References</a><ul>
+      <li>Previous: <a href="ref-caveats.html" title="previous chapter">Caveats about References</a></li>
+      <li>Next: <a href="cidmapformat.html" title="next chapter">Cidmap files</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
