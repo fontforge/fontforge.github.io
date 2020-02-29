@@ -1,0 +1,821 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Preferences Dialog &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Font Info" href="fontinfo.html" />
+    <link rel="prev" title="Select By Lookup Subtable" href="selectbyatt.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="preferences-dialog">
+<h1>Preferences Dialog<a class="headerlink" href="#preferences-dialog" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="configuration-files">
+<h2>Configuration Files<a class="headerlink" href="#configuration-files" title="Permalink to this headline">¶</a></h2>
+<p>FontForge will load its preferences from multiple places, and the last
+definition of any preference will win. First, system defaults are loaded from
+your system wide $sharedir/fontforge/prefs. On a typical installation this might
+be /usr/local/share/fontforge/prefs or
+/Applications/FontForge.app/Contents/Resources/opt/local/share/fontforge/prefs
+on a Mac OSX installation.</p>
+<p>After the system wide prefs file is read your personal preferences are loaded
+from ~/.FontForge/prefs and will always override the system defaults. Any
+settings you make will be saved back into ~/.FontForge/prefs.</p>
+<p>The format of these prefs files is identical. So if you are distributing
+FontForge for a group of new users, you might like to configure your FontForge
+with settings you wish for everybody to start with and replace the default prefs
+file in the distribution with your own personal preferences.</p>
+</div>
+<div class="section" id="the-preferences-window">
+<h2>The Preferences Window…<a class="headerlink" href="#the-preferences-window" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default">
+<img alt="../../_images/prefs-generic.png" src="../../_images/prefs-generic.png" />
+</div>
+<span class="target" id="prefs-resourcefile"></span><dl class="object">
+<dt>
+<code class="sig-name descname">ResourceFile</code></dt>
+<dd><p>FontForge will read <a class="reference internal" href="../misc/xres.html"><span class="doc">X Resources</span></a> from a property on the screen.
+But sometimes this isn’t enough. You set this preference item to specify a
+file from which these resources should be read (those on the screen will also
+be read and will supersede those in the file).</p>
+</dd></dl>
+
+<span class="target" id="prefs-helpdir"></span><dl class="object">
+<dt>
+<code class="sig-name descname">HelpDir</code></dt>
+<dd><p>FontForge will search this directory for help files when the user presses
+[F1].</p>
+</dd></dl>
+
+<span class="target" id="prefs-othersubrsfile"></span><dl class="object">
+<dt>
+<code class="sig-name descname">OtherSubrsFile</code></dt>
+<dd><p>Allows you to redefine the OtherSubrs routines used in type1 fonts. The file
+format is described at the scripting command <a class="reference internal" href="../../scripting/scripting-alpha.html#ReadOtherSubrsFile" title="ReadOtherSubrsFile"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">ReadOtherSubrsFile</span></code></a>.</p>
+</dd></dl>
+
+<span class="target" id="prefs-freetypeinfontview"></span><dl class="object">
+<dt>
+<code class="sig-name descname">FreeTypeInFontView</code></dt>
+<dd><p>Normally FontForge will use the freetype library to generate glyphs for
+display in the fontview. This is a bit slower, but creates better images than
+using FontForge’s built-in rasterizer. This preference item allows you to
+control whether to use freetype or FontForge’s own rasterizer.</p>
+</dd></dl>
+
+<span class="target" id="prefs-freetypeaafillinoutlineview"></span><dl class="object">
+<dt>
+<code class="sig-name descname">FreeTypeAAFillInOutlineView</code></dt>
+<dd><p>In the <a class="reference internal" href="../mainviews/charview.html"><span class="doc">outline glyph view</span></a>, FontForge can generate glyph
+filles using many techniques. If FontForge is using the freetype library for
+this, you can enable this option to have FontForge generate fills with anti
+aliased edges. The old default was not to antialias in order to save some
+RAM.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">SplashScreen</code></dt>
+<dd><p>Controls whether a splash screen is displayed on start up.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">UseCairoDrawing</code></dt>
+<dd><p>FontForge can use its own drawing routines, or rely on Cairo library in the
+<a class="reference internal" href="../mainviews/charview.html"><span class="doc">outline glyph view</span></a>. Using Cairo is slower, but gives smooth
+curves, and subpixel display precision. New setting applies only to windows
+created afterwards.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">EnsureCorrectSaveExtension</code></dt>
+<dd><p>When inputting a name in the Save or SaveAs dialogs, FontForge can ensure
+that the correct filename extension (SFD or SFDIR) is always used. This
+prevents you from accidentally naming your source file with a binary
+extension (such as .otf), out of habit. Most of the time, you will want to
+leave this preference set to “On” because it does not get in the way and will
+ensure that the correct extension is given to your font files as you work on
+them. This makes it much harder to accidentally ship a Fontforge SFD file as
+as binary file or try to use an SFD format file as a binary font file.</p>
+</dd></dl>
+
+<div class="figure align-default">
+<img alt="../../_images/prefs-newfont.png" src="../../_images/prefs-newfont.png" />
+</div>
+<span class="target" id="prefs-newcharset"></span><dl class="object">
+<dt>
+<code class="sig-name descname">NewCharset</code></dt>
+<dd><p>The default encoding used to create new fonts. Normally this is ISO 8859-1.</p>
+</dd></dl>
+
+<span class="target" id="prefs-newemsize"></span><dl class="object">
+<dt>
+<code class="sig-name descname">NewEmSize</code></dt>
+<dd><p>Specifies the default number of em-units in the em-square. For PostScript
+fonts this should be 1000, for truetype fonts it should be a power of two
+(often 512, 1024 or 2048 will be used).</p>
+</dd></dl>
+
+<span class="target" id="prefs-newfontsquadratic"></span><dl class="object">
+<dt>
+<code class="sig-name descname">NewFontsQuadratic</code></dt>
+<dd><p>Splines in fonts may be either in quadratic or cubic format. TrueType fonts
+use quadratic splines while PostScript (and OpenType) fonts use cubic
+splines. When FontForge generates a font it will convert from whatever format
+is used internally to whatever format is required for the font, so there will
+be no problem if this is set incorrectly, but setting it correctly for your
+font means you get a clearer idea of what the outlines will look like.</p>
+</dd></dl>
+
+<span class="target" id="prefs-loadedfontsasnew"></span><dl class="object">
+<dt>
+<code class="sig-name descname">LoadedFontsAsNew</code></dt>
+<dd><p>When FontForge reads in a font it will generally keep the splines in the
+format they used in the font (that is quadratic for truetype fonts and cubic
+for postscript). If you set this flag then all loaded fonts will have the
+same file format as that specified by NewFontsQuadratic above.</p>
+</dd></dl>
+
+<div class="figure align-default">
+<img alt="../../_images/prefs-openfont.png" src="../../_images/prefs-openfont.png" />
+</div>
+<span class="target" id="prefs-prefercjkencoding"></span><dl class="object">
+<dt>
+<code class="sig-name descname">PreferCJKEncoding</code></dt>
+<dd><p>This controls the loading of truetype and opentype fonts. If a font contains
+both an unicode encoding subtable and a cjk subtable, then this item allows
+you to pick which one FontForge will choose to decode.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">AskUserForCMap</code></dt>
+<dd><p>When loading an sfnt (truetype, opentype font file), ask the user which cmap
+encoding s/he would like to use.</p>
+</dd></dl>
+
+<span class="target" id="prefs-preservetables"></span><dl class="object">
+<dt>
+<code class="sig-name descname">PreserveTables</code></dt>
+<dd><p>A string containing a list of 4 letter table tags separated by commas. When
+loading an SFNT (ttf/otf) file, any table in the font with one of these tags
+will be preserved without interpretation. (Note: If FontForge thinks it
+understands the table it will parse it rather than preserving it).</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">SeekCharacter</code></dt>
+<dd><p>A unicode character (or a hex name for a unicode character, so either “A” or
+“U+0041”), fontforge will attempt to scroll the display to this character
+when it opens a font.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">CompactOnOpen</code></dt>
+<dd><p>Whether fontforge should make a font compact when it opens one (does not
+apply to openning an sfd file which already knows whether it should be
+compact or not).</p>
+</dd></dl>
+
+<div class="figure align-default">
+<img alt="../../_images/prefs-navigation.png" src="../../_images/prefs-navigation.png" />
+</div>
+<span class="target" id="prefs-glyphautogoto"></span><dl class="object">
+<dt>
+<code class="sig-name descname">GlyphAutoGoto</code></dt>
+<dd><p>In the glyph window this controls how ff behaves when the user types a normal
+character. If this is On then when a normal character is typed the glyph
+window will shift to display that character, if Off typed characters will
+trigger actions associated with that character as a hotkey or be ignored. For
+example the default action associated with ` as a hotkey is to trigger
+Preview mode while that key is pressed.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">OpenCharsInNewWindow</code></dt>
+<dd><p>Double clicking on a glyph in a <a class="reference internal" href="../mainviews/fontview.html"><span class="doc">font view</span></a> can either always
+create a new <a class="reference internal" href="../mainviews/charview.html"><span class="doc">glyph view</span></a>, or reuse an already opened one.</p>
+</dd></dl>
+
+<div class="figure align-default">
+<img alt="../../_images/prefs-editing.png" src="../../_images/prefs-editing.png" />
+</div>
+<span class="target" id="prefs-italicconstrained"></span><dl class="object">
+<dt>
+<code class="sig-name descname">ItalicConstrained</code></dt>
+<dd><p>Whether constrained motion in the glyph view should allow motion parallel to
+the italic angle as well as horizontal and vertical.</p>
+</dd></dl>
+
+<span class="target" id="prefs-arrowmovesize"></span><dl class="object">
+<dt>
+<code class="sig-name descname">ArrowMoveSize</code></dt>
+<dd><p>The number of em-units an arrow key will move a selected point in the glyph
+view.</p>
+</dd></dl>
+
+<span class="target" id="prefs-arrowaccelfactor"></span><dl class="object">
+<dt>
+<code class="sig-name descname">ArrowAccelFactor</code></dt>
+<dd><p>When holding down the Alt (Meta) key, the arrow keys will move faster. This
+preference item says how much faster.</p>
+</dd></dl>
+
+<span class="target" id="prefs-drawopenpathswithhighlight"></span><dl class="object">
+<dt>
+<code class="sig-name descname">DrawOpenPathsWithHighlight</code></dt>
+<dd><p>When drawing a foreground layer, render the outline of open paths in a
+specific color to highlight a potential mistake. When drawing a new path, the
+incremental stages will be shown in a red, and when the path is closed it
+will revert back to the normal color. By default this open path highlight
+color is a red, it can be changed using the OpenPathColor resource. To do
+this see the Outline View 2 section of the X Resource Editor available
+through the File menu.</p>
+</dd></dl>
+
+<span class="target" id="prefs-snapdistance"></span><dl class="object">
+<dt>
+<code class="sig-name descname">SnapDistance</code></dt>
+<dd><p>The maximum distance at which pointer motion in the glyph view will be
+snapped to an interesting object (ie. a point, baseline, width line, etc.).
+This is measured in pixels.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">SnapToInt</code></dt>
+<dd><p>When positioning points and control points, the mouse will move to the
+nearest integral value. This is useful in editing TrueType (or PostScript if
+you wish to save space in the font file).</p>
+</dd></dl>
+
+<span class="target" id="prefs-joinsnap"></span><dl class="object">
+<dt>
+<code class="sig-name descname">JoinSnap</code></dt>
+<dd><p>The maximum distance between the endpoints of two splines before they will
+join with the <span class="menuselection">Edit ‣ Join</span> command. This is measured in
+pixels in the char view and em-units elsewhere.</p>
+</dd></dl>
+
+<span class="target" id="prefs-stopatjoin"></span><dl class="object">
+<dt>
+<code class="sig-name descname">StopAtJoin</code></dt>
+<dd><p>When dragging points in the outline view, if the end point of one open
+contour is moved onto the end point of another open contour then those two
+contours will join. If you leave this Off then further motion will continue
+to move the points, if you set this to On then FontForge will stop noticing
+mouse movements (it pretends that you released the mouse button). This is
+useful if you hand jitters a little on the mouse.</p>
+</dd></dl>
+
+<span class="target" id="prefs-copymetadata"></span><dl class="object">
+<dt>
+<code class="sig-name descname">CopyMetaData</code></dt>
+<dd><p>Controls the behavior of <span class="menuselection">Edit ‣ Copy</span> from the fontview.
+Normally Copy does not copy a glyph’s metadata (name, encoding, etc.) but if
+this is set then it will.</p>
+</dd></dl>
+
+<span class="target" id="prefs-undodepth"></span><dl class="object">
+<dt>
+<code class="sig-name descname">UndoDepth</code></dt>
+<dd><p>Controls the maximum number of Undoes that may be retained in a glyph. (In
+some rare occasions an Undo will be stored even if this depth is 0)</p>
+</dd></dl>
+
+<span class="target" id="prefs-updateflex"></span><dl class="object">
+<dt>
+<code class="sig-name descname">UpdateFlex</code></dt>
+<dd><p>Figure out what points will be part of flex hints after every change to a
+glyph. Points which are at the center of a flex hint will have a green halo
+drawn around them. The criteria for flex hints are given on pages 72-73 of
+Adobe’s
+<a class="reference external" href="http://partners.adobe.com/asn/developer/PDFS/TN/T1_SPEC.PDF">T1_Spec.pdf</a>.
+This setting can be used to show you when those criteria are not met.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">AutoKernDialog</code></dt>
+<dd><p>Controls whether FontForge opens an <a class="reference internal" href="lookups.html#lookups-pair"><span class="std std-ref">auto kern dialog</span></a>
+for each new kerning subtable.</p>
+</dd></dl>
+
+<div class="figure align-default">
+<img alt="../../_images/prefs-sync.png" src="../../_images/prefs-sync.png" />
+</div>
+<span class="target" id="prefs-autowidthsync"></span><dl class="object">
+<dt>
+<code class="sig-name descname">AutoWidthSync</code></dt>
+<dd><p>Whether you want the widths of accented glyphs to track the width of the base
+glyph (so if you modify the width of A then the width of À will automagically
+change, if À is built as a reference to A and a reference to grave)</p>
+</dd></dl>
+
+<span class="target" id="prefs-autolbearingsync"></span><dl class="object">
+<dt>
+<code class="sig-name descname">AutoLBearingSync</code></dt>
+<dd><p>Whether you want left side bearings of accented glyphs to track the left side
+bearing of base glyphs (so if you shift A left, then the accent in À will
+also be shifted left)</p>
+</dd></dl>
+
+<div class="figure align-default">
+<img alt="../../_images/prefs-tt.png" src="../../_images/prefs-tt.png" />
+</div>
+<span class="target" id="prefs-clearinstrsbigchanges"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Clear Instructions on Big Changes</code></dt>
+<dd><p>TrueType instructions refer to points by number. So if you do any editing
+that adds, removes or otherwise changes the point numbers then the
+instructions will be applied to a different set of points.</p>
+<p>Sometimes the results are amusing, but almost always they are ugly and wrong.</p>
+<p>This is very different from having out of date PostScript Hints. There the
+hints are probably just useless (as opposed to being actively bad, as here).</p>
+<p>FontForge will normally delete all instructions to prevent this happening.
+However, if you are prepared to fix up the instructions after a set of
+changes you may prefer to have the instructions left. Be careful though!</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">CopyTTFInstrs</code></dt>
+<dd><p>When copying and pasting in the font view, copy and paste instructions as
+well as the glyph outlines.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you copy a glyph from one font to another its instructions will
+probably not work (it will make assumptions about the control table and
+subroutines which do not hold in the new font).</p>
+</div>
+</dd></dl>
+
+<div class="figure align-default">
+<img alt="../../_images/prefs-accent.png" src="../../_images/prefs-accent.png" />
+</div>
+<span class="target" id="prefs-accentoffsetpercent"></span><dl class="object">
+<dt>
+<code class="sig-name descname">AccentOffsetPercent</code></dt>
+<dd><p>The amount of space (as a percentage of the em-square) that should be placed
+between an accent and the glyph below it by the Build Accented Character
+command.</p>
+</dd></dl>
+
+<span class="target" id="prefs-accentcenterlowest"></span><dl class="object">
+<dt>
+<code class="sig-name descname">AccentCenterLowest</code></dt>
+<dd><p>Whether accents should be positioned over letters based on the center of the
+accent, or on the center of the bottom of the accent.</p>
+</dd></dl>
+
+<span class="target" id="prefs-charcenterhighest"></span><dl class="object">
+<dt>
+<code class="sig-name descname">CharCenterHighest</code></dt>
+<dd><p>Whether accents should be positioned over letters based on the center of of
+the letter, or on the center of the top of the letter.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">PreferSpacingAccents</code></dt>
+<dd><p>Whether to prefer spacing accents (Unicode 02C0-02FF) or combining accents
+(0300-036F) when building accented glyphs.</p>
+</dd></dl>
+
+<div class="figure align-default">
+<img alt="../../_images/prefs-apps.png" src="../../_images/prefs-apps.png" />
+</div>
+<span class="target" id="prefs-preferpotrace"></span><dl class="object">
+<dt>
+<code class="sig-name descname">PreferPotrace</code></dt>
+<dd><p>If you system has both potrace and autotrace installed this allows you to
+specify which you’d prefer FontForge to use for autotracing.</p>
+</dd></dl>
+
+<span class="target" id="prefs-autotraceargs"></span><dl class="object">
+<dt>
+<code class="sig-name descname">AutotraceArgs</code></dt>
+<dd><p>This allows you to specify any arguments you want passed to the autotrace
+program. Don’t try to pass something that will change the input or output
+format or set input or output files.</p>
+</dd></dl>
+
+<span class="target" id="prefs-autotraceask"></span><dl class="object">
+<dt>
+<code class="sig-name descname">AutotraceAsk</code></dt>
+<dd><p>If this is set then each time autotrace is invoked it will ask you for
+arguments.</p>
+</dd></dl>
+
+<span class="target" id="prefs-mfargs"></span><dl class="object">
+<dt>
+<code class="sig-name descname">MfArgs</code></dt>
+<dd><p>This is the command passed to the mf (MetaFont) program which controls
+conversion of .mf files into bitmaps.</p>
+</dd></dl>
+
+<span class="target" id="prefs-mfclearbg"></span><dl class="object">
+<dt>
+<code class="sig-name descname">MfClearBg</code></dt>
+<dd><p>Loading a .mf font is a multi step process, first a bitmap font is generated,
+it is loaded into the background, then autotrace is invoked to trace around
+the backgrounds. These background bitmaps can take up a lot of space and you
+may not want them after they have been autotraced. Selecting this entry will
+remove those bitmaps from the font after they have been used.</p>
+</dd></dl>
+
+<span class="target" id="prefs-mfshowerr"></span><dl class="object">
+<dt>
+<code class="sig-name descname">MfShowErr</code></dt>
+<dd><p>The mf program generates a fair amount of verbiage even when it is working
+correctly. And if it is working correctly you don’t want to see those words.
+So normally FontForge suppresses messages from mf. But if something goes
+wrong you do want to see mf’s output and setting this will allow you to do
+so.</p>
+</dd></dl>
+
+<div class="figure align-default">
+<img alt="../../_images/prefs-font.png" src="../../_images/prefs-font.png" />
+</div>
+<span class="target" id="prefs-foundryname"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Foundry Name</code></dt>
+<dd><p>Used in generating bdf files (part of the X Windows font naming convention).</p>
+</dd></dl>
+
+<span class="target" id="prefs-ttffoundry"></span><dl class="object">
+<dt>
+<code class="sig-name descname">TTF Foundry</code></dt>
+<dd><p>Similar to the above except that it is used inside ttf files (the achVendID
+field of the OS/2 table) and is limited to 4 characters.</p>
+</dd></dl>
+
+<span class="target" id="prefs-newfontnamelist"></span><dl class="object">
+<dt>
+<code class="sig-name descname">NewFontNameList</code></dt>
+<dd><p>Specifies the namelist that will be attached to any new font. This list will
+be used to name any glyphs created in that font. See the section on
+<a class="reference internal" href="../menus/encodingmenu.html#encodingmenu-namelist"><span class="std std-ref">namelists</span></a> for more information.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">RecognizePUANames</code></dt>
+<dd><p>Originally Adobe used the PUA (public use area of unicode) to contain glyphs
+for small caps, lower case numerals, etc. They have since changed their minds
+and no longer recommend this usage. FontForge normally recognizes names like
+“a.sc” as being mapped to the appropriate slot in Adobe’s old view of the
+PUA. If you don’t like this behavior turn this item off and “a.sc” will not
+have a unicode encoding.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">UnicodeGlyphNames</code></dt>
+<dd><p>Glyph names are supposed to be composed of ASCII letters and numbers (and a
+few other characters). At least they are when they are stored in a font. But
+when you are building a font and if you are not an English speaker, it might
+be useful to have a wider range of letters available for glyph names. You
+should never export these names when you generate a font (Use the Force Glyph
+Names to field of the generate dialog).</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">AddCharToNameList</code></dt>
+<dd><p>Some character names are barely understandable or unintuitive. While editing
+opentype lookups having long lists of such names, confusion is easy. A
+character itself may be appended to the name to make things easier.</p>
+</dd></dl>
+
+<div class="figure align-default">
+<img alt="../../_images/prefs-generate.png" src="../../_images/prefs-generate.png" />
+</div>
+<span class="target" id="prefs-askbdfresolution"></span><dl class="object">
+<dt>
+<code class="sig-name descname">AskBDFResolution</code></dt>
+<dd><p>Normally FontForge will guess at what screen resolution you intend based on
+the pixel size of the font (ie. 17 pixel fonts are usually 100dpi (12pt) and
+12 pixel fonts are usually 75dpi), but sometimes you will have more esoteric
+desires. Setting this will give you more control, but you have to click
+through another dlg.</p>
+</dd></dl>
+
+<span class="target" id="prefs-autohint"></span><dl class="object">
+<dt>
+<code class="sig-name descname">AutoHint</code></dt>
+<dd><p>Whether glyphs should be automagically hinted before a font is generated or
+rasterized.</p>
+</dd></dl>
+
+<div class="figure align-default">
+<img alt="../../_images/prefs-pshints.png" src="../../_images/prefs-pshints.png" />
+</div>
+<dl class="object">
+<dt>
+<code class="sig-name descname">StandardSlopeError</code></dt>
+<dd><p>The maximum slope difference that still allows two elements to be considered
+as parallel. Enlarging this value makes autohinter more tolerable to small
+deviations from straight lines when detecting stem hints.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">SerifSlopeError</code></dt>
+<dd><p>Serifs and other small features usually have to be allowed to deviate from
+parallellness more than stem edges.</p>
+</dd></dl>
+
+<p>I am testing a few hinting options there are three radio button sets which add
+the following hints:</p>
+<div class="flex-container" id="prefs-hints">
+<div class="flex-row">
+<div class="flex-col">
+<img alt="../../_images/hintboundingbox.png" src="../../_images/hintboundingbox.png" />
+<p>HintBoundingBoxes</p>
+<p>Add hints around the bounding boxes of some glyphs. Adobe seems to do this.</p>
+</div>
+<div class="flex-col">
+<img alt="../../_images/hintdiagonalinter.png" src="../../_images/hintdiagonalinter.png" />
+<p>HintDiagonalInter</p>
+<p>Add hints at the intersections of diagonal stems</p>
+</div>
+<div class="flex-col">
+<img alt="../../_images/hintdiagonalends.png" src="../../_images/hintdiagonalends.png" />
+<p>HintDiagonalEnds</p>
+</div>
+</div>
+</div>
+<p id="prefs-detectdiagonalstems">More importantly there is also the DetectDiagonalStems option. Make sure this is
+turned on if you intend to have FontForge
+<a class="reference internal" href="../menus/hintsmenu.html#hintsmenu-autoinstr"><span class="std std-ref">generate truetype instructions automatically</span></a>.</p>
+<div class="figure align-default">
+<img alt="../../_images/prefs-ttinstrs.png" src="../../_images/prefs-ttinstrs.png" />
+</div>
+<p><a class="reference internal" href="../menus/hintsmenu.html#hintsmenu-autoinstr"><span class="std std-ref">Truetype autoinstructor</span></a> bases its output on
+postscript hints, but it has also its own options:</p>
+<dl class="object">
+<dt>
+<code class="sig-name descname">InstructDiagonalStems</code></dt>
+<dd><p>Generate instructions for diagonal stem hints. For this option to be useful,
+<a class="reference internal" href="#prefs-detectdiagonalstems"><span class="std std-ref">DetectDiagonalStems</span></a> must be enabled first.
+Enabling this will lessen apparent weight inconsistencies, perceived at some
+sizes whenever horizontal and vertical stems are controlled, but diagonals
+are not.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">InstructSerifs</code></dt>
+<dd><p>Try to detect serifs and other elements protruding from base stems and
+generate instructions for them: try to control distances between serifs’ tips
+and their base stems.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">InstructBallTerminals</code></dt>
+<dd><p>Generate instructions for ball terminals. They need different handling than
+other kinds of serifs.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">InterpolateStrongPoints</code></dt>
+<dd><p>Instructing stems is sometimes not enough. This option makes FontForge to
+interpolate some important points (sharp corners, inflections, curve
+extremes), not affected by other instructions, between stem edges. Both
+parallel and perpendicular extremes are controlled. Agressive optimization is
+employed, to still leave as many points as possible to IUP, but manual review
+is nevertheless greatly adviced.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">CounterControl</code></dt>
+<dd><p>Make sure similar or equal counters remain the same in gridfitted outlines.
+This was inspired by, but works somewhat independently from,
+<a class="reference internal" href="charinfo.html#charinfo-countermasks"><span class="std std-ref">PS Counter Hints</span></a>. Enabling this option means
+that proper shapes are more important than proper scaling of advance widths.</p>
+</dd></dl>
+
+<div class="figure align-default">
+<img alt="../../_images/prefs-opentype.png" src="../../_images/prefs-opentype.png" />
+</div>
+<span class="target" id="prefs-usenewindicscripts"></span><dl class="object">
+<dt>
+<code class="sig-name descname">UseNewIndicScripts</code></dt>
+<dd><p>MS has changed the way it handles indic scripts and has created a parallel
+set of script tags for the new method. Set this flag if you want to create a
+font using the new Indic system.</p>
+</dd></dl>
+
+<div class="figure align-default" id="prefs-scripts">
+<img alt="../../_images/prefs-script.png" src="../../_images/prefs-script.png" />
+</div>
+<p>This section of the dialog allows you to define built in scripts that will show
+up in the <a class="reference internal" href="../menus/filemenu.html#filemenu-scriptmenu"><span class="std std-ref">script menu</span></a>. Each entry has two things
+associated with it, the menu name and a script file. The menu name will be the
+name of this entry inside the script menu, and the
+<a class="reference internal" href="../../scripting/scripting.html"><span class="doc">script file</span></a> will be the filename of the file to be invoked.
+The “…” button allows you to browse for script files, which I think have
+extension .pe (but which can have whatever extension you prefer if you don’t
+like my conventions).</p>
+<div class="figure align-default" id="prefs-mac">
+<img alt="../../_images/prefs-macfeat.png" src="../../_images/prefs-macfeat.png" />
+</div>
+<p>The Mac Features dialog allows you to define a set of default names (in many
+languages) for mac features and settings. These names are placed in the ‘name’
+table whenever a feature/setting is used in a generated ‘morx’ table. (Thus if
+you have some common ligatures in your font, then the “ligature” feature names,
+and the “common ligature” setting names will be added to the ‘name’ table).</p>
+<p>You may also use this dialog to establish which setting(s) should be on by
+default in a given feature and whether the feature only allows one setting to be
+on at a time (the settings are mutually exclusive). All of this data may be
+overridden by the similar dialog in the
+<a class="reference internal" href="fontinfo.html#fontinfo-mac-features"><span class="std std-ref">Element-&gt;Font Info</span></a> dialog.</p>
+<img alt="Mac Feature dialog" class="align-left" src="../../_images/macfeature.png" />
+<p>To edit an existing feature double click on that feature in the list (at right)
+this will bring up the dialog on the left. Each feature must be assigned a
+unique number. You should indicate whether it has mutually exclusive features or
+not. You should provide names for the feature in various languages, and you
+should provide settings for the feature.</p>
+<p>To add a new name press the [New] button under the name list and you will be
+prompted for a language and a name.</p>
+<p>To add a new setting press the [New] button under the setting list. The setting
+dialog contains the numeric value of this setting (Apple has decreed that if the
+feature is not mutually exclusive, all settings must be even numbers), whether
+this setting is on by default, and then a list of names for the setting in as
+many languages as you like.</p>
+<div class="flex-container">
+<div class="flex-row">
+<div class="flex-col">
+<img alt="../../_images/macFeatureSetting.png" src="../../_images/macFeatureSetting.png" />
+</div>
+<div class="flex-col">
+<img alt="../../_images/MacFeatName.png" src="../../_images/MacFeatName.png" />
+</div>
+</div>
+</div>
+<div class="figure align-default" id="prefs-mapping">
+<img alt="../../_images/prefs-macmap.png" src="../../_images/prefs-macmap.png" />
+</div>
+<p>The Mac Mapping dialog allows you to define a mapping between OTF <code class="docutils literal notranslate"><span class="pre">GSUB</span></code>
+feature tags and Apple’s
+<a class="reference external" href="http://developer.apple.com/fonts/TTRefMan/RM06/Chap6morx.html">mort/morx</a>
+Feature/Setting codes.</p>
+<p><a class="reference external" href="http://developer.apple.com/fonts/Registry/index.html">Apple’s published list</a>
+of features and settings appears out of date (in that some features used by
+current fonts are not found in it).</p>
+<img alt="../../_images/MacMapping.png" class="align-left" src="../../_images/MacMapping.png" />
+<p>A four letter OTF feature tag may correspond to a mac feature/setting
+combination. If you wish to create a new mapping you must first insure that the
+mac feature setting you desire is present in the feature list (above), and then
+you may add the mappings.</p>
+<p>You must specify a mac feature (which must already be defined), a mac setting
+code and a 4 character opentype tag.</p>
+</div>
+<div class="section" id="other-ways-of-configuring">
+<h2>Other ways of configuring<a class="headerlink" href="#other-ways-of-configuring" title="Permalink to this headline">¶</a></h2>
+<p>A number of things that might be controlled from a preference window are
+controlled by</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../misc/xres.html"><span class="doc">X Resources</span></a></p></li>
+<li><p><a class="reference internal" href="../../techref/cliargs.html#cliargs-environment"><span class="std std-ref">Environment Variables</span></a></p></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../ui.html">FontForge’s User Interface</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../mainviews.html">Main Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../menus.html">Menus</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../dialogs.html">Dialogs</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../dialogs.html#general">General</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="generate.html">Generate Font Dialog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="display.html">Display &amp; Print Fonts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="groups.html">Groups of Glyphs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="search.html">Finding shapes within glyphs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="selectbyatt.html">Select By Lookup Subtable</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Preferences Dialog</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#info">Info</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#editing">Editing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#lookups-and-kerning">Lookups and Kerning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#validation">Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/HotKeys.html">Hot Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/fontforge-themes.html">FontForge color schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">X Resource Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xim.html">X Input Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">X Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../techref.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../../ui.html">FontForge’s User Interface</a><ul>
+  <li><a href="../dialogs.html">Dialogs</a><ul>
+      <li>Previous: <a href="selectbyatt.html" title="previous chapter">Select By Lookup Subtable</a></li>
+      <li>Next: <a href="fontinfo.html" title="next chapter">Font Info</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

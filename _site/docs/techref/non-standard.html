@@ -1,0 +1,1367 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Non standard extensions used FontForge in True/Open Type &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Palm fonts" href="palmfonts.html" />
+    <link rel="prev" title="Major differences between FontForge’s and Adobe’s interpretation of feature files" href="featurefile.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="non-standard-extensions-used-fontforge-in-true-open-type">
+<h1>Non standard extensions used FontForge in True/Open Type<a class="headerlink" href="#non-standard-extensions-used-fontforge-in-true-open-type" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="non-standard-feature-tags">
+<h2>Non standard feature tags<a class="headerlink" href="#non-standard-feature-tags" title="Permalink to this headline">¶</a></h2>
+<p>Internal</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">REQ'</span></code> – tag used for required features</p></li>
+</ul>
+<p>For TeX</p>
+<p>I no longer use these. MS has come up with a MATH table which can contain all
+the TeX information.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">ITLC</span></code> – <a class="reference internal" href="PfaEdit-TeX.html#pfaedit-tex-italic"><span class="std std-ref">Italic correction</span></a></p>
+<p>I have proposed this as an extension to OpenType. There was some discussion of
+it, but I believe the idea died.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TCHL</span></code> – <a class="reference internal" href="PfaEdit-TeX.html#pfaedit-tex-charlist"><span class="std std-ref">TeX Charlist</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TEXL</span></code> – <a class="reference internal" href="PfaEdit-TeX.html#pfaedit-tex-extension"><span class="std std-ref">TeX Extension List</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="non-standard-tables">
+<h2>Non standard tables.<a class="headerlink" href="#non-standard-tables" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="#non-standard-pfed"><span class="std std-ref">‘PfEd’ the FontForge extensions table</span></a></p></li>
+<li><p><a class="reference internal" href="#non-standard-tex"><span class="std std-ref">‘TeX ‘ the TeX metrics table</span></a></p></li>
+<li><p><a class="reference internal" href="#non-standard-bdf"><span class="std std-ref">‘BDF ‘ the BDF properties table</span></a></p></li>
+<li><p><a class="reference internal" href="#non-standard-fftm"><span class="std std-ref">‘FFTM’ the FontForge time stamp table</span></a></p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>(<a class="reference internal" href="TrueOpenTables.html"><span class="doc">standard tables</span></a>)</p></li>
+</ul>
+<p>Non standard file formats</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="bitmaponlysfnt.html#bitmaponlysfnt-ms"><span class="std std-ref">Bitmap only sfnt for MS Windows</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="pfed-the-fontforge-extensions-table">
+<span id="non-standard-pfed"></span><h2>‘PfEd’ – the FontForge extensions table<a class="headerlink" href="#pfed-the-fontforge-extensions-table" title="Permalink to this headline">¶</a></h2>
+<p>(the name is ‘PfEd’ for historical reasons)</p>
+<blockquote>
+<div><p>The table begins with a table header containing a version number and a count
+of sub-tables</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 70%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>uint32</p></td>
+<td><p>version</p></td>
+<td><p>currently 0x00010000</p></td>
+</tr>
+<tr class="row-even"><td><p>uint32</p></td>
+<td><p>count</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>This is followed by a table of contents, there will be count replications of
+the following structure (ie. a tag and offset for each sub-table</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 70%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>uint32</p></td>
+<td><p>tag</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>uint32</p></td>
+<td><p>offset</p></td>
+<td><p>from start of ‘PfEd’ table</p></td>
+</tr>
+</tbody>
+</table>
+<p>The format of the subtable depends on the sub-table’s tag. There are
+currently 3 tags supported, these are</p>
+<ul class="simple">
+<li><p>‘<a class="reference internal" href="#non-standard-colr"><span class="std std-ref">colr</span></a>’ – per glyph color sub-table (stores the
+color that appears in the font view)</p></li>
+<li><p>‘<a class="reference internal" href="#non-standard-cmnt"><span class="std std-ref">cmnt</span></a>’ – per glyph comment sub-table (stores the
+comment that appears in the Char Info dialog for the character)</p></li>
+<li><p>‘<a class="reference internal" href="#non-standard-fcmt"><span class="std std-ref">fcmt</span></a>’ – the font comment sub-table (stores the
+comment that appears in the Font Info dialog)</p></li>
+<li><p>‘<a class="reference internal" href="#non-standard-fcmt"><span class="std std-ref">flog</span></a>’ – the font log sub-table (looks just like
+the ‘fcmt’ subtable)</p></li>
+<li><p>‘<a class="reference internal" href="#non-standard-cvtc"><span class="std std-ref">cvtc</span></a>’ – the cvt comments subtable</p></li>
+<li><p>‘<a class="reference internal" href="#non-standard-gpos"><span class="std std-ref">GPOS</span></a>’ – Save lookup, lookup subtable and anchor
+class names of GPOS lookups</p></li>
+<li><p>‘<a class="reference internal" href="#non-standard-gpos"><span class="std std-ref">GSUB</span></a>’ – Save lookup and lookup subtable names of
+GSUB lookups</p></li>
+<li><p>‘<a class="reference internal" href="#non-standard-guid"><span class="std std-ref">guid</span></a>’ – Save guideline locations</p></li>
+<li><p>‘<a class="reference internal" href="#non-standard-layr"><span class="std std-ref">layr</span></a>’ – Save background and spiro layers</p></li>
+</ul>
+</div></blockquote>
+<div class="section" id="colr-the-per-glyph-color-sub-table">
+<span id="non-standard-colr"></span><h3>‘colr’ – the per-glyph color sub-table<a class="headerlink" href="#colr-the-per-glyph-color-sub-table" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>The sub-table header begins with a version number, and a count of ranges</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>uint16</p></td>
+<td><p>version</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>uint16</p></td>
+<td><p>count</p></td>
+<td><p>of ranges</p></td>
+</tr>
+</tbody>
+</table>
+<p>After this will be &lt;count&gt; instances of the following structure</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>uint16</p></td>
+<td><p>starting glyph index</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>uint16</p></td>
+<td><p>ending glyph index</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>uint32</p></td>
+<td><p>color</p></td>
+<td><p>expressed as a 24bit rgb value</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
+<div class="section" id="cmnt-the-per-glyph-comment-sub-table">
+<span id="non-standard-cmnt"></span><h3>‘cmnt’ – the per-glyph comment sub-table<a class="headerlink" href="#cmnt-the-per-glyph-comment-sub-table" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>The sub-table header begins with a version number, and a count of ranges</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>uint16</p></td>
+<td><p>version</p></td>
+<td><p>0/1</p></td>
+</tr>
+<tr class="row-even"><td><p>uint16</p></td>
+<td><p>count</p></td>
+<td><p>of ranges</p></td>
+</tr>
+</tbody>
+</table>
+<p>After this will be &lt;count&gt; instances of the following structure</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>uint16</p></td>
+<td><p>starting glyph index</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>uint16</p></td>
+<td><p>ending glyph index</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>uint32</p></td>
+<td><p>offset</p></td>
+<td><p>from the start of this sub-table</p></td>
+</tr>
+</tbody>
+</table>
+<p>The offset points to an array of offsets (&lt;end&gt;-&lt;start&gt;+1+1) elements in the
+array, so one element for each glyph index mentioned in the range structure
+above, with one left over which allows readers to compute the length of the
+last string.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>uint32</p></td>
+<td><p>offset</p></td>
+<td><p>from start of table</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>…</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>And each of these offsets points to a unicode (UCS2 for version 0, UTF-8 for
+version 1) string. The strings are assumed to be consecutive, so the length
+of each may be calculated by subtracting its offset from the offset to the
+next string.</p>
+</div></blockquote>
+</div>
+<div class="section" id="fcmt-the-font-comment-and-fontlog-sub-table">
+<span id="non-standard-fcmt"></span><h3>‘fcmt’ – the font comment (and FONTLOG) sub-table<a class="headerlink" href="#fcmt-the-font-comment-and-fontlog-sub-table" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>The sub-table header begins with a version number, and a count of ranges</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 70%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>uint16</p></td>
+<td><p>version</p></td>
+<td><p>0/1</p></td>
+</tr>
+<tr class="row-even"><td><p>uint16</p></td>
+<td><p>length</p></td>
+<td><p>number of characters in the string</p></td>
+</tr>
+</tbody>
+</table>
+<p>In version 0 this is followed by &lt;length&gt; Unicode (UCS2) characters. In
+version 1 it is followed by &lt;length&gt; bytes in utf8 encoding.</p>
+</div></blockquote>
+</div>
+<div class="section" id="cvtc-the-cvt-comments-sub-table">
+<span id="non-standard-cvtc"></span><h3>‘cvtc’ – the cvt comments sub-table<a class="headerlink" href="#cvtc-the-cvt-comments-sub-table" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>The sub-table header begins with a version number, and a count of cvt entries
+which might have comments</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 70%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>uint16</p></td>
+<td><p>version</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>uint16</p></td>
+<td><p>count</p></td>
+<td><p>number of entries in the cvt comments array</p>
+<p>which might be smaller than the number of entries in the cvt array itself
+if we want to save space</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>uint16</p></td>
+<td><p>offset[count]</p></td>
+<td><p>offsets to the start of utf8-encoded, NUL terminated strings. Or 0 if this
+cvt entry has no comment</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
+<div class="section" id="gpos-gsub-lookup-names">
+<span id="non-standard-gpos"></span><h3>‘GPOS/GSUB’ – lookup names<a class="headerlink" href="#gpos-gsub-lookup-names" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>The sub-table header begins with a version number, and a count of ranges</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>uint16</p></td>
+<td><p>version</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>uint16</p></td>
+<td><p>count</p></td>
+<td><p>of lookups in this table</p></td>
+</tr>
+</tbody>
+</table>
+<p>Then there will be an array of count elements (one for each lookup, ordered
+as the lookups are in the GPOS or GSUB table)</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>uint16</p></td>
+<td><p>offset</p></td>
+<td><p>to lookup name</p></td>
+</tr>
+<tr class="row-even"><td><p>uint16</p></td>
+<td><p>offset</p></td>
+<td><p>to lookup subtable structure</p></td>
+</tr>
+</tbody>
+</table>
+<p>These offsets are based on the start of the subtable. The name offset points
+to a NUL terminated UTF-8 encoded string. The subtable offset points to the
+following structure:</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>uint16</p></td>
+<td><p>count</p></td>
+<td><p>of lookup subtables in this lookup</p></td>
+</tr>
+</tbody>
+</table>
+<p>Then there will be an array of count elements (one for each subtable, ordered
+as the subtables are in the lookup of the GPOS or GSUB table)</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>uint16</p></td>
+<td><p>offset</p></td>
+<td><p>to lookup subtable name</p></td>
+</tr>
+<tr class="row-even"><td><p>uint16</p></td>
+<td><p>offset</p></td>
+<td><p>to anchor class structure</p></td>
+</tr>
+</tbody>
+</table>
+<p>These offsets are also based on the start of the subtable. The name offset
+points to a NUL terminated UTF-8 encoded string. The anchor offset may be 0
+if this subtable doesn’t have any anchor classes, otherwise it points to the
+following structure:</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>uint16</p></td>
+<td><p>count</p></td>
+<td><p>of anchor classes in this lookupsubtable</p></td>
+</tr>
+</tbody>
+</table>
+<p>Then there will be an array of count elements (one for each anchor class)</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>uint16</p></td>
+<td><p>offset</p></td>
+<td><p>to anchor class name</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
+<div class="section" id="guid-guidelines">
+<span id="non-standard-guid"></span><h3>‘guid’ – guidelines<a class="headerlink" href="#guid-guidelines" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>The sub-table header begins with a version number, and a count of ranges</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 70%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>uint16</p></td>
+<td><p>version</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>uint16</p></td>
+<td><p>vcount</p></td>
+<td><p>number of vertical guidelines</p></td>
+</tr>
+<tr class="row-odd"><td><p>uint16</p></td>
+<td><p>hcount</p></td>
+<td><p>number of horizontal guidelines</p></td>
+</tr>
+<tr class="row-even"><td><p>uint16</p></td>
+<td><p>mbz</p></td>
+<td><p>At some point this may contain info on diagonal guidelines. For now it is
+undefined</p></td>
+</tr>
+<tr class="row-odd"><td><p>uint16</p></td>
+<td><p>offset</p></td>
+<td><p>To a full description of the guideline layer</p></td>
+</tr>
+</tbody>
+</table>
+<p>I provide the guidelines in two formats. Either may be omitted. The first
+format simply describes the horizontal and vertical lines used as guidelines.
+The second format provides a full description of all contours (curved,
+straight, horizontal or diagonal) which fontforge uses. I provide both since
+most apps seem to have a simpler guideline layer than ff does.</p>
+<p>This table is followed by two arrays, one for vertical guidelines, one for
+horizontal guides. Both arrays have the same element type (except that the
+position is for a different coordinate in the horizontal/vertical cases)</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 70%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>int16</p></td>
+<td><p>position</p></td>
+<td><p>x location of vertical guides, y location of horizontal ones</p></td>
+</tr>
+<tr class="row-even"><td><p>uint16</p></td>
+<td><p>offset</p></td>
+<td><p>to name, a NUL terminated utf8 string. (offset may be 0 if guideline is
+unnamed).</p></td>
+</tr>
+</tbody>
+</table>
+<p>The offset to the guideline layer points to a variable length structure which
+is also used in the <a class="reference internal" href="#non-standard-layr"><span class="std std-ref">‘layr’ subtable</span></a></p>
+</div></blockquote>
+<p id="non-standard-glyph-layer">‘glyph-layer’ – Data structure representing all the contours of a layer of a
+glyph
+“””””</p>
+<blockquote>
+<div><p>The sub-table header begins with a version number, and a count of ranges</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 70%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>uint16</p></td>
+<td><p>count</p></td>
+<td><p>of contours</p></td>
+</tr>
+<tr class="row-even"><td><p>uint16</p></td>
+<td><p>count</p></td>
+<td><p>of references (not present in version 0 layers)</p></td>
+</tr>
+<tr class="row-odd"><td><p>uint16</p></td>
+<td><p>mbz</p></td>
+<td><p>reserved for a count of images</p></td>
+</tr>
+</tbody>
+</table>
+<p>This is followed by an array of structures describing each contour</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 70%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>uint16</p></td>
+<td><p>offset</p></td>
+<td><p>to start of contour data</p></td>
+</tr>
+<tr class="row-even"><td><p>uint16</p></td>
+<td><p>offset</p></td>
+<td><p>to a name for the contour, a utf8, NUL terminated string (or 0 if the
+contour is unnamed)</p></td>
+</tr>
+</tbody>
+</table>
+<p>All offsets from the start of the glyph-layer structure.</p>
+<p>This is followed by an array of structures describing each reference</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 70%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>fixed16.16</p></td>
+<td><p>transform[6]</p></td>
+<td><p>A PostScript transformaton matrix where each member is a signed 4 byte
+integers which should be divided by 32768.0 to allow for non-integral
+values</p></td>
+</tr>
+<tr class="row-even"><td><p>uint16</p></td>
+<td><p>gid</p></td>
+<td><p>The Glyph ID of the glyph being referred to</p></td>
+</tr>
+</tbody>
+</table>
+<p>Contour data live in a variable length block. It’s basic idea is that it is a
+list of &lt;command&gt;, &lt;data&gt; pairs. Each command is a byte which consists of two
+parts, a verb which specifies what happens (and how many items of data are
+needed) and a modifier which specifies how each data item is represented. The
+verbs are postscript-like drawing operations: moveto, lineto, curveto, (and
+quadratic curveto), close path, etc. There are also separate verbs for
+specifying spiro control points – these are just the standard spiro type
+bytes (‘v’, ‘o’, ‘c’, ‘[‘ and ‘]’), no modifier is applied to the spiro
+commands, their data are always 2 coordinates in fixed notation.</p>
+<p>The low order two bits of the command (except for the spiro and close
+commands) specify the data format:</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 85%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>signed byte data for values -128 to 127</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>signed short data for values -32768 to 32767</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>A signed 4 byte integer which should be divided by 256.0 for non-integral
+coordinates (or for big ones)</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Undefined and erroneous for now</p></td>
+</tr>
+</tbody>
+</table>
+<p>Each command will start at the current point and draw to the point specified
+by its data. The data are relative to the last point specified (except for
+moveto, which is absolute, there being on previous point).</p>
+<p>The verb may be one of the following:</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 85%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>MoveTo, takes 2 coordinates (x,y). This must begin each contour and may
+not appear elsewhere within it</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>LineTo, also takes 2 coordinates</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>HLineTo, draws a horizontal line, so only the new x coordinate need be
+specified.</p></td>
+</tr>
+<tr class="row-even"><td><p>12</p></td>
+<td><p>VLineTo, draws a vertical line, so only the new y coordinate need be
+specified.</p></td>
+</tr>
+<tr class="row-odd"><td><p>16</p></td>
+<td><p>QCurveTo, takes one off-curve control point and one on-curve point, 4
+coordinates total, to draw a quadratic bezier spline</p></td>
+</tr>
+<tr class="row-even"><td><p>20</p></td>
+<td><p>QImplicit, only specifies the control point. The on-curve point will be
+the average of the control point specified here, and the one specified in
+the next QCurveTo or Q*Implicit command.</p></td>
+</tr>
+<tr class="row-odd"><td><p>24</p></td>
+<td><p>QHImplicit, Same as above, except only the x coordinate of the new control
+point is specified</p></td>
+</tr>
+<tr class="row-even"><td><p>28</p></td>
+<td><p>QVImplicit, Same as above except only the y coordinate of the new control
+point is specified.</p></td>
+</tr>
+<tr class="row-odd"><td><p>32</p></td>
+<td><p>CurveTo, takes two off-curve control point and one on-curve point, 6
+coordinates total, to draw a cubic bezier spline</p></td>
+</tr>
+<tr class="row-even"><td><p>36</p></td>
+<td><p>VHCurveTo, The first control point is vertical from the current point, so
+only its y coordinate is specified. The final point is horizontal from the
+last control point so only its x coordinate is specified. 4 coordinates
+total y1, x2,y2, x3.</p></td>
+</tr>
+<tr class="row-odd"><td><p>40</p></td>
+<td><p>HVCurveTo, Reverse of the above x1, x2,y2, y3</p></td>
+</tr>
+<tr class="row-even"><td><p>44</p></td>
+<td><p>Close, No data. Closes (and ends) the current contour. Will draw a line
+from the start point to the end point if needed.</p></td>
+</tr>
+<tr class="row-odd"><td><p>45</p></td>
+<td><p>End, No data. Ends the current contour, but leaves it open.</p></td>
+</tr>
+</tbody>
+</table>
+<p>These are basically the drawing operators in the type1 charstrings. If my
+terse descriptions make no sense look there for a more complete description.</p>
+<p class="rubric">examples</p>
+<p>suppose we want to draw a box (0,0)-&gt;(0,200)-&gt;(200,200)-&gt;(200,0)-&gt;(0,0). Then
+the glyph-layer would look like:</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 15%" />
+<col style="width: 10%" />
+<col style="width: 65%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Header</p></td>
+<td><p>one contour</p></td>
+<td><p>(ushort) 1</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Header</p></td>
+<td><p>no images</p></td>
+<td><p>(ushort) 0</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>First Contour</p></td>
+<td><p>offset to data</p></td>
+<td><p>(ushort) 8</p></td>
+<td><p>The number of bytes from the start of the glyph-layer to the Contour Data</p></td>
+</tr>
+<tr class="row-even"><td><p>First Contour</p></td>
+<td><p>no name</p></td>
+<td><p>(ushort) 0</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Contour Data</p></td>
+<td><p>Move To 0,0</p></td>
+<td><p>(byte)0, (byte)0, (byte)0</p></td>
+<td><p>Both coordinates are &lt;127 and can fit in a byte, so the modifier is 0. The
+command is also 0, and the coordinates are each 0</p></td>
+</tr>
+<tr class="row-even"><td><p>Contour Data</p></td>
+<td><p>VLine To [0,]200</p></td>
+<td><p>(byte)(12+1) (short)200</p></td>
+<td><p>Vertical motion =&gt; VLineTo. Only the new y value need be specified. Is
+relative to the last position, but that was 0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Contour Data</p></td>
+<td><p>HLine To 200[,200]</p></td>
+<td><p>(byte)(8+1) (short)200</p></td>
+<td><p>Horizontal motion =&gt; HLineTo. Only the new x value need be specified. Is
+relative to the last position, but that was 0</p></td>
+</tr>
+<tr class="row-even"><td><p>Contour Data</p></td>
+<td><p>VLine To [200,]0</p></td>
+<td><p>(byte)(12+1) (short)-200</p></td>
+<td><p>Vertical motion =&gt; HLineTo. Only the new y value need be specified. We
+move from 200 to 0, so the relative change is -200</p></td>
+</tr>
+<tr class="row-odd"><td><p>Contour Data</p></td>
+<td><p>Close</p></td>
+<td><p>(byte)44</p></td>
+<td><p>We can draw the final line by closing the path</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
+<div class="section" id="layr-background-layer-data">
+<span id="non-standard-layr"></span><h3>‘layr’ – Background layer data<a class="headerlink" href="#layr-background-layer-data" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 70%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>uint16</p></td>
+<td><p>version</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>uint16</p></td>
+<td><p>count</p></td>
+<td><p>number of layers in this sub-table</p></td>
+</tr>
+</tbody>
+</table>
+<p>This is followed by an array of structures describing each layer</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 70%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>uint16</p></td>
+<td><p>typeflag</p></td>
+<td><p>Low order byte is the type</p>
+<p>2=&gt;quadratic splines, 3=&gt;cubic splines, 1=&gt;spiros, other values not
+defined</p>
+<p>High order byte are the flags</p>
+<p>0x100 =&gt; foreground layer</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>uint16</p></td>
+<td><p>offset</p></td>
+<td><p>to the name of this layer, a utf8, NUL terminated string</p></td>
+</tr>
+<tr class="row-odd"><td><p>uint32</p></td>
+<td><p>offset</p></td>
+<td><p>to the data for this layer</p></td>
+</tr>
+</tbody>
+</table>
+<p>The layer data is a block of ranges specifying which glyphs (by GID) have
+data for this layer. (the type field is present so that applications can
+ignore layers which they do not support).</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 70%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>uint16</p></td>
+<td><p>count</p></td>
+<td><p>of ranges</p></td>
+</tr>
+</tbody>
+</table>
+<p>This is followed by an array of structures one for each range:</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 70%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>uint16</p></td>
+<td><p>start</p></td>
+<td><p>first GID in the range</p></td>
+</tr>
+<tr class="row-even"><td><p>uint16</p></td>
+<td><p>last</p></td>
+<td><p>last GID in the range</p></td>
+</tr>
+<tr class="row-odd"><td><p>uint32</p></td>
+<td><p>offset</p></td>
+<td><p>to an array of offsets, one for each GID in the range. The offsets in this
+array may be 0. These offsets in turn point to a
+<a class="reference internal" href="#non-standard-glyph-layer"><span class="std std-ref">glyph-layer structure</span></a></p></td>
+</tr>
+</tbody>
+</table>
+<p>All offsets are relative to the start of the ‘layr’ subtable.</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="tex-the-tex-metrics-table">
+<span id="non-standard-tex"></span><h2>‘TeX ‘ – the TeX metrics table<a class="headerlink" href="#tex-the-tex-metrics-table" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>The table begins with a table header containing a version number and a count
+of sub-tables</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 70%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>uint32</p></td>
+<td><p>version</p></td>
+<td><p>currently 0x00010000</p></td>
+</tr>
+<tr class="row-even"><td><p>uint32</p></td>
+<td><p>count</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>This is followed by a table of contents, there will be count replications of
+the following structure (ie. a tag and offset for each sub-table</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 70%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>uint32</p></td>
+<td><p>tag</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>uint32</p></td>
+<td><p>offset</p></td>
+<td><p>from start of ‘PfEd’ table</p></td>
+</tr>
+</tbody>
+</table>
+<p>The format of the subtable depends on the sub-table’s tag. There are
+currently 3 tags supported, these are</p>
+<ul class="simple">
+<li><p>‘<a class="reference internal" href="#non-standard-ftpm"><span class="std std-ref">ftpm</span></a>’ – the font parameter table</p></li>
+<li><p>‘<a class="reference internal" href="#non-standard-htdp"><span class="std std-ref">htdp</span></a>’ – per glyph height/depth sub-table (stores
+TeX’s idea of the height and depth of glyphs (should correct for optical
+overshoot))</p></li>
+<li><p>‘<a class="reference internal" href="#non-standard-sbsp"><span class="std std-ref">sbsp</span></a>’ – per glyph sub/super-script sub-table</p></li>
+</ul>
+</div></blockquote>
+<div class="section" id="htdp-the-per-glyph-height-depth-sub-table">
+<span id="non-standard-htdp"></span><h3>‘htdp’ – the per-glyph height/depth sub-table<a class="headerlink" href="#htdp-the-per-glyph-height-depth-sub-table" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>The sub-table header begins with a version number, and a count of glyphs</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>uint16</p></td>
+<td><p>version</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>uint16</p></td>
+<td><p>count</p></td>
+<td><p>of glyphs</p></td>
+</tr>
+</tbody>
+</table>
+<p>After this will be &lt;count&gt; instances of the following structure</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>uint16</p></td>
+<td><p>height</p></td>
+<td><p>in em-units</p></td>
+</tr>
+<tr class="row-even"><td><p>uint16</p></td>
+<td><p>depth</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>I store these values in em-units rather than in the fix_word of a tfm file
+because em-units make more sense in a sfnt and take up less space.</p>
+</div>
+<div class="section" id="sbsp-the-per-glyph-sub-super-script-sub-table">
+<span id="non-standard-sbsp"></span><h3>‘sbsp’ – the per-glyph sub/super-script sub-table<a class="headerlink" href="#sbsp-the-per-glyph-sub-super-script-sub-table" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>This sub-table has essentially the same format as the previous one. The
+sub-table header begins with a version number, and a count of glyphs</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>uint16</p></td>
+<td><p>version</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>uint16</p></td>
+<td><p>count</p></td>
+<td><p>of glyphs</p></td>
+</tr>
+</tbody>
+</table>
+<p>After this will be &lt;count&gt; instances of the following structure</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>uint16</p></td>
+<td><p>subscript offset</p></td>
+<td><p>in em-units</p></td>
+</tr>
+<tr class="row-even"><td><p>uint16</p></td>
+<td><p>superscript offset</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>I store these values in em-units rather than in the fix_word of a tfm file
+because em-units make more sense in a sfnt and take up less space.</p>
+</div>
+<div class="section" id="ftpm-the-font-parameter-font-dimensions-sub-table">
+<span id="non-standard-ftpm"></span><h3>‘ftpm’ – the font parameter (font dimensions) sub-table<a class="headerlink" href="#ftpm-the-font-parameter-font-dimensions-sub-table" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>The sub-table header begins with a version number, and a count of parameters</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 70%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>uint16</p></td>
+<td><p>version</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>uint16</p></td>
+<td><p>count</p></td>
+<td><p>number of parameters in the font</p></td>
+</tr>
+</tbody>
+</table>
+<p>And this is followed by &lt;count&gt; instances of the following structure:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>uint32</p></td>
+<td><p>tag</p></td>
+<td><p>parameter name</p></td>
+</tr>
+<tr class="row-even"><td><p>int32</p></td>
+<td><p>value</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>I store these values as fix_words and <em>not</em> as em-units because their meaning
+is not constrained by the spec and the <code class="docutils literal notranslate"><span class="pre">Slant</span></code> parameter (at the least) can
+not be converted to em-units.</p>
+<p>I have defined the following 4-letter parameter tags</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Tag</p></th>
+<th class="head"><p>Meaning</p></th>
+<th class="head"><p>traditional font parameter number in tfm file (font dimension number)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Slnt</p></td>
+<td><p>Slant</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Spac</p></td>
+<td><p>Space</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>Stre</p></td>
+<td><p>Stretch</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>Shnk</p></td>
+<td><p>Shrink</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>XHgt</p></td>
+<td><p>XHeight</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-odd"><td><p>Quad</p></td>
+<td><p>Quad</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-even"><td><p>ExSp</p></td>
+<td><p>Extra Space</p></td>
+<td><p>7 (in text fonts)</p></td>
+</tr>
+<tr class="row-odd"><td><p>MtSp</p></td>
+<td><p>Math Space</p></td>
+<td><p>7 (in math and math extension fonts)</p></td>
+</tr>
+<tr class="row-even"><td><p>Num1</p></td>
+<td><p>Num1</p></td>
+<td><p>8 (in math fonts)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Num2</p></td>
+<td><p>Num2</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-even"><td><p>Num3</p></td>
+<td><p>Num2</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-odd"><td><p>Dnm1</p></td>
+<td><p>Denom1</p></td>
+<td><p>11</p></td>
+</tr>
+<tr class="row-even"><td><p>Dnm2</p></td>
+<td><p>Denom2</p></td>
+<td><p>12</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sup1</p></td>
+<td><p>Sup1</p></td>
+<td><p>13</p></td>
+</tr>
+<tr class="row-even"><td><p>Sup2</p></td>
+<td><p>Sup2</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sup3</p></td>
+<td><p>Sup3</p></td>
+<td><p>15</p></td>
+</tr>
+<tr class="row-even"><td><p>Sub1</p></td>
+<td><p>Sub1</p></td>
+<td><p>16</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sub2</p></td>
+<td><p>Sub2</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-even"><td><p>SpDp</p></td>
+<td><p>Sup Drop</p></td>
+<td><p>18</p></td>
+</tr>
+<tr class="row-odd"><td><p>SbDp</p></td>
+<td><p>Sub Drop</p></td>
+<td><p>19</p></td>
+</tr>
+<tr class="row-even"><td><p>Dlm1</p></td>
+<td><p>Delim 1</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-odd"><td><p>Dlm2</p></td>
+<td><p>Delim 2</p></td>
+<td><p>21</p></td>
+</tr>
+<tr class="row-even"><td><p>AxHt</p></td>
+<td><p>Axis height</p></td>
+<td><p>22</p></td>
+</tr>
+<tr class="row-odd"><td><p>RlTk</p></td>
+<td><p>Default Rule Thickness</p></td>
+<td><p>8 (in math extension fonts)</p></td>
+</tr>
+<tr class="row-even"><td><p>BOS1</p></td>
+<td><p>Big Op Spacing1</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-odd"><td><p>BOS2</p></td>
+<td><p>Big Op Spacing2</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>BOS3</p></td>
+<td><p>Big Op Spacing3</p></td>
+<td><p>11</p></td>
+</tr>
+<tr class="row-odd"><td><p>BOS4</p></td>
+<td><p>Big Op Spacing4</p></td>
+<td><p>12</p></td>
+</tr>
+<tr class="row-even"><td><p>BOS5</p></td>
+<td><p>Big Op Spacing5</p></td>
+<td><p>13</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="bdf-the-bdf-properties-table">
+<span id="non-standard-bdf"></span><h2>‘BDF ‘ – the BDF properties table<a class="headerlink" href="#bdf-the-bdf-properties-table" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>The table begins with a table header containing a version number and a count
+of strikes</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 70%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>uint16</p></td>
+<td><p>version</p></td>
+<td><p>currently 0x0001</p></td>
+</tr>
+<tr class="row-even"><td><p>uint16</p></td>
+<td><p>strike-count</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>uint32</p></td>
+<td><p>offset to string table</p></td>
+<td><p>(from start of BDF table)</p></td>
+</tr>
+</tbody>
+</table>
+<p>This is followed by an entry for each strike identifying how many properties
+that strike has.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>uint16</p></td>
+<td><p>ppem</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>uint16</p></td>
+<td><p>property-count</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Then there will be the properties, first there with be property-count[1]
+properties from the first strike, then property-count[2] properties for the
+second, etc. Each property looks like:</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 70%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>uint32</p></td>
+<td><p>name</p></td>
+<td><p>offset into the string table of the property’s name</p></td>
+</tr>
+<tr class="row-even"><td><p>uint16</p></td>
+<td><p>type</p></td>
+<td><p>0=&gt;string</p>
+<p>1=&gt;atom</p>
+<p>2=&gt;int</p>
+<p>3=&gt;uint</p>
+<p>0x10 may be ored into one of the above types to indicate a real property</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>uint32</p></td>
+<td><p>value</p></td>
+<td><p>For strings and atoms, this is an offset into the string table</p>
+<p>for integers it is the value itself</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The string table is a series of ASCII bytes. Each string is NUL terminated.</p>
+</div></blockquote>
+</div>
+<div class="section" id="fftm-the-fontforge-time-stamp-table">
+<span id="non-standard-fftm"></span><h2>‘FFTM’ the FontForge time stamp table<a class="headerlink" href="#fftm-the-fontforge-time-stamp-table" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>The table begins with a table header containing a version number and is
+followed by a series of timestamps (same format as the timestamps in the head
+table – 64 bit times, seconds since 00:00:00, 1-Jan-1904).</p>
+<p>I don’t think this is a duplication of the information in the ‘head’ table.
+Neither the Apple nor OpenType spec is clear: Does head.creationtime refer to
+the creation time of the truetype/opentype file, or of the font itself. After
+examining various fonts of Apple’s, it appears that the ‘head’ entries
+contain the dates for the font file and not the font. The times in this table
+are specifically the creation time of the font (the sfd file), while the
+times in the ‘head’ table contain the creation time of the truetype or
+opentype font file.</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 70%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>uint32</p></td>
+<td><p>version</p></td>
+<td><p>currently 0x00000001</p></td>
+</tr>
+<tr class="row-even"><td><p>int64</p></td>
+<td><p>FontForge’s own timestamp</p></td>
+<td><p>(the date of the sources for fontforge)</p></td>
+</tr>
+<tr class="row-odd"><td><p>int64</p></td>
+<td><p>creation date of this font</p></td>
+<td><p>Not the creation date of the tt/ot file,</p>
+<p>but the date the sfd file was created.</p>
+<p>(not always accurate).</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>int64</p></td>
+<td><p>last modification date of this font</p></td>
+<td><p>Not the modification date of the file,</p>
+<p>but the time a glyph, etc. was last</p>
+<p>changed in the font database.</p>
+<p>(not always accurate)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui.html">FontForge’s User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../techref.html">Technical References</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gposgsub.html">Advanced Typography Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AA-Comparison.html">Anti-Alias Comparison</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autotrace.html">Autotracing bitmaps in FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accented.html">Building Accented and other Composite Glyphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bezier.html">Bézier Splines </a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref-caveats.html">Caveats about References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfdchangelog.html">Changes to the sfd format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cidmapformat.html">Cidmap files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cliargs.html">Command Line Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="splinefont.html">Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SuggestDeltas.html">Delta Instruction Suggestions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stroke.html">Expand Stroke Facility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BDFGrey.html">Extensions to Adobe’s BDF  for greymap fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PfaEdit-TeX.html">FontForge and TeX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pfaeditmath.html">FontForge’s math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hinting.html">Hinting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macformats.html">Macintosh font formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="featurefile.html">Major differences between FontForge’s and Adobe’s interpretation of feature files</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Non standard extensions used FontForge in True/Open Type</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#non-standard-feature-tags">Non standard feature tags</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#non-standard-tables">Non standard tables.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pfed-the-fontforge-extensions-table">‘PfEd’ – the FontForge extensions table</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#colr-the-per-glyph-color-sub-table">‘colr’ – the per-glyph color sub-table</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cmnt-the-per-glyph-comment-sub-table">‘cmnt’ – the per-glyph comment sub-table</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fcmt-the-font-comment-and-fontlog-sub-table">‘fcmt’ – the font comment (and FONTLOG) sub-table</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cvtc-the-cvt-comments-sub-table">‘cvtc’ – the cvt comments sub-table</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gpos-gsub-lookup-names">‘GPOS/GSUB’ – lookup names</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#guid-guidelines">‘guid’ – guidelines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#layr-background-layer-data">‘layr’ – Background layer data</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#tex-the-tex-metrics-table">‘TeX ‘ – the TeX metrics table</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#htdp-the-per-glyph-height-depth-sub-table">‘htdp’ – the per-glyph height/depth sub-table</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sbsp-the-per-glyph-sub-super-script-sub-table">‘sbsp’ – the per-glyph sub/super-script sub-table</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ftpm-the-font-parameter-font-dimensions-sub-table">‘ftpm’ – the font parameter (font dimensions) sub-table</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#bdf-the-bdf-properties-table">‘BDF ‘ – the BDF properties table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fftm-the-fontforge-time-stamp-table">‘FFTM’ the FontForge time stamp table</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="palmfonts.html">Palm fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bitmaponlysfnt.html">Several formats for bitmap only sfnts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfdformat.html">Spline Font Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pcf-format.html">The X11 PCF bitmap font file format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TrueOpenTables.html">TrueType and OpenType tables supported by FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corpchar.html">Unicode Corporate Characters used by FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UniqueID.html">UniqueID and XUID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selections.html">X Selections and the X Clipboard</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../techref.html">Technical References</a><ul>
+      <li>Previous: <a href="featurefile.html" title="previous chapter">Major differences between FontForge’s and Adobe’s interpretation of feature files</a></li>
+      <li>Next: <a href="palmfonts.html" title="next chapter">Palm fonts</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

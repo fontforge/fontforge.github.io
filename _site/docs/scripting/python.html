@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Python Scripting &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="fontforge" href="python/fontforge.html" />
+    <link rel="prev" title="Scripting functions" href="scripting-alpha.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="python-scripting">
+<h1>Python Scripting<a class="headerlink" href="#python-scripting" title="Permalink to this headline">¶</a></h1>
+<p>I assume you have a working knowledge of <a class="reference external" href="http://www.python.org/doc/">Python</a>.
+FontForge implements two Python modules – one great huge one called <a class="reference internal" href="python/fontforge.html#module-fontforge" title="fontforge: The primary module for interacting with FontForge"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fontforge</span></code></a>
+which provides access to as much of FontForge’s functionality as I’ve had
+time to write, and one tiny one called <a class="reference internal" href="python/psMat.html#module-psMat" title="psMat: Provides quick access to some useful transformations expressed as PostScript matrices"><code class="xref py py-mod docutils literal notranslate"><span class="pre">psMat</span></code></a> which provides quick
+access to some useful transformations expressed as PostScript matrices.</p>
+<p>In python terms fontforge <em>embeds</em> python. It is possible to build
+fontforge so that it is also a <a class="reference internal" href="#python-extension"><span class="std std-ref">python extension</span></a>.</p>
+<div class="section" id="fontforge-modules">
+<h2>FontForge Modules<a class="headerlink" href="#fontforge-modules" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="python/fontforge.html">fontforge</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python/fontforge.html#module-attributes">Module attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/fontforge.html#module-functions">Module functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/fontforge.html#user-interface-module-functions">User Interface Module Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/fontforge.html#point">Point</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/fontforge.html#contour">Contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/fontforge.html#layer">Layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/fontforge.html#glyph-pen">Glyph Pen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/fontforge.html#glyph">Glyph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/fontforge.html#selection">Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/fontforge.html#private">Private</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/fontforge.html#math">Math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/fontforge.html#font">Font</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="python/psMat.html">psMat</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="command-line-convenience">
+<h2>Command line convenience<a class="headerlink" href="#command-line-convenience" title="Permalink to this headline">¶</a></h2>
+<p>For convenience, Python commands given as a <code class="docutils literal notranslate"><span class="pre">-c</span></code> argument on the
+command line have the following code prepended:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">argv</span><span class="p">;</span> <span class="kn">from</span> <span class="nn">fontforge</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+<p>Hence, the trivial script to convert a font can be written:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fontforge</span> <span class="o">-</span><span class="n">c</span> <span class="s1">&#39;open(argv[1]).generate(argv[2])&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="trivial-example">
+<h2>Trivial example<a class="headerlink" href="#trivial-example" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fontforge</span>                                 <span class="c1">#Load the module</span>
+<span class="n">amb</span><span class="o">=</span><span class="n">fontforge</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;Ambrosia.sfd&quot;</span><span class="p">)</span>               <span class="c1">#Open a font</span>
+<span class="n">amb</span><span class="o">.</span><span class="n">selection</span><span class="o">.</span><span class="n">select</span><span class="p">((</span><span class="s2">&quot;ranges&quot;</span><span class="p">,</span><span class="kc">None</span><span class="p">),</span><span class="s2">&quot;A&quot;</span><span class="p">,</span><span class="s2">&quot;Z&quot;</span><span class="p">)</span>    <span class="c1">#select A-Z</span>
+<span class="n">amb</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>                                       <span class="c1">#Copy those glyphs into the clipboard</span>
+
+<span class="n">n</span><span class="o">=</span><span class="n">fontforge</span><span class="o">.</span><span class="n">font</span><span class="p">()</span>                               <span class="c1">#Create a new font</span>
+<span class="n">n</span><span class="o">.</span><span class="n">selection</span><span class="o">.</span><span class="n">select</span><span class="p">((</span><span class="s2">&quot;ranges&quot;</span><span class="p">,</span><span class="kc">None</span><span class="p">),</span><span class="s2">&quot;A&quot;</span><span class="p">,</span><span class="s2">&quot;Z&quot;</span><span class="p">)</span>      <span class="c1">#select A-Z of it</span>
+<span class="n">n</span><span class="o">.</span><span class="n">paste</span><span class="p">()</span>                                        <span class="c1">#paste the glyphs above in</span>
+<span class="nb">print</span> <span class="n">n</span><span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">foreground</span>                          <span class="c1">#test to see that something</span>
+                                                 <span class="c1">#  actually got pasted</span>
+<span class="n">n</span><span class="o">.</span><span class="n">fontname</span><span class="o">=</span><span class="s2">&quot;NewFont&quot;</span>                             <span class="c1">#Give the new font a name</span>
+<span class="n">n</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;NewFont.sfd&quot;</span><span class="p">)</span>                            <span class="c1">#and save it.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="fontforge-as-a-python-extension">
+<span id="python-extension"></span><h2>FontForge as a python extension<a class="headerlink" href="#fontforge-as-a-python-extension" title="Permalink to this headline">¶</a></h2>
+<p>In addition to embedding Python, FontForge typically installs a Python
+module accessible to the system’s <code class="docutils literal notranslate"><span class="pre">python</span></code> executable, which can be
+accessed using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">fontforge</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui.html">FontForge’s User Interface</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="scripting.html">Scripting FontForge</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="scripting-alpha.html">Scripting functions</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Python Scripting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#fontforge-modules">FontForge Modules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="python/fontforge.html">fontforge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="python/psMat.html">psMat</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#command-line-convenience">Command line convenience</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#trivial-example">Trivial example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fontforge-as-a-python-extension">FontForge as a python extension</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="scripting.html#invoking-scripts">Invoking scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripting.html#scripting-language">Scripting Language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripting.html#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripting.html#the-execute-script-dialog">The Execute Script dialog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripting.html#the-scripts-menu">The Scripts Menu</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../techref.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="scripting.html">Scripting FontForge</a><ul>
+      <li>Previous: <a href="scripting-alpha.html" title="previous chapter">Scripting functions</a></li>
+      <li>Next: <a href="python/fontforge.html" title="next chapter">fontforge</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

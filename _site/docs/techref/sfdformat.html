@@ -1,0 +1,1778 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Spline Font Database &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="The X11 PCF bitmap font file format" href="pcf-format.html" />
+    <link rel="prev" title="Several formats for bitmap only sfnts" href="bitmaponlysfnt.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="spline-font-database">
+<h1>Spline Font Database<a class="headerlink" href="#spline-font-database" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This page is often out of date. I thought it was a correct on 16 Feb 2011. A
+<a class="reference internal" href="sfdchangelog.html"><span class="doc">changelog</span></a> file is available. Even if out of date it
+should be helpful, but if you really need to know the current format look at
+<a class="reference external" href="https://github.com/fontforge/fontforge/blob/master/fontforge/sfd.c">fontforge/sfd.c</a>
+and see what it parses. Some descriptions of esoteric features are not
+complete, but I hope they give you enough hints that you can figure the
+format out (especially after looking it up in sfd.c)</p>
+</div>
+<blockquote class="epigraph">
+<div><div class="line-block">
+<div class="line"><strong>TYSON:</strong></div>
+<div class="line">What is the meaning of this?</div>
+<div class="line"><br /></div>
+<div class="line"><strong>THOMAS</strong></div>
+<div class="line">That’s the most relevant</div>
+<div class="line">Question in the world.</div>
+</div>
+<p class="attribution">—<em>The Lady’s not for Burning</em>
+– Christopher Fry</p>
+</div></blockquote>
+<p>The sfd <a class="footnote-reference brackets" href="#sfdext" id="id1">1</a> format evolves over time. I hope the current parser can handle old sfd
+formats. Most changes have been small, but in Feb 2008 I allowed multiple layers
+in fonts and this turned out to be an incompatible change and I raised the sfd
+version number to 3, and in March of 2007 the way fontforge handled lookups and
+features changed radically (and I bumped the SFD file version number for the
+first time) and sfd files created before then are better understood if you look
+at an
+<a class="reference external" href="https://github.com/fontforge/fontforge/commits/master/htdocs/sfdformat.html">older version of this document</a>.</p>
+<p>FontForge’s sfd files are ASCII files (so they can be copied easily
+across the internet and so that diffs are somewhat meaningful). They contain a
+full description of your font. As of 14 May 2008 there is a registered (with
+IANA) MIME type for them
+<a class="reference external" href="http://www.iana.org/assignments/media-types/application/">application/vnd.font-fontforge-sfd</a>.</p>
+<p>They are vaguely modeled on bdf files. The first few lines contain general font
+properties, then there’s a section for each character, then a section for each
+bitmap font.</p>
+<div class="contents topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#spline-font-database" id="id5">Spline Font Database</a></p>
+<ul>
+<li><p><a class="reference internal" href="#font-header" id="id6">Font Header</a></p></li>
+<li><p><a class="reference internal" href="#outline-character-data" id="id7">Outline Character Data</a></p></li>
+<li><p><a class="reference internal" href="#bitmap-fonts" id="id8">Bitmap Fonts</a></p></li>
+<li><p><a class="reference internal" href="#splinefont-directories" id="id9">SplineFont Directories</a></p></li>
+<li><p><a class="reference internal" href="#autosave-format" id="id10">Autosave Format</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is tempting to cut and paste information from one sfd file to another.
+This is usually ok, but there are a couple of cases than need to be avoided:</p>
+</div>
+<ul class="simple">
+<li><p>If you copy a glyph with truetype instructions, those instructions may call
+subroutines defined in the old font but not the new. Unexpected things may
+happen when the glyph is grid fit (including system crashes)</p></li>
+<li><p>If you copy a substitution (ligature, kern, contextual chaining, …) item from
+one font to another, the substitution contains the name of a lookup-subtable.
+Bad things will probably happen if the lookup subtable isn’t in the font.</p></li>
+<li><p>If you copy a glyph containing references – these are done by glyph index
+(which is probably different from font to font). You may end up refering to the
+wrong glyph.</p></li>
+</ul>
+<div class="section" id="font-header">
+<span id="sfdformat-font-header"></span><h2>Font Header<a class="headerlink" href="#font-header" title="Permalink to this headline">¶</a></h2>
+<p>Here is an example of what the first few lines look like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SplineFontDB</span><span class="p">:</span> <span class="mf">3.0</span>
+<span class="n">FontName</span><span class="p">:</span> <span class="n">Ambrosia</span>
+<span class="n">FullName</span><span class="p">:</span> <span class="n">Ambrosia</span>
+<span class="n">FamilyName</span><span class="p">:</span> <span class="n">Ambrosia</span>
+<span class="n">DefaultBaseFilename</span><span class="p">:</span> <span class="n">Ambrosia</span><span class="o">-</span><span class="mf">1.0</span>
+<span class="n">Weight</span><span class="p">:</span> <span class="n">Medium</span>
+<span class="n">Copyright</span><span class="p">:</span> <span class="n">Copyright</span> <span class="p">(</span><span class="n">C</span><span class="p">)</span> <span class="mi">1995</span><span class="o">-</span><span class="mi">2000</span> <span class="n">by</span> <span class="n">George</span> <span class="n">Williams</span>
+<span class="n">Comments</span><span class="p">:</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">funny</span> <span class="n">font</span><span class="o">.</span>
+<span class="n">UComments</span><span class="p">:</span> <span class="s2">&quot;This is a funny font.&quot;</span>
+<span class="n">FontLog</span><span class="p">:</span> <span class="s2">&quot;Create Jan 2008&quot;</span>
+<span class="n">Version</span><span class="p">:</span> <span class="mf">001.000</span>
+<span class="n">ItalicAngle</span><span class="p">:</span> <span class="mi">0</span>
+<span class="n">UnderlinePosition</span><span class="p">:</span> <span class="o">-</span><span class="mi">133</span>
+<span class="n">UnderlineWidth</span><span class="p">:</span> <span class="mi">20</span>
+<span class="n">Ascent</span><span class="p">:</span> <span class="mi">800</span>
+<span class="n">Descent</span><span class="p">:</span> <span class="mi">200</span>
+<span class="n">sfntRevision</span><span class="p">:</span> <span class="mh">0x00078106</span>
+<span class="n">WidthSeparation</span><span class="p">:</span> <span class="mi">140</span>
+<span class="n">LayerCount</span><span class="p">:</span> <span class="mi">4</span>
+<span class="n">Layer</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">0</span> <span class="s2">&quot;Back&quot;</span> <span class="mi">1</span>
+<span class="n">Layer</span><span class="p">:</span> <span class="mi">1</span> <span class="mi">1</span> <span class="s2">&quot;Fore&quot;</span> <span class="mi">0</span>
+<span class="n">Layer</span><span class="p">:</span> <span class="mi">2</span> <span class="mi">0</span> <span class="s2">&quot;Cubic_Fore&quot;</span> <span class="mi">0</span>
+<span class="n">Layer</span><span class="p">:</span> <span class="mi">3</span> <span class="mi">0</span> <span class="s2">&quot;Test&quot;</span> <span class="mi">1</span>
+<span class="n">DisplaySize</span><span class="p">:</span> <span class="o">-</span><span class="mi">24</span>
+<span class="n">DisplayLayer</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">AntiAlias</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">WinInfo</span><span class="p">:</span> <span class="mi">64</span> <span class="mi">16</span> <span class="mi">4</span>
+<span class="n">FitToEm</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">UseUniqueID</span><span class="p">:</span> <span class="mi">0</span>
+<span class="n">UseXUID</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">XUID</span><span class="p">:</span> <span class="mi">3</span> <span class="mi">18</span> <span class="mi">21</span>
+<span class="n">Encoding</span><span class="p">:</span> <span class="n">unicode</span>
+<span class="n">Order2</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">OnlyBitmaps</span><span class="p">:</span> <span class="mi">0</span>
+<span class="n">MacStyle</span><span class="p">:</span> <span class="mi">0</span>
+<span class="n">TeXData</span><span class="p">:</span> <span class="mi">1</span> <span class="mi">10485760</span> <span class="mi">0</span> <span class="mi">269484</span> <span class="mi">134742</span> <span class="mi">89828</span> <span class="mi">526385</span> <span class="mi">1048576</span> <span class="mi">89828</span>
+<span class="n">CreationTime</span><span class="p">:</span> <span class="mi">1151539072</span>
+<span class="n">ModificationTime</span><span class="p">:</span> <span class="mi">11516487392</span>
+<span class="n">GaspTable</span> <span class="mi">3</span> <span class="mi">8</span> <span class="mi">2</span> <span class="mi">16</span> <span class="mi">1</span> <span class="mi">65535</span> <span class="mi">3</span> <span class="mi">0</span>
+<span class="n">DEI</span><span class="p">:</span> <span class="mi">91125</span>
+<span class="n">ExtremaBound</span><span class="p">:</span> <span class="mi">30</span>
+</pre></div>
+</div>
+<p>The first line just identifies the file as an sfd file and provides a version
+number. IT MUST BE FIRST in the file. The rest of the file is basically a set of
+keyword value pairs. Within a given section, order is largely irrelevant. The
+next few lines give the various different names that postscript allows fonts to
+have. Then some fairly self-explanatory items (if they don’t make sense, look
+them up in the <a class="reference internal" href="../ui/dialogs/fontinfo.html"><span class="doc">font info</span></a> dlg). A few things need some
+explanation:</p>
+<dl class="object">
+<dt>
+<code class="sig-name descname">Comments</code></dt>
+<dd><p>This is deprecated. A string of ASCII characters</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">UComments</code></dt>
+<dd><p>New format for font comments. A string of utf7 characters.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">FontLog</code></dt>
+<dd><p>A string of utf7 characters.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">TeXData</code></dt>
+<dd><p>These are the TeX font parameters (and some similar info). The first number
+is 1,2 or 3 and indicates that the font is a text, math or math ext font. The
+next number is the design pointsize (times (1&lt;&lt;20)). Then follow the font
+parameters. These values are usually in TeX fix_word format where there is a
+binary point after the first 20 binary digits (so to get the number divide by
+(1&lt;&lt;20)).</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">sfntRevision</code></dt>
+<dd><p>This is the revision number field of the ‘head’ table of an sfnt. It is
+stored in hex in a 16.16 fixed number (that is, a 32 bit number where the
+binary point is after the 16th binary bit).</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">WidthSeparation</code></dt>
+<dd><p>This is internal information that the user never sees directly. It indicates
+the most recent value for the desired separation between glyphs that was used
+in the AutoWidth command. It is also used as a default for the separation in
+AutoKern.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">LayerCount</code></dt>
+<dd><p>The number of layers in a font, must be at least 2.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Layer</code></dt>
+<dd><p>One entry for each layer to name it and describe its splines «Layer: 1 1
+“Fore” 0» means this is layer 1, it has quadratic splines, is named “Fore”
+and is not a background layer, while «Layer: 2 0 “Cubic_Fore” 0» means this
+is layer 2, it does not have quadratic splines (so it has cubic), is named
+“Cubic_Fore” and is also not a background layer.</p>
+<p>Layer &lt;layer-number&gt; &lt;quadratic-flag&gt; &lt;name&gt; [&lt;background-flag&gt;]</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">DisplaySize</code></dt>
+<dd><p>This is the number of pixels per em that will be used by default to display
+the font in fontviews (it may be changed of course). Negative numbers mean to
+rasterize the display from the outlines, positive numbers mean to use a
+prebuilt bitmap font of that size.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">DisplayLayer</code></dt>
+<dd><p>The layer that should be displayed by default on opening the font.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">AntiAlias</code></dt>
+<dd><p>Whether the fontview should display the font as antialiased or black and
+white. (AntiAliased looks better, but will be slower)</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">FitToEm</code></dt>
+<dd><p>Controls whether Fit to Em is checked by default in a fontview that displays
+this font.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">WinInfo</code></dt>
+<dd><p>Has three pieces of data on the default display of windows containing this
+font. The first datum says that the window should be scrolled so that glyph
+at encoding 64 should be visible, the second that the window should have 16
+character columns horizontally, and the last that there should be 4 character
+rows vertically.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Encoding</code></dt>
+<dd><p>For normal fonts this will be one of the names (or a close approximation
+thereto) that appears in the Encoding pulldown list. CID keyed fonts will not
+have encodings. Instead they’ll have something like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Registry</span><span class="p">:</span> <span class="n">Adobe</span>
+<span class="n">Ordering</span><span class="p">:</span> <span class="n">japan1</span>
+<span class="n">Supplement</span><span class="p">:</span> <span class="mi">4</span>
+<span class="n">CIDVersion</span><span class="p">:</span> <span class="mf">1.2</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">CreationTime</code></dt>
+<dd></dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">ModificationTime</code></dt>
+<dd><p>These two dates are expressed as seconds since 00:00:00, 1 January, 1970 –
+standard unix dates.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">GaspTable</code></dt>
+<dd><p>The first number following the keyword gives the number of ppem/flag pairs on
+the line. The next two numbers are the first ppem and first flag. The last
+number is gasp table version.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">UseXUID</code></dt>
+<dd><p>Nowadays Adobe says XUID is deprecated. If this flag is set then fontforge
+will still generate an XUID entry for a postscript font.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">DEI</code></dt>
+<dd><p>It’s too hard to explain, see the minutes of the CalTech OddHack committee
+from 15 Jan 1980. You can safely ignore it.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">ExtremaBound</code></dt>
+<dd><p>Adobe says that short splines are allowed to have internal extrema, but that
+big splines are not. But they don’t define “big”. This allows the user to
+specify that number. Splines where the distance between end-points is longer
+than this number will be checked for extrema.</p>
+</dd></dl>
+
+<p>For WOFF files</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">woffMajor</span><span class="p">:</span> <span class="mi">7</span>
+<span class="n">woffMinor</span><span class="p">:</span> <span class="mi">504</span>
+<span class="n">woffMetadata</span><span class="p">:</span> <span class="s2">&quot;&lt;?xml version+AD0AIgAA-1.0+ACIA encoding ...&quot;</span>
+</pre></div>
+</div>
+<dl class="object">
+<dt>
+<code class="sig-name descname">woffMajor</code></dt>
+<dd><p>The major version number to be stored in a woff file.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">woffMinor</code></dt>
+<dd><p>The minor version number of the woff file.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">woffMetadata</code></dt>
+<dd><p>Metadata for the woff file, stored in UTF7.</p>
+</dd></dl>
+
+<p>For UFO files</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">UFOAscent</span><span class="p">:</span> <span class="mi">697</span>
+<span class="n">UFODescent</span><span class="p">:</span> <span class="o">-</span><span class="mi">154</span>
+</pre></div>
+</div>
+<dl class="object">
+<dt>
+<code class="sig-name descname">UFOAscent</code></dt>
+<dd><p>The value of the “ascender” field in the fontinfo.plist file of a UFO font.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">UFODescent</code></dt>
+<dd><p>The value of the “descender” field in the fontinfo.plist file of a UFO font.</p>
+</dd></dl>
+
+<p>Some fonts will have some TrueType information in them too (look at the
+<a class="reference external" href="http://www.microsoft.com/typography/tt/tt.htm">truetype spec</a> for the
+meanings of these, they usually live in the OS/2, hhea, or vhea tables).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FSType</span><span class="p">:</span> <span class="mi">4</span>
+<span class="n">PFMFamily</span><span class="p">:</span> <span class="mi">17</span>
+<span class="n">TTFWeight</span><span class="p">:</span> <span class="mi">400</span>
+<span class="n">TTFWidth</span><span class="p">:</span> <span class="mi">5</span>
+<span class="n">Panose</span><span class="p">:</span> <span class="mi">2</span> <span class="mi">0</span> <span class="mi">5</span> <span class="mi">3</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
+<span class="n">LineGap</span><span class="p">:</span> <span class="mi">252</span>
+<span class="n">OS2LineGap</span><span class="p">:</span> <span class="mi">252</span>
+<span class="n">VLineGap</span><span class="p">:</span> <span class="mi">0</span>
+<span class="n">OS2Vendor</span><span class="p">:</span> <span class="s1">&#39;PfEd&#39;</span>
+<span class="n">OS2FamilyClass</span><span class="p">:</span> <span class="mi">2050</span>
+<span class="n">OS2Version</span><span class="p">:</span> <span class="mi">4</span>
+<span class="n">OS2_WeightWidthSlopeOnly</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">OS2_UseTypoMetrics</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">OS2CodePages</span><span class="p">:</span> <span class="mi">6000009</span><span class="n">f</span><span class="o">.</span><span class="mi">9</span><span class="n">fd70000</span>
+<span class="n">OS2UnicodeRanges</span><span class="p">:</span> <span class="mi">800002</span><span class="n">ef</span><span class="o">.</span><span class="mf">50002049.00000000</span><span class="o">.</span><span class="mi">00000000</span>
+</pre></div>
+</div>
+<p>The following items also come from the OS/2 and hhea tables but are slightly
+more complex. The keywords are paired, so <code class="docutils literal notranslate"><span class="pre">HheadAscent</span></code> and <code class="docutils literal notranslate"><span class="pre">HheadAOffset</span></code>
+work together. If the offset keyword is 1 (true) then the other keyword is
+treated as a value relative to what FontForge thinks should be the correct
+value, FontForge will calculate what it thinks the value should be and then will
+add the value specified in the keyword. So in the example below, FF will figure
+out what it thinks <code class="docutils literal notranslate"><span class="pre">HheadAscent</span></code> should be and then add “0” to it to get the
+value stored in a truetype font’s OS/2 table. However if the Offset flag is set
+to 0 (false) then the Ascent would be used exactly as specified.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">HheadAscent</span><span class="p">:</span> <span class="mi">0</span>
+<span class="n">HheadAOffset</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">HheadDescent</span><span class="p">:</span> <span class="mi">0</span>
+<span class="n">HheadDOffset</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">OS2TypoAscent</span><span class="p">:</span> <span class="mi">0</span>
+<span class="n">OS2TypoAOffset</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">OS2TypoDescent</span><span class="p">:</span> <span class="mi">0</span>
+<span class="n">OS2TypoDOffset</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">OS2WinAscent</span><span class="p">:</span> <span class="mi">0</span>
+<span class="n">OS2WinAOffset</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">OS2WinDescent</span><span class="p">:</span> <span class="mi">0</span>
+<span class="n">OS2WinDOffset</span><span class="p">:</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>These represent different definitions of ascent and descent that are stored in
+various places in the truetype file (Horizontal header and OS/2 tables).</p>
+<p>The OS/2 table contains information on the position of subscripts, superscripts
+and strike throughs:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">OS2SubXSize</span><span class="p">:</span> <span class="mi">1351</span>
+<span class="n">OS2SubYSize</span><span class="p">:</span> <span class="mi">1228</span>
+<span class="n">OS2SubXOff</span><span class="p">:</span> <span class="mi">0</span>
+<span class="n">OS2SubYOff</span><span class="p">:</span> <span class="o">-</span><span class="mi">446</span>
+<span class="n">OS2SupXSize</span><span class="p">:</span> <span class="mi">1351</span>
+<span class="n">OS2SupYSize</span><span class="p">:</span> <span class="mi">1228</span>
+<span class="n">OS2SupXOff</span><span class="p">:</span> <span class="mi">0</span>
+<span class="n">OS2SupYOff</span><span class="p">:</span> <span class="mi">595</span>
+<span class="n">OS2StrikeYSize</span><span class="p">:</span> <span class="mi">143</span>
+<span class="n">OS2StrikeYPos</span><span class="p">:</span> <span class="mi">614</span>
+</pre></div>
+</div>
+<p>The MacStyle field (if present) indicates whether the font is bold, italic,
+condensed, extended, etc.</p>
+<p>Some fonts will have PostScript specific information contained in the Private
+dictionary (the value is preceeded by an integer holding the number of
+characters needed for the string representation. It makes reading the file
+slightly faster, but is ugly. I should not have done that, but too late now).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">BeginPrivate</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">BlueValues</span> <span class="mi">23</span> <span class="p">[</span><span class="o">-</span><span class="mi">19</span> <span class="mi">0</span> <span class="mi">502</span> <span class="mi">517</span> <span class="mi">750</span> <span class="mi">768</span><span class="p">]</span>
+<span class="n">EndPrivate</span>
+</pre></div>
+</div>
+<p>Some fonts may have python data:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PickledData</span><span class="p">:</span> <span class="s2">&quot;I3</span>
+<span class="o">.</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>This is arbetrary python pickled data (protocol=0) which got set by a python
+script. FontForge stores it as a string. If there are either double quotes or
+backslashes inside the string they will be preceded by a backslash.</p>
+<p>If your font has any lookups</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Lookup</span><span class="p">:</span> <span class="mi">6</span> <span class="mi">0</span> <span class="mi">0</span> <span class="s2">&quot;calt&quot;</span>  <span class="p">{</span><span class="s2">&quot;calt-1&quot;</span>  <span class="p">}</span> <span class="p">[</span><span class="s1">&#39;calt&#39;</span> <span class="p">(</span><span class="s1">&#39;DFLT&#39;</span> <span class="o">&lt;</span><span class="s1">&#39;dflt&#39;</span> <span class="o">&gt;</span> <span class="s1">&#39;latn&#39;</span> <span class="o">&lt;</span><span class="s1">&#39;dflt&#39;</span> <span class="o">&gt;</span> <span class="p">)</span> <span class="p">]</span>
+<span class="n">Lookup</span><span class="p">:</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="s2">&quot;&#39;smcp&#39; Lowercase to Small Capitals in Latin lookup 0&quot;</span>  <span class="p">{</span><span class="s2">&quot;&#39;smcp&#39; Lowercase to Small Capitals in Latin lookup 0&quot;</span>  <span class="p">}</span> <span class="p">[</span><span class="s1">&#39;smcp&#39;</span> <span class="p">(</span><span class="s1">&#39;latn&#39;</span> <span class="o">&lt;</span><span class="s1">&#39;dflt&#39;</span> <span class="o">&gt;</span> <span class="p">)</span> <span class="p">]</span>
+<span class="n">Lookup</span><span class="p">:</span> <span class="mi">4</span> <span class="mi">0</span> <span class="mi">1</span> <span class="s2">&quot;&#39;liga&#39; Standard Ligatures in Latin lookup 1&quot;</span>  <span class="p">{</span><span class="s2">&quot;&#39;liga&#39; Standard Ligatures in Latin lookup 1&quot;</span>  <span class="p">}</span> <span class="p">[</span><span class="s1">&#39;liga&#39;</span> <span class="p">(</span><span class="s1">&#39;latn&#39;</span> <span class="o">&lt;</span><span class="s1">&#39;dflt&#39;</span> <span class="o">&gt;</span> <span class="p">)</span> <span class="p">]</span>
+<span class="n">Lookup</span><span class="p">:</span> <span class="mi">258</span> <span class="mi">0</span> <span class="mi">0</span> <span class="s2">&quot;&#39;kern&#39; Horizontal Kerning in Latin lookup 0&quot;</span>  <span class="p">{</span><span class="s2">&quot;&#39;kern&#39; Horizontal Kerning in Latin lookup 0&quot;</span> <span class="p">[</span><span class="mi">150</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>  <span class="p">}</span> <span class="p">[</span><span class="s1">&#39;kern&#39;</span> <span class="p">(</span><span class="s1">&#39;latn&#39;</span> <span class="o">&lt;</span><span class="s1">&#39;dflt&#39;</span> <span class="o">&gt;</span> <span class="p">)</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p>All entries in the lookup list start with the “Lookup:” keyword. They are
+followed by a lookup type, and flags, and the save-in-afm flag. Then within
+curly braces is a list of all subtable names in this lookup. Then within backets
+a list of all features each followed (within parens) by a list of all scripts
+each followed (within brockets) by a list of all languages. (the lookup flags
+field is now a 32 bit number, the low order 16 bits being the traditional flags,
+and the high order being the mark attachment set index, if any).</p>
+<p>GSUB single substitution subtable names may be followed by a pair parentheses
+containing a utf7 string with the default suffix used for this subtable.</p>
+<p>Kerning subtable names may be followed by a “(1)” to indicated they are vertical
+kerning, or by a pair of brackets containing three numbers. These numbers
+represent default values for autokerning in this subtable, the first is the
+desired separation between glyphs, the next is the minimum (absolute) value that
+will generate a kerning pair (kerning by 1 em unit isn’t interesting and if
+that’s what autokern comes up with, there is really no point to it and it wastes
+time), and the last is a set of bit flags: if the number is odd then it means
+separation is based on closest approach (touching), if the number has bit 2 set,
+then only negative (closer) kerning values will be generated by autokerning and
+if the number has bit 4 set then no auto- kerning will happen at all.</p>
+<p>The order in which lookups are applied is the order listed here. The order in
+which subtables are applied is the order listed here.</p>
+<p>If your font has any kerning classes</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">KernClass2</span><span class="p">:</span> <span class="mi">31</span> <span class="mi">64</span> <span class="mi">2</span> <span class="s2">&quot;&#39;kern&#39; Horizontal Kerning in Latin lookup 0&quot;</span>
+ <span class="mi">1</span> <span class="n">F</span>
+ <span class="mi">41</span> <span class="n">L</span> <span class="n">Lacute</span> <span class="n">glyph78</span> <span class="n">Lcommaaccent</span> <span class="n">Ldot</span> <span class="n">Lslash</span>
+ <span class="mi">1</span> <span class="n">P</span>
+<span class="o">...</span>
+ <span class="mi">6</span> <span class="n">hyphen</span>
+ <span class="mi">5</span> <span class="n">space</span>
+<span class="o">...</span>
+ <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
+ <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="o">-</span><span class="mi">152</span> <span class="o">-</span><span class="mi">195</span> <span class="o">-</span><span class="mi">152</span> <span class="o">-</span><span class="mi">225</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="o">-</span><span class="mi">145</span> <span class="o">-</span><span class="mi">145</span> <span class="o">-</span><span class="mi">130</span>
+ <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="o">-</span><span class="mi">130</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="o">-</span><span class="mi">145</span> <span class="mi">0</span> <span class="o">-</span><span class="mi">115</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="o">-</span><span class="mi">65</span> <span class="mi">0</span> <span class="o">-</span><span class="mi">140</span> <span class="o">-</span><span class="mi">120</span> <span class="o">-</span><span class="mi">120</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>The first line says that this Kerning Class has 31 different classes for the
+first character, and 64 for the second. It lives in the lookup subtable named
+“‘kern’ Horizontal Kerning in Latin lookup 0”.. The next line says that the
+first character class of the first character (numbered 1, class 0 is reserved
+and usually is not defined) consists of only one character “F” (the number in
+front is the string length of the line. It speeds up processing the sfd file but
+has no semantic content). The next line is for class 2 of the first character,
+it has more characters in it and a longer string length. After 30 entries we
+start on the classes for the second character. They look exactly like classes
+for the first character. After all the second character classes have been
+defined we have an array of numbers, &lt;char1 class cnt&gt;*&lt;char2 class cnt&gt; of them
+in fact. This specifies the amount of kerning that should be placed between a
+characters of the given classes of left and right characters (ie. if char1 was
+in left class 2 and char2 was in right class 4 then we would index this array
+with 3*&lt;char2 class cnt&gt; + 4).</p>
+<p>In some cases it is possible to specify class 0 of the first glyph in a kerning
+by classes entry (but not class 0 of the second glyph). In this case there will
+be a plus sign after the count of classes for the first glyph. Then the first
+list of names will be class 0.</p>
+<p>You may find <a class="reference internal" href="#sfdformat-device-table"><span class="std std-ref">device</span></a> tables interspersed among
+the kerning offsets array:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+<span class="mi">0</span> <span class="p">{}</span> <span class="mi">0</span> <span class="p">{}</span> <span class="mi">0</span> <span class="p">{}</span> <span class="o">...</span>
+<span class="o">-</span><span class="mi">145</span> <span class="p">{</span><span class="mi">12</span><span class="o">-</span><span class="mi">13</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span> <span class="o">-</span><span class="mi">145</span> <span class="p">{}</span> <span class="o">-</span><span class="mi">130</span> <span class="p">{</span><span class="mi">8</span><span class="o">-</span><span class="mi">9</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">}</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p>If your font has GDEF Mark attachement classes or sets these look like</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MarkAttachClasses</span><span class="p">:</span> <span class="mi">2</span>
+<span class="s2">&quot;ABClass&quot;</span> <span class="mi">3</span> <span class="n">A</span> <span class="n">B</span>
+<span class="n">MarkAttachSets</span><span class="p">:</span> <span class="mi">2</span>
+<span class="s2">&quot;ABSet&quot;</span> <span class="mi">3</span> <span class="n">A</span> <span class="n">B</span>
+<span class="s2">&quot;ASet&quot;</span> <span class="mi">1</span> <span class="n">A</span>
+</pre></div>
+</div>
+<p>In the example above there are (sort of) 2 mark attachment classes, but class 0
+is always empty and isn’t listed. So there’s really one class. It is named (the
+name is a FontForge thing, not exported to opentype) “ABClass”, is 3 characters
+long and is “A B”.</p>
+<p>Similarly, there are 2 mark attachment sets. Here set 0 is used, and must be
+specified. Set 0 is called “ABSet” is 3 characters long and is “A B”, while set
+1 is called “ASet”, is 1 character long and is “A”.</p>
+<p>If your font has any baseline data</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">BaseHoriz</span><span class="p">:</span> <span class="mi">3</span> <span class="s1">&#39;hang&#39;</span> <span class="s1">&#39;ideo&#39;</span> <span class="s1">&#39;romn&#39;</span>
+<span class="n">BaseScript</span><span class="p">:</span> <span class="s1">&#39;cyrl&#39;</span> <span class="mi">2</span>  <span class="mi">1405</span> <span class="o">-</span><span class="mi">288</span> <span class="mi">0</span>
+<span class="n">BaseScript</span><span class="p">:</span> <span class="s1">&#39;grek&#39;</span> <span class="mi">2</span>  <span class="mi">1405</span> <span class="o">-</span><span class="mi">288</span> <span class="mi">0</span>
+<span class="n">BaseScript</span><span class="p">:</span> <span class="s1">&#39;latn&#39;</span> <span class="mi">2</span>  <span class="mi">1405</span> <span class="o">-</span><span class="mi">288</span> <span class="mi">0</span> <span class="p">{</span> <span class="s1">&#39;dflt&#39;</span> <span class="o">-</span><span class="mi">576</span> <span class="mi">1913</span><span class="p">}</span> <span class="p">{</span> <span class="s1">&#39;ENG &#39;</span> <span class="o">-</span><span class="mi">576</span> <span class="mi">1482</span><span class="p">}</span> <span class="p">{</span> <span class="s1">&#39;VIT &#39;</span> <span class="o">-</span><span class="mi">578</span> <span class="mi">2150</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>The BaseHoriz (or BaseVert) line indicates how many and which baselines are
+active for this axis (Horizontal or Vertical). There is one BaseScript line for
+each script. The first number after it indicates which baseline is the default
+baseline for this script, subsequent numbers indicate how other baselines are
+configured with respect to the default one. Language specific information
+appears inside {} pairs. (feature specific information would be in {} pairs
+inside the language specific curly braces).</p>
+<p>If your font has any JSTF (justification) data</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Justify</span><span class="p">:</span> <span class="s1">&#39;arab&#39;</span>
+<span class="n">JstfExtender</span><span class="p">:</span> <span class="n">afii57440</span> <span class="n">afii5739</span>
+<span class="n">Justify</span><span class="p">:</span> <span class="s1">&#39;latn&#39;</span>
+<span class="n">JstfLang</span><span class="p">:</span> <span class="s1">&#39;dflt&#39;</span> <span class="mi">5</span>
+<span class="n">JstfPrio</span><span class="p">:</span>
+<span class="n">JstfMaxShrink</span><span class="p">:</span> <span class="s2">&quot;JSTF shrinkage max at priority 0 #0 for dflt in latn&quot;</span>
+<span class="n">JstfMaxExtend</span><span class="p">:</span> <span class="s2">&quot;JSTF extension max at priority 0 #1 for dflt in latn&quot;</span>
+<span class="n">JstfPrio</span><span class="p">:</span>
+<span class="n">JstfEnableShrink</span><span class="p">:</span> <span class="s2">&quot;&#39;mark&#39; Mark Positioning in Latin lookup 5&quot;</span>  <span class="s2">&quot;&#39;kern&#39; Horizontal Kerning in Latin lookup 6&quot;</span>  <span class="s2">&quot;&#39;kern&#39; Horizontal Kerning in Cyrillic lookup 7&quot;</span>
+<span class="n">JstfPrio</span><span class="p">:</span>
+<span class="n">JstfEnableShrink</span><span class="p">:</span> <span class="s2">&quot;&#39;liga&#39; Standard Ligatures in Latin lookup 10&quot;</span>  <span class="s2">&quot;&#39;alig&#39; Ancient Ligatures in Latin lookup 11&quot;</span>  <span class="s2">&quot;&#39;liga&#39; Standard Ligatures in Latin lookup 12&quot;</span>
+<span class="n">JstfDisableExtend</span><span class="p">:</span> <span class="s2">&quot;&#39;liga&#39; Standard Ligatures in Latin lookup 10&quot;</span>  <span class="s2">&quot;&#39;alig&#39; Ancient Ligatures in Latin lookup 11&quot;</span>  <span class="s2">&quot;&#39;liga&#39; Standard Ligatures in Latin lookup 12&quot;</span>
+<span class="n">JstfPrio</span><span class="p">:</span>
+<span class="n">JstfMaxShrink</span><span class="p">:</span> <span class="s2">&quot;JSTF shrinkage max at priority 3 #2 for dflt in latn&quot;</span>
+<span class="n">JstfMaxExtend</span><span class="p">:</span> <span class="s2">&quot;JSTF extension max at priority 3 #3 for dflt in latn&quot;</span>
+<span class="n">JstfPrio</span><span class="p">:</span>
+<span class="n">JstfMaxShrink</span><span class="p">:</span> <span class="s2">&quot;JSTF shrinkage max at priority 4 #4 for dflt in latn&quot;</span>
+<span class="n">JstfMaxExtend</span><span class="p">:</span> <span class="s2">&quot;JSTF extension max at priority 4 #5 for dflt in latn&quot;</span>
+<span class="n">Justify</span><span class="p">:</span> <span class="s1">&#39;cyrl&#39;</span>
+<span class="n">JstfLang</span><span class="p">:</span> <span class="s1">&#39;dflt&#39;</span> <span class="mi">1</span>
+<span class="n">JstfPrio</span><span class="p">:</span>
+<span class="n">JstfMaxShrink</span><span class="p">:</span> <span class="s2">&quot;JSTF shrinkage max at priority 0 #6 for dflt in cyrl&quot;</span>
+<span class="n">JstfMaxExtend</span><span class="p">:</span> <span class="s2">&quot;JSTF extension max at priority 0 #7 for dflt in cyrl&quot;</span>
+<span class="n">EndJustify</span>
+</pre></div>
+</div>
+<p>A block of justification information begins with a <code class="docutils literal notranslate"><span class="pre">Justify:</span></code> keyword and is
+followed by a script tag. There may be several <code class="docutils literal notranslate"><span class="pre">Justify:</span></code> instances if information is
+provided for several scripts, the final block must be terminated with a
+<code class="docutils literal notranslate"><span class="pre">EndJustify</span></code> keyword.</p>
+<p>Within a block extender glyphs (kashidas) may be specified with a
+<code class="docutils literal notranslate"><span class="pre">JstfExtender:</span></code> keyword followed by a list of glyph names.</p>
+<p>Each language within the script is started by a <code class="docutils literal notranslate"><span class="pre">JstfLang:</span></code> keyword and is
+followed by a language tag and a count of the number of priority levels.</p>
+<p>Each priority level is started with a <code class="docutils literal notranslate"><span class="pre">JstfPrio:</span></code> keyword, after which you may
+find any of the keywords
+<code class="docutils literal notranslate"><span class="pre">JstfEnableShrink,</span> <span class="pre">JstfDisableShrink,</span> <span class="pre">JstfMaxShrink,</span> <span class="pre">JstfEnableExtend,</span> <span class="pre">JstfDisableExtend,</span> <span class="pre">JstfMaxExtend</span></code>
+each of which is followed by a list of lookup names.</p>
+<p>If the font contains ttf hinting, then the file may contain truetype tables,
+these may be stored in several formats depending on the table. For containting
+truetype instructions (fpgm, prep):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TtTable</span><span class="p">:</span> <span class="n">prep</span>
+<span class="n">PUSHW_1</span>
+ <span class="mi">640</span>
+<span class="n">NPUSHB</span>
+ <span class="mi">255</span>
+ <span class="mi">251</span>
+ <span class="mi">254</span>
+ <span class="mi">3</span>
+ <span class="o">...</span>
+</pre></div>
+</div>
+<p>The first line says that this is the ‘prep’ table, subsequent lines provide the
+instructions of that table. These are stored in the format used by fontforge,
+there’s a table giving the conversion between bytecode and instruction name in
+the file ttfinstrs.c (I won’t introduce it here because it is rather long).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ShortTable</span><span class="p">:</span> <span class="n">cvt</span>  <span class="mi">255</span>
+  <span class="mi">309</span> <span class="s2">&quot;Big stem width, vertical&quot;</span>
+  <span class="mi">184</span> <span class="s2">&quot;Small stem width, vertical&quot;</span>
+  <span class="mi">203</span> <span class="s2">&quot;Stem width, horizontal&quot;</span>
+  <span class="mi">203</span>
+ <span class="o">...</span>
+</pre></div>
+</div>
+<p>The next table format is used for the <code class="docutils literal notranslate"><span class="pre">'cvt</span> <span class="pre">'</span></code> and <code class="docutils literal notranslate"><span class="pre">'maxp'</span></code> tables. It is
+simply a list of short numbers. The first line identifies it as the cvt table
+and indicates that there will be 255 numbers (note: NOT 255 <em>bytes</em>, but 2*255
+bytes).</p>
+<p>In the <code class="docutils literal notranslate"><span class="pre">'cvt</span> <span class="pre">'</span></code> table (but not in <code class="docutils literal notranslate"><span class="pre">'maxp'</span></code>) there may be additional
+comments, one for each number. These are simply descriptive comments which
+remind people what each cvt entry is supposed to do. They are totally optional.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>TtfTable: LILY 4360
+5S;o3()It?eJ8r@H[HSJH[H^@!b&amp;BQ*?Vcm@&#39;XSh+1MACZ&gt;Up/\,o1+Ca&#39;t2!&lt;ocH+Wn2p&quot;@,t&amp;
++Wo+[()Is6G8:u7D/^7,*,KO/(E=N5!=s)LCMjn,:Mp3:DSL&amp;j05dG#cY`hLCN&quot;!&lt;CBO$@s(_ZX
+...
+</pre></div>
+</div>
+<p>FontForge will also store tables it doesn’t understand, these will be stored in
+uninterpreted binary which is packed using the ASCII85Encode <a class="footnote-reference brackets" href="#ascii85" id="id2">2</a> encoding
+filter. The first line says that the ‘LILY’ table is 4360 bytes long.
+Subsequent lines will provide those 4360 bytes of data ASCII85Encode <a class="footnote-reference brackets" href="#ascii85" id="id3">2</a>. See
+the PostScript Reference Manual (3rd edition, pages 131-132) for a description
+of this packing, or <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">man</span> <span class="pre">btoa</span></code>).</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">LangName</span></code> entries represent the TrueType name table: the number
+represents the language and is followed by a list of strings encoded in UTF-7.
+The first string corresponds to ID=0 (Copyright), the second to ID=1 (Family),
+… trailing empty strings will be omitted. In the American English language
+(1033) section, if one of these names exactly matches the equivalent postscript
+item then that name will be omitted (this makes it easier to handle updates,
+users only have to change the copyright in one place)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LangName</span><span class="p">:</span> <span class="mi">1033</span> <span class="s2">&quot;&quot;</span> <span class="s2">&quot;&quot;</span> <span class="s2">&quot;Regular&quot;</span> <span class="s2">&quot;GWW:Caliban Regular: Version 1.0&quot;</span> <span class="s2">&quot;&quot;</span> <span class="s2">&quot;Version 1.0&quot;</span>
+<span class="n">LangName</span><span class="p">:</span> <span class="mi">1032</span> <span class="s2">&quot;&quot;</span> <span class="s2">&quot;&quot;</span> <span class="s2">&quot;+A5oDsQ09A78DvQ05A7oDrAAA&quot;</span>
+</pre></div>
+</div>
+<p>With version 1.6 of OpenType, you are allowed to provide name table entries for
+the feature names ‘ss01’ - ‘ss20’. These look like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">OtfFeatName</span><span class="p">:</span> <span class="s1">&#39;ss01&#39;</span>  <span class="mi">1036</span> <span class="s2">&quot;Riable&quot;</span>  <span class="mi">1033</span> <span class="s2">&quot;Risible&quot;</span>
+</pre></div>
+</div>
+<p>Which binds feature ‘ss01’ to the name “Riable” in French (language 1036) and to
+“Risible” in English (language 1033).</p>
+<p>If your font has any anchor classes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AnchorClass2</span><span class="p">:</span> <span class="s2">&quot;top&quot;</span> <span class="s2">&quot;Latin marks-1&quot;</span> <span class="s2">&quot;bottom&quot;</span> <span class="s2">&quot;Latin marks-1&quot;</span> <span class="s2">&quot;Anchor-2&quot;</span> <span class="s2">&quot;Latin marks-1&quot;</span> <span class="s2">&quot;Anchor-3&quot;</span> <span class="s2">&quot;Latin marks-2&quot;</span> <span class="s2">&quot;Anchor-4&quot;</span> <span class="s2">&quot;Latin marks-2&quot;</span> <span class="s2">&quot;Anchor-5&quot;</span> <span class="s2">&quot;Latin marks-2&quot;</span> <span class="s2">&quot;Anchor-6&quot;</span> <span class="s2">&quot;Latin marks-2&quot;</span>
+</pre></div>
+</div>
+<p>There is an Anchor Class named “top” which lives in lookup subtable “Latin
+marks-1”. The next class is named “bottom”, the next “Anchor-2” and so forth.
+(Anchor class names are output in UTF7)</p>
+<p>Contextual or contextual chaining lookups are also stored in the font header.
+The are introduced by one of the keywords: “ContextPos2”, “ContextSub2”,
+“ChainPos2”, “ChainSub2” and “ReverseChain2”, and are ended by “EndFPST”.
+Contextual chaining lookups may check previous glyphs (called backtracking),
+current glyphs and lookahead glyphs, while Contextual lookups only check for a
+string of current glyphs. There are four formats:</p>
+<p>By coverage tables</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ChainSub2</span><span class="p">:</span> <span class="n">coverage</span> <span class="s2">&quot;calt-1&quot;</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span>
+ <span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span>
+  <span class="n">Coverage</span><span class="p">:</span> <span class="mi">7</span> <span class="n">uni0C40</span>
+  <span class="n">BCoverage</span><span class="p">:</span> <span class="mi">8</span> <span class="n">glyph388</span>
+ <span class="mi">1</span>
+  <span class="n">SeqLookup</span><span class="p">:</span> <span class="mi">0</span> <span class="s2">&quot;high&quot;</span>
+<span class="n">EndFPST</span>
+</pre></div>
+</div>
+<p>This defines a simple context chaining substitution by coverage class. It lives
+in the lookup subtable named “calt-1”. There are no classes, no backtracking
+classes and no lookahead classes defined (it’s by coverage table). There is one
+rule. (For a greater explanation of these cryptic comments see the OpenType
+specs on contextual lookups).</p>
+<p>Then follows the first rule. The first line, “1 1 0”, says how many coverage
+tables there are in the normal list (1), how many in the backtrack list (1) and
+how many in the lookahead list (0). Then we get the one normal coverage table,
+which describes a single glyph (uni0C40). Then one backtracking coverage table
+which also defines one glyph (glyph388). Finally there is one sequence lookup,
+at normal position 0, we should apply the substitution named ‘0013’.</p>
+<p>That is to say: If we find the glyph stream “glyph388 uni0C40”, then it will
+match this lookup and we should apply lookup “high” (found elsewhere) to
+uni0C40.</p>
+<p>By classes</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ChainSub2: class &quot;calt-1&quot; 3 3 0 1
+  Class: 52 b o v w b.high o.high v.high w.high r.alt.high r.alt
+  Class: 43 a c d e f g h i j k l m n p q r s t u x y z
+  BClass: 52 b o v w b.high o.high v.high w.high r.alt.high r.alt
+  BClass: 43 a c d e f g h i j k l m n p q r s t u x y z
+ 1 1 0
+  ClsList: 2
+  BClsList: 1
+  FClsList:
+ 1
+  SeqLookup: 0 &quot;high&quot;
+EndFPST
+</pre></div>
+</div>
+<p>This defines a context chaining substitution, by classes. The format of the
+first line is the same as described above. Here we have three classes for the
+normal match and three for the backtracking match, and one rule. The next 4
+lines define the classes. As with kerning by classes, class 0 does not need to
+be explicitly defined, it is implicitly defined to be “any glyph not defined in
+another class”. So we define class 1 to be “b,o,v,…” and class 2 to be
+“a,c,d,e,…”. And then we define the backtracking classes (which here happen to
+be the same as the classes for the normal match, but that isn’t always the
+case).</p>
+<p>The one rule says that if we get something in normal class 2 following something
+in backtracking class 1 (that is, if we get something like “ba” or “oc”) then
+apply lookup “high”</p>
+<p>By glyphs</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ChainSub2</span><span class="p">:</span> <span class="n">glyph</span> <span class="s2">&quot;calt-1&quot;</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span>
+ <span class="n">String</span><span class="p">:</span> <span class="mi">1</span> <span class="n">D</span>
+ <span class="n">BString</span><span class="p">:</span> <span class="mi">3</span> <span class="n">c</span> <span class="n">b</span>
+ <span class="n">FString</span><span class="p">:</span> <span class="mi">1</span> <span class="n">e</span>
+ <span class="mi">1</span>
+  <span class="n">SeqLookup</span><span class="p">:</span> <span class="mi">0</span> <span class="s2">&quot;high&quot;</span>
+<span class="n">EndFPST</span>
+</pre></div>
+</div>
+<p>Again we have one rule. That rule says that if we get the sequence of glyphs “c
+b D e” then we should apply substitution “high” to glyph “D”.</p>
+<p>And finally by reverse coverage tables</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ChainSub2</span><span class="p">:</span> <span class="n">revcov</span> <span class="s2">&quot;calt-1&quot;</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span>
+ <span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span>
+  <span class="n">Coverage</span><span class="p">:</span> <span class="mi">7</span> <span class="n">uni0C40</span>
+  <span class="n">BCoverage</span><span class="p">:</span> <span class="mi">8</span> <span class="n">glyph388</span>
+ <span class="mi">1</span>
+  <span class="n">Replace</span><span class="p">:</span> <span class="mi">11</span> <span class="n">uni0C40</span><span class="o">.</span><span class="n">alt</span>
+<span class="n">EndFPST</span>
+</pre></div>
+</div>
+<p>Which says that when glyph388 precedes uni0C40 then uni0C40 should be replaced
+by uni0C40.alt</p>
+<p>There may be apple state machines. These are introduced by one of the keywords:
+“MacIndic2”, “MacContext2”, “MacInsert2” and “MacKern2”, and they are terminated
+with “EndASM”.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MacContext2</span><span class="p">:</span> <span class="s2">&quot;calt-1&quot;</span> <span class="mi">16384</span> <span class="mi">9</span> <span class="mi">5</span>
+  <span class="n">Class</span><span class="p">:</span> <span class="mi">320</span> <span class="n">yehhamzaabovearabic</span> <span class="n">beharabic</span> <span class="n">teharabic</span> <span class="n">theharabic</span> <span class="n">jeemarabic</span> <span class="n">haharabic</span> <span class="n">khaharabic</span> <span class="n">seenarabic</span> <span class="n">sheenarabic</span> <span class="n">sadarabic</span> <span class="n">dadarabic</span> <span class="n">taharabic</span> <span class="n">zaharabic</span> <span class="n">ainarabic</span> <span class="n">ghainarabic</span> <span class="n">feharabic</span> <span class="n">qafarabic</span> <span class="n">kafarabic</span> <span class="n">lamarabic</span> <span class="n">meemarabic</span> <span class="n">noonarabic</span> <span class="n">heharabic</span> <span class="n">alefmaksuraarabic</span> <span class="n">yeharabic</span> <span class="n">peharabic</span> <span class="n">tteharabic</span> <span class="n">tcheharabic</span> <span class="n">veharabic</span> <span class="n">gafarabic</span>
+  <span class="n">Class</span><span class="p">:</span> <span class="mi">227</span> <span class="n">noonghunnaarabic</span> <span class="n">alefmaddaabovearabic</span> <span class="n">alefhamzaabovearabic</span> <span class="n">wawhamzaabovearabic</span> <span class="n">alefhamzabelowarabic</span> <span class="n">alefarabic</span> <span class="n">tehmarbutaarabic</span> <span class="n">dalarabic</span> <span class="n">thalarabic</span> <span class="n">reharabic</span> <span class="n">zainarabic</span> <span class="n">wawarabic</span> <span class="n">ddalarabic</span> <span class="n">rreharabic</span> <span class="n">jeharabic</span> <span class="n">yehbarreearabic</span>
+  <span class="n">Class</span><span class="p">:</span> <span class="mi">201</span> <span class="n">shaddakasraarabic</span> <span class="n">shaddakasratanarabic</span> <span class="n">shaddafathaarabic</span> <span class="n">shaddadammaarabic</span> <span class="n">shaddadammatanarabic</span> <span class="n">fathatanarabic</span> <span class="n">dammatanarabic</span> <span class="n">kasratanarabic</span> <span class="n">fathaarabic</span> <span class="n">dammaarabic</span> <span class="n">kasraarabic</span> <span class="n">shaddaarabic</span> <span class="n">sukunarabic</span>
+  <span class="n">Class</span><span class="p">:</span> <span class="mi">13</span> <span class="n">tatweelarabic</span>
+  <span class="n">Class</span><span class="p">:</span> <span class="mi">17</span> <span class="n">ttehinitialarabic</span>
+ <span class="mi">0</span> <span class="mi">0</span> <span class="o">~</span> <span class="o">~</span>
+ <span class="mi">0</span> <span class="mi">0</span> <span class="o">~</span> <span class="o">~</span>
+ <span class="mi">0</span> <span class="mi">0</span> <span class="o">~</span> <span class="o">~</span>
+ <span class="mi">0</span> <span class="mi">0</span> <span class="o">~</span> <span class="o">~</span>
+ <span class="mi">2</span> <span class="mi">32768</span> <span class="o">~</span> <span class="o">~</span>
+ <span class="o">...</span>
+ <span class="mi">3</span> <span class="mi">32768</span> <span class="s2">&quot;high&quot;</span> <span class="s2">&quot;low&quot;</span>
+ <span class="o">...</span>
+<span class="n">EndASM</span>
+</pre></div>
+</div>
+<p>The state machine begins with a line defining what lookup subtable invokes it,
+some mac flags, the number of classes, and number of states in the machine. The
+first four states on the mac are predefined, so we start with class 4
+(yehhamzaabovearabic…). Finally there will be &lt;number of classes&gt;*&lt;number of
+states&gt; lines describing transitions. We begin with the transition for state 0,
+class 0, then the transition for state 0, class 1, …</p>
+<p>Each transition contains the next state to go to, a set of flags. There may also
+be other arguments depending on the type of the state machine.</p>
+<dl class="object">
+<dt>
+<code class="sig-name descname">MacContext2</code></dt>
+<dd><p>This format potentially contains the names of two lookup substitutions. One
+to be applied to the marked glyph, one to be applied to the current glyph
+(the special substitution “~” means do nothing and is used as a place
+holder). See above.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">MacInsert2</code></dt>
+<dd><p>This format contains two glyph lists, each preceded by a number indicating
+how many bytes follow.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">3</span> <span class="n">a</span> <span class="n">b</span>
+<span class="mi">0</span> <span class="mi">32768</span> <span class="mi">4</span> <span class="n">fi</span> <span class="n">q</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>The first line indicates that no characters should be insert at the marked
+glyph but that “a” and “b” should be insert at the current glyph. The second
+line indicates that “fi” and “q” should be insert at the marked glyph and no
+characters at the current glyph. The flags determine whether characters are
+insert before or after the glyph.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">MacKern2</code></dt>
+<dd><p>This format contains a list of kerning offsets. First is a count field saying
+how many numbers follow, then a list of numbers which adjust the kerning for
+glyphs that have previously been pushed on the kerning stack.</p>
+</dd></dl>
+
+<p>There may be a list of Mac Feature/Setting names</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MacFeat</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
+<span class="n">MacName</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">24</span> <span class="s2">&quot;All Typographic Features&quot;</span>
+<span class="n">MacSetting</span><span class="p">:</span> <span class="mi">0</span>
+<span class="n">MacName</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">12</span> <span class="s2">&quot;All Features&quot;</span>
+<span class="n">MacFeat</span><span class="p">:</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span>
+<span class="n">MacName</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">9</span> <span class="s2">&quot;Ligatures&quot;</span>
+<span class="n">MacSetting</span><span class="p">:</span> <span class="mi">0</span>
+<span class="n">MacName</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">18</span> <span class="s2">&quot;Required Ligatures&quot;</span>
+<span class="n">MacSetting</span><span class="p">:</span> <span class="mi">2</span>
+<span class="n">MacName</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">16</span> <span class="s2">&quot;Common Ligatures&quot;</span>
+<span class="n">MacFeat</span><span class="p">:</span> <span class="mi">2</span> <span class="mi">1</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>There may be a Grid entry near the top of the font, this specifies the splines
+to be drawn in the grid layer for the font,
+<a class="reference internal" href="#sfdformat-splineset"><span class="std std-ref">see below for a description of the splineset format</span></a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Grid</span>
+<span class="mi">678</span> <span class="o">-</span><span class="mi">168</span> <span class="n">m</span> <span class="mi">5</span>
+ <span class="o">-</span><span class="mi">40</span> <span class="o">-</span><span class="mi">168</span> <span class="n">l</span> <span class="mi">5</span>
+<span class="o">-</span><span class="mi">678</span> <span class="mi">729</span> <span class="n">m</span> <span class="mi">1</span>
+ <span class="mi">1452</span> <span class="mi">729</span> <span class="n">l</span> <span class="mi">1</span>
+<span class="o">-</span><span class="mi">678</span> <span class="mi">525</span> <span class="n">m</span> <span class="mi">1</span>
+ <span class="mi">1452</span> <span class="mi">525</span> <span class="n">l</span> <span class="mi">1</span>
+<span class="n">EndSplineSet</span>
+</pre></div>
+</div>
+<p>If your font contains a ‘MATH’ table you will see lines like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MATH</span><span class="p">:</span><span class="n">ScriptPercentScaleDown</span><span class="p">:</span> <span class="mi">80</span>
+<span class="n">MATH</span><span class="p">:</span><span class="n">ScriptScriptPercentScaleDown</span><span class="p">:</span> <span class="mi">60</span>
+</pre></div>
+</div>
+<p>I shall not list all the posible entries. Basically there is one for every
+constant that lives in the math table. The names are the same as the names in
+the (English) MATH Info dialog.</p>
+<p>Most math constants may also specify device tables (for more on
+<a class="reference internal" href="#sfdformat-device-table"><span class="std std-ref">device tables see below</span></a>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MATH</span><span class="p">:</span><span class="n">SubscriptShiftDown</span><span class="p">:</span> <span class="mi">483</span> <span class="p">{</span><span class="mi">12</span><span class="o">-</span><span class="mi">17</span> <span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="outline-character-data">
+<span id="sfdformat-outline-char-data"></span><h2>Outline Character Data<a class="headerlink" href="#outline-character-data" title="Permalink to this headline">¶</a></h2>
+<p>Then for non-CID fonts you should find a line like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">BeginChars</span><span class="p">:</span> <span class="mi">285</span> <span class="mi">253</span>
+</pre></div>
+</div>
+<p>This means that the font’s encoding has room for 285 characters and that there
+are a total of 253 glyphs defined (usually control characters are not defined).</p>
+<p>Most encodings entail specific constraints on how many encoding slots must exist
+and how they must be used (which glyphs where, and in what order). That is what
+an encoding means. For instance, in the UnicodeBmp encoding, there must be at
+least 65536 slots numbered 0 to 65535 for the Unicode characters U+0000 to
+U+FFFF. Glyphs with Unicode code points in that range must be encoded in those
+slots in order according to their code points. Glyphs without Unicode code
+points must be encoded in additional slots numbered consecutively starting from
+65536. A file with a BeginChars: line inconsistent with its encoding or
+inconsistent with the number of glyphs it actually contains is not an SFD file.
+FontForge may, but does not promise to, treat attempts to load invalid files as
+fatal errors, or renumber or reorder glyphs to make them match the requirements
+of the encoding. Consider using “Custom” or “Original” encodings if the
+requirements of other encodings are not appropriate; these encodings are less
+restrictive than the others.</p>
+<p>A character looks like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">StartChar</span><span class="p">:</span> <span class="n">exclam</span>
+<span class="n">Encoding</span><span class="p">:</span> <span class="mi">33</span> <span class="mi">33</span> <span class="mi">3</span>
+<span class="n">Width</span><span class="p">:</span> <span class="mi">258</span>
+<span class="n">Flags</span><span class="p">:</span>
+<span class="n">HStem</span><span class="p">:</span> <span class="mi">736</span> <span class="mi">13</span><span class="o">&lt;</span><span class="mi">39</span> <span class="mi">155</span><span class="o">&gt;</span>  <span class="o">-</span><span class="mi">14</span> <span class="mi">88</span><span class="o">&lt;</span><span class="mi">162</span> <span class="mi">180</span><span class="o">&gt;</span>
+<span class="n">VStem</span><span class="p">:</span> <span class="mi">71</span> <span class="mi">84</span><span class="o">&lt;</span><span class="mi">49</span> <span class="mi">396</span><span class="o">&gt;</span>
+<span class="n">DStem2</span><span class="p">:</span> <span class="mi">510</span> <span class="mi">435</span> <span class="mi">225</span> <span class="mi">423</span> <span class="mf">0.568682</span> <span class="o">-</span><span class="mf">0.822558</span><span class="o">&lt;</span><span class="mi">0</span> <span class="mf">124.816</span><span class="o">&gt;</span>
+<span class="n">Fore</span>
+<span class="n">SplineSet</span>
+<span class="mi">195</span> <span class="mi">742</span> <span class="n">m</span> <span class="mi">0</span>
+ <span class="mi">195</span> <span class="mi">738</span> <span class="mi">193</span> <span class="mi">736</span> <span class="mi">189</span> <span class="mi">736</span> <span class="n">c</span> <span class="mi">0</span>
+ <span class="mi">175</span> <span class="mi">736</span> <span class="mi">155</span> <span class="mi">743</span> <span class="mi">155</span> <span class="mi">682</span> <span class="n">c</span> <span class="mi">0</span>
+ <span class="mi">155</span> <span class="mi">661</span> <span class="mi">130</span> <span class="mi">249</span> <span class="mi">130</span> <span class="mi">131</span> <span class="n">c</span> <span class="mi">0</span>
+ <span class="mi">130</span> <span class="mi">100</span> <span class="mi">96</span> <span class="mi">99</span> <span class="mi">96</span> <span class="mi">131</span> <span class="n">c</span> <span class="mi">0</span>
+ <span class="mi">96</span> <span class="mi">149</span> <span class="mi">71</span> <span class="mi">662</span> <span class="mi">71</span> <span class="mi">682</span> <span class="n">c</span> <span class="mi">0</span>
+ <span class="mi">71</span> <span class="mi">731</span> <span class="mi">51</span> <span class="mi">736</span> <span class="mi">37</span> <span class="mi">736</span> <span class="n">c</span> <span class="mi">0</span>
+ <span class="mi">33</span> <span class="mi">736</span> <span class="mi">31</span> <span class="mi">738</span> <span class="mi">31</span> <span class="mi">742</span> <span class="n">c</span> <span class="mi">0</span>
+ <span class="mi">31</span> <span class="mi">748</span> <span class="mi">36</span> <span class="mi">747</span> <span class="mi">38</span> <span class="mi">749</span> <span class="n">c</span> <span class="mi">1</span>
+ <span class="mi">188</span> <span class="mi">749</span> <span class="n">l</span> <span class="mi">1</span>
+ <span class="mi">190</span> <span class="mi">747</span> <span class="mi">195</span> <span class="mi">748</span> <span class="mi">195</span> <span class="mi">742</span> <span class="n">c</span> <span class="mi">0</span>
+<span class="mi">80</span> <span class="mi">32</span> <span class="n">m</span> <span class="mi">0</span>
+ <span class="mi">81</span> <span class="mi">53</span> <span class="mi">95</span> <span class="mi">75</span> <span class="mi">116</span> <span class="mi">74</span> <span class="n">c</span> <span class="mi">0</span>
+ <span class="mi">137</span> <span class="mi">73</span> <span class="mi">150</span> <span class="mi">53</span> <span class="mi">150</span> <span class="mi">32</span> <span class="n">c</span> <span class="mi">0</span>
+ <span class="mi">150</span> <span class="mi">10</span> <span class="mi">137</span> <span class="o">-</span><span class="mi">14</span> <span class="mi">115</span> <span class="o">-</span><span class="mi">14</span> <span class="n">c</span> <span class="mi">0</span>
+ <span class="mi">93</span> <span class="o">-</span><span class="mi">14</span> <span class="mi">79</span> <span class="mi">10</span> <span class="mi">80</span> <span class="mi">32</span> <span class="n">c</span> <span class="mi">0</span>
+<span class="n">EndSplineSet</span>
+<span class="n">EndChar</span>
+</pre></div>
+</div>
+<p>The first line names the character. If you are using a non-standard glyph
+namelist with utf8 names rather than ASCII names, the name will be UTF7 encoded
+and included in quotation marks. The next line gives the encoding, first in the
+current font, then in unicode, and finally the original position (GID). Then the
+advance width.</p>
+<p>Then a set of flags (there are currently five flags: “H” =&gt; the character has
+been changed since last hinted, “M” the character’s hints have been adjusted
+manually, “W” the width has been set explicitly, “O” =&gt; the character was open
+when last saved, and “I” the character’s instructions are out of date).</p>
+<p>Then horizontal and vertical (postscript) stem hints (set of several two number
+pairs, the first number in the pair is the location of the stem, the next number
+is the width of the stem, the numbers in brokets (&lt;&gt;) indicate where the hint is
+valid).</p>
+<p>Diagonal stems (DStem2) are more complex. There are 6 numbers, in 3 pairs of
+two. The first pair represents a point on the left side of the hint, the second
+pair a point on the right and the third pair is a unit vector in the hint
+direction. Again there are numbers in brokets indicating where the hint is
+valid.</p>
+<p>For fonts with vertical metrics there may also be a</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">VWidth</span><span class="p">:</span> <span class="mi">1000</span>
+</pre></div>
+</div>
+<p>specifying the vertical advance width.</p>
+<p id="sfdformat-splineset">The entry <code class="docutils literal notranslate"><span class="pre">Fore</span></code> starts the foreground splines, they are encoded as postscript
+commands with moveto abbreviated to m, curveto to c and lineto to l (lower case
+el). The digit after after the letter is a set of flags whose bits have the
+following meanings:</p>
+<dl class="object">
+<dt>
+<code class="sig-name descname">0x3</code></dt>
+<dd><p>indicates whether the point is curve (0), corner (1) or tangent (2).</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">0x4</code></dt>
+<dd><p>point selected</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">0x8</code></dt>
+<dd><p>point has default next control point</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">0x10</code></dt>
+<dd><p>point has default prev control point</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">0x20</code></dt>
+<dd><p>point is to be rounded in x (truetype hinting. doesn’t really work)</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">0x40</code></dt>
+<dd><p>point is to be rounded in y (truetype hinting. doesn’t really work)</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">0x80</code></dt>
+<dd><p>point was interpolated between two control points (when read from a ttf file) and so has no point number of its own</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">0x100</code></dt>
+<dd><p>point should never be interpolated</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">0x200</code></dt>
+<dd><p>Any extrema on the preceding spline are marked as acceptable to the validator</p>
+</dd></dl>
+
+<p>Splines for a truetype font will have two additional numbers after the flags.
+These are the truetype point numbers for the point itself and for the subsequent
+control point. If the value is -1 then this point has no number.</p>
+<p>Splines for a font with hint substitution will have a hint mask after any point
+before which hint substitution occurs,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">459</span> <span class="mi">422</span> <span class="n">m</span> <span class="mi">1</span><span class="n">xc0</span>
+ <span class="mi">339</span> <span class="mi">442</span> <span class="n">l</span> <span class="mi">1</span><span class="n">xa0</span>
+ <span class="mi">312</span> <span class="mi">243</span> <span class="n">l</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>So the first two points have hint masks “xc0” and “xa0”, these masks may be
+(almost) arbitrarily long, depending on the number of hints in the glyph. “xc0”
+means that the first two hints are active (0x80 &amp; 0x40) while “xa0” means that
+the first and third are (0x80 and 0x20).</p>
+<p>If you have been using
+<a class="reference external" href="http://www.levien.com/spiro/">Raph Levien’s Spiro package</a> you may also have
+a set of Spiro control points. These appear inside the SplineSet list after each
+contour. It is quite possible that some contours will have spiros and that
+others may not.</p>
+<p>The following is the lower case ‘a’ glyph from Raph’s
+<a class="reference external" href="http://www.levien.com/type/myfonts/inconsolata.html">Inconsolata font</a>,
+converted into an sfd file.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Fore</span>
+<span class="n">SplineSet</span>
+<span class="mi">115</span> <span class="mi">467</span> <span class="n">m</span> <span class="mi">1</span>
+ <span class="mf">134.212</span> <span class="mf">486.845</span> <span class="mf">157.062</span> <span class="mf">503.125</span> <span class="mi">182</span> <span class="mi">515</span> <span class="n">c</span> <span class="mi">0</span>
+ <span class="mf">221.656</span> <span class="mf">533.883</span> <span class="mf">266.084</span> <span class="mf">541.787</span> <span class="mi">310</span> <span class="mi">541</span> <span class="n">c</span> <span class="mi">0</span>
+ <span class="mf">338.088</span> <span class="mf">540.496</span> <span class="mf">366.236</span> <span class="mf">536.384</span> <span class="mf">392.804</span> <span class="mf">527.254</span> <span class="n">c</span> <span class="mi">0</span>
+ <span class="mf">419.37</span> <span class="mf">518.123</span> <span class="mf">444.305</span> <span class="mf">503.666</span> <span class="mf">464.14</span> <span class="mf">483.772</span> <span class="n">c</span> <span class="mi">0</span>
+ <span class="mf">483.975</span> <span class="mf">463.879</span> <span class="mf">498.253</span> <span class="mf">438.648</span> <span class="mf">505.793</span> <span class="mf">411.587</span> <span class="n">c</span> <span class="mi">0</span>
+ <span class="mf">513.333</span> <span class="mf">384.526</span> <span class="mi">514</span> <span class="mf">356.092</span> <span class="mi">514</span> <span class="mi">328</span> <span class="n">c</span> <span class="mi">2</span>
+ <span class="mi">514</span> <span class="mi">0</span> <span class="n">l</span> <span class="mi">1</span>
+ <span class="mi">435</span> <span class="mi">0</span> <span class="n">l</span> <span class="mi">1</span>
+ <span class="mi">435</span> <span class="mi">58</span> <span class="n">l</span> <span class="mi">1</span>
+ <span class="mf">381.951</span> <span class="mf">14.5264</span> <span class="mf">314.586</span> <span class="o">-</span><span class="mf">12.708</span> <span class="mi">246</span> <span class="o">-</span><span class="mi">13</span> <span class="n">c</span> <span class="mi">0</span>
+ <span class="mf">205.572</span> <span class="o">-</span><span class="mf">13.1719</span> <span class="mf">164.446</span> <span class="o">-</span><span class="mf">3.24219</span> <span class="mf">131.088</span> <span class="mf">19.5986</span> <span class="n">c</span> <span class="mi">0</span>
+ <span class="mf">97.7295</span> <span class="mf">42.4385</span> <span class="mf">73.3516</span> <span class="mf">78.9277</span> <span class="mi">68</span> <span class="mi">119</span> <span class="n">c</span> <span class="mi">0</span>
+ <span class="mf">64.5488</span> <span class="mf">144.84</span> <span class="mf">68.8574</span> <span class="mf">171.584</span> <span class="mf">79.7275</span> <span class="mf">195.279</span> <span class="n">c</span> <span class="mi">0</span>
+ <span class="mf">90.5977</span> <span class="mf">218.975</span> <span class="mf">107.824</span> <span class="mf">239.525</span> <span class="mf">128.391</span> <span class="mf">255.545</span> <span class="n">c</span> <span class="mi">0</span>
+ <span class="mf">169.524</span> <span class="mf">287.585</span> <span class="mf">222.188</span> <span class="mf">301.168</span> <span class="mi">274</span> <span class="mi">307</span> <span class="n">c</span> <span class="mi">0</span>
+ <span class="mf">321.422</span> <span class="mf">312.338</span> <span class="mf">369.278</span> <span class="mi">312</span> <span class="mi">417</span> <span class="mi">312</span> <span class="n">c</span> <span class="mi">2</span>
+ <span class="mi">434</span> <span class="mi">312</span> <span class="n">l</span> <span class="mi">1</span>
+ <span class="mi">434</span> <span class="mi">331</span> <span class="n">l</span> <span class="mi">2</span>
+ <span class="mi">434</span> <span class="mf">346.261</span> <span class="mf">434.018</span> <span class="mf">361.578</span> <span class="mf">431.955</span> <span class="mf">376.699</span> <span class="n">c</span> <span class="mi">0</span>
+ <span class="mf">429.892</span> <span class="mf">391.819</span> <span class="mf">425.593</span> <span class="mf">406.762</span> <span class="mi">418</span> <span class="mi">420</span> <span class="n">c</span> <span class="mi">0</span>
+ <span class="mf">407.035</span> <span class="mf">439.119</span> <span class="mf">389.166</span> <span class="mf">453.909</span> <span class="mf">368.792</span> <span class="mf">462.316</span> <span class="n">c</span> <span class="mi">0</span>
+ <span class="mf">348.418</span> <span class="mf">470.724</span> <span class="mf">326.037</span> <span class="mf">473.348</span> <span class="mi">304</span> <span class="mi">473</span> <span class="n">c</span> <span class="mi">0</span>
+ <span class="mf">272.076</span> <span class="mf">472.496</span> <span class="mf">240.025</span> <span class="mf">466.302</span> <span class="mi">211</span> <span class="mi">453</span> <span class="n">c</span> <span class="mi">0</span>
+ <span class="mf">190.445</span> <span class="mf">443.58</span> <span class="mf">171.617</span> <span class="mf">430.351</span> <span class="mi">156</span> <span class="mi">414</span> <span class="n">c</span> <span class="mi">1</span>
+ <span class="mi">115</span> <span class="mi">467</span> <span class="n">l</span> <span class="mi">1</span>
+  <span class="n">Spiro</span>
+    <span class="mi">115</span> <span class="mi">467</span> <span class="n">v</span>
+    <span class="mi">182</span> <span class="mi">515</span> <span class="n">o</span>
+    <span class="mi">310</span> <span class="mi">541</span> <span class="n">o</span>
+    <span class="mi">514</span> <span class="mi">328</span> <span class="p">[</span>
+    <span class="mi">514</span> <span class="mi">0</span> <span class="n">v</span>
+    <span class="mi">435</span> <span class="mi">0</span> <span class="n">v</span>
+    <span class="mi">435</span> <span class="mi">58</span> <span class="n">v</span>
+    <span class="mi">246</span> <span class="o">-</span><span class="mi">13</span> <span class="n">o</span>
+    <span class="mi">68</span> <span class="mi">119</span> <span class="n">o</span>
+    <span class="mi">274</span> <span class="mi">307</span> <span class="n">o</span>
+    <span class="mi">417</span> <span class="mi">312</span> <span class="p">[</span>
+    <span class="mi">434</span> <span class="mi">312</span> <span class="n">v</span>
+    <span class="mi">434</span> <span class="mi">331</span> <span class="p">]</span>
+    <span class="mi">418</span> <span class="mi">420</span> <span class="n">o</span>
+    <span class="mi">304</span> <span class="mi">473</span> <span class="n">o</span>
+    <span class="mi">211</span> <span class="mi">453</span> <span class="n">o</span>
+    <span class="mi">156</span> <span class="mi">414</span> <span class="n">v</span>
+    <span class="mi">0</span> <span class="mi">0</span> <span class="n">z</span>
+  <span class="n">EndSpiro</span>
+<span class="mi">437</span> <span class="mi">248</span> <span class="n">m</span> <span class="mi">1</span>
+ <span class="mi">418</span> <span class="mi">248</span> <span class="n">l</span> <span class="mi">2</span>
+ <span class="mf">372.981</span> <span class="mi">248</span> <span class="mf">327.844</span> <span class="mf">249.961</span> <span class="mi">283</span> <span class="mi">246</span> <span class="n">c</span> <span class="mi">0</span>
+ <span class="mf">248.938</span> <span class="mf">242.992</span> <span class="mf">213.941</span> <span class="mf">235.036</span> <span class="mf">187.152</span> <span class="mf">213.785</span> <span class="n">c</span> <span class="mi">0</span>
+ <span class="mf">173.758</span> <span class="mf">203.159</span> <span class="mf">162.801</span> <span class="mf">189.275</span> <span class="mf">156.555</span> <span class="mf">173.36</span> <span class="n">c</span> <span class="mi">0</span>
+ <span class="mf">150.308</span> <span class="mf">157.445</span> <span class="mf">148.943</span> <span class="mf">139.609</span> <span class="mi">153</span> <span class="mi">123</span> <span class="n">c</span> <span class="mi">0</span>
+ <span class="mf">158.267</span> <span class="mf">101.438</span> <span class="mf">172.606</span> <span class="mf">82.5566</span> <span class="mf">191.107</span> <span class="mf">70.2959</span> <span class="n">c</span> <span class="mi">0</span>
+ <span class="mf">209.608</span> <span class="mf">58.0342</span> <span class="mf">231.83</span> <span class="mf">52.0508</span> <span class="mi">254</span> <span class="mi">51</span> <span class="n">c</span> <span class="mi">0</span>
+ <span class="mf">293.532</span> <span class="mf">49.126</span> <span class="mf">333.197</span> <span class="mf">61.8564</span> <span class="mi">366</span> <span class="mi">84</span> <span class="n">c</span> <span class="mi">0</span>
+ <span class="mf">387.405</span> <span class="mf">98.4502</span> <span class="mf">407.011</span> <span class="mf">116.318</span> <span class="mf">420.258</span> <span class="mf">138.489</span> <span class="n">c</span> <span class="mi">0</span>
+ <span class="mf">426.881</span> <span class="mf">149.574</span> <span class="mf">431.634</span> <span class="mf">161.775</span> <span class="mf">434.188</span> <span class="mf">174.434</span> <span class="n">c</span> <span class="mi">0</span>
+ <span class="mf">436.742</span> <span class="mf">187.092</span> <span class="mi">437</span> <span class="mf">200.087</span> <span class="mi">437</span> <span class="mi">213</span> <span class="n">c</span> <span class="mi">2</span>
+ <span class="mi">437</span> <span class="mi">248</span> <span class="n">l</span> <span class="mi">1</span>
+  <span class="n">Spiro</span>
+    <span class="mi">437</span> <span class="mi">248</span> <span class="n">v</span>
+    <span class="mi">418</span> <span class="mi">248</span> <span class="p">]</span>
+    <span class="mi">283</span> <span class="mi">246</span> <span class="n">o</span>
+    <span class="mi">153</span> <span class="mi">123</span> <span class="n">o</span>
+    <span class="mi">254</span> <span class="mi">51</span> <span class="n">o</span>
+    <span class="mi">366</span> <span class="mi">84</span> <span class="p">]</span>
+    <span class="mi">437</span> <span class="mi">213</span> <span class="p">[</span>
+    <span class="mi">0</span> <span class="mi">0</span> <span class="n">z</span>
+  <span class="n">EndSpiro</span>
+<span class="n">EndSplineSet</span>
+</pre></div>
+</div>
+<p>The spiro data follows Raph’s “Plate file” conventions. Each control point has a
+location (x,y) and a point type. A point type is either:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">{</span></code> – May only be on the first control point, indicates that the contour is
+open</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">v</span></code> – Indicates a corner point</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">o</span></code> – Indicates a G4 curve point</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">c</span></code> – Indicates a G2 curve point</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[</span></code> – Indicates a left point</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">]</span></code> – Indicates a right point</p></li>
+</ul>
+<p>The last spiro should have a point type of <code class="docutils literal notranslate"><span class="pre">z</span></code>. It is not part of the contour,
+it merely marks the end of the contour.</p>
+<p>(Actually this doesn’t quite follow Raph’s conventions: His plate files have a
+different coordinate system, and his final <code class="docutils literal notranslate"><span class="pre">z</span></code> doesn’t have any coordinates).</p>
+<p>If the glyph should open in spiro mode (displaying spiro control points rather
+than bezier controls) there will be an “InSpiro” entry</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">InSpiro</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">Flags</span><span class="p">:</span> <span class="n">HO</span>
+<span class="n">Fore</span>
+</pre></div>
+</div>
+<p>A character need not contain any splines:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">StartChar</span><span class="p">:</span> <span class="n">semicolon</span>
+<span class="n">Encoding</span><span class="p">:</span> <span class="mi">59</span> <span class="mi">59</span>
+<span class="n">Width</span><span class="p">:</span> <span class="mi">264</span>
+<span class="n">Flags</span><span class="p">:</span>
+<span class="n">HStem</span><span class="p">:</span>
+<span class="n">VStem</span><span class="p">:</span>
+<span class="n">Fore</span>
+<span class="n">Refer</span><span class="p">:</span> <span class="mi">33</span> <span class="mi">44</span> <span class="n">N</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span>
+<span class="n">Refer</span><span class="p">:</span> <span class="mi">35</span> <span class="mi">46</span> <span class="n">N</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">414</span> <span class="mi">2</span>
+<span class="n">EndChar</span>
+</pre></div>
+</div>
+<p>Above is one with just references to other characters (a semi-colon is drawn
+here by drawing a comma and stacking a period on top of it). The first number is
+the glyph index of the character being refered to (in the current font of
+course), the next number is the unicode code point, the N says the reference is
+not selected (An “S” indicates it is selected), the following 6 numbers are a
+postscript transformation matrix, the one for comma (unicode 44) is the identity
+matrix, while the one for period (unicode 46) just translates it vertically 414
+units. The final number is a set of truetype flags:</p>
+<ul>
+<li><p>1 =&gt; Use My Metrics</p></li>
+<li><p>2 =&gt; Round to Grid</p></li>
+<li><p>4 =&gt; Position reference by point match (rather than by offset)</p>
+<p>If this is set there will be two additional numbers, the first indicating the
+point number in the base glyph, and the second the point number in the current
+reference.</p>
+</li>
+<li><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Ref</span><span class="p">:</span> <span class="mi">33</span> <span class="mi">44</span> <span class="n">N</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span>
+<span class="n">Ref</span><span class="p">:</span> <span class="mi">35</span> <span class="mi">46</span> <span class="n">N</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">414</span> <span class="mi">6</span> <span class="mi">3</span> <span class="mi">7</span> <span class="n">O</span>
+</pre></div>
+</div>
+</li>
+<li><p>The bottom line indicates that point 3 and point 7 will be positioned together.
+The optional “O” is a flag which indicates that this information is out of date.</p></li>
+</ul>
+<p>A set of splines in the background is similar, it will be introduced by a
+<code class="docutils literal notranslate"><span class="pre">Back</span></code> entry, it may also have spiros.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Back</span>
+<span class="n">SplineSet</span>
+<span class="mi">195</span> <span class="mi">742</span> <span class="n">m</span> <span class="mi">0</span>
+ <span class="mi">195</span> <span class="mi">738</span> <span class="mi">193</span> <span class="mi">736</span> <span class="mi">189</span> <span class="mi">736</span> <span class="n">c</span> <span class="mi">0</span>
+ <span class="mi">175</span> <span class="mi">736</span> <span class="mi">155</span> <span class="mi">743</span> <span class="mi">155</span> <span class="mi">682</span> <span class="n">c</span> <span class="mi">0</span>
+<span class="o">...</span>
+<span class="n">Refer</span> <span class="mi">33</span> <span class="mi">44</span> <span class="n">N</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>While a background image is stored in the following horrible format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>StartChar: A
+...
+Back
+Image: 167 301 0 21 2 1 23 753 2.53892 2.53892
+J:N0SYd&quot;0-qu?]szzz!!#7`s7cQozzz!!!!(s8Viozzzz&quot;98E!zzzz!!3-&quot;rVuouzzz!!!&#39;&quot;
+s8N&#39;!zzz!!!!$s8W,7zzzz&quot;98E$huE`WzJ+s!Dz!&quot;],0s6p!g!!!!&quot;s8W-!n,NFg!!!Q0s8Vio
+z5QCc`s82is!!!!`s8W,gz!WW3&quot;s8W&amp;uzJ,fQKp](9o!!iQ(s8W-!z!&lt;&lt;*!s7cQo!!&quot;,@s8W-!
+...
+EndImage
+EndChar
+</pre></div>
+</div>
+<p>Where the numbers on the image line mean respectively: width (of image in
+pixels), height, image type (0=&gt;mono, 1=&gt;indexed, 2=&gt;rgb (true color), 3=&gt;rgba),
+bytes per line, number of color entries in the color table, the index in the
+color table of the transparent color (or for true color images the transparent
+color itself), the x and y coordinates of the upper left corner of the image,
+the x and y scale factors to convert image pixels into character units. Then
+follows a bunch of binary data encoded using Adobe’s Encode85 filter (See the
+PostScript Reference manual for a description). These data contain all the
+colors in the color table followed by a dump of the image pixel data.</p>
+<p>Bitmap data will be compressed by run length encoding. I’m not going to go into
+that in detail, if you want to understand it I suggest you look at the file
+sfd.c and search for image2rle to see how it is done. The image is compressed
+using rle and then output as above, only now there is one more parameter on the
+“Image:” line which gives the number of bytes to be read from the data stream.</p>
+<p>In multilayered fonts the foreground layers may contain images too. They are
+stored in the same way.</p>
+<p>If a glyph has extra layers beyond foreground and background they are introduced
+with</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Layer</span><span class="p">:</span> <span class="mi">2</span>
+<span class="n">SplineSet</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>A postscript glyph may also contain countermasks:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">StartChar</span><span class="p">:</span> <span class="n">m</span>
+<span class="n">Encoding</span><span class="p">:</span> <span class="mi">109</span> <span class="mi">109</span> <span class="mi">77</span>
+<span class="n">Width</span><span class="p">:</span> <span class="mi">785</span>
+<span class="n">HStem</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">18</span><span class="o">&lt;</span><span class="mi">28</span> <span class="mi">224</span> <span class="mi">292</span> <span class="mi">488</span> <span class="mi">566</span> <span class="mi">752</span><span class="o">&gt;</span> <span class="mi">445</span> <span class="mi">27</span><span class="o">&lt;</span><span class="mi">280</span> <span class="mi">296</span> <span class="mi">542</span> <span class="mi">558</span><span class="o">&gt;</span>
+<span class="n">VStem</span><span class="p">:</span> <span class="mi">98</span> <span class="mi">56</span><span class="o">&lt;</span><span class="mi">45</span> <span class="mi">376</span><span class="o">&gt;</span> <span class="mi">362</span> <span class="mi">56</span><span class="o">&lt;</span><span class="mi">45</span> <span class="mi">378</span><span class="o">&gt;</span> <span class="mi">626</span> <span class="mi">56</span><span class="o">&lt;</span><span class="mi">45</span> <span class="mi">378</span><span class="o">&gt;</span>
+<span class="n">CounterMasks</span><span class="p">:</span> <span class="mi">1</span> <span class="mi">38</span>
+<span class="o">...</span>
+<span class="n">EndChar</span>
+</pre></div>
+</div>
+<p>The CounterMasks line in this example declares one counter group (first
+argument). The “38” (and any other values following it) is a bitmask, given in
+hex, that describes a group. The size of the bitmask is always a multiple of
+eight (i.e. always an even number of hex digits). The highest-order bit in the
+mask specifies whether the first stem hint is present (1) or absent (0) in the
+counter group. The second-highest-order bit does the same for the second hint,
+and so on. Any extra low-order bits not corresponding to any hint are ignored.
+(I know, starting from the high bit instead of the low bit seems strange, but
+that was Adobe’s design decision.) Here, the third (0x20), fourth (0x10) and
+fifth (0x08) stem hints (i.e. the three vertical stems) are in the group,
+yielding a counter mask of 0x38. If we were to add four more VStem hints to the
+glyph, making nine hints in all, then the mask would have to be given as 0x3800
+(because two bytes are needed to accommodate nine bits).</p>
+<p>Glyphs in quadratic fonts (truetype) may containing truetype instructions, these
+may be output in two formats, either an text format or an old binary format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TtInstrs</span><span class="p">:</span>
+<span class="n">NPUSHB</span>
+ <span class="mi">4</span>
+ <span class="mi">251</span>
+ <span class="mi">0</span>
+ <span class="mi">6</span>
+ <span class="mi">251</span>
+<span class="n">MDAP</span><span class="p">[</span><span class="n">rnd</span><span class="p">]</span>
+<span class="n">MDRP</span><span class="p">[</span><span class="n">rnd</span><span class="p">,</span><span class="n">grey</span><span class="p">]</span>
+<span class="n">MDRP</span><span class="p">[</span><span class="n">rp0</span><span class="p">,</span><span class="n">rnd</span><span class="p">,</span><span class="n">grey</span><span class="p">]</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>As with the ‘prep’ table above this is simply a list of truetype instruction
+names as used by FontForge (see ttfinstrs.c for a table of these).</p>
+<p>An older format is simply a binary dump in ASCII85 encoding. (Note that these
+are distinguished by the initial keyword <code class="docutils literal notranslate"><span class="pre">TtInstrs</span></code> vs. <code class="docutils literal notranslate"><span class="pre">Tt\</span> <span class="pre">*f*Instrs</span></code>)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>TtfInstrs: 107
+5Xtqo&amp;gTLA(_S)TQj!Kq&quot;UP8&lt;!&lt;rr:&amp;$QcW!&quot;K,K&amp;kWe?(^pl]#mUY&lt;!s\f7&quot;U&gt;G:!%\s-3WRec
+$pP.r$uZOWNsl$t&quot;H&gt;&#39;?EW%CM&amp;Cer:&amp;f3P&gt;eEnad5&lt;Qq=rQYuk3AE2g&gt;q7E*
+EndTtf
+</pre></div>
+</div>
+<p>This is 107 bytes of ASCII85Encode <a class="footnote-reference brackets" href="#ascii85" id="id4">2</a> encoded binary data.</p>
+<p>If the character contains Anchor Points these will be included:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AnchorPoint</span><span class="p">:</span> <span class="s2">&quot;bottom&quot;</span> <span class="mi">780</span> <span class="o">-</span><span class="mi">60</span> <span class="n">basechar</span> <span class="mi">0</span>
+<span class="n">AnchorPoint</span><span class="p">:</span> <span class="s2">&quot;top&quot;</span> <span class="mi">803</span> <span class="mi">1487</span> <span class="n">basechar</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>the point names the anchor class it belongs to (in UTF-7), its location, what
+type of point it is (basechar, mark, baselig, basemark, entry, exit), and for
+ligatures a number indicating which ligature component it refers to. You may
+also see:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AnchorPoint</span><span class="p">:</span> <span class="s2">&quot;bottom&quot;</span> <span class="mi">780</span> <span class="o">-</span><span class="mi">60</span> <span class="n">basechar</span> <span class="mi">0</span> <span class="p">{</span><span class="mi">12</span><span class="o">-</span><span class="mi">13</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">}</span> <span class="p">{</span><span class="mi">8</span><span class="o">-</span><span class="mi">14</span> <span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">}</span>
+</pre></div>
+</div>
+<p id="sfdformat-device-table">Where the items in braces are horizontal/vertical device tables. The first
+indicates that the (horizontal) device table applies to pixel sizes 12 through
+13 with pixel adjustments of -1 pixel each. The second indicates a vertical
+device table applies to pixel sizes 8 through 14 with pixel adjustments of 1, 0,
+-1, -1, -2, -2, -2 pixels.</p>
+<p>Finally a TrueType font may position an anchor point based on a normal point
+within the glyph (if this is done a device table may not be present).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AnchorPoint</span><span class="p">:</span> <span class="s2">&quot;bottom&quot;</span> <span class="mi">780</span> <span class="o">-</span><span class="mi">60</span> <span class="n">basechar</span> <span class="mi">0</span> <span class="mi">23</span>
+</pre></div>
+</div>
+<p>Indicates that this anchor point will be positioned at the same location (which
+is normally 780,-60 but which might be moved by an instruction) as truetype
+point 23.</p>
+<p>If the user has set the glyph class</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GlyphClass</span><span class="p">:</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>Where the number is 1 more than the ‘GDEF’ glyph class it represents. (so the 2
+above means a base glyph (class 1)).</p>
+<p>If a glyph has multiple unicode encodings (the glyph for latin “A” might be used
+for greek “Alpha”), or is specified by variation selector then alternative
+unicode information will be provided:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AltUni2</span><span class="p">:</span> <span class="mf">000061.00</span><span class="n">fe01</span><span class="o">.</span><span class="mi">0</span>
+</pre></div>
+</div>
+<p>Where the first number in the dotted triple is the alternate unicode code point
+(in hex), the next number is the variation selector (or ffffffff), and the last
+number is reserved for future use (and must currently be 0). There may be more
+than one triple on the line.</p>
+<p>If the character is the first in any kern pairs (not a pair defined by a kern
+class, however)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Kerns2</span><span class="p">:</span> <span class="mi">60</span> <span class="o">-</span><span class="mi">100</span> <span class="s2">&quot;Kern Latin&quot;</span> <span class="p">{</span><span class="mi">12</span><span class="o">-</span><span class="mi">13</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">}</span> <span class="mi">63</span> <span class="o">-</span><span class="mi">92</span> <span class="s2">&quot;Kern Latin&quot;</span> <span class="mi">70</span> <span class="o">-</span><span class="mi">123</span> <span class="s2">&quot;Kern Latin&quot;</span> <span class="mi">45</span> <span class="o">-</span><span class="mi">107</span> <span class="s2">&quot;Kern Latin&quot;</span> <span class="mi">76</span> <span class="o">-</span><span class="mi">107</span> <span class="s2">&quot;Kern Latin&quot;</span>
+</pre></div>
+</div>
+<p>Where each kern pair is represented by 2 numbers and a lookup subtable (and an
+optional <a class="reference internal" href="#sfdformat-device-table"><span class="std std-ref">device</span></a> table, see above). The first is
+the original position of the second character (in the current font), the next is
+the horizontal kerning amount, then the lookup subtable name. Then we start over
+with the next kernpair.</p>
+<p>Data that are to go into other GPOS, GSUB or GDEF sub-tables are stored like
+this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Position2</span><span class="p">:</span> <span class="s2">&quot;Inferiors&quot;</span> <span class="n">dx</span><span class="o">=</span><span class="mi">0</span> <span class="n">dy</span><span class="o">=-</span><span class="mi">900</span> <span class="n">dh</span><span class="o">=</span><span class="mi">0</span> <span class="n">dv</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">PairPos2</span><span class="p">:</span> <span class="s2">&quot;Distances&quot;</span> <span class="n">B</span> <span class="n">dx</span><span class="o">=</span><span class="mi">0</span> <span class="n">dy</span><span class="o">=</span><span class="mi">0</span> <span class="n">dh</span><span class="o">=</span><span class="mi">0</span> <span class="n">dv</span><span class="o">=</span><span class="mi">0</span>  <span class="n">dx</span><span class="o">=-</span><span class="mi">10</span> <span class="n">dy</span><span class="o">=</span><span class="mi">0</span> <span class="n">dh</span><span class="o">=</span><span class="mi">0</span> <span class="n">dv</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">Ligature2</span><span class="p">:</span> <span class="s2">&quot;Latin Ligatures&quot;</span> <span class="n">one</span> <span class="n">slash</span> <span class="n">four</span>
+<span class="n">Substitution2</span><span class="p">:</span> <span class="s2">&quot;Latin Smallcaps&quot;</span> <span class="n">agrave</span><span class="o">.</span><span class="n">sc</span>
+<span class="n">AlternateSubs2</span><span class="p">:</span> <span class="s2">&quot;Latin Swash&quot;</span> <span class="n">glyph490</span> <span class="n">A</span><span class="o">.</span><span class="n">swash</span>
+<span class="n">MultipleSubs2</span><span class="p">:</span> <span class="s2">&quot;Latin Decomposition&quot;</span> <span class="n">a</span> <span class="n">grave</span>
+<span class="n">LCarets2</span><span class="p">:</span> <span class="mi">1</span> <span class="mi">650</span>
+</pre></div>
+</div>
+<p>In most of these lines the first string is the lookup subtable name (except for
+LCarets where there is nothing). A simple position change is expressed by the
+amount of movement of the glyph and of the glyph’s advance width. A pairwise
+positioning controls the positioning of two adjacent glyphs (kerning is a
+special case of this). A ligature contains the names of the characters that make
+it up. A simple substitution contains the name of the character that it will
+become. An alternate sub contains the list of characters that the user may
+choose from. A multiple substitution contains the characters the current glyph
+is to be decomposed into. A ligature caret contains a count of the number of
+carets defined, and a list of the locations of those carets.</p>
+<p>Some glyphs may have python data:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PickledData</span><span class="p">:</span> <span class="s2">&quot;I3</span>
+<span class="o">.</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>This is arbetrary python pickled data (protocol=0) which got set by a python
+script. FontForge stores it as a string. If there are either double quotes or
+backslashes inside the string they will be preceded by a backslash.</p>
+<p>A glyph may also have</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Comment</span><span class="p">:</span> <span class="n">Hi</span>
+<span class="n">Colour</span><span class="p">:</span> <span class="n">ff0000</span>
+<span class="n">Validated</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">UnlinkRmOvrlpSave</span><span class="p">:</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>The first is an arbitrary comment, this will be output in UTF-7, the second a
+color (output as a 6 hex digit RGB value), the cached validation state (a
+bitmask, see the python docs for the bits’ meanings, there can be one of these
+for every layer), and a flag that the glyph should have its references unlinked
+and remove overlap run before the font is saved.</p>
+<div class="section" id="tex-math-data">
+<h3>TeX &amp; MATH data<a class="headerlink" href="#tex-math-data" title="Permalink to this headline">¶</a></h3>
+<p>A line like</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TEX</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">425</span>
+</pre></div>
+</div>
+<p>Specifies the tfm height and depth of a glyph.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ItalicCorrection</span><span class="p">:</span> <span class="mi">50</span>
+<span class="n">TopAccentHorizontal</span><span class="p">:</span> <span class="mi">400</span>
+<span class="n">IsExtendedShape</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">GlyphVariantsVertical</span><span class="p">:</span> <span class="n">parenleft</span><span class="o">.</span><span class="n">big</span> <span class="n">parenleft</span><span class="o">.</span><span class="n">bigger</span> <span class="n">parenleft</span><span class="o">.</span><span class="n">biggest</span>
+<span class="n">GlyphConstructionVertical</span><span class="p">:</span> <span class="mi">3</span>  <span class="n">uni239D</span><span class="o">%</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">4733</span> <span class="n">uni239C</span><span class="o">%</span><span class="mi">1</span><span class="p">,</span><span class="mi">2500</span><span class="p">,</span><span class="mi">2500</span><span class="p">,</span><span class="mi">2501</span> <span class="n">uni239B</span><span class="o">%</span><span class="mi">0</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">4733</span>
+<span class="n">TopRightVertex</span><span class="p">:</span> <span class="mi">2</span> <span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">{</span><span class="mi">13</span><span class="o">-</span><span class="mi">15</span> <span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span> <span class="mi">100</span><span class="p">,</span><span class="mi">10</span>
+</pre></div>
+</div>
+<p>Specifies the Italic Correction (either from a tfm file or the MATH table).
+Italic Correction may also include a device table.</p>
+<p>Specifies the horizontal placement of top accents in mathmatical typesetting.
+This may also include a device table.</p>
+<p>Specifies the current glyph is an extended shape (and therefore may need special
+superscript positioning).</p>
+<p>For both glyph variants and construction the word “Vertical” may be replaced
+with Horizontal for glyphs that grow horizontally.</p>
+<p>The first number in GlyphConstruction is the number of components. Each
+component is represented by a glyphname, followed by “%”, followed by an
+indication of whether this is an extender, followed by the start overlap length,
+the end overlap length and the full length.</p>
+<p>Math Kerning info may be specified for each vertex of the glyph (TopRight,
+TopLeft, BottomRight, BottomLeft). First is a count of the number of points,
+then the height, kerning pairs for each. Device tables are permitted and may
+follow directly after either the height or the kerning value.</p>
+</div>
+<div class="section" id="outline-character-extensions-for-multilayered-fonts-type3">
+<h3>Outline character extensions for multilayered fonts (type3)<a class="headerlink" href="#outline-character-extensions-for-multilayered-fonts-type3" title="Permalink to this headline">¶</a></h3>
+<p>Instead of having a single “Fore”ground layer, multilayered type3 fonts have
+(potentially) several layers, each one introduced by a Layer line which
+specifies things like filling and stroking info for this layer. Then within each
+layer you may find a splineset, a list of references and a list of images (any
+or all may be omitted). The syntax for these is the same as in the normal case
+above.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LayerCount</span><span class="p">:</span> <span class="mi">3</span>
+<span class="n">Layer</span><span class="p">:</span> <span class="mi">1</span>  <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span>  <span class="c1">#fffffffe 1  #fffffffe 1 40 round round [1 0 0 1] []</span>
+<span class="n">FillGradient</span><span class="p">:</span> <span class="mi">220</span><span class="p">;</span><span class="mi">260</span> <span class="mi">490</span><span class="p">;</span><span class="mi">450</span> <span class="mi">0</span> <span class="n">pad</span> <span class="mi">2</span> <span class="p">{</span><span class="mi">0</span> <span class="c1">#808080 1} {1 #000000 1}</span>
+<span class="n">SplineSet</span>
+<span class="o">...</span>
+<span class="n">EndSplineSet</span>
+<span class="n">Layer</span><span class="p">:</span> <span class="mi">2</span>  <span class="mi">1</span> <span class="mi">0</span> <span class="mi">1</span>  <span class="c1">#00ff00 1  #0000ff 1 19 miter butt [0.5 0 0 1] [10 5]</span>
+<span class="n">FillGradient</span><span class="p">:</span> <span class="mi">400</span><span class="p">;</span><span class="mi">400</span> <span class="mi">400</span><span class="p">;</span><span class="mi">400</span> <span class="mi">400</span> <span class="n">repeat</span> <span class="mi">2</span> <span class="p">{</span><span class="mi">0</span> <span class="c1">#ffffff 1} {1 #808080 1}</span>
+<span class="n">SplineSet</span>
+<span class="o">...</span>
+<span class="n">EndSplineSet</span>
+<span class="n">Layer</span><span class="p">:</span> <span class="mi">3</span>  <span class="mi">1</span> <span class="mi">0</span> <span class="mi">1</span>  <span class="c1">#00ff00 1  #0000ff 1 19 miter butt [0.5 0 0 1] [10 5]</span>
+<span class="n">FillPattern</span><span class="p">:</span> <span class="n">E</span> <span class="mi">200</span><span class="p">;</span><span class="mi">200</span> <span class="p">[</span><span class="mf">0.707</span> <span class="mf">0.707</span> <span class="o">-</span><span class="mf">0.707</span> <span class="mf">0.707</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">SplineSet</span>
+<span class="o">...</span>
+<span class="n">EndSplineSet</span>
+</pre></div>
+</div>
+<p>The LayerCount line gives the number of layers in the glyph (the background
+layer is layer 0, so this number is one more than the number of layers that will
+actually be specified – the background layer is still specified the way it was
+before, but is included in this count). This line is not required, if omitted
+(or wrong) FontForge will figure that out.</p>
+<p>The Layer line contains too much information. First is a number saying which
+layer, next are three booleans, the first specifies whether to fill the
+splineset (or use an imagemask for images), the second whether to stroke the
+splineset, the third is currently pretty much meaningless. Next follows the RGB
+value of the fill color (the special value of #fffffffe means the color is
+inherited), then the opacity (the special value -1 means inherited), then the
+stroke color and opacity. Then the stroke width (again -1 means inherited), the
+linejoin type (miter, round, bevel, inherited), the linecap type (butt,
+round,square,inherited), the transformation matrix to be applied to the pen and
+finally the dash array.</p>
+<p>Any SplineSet, Ref, Images between this Layer and the next (or the end of the
+character) are part of this layer.</p>
+<p>The FillGradient lines allow you to specify linear or radial gradient fills (or
+StrokeGradient lets you specify a gradient for the strokes). It is followed by
+two points, the start and end points of a linear gradient, the focus and center
+of a radial gradient. Then a radius (if this is 0 then we have a linear
+gradient, otherwise a radial one). A keyword which specifies how the gradient
+should behave outside the region specified by the start and end points. Finally
+there is a number which gives the number of “stop-points”. Each stop point is in
+curly braces and contains three numbers, one between 0 and 1 (indicating the
+location from the start of the gradient to it’s end), one a hex colour, and one
+the opacity, also between 0 and 1.</p>
+<p>The FillPattern line allows you to specify a pattern tiled instead of more
+traditional single colour fills (or StrokePattern lets you specify a pattern for
+the strokes). It is followed by the name of a glyph (which contains the
+pattern), the size of the pattern (width, height) in the current coordinate
+system (so the pattern glyph will be scaled until it is this size). And a
+transformation matrix to be applied after the pattern has been tiled across the
+plain (the one here rotates the tiles by 45 degrees).</p>
+<p>If a glyph is used as a tile it may have one of the following additional
+keywords:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TileMargin</span><span class="p">:</span> <span class="mi">20</span>
+<span class="n">TileBounds</span><span class="p">:</span> <span class="o">-</span><span class="mi">20</span> <span class="o">-</span><span class="mi">220</span> <span class="mi">1020</span> <span class="mi">820</span>
+</pre></div>
+</div>
+<p>If neither of these is specified the tile’s size will be its bounding box. If
+TileBounds is specified, the size is taken from the box information specified
+there (minx, miny, maxx, maxy). If TileMargin is specified then the bounding box
+will be extended by this amount (to provide a whitespace margin around the
+tile).</p>
+<p>Inside a SplineSet a contour may be modified by a PathFlags keyword (output
+after the contour has been completed). Currently there is only one flag (1)
+which indicates the that contour is part of the cliping path of the glyph.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SplineSet</span>
+<span class="mi">102</span> <span class="mi">699</span> <span class="n">m</span> <span class="mi">5</span>
+ <span class="mi">1176</span> <span class="mi">699</span> <span class="n">l</span> <span class="mi">5</span>
+ <span class="mi">1176</span> <span class="o">-</span><span class="mi">120</span> <span class="n">l</span> <span class="mi">5</span>
+ <span class="mi">102</span> <span class="o">-</span><span class="mi">120</span> <span class="n">l</span> <span class="mi">5</span>
+ <span class="mi">102</span> <span class="mi">699</span> <span class="n">l</span> <span class="mi">5</span>
+  <span class="n">PathFlags</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">EndSplineSet</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="bitmap-fonts">
+<span id="sfdformat-bitmap-fonts"></span><h2>Bitmap Fonts<a class="headerlink" href="#bitmap-fonts" title="Permalink to this headline">¶</a></h2>
+<p>After all the outline characters have been described there is an EndChars entry
+and then follow any bitmap fonts:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">EndChars</span>
+<span class="n">BitmapFont</span><span class="p">:</span> <span class="mi">12</span> <span class="mi">285</span> <span class="mi">10</span> <span class="mi">2</span> <span class="mi">1</span>
+<span class="n">BDFStartProperties</span><span class="p">:</span> <span class="mi">2</span>
+<span class="n">COMMENT</span> <span class="mi">0</span> <span class="s2">&quot;This is a bdf comment property&quot;</span>
+<span class="n">FONT_DESCENT</span> <span class="mi">18</span> <span class="mi">2</span>
+<span class="n">BDFEndProperties</span>
+<span class="n">Resolution</span><span class="p">:</span> <span class="mi">75</span>
+<span class="n">BDFChar</span><span class="p">:</span> <span class="mi">32</span> <span class="mi">3</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
+<span class="n">z</span>
+<span class="n">BDFChar</span><span class="p">:</span> <span class="mi">3</span> <span class="mi">33</span> <span class="mi">3</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">9</span>
+<span class="o">^</span><span class="n">d</span><span class="p">(</span><span class="o">.</span><span class="n">M5X7S</span><span class="s2">&quot;!&#39;gMa</span>
+<span class="n">BDFRefChar</span><span class="p">:</span> <span class="mi">302</span> <span class="mi">488</span> <span class="mi">7</span> <span class="mi">1</span> <span class="n">N</span>
+<span class="n">BDFRefChar</span><span class="p">:</span> <span class="mi">302</span> <span class="mi">58</span> <span class="mi">0</span> <span class="mi">0</span> <span class="n">N</span>
+</pre></div>
+</div>
+<p>The bitmap font line contains the following numbers: the pixelsize of the font,
+the number of potential characters in the font, the ascent and the descent of
+the font and the depth of font (number of bits in a pixel).</p>
+<p>Optionally there may be a set of BDF properties. If there are any properties
+there will be a line “BDFStartProperties:” with a count of properties. There
+should be that many property lines, and then a “BDFEndProperties” line. Each
+property is of the form:</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;NAME&gt;</span> <span class="pre">&lt;TYPE&gt;</span> <span class="pre">&lt;VALUE&gt;</span></code></p>
+<p>Where &lt;NAME&gt; is the property name, &lt;TYPE&gt; is 0 for a string, 1 for an atom, 2
+for an int, 3 for an unsigned int. In addition &lt;TYPE&gt; may have a 16 ored to one
+of the above values indicating the line is a true property (rather than
+information from somewhere else in the BDF header). &lt;VALUE&gt; will either be a
+quoted string or an integer.</p>
+<p>Optionally there may be a resolution line, which specifies the design resolution
+of the font.</p>
+<p>This is followed by a list of bitmap characters, the bitmap character line
+contains the following numbers: the original position (glyph ID), the encoding
+(local), the width, the minimum x value, the minimum y value, the maximum x
+value and the maximum y value. If the bitmap font has vertical metrics there
+will also be a vwidth. This is followed by another set of binary data encoded as
+above. There will be (ymax-ymin+1)* ((xmax-xmin)/(8/depth)+1) (unencoded) bytes,
+there is no color table here (the high order bit comes first in the image, set
+bits should be colored black, clear bits transparent).</p>
+<p>If there are any bitmap glyphs with bitmap references then these will appear
+near the end of the bitmap strike. Each <code class="docutils literal notranslate"><span class="pre">BDFRefChar</span></code> line defines a reference,
+the first number is the glyph ID of the composite glyph, the second the glyph ID
+of the referred glyph, and the last two the horizontal and vertical translation
+of the reference in the composite glyph.</p>
+<p>A bitmap font is ended by:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">EndBitmapFont</span>
+<span class="n">BitmapFont</span><span class="p">:</span> <span class="mi">17</span> <span class="mi">285</span> <span class="mi">14</span> <span class="mi">3</span> <span class="mi">1</span>
+<span class="n">BDFChar</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">17</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
+<span class="n">z</span>
+<span class="o">...</span>
+<span class="n">EndBitmapFont</span>
+<span class="n">EndSplineFont</span>
+</pre></div>
+</div>
+<div class="section" id="cid-keyed-fonts">
+<span id="sfdformat-cid-keyed-fonts"></span><h3>CID keyed fonts<a class="headerlink" href="#cid-keyed-fonts" title="Permalink to this headline">¶</a></h3>
+<p>A CID font is saved slighlty differently. It begins with the normal font header
+which contains the information in the top level CID font dictionary. As
+mentioned above this will include special keys that specify the CID charset
+(registry, ordering, supplement). It will also include:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CIDVersion</span><span class="p">:</span> <span class="mf">2.0</span>
+<span class="n">BeginSubFonts</span><span class="p">:</span> <span class="mi">5</span> <span class="mi">8318</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">CIDVersion</span></code> is self-explanatory. The <code class="docutils literal notranslate"><span class="pre">BeginSubFonts</span></code> line says that
+there are 5 subfonts the largest of which contains slots for 8318 characters
+(again some of these may not be defined). This will be followed by a list of the
+subfonts (dumped out just like normal fonts) and their characters. Only the top
+level font will contain any bitmap characters, anchor classes, etc.</p>
+</div>
+<div class="section" id="multiple-master-fonts">
+<span id="sfdformat-multiple-master-fonts"></span><h3>Multiple Master fonts<a class="headerlink" href="#multiple-master-fonts" title="Permalink to this headline">¶</a></h3>
+<p>Multiple master fonts start with a different style of file header, and are
+followed by a set of sub fonts. If the mm font has 4 instances then there will
+be 5 subfonts (one for each instance, and one for the blended font). The font
+header looks like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SplineFontDB</span><span class="p">:</span> <span class="mf">1.0</span>
+<span class="n">MMCounts</span><span class="p">:</span> <span class="mi">4</span> <span class="mi">2</span> <span class="mi">0</span> <span class="mi">0</span>
+<span class="n">MMAxis</span><span class="p">:</span> <span class="n">Weight</span> <span class="n">Width</span>
+<span class="n">MMPositions</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span>
+<span class="n">MMWeights</span><span class="p">:</span> <span class="mf">0.31502</span> <span class="mf">0.13499</span> <span class="mf">0.38499</span> <span class="mf">0.16499</span>
+<span class="n">MMAxisMap</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">2</span> <span class="mi">0</span><span class="o">=&gt;</span><span class="mi">50</span> <span class="mi">1</span><span class="o">=&gt;</span><span class="mi">1450</span>
+<span class="n">MMAxisMap</span><span class="p">:</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">0</span><span class="o">=&gt;</span><span class="mi">50</span> <span class="mi">1</span><span class="o">=&gt;</span><span class="mi">1450</span>
+<span class="n">MMCDV</span><span class="p">:</span>
+<span class="p">{</span>
+<span class="mi">1</span> <span class="n">index</span> <span class="mi">1</span> <span class="mi">2</span> <span class="n">index</span> <span class="n">sub</span> <span class="n">mul</span> <span class="mi">3</span> <span class="mi">1</span> <span class="n">roll</span>
+<span class="mi">1</span> <span class="mi">2</span> <span class="n">index</span> <span class="n">sub</span> <span class="mi">1</span> <span class="n">index</span> <span class="n">mul</span> <span class="mi">3</span> <span class="mi">1</span> <span class="n">roll</span>
+<span class="mi">1</span> <span class="n">index</span> <span class="mi">1</span> <span class="n">index</span> <span class="n">mul</span> <span class="mi">3</span> <span class="mi">1</span> <span class="n">roll</span>
+<span class="n">pop</span> <span class="n">pop</span>
+<span class="mi">0</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">3</span> <span class="p">{</span><span class="n">index</span> <span class="n">add</span><span class="p">}</span> <span class="k">for</span> <span class="mi">1</span> <span class="n">exch</span> <span class="n">sub</span> <span class="mi">4</span> <span class="mi">1</span> <span class="n">roll</span>
+<span class="p">}</span>
+<span class="n">EndMMSubroutine</span>
+<span class="n">MMNDV</span><span class="p">:</span>
+<span class="p">{</span>
+<span class="n">exch</span> <span class="mi">50</span> <span class="n">sub</span> <span class="mi">1400</span> <span class="n">div</span>
+<span class="n">exch</span> <span class="mi">50</span> <span class="n">sub</span> <span class="mi">1400</span> <span class="n">div</span>
+<span class="p">}</span>
+<span class="n">EndMMSubroutine</span>
+<span class="n">BeginMMFonts</span><span class="p">:</span> <span class="mi">5</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>The “MMCounts” line gives the number of instances (4) and the number of axes (2)
+in this font also whether it is an apple distortable font (0) and if so the
+number of named styles (0) in that font. The “MMAxis” line gives the names of
+the axes. The MMPositions line is an array of real numbers (with
+instance_count*axis_count elements) describing the coordinates of each instance
+along each axis. The MMWeights line provides the weights (blends) of the
+instance fonts to which, when interpolated, yield the default font. There will
+be one AxisMap line for each axis, it provides the mapping from design space to
+normalized space. The first line</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MMAxisMap</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">2</span> <span class="mi">0</span><span class="o">=&gt;</span><span class="mi">50</span> <span class="mi">1</span><span class="o">=&gt;</span><span class="mi">1450</span>
+</pre></div>
+</div>
+<p>says that axis 0 has two mapping points. One is at normalized position 0 and
+corresponds to design position 50, the other is at normalized position 1 and
+corresponds to design position 1450. There are two subroutines stored here, both
+are simple postscript. The first is the /NormalizeDesignVector routine and the
+second is the /ConvertDesignVector routine.</p>
+<p>Finally we have the actual instance fonts.</p>
+<hr class="docutils" />
+<p>Fonts with information for Apple’s ‘*var’ tables (‘fvar’, ‘gvar’, ‘avar’ and
+‘cvar’) have a slightly different format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MMCounts</span><span class="p">:</span> <span class="mi">8</span> <span class="mi">2</span> <span class="mi">1</span> <span class="mi">10</span>
+<span class="n">MMAxis</span><span class="p">:</span> <span class="n">Weight</span> <span class="n">Width</span>
+<span class="n">MMPositions</span><span class="p">:</span> <span class="mi">1</span> <span class="mi">0</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="o">-</span><span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">1</span>
+<span class="n">MMWeights</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
+<span class="n">MMAxisMap</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">3</span> <span class="o">-</span><span class="mi">1</span><span class="o">=&gt;</span><span class="mf">0.479996</span> <span class="mi">0</span><span class="o">=&gt;</span><span class="mi">1</span> <span class="mi">1</span><span class="o">=&gt;</span><span class="mf">3.2</span>
+<span class="n">MacName</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">6</span> <span class="s2">&quot;Weight&quot;</span>
+<span class="n">MacName</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">15</span> <span class="s2">&quot;Type de graisse&quot;</span>
+<span class="o">...</span>
+<span class="n">MMAxisMap</span><span class="p">:</span> <span class="mi">1</span> <span class="mi">3</span> <span class="o">-</span><span class="mi">1</span><span class="o">=&gt;</span><span class="mf">0.619995</span> <span class="mi">0</span><span class="o">=&gt;</span><span class="mi">1</span> <span class="mi">1</span><span class="o">=&gt;</span><span class="mf">1.3</span>
+<span class="n">MacName</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">5</span> <span class="s2">&quot;Width&quot;</span>
+<span class="n">MacName</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">7</span> <span class="s2">&quot;Largeur&quot;</span>
+<span class="o">...</span>
+<span class="n">MMNamedInstance</span><span class="p">:</span> <span class="mi">0</span>  <span class="mf">3.2</span> <span class="mi">1</span>
+<span class="n">MacName</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">5</span> <span class="s2">&quot;Black&quot;</span>
+<span class="n">MacName</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">9</span> <span class="s2">&quot;Tr</span><span class="se">\217</span><span class="s2">s gras&quot;</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>In Adobe’s format coordinates range between [0,1], while in Apple’s format they
+range [-1,1]. Adobe generally specifies 2 instances per axis (at the extrema)
+while Apple expects 3 (the extrema and the default setting at 0). So a two axis
+font for Adobe will normally contain 4 instances and a default version, while
+one for Apple will contain 8 instances and a default version. The MMWeights
+field is irrelevant for Apple. Each axis has a set of names, for that axis
+translated into various languages. Finally Apple allows certain points in design
+space to be given names, here the point Weight=3.2, Width=1 is named “Black” or
+“Trés gras”.</p>
+</div>
+</div>
+<div class="section" id="splinefont-directories">
+<span id="sfdformat-sfdir"></span><h2>SplineFont Directories<a class="headerlink" href="#splinefont-directories" title="Permalink to this headline">¶</a></h2>
+<p>In late 2006 some people wanted a font format where each glyph was stored in a
+single file (to give version control systems a finer granularity and reduce the
+amount of stuff to download after changes). I have extended the format slightly
+by creating what I call SplineFont Directories. These are basically sfd files
+split up into little bits in directories with an extension of “.sfdir”. The
+directory contains the following:</p>
+<ul class="simple">
+<li><p>A file <code class="docutils literal notranslate"><span class="pre">font.props</span></code> which contains the
+<a class="reference internal" href="#sfdformat-font-header"><span class="std std-ref">font header</span></a> and includes everything up to (but
+not including) the <code class="docutils literal notranslate"><span class="pre">BeginChars</span></code> line</p></li>
+<li><p>For non-CID-keyed fonts the directory will contain one file for each glyph in
+the font, these files will be named <code class="docutils literal notranslate"><span class="pre">\</span> <span class="pre">*&lt;glyph-name&gt;*.glyph</span></code> and will be in
+the format specified for <a class="reference internal" href="#sfdformat-outline-char-data"><span class="std std-ref">outline data</span></a>.</p></li>
+<li><p>If the font contains any bitmap strikes then there will be subdirectories named
+<code class="docutils literal notranslate"><span class="pre">\</span> <span class="pre">*&lt;pixel-size&gt;*.strike</span></code>. And these directories will contain a
+<code class="docutils literal notranslate"><span class="pre">strike.props</span></code> file and one file per glyph in the strike, these files named
+<code class="docutils literal notranslate"><span class="pre">\</span> <span class="pre">*</span> <span class="pre">&lt;glyph-name&gt;*.bitmap</span></code>. The <code class="docutils literal notranslate"><span class="pre">strike.props</span></code> file will contan the bitmap
+header and bdf properties, while the <code class="docutils literal notranslate"><span class="pre">*.bitmap</span></code> files will contain the
+per-glyph bitmap data. These will be in the format described in the section on
+<a class="reference internal" href="#sfdformat-bitmap-fonts"><span class="std std-ref">bitmaps</span></a>.</p></li>
+<li><p>For CID-keyed fonts there will be subdirectories named
+<code class="docutils literal notranslate"><span class="pre">\</span> <span class="pre">*&lt;subfontname&gt;*.subfont</span></code>, each subfont will contain its own <code class="docutils literal notranslate"><span class="pre">font.props</span></code>
+file and its own set of glyph files.</p></li>
+<li><p>For Multiple Master fonts there will be subdirectories named
+<code class="docutils literal notranslate"><span class="pre">\</span> <span class="pre">*&lt;instancename&gt;*.instance</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="autosave-format">
+<span id="sfdformat-autosave-format"></span><h2>Autosave Format<a class="headerlink" href="#autosave-format" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../appendices/errrecovery.html"><span class="doc">Error recovery</span></a> files are saved in ~/.FontForge/autosave,
+they have quite random looking names and end in .asfd. They look very similar to
+.sfd files above.</p>
+<p>If an asfd file starts with a line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Base</span><span class="p">:</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">gww</span><span class="o">/</span><span class="n">myfonts</span><span class="o">/</span><span class="n">fontforge</span><span class="o">/</span><span class="n">Ambrosia</span><span class="o">.</span><span class="n">sfd</span>
+</pre></div>
+</div>
+<p>Then it is assumed to be a list of changes applied to that file (which may be an
+sfd file or a font file). If it does not start with a “<code class="docutils literal notranslate"><span class="pre">Base:</span></code>” line then it
+is assumed to be a new font. The next line contains the encoding, as above. The
+next line is a <code class="docutils literal notranslate"><span class="pre">BeginChars</span></code> line. The number given on the line is not the
+number of characters in the file, but is the maximum number that could appear in
+the font. Then follows a list of all changed characters in the font (in the
+format described above).</p>
+<p>Bitmaps are not preserved. Grid changes are not preserved.</p>
+<p class="rubric">Footnotes</p>
+<dl class="footnote brackets">
+<dt class="label" id="sfdext"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p><strong>The SFD extension</strong></p>
+<p>Yes, I know it stands for sub-file directory on the dear old PDP-10s.</p>
+<p>But they aren’t really around any more, so I’ll reuse it. And probably nobody
+else remembers them…</p>
+<p>Oh, it’s also used by TeX for Sub Font Definition files (see ttf2afm).</p>
+</dd>
+<dt class="label" id="ascii85"><span class="brackets">2</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id3">2</a>,<a href="#id4">3</a>)</span></dt>
+<dd><p><strong>ASCII85Encode</strong></p>
+<p>An encoding which takes 4 binary bytes and converts them
+to 5 ASCII characters between ‘!’ and ‘u’. Suppose we have 4 binary bytes: (b1
+b2 b3 b4) then we want to find (c1 c2 c3 c4 c5) such that:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">b1</span> <span class="o">*</span> <span class="mi">2563</span>  <span class="o">+</span>  <span class="n">b2</span> <span class="o">*</span> <span class="mi">2562</span>  <span class="o">+</span>  <span class="n">b3</span> <span class="o">*</span> <span class="mi">256</span>  <span class="o">+</span>  <span class="n">b4</span> <span class="o">=</span>
+   <span class="n">c1</span> <span class="o">*</span> <span class="mi">854</span>  <span class="o">+</span>  <span class="n">c2</span> <span class="o">*</span> <span class="mi">853</span>  <span class="o">+</span>  <span class="n">c3</span> <span class="o">*</span> <span class="mi">852</span>  <span class="o">+</span>  <span class="n">c4</span> <span class="o">*</span> <span class="mi">85</span>  <span class="o">+</span>  <span class="n">c5</span>
+</pre></div>
+</div>
+<p>The final output is obtained by adding 33 (‘!’) to each of the c<sub>i</sub>. If
+all four bytes are 0, then rather than writing ‘!!!!!’, the letter ‘z’ may be
+used instead.</p>
+<p>Unfortunately, not all streams of binary data have a length divisible by 4. So
+at the end of the run, assume there are <em>n</em> bytes left over. Append <em>4-n</em> zero
+bytes to the data stream, and apply the above transformation (without the ‘z’
+special case for all zeros), and output <em>n+1</em> of the c<sub>i</sub> bytes.</p>
+<p>So to encode a single 0 byte we would:</p>
+<ul class="simple">
+<li><p>append 3 additional 0 bytes (n==1 =&gt; add 4-1=3 bytes)</p></li>
+<li><p>find that all the c<sub>i</sub> were also zero</p></li>
+<li><p>add ‘!’ to each (all are now ‘!’)</p></li>
+<li><p>output two ‘!’ (n+1 = 2)</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui.html">FontForge’s User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../techref.html">Technical References</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gposgsub.html">Advanced Typography Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AA-Comparison.html">Anti-Alias Comparison</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autotrace.html">Autotracing bitmaps in FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accented.html">Building Accented and other Composite Glyphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bezier.html">Bézier Splines </a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref-caveats.html">Caveats about References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfdchangelog.html">Changes to the sfd format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cidmapformat.html">Cidmap files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cliargs.html">Command Line Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="splinefont.html">Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SuggestDeltas.html">Delta Instruction Suggestions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stroke.html">Expand Stroke Facility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BDFGrey.html">Extensions to Adobe’s BDF  for greymap fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PfaEdit-TeX.html">FontForge and TeX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pfaeditmath.html">FontForge’s math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hinting.html">Hinting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macformats.html">Macintosh font formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="featurefile.html">Major differences between FontForge’s and Adobe’s interpretation of feature files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="non-standard.html">Non standard extensions used FontForge in True/Open Type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="palmfonts.html">Palm fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bitmaponlysfnt.html">Several formats for bitmap only sfnts</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Spline Font Database</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#font-header">Font Header</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#outline-character-data">Outline Character Data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#tex-math-data">TeX &amp; MATH data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#outline-character-extensions-for-multilayered-fonts-type3">Outline character extensions for multilayered fonts (type3)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#bitmap-fonts">Bitmap Fonts</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#cid-keyed-fonts">CID keyed fonts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#multiple-master-fonts">Multiple Master fonts</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#splinefont-directories">SplineFont Directories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#autosave-format">Autosave Format</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pcf-format.html">The X11 PCF bitmap font file format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TrueOpenTables.html">TrueType and OpenType tables supported by FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corpchar.html">Unicode Corporate Characters used by FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UniqueID.html">UniqueID and XUID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selections.html">X Selections and the X Clipboard</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../techref.html">Technical References</a><ul>
+      <li>Previous: <a href="bitmaponlysfnt.html" title="previous chapter">Several formats for bitmap only sfnts</a></li>
+      <li>Next: <a href="pcf-format.html" title="next chapter">The X11 PCF bitmap font file format</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Bitmap Glyph View &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="The Metrics View" href="metricsview.html" />
+    <link rel="prev" title="Outline Glyph View" href="charview.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="bitmap-glyph-view">
+<h1>Bitmap Glyph View<a class="headerlink" href="#bitmap-glyph-view" title="Permalink to this headline">¶</a></h1>
+<img alt="../../_images/BitmapView.png" class="align-right" src="../../_images/BitmapView.png" />
+<p>The bitmap view is vaguely similar to the <a class="reference internal" href="charview.html"><span class="doc">outline view</span></a>. It is
+also designed for editing glyph shapes, but here bitmap glyph shapes.</p>
+<p>At the top of the view is a small region showing an unmagnified view of the
+glyph, to the right of that are two information displays, the first shows the
+current location of the mouse pointer, and the second shows (if the mouse button
+has been depressed and not released yet) the offset from the place where the
+mouse was pressed to the current pointer location. The coordinate system here is
+in pixels with the origin at the glyph’s origin. Next to this is a button (here
+truncated) that allows you to recalculate the bitmap (rasterize the outline and
+place the result in the window for editing).</p>
+<p>Underneath is the main display, showing the bits in the image, the outline of
+the glyph and a grid.</p>
+<div class="figure align-default" id="id1">
+<img alt="../../_images/BitmapReference.png" src="../../_images/BitmapReference.png" />
+<p class="caption"><span class="caption-text">A bitmap glyph composed of two bitmap references</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>As in the outline view you may choose to make the palettes free floating windows
+by unchecking <span class="menuselection">View ‣ Palettes ‣ Dock Palettes</span>.</p>
+<div class="section" id="layers">
+<span id="bitmapview-layers"></span><h2>Layers<a class="headerlink" href="#layers" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/bvlayers.png" class="align-left" src="../../_images/bvlayers.png" />
+<p>There are three layers to the bitmap view, the bitmap itself, the outline glyph
+and the grid lines. You are always editing in the bitmap layer so there is no
+control over what layer is editable, just which ones are visible.</p>
+</div>
+<div class="section" id="tools">
+<span id="bitmapview-tools"></span><h2>Tools<a class="headerlink" href="#tools" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/bvtools.png" class="align-left" src="../../_images/bvtools.png" />
+<p>There are only six tools on the bitmap palette (there are some others available
+by right clicking in the view, this generates a popup menu.</p>
+<p>The pointer tool allows you to select a region of the screen, and move it around
+or copy it (a copy when nothing is selected copies the entire bitmap). The arrow
+keys will also move the selection around. In a bitmap only font the pointer tool
+can change the advance width.</p>
+<p>The if you click with the magnifying tool the view is magnified, centered around
+the point at which you clicked. If you hold down the
+<a class="reference internal" href="charview.html#charview-alt-meta-capslock"><span class="std std-ref">Meta (or Alt or CapsLock)</span></a> key during the
+click then the view will be minified.</p>
+<p>The pencil tool allows you to set or clear bits. If you depress the mouse button
+then the pencil will toggle the bit under the cursor, if you then drag it over
+other bits they will be set if the first bit was set, and cleared if the first
+was cleared.</p>
+<p>The line tool (the pencil with the line beside it) will draw straight lines. It
+behaves like the pencil tool on whether it sets or clears a line. The Shift key
+does not constrain this window.</p>
+<p>The four-arrow tool moves the entire bitmap.</p>
+<p>The hand scrolls the screen.</p>
+<div class="section" id="additional-tools-from-the-popup-menu">
+<h3>Additional tools from the popup menu.<a class="headerlink" href="#additional-tools-from-the-popup-menu" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Draw an open rectangle</p></li>
+<li><p>Draw a filled rectangle</p></li>
+<li><p>Draw an open ellipse</p></li>
+<li><p>Draw a filled ellipse</p></li>
+<li><p>Rotate the bitmap 90° Counter Clockwise.</p></li>
+<li><p>Rotate it 90° Clockwise.</p></li>
+<li><p>Rotate it 180°.</p></li>
+<li><p>Flip it horizontally</p></li>
+<li><p>Flip it vertically.</p></li>
+<li><p>Set Width</p>
+<p>This is only available if there is no outline font (ie. if you opened a bdf file
+directly).</p>
+<p>It sets the width (glyph advance) of the bitmap.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="anti-aliased-glyphs">
+<span id="bitmapview-aa"></span><h2>Anti-Aliased Glyphs<a class="headerlink" href="#anti-aliased-glyphs" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/greymapedit.png" class="align-right" src="../../_images/greymapedit.png" />
+<p>This window may also be used to edit anti-aliased glyphs (glyphs which are
+represented by shades of grey rather than by black and white. In the information
+area there is a little rectangle which shows the current color that will be used
+by the pencil (line, rectangle, etc.) tool.</p>
+<p>The behavior of the drawing tools is slightly different here. In a bitmap glyph
+the color used for drawing is the opposite of whatever color is currently under
+the cursor, but that doesn’t work in an environment with more than two colors.
+So you must select what color you are going to draw with manually.</p>
+<p>There are two ways to select the drawing color:</p>
+<ul class="simple">
+<li><p>With the pencil tool selected, hold down the Alt (Meta) key. The cursor changes
+to an eyedropper. Position the cursor over a pixel with the right color and
+click the mouse.</p></li>
+<li><p>Use the <a class="reference internal" href="#bitmapview-shades"><span class="std std-ref">Shades</span></a> palette.</p></li>
+</ul>
+</div>
+<div class="section" id="shades">
+<span id="bitmapview-shades"></span><h2>Shades<a class="headerlink" href="#shades" title="Permalink to this headline">¶</a></h2>
+<div class="flex-container">
+<div class="flex-row">
+<div class="flex-col">
+<div class="figure align-default" id="id2">
+<img alt="../../_images/Shades.png" src="../../_images/Shades.png" />
+<p class="caption"><span class="caption-text">Shades of grey available with 8 bits/pixel</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="flex-col">
+<div class="figure align-default" id="id3">
+<img alt="../../_images/Shades4.png" src="../../_images/Shades4.png" />
+<p class="caption"><span class="caption-text">Shades of grey available with 4 bits/pixel</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="flex-col">
+<div class="figure align-default" id="id4">
+<img alt="../../_images/Shades2.png" src="../../_images/Shades2.png" />
+<p class="caption"><span class="caption-text">Shades of grey available with 2 bits/pixel</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+</div>
+<p>The shades palette is only visible in an anti-aliased glyph. The palette
+displays all the possible shades of grey available to this glyph. Glyphs with
+more bits per pixel will have more shades of grey.</p>
+<p>The currently selected drawing color is outlined in green. To select a new
+color, move the cursor to the desired color and click the mouse.</p>
+<p>As the cursor moves over the bitmap in the bitmap view, the color under the
+cursor will be outlined in white.</p>
+<div class="clearer docutils container">
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../ui.html">FontForge’s User Interface</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../mainviews.html">Main Views</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="fontview.html">Font View</a></li>
+<li class="toctree-l3"><a class="reference internal" href="charview.html">Outline Glyph View</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Bitmap Glyph View</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#layers">Layers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tools">Tools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anti-aliased-glyphs">Anti-Aliased Glyphs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#shades">Shades</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="metricsview.html">The Metrics View</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../menus.html">Menus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dialogs.html">Dialogs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/HotKeys.html">Hot Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/fontforge-themes.html">FontForge color schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">X Resource Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xim.html">X Input Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">X Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../techref.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../../ui.html">FontForge’s User Interface</a><ul>
+  <li><a href="../mainviews.html">Main Views</a><ul>
+      <li>Previous: <a href="charview.html" title="previous chapter">Outline Glyph View</a></li>
+      <li>Next: <a href="metricsview.html" title="next chapter">The Metrics View</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

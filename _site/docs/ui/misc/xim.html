@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>X Input Methods &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="X Resources" href="xres.html" />
+    <link rel="prev" title="X Resource Editor" href="resedit.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="x-input-methods">
+<h1>X Input Methods<a class="headerlink" href="#x-input-methods" title="Permalink to this headline">¶</a></h1>
+<p>For entering text in CJK languages, simple keyboard typing is not adequate.
+Instead there are programs that run and handle the conversion of keystrokes to
+characters these programs are called input methods.</p>
+<p>I have tested FontForge with two freely available input methods (as well as one
+can who speaks neither Chinese, Japanese nor Korean) kinput2 (for Japanese) and
+<a class="reference external" href="http://xcin.linux.org.tw/">xcin</a> (for Chinese).</p>
+<p>There is reasonably good (English) documentation on installing and using kinput2
+on the mozilla site, and at
+<a class="reference external" href="http://www.suse.de/~mfabian/suse-cjk/kinput2.html">suse</a>, kinput2 has the
+interesting complexity that it requires yet another server to be running,
+generally either cannaserver or jserver. It looks to me as though it might be
+possible to use a chinese or korean jserver with kinput2 but I have not tried
+this.</p>
+<p>There is good Chinese and English documentation on xcin at the
+<a class="reference external" href="http://xcin.linux.org.tw/">xcin site in Taiwan</a> (english is not the default
+here, but it is available about 3 lines down).</p>
+<p>One of the most difficult problems I had in installing these was finding the
+appropriate locales. I could not find them in my RedHat 7.3 distribution, nor
+could I find any RedHad rpms containing them. There is a good supply of Mandrake
+locale rpms (named <code class="docutils literal notranslate"><span class="pre">locales-zh*</span></code> for chinese, <code class="docutils literal notranslate"><span class="pre">locales-jp*</span></code> for japanese,
+etc.) but Mandrake stores them in a different directory so after installing them
+I had to copy them from <code class="docutils literal notranslate"><span class="pre">/usr/share/locales</span></code> to <code class="docutils literal notranslate"><span class="pre">/usr/lib/locales</span></code>. The SUSE
+docs imply that the current SUSE distribution ships with these locales.</p>
+<p>To start fontforge with an input method you must first insure that the input
+method itself is running. For kinput2 do the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cannaserver &amp;
+$ kinput2 -canna -xim &amp;
+</pre></div>
+</div>
+<p>While for xcin:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ setenv LC_CTYPE zh_TW.Big5             (or $ LC_CTYPE=zh_TW.Big5 ; export LC_CTYPE )
+$ xcin &amp;
+</pre></div>
+</div>
+<p>Beware: Different systems will have slightly different locale names (sometimes
+it’s <code class="docutils literal notranslate"><span class="pre">zh_TW.big5</span></code>, or something else) so if things don’t work try something
+else.</p>
+<p>Once you’ve started your input method you must then start FontForge. You should
+set the LC_CTYPE environment variable (or LC_ALL or LANG) to the appropriate
+locale. You may (if you have multiple input methods running that support the
+same locale) need to set the XMODIFIERS environment variable to the name of your
+method (xcin can have multiple names, it prints out the one it is currently
+using on start-up).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ setenv LC_CTYPE ja_JP.eucJP
+$ setenv XMODIFIERS &quot;@im=kinput2&quot;
+$ fontforge -new
+</pre></div>
+</div>
+<p>FontForge will start up significantly more slowly when connecting to an IM, just
+be patient with it. FontForge supports OverTheSpot input in textfields and Root
+input in the font and outline character views. Not all textfields accept unicode
+input, but any that do should now accept input from an IM.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This only works if <code class="docutils literal notranslate"><span class="pre">X_HAVE_UTF8_STRING</span></code> is defined – an XFree 4.0.2
+extension (ie. not on solaris)</p>
+</div>
+<hr class="docutils" />
+<p>If you are interested in the mechanics of XIM programming I refer you to
+O’Reilly’s excellent
+<a class="reference external" href="http://capderec.udg.es:81/ebt-bin/nph-dweb/dynaweb/SGI_Developer/XLib_PG/&#64;Generic__BookView">Programmers Reference Guide for X11</a>,
+chapter 11.</p>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../ui.html">FontForge’s User Interface</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../mainviews.html">Main Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../menus.html">Menus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dialogs.html">Dialogs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HotKeys.html">Hot Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fontforge-themes.html">FontForge color schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resedit.html">X Resource Editor</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">X Input Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xres.html">X Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../techref.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../../ui.html">FontForge’s User Interface</a><ul>
+      <li>Previous: <a href="resedit.html" title="previous chapter">X Resource Editor</a></li>
+      <li>Next: <a href="xres.html" title="next chapter">X Resources</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

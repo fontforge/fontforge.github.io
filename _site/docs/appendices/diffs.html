@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Differences from Fontographer &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Files used by FontForge" href="files.html" />
+    <link rel="prev" title="What on Earth Possessed me…" href="ff-history.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="differences-from-fontographer">
+<h1>Differences from <a class="reference external" href="https://en.wikipedia.org/wiki/Fontographer#Macromedia">Fontographer</a><a class="headerlink" href="#differences-from-fontographer" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>FontForge supports OpenType</p></li>
+<li><p>FontForge supports scripting</p></li>
+<li><p>FontForge understands GPOS/GSUB/GDEF tables as well as morx/prop/etc.</p></li>
+<li><p>The font window can display the outline font at various pixelsizes</p></li>
+<li><p>The font window can display a bitmap font instead (if it does then double
+clicking on a character will open a bitmap editor)</p></li>
+<li><p>The metrics window also lets you look at the bitmap fonts (but doesn’t let you
+change their metrics, except by changing those of the outline font).</p></li>
+<li><p>Supports many more international standard encodings, allows you to create your
+own encodings. Better unicode support. Can generate type0 fonts for 2byte
+encodings. Support for some 94x94 CJK encodings (like JISX208)</p></li>
+<li><p>There’s a command to jump to any particular character in the font, outline or
+bitmap windows. Characters may be entered by name, local encoding, ku ten (for
+CJK fonts), and unicode name.</p></li>
+<li><p>If you change the width of a character then all that character’s bitmaps will
+automagically have their widths changed. Also if the character is used as a
+reference in any other character, and that other character had the same width
+then it’s width will also be updated (as will the widths of any of its
+bitmaps)</p></li>
+<li><p>If you change the lbearing of a character (if you translate all elements in
+the foreground of an outline character, and the translation is only in the x
+direction) then all hints will also be translated, and if the character is a
+letter, then any characters which depend on it will have all other elements
+translated by the same amount. (So if you move the character “A” then the
+reference to tilde in “Ã” will be moved to correspond)</p></li>
+</ul>
+<ul id="diffs-accented">
+<li><p>There’s a command to build an accented character.</p>
+<p>The base characters should already have been created. Select an accented
+character (or several of them) in the font view and press
+<span class="menuselection">Build Accented Chars</span> from the <span class="menuselection">Element</span> menu.</p>
+<p>Suppose you select À, then Unicode says this is made up of the characters
+0x0041 and 0x0300. Now 0x0300 is not present in most postscript fonts, but it
+is sort of synonymous with either 0x02CB or 0x0060 which often are present.
+Unicode also says that 0x0300 floats on top of and centered horizontally over
+the base character. So…</p>
+<p>A reference to “A” will be placed into “À”, and that character will be given
+the same width as “A”. Then a reference to</p>
+<p>Some Unicode characters contain more than one accent. Additional accents will
+be treated similarly. This command can also be used to generate more general
+composite characters. Unicode 0x2163 is the roman numeral IV and this command
+may be used to build it. Greek capital Alpha looks exactly like Latin capital
+A and can be created. On the other hand the oe ligature will be replaced by an
+“o” followed by “e”, so be a little careful. Some accents (for example
+cedilla) are treated unexpectedly on certain letters (different ways in
+different languages), so be careful of g-cedilla. Å often merges the ring into
+the top of the A, but here it will float above it. <strong>Be careful.</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>My centering algorithms attempt to guess what will look centered to the
+human eye (centering it in the middle of the character will often not look
+centered). You should examine all built characters and be prepared to
+adjust the accent.</p>
+<p>The algorithms take some account of the italicangle.</p>
+</div>
+</li>
+<li><p>There’s a merge font command. This is designed to allow you to build one
+monster unicode font out of several smaller fonts. It will prompt for a font
+to merge into the current one, and then will copy any characters which not in
+the current font and put them there. Note both fonts must be properly encoded.</p></li>
+<li><p>You can control what you want copy to copy in the font window. By default if
+you select “A” then and press copy then it will copy the outline description
+and all the bitmap descriptions for “A”, so when you paste it, the bitmaps
+will follow the outline. You can choose instead just to copy from the font
+that is being displayed (which might be the outline font or might be a
+bitmap). When you Paste, whatever is in the clipboard will be pasted.</p>
+<p>Transform sometimes will transform bitmaps, but not all transformations map
+into bitmap transforms.</p>
+</li>
+<li><p>Most changes are preserved across crashes.</p></li>
+<li><p>Right clicking in the character and bitmap windows will produce a menu of
+tools</p></li>
+<li><p>The bitmap window has a number of (not very useful) tools which fontographer
+didn’t include. They are only available from the menu (not from palettes)</p>
+<ul class="simple">
+<li><p>Rectangle</p></li>
+<li><p>Filled Rectangle</p></li>
+<li><p>Ellipse</p></li>
+<li><p>Filled Ellipse</p></li>
+<li><p>Flip horizontal/vertical</p></li>
+<li><p>Rotate 90° Clockwise/Counter Clockwise</p></li>
+<li><p>Rotate 180°</p></li>
+</ul>
+</li>
+</ul>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui.html">FontForge’s User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techref.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../appendices.html">Appendices</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ff-history.html">What on Earth Possessed me…</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Differences from Fontographer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files.html">Files used by FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errrecovery.html">Error Recovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nonbmp.html">Non-BMP Unicode bitmap fonts supported by FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quotations.html">Quotations used in the sample text for Printing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uitranslationnotes.html">User Interface Translation Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fontstyles.html">Font Styles in various languages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OFL-Unofficial.html">Unofficial translations of the OFL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bibliography.html">A meandering bibliography of font related things</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendices.html#japanese-documentation-outdated">Japanese documentation (outdated)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../appendices.html">Appendices</a><ul>
+      <li>Previous: <a href="ff-history.html" title="previous chapter">What on Earth Possessed me…</a></li>
+      <li>Next: <a href="files.html" title="next chapter">Files used by FontForge</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

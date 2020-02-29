@@ -1,0 +1,299 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Transform Dialog &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Viewing and Editing truetype instructions in FontForge." href="ttfinstrs.html" />
+    <link rel="prev" title="Tile Path" href="tilepath.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="transform-dialog">
+<h1>Transform Dialog<a class="headerlink" href="#transform-dialog" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-default">
+<img alt="../../_images/transform.png" src="../../_images/transform.png" />
+</div>
+<p>This dialog is available in the font, outline and metrics views. In the font
+view it applies to all selected glyphs. In the outline view if there is a
+selection then it applies to that. if there is no selection then it applies to
+the entire glyph.</p>
+<p>You may choose whether you want the transformation to be centered at the glyph’s
+origin, the center of the selection (or of the glyph as a whole if there is no
+selection), or the location of the last point on which you clicked the mouse.</p>
+<p>You may apply several different transformations at once:</p>
+<dl class="object">
+<dt>
+<code class="sig-name descname">Do Nothing</code></dt>
+<dd><p>A very simple transformation.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Move</code></dt>
+<dd><p>You may move the selection an arbitrary amount in the x and y directions</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Rotate</code></dt>
+<dd><p>You may rotate the selection an arbitrary number of degrees.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Scale</code></dt>
+<dd><p>You may scale the two coordinates differently</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Scale Uniformly</code></dt>
+<dd><p>You may scale the two coordinates the same amount (which can of course be
+done above, but it’s slightly easier only to set one number).</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Flip</code></dt>
+<dd><p>You may flip either horizontally or vertically</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>After flipping an outline you will almost certainly want to apply
+<a class="reference internal" href="../menus/elementmenu.html#elementmenu-correct"><span class="std std-ref">Element-&gt;Correct Direction</span></a>.</p>
+</div>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Skew</code></dt>
+<dd><p>You may skew the selection a certain number of degrees (to create an oblique
+font for example).</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Rotate 3D Around...</code></dt>
+<dd><p>You may do a three dimensional rotation of the glyph around either the X axis
+or the Y axis. This operation is immediately followed by a projection of the
+result back into the xy-plane (A rotation around the Z axis is a normal
+rotaton (and isn’t included here).</p>
+<p>Following the rotation by a projection produces the same results no matter
+what the sign of the angle (so there are no Clockwise/CounterClockwise
+options here).</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Move by Ruler</code></dt>
+<dd><p>Fill in the amount to move from the x and y offsets of the last measurements
+made with the <a class="reference internal" href="../mainviews/charview.html#charview-ruler"><span class="std std-ref">ruler tool</span></a>.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Rotate by Ruler</code></dt>
+<dd><p>Fill in the rotation angle from the angle of the last measurements made with
+the <a class="reference internal" href="../mainviews/charview.html#charview-ruler"><span class="std std-ref">ruler tool</span></a>.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Skew by Ruler</code></dt>
+<dd><p>Fill in the skew angle from the angle of the last measurements made with the
+<a class="reference internal" href="../mainviews/charview.html#charview-ruler"><span class="std std-ref">ruler tool</span></a>.</p>
+</dd></dl>
+
+<p>If you are in the font view, and if <a class="reference internal" href="../menus/editmenu.html#editmenu-from"><span class="std std-ref">Copy From</span></a> is set to
+all fonts, then the transformation will also be applied to the bitmaps. Not all
+of these transforms can be mapped to ones on the bitmap font (arbitrary
+rotations, scales, etc. do not map). Only rotations by 90 degrees, flips, skews
+and moves will be approximated on the bitmap glyphs.</p>
+<p>If you are in the font view, then any pair-wise kerning information whose first
+glyph is selected will be scaled (but not translated) by the transformation
+matrix. Similarly and simple positioning features that apply to a selected glyph
+will be transformed by the matrix (but again not translated). You may choose to
+scale kerning classes as well.</p>
+<p>If you are in the font view or the outline view and there is no selection (and
+you are in the foreground) there is a “[] Transform Background Too” check box.
+If you check this then anything in the background will be transformed with the
+foreground.</p>
+<p>If you check [] Round to Int then after the transformation has been applied
+everything will be rounded to an integer value.</p>
+<p>Transformations in the Outline glyph view are not applied to any bitmaps. (Nor
+are transformations in the bitmap window mapped back to the outline).</p>
+<div class="section" id="non-linear-transformations">
+<span id="transform-non-linear"></span><h2>Non-Linear Transformations<a class="headerlink" href="#non-linear-transformations" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/non-linear.png" class="align-right" src="../../_images/non-linear.png" />
+<p>Non-linear transformations are defined by providing two expressions, one of
+which results in the transformed value for the X coordinate, the other provides
+the y coordinate. In the example at right:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}x' &amp;= 5x^2 + x + 3\sin(y) \\
+y' &amp;= y\end{split}\]</div>
+<p>Expressions may be made up of the usual C operators: “+”, “-“, “*”, “/”, “%”,
+“!”, “==”, “&lt;”, “&gt;”, “&lt;=”, “&gt;=”, “!=”, “&amp;&amp;”, “||” and “? :” as well as “^” which
+means “raise to the power of”. They may also contain the standard functions:
+“log”, “exp”, “sqrt”, “sin”, “cos”, “tan”, “atan2”, “abs”, “rint”, “floor”,
+“ceil”.</p>
+<p>Note: In non-linear transformations the result is only an approximation to the
+correct result (A linear transformation will transform a cubic spline to another
+cubic spline. A non-linear transformation may not).</p>
+</div>
+<div class="section" id="point-of-view-projection">
+<span id="transform-pov"></span><h2>Point of View Projection<a class="headerlink" href="#point-of-view-projection" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/PoV.png" class="align-right" src="../../_images/PoV.png" />
+<p>I have a hard time describing this. There are three different coordinate systems
+involved. There is the (2D) coordinate system in which your glyph has been
+drawn. There is a 3D coordinate system in which we embed it, and finally there
+is another 2D coordinate system onto which we project it.</p>
+<p>Assume your eye is at the origin of 3 space, and you are looking up along the Z
+axis. Assume that the plane in which your glyph has been drawn is tilted by an
+angle theta (from the XY plane in 3 space) and the intersection between the Z
+axis and the drawing plane is z units along the Z axis. Assume that the
+projection plane is parallel to the XY plane and is at a distance d along the Z
+axis.</p>
+<img alt="../../_images/Bperspective.png" class="align-left" src="../../_images/Bperspective.png" />
+<p>Then for each point in the glyph we draw a line between that point and your eye
+(which is at the origin). The location where that line intersects the projection
+plane is the transformed location of that point. Again the result is only an
+approximation.</p>
+<p>The Point Of View dialog gives you a little more freedom than is described
+above. It allows you to set the location of the eye (instead of fixing it at the
+origin), and allows you to change in what direction the vanishing point will lie
+(instead of fixing it on the y axis).</p>
+<p>The dialog also calculates the location of the vanishing point as you change
+fields (Note: It cannot figure out meta information like “Center of Selection”,
+so whenever the eye is positioned with this value, it just assumes a value of 0
+for that coordinate.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../ui.html">FontForge’s User Interface</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../mainviews.html">Main Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../menus.html">Menus</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../dialogs.html">Dialogs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#general">General</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#info">Info</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../dialogs.html#editing">Editing</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="autowidth.html">Auto Width</a></li>
+<li class="toctree-l4"><a class="reference internal" href="InsertTextDlg.html">Insert Text Dialog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="multilayer.html">Multi Layered Editing of Type3 and SVG fonts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Styles.html">Stylistic Transformations on Fonts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tilepath.html">Tile Path</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Transform Dialog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ttfinstrs.html">Viewing and Editing truetype instructions in FontForge.</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#lookups-and-kerning">Lookups and Kerning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#validation">Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/HotKeys.html">Hot Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/fontforge-themes.html">FontForge color schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">X Resource Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xim.html">X Input Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">X Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../techref.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../../ui.html">FontForge’s User Interface</a><ul>
+  <li><a href="../dialogs.html">Dialogs</a><ul>
+      <li>Previous: <a href="tilepath.html" title="previous chapter">Tile Path</a></li>
+      <li>Next: <a href="ttfinstrs.html" title="next chapter">Viewing and Editing truetype instructions in FontForge.</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

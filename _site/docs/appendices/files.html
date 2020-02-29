@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Files used by FontForge &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Error Recovery" href="errrecovery.html" />
+    <link rel="prev" title="Differences from Fontographer" href="diffs.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="files-used-by-fontforge">
+<h1>Files used by FontForge<a class="headerlink" href="#files-used-by-fontforge" title="Permalink to this headline">¶</a></h1>
+<dl class="object">
+<dt>
+<code class="sig-name descname">~/.FontForge</code></dt>
+<dd><p>FontForge creates this directory the first time it starts up. It contains
+various files FontForge uses to hold context across invocations.</p>
+</dd></dl>
+
+<hr class="docutils" />
+<blockquote>
+<div><dl class="object">
+<dt>
+<code class="sig-name descname">~/.FontForge/prefs</code></dt>
+<dd><p>This file contains user preference settings.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">~/.FontForge/groups</code></dt>
+<dd><p>This file contains groups as defined by
+<span class="menuselection">Encoding ‣ Define Groups…</span></p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">~/.FontForge/Encodings.ps</code></dt>
+<dd><p>If there are any user defined encodings they reside in this file.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">~/.FontForge/autosave</code></dt>
+<dd><p>This directory contains the files used to drive the crash-recovery
+process. When FontForge is running there will be one file in this
+directory corresponding to each font loaded into FontForge that has been
+modified. These files will contain all changed glyphs.</p>
+<p>When FontForge exits normally, this directory will be cleaned up and there
+should be no files in it.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">~/.FontForge/python</code></dt>
+<dd><p>This directory contains any python init scripts you want to run when
+FontForge starts</p>
+</dd></dl>
+
+</div></blockquote>
+<dl class="object">
+<dt>
+<code class="sig-name descname">/usr/local/share (or $PREFIX/share)</code></dt>
+<dt>
+<code class="sig-name descname">/usr/local/share/locale/??/LC_MESSAGES/FontForge.mo</code></dt>
+<dd><p>Contain translations of the ui for various locales. (used after November
+2005)</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">/usr/local/share/fontforge/*.cidmap</code></dt>
+<dd><p>“Encoding” files for Adobe’s cid formats.
+<a class="reference external" href="https://fontforge.org/cidmaps.tar.gz">You can pull down a compressed archive from here.</a></p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">/usr/local/share/fontforge/python</code></dt>
+<dd><p>This directory contains any python init scripts you want available to
+everyone on your system.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">/usr/local/share/doc/fontforge/*.html</code></dt>
+<dd><p>Optional location for online documentation.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui.html">FontForge’s User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techref.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../appendices.html">Appendices</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ff-history.html">What on Earth Possessed me…</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diffs.html">Differences from Fontographer</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Files used by FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errrecovery.html">Error Recovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nonbmp.html">Non-BMP Unicode bitmap fonts supported by FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quotations.html">Quotations used in the sample text for Printing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uitranslationnotes.html">User Interface Translation Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fontstyles.html">Font Styles in various languages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OFL-Unofficial.html">Unofficial translations of the OFL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bibliography.html">A meandering bibliography of font related things</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendices.html#japanese-documentation-outdated">Japanese documentation (outdated)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../appendices.html">Appendices</a><ul>
+      <li>Previous: <a href="diffs.html" title="previous chapter">Differences from Fontographer</a></li>
+      <li>Next: <a href="errrecovery.html" title="next chapter">Error Recovery</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

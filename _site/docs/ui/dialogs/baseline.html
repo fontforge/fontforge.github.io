@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>The baseline dialog, and the OpenType BASE table &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="The Justify dialog" href="justify.html" />
+    <link rel="prev" title="BDF Info Dialog" href="bdfinfo.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="the-baseline-dialog-and-the-opentype-base-table">
+<h1>The baseline dialog, and the OpenType BASE table<a class="headerlink" href="#the-baseline-dialog-and-the-opentype-base-table" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-default">
+<img alt="../../_images/BASEdlg.png" src="../../_images/BASEdlg.png" />
+</div>
+<p>This dialog may be invoked by
+<span class="menuselection">Element ‣ Other Info ‣ Horizontal Baselines</span> (or
+<code class="docutils literal notranslate"><span class="pre">Vertical</span> <span class="pre">Baselines</span></code>). It allows you to control the baseline (in either
+horizontal or vertical orientation) on which the glyphs of a particular script
+line up. You may also control the spacing between baselines, and the interline
+(or intercolumn) spacing on a per-script, or even per-language basis.</p>
+<p>See the <a class="reference internal" href="../../index.html#overview-baseline"><span class="std std-ref">Baseline section</span></a> in the overview for a
+description of why this is important.</p>
+<p>There are currently seven standard baselines. The distinctions between them are
+described in the OpenType standard. (See the
+<a class="reference external" href="http://partners.adobe.com/public/developer/opentype/index_tag4.html">baseline tags section</a>)</p>
+<p>Basically most alphabetic scripts will use the ‘romn’ baseline, most CJK scripts
+will use the ‘ideo’graphic baseline. Tibetan and other Indic scripts will use
+the ‘hang’ing baseline, and math fonts might use the ‘math’ baseline.</p>
+<p>Roughly the ideographic baseline will line up with the descenders of a Latin
+(Greek, Cyrillic) script, and the hanging baseline will line up with the
+ascenders.</p>
+<p>You need to select which baselines your font will support. You may want to
+specify baselines that apply to scripts which aren’t in your font – this will
+mean your font is positioned reasonable when used with glyphs from other fonts.
+In the example above, the font has no Indic characters, but it still specifies a
+hanging baseline.</p>
+<p>You select which baselines you will support by turning on the appropriate
+checkboxes. All scripts will have the same set of baselines. In every script one
+baseline will be the default baseline. Generally glyphs in that script will be
+drawn with their vertical origin (If you are working on horizontal baselines,
+that is) on that baseline. You then should specify how other baselines are
+offset from this one.</p>
+<img alt="../../_images/BASElang.png" class="align-left" src="../../_images/BASElang.png" />
+<p>You may also set the minimum and maximum extent of the font for each script (by
+pressing the <code class="docutils literal notranslate"><span class="pre">[Set</span> <span class="pre">Extents]</span></code> button). This corresponds roughly to a per-script
+line spacing (or column spacing).</p>
+<p>You may specify a default spacing for the script in general, and then more
+specific spacings for a given language.</p>
+<p>In the example at left the default spacing for the Latin script allows room for
+one accent above capital letters. Now English doesn’t have any accents
+(usually), so it might make sense that English could use a tighter line spacing
+(and, traditionally this has been done). On the other hand Vietnamese stacks
+multiple accents above one another, so it needs more room than the default.</p>
+<p>But suppose you are typesetting French. Now French sometimes is printed with
+capital accented letters, but sometimes a “À” will be drawn just as “A” with no
+accent. So you might create at feature that maps capital accented letters to
+their unaccented forms:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">feature</span> <span class="n">NoAc</span> <span class="p">{</span>
+  <span class="n">sub</span> <span class="n">Agrave</span> <span class="n">by</span> <span class="n">A</span><span class="p">;</span>
+  <span class="n">sub</span> <span class="n">Aacute</span> <span class="n">by</span> <span class="n">A</span><span class="p">;</span>
+  <span class="o">...</span>
+  <span class="n">sub</span> <span class="n">Egrave</span> <span class="n">by</span> <span class="n">E</span><span class="p">;</span>
+  <span class="o">...</span>
+<span class="p">}</span> <span class="n">NoAc</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Then it would be convenient to be change the baseline spacing if these feature
+were active. And, indeed you can. Simply select the line for French (in this
+case the default language works for French) and press the [Set Feature Extents]
+button.</p>
+<img alt="../../_images/BASEfeat.png" src="../../_images/BASEfeat.png" />
+<p>It is possible to set Extent information even if you do not provide baseline
+data (that is, if all the baselines are unselected).</p>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../ui.html">FontForge’s User Interface</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../mainviews.html">Main Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../menus.html">Menus</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../dialogs.html">Dialogs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#general">General</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../dialogs.html#info">Info</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="fontinfo.html">Font Info</a></li>
+<li class="toctree-l4"><a class="reference internal" href="charinfo.html">Glyph Info</a></li>
+<li class="toctree-l4"><a class="reference internal" href="getinfo.html">Get Info</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bdfinfo.html">BDF Info Dialog</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">The baseline dialog, and the OpenType BASE table</a></li>
+<li class="toctree-l4"><a class="reference internal" href="justify.html">The Justify dialog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="math.html">Math typesetting information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="multiplemaster.html">Multiple Master Dialog</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#editing">Editing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#lookups-and-kerning">Lookups and Kerning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#validation">Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/HotKeys.html">Hot Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/fontforge-themes.html">FontForge color schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">X Resource Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xim.html">X Input Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">X Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../techref.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../../ui.html">FontForge’s User Interface</a><ul>
+  <li><a href="../dialogs.html">Dialogs</a><ul>
+      <li>Previous: <a href="bdfinfo.html" title="previous chapter">BDF Info Dialog</a></li>
+      <li>Next: <a href="justify.html" title="next chapter">The Justify dialog</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

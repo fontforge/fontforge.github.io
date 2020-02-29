@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>BDF Info Dialog &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="The baseline dialog, and the OpenType BASE table" href="baseline.html" />
+    <link rel="prev" title="Get Info" href="getinfo.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="bdf-info-dialog">
+<h1>BDF Info Dialog<a class="headerlink" href="#bdf-info-dialog" title="Permalink to this headline">¶</a></h1>
+<img alt="BDF Info dialog" class="align-right" src="../../_images/bdfinfo.png" />
+<p>If your font contains bitmaps you may want control over the BDF Properties
+associated with those bitmaps. Each pixel size (bitmap strike) has its own set
+of properties.</p>
+<p>The X11 consortium has defined certain conventional properties and defines their
+meaning in the
+<a class="reference external" href="http://ftp.xfree86.org/pub/XFree86/4.5.0/doc/xlfd.txt">X Long Font Descriptor</a>
+specification.</p>
+<p>When you first create a bitmap strike (with
+<a class="reference internal" href="../menus/elementmenu.html#elementmenu-bitmaps"><span class="std std-ref">Element-&gt;Bitmaps Available</span></a>) it will have no
+properties associated with it. If you then generate a bdf file based on that
+FontForge will give you some default properties.</p>
+<p>You may view these default properties in this dialog by pressing the
+<code class="docutils literal notranslate"><span class="pre">[Default</span> <span class="pre">All]</span></code> button – this will remove any current properties (except for
+<a class="reference internal" href="#bdfinfo-res-y"><span class="std std-ref">RESOLUTION_Y</span></a>) and replace them with the defaults that
+FontForge calculates).</p>
+<p>You may select any property and press the <code class="docutils literal notranslate"><span class="pre">[Default</span> <span class="pre">This]</span></code> button to find its
+default value (There are some properties that FontForge cannot default, you’ll
+have to figure these out yourself).</p>
+<p>You may use the <code class="docutils literal notranslate"><span class="pre">[Delete]</span></code> button to remove a property.</p>
+<p>You may use the up and down arrows buttons to move the selected property up or
+down in the list (as far as I know, there is no functional reason for doing
+this, but if your esthetics prefer a different ordering you may enforce it).</p>
+<p>To change a property name depress the mouse on it. You should get a list of all
+standard properties. At the bottom of the property list is a special line
+labeled “New…”, clicking on it brings up the same popup menu and allows you to
+create a new property.</p>
+<p>To change the value of a property, click in the value field and type in the new
+version.</p>
+<p>To select a property without bringing up the popup menu or the editing field,
+click on the extreme left of the property.</p>
+<p id="bdfinfo-res-y">The one essential property that FontForge can’t always guess correctly is the
+resolution (in particular <code class="docutils literal notranslate"><span class="pre">RESOLUTION_Y</span></code>). When you press <code class="docutils literal notranslate"><span class="pre">[Default</span> <span class="pre">All]</span></code>
+FontForge will retain the current value of this property and base the others on
+it.</p>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../ui.html">FontForge’s User Interface</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../mainviews.html">Main Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../menus.html">Menus</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../dialogs.html">Dialogs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#general">General</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../dialogs.html#info">Info</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="fontinfo.html">Font Info</a></li>
+<li class="toctree-l4"><a class="reference internal" href="charinfo.html">Glyph Info</a></li>
+<li class="toctree-l4"><a class="reference internal" href="getinfo.html">Get Info</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">BDF Info Dialog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="baseline.html">The baseline dialog, and the OpenType BASE table</a></li>
+<li class="toctree-l4"><a class="reference internal" href="justify.html">The Justify dialog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="math.html">Math typesetting information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="multiplemaster.html">Multiple Master Dialog</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#editing">Editing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#lookups-and-kerning">Lookups and Kerning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#validation">Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/HotKeys.html">Hot Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/fontforge-themes.html">FontForge color schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">X Resource Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xim.html">X Input Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">X Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../techref.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../../ui.html">FontForge’s User Interface</a><ul>
+  <li><a href="../dialogs.html">Dialogs</a><ul>
+      <li>Previous: <a href="getinfo.html" title="previous chapter">Get Info</a></li>
+      <li>Next: <a href="baseline.html" title="next chapter">The baseline dialog, and the OpenType BASE table</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

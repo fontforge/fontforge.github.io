@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>4. More on glyphs &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5. Creating letters with consistent stem widths, serifs and heights" href="editexample3.html" />
+    <link rel="prev" title="3. Importing Outline Glyphs" href="importexample.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="more-on-glyphs">
+<h1><span class="section-number">4. </span>More on glyphs<a class="headerlink" href="#more-on-glyphs" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="navigating-to-glyphs">
+<h2><span class="section-number">4.1. </span>Navigating to glyphs.<a class="headerlink" href="#navigating-to-glyphs" title="Permalink to this headline">¶</a></h2>
+<p>The font view provides one way of navigating around the glyphs in a font. Simply
+scroll around it until you find the glyph you need and then double click on it
+to open a window looking at that glyph.</p>
+<p>Typing a glyph will move to that glyph.</p>
+<p>However some fonts are huge (Chinese, Japanese and Korean fonts have thousands
+or even tens of thousands of glyphs) and scrolling around the font view is a an
+inefficient way of finding your glyph. <span class="menuselection">View ‣ Goto</span> provides a
+simple dialog which will allow you to move directly to any glyph for which you
+know the name (or encoding). If your font is a Unicode font, then this dialog
+will also allow you to find glyphs by block name (ie. Hebrew rather than Alef).</p>
+<p>The simplest way to navigate is just to go to the next or previous glyph. And
+<span class="menuselection">View ‣ Next Char</span> and <span class="menuselection">View ‣ Prev Char</span> will
+do exactly that.</p>
+</div>
+<div class="section" id="creating-the-letter-o-consistent-directions">
+<h2><span class="section-number">4.2. </span>Creating the letter “o” – consistent directions<a class="headerlink" href="#creating-the-letter-o-consistent-directions" title="Permalink to this headline">¶</a></h2>
+<p>In the previous example the bitmap of the letter filled the canvas of the image.
+And when FontForge imported the image it needed to be scaled once in the
+program. But usually when you create the image of the letter you have some idea
+of how much white space there should be around it. If your images are exactly
+one em high then FontForge will scale them automatically to be the right size.
+So in the following examples all the images have exactly the right amount of
+white-space around them to fit perfectly in an em.</p>
+<p>For the next example double click on the square in the font view that should
+contain “o”, and import “o_Ambrosia.png” into it.</p>
+<p class="rubric">Stages in editing “o”</p>
+<div class="flex-container">
+<div class="flex-row">
+<div class="flex-col">
+<img alt="../_images/o1.png" src="../_images/o1.png" />
+</div>
+<div class="flex-col">
+<img alt="../_images/o2.png" src="../_images/o2.png" />
+</div>
+<div class="flex-col">
+<img alt="../_images/o3.png" src="../_images/o3.png" />
+</div>
+<div class="flex-col">
+<img alt="../_images/o4.png" src="../_images/o4.png" />
+</div>
+</div>
+</div>
+<p>Notice that the first outline is drawn clockwise and the second
+counter-clockwise. This change in drawing direction is important. Both
+PostScript and TrueType require that the outer boundary of a glyph be drawn in a
+certain direction (they happen to be opposite from each other, which is a mild
+annoyance), within FontForge all outer boundaries must be drawn clockwise, while
+all inner boundaries must be drawn counter-clockwise.</p>
+<p>If you fail to alternate directions between outer and inner boundaries you may
+get results like the one on the left <img alt="o-baddir" src="../_images/o-baddir.png" />. If you fail to draw the outer
+contour in a clockwise fashion the errors are more subtle, but will generally
+result in a less pleasing result once the glyph has been rasterized.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>TECHNICAL AND CONFUSING</strong></p>
+<p>The exact behavior of rasterizers varies. Early PostScript rasterizers used a
+“non-zero winding number rule” while more recent ones use an “even-odd” rule.
+TrueType uses the “non-zero” rule. The description given above is for the
+“non-zero” rule. The “even-odd” rule would fill the “o” correctly no matter
+which way the paths were drawn (though there would probably be subtle
+problems with hinting).</p>
+</div>
+<p id="editexample2-even-odd-non-zero">Filling using the even-odd rules that a line is drawn from the current pixel to
+infinity (in any direction) and the number of contour crossings is counted. If
+this number is even the pixel is not filled. If the number is odd the pixel is
+filled. In the non-zero winding number rule the same line is drawn, contour
+crossings in a clockwise direction add 1 to the crossing count,
+counter-clockwise contours subtract 1. If the result is 0 the pixel is not
+filled, any other result will fill it.</p>
+<p>The command <a class="reference internal" href="../ui/menus/elementmenu.html#elementmenu-correct"><span class="std std-ref">Element-&gt;Correct Direction</span></a> will look at
+each selected contour, figure out whether it qualifies as an outer or inner
+contour and will reverse the drawing direction when the contour is drawn
+incorrectly.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../tutorial.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="editexample.html">1. Font and glyph creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editspiro.html">2. Creating a glyph using spiros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="importexample.html">3. Importing Outline Glyphs</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4. More on glyphs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#navigating-to-glyphs">4.1. Navigating to glyphs.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-the-letter-o-consistent-directions">4.2. Creating the letter “o” – consistent directions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="editexample3.html">5. Creating letters with consistent stem widths, serifs and heights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample4.html">6. Accented glyphs, ligatures, lookups and features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample5.html">7. Metrics, spacing and kerning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample6.html">8. Glyph variants and anchoring marks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample6-5.html">9. Conditional Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample7.html">10. Checking and generating a font</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample8.html">11. Working with Bitmap Fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripting-tutorial.html">12. FontForge Scripting Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scriptnotes.html">13. Special thoughts for special scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial.html#tutorial-in-other-languages">Tutorial in other languages</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ui.html">FontForge’s User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techref.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../tutorial.html">Tutorial</a><ul>
+      <li>Previous: <a href="importexample.html" title="previous chapter"><span class="section-number">3. </span>Importing Outline Glyphs</a></li>
+      <li>Next: <a href="editexample3.html" title="next chapter"><span class="section-number">5. </span>Creating letters with consistent stem widths, serifs and heights</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

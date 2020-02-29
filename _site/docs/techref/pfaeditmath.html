@@ -1,0 +1,542 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>FontForge’s math &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Hinting" href="hinting.html" />
+    <link rel="prev" title="FontForge and TeX" href="PfaEdit-TeX.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="fontforge-s-math">
+<h1>FontForge’s math<a class="headerlink" href="#fontforge-s-math" title="Permalink to this headline">¶</a></h1>
+<p>Being a brief description of the mathematics underlying various of FontForge’s
+commands</p>
+<p>It is presumed that you understand about parameterized splines, if not look at
+the description of <a class="reference internal" href="bezier.html"><span class="doc">Bézier curves</span></a>.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#pfaeditmath-linear"><span class="std std-ref">Linear Transformations</span></a></p></li>
+<li><p><a class="reference internal" href="#pfaeditmath-maxima"><span class="std std-ref">Finding maxima and minima of a spline</span></a></p></li>
+<li><p><a class="reference internal" href="#pfaeditmath-rasterizing"><span class="std std-ref">Rasterizing a Glyph</span></a></p>
+<ul>
+<li><p>finding intersections</p></li>
+<li><p>removing overlap</p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#pfaeditmath-approximating"><span class="std std-ref">Approximating a spline</span></a></p></li>
+<li><p><a class="reference internal" href="#pfaeditmath-stroke"><span class="std std-ref">Stroking a spline (historical)</span></a></p></li>
+<li><p><a class="reference internal" href="bezier.html#bezier-ps2ttf"><span class="std std-ref">Approximating a cubic spline by a series of quadratic splines</span></a></p></li>
+</ul>
+<hr class="docutils" />
+<div class="section" id="linear-transformations">
+<span id="pfaeditmath-linear"></span><h2>Linear Transformations<a class="headerlink" href="#linear-transformations" title="Permalink to this headline">¶</a></h2>
+<p>A linear transformation is one where the spline described by transforming the
+end and control points will match the transformed spline. This includes most of
+the common transformations you might wish:</p>
+<p class="rubric">translation</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}x' &amp;= x + \mathrm{d} x \\
+y' &amp;= y + \mathrm{d} y\end{split}\]</div>
+<p class="rubric">scaling</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}x' &amp;= s_x x \\
+y' &amp;= s_y y\end{split}\]</div>
+<p class="rubric">rotation</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}x' &amp;= \cos(A) x + \sin(A) y \\
+y' &amp;= -\sin(A) x + \cos(A) y\end{split}\]</div>
+<p class="rubric">skewing</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}x' &amp;= x + \sin(A) y \\
+y' &amp;= y\end{split}\]</div>
+<hr class="docutils" />
+</div>
+<div class="section" id="finding-maxima-and-minima-of-a-spline">
+<span id="pfaeditmath-maxima"></span><h2>Finding maxima and minima of a spline<a class="headerlink" href="#finding-maxima-and-minima-of-a-spline" title="Permalink to this headline">¶</a></h2>
+<p>The maximum or minimum of a spline (along either the x or y axes) may be found
+by taking the first derivative of that spline with respect to t. So if we have a
+spline</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}x &amp;= a_x t^3 + b_x t^2 + c_x t + d_x \\
+y &amp;= a_y t^3 + b_y t^2 + c_y t + d_y\end{split}\]</div>
+<p>and we wish to find the maximum point with respect to the x axis we set:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\frac{\mathrm{d}x}{\mathrm{d}y} &amp;= 0 \\
+3 a_x t^2 + 2 b-x t + c_x &amp;= 0\end{split}\]</div>
+<p>and then using the quadratic formula we can solve for t:</p>
+<div class="math notranslate nohighlight">
+\[t = \frac{-2 b_x \pm \sqrt{4b_x^2 - 4 \cdot 3a_x c_x}}{2 \cdot 3a_x}\]</div>
+<hr class="docutils" />
+</div>
+<div class="section" id="finding-points-of-inflection-of-a-spline">
+<span id="pfaeditmath-poi"></span><h2>Finding points of inflection of a spline<a class="headerlink" href="#finding-points-of-inflection-of-a-spline" title="Permalink to this headline">¶</a></h2>
+<p>A point of inflection occurs when <span class="math notranslate nohighlight">\(\frac{\mathrm{d}^2y}{\mathrm{d}x^2} = 0\)</span>
+(or infinity).</p>
+<p>Unfortunately this does not mean that <span class="math notranslate nohighlight">\(\frac{\mathrm{d}^2y}{\mathrm{d}t^2} = 0\)</span>
+or <span class="math notranslate nohighlight">\(\frac{\mathrm{d}^2x}{\mathrm{d}t^2} = 0\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\frac{\mathrm{d}^2y}{\mathrm{d}x^2} &amp;=
+\frac{
+      \frac{\mathrm{d}}{\mathrm{d}t}
+      \left(
+         \frac
+            {\frac{\mathrm{d}y}{\mathrm{d}t}}
+            {\frac{\mathrm{d}x}{\mathrm{d}t}}
+      \right)
+   }{\frac{\mathrm{d}x}{\mathrm{d}t}} \\
+&amp;
+\frac{
+   \frac{\mathrm{d}x}{\mathrm{d}t} \frac{\mathrm{d}^2y}{\mathrm{d}t^2} -
+   \frac{\mathrm{d}y}{\mathrm{d}t} \frac{\mathrm{d}^2x}{\mathrm{d}t^2}
+}{\left( \frac{\mathrm{d}x}{\mathrm{d}t} \right)^3}\end{split}\]</div>
+<p>After a lot of algebra this boils down to the quadratic in t:</p>
+<div class="math notranslate nohighlight">
+\[3(a_x b_y - a_y b_x)t^2 + 3(c_x a_y - c_y a_x)t + c_x b_y - c_y b_x = 0\]</div>
+<p>If you examine this closely you will note that a quadratic spline
+(<span class="math notranslate nohighlight">\(a_y = a_x = 0\)</span>) can never have a point of inflection.</p>
+<hr class="docutils" />
+</div>
+<div class="section" id="rasterizing-a-glyph">
+<span id="pfaeditmath-rasterizing"></span><h2>Rasterizing a glyph<a class="headerlink" href="#rasterizing-a-glyph" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="approximating-a-spline">
+<span id="pfaeditmath-approximating"></span><h2>Approximating a spline<a class="headerlink" href="#approximating-a-spline" title="Permalink to this headline">¶</a></h2>
+<p>Many of FontForge’s commands need to fit a spline to a series of points. The
+most obvious of these are the <span class="menuselection">Edit ‣ Merge</span>, and
+<span class="menuselection">Element ‣ Simplify</span> commands, but many others rely on the same
+technique. Let us consider the case of the Merge command, suppose we have the
+following splines and we wish to remove the middle point and generate a new
+spline that approximates the original two:</p>
+<p><img alt="mergepre" src="../_images/mergepre.png" /> –&gt; <img alt="mergepost" src="../_images/mergepost.png" /></p>
+<p>FontForge uses a least squares approximation to determine the new spline. It
+calculates the locations of several points along the old splines, and then it
+guesses <a class="footnote-reference brackets" href="#f1" id="id1">1</a> at t values for those points.</p>
+<p>Now a cubic <a class="reference internal" href="bezier.html"><span class="doc">Bézier</span></a> spline is determined by its two end points
+(<span class="math notranslate nohighlight">\(P_0\)</span> and <span class="math notranslate nohighlight">\(P_1\)</span>) and two control points (<span class="math notranslate nohighlight">\(CP_0\)</span> and <span class="math notranslate nohighlight">\(CP_1\)</span>),
+which specify the slope at those end points). Here we know the end points, so
+all we need is to find the control points. The spline can also be expressed as a
+cubic polynomial:</p>
+<div class="math notranslate nohighlight">
+\[S(t) = a t^3 + b t^2 + c t + d\]</div>
+<p>with</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}d &amp;= P_0 \\
+c &amp;= 3 CP_0 - 3 P_0 \\
+b &amp;= 3 CP_1 - 6 CP_0 + 3 P_0 \\
+a &amp;= P_1 - 3 CP_1 + 3 CP_0 - P_0\end{split}\]</div>
+<p>substituting</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}S(t) =&amp; (P_1 - 3CP_1 + 3CP_0 - P_0) t^3 + \\
+   &amp; (3CP_1 - 6CP_0 + 3P_0) t^2 + \\
+   &amp; (3CP_0 - 3P_0) t + \\
+   &amp; P_0\end{split}\]</div>
+<p>rearranging</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}S(t) &amp;= (-3t^3 + 3t^2) CP_1 + \\
+   &amp; (3t^3 - 6t^2 + 3t) CP_0 + \\
+   &amp; (P_1 - P_0)t^3 + 3P_0 t^2 - 3P_0 t + P_0\end{split}\]</div>
+<p>Now we want to minimize the sum of the squares of the difference between the
+value we approximate with the new spline, <span class="math notranslate nohighlight">\(S(t_i)\)</span>, and the actual value we
+were given, <span class="math notranslate nohighlight">\(P_i\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\sum [ S(t_i) - P_i ]^2\]</div>
+<p>Now we have four unknown variables, the x and y coordinates of the two control
+points. To find the minimum of the above error term we must take the derivative
+with respect to each variable, and set that to zero. Then we have four equations
+with four unknowns and we can solve for each variable.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\sum 2 ( -3t^3 + 3t^2 ) [ S_x(t_i) - P_{i_x} ] = 0 \\
+\sum 2 ( -3t^3 + 3t^2 ) [ S_y(t_i) - P_{i_y} ] = 0 \\
+\sum 2 ( 3t^3 - 6t^2  + 3t ) [ S_x(t_i) - P_{i_x} ] = 0 \\
+\sum 2 ( 3t^3 - 6t^2  + 3t ) [ S_y(t_i) - P_{i_y} ] = 0\end{split}\]</div>
+<p>Happily for us, the x and y terms do not interact and my be solved separately.
+The procedure is the same for each coordinate, so I shall only show one:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\sum 2 ( -3t^3 + 3t^2 ) [ S_x(t_i) - P_{i_x} ] = 0 \\
+\sum 2 ( 3t^3 - 6t^2  + 3t ) [ S_x(t_i) - P_{i_x} ] = 0\\
+\Rightarrow\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\sum \left[
+   (-3t^3 + 3t^2)CP_{1_x} + \\
+   (-3t^3 + 3t^2)(3t^3 - 6t^2 + 3t)CP_{0_x} + \\
+   (P_{1_x} - P_{0_x})t^3 + 3P_{0_x}t^2 - 3P_{0_x}t + P_{0_x} - P_{i_x}
+\right] = 0\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}CP_{1_x} \sum ( -3t^3 + 3t^2 ) ( -3t^3 + 3t^2 ) = \\
+-\sum ( -3t^3 + 3t^2 )
+[
+   ( 3t^3 - 6t^2 + 3t ) CP_{0_x} + \\
+   ( P_{1_x} - P_{0_x} ) t^3 + 3P_{0_x}t^2 - 3P_{0_x}t + P_{0_x} - P_{i_x}
+]\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}CP_{1_x} = -\frac{
+   \sum ( -3t^3 + 3t^2 )
+   [
+      ( 3t^3 - 6t^2 + 3t ) CP_{0_x} + \\
+      ( P_{1_x} - P_{0_x} ) t^3 + 3P_{0_x}t^2 - 3P_{0_x}t + P_{0_x} - P_{i_x}
+   ]
+}{
+   \sum ( -3t^3 + 3t^2 ) ( -3t^3 + 3t^2 )
+}\end{split}\]</div>
+<p>Now this can be plugged into the other equation</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\sum ( 3t^3 - 6t^2 + 3t )
+[
+   ( -3t^3 + 3t^2 ) CP_{1_x} + \\
+   ( 3t^3 - 6t^2 + 3t ) CP_{0_x} + \\
+   ( P_{1_x} - P_{0_x} ) t^3 + 3P_{0_x}t^2 - 3P_{0_x}t + P_{0_x} - P_{i_x}
+]
+= 0\end{split}\]</div>
+<p>And we can solve for <span class="math notranslate nohighlight">\(CP_{0_x}\)</span> and then <span class="math notranslate nohighlight">\(CP_{1_x}\)</span>. The algebra
+becomes very messy, with lots of terms, but the concepts are simple.</p>
+<p>Thus we know where the control points are. We know where the end points are. We
+have our spline.</p>
+<div class="section" id="why-that-didn-t-quite-work">
+<h3>Why that didn’t (quite) work<a class="headerlink" href="#why-that-didn-t-quite-work" title="Permalink to this headline">¶</a></h3>
+<p>The above matrix yields a curve which is a good approximation to the original
+two. But it has one flaw: There is no constraint placed on the slopes, and
+(surprisingly) the slopes at the end-points of the above method are not close
+enough to those of the original, and the human eye can now detect the join
+between this generated spline and the two that connect to it.</p>
+<p>Generally we will know the slopes at the end points as well as the end points
+themselves.</p>
+<p>Let’s try another approach, based on better geometry. Givens:</p>
+<ul class="simple">
+<li><p>the start point</p></li>
+<li><p>the slope at the start point</p></li>
+<li><p>the end point</p></li>
+<li><p>the slope at the end point</p></li>
+</ul>
+<p>We want to find the two control points. Now it may seem that specifying the
+slope specifies the control point but this is not so, it merely specifies the
+direction in which the control point lies. The control point may be anywhere
+along the line through the start point in that direction, and each position will
+give a different curve.</p>
+<p>So we can express the control point by saying it is <span class="math notranslate nohighlight">\(CP_0 = P_0 + r_0 \Delta_0\)</span>
+where <span class="math notranslate nohighlight">\(\Delta_0\)</span> is a vector in the direction of the slope, and <span class="math notranslate nohighlight">\(r_0\)</span>
+is the distance in that direction. Similarly for the end point:
+<span class="math notranslate nohighlight">\(CP_1 = P_1 + r_1 \Delta_1\)</span></p>
+<p>We want to find <span class="math notranslate nohighlight">\(r_0\)</span> and <span class="math notranslate nohighlight">\(r_1\)</span>.</p>
+<p>Converting from bezier control points into a polynomial gives us</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}S(t) &amp;= at^3 + bt^2 + ct + d \\
+d &amp;= P_0 \\
+c &amp;= 3(CP_0 - P_0) \\
+b &amp;= 3(CP_1 - CP_0) - c \\
+a &amp;= P_1 - P_0 - c -b\end{split}\]</div>
+<p>Substituting we get</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}d &amp;= P_0 \\
+c &amp;= 3r_0 \Delta_0 \\
+b &amp;= 3( P_1 - P_0 + r_1 \Delta_1 - 2r_0 \Delta_0 ) \\
+a &amp;= 2( P_0 - P_1 ) + 3 ( r_0 \Delta_0 - r_1 \Delta_1 )\end{split}\]</div>
+<p>For least squares we want to minimize <span class="math notranslate nohighlight">\(\sum(S(t_i) - P_i)^2\)</span>. Taking
+derivatives with both <span class="math notranslate nohighlight">\(r_0\)</span> and <span class="math notranslate nohighlight">\(r_1\)</span>, we get:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\sum 2(3t^3 - 6t^2 + 3t)\Delta_0[S(t_i) - P_i] &amp;= 0 \\
+\sum 2(-3t^3 + 3t^2)\Delta_1[S(t_i) - P_i] &amp;= 0\end{split}\]</div>
+<p>dividing by constants and substituting, we get</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\sum (3t^3 - 6t^2 + 3t) [
+   P_0 - P_i + 3(P_1 - P_0)t^2 + \\
+   2(P_0-P_1)t^3 + \\
+   \Delta_0(3t - 6t^2 + 3t^3)r_0 + \\
+   \Delta_1(3t^2 - 3t^3)r_1
+] = 0\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\sum (-3t^3 + 3t^2) [
+   P_0 - P_i + 3(P_1 - P_0)t^2 + \\
+   2(P_0 - P_1)t^3 + \\
+   \Delta_0(3t - 6t^2 + 3t^3)r_0 + \\
+   \Delta_1(3t^2 - 3t^3)r_1
+] = 0\end{split}\]</div>
+<p>Again we have two linear equations in two unknowns (<span class="math notranslate nohighlight">\(r_0\)</span>, and
+<span class="math notranslate nohighlight">\(r_1\)</span>), and (after a lot of algebraic grubbing) we can solve for them.
+One interesting thing here is that the x and y terms do not separate but must
+be summed together.</p>
+</div>
+<div class="section" id="singular-matrices">
+<h3>Singular matrices<a class="headerlink" href="#singular-matrices" title="Permalink to this headline">¶</a></h3>
+<p>Very occasionally, a singular matrix will pop out of these equations. Then what
+I do is calculate the slope vectors at the endpoints and then try many
+reasonable lengths for those vectors and see which yields the best approximation
+to the original curve (this gives us our new control points).</p>
+<p>This is very, very slow.</p>
+<hr class="docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="f1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Guessing values for t</p>
+<p>FontForge approximates the lengths of the two splines being merged. If
+<span class="math notranslate nohighlight">\(\mathrm{Point}_i = \mathrm{Spline1}(old-t_i)\)</span>, then we approximate
+<span class="math notranslate nohighlight">\(t_i\)</span> by</p>
+<div class="math notranslate nohighlight">
+\[t_i = old - t_i \frac{\mathrm{len}(\mathrm{spline1})}
+                     {\mathrm{len}(\mathrm{spline1}) + \mathrm{len}(\mathrm{spline2})}\]</div>
+<p>and if <span class="math notranslate nohighlight">\(\mathrm{Point}_i = \mathrm{Spline2(old-t_i)}\)</span></p>
+<div class="math notranslate nohighlight">
+\[t_i = \frac{\mathrm{len}(\mathrm{spline1})}
+           {\mathrm{len}(\mathrm{spline1}) + \mathrm{len}(\mathrm{spline2})} +
+      old-t_i
+      \frac{\mathrm{len}(\mathrm{spline2})}
+           {\mathrm{len}(\mathrm{spline1}) + \mathrm{len}(\mathrm{spline2})}\]</div>
+<p>That is we do a linear interpolation of t based on the relative lengths of the
+two splines.</p>
+</dd>
+</dl>
+<hr class="docutils" />
+</div>
+</div>
+<div class="section" id="calculating-the-outline-of-a-stroked-path">
+<span id="pfaeditmath-stroke"></span><h2>Calculating the outline of a stroked path<a class="headerlink" href="#calculating-the-outline-of-a-stroked-path" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>While some of this section is still accurate, most of it describes an
+earlier version of the Expand Stroke facility. See <a class="reference internal" href="stroke.html"><span class="doc">here</span></a>
+for an up-to-date description of the current algorithm.</p>
+</div>
+<div class="section" id="a-circular-pen">
+<h3>A circular pen<a class="headerlink" href="#a-circular-pen" title="Permalink to this headline">¶</a></h3>
+<p>PostScript supports several variants on the theme of a circular pen, and
+FontForge tries to emulate them all. Basically PostScript “stroke”s a path at a
+certain width by:</p>
+<div class="line-block">
+<div class="line">at every location on the curve</div>
+<div class="line-block">
+<div class="line">find the normal vector at that location</div>
+<div class="line">find the two points which are width/2 away from the curve</div>
+<div class="line">filling in between those two points</div>
+</div>
+<div class="line">end</div>
+</div>
+<p>This is essentially what a circular pen does. The only aberrations appear at the
+end-points of a contour, or at points where two splines join but their slopes
+are not continuous. PostScript allows the user to specify the behavior at joints
+and at end-points.</p>
+<p><img alt="expand-pre" src="../_images/expand-pre.png" /> –&gt; <img alt="expand-post" src="../_images/expand-post.png" /></p>
+<p>FontForge can’t deal with an infinite number of locations, so it samples the
+curve (approximately every em unit), and finds the two normal points. These are
+on the edge of the area to be stroked, so FontForge can approximate new contours
+from these edge points (using the
+<a class="reference internal" href="#pfaeditmath-approximating"><span class="std std-ref">above algorithm</span></a>).</p>
+<p>PostScript pens can end in</p>
+<ul class="simple">
+<li><p>A butt edge – this is easy, we just draw a line from the end of one spline to
+the end of the other</p></li>
+<li><p>A rounded edge – here we just draw a semi-circle (making sure it goes in the
+right direction).</p></li>
+<li><p>A square edge – just draw lines continuing the two splines, moving with the
+same slope and width/2 units long, and then join those end-points with a
+straight line.</p></li>
+</ul>
+<p>Things are a bit more complex at a joint <img alt="expand-joint-pre" src="../_images/expand-joint-pre.png" /> –&gt; <img alt="expand-joint-post" src="../_images/expand-joint-post.png" />
+, the green lines in the right image show where the path would have gone had it
+not been constrained by a joint, so on the inside of the joint FontForge must
+figure out where this intersection occurs. While on the outside FontForge must
+figure out either a round, miter or bevelled edge.</p>
+<p>Unfortunately, the normal points are not always on the edge of the filled
+region. If the curve makes a sharp bend, then one of the normal points may end
+up inside the pen when it is centered somewhere else on the original contour
+(similar to the case of a joint above).</p>
+<p>So FontForge makes another pass through the edge points and figures out which
+ones are actually internal points. After that it will approximate contours.</p>
+<p>Now if we start with an open contour, (a straight line, for example) then we
+will end up with one closed contour. While if we start with a closed contour we
+will end up with two closed contours (one on the inside, and one on the
+outside). Unless there are places where the curve doubles back on itself, then
+when can get arbitrarily many closed contours.</p>
+</div>
+<div class="section" id="an-elliptical-pen">
+<h3>An elliptical pen<a class="headerlink" href="#an-elliptical-pen" title="Permalink to this headline">¶</a></h3>
+<p>This is really just the same as a circular pen. Let us say we want an ellipse
+which is twice as wide as it is high. Then before stroking the path, let’s scale
+it to 50% in the horizontal direction, then stroke it with a circular pen, and
+then scale it back by 200% horizontally. The result will be as if we had used an
+elliptical pen.</p>
+<p>Obviously if the ellipse is at an angle to the glyph’s axes, we must apply a
+more complicated transformation which involves both rotation and scaling.</p>
+</div>
+<div class="section" id="a-rectangular-pen-a-calligraphic-pen">
+<h3>A rectangular pen (a calligraphic pen)<a class="headerlink" href="#a-rectangular-pen-a-calligraphic-pen" title="Permalink to this headline">¶</a></h3>
+<p>Things are subtly different between a rectangular pen and a circular pen. We can
+no longer just find the points which are a given distance away and normal to the
+curve. Except where the spline is parallel to one edge of the pen, a the outer
+contour of a rectangular pen will be stroked by one of its end-points. So all we
+need do is figure out where a spline is parallel to the pen’s sides, and look at
+the problem in little chunks between those difficult points.</p>
+<p>If we are between difficult points then life is very simple indeed. The edge
+will always be stroked by the same end-point, which is a fixed distance from the
+center of the pen, so all we need to do is translate the original spline by this
+distance (and then fix it up so that t goes from [0,1], but that’s another easy
+transformation).</p>
+<p>When we reach a point where the spline’s slope is parallel to one edge of the
+pen, then on the outside path we draw a copy of that edge of of the pen, and on
+the inside edge we calculate a join as above.</p>
+</div>
+<div class="section" id="an-arbitrary-convex-polygonal-pen">
+<h3>An arbitrary convex polygonal pen<a class="headerlink" href="#an-arbitrary-convex-polygonal-pen" title="Permalink to this headline">¶</a></h3>
+<p>The same method which works for a rectangle can be extended without too much
+difficulty to any convex polygon. (MetaFont fonts can be drawn with such a pen.
+I don’t know if any are)</p>
+</div>
+<div class="section" id="a-pen-of-variable-width">
+<h3>A pen of variable width<a class="headerlink" href="#a-pen-of-variable-width" title="Permalink to this headline">¶</a></h3>
+<p>FontForge does not currently support this (some of the assumptions behind this
+algorithm are broken if the pen changes shape too rapidly).</p>
+</div>
+<div class="section" id="a-pen-at-a-varying-angle">
+<h3>A pen at a varying angle<a class="headerlink" href="#a-pen-at-a-varying-angle" title="Permalink to this headline">¶</a></h3>
+<p>FontForge does not support this.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui.html">FontForge’s User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../techref.html">Technical References</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gposgsub.html">Advanced Typography Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AA-Comparison.html">Anti-Alias Comparison</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autotrace.html">Autotracing bitmaps in FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accented.html">Building Accented and other Composite Glyphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bezier.html">Bézier Splines </a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref-caveats.html">Caveats about References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfdchangelog.html">Changes to the sfd format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cidmapformat.html">Cidmap files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cliargs.html">Command Line Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="splinefont.html">Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SuggestDeltas.html">Delta Instruction Suggestions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stroke.html">Expand Stroke Facility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BDFGrey.html">Extensions to Adobe’s BDF  for greymap fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PfaEdit-TeX.html">FontForge and TeX</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">FontForge’s math</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#linear-transformations">Linear Transformations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#finding-maxima-and-minima-of-a-spline">Finding maxima and minima of a spline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#finding-points-of-inflection-of-a-spline">Finding points of inflection of a spline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rasterizing-a-glyph">Rasterizing a glyph</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#approximating-a-spline">Approximating a spline</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#why-that-didn-t-quite-work">Why that didn’t (quite) work</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#singular-matrices">Singular matrices</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#calculating-the-outline-of-a-stroked-path">Calculating the outline of a stroked path</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#a-circular-pen">A circular pen</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#an-elliptical-pen">An elliptical pen</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#a-rectangular-pen-a-calligraphic-pen">A rectangular pen (a calligraphic pen)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#an-arbitrary-convex-polygonal-pen">An arbitrary convex polygonal pen</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#a-pen-of-variable-width">A pen of variable width</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#a-pen-at-a-varying-angle">A pen at a varying angle</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="hinting.html">Hinting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macformats.html">Macintosh font formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="featurefile.html">Major differences between FontForge’s and Adobe’s interpretation of feature files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="non-standard.html">Non standard extensions used FontForge in True/Open Type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="palmfonts.html">Palm fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bitmaponlysfnt.html">Several formats for bitmap only sfnts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfdformat.html">Spline Font Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pcf-format.html">The X11 PCF bitmap font file format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TrueOpenTables.html">TrueType and OpenType tables supported by FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corpchar.html">Unicode Corporate Characters used by FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UniqueID.html">UniqueID and XUID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selections.html">X Selections and the X Clipboard</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../techref.html">Technical References</a><ul>
+      <li>Previous: <a href="PfaEdit-TeX.html" title="previous chapter">FontForge and TeX</a></li>
+      <li>Next: <a href="hinting.html" title="next chapter">Hinting</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,467 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>The File Menu &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="The Edit Menu" href="editmenu.html" />
+    <link rel="prev" title="Menus" href="../menus.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="the-file-menu">
+<h1>The File Menu<a class="headerlink" href="#the-file-menu" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="filemenu-new"></span><dl class="object">
+<dt>
+<code class="sig-name descname">New</code></dt>
+<dd><p>Creates a new font with (by default) ISO 8859-1 (Latin1) encoding. The
+default encoding may be changed in the preference dlg.</p>
+</dd></dl>
+
+<span class="target" id="filemenu-open"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Open</code></dt>
+<dd><img alt="../../_images/openfont.png" class="align-right" src="../../_images/openfont.png" />
+<p>Brings up a file chooser and allows you to open a font in any of the formats
+FontForge understands.</p>
+<p>If you open a truetype font containing bitmaps then you will be asked if you
+want to load some of the bitmaps as well as the outlines.</p>
+<p>By default this dialog will display all files with extensions of pfa, pfb,
+pt3, sfd, ttf, otf, otb, t42, cef, cff, gsf, ttc, svg, ik, mf and bdf
+(possibly others as FontForge comes to support more formats). You can change
+this with the Filter pull down list – there are several standard filters,
+and you may define your own.</p>
+<p>You may select multiple files (by holding down the shift or control keys when
+clicking on them), and all selected files will be opened.</p>
+<p>FontForge can open macbinary resource files containing postscript and
+truetype fonts (it does not open bitmap fonts currently)</p>
+<p>FontForge does not open Acorn RISC/OS files, but you can use
+<a class="reference internal" href="../../fontutils/acorn2sfd.html"><span class="doc">acorn2sfd</span></a> to convert them into an sfd file which
+FontForge can then open.</p>
+<p>If you have <a class="reference external" href="http://www.tug.org/">mf</a> and
+<a class="reference external" href="http://sourceforge.net/projects/autotrace/">autotrace</a> installed on
+your machine FontForge will process metafont’s mf files for you. But you
+might want to use <em>pktrace, mftrace</em> or some other standalone program to do
+the job.</p>
+<p>When opening a TTC file, or a mac dfont – files which potentially contain
+several fonts – you will be given a dlg showing a list of all fonts in the
+file, you get to pick which you want to open. (FontForge does not provide a
+way to open all fonts in a file at once). If you know the fontname you are
+interested in you may append it to the filename in the open dlg as:
+<code class="docutils literal notranslate"><span class="pre">Helvetica.dfont(Helvetica</span> <span class="pre">Bold)</span></code> or if you know the font index
+<code class="docutils literal notranslate"><span class="pre">Helvetica.dfont(0)</span></code> (indeces start at 0, not 1).</p>
+<p>When FontForge opens a pdb file (one that contains palm bitmap fonts) it will
+open the first font it finds. In most formats it will list the available
+fonts in a file and ask which you want, but palm fonts contain no fontname so
+there is no way to identify them.</p>
+<p id="filemenu-type3-import">When importing a type3 font FontForge will ask you a few questions. It
+shouldn’t have to ask these questions, but this is an imperfect world and
+FontForge an imperfect program. In some rare cases FontForge will crash if it
+tries to do a remove overlap. The remove overlap functionality is important
+for interpreting stroked paths so you really should have it on. But if a
+crash happens then, turn it off (and the crash should not repeat, but some
+functionality will be lost).</p>
+<p>Not all font formats that fontforge supports have standard extensions. Mac
+resource forks are one example, postscript cid, type0 and type3 fonts are
+another. FontForge can still open these formats, even if it fails to display
+the file. You can always type the file name in yourself if you don’t see it
+in the file list.</p>
+<p>FontForge can also read (many) fonts out of a pdf file. FontForge usually
+does not list pdf files (because they aren’t really designed as mechanisms
+for transporting fonts and most such fonts will be incomplete due to
+subsetting and other optimizations), but you can always type in the name of
+one directly (or use the [Filter] button to define a filter for pdf files).</p>
+<p>You can also force fontforge to rename all the glyphs in the font being read
+in to fit some standard naming convention. See the section on
+<a class="reference internal" href="encodingmenu.html#encodingmenu-namelist"><span class="std std-ref">namelists</span></a> for more information.</p>
+</dd></dl>
+
+<hr class="docutils" />
+<blockquote>
+<div><p>The dialog has several buttons at the top, one takes you to your home
+directory, one to the directory above the current one and the other two
+produce menus. The bookmark menu allows you to pick a directory from your
+list of bookmarks, and to add to or remove from your list of bookmarks, you
+may also move backwards and forwards on your directory stack. The tools menu
+allows you to rearrange how the dialog works. You may set it to show hidden
+files (on unix files beginning with “.” are “hidden”), you may set it so that
+directories are displayed amid other files, in alphabetical order, so that
+directories precede normal files, or so that there is a separate pane for
+directories.</p>
+</div></blockquote>
+<span class="target" id="filemenu-recent"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Recent</code></dt>
+<dd><p>A submenu showing recently opened font files (it does not show the current
+font).</p>
+</dd></dl>
+
+<span class="target" id="filemenu-close"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Close</code></dt>
+<dd><p>Closes the current window.</p>
+<p>If this is a font view and the font has been changed, then it will ask
+whether you want to save the font. It will also close any outline glyph,
+bitmap glyph or metrics views associated with the font.</p>
+</dd></dl>
+
+<span class="target" id="filemenu-save"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Save</code></dt>
+<dd><p>Saves the current file. If it is associated with a spline font database it
+will be saved there and a backup file will be created. If it is a new font,
+or if the font has been read from a font file, then a Save As dialog will pop
+up.</p>
+<p>If you are editing a font “Ambrosia.sfd” then the backup file will be called
+“Ambrosia.sfd~”.</p>
+</dd></dl>
+
+<span class="target" id="filemenu-saveas"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Save As...</code></dt>
+<dd><p>Allows you to give a new name to the current spline font database. Pops up a
+file picker.</p>
+<p>Normally fonts are saved into “sfd” files (a single file containing all the
+information needed to regenerate your font), but you may choose to save it
+into a directory format where every glyph has its own file.</p>
+</dd></dl>
+
+<span class="target" id="filemenu-saveall"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Save All</code></dt>
+<dd><p>Saves all changed fonts. If any have not been named, it will pop up a Save As
+file picker for that font.</p>
+</dd></dl>
+
+<span class="target" id="filemenu-generate"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Generate Fonts...</code></dt>
+<dd><p><a class="reference internal" href="../dialogs/generate.html"><span class="doc">This generates font files</span></a>, both outline and bitmap. You may
+choose not to generate either, you may generate an afm file or a pfm file,
+you may select the type of postscript output, you may select which pixelsizes
+of bitmap to generate. (See <a class="reference internal" href="../dialogs/generate.html"><span class="doc">that page</span></a> for more info)</p>
+</dd></dl>
+
+<span class="target" id="filemenu-generatemac"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Generate Mac Family...</code></dt>
+<dd><p>This is only available if there are multiple fonts open in the same family,
+and if the current font is the “Plain” style of that family. It generates a
+mac FOND structure containing references to all family members, sfnt, and
+POST resources for all selected faces. It brings up a
+<a class="reference internal" href="../dialogs/generate.html#generate-mac-family"><span class="std std-ref">dlg</span></a> very similar to the Generate fonts dialog,
+but one that includes a list of all potential faces for family members.</p>
+</dd></dl>
+
+<span class="target" id="filemenu-generatettc"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Generate TTC...</code></dt>
+<dd><p>This is only available if there are multiple fonts open (they need not be the
+same family). It opens a <a class="reference internal" href="../dialogs/generate.html#generate-generatettc"><span class="std std-ref">dialog</span></a> similar to the
+above listing all open fonts. You select which fonts go into the ttc file and
+how they should be stored.</p>
+</dd></dl>
+
+<span class="target" id="filemenu-revert"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Revert</code></dt>
+<dd><p>Rereads the font from the file on the disk. All changes are lost.</p>
+</dd></dl>
+
+<span class="target" id="filemenu-revertbackup"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Revert To Backup</code></dt>
+<dd><p>Only available in the font view. When FontForge saves an sfd file (with the
+<a class="reference internal" href="#filemenu-save"><span class="std std-ref">Save</span></a> command, not the <a class="reference internal" href="#filemenu-saveas"><span class="std std-ref">Save As</span></a>
+command) it creates a backup version of the file containing the old data
+(this file has the same name as the main branch with a “~” character appended
+to it). This command will revert to the backuped version of the file (if
+there is one).</p>
+</dd></dl>
+
+<span class="target" id="filemenu-revertglyph"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Revert Glyph</code></dt>
+<dd><p>Only available in the font and outline views. Rereads the font from the sfd
+file on the disk searching for a glyph in that file with the same name as the
+current glyph. All changes to this glyph will be lost (but if the glyph has
+references then any changes made to the glyphs being refered to will still be
+visible), <em>this command may be undone.</em></p>
+<p>So if you have changed the name of the glyph this command will fail.</p>
+<p>If the font did not come from an sfd file this command will fail.</p>
+<p>If the font has been reencoded and the glyph has references this command may
+fail.</p>
+<p>If you have made a global change to the font (like scaling it to a new
+em-size) then the results may not be appropriate.</p>
+</dd></dl>
+
+<span class="target" id="filemenu-export"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Export...</code></dt>
+<dd><p>In the Outline view this allows you to export the splines that make up the
+glyph into an encapsulated postscript (.eps), pdf, svg or xfig format (.fig
+– the conversion to fig format is not the best) file. You may also have the
+glyph rasterized and output in either .xbm or .bmp (or png if you have that
+library) formats (FontForge will prompt you for a pixelsize. bmp also allows
+you to generate an anti-aliased image, and you will be prompted for bits per
+pixel. 1 bit per pixel is a bitmap).</p>
+<p>In the Bitmap view this allows you to export the current glyph as either a
+.xbm or a .bmp (always as a bitmap) file.</p>
+<p>This menu item is not available in the Font or Metrics Views.</p>
+</dd></dl>
+
+<span class="target" id="filemenu-import"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Import...</code></dt>
+<dd><p>In the Font View this allows you to import one or several bitmap fonts (from
+a .bdf file or a ttf/otf/ttc file, TeX pk (gf) file, an X11 .pcf file or a
+mac dfont) and merge it into the list of bitmap sizes stored in the database.
+You may also load one bitmap font into the backgrounds of the outline glyphs
+(So “A” from the bitmap font goes into the background of the “A” outline
+glyph), this is to make tracing glyphs easier. Be careful, you need to load a
+big bitmap for autotrace to be useful.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>FontForge is unable to read an encoding from pk files, you will may need
+to set it with “Force Encoding” after you’ve loaded the pk file.</p>
+</div>
+<p>You may also load images into the glyph backgrounds. There are two ways to do
+this, you may either select several image files and they will be loaded
+consecutively into selected glyphs, or you may select an image template and
+all images whose filename match that template will be loaded into the
+backgrounds of the appropriate glyphs. Image templates look like “uni*.png”
+or “enc*.gif” or “cid*.tiff”. You select the template by selecting a filename
+which matches that template– So if you select “uni1100.gif” then all image
+files which start with “uni” and end with “.gif” and contain a valid unicode
+number will be loaded and placed in the appropriate place. Files named “enc*”
+or “cid*” are handled similarly except that they specify the current encoding
+(and the number must be in decimal rather than hex).</p>
+<p>If you are editing a <a class="reference internal" href="../dialogs/multilayer.html"><span class="doc">multi-layered font</span></a> then you can also
+import an image into one of the foreground layers.</p>
+<p id="filemenu-bitmapfiles"><span class="small">FontForge does best when given bitmap images. It will grey out the foreground and make the background transparent. It will also compress them when it stores them in the sfd file. It will handle most other image formats but does not try to optimize them in anyway. Please use bitmaps here.</span></p>
+<p>You may load an encapsulated postscript file (or rather the sub-set of
+postscript that FontForge understands) into the foreground of glyphs. As with
+images above this may import either depending on the selection or a template.</p>
+<p>If you have libxml2 on your system then FontForge will also be able to import
+svg files. As with postscript, only a subset of svg is understood).</p>
+<p>In the Outline View this allows you to import an image into the background
+(see the above remark about <a class="reference internal" href="#filemenu-bitmapfiles"><span class="std std-ref">bitmaps</span></a>, or import
+eps or fig files into the foreground (the xfig conversion is really bad, the
+eps conversion is very limited).</p>
+<p>In the Bitmap View this allows you to import a bitmap image into the glyph.</p>
+<p>This menu item is not available in the Metrics View</p>
+<p>In the font view you may select multiple files (by holding down the shift or
+control keys when clicking on them), and all selected bitmap fonts will be
+imported into the sfd.</p>
+</dd></dl>
+
+<span class="target" id="filemenu-merge-feature"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Merge Feature Info...</code></dt>
+<dd><p>Only available in the font view window. This command will allow you to search
+for an <a class="reference internal" href="../../techref/featurefile.html"><span class="doc">adobe feature file</span></a> (.fea) for feature/lookup
+information or an afm, ofm, tfm, pfm or mac resource file containing kerning
+pairs for the specified font. In many cases it will not be needed because
+when FontForge opens a .pfa or .pfb font it will automagically search for an
+appropriate .afm file in the same place. But sometimes afm files are stored
+in other directories. And sometimes you want to import information from TeX,
+from mac resource files or from windows pfm files.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>FontForge is unable to read an encoding from tfm/ofm files or from mac
+resource files, it is your responsibility to ensure that the encoding of
+your font matches that of the tfm file <em>BEFORE</em> merging kerning
+information. This is unfortunate, sorry.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When loading a postscript font from a mac resource file, the associated
+kerning data will be found in the FOND stored with a bitmap font for this
+face. FontForge can’t guess the name of this file when loading the font.
+You must figure it out yourself.</p>
+</div>
+</dd></dl>
+
+<span class="target" id="filemenu-print"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Print...</code></dt>
+<dd><p>Not available in the bitmap view. Allows you to print out all the glyphs in
+the font, a text sample of the font, or specific glyphs at a very large
+scale.</p>
+<p>See the section on <a class="reference internal" href="../dialogs/display.html"><span class="doc">printing</span></a> for more information.</p>
+</dd></dl>
+
+<span class="target" id="filemenu-execute"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Execute Script...</code></dt>
+<dd><p>Only in the font view. Brings up a dlg and allows you to enter a
+<a class="reference internal" href="../../scripting/scripting.html"><span class="doc">script</span></a>, which could be just calling a prewritten script
+file. There is a [Call] button in the dlg to help you locate any such files.
+The default extension is “*.pe” (postscript edit) but you can change that
+with the [Filter] button if you use something else.</p>
+</dd></dl>
+
+<span class="target" id="filemenu-scriptmenu"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Script Menu</code></dt>
+<dd><p>Only in the font view. You may define up to 10
+<a class="reference internal" href="../../scripting/scripting.html#scripting-menu"><span class="std std-ref">scripts</span></a> that you want to execute frequently and place
+them in this menu. The scripts may also be invoked by short cut with the
+first one being invoked by Control-Meta(Alt)-1, the second Control-Meta-2,
+and the tenth by Control-Meta-0. The scripts are set in the
+<a class="reference internal" href="../dialogs/prefs.html#prefs-scripts"><span class="std std-ref">preferences dialog</span></a></p>
+</dd></dl>
+
+<span class="target" id="filemenu-prefs"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Preferences...</code></dt>
+<dd><p>This pops up a
+<a class="reference internal" href="../dialogs/prefs.html"><span class="doc">dialog allowing you to configure various esoteric bits of fontforge</span></a>.</p>
+<p>A number of things, like the colors used in FontForge, that might be
+controlled from a preference window are controlled by
+<a class="reference internal" href="../misc/xres.html"><span class="doc">X Resources</span></a> below.</p>
+</dd></dl>
+
+<span class="target" id="filemenu-resedit"></span><dl class="object">
+<dt>
+<code class="sig-name descname">X Resource Editor...</code></dt>
+<dd><p><a class="reference internal" href="../misc/resedit.html"><span class="doc">This dialog</span></a> allows you to edit FontForge’s X Resources, you
+may either save them to a file for perminant storage, or change the current
+settings for this use of FontForge.</p>
+</dd></dl>
+
+<span class="target" id="filemenu-quit"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Quit</code></dt>
+<dd><p>Exits the program, prompting you whether to save any changed fonts.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../ui.html">FontForge’s User Interface</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../mainviews.html">Main Views</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../menus.html">Menus</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">The File Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="editmenu.html">The Edit Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pointmenu.html">The Point Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elementmenu.html">The Element Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="toolsmenu.html">The Tools Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hintsmenu.html">The Hints Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encodingmenu.html">Encoding Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="viewmenu.html">The View Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="metricsmenu.html">The Metrics Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cidmenu.html">The CID Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mmmenu.html">The Multiple Master Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="windowmenu.html">The Window Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="helpmenu.html">Help Menu</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../dialogs.html">Dialogs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/HotKeys.html">Hot Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/fontforge-themes.html">FontForge color schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">X Resource Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xim.html">X Input Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">X Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../techref.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../../ui.html">FontForge’s User Interface</a><ul>
+  <li><a href="../menus.html">Menus</a><ul>
+      <li>Previous: <a href="../menus.html" title="previous chapter">Menus</a></li>
+      <li>Next: <a href="editmenu.html" title="next chapter">The Edit Menu</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

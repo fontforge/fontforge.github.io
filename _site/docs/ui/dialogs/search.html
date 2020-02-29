@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Finding shapes within glyphs &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Select By Lookup Subtable" href="selectbyatt.html" />
+    <link rel="prev" title="Groups of Glyphs" href="groups.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="finding-shapes-within-glyphs">
+<h1>Finding shapes within glyphs<a class="headerlink" href="#finding-shapes-within-glyphs" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-default">
+<img alt="../../_images/rplref.png" src="../../_images/rplref.png" />
+</div>
+<p>FontForge will allow you to search a font for all glyphs containing a certain
+shape and optionally replace that shape with another shape.</p>
+<p>FontForge allows you to control whether a match will be found even if the shape
+has undergone certain transformations (ie. rotated, scaled, flipped, etc.).</p>
+<p>The search will be on a point by point basis. That is, the first point of the
+search pattern will be moved to a point in the glyph being searched, and all
+subsequent points and control points in the search pattern must lie exactly on
+top of an equivalent point in the glyph.</p>
+<p>Of course if a transformation is allowed, then it is the transformed search
+pattern which must match.</p>
+<p>Normally FontForge will search all glyphs in a font, but you may restrict the
+search so that only those glyphs which are selected will be tested.</p>
+<p>The search and replace panes behave very much like the outline glyph views and
+you may draw within them using the tools available in the outline view. The menu
+at the top of the window is a subset of the menu in the outline glyph view. Only
+one of the two panes is active at a given time, and the menu works on the active
+one. You can make a pane active by clicking in it, or by using the [Tab] key.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">[Find]</span></code> button will start at the beginning of the font and search for the
+first glyph containing the search pattern and then open an outline glyph view
+looking at that glyph. After <code class="docutils literal notranslate"><span class="pre">[Find]</span></code> has been used once the button changes to
+<code class="docutils literal notranslate"><span class="pre">[Find</span> <span class="pre">Next]</span></code> whose behavior is similar excepts that it starts at the last
+glyph found and displays the next glyph in the same window.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">[Find</span> <span class="pre">All]</span></code> button will select all glyphs containing the pattern.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">[Replace]</span></code> button only works after a <code class="docutils literal notranslate"><span class="pre">[Find]/[Find</span> <span class="pre">Next]/[Replace]</span></code>. It
+replaces the thing found with the replace pattern, and does another
+<code class="docutils literal notranslate"><span class="pre">[Find</span> <span class="pre">Next]</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">[Replace</span> <span class="pre">All]</span></code> button replaces all instances of the search pattern with
+the replace pattern and selects all glyphs found.</p>
+<p>There are three different kinds of search, and which is used depends on the
+shapes in the patterns. If the search pattern contains a closed path or multiple
+paths, then the search looks for an exact match, ie. for each path in the search
+pattern there must be a path in the glyph which matches it exactly. Whereas, if
+the search pattern is a single open path then the search will look for the
+search pattern <em>within</em> any path. And a variant of this last– if the
+<code class="docutils literal notranslate"><span class="pre">[]</span> <span class="pre">Endpoints</span> <span class="pre">specify</span> <span class="pre">minimum</span> <span class="pre">length</span> <span class="pre">and</span> <span class="pre">direction</span> <span class="pre">only</span></code> box is checked, then
+the end points of the search pattern will not be matched, only the points
+between them will match – This may seem rather odd, but it allows you to match
+something like “all right angles” where you neither know nor care how long the
+segments are on either side of the right angle.</p>
+<p>The way a replacement happens will depend on the type of search.</p>
+<ol class="arabic">
+<li><p>In a contour search (the first type above) all matching contours will be
+removed, and the replacement contours will be copied in.</p></li>
+<li><p>In a segment match the matched points will be removed from the contour and the
+replacement points will be added in their place. Note that the order in which
+you draw the two patterns is important, and the start point of the replacement
+will go where the start point of the search pattern came from. If you draw your
+patterns in the wrong direction you will not get the effect you want. Similarly,
+in most cases you will want the distance between the start point and end point
+of the search pattern to be the same as the equivalent distance in the replace
+pattern (else you will get odd jumps in your results).</p></li>
+<li><p>If the endpoints of the search pattern are not explicitly matched, then the end
+points of the replace pattern will not be used either. The end points of the
+replace pattern are simply used to position the replacement. So the first point
+matched will correspond to the second point in the search pattern; FontForge
+will figure out where the first point of the search pattern would lie; it will
+then position the first point of the replace pattern there, and use that to
+figure out where the real replacement points should go. It’s hard to explain in
+words, but fairly obvious in a picture:</p>
+<div class="flex-container flex-nobreak">
+<div class="flex-row">
+<div class="flex-col flex-5">
+<img alt="../../_images/rplsansserifs.png" src="../../_images/rplsansserifs.png" />
+</div>
+<div class="flex-col">
+<img alt="../../_images/rplprocess.png" src="../../_images/rplprocess.png" />
+</div>
+</div>
+</div>
+<p>The above could be used to convert a san-serif font into a serifed one
+(simplifying grossly). The end point of the search pattern is the same distance
+from its start point as is the end point of the replace pattern. The first
+(only) point matched in the search pattern is the right angle point. There is no
+point in the replace pattern that corresponds to it, so nothing in the replace
+pattern can be aligned with it, but given that point we can extrapolate
+backwards where the start point would be, then lay a virtual replacement point
+on top of it, and place the other replacement points normally.</p>
+<p>Now the end points also specify a minimum distance which must be matched. This
+is important because the replacement pattern also contains a right angle. You
+would not want FontForge recursively placing smaller and smaller serifs onto
+already existing ones.</p>
+</li>
+</ol>
+<p>At the moment I see two possible uses for the replace feature:</p>
+<ol class="arabic simple">
+<li><p>It can help you change the style of serifs in your font (see the example below)</p></li>
+<li><p>FontForge can’t always detect which glyphs should contain references when
+reading in opentype (and some type1) fonts. You can use the replace feature to
+fix up all things that look like “A” with a reference to A. (see the first
+example above)</p></li>
+</ol>
+<img alt="../../_images/rplserifs.png" src="../../_images/rplserifs.png" />
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../ui.html">FontForge’s User Interface</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../mainviews.html">Main Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../menus.html">Menus</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../dialogs.html">Dialogs</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../dialogs.html#general">General</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="generate.html">Generate Font Dialog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="display.html">Display &amp; Print Fonts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="groups.html">Groups of Glyphs</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Finding shapes within glyphs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="selectbyatt.html">Select By Lookup Subtable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="prefs.html">Preferences Dialog</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#info">Info</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#editing">Editing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#lookups-and-kerning">Lookups and Kerning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#validation">Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/HotKeys.html">Hot Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/fontforge-themes.html">FontForge color schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">X Resource Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xim.html">X Input Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">X Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../techref.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../../ui.html">FontForge’s User Interface</a><ul>
+  <li><a href="../dialogs.html">Dialogs</a><ul>
+      <li>Previous: <a href="groups.html" title="previous chapter">Groups of Glyphs</a></li>
+      <li>Next: <a href="selectbyatt.html" title="next chapter">Select By Lookup Subtable</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

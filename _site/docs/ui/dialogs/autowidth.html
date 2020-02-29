@@ -1,0 +1,386 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Auto Width &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Insert Text Dialog" href="InsertTextDlg.html" />
+    <link rel="prev" title="Multiple Master Dialog" href="multiplemaster.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="auto-width">
+<span id="autowidth-autowidth"></span><h1>Auto Width<a class="headerlink" href="#auto-width" title="Permalink to this headline">¶</a></h1>
+<img alt="../../_images/autowidth.png" class="align-right" src="../../_images/autowidth.png" />
+<p>The Auto Width command will attempt to guess reasonable widths (more accurately
+reasonable left and right side bearings) for your font. The command splits the
+selection into scripts and looks at all possible combinations of selected glyphs
+within each script.</p>
+<p>The Separation text box allows you to say how close you want the glyphs to be.
+If you look at a vertical bar (or sanserif “I”), and you autowidth it the sum of
+the left and right side bearings will be equal to the spacing. The min and max
+values will prevent sidebearings from becoming unrealistically large (these
+rarely matter).</p>
+<p>Adjusting the left and right bearings of a letter will also adjust the left and
+right bearings of all accented letters based (by reference) on it. You should
+not try to use AutoWidth on accented letters directly (unless those glyphs do
+not use references).</p>
+<div class="section" id="auto-kern">
+<span id="autowidth-autokern"></span><h2>Auto Kern<a class="headerlink" href="#auto-kern" title="Permalink to this headline">¶</a></h2>
+<p>There used to be an Auto Kern dialog. There is no longer, this is now done in
+the <a class="reference internal" href="lookups.html#lookups-pair"><span class="std std-ref">kerning subtable</span></a> dialog and the
+<a class="reference internal" href="../mainviews/metricsview.html#metricsview-kernclass"><span class="std std-ref">kerning class</span></a> dialog.</p>
+<hr class="docutils" />
+<div class="section" id="the-python-glyphseparationhook">
+<span id="autowidth-glyphseparationhook"></span><h3>The python GlyphSeparationHook<a class="headerlink" href="#the-python-glyphseparationhook" title="Permalink to this headline">¶</a></h3>
+<p>When FontForge does AutoKerning (and in a more complicated fashion, when it does
+AutoWidthing) it tries to guess the optical separation between two glyphs, and
+then it applies an appropriate kern value to make the optical separation be the
+desired spacing.</p>
+<p>FontForge assumes that the optical spacing is linear (so if you increase the
+separation between two glyphs by 3 em-units, then the optical spacing will also
+increase by 3 em-units).</p>
+<p>FF guesses the optical separation between two glyphs by figuring a value for the
+separation of two glyphs when their bounding boxes are adjacent. For two
+rectangles (where the bounding box is the same as the glyph itself) the
+separation will be 0 as the two glyphs will be touching. For a combination like
+“To” the optical separation will be quite large.</p>
+<div class="flex-container">
+<div class="flex-row">
+<div class="flex-col">
+<img alt="../../_images/GlyphSep-rectangles.png" src="../../_images/GlyphSep-rectangles.png" />
+</div>
+<div class="flex-col">
+<img alt="../../_images/GlyphSep-To.png" src="../../_images/GlyphSep-To.png" />
+</div>
+</div>
+</div>
+<p>The GlyphSeparationHook is a python routine which will be called with a bunch of
+information about two glyphs, and is expected to return an integer representing
+the optical separation between the two. It is a low-level routine; the actual
+calculation of kerning offsets or setting glyph widths is done elsewhere, but
+this routine provides the information those higher level routines need. Of
+course, if you don’t provide a routine, FontForge has a built-in routine which
+will provide a default behavior. Here is a python version of that default
+routine:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fontforge</span><span class="p">;</span>
+
+<span class="k">def</span> <span class="nf">GlyphSeparation</span><span class="p">(</span><span class="n">onLeft</span><span class="p">,</span><span class="n">onRight</span><span class="p">,</span><span class="n">context</span><span class="p">)</span> <span class="p">:</span>
+    <span class="c1"># the goal is to give a weighted average that expresses the visual</span>
+    <span class="c1">#  separation between two glyphs when they are placed so their bounding</span>
+    <span class="c1">#  boxes are adjacent. The separation between two rectangles would be 0</span>
+    <span class="c1">#  While the separation between &quot;T&quot; and &quot;o&quot; would be fairly large</span>
+    <span class="c1"># The trick is to guess a good weighting function. My guess is that</span>
+    <span class="c1">#  things that look close are more important than those which look far</span>
+    <span class="c1">#  So &quot;T&quot; and &quot;O&quot; should be dominated by the crossbar of the &quot;T&quot;...</span>
+    <span class="c1">#</span>
+    <span class="c1"># Find the area the two glyphs have in common (so when comparing &quot;o&quot; and</span>
+    <span class="c1">#  &quot;l&quot; or &quot;g&quot;, ignore the ascenders and descenders since that&#39;s outside</span>
+    <span class="c1">#  the range of &quot;o&quot; and won&#39;t affect its visual proximity.</span>
+    <span class="n">imin_y</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">onRight</span><span class="o">.</span><span class="n">iminY</span><span class="p">,</span><span class="n">onLeft</span><span class="o">.</span><span class="n">iminY</span><span class="p">);</span>
+    <span class="n">imax_y</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">onRight</span><span class="o">.</span><span class="n">imaxY</span><span class="p">,</span><span class="n">onLeft</span><span class="o">.</span><span class="n">imaxY</span><span class="p">);</span>
+    <span class="c1">#</span>
+    <span class="c1"># Some glyph combinations will have no overlap -- the grave accent and the</span>
+    <span class="c1"># letter &quot;a&quot; will have none. So they don&#39;t interact visually.</span>
+    <span class="k">if</span> <span class="n">imax_y</span> <span class="o">&lt;</span> <span class="n">imin_y</span> <span class="p">:</span>
+        <span class="k">return</span><span class="p">(</span> <span class="mi">0</span> <span class="p">)</span>
+    <span class="c1">#</span>
+    <span class="c1"># Otherwise compute some sort of weighted average of the separations between</span>
+    <span class="c1"># the two glyphs at various heights.</span>
+    <span class="n">tot</span><span class="p">,</span><span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span><span class="mi">0</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="n">imin_y</span>
+    <span class="k">while</span> <span class="n">j</span><span class="o">&lt;=</span><span class="n">imax_y</span> <span class="p">:</span>
+        <span class="k">if</span> <span class="n">onRight</span><span class="o">.</span><span class="n">left</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">32767</span> <span class="ow">and</span> <span class="n">onLeft</span><span class="o">.</span><span class="n">right</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">32767</span> <span class="p">:</span>
+            <span class="c1"># beware of gaps such as those in &quot;i&quot; or &quot;aaccute&quot;</span>
+            <span class="c1"># a gap has a left or right value which is huge</span>
+            <span class="c1"># so ignore any such, again it doesn&#39;t contribute to the</span>
+            <span class="c1"># visual separation.</span>
+            <span class="n">sep</span> <span class="o">=</span> <span class="n">onRight</span><span class="o">.</span><span class="n">left</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">-</span> <span class="n">onLeft</span><span class="o">.</span><span class="n">right</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+            <span class="n">weight</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">/</span><span class="p">(</span><span class="n">sep</span> <span class="o">+</span> <span class="n">context</span><span class="o">.</span><span class="n">denom</span><span class="p">)</span>
+            <span class="n">weight</span> <span class="o">*=</span> <span class="n">weight</span>
+            <span class="n">tot</span> <span class="o">+=</span> <span class="n">weight</span><span class="o">*</span><span class="n">sep</span>
+            <span class="n">cnt</span> <span class="o">+=</span> <span class="n">weight</span>
+        <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">cnt</span><span class="o">!=</span><span class="mi">0</span> <span class="p">:</span>
+        <span class="n">tot</span> <span class="o">/=</span> <span class="n">cnt</span>
+    <span class="k">return</span><span class="p">(</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span> <span class="n">tot</span> <span class="p">))</span> <span class="p">);</span>
+
+<span class="n">fontforge</span><span class="o">.</span><span class="n">registerGlyphSeparationHook</span><span class="p">(</span><span class="n">GlyphSeparation</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The hook will be called with three arguments, a structure with information about
+the glyph on the left, a structure with information about the glyph on the
+right, and a structure containing general information about the operation as a
+whole.</p>
+<p>The context argument contains the following fields:</p>
+<dl class="object">
+<dt>
+<code class="sig-name descname">font</code></dt>
+<dd><p>The font being worked on</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">emSize</code></dt>
+<dd><p>The emsize of the font</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">layer</code></dt>
+<dd><p>The active layer for this operation</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">regionHeight</code></dt>
+<dd><p>(explained below) by default emSize/100</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">denom</code></dt>
+<dd><p>1/50th of the emSize. A number I found handy.</p>
+</dd></dl>
+
+<p>FontForge preprocess all the glyphs, extracting pertinant information from each
+and storing it in a separate per-glyph structure than the normal python Glyph
+object. The most important information is a representation of the leftmost and
+rightmost edges of the glyph. Basically, for every value of y, FontForge finds
+the smallest x coordinate on any of the glyph’s contours at that height and
+stores that information in an array. There is a similar array containing the
+largest x coordinates. Of course there are an infinite number of y values, so
+that isn’t quite accurate. FontForge divides the vertical axis into many
+regions, each regionHeight high (this is usually 1/100th of the emsize). It then
+finds the smallest x coordinate achieved by any contour within that region.</p>
+<p>The value stored in the array representing the leftmost edge of the glyph is not
+quite the smallest x coordinate. Instead we normalize the numbers so that the x
+coordinate of the left side bearing of the glyph is 0. None of the numbers in
+the left array will be negative.</p>
+<p>Similarly the value stored in the rightmost array is normalized so that the
+glyph’s right side bearing is 0. None of the numbers in the right array will be
+positive.</p>
+<p>There can be gaps in a glyph – for example in a lower case “i” there is a hole
+in the body of the glyph between the dot on top and the rest down below. In this
+case the left array will hold the special value 32767, and the right array will
+hold -32767.</p>
+<p>So I don’t pass a standard glyph object. The underlying glyph object can be
+obtained through the <code class="docutils literal notranslate"><span class="pre">glyph</span></code> member. The most important things in this
+structure are the arrays representing the left and right contours called
+<code class="docutils literal notranslate"><span class="pre">left</span></code> and <code class="docutils literal notranslate"><span class="pre">right</span></code>. The structure also contains the upper and lower bounds
+of the arrays (both arrays have the same bounds). The glyph structures contain
+the following members:</p>
+<dl class="object">
+<dt>
+<code class="sig-name descname">glyph</code></dt>
+<dd><p>This is the standard python glyph object. This can (rarely) be None.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">boundingbox</code></dt>
+<dd><p>A tuple of 4 values (minx,miny,maxx,maxy) for the glyph</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">iminY</code></dt>
+<dd><p>The low bound of the arrays.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">imaxX</code></dt>
+<dd><p>The high bound of the arrays</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">left</code></dt>
+<dd><p>an array of integers representing the separation between the left edge of the
+bounding box and the leftmost contour at that height (never negative)</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">right</code></dt>
+<dd><p>an array of integers representing the separation between the right edge of
+the bounding box and the rightmost contour at that height (never positive)</p>
+</dd></dl>
+
+<p><code class="docutils literal notranslate"><span class="pre">iminY</span></code> and <code class="docutils literal notranslate"><span class="pre">imaxY</span></code> are scaled by <code class="docutils literal notranslate"><span class="pre">regionHeight</span></code> from the y units in the
+glyph itself. The value contain at left[0] would represent minimum separation
+between boundingbox.minx and any the x location of any contour when the y
+location was between 0 and regionHeight. Similarly left[1] would be the minimum
+separation with the y location between regionHeight and 2*regionHeight. And so
+forth.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">imin_y</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">onRight</span><span class="o">.</span><span class="n">iminY</span><span class="p">,</span><span class="n">onLeft</span><span class="o">.</span><span class="n">iminY</span><span class="p">);</span>
+    <span class="n">imax_y</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">onRight</span><span class="o">.</span><span class="n">imaxY</span><span class="p">,</span><span class="n">onLeft</span><span class="o">.</span><span class="n">imaxY</span><span class="p">);</span>
+    <span class="k">if</span> <span class="n">imax_y</span> <span class="o">&lt;</span> <span class="n">imin_y</span> <span class="p">:</span>
+        <span class="k">return</span><span class="p">(</span> <span class="mi">0</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>Here we figure out the range along the y axis where the glyphs both exist. If
+the two glyphs don’t share any area along the y axis (as, for example, the glyph
+“a” and the grave accent might not) then we assume they do not interact and
+return a visual separation of 0.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tot</span><span class="p">,</span><span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span><span class="mi">0</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="n">imin_y</span>
+    <span class="k">while</span> <span class="n">j</span><span class="o">&lt;=</span><span class="n">imax_y</span> <span class="p">:</span>
+        <span class="k">if</span> <span class="n">onRight</span><span class="o">.</span><span class="n">left</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">32767</span> <span class="ow">and</span> <span class="n">onLeft</span><span class="o">.</span><span class="n">right</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">32767</span> <span class="p">:</span>
+            <span class="n">sep</span> <span class="o">=</span> <span class="n">onRight</span><span class="o">.</span><span class="n">left</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">-</span> <span class="n">onLeft</span><span class="o">.</span><span class="n">right</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+            <span class="n">weight</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">/</span><span class="p">(</span><span class="n">sep</span> <span class="o">+</span> <span class="n">context</span><span class="o">.</span><span class="n">denom</span><span class="p">)</span>
+            <span class="n">weight</span> <span class="o">*=</span> <span class="n">weight</span>
+            <span class="n">tot</span> <span class="o">+=</span> <span class="n">weight</span><span class="o">*</span><span class="n">sep</span>
+            <span class="n">cnt</span> <span class="o">+=</span> <span class="n">weight</span>
+        <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Otherwise loop over the y range where both glyphs are active. Checking to make
+sure there are no holes.</p>
+<p>We find the actual separation between the two glyphs at this y value.</p>
+<p>Then we calculate some magic weighting function (this is handwaving. your
+routine will have a better weighting function)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">cnt</span><span class="o">!=</span><span class="mi">0</span> <span class="p">:</span>
+        <span class="n">tot</span> <span class="o">/=</span> <span class="n">cnt</span>
+    <span class="k">return</span><span class="p">(</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span> <span class="n">tot</span> <span class="p">))</span> <span class="p">);</span>
+</pre></div>
+</div>
+<p>And finally we take the weighted average of those separations, and return that
+as the optical separation.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fontforge</span><span class="o">.</span><span class="n">registerGlyphSeparationHook</span><span class="p">(</span><span class="n">GlyphSeparation</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>And this routine will tell FontForge to use the hook you provide.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../ui.html">FontForge’s User Interface</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../mainviews.html">Main Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../menus.html">Menus</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../dialogs.html">Dialogs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#general">General</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#info">Info</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../dialogs.html#editing">Editing</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Auto Width</a></li>
+<li class="toctree-l4"><a class="reference internal" href="InsertTextDlg.html">Insert Text Dialog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="multilayer.html">Multi Layered Editing of Type3 and SVG fonts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Styles.html">Stylistic Transformations on Fonts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tilepath.html">Tile Path</a></li>
+<li class="toctree-l4"><a class="reference internal" href="transform.html">Transform Dialog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ttfinstrs.html">Viewing and Editing truetype instructions in FontForge.</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#lookups-and-kerning">Lookups and Kerning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#validation">Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/HotKeys.html">Hot Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/fontforge-themes.html">FontForge color schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">X Resource Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xim.html">X Input Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">X Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../techref.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../../ui.html">FontForge’s User Interface</a><ul>
+  <li><a href="../dialogs.html">Dialogs</a><ul>
+      <li>Previous: <a href="multiplemaster.html" title="previous chapter">Multiple Master Dialog</a></li>
+      <li>Next: <a href="InsertTextDlg.html" title="next chapter">Insert Text Dialog</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

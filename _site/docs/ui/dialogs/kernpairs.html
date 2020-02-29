@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>The Kerning Pairs dialog &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="The Anchor Control dialog" href="anchorcontrol.html" />
+    <link rel="prev" title="Manipulating OpenType Lookups" href="lookups.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="the-kerning-pairs-dialog">
+<h1>The Kerning Pairs dialog<a class="headerlink" href="#the-kerning-pairs-dialog" title="Permalink to this headline">¶</a></h1>
+<img alt="../../_images/KernPairs.png" class="align-right" src="../../_images/KernPairs.png" />
+<p>This dialog either displays all kerning pairs in the entire font, or all kerning
+pairs associated with a character (if it is invoked from the outline view).</p>
+<p>You may choose at what pixel size to view the pairs. Each pair is drawn kerned
+so you can see at a glance those that are too close. Underneath the pair is the
+kerning offset.</p>
+<p>You may change the kerning by moving the mouse to the right hand character of a
+pair, depressing the button and moving the character around. The display is
+updated as you move it. All kern offsets that have been changed will be
+displayed in red (in the example at right, the “AT” pair has been changed).</p>
+<p>You may select a kern pair by clicking on them. Once a selection has been made
+you may use the up and down arrows to step to the next or previous pair. For
+more accurate positioning you may alter the kerning by using the left or right
+arrows, each alters the kerning by one unit (if you hold down the shift or
+control keys and use the arrows the kerning is altered by 10 units).</p>
+<p>You may double click on a kern pair to get the
+<a class="reference internal" href="../mainviews/metricsview.html#metricsview-kernpair"><span class="std std-ref">Kern Pair Closeup</span></a> dlg.</p>
+<p>You may undo the last change by pressing ^Z. You may revert the currently
+selected pair to its original value by pressing Meta-Z (Alt-Z).</p>
+<p>You may control the order in which the kerning pairs are displayed, they may be
+sorted by:</p>
+<ul class="simple">
+<li><p>The left hand character first and the right hand character second</p></li>
+<li><p>The right hand character first and the left hand character second</p></li>
+<li><p>The (absolute value of the) kerning offset</p></li>
+</ul>
+<p>If you type a character (or use
+<a class="reference internal" href="../mainviews/metricsview.html#metricsview-entering"><span class="std std-ref">F12 to get characters you can’t type</span></a>), then the
+dlg will scroll to display the pairs associated with that character. The
+behavior depends in an obvious way on how the dlg is sorted.</p>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../ui.html">FontForge’s User Interface</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../mainviews.html">Main Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../menus.html">Menus</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../dialogs.html">Dialogs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#general">General</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#info">Info</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#editing">Editing</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../dialogs.html#lookups-and-kerning">Lookups and Kerning</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="lookups.html">Manipulating OpenType Lookups</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">The Kerning Pairs dialog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="anchorcontrol.html">The Anchor Control dialog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="contextchain.html">Editing Contextual or Chaining Contextual lookups</a></li>
+<li class="toctree-l4"><a class="reference internal" href="statemachine.html">The Mac State Machine Dialog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="showatt.html">Show Advanced Typographic Features</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#validation">Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/HotKeys.html">Hot Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/fontforge-themes.html">FontForge color schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">X Resource Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xim.html">X Input Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">X Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../techref.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../../ui.html">FontForge’s User Interface</a><ul>
+  <li><a href="../dialogs.html">Dialogs</a><ul>
+      <li>Previous: <a href="lookups.html" title="previous chapter">Manipulating OpenType Lookups</a></li>
+      <li>Next: <a href="anchorcontrol.html" title="next chapter">The Anchor Control dialog</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

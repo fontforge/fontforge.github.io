@@ -1,0 +1,497 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>User Interface Translation Notes &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Font Styles in various languages" href="fontstyles.html" />
+    <link rel="prev" title="Quotations used in the sample text for Printing" href="quotations.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="user-interface-translation-notes">
+<h1>User Interface Translation Notes<a class="headerlink" href="#user-interface-translation-notes" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This page is severely out of date! Much of what is described may no
+longer apply. If you wish to translate FontForge’s interface, please
+use Crowdin: <a class="reference external" href="https://crowdin.com/project/fontforge">https://crowdin.com/project/fontforge</a></p>
+</div>
+</div></blockquote>
+<blockquote class="epigraph">
+<div><div class="line-block">
+<div class="line"><strong>CASCA:</strong> Ay, he spoke Greek.</div>
+<div class="line"><strong>CASSIUS:</strong> To what effect?</div>
+<div class="line"><strong>CASCA:</strong> Nay, an I tell you that, I’ll ne’er</div>
+<div class="line">look you i’ the face again: but those that</div>
+<div class="line">understood him smiled at one another and</div>
+<div class="line">shook their heads; but, for mine own</div>
+<div class="line">part, it was Greek to me.</div>
+</div>
+<p class="attribution">—<em>Julius Caesar</em>, I, ii
+– Shakespeare</p>
+</div></blockquote>
+<p>FontForge uses a standard mechanism called gettext to provide translations of
+user interface strings into different language. Gettext is described profusely
+at the <a class="reference external" href="http://www.gnu.org/software/gettext/manual/">gettext site</a>, the
+following are some brief notes on what you need to know to translate FontForge’s
+UI.</p>
+<div class="contents clear-both topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#user-interface-translation-notes" id="id1">User Interface Translation Notes</a></p>
+<ul>
+<li><p><a class="reference internal" href="#obtaining-the-strings" id="id2">Obtaining the strings</a></p></li>
+<li><p><a class="reference internal" href="#creating-and-modifying-a-po-file" id="id3">Creating and Modifying a “po” file</a></p></li>
+<li><p><a class="reference internal" href="#still-more-strings-to-translate" id="id4">Still more strings to translate!</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="obtaining-the-strings">
+<span id="uitranslationnotes-obtaining"></span><h2>Obtaining the strings<a class="headerlink" href="#obtaining-the-strings" title="Permalink to this headline">¶</a></h2>
+<blockquote class="epigraph">
+<div><div class="line-block">
+<div class="line"><strong>CHAPLAIN:</strong>…legal matters and so forth</div>
+<div class="line">Are Greek to me; except of course</div>
+<div class="line">That I understand Greek.</div>
+</div>
+<p class="attribution">—<em>The Lady’s not for Burning</em>, II
+– Christopher Fry</p>
+</div></blockquote>
+<p>In a gettext based package, the translatable strings live in a “pot” file. In
+FontForge’s case it is called “FontForge.pot”.</p>
+<p>You can download the
+<a class="reference external" href="https://crowdin.com/project/fontforge">current version of this file from here.</a></p>
+</div>
+<div class="section" id="creating-and-modifying-a-po-file">
+<span id="uitranslationnotes-modifying"></span><h2>Creating and Modifying a “po” file<a class="headerlink" href="#creating-and-modifying-a-po-file" title="Permalink to this headline">¶</a></h2>
+<blockquote class="epigraph">
+<div><div class="line-block">
+<div class="line">The Bellman looked uffish, and wrinkled his brow,</div>
+<div class="line">‘If only you’d spoken before!</div>
+<div class="line">It’s excessively awkward to mention it now,</div>
+<div class="line">With the Snark, so to speak, at the door!’</div>
+<div class="line"><br /></div>
+<div class="line">‘We should all of us grieve, as you may well believe</div>
+<div class="line">If you never were met with again-</div>
+<div class="line">But surely, my man, when the voyage began</div>
+<div class="line">You might have suggested it then?’</div>
+<div class="line"><br /></div>
+<div class="line">‘It’s excessively awkward to mention it now</div>
+<div class="line">As I think I’ve already remarked.’</div>
+<div class="line">And the man they called “Hi!” replied with a sigh,</div>
+<div class="line">‘I informed you the day we embarked.’</div>
+<div class="line"><br /></div>
+<div class="line">‘You may charge me with murder- or want of sense-</div>
+<div class="line">(We are all of us weak at times):</div>
+<div class="line">But the slightest approach to a false pretense</div>
+<div class="line">Was never among my crimes!’</div>
+<div class="line"><br /></div>
+<div class="line">‘I said it in Hebrew- I said it in Dutch-</div>
+<div class="line">I said it in German and Greek:</div>
+<div class="line">But I wholly forgot (and it vexes me much)</div>
+<div class="line">That English is what you speak!’</div>
+</div>
+<p class="attribution">—The Hunting of the Snark, Lewis Carroll</p>
+</div></blockquote>
+<p>You should now have a FontForge.pot file (if you don’t see the
+<a class="reference internal" href="#uitranslationnotes-obtaining"><span class="std std-ref">above section</span></a> on how to get one).</p>
+<p>The pot file is in the same format as the “po” file which you need to generate.
+Simply rename FontForge.pot to the language/locale that you are working on. In
+most cases you will probably want to rename it just to the language</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mv FontForge.pot fr.po
+</pre></div>
+</div>
+<p>But sometimes that will not be enough. For example, Traditional and simplified
+chinese are sufficiently different that a locale must also be specified:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mv FontForge.pot zh_TW.po
+</pre></div>
+</div>
+<p>Once you have created your po file it is time to start modifying it. I shall use
+French as an example in the following (because I almost speak French), obviously
+you will need to make changes appropriate for your language.</p>
+<p>The po file begins with some lines like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># (American) English User Interface strings for FontForge.</span>
+<span class="c1"># Copyright (C) 2000-2006 by George Williams</span>
+<span class="c1"># This file is distributed under the same license as the FontForge package.</span>
+<span class="c1"># George Williams, &lt;pfaedit@users.sourceforge.net&gt;, 2006.</span>
+<span class="c1">#</span>
+<span class="c1">#, fuzzy</span>
+<span class="n">msgid</span> <span class="s2">&quot;&quot;</span>
+<span class="n">msgstr</span> <span class="s2">&quot;&quot;</span>
+<span class="s2">&quot;Project-Id-Version: PACKAGE VERSION</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;POT-Creation-Date: 2006-08-19 07:32-0700</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;Last-Translator: FULL NAME &lt;EMAIL@ADDRESS&gt;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;Language-Team: LANGUAGE &lt;LL@li.org&gt;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;MIME-Version: 1.0</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;Content-Type: text/plain; charset=CHARSET</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;Content-Transfer-Encoding: 8bit</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;</span><span class="se">\n</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>You should change this to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># (French) French User Interface strings for FontForge.</span>
+<span class="c1"># Copyright (C) 2004-2006 by Pierre Hanser &amp; Yannis Haralambous</span>
+<span class="c1"># This file is distributed under the same license as the FontForge package.</span>
+<span class="c1">#</span>
+<span class="c1">#, fuzzy</span>
+<span class="n">msgid</span> <span class="s2">&quot;&quot;</span>
+<span class="n">msgstr</span> <span class="s2">&quot;&quot;</span>
+<span class="s2">&quot;Project-Id-Version: 20060821</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;POT-Creation-Date: 2006-08-19 07:32-0700</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;PO-Revision-Date: 2006-08-20 14:46+0100</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;Last-Translator: Pierre Hanser</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;Language-Team: French &lt;LL@li.org&gt;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;MIME-Version: 1.0</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;Content-Type: text/plain; charset=UTF-8</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;Content-Transfer-Encoding: 8bit</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="s2">&quot;Plural-Forms: nplurals=2; plural=n&gt;1;</span><span class="se">\n</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>Most of these are pretty self-explanatory. Fill in your name and email address
+where appropriate, and the date on which you last worked on the file. The
+plurals line is a little more complex, and I’ll describe it
+<a class="reference internal" href="#uitranslationnotes-plurals"><span class="std std-ref">later</span></a>.</p>
+<p>Next there are thousands of string entries. They look something like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#: ttfinstrs.c:2184 typofeatures.c:1450 ../gdraw/gaskdlg.c:1076</span>
+<span class="c1">#: ../gdraw/gaskdlg.c:1332 ../gdraw/gaskdlg.c:1391 ../gdraw/gfiledlg.c:152</span>
+<span class="c1">#: ../gdraw/gmatrixedit.c:711 ../gdraw/gsavefiledlg.c:280</span>
+<span class="n">msgid</span> <span class="s2">&quot;_Cancel&quot;</span>
+<span class="n">msgstr</span> <span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
+<p>You should change these to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#: ttfinstrs.c:2184 typofeatures.c:1450 ../gdraw/gaskdlg.c:1076</span>
+<span class="c1">#: ../gdraw/gaskdlg.c:1332 ../gdraw/gaskdlg.c:1391 ../gdraw/gfiledlg.c:152</span>
+<span class="c1">#: ../gdraw/gmatrixedit.c:711 ../gdraw/gsavefiledlg.c:280</span>
+<span class="n">msgid</span> <span class="s2">&quot;_Cancel&quot;</span>
+<span class="n">msgstr</span> <span class="s2">&quot;_Annuler&quot;</span>
+</pre></div>
+</div>
+<p>So the translation goes into the msgstr line. (The comment lines above indicate
+in what source files and on what lines the “_Cancel” string is used – this
+information may be helpful if you want more information about context). If you
+don’t want to translate a string just leave the msgstr as a null-string, and the
+English text will be used (“OK” seems to be left untranslated in many languages)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#: ttfinstrs.c:2184 typofeatures.c:1450 ../gdraw/gaskdlg.c:1076</span>
+<span class="c1">#: ../gdraw/gaskdlg.c:1332 ../gdraw/gaskdlg.c:1391 ../gdraw/gfiledlg.c:152</span>
+<span class="c1">#: ../gdraw/gmatrixedit.c:711 ../gdraw/gsavefiledlg.c:280</span>
+<span class="n">msgid</span> <span class="s2">&quot;_OK&quot;</span>
+<span class="n">msgstr</span> <span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
+<p>Some strings contain mnemonics. The mnemonic is preceded by an underscore.</p>
+<p>That seems fairly straight forward. But there are always complications.
+Sometimes an English word might be translated by different French words
+depending on context. For example in French the English word “New” might be
+translated as either “Nouveau” or “Nouvelle” depending on the gender of the
+thing being created. In Japanese the word for the latin language is different
+from the latin script. So to disambiguate some strings a little bit of context
+information may appear before the actual string to be translated:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">msgid</span> <span class="s2">&quot;File|_New&quot;</span>
+<span class="n">msgstr</span> <span class="s2">&quot;_Nouveau&quot;</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">msgid</span> <span class="s2">&quot;Anchor|_New&quot;</span>
+<span class="n">msgstr</span> <span class="s2">&quot;_Nouvelle&quot;</span>
+</pre></div>
+</div>
+<p>The context will be any text before an “|”. It should not be translated. Indeed
+both it and the “|” should be completely omitted.</p>
+<p id="uitranslationnotes-plurals">Finally we have the problem of plurals. Suppose we have a string</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">msgid</span> <span class="s2">&quot;</span><span class="si">%d</span><span class="s2"> Group&quot;</span>
+</pre></div>
+</div>
+<p>We need to inflect the word “Group” depending on the number of groups we’ve got
+– and each language has different rules.</p>
+<p>Remember, at the beginning of the file there was a line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Plural-Forms: nplurals=2; plural=n&gt;1;</span><span class="se">\n</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>This says that this language has two plural forms, the singular form is used
+when there are 0 or 1 entries (n&lt;=1), and the plural form is used for n&gt;1
+entries. That rule is correct for French. English looks like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Plural-Forms: nplurals=2; plural=n!=1;</span><span class="se">\n</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>A language like classical Greek, which has a dual form, might look like</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Plural-Forms: nplurals=3; plural=n&lt;=1?0:n==2?1:2;</span><span class="se">\n</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>The expression is a c language expression. When there is a string that might be
+plural it has a slightly different form in the po file</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#: groups.c:1558</span>
+<span class="n">msgid</span> <span class="s2">&quot;</span><span class="si">%d</span><span class="s2"> Group&quot;</span>
+<span class="n">msgid_plural</span> <span class="s2">&quot;</span><span class="si">%d</span><span class="s2"> Groups&quot;</span>
+<span class="n">msgstr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="s2">&quot;</span><span class="si">%d</span><span class="s2"> Groupe&quot;</span>
+<span class="n">msgstr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="s2">&quot;</span><span class="si">%d</span><span class="s2"> Groupes&quot;</span>
+</pre></div>
+</div>
+<p>Obviously, in a language with three forms there would be additional
+<code class="docutils literal notranslate"><span class="pre">msgstr[n]</span></code> entries.</p>
+<div class="section" id="updating-an-already-existing-po-file">
+<span id="uitranslationnotes-updating"></span><h3>Updating an already existing “po” file<a class="headerlink" href="#updating-an-already-existing-po-file" title="Permalink to this headline">¶</a></h3>
+<p>After a few months, you will probably find that I’ve added some additional
+strings to FontForge, and you may want to update your original po file.</p>
+<p>Once again you <a class="reference internal" href="#uitranslationnotes-obtaining"><span class="std std-ref">grab a current “pot” file</span></a>
+and you type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ msgmerge fr.po FontForge.pot &gt;fr-new.po
+</pre></div>
+</div>
+<p>This will update your po file to contain any new strings for you to translate.
+It will also make guesses for these new strings. Some of these guesses are
+correct, some are very strange, so you will want to examine the guessed strings
+(they will be marked with the word “fuzzy” – emacs has a mode that makes
+checking these easy).</p>
+</div>
+<div class="section" id="testing-a-po-file">
+<span id="uitranslationnotes-testing"></span><h3>Testing a “po” file<a class="headerlink" href="#testing-a-po-file" title="Permalink to this headline">¶</a></h3>
+<p>Once you have completed your po file you will want to test it.</p>
+<ol class="arabic">
+<li><p>If you have a copy of the fontforge source distribution you can test it by</p>
+<ul>
+<li><p>copying your new file into the fontforge/po directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cp fr.po fontforge-20060819/fontforge/po
+</pre></div>
+</div>
+</li>
+<li><p>Reconfiguring fontforge, and installing it</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd fontforge-20060819
+$ ./configure
+$ make
+$ su
+# make install
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>Or, if you want to do things manually:</p>
+<ul>
+<li><p>First you need to compile it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ msgfmt -o fr.mo fr.po
+</pre></div>
+</div>
+<p>and create an “mo” file.</p>
+</li>
+<li><p>This file you will want to rename and move to the appropriate directory. If
+fontforge is installed in /usr/local/bin then you would say</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mv fr.mo /usr/local/share/locale/fr/LC_MESSAGES/FontForge.mo
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ol>
+<p>Then make sure your locale is set properly (and that your operating system has
+the support files it needs for that locale) and start fontforge. You should see
+your translation</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ LANG=fr_FR.UTF-8; export LANG
+$ fontforge -new
+</pre></div>
+</div>
+<img alt="../_images/fontview.fr.png" src="../_images/fontview.fr.png" />
+<hr class="docutils" />
+</div>
+</div>
+<div class="section" id="still-more-strings-to-translate">
+<span id="uitranslationnotes-more"></span><h2>Still more strings to translate!<a class="headerlink" href="#still-more-strings-to-translate" title="Permalink to this headline">¶</a></h2>
+<p>FontForge has some strings that do not fit into the standard gettext mechanism.
+These are strings for which fontforge wants to know all translations at all
+times. For exampe the truetype ‘name’ table encourages designers to provide a
+translation for the stylistic variant of the font into as many languages as
+possible. So if you had a Bold font it would be nice if the ‘name’ table
+contained: An English entry, “Bold”; A French entry, “Gras”; A German entry,
+“Fett”. To make this easier on the designer FontForge would like to have all
+translations of “Bold” built into it at all times, all translations of “Italic”,
+“Condensed”, and so forth.</p>
+<p><a class="reference internal" href="fontstyles.html"><span class="doc">There is a table of the stylistic names FontForge recognizes on the Font Info page.</span></a></p>
+<p>There is a second list of names for which FontForge would like multiple
+translations because these also appear in the ‘name’ table translated into as
+many languages as possible. These are the names of the mac’s Feature/Setting
+strings, and they may be found on
+<a class="reference external" href="http://developer.apple.com/fonts/Registry/index.html">Apple’s Font Feature registry</a>.</p>
+<p>Finally I would like to make it as easy as possible to embed the
+<a class="reference external" href="http://scripts.sil.org/OFL">OFL</a> into a font created by FontForge, and I
+would like to encourage its translation (And that of its accompanying FAQ) into
+as many languages as possible.</p>
+<p>SIL regards translation as important but adds the following caveats (in their
+<a class="reference external" href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;item_id=OFL-FAQ_web">FAQ</a>):</p>
+<blockquote>
+<div><p><strong>5.5 How about translating the license and the FAQ into other languages?</strong></p>
+<p>SIL certainly recognises the need for people who are not familiar with
+English to be able to understand the OFL and this FAQ better in their own
+language. Making the license very clear and readable is a key goal of the
+OFL.</p>
+<p>If you are an experienced translator, you are very welcome to help
+translating the OFL and its FAQ so that designers and users in your language
+community can understand the license better. But only the original English
+version of the license has legal value and has been approved by the
+community. Translations do not count as legal substitutes and should only
+serve as a way to explain the original license. SIL - as the author and
+steward of the license for the community at large - does not approve any
+translation of the OFL as legally valid because even small translations
+ambiguities could be abused and create problems.</p>
+<p>We give permission to publish unofficial translations into other languages
+provided that they comply with the following guidelines:</p>
+<ul>
+<li><p>put the following disclaimer in both English and the target language
+stating clearly that the translation is unofficial:</p>
+<blockquote>
+<div><p>“This is an unofficial translation of the SIL Open Font License into
+$language. It was not published by SIL International, and does not legally
+state the distribution terms for fonts that use the OFL. A release under
+the OFL is only valid when using the original English text.</p>
+<p>However, we recognize that this unofficial translation will help users and
+designers not familiar with English to understand the SIL OFL better and
+make it easier to use and release font families under this collaborative
+font design model. We encourage designers who consider releasing their
+creation under the OFL to read the FAQ in their own language if it is
+available.</p>
+<p>Please go to <a class="reference external" href="http://scripts.sil.org/OFL">http://scripts.sil.org/OFL</a> for the official version of the
+license and the accompanying FAQ.”</p>
+</div></blockquote>
+</li>
+<li><p>keep your unofficial translation current and update it at our request if
+needed, for example if there is any ambiguity which could lead to confusion.</p></li>
+</ul>
+<p>If you start such a unofficial translation effort of the OFL and its
+accompanying FAQ please let us know, thank you.</p>
+</div></blockquote>
+<p><a class="reference external" href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;item_id=OFL_web">The text of the current version of the OFL</a>.
+If anyone is interested in translation both the OFL and its FAQ
+<a class="reference external" href="mailto:fontforge-devel&#37;&#52;&#48;lists&#46;sourceforge&#46;net">please let me know</a> (via
+mailing list) and I will provide Web space for both. I had intended to include
+these translations in the font’s ‘name’ table, but have been asked not to
+because of the possible legal ramifications.</p>
+<p>At the moment (Feb 2007) OFL version 1.1 has just been released. I have
+collected the <a class="reference internal" href="OFL-Unofficial.html"><span class="doc">following unofficial translations</span></a>.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui.html">FontForge’s User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techref.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../appendices.html">Appendices</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ff-history.html">What on Earth Possessed me…</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diffs.html">Differences from Fontographer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files.html">Files used by FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errrecovery.html">Error Recovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nonbmp.html">Non-BMP Unicode bitmap fonts supported by FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quotations.html">Quotations used in the sample text for Printing</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">User Interface Translation Notes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#obtaining-the-strings">Obtaining the strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-and-modifying-a-po-file">Creating and Modifying a “po” file</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#updating-an-already-existing-po-file">Updating an already existing “po” file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#testing-a-po-file">Testing a “po” file</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#still-more-strings-to-translate">Still more strings to translate!</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="fontstyles.html">Font Styles in various languages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OFL-Unofficial.html">Unofficial translations of the OFL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bibliography.html">A meandering bibliography of font related things</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendices.html#japanese-documentation-outdated">Japanese documentation (outdated)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../appendices.html">Appendices</a><ul>
+      <li>Previous: <a href="quotations.html" title="previous chapter">Quotations used in the sample text for Printing</a></li>
+      <li>Next: <a href="fontstyles.html" title="next chapter">Font Styles in various languages</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

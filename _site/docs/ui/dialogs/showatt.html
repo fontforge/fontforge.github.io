@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Show Advanced Typographic Features &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Finding common font problems automagically" href="problems.html" />
+    <link rel="prev" title="The Mac State Machine Dialog" href="statemachine.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="show-advanced-typographic-features">
+<h1>Show Advanced Typographic Features<a class="headerlink" href="#show-advanced-typographic-features" title="Permalink to this headline">¶</a></h1>
+<img alt="../../_images/showatt.png" class="align-right" src="../../_images/showatt.png" />
+<p>This dialog shows the contents of some advanced typography tables (GDEF, GPOS
+and GSUB for opentype fonts, kern, lcar, morx, opbd and prop for Apple fonts) as
+far as fontforge understands them. The dialog is hierarchical with the typical
+boxed +/- signs used for opening and closing sub-levels.</p>
+<p>The GSUB and GPOS tables are organized as one might expect. Underneath each
+table is a list of scripts, underneath each script is a list of languages,
+underneath each language is a list of features, underneath each feature is a
+list of glyphs, generally with some description of what happens (in the example
+a right the ‘frac’ feature turns 1/4 into ¼). Some features are a little more
+complex (the ‘kern’ feature has a list of all glyphs that kern with the first
+glyph under the first glyph).</p>
+<p>The morx and kern tables are also broken up into scripts (Apple doesn’t treat
+scripts at all, but it makes the state machines smaller, so fontforge uses the
+concept anyway), but languages are omitted (Apple tables will be based on data
+for the default language).</p>
+<p>Pressing the right mouse button will bring up a popup menu which will allow you
+to save the contents of the dlg (as utf8 text).</p>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../ui.html">FontForge’s User Interface</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../mainviews.html">Main Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../menus.html">Menus</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../dialogs.html">Dialogs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#general">General</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#info">Info</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#editing">Editing</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../dialogs.html#lookups-and-kerning">Lookups and Kerning</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="lookups.html">Manipulating OpenType Lookups</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kernpairs.html">The Kerning Pairs dialog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="anchorcontrol.html">The Anchor Control dialog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="contextchain.html">Editing Contextual or Chaining Contextual lookups</a></li>
+<li class="toctree-l4"><a class="reference internal" href="statemachine.html">The Mac State Machine Dialog</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Show Advanced Typographic Features</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#validation">Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/HotKeys.html">Hot Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/fontforge-themes.html">FontForge color schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">X Resource Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xim.html">X Input Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">X Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../techref.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../../ui.html">FontForge’s User Interface</a><ul>
+  <li><a href="../dialogs.html">Dialogs</a><ul>
+      <li>Previous: <a href="statemachine.html" title="previous chapter">The Mac State Machine Dialog</a></li>
+      <li>Next: <a href="problems.html" title="next chapter">Finding common font problems automagically</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
