@@ -1,0 +1,1578 @@
+<HTML>
+<HEAD>
+  <!-- Created with AOLpress/2.0 -->
+  <!-- AP: Created on: 6-Dec-2000 -->
+  <!-- AP: Last modified: 24-Mar-2007 -->
+  <TITLE>Steps to creating a font...</TITLE>
+  <LINK REL="icon" href="ffanvil16.png">
+  <LINK REL="stylesheet" TYPE="text/css" HREF="/assets/css/old/FontForge.css">
+</HEAD>
+>
+<div style="margin:0; height: 4	em; padding: 0.5em; background: red; color:yellow; text-align:center; font-size:1em; font-family: sans-serif;">
+	<p><a href="http://fontforge.github.io" style="padding: 0.5em; color: yellow; font-weight: bold; text-decoration: none;" onmouseover="this.style.background='black';" onmouseout="this.style.background='red';" >This is part of the old website, it is no longer updated.</a></p>
+</div>
+<DIV id="in">
+  <H1 ALIGN=Center>
+    Tutorial<BR>
+    <A HREF="/docs/old/ja/editexample.html"><IMG SRC="/assets/img/old/flags/Nisshoki-Japan.png" WIDTH="39"
+	HEIGHT="26"></A>
+    <A HREF="http://edt1023.sayya.org/fontforge/editexample.html"><IMG SRC="/assets/img/old/flags/taiwan.png"
+	WIDTH="39" HEIGHT="26"></A>
+    <A HREF="/docs/old/de/editexample.html"><IMG SRC="/assets/img/old/flags/GermanFlag.png" WIDTH="39"
+	HEIGHT="26"></A>
+  </H1>
+  <P>
+  This tutorial is also available as a <A HREF="fontforge-tutorial.pdf">pdf
+  version</A>. If you wish to follow along with the tutorial,
+  <A HREF="tutorial.tgz">this bundle</A> should provide you with the basic
+  files you need.<BR>
+  I shall not presume to teach aesthetics, I concentrate solely on the mechanics
+  here.
+  <UL>
+    <LI>
+      <A HREF="editexample.html#FontCreate">Font Creation</A>
+    <LI>
+      <A HREF="editexample.html#CharCreate">Creating a glyph (tracing outlines)</A>
+    <LI>
+      <A HREF="editexample2.html#Navigating">Navigating to other glyphs</A>
+    <LI>
+      <A HREF="editexample2.html#Creating-o">On to the next glyph (consistent
+      directions)</A>
+    <LI>
+      <A HREF="editexample3.html#consistent-stems">Consistent serifs and stem
+      widths</A>
+    <LI>
+      <A HREF="editexample4.html#accents">Building accented glyphs</A>
+    <LI>
+      <A HREF="editexample4.html#ligature">Building a ligature</A>
+    <LI>
+      <A HREF="editexample4.html#lookups">Lookups and features</A>
+    <LI>
+      <A HREF="editexample5.html#metrics">Examining metrics</A>
+      <UL>
+	<LI>
+	  <A HREF="editexample5.html#baseline">Setting the baseline to baseline spacing
+	  of a font</A>
+      </UL>
+    <LI>
+      <A HREF="editexample5.html#Kerning">Kerning</A>
+    <LI>
+      <A HREF="editexample6.html#Variants">Glyph variants</A>
+    <LI>
+      <A HREF="editexample6.html#Marks">Anchoring marks</A>
+    <LI>
+      <A HREF="editexample6-5.html#Conditional">Conditional features</A>
+    <LI>
+      <A HREF="editexample7.html#checking">Checking your font</A>
+    <LI>
+      <A HREF="editexample7.html#Bitmaps">Bitmaps</A>
+    <LI>
+      <A HREF="editexample7.html#generating">Generating it</A>
+    <LI>
+      <A HREF="editexample7.html#Families">Font Families</A>
+    <LI>
+      <A HREF="editexample7.html#summary">Final Summary</A>
+    <LI>
+      <A HREF="editexample8.html">Bitmap strikes</A>
+    <LI>
+      <A HREF="scripting-tutorial.html">Scripting Tutorial</A>
+    <LI>
+      <A HREF="scriptnotes.html#Special">Notes on various scripts</A>
+  </UL>
+  <BLOCKQUOTE ID="lit">
+    <B><SMALL>NOBLEMAN:</SMALL></B><SMALL> </SMALL>Now this is what I call
+    workmanship. There is nothing on earth more exquisite than a bonny book,
+    with well-placed columns of rich black writing in beautiful borders, and
+    illuminated pictures cunningly inset. But nowadays, instead of looking at
+    books, people read them. A book might as well be one of those orders for
+    bacon and bran that you are scribbling.
+    <P ALIGN=Right>
+    -- Saint Joan, Scene IV<BR>
+    George Bernard Shaw, 1924
+  </BLOCKQUOTE>
+  <H2>
+    <A NAME="FontCreate">Font creation</A>
+  </H2>
+  <P>
+  First create a new font with the <CODE>New</CODE> command in the
+  <CODE>File</CODE> menu (or by using the <KBD>-new</KBD> argument at startup).
+  <P>
+  <IMG SRC="/assets/img/old/newfont.png" WIDTH="419" HEIGHT="189">
+  <P>
+  Give the font a name with the <CODE><A HREF="fontinfo.html">Font
+  Info</A></CODE> command from the <CODE>Element</CODE> menu. You use this
+  same command to set the copyright message and change the ascent and descent
+  (the sum of these two determines the size of the em square for the font,
+  and by convention is 1000 for postscript fonts, a power of two (often 2048
+  or 4096) for truetype fonts and 15,000 for Ikarus fonts). <SMALL>(Also if
+  you are planning on making a truetype font you might want to check the Quadratic
+  Splines checkbox to use the native truetype format. Editing is a little more
+  difficult in this mode though)</SMALL>
+  <P>
+  <IMG SRC="/assets/img/old/fontinfo.png" WIDTH="602" HEIGHT="534">
+  <P>
+  You may also wish to use Encoding-&gt;Reencode to change what characters
+  are available in your font. FontForge generally creates new fonts with an
+  ISO-8859-1, which contains (most of) the characters needed for Western Europe
+  (the latin letters, some accented letters, digits, and symbols).
+  <H2>
+    <A NAME="CharCreate">Creating a glyph</A>
+  </H2>
+  <P>
+  Once you have done that you are ready to start editing glyphs. Double click
+  on the entry for "C" in the font view above. You should now have an empty
+  Outline Glyph window:
+  <P>
+  <IMG SRC="/assets/img/old/C1.png" WIDTH="272" HEIGHT="283">
+  <P>
+  The outline glyph window contains two palettes snuggled up on the left side
+  of the window. The top palette contains a set of editing tools, and the bottom
+  palette controls which layers of the window are visible or editable.
+  <P>
+  The foreground layer contains the outline that will become part of the font.
+  The background layer can contain images or line drawings that help you draw
+  this particular glyph. The guide layer contains lines that are useful on
+  a font-wide basis (such as the x-height). Currently all layers are empty.
+  <P>
+  This window also shows the glyph's internal coordinate system with the x
+  and y axes drawn in light grey. A line representing the glyph's advance width
+  is drawn in black at the right edge of the window. FontForge assigns an advance
+  width of one em (in PostScript that will usually be 1000 units) to the advance
+  width of a new glyph.
+  <P>
+  Select the Import command from the File menu and import an image of the glyph
+  you are creating. It will be scaled so that it is as high as the em-square.
+  <P>
+  <IMG SRC="/assets/img/old/C2.png" WIDTH="272" HEIGHT="283">
+  <P>
+  Select the background layer as editable from the layers palette, move the
+  mouse pointer to one of the edges of the image, hold down the shift key,
+  depress and drag the corner until the image is a reasonable size, then move
+  the pointer onto the dark part of the image, depress the mouse and drag until
+  the image is properly positioned.
+  <P>
+  <IMG SRC="/assets/img/old/C3.png" WIDTH="272" HEIGHT="283">
+  <P>
+  If you have downloaded the
+  <A HREF="http://sourceforge.net/projects/autotrace/">autotrace program</A>
+  you can invoke <CODE>Element-&gt;AutoTrace</CODE> to generate an outline
+  from the image. But if you have not you must add points yourself. Change
+  the active layer to be the foreground, and go to the tools palette and select
+  the round (or curve) point. Then move the pointer to the edge of the image
+  and add a point. I find that it is best to add points at places where the
+  curve is horizontal or vertical, at corners, or where the curve changes
+  inflection (A change of inflection occurs in a curve like "S" where the curve
+  changes from being open to the left to being open on the right. If you follow
+  these rules hinting will work better.
+  <P>
+  <IMG SRC="/assets/img/old/C4.png" WIDTH="272" HEIGHT="283">
+  <P>
+  It is best to enter a curve in a clockwise fashion, so the next point should
+  be added up at the top of the image on the flat section. Because the shape
+  becomes flat here, a curve point is not appropriate, rather a tangent point
+  is (this looks like a little triangle on the tools palette). A tangent point
+  makes a nice transition from curves to straight lines because the curve leaves
+  the point with the same slope the line had when it entered.
+  <P>
+  <IMG SRC="/assets/img/old/C5.png" WIDTH="272" HEIGHT="283">
+  <P>
+  At the moment this "curve" doesn't match the image at all, don't worry about
+  that we'll fix it later, and anyway it will change on its own as we continue.
+  Note that we now have a control point attached to the tangent point (the
+  little blue x). The next point needs to go where the image changes direction
+  abruptly. Neither a curve nor a tangent point is appropriate here, instead
+  we must use a corner point (one of the little squares on the tools palette).
+  <P>
+  <IMG SRC="/assets/img/old/C6.png" WIDTH="272" HEIGHT="283">
+  <P>
+  As you see the old curve now follows the image a bit more closely. We continue
+  adding points until we are ready to close the path.
+  <P>
+  <IMG SRC="/assets/img/old/C7.png" WIDTH="272" HEIGHT="283">
+  <P>
+  Then we close the path just by adding a new point on top of the old start
+  point
+  <P>
+  <IMG SRC="/assets/img/old/C8.png" WIDTH="272" HEIGHT="283">
+  <P>
+  Now we must make the curve track the image more closely, to do this we must
+  adjust the control points (the blue "x"es). To make all the control points
+  visible select the pointer tool and double-click on the curve and then move
+  the control points around until the curve looks right.
+  <P>
+  <IMG SRC="/assets/img/old/C9.png" WIDTH="266" HEIGHT="279">
+  <P>
+  Finally we set width. Again with the pointer tool, move the mouse to the
+  width line on the right edge of the screen, depress and drag the line back
+  to a reasonable location.
+  <P>
+  <IMG SRC="/assets/img/old/C10.png" WIDTH="266" HEIGHT="279">
+  <P>
+  And we are done with this glyph.
+  <P>
+  If you are mathematically inclined you may be interested in the coordinates
+  that fontforge shows in the upper left of the window. Generally you can draw
+  glyphs quite happily without bothering about these, but for those who are
+  interested here is some basic info:
+  <UL>
+    <LI>
+      Each glyph has its own coordinate system.
+    <LI>
+      The vertical origin is the font's baseline (the line on which most latin
+      letters rest)
+    <LI>
+      The horizontal origin is the place where drawing the glyph will commence.
+      In the example above what gets drawn initially is empty space, that is fairly
+      common, and that empty space (the distance from the origin to the left edge
+      of the glyph) is called the left side bearing.
+    <LI>
+      The units of the coordinate system are determined by the em-size of the font.
+      This is the sum of the font's ascent and descent. In the example above the
+      font's ascent is 800 and descent is 200, and the ascent line (the one just
+      above the top of the "C") is 800 units from the baseline, while the descent
+      line is 200 units below.
+    <LI>
+      So a position of 282,408 (as above) means that the cursor is 282 units right
+      of the horizontal origin and 408 units above the baseline (or halfway between
+      baseline and ascent).
+  </UL>
+  <P>
+    <HR>
+  <H1 ALIGN=Center>
+    Tutorial #2
+  </H1>
+  <UL>
+    <LI>
+      <A HREF="editexample.html#FontCreate">Font Creation</A>
+    <LI>
+      <A HREF="editexample.html#CharCreate">Creating a glyph (tracing outlines)</A>
+    <LI>
+      <A HREF="editexample2.html#Navigating">Navigating to other glyphs</A>
+    <LI>
+      <A HREF="editexample2.html#Creating-o">On to the next glyph (consistent
+      directions)</A>
+    <LI>
+      <A HREF="editexample3.html#consistent-stems">Consistent serifs and stem
+      widths</A>
+    <LI>
+      <A HREF="editexample4.html#accents">Building accented glyphs</A>
+    <LI>
+      <A HREF="editexample4.html#ligature">Building a ligature</A>
+    <LI>
+      <A HREF="editexample4.html#lookups">Lookups and features</A>
+    <LI>
+      <A HREF="editexample5.html#metrics">Examining metrics</A>
+    <LI>
+      <A HREF="editexample5.html#Kerning">Kerning</A>
+    <LI>
+      <A HREF="editexample6.html#Variants">Glyph variants</A>
+    <LI>
+      <A HREF="editexample6.html#Marks">Anchoring marks</A>
+    <LI>
+      <A HREF="editexample6-5.html#Conditional">Conditional features</A>
+    <LI>
+      <A HREF="editexample7.html#checking">Checking your font</A>
+    <LI>
+      <A HREF="editexample7.html#generating">Generating it</A>
+    <LI>
+      <A HREF="editexample7.html#Families">Font Families</A>
+    <LI>
+      <A HREF="editexample7.html#summary">Final Summary</A>
+    <LI>
+      <A HREF="editexample8.html">Bitmap strikes</A>
+    <LI>
+      <A HREF="scripting-tutorial.html">Scripting Tutorial</A>
+    <LI>
+      <A HREF="scriptnotes.html#Special">Notes on various scripts</A>
+  </UL>
+  <H2>
+    <A NAME="Navigating">Navigating to glyphs.</A>
+  </H2>
+  <P>
+  The font view provides one way of navigating around the glyphs in a font.
+  Simple scroll around it until you find the glyph you need and then double
+  click on it to open a window looking at that glyph.
+  <P>
+  Typing a glyph will move to that glyph.
+  <P>
+  However some fonts are huge (Chinese, Japanese and Korean fonts have thousands
+  or even tens of thousands of glyphs) and scrolling around the font view is
+  a an inefficient way of finding your glyph. <CODE>View-&gt;Goto </CODE>provides
+  a simple dialog which will allow you to move directly to any glyph for which
+  you know the name (or encoding). If your font is a Unicode font, then this
+  dialog will also allow you to find glyphs by block name (ie. Hebrew rather
+  than Alef).
+  <P>
+  The simplest way to navigate is just to go to the next or previous glyph.
+  And <CODE>View-&gt;Next Char</CODE> and <CODE>View-&gt;Prev Char</CODE> will
+  do exactly that.
+  <H2>
+    <A NAME="Creating-o">Creating </A>the letter "o" -- consistent directions
+  </H2>
+  <P>
+  In the previous example the bitmap of the letter filled the canvas of the
+  image. And when FontForge imported the image it needed to be scaled once
+  in the program. But usually when you create the image of the letter you have
+  some idea of how much white space there should be around it. If your images
+  are exactly one em high then FontForge will scale them automatically to be
+  the right size. So in the following examples all the images have exactly
+  the right amount of white-space around them to fit perfectly in an em.
+  <P>
+  For the next example double click on the square in the font view that should
+  contain "o", and import "o_Ambrosia.png" into it.
+  <TABLE BORDER CELLPADDING="2">
+    <CAPTION>
+      Stages in editing "o"
+    </CAPTION>
+    <TR>
+      <TD><IMG SRC="/assets/img/old/o1.png" WIDTH="190" HEIGHT="287"></TD>
+      <TD><IMG SRC="/assets/img/old/o2.png" WIDTH="190" HEIGHT="287"></TD>
+      <TD><IMG SRC="/assets/img/old/o3.png" WIDTH="190" HEIGHT="287"></TD>
+      <TD><IMG SRC="/assets/img/old/o4.png" WIDTH="190" HEIGHT="287"></TD>
+    </TR>
+  </TABLE>
+  <P>
+  Notice that the first outline is drawn clockwise and the second
+  counter-clockwise. This change in drawing direction is important. Both PostScript
+  and TrueType require that the outer boundary of a glyph be drawn in a certain
+  direction (they happen to be opposite from each other, which is a mild
+  annoyance), within FontForge all outer boundaries must be drawn clockwise,
+  while all inner boundaries must be drawn counter-clockwise.
+  <P>
+  If you fail to alternate directions between outer and inner boundaries you
+  may get results like the one on the left
+  <IMG SRC="/assets/img/old/o-baddir.png" WIDTH="51" HEIGHT="28">. If you fail to draw the
+  outer contour in a clockwise fashion the errors are more subtle, but will
+  generally result in a less pleasing result once the glyph has been rasterized.
+  <P>
+  <SMALL><STRONG>TECHNICAL AND CONFUSING</STRONG>: the exact behavior of
+  rasterizers varies. Early PostScript rasterizers used a "non-zero winding
+  number rule" while more recent ones use an "even-odd" rule. TrueType uses
+  the "non-zero" rule. The description given above is for the "non-zero" rule.
+  The "even-odd" rule would fill the "o" correctly no matter which way the
+  paths were drawn (though there would probably be subtle problems with
+  hinting).</SMALL>
+  <P>
+  <SMALL>Filling using the <A NAME="even-odd">even-odd </A>rules that a line
+  is drawn from the current pixel to infinity (in any direction) and the number
+  of contour crossings is counted. If this number is even the pixel is not
+  filled. If the number is odd the pixel is filled. In the
+  <A NAME="non-zero">non-zero </A>winding number rule the same line is drawn,
+  contour crossings in a clockwise direction add 1 to the crossing count,
+  counter-clockwise contours subtract 1. If the result is 0 the pixel is not
+  filled, any other result will fill it.</SMALL>
+  <P>
+  The command <CODE><A HREF="elementmenu.html#Correct">Element-&gt;Correct
+  Direction</A></CODE> will look at each selected contour, figure out whether
+  it qualifies as an outer or inner contour and will reverse the drawing direction
+  when the contour is drawn incorrectly. 
+    <HR>
+  <H2>
+    <A NAME="consistent-stems">Creating </A>letters with consistent stem widths,
+    serifs and heights.
+  </H2>
+  <P>
+  Many Latin (Greek, Cyrillic) fonts have serifs, special terminators at the
+  end of stems. And in almost all LGC fonts there should only be a small number
+  of stem widths used (ie. the vertical stem of "l" and "i" should probably
+  be the same).
+  <P>
+  FontForge does not have a good way to enforce consistency, but it does have
+  various commands to help you check for it, and to find discrepancies.
+  <P>
+  Let us start with the letter "l" and go through the familiar process of importing
+  a bitmap and defining it's outline.
+  <TABLE BORDER CELLPADDING="2" WIDTH=600>
+    <TR VALIGN="Bottom">
+      <TD WIDTH=140><P ALIGN=Center>
+	<IMG SRC="/assets/img/old/l1.png" WIDTH="35" HEIGHT="153"></TD>
+      <TD WIDTH=140><IMG SRC="/assets/img/old/l2.png" WIDTH="134" HEIGHT="101"></TD>
+      <TD WIDTH=140><IMG SRC="/assets/img/old/l3.png" WIDTH="134" HEIGHT="101"></TD>
+      <TD WIDTH=140><IMG SRC="/assets/img/old/l4.png" WIDTH="134" HEIGHT="101"></TD>
+    </TR>
+    <TR VALIGN="Top">
+      <TD>The imported image</TD>
+      <TD>Use the magnify tool to examine the bottom serif, and note that it is
+	symmetric left to right.</TD>
+      <TD>Outline the right half of the serif</TD>
+      <TD>select the outline, invoke <CODE>Edit -&gt; Copy</CODE> then <CODE>Edit
+	-&gt; Paste</CODE>, and finally <CODE>Element -&gt; Transform</CODE>
+	<CODE>-&gt; Transform</CODE> and select <CODE>Flip</CODE> (from the pull
+	down list) and <CODE>check Horizontal</CODE></TD>
+    </TR>
+    <TR VALIGN="Bottom">
+      <TD><IMG SRC="/assets/img/old/l5.png" WIDTH="134" HEIGHT="101"></TD>
+      <TD><IMG SRC="/assets/img/old/l6.png" WIDTH="134" HEIGHT="101"></TD>
+      <TD><IMG SRC="/assets/img/old/l7.png" WIDTH="134" HEIGHT="101"></TD>
+      <TD><P ALIGN=Center>
+	<IMG SRC="/assets/img/old/l8.png" WIDTH="35" HEIGHT="153"></TD>
+    </TR>
+    <TR VALIGN="Top">
+      <TD>Drag the flipped serif over to the left until it snuggles up against
+	the left edge of the glyph</TD>
+      <TD COLSPAN=2>Deselect the path, and select one end point and drag it until
+	it is on top of the end point of the other half</TD>
+      <TD>Finish off the glyph</TD>
+    </TR>
+    <TR VALIGN="Bottom">
+      <TD></TD>
+      <TD><IMG SRC="/assets/img/old/l9.png" WIDTH="134" HEIGHT="101"></TD>
+      <TD><IMG SRC="/assets/img/old/l10.png" WIDTH="134" HEIGHT="101"></TD>
+      <TD></TD>
+    </TR>
+    <TR VALIGN="Top">
+      <TD>But let's do two more things. First let's measure the stem width, and
+	second let's mark the height of the "l"</TD>
+      <TD>Select the ruler tool from the tool palette, and drag it from one edge
+	of the stem to the other. A little window pops up showing the width is 58
+	units, the drag direction is 180 degrees, and the drag was -58 units
+	horizontally, and 0 units vertically.</TD>
+      <TD>Go to the layers palette and select the Guide radio box (this makes the
+	guide layer editable). Then draw a line at the top of the "l", this line
+	will be visible in all glyphs and marks the ascent height of this font.</TD>
+      <TD></TD>
+    </TR>
+  </TABLE>
+  <P>
+  Now let's do "i". This glyph looks very much like a short "l" with a dot
+  on top. So let's copy the "l" into the "i"; this will automatically give
+  us the right stem width and the correct advance width. The copy may be done
+  either from the font view (by selecting the square with the "l" in it and
+  pressing <CODE>Edit-&gt;Copy</CODE>) or from the outline view (by
+  <CODE>Edit-&gt;Select-&gt;Select All </CODE>and
+  <CODE>Edit-&gt;Copy</CODE>). Similarly the Paste may be done either in the
+  font view (by selecting the "i" square and pressing
+  <CODE>Edit-&gt;Paste</CODE>) or the outline view (by opening the "i" glyph
+  and pressing <CODE>Edit-&gt;Paste</CODE>).
+  <TABLE BORDER CELLPADDING="2" WIDTH=600>
+    <TR>
+      <TD><P ALIGN=Center>
+	<IMG SRC="/assets/img/old/i1.png" WIDTH="50" HEIGHT="170"></TD>
+      <TD><P ALIGN=Center>
+	<IMG SRC="/assets/img/old/i2.png" WIDTH="111" HEIGHT="170"></TD>
+      <TD><P ALIGN=Center>
+	<IMG SRC="/assets/img/old/i3.png" WIDTH="111" HEIGHT="170"></TD>
+      <TD><P ALIGN=Center>
+	<IMG SRC="/assets/img/old/i4.png" WIDTH="111" HEIGHT="170"></TD>
+    </TR>
+    <TR VALIGN="Top">
+      <TD>Import the "i" image, and copy the "l" glyph.</TD>
+      <TD>Select the top serif of the l</TD>
+      <TD>drag it down to the right height</TD>
+      <TD>go to the guide layer and add a line at the x-height</TD>
+    </TR>
+  </TABLE>
+  <P>
+  <IMG SRC="/assets/img/old/o5.png" WIDTH="85" HEIGHT="101" ALIGN="Right">Let's look briefly
+  back at the "o" we built before. You may notice that the "o" reaches a little
+  above the guide line we put in to mark the x-height (and a little below the
+  baseline). This is called overshoot and is an attempt to remedy an optical
+  illusion. A curve actually needs to rise about 3% (of its diameter) above
+  the x-height for it to appear on the x-height.<BR CLEAR=ALL>
+  <P>
+  Let's look at "k". Again we will copy an "l" into it and import an appropriate
+  image.
+  <TABLE BORDER CELLPADDING="2" WIDTH=600>
+    <TR>
+      <TD><P ALIGN=Center>
+	<IMG SRC="/assets/img/old/k1.png" WIDTH="87" HEIGHT="151"></TD>
+      <TD><P ALIGN=Center>
+	<IMG SRC="/assets/img/old/k2.png" WIDTH="87" HEIGHT="151"></TD>
+      <TD><P ALIGN=Center>
+	<IMG SRC="/assets/img/old/k3.png" WIDTH="87" HEIGHT="151"></TD>
+    </TR>
+    <TR VALIGN="Top">
+      <TD>Import the "k" image and copy the "l" glyph. Note that the x-height line
+	matches the "k" (as we would hope). Also note that the width of the "l" is
+	inappropriate for "k" so we'll have to select it and drag it over.</TD>
+      <TD>Select the knife tool from the palette, and cut the stem of the "l" shape
+	at appropriate points for "k".</TD>
+      <TD>Remove the splines between the cut points. An easy way to do this is
+	to grab the spline itself, (which selects its end points) and then do
+	<CODE>Edit -&gt; Clear</CODE>.</TD>
+    </TR>
+    <TR>
+      <TD><P ALIGN=Center>
+	<IMG SRC="/assets/img/old/k4.png" WIDTH="87" HEIGHT="151"></TD>
+      <TD><P ALIGN=Center>
+	<IMG SRC="/assets/img/old/k5.png" WIDTH="87" HEIGHT="151"></TD>
+      <TD><P ALIGN=Center>
+	<IMG SRC="/assets/img/old/k6.png" WIDTH="87" HEIGHT="151"></TD>
+    </TR>
+    <TR VALIGN="Top">
+      <TD>Select the end points and convert them into corner points with <CODE>Point
+	-&gt; Corner</CODE>.</TD>
+      <TD>Then draw in the outer contour.</TD>
+      <TD>And the inner contour. Finally do an <CODE>Edit -&gt; Select -&gt; Select
+	All </CODE>and an <CODE>Element -&gt; Correct Direction</CODE>.</TD>
+    </TR>
+  </TABLE>
+  <P>
+    <HR>
+  <H2>
+    <A NAME="accents">Building</A> accented glyphs
+  </H2>
+  <P>
+  Latin, Greek and Cyrillic all have a large complement of accented glyphs.
+  FontForge provides several ways to build accented glyphs out of base glyphs.
+  <P>
+  The most obvious mechanism is simple copy and paste:
+  <A HREF="editmenu.html#Copy">Copy</A> the letter "A" and
+  <A HREF="editmenu.html#Paste">Paste</A> it to "&Atilde;" then
+  <A HREF="editmenu.html#Copy">copy</A> the tilde accent and
+  <A HREF="editmenu.html#PasteInto">Paste it Into</A> "&Atilde;" (note Paste
+  Into is subtly different from Paste. Paste clears out the glyph before pasting,
+  while Paste Into merges what was in the glyph with the what is in the clipboard).
+  Then you open up "&Atilde;" and position the accent so that it appears properly
+  centered over the A.
+  <P>
+  This mechanism is not particularly efficient, if you change the shape of
+  the letter "A" you will need to regenerate all the accented glyphs built
+  from it. FontForge has the concept of a
+  <A HREF="overview.html#References">Reference</A> to a glyph. So you can Copy
+  a Reference to "A", and Paste it, the Copy a Reference to tilde and Paste
+  it Into, and then again adjust the position of the accent over the A.
+  <P>
+  Then if you change the shape of the A the shape of the A in "&Atilde;" will
+  be updated automagically -- as will the width of "&Atilde;".
+  <P>
+  But FontForge knows that "&Atilde;" is built out of "A" and the tilde accent,
+  and it can easily create your accented glyphs itself by placing the references
+  in "&Atilde;" and then positioning the accent over the "A". (The Unicode
+  consortium provides a database which lists the components of every accented
+  glyph in Unicode and FontForge uses this).
+  <P>
+  As an example, open the file: tutorial/Ambrosia.sfd, then select all the
+  glyphs at encodings 0xc0-0xff, and then press
+  <A HREF="elementmenu.html#Accented">Element-&gt;Build-&gt;Build Accented</A>
+  all the accented glyphs will magically appear (there are a few glyphs in
+  this range which are not accented, and they will remain blank).
+  <P>
+  FontForge has a heuristic for positioning accents (most accents are centered
+  over the highest point of the glyph), sometimes this will produce bad results
+  (if the one of the two stems of "u" is slightly taller than the other the
+  accent will be placed over it rather than being centered over the glyph),
+  so you should be prepared to look at your accented glyphs after creating
+  them. You may need to adjust one or two (or you may even want to redesign
+  your base glyphs slightly).
+  <H2>
+    <A NAME="ligature">Creating</A> a ligature
+  </H2>
+  <P>
+  Unicode contains a number of ligature glyphs (in latin we have: &AElig;,
+  OE, fi, etc. while in arabic there are hundreds). Again Unicode provides
+  a database listing the components of each standard ligature.
+  <P>
+  FontForge cannot create a nice ligature for you, but what it can do is put
+  all the components of the ligature into the glyph with
+  <A HREF="elementmenu.html#Accented">Element-&gt;Build-&gt;Build Composite</A>.
+  This makes it slightly easier (at least in latin) to design a ligature.
+  <TABLE BORDER CELLPADDING="2">
+    <CAPTION>
+      Steps to building a ligature
+    </CAPTION>
+    <TR>
+      <TD><P ALIGN=Center>
+	<IMG SRC="/assets/img/old/ffi-refs.png" ALT="ffi ligature as references" WIDTH="154" HEIGHT="277"></TD>
+      <TD><P ALIGN=Center>
+	<IMG SRC="/assets/img/old/ffi-unlink.png" WIDTH="154" HEIGHT="277" ALT="ffi after unlinking references"></TD>
+      <TD><P ALIGN=Center>
+	<IMG SRC="/assets/img/old/ffi-moved.png" WIDTH="154" HEIGHT="277" ALT="ffi after lowering first f"></TD>
+      <TD><P ALIGN=Center>
+	<IMG SRC="/assets/img/old/ffi-rmoverlap.png" ALT="ffi after doing remove overlap" WIDTH="154"
+	    HEIGHT="277"></TD>
+      <TD><P ALIGN=Center>
+	<IMG SRC="/assets/img/old/ffi-caret.png" ALT="ffi after adjusting ligature carets" WIDTH="154"
+	    HEIGHT="277"></TD>
+    </TR>
+    <TR VALIGN="Top">
+      <TD>Use the <A HREF="elementmenu.html#CharInfo">Element -&gt; Glyph Info</A>
+	dialog to name the glyph and mark it as a ligature. Then use
+	<A HREF="elementmenu.html#Accented">Element -&gt; Build -&gt; Build
+	Composite</A> to insert references to the ligature components.</TD>
+      <TD>Use the <A HREF="editmenu.html#Unlink">Edit-&gt; Unlink References</A>
+	command to turn the references into a set of contours.</TD>
+      <TD>Adjust the components so that they will look better together. Here the
+	stem of the first f has been lowered.</TD>
+      <TD>Use the <A HREF="elementmenu.html#Remove">Element -&gt; Remove Overlap</A>
+	command to clean up the glyph.</TD>
+      <TD>Finally drag the ligature caret lines from the origin to more appropriate
+	places between the components.</TD>
+    </TR>
+  </TABLE>
+  <P>
+  Some word processors will allow the editing caret to be placed inside a ligature
+  (with a caret position between each component of the ligature). This means
+  that the user of that word processor does not need to know s/he is dealing
+  with a ligature and sees behavior very similar to what s/he would see if
+  the components were present. But if the word processor is to be able to do
+  this it must have some information from the font designer giving the locations
+  of appropriate caret positions. As soon as FontForge notices that a glyph
+  is a ligature it will insert in it enough caret location lines to fit between
+  the ligature's components. FontForge places these on the origin, if you leave
+  them on the origin FontForge will ignore them. But once you have built your
+  ligature you might want to move the pointer tool over to the origin line,
+  press the button and drag one of the caret lines to its correct location.
+  (Only Apple Advanced Typography and OpenType support this).
+  <P>
+  There are a good many ligatures needed for the indic scripts, but Unicode
+  does not provide an encoding for them. If you wish to build a ligature that
+  is not part of Unicode you may do so. First <A HREF="faq.html#new-name">add
+  an unencoded glyph to your font</A> (or if your font is a Unicode font, you
+  could use a code point in the private use area), and name the glyph. The
+  name is important, if you name it correctly FontForge will be able to figure
+  out that it is a ligature and what its components are. If you want to build
+  a ligature out of the glyphs "longs", "longs" and "l" then name it
+  "longs_longs_l", if you want to build a ligature out of Unicode 0D15, 0D4D
+  and 0D15 then name it "uni0D15_uni0D4D_uni0D15".
+  <P>
+  Once you have named your ligature, and inserted its components (with Build
+  Composite), you probably want to open the glyph,
+  <A HREF="editmenu.html#Unlink">Unlink your References</A> and edit them to
+  make a pleasing shape (as above).
+  <H2>
+    <A NAME="lookups">Lookups and Features</A>
+  </H2>
+  <P>
+  <IMG SRC="/assets/img/old/fontinfo-lookups.png" WIDTH="602" HEIGHT="534" ALIGN="Right">Unfortunately
+  simply creating a ligature glyph is not enough. You must also include information
+  in the font to say that the glyph is a ligature, and to say what components
+  it is built from.
+  <P>
+  In OpenType this is handled by lookups and features. A lookup is a collection
+  of tables in the font which contain transformation information. A feature
+  is a collection of lookups and is a provides semantic information to the
+  world outside the font about what that set of lookups can be expected to
+  do. So in the example above the lookup would contain the information that
+  "f" + "f" + "i" should turn into "ffi", while the feature would say that
+  this is a standard ligature for the latin script.
+  <P>
+  So the first time you create a ligature glyph you will need to create a lookup
+  (and a lookup subtable) in which the information for that glyph will reside.
+  Any subsequent ligatures can probably share the same lookup and subtable.
+  <P>
+  (This may seem like overkill for latin ligatures, and perhaps it is, bt the
+  complexity is needed for more complex writing systems).
+  <P>
+  You would open the Lookups pane of the
+  <A HREF="fontinfo.html#Lookups">Element-&gt;FontInfo</A> command and press
+  the <CODE>[Add Lookup] </CODE>button. This will give you a new dialog in
+  which you can fill in the attributes of your new lookup.
+  <P>
+  <IMG SRC="/assets/img/old/AddLookup-Liga.png" WIDTH="439" HEIGHT="427" ALIGN="Left">You must
+  first choose the lookup type. For ligatures this should be "Ligature
+  Substitution". You may then bind this lookup to a feature, script and language
+  set. The "ffi" ligature is a standard ligature in latin typesetting so it
+  should be bound to the 'liga' tag, and the 'latn' script. (If you click on
+  the little box to the right of "liga" you will get a pulldown list of the
+  so-called "friendly names" for the features. "liga" corresponds to "Standard
+  Ligatures").
+  <P>
+  The language is a bit tricky. This ligature should probably be active for
+  all languages except Turkish that use the latin script (Turkish uses a dotlessi
+  and it is not clear whether the "i" in the "fi" and "ffi" ligatures has a
+  dot over it). So we want to list all languages but Turkish. That's a lot
+  of languages. The convention instead is that if a language isn't mentioned
+  explicitly anywhere in the font then that language will be treated as the
+  "default" language. So to make this feature not be active for Turkish, we'd
+  have to create some other feature which specifically mentioned Turkish in
+  its language list.
+  <P>
+  Underneath the feature list is a set of flags. In latin ligatures none of
+  these flags need be set. In Arabic one might want to set both "Right to Left"
+  and "Ignore Combining Marks".
+  <P>
+  Next the lookup must be given a name. This name is for your use and will
+  never be seen in the real font. The name must be distinct from the name of
+  any other lookup however.
+  <P>
+  Finally you get to decide whether you want the ligatures in this lookup to
+  be stored in afm files.
+  <P>
+  <IMG SRC="/assets/img/old/subtable-ffi.png" WIDTH="421" HEIGHT="215" ALIGN="Right">Once you
+  have created a lookup, you must create a subtable in that lookup. Select
+  the lookup line (in the Lookups pane of Font Info) and press <CODE>[Add
+  Subtable]</CODE>. This is a fairly simple dialog... you simply provide a
+  name for the sub-table, and then another dialog will pop up and you will
+  (finally) be able to store your ligature information.
+  <P>
+  <FONT COLOR="Red"><STRONG><BIG>CAVEAT: </BIG></STRONG></FONT>OpenType engines
+  will only apply features which they believe are appropriate for the current
+  script (in Latin scripts, Uniscribe will apply 'liga'). Even worse, some
+  applications may choose not to apply any features ever (Word does not do
+  ligatures in latin -- though this may have changed with the 2007 release?).
+  <A HREF="http://www.microsoft.com/typography/specs/default.htm">Microsoft
+  tries to document </A>what features they apply for which scripts in Uniscribe,
+  but that isn't very helpful since Word and Office have quite different behavior
+  than the default. 
+    <HR>
+  <H2>
+    <A NAME="metrics">Examining</A> and controlling metrics
+  </H2>
+  <P>
+  <IMG SRC="/assets/img/old/sidebearings.png" WIDTH="111" HEIGHT="191" ALIGN="Right">After
+  you have created the shapes of your glyphs you must next figure out the spacing
+  between glyphs. The space between any two glyph has two components, the space
+  after the first glyph, and the space before the second glyph. In a left to
+  right world these two are called the right side bearing and the left side
+  bearing respectively.
+  <P>
+  The left side bearing may be changed by the simple expedient of
+  <CODE>Edit-&gt;Select All</CODE> (in the outline view) and then dragging
+  the selected objects to the appropriate place. The right side bearing may
+  be changed by selecting the advance width line and adjusting it
+  appropriately.<BR CLEAR=ALL>
+  <P>
+  However it is generally better not to set the metrics of a single glyph in
+  isolation, you should see the glyph in the context of other glyphs and set
+  it from that perspective. Use the <CODE>Window-&gt;Open
+  <A HREF="metricsview.html">Metrics Window </A></CODE>command.<BR>
+  <IMG SRC="/assets/img/old/MetricsView.png" WIDTH="479" HEIGHT="331"><BR>
+  Any glyphs selected in the fontview (when you invoke the metrics view) will
+  be displayed in the metrics view. You may change which glyphs are displayed
+  by either typing new ones in to the text field at the top of the view, or
+  by dragging a glyph from the fontview.
+  <P>
+  From here you may adjust any glyph's metrics by typing into the textfields
+  below it, or you may select a glyph (by clicking on its image) and drag it
+  around (to adjust the left side bearing), or drag its width line (to adjust
+  its right side bearing).
+  <P>
+  If you want to generate a "typewriter" style font (where all glyphs have
+  the same width) execute an <CODE>Edit-&gt;Select All</CODE> from the fontview
+  and then <CODE>Metrics-&gt;Set Width</CODE>. This will set the widths of
+  all glyphs to the same value. After doing that you might also want to execute
+  <CODE>Metrics-&gt;Center in Width</CODE> to even out the left and right spacing
+  on each glyph.
+  <P>
+  <I><IMG SRC="/assets/img/old/autowidth.png" WIDTH="276" HEIGHT="268" ALIGN="Right"></I>If
+  all this manual operation seems too complicated, try
+  <CODE><A HREF="autowidth.html#AutoWidth">Metrics-&gt;Auto Width</A></CODE>.
+  This will automagically assign widths to glyphs. These widths are not up
+  to professional standards, but they are generally reasonable approximations.
+  <H3>
+    <A NAME="Vertical">Vertical</A> Metrics
+  </H3>
+  <P>
+  FontForge provides some support for the vertical metrics needed for CJK fonts.
+  First you must tell FontForge that this font should contain vertical metrics,
+  do this with <CODE>Element-&gt;Font Info-&gt;General-&gt;Has Vertical
+  Metrics</CODE>. Then in each outline glyph enable VMetrics in the Layers
+  palette.
+  <P>
+  You should now see a vertical advance line somewhere underneath your glyph.
+  You may drag this line just as you would the horizontal advance (width) line.
+  <H3>
+    Setting the <A NAME="baseline">baseline</A> to baseline spacing of a font.
+  </H3>
+  <P>
+  You might imagine that there would be an easy way to set this seemingly important
+  quantity. Unfortunately there is not.
+  <DL>
+    <DT>
+      In a PostScript Type1 font (or bare CFF font)
+    <DD>
+      There is no way to set this value.<BR>
+      At all, ever.<BR>
+      In traditional typography the inter-line spacing is 1em (which in FontForge
+      is the ascent+descent of a font). Some applications will use this. Other
+      applications will use the font's bounding box (summing the maximum ascender
+      height with the minimum descender depth) -- a very bad, but very common approach.
+    <DT>
+      In a TrueType or OpenType font
+    <DD>
+      Unfortunately this depends on the platform
+      <DL>
+	<DT>
+	  Mac
+	<DD>
+	  On a mac the baseline to baseline spacing is determined again by the bounding
+	  box values of the font, specified in the 'hhea' table, possibly modified
+	  by a linegap (Which you can set in FontForge with
+	  <A HREF="fontinfo.html">Element-&gt;FontInfo-&gt;OS/2</A>.
+	<DT>
+	  On Windows
+	<DD>
+	  According to the OpenType spec, the baseline to baseline distance is set
+	  by the values of Typographic Ascent and Descent of the 'OS/2' table. These
+	  can be set with
+	  <A HREF="fontinfo.html">Element-&gt;FontInfo-&gt;OS/2</A>, but are usually
+	  allowed to default to the Ascent and Descent values of FontForge -- they
+	  generally sum to 1em and are equivalent to the traditional unleaded
+	  default.<BR>
+	  Again this may be modified by a linegap field.<BR>
+	  Unfortunately Windows programs rarely follow the standard (which I expect
+	  doesn't supprise anyone), and generally they will use the font's bounding
+	  box as specified in the Win Ascent/Descent fields of the 'OS/2' table.
+	<DT>
+	  On linux/unix
+	<DD>
+	  I doubt there is any standard behavior. Unix apps will probably choose one
+	  of the above.
+      </DL>
+  </DL>
+  <P>
+  Typographically ept applications will allow users to adjust baseline to baseline
+  spacing, so the default value may not be all that relevant.
+  <H2>
+    <A NAME="Kerning">Kerning</A>
+  </H2>
+  <P>
+  If you are careful in setting the left and right side-bearings you can design
+  your font so that the spacing looks nice in almost all cases. But there are
+  always some cases which confound simple solutions.
+  <P>
+  Consider "<FONT FACE="helvetica">To</FONT>" or
+  "<FONT FACE="helvetica">Av</FONT>" here the standard choices are inappropriate.
+  The "<FONT FACE="helvetica">o</FONT>" will look better if it can slide more
+  to the left and snuggle under the top bar of the
+  "<FONT FACE="helvetica">T</FONT>". This is called kerning, and it is used
+  to control inter-glyph spacing on a pair-by-pair basis.
+  <TABLE BORDER CELLPADDING="2">
+    <CAPTION>
+      Kerning
+    </CAPTION>
+    <TR>
+      <TD><IMG SRC="/assets/img/old/To-unkerned.png" WIDTH="204" HEIGHT="323"></TD>
+      <TD><IMG SRC="/assets/img/old/To-kerned.png" WIDTH="204" HEIGHT="323"></TD>
+    </TR>
+  </TABLE>
+  <P>
+  <IMG SRC="/assets/img/old/addlookup-kern.png" WIDTH="439" HEIGHT="408" ALIGN="Right">In the
+  above example the left image shows the unkerned text, the right shows the
+  kerned text. To create a kerned pair in the metrics window, simply click
+  on the right glyph of the pair, the line (normally the horizontal advance)
+  between the two should go green (and becomes the kerned advance). Drag this
+  line around until the spacing looks nice.
+  <P>
+  Sadly that statement is a simplification... Before you can create a kerning
+  pair you must create a kerning lookup (see
+  <A HREF="editexample4.html#lookups">the section on lookups</A>). Once again
+  you bring up the Element-&gt;Font Info-&gt;Lookups pane and this time you
+  must select the GPOS (Glyph Positioning) tab at the top of the pane. Once
+  again you press <CODE>[Add Lookup]</CODE>. This time the lookup type is "Pairwise
+  Positioning", and the feature is "kern" (or perhaps "vkrn" if you want to
+  do vertical kerning).
+  <P>
+  Once you have created your lookup you again select it and press the [Add
+  Subtable] button (which asks you to name the subtable). Then FontForge will
+  ask you whether you want a subtable of kerning pairs or kerning classes.
+  <P>
+  If you have many glyphs which have similar kerning features you might wish
+  to create a set of <A HREF="metricsview.html#kernclass">kerning classes</A>
+  (which might say that A, &Agrave;, &Aacute;, &Acirc;, &Acirc;, &Atilde; and
+  &Auml; all kern alike). However for this example you want a kerning pair
+  subtable.<BR CLEAR=RIGHT>
+  <P>
+  <IMG SRC="/assets/img/old/subtable-to.png" WIDTH="415" HEIGHT="441" ALIGN="Left">Then FontForge
+  will popup a dialog allowing you to set the kerning subtable directly. You
+  may set your kerning pairs from here, though I prefer the metrics view myself
+  because you can see more glyphs and so get a better feel for the "color"
+  of the font.
+  <P>
+  (Some glyph combinations are better treated by
+  <A HREF="editexample4.html#ligature">creating a ligature </A>than by kerning
+  the letters)
+  <H3>
+    <A NAME="VKern">Vertical</A> Kerning
+  </H3>
+  <P>
+  FontForge has equivalent support for vertical kerning. It can read and write
+  vertical kerning information from and to truetype, opentype and svg fonts.
+  It allows you to create vertical kerning classes. The metrics window has
+  a vertical mode in which you can set vertical kerning pairs. Finally it has
+  a command which will copy horizontal kerning information to the vertically
+  rotated glyphs (That is, if the combination "A" "V" is horizontally kerned
+  by -200, then "A.vert" "V.vert" should be vertically kerned by -200.
+  <P>
+  (Vertical kerning is only available if the font has vertical metrics) 
+    <HR>
+  <H2>
+    <A NAME="Variants">Glyph</A> Variants
+  </H2>
+  <P>
+  In many scripts glyphs have several variant glyphs. In latin the most obvious
+  example is that every letter has both an upper case and a lower case variant.
+  A more esoteric example would be that in renaissance times the long-s variant
+  (of s) was used initially and medially in a word, while the short-s was only
+  used at the end of a word.
+  <P>
+  Most Arabic glyphs have four variants (initial, medial, final and isolated).
+  <P>
+  The digits often have several variants: tabular digits (where all digits
+  have the same advance width so that tables of numbers don't look ragged),
+  proportional digits (where each digit has a width appropriate to its shape)
+  and old-style or lower case digits
+  (<IMG SRC="/assets/img/old/lcdigits.png" WIDTH="76" HEIGHT="18" ALIGN="Middle">) where some
+  digits have descenders and others have ascenders.
+  <P>
+  Some of these variants are built into the encodings (the upper and lower
+  case distinction is), but in other cases you should provide extra information
+  in the font so that the word processor can be aware of the variants (Arabic
+  is midway between the two, the various forms are in the encoding, but you
+  need to provide extra information as well).
+  <P>
+  <IMG SRC="/assets/img/old/subtable-oldstyle.png" WIDTH="421" HEIGHT="287" ALIGN="Right">Let
+  us consider the case of the digits mentioned above. Assume that the glyph
+  called "one" contains the tabular variant of one, the glyph "one.prop" contains
+  the proportional variant and "one.oldstyle" contains the lower-case variant,
+  and so on for all the other digits. Before you do anything else you must
+  create two <A HREF="editexample4.html#lookups">lookups</A> and associated
+  subtables (I shan't go into that again. Here the lookup type is "Single
+  Substitution", and the features are "pnum" for Proportional Numbers and "onum"
+  for Oldstyle Figures. Also the digits aren't in any single script, but are
+  in many, so make this feature apply to multiple scripts (including "DFLT").
+  <P>
+  When FontForge brings up the dialog to fill in the oldstyle lookup subtable
+  notice that there is a button [Default Using Suffix:] followed by a text
+  field containing a suffix. Set the text field to "oldstyle" and press the
+  button. It will search through all glyphs in all the scripts of the feature
+  and find any "oldstyle" variants of them and populate the table with them.
+  <P>
+  <IMG SRC="/assets/img/old/glyphinfo-one.png" WIDTH="431" HEIGHT="310" ALIGN="Left">Sometimes
+  it makes more sense to think of all the substitutions available for a specific
+  glyph (rather than all substitutions in a specific lookup). So instead if
+  filling up the subtable dialog for "Proportional Numbers" let us instead
+  select "one" from the fontview,
+  <CODE><A HREF="charinfo.html#substitution">Element-&gt;Glyph Info</A></CODE>,
+  select the <CODE>Substitutions</CODE> tab and press the <CODE>&lt;New&gt;
+  </CODE>button.
+  <P>
+  (Note: Type0, Type1 and Type3 PostScript fonts have no notation to handle
+  this. You need to be creating an OpenType or TrueType font for these variants
+  to be output).
+  <H3>
+    <A NAME="Conditional">Conditional</A> Variants
+  </H3>
+  <P>
+  FontForge supports OpenType's Contextual Substitution and Chaining Contextual
+  Substitution sub-tables, and to a lesser extent, Apple's contextual glyph
+  substitution sub-table. This means that you can insert conditional variants
+  into your font. <A HREF="editexample6-5.html#Conditional">The next page</A>
+  will go into this in greater detail.
+  <H2>
+    <A NAME="Marks">Anchoring</A> marks
+  </H2>
+  <P>
+  Some scripts (Arabic, Hebrew) need vowel marks placed around the main text
+  glyphs. Other scripts (some variants of Latin and Greek) have so many possible
+  accent combinations that having preassembled glyphs for all combinations
+  is unwieldy.
+  <P>
+  In OpenType (which includes MicroSoft's TrueType fonts) it is possible to
+  indicate on all base glyphs where marks should attach, and on all marks where
+  the base glyphs should attach. Thus one could put an anchor centered above
+  a lowercase-a indicating that all accents (acute, grave, umlaut, circumflex,
+  tilde, macron, ring, caron, ...) should attach there, and underneath all
+  the accents one could put another anchor so that when the two glyphs are
+  adjacent in the text the word-processor will know where to place the accent
+  so that it rides above the "a".
+  <TABLE>
+    <TR>
+      <TD><IMG SRC="/assets/img/old/a_with_anchor.png" WIDTH=104 HEIGHT=208></TD>
+      <TD>+</TD>
+      <TD><IMG SRC="/assets/img/old/grave_with_anchor.png" WIDTH=66 HEIGHT=208></TD>
+      <TD>=&gt;</TD>
+      <TD><IMG SRC="/assets/img/old/agrave_anchored.png" WIDTH=104 HEIGHT=208></TD>
+    </TR>
+  </TABLE>
+  <P>
+  Not all accents ride centered above the letter (the dot and ogonek ride below
+  the letter), so you may need more than one anchor for different styles of
+  attachment.
+  <P>
+  Finally some letters can have multiple attachments, unicode U+1EA4, for example,
+  is an A with a circumflex and an acute. Normally the circumflex and the acute
+  will attach at the same point, which would be ugly and confusing. Instead
+  we create a different kind of anchor, a mark to mark anchor, on the circumflex
+  and allow the acute accent to attach to that.
+  <P>
+  Before one can create an anchor in a glyph one must (of course) create a
+  lookup and subtable. This is another Glyph Positioning lookup (so you enter
+  it in the GPOS pane). Once you have created the subtable you will be presented
+  with another dialog asking for anchor classes, you must create an
+  <A HREF="overview.html#Anchors">anchor class</A> for each type of attachment
+  (thus in the case of A above with two types of attachments (one above and
+  one below) you would create two anchor classes.
+  <P>
+  Then for each glyph in which an attachment will be made, you should first
+  click at the point where the anchor is to be created and then bring up the
+  <CODE><A HREF="pointmenu.html#AddAnchor">Point-&gt;Add Anchor</A></CODE>
+  dialog.
+  <P>
+  You can examine (and correct) how a glyph fits to any others that combine
+  with it by using the
+  <CODE><A HREF="viewmenu.html#AnchorControl">View-&gt;Anchor
+  Control...</A></CODE> command.
+  <P>
+  <FONT COLOR="Red"><STRONG>A warning about mark attachments:</STRONG></FONT>
+  Not all software supports them. And even more confusing software may support
+  them for some scripts and not for others. 
+    <HR>
+  <H2>
+    <A NAME="Conditional">Conditional</A> Features
+  </H2>
+  <P>
+  OpenType and Apple fonts both provide contextual features. These are features
+  which only take place in a given context and are essential for typesetting
+  Indic and Arabic scripts. In OpenType a context is specified by a set of
+  patterns that are tested against the glyph stream of a document. If a pattern
+  matches then any substitutions it defines will be applied. In an Apple font,
+  the context is specified by a state machine -- a mini program which parses
+  and transforms the glyph stream.
+  <P>
+  Conditional features may involve substitutions, ligatures or kerning (and
+  some more obscure behaviors). First I shall provide an example of a contextual
+  substitution, later of <A HREF="editexample6-5.html#Greek">contextual
+  ligatures</A>.
+  <P>
+  <IMG SRC="/assets/img/old/bed-script.png" WIDTH="259" HEIGHT="81" ALIGN="Right">Instead of
+  an Indic or Arabic example, let us take something I'm more familiar with,
+  the problem of typesetting a latin script font where the letters ``b,'' ``o,''
+  ``v'' and ``w'' join their following letter near the x-height, while all
+  other letters join near the baseline. Thus we need two variants for each
+  glyph, one that joins (on the left) at the baseline (the default variant)
+  and one which joins at the x-height. Let us call this second set of letters
+  the ``high'' letters and name them ``a.high,'' ``b.high'' and so forth.
+  <H3>
+    <A NAME="OpenType">OpenType</A> Example
+  </H3>
+  <P>
+  <TABLE BORDER CELLPADDING="2" ALIGN="Center" BGCOLOR="#ffffa0" WIDTH="80%">
+    <CAPTION>
+      <FONT COLOR="Red"> <STRONG>Warning</STRONG></FONT>
+    </CAPTION>
+    <TR>
+      <TD >The following example may not work! The font tables produced by it are
+	all correct, but the designers of OpenType (or its implementors) decided
+	that the latin script does not need complex conditional features and many
+	implementations of OpenType do not support them for latin. This is not even
+	mentioned in the standard, but is hidden away in supplemental information
+	on microsoft's site.
+	<P>
+	Why do I provide an example which doesn't work? It's the best I can do. If
+	I knew enough about Indic or Arabic typesetting I would provide an example
+	for those scripts. But I don't. The procedures are the same. If you follow
+	them for some other scripts they will work.
+	<P>
+	On some systems and in some applications 'calt' is supported for latn and
+	this example will work. On other systems/applications the example can be
+	made to work by replacing the 'calt' feature tag (conditional alternatives)
+	with a Required tag (but I gather that is now deprecated).</TD>
+    </TR>
+  </TABLE>
+  <P>
+  We divide the set of possible glyphs into three classes: the letters ``bovw'',
+  all other letters, and all other glyphs. We need to create two patterns,
+  the first will match a glyph in the ``bovw'' class followed by another glyph
+  in the ``bovw'' class, while the second will match a glyph in the ``bovw''
+  class followed by any other letter. If either of these matches the second
+  glyph should be transformed into its high variant.
+  <UL>
+    <LI>
+      [bovw] [bovw] =&gt; Apply a substitution to second letter
+    <LI>
+      [bovw] &lt;any other letter&gt; =&gt; Apply a substitution to the second
+      letter
+  </UL>
+  <P>
+  (You might wonder why I don't just have a class of all letters and use one
+  rule instead of two? Because in this case all my classes must be disjoint,
+  I mayn't have one glyph appearing in two classes).
+  <P>
+  The first thing we must do is create a simple substitution mapping each low
+  letter to its high variant. This is a "Simple Substitution" lookup, but it
+  will not be attached to any feature, instead it will be invoked by a contextual
+  lookup. Let us call this lookup "high". We must (of course) create a subtable
+  to go with our lookup, and we can use the [Default with Suffix:] button to
+  fill it up with the high variants.
+  <P>
+  The tricky part is defining the context. This is done by defining yet another
+  lookup, a contextual chaining lookup which should be associated with a 'calt'
+  feature. And of course we want an associated subtable). This will pop up
+  a series of dialogs to edit a contextual subtable
+  <P>
+  <IMG SRC="/assets/img/old/ott2_5.png" WIDTH="329" HEIGHT="263" ALIGN="Left">The first dialog
+  allows you to specify the overall format of the substitution. We want a class
+  based system -- we've already mentioned what the glyph classes will
+  be.<BR CLEAR=ALL>
+  <P>
+  <IMG SRC="/assets/img/old/ott3.png" WIDTH="330" HEIGHT="357" ALIGN="Right">The next dialog
+  finally shows something interesting. At the top are a series of patterns
+  to match and substitutions that will be applied if the string matches. Underneath
+  that are the glyph classes that this substitution uses. A contextual chaining
+  dialog divides the glyph stream into three categories: those glyphs before
+  the current glyph (these are called backtracking glyphs), the current glyph
+  itself (you may specify more than one), and this (these) glyphs may have
+  simple substitutions applied to them, and finally glyphs after the current
+  glyph (these are called lookahead glyphs).
+  <P>
+  Each category of glyphs may divide glyphs into a different set of classes,
+  but in this example we use the same classes for all categories (this makes
+  it easier to convert the substitution to Apple's format). The first line
+  (in the ``List of lists'' field) should be read thus: If a backtracking glyph
+  (the glyph before the current one) in class 1 is followed by the current
+  glyph in class 2, then location 0 --the only location -- in the match string
+  (that is the current glyph) should have simple substitution `high' applied
+  to it.
+  <P>
+  If you look at the glyph class definitions you will see that class 1 includes
+  those glyphs which must be followed by a high variant, so this seems reasonable.
+  <P>
+  The second line is similar except that it matches glyphs in class 1. Looking
+  at the class definitions we see that classes 1 &amp; 2 include all the letters,
+  so these two lines mean that if any letter follows one of ``bovw'' then that
+  letter should be converted to its `high' variant. <BR CLEAR=ALL>
+  <P>
+  <IMG SRC="/assets/img/old/ott4.png" WIDTH="330" HEIGHT="357" ALIGN="Left">To edit a glyph
+  class simply double click on it. To create a new one press the [New] button
+  (under the class list). This produces another dialog showing all the names
+  of all the glyphs in the current class. Pressing the [Select] button will
+  set the selection in the font window to match the glyphs in the class, while
+  the [Set] button will do the reverse and set the class to the selection in
+  the font window. These provide a short cut to typing in a lot of glyph names.
+  <P>
+  Pressing the [Next] button defines the class and returns to the overview
+  dialog. <BR CLEAR=ALL>
+  <P>
+  <IMG SRC="/assets/img/old/ott3.png" WIDTH="330" HEIGHT="357" ALIGN="Right">To edit a pattern
+  double click on it, or to create a new one press the [New] button (under
+  the List of lists). Again the pattern string is divided into three categories,
+  <IMG SRC="/assets/img/old/ott5.png" WIDTH="330" HEIGHT="357" ALIGN="Left">those glyphs before
+  the current one, the current one itself, and any glyphs after the current
+  one. You choose which category of the pattern you are editing with the tabs
+  at the top of the dialog.
+  <P>
+  Underneath these is the subset of the pattern that falls within the current
+  category, the classes defined for this category, and finally the substitutions
+  for the current glyph(s). Clicking on one of the classes will add the class
+  number to the pattern.
+  <P>
+  To edit a substitution double click on it, or to create a new one press the
+  [New] button (under ``An ordered list...''). The sequence number specifies
+  which glyph among the current glyphs should be modified, and the tag specifies
+  a four character substitution name<BR CLEAR=ALL>
+  <P>
+  <FONT COLOR="Red"><STRONG>A warning about contextual
+  behavior:</STRONG></FONT> Not all software supports them. And even more confusing
+  software may support them for some scripts and not for others.
+  <H3>
+    <A NAME="Apple">Apple</A> advanced typography
+  </H3>
+  <P>
+  Apple specifies a context with a finite state machine, which is essentially
+  a tiny program that looks at the glyph stream and decides what substitutions
+  to apply. Each state machine has a set of glyph class definitions (just as
+  in the OpenType example), and a set of states. The process begins in state
+  0 at the start of the glyph stream. The computer determines what class the
+  current glyph is in and then looks at the current state to see how it will
+  behave when given input from that class. The behavior includes the ability
+  to change to a different state, advancing the input to the next glyph, applying
+  a substitution to either the current glyph or a previous one (the ``marked''
+  glyph).
+  <P>
+  <IMG SRC="/assets/img/old/sm-picture.png" WIDTH="386" HEIGHT="130" ALIGN="Right">Using the
+  same example of a latin script font... We again need a simple substitution
+  to convert each letter into its high alternate. The process is the same as
+  it was for OpenType, and indeed we can use the same substitution. Again we
+  divide the glyphs into three classes (Apple gives us some extra classes whether
+  we want them or no, but conceptually we use the same three classes as in
+  the OpenType example). We want a state machine with two states (again Apple
+  gives us an extra state for free, but we shall ignore that), one is the start
+  state (the base state -- where nothing changes), and the other is the state
+  where we've just read a glyph from the ``bovw'' class. <BR CLEAR=ALL>
+  <P>
+  <IMG SRC="/assets/img/old/asm1.png" WIDTH="439" HEIGHT="427" ALIGN="Left"> Apple Advanced
+  Typography does not quite fit into the OpentType concepts of lookups and
+  features, but it is close enough that I sort of force it to. So once again
+  we create a GSUB lookup. This time the lookup type is "Mac Contextual State
+  Machine", and the feature is actually a mac feature/setting, two numbers.
+  When we create a new subtable of this type we get a state machine dialog,
+  as shown below.
+  <P>
+  <IMG SRC="/assets/img/old/asm2.png" WIDTH="309" HEIGHT="381" ALIGN="Right"> At the top of
+  the dialog we see a set of class definitions, and at the bottom is a
+  representation of the state machine itself. <BR CLEAR=Left>
+  <P>
+  <IMG SRC="/assets/img/old/asm3.png" WIDTH="309" HEIGHT="206" ALIGN="Left">Double clicking
+  on a class brings up a dialog similar to that used in OpenType<BR CLEAR=Right>
+  <P>
+  <IMG SRC="/assets/img/old/asm4.png" WIDTH="196" HEIGHT="307" ALIGN="Right"> Clicking on a
+  transition in the state machine (there is a transition for each state / class
+  combination) produces a transition dialog. This controls how the state machine
+  behaves when it is in a given state and receives a glyph in a given class.
+  In this example it is in state 2 (which means it has already read a ``bovw''
+  glyph), and it has received a glyph in class 4 (which is another ``bovw''
+  glyph). In this case the next state will be state 2 again (we will have just
+  read a new ``bovw'' glyph), read another glyph and apply the ``high''
+  substitution to the current glyph.
+  <P>
+  At the bottom of the dialog are a series of buttons that allow you to navigate
+  through the transitions of the state machine.
+  <P>
+  Pressing [OK] many times will extract you from this chain of dialogs and
+  add a new state machine to your font.<BR CLEAR=ALL>
+  <H2>
+    OpenType, <A NAME="Greek">Greek</A> ligatures
+  </H2>
+  <P>
+  Greek has a character (U+03D7) which is equivalent to the Latin ampersand.
+  Just as the ampersand is (originally) a ligature of "E" and "t", so U+03D7
+  is a ligature of "kappa" and "iota". However this ligature should only be
+  used if "kappa" and "iota" make up a word unto themselves, it should not
+  be used for more normal occurances of the two within a longer word.
+  <P>
+  <IMG SRC="/assets/img/old/kappa_iota-lookup.png" WIDTH="239" HEIGHT="315" ALIGN="Right">So
+  the first thing to do is create the ligature itself. Add the glyph for U+03D7,
+  and then create a ligature lookup and subtable (with
+  <CODE><A HREF="fontinfo.html#Lookups">Element-&gt;Font
+  Info-&gt;Lookups)</A></CODE> to bind U+03D7 to be a ligature of "kappa" and
+  "iota". This lookup will never be used directly -- only under the control
+  of another, a conditional feature -- so we don't give it a feature tag.<BR>
+  <IMG SRC="/assets/img/old/kappa_iota-subtable.png" WIDTH="292" HEIGHT="172">
+  <P>
+  Next the conditional bit.
+  <P>
+  I'm going to use the notation &lt;letters&gt; to represent a class consisting
+  of all greek letters.
+  <OL>
+    <LI>
+      &lt;letters&gt; kappa iota =&gt; no substitution
+    <LI>
+      kappa iota &lt;letters&gt; =&gt; no substitution
+    <LI>
+      kappa iota =&gt; apply the ligature "WORD"
+  </OL>
+  <P>
+  <SMALL>(Now as I read the standard all these rules could be put into one
+  subtable, and the font validation tools I have agree with me -- but the layout
+  engines do not. The layout engines seem to insist that each rule live in
+  its own subtable. This is inconvenient (the classes must be defined in each
+  subtable) but it seems to work.)</SMALL>
+  <P>
+  These rules will be executed in order, and the first one that matches the
+  input text will be the (one and only) rule applied. Consider these three
+  strings, <IMG SRC="/assets/img/old/alphakappaiota.png" WIDTH="23" HEIGHT="12">,
+  <IMG SRC="/assets/img/old/kappaiotatheta.png" WIDTH="24" HEIGHT="12">,
+  <IMG SRC="/assets/img/old/alphakappaiotatheta.png" WIDTH="30" HEIGHT="12"> all contain kappa
+  and iota but each contains more letters around them, so none should be replaced
+  by the ligature.
+  <UL>
+    <LI>
+      The first string, <IMG SRC="/assets/img/old/alphakappaiota.png" WIDTH="23" HEIGHT="12">,
+      will match the first rule above (it contains letters before the kappa iota
+      sequence) and no substitution will be done. It also matches the third rule,
+      but we never get that far.
+    <LI>
+      The second string, <IMG SRC="/assets/img/old/kappaiotatheta.png" WIDTH="24" HEIGHT="12">,
+      will match the second rule above (it contains letters after the sequence)
+      and again no substitution will be done. It would match the third rule, but
+      we stop with the first match.
+    <LI>
+      The third string, <IMG SRC="/assets/img/old/alphakappaiotatheta.png" WIDTH="30" HEIGHT="12">,
+      matches all the rules, but since the search stops at the first match, only
+      the first rule will be applied, and no substitution will be done.
+    <LI>
+      The string, <IMG SRC="/assets/img/old/spacekappaiotaspace.png" WIDTH="29" HEIGHT="12">, matches
+      neither of the first two rules but does match the last, so here the ligature
+      will be formed.
+  </UL>
+  <P>
+  You might wonder why I don't just have one rule
+  <OL>
+    <LI>
+      &lt;any non-letter&gt; kappa iota &lt;any non-letter&gt; =&gt; apply our
+      ligature
+  </OL>
+  <P>
+  It seems much simpler.
+  <P>
+  Well there's one main reason:
+  <UL>
+    <LI>
+      This does not work if the kappa is at the beginning of the input stream (it
+      will not be preceded by any glyphs, but might still need replacing), or iota
+      at the end.
+  </UL>
+  <P>
+  Now how do we convert these rules into a contextual lookup?
+  <P>
+  <IMG SRC="/assets/img/old/kappa_iota-context.png" WIDTH="246" HEIGHT="315" ALIGN="Left">We
+  use <CODE><A HREF="fontinfo.html#Contextual">Element-&gt;Font
+  Info-&gt;Lookups-&gt;Add Lookup</A></CODE> to create a new contextual chaining
+  lookup. This is the top level lookup and should be bound to a feature tag
+  in the Greek script.
+  <P>
+  We have three rules, each rule lives in its own subtable, so we will create
+  three subtables, one for each. The order in which these subtables n the Lookups
+  pane is important because that is the order in which the the rules they contain
+  will be executed. We must insure that that final rule which actually invokes
+  the ligature is the last one executed (and the last one in the
+  list).<BR CLEAR=ALL>
+  <TABLE BORDER CELLPADDING="2">
+    <TR VALIGN="Top">
+      <TD><IMG SRC="/assets/img/old/hligbyclasses.png" WIDTH="330" HEIGHT="248"><BR>
+	Since we are planning on using the class of all greek letters we will want
+	to use a class format for this feature. Then we press the <CODE>[Next&gt;]
+	</CODE>button.</TD>
+      <TD><IMG SRC="/assets/img/old/emptyhlig.png" WIDTH="330" HEIGHT="337"><BR>
+	The main match will be on the letters kappa and iota in all three rules,
+	so we need one class for each of them. So in the Match Classes area we press
+	the <CODE>[New]</CODE> button...</TD>
+    </TR>
+    <TR VALIGN="Top">
+      <TD><IMG SRC="/assets/img/old/hligkappaclass.png" WIDTH="330" HEIGHT="195"><BR>
+	And type in the word "kappa" and press <CODE>[Next&gt;]</CODE></TD>
+      <TD><IMG SRC="/assets/img/old/hligkappa.png" WIDTH="330" HEIGHT="362"><BR>
+	Now we have a class containing the single glyph "kappa". We want to do the
+	same thing for "iota" so we press <CODE>[New] </CODE>again.</TD>
+    </TR>
+    <TR VALIGN="Top">
+      <TD><IMG SRC="/assets/img/old/hligiotaclass.png" WIDTH="330" HEIGHT="195"><BR>
+	Again type in "iota" and press <CODE>[Next&gt;]</CODE></TD>
+      <TD><IMG SRC="/assets/img/old/hligkappaiota.png" WIDTH="330" HEIGHT="362"><BR>
+	Now we have all the classes we need here. We still need to create classes
+	for the lookahead and backtrack. We only need one class for these groups
+	and that class will consist of all greek letters.</TD>
+    </TR>
+    <TR VALIGN="Top">
+      <TD><IMG SRC="/assets/img/old/hligback.png" WIDTH="330" HEIGHT="362"><BR>
+	The check box <CODE>[*] Same as Match Classes</CODE> is set, but we don't
+	want that, we want our own classes here. So uncheck it.</TD>
+      <TD><IMG SRC="/assets/img/old/hligbacknomatch.png" WIDTH="330" HEIGHT="362"><BR>
+	Now the buttons become active and we can create a new class by pressing
+	<CODE>[New]</CODE></TD>
+    </TR>
+    <TR VALIGN="Top">
+      <TD><IMG SRC="/assets/img/old/allgreek.png" WIDTH="313" HEIGHT="276"><BR>
+	Now you could go back to the font view and select all of the greek letters,
+	and then press the [Set From Font] button in the class dialog.</TD>
+      <TD><IMG SRC="/assets/img/old/hliggreekclass.png" WIDTH="330" HEIGHT="228"><BR>
+	But in this case the class we are interested in (all the greek letters) is
+	built it, and you can select it from the Standard Class pulldown list (Letters
+	in script(s)) Then press <CODE>[Next&gt;]</CODE>.</TD>
+    </TR>
+    <TR VALIGN="Top">
+      <TD><IMG SRC="/assets/img/old/hliggreekback.png" WIDTH="330" HEIGHT="357"></TD>
+      <TD VALIGN="Top"><IMG SRC="/assets/img/old/hliggreekahead.png" WIDTH="330" HEIGHT="357"><BR>
+	Then go through the same process for the look ahead classes (adding one class
+	which consists of all the greek letters.</TD>
+    </TR>
+    <TR VALIGN="Top">
+      <TD>Now we have all our classes defined and are finally ready to create the
+	patterns for our rules. So underneath "List of lists of class numbers" press
+	the <CODE>[New] </CODE>button.<BR>
+	<IMG SRC="/assets/img/old/hlignewrule.png" WIDTH="330" HEIGHT="357"></TD>
+      <TD>The first rule begins with all the greek letters in the backtrack area,
+	so click on the "Backtrack" tab, and then press on the class consisting of
+	all the greek letters. This puts the class number into the pattern area (the
+	List of class numbers)<BR>
+	<IMG SRC="/assets/img/old/hligbackrule.png" WIDTH="330" HEIGHT="357"></TD>
+    </TR>
+    <TR VALIGN="Top">
+      <TD>In the match area we want to match kappa and then iota, so click on the
+	Match tab, and then on the entries for "kappa" and "iota".<BR>
+	<IMG SRC="/assets/img/old/hligrule.png" WIDTH="330" HEIGHT="357"><BR>
+	This rule has no substitutions, so leave the bottom area blank and press
+	<CODE>[Next&gt;]</CODE>.</TD>
+      <TD>We are done with the first rule. It says:
+	<UL>
+	  <LI>
+	    The previous character should match class 1 of the backtrack classes (and
+	    that class contains all greek letters, which is what we want)
+	  <LI>
+	    The current character should match class 1 of the match classes (and that
+	    class contains "kappa")
+	  <LI>
+	    The next character should match class 2 of the match classes (which is iota)
+	  <LI>
+	    And if the match is successful, do absolutely nothing.
+	</UL>
+	<P>
+	<IMG SRC="/assets/img/old/hligbackruledone.png" WIDTH="330" HEIGHT="357"><BR>
+	We've got two more rules though, so press <CODE>[OK] </CODE>and then <CODE>[Add
+	Subtable]</CODE>. Then go through the process of adding all the classes,
+	and then add the match string for this rule.</TD>
+    </TR>
+    <TR VALIGN="Top">
+      <TD>We are done with the second rule. It says:
+	<UL>
+	  <LI>
+	    The current character should match class 1 of the match classes (and that
+	    class contains "kappa")
+	  <LI>
+	    The next character should match class 2 of the match classes (which is iota)
+	  <LI>
+	    The character after that should match class 1 of the lookahead classes (and
+	    that class contains all the greek letters)
+	  <LI>
+	    And if the match is successful, do absolutely nothing.
+	</UL>
+	<P>
+	<IMG SRC="/assets/img/old/hligaheadruledone.png"><BR>
+	Press <CODE>[OK] </CODE>and<CODE> [Add Subtable] </CODE>for the final rule.</TD>
+      <TD><IMG SRC="/assets/img/old/hligrule.png" WIDTH="330" HEIGHT="357"><BR>
+	This rule does have substitutions -- we want to take the two characters and
+	convert them into a ligature. So Press <CODE>[New] </CODE>under the sequence
+	position list, we want to start at the first character (sequence position
+	0) and apply the ligature we called "WORD":<BR>
+	<IMG SRC="/assets/img/old/hligseqdlg.png" WIDTH="177" HEIGHT="156"></TD>
+    </TR>
+    <TR VALIGN="Top">
+      <TD>So if anything doesn't match the first two rules, and does contain a
+	kappa followed by an iota, it must be a two letter stand-alone greek word.
+	And we want to apply our ligature to it.<BR>
+	<IMG SRC="/assets/img/old/hligallrulesdone.png" WIDTH="330" HEIGHT="357"></TD>
+      <TD>Now we are done. Press a series of <CODE>[OK]</CODE>s until all the dialogs
+	have been accepted.
+	<P>
+	<IMG SRC="/assets/img/old/kappaiota-lookups.png" WIDTH="422" HEIGHT="380"></TD>
+    </TR>
+  </TABLE>
+  <P>
+  Once you have created your lookups you may test the result in the
+  <A HREF="metricsview.html">metrics view</A>.<BR>
+  <IMG SRC="/assets/img/old/metrics-kappa_iota.png" WIDTH="527" HEIGHT="331">
+  <P>
+  (This example was provided by Apostolos Syropoulos) 
+    <HR>
+  <H2>
+    <A NAME="checking">Checking</A> a font
+  </H2>
+  <P>
+  After you have finished making all the glyphs in your font you should check
+  it for inconsistencies. FontForge has a command,
+  <A HREF="problems.html">Element-&gt;Find Problems</A> which is designed to
+  find many common problems.
+  <P>
+  Simply select all the glyphs in the font and then bring up the Find Problems
+  dialog. Be warned though: Not everything it reports as a problem is a real
+  problem, some may be an element of the font's design that FontForge does
+  not expect.
+  <P>
+  The dialog can search for problems like:
+  <UL>
+    <LI>
+      Stems which are close to but not exactly some standard value.
+    <LI>
+      Points which are close to but not exactly some standard height
+    <LI>
+      Paths which are almost but not quite vertical or horizontal
+    <LI>
+      Control points which are in unlikely places
+    <LI>
+      Points which are almost but not quite on a hint
+    <LI>
+      ...
+  </UL>
+  <P>
+  I find it best just to check for a similar problems at a time, otherwise
+  switching between different kinds of problems can be distracting.
+  <H2>
+    <A NAME="Bitmaps">Bitmaps</A>
+  </H2>
+  <P>
+  At this point you might want some bitmaps to go with the outline font (this
+  is not compulsory). Go to <CODE>Element-&gt;Bitmap Strikes Available</CODE>
+  and select the pixel sizes you want bitmaps in (Note, that on X and MS windows
+  pixel sizes often do not correspond exactly to point sizes. You can then
+  use the bitmap editor (<CODE><A HREF="bitmapview.html">Window-&gt;Open
+  Bitmap</A></CODE>) to clean up the bitmaps, or you can generate your bitmap
+  fonts and then <A HREF="http://clr.nmsu.edu/~mleisher/download.html">use
+  someone else's bitmap editor to clean them up</A>.
+  <P>
+  <IMG SRC="/assets/img/old/BitmapView.png" WIDTH="254" HEIGHT="273">
+  <P>
+  Bitmaps are discussed in more detail in the <A HREF="editexample8.html">next
+  section.</A>
+  <H2>
+    <A NAME="generating">Generating</A> a font
+  </H2>
+  <P>
+  If you save your file it will be saved in a format that only FontForge
+  understands (as far as I know anyway). This is not very helpful if you want
+  to use the font.
+  <P>
+  <IMG SRC="/assets/img/old/generate.png" WIDTH="406" HEIGHT="411" ALIGN="Right">Instead you
+  must use <A HREF="generate.html">File-&gt;Generate</A> to convert your font
+  into one of the standard font formats. FontForge presents what looks like
+  a vast array of font formats, but in reality there are just several variants
+  on a few basic font formats: PostScript Type 1, TrueType, OpenType (and for
+  CJK fonts, also CID-keyed fonts).
+  <P>
+  You also have a choice of bitmap formats. FontForge supports bdf (used by
+  X), mac NFNT (used by the Mac), Windows FNT (used by Windows 2.0 I think)
+  and storing bitmaps inside true (or open) type wrappers.<BR CLEAR=RIGHT>
+  <H2>
+    Font <A NAME="Families">Families</A>
+  </H2>
+  <P>
+  After you have generated a font, you probably want to generate a sequence
+  of similar fonts. In Latin, Greek and Cyrillic fonts italic (or oblique),
+  bold, condensed, expanded styles are fairly common.
+  <P>
+  Fonts with different styles in the same family should share the same Family
+  Name (in the <A HREF="fontinfo.html">Element-&gt;Font Info-&gt;Names</A>
+  dialog). The Font Name should be the Family Name with the style name(s) appended
+  to the end, often preceded by a hyphen. So in the font family "Helvetica"
+  all fonts should have the Family Name set to "Helvetica". The plain style
+  could be called simply "Helvetica" or "Helvetica-Regular", the bold style
+  "Helvetica-Bold", the oblique (Helvetica doesn't have a true italic)
+  "Helvetica-Oblique", etc.
+  <P>
+  FontForge has a command (which doesn't work well yet, but I hope to improve
+  eventually) <A HREF="MetaFont.html">Element-&gt;MetaFont</A> which is designed
+  to help you create a bold (condensed, expanded, etc.) style from a plain
+  one.
+  <P>
+  The
+  <A HREF="transform.html">Element-&gt;Transform-&gt;Transform-&gt;Skew</A>
+  command can turn a plain font into an Oblique one. Creating a true italic
+  font is generally a bit more complex, the shape of the "a" changes dramatically
+  to "<I>a</I>", the "f" gains a descender as "<I>f</I>", the serifs on "ilm"
+  etc. become rounded as "<I>ilm</I>" and there will probably be other subtle
+  differences. Also, after having skewed a font you should
+  <A HREF="elementmenu.html#Add-Extrema">Element-&gt;Add Extrema</A>.
+  <P>
+  If you already have a "Bold" and a "Plain" style of a font (and each glyph
+  has the same number of points in the same order), you can use the
+  <A HREF="elementmenu.html#Interpolate">Element-&gt;Interpolate Font </A>command
+  to generate a "DemiBold" style.
+  <P>
+  TrueType fonts (and Windows) support a very fine gradation of stem thicknesses
+  (the Mac really only understands Plain and Bold). If you go to
+  <A HREF="fontinfo.html#TTF-Values">Element-&gt;Font Info-&gt;OS/2</A> you
+  can set the weight to be any value between 0 and 999 (with plain generally
+  being at 400 or 500, and Bold at 700). TrueType fonts also support a range
+  of widths (while the Mac only supports condensed, plain and expanded).
+  <P>
+  <IMG SRC="/assets/img/old/GenerateFamily.png" WIDTH="414" HEIGHT="552" ALT="Dialog for Generate Mac Family"
+      ALIGN="Right">On Windows machines, as long as you get the names right, the
+  system should be able to figure out what fonts go into what families. But
+  on the Mac the situation is (or was, it is changing and I don't understand
+  all the new extensions yet) more complicated. The Mac supports a limited
+  range of styles (plain, italic, bold, outline, condensed, expanded and
+  combinations of these) anything outside these must go into a separate family.
+  Then a special table needs to be constructed (called the FOND) which holds
+  pointers to the various fonts in the family. If you open all the fonts you
+  want to be in a given family (and if they have been given the proper names)
+  and then from the plain font select
+  <A HREF="filemenu.html#GenerateMac">File-&gt;Generate Family</A>. This will
+  list all the fonts that FontForge thinks belong to the same family as the
+  current font and will allow you to generate a FOND structure as well as font
+  files for all family members (sometimes all the fonts live in one file, sometimes
+  they don't, it depends on the font format chosen).
+  <H2>
+    <A NAME="summary">Final</A> Summary
+  </H2>
+  <P>
+  So you have made a new font. But it does you no good just sitting on your
+  disk, you must install it on your machine. On some systems this is as simple
+  as just dragging the new font into your system Fonts folder, but on other
+  systems there is a fair amount work involved still. See the
+  <A HREF="faq.html#font-install">Installing fonts FAQ</A>.
+  <P>
+  For a tutorial about <A HREF="scripting-tutorial.html">FontForge's scripting
+  mechanism click here</A>.
+</DIV>
+</BODY></HTML>

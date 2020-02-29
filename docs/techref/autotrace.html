@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Autotracing bitmaps in FontForge &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Building Accented and other Composite Glyphs" href="accented.html" />
+    <link rel="prev" title="Anti-Alias Comparison" href="AA-Comparison.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="autotracing-bitmaps-in-fontforge">
+<h1>Autotracing bitmaps in FontForge<a class="headerlink" href="#autotracing-bitmaps-in-fontforge" title="Permalink to this headline">¶</a></h1>
+<p>FontForge does not have a native autotrace, but it will happily use the output
+of two freely available programs which do autotracing. These are:</p>
+<ul>
+<li><p>Peter Selinger’s <a class="reference external" href="http://potrace.sf.net/">potrace</a></p></li>
+<li><p>Martin Weber’s <a class="reference external" href="http://sourceforge.net/projects/autotrace/">autotrace program</a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Autotrace 2.8 changed its argument conventions (around Dec 2001). New
+versions (after 15 Dec) of fontforge will not work with autotrace2.7, old
+versions of fontforge will not work with autotrace2.8. I see no way to make
+fontforge work with both or to detect the current version…</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>I may not be loading the results of autotrace properly in all cases (I do in
+my test cases, of course). AutoTrace traces out both foreground and
+background regions, so I may sometimes leave behind a lump which represents a
+background area. Just delete it if it happens (and send me the image so I can
+fix things up).</p>
+</div>
+</li>
+</ul>
+<p>You must download at least one of these, (and possibly build it), and install it
+somewhere along your PATH.</p>
+<p>Having done that you must get an image into the background of the glyph(s) you
+want to autotrace. There are several ways of doing this:</p>
+<dl class="object">
+<dt>
+<code class="sig-name descname">From a bitmap font</code></dt>
+<dd><p>If you want to autotrace a bitmap font then (from the FontView)</p>
+<ul class="simple">
+<li><p>(You will probably want to start out with a new font, but you might not)</p></li>
+<li><p><span class="menuselection">File ‣ Import</span></p></li>
+<li><p>select the bitmap font type (bdf, FON, embedded in a ttf file, TeX bitmap
+(GF, PK), etc.)</p></li>
+<li><p>turn on the <code class="docutils literal notranslate"><span class="pre">[*]</span> <span class="pre">As</span> <span class="pre">Background</span></code> flag</p></li>
+<li><p>Select your font file</p></li>
+<li><p>This should place the bitmaps into the background of the glyphs in the font.
+Nothing will be visible in the font view, but if you open up an outline glyph
+view, you should see the bitmap version of the glyph as a grey background.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">From the clipboard</code></dt>
+<dd><p>If you have an application that supports sending image selections by mime
+type (kde does this), then you should be able to copy the image in that
+application and paste it into the appropriate glyph window in FontForge</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">From an image file</code></dt>
+<dd><p>If you have a bitmap in an image (it works best if it IS a black and white
+bitmap image, rather than a color image)</p>
+<ul class="simple">
+<li><p>Open up an outline glyph view for the appropriate glyph</p></li>
+<li><p>Make the Background layer active (this is usually not necessary)</p></li>
+<li><p><span class="menuselection">File ‣ Import</span></p></li>
+<li><p>select Format=Image (this will show you any image format that fontforge
+supports)</p></li>
+<li><p>Select your file</p></li>
+<li><p>The image should now be visible in the background of this glyph</p></li>
+</ul>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">From multiple image files</code></dt>
+<dd><p>If you have many images, you can load them with one command, but you must
+name them appropriately. For example if your font contains unicode characters
+U+0041 (LATIN CAPITAL LETTER A) through U+0049 (LATIN CAPITAL LETTER J) then
+create files called “uni0041.png”, “uni0042.png”, … “uni0049.png”
+containing the images for the appropriate characters, then (from the Font
+View)</p>
+<ul class="simple">
+<li><p>Select the requisite glyphs</p></li>
+<li><p><span class="menuselection">File ‣ Import</span></p></li>
+<li><p>select Format=Image template</p></li>
+<li><p>select the first of your images, “uni0041.png”</p></li>
+<li><p>This should load all images that match that template (“uni*.png”) into the
+appropriate glyph slot</p></li>
+</ul>
+</dd></dl>
+
+<p>Once you have background images in your font (and have installed an autotrace
+program)</p>
+<ul class="simple">
+<li><p>Select all the glyphs you wish to autotrace</p></li>
+<li><p><span class="menuselection">Element ‣ Autotrace</span></p></li>
+</ul>
+<p>This can take a while, so be patient.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Unless you are working with a TeX bitmap font, you will most likely have an
+extremely low resolution image. Autotrace programs work better the more
+resolution you give them.</p>
+</div>
+<p>If you hold down the shift key when you invoke AutoTrace from the menu then you
+will be prompted for arguments to pass to it, if you do not hold down the shift
+key FontForge will use the same arguments it used last time. AutoTrace’s
+arguments are described in “$ autotrace -help” or in the README file that came
+with the program. Please do not specify input/output files or formats. FontForge
+fills these in.</p>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui.html">FontForge’s User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../techref.html">Technical References</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gposgsub.html">Advanced Typography Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AA-Comparison.html">Anti-Alias Comparison</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Autotracing bitmaps in FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accented.html">Building Accented and other Composite Glyphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bezier.html">Bézier Splines </a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref-caveats.html">Caveats about References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfdchangelog.html">Changes to the sfd format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cidmapformat.html">Cidmap files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cliargs.html">Command Line Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="splinefont.html">Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SuggestDeltas.html">Delta Instruction Suggestions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stroke.html">Expand Stroke Facility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BDFGrey.html">Extensions to Adobe’s BDF  for greymap fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PfaEdit-TeX.html">FontForge and TeX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pfaeditmath.html">FontForge’s math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hinting.html">Hinting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macformats.html">Macintosh font formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="featurefile.html">Major differences between FontForge’s and Adobe’s interpretation of feature files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="non-standard.html">Non standard extensions used FontForge in True/Open Type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="palmfonts.html">Palm fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bitmaponlysfnt.html">Several formats for bitmap only sfnts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfdformat.html">Spline Font Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pcf-format.html">The X11 PCF bitmap font file format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TrueOpenTables.html">TrueType and OpenType tables supported by FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corpchar.html">Unicode Corporate Characters used by FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UniqueID.html">UniqueID and XUID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selections.html">X Selections and the X Clipboard</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../techref.html">Technical References</a><ul>
+      <li>Previous: <a href="AA-Comparison.html" title="previous chapter">Anti-Alias Comparison</a></li>
+      <li>Next: <a href="accented.html" title="next chapter">Building Accented and other Composite Glyphs</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

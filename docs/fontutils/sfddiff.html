@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>sfddiff &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Frequently Asked Questions" href="../faq.html" />
+    <link rel="prev" title="fontlint" href="fontlint.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="sfddiff">
+<h1>sfddiff<a class="headerlink" href="#sfddiff" title="Permalink to this headline">¶</a></h1>
+<p>A program for comparing fonts</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sfddiff</span> <span class="p">[</span><span class="o">-</span><span class="n">merge</span> <span class="n">outfile</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">ignorehints</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">ignorenames</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">ignoregpos</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">ignoregsub</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">ignorebitmaps</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">exact</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">warn</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">version</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">help</span><span class="p">]</span> <span class="n">fontfile1</span> <span class="n">fontfile2</span>
+</pre></div>
+</div>
+<p><em>Sfddiff</em> compares (or merges) two font files (in any format
+<a class="reference internal" href="../index.html"><span class="doc">fontforge</span></a> can read) and checks for differences.</p>
+<p>It will notice:</p>
+<ol class="arabic simple">
+<li><p>any characters present in one font but not in the other</p></li>
+<li><p>any characters present in both fonts but which have different sets of
+outlines or references. The outlines may be compared so that only exact
+matches are accepted, or so that a fuzzier match is used (useful in compare
+that a truetype and postscript font are the same). Similarly references may
+be matched exactly or may match after an unlink.</p></li>
+<li><p>optionally will check if the postscript hints or truetype instructions are
+different.</p></li>
+<li><p>if the truetype ‘name’ tables match</p></li>
+<li><p>if kerning (and other ‘GPOS’ data) match</p></li>
+<li><p>if ligatures (and other ‘GSUB’ data) match</p></li>
+<li><p>Any bitmap strikes present in one font but not the other</p></li>
+<li><p>Any bitmap characters present in one font but not the other</p></li>
+<li><p>Any bitmap characters which differ</p></li>
+</ol>
+<dl class="option">
+<dt id="cmdoption-sfddiff-merge">
+<code class="sig-name descname">-merge</code><code class="sig-prename descclassname"> &lt;output&gt;</code><a class="headerlink" href="#cmdoption-sfddiff-merge" title="Permalink to this definition">¶</a></dt>
+<dd><p>If this flag is specified the following argument should be the name of an
+output file into which sfddiff will store a merged version of the two fonts.</p>
+<p>This will contain everything from fontfile1 as well as any characters present in
+fontfile2 but not in fontfile1. For any characters with different outlines or
+references, the background of the character will contain the splines from
+fontfile2 (sadly references can not be placed in the background).</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-sfddiff-ignorehints">
+<code class="sig-name descname">-ignorehints</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-sfddiff-ignorehints" title="Permalink to this definition">¶</a></dt>
+<dd><p>If specified, then no hint differences will be reported.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-sfddiff-help">
+<code class="sig-name descname">-help</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-sfddiff-help" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provides a mini description and will list the available options.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-sfddiff-usage">
+<code class="sig-name descname">-usage</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-sfddiff-usage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lists the available options.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-sfddiff-version">
+<code class="sig-name descname">-version</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-sfddiff-version" title="Permalink to this definition">¶</a></dt>
+<dd><p>Displays the current version of <em>sfddiff</em>.</p>
+</dd></dl>
+
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../index.html"><span class="doc">fontforge</span></a></p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui.html">FontForge’s User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techref.html">Technical References</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../fontutils.html">Utilities for examining fonts</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="acorn2sfd.html">acorn2sfd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fontimage.html">fontimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fontlint.html">fontlint</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">sfddiff</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#see-also">See Also</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../fontutils.html#showttf">ShowTTF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fontutils.html#ttf2eps">Ttf2Eps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fontutils.html#pfadecrypt">PfaDecrypt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fontutils.html#pcl2ttf">Pcl2Ttf</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../fontutils.html">Utilities for examining fonts</a><ul>
+      <li>Previous: <a href="fontlint.html" title="previous chapter">fontlint</a></li>
+      <li>Next: <a href="../faq.html" title="next chapter">Frequently Asked Questions</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

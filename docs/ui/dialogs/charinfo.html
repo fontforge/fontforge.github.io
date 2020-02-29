@@ -1,0 +1,350 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Glyph Info &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Get Info" href="getinfo.html" />
+    <link rel="prev" title="The histogram dialog" href="histogram.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="glyph-info">
+<span id="charinfo-character"></span><h1>Glyph Info<a class="headerlink" href="#glyph-info" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-default">
+<img alt="../../_images/charinfo.png" src="../../_images/charinfo.png" />
+</div>
+<div class="section" id="encoding-and-unicode-data">
+<h2>Encoding and Unicode data<a class="headerlink" href="#encoding-and-unicode-data" title="Permalink to this headline">¶</a></h2>
+<p>This dialog allows you to set the name and unicode encoding of a given glyph. If
+you know the name of the glyph then FontForge can tell you the encoding (if you
+press Set From Name), similarly if you know the encoding then FontForge can tell
+you the name.</p>
+<p>The name field contains a pull down list with (possibly) several synonyms for
+the name of this unicode code point.</p>
+<p>It is possible to have one glyph assigned to two unicode code points (This is
+not recommended, but it is possible). If you wish to do this you may enter
+additional unicode values in the “<code class="docutils literal notranslate"><span class="pre">Alternate</span> <span class="pre">Unicode</span></code>” area (set the variation
+selector to 0).</p>
+<p>Adobe has proposed an extension to OpenType to support unicode variation
+selectors in the ‘cmap’ table (traditionally they have been done as ligatures in
+the ‘GSUB’ table). If you wish to take advantage of this mechanism you can also
+use the “<code class="docutils literal notranslate"><span class="pre">Alternate</span> <span class="pre">Unicode/Variation</span></code>” section to add ‘cmap’ data. If you
+wish the current glyph to be the default variation for this font (the one that
+appears in the unicode encoding subtable), then set the <code class="docutils literal notranslate"><span class="pre">Unicode</span> <span class="pre">Value</span></code> field
+above to the desired code point and add an entry with the same code point and
+the appropriate variation selector (as in the example above).</p>
+<p>However if this glyph is not going to be the default glyph for this code point,
+then set the <code class="docutils literal notranslate"><span class="pre">Unicode</span> <span class="pre">Value</span></code> field to -1, while entering the appropriate code
+point and variation selector below.</p>
+<p>The Glyph class field is for the opentype ‘GDEF’ table. You can usually leave it
+set to automatic. FontForge will then figure out the class, and whether it
+should be output into GDEF. You can see what FontForge does in
+<a class="reference internal" href="showatt.html"><span class="doc">View-&gt;Show ATT</span></a>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">[]</span> <span class="pre">Mark</span> <span class="pre">for</span> <span class="pre">Unlink,</span> <span class="pre">Remove</span> <span class="pre">Overlap</span> <span class="pre">Before</span> <span class="pre">Save</span></code> checkbox sounds absurdly
+complicated. Consider the glyphs Aring, Ccedilla, and Oogonek. In traditional
+design the accent of each of these glyphs will overlap the base letter.
+Unfortunately neither TrueType nor PostScript allows contours to intersect. You
+can solve this problem by unlinking the references that make up the glyph and
+then running <span class="menuselection">Element ‣ Remove Overlap</span>. But that has problems
+of its own… now when you change the base letter (or the accent) the change
+will no longer be reflected in the composite glyph. This little checkbox neatly
+solves that problem. If the glyph is composed of references which overlap, and
+you wish to retain the references, but you wish it to be output without an
+overlap, simply check this box. Then when it comes time to save the font, ff
+will perform the unlink and then run remove overlap, save the font, and then
+restore the glyph to its original condition.</p>
+</div>
+<div class="section" id="glyph-comment">
+<span id="charinfo-comment"></span><h2>Glyph Comment<a class="headerlink" href="#glyph-comment" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/charinfo-comment.png" class="align-right" src="../../_images/charinfo-comment.png" />
+<p>You can assign an arbitrary (unicode) comment to the glyph. Simply type any text
+into this field. The comment is for your use, it will not go into any generated
+fonts. You may also assign a color to a glyph to make it stand out in the font
+view.</p>
+<p>There are 6 separate sub-dialogs to help you edit the <a class="reference internal" href="lookups.html"><span class="doc">lookups</span></a>
+of the <a class="reference internal" href="../../techref/gposgsub.html"><span class="doc">GPOS and GSUB</span></a> tables (some of these data can be
+converted into various of Apple’s AAT tables, particularly ‘morx’). Lookups and
+their subtables are described in some detail <a class="reference internal" href="../../index.html#overview-lookups"><span class="std std-ref">here</span></a>, and
+may be manipulated and created with the
+<a class="reference internal" href="fontinfo.html#fontinfo-lookups"><span class="std std-ref">Element-&gt;Font Info</span></a> command.</p>
+</div>
+<div class="section" id="simple-glyph-positioning">
+<span id="charinfo-position"></span><h2>Simple Glyph Positioning<a class="headerlink" href="#simple-glyph-positioning" title="Permalink to this headline">¶</a></h2>
+<p>The first of sub-dialogs is the alternate position pane which allows you to
+associate certain modifications to a glyph’s metrics with a feature in the GPOS
+table.</p>
+<img alt="../../_images/charinfo-pos.png" class="align-right" src="../../_images/charinfo-pos.png" />
+<p>In the example at right the first lookup subtable (which is associated with the
+Scientific Inferiors feature) will move the y position of the glyph down by 900
+em-units, while the second subtable will move it down by 560 em-units.
+Positioning subtables can also move glyphs horizontally and can adjust the
+horizontal and vertical advances of the glyph. You can also add device tables
+for pixel level corrections to these adjustments. Most subtables will use only a
+few of the possibilities open to them and FontForge generally hides unused
+columns – but if you want to see them just turn off [*] Hide Unused Columns.</p>
+<p>A new entry in the list may be created by pressing the &lt;New&gt; button and a popup
+menu will appear with all possible lookup subtables you could add data to.</p>
+</div>
+<div class="section" id="pair-wise-glyph-positioning-kerning-gpos">
+<span id="charinfo-pairwise"></span><h2>Pair-wise Glyph Positioning (kerning) (GPOS)<a class="headerlink" href="#pair-wise-glyph-positioning-kerning-gpos" title="Permalink to this headline">¶</a></h2>
+<p>The pairwise positioning sub-dialog allows you to change the positions of two
+glyphs when they occur next to one another – better know as kerning. I think
+the <a class="reference internal" href="../mainviews/metricsview.html"><span class="doc">Metrics View</span></a> provides a better place to do kerning, but
+you can do it here if you wish.</p>
+</div>
+<div class="section" id="glyph-simple-substitution-gsub-morx">
+<span id="charinfo-substitution"></span><h2>Glyph Simple Substitution (GSUB, morx)<a class="headerlink" href="#glyph-simple-substitution-gsub-morx" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/charinfo-subs.png" class="align-right" src="../../_images/charinfo-subs.png" />
+<p>A simple substitution replaces one glyph with another. Here the glyph “one” has
+a series of substitutions to various glyphs depending on what lookup subtable is
+invoked.</p>
+<div class="clearer docutils container">
+</div>
+</div>
+<div class="section" id="glyph-multiple-alternate-substitution">
+<span id="charinfo-multiple"></span><h2>Glyph Multiple &amp; Alternate Substitution<a class="headerlink" href="#glyph-multiple-alternate-substitution" title="Permalink to this headline">¶</a></h2>
+<blockquote class="epigraph">
+<div><div class="line-block">
+<div class="line">“Hello Rabbit,” he said, “is that you?”</div>
+<div class="line">“Let’s pretend it isn’t,” said Rabbit, “and see what happens.”</div>
+</div>
+<p class="attribution">—Winnie-The-Pooh – A. A. Milne, 1926</p>
+</div></blockquote>
+<p>The multiple and alternate substitution sub-dialogs are very similar to this one
+except that they can take multiple glyph names. In a multiple substitution
+subtable each glyph is replaced by several other glyphs (sort of the reverse of
+a ligature), while in the alternate substitution sub-dialog each glyph is to be
+replaced by exactly one glyph from a list and the user is to be given a choice
+as to which glyph is to be chosen.</p>
+</div>
+<div class="section" id="glyph-ligature-substitution">
+<span id="charinfo-ligature"></span><h2>Glyph Ligature Substitution<a class="headerlink" href="#glyph-ligature-substitution" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/charinfo-lig.png" class="align-right" src="../../_images/charinfo-lig.png" />
+<p>The ligature pane allows you to tell FontForge that the current glyph is a
+ligature composed of several other glyphs. FontForge will sometimes be able to
+fill this in with the right default value, but not always. The value should be a
+list of postscript glyph names separated by spaces. If a glyph may be viewed as
+two different ligatures then they may both be specified in different lines. For
+example “ffi” may be viewed as a ligature of “f” “f” and “i” or of “ff” and “i”.</p>
+</div>
+<div class="section" id="counter-masks">
+<span id="charinfo-countermasks"></span><h2>Counter Masks<a class="headerlink" href="#counter-masks" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/newcountermask.png" src="../../_images/newcountermask.png" />
+<img alt="../../_images/charinfo-counters.png" src="../../_images/charinfo-counters.png" />
+<p>In complicated Asian glyphs, postscript has a mechanism for controlling the
+width of counters between stems. These are called counter mask hints.</p>
+<p>In Latin, Cyrillic, Greek fonts only glyphs like “m” are allowed to have
+counter masks, and only in very controlled conditions. See the description of
+<a class="reference internal" href="../../techref/hinting.html#hinting-counter"><span class="std std-ref">counter masks</span></a>.</p>
+</div>
+<div class="section" id="components">
+<span id="charinfo-components"></span><h2>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/charinfo-counters.png" class="align-right" src="../../_images/charinfo-counters.png" />
+<p>Some glyphs (ligatures, accented glyphs, Hangul syllables, etc.) are built up
+out of other glyphs (at least according to unicode). This pane of the dlg shows
+the components that Unicode says make up the current glyph, if those components
+are in the font then you can use FontForge’s
+<span class="menuselection">Element ‣ Build ‣ Build Accented</span> or
+<span class="menuselection">Element ‣ Build ‣ Build Composite</span> commands to create the
+current glyph. The information displayed here is informative only, you may not
+change this field directly (it changes when you change the unicode value or
+glyph name associated with this glyph).</p>
+<div class="clearer docutils container">
+</div>
+</div>
+<div class="section" id="tex-math">
+<span id="charinfo-tex"></span><h2>TeX &amp; Math<a class="headerlink" href="#tex-math" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default">
+<img alt="../../_images/charinfo-tex.png" src="../../_images/charinfo-tex.png" />
+</div>
+<p>The TeX pane allows you to specify glyph specific information used in TeX tmf
+files. The height and depth fields are often the same as the glyph’s bounding
+box (if you don’t fill these in that’s what fontforge will use by default), but
+they should be corrected for optical distortion, so in glyphs like “o” these
+fields should be clipped to the x-height and baseline (ff will attempt to do
+this when you press <code class="docutils literal notranslate"><span class="pre">[Guess]</span></code>).</p>
+<p>The Italic correction is used by both TeX and the new OpenType
+<a class="reference internal" href="math.html#math-italic"><span class="std std-ref">MATH</span></a> table. In the MATH table you may also specify a device
+table to correct rounding errors at small pixel sizes.</p>
+<p>The Top Accent Position is another concept from the
+<a class="reference internal" href="math.html#math-topaccent"><span class="std std-ref">MATH table</span></a> and provides a horizontal position over which
+to position math accents (vertical positioning is done somewhere else).</p>
+<p>For extremely tall glyphs the normal mechanisms for positioning superscripts are
+inappropriate and the <code class="docutils literal notranslate"><span class="pre">[]</span> <span class="pre">Is</span> <span class="pre">Extended</span> <span class="pre">Shape</span></code> checkbox alerts the typesetter to
+this fact.</p>
+<p>The [Math Kerning] button brings up the
+<a class="reference internal" href="math.html#math-mathkern"><span class="std std-ref">Math Kerning dialog</span></a> which gives you fine control over the
+placement of subscripts and superscripts near the glyph.</p>
+</div>
+<div class="section" id="variants">
+<span id="charinfo-variants"></span><h2>Variants<a class="headerlink" href="#variants" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default">
+<img alt="../../_images/charinfo-variants.png" src="../../_images/charinfo-variants.png" />
+</div>
+<p>There are two panes for variants, one for glyphs that get longer horizontally
+and one for glyphs that get longer vertically.</p>
+<p>In mathmatical typesetting the size of a parenthesis will depend on the vertical
+size of the formula within that parenthesis. As formulae can be arbetarily
+complex they may be arbetarily tall, so there needs to be a way of making
+arbetarily big parentheses. This pane provides two mechanisms.</p>
+<p>At the top you may specify a list of prebuilt glyphs each a little bigger than
+the one before.</p>
+<p>Underneath you may specify a way of building really big parentheses by combining
+several component glyphs. See the description of this in the
+<a class="reference internal" href="math.html#math-glyphconstruction"><span class="std std-ref">MATH Info dialog</span></a> for more details.</p>
+</div>
+<div class="section" id="tile-size">
+<span id="charinfo-tilesize"></span><h2>Tile Size<a class="headerlink" href="#tile-size" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/charinfo-tilesize.png" class="align-right" src="../../_images/charinfo-tilesize.png" />
+<p>This only applies when editing type3 fonts. Even then it is only meaningful if
+the current glyph is used as a <a class="reference internal" href="multilayer.html#multilayer-patterns"><span class="std std-ref">pattern</span></a> in some
+other glyph.</p>
+<p>When a glyph is used as a pattern, the size of the pattern tile defaults to the
+bounding box of the glyph used. This means there will be no whitespace around
+the tile. Sometimes that is desirable (if the tiles are to looks as though they
+touch), sometimes it is not. This provides control over the whitespace that
+surrounds the drawn region of the tile.</p>
+<p>You can specify that you want a constant margin of white space around all edges
+of the tile, or you can specify explicitly the coordinates of the tile.</p>
+<p>The Next and Prev buttons allow you to move from one glyph to the next (if, for
+example, you need to enter encodings for a range of glyphs).</p>
+<p>The Cancel button now cancels all changes made with this instance of the dialog.</p>
+<p>See Also:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="fontinfo.html"><span class="doc">The font info dialog</span></a></p></li>
+<li><p><a class="reference internal" href="getinfo.html"><span class="doc">The get info dialogs</span></a></p></li>
+<li><p><a class="reference internal" href="math.html"><span class="doc">The MATH info dialog</span></a></p></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../ui.html">FontForge’s User Interface</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../mainviews.html">Main Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../menus.html">Menus</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../dialogs.html">Dialogs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#general">General</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../dialogs.html#info">Info</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="fontinfo.html">Font Info</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Glyph Info</a></li>
+<li class="toctree-l4"><a class="reference internal" href="getinfo.html">Get Info</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bdfinfo.html">BDF Info Dialog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="baseline.html">The baseline dialog, and the OpenType BASE table</a></li>
+<li class="toctree-l4"><a class="reference internal" href="justify.html">The Justify dialog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="math.html">Math typesetting information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="multiplemaster.html">Multiple Master Dialog</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#editing">Editing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#lookups-and-kerning">Lookups and Kerning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#validation">Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/HotKeys.html">Hot Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/fontforge-themes.html">FontForge color schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">X Resource Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xim.html">X Input Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">X Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../techref.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../../ui.html">FontForge’s User Interface</a><ul>
+  <li><a href="../dialogs.html">Dialogs</a><ul>
+      <li>Previous: <a href="histogram.html" title="previous chapter">The histogram dialog</a></li>
+      <li>Next: <a href="getinfo.html" title="next chapter">Get Info</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

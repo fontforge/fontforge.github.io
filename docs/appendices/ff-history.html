@@ -1,0 +1,546 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>What on Earth Possessed me… &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Differences from Fontographer" href="diffs.html" />
+    <link rel="prev" title="Appendices" href="../appendices.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="what-on-earth-possessed-me">
+<h1>What on Earth Possessed me…<a class="headerlink" href="#what-on-earth-possessed-me" title="Permalink to this headline">¶</a></h1>
+<img alt="../_images/fftype300.svg" class="align-right" src="../_images/fftype300.svg" width="200px" /><blockquote class="epigraph">
+<div><div class="line-block">
+<div class="line"><strong>MALVOLIO</strong></div>
+<div class="line"><br /></div>
+<div class="line">By my life, this is my lady’s hand, these be her</div>
+<div class="line">very C’s, her U’s and her T’s and thus she makes her</div>
+<div class="line">great P’s. It is, in contempt of question, her hand.</div>
+<div class="line"><br /></div>
+<div class="line"><strong>Sir ANDREW</strong></div>
+<div class="line">Her C’s, her U’s and her T’s: why that?</div>
+</div>
+<p class="attribution">—Twelfth Night, II, v
+– Shakespeare</p>
+</div></blockquote>
+<p>I have always been interested in calligraphy, especially the eccentricities of
+the swash and black letter capitals.</p>
+<p>My father was deeply concerned with Renaissance printing, being a textual
+bibliographer of Shakespeare. His major focus was in the errors printers were
+likely to make, nevertheless I grew up in an environment where the long-s and
+other archaic devices appeared. My father used to brag that a great aunt of his
+still used the long-s in her hand-written notes.</p>
+<p>Why that indeed. Some questions may have no answers.</p>
+<p>In the early ’80s I was working at JPL and I met my first bitmap display. The
+primary use of this display was to make movies of a simulated fly-by of Olympus
+Mons (on Mars). I used it to design my first bitmap font.</p>
+<p>In the late ’80s I bought my first computer, a Mac II. And with it a bought a
+little program called Fontastic which allowed people to design their own ‘FONT’
+resources (mac bitmap fonts).</p>
+<p>Then a friend, Godfrey DiGiorgi, recommended that I buy a copy of Fontographer
+and design PostScript fonts. I was leary initially. How could a rasterizer match
+the quality of a hand crafted bitmap? But eventually I succumbed to the
+attractions of the cubic spline.</p>
+<p>In the meantime I had studied calligraphy, and once I had Fontographer began
+designing fonts based on various (latin) calligraphic hands.</p>
+<p>In the early ’90s I was working at a little web start-up company, called
+NaviSoft, which was almost immediately bought by AOL. My product was an
+html-editor (best known as AOLpress). As I was working to convert it to handle
+Unicode I became concerned about the lack of Unicode fonts. I began working on
+my own Unicode font (just the alphabetics and symbols, I knew there was no way
+I’d be able to deal with all the CJK characters). I designed a font based on
+Caslon’s work with Bold and Italic variants. And then I started working on
+monospaced and sans-serif families (I called the sans-serif design “Caliban” as
+a play on Arial).</p>
+<p>Aldus (the makers of Fontographer) had been bought by MacroMedia, and MacroMedia
+seemed to have no interest in continuing Fontographer. So development on
+Fontographer ceased. It did not support OpenType, and its unicode support was
+minimal. I began to write little programs to decode Type1 fonts and fix them up
+in various ways.</p>
+<p>AOL did not really know what to do with AOLpress. AOLpress had been designed
+with web designers in mind, not with Steve Case’s mother (which was AOL’s target
+audience). So development on AOLpress ceased and the Unicode/CSS version never
+was completed. I continued to work on my fonts however and continued to be
+dissatisfied with Fontographer. In 1998 my AOL options matured and I was able to
+retire.</p>
+<p>I wanted to try to become a primatologist and had made arrangements to spend 4
+months in Madagascar as a field assistant to Chia Tan studying the Greater
+Bamboo lemur (<em>Hapalemur simus</em>). Sadly I found that I was not really cut out
+for that life. I had a hard time recognizing individual animals, and found that
+after a few months the leaches were more annoying than I had expected.</p>
+<p>So I gave up on that.</p>
+<p>Instead I set about working on an improved version of my html editor, and
+started by writing my own Unicode based widget set for it (this was before pango
+was out). When the widget set was usable I decided to write a small application
+to test it, and something to display the splines of a postscript font seemed
+just the thing. Having done that I figured I might as well allow people to edit
+those splines and save it back. And so was born the first version of PfaEdit.</p>
+<p>Somehow the html-editor never got written.</p>
+<p>I quickly discovered I was better at designing a font editor than I was at
+designing fonts, so I gave up on them too.</p>
+<p>After a couple months of work I had something which worked, or so I thought, and
+I posted it to the web (my friend, Dan Kenan, very kindly gave me some space on
+his server, aptly named bibliofile) on 7 November of 2000. Within a month I had
+received my first bug report, and presumably had my first user.</p>
+<p>I continued working on PfaEdit, adding support for pfb fonts and then in
+December for truetype and bdf fonts. I learned about sourceforge and moved
+PfaEdit there in April of 2001.</p>
+<p>In April of 2001 I added support for type2 fonts embedded in an sfnt wrapper
+(opentype fonts, but not the advanced typographic tables). In July of 2001
+MinGyoon (from Korea) asked me if PfaEdit could support CID keyed fonts so I
+learned about those and added support for them in August.</p>
+<p>Valek Filippov suggested that I make PfaEdit be internationalizable, so I
+provided a mechanism and he provided a Russian translation of the user interface
+in June of 2001. On December of 2005 I gave up on my own system and switched to
+GNU gettext.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head stub"><p>Language</p></th>
+<th class="head"><p>Translator</p></th>
+<th class="head"><p>Initial version</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><th class="stub"><p>English</p></th>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>Russian</p></th>
+<td><p>Valek Filippov</p></td>
+<td><p>June 2001</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Japanese</p></th>
+<td><p>Kanou Hiroki</p></td>
+<td><p>August 2002</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>French</p></th>
+<td><p>Pierre Hanser</p></td>
+<td><p>September 2002</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Italian</p></th>
+<td><p>Claudio Beccari</p></td>
+<td><p>February 2003</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>Spanish</p></th>
+<td><p>Walter Echarri</p></td>
+<td><p>October 2004</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Vietnamese</p></th>
+<td><p>Clytie Siddall</p></td>
+<td><p>July 2006</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>Greek</p></th>
+<td><p>Apostolos Syropoulos</p></td>
+<td><p>August 2006</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p><span class="small">Simplified</span> Chinese</p></th>
+<td><p>Lee Chenhwa</p></td>
+<td><p>October 2006</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>German</p></th>
+<td><p>Philipp Poll</p></td>
+<td><p>October 2006</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Polish</p></th>
+<td><p>Michal Nowakowski</p></td>
+<td><p>October 2006</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p><span class="small">Traditional</span> Chinese</p></th>
+<td><p>Wei-Lun Chao</p></td>
+<td><p>August 2007</p></td>
+</tr>
+</tbody>
+</table>
+<p>I started working on support for simple aspects of the OpenType GSUB and GPOS
+tables in April of 2001 and finished the process (ignoring bugs of course) with
+the contextual chaining lookups in August of 2003. Similarly I started adding
+support for the various equivalent Apple Advanced Typography tables (primarily
+‘morx’) at about the same time.</p>
+<p>In an early attempt to get PfaEdit to generate instructions to grid-fit truetype
+fonts, I set about to write a truetype instruction simulator so that I could
+debug the generated code. It didn’t work very well on real fonts. Then, in early
+2001, I discovered <a class="reference external" href="http://freetype.sf.net/">freetype</a> and found that freetype
+already did this (and did it right). At first I examined their code to try and
+figure out what was wrong with mine, but eventually I gave that up and simply
+used freetype as an instruction simulator. As things got more complicated (with
+David Turner’s permission, and many suggestions from Werner LEMBERG), I
+eventually wrote a visual front end for freetype’s built-in debugger. For a
+while this lived in a separate program called mensis, but in March of 2003 I
+integrated it into PfaEdit.</p>
+<p>Many people urged me to provide a scripting interface to PfaEdit. At first I
+could not understand the point – font design needs a graphical interface after
+all. But I was only looking at a small fraction of the tasks that could
+potentially be done with such an interface, and in January of 2002 PfaEdit
+gained the ability to run scripts.</p>
+<p>In 2003 Yannis Haralambous invited me to talk at EuroTex. I fear I rather
+disappointed him in my choice of subject matter – I tried to do better the next
+year when Apostolos Syropoulos invited me to EuroTex 2004 (but I overreached
+myself then and made some incorrect assumptions). These conferences were the
+first time I had actually met any of my users and were quite stimulating,
+leading to many suggestions and requests. I learned about SVG fonts at EuroTex
+2003 and implemented them soon thereafter.</p>
+<p>Yannis was also working on a book, <em>Fontes &amp; codages</em> in which FontForge
+figures. He spent a lot of time making suggestions and finding bugs. He
+encouraged me to support multi-master fonts and by February of 2004 I had done
+so. Then I started working on Apple’s distortable font technology (which has
+many similarities to Adobe’s multi-master, but is rather badly documented) and,
+with help from Apple, had them working in April of 2004. I then extended
+freetype’s support for multi-master fonts to support Apple’s distortable fonts.</p>
+<p>In early 2004 people complained that the name “PfaEdit” no longer reflected the
+abilities of the program and requested that I change it. Various people
+suggested names (including me), but the one I liked the best, FontForge, came
+from David Turner of freetype. And in March of 2004 PfaEdit changed its name to
+FontForge.</p>
+<p>At about the same time I wanted to provide a somewhat more complete ability to
+handle PostScript Type3 fonts (or SVG fonts). So I implemented a multi-layered
+editing mode which provided a rather clumsy interface to some of the facilities
+of vector graphics programs.</p>
+<p>In 2005 a Korean company asked me to do something. We had some difficulty
+communicating (I don’t speak Korean), but eventually I figured out that they
+wanted to be able to group glyphs together. Prior to this FontForge handled
+encodings as an integral part of the font, which didn’t seem right, and it made
+implementing groups impossible. So I had to rewrite much of the internals of
+FontForge to redo encodings before I could even start on groups. This took
+longer than I had thought it would, and by the time I finished (in July of 2005)
+the Koreans seemed to have lost interest. Ah well.</p>
+<p>I got interested in pdf files in October of 2005, and gave FontForge’s Print
+command the ability to print to a pdf file. Then I thought it would be kind of
+fun to be able to read a font out of a pdf file. I was a little worried about
+implementing this because I know that most fonts stored in pdf files are
+sub-sets, and only contain the glyphs actually used in the pdf file itself. I
+was convinced that I’d get lots of bug reports from people complaining that
+FontForge didn’t read the entire font. Nevertheless my sense of fun overcame my
+fear of silly bug reports and I implemented it.</p>
+<p>And I did get bug reports complaining that FontForge did not read the fonts
+correctly.</p>
+<p>And I don’t think I was able to convince some of the complainers that the fonts
+were incomplete in the pdf file. Ah well.</p>
+<p>The X11 folk want to move away from the bdf format, so they came up with their
+own format (call opentype bitmap, with extension “otb”) which was essentially an
+sfnt wrapper around a series of bitmap strikes with no outline font. I
+implemented that back in July of 2003. But then in July of 2005 they wanted to
+preserve the BDF properties as well. So we worked out a new table (called ‘BDF
+‘) to contain the properties from all the strikes in the font. Now it should be
+possible to make a round trip conversion of bdf-&gt;otb-&gt;bdf and not lose any
+information.</p>
+<p>Many people complained about FontForge’s ability to edit quadratic splines. I
+had no experience editing quadratic splines before I wrote my original version,
+I just made it behave like the cubic spline editor (which seemed obvious). But
+doing the obvious makes it hard to create a font that uses some of the
+optimizations in the ttf file, and made instructing the font confusing. So
+between January and February of 2006 FontForge’s quadratic editing capabilities
+underwent an evolutionary change as people complained and I tried to fix things.</p>
+<p>I have a testsuite for fontforge. Obviously. Originally it was very simple: a
+set of script files which did various actions. If FontForge didn’t crash, then I
+presumed it worked. That was about all I could test, and although that’s
+important, there are a few other things which might be examined. So I wrote a
+command to compare two fonts and see if they were equivalent. Originally this
+had been a separate command (called sfddiff), but if I integrated it into
+FontForge I could increase the abilities of the tests I wrote.</p>
+<p>FontForge produced some rather naive type1 and type2 fonts which did not make
+good use of the PostScript concept of subroutines. In June of 2006 I did a
+substantial rewrite of the type2 output code and decreased the size of my output
+fonts considerably. My new comparison command was helpful in debugging.
+Nonetheless I introduced a number of bugs. Which got fixed, of course. But it
+made me leary of doing the same thing for type1 output. After all, Adobe doesn’t
+even produce type1 fonts any more, so surely I don’t need to optimize them.
+Michael Zedler said otherwise, and after great effort on his part induced me (in
+October 2006) to make better use of subroutines in Type1 output also. No bugs
+yet… (but it’s still October of 2006).</p>
+<p>All of FontForge’s dialogs had a fixed layout. Which works fine if you’ve only
+got one language to support, but which looks really ugly (and worse can be
+totally illegible) when the dialog is translated into a different language and
+labels suddenly become longer (or shorter) and spill over into the textfield
+they identify. There has been a sudden burst of people willing to do
+translations recently. This mattered. So I stole the concept of boxes from gtk
+and implemented them in my widget set (in August of 2006), allowing a dialog to
+do its own layout to match the size of the things in it.</p>
+<p>The pace of change seems to have slowed recently (Oct 2006) as all of the large
+tasks have either been done or proved insurmountable. As more people use the
+program they find more bugs and I have less time to do development. In the last
+few years there have also been large internal changes which (I hope) are
+practically invisible to users and cosmetic changes which make the dialogs look
+nicer and more comprehensible but which aren’t functional.</p>
+<hr class="docutils" />
+<p>My interface to GSUB/GPOS was not well thought out. I stored things in FontForge
+at the feature level, while OpenType wants things done at the lookup level. I
+thought lookups added an unnecessary level of complexity and ignored them. But
+people complained (they always do) that once a font had been read in to
+FontForge and saved out again it wouldn’t work any more. And that was because I
+had lost the ordering imposed by the lookups. So in early 2007 I had to redo
+much of the internals of fontforge as it related to OpenType. I also changed the
+Metrics View so it would handle all OpenType lookup types (rather than just
+kerning).</p>
+<p>And people didn’t like my scripting language. Why hadn’t I used python? (Well
+because I didn’t know python and was lazy about learning more stuff that I
+didn’t think would be useful to me). Various people told me that they just
+couldn’t use FontForge because it didn’t support python. So I added python
+support. Then I discovered that my build machine has such an old version of
+python that it doesn’t provide libpython – and I can’t upgrade my machine any
+more because all the distros require booting from CD now (and my machine can’t).</p>
+<p>In May of 2007 I went to the Libre Graphics Meeting in Montreal, and as I
+listened to the Inkscape talk on how they handled plugins, I realized that I
+could do that too. So I extended the python interface to support python plugins
+and menu items. Dave Crossland, as is his wont, had many requests, and had me
+update the old Display dialog to support all the OpenType lookups (just as I’d
+done for the Metrics View) and then merge that into the Print dialog too. Dave
+also felt that FontForge should be able to store a font directly on the Open
+Font Library website. Well, they had no API for this, so I had to sit down and
+figure out http all over again and see what bits of the user API I needed to
+walk through.</p>
+<p>In June I started working on Adobe’s feature files (I could support them now
+that I was handling lookups properly), and found to my shock that</p>
+<ol class="arabic simple">
+<li><p>The syntax as presented by Adobe wasn’t complete (could not represent all of
+opentype)</p></li>
+<li><p>Some of the syntax that was presented hadn’t been implemented by Adobe yet
+and was marked “Subject to change”</p></li>
+<li><p>There was no easy way to represent the “Everything else” class (class 0) of a
+class set without enumerating every glyph by hand (which could not be
+translated into a class 0.</p></li>
+<li><p>There was no way to distinguish a contextual class based lookup from a
+contextual coverage-table based lookup.</p></li>
+<li><p>… on and on …</p></li>
+</ol>
+<p>I had assumed that feature files were a stable useful format and found to my
+distaste that they were not. I implemented the bits that Adobe hadn’t
+implemented, and extended them a bit so I could represent more of OpenType (and
+told Adobe what my extensions were, but was told they didn’t like them). Grump.
+Well I wanted something to store as much of OpenType as I could, and I wasn’t
+going to wait for Adobe to come up with something (which they still haven’t).</p>
+<p>Apostolos gave me the spec for the new ‘MATH’ table. But that spec had MicroSoft
+Confidential printed all over it and I wasn’t about to touch it. Apostolos got
+annoyed at my ignoring it, so in July he had Sergey from MS send me a copy of
+the spec that no longer said “Confidential” on every page. Then I implemented
+the new ‘MATH’ table.</p>
+<p>I’d never had a good Embolden function. I’d tried various approaches and none
+worked well. This year I decided to try a very simple idea: Use expand stroke
+and then squash the glyph together so it was the same height it had been before.
+That basically worked. Still a few oddities, but basically functional.</p>
+<p>In July Michal Nowakowski gave me a patch which vastly improved the truetype
+auto instructor. I told him I’d only accept it if he would support it. After
+some initial grumbling he did so – and then proceded to make it even better!
+Then about a week later Alexej Kryukov said he wanted to make the autoinstructor
+support diagonal stems, and the two of them started working together on this.</p>
+<p>At the Libre Graphics Meeting Dave demoed Raph Levien’s spiro splines and
+encouraged me to integrate them into fontforge. But Raph released under GPL and
+wasn’t willing to change, and I released under BSD and wasn’t willing to change.
+I got permision from Raph to repackage his spiro routines into a small shared
+library (libspiro) which could be released separately from FontForge but to
+which FontForge could link. And we had Raph’s spiros in FontForge.</p>
+<p>I realized that no only could I stick python into fontforge, but if I did a
+little more work, I could stick fontforge into python. So I wrapped up most of
+fontforge into a shared library that python could load. Dave Crossland had been
+complaining (again) about the FontForge widget set. When was I going to move to
+gtk? (well, I’d tried gtk back in 2004, and found it hard to use, and bits of it
+ugly – and less functional than my own widget set in the ways that mattered to
+me, so I had given up on it). Dave offered to fund development of a gtk
+fontforge UI, but only if I’d switch to GPL. I dislike GPL, it seems so
+restrictive to me, so I said I wouldn’t. Then I realized that I could rework my
+library until it was independant of widget set, and allow Dave to write a UI to
+sit on top of it, not bound by the fontforge license. So I reworked the
+internals of fontforge to make them extensible, stripped the UI out of
+libfontforge. And started to work on a gtk based fontforge of my own.</p>
+<p>Dave Crossland was complaining on the Open Font Library mailing list about how
+much information was lost when a font was released. Guidelines. Names of
+lookups. Cubic splines used for generating the quadratics of TrueType. And about
+the need for providing sources. Well, providing sources of fonts can be
+difficult, and not always useful if the tools to generate the fonts aren’t also
+available. However there is no reason why much of that information can’t be
+stored in the font itself. I already had a table that FontForge would create
+called (‘PfEd’, left over from PfaEdit days) which stored per-glyph comments,
+and other things. I could simply extend that table to store guidelines and other
+things. And document it so that others could use it, of course – but I’d
+already done that.</p>
+<p>And that brings us up to Jan 2008, I guess the pace of change sped up a bit this
+year as opposed to last.</p>
+<p>Alexey and others complained that they wanted multiple layers of splines. More
+than just the Foreground, Background, Guidelines layers that FontForge came
+with. One common request was to have both a cubic (PostScript) and a quadratic
+(TrueType) layer and be able to generate fonts from both. So in March of 2008
+FontForge grew multiple layer support.</p>
+<p>Later in March I added support for the OpenType ‘BASE’ and Apple ‘bsln’ tables.
+And to amuse myself I added the ablity to have gradient fills in Type3 (and svg)
+fonts.</p>
+<p>In June I was thinking of the embolden command I did the year before, and
+realized that that was essentially the same idea as was needed for generating
+Small Caps glyphs from Capital letters. And then some of those algorithms could
+be used to create condensed and extended glyphs. And then I sat down and wrote a
+generic “glyph change” dialog – years ago I had had a “MetaFont” command which
+was supposed to allow the user to embolden fonts for condense them or …
+Unfortunately my MetaFont never worked very well (And some users complained that
+It didn’t read Knuth’s mf files. Sigh. No, it metamorphosed fonts in its own
+way, not Knuth’s), so it got removed. Now it was basically working in a new form
+– but I know better than to call it MetaFont now.</p>
+<p>Alexey then stepped in and rewrote much of the code. I did not handle diagonal
+stems well when creating small caps, and that was just what he was doing with
+the autohinter. So he greatly improved the output.</p>
+<p>I was also intregued by italics. Converting a font to italics involves so many
+different things – the font is slanted, compressed, serifs change, letter forms
+change, … I studied exisiting fonts to see what I could learn and asked
+various real typographers. The consensis I heard from them was that I could
+never make a good italic font from a roman one mechanically and should not
+bother to try – it would just lead to people making bad italic fonts. Good
+advice, but I didn’t follow it. I thought it was a neat challange. And it was
+something Ikarus had done, so I wanted to do it too.</p>
+<p>In July a friend of mine, who is a mac user, said she wouldn’t even consider
+looking at fontforge on her mac unless it behaved more like a mac application.
+So I figured out how to build a mac Application, and how to respond to apple
+events (like having someone double click on a font file, or drop a font file on
+fontforge’s icon). I figured out how to start up X so that the user didn’t have
+to. I made pretty (well, I think they are pretty) icons for font files. I even
+changed the menus to use the command key on the mac and to show the mac
+cloverleaf icon.</p>
+<p>My friend still (November) has not looked at fontforge. Ah well.</p>
+<p>Dave Crossland had hired someone to integrate cairo into fontforge. But the
+result never got back to me. In a moment of foolish boredom I decided I could do
+that too. So I studied cairo, and it really didn’t seem that hard. But it was
+slow – at least on my 10 year old x86 machine which doesn’t support XRender.
+Cairo gave two things I cared about, anti-aliased splines in the glyph view, and
+anti-aliased text everywhere. Well I needed cairo in the glyph view, but pango
+would also provide fuzzy text and was lighter weight and would also support
+complex scripts (which fontforge’s own widget set did not do). So I could turn
+off cairo everywhere but the glyph view but still get fuzzy text from pango. And
+speed things up. Then Khaled Hosny suggested that I implement pango. Hurumph.
+And I had wanted to surprise people. Oh well. Implement Pango I did.</p>
+<p>A group in Japan created the “Unofficial mingw fontforge page”. A very nice
+piece of work. It included a set of X resources which provided another, nice
+look to the UI. A theme. And then other people started writing themes – and
+started complaining about and finding old bugs in fontforge’s resource reading
+code – it had never been exercised before I guess.</p>
+<hr class="docutils" />
+<p>I have received many suggestions from many people, too many to enumerate here,
+and FontForge is the better for their requests. Often I have reacted badly to
+these suggestions (because they always mean more work for me), and I apologize
+for that, but mostly I wish to thank those who have helped make FontForge what
+it is today.</p>
+<p>Currently, probably the biggest complaint about FontForge is the choice of
+widget set. No one likes my widgets (except me). Unfortunately for the rest of
+the world
+<a class="reference internal" href="../faq.html#faq-widget-set"><span class="std std-ref">I don’t like the two choices of widget set available to me (gtk and qt)</span></a>.
+I will get started working on converting to one and then run into some problem I
+can’t work around easily and give up and go back to my own. Well in 2008 I still
+don’t like gtk, but I have the fontview working in it. A start but probably not
+something I will continue.</p>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui.html">FontForge’s User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techref.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../appendices.html">Appendices</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">What on Earth Possessed me…</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diffs.html">Differences from Fontographer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files.html">Files used by FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errrecovery.html">Error Recovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nonbmp.html">Non-BMP Unicode bitmap fonts supported by FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quotations.html">Quotations used in the sample text for Printing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uitranslationnotes.html">User Interface Translation Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fontstyles.html">Font Styles in various languages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OFL-Unofficial.html">Unofficial translations of the OFL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bibliography.html">A meandering bibliography of font related things</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendices.html#japanese-documentation-outdated">Japanese documentation (outdated)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../appendices.html">Appendices</a><ul>
+      <li>Previous: <a href="../appendices.html" title="previous chapter">Appendices</a></li>
+      <li>Next: <a href="diffs.html" title="next chapter">Differences from Fontographer</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

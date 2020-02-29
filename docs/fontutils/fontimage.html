@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>fontimage &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="fontlint" href="fontlint.html" />
+    <link rel="prev" title="acorn2sfd" href="acorn2sfd.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="fontimage">
+<h1>fontimage<a class="headerlink" href="#fontimage" title="Permalink to this headline">¶</a></h1>
+<p>Generate a font thumbnail image</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fontimage</span> <span class="p">[</span><span class="o">--</span><span class="n">o</span> <span class="n">outfile</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">width</span> <span class="n">num</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">height</span> <span class="n">num</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">pixelsize</span> <span class="n">num</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">fontname</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">text</span> <span class="n">string</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">version</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">help</span><span class="p">]</span> <span class="n">fontfile</span>
+</pre></div>
+</div>
+<p><em>Fontimage</em> produces a thumbnail image of a font (which may be in any format
+<a class="reference internal" href="../index.html"><span class="doc">fontforge</span></a> can read).</p>
+<p>You may either explicitly specify text to be displayed in the font, or rely on
+fontimage’s default behavior, which is to check for various scripts it knows
+about and display something appropriate for each one present.</p>
+<dl class="option">
+<dt id="cmdoption-fontimage-help">
+<code class="sig-name descname">--help</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-fontimage-help" title="Permalink to this definition">¶</a></dt>
+<dd><p>Displays a list of arguments and descriptions of each.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-fontimage-width">
+<code class="sig-name descname">--width</code><code class="sig-prename descclassname"> num</code><a class="headerlink" href="#cmdoption-fontimage-width" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specifies the width (in pixels) of the output image. If omitted the image
+will be as wide as it needs to be to display the text.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-fontimage-height">
+<code class="sig-name descname">--height</code><code class="sig-prename descclassname"> num</code><a class="headerlink" href="#cmdoption-fontimage-height" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specifies the height (in pixels) of the output image. If omitted the image
+will be as high as it needs to be to display the text.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-fontimage-o">
+<code class="sig-name descname">--o</code><code class="sig-prename descclassname"> outputfile</code><a class="headerlink" href="#cmdoption-fontimage-o" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specifies the name of the output image file. The format is determined by the
+extension. Currently only “.bmp” and “.png” are supported. If omitted,
+fontimage will choose a filename based on the fontname of the font.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-fontimage-pixelsize">
+<code class="sig-name descname">--pixelsize</code><code class="sig-prename descclassname"> num</code><a class="headerlink" href="#cmdoption-fontimage-pixelsize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specifies the pixelsize at which to display text. This may be specified
+multiple times. Each specification applies to any –text arguments which
+occur after it.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-fontimage-fontname">
+<code class="sig-name descname">--fontname</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-fontimage-fontname" title="Permalink to this definition">¶</a></dt>
+<dd><p>Include the fontname as a line of text.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-fontimage-text">
+<code class="sig-name descname">--text</code><code class="sig-prename descclassname"> string</code><a class="headerlink" href="#cmdoption-fontimage-text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specifies a string to be displayed. The string <em>must</em> be in UTF-8. This
+option may be provided multiple times to supply more than one line of text.
+If omitted entirely, fontimage will examine the scripts it knows about in the
+font and will display text appropriate to each one present.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-fontimage-version">
+<code class="sig-name descname">--version</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-fontimage-version" title="Permalink to this definition">¶</a></dt>
+<dd><p>Displays the fontimage version.</p>
+</dd></dl>
+
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../index.html"><span class="doc">fontforge</span></a></p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui.html">FontForge’s User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techref.html">Technical References</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../fontutils.html">Utilities for examining fonts</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="acorn2sfd.html">acorn2sfd</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">fontimage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#see-also">See Also</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="fontlint.html">fontlint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfddiff.html">sfddiff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fontutils.html#showttf">ShowTTF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fontutils.html#ttf2eps">Ttf2Eps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fontutils.html#pfadecrypt">PfaDecrypt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fontutils.html#pcl2ttf">Pcl2Ttf</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../fontutils.html">Utilities for examining fonts</a><ul>
+      <li>Previous: <a href="acorn2sfd.html" title="previous chapter">acorn2sfd</a></li>
+      <li>Next: <a href="fontlint.html" title="next chapter">fontlint</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

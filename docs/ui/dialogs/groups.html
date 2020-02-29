@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Groups of Glyphs &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Finding shapes within glyphs" href="search.html" />
+    <link rel="prev" title="Display &amp; Print Fonts" href="display.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="groups-of-glyphs">
+<h1>Groups of Glyphs<a class="headerlink" href="#groups-of-glyphs" title="Permalink to this headline">¶</a></h1>
+<p>A group is a collection of glyphs. It may be any collection that appeals to you.
+My expectation is that groups will be used to collect glyphs which are visually
+associated (in some way) close together so that they may be examined and changed
+without the visual clutter of the rest of the font. So you might make a group
+that consisted of “b d p q” which often have similar shapes, or in a Korean font
+you might wish to look at all sylables with a give cho-sung.</p>
+<img alt="../../_images/fontview-grouped.png" class="align-left" src="../../_images/fontview-grouped.png" />
+<p>FontForge treats groups like baby encodings. In the image at left, it is
+displaying a font showing only the glyphs “b d p q”. The order the glyphs are
+mentioned in the group is the order in which they will be displayed in the
+fontview – and, like an encoding the group may be compaced so there are no
+empty holes for missing glyphs (so if the group had contained “b d p uniAC00 q”
+and the font was missing uniAC00, the display would be exactly the same) or
+uncompacted with holes.</p>
+<p>Glyphs in a group may be specified by glyph name, by unicode code point or by a
+range of unicode values. The examples above all used glyph names. A unicode code
+point looks like “U+XXXX” (where XXXX indicates a hex number). Occasionally
+fonts will use this notation to name their glyphs (they should not, but some
+do), that should not be a significant problem because such glyphs should have
+the obvious unicode code points and so will still match. A range of unicode code
+points looks like “U+XXXX-U+YYYY” (XXXX &lt; YYYY).</p>
+<p>A groups are heirarchical. A group may either contain a list of glyphs, or a
+list of sub-groups. (If you display (in the fontview) a group which contains
+subgroups you will see all glyphs in all sub-groups. A glyph may occur more than
+once if that is desirable. So a group could contain “A A A A” and the fontview
+would show four copies of “A” (I’m not sure why you’d want to do that, but you
+could). As you design your groups you can ask fontforge to check so that you do
+not inadvertently put the same glyph in more that one group (or in the same
+group twice).</p>
+<div class="section" id="display-by-groups">
+<h2>Display by Groups<a class="headerlink" href="#display-by-groups" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/displaygroups.png" class="align-right" src="../../_images/displaygroups.png" />
+<p>The Display by Groups dialog is shown in the screen shot at right. The top-level
+group is called “Groups” it has two children, one called “Vowels” which is a
+terminal group and contains the glyph names of the latin vowels, the other
+called “consonants” which itself contains three subgroups.</p>
+<p>Any group with children will have (to the right of its name) a square box
+containing either a “+” or a “-“, clicking on this box will either expand all
+the sub-groups of the group, or contract them into invisibility (here all are
+expanded).</p>
+<p>Clicking on a group’s name will select it (clicking again will deselect it).
+Here groups “ascenders” and “descenders” are selected. If you were to press
+<code class="docutils literal notranslate"><span class="pre">[OK]</span></code> then the fontview would show the glyphs associated with “b d f h k l t
+g j p q y” in that order.</p>
+<p>Underneath everything is a check box you may use to specify whether you want the
+results compacted or not.</p>
+</div>
+<div class="section" id="define-groups">
+<h2>Define Groups<a class="headerlink" href="#define-groups" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/definegroups.png" class="align-right" src="../../_images/definegroups.png" />
+<p>This dialog is a bit more complicated than the previous one. It again contains
+the group list at the top of the dialog, but here only one group at a time may
+be selected, and information about it is displayed in the bottom part of the
+dialog and is subject to change.</p>
+<p>You can <code class="docutils literal notranslate"><span class="pre">[Delete]</span></code> the group (this also deletes any subgroups). If the group
+contains no glyphs then you may add sub-groups to it. Every group has a name. If
+the group contains no subgroups you may add glyphs to it.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">[Set]</span></code> and <code class="docutils literal notranslate"><span class="pre">[Select]</span></code> buttons interact with the selection in the
+associated fontview. <code class="docutils literal notranslate"><span class="pre">[Set]</span></code> sets the glyph list to the glyphs selected in the
+fontview, while <code class="docutils literal notranslate"><span class="pre">[Select]</span></code> changes the selection to the glyphs specified in
+the glyph list. Normally glyphs are entered into the glyph list by <code class="docutils literal notranslate"><span class="pre">&lt;*&gt;Name</span></code>,
+but you can change the radio button to <code class="docutils literal notranslate"><span class="pre">&lt;*&gt;Unicode</span></code> and glyphs will be entered
+as U+0067 U+006A U+0070-U+0071 U+0079.</p>
+<p>If you select <code class="docutils literal notranslate"><span class="pre">[*]No</span> <span class="pre">glyph</span> <span class="pre">duplicates</span></code> then ff will prevent you from entering
+the same glyph name (or unicode code point) twice (ff will allow you to enter
+“A” and U+0041 – because I’m lazy and this is harder to check for and less
+likely to occur). If you set this in a parent group then there can be no glyph
+duplicates among any of its children.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../ui.html">FontForge’s User Interface</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../mainviews.html">Main Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../menus.html">Menus</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../dialogs.html">Dialogs</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../dialogs.html#general">General</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="generate.html">Generate Font Dialog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="display.html">Display &amp; Print Fonts</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Groups of Glyphs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="search.html">Finding shapes within glyphs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="selectbyatt.html">Select By Lookup Subtable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="prefs.html">Preferences Dialog</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#info">Info</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#editing">Editing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#lookups-and-kerning">Lookups and Kerning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#validation">Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/HotKeys.html">Hot Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/fontforge-themes.html">FontForge color schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">X Resource Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xim.html">X Input Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">X Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../techref.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../../ui.html">FontForge’s User Interface</a><ul>
+  <li><a href="../dialogs.html">Dialogs</a><ul>
+      <li>Previous: <a href="display.html" title="previous chapter">Display &amp; Print Fonts</a></li>
+      <li>Next: <a href="search.html" title="next chapter">Finding shapes within glyphs</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

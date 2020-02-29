@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Unicode Corporate Characters used by FontForge &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="UniqueID and XUID" href="UniqueID.html" />
+    <link rel="prev" title="TrueType and OpenType tables supported by FontForge" href="TrueOpenTables.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="unicode-corporate-characters-used-by-fontforge">
+<h1>Unicode Corporate Characters used by FontForge<a class="headerlink" href="#unicode-corporate-characters-used-by-fontforge" title="Permalink to this headline">¶</a></h1>
+<p>Unicode has a region (0xe000-0xf8ff) in which font vendors may assign their own
+characters. Adobe and Apple have each done so and FontForge recognizes the most
+common of these (things like the Small Caps characters used in Adobe’s Expert
+Character Set, or the Apple Logo used in nearly all Apple fonts). The
+allocations made by these two companies are described in:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.unicode.org/Public/MAPPINGS/VENDORS/APPLE/CORPCHAR.TXT">Apple’s corporate use extensions</a>
+(0xF850-0xF8FE)</p></li>
+<li><p><a class="reference external" href="http://partners.adobe.com/asn/tech/type/corporateuse.txt">Adobe’s corporate use extensions</a>
+(0xF634-0F7FF) (also includes some of Apple’s codes above)</p></li>
+</ul>
+<p>I have been asked to add a few similar characters to FontForge’s repertory and
+so have started using my own block of characters 0xf500-0xf580.</p>
+<div class="section" id="greek-small-caps">
+<h2>Greek Small Caps<a class="headerlink" href="#greek-small-caps" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>f500;Alphasmall;GREEK SMALL CAPITAL LETTER ALPHA;&lt;sc&gt;;0391
+f501;Betasmall;GREEK SMALL CAPITAL LETTER BETA;&lt;sc&gt;;0392
+f502;Gammasmall;GREEK SMALL CAPITAL LETTER GAMMA;&lt;sc&gt;;0393
+f503;Deltasmall;GREEK SMALL CAPITAL LETTER DELTA;&lt;sc&gt;;0394
+f504;Epsilonsmall;GREEK SMALL CAPITAL LETTER EPSILON;&lt;sc&gt;;0395
+f505;Zetasmall;GREEK SMALL CAPITAL LETTER ZETA;&lt;sc&gt;;0396
+f506;Etasmall;GREEK SMALL CAPITAL LETTER ETA;&lt;sc&gt;;0397
+f507;Thetasmall;GREEK SMALL CAPITAL LETTER THETA;&lt;sc&gt;;0398
+f508;Iotasmall;GREEK SMALL CAPITAL LETTER IOTA;&lt;sc&gt;;0399
+f509;Kappasmall;GREEK SMALL CAPITAL LETTER KAPPA;&lt;sc&gt;;039a
+f50a;Lambdasmall;GREEK SMALL CAPITAL LETTER LAMBDA;&lt;sc&gt;;039b
+f50b;Musmall;GREEK SMALL CAPITAL LETTER MU;&lt;sc&gt;;039c
+f50c;Nusmall;GREEK SMALL CAPITAL LETTER NU;&lt;sc&gt;;039d
+f50d;Xismall;GREEK SMALL CAPITAL LETTER XI;&lt;sc&gt;;039e
+f50e;Omicronsmall;GREEK SMALL CAPITAL LETTER OMICRON;&lt;sc&gt;;039f
+f50f;Pismall;GREEK SMALL CAPITAL LETTER ALPHA;&lt;sc&gt;;03a0
+f510;Rhosmall;GREEK SMALL CAPITAL LETTER RHO;&lt;sc&gt;;03a1
+f511;;
+f512;Sigmasmall;GREEK SMALL CAPITAL LETTER SIGMA;&lt;sc&gt;;03a3
+f513;Tausmall;GREEK SMALL CAPITAL LETTER TAU;&lt;sc&gt;;03a4
+f514;Upsilonsmall;GREEK SMALL CAPITAL LETTER UPSILON;&lt;sc&gt;;03a5
+f515;Phismall;GREEK SMALL CAPITAL LETTER PHI;&lt;sc&gt;;03a6
+f516;Chismall;GREEK SMALL CAPITAL LETTER CHI;&lt;sc&gt;;03a7
+f517;Psismall;GREEK SMALL CAPITAL LETTER PSI;&lt;sc&gt;;03a8
+f518;Omegasmall;GREEK SMALL CAPITAL LETTER OMEGA;&lt;sc&gt;;03a9
+f519;Iotadieresissmall;GREEK SMALL CAPITAL LETTER IOTA WITH DIAERESIS;&lt;sc&gt;;03aa
+f51a;Upsilondieresissmall;GREEK SMALL CAPITAL LETTER UPSILON WITH DIAERESIS;&lt;sc&gt;;03ab
+</pre></div>
+</div>
+</div>
+<div class="section" id="archaic-and-rare-latin-ligatures">
+<h2>Archaic and Rare Latin Ligatures<a class="headerlink" href="#archaic-and-rare-latin-ligatures" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>f520;c_t;LATIN SMALL LIGATURE CT;;;0063 0074
+f521;longs_i;LATIN SMALL LIGATURE LONGS I;;;017f 0069
+f522;longs_l;LATIN SMALL LIGATURE LONGS L;;;017f 006c
+f523;longs_longs;LATIN SMALL LIGATURE LONGS LONGS;;;017f 017f
+f524;longs_longs_i;LATIN SMALL LIGATURE LONGS LONGS I;;;017f 0x17f 0069
+f525;longs_longs_l;LATIN SMALL LIGATURE LONGS LONGS L;;;017f 0x17f 006c
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui.html">FontForge’s User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../techref.html">Technical References</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gposgsub.html">Advanced Typography Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AA-Comparison.html">Anti-Alias Comparison</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autotrace.html">Autotracing bitmaps in FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accented.html">Building Accented and other Composite Glyphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bezier.html">Bézier Splines </a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref-caveats.html">Caveats about References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfdchangelog.html">Changes to the sfd format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cidmapformat.html">Cidmap files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cliargs.html">Command Line Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="splinefont.html">Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SuggestDeltas.html">Delta Instruction Suggestions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stroke.html">Expand Stroke Facility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BDFGrey.html">Extensions to Adobe’s BDF  for greymap fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PfaEdit-TeX.html">FontForge and TeX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pfaeditmath.html">FontForge’s math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hinting.html">Hinting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macformats.html">Macintosh font formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="featurefile.html">Major differences between FontForge’s and Adobe’s interpretation of feature files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="non-standard.html">Non standard extensions used FontForge in True/Open Type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="palmfonts.html">Palm fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bitmaponlysfnt.html">Several formats for bitmap only sfnts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfdformat.html">Spline Font Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pcf-format.html">The X11 PCF bitmap font file format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TrueOpenTables.html">TrueType and OpenType tables supported by FontForge</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Unicode Corporate Characters used by FontForge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#greek-small-caps">Greek Small Caps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#archaic-and-rare-latin-ligatures">Archaic and Rare Latin Ligatures</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="UniqueID.html">UniqueID and XUID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selections.html">X Selections and the X Clipboard</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../techref.html">Technical References</a><ul>
+      <li>Previous: <a href="TrueOpenTables.html" title="previous chapter">TrueType and OpenType tables supported by FontForge</a></li>
+      <li>Next: <a href="UniqueID.html" title="next chapter">UniqueID and XUID</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

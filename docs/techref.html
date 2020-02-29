@@ -1,0 +1,338 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Technical References &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="_static/fftype16.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Advanced Typography Tables" href="techref/gposgsub.html" />
+    <link rel="prev" title="psMat" href="scripting/python/psMat.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="technical-references">
+<h1>Technical References<a class="headerlink" href="#technical-references" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="techref/gposgsub.html">Advanced Typography Tables</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="techref/gposgsub.html#the-gpos-gsub-gdef-and-base-opentype-tables">The <code class="docutils literal notranslate"><span class="pre">GPOS</span></code>, <code class="docutils literal notranslate"><span class="pre">GSUB</span></code>, <code class="docutils literal notranslate"><span class="pre">GDEF</span></code> and <code class="docutils literal notranslate"><span class="pre">BASE</span></code> OpenType tables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="techref/gposgsub.html#the-gpos-table">The <strong>GPOS</strong> table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="techref/gposgsub.html#the-gsub-table">The <strong>GSUB</strong> table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="techref/gposgsub.html#the-gdef-table">The <strong>GDEF</strong> table</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="techref/gposgsub.html#apple-advanced-typography">Apple Advanced Typography</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="techref/gposgsub.html#what-features-can-be-interconverted-between-opentype-and-aat">What features can be interconverted between OpenType and AAT?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="techref/gposgsub.html#an-analysis-of-gsub-and-morx-sub-tables-and-feature-tags">An analysis of GSUB and morx sub-tables and feature tags</a></li>
+<li class="toctree-l4"><a class="reference internal" href="techref/gposgsub.html#why-do-contextual-glyph-substitutions-only-sometimes-get-generated-in-aat">Why do contextual glyph substitutions only sometimes get generated in AAT?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="techref/gposgsub.html#why-can-t-all-contextual-chaining-tables-be-converted">Why can’t all contextual/chaining tables be converted?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="techref/gposgsub.html#apple-and-opentype-features">Apple and OpenType features</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="techref/gposgsub.html#what-is-unsupported">What is Unsupported?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="techref/gposgsub.html#opentype">OpenType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="techref/gposgsub.html#id1">Apple Advanced Typography</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="techref/AA-Comparison.html">Anti-Alias Comparison</a></li>
+<li class="toctree-l1"><a class="reference internal" href="techref/autotrace.html">Autotracing bitmaps in FontForge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="techref/accented.html">Building Accented and other Composite Glyphs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="techref/bezier.html">Bézier Splines </a><ul>
+<li class="toctree-l2"><a class="reference internal" href="techref/bezier.html#converting-truetype-to-postscript">Converting TrueType to PostScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/bezier.html#converting-postscript-to-truetype">Converting PostScript to TrueType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/bezier.html#open-type-another-solution">Open Type, another solution</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="techref/bezier.html#see-also">See Also</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="techref/ref-caveats.html">Caveats about References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="techref/sfdchangelog.html">Changes to the sfd format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="techref/cidmapformat.html">Cidmap files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="techref/cliargs.html">Command Line Arguments</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="techref/cliargs.html#environment-variables">Environment Variables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="techref/splinefont.html">Data Types</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="techref/splinefont.html#function-declarations">Function declarations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="techref/SuggestDeltas.html">Delta Instruction Suggestions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="techref/stroke.html">Expand Stroke Facility</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="techref/stroke.html#offsetting">Offsetting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="techref/stroke.html#caps">Caps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="techref/stroke.html#joins">Joins</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="techref/stroke.html#calligraphic-and-other-convex-nibs">Calligraphic and Other Convex Nibs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="techref/stroke.html#general-convex-nibs">General convex nibs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="techref/stroke.html#caps-and-joins-with-other-nibs">Caps and Joins With Other Nibs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="techref/stroke.html#multi-nibs-and-pseudo-concavity">Multi-Nibs and “Pseudo-Concavity”</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="techref/stroke.html#other-parameters">Other Parameters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="techref/stroke.html#accuracy-target">Accuracy Target</a></li>
+<li class="toctree-l3"><a class="reference internal" href="techref/stroke.html#remove-overlap">Remove Overlap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="techref/stroke.html#external-only-and-internal-only">External Only and Internal Only</a></li>
+<li class="toctree-l3"><a class="reference internal" href="techref/stroke.html#add-extrema-and-simplify">Add Extrema and Simplify</a></li>
+<li class="toctree-l3"><a class="reference internal" href="techref/stroke.html#arcs-clip-algorithm">Arcs Clip Algorithm</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="techref/stroke.html#troubleshooting">Troubleshooting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="techref/stroke.html#general-guidance">General Guidance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="techref/stroke.html#cusps-and-inverted-curvature">Cusps and Inverted Curvature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="techref/stroke.html#bevel-caps-and-flat-nibs">Bevel Caps and Flat Nibs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="techref/BDFGrey.html">Extensions to Adobe’s BDF  for greymap fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="techref/PfaEdit-TeX.html">FontForge and TeX</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="techref/PfaEdit-TeX.html#generating-a-tfm-file-and-an-enc-file">Generating a tfm file (and an enc file).</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/PfaEdit-TeX.html#installing-a-type1-pfb-postscript-font-for-tex">Installing a type1 (pfb) postscript font for TeX</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="techref/pfaeditmath.html">FontForge’s math</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="techref/pfaeditmath.html#linear-transformations">Linear Transformations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/pfaeditmath.html#finding-maxima-and-minima-of-a-spline">Finding maxima and minima of a spline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/pfaeditmath.html#finding-points-of-inflection-of-a-spline">Finding points of inflection of a spline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/pfaeditmath.html#rasterizing-a-glyph">Rasterizing a glyph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/pfaeditmath.html#approximating-a-spline">Approximating a spline</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="techref/pfaeditmath.html#why-that-didn-t-quite-work">Why that didn’t (quite) work</a></li>
+<li class="toctree-l3"><a class="reference internal" href="techref/pfaeditmath.html#singular-matrices">Singular matrices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="techref/pfaeditmath.html#calculating-the-outline-of-a-stroked-path">Calculating the outline of a stroked path</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="techref/pfaeditmath.html#a-circular-pen">A circular pen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="techref/pfaeditmath.html#an-elliptical-pen">An elliptical pen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="techref/pfaeditmath.html#a-rectangular-pen-a-calligraphic-pen">A rectangular pen (a calligraphic pen)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="techref/pfaeditmath.html#an-arbitrary-convex-polygonal-pen">An arbitrary convex polygonal pen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="techref/pfaeditmath.html#a-pen-of-variable-width">A pen of variable width</a></li>
+<li class="toctree-l3"><a class="reference internal" href="techref/pfaeditmath.html#a-pen-at-a-varying-angle">A pen at a varying angle</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="techref/hinting.html">Hinting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="techref/hinting.html#serifs">Serifs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/hinting.html#automatic-hinting">Automatic Hinting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/hinting.html#manual-hinting">Manual Hinting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="techref/hinting.html#manual-hint-substitution-points">Manual Hint Substitution Points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="techref/hinting.html#manual-counter-groups">Manual Counter Groups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="techref/hinting.html#the-private-dictionary">The Private dictionary</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="techref/hinting.html#hints-and-previously-existing-fonts">Hints and previously existing fonts.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/hinting.html#hinting-and-truetype">Hinting and TrueType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/hinting.html#hint-questions">Hint questions:</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="techref/macformats.html">Macintosh font formats</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="techref/macformats.html#resource-forks-on-mac-os-x">Resource forks on Mac OS/X</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="techref/featurefile.html">Major differences between FontForge’s and Adobe’s interpretation of feature files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="techref/featurefile.html#parsing-a-feature-file">Parsing a feature file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/featurefile.html#outputting-a-feature-file">Outputting a feature file</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="techref/non-standard.html">Non standard extensions used FontForge in True/Open Type</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="techref/non-standard.html#non-standard-feature-tags">Non standard feature tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/non-standard.html#non-standard-tables">Non standard tables.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/non-standard.html#pfed-the-fontforge-extensions-table">‘PfEd’ – the FontForge extensions table</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="techref/non-standard.html#colr-the-per-glyph-color-sub-table">‘colr’ – the per-glyph color sub-table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="techref/non-standard.html#cmnt-the-per-glyph-comment-sub-table">‘cmnt’ – the per-glyph comment sub-table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="techref/non-standard.html#fcmt-the-font-comment-and-fontlog-sub-table">‘fcmt’ – the font comment (and FONTLOG) sub-table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="techref/non-standard.html#cvtc-the-cvt-comments-sub-table">‘cvtc’ – the cvt comments sub-table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="techref/non-standard.html#gpos-gsub-lookup-names">‘GPOS/GSUB’ – lookup names</a></li>
+<li class="toctree-l3"><a class="reference internal" href="techref/non-standard.html#guid-guidelines">‘guid’ – guidelines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="techref/non-standard.html#layr-background-layer-data">‘layr’ – Background layer data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="techref/non-standard.html#tex-the-tex-metrics-table">‘TeX ‘ – the TeX metrics table</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="techref/non-standard.html#htdp-the-per-glyph-height-depth-sub-table">‘htdp’ – the per-glyph height/depth sub-table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="techref/non-standard.html#sbsp-the-per-glyph-sub-super-script-sub-table">‘sbsp’ – the per-glyph sub/super-script sub-table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="techref/non-standard.html#ftpm-the-font-parameter-font-dimensions-sub-table">‘ftpm’ – the font parameter (font dimensions) sub-table</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="techref/non-standard.html#bdf-the-bdf-properties-table">‘BDF ‘ – the BDF properties table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/non-standard.html#fftm-the-fontforge-time-stamp-table">‘FFTM’ the FontForge time stamp table</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="techref/palmfonts.html">Palm fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="techref/bitmaponlysfnt.html">Several formats for bitmap only sfnts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="techref/bitmaponlysfnt.html#apple">Apple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/bitmaponlysfnt.html#x11-unix-linux">X11 (Unix/Linux)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/bitmaponlysfnt.html#ms">MS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="techref/sfdformat.html">Spline Font Database</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="techref/sfdformat.html#font-header">Font Header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/sfdformat.html#outline-character-data">Outline Character Data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="techref/sfdformat.html#tex-math-data">TeX &amp; MATH data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="techref/sfdformat.html#outline-character-extensions-for-multilayered-fonts-type3">Outline character extensions for multilayered fonts (type3)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="techref/sfdformat.html#bitmap-fonts">Bitmap Fonts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="techref/sfdformat.html#cid-keyed-fonts">CID keyed fonts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="techref/sfdformat.html#multiple-master-fonts">Multiple Master fonts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="techref/sfdformat.html#splinefont-directories">SplineFont Directories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/sfdformat.html#autosave-format">Autosave Format</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="techref/pcf-format.html">The X11 PCF bitmap font file format</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="techref/pcf-format.html#file-header">File Header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/pcf-format.html#properties-table">Properties Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/pcf-format.html#metrics-data">Metrics Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/pcf-format.html#accelerator-tables">Accelerator Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/pcf-format.html#metrics-tables">Metrics Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/pcf-format.html#the-bitmap-table">The Bitmap Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/pcf-format.html#the-encoding-table">The Encoding Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/pcf-format.html#the-scalable-widths-table">The Scalable Widths Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/pcf-format.html#the-glyph-names-table">The Glyph Names Table</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="techref/TrueOpenTables.html">TrueType and OpenType tables supported by FontForge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="techref/corpchar.html">Unicode Corporate Characters used by FontForge</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="techref/corpchar.html#greek-small-caps">Greek Small Caps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/corpchar.html#archaic-and-rare-latin-ligatures">Archaic and Rare Latin Ligatures</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="techref/UniqueID.html">UniqueID and XUID</a></li>
+<li class="toctree-l1"><a class="reference internal" href="techref/selections.html">X Selections and the X Clipboard</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui.html">FontForge’s User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Technical References</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="techref/gposgsub.html">Advanced Typography Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/AA-Comparison.html">Anti-Alias Comparison</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/autotrace.html">Autotracing bitmaps in FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/accented.html">Building Accented and other Composite Glyphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/bezier.html">Bézier Splines </a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/ref-caveats.html">Caveats about References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/sfdchangelog.html">Changes to the sfd format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/cidmapformat.html">Cidmap files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/cliargs.html">Command Line Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/splinefont.html">Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/SuggestDeltas.html">Delta Instruction Suggestions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/stroke.html">Expand Stroke Facility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/BDFGrey.html">Extensions to Adobe’s BDF  for greymap fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/PfaEdit-TeX.html">FontForge and TeX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/pfaeditmath.html">FontForge’s math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/hinting.html">Hinting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/macformats.html">Macintosh font formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/featurefile.html">Major differences between FontForge’s and Adobe’s interpretation of feature files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/non-standard.html">Non standard extensions used FontForge in True/Open Type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/palmfonts.html">Palm fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/bitmaponlysfnt.html">Several formats for bitmap only sfnts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/sfdformat.html">Spline Font Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/pcf-format.html">The X11 PCF bitmap font file format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/TrueOpenTables.html">TrueType and OpenType tables supported by FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/corpchar.html">Unicode Corporate Characters used by FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/UniqueID.html">UniqueID and XUID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="techref/selections.html">X Selections and the X Clipboard</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="scripting/python/psMat.html" title="previous chapter">psMat</a></li>
+      <li>Next: <a href="techref/gposgsub.html" title="next chapter">Advanced Typography Tables</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

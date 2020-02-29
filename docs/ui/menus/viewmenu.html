@@ -1,0 +1,778 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>The View Menu &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="The Metrics Menu" href="metricsmenu.html" />
+    <link rel="prev" title="Encoding Menu" href="encodingmenu.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="the-view-menu">
+<h1>The View Menu<a class="headerlink" href="#the-view-menu" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="viewmenu-fit"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Fit</code></dt>
+<dd><p>In the outline and bitmap views this will scale the current glyph to the
+largest setting where it all fits in the view.</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-out"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Zoom Out</code></dt>
+<dd><p>Not in the font view. Centered on the middle selection if there is one, else
+the middle of the view.</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-in"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Zoom In</code></dt>
+<dd><p>Not in the font view. Centered on the middle selection if there is one, else
+the middle of the view.</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-next"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Next Glyph</code></dt>
+<dd><p>In the metrics, outline and bitmap view this changes the current glyph to be
+the next one in the font.</p>
+<p>In the font view this selects the next glyph in the font (and scrolls, if
+necessary, to display that glyph).</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-prev"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Prev Glyph</code></dt>
+<dd><p>In the metrics, outline and bitmap view this changes the current glyph to be
+the previous one in the font.</p>
+<p>In the font view this selects the next glyph in the font (and scrolls, if
+necessary, to display that glyph).</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-nextdef"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Next Defined Glyph</code></dt>
+<dd><p>Similar to Next Glyph, except it moves to the next glyph defined in the font.</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-prevdef"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Prev Defined Glyph</code></dt>
+<dd><p>Similar to Prev Glyph, except it moves to the previous glyph defined in the
+font.</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-former"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Former Glyph</code></dt>
+<dd><p>Changes the glyph window to look at whatever glyph was being edited there
+before this one (one level of history).</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-substitutions"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Substitutions</code></dt>
+<dd><p>Brings up a sub menu showing all the GSUB type 1 and type 3 substitutions
+(simple and alternate) you have defined for the selected glyph and allows you
+to change the glyph as directed by the substitution. Also contains an entry
+to return you to the original glyph.</p>
+<p>Substitutions may be set with the <a class="reference internal" href="../dialogs/charinfo.html"><span class="doc">Element-&gt;Glyph Info</span></a>
+command.</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-goto"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Goto</code></dt>
+<dt>
+<code class="sig-name descname">Replace Glyph...</code></dt>
+<dd><p>In the Font, Outline, Bitmap and Metrics views this brings up a dialog in
+which you may type either:</p>
+<ul class="simple">
+<li><p>A name of a glyph in the current font</p></li>
+<li><p>A number (in either decimal or hex) indicating the glyph you are interested
+in, in the current encoding</p></li>
+<li><p>A hex number ,preceded by “U+” or “uni” or “u”, indicating the character you
+are interested in in unicode.</p></li>
+<li><p>A decimal number, preceded by “glyph” ,indicating the glyph index in the
+original glyph list.</p></li>
+<li><p>A ku ten representation of a CJK font (two comma separated numbers)</p></li>
+<li><p>A standard name (which need not be used in the current font) but which can be
+mapped to a unicode value.</p></li>
+<li><p>For 2/4 byte encodings you will also be shown a pull-down list of unicode
+ranges (Things like “Greek”, “Katakana”, “Hangul Compatibility Jamo”) and you
+can select one of the range names.</p></li>
+<li><p>Arabic letters may also be named as: <code class="docutils literal notranslate"><span class="pre">afii57442.isolated</span></code> or
+<code class="docutils literal notranslate"><span class="pre">0x642.initial</span></code></p></li>
+<li><p>A single unicode character</p></li>
+</ul>
+<p>In the font view the view will scroll so that this glyph is visible and it
+will be selected</p>
+<p>In the bitmap, outline and metrics views, the current glyph will change to be
+the one specified.</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-insbeforeafter"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Insert Glyph Before...</code></dt>
+<dt>
+<code class="sig-name descname">Insert Glyph After...</code></dt>
+<dd><p>In the metrics view this brings up a dialog similar to the previous one
+allowing you to enter a glyph by name or encoding either before or after the
+currently selected position.</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-fvlayers"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Layers</code></dt>
+<dd><p>A submenu which only appears in the font view. It lets you chose which layer
+to display in the font view.</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-findinfv"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Find In Font View</code></dt>
+<dd><p>In the outline, bitmap and metrics views this will scroll the associated font
+view so that the current glyph is displayed (and selected) in the fontview.</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-showatt"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Show ATT</code></dt>
+<dd><p>Only in the font view. Brings up a <a class="reference internal" href="../dialogs/showatt.html"><span class="doc">dlg</span></a> showing the advanced
+typographic tables (GPOS/GSUB or morx/kern) that FontForge supports.</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-dspsubs"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Display Substitutions</code></dt>
+<dd><p>Only in the font view. This allows you to select a simple substitution, any
+glyph with that substitution attached will be displayed as the substituted
+glyph. Any glyph without such a substitution will be left blank. Double
+clicking on a glyph will either go the substituted version or will create a
+substituted version and go to that. (However almost no other commands will be
+aware of this mapping, which will probably be confusing).</p>
+<p class="rubric">Displaying small caps (‘smcp’ substitution)</p>
+<div class="flex-container">
+<div class="flex-row">
+<div class="flex-col">
+<img alt="../../_images/fv-normal.png" src="../../_images/fv-normal.png" />
+</div>
+<div class="flex-col">
+<img alt="../../_images/fv-smallcaps.png" src="../../_images/fv-smallcaps.png" />
+</div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Combinations</code></dt>
+<dd><p>A submenu containing</p>
+<span class="target" id="viewmenu-kernpairs"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Kern Pairs</code></dt>
+<dd><p>This <a class="reference internal" href="../dialogs/kernpairs.html"><span class="doc">brings up a dialog showing all kerning pairs</span></a> in
+the current font (or, if invoked from the outline glyph view, a list of
+all kerning pairs involving that glyph). You may alter kerning pairs here
+too.</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-anchoredpairs"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Anchored Pairs</code></dt>
+<dd><p>This may have a sub-menu of its own containing all the anchor classes for
+this font and an entry “All”. You may choose to see all combinations of
+glyphs from a given anchor class, or all combinations from all anchored
+classes.</p>
+<p>If invoked from the outline glyph view it will provide a list of all
+anchored combinations involving that glyph.</p>
+<p>Selecting a combination and double clicking on it will bring up an
+<a class="reference internal" href="../dialogs/anchorcontrol.html"><span class="doc">Anchor Control</span></a> dialog.</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-acontrol"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Anchor Control</code></dt>
+<dd><p>Only in the outline view. Has a submenu of all anchor points in this
+glyph. Selecting one brings upt the <a class="reference internal" href="../dialogs/anchorcontrol.html"><span class="doc">Anchor Control</span></a>
+dialog.</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-glyph"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Anchor Glyph at Point</code></dt>
+<dd><p>Only in the outline view. Allows you to attach and display another glyph
+at the selected anchor point.</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-ligatures"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Ligatures</code></dt>
+<dd><p>This brings up a dialog showing the names of all ligatures and of the
+glyphs that compose them (if invoked from the outline glyph view, a list
+of all ligatures containing that glyph). Double clicking on an entry will
+bring up a window showing that ligature.</p>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="viewmenu-glyphlabel"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Label Glyph By</code></dt>
+<dd><p>In the font view each glyph has a label above it. This may be either:</p>
+<ul class="simple">
+<li><p>An image of the glyph (from a conventional font)</p></li>
+<li><p>The name of the glyph</p></li>
+<li><p>The unicode code point associated with the glyph</p></li>
+<li><p>The glyph’s encoding (in hex)</p></li>
+</ul>
+<p>Note that when the glyphs are small (the 24 pixel view, for example) there
+may not be room for the entire name of each glyph (or even for the encoding),
+so the labels may be truncated.</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-hmetrics"></span><dl class="object">
+<dt>
+<code class="sig-name descname">View H. Metrics...</code></dt>
+<dd><p>In the font view this will control which of the horizontal metrics lines are
+draw across the displayed glyphs. In the outline glyph view the same
+functionality is available from one of the palettes.
+<a class="reference internal" href="../mainviews/fontview.html#fontview-metrics"><span class="std std-ref">See the font view for more information</span></a></p>
+</dd></dl>
+
+<span class="target" id="viewmenu-vmetrics"></span><dl class="object">
+<dt>
+<code class="sig-name descname">View V. Metrics...</code></dt>
+<dd><p>In the font view this will control which of the vertical metrics lines are
+draw across the displayed glyphs. In the outline glyph view the same
+functionality is available from one of the palettes. (This will be greyed out
+if your font does not have vertical metrics in it).
+<a class="reference internal" href="../mainviews/fontview.html#fontview-metrics"><span class="std std-ref">See the font view for more information</span></a></p>
+</dd></dl>
+
+<span class="target" id="viewmenu-32x8"></span><dl class="object">
+<dt>
+<code class="sig-name descname">32x8 cell window</code></dt>
+<dd><p>In the font view you may explicitly set the window size so that there are 32
+glyph cells horizontally and 8 vertically.</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-16x4"></span><dl class="object">
+<dt>
+<code class="sig-name descname">16x4 cell window</code></dt>
+<dd><p>In the font view you may explicitly set the window size so that there are 16
+glyph cells horizontally and 4 vertically.</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-8x2"></span><dl class="object">
+<dt>
+<code class="sig-name descname">8x2 cell window</code></dt>
+<dd><p>In the font view you may explicitly set the window size so that there are 8
+glyph cells horizontally and 2 vertically.</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-px24"></span><dl class="object">
+<dt>
+<code class="sig-name descname">24 pixel outline</code></dt>
+<dd><p>In the font view you may choose how large you want the rasterized
+representation of the outline view to be. The default is to rasterize it on a
+24 pixel block. If this item is checked then a 24 pixel version of the
+outline font is displayed, selecting it will display a 24 pixel version of
+the font.</p>
+<p>(Exactly one em-square of the glyph will be displayed, if the glyph extends
+above the ascent or below the descent those features will be clipped)</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-px36"></span><dl class="object">
+<dt>
+<code class="sig-name descname">36 pixel outline</code></dt>
+<dd><p>Similar to the above but for a 36 pixel version.</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-px48"></span><dl class="object">
+<dt>
+<code class="sig-name descname">48 pixel outline</code></dt>
+<dd><p>Similar to the above but for a 48 pixel version.</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-px72"></span><dl class="object">
+<dt>
+<code class="sig-name descname">72 pixel outline</code></dt>
+<dd><p>Similar to the above but for a 72 pixel version.</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-px96"></span><dl class="object">
+<dt>
+<code class="sig-name descname">96 pixel outline</code></dt>
+<dd><p>Similar to the above but for a 96 pixel version.</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-antialias"></span><dl class="object">
+<dt>
+<code class="sig-name descname">AntiAlias</code></dt>
+<dd><p>Only in the font and metrics view. Toggles between whether the font displayed
+in the view is a bitmapped font or an anti-aliased font. An Anti-aliased font
+shows levels of grey rather than just black and white. It often looks better
+than a bitmap, but it is slower to generate and draw.</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-vertical"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Vertical</code></dt>
+<dd><p>Only in the metrics view. Toggles between displaying horizontal and vertical
+metrics. (Only available if
+<span class="menuselection">Element ‣ Font Info ‣ General ‣ Has Vertical Metrics</span>
+is set).</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-fittoem"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Fit To Em</code></dt>
+<dd><p>Only in the font view. The fontview will either display glyphs scaled so that
+the font’s bounding box fits in the window, or so that the em fits in the
+window. The advantage of the first method is that you see all of each glyph,
+the advantage of the second is that you can see how the letter sizes compare
+from font to font.</p>
+<p><span class="small">(This is something of a simplification. In bounding box mode the displayed font is scaled so that the vertical size (as found in the bounding box) fits it the window. Very wide glyphs will still not fit horizontally. Also the scaling is not updated when glyphs change, if you have changed the maximum bounds of the font you might want to force a rescale by toggling this mode)</span></p>
+</dd></dl>
+
+<span class="target" id="viewmenu-bitmapmag"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Bitmap Magnification...</code></dt>
+<dd><p>In the font view. When displaying a bitmap font it is sometimes desirable to
+look at the font with a greater magnification than normal.</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-bitmaps"></span><dl class="object">
+<dt>
+<code class="sig-name descname">&lt;list of bitmap pixel sizes, if any&gt;</code></dt>
+<dd><p>In the font view or metrics view there is a list of all generated bitmap
+fonts. You may select to have one of them displayed in the view rather than a
+rasterized version of the outline font. If one is checked then that one is
+currently displayed, if you select one then it will be displayed.</p>
+<p>In CID keyed fonts this list will not be present.</p>
+<p>If your font database includes some greymap fonts then these will be listed
+here too, as usual they will be displayed as &lt;pixel-size&gt;&#64;&lt;bits-per-pixel&gt;</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-grid"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Show/Hide Grid</code></dt>
+<dd><p>In the Metrics View this entry allows you to turn on or off the lines marking
+the edges of the glyphs on display. There are 4 levels</p>
+<ul class="simple">
+<li><p>Show Grid – Always show the full grid lines</p></li>
+<li><p>Partial Grid – Show short lines at the top and bottom of the window so the
+line will not be distracting when examining spacing</p></li>
+<li><p>Hide when moving – Show the full grid line normally, but it will vanish
+while the user adjusts spacing with the mouse</p></li>
+<li><p>Hode Grid – Always hide the grid.</p></li>
+</ul>
+</dd></dl>
+
+<span class="target" id="viewmenu-outline"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Outline</code></dt>
+<dd><p>In the Metrics View this will be checked when the outline font is bring
+displayed. Selecting it will display the outline font (rather than a bitmap
+font).</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-numpts"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Number Points</code></dt>
+<dd><p>In the Outline view, this small sub-menu allows you to control whether point
+numbers are displayed next to points in the foreground view. This is
+primarily for TrueType, where the instructions use these numbers to refer to
+the points when they do grid-fitting. The numbering scheme is a little
+different depending on what the expected output (input) will be, so we have a
+sub-menu listing output types.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Show Grid Fit</code></dt>
+<dd><span class="target" id="viewmenu-showgridfit"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Show Grid Fit</code></dt>
+<dd><p>In the Outline view and only if the freetype library is available. Brings
+up a <a class="reference internal" href="../mainviews/charview.html#charview-gridfit"><span class="std std-ref">dialog</span></a> which allows you to control whether
+a grid fit version of the splines in the font is displayed.</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-gfbigger"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Bigger Point Size</code></dt>
+<dd><p>In the Outline view, if grid fitting is turned on, this will increase the
+point size (note, this is slightly different from increasing the pixel
+size).</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-gfsmaller"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Smaller Point Size</code></dt>
+<dd><p>In the Outline view, if grid fitting is turned on, this will decrease the
+point size.</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-gfantialias"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Anti-Alias</code></dt>
+<dd><p>In the Outline view, if grid fitting is turned on, this will toggle whethe
+the display is in anti alias mode.</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-gfoff"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Off</code></dt>
+<dd><p>Turns off grid fitting.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Show</code></dt>
+<dd><p>This submenu is only in the outline glyph view.</p>
+<span class="target" id="viewmenu-points"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Points</code></dt>
+<dd><p>This hides or displays the points in the outline glyph view.</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-cpinfo"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Show Control Point Info</code></dt>
+<dd><p>In the Outline view, when you move a
+<a class="reference internal" href="../mainviews/charview.html#charview-cpinfo"><span class="std std-ref">control point</span></a> this mode pops up a little window
+showing various bits of information about the control point you are
+editing.</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-extrema"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Extrema</code></dt>
+<dd><p>In the Outline view,</p>
+<img alt="../../_images/extrema-poi.png" class="align-right" src="../../_images/extrema-poi.png" />
+<p>in postscript and truetype fonts (in almost all cases) should have their
+horizontal and vertical extrema at the endpoints of splines. This setting
+will mark extremal endpoints by coloring them a dull purple to remind you
+that you should not delete them. If an extremum occurs somewhere other
+than an end point a crosshair will be drawn around it. You might consider
+doing <a class="reference internal" href="elementmenu.html#elementmenu-add-extrema"><span class="std std-ref">Element-&gt;Add Extrema</span></a> in this case
+(or you might not, this can be ok in some cases).</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-poi"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Points of Inflection</code></dt>
+<dd><p>In the Outline view, points of inflection occur where the change in the
+slope of the curve (second derivative) changes sign. Quadratic splines
+(truetype) cannot represent points of inflection. If you have a postscript
+font which you intend to convert to truetype it can be helpful to know
+where these difficult points lie. (the cubic-&gt;quadratic approximation
+routines will often add intermediate points at these points of inflection)</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-hvlines"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Almost Horizontal/Vertical Lines</code></dt>
+<dd><p>If a line is almost, but not quite horizontal or vertical then draw the
+line in a different color to show visually that it should be fixed.</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-hvcurves"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Almost Horizontal/Vertical Curves</code></dt>
+<dd><p>If a curve is almost, but not quite horizontal or vertical at one of its
+endpoints then draw little tick marks at the end point to indicate this.</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-definealmost"></span><dl class="object">
+<dt>
+<code class="sig-name descname">(Define Almost)</code></dt>
+<dd><p>Define what “almost” means, as used in the above two commands.</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-bearings"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Side Bearings</code></dt>
+<dd><p>Draws little lines to mark the left and right side bearings of a glyph.</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-fill"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Fill</code></dt>
+<dd><p>In the Outline view this fills in the glyph outline as you edit it. (this
+can be very slow. If the glyph is too big (too magnified) then filling
+will not be done).</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-preview"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Preview</code></dt>
+<dd><p>A preview mode hides points, hints, various other stuff and fills the
+outline to give a better feeel of the glyph’s looks. Besides usual
+shortcut toggling it on and off - <strong>Ctrl+[*key above Tab*]</strong> (eg,
+<strong>Ctrl+`</strong> on a US keyboard) - it can be also used by holding that <strong>[*key above Tab*]</strong> down (unless quick navigation is enabled).</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-palettes"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Palettes</code></dt>
+<dd><span class="target" id="viewmenu-tools"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Tools</code></dt>
+<dd><p>If this item is checked then the tools palette (in the outline and
+bitmap views) is visible. Selecting it toggles whether the palette is
+visible or not.</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-layers"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Layers</code></dt>
+<dd><p>If this item is checked then the layers palette (in the outline and
+bitmap views) is visible. Selecting it toggles whether the palette is
+visible or not.</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-shades"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Shades</code></dt>
+<dd><p>Only in the bitmap view, and only if editing grey-scale (anti-aliased)
+fonts. Controls whether the shades of grey palette is visible or not.</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-dock"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Dock Palettes</code></dt>
+<dd><p>Allows you to control whether you want the palettes free standing or
+docked in the current view.</p>
+<p>The window manager under gnome does not handle this properly. If you
+want docked palettes under gnome: Open a window with palettes, select
+docked palettes (the palettes will not dock), close the window, reopen
+the window. The palettes are now docked and should be from here on.</p>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="viewmenu-gtabs"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Glyph Tabs</code></dt>
+<dd><p>Controls whether the outline glyph view has a set of tabs of past glyphs
+viewed in that window.</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-rulers"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Rulers</code></dt>
+<dd><p>In the Glyph Outline View toggles whether rulers appear at the top and to
+the left of the editing area.</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-hhints"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Horizontal Hints</code></dt>
+<dd><p>Controls whether horizontal hints are visible</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-vhints"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Vertical Hints</code></dt>
+<dd><p>Controls whether vertical hints are visible</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-dhints"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Diagonal Hints</code></dt>
+<dd><p>Controls whether diagonal hints are visible</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-bluevalues"></span><dl class="object">
+<dt>
+<code class="sig-name descname">BlueValues</code></dt>
+<dd><p>Controls whether the glyph’s PostScript BlueValues are visible</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-familyblues"></span><dl class="object">
+<dt>
+<code class="sig-name descname">FamilyBlues</code></dt>
+<dd><p>Controls whether the glyph’s PostScript FamilyBlues are visible.</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-anchors"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Anchors</code></dt>
+<dd><p>Controls whether Anchor points are visible</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-cv-hmetrics"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Horizontal Metrics</code></dt>
+<dd><p>Controls whether horizontal metrics lines (the width line) are visible.</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-cv-vmetrics"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Vertical Metrics</code></dt>
+<dd><p>Controls whether vertical metrics lines (the vertical advance line) are
+visible.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Snap Outlines to Pixel Grid</code></dt>
+<dd><p>Cairo can draw contours with sub-pixel resolution – which means that if a
+spline’s end point falls somewhere between two pixels then cairo will draw
+a bit of the contour on both pixels this leads to an often undesirable
+level of fuzziness. In some sense it provides a more accurate indication
+of where the spline goes. This menu item can be used to turn that on and
+off.</p>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="viewmenu-bigger"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Bigger Pixel Size</code></dt>
+<dd><p>In the bitmap view this displays the current glyph in next larger bitmap font
+(if there is one)</p>
+</dd></dl>
+
+<span class="target" id="viewmenu-smaller"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Smaller Pixel Size</code></dt>
+<dd><p>In the bitmap view this displays the current glyph in next smaller bitmap
+font (if there is one)</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../ui.html">FontForge’s User Interface</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../mainviews.html">Main Views</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../menus.html">Menus</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="filemenu.html">The File Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="editmenu.html">The Edit Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pointmenu.html">The Point Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elementmenu.html">The Element Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="toolsmenu.html">The Tools Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hintsmenu.html">The Hints Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encodingmenu.html">Encoding Menu</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">The View Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="metricsmenu.html">The Metrics Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cidmenu.html">The CID Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mmmenu.html">The Multiple Master Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="windowmenu.html">The Window Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="helpmenu.html">Help Menu</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../dialogs.html">Dialogs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/HotKeys.html">Hot Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/fontforge-themes.html">FontForge color schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">X Resource Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xim.html">X Input Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">X Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../techref.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../../ui.html">FontForge’s User Interface</a><ul>
+  <li><a href="../menus.html">Menus</a><ul>
+      <li>Previous: <a href="encodingmenu.html" title="previous chapter">Encoding Menu</a></li>
+      <li>Next: <a href="metricsmenu.html" title="next chapter">The Metrics Menu</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

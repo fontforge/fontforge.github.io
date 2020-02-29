@@ -1,0 +1,538 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Encoding Menu &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="The View Menu" href="viewmenu.html" />
+    <link rel="prev" title="The Hints Menu" href="hintsmenu.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="encoding-menu">
+<h1>Encoding Menu<a class="headerlink" href="#encoding-menu" title="Permalink to this headline">¶</a></h1>
+<p>The Encoding menu is only found in the font view.</p>
+<span class="target" id="encodingmenu-reencode"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Reencode</code></dt>
+<dd><p>Has an attached sub-menu of standard and user defined encodings. The font’s
+current encoding will be indicated with a check mark. You may change the
+encoding by selecting a different entry.</p>
+<p>There are two slightly different formats an encoding can take. It can be
+defined by unicode code points, or it can be defined by glyph names. When
+reencoding to an encoding defined by code points, the glyph with the matching
+unicode value is placed in the encoding slot. When reencoding to an encoding
+defined by glyph name, we first search for a glyph with the matching name and
+use it, if not found we search for the glyph name’s corresponding unicode
+code point (if any) and if found we change its name to that specified by the
+encoding.</p>
+<p>Example: Suppose we have a font containing a glyph named “uni0041”, and an
+encoding which maps U+0041-&gt;slot 65, then the glyph will be moved into slot
+65. If we have another encoding which maps “A” -&gt; slot 65, then (since “A”
+has unicode value U+0041) our glyph will still be mapped to slot 65, but in
+addition its name will be changed to “A”.</p>
+</dd></dl>
+
+<span class="target" id="encodingmenu-compact"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Compact</code></dt>
+<dd><p>Remove any holes from the encoding so all the glyphs get smushed together. If
+the font is already compact, then selecting this again will restore the
+original.</p>
+</dd></dl>
+
+<span class="target" id="encodingmenu-force"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Force Encoding</code></dt>
+<dd><p>Has the same sub-menu as above. Here we assume that the glyphs of the font
+are currently encoded in the right order, but they have the wrong names (This
+may seem odd, but it happens a lot). This command will change the names of
+all the glyphs to match what they should be if the indicated encoding were in
+force.</p>
+</dd></dl>
+
+<span class="target" id="encodingmenu-addslots"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Add Encoding Slots...</code></dt>
+<dd><p>Add some extra slots at the end of the font into which you can put unencoded
+glyphs (variant glyphs, etc.)</p>
+</dd></dl>
+
+<span class="target" id="encodingmenu-removeslots"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Remove Unused Slots</code></dt>
+<dd><p>Removes any unused slots from the end of the font. It does not remove unused
+slots inside the font, that would screw up the encoding.</p>
+</dd></dl>
+
+<span class="target" id="encodingmenu-detach"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Detach Glyphs</code></dt>
+<dd><p>Detaches any selected encoding slots from their currently associated glyphs.
+These slots will now be marked as unused. The glyphs will remain in the font,
+just not encoded (If you reencode the font those glyphs will become visible
+again).</p>
+</dd></dl>
+
+<span class="target" id="encodingmenu-removeglyphs"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Detach &amp; Remove Glyphs...</code></dt>
+<dd><p>Similar to the above except that any glyphs detached (which are not used
+elsewhere in the encoding) will be removed from the font.</p>
+</dd></dl>
+
+<span class="target" id="encodingmenu-addenc"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Add Encoding Name...</code></dt>
+<dd><p>Requests an encoding name from the user and searches for it in the iconv()
+database. It then adds that encoding to the menu.</p>
+</dd></dl>
+
+<span class="target" id="encodingmenu-load"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Load Encoding...</code></dt>
+<dd><p>Asks the user for a filename and attempts to load a user defined encoding
+from that file. (You can only load small encodings – one byte encodings)</p>
+</dd></dl>
+
+<span class="target" id="encodingmenu-make"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Make from Font...</code></dt>
+<dd><p>Allows you to name the font’s current encoding (if it isn’t already named),
+and add it to the encoding menu.</p>
+</dd></dl>
+
+<span class="target" id="encodingmenu-removeenc"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Remove Encoding...</code></dt>
+<dd><p>Removes one of the user defined encodings from the menu.</p>
+</dd></dl>
+
+<span class="target" id="encodingmenu-display"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Display by Group...</code></dt>
+<dd><p>Allows you restrict the glyphs displayed in the font view to those in a user
+defined <a class="reference internal" href="../dialogs/groups.html"><span class="doc">group</span></a> (specified in the next command).</p>
+</dd></dl>
+
+<span class="target" id="encodingmenu-define"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Define Groups...</code></dt>
+<dd><p>Allows you to define <a class="reference internal" href="../dialogs/groups.html"><span class="doc">groups</span></a> of glyphs which (presumably) have
+some meaningful connection to each other.</p>
+</dd></dl>
+
+<span class="target" id="encodingmenu-savenl"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Save NameList of Font...</code></dt>
+<dd><p>Creates a <a class="reference internal" href="#encodingmenu-namelist"><span class="std std-ref">namelist</span></a> file mapping unicode to the
+glyph names of the current font.</p>
+</dd></dl>
+
+<span class="target" id="encodingmenu-loadnl"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Load NameList...</code></dt>
+<dd><p>Loads a <a class="reference internal" href="#encodingmenu-namelist"><span class="std std-ref">namelist</span></a> file into fontforge and
+copies it so that fontforge will load it on start up in the future.</p>
+</dd></dl>
+
+<span class="target" id="encodingmenu-renameglyphs"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Rename Glyphs...</code></dt>
+<dd><p>Allows you to specify a <a class="reference internal" href="#encodingmenu-namelist"><span class="std std-ref">namelist</span></a>. All glyphs
+in the current font will be renamed to match the scheme in the namelist.</p>
+</dd></dl>
+
+<span class="target" id="encodingmenu-nameglyphs"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Create Named Glyphs...</code></dt>
+<dd><p>Allows you to specify a file containing a list of glyph names. FontForge will
+create a sequence of unencoded glyphs with these names. This might be useful
+if all your fonts contain small caps and you always want to have the names
+“A.small”, “B.small”, “C.small” etc. or perhaps you always want the ligatures
+“longs_longs_t”, “f_longs”, “f_j”, etc.</p>
+</dd></dl>
+
+<div class="section" id="general-notes-on-encodings">
+<span id="encodingmenu-general-encodings"></span><h2>General notes on encodings<a class="headerlink" href="#general-notes-on-encodings" title="Permalink to this headline">¶</a></h2>
+<p>Not all font formats support all encodings. SVG fonts will always be output in a
+unicode encoding, truetype fonts in either unicode or one of the CJK encodings,
+type1 fonts only support single byte encodings, etc.</p>
+<p>In a CID keyed font you are not allowed to change the encoding (in essence
+because there is none), but there is an entry
+<a class="reference internal" href="cidmenu.html#cidmenu-changesup"><span class="std std-ref">CID-&gt;Change Supplement</span></a> which will display the
+Registry/Ordering information and allow you to change the supplement.</p>
+<hr class="docutils" />
+<div class="section" id="built-in-encodings">
+<span id="encodingmenu-encodings"></span><h3>Built in Encodings<a class="headerlink" href="#built-in-encodings" title="Permalink to this headline">¶</a></h3>
+<p>FontForge knows about the following encodings by default:</p>
+<ul>
+<li><p>ISO-8859-1 (Latin1) – traditional encoding for western european characters.
+Default encoding for http. Does not include the Euro sign.</p></li>
+<li><p>ISO-8859-15 (Latin0) – Replacement for Latin1. Does include the Euro.</p></li>
+<li><p>ISO-8859-2 (Latin2) – Central &amp; Eastern European (Czech, Hungarian, Polish,
+Romanian, Croatian, Slovak, Slovnian.</p></li>
+<li><p>ISO-8859-3 (Latin3) – Southern European (Esperanto, Maltese)</p></li>
+<li><p>ISO-8859-4 (Latin4) – Northern European (Estonian, Latvian, Lithuanian,
+Greenlandic, Lappish)</p></li>
+<li><p>ISO-8859-9 (Latin5) – Turkish</p></li>
+<li><p>ISO-8859-10 (Latin6) – Nordic (reworking of Latin4&amp;Latin1)</p></li>
+<li><p>ISO-8859-13 (Latin7) – Another Baltic character set</p></li>
+<li><p>ISO-8859-14 (Latin8) – Celtic (Gaelic &amp; Welsh)</p></li>
+<li><p>ISO-8859-5 (Cyrillic)</p></li>
+<li><p>ISO-8859-6 (Arabic)</p></li>
+<li><p>ISO-8859-7 (Greek)</p></li>
+<li><p>ISO-8859-8 (Hebrew) – (and Yiddish)</p></li>
+<li><p>ISO-8859-11 (Thai) – Also know as TIS 620</p>
+<p>&lt;there is no ISO-8859-12&gt;</p>
+</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>KOI8-R – Cyrillic</p></li>
+<li><p>Macintosh Roman</p></li>
+<li><p>Windows “ANSI” (CodePage1252)</p></li>
+<li><p>Adobe Standard</p></li>
+<li><p>Symbol</p></li>
+<li><p>TeX Base</p></li>
+</ul>
+<hr class="docutils" />
+<ul>
+<li><p>ISO-10646-1 (Unicode, BMP)</p></li>
+<li><p>ISO-10646-1 (Unicode, Full)</p></li>
+<li><p>ISO-10646-? (Unicode, by plane)</p>
+<p>(You can select a specific plane of unicode as an encoding (ie BMP, SMP,
+SIP,…)</p>
+</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>SJIS</p></li>
+<li><p>JIS 208 – Japanese Kanji (first 8000 characters)</p></li>
+<li><p>JIS 212 – Japanese Kanji (next 8000 characters)</p></li>
+<li><p>Wansung</p></li>
+<li><p>KSC 5601 – Korean (this is the 94x94 version of KSC 5601)</p></li>
+<li><p>Johab</p></li>
+<li><p>GB 2312 – Simplified Chinese</p></li>
+<li><p>Packed GB 2312 – (I don’t know what the proper name for this is, ASCII for
+bytes&lt;0x80, and GB 2312 EUC offset by 0x8080)</p></li>
+<li><p>Big5 – Traditional Chinese</p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>Custom – An unknown encoding</p></li>
+<li><p>Glyph Order – the glyph ordering used in the original font file.</p></li>
+</ul>
+<p>Encoding sources:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://czyborra.com/charsets/iso8859.html">ISO 8859 Alphabet Soup</a></p></li>
+<li><p><a class="reference external" href="http://www.unicode.org/Public/MAPPINGS/">Unicode Mapping Tables</a></p></li>
+</ul>
+<p><a class="reference external" href="http://www.unicode.org/charts/">An index to images of all the glyphs in unicode</a>.</p>
+<hr class="docutils" />
+</div>
+<div class="section" id="user-defined-encodings">
+<span id="encodingmenu-user-def"></span><h3>User Defined Encodings<a class="headerlink" href="#user-defined-encodings" title="Permalink to this headline">¶</a></h3>
+<p>You can also add new encodings to the set that FontForge knows about. There are
+three menu items that manipulate a set of user defined encodings. As always
+these specify both a character set and an encoding. The encoding has a maximum
+of 256 entries, but the character set may be larger (up to 1024). This means
+that you can define a font with extra characters. Since postscript fonts can be
+reencoded at runtime this can be useful.</p>
+<p>The Load Encoding command allows you to load an encoding(s) from a file.
+Currently the file must either be in the format used by the unicode consortium
+for <a class="reference external" href="http://www.unicode.org/Public/MAPPINGS/ISO8859/">mapping ISO 8859</a>
+encodings to unicode, or it must be a postscript encoding array. The first
+format looks like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mh">0x20</span>   <span class="mh">0x0020</span>  <span class="c1">#       SPACE</span>
+<span class="mh">0x21</span>    <span class="mh">0x0021</span>  <span class="c1">#       EXCLAMATION MARK</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>A postscript file looks like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">TeXBase1Encoding</span> <span class="p">[</span>
+ <span class="o">%</span> <span class="mi">00</span>
+ <span class="o">/.</span><span class="n">notdef</span> <span class="o">/</span><span class="n">dotaccent</span> <span class="o">/</span><span class="n">fi</span> <span class="o">/</span><span class="n">fl</span>
+ <span class="o">/</span><span class="n">fraction</span> <span class="o">/</span><span class="n">hungarianumlaut</span> <span class="o">/</span><span class="n">Lslash</span> <span class="o">/</span><span class="n">lslash</span>
+ <span class="o">...</span>
+<span class="p">]</span> <span class="k">def</span>
+</pre></div>
+</div>
+<p>There may be more than one encoding in a postscript file. The encoding parser is
+not smart. It will only read arrays specified like this, don’t try any of the
+innumerable other ways of specifying an array in postscript.</p>
+<p>If the font has a custom encoding then the <code class="docutils literal notranslate"><span class="pre">Make</span> <span class="pre">From</span> <span class="pre">Font</span></code> menu item is
+enabled. This allows you to name the encoding you have defined for the current
+font.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Remove</span> <span class="pre">Encoding</span></code> menu item brings up a list showing all the custom
+encodings and allows you to delete them.</p>
+<p>Here’s an <a class="reference external" href="https://fontforge.org/downloads/Encodings.ps.gz">example of a postscript encoding file</a>.
+It contains:</p>
+<ul class="simple">
+<li><p>TeXMathItalicEncoding</p></li>
+<li><p>TeXMathSymbolEncoding</p></li>
+<li><p>TeXMathExtensionEncoding</p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>IsoLatin – (which specifies all the characters used in any of the ISO-Latin-*
+fonts</p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>AdobeExpert – (Which contains things like lower case numbers, small caps,
+fractions, sub/superscript numbers, etc.)</p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>CodePage1250 – Microsoft’s encoding for Central European characters</p></li>
+<li><p>CodePage1251 – Microsoft’s Cyrillic encoding</p></li>
+<li><p>CodePage1252 – Microsoft’s Western European encoding (a superset of Latin1.
+Sometimes called “ANSI” though I can find no ANSI standard that it follows)</p></li>
+<li><p>CodePage1253 – Microsoft’s Greek encoding</p></li>
+<li><p>CodePage1254 – Microsoft’s Turkish encoding</p></li>
+<li><p>CodePage1255 – Microsoft’s Hebrew encoding (an extension of ISO-8859-8)</p></li>
+<li><p>CodePage1256 – Microsoft’s Arabic encoding</p></li>
+<li><p>CodePage1257 – Microsoft’s Baltic encoding</p></li>
+<li><p>CodePage1258 – Microsoft’s Viet Namese encoding</p></li>
+<li><p>CodePage874 – Microsoft’s Thai encoding</p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>MacCentralEuropean</p></li>
+<li><p>MacCyrillic</p></li>
+<li><p>MacGreek</p></li>
+<li><p>MacHebrew</p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>US-ASCII – Not really useful by itself any more, but provides the first 128
+characters of almost every other encoding.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="namelists">
+<span id="encodingmenu-namelist"></span><h2>NameLists<a class="headerlink" href="#namelists" title="Permalink to this headline">¶</a></h2>
+<p>Adobe has established a standard glyph naming convention which provides
+intelligible names for many glyphs of unicode characters. And some
+unintelligible names too.</p>
+<p>A <a class="reference internal" href="../../index.html#overview-glyph-names"><span class="std std-ref">namelist</span></a> is just a mapping from unicode to glyph
+names (a glyph name must be made up of alphanumeric characters (or the special
+characters ‘.’ or ‘_’), it may not begin with a digit, and it must be 31 or
+fewer characters in length.</p>
+<p>FontForge provides a series of standard namelists:</p>
+<ul>
+<li><p>Adobe Glyph List</p>
+<p>This is the set of names that Adobe publishes on the web.</p>
+</li>
+<li><p>AGL For New Fonts</p>
+<p>This is set of the names that Adobe recommends for the new fonts, without odd
+names like “afiiXXXXX” or incorrect commaaccent names.</p>
+</li>
+<li><p>AGL without afii</p>
+<p>The cyrillic and hebrew glyphs have been assigned some very odd names
+(afiiXXXXX) and some people prefer not to use them. This is now redundant; AGL
+for New Fonts should be used instead.</p>
+</li>
+<li><p>AGL with PUA</p>
+<p>Adobe has assigned part of the unicode public use area to hold some standard
+glyph variants like small caps, subscripts, old-style numbers, etc.</p>
+</li>
+<li><p>Greek small caps</p>
+<p>I’ve added some greek small cap assignments</p>
+</li>
+<li><p>TeX Names</p>
+<p>The TeX typesetting system has its own set of names</p>
+</li>
+<li><p>AMS Names</p>
+<p>The American Mathematical Society has its set of names (see the American
+Mathematical Society’s
+<a class="reference external" href="http://www.ams.org/STIX/bnb/stix-tbl.asc-2003-10-10">specification</a>)</p>
+</li>
+</ul>
+<p>You may define your own namelist file. It should have the extension “.nam”. And
+it should contain a series of lines that look like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mh">0x0020</span> <span class="n">space</span>
+<span class="mh">0x0021</span> <span class="n">exclam</span>
+<span class="mh">0x0022</span> <span class="n">dblquote</span>
+</pre></div>
+</div>
+<p>In many cases you will just want to make a few modifications to an already
+existing namelist. You can write:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Based</span><span class="p">:</span> <span class="n">Adobe</span> <span class="n">Glyph</span> <span class="n">List</span>
+<span class="mh">0x0021</span> <span class="n">exclamation</span>
+</pre></div>
+</div>
+<p>Which means the namelist is the same as the Adobe Glyph List except that in your
+system U+0021 will be called “exclamation” rather than “exclam”.</p>
+<p>Any glyphs you do not explicitly name will be named “uniXXXX” or “uXXXXX” where
+XXXX is the unicode value in hex. The prefix “uni” will be used for glyphs in
+the BMP, the prefix “u” for glyphs outside.</p>
+<p>I said that glyph names should contain only alphanumeric characters (and some
+others). But really this is only true of glyph names that get output into a
+font. If you design your own namelist you may include whatever glyph names you
+like, using (almost) the full range of unicode – provided you rename all your
+glyphs to Adobe’s names before you generate a font. If you use non-ASCII
+characters you should encode the file in utf-8.</p>
+<p>FontForge normally will restrict glyph names to be within the ASCII range, but
+if you go to
+<span class="menuselection">File ‣ Preferences ‣ Generic ‣ UnicodeGlyphNames</span> and set
+it on you can use unicode.</p>
+<p>I’ve created a <a class="reference external" href="https://fontforge.org/downloads/ListeDesGlyphs.nam">french namelist</a>
+which uses accented letters. This will work fine within fontforge, and most rasterizers
+will parse fonts generated using such names – but they are non-standard and may
+cause problems. Best to do a rename just before generating your font.</p>
+<p>So if you find it easier to work with names other than those Adobe has
+established you may create your own namelist file. Then use
+<a class="reference internal" href="#encodingmenu-loadnl"><span class="std std-ref">Encoding-&gt;Load NameList…</span></a> to load that into
+FontForge (you only need do this once, FontForge should remember it thereafter).
+You may use <a class="reference internal" href="../dialogs/prefs.html#prefs-newfontnamelist"><span class="std std-ref">File-&gt;Preferences-&gt;Font Info</span></a> to
+decree that all your new fonts will use this namelist. You can change a font’s
+namelist with either:</p>
+<ul>
+<li><p><a class="reference internal" href="../dialogs/fontinfo.html#fontinfo-ps-general"><span class="std std-ref">Element-&gt;Font Info-&gt;General-&gt;NameList</span></a></p>
+<p>Which will change the way new glyphs are assigned names</p>
+</li>
+<li><p><a class="reference internal" href="#encodingmenu-renameglyphs"><span class="std std-ref">Encoding-&gt;Rename Glyphs…</span></a></p>
+<p>Which will rename existing glyphs as well as changing the way new glyphs are
+named.</p>
+</li>
+</ul>
+<p>You may also want to force a rename of all glyphs when you Open a font, and the
+open dialog now lets you do this. Similarly when generating a font you will
+probably want to force that font to be use the standard names of the Adobe Glyph
+List.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../ui.html">FontForge’s User Interface</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../mainviews.html">Main Views</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../menus.html">Menus</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="filemenu.html">The File Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="editmenu.html">The Edit Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pointmenu.html">The Point Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elementmenu.html">The Element Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="toolsmenu.html">The Tools Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hintsmenu.html">The Hints Menu</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Encoding Menu</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#general-notes-on-encodings">General notes on encodings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#namelists">NameLists</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="viewmenu.html">The View Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="metricsmenu.html">The Metrics Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cidmenu.html">The CID Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mmmenu.html">The Multiple Master Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="windowmenu.html">The Window Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="helpmenu.html">Help Menu</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../dialogs.html">Dialogs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/HotKeys.html">Hot Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/fontforge-themes.html">FontForge color schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">X Resource Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xim.html">X Input Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">X Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../techref.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../../ui.html">FontForge’s User Interface</a><ul>
+  <li><a href="../menus.html">Menus</a><ul>
+      <li>Previous: <a href="hintsmenu.html" title="previous chapter">The Hints Menu</a></li>
+      <li>Next: <a href="viewmenu.html" title="next chapter">The View Menu</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

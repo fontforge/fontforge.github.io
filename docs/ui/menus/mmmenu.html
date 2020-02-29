@@ -1,0 +1,264 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>The Multiple Master Menu &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="The Window Menu" href="windowmenu.html" />
+    <link rel="prev" title="The CID Menu" href="cidmenu.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="the-multiple-master-menu">
+<h1>The Multiple Master Menu<a class="headerlink" href="#the-multiple-master-menu" title="Permalink to this headline">¶</a></h1>
+<p>The MM Menu provides a few commands for manipulating
+<a class="reference internal" href="../dialogs/multiplemaster.html#multiplemaster-mm"><span class="std std-ref">Multiple Master or Apple distortable fonts</span></a>. If the
+current font is a MM itself font the menu also includes a list of all font
+instances that make up this one. This menu is available in the
+<a class="reference internal" href="#mmmenu-fontview"><span class="std std-ref">font view</span></a> and the
+<a class="reference internal" href="#mmmenu-outline-char"><span class="std std-ref">outline glyph view</span></a>.</p>
+<p id="mmmenu-fontview">The menu as it appears in the font view</p>
+<span class="target" id="mmmenu-create"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Create MM</code></dt>
+<dd><p>Brings up the <a class="reference internal" href="../dialogs/multiplemaster.html"><span class="doc">multiple master dialog</span></a> and allows you
+to create your own multiple master font from scratch.</p>
+</dd></dl>
+
+<span class="target" id="mmmenu-valid"></span><dl class="object">
+<dt>
+<code class="sig-name descname">MM Valid</code></dt>
+<dd><p>Checks that the current multiple master font can be saved. So each master
+design must match in:</p>
+<ul class="simple">
+<li><p>Contours</p>
+<ul>
+<li><p>There must be the same number of contours and</p></li>
+<li><p>each contour must have the same number of points and</p></li>
+<li><p>each spline on the contour must be the same type (ie it can’t correspond to a
+straight line in one font and a curve in another)</p></li>
+</ul>
+</li>
+<li><p>References</p>
+<ul>
+<li><p>There must be the same number of references and</p></li>
+<li><p>Each corresponding reference must refer to the same encoding</p></li>
+</ul>
+</li>
+<li><p>Hints</p>
+<ul>
+<li><p>Same number of hints</p></li>
+</ul>
+</li>
+<li><p>HintMasks (Counter masks are not supported here)</p>
+<ul>
+<li><p>HintMasks at corresponding points must specify a corresponding set of hints</p></li>
+</ul>
+</li>
+<li><p>Kerning</p>
+<ul>
+<li><p>If a glyph kerns with another glyph in one font, then a corresponding kerning
+pair must exist in all designs</p></li>
+</ul>
+</li>
+</ul>
+</dd></dl>
+
+<span class="target" id="mmmenu-info"></span><dl class="object">
+<dt>
+<code class="sig-name descname">MM Info</code></dt>
+<dd><p>Brings up the <a class="reference internal" href="../dialogs/multiplemaster.html"><span class="doc">multiple master dialog</span></a> and allows you
+to modify the current multiple master font.</p>
+</dd></dl>
+
+<span class="target" id="mmmenu-newfont"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Blend to New Font...</code></dt>
+<dd><p>Allows you to create a blended version of the current multiple master font
+set as a stand alone font.</p>
+</dd></dl>
+
+<span class="target" id="mmmenu-defweights"></span><dl class="object">
+<dt>
+<code class="sig-name descname">MM Change Default Weights</code></dt>
+<dd><p>Allows you to change the default weights assigned to each master design used
+in blending the default instance of the font</p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="object">
+<dt>
+<code class="sig-name descname">&lt;sub font name&gt;</code></dt>
+<dd><p>Clicking on a different sub font name in the menu will cause that sub-font to
+be displayed instead of the current one. The subfonts are the master designs
+and the default blended font.</p>
+</dd></dl>
+
+<div class="section" id="the-menu-as-it-appears-in-the-outline-glyph-view">
+<span id="mmmenu-outline-char"></span><h2>The menu as it appears in the outline glyph view<a class="headerlink" href="#the-menu-as-it-appears-in-the-outline-glyph-view" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="#mmmenu-reblend"><span class="std std-ref">MM Reblend</span></a></p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p><a class="reference internal" href="#mmmenu-view"><span class="std std-ref">View</span></a></p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>&lt;sub font names&gt;</p></li>
+</ul>
+<span class="target" id="mmmenu-reblend"></span><dl class="object">
+<dt>
+<code class="sig-name descname">MM Reblend</code></dt>
+<dd><p>Reblends the default version of the current glyph</p>
+</dd></dl>
+
+<span class="target" id="mmmenu-view"></span><dl class="object">
+<dt>
+<code class="sig-name descname">View</code></dt>
+<dd><p>A submenu which allows you to choose which of the designs of this glyph you
+want displayed in the background of the view</p>
+</dd></dl>
+
+<hr class="docutils" />
+<dl class="object">
+<dt>
+<code class="sig-name descname">&lt;sub font name&gt;</code></dt>
+<dd><p>Clicking on a different sub font name in the menu will cause the glyph from
+that sub-font to be displayed instead of the current one. The subfonts are
+the master designs and the default blended font.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../ui.html">FontForge’s User Interface</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../mainviews.html">Main Views</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../menus.html">Menus</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="filemenu.html">The File Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="editmenu.html">The Edit Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pointmenu.html">The Point Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elementmenu.html">The Element Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="toolsmenu.html">The Tools Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hintsmenu.html">The Hints Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encodingmenu.html">Encoding Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="viewmenu.html">The View Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="metricsmenu.html">The Metrics Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cidmenu.html">The CID Menu</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">The Multiple Master Menu</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#the-menu-as-it-appears-in-the-outline-glyph-view">The menu as it appears in the outline glyph view</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="windowmenu.html">The Window Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="helpmenu.html">Help Menu</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../dialogs.html">Dialogs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/HotKeys.html">Hot Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/fontforge-themes.html">FontForge color schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">X Resource Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xim.html">X Input Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">X Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../techref.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../../ui.html">FontForge’s User Interface</a><ul>
+  <li><a href="../menus.html">Menus</a><ul>
+      <li>Previous: <a href="cidmenu.html" title="previous chapter">The CID Menu</a></li>
+      <li>Next: <a href="windowmenu.html" title="next chapter">The Window Menu</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

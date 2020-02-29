@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Several formats for bitmap only sfnts &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Spline Font Database" href="sfdformat.html" />
+    <link rel="prev" title="Palm fonts" href="palmfonts.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="several-formats-for-bitmap-only-sfnts">
+<h1>Several formats for bitmap only sfnts<a class="headerlink" href="#several-formats-for-bitmap-only-sfnts" title="Permalink to this headline">¶</a></h1>
+<p><span class="small">(the file type which holds a truetype or opentype font)</span></p>
+<p>Unfortunately every system has its own way of storing bitmap only fonts into an
+sfnt wrapper (or the system just doesn’t support it)</p>
+<div class="section" id="apple">
+<span id="bitmaponlysfnt-apple"></span><h2>Apple<a class="headerlink" href="#apple" title="Permalink to this headline">¶</a></h2>
+<p>Apple documents the existence of a bitmap only format, and gives some hints
+about the requirements of it. Their documentation is far from complete and the
+following is determined in part by that documentation, in part by examining the
+(few) bitmap only fonts of theirs I have found, and in part by error messages
+given by some of their tools.</p>
+<ul>
+<li><p>As is expected on Apple, the bitmap data reside in ‘<a class="reference external" href="https://developer.apple.com/fonts/TrueType-Reference-Manual/RM06/Chap6bloc.html">bloc</a>’ and ‘<a class="reference external" href="https://developer.apple.com/fonts/TrueType-Reference-Manual/RM06/Chap6bdat.html">bdat</a>’ tables.</p>
+<p>(These are identical in format to the ‘<a class="reference external" href="https://docs.microsoft.com/en-us/typography/opentype/spec/eblc">EBLC</a>’ and ‘<a class="reference external" href="https://docs.microsoft.com/en-us/typography/opentype/spec/ebdt">EBDT</a>’ tables used in
+OpenType)</p>
+</li>
+<li><p>The ‘<a class="reference external" href="https://developer.apple.com/fonts/TrueType-Reference-Manual/RM06/Chap6head.html">head</a>’
+table is replaced by a ‘<a class="reference external" href="https://developer.apple.com/fonts/TrueType-Reference-Manual/RM06/Chap6bhed.html">bhed</a>’ table which is byte for byte identical</p></li>
+<li><p>There are no ‘<a class="reference external" href="https://docs.microsoft.com/en-us/typography/opentype/spec/glyf">glyf</a>’, ‘<a class="reference external" href="https://docs.microsoft.com/en-us/typography/opentype/spec/loca">loca</a>’ nor ‘<code class="docutils literal notranslate"><span class="pre">CFF</span></code> ‘ tables.</p></li>
+<li><p>There are no ‘<code class="docutils literal notranslate"><span class="pre">hhea</span></code>’ nor ‘<code class="docutils literal notranslate"><span class="pre">hmtx</span></code>’ tables (metrics data are provided in
+the bitmap strikes themselves)</p></li>
+<li><p>(Presumably there are no ‘<code class="docutils literal notranslate"><span class="pre">vhea</span></code>’ nor ‘<code class="docutils literal notranslate"><span class="pre">vmtx</span></code>’ tables either)</p></li>
+<li><p>‘<a class="reference external" href="https://developer.apple.com/fonts/TrueType-Reference-Manual/RM06/Chap6maxp.html">maxp</a>’.
+<code class="docutils literal notranslate"><span class="pre">numGlyphs</span></code> is set to the number of bitmap glyphs</p></li>
+</ul>
+</div>
+<div class="section" id="x11-unix-linux">
+<span id="bitmaponlysfnt-x11"></span><h2>X11 (Unix/Linux)<a class="headerlink" href="#x11-unix-linux" title="Permalink to this headline">¶</a></h2>
+<p>The X consortium have devised their own format which they call “OpenType Bitmap”
+with extension .otb.</p>
+<ul class="simple">
+<li><p>The bitmap data reside in ‘<a class="reference external" href="https://docs.microsoft.com/en-us/typography/opentype/spec/eblc">EBLC</a>’ and ‘<a class="reference external" href="https://docs.microsoft.com/en-us/typography/opentype/spec/ebdt">EBDT</a>’ tables.</p></li>
+<li><p>There is a zero length ‘<a class="reference external" href="https://docs.microsoft.com/en-us/typography/opentype/spec/glyf">glyf</a>’ table</p></li>
+<li><p>There is a ‘<a class="reference external" href="https://docs.microsoft.com/en-us/typography/opentype/spec/loca">loca</a>’ table with one entry in it</p></li>
+<li><p>There is a ‘<a class="reference external" href="https://docs.microsoft.com/en-us/typography/opentype/spec/head">head</a>’ table (not a ‘<code class="docutils literal notranslate"><span class="pre">bhed</span></code>’)</p></li>
+<li><p>‘<a class="reference external" href="https://docs.microsoft.com/en-us/typography/opentype/spec/maxp">maxp</a>’. <code class="docutils literal notranslate"><span class="pre">numGlyphs</span></code> is set to the number of bitmap glyphs, not to the
+size of the ‘<a class="reference external" href="https://docs.microsoft.com/en-us/typography/opentype/spec/loca">loca</a>’ table</p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>The fonts I generate also contain the metrics tables as appropriate</p></li>
+</ul>
+</div>
+<div class="section" id="ms">
+<span id="bitmaponlysfnt-ms"></span><h2>MS<a class="headerlink" href="#ms" title="Permalink to this headline">¶</a></h2>
+<p>MicroSoft Windows provides no support for a bitmap only sfnt. So I have created
+a faked up format which should work in most cases</p>
+<ul class="simple">
+<li><p>The bitmap data reside in ‘<a class="reference external" href="https://docs.microsoft.com/en-us/typography/opentype/spec/eblc">EBLC</a>’ and ‘<a class="reference external" href="https://docs.microsoft.com/en-us/typography/opentype/spec/ebdt">EBDT</a>’ tables.</p></li>
+<li><p>There are ‘<a class="reference external" href="https://docs.microsoft.com/en-us/typography/opentype/spec/glyf">glyf</a>’ / ‘<a class="reference external" href="https://docs.microsoft.com/en-us/typography/opentype/spec/loca">loca</a>’ tables with entries for every glyph. If used
+the entries will produce blank glyphs (spaces).</p></li>
+<li><p>There is an ‘<a class="reference external" href="https://docs.microsoft.com/en-us/typography/opentype/spec/ebsc">EBSC</a>’ table which maps common pixel sizes to the supplied
+pixel sizes. (so if a user asked for a 20 pixel strike s/he might get an 18
+pixel strike – as opposed to getting a set of blanks.</p></li>
+<li><p>There is a ‘<a class="reference external" href="https://docs.microsoft.com/en-us/typography/opentype/spec/head">head</a>’ table (not a ‘<code class="docutils literal notranslate"><span class="pre">bhed</span></code>’)</p></li>
+<li><p>Since these fonts try to look like scalable fonts (to MS anyway) they contain
+metrics tables.</p></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui.html">FontForge’s User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../techref.html">Technical References</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gposgsub.html">Advanced Typography Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AA-Comparison.html">Anti-Alias Comparison</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autotrace.html">Autotracing bitmaps in FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accented.html">Building Accented and other Composite Glyphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bezier.html">Bézier Splines </a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref-caveats.html">Caveats about References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfdchangelog.html">Changes to the sfd format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cidmapformat.html">Cidmap files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cliargs.html">Command Line Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="splinefont.html">Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SuggestDeltas.html">Delta Instruction Suggestions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stroke.html">Expand Stroke Facility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BDFGrey.html">Extensions to Adobe’s BDF  for greymap fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PfaEdit-TeX.html">FontForge and TeX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pfaeditmath.html">FontForge’s math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hinting.html">Hinting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macformats.html">Macintosh font formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="featurefile.html">Major differences between FontForge’s and Adobe’s interpretation of feature files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="non-standard.html">Non standard extensions used FontForge in True/Open Type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="palmfonts.html">Palm fonts</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Several formats for bitmap only sfnts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#apple">Apple</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#x11-unix-linux">X11 (Unix/Linux)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ms">MS</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sfdformat.html">Spline Font Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pcf-format.html">The X11 PCF bitmap font file format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TrueOpenTables.html">TrueType and OpenType tables supported by FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corpchar.html">Unicode Corporate Characters used by FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UniqueID.html">UniqueID and XUID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selections.html">X Selections and the X Clipboard</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../techref.html">Technical References</a><ul>
+      <li>Previous: <a href="palmfonts.html" title="previous chapter">Palm fonts</a></li>
+      <li>Next: <a href="sfdformat.html" title="next chapter">Spline Font Database</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

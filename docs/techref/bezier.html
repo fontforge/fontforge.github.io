@@ -1,0 +1,298 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Bézier Splines &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Caveats about References" href="ref-caveats.html" />
+    <link rel="prev" title="Building Accented and other Composite Glyphs" href="accented.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="bezier-splines">
+<h1>Bézier Splines <a class="footnote-reference brackets" href="#f1" id="id1">1</a><a class="headerlink" href="#bezier-splines" title="Permalink to this headline">¶</a></h1>
+<img alt="../_images/splines.gif" class="align-left" src="../_images/splines.gif" />
+<p>Technically PostScript uses cubic Bézier splines. Each control point determines
+the slope of the spline at the corresponding end point. TrueType uses quadratic
+Bézier splines, in these there is only one control point between two end points
+and that point determines the slope of the spline at both end points. Both
+formats also use lines (which are linear Bézier splines).</p>
+<img alt="../_images/quadbezier.gif" class="align-right" src="../_images/quadbezier.gif" />
+<p>It is also possible to have other degree Bézier splines. For a quartic spline
+there would be 3 control points, for a quintic 4 control points, etc. Of these
+only the linear, quadratic and cubic splines are interesting to us – those used
+by TrueType and PostScript.</p>
+<p>The examples at left are cubic splines with two control points, each determining
+the slope at the nearest end point, while the example at right shows a quadratic
+spline with one control point used to determine the slopes at both end points.</p>
+<p>In general if there are <span class="math notranslate nohighlight">\(n+1\)</span> points labeled <span class="math notranslate nohighlight">\(P_0, P_1, ... P_n\)</span>, with
+<span class="math notranslate nohighlight">\(P_0\)</span> and <span class="math notranslate nohighlight">\(P_n\)</span> the end points (and all the others control points)
+then the equation of the Bézier spline between them is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\sum_{i=0}^{n}{\begin{pmatrix} i \\ n \end{pmatrix} t^i (1-t)^{n-i} P_i}\end{split}\]</div>
+<p>If there are two points then this is just the line between the two end points,
+if three then the quadratic spline used by TrueType, if four then the cubic
+spline used by PostScript.</p>
+<p>A cubic Bézier curve may be viewed as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}x &amp;= a_x t^3 + b_x t^2 + c_x t + d_x \\
+y &amp;= a_y t^3 + b_y t^2 + c_y t + d_y\end{split}\]</div>
+<p>Where</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+   d_x &amp;= P_{0_x}                                     &amp;   d_y &amp;= P_{0_y} \\
+   c_x &amp;= 3 P_{1_x} - 3 P_{0_x}                       &amp;   c_y &amp;= 3 P_{1_y} - 3 P_{0_y} \\
+   b_x &amp;= 3 P_{2_x} - 6 P_{1_x} + 3 P_{0_x}           &amp;   b_y &amp;= 3 P_{2_y} - 6 P_{1_y} + 3 P_{0_y} \\
+   a_x &amp;= P_{3_x} - 3 P_{2_x} + 3 P_{1_x} - P_{0_x}   &amp;   a_y &amp;= P_{3_y} - 3 P_{2_y} + 3 P_{1_y} - P_{0_y}
+\end{align}\end{split}\]</div>
+<p>And a quadratic Bézier curve:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}x &amp;= b_x t^2 + c_x t + d_x \\
+y &amp;= b_y t^2 + c_y t + d_y\end{split}\]</div>
+<p>with</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+   d_x &amp;= P_{0_x}                         &amp;   d_y &amp;= P_{0_y} \\
+   c_x &amp;= 2 P_{1_x} - 2 P_{0_x}           &amp;   c_y &amp;= 2 P_{1_y} - 2 P_{0_y} \\
+   b_x &amp;= P_{2_x} - 2 P_{1_x} + P_{0_x}   &amp;   b_y &amp;= P_{2_y} - 2 P_{1_y} + P_{0_y}
+\end{align}\end{split}\]</div>
+<p>And a line:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+   d_x &amp;= P_{0_x}             &amp;   d_y &amp;= P_{0_y} \\
+   c_x &amp;= P_{1_x} - P_{0_x}   &amp;   c_y &amp;= P_{1_y} - P_{0_y}
+\end{align}\end{split}\]</div>
+<div class="section" id="converting-truetype-to-postscript">
+<span id="bezier-ttf2ps"></span><h2>Converting TrueType to PostScript<a class="headerlink" href="#converting-truetype-to-postscript" title="Permalink to this headline">¶</a></h2>
+<p>Lines convert with no math whatsoever.</p>
+<p>Any quadratic spline can be expressed as a cubic (where the cubic term is zero).
+The end points of the cubic will be the same as the quadratic’s.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}CP_0 &amp;= QP_0 \\
+CP_3 &amp;= QP_2\end{split}\]</div>
+<p>The two control points for the cubic are:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}CP_1 &amp;= QP_0 + \frac{2}{3}(QP_1 - QP_0) \\
+CP_2 &amp;= QP_2 + \frac{2}{3}(QP_1 - QP_2)\end{split}\]</div>
+<p>So converting from TrueType to PostScript is trivial. There is a slight error
+introduced due to rounding, but it is usually not noticeable.</p>
+<p>(Anish Mehta points out that in truetype it is possible to specify points which
+are in the middle of a pixel (ie. with an x or y value ending in 1/2). These
+will also introduce rounding errors when converted to postscript, but here the
+solution is simple: Scale the em-square of the font by a factor of 2 and the
+problem vanishes).</p>
+</div>
+<div class="section" id="converting-postscript-to-truetype">
+<span id="bezier-ps2ttf"></span><h2>Converting PostScript to TrueType<a class="headerlink" href="#converting-postscript-to-truetype" title="Permalink to this headline">¶</a></h2>
+<p>Most cubic splines cannot be represented exactly by a quadratic (or even by a
+series of quadratics). The best that can be done is to approximate the cubic to
+within some margin of error. Here is a way to do that:</p>
+<p>Given a cubic spline. Look at two points on the spline. Then there is only one
+possible quadratic spline between those two points which has the desired slope
+at those two points. (the one quadratic has its end points as the end points of
+the interval, and its control point is determined by the intersections of the
+lines tangent to the cubic at the start and end of the interval).</p>
+<img alt="../_images/cubic2quad.png" class="align-right" src="../_images/cubic2quad.png" />
+<p>I cannot prove this, but have determined empirically (after being told it
+worked) that if a cubic spline – like the quarter ellipse at right – is
+divided “evenly” into n quadratic splines (here <span class="math notranslate nohighlight">\(n = 3\)</span>) then the control
+points will have the nice property that the on-curve points are exactly mid-way
+between control points – this means that truetype can represent them as
+interpolated points. An even division means means that each sub-point is placed
+where <span class="math notranslate nohighlight">\(t = i/n\)</span> (where <span class="math notranslate nohighlight">\(0&lt;i&lt;n\)</span>).</p>
+<p>FontForge first checks to see if the curve is already a quadratic – this might
+happen if the cubic originally came from a truetype font. If it is it simply
+converts the control point.</p>
+<p>Otherwise FontForge start inserting points. It begins by inserting a single
+point mid-way on the spline. If this produces a good approximation it stops,
+otherwise it tries again with two, three … additional points.</p>
+<p>On each test it will round the control points to integer values because truetype
+output requires this (note that it does not do this to the on-curve points, they
+are interpolated between control points and will be ok if the control points
+are). Then it checks to see if the resultant quadratics are close to the
+original curve.</p>
+<p>FontForge may also break the curve at its points of inflection (because no
+quadratic can have one there should be a point there to start a new quadratic)
+and apply the above algorithm to the components.</p>
+<p>If FontForge can find no good approximation using the above algorithm it will
+fall back to its old method, which is:</p>
+<p>Start from the end of the spline and every so often (ie. within the margin of
+error) check to see if the one permissible quadratic approximation actually
+matches the cubic closely enough .</p>
+<p>If this approximation works then keep it as part of the result, and continue the
+process by advancing our start point along to the cubic spline to the end of the
+quadratic we just created.</p>
+<p>(There are some slight complexities introduced because there may not be a
+quadratic approximation at a given point (if the tangents happen to be parallel)
+or because the approximation happens to be linear, but these are easily dealt
+with).</p>
+<p>It may, of course, happen that the “cubic” we are given is actually a quadratic
+(if its third degree term is 0), the most likely cause is that the font came
+from a truetype source. In that case the control point for the quadratic is at:</p>
+<div class="math notranslate nohighlight">
+\[QP_1 = CP_0 + \frac{3}{2}(CP_1 - CP_0)\]</div>
+<p>Other sources I have read on the net suggest checking the cubic spline for
+points of inflection (which quadratic splines cannot have) and forcing breaks
+there. To my eye this actually makes the result worse, it uses more points and
+the approximation does not look as close as it does when ignoring the points of
+inflection. So I ignore them.</p>
+</div>
+<div class="section" id="open-type-another-solution">
+<h2>Open Type, another solution<a class="headerlink" href="#open-type-another-solution" title="Permalink to this headline">¶</a></h2>
+<p>Adobe and Microsoft decided to produce one font format which could hold either a
+true type font or a postscript font. This is called Open Type. It is essentially
+a superset of TrueType. Any TrueType font is a valid Open Type font, but Open
+Type fonts can also contain postscript. Anything that supports Open Type will
+not require converting between PostScript and True Type.</p>
+<div class="section" id="see-also">
+<h3>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="pfaeditmath.html"><span class="doc">FontForge’s math</span></a></p></li>
+</ul>
+<p class="rubric">Footnotes</p>
+<dl class="footnote brackets">
+<dt class="label" id="f1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Bézier splines were developed by Pierre Bézier (1910-1999).</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui.html">FontForge’s User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../techref.html">Technical References</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gposgsub.html">Advanced Typography Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AA-Comparison.html">Anti-Alias Comparison</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autotrace.html">Autotracing bitmaps in FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accented.html">Building Accented and other Composite Glyphs</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Bézier Splines </a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#converting-truetype-to-postscript">Converting TrueType to PostScript</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#converting-postscript-to-truetype">Converting PostScript to TrueType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#open-type-another-solution">Open Type, another solution</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#see-also">See Also</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ref-caveats.html">Caveats about References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfdchangelog.html">Changes to the sfd format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cidmapformat.html">Cidmap files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cliargs.html">Command Line Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="splinefont.html">Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SuggestDeltas.html">Delta Instruction Suggestions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stroke.html">Expand Stroke Facility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BDFGrey.html">Extensions to Adobe’s BDF  for greymap fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PfaEdit-TeX.html">FontForge and TeX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pfaeditmath.html">FontForge’s math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hinting.html">Hinting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macformats.html">Macintosh font formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="featurefile.html">Major differences between FontForge’s and Adobe’s interpretation of feature files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="non-standard.html">Non standard extensions used FontForge in True/Open Type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="palmfonts.html">Palm fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bitmaponlysfnt.html">Several formats for bitmap only sfnts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfdformat.html">Spline Font Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pcf-format.html">The X11 PCF bitmap font file format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TrueOpenTables.html">TrueType and OpenType tables supported by FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corpchar.html">Unicode Corporate Characters used by FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UniqueID.html">UniqueID and XUID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selections.html">X Selections and the X Clipboard</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../techref.html">Technical References</a><ul>
+      <li>Previous: <a href="accented.html" title="previous chapter">Building Accented and other Composite Glyphs</a></li>
+      <li>Next: <a href="ref-caveats.html" title="next chapter">Caveats about References</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

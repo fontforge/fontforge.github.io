@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>The Justify dialog &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Math typesetting information" href="math.html" />
+    <link rel="prev" title="The baseline dialog, and the OpenType BASE table" href="baseline.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="the-justify-dialog">
+<h1>The Justify dialog<a class="headerlink" href="#the-justify-dialog" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-default">
+<img alt="../../_images/JustifyDlg.png" src="../../_images/JustifyDlg.png" />
+</div>
+<p>Text justification is handled differently in different scripts and in different
+languages within those scripts.</p>
+<p>In arabic special glyphs (called kashidas) are inserted into the text to fill up
+space, in latin interword spacing and even the within word letter spacing can be
+adjusted.</p>
+<p>But more sophisticated behaviors are possible. In some circumstances it might be
+appropriate to turn off ligatures, something which (in latin at least) will
+usually add a little more space to the line. In other cases a special kerning
+lookup might be invoked.</p>
+<p>OpenType allows a fairly general approach to this. Information is organized by
+script, and then by language within the script.</p>
+<img alt="../../_images/JustifyExtenderDlg.png" class="align-left" id="justify-glyphs-dlg" src="../../_images/JustifyExtenderDlg.png" />
+<p>The extender list is specified at the script level. You may either enter a
+series of glyph names into the space provided in the dialog above, or click on
+the little box to the right and a dialog will pop up giving a more convenient
+entry mechanism.</p>
+<p>Several different priority levels may be specified within a language. The first
+priority level will be invoked to make small adjustments to spacing. If this is
+not enough to fix the problem then the second level will be invoked (in addition
+to the first, I believe). If the second level is not enough then third, fourth,
+fifth… levels will be invoked in turn until the line can be justified.</p>
+<div class="figure align-default" id="justify-language-dlg">
+<img alt="../../_images/JustifyLangDlg.png" src="../../_images/JustifyLangDlg.png" />
+</div>
+<p>Each priority level consists of two parts, a series of behaviors for when the
+line is too long (and needs to be make smaller) and another series for when the
+line is too short (and needs to be extended). Each of these, in turn consists of
+a set of lookups (in either GPOS or GSUB) to turn on, a set of lookups to turn
+off, and finally a special lookup which specifies the maximum amount the advance
+width of a glyph can change.</p>
+<img alt="../../_images/JustifyLookupDlg.png" class="align-right" id="justify-lookup-dlg" src="../../_images/JustifyLookupDlg.png" />
+<p>So if you want to make a line shorter you might turn on ligatures and turn on
+kerning. Both of which (usually) make text shorter. On the other hand if you
+want to make a line longer you might want to turn those same lookups off.</p>
+<p>The maximum advance width lookups are a little different from normal lookups.
+These may be either single positioning GPOS-style lookups or kerning GPOS-style
+lookups. The lookup does not specify an exact adjustment to a glyph’s width,
+rather it specifies the maximum (in absolute value) amount by which that glyph’s
+width can change. So in latin typesetting you might have a lookup with
+information solely for the space glyph allowing it to (for instance) double in
+size when expansion is needed, or half in size when contraction is needed – or
+any value between the normative amount and the adjusted maximum. At a higher
+priority level there might be a set of lookups which adjust the advance width of
+every glyph.</p>
+<p>In theory you could use a kerning lookup to specify the maximum width adjustment
+allowed between any two glyphs. (The OpenType spec actually says that <em>any</em> GPOS
+lookup could be used, except for contextual ones (which makes one wonder if
+contextual chaining lookups are permitted), no semantics are provided for these
+other lookup types and it is hard to imagine what they might do, so I’m ignoring
+them).</p>
+<p>These maximum lookups look like GPOS lookups, but are stored in the JSTF table.
+FontForge will display them in the GPOS lookup list but will output them the
+JSTF table when appropriate.</p>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../ui.html">FontForge’s User Interface</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../mainviews.html">Main Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../menus.html">Menus</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../dialogs.html">Dialogs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#general">General</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../dialogs.html#info">Info</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="fontinfo.html">Font Info</a></li>
+<li class="toctree-l4"><a class="reference internal" href="charinfo.html">Glyph Info</a></li>
+<li class="toctree-l4"><a class="reference internal" href="getinfo.html">Get Info</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bdfinfo.html">BDF Info Dialog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="baseline.html">The baseline dialog, and the OpenType BASE table</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">The Justify dialog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="math.html">Math typesetting information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="multiplemaster.html">Multiple Master Dialog</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#editing">Editing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#lookups-and-kerning">Lookups and Kerning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#validation">Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/HotKeys.html">Hot Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/fontforge-themes.html">FontForge color schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">X Resource Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xim.html">X Input Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">X Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../techref.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../../ui.html">FontForge’s User Interface</a><ul>
+  <li><a href="../dialogs.html">Dialogs</a><ul>
+      <li>Previous: <a href="baseline.html" title="previous chapter">The baseline dialog, and the OpenType BASE table</a></li>
+      <li>Next: <a href="math.html" title="next chapter">Math typesetting information</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

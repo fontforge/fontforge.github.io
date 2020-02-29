@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Non-BMP Unicode bitmap fonts supported by FontForge &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Quotations used in the sample text for Printing" href="quotations.html" />
+    <link rel="prev" title="Error Recovery" href="errrecovery.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="non-bmp-unicode-bitmap-fonts-supported-by-fontforge">
+<h1>Non-BMP Unicode bitmap fonts supported by FontForge<a class="headerlink" href="#non-bmp-unicode-bitmap-fonts-supported-by-fontforge" title="Permalink to this headline">¶</a></h1>
+<p>Ironically, FontForge is stuck in the dark ages when it comes to using fonts. It
+should be using libXft and gtk to get full unicode support.</p>
+<p>It doesn’t. It continues to use the old X bitmap interface which the X
+consortium isn’t interested in extending beyond BMP (since libXft/gtk do this
+well and there is no point in redoing that for an obsolete interface).</p>
+<p>But I’d like to draw non-BMP characters at least in my font view.</p>
+<p>To this end I have made FontForge recognize some non-standard encodings:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-*-*-*-*-*--*-*-*-*-*-*-</span><span class="n">UnicodePlane</span><span class="o">-</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="o">...</span><span class="mi">16</span><span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">fontforge</span><span class="o">-</span><span class="n">planeone</span><span class="o">-</span><span class="n">medium</span><span class="o">-</span><span class="n">r</span><span class="o">-</span><span class="n">normal</span><span class="o">--</span><span class="mi">13</span><span class="o">-</span><span class="mi">120</span><span class="o">-</span><span class="mi">75</span><span class="o">-</span><span class="mi">75</span><span class="o">-</span><span class="n">p</span><span class="o">-</span><span class="mi">101</span><span class="o">-</span><span class="n">unicodeplane</span><span class="o">-</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>Is a font that fontforge will interpret as containing glyphs from plane 1
+(Supplementary Multilingual Plane) – starting with Linear B glyphs.</p>
+<p>As a proof of concept I’ve created a bdf font containing all the Linear B
+syllables, and not much of anything else (I am aware that the CODE200? fonts
+provide good glyphs for the non-bmp characters, but they are shareware so I
+can’t just rasterize them and redistribute them).</p>
+<p>If anyone would like to submit glyphs to this font (or to putative similar ones
+for planes 2&amp;14) I’ll try and coordinate that process.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://fontforge.org/downloads/PlaneOne.sfd.bz2">PlaneOne.sfd</a></p></li>
+<li><p><a class="reference external" href="https://fontforge.org/downloads/PlaneOne-13.bdf.bz2">PlaneOne-13.bdf</a></p></li>
+<li><p><a class="reference external" href="https://fontforge.org/downloads/toplane.c.bz2">toplane.c</a></p></li>
+</ul>
+<p>The sfd file is encoded with a “full unicode” encoding. The program toplane.c
+will take a bdf containing one Unicode plane, figure out which plane it is, and
+reencode the font with the appropriate UnicodePlane mapping.</p>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui.html">FontForge’s User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techref.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../appendices.html">Appendices</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ff-history.html">What on Earth Possessed me…</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diffs.html">Differences from Fontographer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files.html">Files used by FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errrecovery.html">Error Recovery</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Non-BMP Unicode bitmap fonts supported by FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quotations.html">Quotations used in the sample text for Printing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uitranslationnotes.html">User Interface Translation Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fontstyles.html">Font Styles in various languages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OFL-Unofficial.html">Unofficial translations of the OFL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bibliography.html">A meandering bibliography of font related things</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendices.html#japanese-documentation-outdated">Japanese documentation (outdated)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../appendices.html">Appendices</a><ul>
+      <li>Previous: <a href="errrecovery.html" title="previous chapter">Error Recovery</a></li>
+      <li>Next: <a href="quotations.html" title="next chapter">Quotations used in the sample text for Printing</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

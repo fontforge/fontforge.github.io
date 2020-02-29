@@ -1,0 +1,1746 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>X Resources &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Scripting FontForge" href="../../scripting/scripting.html" />
+    <link rel="prev" title="X Input Methods" href="xim.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="x-resources">
+<h1>X Resources<a class="headerlink" href="#x-resources" title="Permalink to this headline">¶</a></h1>
+<p>Every X application has an inordinate number of resources that you can tweak.
+This one is no exception. However I don’t follow standard conventions, so it’s
+all different. Sorry (a little anyway).</p>
+<p>To use an X resource add a series of lines to your .Xdefaults file and then run
+“$ xrdb ~/.Xdefaults”. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Gdraw</span><span class="o">.</span><span class="n">ScreenWidthInches</span><span class="p">:</span> <span class="mf">14.7</span>
+<span class="n">Gdraw</span><span class="o">.</span><span class="n">GGadget</span><span class="o">.</span><span class="n">Popup</span><span class="o">.</span><span class="n">Font</span><span class="p">:</span> <span class="mi">10</span><span class="n">pt</span> <span class="n">helvetica</span>
+<span class="n">Gdraw</span><span class="o">.</span><span class="n">Background</span><span class="p">:</span> <span class="n">white</span>
+<span class="n">fontforge</span><span class="o">.</span><span class="n">FontView</span><span class="o">.</span><span class="n">FontFamily</span><span class="p">:</span> <span class="n">Helvetica</span><span class="p">,</span> <span class="n">GillSans</span>
+</pre></div>
+</div>
+<p>Some systems (the mac) will not automatically load X resources when starting X,
+in this case you must explicitly tell fontforge where to find a resource file
+with the preference item:
+<a class="reference internal" href="../dialogs/prefs.html#prefs-resourcefile"><span class="std std-ref">File-&gt;Preference-&gt;Generic-&gt;ResourceFile</span></a>.</p>
+<p>You may also use fontforge’s resource editor
+(<a class="reference internal" href="resedit.html"><span class="doc">File-&gt;X Resource Editor</span></a>)</p>
+<p>If a resource begins with “<code class="docutils literal notranslate"><span class="pre">Gdraw.</span></code>” or “<code class="docutils literal notranslate"><span class="pre">fontforge.</span></code>” then the program
+will look at it.</p>
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.FontView.ChangedColor</code></dt>
+<dd><p>Sets the color used to mark changed glyphs.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.FontView.GlyphInfoColor</code></dt>
+<dd><p>Sets the color used to dislpay information about selected glyph, betwen the
+FontView menu bar and the glyph array.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.FontView.SelectedColor</code></dt>
+<dd><p>Sets the background color of selected glyphs.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.FontView.SelectedFgColor</code></dt>
+<dd><p>Sets the foreground color of selected glyphs.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.FontView.EmptySlotFgColor</code></dt>
+<dd><p>Sets the color of crosses marking empty code points.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.FontView.HintingNeededColor</code></dt>
+<dd><p>Sets the color of markings for glyphs that need hinting or instructing.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.FontView.FontSize</code></dt>
+<dd><p>Point size of those fonts.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.InfoFamily</code></dt>
+<dd><p>A list of font family names to be used in the outline and bitmap character
+views for information messages.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.PointColor</code></dt>
+<dd><p>Sets the color used to draw curved, corner or tangent points in the outline
+character view.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.FirstPointColor</code></dt>
+<dd><p>Sets the color of the first point on a contour.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.SelectedPointColor</code></dt>
+<dd><p>Sets the color used to draw selected curved, corner or tangent points in the
+outline character view.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.SelectedPointWidth</code></dt>
+<dd><p>Sets the width of the line used to outline selected curved, corner or tangent
+points in the outline character view.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.ExtremePointColor</code></dt>
+<dd><p>Sets the color of a point which is an extremum.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.PointOfInflectionColor</code></dt>
+<dd><p>Sets the color of a location which is a point of inflection.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.AlmostHVColor</code></dt>
+<dd><p>Sets the color used to mark lines and curves which are almost, but not quite
+horizontal or vertical.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.NextCPColor</code></dt>
+<dd><p>Sets the color used to draw the “Next” control point.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.PrevCPColor</code></dt>
+<dd><p>Sets the color used to draw the “Previous” control point.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.SelectedCPColor</code></dt>
+<dd><p>Sets the color used to draw a control point that has been selected.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.CoordinateLineColor</code></dt>
+<dd><p>Sets the color used to draw the coordinate axes.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.WidthColor</code></dt>
+<dd><p>Sets the color used to draw the advance width line.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.WidthSelColor</code></dt>
+<dd><p>Sets the color used to draw the advance width if it is selected.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.GridFitWidthColor</code></dt>
+<dd><p>Sets the color used to draw the advance width once it has been grid fit (if
+<span class="menuselection">View ‣ Show Grid Fit</span> is on)</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.LigatureCaretColor</code></dt>
+<dd><p>Sets the color used to draw ligature caret lines.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.RasterColor</code></dt>
+<dd><p>Sets the color used to draw the pixels of a rasterized bitmap (if
+<span class="menuselection">View ‣ Show Grid Fit</span> or <span class="menuselection">Hints ‣ Debug</span>
+is on)</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.RasterNewColor</code></dt>
+<dd><p>Sets the color used to draw the pixels of a rasterized bitmap if they have
+recently been turned on (if <span class="menuselection">Hints ‣ Debug</span> is on)</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.RasterOldColor</code></dt>
+<dd><p>Sets the color used to draw the pixels of a rasterized bitmap f they have
+recently been turned off (if <span class="menuselection">Hints ‣ Debug</span> is on)</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.RasterGridColor</code></dt>
+<dd><p>Sets the color used to draw the pixel grid used by the rasterizer (if
+<span class="menuselection">View ‣ Show Grid Fit</span> or <span class="menuselection">Hints ‣ Debug</span>
+is on)</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.RasterDarkColor</code></dt>
+<dd><p>When doing anti-aliased debugging, sets the color used for the darkest pixel.
+Other pixels will be interpolated between this and the background.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.ItalicCoordColor</code></dt>
+<dd><p>Sets the color used to draw various horizontal metrics lines when they have
+been skewed appropriately for an italic font.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.MetricsLabelColor</code></dt>
+<dd><p>Sets the color used to label metrics lines</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.HintLabelColor</code></dt>
+<dd><p>Sets the color used to label hint lines (and blue value lines)</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.BlueValuesStippledCol</code></dt>
+<dd><p>Sets the color used to draw the BlueValues and OtherBlues zones.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.FamilyBlueStippledColor</code></dt>
+<dd><p>Sets the color used to draw the FamilyBlueValues and FamilyOtherBlues zones.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.MDHintColor</code></dt>
+<dd><p>Sets the color used to draw minimum distance hints</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.DHintColor</code></dt>
+<dd><p>Sets the color used to draw diagonal hints</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.HHintColor</code></dt>
+<dd><p>Sets the color used to draw horizontal stem hints</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.VHintColor</code></dt>
+<dd><p>Sets the color used to draw vertical stem hints</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.ConflictHintColor</code></dt>
+<dd><p>Sets the color used to draw hints when they conflict</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.HHintActiveColor</code></dt>
+<dd><p>Sets the color used to draw a horizontal stem hint when it is active in the
+review hints dlg.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.VHintActiveColor</code></dt>
+<dd><p>Sets the color used to draw a vertical stem hint when it is active in the
+review hints dlg.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.HFlexHintColor</code></dt>
+<dd><p>Sets the color used to draw the halo around horizontal flex hints</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.VFlexHintColor</code></dt>
+<dd><p>Sets the color used to draw the halo around vertical flex hints.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.AnchorColor</code></dt>
+<dd><p>Sets the color used to draw an anchor point</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.TemplateOutlineColor</code></dt>
+<dd><p>Sets the color used to draw a template outline. (not currently used)</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.OldOutlineColor</code></dt>
+<dd><p>Sets the color used to draw the original outline of a set of splines being
+transformed with one of the transform tools (flip, rotate, scale, etc.)</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.TransformOriginColor</code></dt>
+<dd><p>Sets the color used to draw the origin of the current transformation.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.GuideOutlineColor</code></dt>
+<dd><p>Sets the color used to draw outlines in the Guide layer.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.GridFitOutlineColor</code></dt>
+<dd><p>Sets the color used to draw outlines which have been gridfit (this should
+probably be the same as BackgroundOutlineColor as both are in the background
+layer).</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.BackgroundOutlineColor</code></dt>
+<dd><p>Sets the color used to draw background outlines.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.ForegroundOutlineColor</code></dt>
+<dd><p>Sets the color used to draw foreground outlines.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.BackgroundImageColor</code></dt>
+<dd><p>Sets the color used to draw background images.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.FillColor</code></dt>
+<dd><p>Sets the color used to draw a character’s fill</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.PreviewFillColor</code></dt>
+<dd><p>The color to use when performing a preview fill. If this is not set then
+FontForge will fallback to using fontforge.CharView.FillColor. Neither of
+these resources are set then black will be used.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.TraceColor</code></dt>
+<dd><p>Sets the color used to draw the trace of the freehand tool.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.Rulers.FontSize</code></dt>
+<dd><p>Sets the point size of the font used in the rulers and the info bar. If the
+font is too big text will be clipped.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.Measure.Font</code></dt>
+<dd><p>Select the font used to display the information shown in the window
+associated with the measure tool.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.Hotkey.Tool.Zoom</code></dt>
+<dd><p>The keyboard shortcut that you desire to switch to the zoom tool. For
+example: fontforge.CharView.Hotkey.Tool.Zoom: z</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.Hotkey.Tool.Ruler</code></dt>
+<dd><p>The keyboard shortcut to select the ruler tool.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.Hotkey.Tool.Pointer</code></dt>
+<dd><p>The keyboard shortcut to select the pointer tool.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.Hotkey.Tool.Hand</code></dt>
+<dd><p>The keyboard shortcut to select the hand tool.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.Hotkey.Tool.PointCurve</code></dt>
+<dd><p>The keyboard shortcut to select the point curve tool.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.Hotkey.Tool.PointHVCurve</code></dt>
+<dd><p>The keyboard shortcut to select the point hv curve tool.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.Hotkey.Tool.PointCorner</code></dt>
+<dd><p>The keyboard shortcut to select the point corner tool.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.Hotkey.Tool.PointTangent</code></dt>
+<dd><p>The keyboard shortcut to select the point tangent tool.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.Hotkey.Tool.Freehand</code></dt>
+<dd><p>The keyboard shortcut to select the point Freehand tool.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.Hotkey.Tool.PointTangent</code></dt>
+<dd><p>The keyboard shortcut to select the point tangent tool.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.Hotkey.Tool.Pen</code></dt>
+<dd><p>The keyboard shortcut to select the point Pen tool.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.Hotkey.Tool.SpiroToggle</code></dt>
+<dd><p>Toggle spiro mode on if it is available.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.Hotkey.Tool.SpiroG4</code></dt>
+<dd><p>SpiroG4 tool.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.Hotkey.Tool.SpiroCorner</code></dt>
+<dd><p>SpiroCorner tool.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.Hotkey.Tool.SpiroLeft</code></dt>
+<dd><p>SpiroLeft tool.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.Hotkey.Tool.SpiroRight</code></dt>
+<dd><p>SpiroRight tool.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CharView.Hotkey.Tool.Knife</code></dt>
+<dd><p>Knife tool.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.DebugView.Font</code></dt>
+<dd><p>Select the font used to display the truetype instructions being debugged.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.DVRaster.Background</code></dt>
+<dd><p>Sets the background color of the raster window in the debugger.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.MetricsView.AdvanceWidthColor</code></dt>
+<dd><p>Sets the color for the grid lines in the metrics view when nothing special is
+happening to them.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.MetricsView.ItalicAdvanceColor</code></dt>
+<dd><p>In an italic font, this will be the color used to draw the line at the
+italicAngle which corresponds to the italic advance width.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.MetricsView.KernLineColor</code></dt>
+<dd><p>Sets the color for the grid line in the metrics view which currently may be
+moved to change a glyph’s kerning.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.MetricsView.SideBearingLneColor</code></dt>
+<dd><p>Sets the color for the grid line in the metrics view which currently may be
+moved to change a glyph’s right side bearing (or bottom side bearing).</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.MetricsView.SelectedGlyphColor</code></dt>
+<dd><p>Sets the color for the currently selected glyph in the metrics view.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.MetricsView.Font</code></dt>
+<dd><p>Select the font used to display labels in the metrics view.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.BDFProperties.Font</code></dt>
+<dd><p>Sets the font used in the BDF Properties dialog for stand alone text</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.Combinations.Font</code></dt>
+<dd><p>Sets the font used in the kern and anchor combinations dialog for labelling
+the combinations</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.CVT.Font</code></dt>
+<dd><p>Sets the font used in the ‘cvt ‘ table dialog</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.GlyphInfo.Font</code></dt>
+<dd><p>Sets the font used in the glyph info dialog for stand alone text</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.Groups.Font</code></dt>
+<dd><p>Sets the font used in the Groups dialog</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.Histogram.Font</code></dt>
+<dd><p>Sets the font used in the Histogram dialog</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.KernClass.Font</code></dt>
+<dd><p>Sets the font used in the kern class and pair dialogs</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.LayersPalette.Font</code></dt>
+<dd><p>Sets the font used in the layers palettes dialog</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.Math.Font</code></dt>
+<dd><p>Sets the font used in the Math dialog</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.Math.BoldFont</code></dt>
+<dd><p>Sets the bold font used in the Math dialog</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.OFLib.Font</code></dt>
+<dd><p>Sets the font used in the Open Font Library browser dialog</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.SearchView.Font</code></dt>
+<dd><p>Sets the font used in the find and replace dialog</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.SearchView.BoldFont</code></dt>
+<dd><p>Sets the bold font used in the find and replace dialog</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.SFTextArea.Font</code></dt>
+<dd><p>Sets the font used in the Print dialog and its variants dialog – except I
+don’t think this ever gets used.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.ShowATT.Font</code></dt>
+<dd><p>Sets the font used in the Show ATT dialog</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.ShowATT.MonoFont</code></dt>
+<dd><p>Sets the monospaced font used in the Show ATT dialog</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.Splash.Font</code></dt>
+<dd><p>Sets the font used in the splash screen and About FontForge dialog.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.Splash.ItalicFont</code></dt>
+<dd><p>Sets the italic font used in the About FontForge dialog</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.StateMachine.Font</code></dt>
+<dd><p>Sets the font used in the Apple state machine dialog</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.TilePath.Font</code></dt>
+<dd><p>Sets the font used in the Tile Path dialog</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.TilePath.BoldFont</code></dt>
+<dd><p>Sets the bold font used in the Tile Path dialog</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.ToolsPalette.Font</code></dt>
+<dd><p>Sets the font used in the Tools Palette dialog for labelling tool options</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.TTInstruction.Font</code></dt>
+<dd><p>Sets the font used in the various dialogs which edit truetype instructions
+(‘fpgm’ table, glyph instructions, etc.)</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.Validate.Font</code></dt>
+<dd><p>Sets the font used in the Validate dialog</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.View.Background</code></dt>
+<dd><p>Sets the background color for the drawing areas of the fontview, glyph view,
+bitmap view and metrics view.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontforge.Warnings.Font</code></dt>
+<dd><p>Sets the font used in the Warnings dialog</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.ScreenWidthCentimeters</code></dt>
+<dd><p>A double. (centimeters)</p>
+<p>X usually does not know the physical width of a screen (it knows the logical,
+pixel width). Gdraw’s internals are based on points rather than pixels, and
+it will sometimes pick a font that is too small or too large if it relies on
+X’s idea of how wide the screen is.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.ScreenWidthInches</code></dt>
+<dd><p>A double. (inches)</p>
+<p>Same as the above, except measured in inches.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.ScreenWidthPixels</code></dt>
+<dd><p>An integer (pixels)</p>
+<p>When X creates a virtual screen it may not be possible for Gdraw to find the
+actual number of pixels on the screen. This again will throw off point
+calculations.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.ScreenHeightPixels</code></dt>
+<dd><p>An integer (pixels)</p>
+<p>When X creates a virtual screen it may not be possible for Gdraw to find the
+actual number of pixels on the screen. This is not used in point
+calculations.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.Depth</code></dt>
+<dd><p>An integer (1, 8, 16, 32)</p>
+<p>You can use this to request a different depth than the default one. Not all
+servers will support all depths. If FontForge can’t find a visual with the
+desired depth it will use the default depth.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.VisualClass</code></dt>
+<dd><p>A string (“StaticGray”, “GrayScale”, “StaticColor”, “PsuedoColor”,
+“TrueColor”, “DirectColor”)</p>
+<p>FontForge will search for a visual with the given class (and possibly depth
+if the depth argument is specified too).</p>
+</dd></dl>
+
+<span class="target" id="xres-colormap"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.Colormap</code></dt>
+<dd><p>An string (“Current”, “Copy”, “Private”)</p>
+<p>You can use this to control what FontForge does about the colormap on an 8bit
+screen</p>
+<ul class="simple">
+<li><p>Current – FontForge will attempt to allocate its colors in the current
+colormap.</p></li>
+<li><p>Copy – FontForge will allocate what colors it can and then copy the current
+color map into a private copy. This means FontForge has access to a much
+wider range of colors, and (as long as the shared colormap doesn’t change)
+FontForge’s colormap will match that of the rest of the screen.</p></li>
+<li><p>Private – FontForge will allocate a private colormap and set the colors just
+as it wants them. It will almost certainly not match the shared colormap.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.DoDithering</code></dt>
+<dd><p>An integer (0 or 1)</p>
+<p>You can use this to turn off dithering of images on an 8bit screen.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.MultiClickTime</code></dt>
+<dd><p>An integer (milliseconds)</p>
+<p>The maximum amount of time allowed between two clicks for them to be
+considered a double (triple, etc.) click.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.MultiClickWiggle</code></dt>
+<dd><p>An integer (pixels)</p>
+<p>The maximum number of pixels the mouse is allowed to move between two clicks
+and have them still be considered a double click.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.TwoButtonFixup</code></dt>
+<dd><p>A boolean</p>
+<p>On a windows keyboard use the modifier key with the flag on it to simulate
+mouse button 2 (middle button). If this key is depressed when a mouse button
+is pressed or released then pretend it was button 2 that was pressed or
+release.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.DontOpenXDevices</code></dt>
+<dd><p>a booleanVarious people have complained that when FontForge attempts to open
+the devices of the wacom graphics tablet, the X server gives a BadDevice
+error. I can’t duplicate this, the open works fine on my system, but this
+resource allows them to tell fontforge not to try to use the tablet.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.MacOSXCmd</code></dt>
+<dd><p>A boolean</p>
+<p>On Mac OS X the user will probably expect to use the Command (apple,
+cloverleaf) key to control the menu (rather than the Control key). If this is
+set then the command key will be mapped to the control key internally.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.MultiClickWiggle</code></dt>
+<dd><p>An integer (pixels)</p>
+<p>The maximum number of pixels the mouse is allowed to move between two clicks
+and have them still be considered a double click.</p>
+</dd></dl>
+
+<span class="target" id="xres-keyboard"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.Keyboard</code></dt>
+<dd><p>ibm | mac | sun | ppc | 0 | 1 | 2 | 3</p>
+<p>Allows you to specify the type of keyboard. Currently this is only relevent
+when generating menus. The modifier keys are in different locations on
+different keyboards (under different operating systems) and if FontForge
+knows what keyboard you are using it can make the hot-keys have better
+labels.</p>
+<ul>
+<li><p>ibm | 0</p>
+<p>Uses the Control and Alt keys</p>
+</li>
+<li><p>mac | 1</p>
+<p>Uses the Command and Option keys (Mac OS/X, Mac keyboard)</p>
+</li>
+<li><p>ppc | 3</p>
+<p>Uses the Control and Command keys (Suse ppc linux, Mac keyboard)</p>
+</li>
+<li><p>sun | 2</p>
+<p>Uses the Control and Meta keys</p>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.SelectionNotifyTimeout</code></dt>
+<dd><p>An integer (seconds)</p>
+<p>Gdraw will wait this many seconds after making a request for a selection (ie.
+when doing a Paste). If it gets no responce after that period it reports a
+failure.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.Background</code></dt>
+<dd><p>A <a class="reference internal" href="#xres-color"><span class="std std-ref">color</span></a></p>
+<p>Gdraw will use this as the default background color for the windows.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.Foreground</code></dt>
+<dd><p>A <a class="reference internal" href="#xres-color"><span class="std std-ref">color</span></a></p>
+<p>Gdraw will use this as the default foreground color for dialogs.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GGadget.Popup.Foreground</code></dt>
+<dd><p>A <a class="reference internal" href="#xres-color"><span class="std std-ref">color</span></a></p>
+<p>Specifies the foreground color of popup (tooltip) messages.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GGadget.Popup.Background</code></dt>
+<dd><p>A <a class="reference internal" href="#xres-color"><span class="std std-ref">color</span></a></p>
+<p>Specifies the background color of popup messages.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GGadget.Popup.Delay</code></dt>
+<dd><p>An integer (milliseconds).</p>
+<p>Specifies the amount of time the cursor must remain motionless before a popup
+message pops up.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GGadget.Popup.LifeTime</code></dt>
+<dd><p>An integer (milliseconds).</p>
+<p>Specifies the length of time the message will display.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GGadget.Popup.Font</code></dt>
+<dd><p>A <a class="reference internal" href="#xres-font"><span class="std std-ref">font</span></a></p>
+<p>Specifies the font to use in a popup message.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GGadget.Progress.FillCol</code></dt>
+<dd><p>A <a class="reference internal" href="#xres-color"><span class="std std-ref">color</span></a></p>
+<p>Specifies the color of the progress bar in the progress window.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GGadget.Progress.Background</code></dt>
+<dd><p>A <a class="reference internal" href="#xres-color"><span class="std std-ref">color</span></a></p>
+<p>Specifies the background color of progress window.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GGadget.Progress.Font</code></dt>
+<dd><p>A <a class="reference internal" href="#xres-font"><span class="std std-ref">font</span></a></p>
+<p>Specifies the font to use in a progress window.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GGadget.ImagePath</code></dt>
+<dd><p>A unix style path string, with directories separated by “:”. The sequence
+“~/” at the start of a directory will be interpreted as the user’s home
+directory. If a directory is “=” then the installed pixmap directory will be
+used.</p>
+<p>Specifies the search path for images. Specifically those used in the menus,
+and those used in various gadgets listed below.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GGadget...</code></dt>
+<dd><p>Every ggadget in enclosed in a box. No gadget is actually a GGadget, but
+every other gadget inherits (potentially with modification) from this
+abstract class. The following information may be supplied for any box:</p>
+<dl class="object">
+<dt>
+<code class="sig-name descname">...Box.BorderType</code></dt>
+<dd><p>one of “none”, “box”, “raised”, “lowered”, “engraved”, “embossed”,
+“double”</p>
+<p>For a description of these see the css manual.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">...Box.BorderShape</code></dt>
+<dd><p>one of “rect”, “roundrect”, “ellipse”, “diamond”</p>
+<p>Describes the basic shape of the box. (some ggadgets must be in
+rectangles).</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">...Box.BorderWidth</code></dt>
+<dd><p>An integer (points)</p>
+<p>Specifies the width of the box’s border in points (NOT pixels)</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">...Box.Padding</code></dt>
+<dd><p>An integer (points)</p>
+<p>Specifies the padding between the interior of the box and the border</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">...Box.Radius</code></dt>
+<dd><p>An integer (points)</p>
+<p>Specifies the radius of a roundrect. Ignored for everything else.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">...Box.BorderInner</code></dt>
+<dd><p>A boolean (true, on or 1, false, off or 0)</p>
+<p>Specifies whether a line should be drawn inside the border.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">...Box.BorderInnerCol</code></dt>
+<dd><p>A <a class="reference internal" href="#xres-color"><span class="std std-ref">color</span></a></p>
+<p>Specifies a color of line that should be drawn inside a border.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">...Box.BorderOuter</code></dt>
+<dd><p>A boolean (true, on or 1, false, off or 0)</p>
+<p>Specifies whether a black line should be drawn outside the border.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">...Box.BorderOuterCol</code></dt>
+<dd><p>A <a class="reference internal" href="#xres-color"><span class="std std-ref">color</span></a></p>
+<p>Specifies a color of line that should be drawn outside a border.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">...Box.ActiveInner</code></dt>
+<dd><p>A boolean (true, on or 1, false, off or 0)</p>
+<p>Specifies whether a yellow line should be drawn inside the border when the
+gadget is active (not all gadgets support this).</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">...Box.DoDepressedBackground</code></dt>
+<dd><p>A boolean (true, on or 1, false, off or 0)</p>
+<p>Changes the color of the background while a button is depressed.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">...Box.GradientBG</code></dt>
+<dd><p>A boolean (true, on or 1, false, off or 0)</p>
+<p>Draws a gradient from GradientStartCol (at top and bottom edge) to
+Background (in the center).</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">...Box.BorderBrightest</code></dt>
+<dd><p>A <a class="reference internal" href="#xres-color"><span class="std std-ref">color</span></a></p>
+<p>The color of the brightest edge of the border (usually the left edge)</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">...Box.BorderBrighter</code></dt>
+<dd><p>A <a class="reference internal" href="#xres-color"><span class="std std-ref">color</span></a></p>
+<p>The color of the next to brightest edge of the border (usually the top
+edge)</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">...Box.BorderDarkest</code></dt>
+<dd><p>A <a class="reference internal" href="#xres-color"><span class="std std-ref">color</span></a></p>
+<p>The color of the darkest edge of the border (usually the right edge)</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">...Box.BorderDarker</code></dt>
+<dd><p>A <a class="reference internal" href="#xres-color"><span class="std std-ref">color</span></a></p>
+<p>The color of the next to next to darkest edge of the border. (usually the
+bottom edge)</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">...Box.NormalBackground</code></dt>
+<dd><p>A <a class="reference internal" href="#xres-color"><span class="std std-ref">color</span></a></p>
+<p>The color of a normal background (not disabled, not depressed)</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">...Box.NormalForeground</code></dt>
+<dd><p>A <a class="reference internal" href="#xres-color"><span class="std std-ref">color</span></a></p>
+<p>The color of a normal foreground (not disabled)</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">...Box.DisabledBackground</code></dt>
+<dd><p>A <a class="reference internal" href="#xres-color"><span class="std std-ref">color</span></a></p>
+<p>The color of a disabled background .</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">...Box.DisabledForeground</code></dt>
+<dd><p>A <a class="reference internal" href="#xres-color"><span class="std std-ref">color</span></a></p>
+<p>The color of a normal foreground.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">...Box.ActiveBorder</code></dt>
+<dd><p>A <a class="reference internal" href="#xres-color"><span class="std std-ref">color</span></a></p>
+<p>The color of an ActiveInner border.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">...Box.PressedBackground</code></dt>
+<dd><p>A <a class="reference internal" href="#xres-color"><span class="std std-ref">color</span></a></p>
+<p>The color of a depressed background.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">...Box.GradientStartCol</code></dt>
+<dd><p>A <a class="reference internal" href="#xres-color"><span class="std std-ref">color</span></a></p>
+<p>Only meaningful if GradientBG is set. Draws a gradient of colors for the
+background with this color as the start point at the top and bottom edges
+of the gadget, and Background as the end point in the center of it.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">...Font</code></dt>
+<dd><p>A <a class="reference internal" href="#xres-font"><span class="std std-ref">font</span></a></p>
+<p>Specifies the default font for a ggadget.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GButton...</code></dt>
+<dd><img alt="../../_images/GButton.png" src="../../_images/GButton.png" />
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GDefaultButton... Inherits from GButton</code></dt>
+<dd><img alt="../../_images/GDefaultButton.png" src="../../_images/GDefaultButton.png" />
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GCancelButton...  Inherits from GButton</code></dt>
+<dd><img alt="../../_images/GCancelButton.png" src="../../_images/GCancelButton.png" />
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GLabel...</code></dt>
+<dd><img alt="../../_images/GLabel.png" src="../../_images/GLabel.png" />
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GDropList...</code></dt>
+<dd><img alt="../../_images/GDropList.png" src="../../_images/GDropList.png" />
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GListMark... controls the shape of the mark used to show the menu of a combo box.</code></dt>
+<dd><img alt="../../_images/GListMark.png" src="../../_images/GListMark.png" />
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GRadio... affects the text of the radio</code></dt>
+<dd><img alt="../../_images/GRadio.png" src="../../_images/GRadio.png" />
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">GDraw.GRadioOn... -- affects the shape used (above, the diamond to the left of the text) of an on radio button</code></dt>
+<dt>
+<code class="sig-name descname">GDraw.GRadioOff... -- affects the shape used of an off radio button</code></dt>
+<dt>
+<code class="sig-name descname">Gdraw.GCheckBox...</code></dt>
+<dt>
+<code class="sig-name descname">GDraw.GCheckBoxOn...</code></dt>
+<dt>
+<code class="sig-name descname">GDraw.GCheckBoxOff...</code></dt>
+<dt>
+<code class="sig-name descname">Gdraw.GTextField...</code></dt>
+<dd><img alt="../../_images/GTextField.png" src="../../_images/GTextField.png" />
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GComboBox...    Inherits from GTextField</code></dt>
+<dd><img alt="../../_images/GComboBox.png" src="../../_images/GComboBox.png" />
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GComboBoxMenu...    Inherits from GComboBox (This is the box drawn around the GListMark in a ComboBox)</code></dt>
+<dd><img alt="../../_images/GComboBoxMenu.png" src="../../_images/GComboBoxMenu.png" />
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GNumericField...    Inherits from GTextField</code></dt>
+<dd><img alt="../../_images/GNumericField.png" src="../../_images/GNumericField.png" />
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GNumericFieldSpinner...    Inherits from GNumericField</code></dt>
+<dd><img alt="../../_images/GNumericFieldSpinner.png" src="../../_images/GNumericFieldSpinner.png" />
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GList...</code></dt>
+<dt>
+<code class="sig-name descname">Gdraw.GScrollBar...</code></dt>
+<dt>
+<code class="sig-name descname">Gdraw.GScrollBarThumb...</code></dt>
+<dt>
+<code class="sig-name descname">Gdraw.GGroup... -- a frame around groups of gadgets.</code></dt>
+<dt>
+<code class="sig-name descname">Gdraw.GLine...</code></dt>
+<dt>
+<code class="sig-name descname">Gdraw.GMenu...</code></dt>
+<dt>
+<code class="sig-name descname">Gdraw.GMenuBar...</code></dt>
+<dt>
+<code class="sig-name descname">Gdraw.GTabSet...</code></dt>
+<dt>
+<code class="sig-name descname">Gdraw.GVTabSet...</code></dt>
+<dd><p>As above.</p>
+<p>Specifies the box, font, color, etc. for this particular type of ggadget.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GHVBox</code></dt>
+<dd><p>A group of gadgets that sits inside <code class="docutils literal notranslate"><span class="pre">GGroup</span></code> and supports graceful reflow
+of window contents in event of resizing. Modelled after GTK boxes. It’s
+supposed to be invisible, but interface developers might actually want to
+style it.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GScrollBar.Width</code></dt>
+<dd><p>An integer (points)</p>
+<p>Specifies the scrollbar width in points (for horizontal scrollbars it
+specifies the height)</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GListMark.Width</code></dt>
+<dd><p>An integer (points)</p>
+<p>Specifies the width for the little mark at the end of comboboxes and drop
+lists.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GListMark.Image</code></dt>
+<dd><p>A filename of an image file</p>
+<p>Will be used instead of GListMark.Box if present. This is either a fully
+qualified pathname, or the filename of an image in the pixmap directory.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GListMark.DisabledImage</code></dt>
+<dd><p>A filename of an image file</p>
+<p>Will be used instead of GListMark.Box for disabled (non-clickable) instances,
+if present. This is either a fully qualified pathname, or the filename of an
+image in the pixmap directory.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GMenu.Grab</code></dt>
+<dd><p>A boolean</p>
+<p>Controls whether menus do pointer grabs. Debugging is easier if they don’t.
+Default is for them to do grabs.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GMenu.MacIcons</code></dt>
+<dd><p>A boolean</p>
+<p>Controls whether menus show shortcuts as the standard mac icons (cloverleaf
+for Command key, up arrow for shift, ^ for control and wierd squiggle for
+Option(Meta/Alt)) or as text (“Cnt-Shft-A”). Default is True on the mac and
+False elsewhere.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id1">
+<img alt="../../_images/MenuWithMacIcons.png" src="../../_images/MenuWithMacIcons.png" />
+<p class="caption"><span class="caption-text">True</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id2">
+<img alt="../../_images/MenuWithoutMacIcons.png" src="../../_images/MenuWithoutMacIcons.png" />
+<p class="caption"><span class="caption-text">False</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GRadioOn.Image</code></dt>
+<dd><p>A filename of an image file.</p>
+<p>Used for drawing the “On” state of a radio button. (This is drawn within the
+<code class="docutils literal notranslate"><span class="pre">GRadioOn</span></code> box, if you intend the image to be the entire radio marker you
+should probably make the <code class="docutils literal notranslate"><span class="pre">GRadioOn</span></code> box be a blank rectangle). This is
+either a fully qualified pathname, or the filename of an image in the pixmap
+directory.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GRadioOn.DisabledImage</code></dt>
+<dd><p>A filename of an image file.</p>
+<p>Used for drawing the “On” state of a disabled (non-clickable) radio button.
+(This is drawn within the <code class="docutils literal notranslate"><span class="pre">GRadioOn</span></code> box, if you intend the image to be the
+entire radio marker you should probably make the <code class="docutils literal notranslate"><span class="pre">GRadioOn</span></code> box be a blank
+rectangle). This is either a fully qualified pathname, or the filename of an
+image in the pixmap directory.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GRadioOff.Image</code></dt>
+<dd><p>A filename of an image file.</p>
+<p>Used for drawing the “Off” state of a radio button. (This is drawn within the
+<code class="docutils literal notranslate"><span class="pre">GRadioOff</span></code> box, if you intend the image to be the full radio marker you
+should probably make the <code class="docutils literal notranslate"><span class="pre">GRadioOff</span></code> box be a blank rectangle). This is
+either a fully qualified pathname, or the filename of an image in the pixmap
+directory.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GRadioOff.DisabledImage</code></dt>
+<dd><p>A filename of an image file.</p>
+<p>Used for drawing the “Off” state of a disabled (non-clickable) radio button.
+(This is drawn within the <code class="docutils literal notranslate"><span class="pre">GRadioOff</span></code> box, if you intend the image to be
+the full radio marker you should probably make the <code class="docutils literal notranslate"><span class="pre">GRadioOff</span></code> box be a
+blank rectangle). This is either a fully qualified pathname, or the filename
+of an image in the pixmap directory.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GCheckBoxOn.Image</code></dt>
+<dd><p>A filename of an image file.</p>
+<p>Used for drawing the “On” state of a check box button. (This is drawn within
+the <code class="docutils literal notranslate"><span class="pre">GCheckBoxOn</span></code> box, if you intend the image to be the complete check box
+marker you should probably make the <code class="docutils literal notranslate"><span class="pre">GCheckBoxOn</span></code> box be a blank
+rectangle). This is either a fully qualified pathname, or the filename of an
+image in the pixmap directory.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GCheckBoxOn.DisabledImage</code></dt>
+<dd><p>A filename of an image file.</p>
+<p>Used for drawing the “On” state of a disabled (non-clickable) check box
+button. (This is drawn within the <code class="docutils literal notranslate"><span class="pre">GCheckBoxOn</span></code> box, if you intend the
+image to be the complete check box marker you should probably make the
+<code class="docutils literal notranslate"><span class="pre">GCheckBoxOn</span></code> box be a blank rectangle). This is either a fully qualified
+pathname, or the filename of an image in the pixmap directory.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GCheckBoxOff.Image</code></dt>
+<dd><p>A filename of an image file.</p>
+<p>Used for drawing the “Off” state of a check box button. (This is drawn within
+the <code class="docutils literal notranslate"><span class="pre">GCheckBoxOff</span></code> box, if you intend the image to be the sole check box
+marker you should probably make the <code class="docutils literal notranslate"><span class="pre">GCheckBoxOff</span></code> box be a blank
+rectangle). This is either a fully qualified pathname, or the filename of an
+image in the pixmap directory.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GCheckBoxOff.DisabledImage</code></dt>
+<dd><p>A filename of an image file.</p>
+<p>Used for drawing the “Off” state of a disabled )non-clickable) check box
+button. (This is drawn within the <code class="docutils literal notranslate"><span class="pre">GCheckBoxOff</span></code> box, if you intend the
+image to be the sole check box marker you should probably make the
+<code class="docutils literal notranslate"><span class="pre">GCheckBoxOff</span></code> box be a blank rectangle). This is either a fully qualified
+pathname, or the filename of an image in the pixmap directory.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GVisibilityBoxOn.Image</code></dt>
+<dd><p>A filename of an image file.</p>
+<p>Used for drawing the “On” state of a visibility box button. (This is the
+“eye” drawn within the layers palette of glyph view). This is either a fully
+qualified pathname, or the filename of an image in the pixmap directory.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GVisibilityBoxOn.DisabledImage</code></dt>
+<dd><p>A filename of an image file.</p>
+<p>Used for drawing the “On” state of a disabled (non-clickable) visibility box
+button. (This is the “eye” drawn within the layers palette of glyph view).
+This is either a fully qualified pathname, or the filename of an image in the
+pixmap directory.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GVisibilityBoxOff.Image</code></dt>
+<dd><p>A filename of an image file.</p>
+<p>Used for drawing the “Off” state of a visibility box button. (This is the
+“eye” drawn within the layers palette of glyph view). This is either a fully
+qualified pathname, or the filename of an image in the pixmap directory.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GVisibilityBoxOff.DisabledImage</code></dt>
+<dd><p>A filename of an image file.</p>
+<p>Used for drawing the “Off” state of a disabled (non-clickable) visibility box
+button. (This is the “eye” drawn within the layers palette of glyph view).
+This is either a fully qualified pathname, or the filename of an image in the
+pixmap directory.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GMatrixEdit.TitleFont</code></dt>
+<dd><p>A font.</p>
+<p>The font used to draw titles in a GMatrixEdit. By default this is smaller and
+bolder than the font used for text in the matrix edit.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GMatrixEdit.TitleBG</code></dt>
+<dd><p>A color.</p>
+<p>Background color used for the titles of a matrix edit.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GMatrixEdit.TitleFG</code></dt>
+<dd><p>A color.</p>
+<p>Foreground color used to draw the text of the titles of a matrix edit.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GMatrixEdit.TitleDivider</code></dt>
+<dd><p>A color.</p>
+<p>Color used to draw the divider lines in the titles of a matrix edit.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GMatrixEdit.RuleCol</code></dt>
+<dd><p>A color.</p>
+<p>Used to draw the horizontal and vertical lines in the body of a matrix edit.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GMatrixEdit.FrozenCol</code></dt>
+<dd><p>A color.</p>
+<p>Used to draw text in a cell which is frozen (cannot but updated by the user)</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">Gdraw.GMatrixEdit.ActiveCol</code></dt>
+<dd><p>A color.</p>
+<p>Used to draw text in the cell which is active (and used for the “&lt;New&gt;”
+entry).</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">...</code></dt>
+<dd></dd></dl>
+
+<span class="target" id="xres-deprecated"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Deprecated</code></dt>
+<dd><p>The following resources are deprecated and will be silently ignored.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">fontforge.FontView.FontFamily</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fontforge.FontView.SerifFamily</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fontforge.FontView.ScriptFamily</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fontforge.FontView.FrakturFamily</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fontforge.FontView.DoubleStruckFamily</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fontforge.FontView.SansFamily</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fontforge.FontView.MonoFamily</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Gdraw.GHVGroupBox</span></code></p></li>
+</ul>
+</dd></dl>
+
+<span class="target" id="xres-color"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Colors</code></dt>
+<dd><p>Colors may be specified as:</p>
+<ul>
+<li><p>rgb(r,g,b)</p>
+<p>where r,g and b are doubles between 0 and 1.0</p>
+</li>
+<li><p>argb(a,r,g,b)</p>
+<p>where a,r,g, and b are doubles between 0 and 1.0</p>
+<p>(The alpha channel is only supported in windows with cairo – that is the
+glyph view. Alpha 1.0 is fully opaque, alpha 0.0 should be fully transparent,
+values in between are translucent. Since drawing something fully transparent
+has no effect, FontForge treats transparent spot colors as fully opaque).</p>
+</li>
+<li><p>rgb(r%,g%,b%)</p>
+<p>where r, g, and b are doubles between 0% and 100%</p>
+</li>
+<li><p>hsv(h,s,v)</p>
+<p>A color expressed as hue (between 0 and 360), saturation (0.0 and 1.0) and
+value (0.0 and 1.0)</p>
+</li>
+<li><p>hsl(h,s,l)</p>
+<p>A color expressed as hue (between 0 and 360), saturation (0.0 and 1.0) and
+luminosity (0.0 and 1.0)</p>
+</li>
+<li><p>r g b</p>
+<p>where r, g, and b are decimal integers between 0 and 255</p>
+</li>
+<li><p>#rgb</p>
+<p>where r, g, and b are hex digits between 0 and 15 (0xf)</p>
+</li>
+<li><p>#rrggbb</p>
+<p>where rr, gg, bb are hex numbers between 0x00 and 0xff</p>
+</li>
+<li><p>#aarrggbb</p>
+<p>where aa, rr, gg, bb are hex numbers between 0x00 and 0xff</p>
+<p>(The alpha channel is only supported in cairo windows. If alpha is 0, then
+fontforge will treat the color as opaque because drawing a completely
+transparent spot color does nothing).</p>
+</li>
+<li><p>#rrrrggggbbbb</p>
+<p>where rrrr, gggg, bbbb are hex numbers between 0x0000 and 0xffff</p>
+</li>
+<li><p>or one of the color names accepted on the net (red, green, blue, cyan,
+magenta, yellow, white, black, maroon, olive, navy, purple, lime, aqua, teal,
+fuchsia, silver)</p></li>
+</ul>
+</dd></dl>
+
+<span class="target" id="xres-font"></span><dl class="object">
+<dt>
+<code class="sig-name descname">Fonts</code></dt>
+<dd><p>A font may be specified as:</p>
+<p>&lt;boldness&gt; &lt;italicness&gt; &lt;pointsize&gt; &lt;familyname&gt;</p>
+<p>(I know the order looks a bit weird but that’s what is used by css).</p>
+<ul class="simple">
+<li><p>&lt;boldness&gt; can be:</p>
+<ul>
+<li><p>nothing – the font is not bold</p></li>
+<li><p>bold – the font is bold</p></li>
+<li><p>a number – (between 0 and 999), a numeric value that gives some idea of how
+bold the font should be. 200 would be a light font, 400 an normal font, 700 a
+bold font and 999 and ultra-black font.</p></li>
+</ul>
+</li>
+<li><p>&lt;italicness&gt; can be:</p>
+<ul>
+<li><p>nothing – the font is not italic</p></li>
+<li><p>italic – the font is italic</p></li>
+<li><p>oblique – the font is oblique (italic)</p></li>
+</ul>
+</li>
+<li><p>&lt;pointsize&gt; can be:</p>
+<ul>
+<li><p>nothing – a default point size is chosen</p></li>
+<li><p>a number followed by “pt” – specifies the point size.</p></li>
+</ul>
+</li>
+</ul>
+<p>Examples</p>
+<ul>
+<li><p>bold 14pt helvetica</p>
+<p>Helvetica Bold at 14 points</p>
+</li>
+<li><p>italic 10pt times</p>
+<p>Times italic at 10 points</p>
+</li>
+</ul>
+</dd></dl>
+
+<div class="section" id="keyboards-and-mice">
+<span id="xres-keyboards"></span><h2>Keyboards and Mice.<a class="headerlink" href="#keyboards-and-mice" title="Permalink to this headline">¶</a></h2>
+<p>FontForge assumes that your keyboard has a control key and some equivalent of a
+meta key. FontForge works best with a three button mouse.</p>
+<p>Almost all keyboards now-a-days will have the needed modifier keys, but which
+key is used for what will depend on the keyboard and the OS (for instance
+XDarwin and suse linux use quite different mappings for the modifier keys on the
+mac keyboard). Usually this is only relevant for menus (and mnemonics).
+FontForge tries to guess the keyboard from the environment in which it was
+compiled. But with X this may not always be appropriate. So the
+“<a class="reference internal" href="#xres-keyboard"><span class="std std-ref">Gdraw.Keyboard</span></a>” resource above may be used to change
+this. (Currently this setting only control the labels that appear in menus for
+the hotkeys).</p>
+<p>Mice are more problematic. On PCs we usually have two button mice and on mac
+single button mice. Many linuxes that run on a PC will give you an option of
+simulating the middle button of the mouse by depressing the left and right
+buttons simultaneously. FontForge will also allow you to simulate it by holding
+down the super key (usually this is the one with the picture of a windows flag
+on it) while depressing either mouse button.</p>
+<p>On the mac I don’t see any good way of simulating a three button mouse…</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../ui.html">FontForge’s User Interface</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../mainviews.html">Main Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../menus.html">Menus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dialogs.html">Dialogs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HotKeys.html">Hot Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fontforge-themes.html">FontForge color schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resedit.html">X Resource Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xim.html">X Input Methods</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">X Resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#keyboards-and-mice">Keyboards and Mice.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../techref.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../../ui.html">FontForge’s User Interface</a><ul>
+      <li>Previous: <a href="xim.html" title="previous chapter">X Input Methods</a></li>
+      <li>Next: <a href="../../scripting/scripting.html" title="next chapter">Scripting FontForge</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

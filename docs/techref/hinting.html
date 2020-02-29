@@ -1,0 +1,346 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Hinting &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Macintosh font formats" href="macformats.html" />
+    <link rel="prev" title="FontForge’s math" href="pfaeditmath.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="hinting">
+<h1>Hinting<a class="headerlink" href="#hinting" title="Permalink to this headline">¶</a></h1>
+<p>PostScript originally required that hints should not overlap. Now it requires
+that any active set of hints be non-overlapping, but it allows you to change
+sets as you move through the glyph.</p>
+<p>So to implement hinting with hint substitution FontForge needs to know not only
+the position and width of the stem being hinted, but also where the stem should
+be active. And it needs to know what stems overlap which other stems.</p>
+<img alt="../_images/Hints.png" class="align-left" src="../_images/Hints.png" />
+<p>The horizontal stems are drawn in light green. The vertical stems are drawn in
+light blue. The areas where the stems are active are filled in as rectangles,
+outside of that area the stems’ outlines are drawn with dotted lines. Most of
+these stems do not conflict with any other stems, but two, the bottom two
+horizontal stems conflict with each other. All the non-overlapping stem hints
+may be active at the same time, but only one of the two conflicting stem hints
+may be active. As FontForge outputs the glyph it decides at each point what
+stems need to be active, and activates them.</p>
+<p>PostScript now allows FontForge to control relative counter sizes. Counters are
+the spaces between adjacent stems. In the example at left there are two counters
+of equal sizes between the horizontal stems on the left, and three counters of
+equal sizes on the right. These form two independent counter groups, and
+FontForge’s <span class="menuselection">Hints ‣ Auto Counter</span> command will generate a
+counter description for each of them. You may also control the counters directly
+by using the Counters pane of the <span class="menuselection">Element ‣ Char Info</span> dialog.</p>
+<p>Counters spaces appear between vertical stems too, and in this case FontForge
+would output one counter group for the vertical stems.</p>
+<div class="section" id="serifs">
+<h2>Serifs<a class="headerlink" href="#serifs" title="Permalink to this headline">¶</a></h2>
+<img alt="../_images/serif.png" class="align-right" src="../_images/serif.png" />
+<p>One of the major advantages of hint substitution is that it allows certain
+standard serif situations to be described. In the example at right, the serif
+one the left is smaller than the stem a bit further right.</p>
+<img alt="../_images/serif2.png" class="align-left" src="../_images/serif2.png" />
+<p>But it doesn’t solve all problems (or I don’t know how to use it to do so).
+Consider the serif on the right. Hint substitution would allow us to define a
+hint for the main vertical stem and for the short vertical stem that corresponds
+to the serif. But the problem that needs to be solved is making the distance
+between the left edge of the serif and the left edge of the stem be the same as
+the distance between the right edge of the stem and the right edge of the serif.
+But doing so would require overlapping hints, active at the same time.
+<span class="small">I think</span></p>
+</div>
+<div class="section" id="automatic-hinting">
+<h2>Automatic Hinting<a class="headerlink" href="#automatic-hinting" title="Permalink to this headline">¶</a></h2>
+<p>FontForge’s AutoHint command can be used to figure out horizontal and vertical
+stem hints. It will also find hint substitution points (if any are needed), and
+will check for the simple counter description allowed by OpenType for non-Asian
+fonts (the equivalent of h/vstem3 hints in type1 fonts).</p>
+<p>Whenever you change a glyph FontForge keeps track of that fact that the hints
+are out of date (when you autohint a glyph, or make a manual change to the hints
+FontForge resets this flag). If you generate a postscript font from something
+that contains glyphs with out of date hints, then FontForge will automagically
+regenerate them.</p>
+<p>This may not always be appropriate. You can turn this off in general with the
+<a class="reference internal" href="../ui/dialogs/prefs.html#prefs-autohint"><span class="std std-ref">AutoHint preference item</span></a>. You may turn it off for an
+individual glyph with the <span class="menuselection">Hints ‣ Don’t AutoHint</span> command.</p>
+</div>
+<div class="section" id="manual-hinting">
+<h2>Manual Hinting<a class="headerlink" href="#manual-hinting" title="Permalink to this headline">¶</a></h2>
+<p>I hope that the FontForge’s autohint command will be good enough that manual
+efforts will not be needed. But hopes like this are rarely fulfilled.</p>
+<p>The AutoHint command should find all stems in a glyph. Some of them it deems to
+be useless and will remove them. If you find that FontForge is removing a hint
+that you think is important then invoke <span class="menuselection">Hint ‣ AutoHint</span> with
+the shift key held down, this will tell FontForge not to prune any of the stems.
+You may then use Review Hints to prune things yourself.</p>
+<p>If you find that you must create your own hints, FontForge will only allow you
+to specify the position and width of the hint, it will then go off and try to
+guess the extents where the hint should be active.</p>
+<p>You may manually:</p>
+<ul class="simple">
+<li><p>Clear all horizontal stem hints</p></li>
+<li><p>Clear all vertical stem hints</p></li>
+<li><p>Select two points and create a vertical stem hint that whose width is horizontal
+distance between the two points</p></li>
+<li><p>Select two points and create a horizontal stem hint whose width is the vertical
+distance between the two points</p></li>
+<li><p>Create a horizontal hint starting at an arbitrary y location with an arbitrary
+vertical width.</p></li>
+<li><p>Create a vertical hint starting at an arbitrary x location with an arbitrary
+horizontal width.</p></li>
+<li><p>Review all your hints, manually changing or removing any (or all).</p></li>
+</ul>
+<p>Once you have made a manual change to a glyph’s hints with any of the above
+commands, that glyph will be marked “Don’t AutoHint” until you explicitly call
+the AutoHint command on it. You may also explicitly use the
+<span class="menuselection">Hints ‣ Don’t AutoHint</span> command to turn off FontForge’s
+automatic hinting attempts.</p>
+<p>You may also manually</p>
+<ul class="simple">
+<li><p>Set hint change-over points</p></li>
+<li><p>Set counter groups for a glyph</p></li>
+</ul>
+<p>These do not set the “Don’t AutoHint” bit.</p>
+<div class="section" id="manual-hint-substitution-points">
+<h3>Manual Hint Substitution Points<a class="headerlink" href="#manual-hint-substitution-points" title="Permalink to this headline">¶</a></h3>
+<p>FontForge’s <span class="menuselection">Hints ‣ Hint Substitution Pts</span> command will
+automatically figure out where hint substitution should occur, but if this isn’t
+good enough you may do it manually with the
+<a class="reference internal" href="../ui/dialogs/getinfo.html#getinfo-hintmask"><span class="std std-ref">Element-&gt;Get Info</span></a> command (when the selection is a
+single point to which you want to attach a hintmask).</p>
+<p>If a glyph has conflicting hints then the first point in the glyph (the first
+point on the first contour) MUST have a hintmask attached to it. If it does not,
+the FontForge will automatically figure substitution points when it generates
+the font. Other points are not required (but may) have a hintmask.</p>
+<p>The hintmask specifies what hints should be active when that point is
+positioned, and will control all subsequent points until a new hintmask is
+established. So in the following example, the selected point (on left) has the
+highlight hints active at it, In the glyph view the currently active stems are
+drawn much darker than the inactive ones. Points with hintmasks attached to
+them have circles drawn around them.</p>
+<div class="flex-container">
+<div class="flex-row">
+<div class="flex-col">
+<img alt="../_images/charwithhintmask.png" src="../_images/charwithhintmask.png" />
+</div>
+<div class="flex-col">
+<img alt="../_images/hintmaskinfo.png" src="../_images/hintmaskinfo.png" />
+</div>
+</div>
+</div>
+<p>Remember to hold the control key down when making disjoint selections.</p>
+</div>
+<div class="section" id="manual-counter-groups">
+<span id="hinting-counter"></span><h3>Manual Counter Groups<a class="headerlink" href="#manual-counter-groups" title="Permalink to this headline">¶</a></h3>
+<p>FontForge also has a <span class="menuselection">Hints ‣ Auto Counter</span> command which tries
+to figure out what stems form a counter group.</p>
+<p>Again you can do this manually, with the <a class="reference internal" href="../ui/dialogs/charinfo.html#charinfo-countermasks"><span class="std std-ref">Counter</span></a>
+pane of the <span class="menuselection">Element ‣ Char Info</span> dialog. When creating a new
+counter group you are presented with a dialog very similar to the one above in
+which you must select a set of hints that bound a set of counters.</p>
+</div>
+<div class="section" id="the-private-dictionary">
+<h3>The Private dictionary<a class="headerlink" href="#the-private-dictionary" title="Permalink to this headline">¶</a></h3>
+<p>This contains font-wide hinting infomation. Things like: The standard width of a
+stem in the font (StdVW, StdHW), The standard height of capitals and lower case
+letters (BlueValues, OtherBlues), and so forth. These live in the PostScript
+Private dictionary. Once you have hinted your font fontforge can generate
+reasonable values for these settings (But you must have hinted the font first!)
+– See the [Guess] button in the
+<a class="reference internal" href="../ui/dialogs/fontinfo.html#fontinfo-private"><span class="std std-ref">Element-&gt;Font Info-&gt;PS Private</span></a> dialog. Then once you
+have generated BlueValues you should rehint the font (the hints depend on the
+BlueValues, just as the BlueValues depend on the hints:-).</p>
+</div>
+</div>
+<div class="section" id="hints-and-previously-existing-fonts">
+<h2>Hints and previously existing fonts.<a class="headerlink" href="#hints-and-previously-existing-fonts" title="Permalink to this headline">¶</a></h2>
+<p>FontForge will not be able to convert TrueType instructions into PostScript
+hints when it reads a TrueType font (the format is too complex, there are too
+many possibilities, instead FontForge stores all the truetype instructions and
+writes them back out uninterpretted).</p>
+<p>From a Type1 font it will happily read all the hints in a glyph, and keep track
+of hint substitution points. It will not read counter hints though.</p>
+<p>In an OpenType (Type2) font FontForge will read in all the hints, keep track of
+hint substitution points and the counter hints.</p>
+</div>
+<div class="section" id="hinting-and-truetype">
+<h2>Hinting and TrueType<a class="headerlink" href="#hinting-and-truetype" title="Permalink to this headline">¶</a></h2>
+<p>FontForge can auto-instruct a truetype font
+(<span class="menuselection">Hints ‣ AutoInstr</span>). FontForge also allows you the somewhat
+arcane practice of editing glyph instruction programs directly
+(<span class="menuselection">Hints ‣ Edit Instructions</span>).</p>
+<p>FontForge’s Auto Instructor bases its output on the PostScript Stem Hints, the
+contents of the Private dictionary, and diagonal stems. You can create diagonal
+stems manually (<span class="menuselection">Hints ‣ Add DHint</span>), or you can let the
+autohinter do this for you
+(<span class="menuselection">File ‣ Preferences ‣ PSHints ‣ DetectDiagonalStems</span>).</p>
+<p>Please look at the <a class="reference internal" href="../ui/dialogs/ttfinstrs.html"><span class="doc">page on instructing fonts</span></a>.</p>
+</div>
+<div class="section" id="hint-questions">
+<h2>Hint questions:<a class="headerlink" href="#hint-questions" title="Permalink to this headline">¶</a></h2>
+<p>I find the hint documentation inadequate for me to do a good job at hinting.</p>
+<ul>
+<li><p>Section 2.4 of
+<a class="reference external" href="http://partners.adobe.com/asn/developer/pdfs/tn/5015.Type1_Supp.pdf">T1_Supp.pdf</a>
+says that vertical counters are offset from the lbearing, but the example 2.6
+shows them being offset from 0.</p></li>
+<li><p>In <a class="reference external" href="http://partners.adobe.com/asn/developer/pdfs/tn/5177.Type2.pdf">Type2</a> is
+it ok to use Counter mask if LanguageGroup is not 1 and the stems don’t fit into
+a *stem3 pattern? Or can cntrmask only be used for *stem3 in latin letters?</p></li>
+<li><img alt="../_images/NoPointHint.png" class="align-right" src="../_images/NoPointHint.png" />
+<p>How do hints work? Is a hint meaningful if there are no points associated with
+it? As in the “O” at right, where the two vertical stems have no points
+associated with them.</p>
+</li>
+<li><p>Is it meaningful for a hint to have points only on one side of it? Can
+reasonable hints be written for the serif cap above left?</p></li>
+</ul>
+<p><a class="reference internal" href="../index.html#overview-hints"><span class="std std-ref">Overview of Hinting in PostScript and TrueType</span></a>.</p>
+<p><a class="reference internal" href="../ui/menus/hintsmenu.html"><span class="doc">Hinting menu.</span></a></p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui.html">FontForge’s User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../techref.html">Technical References</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gposgsub.html">Advanced Typography Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AA-Comparison.html">Anti-Alias Comparison</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autotrace.html">Autotracing bitmaps in FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accented.html">Building Accented and other Composite Glyphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bezier.html">Bézier Splines </a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref-caveats.html">Caveats about References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfdchangelog.html">Changes to the sfd format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cidmapformat.html">Cidmap files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cliargs.html">Command Line Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="splinefont.html">Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SuggestDeltas.html">Delta Instruction Suggestions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stroke.html">Expand Stroke Facility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BDFGrey.html">Extensions to Adobe’s BDF  for greymap fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PfaEdit-TeX.html">FontForge and TeX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pfaeditmath.html">FontForge’s math</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Hinting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#serifs">Serifs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#automatic-hinting">Automatic Hinting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manual-hinting">Manual Hinting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#manual-hint-substitution-points">Manual Hint Substitution Points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#manual-counter-groups">Manual Counter Groups</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-private-dictionary">The Private dictionary</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#hints-and-previously-existing-fonts">Hints and previously existing fonts.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hinting-and-truetype">Hinting and TrueType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hint-questions">Hint questions:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="macformats.html">Macintosh font formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="featurefile.html">Major differences between FontForge’s and Adobe’s interpretation of feature files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="non-standard.html">Non standard extensions used FontForge in True/Open Type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="palmfonts.html">Palm fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bitmaponlysfnt.html">Several formats for bitmap only sfnts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfdformat.html">Spline Font Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pcf-format.html">The X11 PCF bitmap font file format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TrueOpenTables.html">TrueType and OpenType tables supported by FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corpchar.html">Unicode Corporate Characters used by FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UniqueID.html">UniqueID and XUID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selections.html">X Selections and the X Clipboard</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../techref.html">Technical References</a><ul>
+      <li>Previous: <a href="pfaeditmath.html" title="previous chapter">FontForge’s math</a></li>
+      <li>Next: <a href="macformats.html" title="next chapter">Macintosh font formats</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

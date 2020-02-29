@@ -16,3 +16,5 @@ FontForge can accept donations by PayPal, but these are not routed through a 501
 </form>
 
 The [Libre Font Fund](https://www.tug.org/fonts/librefontfund.html), a mission of the TeX User Group, is able to accept donations for FontForge development in a way that qualifies for charitable deductions in the United States.
+
+If you would like to fund a specific issue, please see [When Things Go Wrong With FontForge Itself](http://designwithfontforge.com/en-US/When_Things_Go_Wrong_With_Fontforge_Itself.html)

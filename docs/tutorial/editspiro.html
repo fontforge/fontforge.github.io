@@ -1,0 +1,302 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>2. Creating a glyph using spiros &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3. Importing Outline Glyphs" href="importexample.html" />
+    <link rel="prev" title="1. Font and glyph creation" href="editexample.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="creating-a-glyph-using-spiros">
+<h1><span class="section-number">2. </span>Creating a glyph using spiros<a class="headerlink" href="#creating-a-glyph-using-spiros" title="Permalink to this headline">¶</a></h1>
+<p>Spiro is the work of <a class="reference external" href="https://levien.com/spiro/">Raph Levien</a>, it
+provides an alternate method of designing a glyph using a set of
+on-curve points rather than the traditional mixture of on and off curve
+points used for bezier splines.</p>
+<ul class="simple">
+<li><p>G4 Curve Points (continuous up to the fourth derivative)</p></li>
+<li><p>G2 Curve Points (continuous up to the second derivative)
+Basically this boils down to: If you have a sharp curve you are
+probably better off using a G2 point, while a more gentle curve would
+call for a G4.</p></li>
+<li><p>Corner Points</p></li>
+<li><p>Prev Constraint points (to be used when the contour changes from a
+curve to a straight line) <img alt="spiroprevconstraint" src="../_images/spiroprevconstraint.png" /></p></li>
+<li><p>Next Constraint points (to be used when the contour changes from a
+straight line to a curve) <img alt="spironextconstraint" src="../_images/spironextconstraint.png" /></p></li>
+</ul>
+<div class="section" id="step-1">
+<h2><span class="section-number">2.1. </span>Step 1<a class="headerlink" href="#step-1" title="Permalink to this headline">¶</a></h2>
+<p>As before let us try to edit the “C” glyph from Ambrosia.</p>
+<div class="figure align-default">
+<img alt="../_images/Cspiro0.png" src="../_images/Cspiro0.png" />
+</div>
+<p>Again we start with a blank glyph. Note that there is a button in the
+shape of a spiral in the tool pane. If you press this button you go
+into spiro mode, and the tools available to you change slightly.</p>
+<p>(If you press the button again you go back to Bezier mode)</p>
+<p>Again use File-&gt;Import to import a background image and then scale it
+properly. (If you don’t know how this is done, look at the
+<a class="reference internal" href="editexample.html#editexample-import"><span class="std std-ref">previous page</span></a>)</p>
+</div>
+<div class="section" id="step-2">
+<h2><span class="section-number">2.2. </span>Step 2<a class="headerlink" href="#step-2" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default">
+<img alt="../_images/Cspiro1.png" src="../_images/Cspiro1.png" />
+</div>
+<p>Select the G4 curve point (the tool on the left side of the third row).</p>
+<p>G4 curve points have the nice properties that the slope of the splines
+will be the same on either side of them, and the curvature of the splines
+will be too.</p>
+<p>Then move the pointer over the image and click to place a point at a point
+on the edge of the bitmap image.</p>
+</div>
+<div class="section" id="step-3">
+<h2><span class="section-number">2.3. </span>Step 3<a class="headerlink" href="#step-3" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default">
+<img alt="../_images/Cspiro2.png" src="../_images/Cspiro2.png" />
+</div>
+<p>Select the “next constraint” point which changes the contour nicely from a
+curve to a straight line.</p>
+<p>If you pick the wrong constraint (and I often do – it will become obvious
+later when the contour looks distorted here), then select the constraint
+point and use <a class="reference internal" href="../ui/dialogs/getinfo.html#getinfo-spiro"><span class="std std-ref">Element-&gt;Get Info</span></a> to change the
+point type – or use the <a class="reference internal" href="../ui/menus/pointmenu.html"><span class="doc">Point menu</span></a>.</p>
+</div>
+<div class="section" id="step-4">
+<h2><span class="section-number">2.4. </span>Step 4<a class="headerlink" href="#step-4" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default">
+<img alt="../_images/Cspiro3.png" src="../_images/Cspiro3.png" />
+</div>
+<p>Now select the corner point from the tool menu (the one that looks like a square).</p>
+<p>Place it at a location where the slope changes abruptly – a corner.</p>
+<p>We are now readly to talk about the “left tangent point”. Pretend you are
+standing on the corner point, facing toward the tangent point. Is the next
+point after it (in this case the curved point) to your left or to your right?
+If to your left, use a left tangen, if to your right, use a right tangent.</p>
+</div>
+<div class="section" id="step-5">
+<h2><span class="section-number">2.5. </span>Step 5<a class="headerlink" href="#step-5" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default">
+<img alt="../_images/Cspiro4.png" src="../_images/Cspiro4.png" />
+</div>
+<p>Now we want to do some fiddly work on the top of the “C”. Here we have a serif
+with a slight curve to it between two corners, two abrupt changes of direction.</p>
+<p>We need to get a close up view of the image in order to work more precisely, so
+select the magnifying glass tool from the tool pane, move it to the middle of
+the serif, and click it several times until the serif fills the screen.</p>
+</div>
+<div class="section" id="step-6">
+<h2><span class="section-number">2.6. </span>Step 6<a class="headerlink" href="#step-6" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default">
+<img alt="../_images/Cspiro5.png" src="../_images/Cspiro5.png" />
+</div>
+<p>Generally a corner point should have a constraint (or another corner) point on
+either side of it, so we need to pick another constraint. In this case the
+contour will change from a straight line to a curve, so that means a “prev
+constraint” point.</p>
+</div>
+<div class="section" id="step-7">
+<h2><span class="section-number">2.7. </span>Step 7<a class="headerlink" href="#step-7" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default">
+<img alt="../_images/Cspiro6.png" src="../_images/Cspiro6.png" />
+</div>
+<p>Then proceeding to fill in the other points needed to make for a smooth curve
+of the serif.</p>
+</div>
+<div class="section" id="step-8">
+<h2><span class="section-number">2.8. </span>Step 8<a class="headerlink" href="#step-8" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default">
+<img alt="../_images/Cspiro6_5.png" src="../_images/Cspiro6_5.png" />
+</div>
+<p>And another smooth curve of the other side of the serif.</p>
+</div>
+<div class="section" id="step-9">
+<h2><span class="section-number">2.9. </span>Step 9<a class="headerlink" href="#step-9" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default">
+<img alt="../_images/Cspiro7.png" src="../_images/Cspiro7.png" />
+</div>
+<p>Now it is no longer useful to have such a close view of the image, so grab the
+magnifying glass tool again, and hold down the Alt (Meta, Option) key. The
+cursor should change, and clicking it will zoom you out.</p>
+<p>Then fill in the remainder of the points on this side.</p>
+</div>
+<div class="section" id="step-10">
+<h2><span class="section-number">2.10. </span>Step 10<a class="headerlink" href="#step-10" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default">
+<img alt="../_images/Cspiro8.png" src="../_images/Cspiro8.png" />
+</div>
+<p>As we approach the lower tip of the C we again need to zoom in</p>
+</div>
+<div class="section" id="step-11">
+<h2><span class="section-number">2.11. </span>Step 11<a class="headerlink" href="#step-11" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default">
+<img alt="../_images/Cspiro9.png" src="../_images/Cspiro9.png" />
+</div>
+<p>And eventually we have completed a rough outline of the glyph. Clicking on the
+start point will close the curve.</p>
+<p>Unfortunately the result isn’t quite what we’d hoped. There are some rather
+erratic bulges.</p>
+<p>We can fix that by</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p>moving points around</p>
+<p>Use the pointer tool, click on a point (or hold down the shift key to
+select several points) and then drag them around.</p>
+</li>
+<li><p>adding new points to the outline.</p>
+<p>Using the appropriate spiro tool, depress the mouse somewhere on the
+outline – a new point appears there. You may now drag this point around.</p>
+</li>
+</ol>
+</div></blockquote>
+<div class="figure align-default">
+<img alt="../_images/Cspirals.png" src="../_images/Cspirals.png" />
+</div>
+<p>In the process of fixing things we can move a point so far that the spiro
+converter can’t make sense of it. All of a sudden our (almost) nice outline
+turns into an erratic spirals.</p>
+<p>Don’t worry about it, just move the point back and things return to normal.
+If you move the point too far things can get even worse and the outline will
+disappear altogether. Don’t worry about that either, just put the point back.
+Or use Edit-&gt;Undo.</p>
+<p>And enjoy the curious beauty of the spirals you have unintentionally created.</p>
+<p>(Raph is working on this, and at some point we may lose the spirals entirely,
+but they have a certain charm – I’ll be sorry to see them go)</p>
+<div class="figure align-default">
+<img alt="../_images/Cspiro10.png" src="../_images/Cspiro10.png" />
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../tutorial.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="editexample.html">1. Font and glyph creation</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2. Creating a glyph using spiros</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#step-1">2.1. Step 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-2">2.2. Step 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-3">2.3. Step 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-4">2.4. Step 4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-5">2.5. Step 5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-6">2.6. Step 6</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-7">2.7. Step 7</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-8">2.8. Step 8</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-9">2.9. Step 9</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-10">2.10. Step 10</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-11">2.11. Step 11</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="importexample.html">3. Importing Outline Glyphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample2.html">4. More on glyphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample3.html">5. Creating letters with consistent stem widths, serifs and heights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample4.html">6. Accented glyphs, ligatures, lookups and features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample5.html">7. Metrics, spacing and kerning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample6.html">8. Glyph variants and anchoring marks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample6-5.html">9. Conditional Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample7.html">10. Checking and generating a font</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editexample8.html">11. Working with Bitmap Fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripting-tutorial.html">12. FontForge Scripting Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scriptnotes.html">13. Special thoughts for special scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial.html#tutorial-in-other-languages">Tutorial in other languages</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ui.html">FontForge’s User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../techref.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../tutorial.html">Tutorial</a><ul>
+      <li>Previous: <a href="editexample.html" title="previous chapter"><span class="section-number">1. </span>Font and glyph creation</a></li>
+      <li>Next: <a href="importexample.html" title="next chapter"><span class="section-number">3. </span>Importing Outline Glyphs</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

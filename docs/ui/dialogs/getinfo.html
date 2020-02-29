@@ -1,0 +1,292 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Get Info &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="BDF Info Dialog" href="bdfinfo.html" />
+    <link rel="prev" title="Glyph Info" href="charinfo.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="get-info">
+<h1>Get Info<a class="headerlink" href="#get-info" title="Permalink to this headline">¶</a></h1>
+<p>In the Outline View the Get Info command can generate one of four different
+dialogs depending on what is selected. If a single thing is selected, and that
+thing is a point then the <a class="reference internal" href="#getinfo-point"><span class="std std-ref">point info</span></a> dialog is brought
+up, if it is a reference then the
+<a class="reference internal" href="#getinfo-getreferenceinfo"><span class="std std-ref">reference dialog</span></a> is brought up, if it is a
+background image then the <a class="reference internal" href="#getinfo-image"><span class="std std-ref">image dialog</span></a> is brought up. If
+it is an anchor point then the <a class="reference internal" href="#getinfo-anchors"><span class="std std-ref">anchor point</span></a> dialog is
+brought up.</p>
+<div class="section" id="point-info">
+<span id="getinfo-point"></span><h2>Point Info<a class="headerlink" href="#point-info" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/pointinfo.png" class="align-right" src="../../_images/pointinfo.png" />
+<p>This shows information about the current point. The Base position is where the
+point itself is.</p>
+<p>The Next CP shows both the location of the next control point, and the offset to
+that point from the base (and whether this setting is the default for that
+point, if this point is the last on an open contour then the [] Default button
+will be grey), underneath the offsets it shows the same information in a
+different format – as a distance from the point itself, and the angle to it.</p>
+<p>The Prev CP does the same for the previous control point.</p>
+<p>You may change any of these and the change is reflected in the outline view.
+Your changes are constrained by the point type (for instance with tangent
+points, you may not change the angle fields as these are fixed).</p>
+<p>FontForge also shows you the curvature of the two splines on either side of the
+point. In a perfect world these will be equal for curve points and the join will
+appear smooth. It also shows the difference between the two. The curvature is
+the reciprical of the radius of the circle tangent to the curve (a straight line
+has curvature 0 because it is a circle with infinite radius so its reciprical is
+0). For most curves in letters this radius is fairly large when expressed in
+em-units (and its reciprical is correspondingly small). To make it easier to
+read, FontForge scales it by the em-size of the font – this is equivalent to
+expressing it in units where 1 corresponds to an em (rather than 1000 or 2048).</p>
+<img alt="../../_images/pointinfo-interp.png" class="align-right" src="../../_images/pointinfo-interp.png" />
+<p>You may also change whether a point is a curve, corner or tangent point
+(Caution: Changing from a corner point to a curve point and back to a corner
+point is NOT a no op. It may change the control points) You may move on to the
+next or previous point on the path, or the next/previous point of the current
+contour. If you cancel then all changes to all points are canceled.</p>
+<p>The colors of the labels reflect the colors of the items they refer to. The
+point itself will be drawn in red, the previous control point will be drawn in
+magenta and the next control point will be drawn in dull cyan.</p>
+<p>When editing truetype interpolated points it is more important to view the
+control points and let the base point continue to be interpolated. The &lt;&gt; Normal
+and &lt;&gt;Interpolated radio buttons control which view is active.</p>
+<p>Pressing &lt;&gt; Interpolated may move the point to position it correctly for
+interpolation.</p>
+<div class="section" id="hint-mask">
+<span id="getinfo-hintmask"></span><h3>Hint Mask<a class="headerlink" href="#hint-mask" title="Permalink to this headline">¶</a></h3>
+<img alt="../../_images/charwithhintmask.png" src="../../_images/charwithhintmask.png" />
+<img alt="../../_images/hintmaskinfo.png" src="../../_images/hintmaskinfo.png" />
+<p>If you want to control what hints are active at a given point (and at all
+subsequent points until an new hintmask is given) you can use the hint mask
+pane. This provides you with a list of all hints in the current glyph, you
+should select the ones which you want active.</p>
+<p>As you select hints, the glyph view will darken those hints so you can see what
+you’ve selected.</p>
+<p>Points with circles drawn around them have hintmasks.</p>
+<p>According to Adobe’s documentation you should never have two hints which
+conflict active at the same time. FontForge will warn you if you do this.
+Unfortunately there are fonts (even fonts from Adobe) which do not follow this
+rule, so I have made this a warning rather than an error.</p>
+<p>Remember to hold the control key down when making disjoint selections.</p>
+<p>Sadly the direction in which hintmasks apply is backwards from what you would
+expect (the hintmask applies to this point an all previous points on the
+contour, rather than all subsequent ones).</p>
+<div class="section" id="active-hints">
+<h4>Active Hints<a class="headerlink" href="#active-hints" title="Permalink to this headline">¶</a></h4>
+<p>This looks just like the hint mask, except you cannot change anything it in. It
+shows you what hints are currently selected at this point. If a point has a hint
+mask then the two will be identical.</p>
+</div>
+</div>
+</div>
+<div class="section" id="spiro-point-info">
+<span id="getinfo-spiro"></span><h2>Spiro Point Info<a class="headerlink" href="#spiro-point-info" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/spiropointinfo.png" class="align-right" src="../../_images/spiropointinfo.png" />
+<p>If you are editing in spiro (clothoid) mode rather than Bezier mode, then there
+are no control points and the get info dialog is much simpler. Just the location
+of the point and the point type.</p>
+<div class="clearer docutils container">
+</div>
+</div>
+<div class="section" id="anchor-points-info">
+<span id="getinfo-anchors"></span><h2>Anchor Points Info<a class="headerlink" href="#anchor-points-info" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/agetinfo.png" class="align-right" src="../../_images/agetinfo.png" />
+<p>This dialog shows the selected <a class="reference internal" href="../../index.html#overview-anchors"><span class="std std-ref">anchor point</span></a> with the
+anchor class, location, type and (for ligatures) the ligature index. You may
+change any of these attributes (as long as your changes are reasonable). You may
+create new points or delete the current one. As with normal points above you may
+step through all the anchor points in your glyph.</p>
+<p>In a truetype font you can force the anchor to track a contour point in the
+truetype glyph. This point can then be manipulated with truetype instructions to
+grid fit it properly with the current rasterization.</p>
+<p>Anchor points may also be created with the
+<a class="reference internal" href="../menus/pointmenu.html#pointmenu-addanchor"><span class="std std-ref">Point-&gt;Add Anchor</span></a> command.</p>
+<div class="clearer docutils container">
+</div>
+</div>
+<div class="section" id="reference-info">
+<span id="getinfo-getreferenceinfo"></span><h2>Reference Info<a class="headerlink" href="#reference-info" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/rgetinfo.png" class="align-right" src="../../_images/rgetinfo.png" />
+<p>This dialog shows the name of the selected reference, its encoding in the font
+and its postscript transformation matrix. You may alter the transformation
+matrix if you desire.</p>
+<div class="clearer docutils container">
+</div>
+<p>The transformation matrix maps points in the glyph being refered to into their
+location in the current glyph:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}x_{\mathrm{current}} &amp;= TM_{1,1}\cdot x_{\mathrm{ref}} + TM_{2,1}\cdot y_{\mathrm{ref}} + TM_{3,1} \\
+y_{\mathrm{current}} &amp;= TM_{1,2}\cdot y_{\mathrm{ref}} + TM_{2,2}\cdot y_{\mathrm{ref}} + TM_{3,2}\end{split}\]</div>
+<p>The Use My Metrics checkbox is useful in truetype fonts where it forces the
+metrics (width) of a composite glyph (for exampe acute a) is the same as the
+metrics of one of its components (for example a). This is especially important
+in fonts containing instructions that might modify a glyph’s width.</p>
+<p>The Round To Grid checkbox is also used in truetype hints and indicates that the
+translation should be rounded to the rasterizer’s grid before being applied to
+the points of the reference. This means that the grid-fitting done by the
+reference’s instructions will still be useful in the composite.</p>
+<p>In a truetype font a reference may be positioned by matching two points, one in
+the base character, and one in the reference itself. In the example at right,
+the reference to “acute” will be moved until point 12 in “acute” is at the same
+place as point 33 in the base glyph. The glory of this method is that the
+truetype instructions assocated with the glyphs can move these points around to
+an appropriate location for the current pixelsize.</p>
+<p>Points in a composite glyph are numbered by counting the points of the first
+component, adding 4 (for the 4 phantom (metric) points), then counting the
+points in the second composite, adding 4, etc. The first composite is the one
+which is drawn first, not the one which is added first. The Base numbering
+scheme is from the full composite, while the reference point is numbered by the
+current reference. The current reference must be drawn after the base point. You
+may use <a class="reference internal" href="../menus/elementmenu.html#elementmenu-order"><span class="std std-ref">Element-&gt;Order</span></a> to reorder the references.</p>
+<p>(You should probably not set Round To Grid when doing point matching)</p>
+<p>The bounding box information is informative only and displays the current
+location and size of the reference.</p>
+<p>The [Show] button will open a glyph outline view showing the glyph being
+referred to.</p>
+</div>
+<div class="section" id="image-info">
+<span id="getinfo-image"></span><h2>Image Info<a class="headerlink" href="#image-info" title="Permalink to this headline">¶</a></h2>
+<p>This dialog gives the offset to the lower left corner of the image and the scale
+factors applied to the image. Currently you may not alter anything here, it is
+purely informational.</p>
+<p>See Also:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="fontinfo.html"><span class="doc">The font info dialog</span></a></p></li>
+<li><p><a class="reference internal" href="charinfo.html"><span class="doc">The glyph info dialog</span></a></p></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../ui.html">FontForge’s User Interface</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../mainviews.html">Main Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../menus.html">Menus</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../dialogs.html">Dialogs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#general">General</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../dialogs.html#info">Info</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="fontinfo.html">Font Info</a></li>
+<li class="toctree-l4"><a class="reference internal" href="charinfo.html">Glyph Info</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Get Info</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bdfinfo.html">BDF Info Dialog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="baseline.html">The baseline dialog, and the OpenType BASE table</a></li>
+<li class="toctree-l4"><a class="reference internal" href="justify.html">The Justify dialog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="math.html">Math typesetting information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="multiplemaster.html">Multiple Master Dialog</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#editing">Editing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#lookups-and-kerning">Lookups and Kerning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dialogs.html#validation">Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/HotKeys.html">Hot Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/fontforge-themes.html">FontForge color schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">X Resource Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xim.html">X Input Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">X Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../techref.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../../ui.html">FontForge’s User Interface</a><ul>
+  <li><a href="../dialogs.html">Dialogs</a><ul>
+      <li>Previous: <a href="charinfo.html" title="previous chapter">Glyph Info</a></li>
+      <li>Next: <a href="bdfinfo.html" title="next chapter">BDF Info Dialog</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

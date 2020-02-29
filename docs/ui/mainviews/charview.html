@@ -1,0 +1,841 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Outline Glyph View &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Bitmap Glyph View" href="bitmapview.html" />
+    <link rel="prev" title="Font View" href="fontview.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="outline-glyph-view">
+<h1>Outline Glyph View<a class="headerlink" href="#outline-glyph-view" title="Permalink to this headline">¶</a></h1>
+<img alt="../../_images/charview2.png" src="../../_images/charview2.png" />
+<p>The outline glyph view is the window in which most editing happens.</p>
+<p>At the top of the window, underneath the menu bar is an information line. The
+first item is the location of the mouse pointer (in the internal coordinate
+system of the glyph). If there is a single selected point then the next item
+gives its location, and the next three are, respectively, the offsets from the
+selected point to the current location, the distance from the selected point,
+and the angle from the horizontal (measured counter-clockwise). Then we have the
+current scale factor, and the layer which is active. Finally (in the debugging
+view) is an indication of whether the instruction pointer is in the glyph
+program, the ‘prep’ program of the ‘fpgm’.</p>
+<p>Underneath the information is a ruler showing the current pointer location as a
+red line. There’s a similar ruler on the left side.</p>
+<p>Underneath that is the glyph itself. On the left edge of the screen is a grey
+line indicating the x=0 line, further right is a black line showing where the
+glyph’s width is currently set. There are also grey lines showing the ascent,
+descent and baseline.</p>
+<p>Background images and background splines are drawn in grey. Grid lines are also
+drawn in grey. Vertical hinting regions are drawn in light blue, Horizontal
+hints are drawn in light green. If any hints overlap the boundaries are drawn in
+cyan.</p>
+<p>The points of the glyph are of three types, corner points drawn as filled
+squares, curve points drawn as filled circles and tangent points drawn as filled
+triangles. If a point is selected then it will be drawn as an outlined square,
+circle or triangle and its control points are drawn as little magenta or
+dull-cyan xs at the end of a similarly colored line. (in a curved point the
+control points will be collinear). (the “Next” control point will be drawn dull
+cyan, and the Prev point will be magenta).</p>
+<img alt="A quadratic glyph" class="align-right" src="../../_images/charview-quadratic.png" />
+<p>In a TrueType font, an on-curve point can be implied between two control points.
+FontForge will draw these with an open circle.</p>
+<p>The initial point in a contour will be drawn in green, and beside it will be a
+tiny arrow pointing in the direction of the contour.</p>
+<img alt="Showing extrema" class="align-left" src="../../_images/extrema-poi.png" />
+<p>Sometimes it is important to know which points are at the extrema of splines
+(postscript likes for there to be points at the extrema of all splines), if this
+is important to you set the “Mark Extrema” flag in the View menu. After that
+points at extrema will show up as dull purple. And internal extrema will also be
+marked.</p>
+<p>There are also two palettes, one, a layer palette, allowing you to control
+<a class="reference internal" href="#charview-layers"><span class="std std-ref">which layers are visible</span></a>, and one, a tool palette, from
+which you <a class="reference internal" href="#charview-tools"><span class="std std-ref">may pick editing tools</span></a>. Normally these are
+docked in the window, but you may choose to make them free floating windows by
+unchecking <span class="menuselection">View ‣ Show ‣ Palettes ‣ Dock Palettes</span>.</p>
+<p>You select an editing tool by clicking on the appropriate button on the tools
+palette, or you may depress the right mouse button and select a tool from a
+popup menu (you may also change layers and do a few other things with this
+menu). There are four different tools bindings available to you (this may be a
+complication with no utility). The left mouse button has a tool bound to it, and
+this tool will be displayed when the program is idle. If you hold down the
+control key, another tool is available, by default this is a pointer but if you
+click on the tools palette with the control key down you can select something
+else. If you depress the middle mouse button you get a third tool (by default a
+magnifying glass), and the control key and middle button give you the fourth (a
+ruler).</p>
+<p>If the mouse pointer is close to a point (within a few pixels) when you depress
+the mouse, then the effective location of the press will be the location of the
+point.</p>
+<p>If you drag a glyph from the font view and drop it into a glyph view then
+FontForge will drop a reference to the dragged glyph into the view.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If your glyph has truetype instructions then editing it may cause those
+instructions to behave very oddly. If your glyph has anchor points which
+depend on truetype point matching then editing the glyph may disconnect the
+points. If your glyph is used as a reference in another glyph that positions
+references by point matching then editing this glyph may reposition those
+references.</p>
+</div>
+<div class="section" id="layers">
+<span id="charview-layers"></span><h2>Layers<a class="headerlink" href="#layers" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/layers.png" class="align-left" src="../../_images/layers.png" />
+<p>There are several drawing layers in the outline view. Each layer has an “eye
+box” (indicating whether it is visible or not), curve type (“C” for cubic,
+“Q”for quadratic, ” ” for Guide layer, which is always cubic), mode (“#” for
+Guide layer, “B” for background layers, “F” for foreground layers) and a name.</p>
+<p>The first layer is a set of guide lines/splines. These are common to all glyphs
+in the font. A few lines are provided for you (the x=0 line, the ascent, descent
+and baseline). Other handy lines might be the x-height of the font, the
+cap-height, ascender-height, descender-height, … When you are working in any
+of the other layers, points will snap to splines in this layer (making it easy
+to force a consistent x-height for example).</p>
+<p>Next are the background layers, these contain background images and splines.
+These do not go into the font, but may be helpful to you in tracing the outline
+of your glyph. It is possible to paste an image into the background if you have
+an image manipulation program that supports selection by mime type (the kde
+family of applications does this, perhaps others), then FontForge will be able
+to read images in either “image/png” or “image/bmp”, otherwise you may import
+background image files.</p>
+<p>When debugging truetype (<a class="reference internal" href="../menus/hintsmenu.html#hintsmenu-debug"><span class="std std-ref">Hints-&gt;Debug</span></a>), or showing
+gritfit outlines (<a class="reference internal" href="../menus/viewmenu.html#viewmenu-showgridfit"><span class="std std-ref">View-&gt;Show Gridfit</span></a>) the
+visibility of the gridfit outlines can be controlled by the background layer’s
+visibility.</p>
+<p>The last is the foreground layer, this contains the splines that actually make
+up the glyph that will be placed into the font.</p>
+<p>One can actually have multiple foreground and background layers. They can be
+created and deleted with “+” and “-” buttons. FontForge, won’t delete last layer
+of its type, though. And care must be taken when generating a font to have the
+right foreground layer selected, if multiple are present.</p>
+<p>Layer curve type and visibility can be toggled freely with left mouse button.
+Making the layer cubic or quadratic is a little trickier, as it’s done with
+right mouse button: a pop-up menu will appear, allowing for some additional
+operations, like moving contents between layers.</p>
+</div>
+<div class="section" id="tools">
+<span id="charview-tools"></span><h2>Tools<a class="headerlink" href="#tools" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/tools.png" class="align-left" src="../../_images/tools.png" />
+<p>There are 19 different editing tools, a mode button which alters the behavior of
+5 of them, and two others (rectangle/ellipse and polygon/star) which come in two
+forms.</p>
+<p>At the bottom of the palette is a list of the current bindings of the mouse
+buttons. Here mouse button 1 is bound to the pointer tool, mouse button 1 with
+the control key pressed is also bound to pointer, mouse button 2 is bound to
+magnify, and mouse button 2 with control is bound to ruler.</p>
+<p id="charview-alt-meta-capslock">Many of the tools have different behaviors if you hold the shift or alt (meta)
+key down when using the tool. On the mac there is no alt/meta key, and the
+Option and Command keys are usually bound to making a one button mouse look like
+a three button mouse. So on the mac fontforge uses the caps-lock key rather than
+alt/meta.</p>
+<div class="section" id="the-pointer-tool">
+<h3>The pointer tool<a class="headerlink" href="#the-pointer-tool" title="Permalink to this headline">¶</a></h3>
+<img alt="../../_images/cvarrowicon.png" class="align-left" src="../../_images/cvarrowicon.png" />
+<p id="charview-pointer">This tool is used for selecting points, images and referenced glyphs. It can
+also move these and scale images and referenced glyphs.</p>
+<p>Only things that are in the layer that is currently editable may be selected or
+moved or scaled.</p>
+<p>A simple click on an unselected point selects it and deselects everything else.
+A shift click on a point toggles whether that point is selected or not. A double
+click selects all points on the path containing that point. A tripple click
+selects everything in the layer. Clicking on the background will deselect
+everything. Clicking on the background and dragging out a rectangle will select
+everything within the rectangle. Clicking on a line or spline will select the
+two end points of that line or spline. Clicking on the dark part of an image
+(when in a layer with images) will select the image. Clicking on the outline of
+a referenced glyph will select that reference (if a reference glyph happens to
+have the same outline and bounding box, then holding down the
+<a class="reference internal" href="#charview-alt-meta-capslock"><span class="std std-ref">meta/alt/caps-lock</span></a> key will allow you to
+move it once it is selected, without the meta key you will resize it).</p>
+<p>If a point has no visible control points, then they are at the same location as
+the point itself. If you want to select one of the control points then first
+select the point (to make the control points active) then hold down the meta key
+(use caps-lock on the mac) and depress the mouse on the point. This should allow
+you to drag one of the control points (if you get the wrong point the first time
+drag it out of the way, repeat the process to get the other control and then put
+the first one back). Sadly some window managers (gnome-sawtooth for one) will
+steal meta-clicks. If this happens you will need to use Element-&gt;Get Info to set
+the control points.</p>
+<img alt="../../_images/cpinfo.png" class="align-right" id="charview-cpinfo" src="../../_images/cpinfo.png" />
+<p>When you move a control point you have the option
+(<a class="reference internal" href="../menus/viewmenu.html#viewmenu-cpinfo"><span class="std std-ref">View-&gt;Show Control Point Info</span></a>) of getting a popup box
+showing information about the control point (and its opposite number on the
+other side of the on-curve point). You will be told whether this is the next or
+previous control point, the absolute location of the point, the offset from the
+on-curve point, the slope expressed as a ratio, and as an angle, and the
+curvature on this side of the base point. At the very bottom is the difference
+between the two curvatures. Try to make this number approach 0 for curved
+points.</p>
+<p>Once something is selected you may drag it around. If you select something and
+drag the mouse then it and everything else selected will be moved. If you drag
+an open path and one of the end points happens to fall on the end point of
+another open path, then the two will be merged into one (If you don’t want open
+paths to merge, hold down the
+<a class="reference internal" href="#charview-alt-meta-capslock"><span class="std std-ref">Alt/meta/caps-lock</span></a> key). If you drag a
+control point then it will be moved (if you drag a control point defining an
+implied point, then the implied point(s) will also be moved).</p>
+<p>If you selected a spline, then dragging it will drag the location on the spline
+where you pressed the mouse (so you are changing the shape of the spline).</p>
+<p>If you hold the shift key down when you drag then the motion will be constrained
+to be either horizontal, vertical, or at a 45° angle. (When moving control
+points the combination of shift and
+<a class="reference internal" href="#charview-alt-meta-capslock"><span class="std std-ref">meta (alt)</span></a> will mean that the control point
+is constrained to be the same angle from the base point as it was before you
+started moving it).</p>
+<p>If your font has an ItalicAngle set, and the ItalicConstrain preference item is
+set, then motion that would normally be constrained to the vertical is
+constrained to be along the ItalicAngle.</p>
+<p>If you move the mouse to the bounding box of a selected image or reference glyph
+and drag it then you will scale that object.</p>
+<p id="charview-set-width">If you move the mouse to the advance width line, then dragging it will change
+the width of the current glyph. If there are any bitmaps of this glyph then
+their widths will also be updated. If there are any other glyphs which depend on
+this glyph (ie. include this glyph as a reference) and their width was the same
+as the glyph’s, then their widths will also be updated (so if you change the
+width of A, then the width of À, Á, Â, Ã, Ä and Å might also be changed). If you
+are displaying vertical metrics (in a font that has them), then you can use the
+same technique to modify the vertical advance.</p>
+<p>If you are in an accented glyph then you may not be able to change the width, as
+its width is bound to that of the base glyph (By setting the “Use My Metrics”
+bit in the reference containing the base glyph). This will be displayed as a
+lock icon at the top of the window near the width line.</p>
+<p>It is also possible to use the arrow keys to move selected items around. Each
+arrow will move the selection one em-unit (this can be changed in preferences to
+be any number of em-units) in the obvious direction. The selection may include
+the width (right bearing) line (or vertical with line). If the last thing you
+selected was a control point then that point will be moved. If you hold down the
+shift key at the same time the up and down arrows will move parallel to the
+italic angle (be careful of this: this leads to non-integral values). If you
+hold down the <a class="reference internal" href="#charview-alt-meta-capslock"><span class="std std-ref">meta (alt)</span></a> key, then the
+motion will be 10 times the normal amount.</p>
+<p>If you hold down the control key while working with the arrows then the view
+will be scrolled rather than moving the selection.</p>
+<p>If the glyph is a ligature (and has a ligature entry in Glyph Info) then it has
+the potential of having “ligature caret locations”. Essentially this means that
+between each ligature component it is possible to place a caret location (so
+that the word processor will place be able to place a caret between each
+component of the ligature). In a ligature window a series of vertical lines will
+be drawn across the screen at the caret locations. By default these lines will
+be placed at the origin, but you may move one by placing the mouse pointer on
+it, depressing the button and dragging the line around. See the description on
+<a class="reference internal" href="../../tutorial/editexample4.html#editexample4-ligature"><span class="std std-ref">building a ligature</span></a> for a more complete
+description.</p>
+</div>
+<div class="section" id="the-magnifying-tool">
+<h3>The magnifying tool<a class="headerlink" href="#the-magnifying-tool" title="Permalink to this headline">¶</a></h3>
+<img alt="../../_images/cvmagicon.png" class="align-left" src="../../_images/cvmagicon.png" />
+<p id="charview-magnify">Clicking with the magnifying tool will magnify the view and center it around the
+point you clicked on. Holding down the
+<a class="reference internal" href="#charview-alt-meta-capslock"><span class="std std-ref">Alt/Meta/CapsLock</span></a> key and clicking will
+minify the view, again centered around the point at which you clicked. Again
+some window managers will steal meta-clicks, so you may have to use the View
+menu to minify (It’s called Zoom Out</p>
+<p>If you drag out a rectangle with this tool then when you release, FontForge will
+shift and scale the view so that your rectangle just fits into the window.</p>
+<p>If your mouse has a scroll wheel then holding down the control key with the
+scroll wheel causes it to magnify or minify the window.</p>
+</div>
+<div class="section" id="the-scroll-tool">
+<span id="charview-scroll"></span><h3>The scroll tool<a class="headerlink" href="#the-scroll-tool" title="Permalink to this headline">¶</a></h3>
+<img alt="../../_images/cvhandicon.png" class="align-left" src="../../_images/cvhandicon.png" />
+<p>You can use this tool to scroll the window without using the scroll bars.</p>
+</div>
+<div class="section" id="the-freehand-tool">
+<span id="charview-freehand"></span><h3>The freehand tool<a class="headerlink" href="#the-freehand-tool" title="Permalink to this headline">¶</a></h3>
+<img alt="../../_images/cvfreehandicon.png" class="align-left" src="../../_images/cvfreehandicon.png" />
+<img alt="../../_images/freehandctl.png" class="align-right" src="../../_images/freehandctl.png" />
+<p>You can use this tool to draw a random curve which FontForge will then attempt
+to convert into a set of splines. If you hold down the
+<a class="reference internal" href="#charview-alt-meta-capslock"><span class="std std-ref">Alt/Meta/CapsLock</span></a> key then FontForge will
+close the curve when you release the mouse.</p>
+<p>If you double click on the icon in the tool palette you get a dialog similar to
+the <a class="reference internal" href="../menus/elementmenu.html#elementmenu-expand"><span class="std std-ref">Element-&gt;Expand Stroke</span></a> which will give you
+slightly more control over the results, as you can have it not expand the stroke
+you draw (ie. leave a single trace.)</p>
+</div>
+<div class="section" id="tools-for-adding-curved-corner-and-tangent-points">
+<span id="charview-add-point"></span><h3>Tools for adding curved, corner and tangent points.<a class="headerlink" href="#tools-for-adding-curved-corner-and-tangent-points" title="Permalink to this headline">¶</a></h3>
+<img alt="../../_images/cvcurveicon.png" src="../../_images/cvcurveicon.png" />
+<img alt="../../_images/cvhvcurveicon.png" src="../../_images/cvhvcurveicon.png" />
+<img alt="../../_images/cvcornericon.png" src="../../_images/cvcornericon.png" />
+<img alt="../../_images/cvtangenticon.png" src="../../_images/cvtangenticon.png" />
+<p>These four tools behave similarly, differing only in what kind of point is added
+to the view.</p>
+<p>If a single point is selected, and if that point is at the end of a path then
+depressing the mouse button will create a new point where the mouse was
+depressed and draw a spline from the selected point to new point. If this new
+location happens to be the end of a path then the two paths will be joined (or
+if it is the end of the current path then the path will be closed).</p>
+<p>Otherwise if the mouse is depressed while being on a spline then a point will be
+added to that spline.</p>
+<p>Otherwise a new point is created not on any path at the location of the press.</p>
+<p>Once the point has been created then it becomes selected and all others are
+deselected. You may drag the point around, and if the point is on an open path
+and you drag it to the end point of another open path then the two paths will be
+joined.</p>
+<p>If you double click then a point will be added as above and a
+<a class="reference internal" href="../dialogs/getinfo.html"><span class="doc">Point Info</span></a> dlg will appear to give you fine control over the
+location of the point and its control points.</p>
+<p>The four different point types are</p>
+<ul class="simple">
+<li><p>curved points (where the incoming and outgoing splines have the same slope)</p></li>
+<li><p>horizontal/vertical curved points (similar to the above except the slope is
+constrained to be either horizontal or vertical)</p></li>
+<li><p>corner points (where the incoming and outgoing splines may have different
+slopes)</p></li>
+<li><p>tangent points (where one spline is a line segment and the other spline is
+curved then the curved spline is constrained to start with the same slope as the
+line).</p></li>
+</ul>
+</div>
+<div class="section" id="the-pen-tool">
+<span id="charview-pen"></span><h3>The pen tool<a class="headerlink" href="#the-pen-tool" title="Permalink to this headline">¶</a></h3>
+<img alt="../../_images/cvpenicon.png" class="align-left" src="../../_images/cvpenicon.png" />
+<p>This tool behaves differently in cubic and quadratic editing. In many ways it is
+similar to the tools above as it adds a point to the current spline.</p>
+<p>In a cubic font the points created are curved points, and they are initially
+created with the control points on the point and as you drag you drag out the
+control points rather than moving the point itself around.</p>
+<p>In a quadratic font a point will be created half-way between the last control
+point and the current location (which becomes the next control point).</p>
+<p>If you hold down the Alt (Meta, etc) key you change the behavior so that cubic
+editing looks like quadratic and vice versa.</p>
+</div>
+<div class="section" id="tools-for-adding-spiro-control-points">
+<span id="charview-spiro-add-points"></span><h3>Tools for adding spiro control points<a class="headerlink" href="#tools-for-adding-spiro-control-points" title="Permalink to this headline">¶</a></h3>
+<img alt="../../_images/cvspiroG4icon.png" src="../../_images/cvspiroG4icon.png" />
+<img alt="../../_images/cvspiroG2icon.png" src="../../_images/cvspiroG2icon.png" />
+<img alt="../../_images/cvspirocornericon.png" src="../../_images/cvspirocornericon.png" />
+<img alt="../../_images/cvspirolefticon.png" src="../../_images/cvspirolefticon.png" />
+<img alt="../../_images/cvspirorighticon.png" src="../../_images/cvspirorighticon.png" />
+<p>These tools add spiro control points to the current contour, these are only
+available in spiro mode, but the basic adding process is similar to the above.</p>
+<p>The different point types are:</p>
+<ul>
+<li><p>G4 (continuous up to the fourth derivative)</p></li>
+<li><p>G2 (continuous up to the second derivative)</p>
+<p>Basically, if you have a sharp curve you should probably use a G2 point, and if
+a more gentle curve a G4.</p>
+</li>
+<li><p>corner</p></li>
+<li><p>prev constraint point – vaguely like a tangent (Raph calls this a “left” point)</p>
+<p>This type of point should be used where the contour changes from a curve to a
+straight line (where the curve is on the previous side of the constraint point)</p>
+</li>
+<li><p>next constraint point – vaguely like a tangent (Raph calls this a “right”
+point)</p>
+<p>This type of point should be used where the contour changes from a straight line
+to a curve (where the curve is on the next side of the constraint point)</p>
+</li>
+</ul>
+<p>This is based on <a class="reference external" href="http://www.levien.com/spiro/">Raph Levien’s work</a> with
+clothoid splines which provide constant curvature across points.</p>
+</div>
+<div class="section" id="spiro-mode">
+<span id="charview-spiro-mode"></span><h3>Spiro mode<a class="headerlink" href="#spiro-mode" title="Permalink to this headline">¶</a></h3>
+<img alt="../../_images/cvspiromodeicon.png" class="align-left" src="../../_images/cvspiromodeicon.png" />
+<p>This button toggles between editing contours using Bézier control points, or
+between using spiro (clothoid) control points.</p>
+</div>
+<div class="section" id="the-knife-tool">
+<span id="charview-knife"></span><h3>The knife tool<a class="headerlink" href="#the-knife-tool" title="Permalink to this headline">¶</a></h3>
+<img alt="../../_images/cvknifeicon.png" class="align-left" src="../../_images/cvknifeicon.png" />
+<p>This tool is used to cut splines. As you drag it across the view fontforge draws
+a line showing where the cut will happen. When you release, every spline you
+intersect will be cut– that is at the location where this line intersects the
+spline two new points will be created and the old spline will be split in two
+connecting to the two new end points. These endpoints are not joined, so the
+spline is now open (or if it were previously open, it is now cut in two).</p>
+</div>
+<div class="section" id="the-ruler-tool">
+<span id="charview-ruler"></span><h3>The ruler tool<a class="headerlink" href="#the-ruler-tool" title="Permalink to this headline">¶</a></h3>
+<img alt="../../_images/cvrulericon.png" class="align-left" src="../../_images/cvrulericon.png" />
+<img alt="../../_images/ruler.png" class="align-right" src="../../_images/ruler.png" />
+<p>This tool tells you the current position of the mouse. If the mouse is near the
+outline it will give the slope and curvature there. If the mouse is near a point
+on the outline will give the slope and curvature on each side of the point.</p>
+<p>If you depress the button and drag, the first line of the tool’s pop-up shows
+the distance, angle and (x-y) offsets from the first point where you depressed
+the mouse to the last point, the mouse’s current location. The next lines in the
+pop-up show information about points along the line that intersect splines,
+including the start and end points of the line itself. If there are more than
+two intersections then the x, y, and total distance between the first and last
+intersections are shown before the point list.</p>
+<p>[0] indicates the starting point of the measure line, and the (x-y) co-ordinates
+of that point. Initially [1] is the end point; when it intersects with one
+spline then [1] becomes the first intersection point and [2] becomes the end
+point, and so on. The co-ordinates are followed by the x and y distances and
+then the final number is the length of the section ending at that point; which
+is also shown directly on the canvas.</p>
+<p>If you hold down the <a class="reference internal" href="#charview-alt-meta-capslock"><span class="std std-ref">Meta/Alt/CapsLock</span></a> key
+then information will only be shown when the mouse is depressed.</p>
+</div>
+<div class="section" id="the-scale-tool">
+<span id="charview-scale"></span><h3>The scale tool<a class="headerlink" href="#the-scale-tool" title="Permalink to this headline">¶</a></h3>
+<img alt="../../_images/cvscaleicon.png" class="align-left" src="../../_images/cvscaleicon.png" />
+<p>This tool allows you to scale the selection by eye rather than by a set amount
+(if there is no selection then everything in the current layer will be scaled).
+The location of the press will be the origin of the transformation, the further
+you move the point up and to the right the more it will be scaled in that
+dimension. If you want the scaling to be uniform or only in one dimension then
+hold down the shift key.</p>
+<p>Double clicking on this will bring up the transform dialog with the “Scale…”
+option selected.</p>
+</div>
+<div class="section" id="the-flip-tool">
+<span id="charview-flip"></span><h3>The flip tool<a class="headerlink" href="#the-flip-tool" title="Permalink to this headline">¶</a></h3>
+<img alt="../../_images/cvflipicon.png" class="align-left" src="../../_images/cvflipicon.png" />
+<p>This tool allows you to flip the selection either horizontally or vertically.
+Again the point at which you press the mouse is the origin of the
+transformation.</p>
+<p>Double clicking on this will bring up the transform dialog with the “Flip…”
+option selected.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>After flipping an outline you will almost certainly want to apply
+<a class="reference internal" href="../menus/elementmenu.html#elementmenu-correct"><span class="std std-ref">Element-&gt;Correct Direction</span></a>.</p>
+</div>
+</div>
+<div class="section" id="the-rotate-tool">
+<span id="charview-rotate"></span><h3>The rotate tool<a class="headerlink" href="#the-rotate-tool" title="Permalink to this headline">¶</a></h3>
+<img alt="../../_images/cvrotateicon.png" class="align-left" src="../../_images/cvrotateicon.png" />
+<p>This tools allows you to rotate the selection freely.</p>
+<p>Double clicking on this will bring up the transform dialog with the “Rotate…”
+option selected.</p>
+</div>
+<div class="section" id="the-skew-tool">
+<span id="charview-skew"></span><h3>The skew tool<a class="headerlink" href="#the-skew-tool" title="Permalink to this headline">¶</a></h3>
+<img alt="../../_images/cvskewicon.png" class="align-left" src="../../_images/cvskewicon.png" />
+<p>This tool allows you to skew the selection.</p>
+<p>Double clicking on this will bring up the transform dialog with the “Skew…”
+option selected.</p>
+</div>
+<div class="section" id="the-rotate-3d-tool">
+<span id="charview-rotate3d"></span><h3>The rotate 3D tool<a class="headerlink" href="#the-rotate-3d-tool" title="Permalink to this headline">¶</a></h3>
+<img alt="../../_images/cvrotate3dicon.png" class="align-left" src="../../_images/cvrotate3dicon.png" />
+<p>This tool allows you to rotate the selection in the third dimension and project
+the result back onto the x-y plane. An imaginary line is drawn from the point
+where you pressed to the current point, this line determines the axis of
+rotation. The distance you move from the initial press determines the amount of
+rotation.</p>
+<p>Double clicking on this will bring up the transform dialog with the “Rotate
+3D…” option selected.</p>
+</div>
+<div class="section" id="the-perspective-tool">
+<span id="charview-perspective"></span><h3>The perspective tool<a class="headerlink" href="#the-perspective-tool" title="Permalink to this headline">¶</a></h3>
+<img alt="../../_images/Eperspective.png" class="align-right" src="../../_images/Eperspective.png" />
+<img alt="../../_images/cvperspectiveicon.png" class="align-left" src="../../_images/cvperspectiveicon.png" />
+<p>This tool allows you to apply a perspective transformation to the selection
+(this is a non-linear transformation). This tool uses three points: The glyph
+origin, the press point, and the current location of the cursor. In the image at
+right the mouse was pressed on the baseline near the glyph’s advance width, and
+the mouse was released in the upper middle of the image. The glyph is
+transformed so that the release point is treated as the point at infinity. The
+line between the origin and the press point defines one axis of the
+transformation. Distances perpendicular to this line are retained, distances
+parallel to it are scaled as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}x' &amp;= x_{\mathrm{release}} + \frac{y_{\mathrm{release}} - y}{y_{\mathrm{release}}} (x - x_{\mathrm{release}}) \\
+y' &amp;= y\end{split}\]</div>
+</div>
+<div class="section" id="the-rectangle-ellipse-tools">
+<span id="charview-rectangle"></span><h3>The rectangle/ellipse tools<a class="headerlink" href="#the-rectangle-ellipse-tools" title="Permalink to this headline">¶</a></h3>
+<img alt="../../_images/cvrecticon.png" src="../../_images/cvrecticon.png" />
+<img alt="../../_images/cvellipseicon.png" src="../../_images/cvellipseicon.png" />
+<p>By default this produces a rectangle, single-clicking on the tool palette will
+toggle between rectangle and ellipse, and double clicking in the tools palette
+gives you a dialog which allows you to control whether your rectangles are drawn
+with round corners, and how both rectangles and ellipses are specified.</p>
+<p>You can choose whether the rectangle (or ellipse) will be drawn between the
+point where you depressed the mouse on the view and the point where you released
+it (bounding box), or whether the point where you depress the mouse becomes the
+center of the rectangle and the point where you release it provides an end-point
+(center out).</p>
+<p>If you want even more control, you can double click in the glyph view and get
+another dialog which allows you to define numerically where the
+rectangle/ellipse should be placed, how big it should be, and whether it should
+be rotated.</p>
+</div>
+<div class="section" id="the-polygon-star-tools">
+<h3>The polygon/star tools<a class="headerlink" href="#the-polygon-star-tools" title="Permalink to this headline">¶</a></h3>
+<img alt="../../_images/cvpolyicon.png" src="../../_images/cvpolyicon.png" />
+<img alt="../../_images/cvstaricon.png" src="../../_images/cvstaricon.png" />
+<p>By default this draws a regular polygon, but by double clicking on the button in
+the tools palette you can make it draw a star, or select the number of verteces
+in your polygon.</p>
+<p>The polygon is drawn as though it were inscribed in the circle whose center is
+the point where you depressed the mouse and whose radius is the distance between
+the press point and the release point. One of the polygon’s verteces will be at
+the release point.</p>
+<p>A star is drawn similarly. It will be a star generated from a regular polygon.
+As the number of verteces of the polygon gets larger the star will look more and
+more like a circle, for this reason the dialog box that allows you to pick the
+number of verteces will also allow you to pick how far the star’s points should
+extend beyond the circle in which the polygon is inscribed (this will make a
+non-regular star, but it might look nicer).</p>
+</div>
+</div>
+<div class="section" id="vertical-view">
+<span id="charview-vertical"></span><h2>Vertical View<a class="headerlink" href="#vertical-view" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/charview-vert.png" class="align-right" src="../../_images/charview-vert.png" />
+<p>In this view the vertical metrics of the glyph are shown. You can change the
+vertical advance just as you changed the glyph’s width (by selecting the pointer
+tool and dragging the vertical advance line up or down).</p>
+<div class="clearer docutils container">
+</div>
+</div>
+<div class="section" id="grid-fit-view">
+<span id="charview-gridfit"></span><h2>Grid Fit View<a class="headerlink" href="#grid-fit-view" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/GridFit.png" class="align-right" src="../../_images/GridFit.png" />
+<p>If you have the freetype library, then you can see the results of rasterizing
+your glyph. If you have freetype’s bytecode interpreter enabled you can also see
+how the truetype instructions in the glyph have moved the points around (if you
+don’t have the bytecode interpreter enabled you will see what freetype’s
+autohinter does to points). This mode can be invoked with
+<a class="reference internal" href="../menus/viewmenu.html#viewmenu-showgridfit"><span class="std std-ref">View-&gt;Show Grid Fit</span></a>…</p>
+<p>The Show Grid Fit command will ask you for some basic information first. It
+needs to know the pointsize and resolution for which you want the action
+performed (the example at right is 12pt on a 72dpi screen).</p>
+<img alt="../../_images/ShowGridFit.png" src="../../_images/ShowGridFit.png" />
+</div>
+<div class="section" id="the-debugging-view">
+<span id="charview-debugging"></span><h2>The Debugging View<a class="headerlink" href="#the-debugging-view" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/cvdebug.png" src="../../_images/cvdebug.png" />
+<blockquote class="epigraph">
+<div><p>“I told you butter wouldn’t suit the works!” he added, looking angrily at the
+March Hare.</p>
+<p>“It was the <em>best</em> butter,” the March Hare meekly replied.</p>
+<p class="attribution">—Alice’s Adventures in Wonderland
+– Lewis Carroll</p>
+</div></blockquote>
+<p>FontForge has a truetype debugger – provided you have a version of freetype on
+your machine with the bytecode interpreter enabled.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>You need a license from Apple to enable this. It is protected by several
+patents</p>
+</div>
+<p>The image to the right shows an example of this mode. You invoke it with
+<a class="reference internal" href="../menus/hintsmenu.html#hintsmenu-debug"><span class="std std-ref">Hints-&gt;Debug</span></a>, and as with the grid-fit view above you
+must establish a pointsize and and resolution. The view divides into two panes,
+the left of which is similar to the grid fit view above (except that it changes
+as you step through the instructions), the right pane provides a list of the
+instructions to be executed.</p>
+<p>In addition to showing you all the points in your glyph there are either 2 or 4
+additional points. These are the so-called “phantom” points and represent the
+horizontal and vertical metrics of the glyph (old versions of freetype will only
+display 2 points – left side bearing and advance width, while newer versions
+will display top side bearing and advance height as well).</p>
+<p>As you step through a glyph occasionally points will light up. This is
+FontForge’s attempt to show you what points will be affected (usually moved) by
+the current instruction. Other points will have a circle drawn around them.
+These are used as reference points by the instruction.</p>
+<p>There are a series of buttons at the top of the instruction view. The first will
+single step the truetype program (step into), the second will step over
+procedure calls, the third will set a break point at the return point for the
+current function and continue until that is hit, and the fourth will continue
+until:</p>
+<ul class="simple">
+<li><p>It hits a break point</p></li>
+<li><p>It hits a watch point</p></li>
+<li><p>It reaches the end of the glyph program</p></li>
+<li><p>An error occurs</p></li>
+</ul>
+<p>The red “STOPPED” arrow shows the current location of the instruction pointer
+(and what instruction will be executed next).</p>
+<p>The fifth button allows you to set a watch point. You select a point (or several
+points) in the left hand pane, and press this button. Thereafter, whenever one
+of those points is moved FontForge will stop the glyph program. (You may also
+set watch points through the points window).</p>
+<p>When you are in this mode there are a few special “hot keys”</p>
+<dl class="simple">
+<dt>r</dt><dd><p>run/restart</p>
+</dd>
+<dt>k</dt><dd><p>kill/quit debugger</p>
+</dd>
+<dt>q</dt><dd><p>kill/quit debugger</p>
+</dd>
+<dt>c</dt><dd><p>continue</p>
+</dd>
+<dt>s</dt><dd><p>step (into)</p>
+</dd>
+<dt>n</dt><dd><p>next (step over)</p>
+</dd>
+<dt>f</dt><dd><p>finish function (continue until we return from the function)</p>
+</dd>
+</dl>
+<p>Similarly you may watch storage and cvt locations by clicking on the appropriate
+spot in the storage and cvt windows.</p>
+<p>You can set a more conventional break point by clicking on an instruction. A
+little red stop sign will appear on top of the address area, and the program
+will halt when the instruction pointer reaches that instruction. Clicking on the
+instruction again will remove the breakpoint.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Flaw: Currently there is no way to set breakpoints outside of the current
+function (or glyph).</p>
+<p>Flaw: Currently there is no way to examine the call stack.</p>
+</div>
+<p>The sixth button brings up a menu with which you can control which of various
+debugging palettes are visible. The ones available so far are: Registers, Stack,
+Points, Storage, Cvt, Raster and Gloss.</p>
+<p class="rubric">Registers and the stack</p>
+<div class="flex-container">
+<div class="flex-row">
+<div class="flex-col">
+<img alt="../../_images/TTRegisters.png" src="../../_images/TTRegisters.png" />
+<p>Shows the truetype graphics state.</p>
+</div>
+<div class="flex-col">
+<img alt="../../_images/TTStack.png" src="../../_images/TTStack.png" />
+<p>Shows the truetype stack. The value in parentheses is a 26.6 number.</p>
+</div>
+</div>
+</div>
+<p class="rubric">Points</p>
+<img alt="../../_images/TTPoints.png" class="align-center" src="../../_images/TTPoints.png" />
+<p>Shows the points. You may choose to view the twilight points, or the points
+displayed in the glyph pane (the normal points). You may view the current
+location or the original location. You may view them in the units of the
+current grid, or in em-units.</p>
+<p>When debugging a composite glyph the Transformed check box indicates whether
+the points of the current component have been transformed (to show where they
+fit in the composite) or not (showing where they are in the base component –
+this is what the instructions are working on).</p>
+<p>The points may have some flags associated with them: ‘P’ means the point is
+an on curve point, ‘C’ means the point is an off curve point (a control
+point), ‘I’ means the point is an on-curve point interpolated between two
+control points, ‘F’ means a phantom point, ‘T’ means a twilight point, ‘X’
+means the horizontal touch flag has been set, ‘Y’ means the vertical touch
+flag has been set.</p>
+<p>A small stop sign indicates the point is being watched (that is execution
+will stop if the point moves). You may change whether a point is watched by
+clicking on it.</p>
+<p>Contours are separated by horizontal lines</p>
+<p class="rubric">Storage locations</p>
+<img alt="../../_images/TTStorage.png" class="align-right" src="../../_images/TTStorage.png" />
+<p>Shows the truetype storage locations.</p>
+<p>A small stop sign indicates the storage location is being watched (that is
+execution will stop if the location changes). You may change whether a
+location is watched by clicking on it.</p>
+<p class="rubric">The cvt array</p>
+<img alt="../../_images/TTCvt.png" class="align-right" src="../../_images/TTCvt.png" />
+<p>Shows the current values in the cvt array.</p>
+<p>A small stop sign indicates the cvt location is being watched (that is
+execution will stop if the value changes). You may change whether a location
+is watched by clicking on it.</p>
+<p class="rubric">Raster</p>
+<img alt="../../_images/TTRaster.png" class="align-right" src="../../_images/TTRaster.png" />
+<p>Shows the current raster with no magnificaton</p>
+<p class="rubric">Instruction Gloss</p>
+<img alt="../../_images/TTgloss.png" class="align-right" src="../../_images/TTgloss.png" />
+<p>This window tries to provide a gloss for the current instruction. It gives a
+brief description of the instruction in the top few lines, then explains what
+registers it uses, and shows their values, it shows what use is made of the
+stack and attempts to interpret the data on the stack. Finally it explains
+what registers will be set, and what will be pushed onto the stack.</p>
+<div class="clearer docutils container">
+</div>
+<hr class="docutils" />
+<p>The final button will exit the debugger.</p>
+<p>The debugger also responds to some single character commands common to many
+debuggers:</p>
+<dl class="simple">
+<dt>s</dt><dd><p>step into</p>
+</dd>
+<dt>n</dt><dd><p>step over (next)</p>
+</dd>
+<dt>c</dt><dd><p>continue</p>
+</dd>
+<dt>r</dt><dd><p>restart (with same grid)</p>
+</dd>
+<dt>f</dt><dd><p>step out (finish routine)</p>
+</dd>
+<dt>k</dt><dd><p>kill the debugger</p>
+</dd>
+<dt>q</dt><dd><p>kill the debugger</p>
+</dd>
+</dl>
+<p>The <span class="menuselection">Hints ‣ Debug</span> menu command can also be used to exit the
+debugger (by turning off the debug check box), or to restart the debugger with
+different values for the point size and resolution. This dlg can also control
+whether the fpgm and prep tables are debugged. Usually debugging will start
+when execution reaches the instructions associated with this glyph.</p>
+<div class="section" id="debugging-composite-glyphs">
+<h3>Debugging composite glyphs<a class="headerlink" href="#debugging-composite-glyphs" title="Permalink to this headline">¶</a></h3>
+<p>FontForge is not as friendly when debugging composite glyphs as it should be –
+this is influenced by the way truetype works. Suppose you want to debug the
+“Atilde” glyph.</p>
+<p>First FontForge will load and grid fit the “A” glyph, points from the “tilde”
+will not be displayed and behavior will be exactly the same as if you were
+debugging a stand alone “A”.</p>
+<p>Then FontForge will load and grid fit the “tilde” glyph, and now points from the
+“A” glyph will not be visible. The point numbers on the “tilde” will be the same
+as they are in a stand-alone “tilde” (whereas in a true representation of
+“Atilde”, the points numbering in the “tilde” component will be offset by the
+number of points in the “A” component). The “tilde” may appear oddly positioned,
+this is caused by rounding: the “tilde” will usually be translated, and this
+translation will usually be rounded to fit the pixel grid. The width line will
+show the width of the “tilde” and not of the “Atilde”.</p>
+<p>Finally FontForge will execute any instructions in the composite itself, now all
+sub-components will be displayed, and all points will be numbered as they should
+be.</p>
+<p>Several words of caution:</p>
+<ul class="simple">
+<li><p>If a component, or the composite as a whole, has no instructions then FontForge
+will not debug that piece (there will be nothing to debug).</p></li>
+<li><p>FontForge does not translate references which do point matching properly until
+the entire glyph has been loaded.</p></li>
+</ul>
+<div class="figure align-default" id="id1">
+<img alt="../../_images/mmcharview.png" src="../../_images/mmcharview.png" />
+<p class="caption"><span class="caption-text">Intermediate version of “A” with two other styles in the background</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="multiple-master-view">
+<span id="charview-mm"></span><h2>Multiple Master View<a class="headerlink" href="#multiple-master-view" title="Permalink to this headline">¶</a></h2>
+<p>In a multiple master font the <a class="reference internal" href="../menus/mmmenu.html#mmmenu-outline-char"><span class="std std-ref">MM</span></a> menu gives you
+control over which style of the font you are editing. It will also allow you to
+display any (or all) of the other styles in the background. Although the menu is
+called “MM” it applies equally to Apple’s distortable fonts (“*var” fonts, like
+Skia).</p>
+</div>
+<div class="section" id="multiple-layer-editing">
+<span id="charview-multilayer"></span><h2>Multiple Layer Editing<a class="headerlink" href="#multiple-layer-editing" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/charview-multilayer.png" class="align-right" src="../../_images/charview-multilayer.png" />
+<p>If you wish to <a class="reference internal" href="../dialogs/multilayer.html"><span class="doc">edit type3 fonts</span></a>, FontForge can display a
+glyph broken down into a series of strokes and fills and allow you to edit each
+one.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../ui.html">FontForge’s User Interface</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../mainviews.html">Main Views</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="fontview.html">Font View</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Outline Glyph View</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#layers">Layers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tools">Tools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vertical-view">Vertical View</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#grid-fit-view">Grid Fit View</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-debugging-view">The Debugging View</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#multiple-master-view">Multiple Master View</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#multiple-layer-editing">Multiple Layer Editing</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="bitmapview.html">Bitmap Glyph View</a></li>
+<li class="toctree-l3"><a class="reference internal" href="metricsview.html">The Metrics View</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../menus.html">Menus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dialogs.html">Dialogs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/HotKeys.html">Hot Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/fontforge-themes.html">FontForge color schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">X Resource Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xim.html">X Input Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">X Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../techref.html">Technical References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../../ui.html">FontForge’s User Interface</a><ul>
+  <li><a href="../mainviews.html">Main Views</a><ul>
+      <li>Previous: <a href="fontview.html" title="previous chapter">Font View</a></li>
+      <li>Next: <a href="bitmapview.html" title="next chapter">Bitmap Glyph View</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

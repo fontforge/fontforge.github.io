@@ -1,0 +1,390 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>The X11 PCF bitmap font file format &#8212; FontForge 20200301 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="TrueType and OpenType tables supported by FontForge" href="TrueOpenTables.html" />
+    <link rel="prev" title="Spline Font Database" href="sfdformat.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="the-x11-pcf-bitmap-font-file-format">
+<h1>The X11 PCF bitmap font file format<a class="headerlink" href="#the-x11-pcf-bitmap-font-file-format" title="Permalink to this headline">¶</a></h1>
+<p>This file is based on the
+<a class="reference external" href="http://ftp.x.org/pub/R6.4/xc/lib/font/bitmap/">X11 sources</a>. If something
+here disagrees with what is found in the sources, my statement is incorrect. The
+sources are definitive.</p>
+<p>The pcf (portable compiled format) file format is a binary representation of a
+bitmap font used by the XServer. It consists of a file header followed by a
+series of tables, with the header containing pointers to all the tables.</p>
+<div class="section" id="file-header">
+<h2>File Header<a class="headerlink" href="#file-header" title="Permalink to this headline">¶</a></h2>
+<p>The file header contains 32 bit integers stored with the least significant byte
+first.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span> <span class="n">header</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>                  <span class="cm">/* always &quot;\1fcp&quot; */</span>
+<span class="n">lsbint32</span> <span class="n">table_count</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">toc_entry</span> <span class="p">{</span>
+    <span class="n">lsbint32</span> <span class="n">type</span><span class="p">;</span>              <span class="cm">/* See below, indicates which table */</span>
+    <span class="n">lsbint32</span> <span class="n">format</span><span class="p">;</span>            <span class="cm">/* See below, indicates how the data are formatted in the table */</span>
+    <span class="n">lsbint32</span> <span class="n">size</span><span class="p">;</span>              <span class="cm">/* In bytes */</span>
+    <span class="n">lsbint32</span> <span class="n">offset</span><span class="p">;</span>            <span class="cm">/* from start of file */</span>
+<span class="p">}</span> <span class="n">tables</span><span class="p">[</span><span class="n">table_count</span><span class="p">];</span>
+</pre></div>
+</div>
+<p>The type field may be one of:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define PCF_PROPERTIES               (1&lt;&lt;0)</span>
+<span class="cp">#define PCF_ACCELERATORS            (1&lt;&lt;1)</span>
+<span class="cp">#define PCF_METRICS                 (1&lt;&lt;2)</span>
+<span class="cp">#define PCF_BITMAPS                 (1&lt;&lt;3)</span>
+<span class="cp">#define PCF_INK_METRICS             (1&lt;&lt;4)</span>
+<span class="cp">#define PCF_BDF_ENCODINGS           (1&lt;&lt;5)</span>
+<span class="cp">#define PCF_SWIDTHS                 (1&lt;&lt;6)</span>
+<span class="cp">#define PCF_GLYPH_NAMES             (1&lt;&lt;7)</span>
+<span class="cp">#define PCF_BDF_ACCELERATORS        (1&lt;&lt;8)</span>
+</pre></div>
+</div>
+<p>The format field may be one of:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define PCF_DEFAULT_FORMAT       0x00000000</span>
+<span class="cp">#define PCF_INKBOUNDS           0x00000200</span>
+<span class="cp">#define PCF_ACCEL_W_INKBOUNDS   0x00000100</span>
+<span class="cp">#define PCF_COMPRESSED_METRICS  0x00000100</span>
+</pre></div>
+</div>
+<p>The format field may be modified by:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define PCF_GLYPH_PAD_MASK       (3&lt;&lt;0)            </span><span class="cm">/* See the bitmap table for explanation */</span><span class="cp"></span>
+<span class="cp">#define PCF_BYTE_MASK           (1&lt;&lt;2)            </span><span class="cm">/* If set then Most Sig Byte First */</span><span class="cp"></span>
+<span class="cp">#define PCF_BIT_MASK            (1&lt;&lt;3)            </span><span class="cm">/* If set then Most Sig Bit First */</span><span class="cp"></span>
+<span class="cp">#define PCF_SCAN_UNIT_MASK      (3&lt;&lt;4)            </span><span class="cm">/* See the bitmap table for explanation */</span><span class="cp"></span>
+</pre></div>
+</div>
+<p>The format will be repeated as the first word in each table. Most tables only
+have one format (default), but some have alternates. The high order three bytes
+of the format describe the gross format. The way integers and bits are stored
+can be altered by adding one of the mask bits above.</p>
+<p>All tables begin on a 32bit boundary (and will be padded with zeroes).</p>
+</div>
+<div class="section" id="properties-table">
+<h2>Properties Table<a class="headerlink" href="#properties-table" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">lsbint32</span> <span class="n">format</span><span class="p">;</span>                 <span class="cm">/* Always stored with least significant byte first! */</span>
+<span class="n">int32</span> <span class="n">nprops</span><span class="p">;</span>                   <span class="cm">/* Stored in whatever byte order is specified in the format */</span>
+<span class="k">struct</span> <span class="n">props</span> <span class="p">{</span>
+    <span class="n">int32</span> <span class="n">name_offset</span><span class="p">;</span>          <span class="cm">/* Offset into the following string table */</span>
+    <span class="n">int8</span> <span class="n">isStringProp</span><span class="p">;</span>
+    <span class="n">int32</span> <span class="n">value</span><span class="p">;</span>                <span class="cm">/* The value for integer props, the offset for string props */</span>
+<span class="p">}</span> <span class="n">props</span><span class="p">[</span><span class="n">nprops</span><span class="p">];</span>
+<span class="kt">char</span> <span class="n">padding</span><span class="p">[(</span><span class="n">nprops</span><span class="o">&amp;</span><span class="mi">3</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="o">?</span><span class="mi">0</span><span class="o">:</span><span class="p">(</span><span class="mi">4</span><span class="o">-</span><span class="p">(</span><span class="n">nprops</span><span class="o">&amp;</span><span class="mi">3</span><span class="p">))];</span>   <span class="cm">/* pad to next int32 boundary */</span>
+<span class="kt">int</span> <span class="n">string_size</span><span class="p">;</span>                <span class="cm">/* total size of all strings (including their terminating NULs) */</span>
+<span class="kt">char</span> <span class="n">strings</span><span class="p">[</span><span class="n">string_size</span><span class="p">];</span>
+<span class="kt">char</span> <span class="n">padding2</span><span class="p">[];</span>
+</pre></div>
+</div>
+<p>These properties are the Font Atoms that X provides to users. Many are described
+in
+<a class="reference external" href="http://ftp.x.org/pub/R6.4/xc/doc/specs/XLFD/xlfd.tbl.ms">xc/doc/specs/XLFD/xlfd.tbl.ms</a>
+or
+<a class="reference external" href="http://rpmfind.net/linux/RPM/redhat/6.2/i386/XFree86-doc-3.3.6-20.i386.html">here</a>
+(the X protocol does not limit these atoms so others could be defined for some
+fonts).</p>
+<p>To find the name of a property: <code class="docutils literal notranslate"><span class="pre">strings</span> <span class="pre">+</span> <span class="pre">props[i].name_offset</span></code></p>
+</div>
+<div class="section" id="metrics-data">
+<span id="pcf-format-metricsdata"></span><h2>Metrics Data<a class="headerlink" href="#metrics-data" title="Permalink to this headline">¶</a></h2>
+<p>Several of the tables (PCF_METRICS, PCF_INK_METRICS, and within the accelerator
+tables) contain metrics data which may be in either compressed
+(PCF_COMPRESSED_METRICS) or uncompressed (DEFAULT) formats. The compressed
+format uses bytes to contain values, while the uncompressed uses shorts. The
+(compressed) bytes are unsigned bytes which are offset by 0x80 (so the actual
+value will be <code class="docutils literal notranslate"><span class="pre">(getc(pcf_file)-0x80)</span></code>. The data are stored as:</p>
+<p>Compressed</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">uint8</span> <span class="n">left_sided_bearing</span><span class="p">;</span>
+<span class="n">uint8</span> <span class="n">right_side_bearing</span><span class="p">;</span>
+<span class="n">uint8</span> <span class="n">character_width</span><span class="p">;</span>
+<span class="n">uint8</span> <span class="n">character_ascent</span><span class="p">;</span>
+<span class="n">uint8</span> <span class="n">character_descent</span><span class="p">;</span>
+ <span class="cm">/* Implied character attributes field = 0 */</span>
+</pre></div>
+</div>
+<p>Uncompressed</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">int16</span> <span class="n">left_sided_bearing</span><span class="p">;</span>
+<span class="n">int16</span> <span class="n">right_side_bearing</span><span class="p">;</span>
+<span class="n">int16</span> <span class="n">character_width</span><span class="p">;</span>
+<span class="n">int16</span> <span class="n">character_ascent</span><span class="p">;</span>
+<span class="n">int16</span> <span class="n">character_descent</span><span class="p">;</span>
+<span class="n">uint16</span> <span class="n">character_attributes</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>This provides the data needed for an XCharStruct.</p>
+</div>
+<div class="section" id="accelerator-tables">
+<h2>Accelerator Tables<a class="headerlink" href="#accelerator-tables" title="Permalink to this headline">¶</a></h2>
+<p>These data provide various bits of information about the font as a whole. This
+data structure is used by two tables PCF_ACCELERATORS and PCF_BDF_ACCELERATORS.
+The tables may either be in DEFAULT format or in PCF_ACCEL_W_INKBOUNDS (in which
+case they will have some extra metrics data at the end.</p>
+<p>The accelerator tables look like:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">lsbint32</span> <span class="n">format</span><span class="p">;</span>                 <span class="cm">/* Always stored with least significant byte first! */</span>
+<span class="n">uint8</span> <span class="n">noOverlap</span><span class="p">;</span>                <span class="cm">/* if for all i, max(metrics[i].rightSideBearing - metrics[i].characterWidth) */</span>
+                                <span class="cm">/*      &lt;= minbounds.leftSideBearing */</span>
+<span class="n">uint8</span> <span class="n">constantMetrics</span><span class="p">;</span>          <span class="cm">/* Means the perchar field of the XFontStruct can be NULL */</span>
+<span class="n">uint8</span> <span class="n">terminalFont</span><span class="p">;</span>             <span class="cm">/* constantMetrics true and forall characters: */</span>
+                                <span class="cm">/*      the left side bearing==0 */</span>
+                                <span class="cm">/*      the right side bearing== the character&#39;s width */</span>
+                                <span class="cm">/*      the character&#39;s ascent==the font&#39;s ascent */</span>
+                                <span class="cm">/*      the character&#39;s descent==the font&#39;s descent */</span>
+<span class="n">uint8</span> <span class="n">constantWidth</span><span class="p">;</span>            <span class="cm">/* monospace font like courier */</span>
+<span class="n">uint8</span> <span class="n">inkInside</span><span class="p">;</span>                <span class="cm">/* Means that all inked bits are within the rectangle with x between [0,charwidth] */</span>
+                                <span class="cm">/*  and y between [-descent,ascent]. So no ink overlaps another char when drawing */</span>
+<span class="n">uint8</span> <span class="n">inkMetrics</span><span class="p">;</span>               <span class="cm">/* true if the ink metrics differ from the metrics somewhere */</span>
+<span class="n">uint8</span> <span class="n">drawDirection</span><span class="p">;</span>            <span class="cm">/* 0=&gt;left to right, 1=&gt;right to left */</span>
+<span class="n">uint8</span> <span class="n">padding</span><span class="p">;</span>
+<span class="n">int32</span> <span class="n">fontAscent</span><span class="p">;</span>               <span class="cm">/* byte order as specified in format */</span>
+<span class="n">int32</span> <span class="n">fontDescent</span><span class="p">;</span>
+<span class="n">int32</span> <span class="n">maxOverlap</span><span class="p">;</span>               <span class="cm">/* ??? */</span>
+<span class="n">Uncompressed_Metrics</span> <span class="n">minbounds</span><span class="p">;</span>
+<span class="n">Uncompressed_Metrics</span> <span class="n">maxbounds</span><span class="p">;</span>
+<span class="cm">/* If format is PCF_ACCEL_W_INKBOUNDS then include the following fields */</span>
+    <span class="n">Uncompressed_Metrics</span> <span class="n">ink_minbounds</span><span class="p">;</span>
+    <span class="n">Uncompressed_Metrics</span> <span class="n">ink_maxbounds</span><span class="p">;</span>
+<span class="cm">/* Otherwise those fields are not in the file and should be filled by duplicating min/maxbounds above */</span>
+</pre></div>
+</div>
+<p>BDF Accelerators should be preferred to plain Accelerators if both tables are
+present. BDF Accelerators contain data that refers only to the encoded
+characters in the font (while the simple Accelerator table includes all glyphs),
+therefore the BDF Accelerators are more accurate.</p>
+</div>
+<div class="section" id="metrics-tables">
+<h2>Metrics Tables<a class="headerlink" href="#metrics-tables" title="Permalink to this headline">¶</a></h2>
+<p>There are two different metrics tables, PCF_METRICS and PCF_INK_METRICS, the
+former contains the size of the stored bitmaps, while the latter contains the
+minimum bounding box. The two may contain the same data, but many CJK fonts pad
+the bitmaps so all bitmaps are the same size. The table format may be either
+DEFAULT or PCF_COMPRESSED_METRICS (see the section on
+<a class="reference internal" href="#pcf-format-metricsdata"><span class="std std-ref">Metrics Data</span></a> for an explanation).</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">lsbint32</span> <span class="n">format</span><span class="p">;</span>                 <span class="cm">/* Always stored with least significant byte first! */</span>
+<span class="cm">/* if the format is compressed */</span>
+    <span class="n">int16</span> <span class="n">metrics_count</span><span class="p">;</span>
+    <span class="n">Compressed_Metrics</span> <span class="n">metrics</span><span class="p">[</span><span class="n">metrics_count</span><span class="p">];</span>
+<span class="cm">/* else if format is default (uncompressed) */</span>
+    <span class="n">int32</span> <span class="n">metrics_count</span><span class="p">;</span>
+    <span class="n">Uncompressed_Metrics</span> <span class="n">metrics</span><span class="p">[</span><span class="n">metrics_count</span><span class="p">];</span>
+<span class="cm">/* endif */</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="the-bitmap-table">
+<h2>The Bitmap Table<a class="headerlink" href="#the-bitmap-table" title="Permalink to this headline">¶</a></h2>
+<p>The bitmap table has type PCF_BITMAPS. Its format must be PCF_DEFAULT.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">lsbint32</span> <span class="n">format</span><span class="p">;</span>                 <span class="cm">/* Always stored with least significant byte first! */</span>
+<span class="n">int32</span> <span class="n">glyph_count</span><span class="p">;</span>              <span class="cm">/* byte ordering depends on format, should be the same as the metrics count */</span>
+<span class="n">int32</span> <span class="n">offsets</span><span class="p">[</span><span class="n">glyph_count</span><span class="p">];</span>     <span class="cm">/* byte offsets to bitmap data */</span>
+<span class="n">int32</span> <span class="n">bitmapSizes</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>           <span class="cm">/* the size the bitmap data will take up depending on various padding options */</span>
+                                <span class="cm">/*  which one is actually used in the file is given by (format&amp;3) */</span>
+<span class="kt">char</span> <span class="n">bitmap_data</span><span class="p">[</span><span class="n">bitmapsizes</span><span class="p">[</span><span class="n">format</span><span class="o">&amp;</span><span class="mi">3</span><span class="p">]];</span>    <span class="cm">/* the bitmap data. format contains flags that indicate: */</span>
+                                <span class="cm">/* the byte order (format&amp;4 =&gt; LSByte first)*/</span>
+                                <span class="cm">/* the bit order (format&amp;8 =&gt; LSBit first) */</span>
+                                <span class="cm">/* how each row in each glyph&#39;s bitmap is padded (format&amp;3) */</span>
+                                <span class="cm">/*  0=&gt;bytes, 1=&gt;shorts, 2=&gt;ints */</span>
+                                <span class="cm">/* what the bits are stored in (bytes, shorts, ints) (format&gt;&gt;4)&amp;3 */</span>
+                                <span class="cm">/*  0=&gt;bytes, 1=&gt;shorts, 2=&gt;ints */</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="the-encoding-table">
+<h2>The Encoding Table<a class="headerlink" href="#the-encoding-table" title="Permalink to this headline">¶</a></h2>
+<p>The encoding table has type PCF_BDF_ENCODINGS. Its format must be PCF_DEFAULT.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">lsbint32</span> <span class="n">format</span><span class="p">;</span>                 <span class="cm">/* Always stored with least significant byte first! */</span>
+<span class="n">int16</span> <span class="n">min_char_or_byte2</span><span class="p">;</span>        <span class="cm">/* As in XFontStruct */</span>
+<span class="n">int16</span> <span class="n">max_char_or_byte2</span><span class="p">;</span>        <span class="cm">/* As in XFontStruct */</span>
+<span class="n">int16</span> <span class="n">min_byte1</span><span class="p">;</span>                <span class="cm">/* As in XFontStruct */</span>
+<span class="n">int16</span> <span class="n">max_byte1</span><span class="p">;</span>                <span class="cm">/* As in XFontStruct */</span>
+<span class="n">int16</span> <span class="n">default_char</span><span class="p">;</span>             <span class="cm">/* As in XFontStruct */</span>
+<span class="n">int16</span> <span class="n">glyphindeces</span><span class="p">[(</span><span class="n">max_char_or_byte2</span><span class="o">-</span><span class="n">min_char_or_byte2</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">max_byte1</span><span class="o">-</span><span class="n">min_byte1</span><span class="o">+</span><span class="mi">1</span><span class="p">)];</span>
+                                <span class="cm">/* Gives the glyph index that corresponds to each encoding value */</span>
+                                <span class="cm">/* a value of 0xffff means no glyph for that encoding */</span>
+</pre></div>
+</div>
+<p>For single byte encodings min_byte1==max_byte1==0, and encoded values are
+between [min_char_or_byte2,max_char_or_byte2]. The glyph index corresponding to
+an encoding is glyphindex[encoding-min_char_or_byte2].</p>
+<p>Otherwise [min_byte1,max_byte1] specifies the range allowed for the first (high
+order) byte of a two byte encoding, while [min_char_or_byte2,max_char_or_byte2]
+is the range of the second byte. The glyph index corresponding to a double byte
+encoding (enc1,enc2) is
+glyph_index[(enc1-min_byte1)*(max_char_or_byte2-min_char_or_byte2+1)+
+enc2-min_char_or_byte2].</p>
+<p>Not all glyphs need to be encoded. Not all encodings need to be associated with
+glyphs.</p>
+</div>
+<div class="section" id="the-scalable-widths-table">
+<h2>The Scalable Widths Table<a class="headerlink" href="#the-scalable-widths-table" title="Permalink to this headline">¶</a></h2>
+<p>The encoding table has type PCF_SWIDTHS. Its format must be PCF_DEFAULT.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">lsbint32</span> <span class="n">format</span><span class="p">;</span>                 <span class="cm">/* Always stored with least significant byte first! */</span>
+<span class="n">int32</span> <span class="n">glyph_count</span><span class="p">;</span>              <span class="cm">/* byte ordering depends on format, should be the same as the metrics count */</span>
+<span class="n">int32</span> <span class="n">swidths</span><span class="p">[</span><span class="n">glyph_count</span><span class="p">];</span>     <span class="cm">/* byte offsets to bitmap data */</span>
+</pre></div>
+</div>
+<p>The scalable width of a character is the width of the corresponding postscript
+character in em-units (1/1000ths of an em).</p>
+</div>
+<div class="section" id="the-glyph-names-table">
+<h2>The Glyph Names Table<a class="headerlink" href="#the-glyph-names-table" title="Permalink to this headline">¶</a></h2>
+<p>The encoding table has type PCF_GLYPH_NAMES. Its format must be PCF_DEFAULT.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">lsbint32</span> <span class="n">format</span><span class="p">;</span>                 <span class="cm">/* Always stored with least significant byte first! */</span>
+<span class="n">int32</span> <span class="n">glyph_count</span><span class="p">;</span>              <span class="cm">/* byte ordering depends on format, should be the same as the metrics count */</span>
+<span class="n">int32</span> <span class="n">offsets</span><span class="p">[</span><span class="n">glyph_count</span><span class="p">];</span>     <span class="cm">/* byte offsets to string data */</span>
+<span class="n">int32</span> <span class="n">string_size</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">string</span><span class="p">[</span><span class="n">string_size</span><span class="p">];</span>
+</pre></div>
+</div>
+<p>The postscript name associated with each character.</p>
+<hr class="docutils" />
+<p>Other sources of info:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.tsg.ne.jp/GANA/S/pcf2bdf/pcf.pdf">http://www.tsg.ne.jp/GANA/S/pcf2bdf/pcf.pdf</a></p></li>
+<li><p><a class="reference external" href="http://myhome.hananet.net/~bumchul/xfont/pcf.txt">http://myhome.hananet.net/~bumchul/xfont/pcf.txt</a></p></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui.html">FontForge’s User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../techref.html">Technical References</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gposgsub.html">Advanced Typography Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AA-Comparison.html">Anti-Alias Comparison</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autotrace.html">Autotracing bitmaps in FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accented.html">Building Accented and other Composite Glyphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bezier.html">Bézier Splines </a></li>
+<li class="toctree-l2"><a class="reference internal" href="ref-caveats.html">Caveats about References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfdchangelog.html">Changes to the sfd format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cidmapformat.html">Cidmap files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cliargs.html">Command Line Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="splinefont.html">Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SuggestDeltas.html">Delta Instruction Suggestions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stroke.html">Expand Stroke Facility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BDFGrey.html">Extensions to Adobe’s BDF  for greymap fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PfaEdit-TeX.html">FontForge and TeX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pfaeditmath.html">FontForge’s math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hinting.html">Hinting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macformats.html">Macintosh font formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="featurefile.html">Major differences between FontForge’s and Adobe’s interpretation of feature files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="non-standard.html">Non standard extensions used FontForge in True/Open Type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="palmfonts.html">Palm fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bitmaponlysfnt.html">Several formats for bitmap only sfnts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfdformat.html">Spline Font Database</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">The X11 PCF bitmap font file format</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#file-header">File Header</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#properties-table">Properties Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#metrics-data">Metrics Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#accelerator-tables">Accelerator Tables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#metrics-tables">Metrics Tables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-bitmap-table">The Bitmap Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-encoding-table">The Encoding Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-scalable-widths-table">The Scalable Widths Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-glyph-names-table">The Glyph Names Table</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="TrueOpenTables.html">TrueType and OpenType tables supported by FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corpchar.html">Unicode Corporate Characters used by FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UniqueID.html">UniqueID and XUID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selections.html">X Selections and the X Clipboard</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../techref.html">Technical References</a><ul>
+      <li>Previous: <a href="sfdformat.html" title="previous chapter">Spline Font Database</a></li>
+      <li>Next: <a href="TrueOpenTables.html" title="next chapter">TrueType and OpenType tables supported by FontForge</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
