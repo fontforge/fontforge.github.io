@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Scripting functions &#8212; FontForge 20200301 documentation</title>
+    <title>Scripting functions &#8212; FontForge 20200314 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -1051,6 +1051,13 @@ the matching strike. It will NOT rasterize an image for you here. For bitmap
 strikes just use the pixel size, for grey scale strikes use the
 <code class="docutils literal notranslate"><span class="pre">(depth</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">grey</span> <span class="pre">scale&lt;&lt;16)</span> <span class="pre">+</span> <span class="pre">pixel_size</span></code>, in most cases the depth will
 be 8.</p>
+<p>If there is a third argument it must also be an integer and provides a set of
+flags:</p>
+<ul class="simple">
+<li><p>1 =&gt; Flip the y-axis of exported SVGs with a transform element (instead of rewriting values)</p></li>
+<li><p>256 =&gt; Use current Export dialog settings (other flags are ignored)</p></li>
+<li><p>512 =&gt; Present Export options dialog (if UI is enabled)</p></li>
+</ul>
 </dd></dl>
 
 <dl class="function">
@@ -1612,14 +1619,23 @@ bitmap list (0) or to fill up the backgrounds of glyphs (1). For eps and svg
 files this argument controls whether the splines are added to the foreground
 or the background layer of the glyph.</p>
 <p>If there is a third argument it must also be an integer and provides a set of
-flags controling the behavior of importing an EPS (and in one case SVG too)
-file.</p>
+flags:</p>
 <ul class="simple">
-<li><p>16 =&gt; remove anything currently present (works for SVG &amp; EPS)</p></li>
-<li><p>8 =&gt; correct direction</p></li>
-<li><p>4 =&gt; attempt to handle TeX erasers (stroking with a white pen)</p></li>
-<li><p>2 =&gt; remove overlap</p></li>
+<li><p>4 =&gt; Attempt to handle PostScript erasers (stroking with a white pen)</p></li>
+<li><p>8 =&gt; Correct direction (PostScript)</p></li>
+<li><p>16 =&gt; Remove anything currently present (works for SVG &amp; EPS)</p></li>
+<li><p>64 =&gt; Don’t scale images and SVGs to ascender height</p></li>
+<li><p>128 =&gt; Don’t simplify the output of stroked paths</p></li>
+<li><p>256 =&gt; Use current Import dialog settings (other flags are ignored)</p></li>
+<li><p>512 =&gt; Present Import options dialog (if UI is enabled)</p></li>
 </ul>
+<blockquote>
+<div><p>When present the optional fourth argument must be a number; it overrides
+the default miterlimit for PostScript (normally 10.0) and SVG (normally
+4.0) stroked paths.</p>
+<p>Similarly, the optional fifth argument must be a number and sets the
+accuracy, in em-units, of stroked and simplified paths.</p>
+</div></blockquote>
 </dd></dl>
 
 <dl class="function">
@@ -2133,19 +2149,19 @@ then the name will come from it. It can execute with no current font.</p>
 <code class="sig-name descname">NonLinearTransform</code><span class="sig-paren">(</span><em class="sig-param">x-expression</em>, <em class="sig-param">y-expression</em><span class="sig-paren">)</span><a class="headerlink" href="#NonLinearTransform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Takes two string arguments which must contain valid expressions of x and y
 and transforms all selected glyphs using those expressions.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">e0</span><span class="o">&gt;</span> <span class="p">:</span><span class="o">=</span> <span class="s2">&quot;x&quot;</span> <span class="o">|</span> <span class="s2">&quot;y&quot;</span> <span class="o">|</span> <span class="s2">&quot;-&quot;</span> <span class="o">&lt;</span><span class="n">e0</span><span class="o">&gt;</span> <span class="o">|</span> <span class="s2">&quot;!&quot;</span> <span class="o">&lt;</span><span class="n">e0</span><span class="o">&gt;</span> <span class="o">|</span> <span class="s2">&quot;(&quot;</span> <span class="o">&lt;</span><span class="n">expr</span><span class="o">&gt;</span> <span class="s2">&quot;)&quot;</span> <span class="o">|</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">e0</span><span class="o">&gt;</span> <span class="o">:=</span> <span class="s2">&quot;x&quot;</span> <span class="o">|</span> <span class="s2">&quot;y&quot;</span> <span class="o">|</span> <span class="s2">&quot;-&quot;</span> <span class="o">&lt;</span><span class="n">e0</span><span class="o">&gt;</span> <span class="o">|</span> <span class="s2">&quot;!&quot;</span> <span class="o">&lt;</span><span class="n">e0</span><span class="o">&gt;</span> <span class="o">|</span> <span class="s2">&quot;(&quot;</span> <span class="o">&lt;</span><span class="n">expr</span><span class="o">&gt;</span> <span class="s2">&quot;)&quot;</span> <span class="o">|</span>
         <span class="s2">&quot;sin&quot;</span> <span class="s2">&quot;(&quot;</span> <span class="o">&lt;</span><span class="n">expr</span><span class="o">&gt;</span> <span class="s2">&quot;)&quot;</span> <span class="o">|</span> <span class="s2">&quot;cos&quot;</span> <span class="s2">&quot;(&quot;</span> <span class="o">&lt;</span><span class="n">expr</span><span class="o">&gt;</span> <span class="s2">&quot;)&quot;</span> <span class="o">|</span> <span class="s2">&quot;tan&quot;</span> <span class="s2">&quot;(&quot;</span> <span class="o">&lt;</span><span class="n">expr</span><span class="o">&gt;</span> <span class="s2">&quot;)&quot;</span> <span class="o">|</span>
         <span class="s2">&quot;log&quot;</span> <span class="s2">&quot;(&quot;</span> <span class="o">&lt;</span><span class="n">expr</span><span class="o">&gt;</span> <span class="s2">&quot;)&quot;</span> <span class="o">|</span> <span class="s2">&quot;exp&quot;</span> <span class="s2">&quot;(&quot;</span> <span class="o">&lt;</span><span class="n">expr</span><span class="o">&gt;</span> <span class="s2">&quot;)&quot;</span> <span class="o">|</span> <span class="s2">&quot;sqrt&quot;</span> <span class="s2">&quot;(&quot;</span> <span class="o">&lt;</span><span class="n">expr</span><span class="o">&gt;</span> <span class="s2">&quot;)&quot;</span> <span class="o">|</span>
         <span class="s2">&quot;abs&quot;</span> <span class="s2">&quot;(&quot;</span> <span class="o">&lt;</span><span class="n">expr</span><span class="o">&gt;</span> <span class="s2">&quot;)&quot;</span> <span class="o">|</span>
         <span class="s2">&quot;rint&quot;</span> <span class="s2">&quot;(&quot;</span> <span class="o">&lt;</span><span class="n">expr</span><span class="o">&gt;</span> <span class="s2">&quot;)&quot;</span> <span class="o">|</span> <span class="s2">&quot;float&quot;</span> <span class="s2">&quot;(&quot;</span> <span class="o">&lt;</span><span class="n">expr</span><span class="o">&gt;</span> <span class="s2">&quot;)&quot;</span> <span class="o">|</span> <span class="s2">&quot;ceil&quot;</span> <span class="s2">&quot;(&quot;</span> <span class="o">&lt;</span><span class="n">expr</span><span class="o">&gt;</span> <span class="s2">&quot;)&quot;</span>
-<span class="o">&lt;</span><span class="n">e1</span><span class="o">&gt;</span> <span class="p">:</span><span class="o">=</span> <span class="o">&lt;</span><span class="n">e0</span><span class="o">&gt;</span> <span class="s2">&quot;^&quot;</span> <span class="o">&lt;</span><span class="n">e1</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="n">e2</span><span class="o">&gt;</span> <span class="p">:</span><span class="o">=</span> <span class="o">&lt;</span><span class="n">e1</span><span class="o">&gt;</span> <span class="s2">&quot;*&quot;</span> <span class="o">&lt;</span><span class="n">e2</span><span class="o">&gt;</span> <span class="o">|</span> <span class="o">&lt;</span><span class="n">e1</span><span class="o">&gt;</span> <span class="s2">&quot;/&quot;</span> <span class="o">&lt;</span><span class="n">e2</span><span class="o">&gt;</span> <span class="o">|</span> <span class="o">&lt;</span><span class="n">e1</span><span class="o">&gt;</span> <span class="s2">&quot;%&quot;</span> <span class="o">&lt;</span><span class="n">e2</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="n">e3</span><span class="o">&gt;</span> <span class="p">:</span><span class="o">=</span> <span class="o">&lt;</span><span class="n">e2</span><span class="o">&gt;</span> <span class="s2">&quot;+&quot;</span> <span class="o">&lt;</span><span class="n">e3</span><span class="o">&gt;</span> <span class="o">|</span> <span class="o">&lt;</span><span class="n">e2</span><span class="o">&gt;</span> <span class="s2">&quot;-&quot;</span> <span class="o">&lt;</span><span class="n">e3</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="n">e4</span><span class="o">&gt;</span> <span class="p">:</span><span class="o">=</span> <span class="o">&lt;</span><span class="n">e3</span><span class="o">&gt;</span> <span class="s2">&quot;==&quot;</span> <span class="o">&lt;</span><span class="n">e4</span><span class="o">&gt;</span> <span class="o">|</span> <span class="o">&lt;</span><span class="n">e3</span><span class="o">&gt;</span> <span class="s2">&quot;!=&quot;</span> <span class="o">&lt;</span><span class="n">e4</span><span class="o">&gt;</span> <span class="o">|</span>
+<span class="o">&lt;</span><span class="n">e1</span><span class="o">&gt;</span> <span class="o">:=</span> <span class="o">&lt;</span><span class="n">e0</span><span class="o">&gt;</span> <span class="s2">&quot;^&quot;</span> <span class="o">&lt;</span><span class="n">e1</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">e2</span><span class="o">&gt;</span> <span class="o">:=</span> <span class="o">&lt;</span><span class="n">e1</span><span class="o">&gt;</span> <span class="s2">&quot;*&quot;</span> <span class="o">&lt;</span><span class="n">e2</span><span class="o">&gt;</span> <span class="o">|</span> <span class="o">&lt;</span><span class="n">e1</span><span class="o">&gt;</span> <span class="s2">&quot;/&quot;</span> <span class="o">&lt;</span><span class="n">e2</span><span class="o">&gt;</span> <span class="o">|</span> <span class="o">&lt;</span><span class="n">e1</span><span class="o">&gt;</span> <span class="s2">&quot;%&quot;</span> <span class="o">&lt;</span><span class="n">e2</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">e3</span><span class="o">&gt;</span> <span class="o">:=</span> <span class="o">&lt;</span><span class="n">e2</span><span class="o">&gt;</span> <span class="s2">&quot;+&quot;</span> <span class="o">&lt;</span><span class="n">e3</span><span class="o">&gt;</span> <span class="o">|</span> <span class="o">&lt;</span><span class="n">e2</span><span class="o">&gt;</span> <span class="s2">&quot;-&quot;</span> <span class="o">&lt;</span><span class="n">e3</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">e4</span><span class="o">&gt;</span> <span class="o">:=</span> <span class="o">&lt;</span><span class="n">e3</span><span class="o">&gt;</span> <span class="s2">&quot;==&quot;</span> <span class="o">&lt;</span><span class="n">e4</span><span class="o">&gt;</span> <span class="o">|</span> <span class="o">&lt;</span><span class="n">e3</span><span class="o">&gt;</span> <span class="s2">&quot;!=&quot;</span> <span class="o">&lt;</span><span class="n">e4</span><span class="o">&gt;</span> <span class="o">|</span>
         <span class="o">&lt;</span><span class="n">e3</span><span class="o">&gt;</span> <span class="s2">&quot;&gt;=&quot;</span> <span class="o">&lt;</span><span class="n">e4</span><span class="o">&gt;</span> <span class="o">|</span> <span class="o">&lt;</span><span class="n">e3</span><span class="o">&gt;</span> <span class="s2">&quot;&gt;&quot;</span> <span class="o">&lt;</span><span class="n">e4</span><span class="o">&gt;</span> <span class="o">|</span>
         <span class="o">&lt;</span><span class="n">e3</span><span class="o">&gt;</span> <span class="s2">&quot;&lt;=&quot;</span> <span class="o">&lt;</span><span class="n">e4</span><span class="o">&gt;</span> <span class="o">|</span> <span class="o">&lt;</span><span class="n">e3</span><span class="o">&gt;</span> <span class="s2">&quot;&lt;&quot;</span> <span class="o">&lt;</span><span class="n">e4</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="n">e5</span><span class="o">&gt;</span> <span class="p">:</span><span class="o">=</span> <span class="o">&lt;</span><span class="n">e4</span><span class="o">&gt;</span> <span class="s2">&quot;&amp;&amp;&quot;</span> <span class="o">&lt;</span><span class="n">e5</span><span class="o">&gt;</span> <span class="o">|</span> <span class="o">&lt;</span><span class="n">e4</span><span class="o">&gt;</span> <span class="s2">&quot;||&quot;</span> <span class="o">&lt;</span><span class="n">e5</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="n">expr</span><span class="o">&gt;</span> <span class="p">:</span><span class="o">=</span> <span class="o">&lt;</span><span class="n">e5</span><span class="o">&gt;</span> <span class="s2">&quot;?&quot;</span> <span class="o">&lt;</span><span class="n">expr</span><span class="o">&gt;</span> <span class="s2">&quot;:&quot;</span>
+<span class="o">&lt;</span><span class="n">e5</span><span class="o">&gt;</span> <span class="o">:=</span> <span class="o">&lt;</span><span class="n">e4</span><span class="o">&gt;</span> <span class="s2">&quot;&amp;&amp;&quot;</span> <span class="o">&lt;</span><span class="n">e5</span><span class="o">&gt;</span> <span class="o">|</span> <span class="o">&lt;</span><span class="n">e4</span><span class="o">&gt;</span> <span class="s2">&quot;||&quot;</span> <span class="o">&lt;</span><span class="n">e5</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">expr</span><span class="o">&gt;</span> <span class="o">:=</span> <span class="o">&lt;</span><span class="n">e5</span><span class="o">&gt;</span> <span class="s2">&quot;?&quot;</span> <span class="o">&lt;</span><span class="n">expr</span><span class="o">&gt;</span> <span class="s2">&quot;:&quot;</span>
 </pre></div>
 </div>
 <p>Example: To do a perspective transformation with a vanishing point at
@@ -2168,11 +2184,23 @@ font may be selected by placing the fontname in parens and appending it to
 the filename, as <code class="docutils literal notranslate"><span class="pre">Open(&quot;gulim.ttc(Dotum)&quot;)</span></code>. If you know the font’s index
 you may also say: <code class="docutils literal notranslate"><span class="pre">Open(&quot;gulim.ttc(0)&quot;)</span></code>.</p>
 <p>The optional flags argument current has only two flags in it:</p>
-<ul class="simple">
+<ul>
 <li><p>1 =&gt; the user does have the appropriate license to examine the font no matter
 what the fstype setting is.</p></li>
 <li><p>4 =&gt; load all glyphs from the ‘glyf’ table of a ttc font (rather than only
 the glyphs used in the font picked).</p></li>
+<li><p>8 =&gt; Report more error conditions</p></li>
+<li><p>16 =&gt; Do not create a view window for this font even if the UI is active.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This option supports efficient bulk processing of fonts in scripts
+run through the UI but using it can be tricky. Open fonts will be listed
+at the bottom of the “Window” menu but choosing them will have no effect.</p>
+<p>If some fonts are not closed you may need to “force-quit” the
+application using your OS.</p>
+</div>
+</li>
+<li><p>32 =&gt; Retain all recognized font tables that do not have a native format</p></li>
 </ul>
 </dd></dl>
 
@@ -3868,7 +3896,7 @@ font.</p>
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.4</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

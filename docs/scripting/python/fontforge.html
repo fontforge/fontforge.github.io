@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>fontforge &#8212; FontForge 20200301 documentation</title>
+    <title>fontforge &#8212; FontForge 20200314 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -600,10 +600,49 @@ be empty if FontForge couldn’t find any.</p>
 <dl class="function">
 <dt id="fontforge.open">
 <code class="sig-prename descclassname">fontforge.</code><code class="sig-name descname">open</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="optional">[</span>, <em class="sig-param">flags</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#fontforge.open" title="Permalink to this definition">¶</a></dt>
-<dd><p>Opens a filename and returns the font it contains (if any). If the flags
-argument is 4, then ff will load all glyphs in the ‘glyf’ table of a ttc file
-(rather than just the glyphs used in the font picked). This will not load all
-‘glyf’ tables though.</p>
+<dd><p>Opens a filename and returns the font it contains (if any). The optional
+<code class="docutils literal notranslate"><span class="pre">flags</span></code> argument can be string tuple or integer combination of the
+following flags:</p>
+<dl class="object">
+<dt>
+<code class="sig-name descname">fstypepermitted (1)</code></dt>
+<dd><p>The user has the appropriate license to examine the font no matter what
+the fstype setting is.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">allglyphsinttc (4)</code></dt>
+<dd><p>Load all glyphs from the ‘glyf’ table of a ttc font (rather than only the
+glyphs used in the font picked).</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">fontlint (8)</code></dt>
+<dd><p>Report more error conditions.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">hidewindow (16)</code></dt>
+<dd><p>Do not create a view window for this font even if the UI is active.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This option supports efficient bulk processing of fonts in scripts run
+through the UI but using it can be tricky. Open fonts will be listed at
+the bottom of the “Window” menu but choosing them will have no effect.</p>
+<p>If some fonts are not closed you may need to “force-quit” the
+application using your OS.</p>
+</div>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">alltables (32)</code></dt>
+<dd><p>Retain all recognized font tables that do not have a native format.</p>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="function">
@@ -1504,9 +1543,31 @@ counter-clockwise. See also <a class="reference internal" href="#fontforge.conto
 
 <dl class="method">
 <dt id="fontforge.layer.export">
-<code class="sig-prename descclassname">layer.</code><code class="sig-name descname">export</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="sig-paren">)</span><a class="headerlink" href="#fontforge.layer.export" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">layer.</code><code class="sig-name descname">export</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="optional">[</span>, <em class="sig-param">KEYWORD</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#fontforge.layer.export" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exports the current layer (in outline format) to a file. The type of file is
 determined by the extension.</p>
+<p>The following optional keywords modify the export process for various formats:</p>
+<dl class="object">
+<dt>
+<code class="sig-name descname">usetransform (boolean, default=False)</code></dt>
+<dd><p>Flip the Y-axis of exported SVGs with a transform element rather than
+modifying the individual Y values.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">usesystem (boolean, default=False)</code></dt>
+<dd><p>Ignore the above keyword settings and use the values set by the user
+in the Import options dialog.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">asksystem (boolean, default=False)</code></dt>
+<dd><p>If the UI is present show the Import options dialog to the user
+and use the chosen values (does nothing otherwise).</p>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="method">
@@ -2674,18 +2735,51 @@ a layer. See also <a class="reference internal" href="#fontforge.glyph.removeOve
 
 <dl class="method">
 <dt id="fontforge.glyph.export">
-<code class="sig-prename descclassname">glyph.</code><code class="sig-name descname">export</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="optional">[</span>, <em class="sig-param">pixelsize</em>, <em class="sig-param">bitdepth</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#fontforge.glyph.export" title="Permalink to this definition">¶</a></dt>
-<dd><p>(bitmap images)</p>
+<code class="sig-prename descclassname">glyph.</code><code class="sig-name descname">export</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="optional">[</span>, <em class="sig-param">KEYWORD</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#fontforge.glyph.export" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a file with the specified name containing a representation of
+the glyph. Uses the file’s extension to determine output file type.</p>
+<p>The following optional keywords modify the export process for various formats:</p>
+<dl class="object">
+<dt>
+<code class="sig-name descname">layer (string or integer, default=glyph.activeLayer)</code></dt>
+<dd><p>For vector formats, the layer to export.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="object">
 <dt>
-<code class="sig-prename descclassname">glyph.</code><code class="sig-name descname">export</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="optional">[</span>, <em class="sig-param">layer</em><span class="optional">]</span><span class="sig-paren">)</span></dt>
-<dd><p>(vector outlines)</p>
-<p>Uses the file’s extension to determine output file type. Exports outline
-formats to the file. For bitmap formats it will rasterize the glyph and
-output that. There are different optional arguments for rasterizing images
-and for direct outline output. bitdepth must be 1 or 8.</p>
+<code class="sig-name descname">pixelsize (integer, default=100)</code></dt>
+<dd><p>For raster formats, the size of the image to output.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">bitdepth (integer, default=8)</code></dt>
+<dd><p>For raster formats, the depth of the image to output. Must be 1 or 8.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">usetransform (boolean, default=False)</code></dt>
+<dd><p>Flip the Y-axis of exported SVGs with a transform element rather than
+modifying the individual Y values.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">usesystem (boolean, default=False)</code></dt>
+<dd><p>Ignore the above keyword settings and use the values set by the user
+in the Import options dialog.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">asksystem (boolean, default=False)</code></dt>
+<dd><p>If the UI is present show the Import options dialog to the user
+and use the chosen values (does nothing otherwise).</p>
+</dd></dl>
+
+<p>Note: The old positional layer/pixelsize,bitdepth calling conventions are
+still supported but are not compatible with the other keyword parameters.</p>
 </dd></dl>
 
 <dl class="method">
@@ -2721,38 +2815,65 @@ of a ligature component glyph.</p>
 
 <dl class="method">
 <dt id="fontforge.glyph.importOutlines">
-<code class="sig-prename descclassname">glyph.</code><code class="sig-name descname">importOutlines</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="optional">[</span>, <em class="sig-param">flags</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#fontforge.glyph.importOutlines" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">glyph.</code><code class="sig-name descname">importOutlines</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="optional">[</span>, <em class="sig-param">KEYWORD</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#fontforge.glyph.importOutlines" title="Permalink to this definition">¶</a></dt>
 <dd><p>Uses the file’s extension to determine behavior. Imports outline descriptions
 (eps, svg, glif files) into the forground layer. Imports image descriptions
-(bmp, png, xbm, etc.) into the background layer. Optionally, flags can be
-used to control PostScript import, it’ll be ignored for other file types.
-Flags is a tuple of the following strings</p>
+(bmp, png, xbm, etc.) into the background layer. The following optional keywords modify the import process for various formats:</p>
 <dl class="object">
 <dt>
-<code class="sig-name descname">toobigwarn</code></dt>
-<dd><p>Supress warning window about too big stroke width</p>
+<code class="sig-name descname">scale (boolean, default=True)</code></dt>
+<dd><p>Scale imported images and SVGs to ascender height</p>
 </dd></dl>
 
 <dl class="object">
 <dt>
-<code class="sig-name descname">removeoverlap</code></dt>
-<dd><p>When FontForge detects that an expanded stroke will self-intersect, then
-setting this flag will cause it to try to make things nice by removing
-the intersections</p>
+<code class="sig-name descname">simplify (boolean, default=True)</code></dt>
+<dd><p>Run simplify on the output of stroked paths</p>
 </dd></dl>
 
 <dl class="object">
 <dt>
-<code class="sig-name descname">handle_eraser</code></dt>
+<code class="sig-name descname">accuracy (float, default=0.25)</code></dt>
+<dd><p>The minimum accuracy (in em-units) of stroked paths.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">default_joinlimit (float, default=-1)</code></dt>
+<dd><p>Override the format’s default miterlimit for stroked paths, which is
+10.0 for PostScript and 4.0 for SVG. (Value -1 means “inherit” those
+defaults.)</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">handle_eraser (boolean, default=False)</code></dt>
 <dd><p>Certain programs use pens with white ink as erasers. When this flag is
-set, FontForge will attempt to simulate that.</p>
+set FontForge will attempt to simulate that.</p>
 </dd></dl>
 
 <dl class="object">
 <dt>
-<code class="sig-name descname">correctdir</code></dt>
-<dd></dd></dl>
+<code class="sig-name descname">correctdir (boolean, default=False)</code></dt>
+<dd><p>Run “Correct direction” on (some) PostScript paths</p>
+</dd></dl>
 
+<dl class="object">
+<dt>
+<code class="sig-name descname">usesystem (boolean, default=False)</code></dt>
+<dd><p>Ignore the above keyword settings and use the values set by the user
+in the Import options dialog.</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
+<code class="sig-name descname">asksystem (boolean, default=False)</code></dt>
+<dd><p>If the UI is present show the Import options dialog to the user
+and use the chosen values (does nothing otherwise).</p>
+</dd></dl>
+
+<p>Note: The old PostScript correctdir/handle_eraser flag tuple is still
+supported but is not compatible with the other keywords.</p>
 </dd></dl>
 
 <dl class="method">
@@ -6341,7 +6462,7 @@ for the expressions is explained in the
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.2</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.4</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
