@@ -8,7 +8,7 @@ archive_extension: ".dmg"
 FontForge is a UNIX application, so it doesn't behave 100% like a normal Mac Application.
 OS X 10.12 or later is required.
 
-Download and install [FontForge 2019-08-01](https://github.com/fontforge/fontforge/releases/download/20190801/FontForge-2019-08-01-ac635b8.app.dmg)
+Download and install [FontForge 2020-03-14](https://github.com/fontforge/fontforge/releases/download/20200314/FontForge-2020-03-14-67687b0.app.dmg)
 
 <a class="btn btn-primary btn-large default" data-toggle="collapse" href="#collapseOld" aria-expanded="false" aria-controls="collapseOld">
   For releases before 2019-03-17
