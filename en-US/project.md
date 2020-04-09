@@ -22,7 +22,7 @@ in a very public way: A project.
 
 When users make changes to the code to improve their lives, they can keep 
 their changes private. But they are invited by the project to contribute their 
-work back 'upstream.' The frequent contributors
+work back [`upstream`](https://en.wikipedia.org/wiki/Upstream_(software_development)). The frequent contributors
 review the work, and perhaps after some discussion and revision include 
 it in the next release for all other users to enjoy and build on further. 
 (The Git version control system and the GitHub website make the process 
