@@ -161,13 +161,13 @@ title: Older changes to FontForge
         introduced garbage).
     -   We didn't think we could read in a kerning subtable (class or
         pair) with device tables, so we converted them to pst data. We
-        can read them in in optimized form and we should do so.
+        can read them in optimized form and we should do so.
     -   Alexej points out that if a glyph has
         "instructions\_out\_of\_date" set on it, then setting the
         instructions via a script should clear the bit -- but didn't.
     -   Werner points out that if a type2 charstring contained a
         sequence \<num\> endchar then ff would set the width of the
-        charater even if the the width had already been set. Width can
+        charater even if the width had already been set. Width can
         only be set on first stack clearing operation, any extra params
         on subsequent calls get ignored.
 
@@ -403,7 +403,7 @@ title: Older changes to FontForge
     -   Revert glyph had some stray memory references.
     -   Add two proposed language tags for IPA use (one for IPA and one
         for Americanist).
-    -   In an empty python layer layer.boundingBox should return a tuple
+    -   In an empty python layer.boundingBox should return a tuple
         of 4 zeros, instead it returned a tuple of 2 zeros and 2 random
         garbage values.
     -   Validate dlg's scrollbar was broken, and you couldn't drag the
@@ -2518,7 +2518,7 @@ title: Older changes to FontForge
     -   If the width of a glyph changed in the metrics view then that
         was not synchronized to dependent glyphs.
     -   Enforce the "Use My Metrics" bit of a reference.
-         In TrueType, if this bit is set on a reference then then width
+         In TrueType, if this bit is set on a reference then width
         of the containing glyph will be the same as that of the
         reference.
          So don't let the user change the width of such glyphs. (and add

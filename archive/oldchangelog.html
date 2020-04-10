@@ -208,7 +208,7 @@
 	  table. (Needed because of a bug which introduced garbage).
 	<LI>
 	  We didn't think we could read in a kerning subtable (class or pair) with
-	  device tables, so we converted them to pst data. We can read them in in optimized
+	  device tables, so we converted them to pst data. We can read them in optimized
 	  form and we should do so.
 	<LI>
 	  Alexej points out that if a glyph has "instructions_out_of_date" set on it,
@@ -3151,7 +3151,7 @@ $ make install_gtk
 	  synchronized to dependent glyphs.
 	<LI>
 	  Enforce the "Use My Metrics" bit of a reference.<BR>
-	  In TrueType, if this bit is set on a reference then then width of the containing
+	  In TrueType, if this bit is set on a reference then width of the containing
 	  glyph will be the same as that of the reference.<BR>
 	  So don't let the user change the width of such glyphs. (and add a lock icon
 	  to the width line in the character view to show that it is fixed).
