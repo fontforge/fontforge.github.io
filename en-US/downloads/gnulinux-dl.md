@@ -5,45 +5,33 @@ title: FontForge on GNU+Linux and other UNIXes
 archive_extension: .tar.gz|.zip
 ---
 
-Most of the GNU+Linux distributions have packages for fontforge, but these will often be a quite old.
+Most of the GNU+Linux distributions have packages for fontforge, but these will often be a quite old. If you want the latest FontForge, these are your options:
 
 ### AppImage
 
-Use the precompiled AppImage: [2020-03-14](https://github.com/fontforge/fontforge/releases/download/20200314/FontForge-2020-03-14-67687b0-x86_64.AppImage)
+AppImage is a binary format that has improved to the point where it is generally usable by all GNU+Linux users.
 
-### Ubuntu
+With each release, we compile an AppImage. The latest is [2020-03-14](https://github.com/fontforge/fontforge/releases/download/20200314/FontForge-2020-03-14-67687b0-x86_64.AppImage).
 
-Installing on Ubuntu is easy with our [Ubuntu PPA](https://launchpad.net/%7Efontforge/+archive/ubuntu/fontforge)
+We recommend all users use this method to get the latest release if their distribution has not yet provided it. The Ubuntu PPA, and similar distribution-specific build platforms that put the onus on us, are deprecated and not to be used.
 
-```sh
-sudo add-apt-repository ppa:fontforge/fontforge;
-sudo apt-get update;
-sudo apt-get install fontforge;
-```
+### Compiling
 
-### Compiling from Github
+#### From GitHub
 
-Check out [Building From Source](../source) for more information on using the bleeding edge.
+Check out [Building From Source](../source), as well as [`INSTALL.md`](https://github.com/fontforge/fontforge/blob/master/INSTALL.md), for more information on using bleeding edge versions of FontForge, which change every time a developer merges a pull request.
 
-### Installing from an rpm
+#### From distribution-specific build recipe
 
-Installing an rpm package is relatively straight forward.
-You will need root access.
-Download the RPM files on the [release page](https://github.com/fontforge/fontforge/releases)
+Some distributions provide a collection of build recipes which can simplify building on them. On Arch Linux this is called a `PKGBUILD` and one way they are distributed is via the Arch User Repository (AUR): it may be simpler to install [`fontforge-git`](https://aur.archlinux.org/packages/fontforge-git/) via the AUR if you are an Arch user.
 
-Move to the directory containing the downloaded rpm, and then type
+The Alpine Linux version of this is an [`APKBUILD`](https://git.alpinelinux.org/aports/tree/testing/fontforge/APKBUILD). Gentoo Linux calls it a "`portage` overlay", see e.g. [here](http://gpo.zugaina.org/media-gfx/fontforge).
 
-     rpm -i fontforge-*.rpm
+## Other Unices
 
-If you've already installed fontforge and are updating an earlier version then you should type:
-
-     rpm -U fontforge-*.rpm
-
-## Other UNIX Systems
-
-[netbsd](ftp://ftp.netbsd.org/pub/NetBSD/packages/pkgsrc/fonts/fontforge/README.html) builds for various architectures (alpha, i386, ppc, sparc, x86\_64) are available.
-
-[Solaris](http://www.sunfreepacks.com/) packages for x86 by Apostolos Syropoulos
+* [FreeBSD](https://www.freshports.org/print/fontforge) has a FontForge port in its ports tree.
+* [netbsd](ftp://ftp.netbsd.org/pub/NetBSD/packages/pkgsrc/fonts/fontforge/README.html) builds for various architectures (alpha, i386, ppc, sparc, x86\_64) are available.
+* [Solaris](http://www.sunfreepacks.com/) packages for x86 by Apostolos Syropoulos
 
 ## Don't miss an update!
 
