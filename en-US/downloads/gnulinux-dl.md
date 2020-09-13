@@ -1,7 +1,7 @@
 ---
 published: true
 layout: downloads
-title: FontForge on GNU+Linux and other UNIXes
+title: FontForge on GNU+Linux and other Unices
 archive_extension: .tar.gz|.zip
 ---
 
@@ -31,7 +31,6 @@ The Alpine Linux version of this is an [`APKBUILD`](https://git.alpinelinux.org/
 
 * [FreeBSD](https://www.freshports.org/print/fontforge) has a FontForge port in its ports tree.
 * [netbsd](ftp://ftp.netbsd.org/pub/NetBSD/packages/pkgsrc/fonts/fontforge/README.html) builds for various architectures (alpha, i386, ppc, sparc, x86\_64) are available.
-* [Solaris](http://www.sunfreepacks.com/) packages for x86 by Apostolos Syropoulos
 
 ## Don't miss an update!
 
