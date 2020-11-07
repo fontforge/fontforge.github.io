@@ -1,18 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>Data Types &#8212; FontForge 20200314 documentation</title>
-    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Types &#8212; FontForge 20201107 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -220,7 +221,7 @@ points have intermediate values). Used when trying to approximate new splines.</
 <p>The bounding box of a <a class="reference internal" href="#splinefont-spline"><span class="std std-ref">Spline</span></a>,
 <a class="reference internal" href="#splinefont-splinechar"><span class="std std-ref">SplineChar</span></a>, <a class="reference internal" href="#splinefont-refchar"><span class="std std-ref">RefChar</span></a>,
 <a class="reference internal" href="#splinefont-imagelist"><span class="std std-ref">Image</span></a>, or whatever else needs a bounding box.</p>
-<div class="highlight-c notranslate" id="splinefont-bdffloat"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="k">struct</span> <span class="n">bdffloat</span> <span class="p">{</span>
+<div class="highlight-default notranslate" id="splinefont-bdffloat"><div class="highlight"><pre><span></span><span class="n">typedef</span> <span class="n">struct</span> <span class="n">bdffloat</span> <span class="p">{</span>
     <span class="n">int16</span> <span class="n">xmin</span><span class="p">,</span><span class="n">xmax</span><span class="p">,</span><span class="n">ymin</span><span class="p">,</span><span class="n">ymax</span><span class="p">;</span>
     <span class="n">int16</span> <span class="n">bytes_per_line</span><span class="p">;</span>
     <span class="n">uint8</span> <span class="o">*</span><span class="n">bitmap</span><span class="p">;</span>
@@ -228,33 +229,33 @@ points have intermediate values). Used when trying to approximate new splines.</
 </pre></div>
 </div>
 <p>The floating selection in a <a class="reference internal" href="#splinefont-bdfchar"><span class="std std-ref">BDFChar</span></a>.</p>
-<div class="highlight-c notranslate" id="splinefont-undoes"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="k">struct</span> <span class="n">undoes</span> <span class="p">{</span>
-    <span class="k">struct</span> <span class="n">undoes</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>
-    <span class="k">enum</span> <span class="n">undotype</span> <span class="p">{</span> <span class="n">ut_none</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ut_state</span><span class="p">,</span> <span class="n">ut_tstate</span><span class="p">,</span> <span class="n">ut_width</span><span class="p">,</span>
+<div class="highlight-default notranslate" id="splinefont-undoes"><div class="highlight"><pre><span></span><span class="n">typedef</span> <span class="n">struct</span> <span class="n">undoes</span> <span class="p">{</span>
+    <span class="n">struct</span> <span class="n">undoes</span> <span class="o">*</span><span class="nb">next</span><span class="p">;</span>
+    <span class="n">enum</span> <span class="n">undotype</span> <span class="p">{</span> <span class="n">ut_none</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ut_state</span><span class="p">,</span> <span class="n">ut_tstate</span><span class="p">,</span> <span class="n">ut_width</span><span class="p">,</span>
             <span class="n">ut_bitmap</span><span class="p">,</span> <span class="n">ut_bitmapsel</span><span class="p">,</span> <span class="n">ut_composite</span><span class="p">,</span> <span class="n">ut_multiple</span> <span class="p">}</span> <span class="n">undotype</span><span class="p">;</span>
-    <span class="k">union</span> <span class="p">{</span>
-        <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">union</span> <span class="p">{</span>
+        <span class="n">struct</span> <span class="p">{</span>
             <span class="n">int16</span> <span class="n">width</span><span class="p">;</span>
             <span class="n">int16</span> <span class="n">lbearingchange</span><span class="p">;</span>
-            <span class="k">struct</span> <span class="n">splinepointlist</span> <span class="o">*</span><span class="n">splines</span><span class="p">;</span>
-            <span class="k">struct</span> <span class="n">refchar</span> <span class="o">*</span><span class="n">refs</span><span class="p">;</span>
-            <span class="k">struct</span> <span class="n">imagelist</span> <span class="o">*</span><span class="n">images</span><span class="p">;</span>
+            <span class="n">struct</span> <span class="n">splinepointlist</span> <span class="o">*</span><span class="n">splines</span><span class="p">;</span>
+            <span class="n">struct</span> <span class="n">refchar</span> <span class="o">*</span><span class="n">refs</span><span class="p">;</span>
+            <span class="n">struct</span> <span class="n">imagelist</span> <span class="o">*</span><span class="n">images</span><span class="p">;</span>
         <span class="p">}</span> <span class="n">state</span><span class="p">;</span>
-        <span class="kt">int</span> <span class="n">width</span><span class="p">;</span>
-        <span class="k">struct</span> <span class="p">{</span>
-            <span class="cm">/*int16 width;*/</span>    <span class="cm">/* width should be controlled by postscript */</span>
+        <span class="nb">int</span> <span class="n">width</span><span class="p">;</span>
+        <span class="n">struct</span> <span class="p">{</span>
+            <span class="o">/*</span><span class="n">int16</span> <span class="n">width</span><span class="p">;</span><span class="o">*/</span>    <span class="o">/*</span> <span class="n">width</span> <span class="n">should</span> <span class="n">be</span> <span class="n">controlled</span> <span class="n">by</span> <span class="n">postscript</span> <span class="o">*/</span>
             <span class="n">int16</span> <span class="n">xmin</span><span class="p">,</span><span class="n">xmax</span><span class="p">,</span><span class="n">ymin</span><span class="p">,</span><span class="n">ymax</span><span class="p">;</span>
             <span class="n">int16</span> <span class="n">bytes_per_line</span><span class="p">;</span>
             <span class="n">uint8</span> <span class="o">*</span><span class="n">bitmap</span><span class="p">;</span>
             <span class="n">BDFFloat</span> <span class="o">*</span><span class="n">selection</span><span class="p">;</span>
-            <span class="kt">int</span> <span class="n">pixelsize</span><span class="p">;</span>
+            <span class="nb">int</span> <span class="n">pixelsize</span><span class="p">;</span>
         <span class="p">}</span> <span class="n">bmpstate</span><span class="p">;</span>
-        <span class="k">struct</span> <span class="p">{</span>                <span class="cm">/* copy contains an outline state and a set of bitmap states */</span>
-            <span class="k">struct</span> <span class="n">undoes</span> <span class="o">*</span><span class="n">state</span><span class="p">;</span>
-            <span class="k">struct</span> <span class="n">undoes</span> <span class="o">*</span><span class="n">bitmaps</span><span class="p">;</span>
+        <span class="n">struct</span> <span class="p">{</span>                <span class="o">/*</span> <span class="n">copy</span> <span class="n">contains</span> <span class="n">an</span> <span class="n">outline</span> <span class="n">state</span> <span class="ow">and</span> <span class="n">a</span> <span class="nb">set</span> <span class="n">of</span> <span class="n">bitmap</span> <span class="n">states</span> <span class="o">*/</span>
+            <span class="n">struct</span> <span class="n">undoes</span> <span class="o">*</span><span class="n">state</span><span class="p">;</span>
+            <span class="n">struct</span> <span class="n">undoes</span> <span class="o">*</span><span class="n">bitmaps</span><span class="p">;</span>
         <span class="p">}</span> <span class="n">composite</span><span class="p">;</span>
-        <span class="k">struct</span> <span class="p">{</span>
-            <span class="k">struct</span> <span class="n">undoes</span> <span class="o">*</span><span class="n">mult</span><span class="p">;</span> <span class="cm">/* copy contains several sub copies (composites, or states or widths or...) */</span>
+        <span class="n">struct</span> <span class="p">{</span>
+            <span class="n">struct</span> <span class="n">undoes</span> <span class="o">*</span><span class="n">mult</span><span class="p">;</span> <span class="o">/*</span> <span class="n">copy</span> <span class="n">contains</span> <span class="n">several</span> <span class="n">sub</span> <span class="n">copies</span> <span class="p">(</span><span class="n">composites</span><span class="p">,</span> <span class="ow">or</span> <span class="n">states</span> <span class="ow">or</span> <span class="n">widths</span> <span class="ow">or</span><span class="o">...</span><span class="p">)</span> <span class="o">*/</span>
         <span class="p">}</span> <span class="n">multiple</span><span class="p">;</span>
     <span class="n">uint8</span> <span class="o">*</span><span class="n">bitmap</span><span class="p">;</span>
     <span class="p">}</span> <span class="n">u</span><span class="p">;</span>
@@ -288,18 +289,18 @@ field.</p>
 both the splines and the bitmaps of a character.</p>
 <p>ut_mult is used when doing a copy from the FontView where you are copying more
 than one character.</p>
-<div class="highlight-c notranslate" id="splinefont-bdfchar"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="k">struct</span> <span class="n">bdfchar</span> <span class="p">{</span>
-    <span class="k">struct</span> <span class="n">splinechar</span> <span class="o">*</span><span class="n">sc</span><span class="p">;</span>
+<div class="highlight-default notranslate" id="splinefont-bdfchar"><div class="highlight"><pre><span></span><span class="n">typedef</span> <span class="n">struct</span> <span class="n">bdfchar</span> <span class="p">{</span>
+    <span class="n">struct</span> <span class="n">splinechar</span> <span class="o">*</span><span class="n">sc</span><span class="p">;</span>
     <span class="n">int16</span> <span class="n">xmin</span><span class="p">,</span><span class="n">xmax</span><span class="p">,</span><span class="n">ymin</span><span class="p">,</span><span class="n">ymax</span><span class="p">;</span>
     <span class="n">int16</span> <span class="n">width</span><span class="p">;</span>
     <span class="n">int16</span> <span class="n">bytes_per_line</span><span class="p">;</span>
     <span class="n">uint8</span> <span class="o">*</span><span class="n">bitmap</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">orig_pos</span><span class="p">;</span>
-    <span class="k">struct</span> <span class="n">bitmapview</span> <span class="o">*</span><span class="n">views</span><span class="p">;</span>
+    <span class="nb">int</span> <span class="n">orig_pos</span><span class="p">;</span>
+    <span class="n">struct</span> <span class="n">bitmapview</span> <span class="o">*</span><span class="n">views</span><span class="p">;</span>
     <span class="n">Undoes</span> <span class="o">*</span><span class="n">undoes</span><span class="p">;</span>
     <span class="n">Undoes</span> <span class="o">*</span><span class="n">redoes</span><span class="p">;</span>
-    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">changed</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">byte_data</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>          <span class="cm">/* for anti-aliased chars entries are grey-scale bytes not bw bits */</span>
+    <span class="n">unsigned</span> <span class="nb">int</span> <span class="n">changed</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">unsigned</span> <span class="nb">int</span> <span class="n">byte_data</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>          <span class="o">/*</span> <span class="k">for</span> <span class="n">anti</span><span class="o">-</span><span class="n">aliased</span> <span class="n">chars</span> <span class="n">entries</span> <span class="n">are</span> <span class="n">grey</span><span class="o">-</span><span class="n">scale</span> <span class="nb">bytes</span> <span class="ow">not</span> <span class="n">bw</span> <span class="n">bits</span> <span class="o">*/</span>
     <span class="n">BDFFloat</span> <span class="o">*</span><span class="n">selection</span><span class="p">;</span>
 <span class="p">}</span> <span class="n">BDFChar</span><span class="p">;</span>
 </pre></div>
@@ -324,14 +325,14 @@ represented by a byte rather than a bit. There is a clut for this in the BDFFont
 1,2,4 and 8 bits/pixel.</p>
 <p>The last thing in the BDFChar is a (/an optional) floating selection. Only
 present if the user has made a selection or done a paste or something like that.</p>
-<div class="highlight-c notranslate" id="splinefont-bdffont"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="k">struct</span> <span class="n">bdffont</span> <span class="p">{</span>
-    <span class="k">struct</span> <span class="n">splinefont</span> <span class="o">*</span><span class="n">sf</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">glyphcnt</span><span class="p">;</span>
-    <span class="n">BDFChar</span> <span class="o">**</span><span class="n">glyphs</span><span class="p">;</span>            <span class="cm">/* an array of charcnt entries */</span>
-    <span class="kt">int</span> <span class="n">pixelsize</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">ascent</span><span class="p">,</span> <span class="n">descent</span><span class="p">;</span>
-    <span class="k">struct</span> <span class="n">bdffont</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>
-    <span class="k">struct</span> <span class="n">clut</span> <span class="o">*</span><span class="n">clut</span><span class="p">;</span>          <span class="cm">/* Only for anti-aliased fonts */</span>
+<div class="highlight-default notranslate" id="splinefont-bdffont"><div class="highlight"><pre><span></span><span class="n">typedef</span> <span class="n">struct</span> <span class="n">bdffont</span> <span class="p">{</span>
+    <span class="n">struct</span> <span class="n">splinefont</span> <span class="o">*</span><span class="n">sf</span><span class="p">;</span>
+    <span class="nb">int</span> <span class="n">glyphcnt</span><span class="p">;</span>
+    <span class="n">BDFChar</span> <span class="o">**</span><span class="n">glyphs</span><span class="p">;</span>            <span class="o">/*</span> <span class="n">an</span> <span class="n">array</span> <span class="n">of</span> <span class="n">charcnt</span> <span class="n">entries</span> <span class="o">*/</span>
+    <span class="nb">int</span> <span class="n">pixelsize</span><span class="p">;</span>
+    <span class="nb">int</span> <span class="n">ascent</span><span class="p">,</span> <span class="n">descent</span><span class="p">;</span>
+    <span class="n">struct</span> <span class="n">bdffont</span> <span class="o">*</span><span class="nb">next</span><span class="p">;</span>
+    <span class="n">struct</span> <span class="n">clut</span> <span class="o">*</span><span class="n">clut</span><span class="p">;</span>          <span class="o">/*</span> <span class="n">Only</span> <span class="k">for</span> <span class="n">anti</span><span class="o">-</span><span class="n">aliased</span> <span class="n">fonts</span> <span class="o">*/</span>
 <span class="p">}</span> <span class="n">BDFFont</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -347,21 +348,21 @@ bitmap font associated with this SplineFont.</p>
 contains a count of the number of entries in the array, and then the array
 itself. Currently the number of entries here is always 16, but that could
 change.</p>
-<div class="highlight-c notranslate" id="splinefont-splinepoint"><div class="highlight"><pre><span></span><span class="k">enum</span> <span class="n">pointtype</span> <span class="p">{</span> <span class="n">pt_curve</span><span class="p">,</span> <span class="n">pt_corner</span><span class="p">,</span> <span class="n">pt_tangent</span> <span class="p">};</span>
-<span class="k">typedef</span> <span class="k">struct</span> <span class="n">splinepoint</span> <span class="p">{</span>
+<div class="highlight-default notranslate" id="splinefont-splinepoint"><div class="highlight"><pre><span></span><span class="n">enum</span> <span class="n">pointtype</span> <span class="p">{</span> <span class="n">pt_curve</span><span class="p">,</span> <span class="n">pt_corner</span><span class="p">,</span> <span class="n">pt_tangent</span> <span class="p">};</span>
+<span class="n">typedef</span> <span class="n">struct</span> <span class="n">splinepoint</span> <span class="p">{</span>
     <span class="n">BasePoint</span> <span class="n">me</span><span class="p">;</span>
-    <span class="n">BasePoint</span> <span class="n">nextcp</span><span class="p">;</span>          <span class="cm">/* control point */</span>
-    <span class="n">BasePoint</span> <span class="n">prevcp</span><span class="p">;</span>          <span class="cm">/* control point */</span>
-    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">nonextcp</span><span class="p">:</span><span class="mi">1</span><span class="p">;</span>
-    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">noprevcp</span><span class="p">:</span><span class="mi">1</span><span class="p">;</span>
-    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">nextcpdef</span><span class="p">:</span><span class="mi">1</span><span class="p">;</span>
-    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">prevcpdef</span><span class="p">:</span><span class="mi">1</span><span class="p">;</span>
-    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">selected</span><span class="p">:</span><span class="mi">1</span><span class="p">;</span>    <span class="cm">/* for UI */</span>
-    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">pointtype</span><span class="p">:</span><span class="mi">2</span><span class="p">;</span>
-    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">isintersection</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="n">uint16</span> <span class="n">flex</span><span class="p">;</span>                <span class="cm">/* This is a flex serif have to go through icky flex output */</span>
-    <span class="k">struct</span> <span class="n">spline</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>
-    <span class="k">struct</span> <span class="n">spline</span> <span class="o">*</span><span class="n">prev</span><span class="p">;</span>
+    <span class="n">BasePoint</span> <span class="n">nextcp</span><span class="p">;</span>          <span class="o">/*</span> <span class="n">control</span> <span class="n">point</span> <span class="o">*/</span>
+    <span class="n">BasePoint</span> <span class="n">prevcp</span><span class="p">;</span>          <span class="o">/*</span> <span class="n">control</span> <span class="n">point</span> <span class="o">*/</span>
+    <span class="n">unsigned</span> <span class="nb">int</span> <span class="n">nonextcp</span><span class="p">:</span><span class="mi">1</span><span class="p">;</span>
+    <span class="n">unsigned</span> <span class="nb">int</span> <span class="n">noprevcp</span><span class="p">:</span><span class="mi">1</span><span class="p">;</span>
+    <span class="n">unsigned</span> <span class="nb">int</span> <span class="n">nextcpdef</span><span class="p">:</span><span class="mi">1</span><span class="p">;</span>
+    <span class="n">unsigned</span> <span class="nb">int</span> <span class="n">prevcpdef</span><span class="p">:</span><span class="mi">1</span><span class="p">;</span>
+    <span class="n">unsigned</span> <span class="nb">int</span> <span class="n">selected</span><span class="p">:</span><span class="mi">1</span><span class="p">;</span>    <span class="o">/*</span> <span class="k">for</span> <span class="n">UI</span> <span class="o">*/</span>
+    <span class="n">unsigned</span> <span class="nb">int</span> <span class="n">pointtype</span><span class="p">:</span><span class="mi">2</span><span class="p">;</span>
+    <span class="n">unsigned</span> <span class="nb">int</span> <span class="n">isintersection</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">uint16</span> <span class="n">flex</span><span class="p">;</span>                <span class="o">/*</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">flex</span> <span class="n">serif</span> <span class="n">have</span> <span class="n">to</span> <span class="n">go</span> <span class="n">through</span> <span class="n">icky</span> <span class="n">flex</span> <span class="n">output</span> <span class="o">*/</span>
+    <span class="n">struct</span> <span class="n">spline</span> <span class="o">*</span><span class="nb">next</span><span class="p">;</span>
+    <span class="n">struct</span> <span class="n">spline</span> <span class="o">*</span><span class="n">prev</span><span class="p">;</span>
 <span class="p">}</span> <span class="n">SplinePoint</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -398,24 +399,24 @@ Someday I may use it.</p>
 drawing it. They are cached so they don’t need to be regenerated each time.
 There’s a different set of lines for every scale (as there is a different amount
 of visible detail). They get freed and regenerated if the Spline changes.</p>
-<div class="highlight-c notranslate" id="splinefont-spline"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="k">struct</span> <span class="n">spline1d</span> <span class="p">{</span>
-    <span class="kt">double</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">;</span>
+<div class="highlight-default notranslate" id="splinefont-spline"><div class="highlight"><pre><span></span><span class="n">typedef</span> <span class="n">struct</span> <span class="n">spline1d</span> <span class="p">{</span>
+    <span class="n">double</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">;</span>
 <span class="p">}</span> <span class="n">Spline1D</span><span class="p">;</span>
 
-<span class="k">typedef</span> <span class="k">struct</span> <span class="n">spline</span> <span class="p">{</span>
-    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">islinear</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">isticked</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">isneeded</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">isunneeded</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">ishorvert</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">order2</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">typedef</span> <span class="n">struct</span> <span class="n">spline</span> <span class="p">{</span>
+    <span class="n">unsigned</span> <span class="nb">int</span> <span class="n">islinear</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">unsigned</span> <span class="nb">int</span> <span class="n">isticked</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">unsigned</span> <span class="nb">int</span> <span class="n">isneeded</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">unsigned</span> <span class="nb">int</span> <span class="n">isunneeded</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">unsigned</span> <span class="nb">int</span> <span class="n">ishorvert</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">unsigned</span> <span class="nb">int</span> <span class="n">order2</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
     <span class="n">SplinePoint</span> <span class="o">*</span><span class="n">from</span><span class="p">,</span> <span class="o">*</span><span class="n">to</span><span class="p">;</span>
-    <span class="n">Spline1D</span> <span class="n">splines</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>                <span class="cm">/* splines[0] is the x spline, splines[1] is y */</span>
-    <span class="k">struct</span> <span class="n">linearapprox</span> <span class="o">*</span><span class="n">approx</span><span class="p">;</span>
-    <span class="cm">/* Possible optimizations:</span>
-<span class="cm">        Precalculate bounding box</span>
-<span class="cm">        Precalculate points of inflection</span>
-<span class="cm">    */</span>
+    <span class="n">Spline1D</span> <span class="n">splines</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>                <span class="o">/*</span> <span class="n">splines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">x</span> <span class="n">spline</span><span class="p">,</span> <span class="n">splines</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">is</span> <span class="n">y</span> <span class="o">*/</span>
+    <span class="n">struct</span> <span class="n">linearapprox</span> <span class="o">*</span><span class="n">approx</span><span class="p">;</span>
+    <span class="o">/*</span> <span class="n">Possible</span> <span class="n">optimizations</span><span class="p">:</span>
+        <span class="n">Precalculate</span> <span class="n">bounding</span> <span class="n">box</span>
+        <span class="n">Precalculate</span> <span class="n">points</span> <span class="n">of</span> <span class="n">inflection</span>
+    <span class="o">*/</span>
 <span class="p">}</span> <span class="n">Spline</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -428,9 +429,9 @@ Splines in various functions. Most are used in the SplineOverlap routines, but
 some are used in other places too.</p>
 <p>The Spline1D structures give the equations for the x and y coordinates
 respectively (splines[0] is for x, splines[1] is for y).</p>
-<div class="highlight-c notranslate" id="splinefont-splinepointlist"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="k">struct</span> <span class="n">splinepointlist</span> <span class="p">{</span>
+<div class="highlight-default notranslate" id="splinefont-splinepointlist"><div class="highlight"><pre><span></span><span class="n">typedef</span> <span class="n">struct</span> <span class="n">splinepointlist</span> <span class="p">{</span>
     <span class="n">SplinePoint</span> <span class="o">*</span><span class="n">first</span><span class="p">,</span> <span class="o">*</span><span class="n">last</span><span class="p">;</span>
-    <span class="k">struct</span> <span class="n">splinepointlist</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>
+    <span class="n">struct</span> <span class="n">splinepointlist</span> <span class="o">*</span><span class="nb">next</span><span class="p">;</span>
 <span class="p">}</span> <span class="n">SplinePointList</span><span class="p">,</span> <span class="n">SplineSet</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -449,16 +450,16 @@ a closed path. This should be the most common case.</p></li>
 </ul>
 <p>Generally a series of paths will make up a character, and they are linked
 together on the next field.</p>
-<div class="highlight-c notranslate" id="splinefont-refchar"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="k">struct</span> <span class="n">refchar</span> <span class="p">{</span>
+<div class="highlight-default notranslate" id="splinefont-refchar"><div class="highlight"><pre><span></span><span class="n">typedef</span> <span class="n">struct</span> <span class="n">refchar</span> <span class="p">{</span>
     <span class="n">int16</span> <span class="n">adobe_enc</span><span class="p">,</span> <span class="n">orig_pos</span>
-    <span class="kt">int</span> <span class="n">unicode_enc</span><span class="p">;</span>            <span class="cm">/* used by paste */</span>
-    <span class="kt">double</span> <span class="n">transform</span><span class="p">[</span><span class="mi">6</span><span class="p">];</span>        <span class="cm">/* transformation matrix (first 2 rows of a 3x3 matrix, missing row is 0,0,1) */</span>
+    <span class="nb">int</span> <span class="n">unicode_enc</span><span class="p">;</span>            <span class="o">/*</span> <span class="n">used</span> <span class="n">by</span> <span class="n">paste</span> <span class="o">*/</span>
+    <span class="n">double</span> <span class="n">transform</span><span class="p">[</span><span class="mi">6</span><span class="p">];</span>        <span class="o">/*</span> <span class="n">transformation</span> <span class="n">matrix</span> <span class="p">(</span><span class="n">first</span> <span class="mi">2</span> <span class="n">rows</span> <span class="n">of</span> <span class="n">a</span> <span class="mi">3</span><span class="n">x3</span> <span class="n">matrix</span><span class="p">,</span> <span class="n">missing</span> <span class="n">row</span> <span class="ow">is</span> <span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="o">*/</span>
     <span class="n">SplinePointList</span> <span class="o">*</span><span class="n">splines</span><span class="p">;</span>
-    <span class="k">struct</span> <span class="n">refchar</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>
-    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">checked</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">selected</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">struct</span> <span class="n">refchar</span> <span class="o">*</span><span class="nb">next</span><span class="p">;</span>
+    <span class="n">unsigned</span> <span class="nb">int</span> <span class="n">checked</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">unsigned</span> <span class="nb">int</span> <span class="n">selected</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
     <span class="n">DBounds</span> <span class="n">bb</span><span class="p">;</span>
-    <span class="k">struct</span> <span class="n">splinechar</span> <span class="o">*</span><span class="n">sc</span><span class="p">;</span>
+    <span class="n">struct</span> <span class="n">splinechar</span> <span class="o">*</span><span class="n">sc</span><span class="p">;</span>
 <span class="p">}</span> <span class="n">RefChar</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -481,10 +482,10 @@ used to insure that we don’t have any loops (ie. on characters which refer to
 themselves). The selected field indicates that the reference is selected. The bb
 field provides a transformed bounding box. And the sc field points to the
 SplineChar we are referring to.</p>
-<div class="highlight-c notranslate" id="splinefont-kernpair"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="k">struct</span> <span class="n">kernpair</span> <span class="p">{</span>
-    <span class="k">struct</span> <span class="n">splinechar</span> <span class="o">*</span><span class="n">sc</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">off</span><span class="p">;</span>
-    <span class="k">struct</span> <span class="n">kernpair</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>
+<div class="highlight-default notranslate" id="splinefont-kernpair"><div class="highlight"><pre><span></span><span class="n">typedef</span> <span class="n">struct</span> <span class="n">kernpair</span> <span class="p">{</span>
+    <span class="n">struct</span> <span class="n">splinechar</span> <span class="o">*</span><span class="n">sc</span><span class="p">;</span>
+    <span class="nb">int</span> <span class="n">off</span><span class="p">;</span>
+    <span class="n">struct</span> <span class="n">kernpair</span> <span class="o">*</span><span class="nb">next</span><span class="p">;</span>
 <span class="p">}</span> <span class="n">KernPair</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -494,13 +495,13 @@ list the sc field indicates the other character in the pair, and off defines the
 offset between them (or rather the difference from what their respective left
 and right bearings would lead you to believe it should be). Next points to the
 next kernpair.</p>
-<div class="highlight-c notranslate" id="splinefont-hints"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="k">struct</span> <span class="n">hints</span> <span class="p">{</span>
-    <span class="kt">double</span> <span class="n">base</span><span class="p">,</span> <span class="n">width</span><span class="p">;</span>
-    <span class="kt">double</span> <span class="n">b1</span><span class="p">,</span> <span class="n">b2</span><span class="p">,</span> <span class="n">e1</span><span class="p">,</span> <span class="n">e2</span><span class="p">;</span>
-    <span class="kt">double</span> <span class="n">ab</span><span class="p">,</span> <span class="n">ae</span><span class="p">;</span>
-    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">adjustb</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">adjuste</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="k">struct</span> <span class="n">hints</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>
+<div class="highlight-default notranslate" id="splinefont-hints"><div class="highlight"><pre><span></span><span class="n">typedef</span> <span class="n">struct</span> <span class="n">hints</span> <span class="p">{</span>
+    <span class="n">double</span> <span class="n">base</span><span class="p">,</span> <span class="n">width</span><span class="p">;</span>
+    <span class="n">double</span> <span class="n">b1</span><span class="p">,</span> <span class="n">b2</span><span class="p">,</span> <span class="n">e1</span><span class="p">,</span> <span class="n">e2</span><span class="p">;</span>
+    <span class="n">double</span> <span class="n">ab</span><span class="p">,</span> <span class="n">ae</span><span class="p">;</span>
+    <span class="n">unsigned</span> <span class="nb">int</span> <span class="n">adjustb</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">unsigned</span> <span class="nb">int</span> <span class="n">adjuste</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">struct</span> <span class="n">hints</span> <span class="o">*</span><span class="nb">next</span><span class="p">;</span>
 <span class="p">}</span> <span class="n">Hints</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -509,13 +510,13 @@ temporarily by the SplineFill routines. Base gives the location (in either x or
 y space) of where the stem starts, and width is how long it is. Width may be
 negative (in which case base is where the stem ends). Next points to the next
 hint for the character.</p>
-<div class="highlight-c notranslate" id="splinefont-imagelist"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="k">struct</span> <span class="n">imagelist</span> <span class="p">{</span>
-    <span class="k">struct</span> <span class="n">gimage</span> <span class="o">*</span><span class="n">image</span><span class="p">;</span>
-    <span class="kt">double</span> <span class="n">xoff</span><span class="p">,</span> <span class="n">yoff</span><span class="p">;</span>          <span class="cm">/* position in character space of upper left corner of image */</span>
-    <span class="kt">double</span> <span class="n">xscale</span><span class="p">,</span> <span class="n">yscale</span><span class="p">;</span>      <span class="cm">/* scale to convert one pixel of image to one unit of character space */</span>
+<div class="highlight-default notranslate" id="splinefont-imagelist"><div class="highlight"><pre><span></span><span class="n">typedef</span> <span class="n">struct</span> <span class="n">imagelist</span> <span class="p">{</span>
+    <span class="n">struct</span> <span class="n">gimage</span> <span class="o">*</span><span class="n">image</span><span class="p">;</span>
+    <span class="n">double</span> <span class="n">xoff</span><span class="p">,</span> <span class="n">yoff</span><span class="p">;</span>          <span class="o">/*</span> <span class="n">position</span> <span class="ow">in</span> <span class="n">character</span> <span class="n">space</span> <span class="n">of</span> <span class="n">upper</span> <span class="n">left</span> <span class="n">corner</span> <span class="n">of</span> <span class="n">image</span> <span class="o">*/</span>
+    <span class="n">double</span> <span class="n">xscale</span><span class="p">,</span> <span class="n">yscale</span><span class="p">;</span>      <span class="o">/*</span> <span class="n">scale</span> <span class="n">to</span> <span class="n">convert</span> <span class="n">one</span> <span class="n">pixel</span> <span class="n">of</span> <span class="n">image</span> <span class="n">to</span> <span class="n">one</span> <span class="n">unit</span> <span class="n">of</span> <span class="n">character</span> <span class="n">space</span> <span class="o">*/</span>
     <span class="n">DBounds</span> <span class="n">bb</span><span class="p">;</span>
-    <span class="k">struct</span> <span class="n">imagelist</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>
-    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">selected</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">struct</span> <span class="n">imagelist</span> <span class="o">*</span><span class="nb">next</span><span class="p">;</span>
+    <span class="n">unsigned</span> <span class="nb">int</span> <span class="n">selected</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
 <span class="p">}</span> <span class="n">ImageList</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -525,37 +526,37 @@ indication of where it should be positioned, and how it should be scaled (I do
 not support any other transformations on images). The bounding box is after the
 transformations have been applied. The next field points to the next image, and
 selected indicates whether this one is selected or not.</p>
-<div class="highlight-c notranslate" id="splinefont-splinechar"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="k">struct</span> <span class="n">splinechar</span> <span class="p">{</span>
-    <span class="kt">char</span> <span class="o">*</span><span class="n">name</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">enc</span><span class="p">,</span> <span class="n">unicodeenc</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">width</span><span class="p">;</span>
-    <span class="n">int16</span> <span class="n">lsidebearing</span><span class="p">;</span>         <span class="cm">/* only used when reading in a type1 font */</span>
-    <span class="n">int16</span> <span class="n">ttf_glyph</span><span class="p">;</span>            <span class="cm">/* only used when writing out a ttf font */</span>
+<div class="highlight-default notranslate" id="splinefont-splinechar"><div class="highlight"><pre><span></span><span class="n">typedef</span> <span class="n">struct</span> <span class="n">splinechar</span> <span class="p">{</span>
+    <span class="n">char</span> <span class="o">*</span><span class="n">name</span><span class="p">;</span>
+    <span class="nb">int</span> <span class="n">enc</span><span class="p">,</span> <span class="n">unicodeenc</span><span class="p">;</span>
+    <span class="nb">int</span> <span class="n">width</span><span class="p">;</span>
+    <span class="n">int16</span> <span class="n">lsidebearing</span><span class="p">;</span>         <span class="o">/*</span> <span class="n">only</span> <span class="n">used</span> <span class="n">when</span> <span class="n">reading</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">type1</span> <span class="n">font</span> <span class="o">*/</span>
+    <span class="n">int16</span> <span class="n">ttf_glyph</span><span class="p">;</span>            <span class="o">/*</span> <span class="n">only</span> <span class="n">used</span> <span class="n">when</span> <span class="n">writing</span> <span class="n">out</span> <span class="n">a</span> <span class="n">ttf</span> <span class="n">font</span> <span class="o">*/</span>
     <span class="n">SplinePointList</span> <span class="o">*</span><span class="n">splines</span><span class="p">;</span>
-    <span class="n">Hints</span> <span class="o">*</span><span class="n">hstem</span><span class="p">;</span>          <span class="cm">/* hstem hints have a vertical offset but run horizontally */</span>
-    <span class="n">Hints</span> <span class="o">*</span><span class="n">vstem</span><span class="p">;</span>          <span class="cm">/* vstem hints have a horizontal offset but run vertically */</span>
+    <span class="n">Hints</span> <span class="o">*</span><span class="n">hstem</span><span class="p">;</span>          <span class="o">/*</span> <span class="n">hstem</span> <span class="n">hints</span> <span class="n">have</span> <span class="n">a</span> <span class="n">vertical</span> <span class="n">offset</span> <span class="n">but</span> <span class="n">run</span> <span class="n">horizontally</span> <span class="o">*/</span>
+    <span class="n">Hints</span> <span class="o">*</span><span class="n">vstem</span><span class="p">;</span>          <span class="o">/*</span> <span class="n">vstem</span> <span class="n">hints</span> <span class="n">have</span> <span class="n">a</span> <span class="n">horizontal</span> <span class="n">offset</span> <span class="n">but</span> <span class="n">run</span> <span class="n">vertically</span> <span class="o">*/</span>
     <span class="n">RefChar</span> <span class="o">*</span><span class="n">refs</span><span class="p">;</span>
-    <span class="k">struct</span> <span class="n">charview</span> <span class="o">*</span><span class="n">views</span><span class="p">;</span>   <span class="cm">/* All CharViews that look at us */</span>
-    <span class="k">struct</span> <span class="n">splinefont</span> <span class="o">*</span><span class="n">parent</span><span class="p">;</span>
-    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">changed</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">changedsincelasthhinted</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">changedsincelastvhinted</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">manualhints</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">ticked</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>     <span class="cm">/* For reference character processing */</span>
-    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">changed_since_autosave</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">widthset</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>   <span class="cm">/* needed so an emspace char doesn&#39;t disappear */</span>
-    <span class="k">struct</span> <span class="n">splinecharlist</span> <span class="p">{</span> <span class="k">struct</span> <span class="n">splinechar</span> <span class="o">*</span><span class="n">sc</span><span class="p">;</span> <span class="k">struct</span> <span class="n">splinecharlist</span> <span class="o">*</span><span class="n">next</span><span class="p">;}</span> <span class="o">*</span><span class="n">dependents</span><span class="p">;</span>
-            <span class="cm">/* The dependents list is a list of all characters which reference*/</span>
-            <span class="cm">/*  the current character directly */</span>
+    <span class="n">struct</span> <span class="n">charview</span> <span class="o">*</span><span class="n">views</span><span class="p">;</span>   <span class="o">/*</span> <span class="n">All</span> <span class="n">CharViews</span> <span class="n">that</span> <span class="n">look</span> <span class="n">at</span> <span class="n">us</span> <span class="o">*/</span>
+    <span class="n">struct</span> <span class="n">splinefont</span> <span class="o">*</span><span class="n">parent</span><span class="p">;</span>
+    <span class="n">unsigned</span> <span class="nb">int</span> <span class="n">changed</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">unsigned</span> <span class="nb">int</span> <span class="n">changedsincelasthhinted</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">unsigned</span> <span class="nb">int</span> <span class="n">changedsincelastvhinted</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">unsigned</span> <span class="nb">int</span> <span class="n">manualhints</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">unsigned</span> <span class="nb">int</span> <span class="n">ticked</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>     <span class="o">/*</span> <span class="n">For</span> <span class="n">reference</span> <span class="n">character</span> <span class="n">processing</span> <span class="o">*/</span>
+    <span class="n">unsigned</span> <span class="nb">int</span> <span class="n">changed_since_autosave</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">unsigned</span> <span class="nb">int</span> <span class="n">widthset</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>   <span class="o">/*</span> <span class="n">needed</span> <span class="n">so</span> <span class="n">an</span> <span class="n">emspace</span> <span class="n">char</span> <span class="n">doesn</span><span class="s1">&#39;t disappear */</span>
+    <span class="n">struct</span> <span class="n">splinecharlist</span> <span class="p">{</span> <span class="n">struct</span> <span class="n">splinechar</span> <span class="o">*</span><span class="n">sc</span><span class="p">;</span> <span class="n">struct</span> <span class="n">splinecharlist</span> <span class="o">*</span><span class="nb">next</span><span class="p">;}</span> <span class="o">*</span><span class="n">dependents</span><span class="p">;</span>
+            <span class="o">/*</span> <span class="n">The</span> <span class="n">dependents</span> <span class="nb">list</span> <span class="ow">is</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">characters</span> <span class="n">which</span> <span class="n">reference</span><span class="o">*/</span>
+            <span class="o">/*</span>  <span class="n">the</span> <span class="n">current</span> <span class="n">character</span> <span class="n">directly</span> <span class="o">*/</span>
     <span class="n">SplinePointList</span> <span class="o">*</span><span class="n">backgroundsplines</span><span class="p">;</span>
     <span class="n">ImageList</span> <span class="o">*</span><span class="n">backimages</span><span class="p">;</span>
     <span class="n">Undoes</span> <span class="o">*</span><span class="n">undoes</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
     <span class="n">Undoes</span> <span class="o">*</span><span class="n">redoes</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
     <span class="n">KernPair</span> <span class="o">*</span><span class="n">kerns</span><span class="p">;</span>
-    <span class="n">uint8</span> <span class="o">*</span><span class="n">origtype1</span><span class="p">;</span>           <span class="cm">/* The original type1 (unencoded) character string */</span>
-    <span class="kt">int</span> <span class="n">origlen</span><span class="p">;</span>                <span class="cm">/*  its length. These get freed once the user has changed */</span>
-                                <span class="cm">/*  the character. Until then the preserve things like */</span>
-                                <span class="cm">/*  hint substitution which we wouldn&#39;t otherwise understand */</span>
+    <span class="n">uint8</span> <span class="o">*</span><span class="n">origtype1</span><span class="p">;</span>           <span class="o">/*</span> <span class="n">The</span> <span class="n">original</span> <span class="n">type1</span> <span class="p">(</span><span class="n">unencoded</span><span class="p">)</span> <span class="n">character</span> <span class="n">string</span> <span class="o">*/</span>
+    <span class="nb">int</span> <span class="n">origlen</span><span class="p">;</span>                <span class="o">/*</span>  <span class="n">its</span> <span class="n">length</span><span class="o">.</span> <span class="n">These</span> <span class="n">get</span> <span class="n">freed</span> <span class="n">once</span> <span class="n">the</span> <span class="n">user</span> <span class="n">has</span> <span class="n">changed</span> <span class="o">*/</span>
+                                <span class="o">/*</span>  <span class="n">the</span> <span class="n">character</span><span class="o">.</span> <span class="n">Until</span> <span class="n">then</span> <span class="n">the</span> <span class="n">preserve</span> <span class="n">things</span> <span class="n">like</span> <span class="o">*/</span>
+                                <span class="o">/*</span>  <span class="n">hint</span> <span class="n">substitution</span> <span class="n">which</span> <span class="n">we</span> <span class="n">wouldn</span><span class="s1">&#39;t otherwise understand */</span>
 <span class="p">}</span> <span class="n">SplineChar</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -590,28 +591,28 @@ the background. Same for redoes.</p>
 follow this one. For instance the combination “VA” might need kerning, then the
 SplineChar representing “V” would have a pointer to a
 <a class="reference internal" href="#splinefont-kernpair"><span class="std std-ref">KernPair</span></a> with data on “A”.</p>
-<div class="highlight-c notranslate" id="splinefont-splinefont"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="k">struct</span> <span class="n">splinefont</span> <span class="p">{</span>
-    <span class="kt">char</span> <span class="o">*</span><span class="n">fontname</span><span class="p">,</span> <span class="o">*</span><span class="n">fullname</span><span class="p">,</span> <span class="o">*</span><span class="n">familyname</span><span class="p">,</span> <span class="o">*</span><span class="n">weight</span><span class="p">;</span>
-    <span class="kt">char</span> <span class="o">*</span><span class="n">copyright</span><span class="p">;</span>
-    <span class="kt">char</span> <span class="o">*</span><span class="n">filename</span><span class="p">;</span>
-    <span class="kt">char</span> <span class="o">*</span><span class="n">version</span><span class="p">;</span>
-    <span class="kt">double</span> <span class="n">italicangle</span><span class="p">,</span> <span class="n">upos</span><span class="p">,</span> <span class="n">uwidth</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">ascent</span><span class="p">,</span> <span class="n">descent</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">glyphcnt</span><span class="p">;</span>
+<div class="highlight-default notranslate" id="splinefont-splinefont"><div class="highlight"><pre><span></span><span class="n">typedef</span> <span class="n">struct</span> <span class="n">splinefont</span> <span class="p">{</span>
+    <span class="n">char</span> <span class="o">*</span><span class="n">fontname</span><span class="p">,</span> <span class="o">*</span><span class="n">fullname</span><span class="p">,</span> <span class="o">*</span><span class="n">familyname</span><span class="p">,</span> <span class="o">*</span><span class="n">weight</span><span class="p">;</span>
+    <span class="n">char</span> <span class="o">*</span><span class="n">copyright</span><span class="p">;</span>
+    <span class="n">char</span> <span class="o">*</span><span class="n">filename</span><span class="p">;</span>
+    <span class="n">char</span> <span class="o">*</span><span class="n">version</span><span class="p">;</span>
+    <span class="n">double</span> <span class="n">italicangle</span><span class="p">,</span> <span class="n">upos</span><span class="p">,</span> <span class="n">uwidth</span><span class="p">;</span>
+    <span class="nb">int</span> <span class="n">ascent</span><span class="p">,</span> <span class="n">descent</span><span class="p">;</span>
+    <span class="nb">int</span> <span class="n">glyphcnt</span><span class="p">;</span>
     <span class="n">SplineChar</span> <span class="o">**</span><span class="n">glyphs</span><span class="p">;</span>
-    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">changed</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">changed_since_autosave</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">display_antialias</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">dotlesswarn</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>                <span class="cm">/* User warned that font doesn&#39;t have a dotless i character */</span>
-    <span class="cm">/*unsigned int wasbinary: 1;*/</span>
-    <span class="k">struct</span> <span class="n">fontview</span> <span class="o">*</span><span class="n">fv</span><span class="p">;</span>
-    <span class="k">enum</span> <span class="n">charset</span> <span class="n">encoding_name</span><span class="p">;</span>
+    <span class="n">unsigned</span> <span class="nb">int</span> <span class="n">changed</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">unsigned</span> <span class="nb">int</span> <span class="n">changed_since_autosave</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">unsigned</span> <span class="nb">int</span> <span class="n">display_antialias</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">unsigned</span> <span class="nb">int</span> <span class="n">dotlesswarn</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>                <span class="o">/*</span> <span class="n">User</span> <span class="n">warned</span> <span class="n">that</span> <span class="n">font</span> <span class="n">doesn</span><span class="s1">&#39;t have a dotless i character */</span>
+    <span class="o">/*</span><span class="n">unsigned</span> <span class="nb">int</span> <span class="n">wasbinary</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span><span class="o">*/</span>
+    <span class="n">struct</span> <span class="n">fontview</span> <span class="o">*</span><span class="n">fv</span><span class="p">;</span>
+    <span class="n">enum</span> <span class="n">charset</span> <span class="n">encoding_name</span><span class="p">;</span>
     <span class="n">SplinePointList</span> <span class="o">*</span><span class="n">gridsplines</span><span class="p">;</span>
     <span class="n">Undoes</span> <span class="o">*</span><span class="n">gundoes</span><span class="p">,</span> <span class="o">*</span><span class="n">gredoes</span><span class="p">;</span>
     <span class="n">BDFFont</span> <span class="o">*</span><span class="n">bitmaps</span><span class="p">;</span>
-    <span class="kt">char</span> <span class="o">*</span><span class="n">origname</span><span class="p">;</span>             <span class="cm">/* filename of font file (ie. if not an sfd) */</span>
-    <span class="kt">char</span> <span class="o">*</span><span class="n">autosavename</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">display_size</span><span class="p">;</span>
+    <span class="n">char</span> <span class="o">*</span><span class="n">origname</span><span class="p">;</span>             <span class="o">/*</span> <span class="n">filename</span> <span class="n">of</span> <span class="n">font</span> <span class="n">file</span> <span class="p">(</span><span class="n">ie</span><span class="o">.</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">an</span> <span class="n">sfd</span><span class="p">)</span> <span class="o">*/</span>
+    <span class="n">char</span> <span class="o">*</span><span class="n">autosavename</span><span class="p">;</span>
+    <span class="nb">int</span> <span class="n">display_size</span><span class="p">;</span>
 <span class="p">}</span> <span class="n">SplineFont</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -888,7 +889,7 @@ stuff to disk.</p>
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.4</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

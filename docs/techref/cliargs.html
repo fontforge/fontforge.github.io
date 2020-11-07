@@ -1,18 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>Command Line Arguments &#8212; FontForge 20200314 documentation</title>
-    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Command Line Arguments &#8212; FontForge 20201107 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -52,7 +53,7 @@ parentheses, thus:</p>
 </div>
 <p>will select the font GulimChe out of the font file gulim.ttc.</p>
 <p>FontForge recognizes the following options:</p>
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-fontforge-allglyphs">
 <code class="sig-name descname">-allglyphs</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-fontforge-allglyphs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load all glyphs from the ‘glyf’ table of a ttc file, rather than the subset
@@ -60,7 +61,7 @@ used in the selected font. (Note that if a ttc file contains multiple ‘glyf’
 tables, only one will be loaded, but that one will be completely loaded).</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-fontforge-c">
 <code class="sig-name descname">-c</code><code class="sig-prename descclassname"> script-string</code><a class="headerlink" href="#cmdoption-fontforge-c" title="Permalink to this definition">¶</a></dt>
 <dd><p>If FontForge’s first (or second, if the first is -lang) argument is “-c” then
@@ -74,7 +75,7 @@ be passed to the script.</p>
 called “foo.ttf”</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-fontforge-cmap">
 <code class="sig-name descname">-cmap</code><code class="sig-prename descclassname"> type</code><a class="headerlink" href="#cmdoption-fontforge-cmap" title="Permalink to this definition">¶</a></dt>
 <dd><p>Where type may be</p>
@@ -83,19 +84,19 @@ called “foo.ttf”</p>
 8bit screens.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-fontforge-depth">
 <code class="sig-name descname">-depth</code><code class="sig-prename descclassname"> val</code><a class="headerlink" href="#cmdoption-fontforge-depth" title="Permalink to this definition">¶</a></dt>
 <dd><p>Specifies that FontForge should search for a visual with the given depth</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-fontforge-display">
 <code class="sig-name descname">-display</code><code class="sig-prename descclassname"> name</code><a class="headerlink" href="#cmdoption-fontforge-display" title="Permalink to this definition">¶</a></dt>
 <dd><p>Specifies the name of the display on which FontForge will open its windows</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-fontforge-dontopenxdevices">
 <code class="sig-name descname">-dontopenxdevices</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-fontforge-dontopenxdevices" title="Permalink to this definition">¶</a></dt>
 <dd><p>Various people have complained that when FontForge attempts to open the
@@ -104,13 +105,13 @@ can’t duplicate this, the open works fine on my system, but this argument
 allows them to tell fontforge not to try to use the tablet.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-fontforge-help">
 <code class="sig-name descname">-help</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-fontforge-help" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bring up a <a class="reference internal" href="../ui/menus/helpmenu.html"><span class="doc">browser</span></a> looking at this documentation.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-fontforge-lang">
 <code class="sig-name descname">-lang</code><code class="sig-prename descclassname">={py|ff}</code><a class="headerlink" href="#cmdoption-fontforge-lang" title="Permalink to this definition">¶</a></dt>
 <dt>
@@ -119,13 +120,13 @@ allows them to tell fontforge not to try to use the tablet.</p>
 fontforge script.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-fontforge-version">
 <code class="sig-name descname">-version</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-fontforge-version" title="Permalink to this definition">¶</a></dt>
 <dd><p>Prints out the source version and exits.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-fontforge-keyboard">
 <code class="sig-name descname">-keyboard</code><code class="sig-prename descclassname"> type</code><a class="headerlink" href="#cmdoption-fontforge-keyboard" title="Permalink to this definition">¶</a></dt>
 <dd><div class="admonition warning">
@@ -163,48 +164,40 @@ labels.</p>
 </ul>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-fontforge-last">
 <code class="sig-name descname">-last</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-fontforge-last" title="Permalink to this definition">¶</a></dt>
 <dd><p>Opens the last sfd file closed. If used more than once will open the last
 several sfd files.</p>
 </dd></dl>
 
-<dl class="option">
-<dt id="cmdoption-fontforge-library-status">
-<code class="sig-name descname">-library-status</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-fontforge-library-status" title="Permalink to this definition">¶</a></dt>
-<dd><p>Writes info about the status of optional libraries to stderr. Including:
-Whether the library exists on this system, whether ff can use it, and an URL
-from which the library can be found.</p>
-</dd></dl>
-
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-fontforge-new">
 <code class="sig-name descname">-new</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-fontforge-new" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a new font.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-fontforge-nosplash">
 <code class="sig-name descname">-nosplash</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-fontforge-nosplash" title="Permalink to this definition">¶</a></dt>
 <dd><p>FontForge will not display its splash screen on startup (for slow
 connections)</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-fontforge-open">
 <code class="sig-name descname">-open</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-fontforge-open" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bring up an open font dialog</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-fontforge-quit">
 <code class="sig-name descname">-quit</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-fontforge-quit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exit fontforge (only useful if -unique is passed as well, in which case the
 master fontforge will be asked to exit)</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-fontforge-recover">
 <code class="sig-name descname">-recover</code><code class="sig-prename descclassname"> type</code><a class="headerlink" href="#cmdoption-fontforge-recover" title="Permalink to this definition">¶</a></dt>
 <dd><p>Where type may be:</p>
@@ -229,7 +222,7 @@ before saving.</p>
 
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-fontforge-script">
 <code class="sig-name descname">-script</code><code class="sig-prename descclassname"> script-file</code><a class="headerlink" href="#cmdoption-fontforge-script" title="Permalink to this definition">¶</a></dt>
 <dd><p>If FontForge’s first argument is “-script” then the argument that follows
@@ -242,14 +235,14 @@ script file and type its name to your shell and fontforge will be invoked to
 process that file as a script file (passing any arguments to it)).</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-fontforge-sync">
 <code class="sig-name descname">-sync</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-fontforge-sync" title="Permalink to this definition">¶</a></dt>
 <dd><p>Do synchronous screen drawing. Slows things down, makes some things easier to
 debug.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-fontforge-unique">
 <code class="sig-name descname">-unique</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-fontforge-unique" title="Permalink to this definition">¶</a></dt>
 <dd><p>If there is already a fontforge running on this screen, then the current
@@ -258,13 +251,13 @@ and then the current version will exit. So it looks more like a Mac/Windows
 app.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-fontforge-usage">
 <code class="sig-name descname">-usage</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-fontforge-usage" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display a brief description of the options</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-fontforge-vc">
 <code class="sig-name descname">-vc</code><code class="sig-prename descclassname"> type</code><a class="headerlink" href="#cmdoption-fontforge-vc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Where type may be:</p>
@@ -277,7 +270,7 @@ VisualClass (given here) and depth (given with the -depth option).</p>
 <div class="section" id="environment-variables">
 <span id="cliargs-environment"></span><h2>Environment Variables<a class="headerlink" href="#environment-variables" title="Permalink to this headline">¶</a></h2>
 <p>FontForge examines the following environment variables:</p>
-<dl class="envvar">
+<dl class="std envvar">
 <dt id="envvar-BROWSER">
 <code class="sig-name descname">BROWSER</code><a class="headerlink" href="#envvar-BROWSER" title="Permalink to this definition">¶</a></dt>
 <dd><p>Specifies the name of a browser program for examining documentation (must be
@@ -286,34 +279,34 @@ CygWin systems browsers that work in the windows world (as opposed to the
 cygwin sub-system) must be specified by a full path spec.</p>
 </dd></dl>
 
-<dl class="envvar">
+<dl class="std envvar">
 <dt id="envvar-AUTOTRACE">
 <code class="sig-name descname">AUTOTRACE</code><a class="headerlink" href="#envvar-AUTOTRACE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Specifies the name and location of the autotrace program. (if not specified
 FontForge will try to find it in the user’s path)</p>
 </dd></dl>
 
-<dl class="envvar">
+<dl class="std envvar">
 <dt id="envvar-POTRACE">
 <code class="sig-name descname">POTRACE</code><a class="headerlink" href="#envvar-POTRACE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Specifies the name and location of the potrace program.</p>
 </dd></dl>
 
-<dl class="envvar">
+<dl class="std envvar">
 <dt id="envvar-MF">
 <code class="sig-name descname">MF</code><a class="headerlink" href="#envvar-MF" title="Permalink to this definition">¶</a></dt>
 <dd><p>Specifies the name and location of the metafont program. (if not specified
 FontForge will try to find it in the user’s path)</p>
 </dd></dl>
 
-<dl class="envvar">
+<dl class="std envvar">
 <dt id="envvar-FONTFORGE_VERBOSE">
 <code class="sig-name descname">FONTFORGE_VERBOSE</code><a class="headerlink" href="#envvar-FONTFORGE_VERBOSE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Turns on verbose mode in script execution (the script will be printed to
 stdout as it is executed).</p>
 </dd></dl>
 
-<dl class="envvar">
+<dl class="std envvar">
 <dt id="envvar-FONTFORGE_LOADPREFS">
 <code class="sig-name descname">FONTFORGE_LOADPREFS</code><a class="headerlink" href="#envvar-FONTFORGE_LOADPREFS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Controls loading of preference items. If set to “Always” then preferences
@@ -323,7 +316,7 @@ value) then preferences will be loaded when ff starts up with a user
 interface, and will not be loaded if ff starts up executing a script.</p>
 </dd></dl>
 
-<dl class="envvar">
+<dl class="std envvar">
 <dt id="envvar-FONTFORGE_LANGUAGE">
 <code class="sig-name descname">FONTFORGE_LANGUAGE</code><a class="headerlink" href="#envvar-FONTFORGE_LANGUAGE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Provides a default interpreter to use when executing a script. Must be either
@@ -331,33 +324,33 @@ interface, and will not be loaded if ff starts up executing a script.</p>
 </dd></dl>
 
 <hr class="docutils" />
-<dl class="envvar">
-<dt id="envvar-LANG,LC_ALL,etc.">
-<code class="sig-name descname">LANG, LC_ALL, etc.</code><a class="headerlink" href="#envvar-LANG,LC_ALL,etc." title="Permalink to this definition">¶</a></dt>
+<dl class="std envvar">
+<dt id="envvar-LANG-LC_ALL-etc.">
+<span id="envvar-LANG, LC_ALL, etc."></span><code class="sig-name descname">LANG, LC_ALL, etc.</code><a class="headerlink" href="#envvar-LANG-LC_ALL-etc." title="Permalink to this definition">¶</a></dt>
 <dd><p>To determine the current locale, etc.</p>
 </dd></dl>
 
-<dl class="envvar">
+<dl class="std envvar">
 <dt id="envvar-PATH">
 <code class="sig-name descname">PATH</code><a class="headerlink" href="#envvar-PATH" title="Permalink to this definition">¶</a></dt>
 <dd><p>Used when looking for Autotrace or mf programs</p>
 </dd></dl>
 
-<dl class="envvar">
+<dl class="std envvar">
 <dt id="envvar-TMPDIR">
 <code class="sig-name descname">TMPDIR</code><a class="headerlink" href="#envvar-TMPDIR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Temporary directory. Used for temporary files for which I need a filename
 (ie. to pass to autotrace, etc.)</p>
 </dd></dl>
 
-<dl class="envvar">
+<dl class="std envvar">
 <dt id="envvar-HOME">
 <code class="sig-name descname">HOME</code><a class="headerlink" href="#envvar-HOME" title="Permalink to this definition">¶</a></dt>
 <dd><p>Used to figure out where to put the .FontForge directory which includes user
 preferences and the recovery files.</p>
 </dd></dl>
 
-<dl class="envvar">
+<dl class="std envvar">
 <dt id="envvar-USER">
 <code class="sig-name descname">USER</code><a class="headerlink" href="#envvar-USER" title="Permalink to this definition">¶</a></dt>
 <dd><p>Used to create comments in new fonts about who created the font, or who saved
@@ -464,7 +457,7 @@ it.</p>
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.4</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

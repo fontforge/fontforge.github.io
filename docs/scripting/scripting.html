@@ -1,18 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>Scripting FontForge &#8212; FontForge 20200314 documentation</title>
-    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scripting FontForge &#8212; FontForge 20201107 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -331,13 +332,13 @@ alter that.</p>
 <span id="scripting-variables"></span><h3>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h3>
 <p>All builtin variables begin with “$”, you may not create any variables that
 start with “$” yourself (though you may assign to (some) already existing ones)</p>
-<dl class="data">
+<dl class="ff data">
 <dt id="0">
 <em class="property">$</em><code class="sig-name descname">0</code><a class="headerlink" href="#0" title="Permalink to this definition">¶</a></dt>
 <dd><p>the current script filename</p>
 </dd></dl>
 
-<dl class="data">
+<dl class="ff data">
 <dt id="1">
 <em class="property">$</em><code class="sig-name descname">1</code><a class="headerlink" href="#1" title="Permalink to this definition">¶</a></dt>
 <dt id="2">
@@ -347,26 +348,26 @@ start with “$” yourself (though you may assign to (some) already existing on
 <dd><p>the first, second (…) argument to the script file</p>
 </dd></dl>
 
-<dl class="data">
+<dl class="ff data">
 <dt id="argc">
 <em class="property">$</em><code class="sig-name descname">argc</code><a class="headerlink" href="#argc" title="Permalink to this definition">¶</a></dt>
 <dd><p>the number of arguments passed to the script file (this will always be
 at least 1 as $0 is always present)</p>
 </dd></dl>
 
-<dl class="data">
+<dl class="ff data">
 <dt id="argv">
 <em class="property">$</em><code class="sig-name descname">argv</code><a class="headerlink" href="#argv" title="Permalink to this definition">¶</a></dt>
 <dd><p>allows you to access the array of all the arguments</p>
 </dd></dl>
 
-<dl class="data">
+<dl class="ff data">
 <dt id="curfont">
 <em class="property">$</em><code class="sig-name descname">curfont</code><a class="headerlink" href="#curfont" title="Permalink to this definition">¶</a></dt>
 <dd><p>the name of the filename in which the current font resides</p>
 </dd></dl>
 
-<dl class="data">
+<dl class="ff data">
 <dt id="firstfont">
 <em class="property">$</em><code class="sig-name descname">firstfont</code><a class="headerlink" href="#firstfont" title="Permalink to this definition">¶</a></dt>
 <dd><p>the name of the filename of the font which is first on the font
@@ -375,7 +376,7 @@ returns an empty string. This can be used to determine if any font at all
 is loaded into fontforge.</p>
 </dd></dl>
 
-<dl class="data">
+<dl class="ff data">
 <dt id="nextfont">
 <em class="property">$</em><code class="sig-name descname">nextfont</code><a class="headerlink" href="#nextfont" title="Permalink to this definition">¶</a></dt>
 <dd><p>the name of the filename of the font which follows the current
@@ -383,69 +384,69 @@ font on the list (or the empty string if the current font is the last one on the
 list)</p>
 </dd></dl>
 
-<dl class="data">
+<dl class="ff data">
 <dt id="fontchanged">
 <em class="property">$</em><code class="sig-name descname">fontchanged</code><a class="headerlink" href="#fontchanged" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns 1 if the current font has changed, 0 if it has not
 changed since it was read in (or saved).</p>
 </dd></dl>
 
-<dl class="data">
+<dl class="ff data">
 <dt id="fontname">
 <em class="property">$</em><code class="sig-name descname">fontname</code><a class="headerlink" href="#fontname" title="Permalink to this definition">¶</a></dt>
 <dd><p>the name contained in the postscript FontName field</p>
 </dd></dl>
 
-<dl class="data">
+<dl class="ff data">
 <dt id="familyname">
 <em class="property">$</em><code class="sig-name descname">familyname</code><a class="headerlink" href="#familyname" title="Permalink to this definition">¶</a></dt>
 <dd><p>the name contained in the postscript FamilyName field</p>
 </dd></dl>
 
-<dl class="data">
+<dl class="ff data">
 <dt id="fullname">
 <em class="property">$</em><code class="sig-name descname">fullname</code><a class="headerlink" href="#fullname" title="Permalink to this definition">¶</a></dt>
 <dd><p>the name contained in the postscript FullName field</p>
 </dd></dl>
 
-<dl class="data">
+<dl class="ff data">
 <dt id="fondname">
 <em class="property">$</em><code class="sig-name descname">fondname</code><a class="headerlink" href="#fondname" title="Permalink to this definition">¶</a></dt>
 <dd><p>if set this name indicates what FOND the current font should be
 put in under Generate Mac Family.</p>
 </dd></dl>
 
-<dl class="data">
+<dl class="ff data">
 <dt id="weight">
 <em class="property">$</em><code class="sig-name descname">weight</code><a class="headerlink" href="#weight" title="Permalink to this definition">¶</a></dt>
 <dd><p>the name contained in the postscript Weight field</p>
 </dd></dl>
 
-<dl class="data">
+<dl class="ff data">
 <dt id="copyright">
 <em class="property">$</em><code class="sig-name descname">copyright</code><a class="headerlink" href="#copyright" title="Permalink to this definition">¶</a></dt>
 <dd><p>the name contained in the postscript Notice field</p>
 </dd></dl>
 
-<dl class="data">
+<dl class="ff data">
 <dt id="filename">
 <em class="property">$</em><code class="sig-name descname">filename</code><a class="headerlink" href="#filename" title="Permalink to this definition">¶</a></dt>
 <dd><p>the name of the file containing the font.</p>
 </dd></dl>
 
-<dl class="data">
+<dl class="ff data">
 <dt id="fontversion">
 <em class="property">$</em><code class="sig-name descname">fontversion</code><a class="headerlink" href="#fontversion" title="Permalink to this definition">¶</a></dt>
 <dd><p>the string containing the font’s version</p>
 </dd></dl>
 
-<dl class="data">
+<dl class="ff data">
 <dt id="iscid">
 <em class="property">$</em><code class="sig-name descname">iscid</code><a class="headerlink" href="#iscid" title="Permalink to this definition">¶</a></dt>
 <dd><p>1 if the current font is a cid keyed font, 0 if not</p>
 </dd></dl>
 
-<dl class="data">
+<dl class="ff data">
 <dt id="cidfontname">
 <em class="property">$</em><code class="sig-name descname">cidfontname</code><a class="headerlink" href="#cidfontname" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns the fontname of the top-level cid-keyed font (or the
@@ -453,65 +454,65 @@ empty string if there is none)</p>
 <p>Can be used to detect if this is a cid keyed font.</p>
 </dd></dl>
 
-<dl class="data">
+<dl class="ff data">
 <dt>
 <code class="sig-name descname">$cidfamilyname, $cidfullname, $cidweight, $cidcopyright</code></dt>
 <dd><p>similar to <a class="reference internal" href="#cidfontname" title="cidfontname"><code class="xref ff ff-data docutils literal notranslate"><span class="pre">cidfontname</span></code></a></p>
 </dd></dl>
 
-<dl class="data">
+<dl class="ff data">
 <dt id="mmcount">
 <em class="property">$</em><code class="sig-name descname">mmcount</code><a class="headerlink" href="#mmcount" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns 0 for non multiple master fonts, returns the number of
 instances in a multiple master font.</p>
 </dd></dl>
 
-<dl class="data">
+<dl class="ff data">
 <dt id="italicangle">
 <em class="property">$</em><code class="sig-name descname">italicangle</code><a class="headerlink" href="#italicangle" title="Permalink to this definition">¶</a></dt>
 <dd><p>the value of the postscript italic angle field</p>
 </dd></dl>
 
-<dl class="data">
+<dl class="ff data">
 <dt id="loadState">
 <em class="property">$</em><code class="sig-name descname">loadState</code><a class="headerlink" href="#loadState" title="Permalink to this definition">¶</a></dt>
 <dd><p>a bitmask of non-fatal errors encountered when loading the font.</p>
 </dd></dl>
 
-<dl class="data">
+<dl class="ff data">
 <dt id="privateState">
 <em class="property">$</em><code class="sig-name descname">privateState</code><a class="headerlink" href="#privateState" title="Permalink to this definition">¶</a></dt>
 <dd><p>a bitmask of some errors in the PostScript Private dictionary
 (see <a class="reference internal" href="python/fontforge.html#fontforge.font.privateState" title="fontforge.font.privateState"><code class="xref py py-attr docutils literal notranslate"><span class="pre">fontforge.font.privateState</span></code></a> for more info).</p>
 </dd></dl>
 
-<dl class="data">
+<dl class="ff data">
 <dt id="curcid">
 <em class="property">$</em><code class="sig-name descname">curcid</code><a class="headerlink" href="#curcid" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns the fontname of the current font</p>
 </dd></dl>
 
-<dl class="data">
+<dl class="ff data">
 <dt id="firstcid">
 <em class="property">$</em><code class="sig-name descname">firstcid</code><a class="headerlink" href="#firstcid" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns the fontname of the first font within this cid font</p>
 </dd></dl>
 
-<dl class="data">
+<dl class="ff data">
 <dt id="nextcid">
 <em class="property">$</em><code class="sig-name descname">nextcid</code><a class="headerlink" href="#nextcid" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns the fontname of the next font within this cid font (or the
 empty string if the current sub-font is the last)</p>
 </dd></dl>
 
-<dl class="data">
+<dl class="ff data">
 <dt id="macstyle">
 <em class="property">$</em><code class="sig-name descname">macstyle</code><a class="headerlink" href="#macstyle" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns the value of the macstyle field (a set of bits indicating
 whether the font is bold, italic, condensed, etc.)</p>
 </dd></dl>
 
-<dl class="data">
+<dl class="ff data">
 <dt id="bitmaps">
 <em class="property">$</em><code class="sig-name descname">bitmaps</code><a class="headerlink" href="#bitmaps" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns an array containing all bitmap pixelsizes generated for
@@ -519,7 +520,7 @@ this font. (If the font database contains greymaps then they will be indicated
 in the array as <code class="docutils literal notranslate"><span class="pre">(&lt;BitmapDepth&gt;&lt;&lt;16)|&lt;PixelSize&gt;</span></code>)</p>
 </dd></dl>
 
-<dl class="data">
+<dl class="ff data">
 <dt id="order">
 <em class="property">$</em><code class="sig-name descname">order</code><a class="headerlink" href="#order" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns an integer containing either 2 (for truetype fonts) or 3 (for
@@ -527,25 +528,25 @@ postscript fonts). This indicates whether the font uses quadratic or cubic
 splines.</p>
 </dd></dl>
 
-<dl class="data">
+<dl class="ff data">
 <dt id="em">
 <em class="property">$</em><code class="sig-name descname">em</code><a class="headerlink" href="#em" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns the number of em-units used by the font.</p>
 </dd></dl>
 
-<dl class="data">
+<dl class="ff data">
 <dt id="ascent">
 <em class="property">$</em><code class="sig-name descname">ascent</code><a class="headerlink" href="#ascent" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns the ascent of the font</p>
 </dd></dl>
 
-<dl class="data">
+<dl class="ff data">
 <dt id="descent">
 <em class="property">$</em><code class="sig-name descname">descent</code><a class="headerlink" href="#descent" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns the descent of the font.</p>
 </dd></dl>
 
-<dl class="data">
+<dl class="ff data">
 <dt id="selection">
 <em class="property">$</em><code class="sig-name descname">selection</code><a class="headerlink" href="#selection" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns an array containing one entry for each glyph in the
@@ -553,19 +554,19 @@ current font indicating whether that glyph is selected or not (0=&gt;not,
 1=&gt;selected)</p>
 </dd></dl>
 
-<dl class="data">
+<dl class="ff data">
 <dt id="panose">
 <em class="property">$</em><code class="sig-name descname">panose</code><a class="headerlink" href="#panose" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns an array containing the 10 panose values for the font.</p>
 </dd></dl>
 
-<dl class="data">
+<dl class="ff data">
 <dt id="trace">
 <em class="property">$</em><code class="sig-name descname">trace</code><a class="headerlink" href="#trace" title="Permalink to this definition">¶</a></dt>
 <dd><p>if this is set to one then FontForge will trace each procedure call.</p>
 </dd></dl>
 
-<dl class="data">
+<dl class="ff data">
 <dt id="version">
 <em class="property">$</em><code class="sig-name descname">version</code><a class="headerlink" href="#version" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
@@ -574,7 +575,7 @@ current font indicating whether that glyph is selected or not (0=&gt;not,
 </dl>
 </dd></dl>
 
-<dl class="data">
+<dl class="ff data">
 <dt id="haspython">
 <em class="property">$</em><code class="sig-name descname">haspython</code><a class="headerlink" href="#haspython" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns 1 if python scripting is available, 0 if it is not.</p>
@@ -1457,7 +1458,7 @@ tenth by Cnt-Alt-0.</p>
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.4</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
