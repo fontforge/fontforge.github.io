@@ -1,18 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>Scripting functions &#8212; FontForge 20200314 documentation</title>
-    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scripting functions &#8212; FontForge 20201107 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -45,7 +46,7 @@ information.</p>
 </div>
 <p>To mean that arguments after the first are optional. However if you wish to set
 the fourth argument you must specify the second and third arguments too.</p>
-<dl class="function">
+<dl class="ff function">
 <dt id="AddAccent">
 <code class="sig-name descname">AddAccent</code><span class="sig-paren">(</span><em class="sig-param">accent</em><span class="optional">[</span>, <em class="sig-param">pos</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#AddAccent" title="Permalink to this definition">¶</a></dt>
 <dd><p>There must be exactly one glyph selected. That glyph must contain at least
@@ -84,7 +85,7 @@ following flags:</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="AddAnchorClass">
 <code class="sig-name descname">AddAnchorClass</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">type</em>, <em class="sig-param">lookup-subtable-name</em><span class="sig-paren">)</span><a class="headerlink" href="#AddAnchorClass" title="Permalink to this definition">¶</a></dt>
 <dd><p>These mirror the values of the Anchor class dialog of
@@ -93,7 +94,7 @@ encoded name for the anchor class. The second should be one of the strings
 “default”, “mk-mk”, or “cursive”. The third should be a lookup subtable name.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="AddAnchorPoint">
 <code class="sig-name descname">AddAnchorPoint</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">type</em>, <em class="sig-param">x</em>, <em class="sig-param">y</em><span class="optional">[</span>, <em class="sig-param">lig-index</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#AddAnchorPoint" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds an AnchorPoint to the currently selected glyph. The first argument is
@@ -104,14 +105,14 @@ an appropriate setting for you). The next two values specify the location of
 the point. The final argument is only present for things of type “baselig”.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="AddDHint">
 <code class="sig-name descname">AddDHint</code><span class="sig-paren">(</span><em class="sig-param">x1</em>, <em class="sig-param">y1</em>, <em class="sig-param">x2</em>, <em class="sig-param">y2</em>, <em class="sig-param">unit.x</em>, <em class="sig-param">unit.y</em><span class="sig-paren">)</span><a class="headerlink" href="#AddDHint" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds a diagonal hint. A diagonal hint requires two points on oposite sides of
 the stem and a unit vector in the direction of the stem.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="AddExtrema">
 <code class="sig-name descname">AddExtrema</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">all</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#AddExtrema" title="Permalink to this definition">¶</a></dt>
 <dd><p>If a spline in a glyph reaches a maximum or minimum x or y value within a
@@ -124,14 +125,14 @@ integer, then all extrema will be added; otherwise, some that would be very
 close to existing endpoints will not be added.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="AddHHint">
 <code class="sig-name descname">AddHHint</code><span class="sig-paren">(</span><em class="sig-param">start</em>, <em class="sig-param">width</em><span class="sig-paren">)</span><a class="headerlink" href="#AddHHint" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds horizontal stem hint to any selected glyphs. The hint starts at location
 “start” and is width wide. A hint will be added to all selected glyphs.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="AddInstrs">
 <code class="sig-name descname">AddInstrs</code><span class="sig-paren">(</span><em class="sig-param">thingamy</em>, <em class="sig-param">replace</em>, <em class="sig-param">instrs</em><span class="sig-paren">)</span><a class="headerlink" href="#AddInstrs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Where thingamy is a string, either “fpgm” or “prep” in which case it refers
@@ -145,7 +146,7 @@ already present.</p>
 instructions, as “<code class="docutils literal notranslate"><span class="pre">IUP[x]\nIUP[y]</span></code>”</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="AddLookup">
 <code class="sig-name descname">AddLookup</code><span class="sig-paren">(</span><em class="sig-param">name,type,flags,features-script-lang-array[,after-lookup-name</em><span class="sig-paren">)</span><a class="headerlink" href="#AddLookup" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a new lookup with the given name, type and flags. It will tag it with
@@ -192,7 +193,7 @@ language. Example: [[“liga”,[[“latn”,[“dflt”]]]]]</p>
 If not specified the lookup will be come the first lookup in its table.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="AddLookupSubtable">
 <code class="sig-name descname">AddLookupSubtable</code><span class="sig-paren">(</span><em class="sig-param">lookup-name</em>, <em class="sig-param">new-subtable-name</em><span class="optional">[</span>, <em class="sig-param">after-subtable</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#AddLookupSubtable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a new subtable within the specified lookup. The optional final
@@ -200,7 +201,7 @@ argument allows you to specify the ordering within the lookup. If not
 specified this subtable will be first in the lookup.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="AddPosSub">
 <code class="sig-name descname">AddPosSub</code><span class="sig-paren">(</span><em class="sig-param">subtable-name</em>, <em class="sig-param">variant-glyph-name(s)</em><span class="sig-paren">)</span><a class="headerlink" href="#AddPosSub" title="Permalink to this definition">¶</a></dt>
 <dt>
@@ -211,7 +212,7 @@ specified this subtable will be first in the lookup.</p>
 of the lookup containing the subtable.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="AddSizeFeature">
 <code class="sig-name descname">AddSizeFeature</code><span class="sig-paren">(</span><em class="sig-param">default-size</em><span class="optional">[</span>, <em class="sig-param">range-bottom</em>, <em class="sig-param">range-top</em>, <em class="sig-param">style-id</em>, <em class="sig-param">array-of-lang-names</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#AddSizeFeature" title="Permalink to this definition">¶</a></dt>
 <dd><p>This allows you to specify an OpenType ‘size’ feature. It will also set the
@@ -276,14 +277,14 @@ French from France).</p>
 </ul>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="AddVHint">
 <code class="sig-name descname">AddVHint</code><span class="sig-paren">(</span><em class="sig-param">start</em>, <em class="sig-param">width</em><span class="sig-paren">)</span><a class="headerlink" href="#AddVHint" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds a vertical stem hint to any selected glyphs. The hint starts at location
 “start” and is width wide. A hint will be added to all selected glyphs.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="ApplySubstitution">
 <code class="sig-name descname">ApplySubstitution</code><span class="sig-paren">(</span><em class="sig-param">script</em>, <em class="sig-param">lang</em>, <em class="sig-param">tag</em><span class="sig-paren">)</span><a class="headerlink" href="#ApplySubstitution" title="Permalink to this definition">¶</a></dt>
 <dd><p>All three arguments must be strings of no more that four characters (shorter
@@ -303,7 +304,7 @@ their vertical variants:</p>
 </div>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Array">
 <code class="sig-name descname">Array</code><span class="sig-paren">(</span><em class="sig-param">size</em><span class="sig-paren">)</span><a class="headerlink" href="#Array" title="Permalink to this definition">¶</a></dt>
 <dd><p>Allocates an array of the indicated size.</p>
@@ -320,39 +321,39 @@ their vertical variants:</p>
 <p>It can execute with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="AskUser">
 <code class="sig-name descname">AskUser</code><span class="sig-paren">(</span><em class="sig-param">question</em><span class="optional">[</span>, <em class="sig-param">default-answer</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#AskUser" title="Permalink to this definition">¶</a></dt>
 <dd><p>Asks the user the question and returns an answer (a string). A default-answer
 may be specified too. It can execute with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="ATan2">
 <code class="sig-name descname">ATan2</code><span class="sig-paren">(</span><em class="sig-param">val1</em>, <em class="sig-param">val2</em><span class="sig-paren">)</span><a class="headerlink" href="#ATan2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the arc-tangent. See atan2(3) for more info. It can execute with no
 current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="AutoCounter">
 <code class="sig-name descname">AutoCounter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#AutoCounter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates (PostScript) counter masks for selected glyphs automagically.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="AutoHint">
 <code class="sig-name descname">AutoHint</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#AutoHint" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates (PostScript) hints for selected glyphs automagically.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="AutoInstr">
 <code class="sig-name descname">AutoInstr</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#AutoInstr" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates (TrueType) instructions for selected glyphs.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="AutoKern">
 <code class="sig-name descname">AutoKern</code><span class="sig-paren">(</span><em class="sig-param">spacing</em>, <em class="sig-param">threshold</em>, <em class="sig-param">subtable-name</em><span class="optional">[</span>, <em class="sig-param">kernfile</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#AutoKern" title="Permalink to this definition">¶</a></dt>
 <dd><p>(AutoKern doesn’t work well in general)</p>
@@ -361,14 +362,14 @@ kerning pairs in the indicated subtable, or if a kernfile is specified,
 FontForge will read the kern pairs out of the file.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="AutoTrace">
 <code class="sig-name descname">AutoTrace</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#AutoTrace" title="Permalink to this definition">¶</a></dt>
 <dd><p>If you have either potrace or autotrace installed, this will invoke them on
 the selected glyphs to trace the background image and generate splines.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="AutoWidth">
 <code class="sig-name descname">AutoWidth</code><span class="sig-paren">(</span><em class="sig-param">spacing</em><span class="sig-paren">)</span><a class="headerlink" href="#AutoWidth" title="Permalink to this definition">¶</a></dt>
 <dd><p>Guesses at the widths of all selected glyphs so that two adjacent “I” glyphs
@@ -376,7 +377,7 @@ will appear to be spacing em-units apart. (if spacing is the negative of the
 em-size (sum of ascent and descent) then a default value will be used).</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="BitmapsAvail">
 <code class="sig-name descname">BitmapsAvail</code><span class="sig-paren">(</span><em class="sig-param">sizes</em><span class="optional">[</span>, <em class="sig-param">rasterized</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#BitmapsAvail" title="Permalink to this definition">¶</a></dt>
 <dd><p>Controls what bitmap sizes are stored in the font’s database. It is passed an
@@ -392,7 +393,7 @@ pixel size and the high order 16 bits will specify the bits/pixel. Thus
 rasterized parameter to 0.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="BitmapsRegen">
 <code class="sig-name descname">BitmapsRegen</code><span class="sig-paren">(</span><em class="sig-param">sizes</em><span class="sig-paren">)</span><a class="headerlink" href="#BitmapsRegen" title="Permalink to this definition">¶</a></dt>
 <dd><p>Allows you to update specific bitmaps in an already generated bitmap font. It
@@ -400,27 +401,27 @@ will regenerate the bitmaps of all selected glyphs at the specified
 pixelsizes.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="BuildAccented">
 <code class="sig-name descname">BuildAccented</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BuildAccented" title="Permalink to this definition">¶</a></dt>
 <dd><p>If any of the selected glyphs are accented, then clear them and create a new
 glyph by inserting references to the approriate base glyph and accents.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="BuildComposite">
 <code class="sig-name descname">BuildComposite</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BuildComposite" title="Permalink to this definition">¶</a></dt>
 <dd><p>Similar to BuildAccented but will build any composite glyph – ligatures and
 what not.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="BuildDuplicate">
 <code class="sig-name descname">BuildDuplicate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BuildDuplicate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Changes the encoding so that to encoding points share the same glyph.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="CanonicalContours">
 <code class="sig-name descname">CanonicalContours</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CanonicalContours" title="Permalink to this definition">¶</a></dt>
 <dd><p>Orders the contours in the currently selected glyph(s) by the x coordinate of
@@ -428,7 +429,7 @@ their leftmost point. (This can reduce the size of the charstring needed to
 describe the glyph(s).</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="CanonicalStart">
 <code class="sig-name descname">CanonicalStart</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CanonicalStart" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the start point of all the contours of the currently selected glyph(s)
@@ -439,7 +440,7 @@ regularizing things it can also make more things available to be put in
 subroutines.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Ceil">
 <code class="sig-name descname">Ceil</code><span class="sig-paren">(</span><em class="sig-param">real</em><span class="sig-paren">)</span><a class="headerlink" href="#Ceil" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts a real number to the smallest integer larger than the real. It can
@@ -447,14 +448,14 @@ execute with no current font.</p>
 <p>See Also <a class="reference internal" href="#Int" title="Int"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Int()</span></code></a>, <a class="reference internal" href="#Round" title="Round"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Round()</span></code></a> and <a class="reference internal" href="#Floor" title="Floor"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Floor()</span></code></a>.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="CenterInWidth">
 <code class="sig-name descname">CenterInWidth</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CenterInWidth" title="Permalink to this definition">¶</a></dt>
 <dd><p>Centers any selected glyphs so that their right and left side bearings are
 equal.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="ChangePrivateEntry">
 <code class="sig-name descname">ChangePrivateEntry</code><span class="sig-paren">(</span><em class="sig-param">key</em>, <em class="sig-param">val</em><span class="sig-paren">)</span><a class="headerlink" href="#ChangePrivateEntry" title="Permalink to this definition">¶</a></dt>
 <dd><p>Changes (or adds if the key is not already present) the value in the
@@ -462,7 +463,7 @@ dictionary indexed by key. (all values must be strings even if they represent
 numbers in PostScript)</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="ChangeWeight">
 <code class="sig-name descname">ChangeWeight</code><span class="sig-paren">(</span><em class="sig-param">em-units</em><span class="sig-paren">)</span><a class="headerlink" href="#ChangeWeight" title="Permalink to this definition">¶</a></dt>
 <dd><p><a class="reference internal" href="../ui/menus/elementmenu.html#elementmenu-embolden"><span class="std std-ref">Emboldens</span></a> the selected glyphs by the given
@@ -470,27 +471,27 @@ amount in em units. If em-units is a negative number, the glyphs are made
 less bold.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="CharCnt">
 <code class="sig-name descname">CharCnt</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CharCnt" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the number of encoding slots (or encoding slots + unencoded glyphs)
 in the current font</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="CharInfo">
 <code class="sig-name descname">CharInfo</code><span class="sig-paren">(</span><em class="sig-param">str</em><span class="sig-paren">)</span><a class="headerlink" href="#CharInfo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deprecated name for <a class="reference internal" href="#GlyphInfo" title="GlyphInfo"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">GlyphInfo()</span></code></a></p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="CheckForAnchorClass">
 <code class="sig-name descname">CheckForAnchorClass</code><span class="sig-paren">(</span><em class="sig-param">name</em><span class="sig-paren">)</span><a class="headerlink" href="#CheckForAnchorClass" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns 1 if the current font contains an Anchor class with the given name
 (which must be in utf8).</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Chr">
 <code class="sig-name descname">Chr</code><span class="sig-paren">(</span><em class="sig-param">int</em><span class="sig-paren">)</span><a class="headerlink" href="#Chr" title="Permalink to this definition">¶</a></dt>
 <dt>
@@ -504,7 +505,7 @@ of integers and the result is the string. It can execute with no current
 font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="CIDChangeSubFont">
 <code class="sig-name descname">CIDChangeSubFont</code><span class="sig-paren">(</span><em class="sig-param">new-sub-font-name</em><span class="sig-paren">)</span><a class="headerlink" href="#CIDChangeSubFont" title="Permalink to this definition">¶</a></dt>
 <dd><p>If the current font is a cid keyed font, this command changes the active
@@ -512,20 +513,20 @@ sub-font to be the one specified (the string should be the postscript
 FontName of the subfont)</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="CIDFlatten">
 <code class="sig-name descname">CIDFlatten</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CIDFlatten" title="Permalink to this definition">¶</a></dt>
 <dd><p>Flattens a cid-keyed font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="CIDFlattenByCMap">
 <code class="sig-name descname">CIDFlattenByCMap</code><span class="sig-paren">(</span><em class="sig-param">cmap-filename</em><span class="sig-paren">)</span><a class="headerlink" href="#CIDFlattenByCMap" title="Permalink to this definition">¶</a></dt>
 <dd><p>Flattens a cid-keyed font, producing a font encoded with the result of the
 CMAP file.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="CIDSetFontNames">
 <code class="sig-name descname">CIDSetFontNames</code><span class="sig-paren">(</span><em class="sig-param">fontname</em><span class="optional">[</span>, <em class="sig-param">family</em><span class="optional">[</span>, <em class="sig-param">fullname</em><span class="optional">[</span>, <em class="sig-param">weight</em><span class="optional">[</span>, <em class="sig-param">copyright-notice</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CIDSetFontNames" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets various postscript names associated with the top level cid font. If a
@@ -534,31 +535,31 @@ just like SetFontNames except it works on the top level cid font rather than
 the current font).</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Clear">
 <code class="sig-name descname">Clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Clear" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clears out all selected glyphs</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="ClearBackground">
 <code class="sig-name descname">ClearBackground</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ClearBackground" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clears the background of all selected glyphs</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="ClearCharCounterMasks">
 <code class="sig-name descname">ClearCharCounterMasks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ClearCharCounterMasks" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deprecated name for <a class="reference internal" href="#ClearGlyphCounterMasks" title="ClearGlyphCounterMasks"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">ClearGlyphCounterMasks()</span></code></a></p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="ClearGlyphCounterMasks">
 <code class="sig-name descname">ClearGlyphCounterMasks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ClearGlyphCounterMasks" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clears any counter masks from the (one) selected glyph.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="ClearHints">
 <code class="sig-name descname">ClearHints</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ClearHints" title="Permalink to this definition">¶</a></dt>
 <dt>
@@ -572,20 +573,20 @@ clears all hints, the other three clear either all vertical, all horizontal
 or all diagonal hints respectively.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="ClearInstrs">
 <code class="sig-name descname">ClearInstrs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ClearInstrs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clears any (TrueType) instructions from selected glyphs</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="ClearPrivateEntry">
 <code class="sig-name descname">ClearPrivateEntry</code><span class="sig-paren">(</span><em class="sig-param">key</em><span class="sig-paren">)</span><a class="headerlink" href="#ClearPrivateEntry" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes the entry indexed by the given key from the private dictionary of the
 font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="ClearTable">
 <code class="sig-name descname">ClearTable</code><span class="sig-paren">(</span><em class="sig-param">tag</em><span class="sig-paren">)</span><a class="headerlink" href="#ClearTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes the table named tag. This may be ‘fpgm’, ‘prep’, ‘cvt ‘, ‘maxp’ or
@@ -593,14 +594,14 @@ any user defined tables. It returns 1 if it found (and removed) the table, 0
 if the table was not present.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Close">
 <code class="sig-name descname">Close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Close" title="Permalink to this definition">¶</a></dt>
 <dd><p>This frees up any memory taken up by the current font and drops it off the
 list of loaded fonts. After this executes there will be no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="CompareFonts">
 <code class="sig-name descname">CompareFonts</code><span class="sig-paren">(</span><em class="sig-param">other-font-filename</em>, <em class="sig-param">output-filename</em>, <em class="sig-param">flags</em><span class="sig-paren">)</span><a class="headerlink" href="#CompareFonts" title="Permalink to this definition">¶</a></dt>
 <dd><p>This will compare the current font with the font in <code class="docutils literal notranslate"><span class="pre">other-font-filename</span></code>
@@ -641,7 +642,7 @@ in the first and add the outlines from the second into the backgroun layer</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="CompareGlyphs">
 <code class="sig-name descname">CompareGlyphs</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">pt_err</em><span class="optional">[</span>, <em class="sig-param">spline_err</em><span class="optional">[</span>, <em class="sig-param">pixel_off_frac</em><span class="optional">[</span>, <em class="sig-param">bb_err</em><span class="optional">[</span>, <em class="sig-param">compare_hints</em><span class="optional">[</span>, <em class="sig-param">report_diffs_as_errors</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CompareGlyphs" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function compares two versions of one or several glyphs. It looks at any
@@ -733,14 +734,14 @@ matrices)</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="ConvertByCMap">
 <code class="sig-name descname">ConvertByCMap</code><span class="sig-paren">(</span><em class="sig-param">cmapfilename</em><span class="sig-paren">)</span><a class="headerlink" href="#ConvertByCMap" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts current font to a CID-keyed font using specified CMap file.
 cmapfilename must be a path name of a file conforming Adobe CMap File Format.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="ConvertToCID">
 <code class="sig-name descname">ConvertToCID</code><span class="sig-paren">(</span><em class="sig-param">registry</em>, <em class="sig-param">ordering</em>, <em class="sig-param">supplement</em><span class="sig-paren">)</span><a class="headerlink" href="#ConvertToCID" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts current font to a CID-keyed font using given registry, ordering and
@@ -748,43 +749,43 @@ supplement. registry and ordering must be strings, supplement must be a
 integer.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Copy">
 <code class="sig-name descname">Copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Copy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Makes a copy of all selected glyphs.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="CopyAnchors">
 <code class="sig-name descname">CopyAnchors</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CopyAnchors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Copies all the anchor points in a glyph.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="CopyFgToBg">
 <code class="sig-name descname">CopyFgToBg</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CopyFgToBg" title="Permalink to this definition">¶</a></dt>
 <dd><p>Copies all foreground splines into the background in all selected glyphs</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="CopyLBearing">
 <code class="sig-name descname">CopyLBearing</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CopyLBearing" title="Permalink to this definition">¶</a></dt>
 <dd><p>Stores the left side bearing of all selected glyphs in the clipboard</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="CopyRBearing">
 <code class="sig-name descname">CopyRBearing</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CopyRBearing" title="Permalink to this definition">¶</a></dt>
 <dd><p>Stores the right side bearing of all selected glyphs in the clipboard</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="CopyReference">
 <code class="sig-name descname">CopyReference</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CopyReference" title="Permalink to this definition">¶</a></dt>
 <dd><p>Makes references to all selected glyphs and stores them in the clipboard.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="CopyUnlinked">
 <code class="sig-name descname">CopyUnlinked</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CopyUnlinked" title="Permalink to this definition">¶</a></dt>
 <dd><p>Makes a copy of all selected glyphs, just as <a class="reference internal" href="../ui/menus/editmenu.html#editmenu-copy"><span class="std std-ref">Copy</span></a>
@@ -792,19 +793,19 @@ does. However if a glyph contains a reference, then the reference will be
 unlinked (turned into splines) before it is added to the clipboard.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="CopyVWidth">
 <code class="sig-name descname">CopyVWidth</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CopyVWidth" title="Permalink to this definition">¶</a></dt>
 <dd><p>Stores the vertical widths of all selected glyphs in the clipboard</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="CopyWidth">
 <code class="sig-name descname">CopyWidth</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CopyWidth" title="Permalink to this definition">¶</a></dt>
 <dd><p>Stores the widths of all selected glyphs in the clipboard</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="CorrectDirection">
 <code class="sig-name descname">CorrectDirection</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">unlinkrefs</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CorrectDirection" title="Permalink to this definition">¶</a></dt>
 <dd><p>If an argument is present it must be integral and is treated as a flag
@@ -813,27 +814,27 @@ CorrectDirection code runs. If the argument is not present, or if it has a
 non-zero value then flipped references will be unlinked.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Cos">
 <code class="sig-name descname">Cos</code><span class="sig-paren">(</span><em class="sig-param">val</em><span class="sig-paren">)</span><a class="headerlink" href="#Cos" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the cosine of val. It can execute with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Cut">
 <code class="sig-name descname">Cut</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Cut" title="Permalink to this definition">¶</a></dt>
 <dd><p>Makes a copy of all selected glyphs and saves it in the clipboard, then
 clears out the selected glyphs</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="DefaultOtherSubrs">
 <code class="sig-name descname">DefaultOtherSubrs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DefaultOtherSubrs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns to using Adobe’s versions of the OtherSubrs subroutines. It can
 execute with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="DefaultRoundToGrid">
 <code class="sig-name descname">DefaultRoundToGrid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DefaultRoundToGrid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Looks at all selected glyphs, if any reference is not positioned by point
@@ -841,7 +842,7 @@ matching, then FontForge will set the truetype “ROUND-TO-GRID” flag for the
 reference.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="DefaultUseMyMetrics">
 <code class="sig-name descname">DefaultUseMyMetrics</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DefaultUseMyMetrics" title="Permalink to this definition">¶</a></dt>
 <dd><p>Looks at all selected glyphs. If any glyph contains references, does not have
@@ -850,7 +851,7 @@ references has the same width as the current glyph, and has an identity
 transformation matrix, then set the bit on that reference.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="DetachAndRemoveGlyphs">
 <code class="sig-name descname">DetachAndRemoveGlyphs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DetachAndRemoveGlyphs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Any selected encoding slots will have their glyph pointer nulled out. In
@@ -858,7 +859,7 @@ addition, if this glyph is now unencoded it will remove the glyph from the
 font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="DetachGlyphs">
 <code class="sig-name descname">DetachGlyphs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DetachGlyphs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Any selected encoding slots will have their glyph pointer nulled out. This
@@ -866,7 +867,7 @@ does not remove the glyph from the font, it just makes it unreachable through
 this encoding slot.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="DontAutoHint">
 <code class="sig-name descname">DontAutoHint</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DontAutoHint" title="Permalink to this definition">¶</a></dt>
 <dd><p>Mark any selected glyphs so that they will not be AutoHinted when saving the
@@ -874,27 +875,27 @@ font. (This flag is cleared if the user explicitely AutoHints the glyph
 himself).</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="DrawsSomething">
 <code class="sig-name descname">DrawsSomething</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">arg</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#DrawsSomething" title="Permalink to this definition">¶</a></dt>
 <dd><p>Arg is as in <a class="reference internal" href="#InFont" title="InFont"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">InFont()</span></code></a>. This returns true if the
 glyph contains any splines, references or images.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Error">
 <code class="sig-name descname">Error</code><span class="sig-paren">(</span><em class="sig-param">str</em><span class="sig-paren">)</span><a class="headerlink" href="#Error" title="Permalink to this definition">¶</a></dt>
 <dd><p>Prints out str as an error message and aborts the current script. It can
 execute with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Exp">
 <code class="sig-name descname">Exp</code><span class="sig-paren">(</span><em class="sig-param">val</em><span class="sig-paren">)</span><a class="headerlink" href="#Exp" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns e:sup:<cite>val</cite>. It can execute with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="ExpandStroke">
 <code class="sig-name descname">ExpandStroke</code><span class="sig-paren">(</span><em class="sig-param">width</em><span class="sig-paren">)</span><a class="headerlink" href="#ExpandStroke" title="Permalink to this definition">¶</a></dt>
 <dt>
@@ -1005,7 +1006,7 @@ Join clip algorithm</p>
 
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Export">
 <code class="sig-name descname">Export</code><span class="sig-paren">(</span><em class="sig-param">format</em><span class="optional">[</span>, <em class="sig-param">bitmap-size</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Export" title="Permalink to this definition">¶</a></dt>
 <dd><p>For each selected glyph in the current font, this command will export that
@@ -1060,7 +1061,7 @@ flags:</p>
 </ul>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="FileAccess">
 <code class="sig-name descname">FileAccess</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="optional">[</span>, <em class="sig-param">prot</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#FileAccess" title="Permalink to this definition">¶</a></dt>
 <dd><p>Behaves like the unix access system call. Returns 0 if the file exists, -1 if
@@ -1068,13 +1069,13 @@ it does not. If protection is omitted, checks for read access. It can execute
 with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="FindIntersections">
 <code class="sig-name descname">FindIntersections</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#FindIntersections" title="Permalink to this definition">¶</a></dt>
 <dd><p>Finds everywhere that splines cross and creates points there.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="FindOrAddCvtIndex">
 <code class="sig-name descname">FindOrAddCvtIndex</code><span class="sig-paren">(</span><em class="sig-param">value</em><span class="optional">[</span>, <em class="sig-param">sign-matters</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#FindOrAddCvtIndex" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the index in the cvt table of the given value. If the value does not
@@ -1085,7 +1086,7 @@ value, but if sign-matters is present and non-zero a negative value can be
 looked up (or added).</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Floor">
 <code class="sig-name descname">Floor</code><span class="sig-paren">(</span><em class="sig-param">real</em><span class="sig-paren">)</span><a class="headerlink" href="#Floor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts a real number to the largest integer smaller than the real. It can
@@ -1093,7 +1094,7 @@ execute with no current font.</p>
 <p>See Also <a class="reference internal" href="#Ceil" title="Ceil"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Ceil()</span></code></a>, <a class="reference internal" href="#Int" title="Int"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Int()</span></code></a> and <a class="reference internal" href="#Round" title="Round"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Round()</span></code></a>.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="FontImage">
 <code class="sig-name descname">FontImage</code><span class="sig-paren">(</span><em class="sig-param">filename</em>, <em class="sig-param">array</em><span class="optional">[</span>, <em class="sig-param">width</em><span class="optional">[</span>, <em class="sig-param">height</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#FontImage" title="Permalink to this definition">¶</a></dt>
 <dd><p>Produces a thumbnail image of the font and stores it in the given filename.
@@ -1111,7 +1112,7 @@ the lines.</p>
 <img alt="../_images/FontImage.png" src="../_images/FontImage.png" />
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="FontsInFile">
 <code class="sig-name descname">FontsInFile</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="sig-paren">)</span><a class="headerlink" href="#FontsInFile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an array of strings containing the names of all fonts within a file.
@@ -1121,7 +1122,7 @@ file doesn’t exist, or the fonts aren’t named), a zero length array is
 returned. It does not open the font. It can execute without a current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Generate">
 <code class="sig-name descname">Generate</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="optional">[</span>, <em class="sig-param">bitmaptype</em><span class="optional">[</span>, <em class="sig-param">fmflags</em><span class="optional">[</span>, <em class="sig-param">res</em><span class="optional">[</span>, <em class="sig-param">mult-sfd-file</em><span class="optional">[</span>, <em class="sig-param">namelist-name</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Generate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates a font. The type of font is determined by the extension of the
@@ -1235,6 +1236,7 @@ The map file will have extension “.g2n”.</p></li>
 set with OpenType (GPOS/GSUB) tables and without Apple tables.</p></li>
 <li><p>fmflags&amp;0x2000 =&gt; use a symbol cmap entry (same as .sym.ttf, except you can
 now specify a filename ending in .ttf)</p></li>
+<li><p>fmflags&amp;0x8000 =&gt; do not generate an ‘FFTM’ table</p></li>
 <li><p>fmflags&amp;0x10000 =&gt; generate a tfm file</p></li>
 <li><p>fmflags&amp;0x40000 =&gt; do not do flex hints</p></li>
 <li><p>fmflags&amp;0x80000 =&gt; do not include postscript hints</p></li>
@@ -1256,7 +1258,7 @@ FontForge will go through its default search process to find a file for the
 encoding, and if it fails the fonts will not be saved.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="GenerateFamily">
 <code class="sig-name descname">GenerateFamily</code><span class="sig-paren">(</span><em class="sig-param">filename</em>, <em class="sig-param">bitmaptype</em>, <em class="sig-param">fmflags</em>, <em class="sig-param">array-of-font-filenames</em><span class="sig-paren">)</span><a class="headerlink" href="#GenerateFamily" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates a mac font family (FOND) from the fonts (which must be loaded) in
@@ -1280,14 +1282,14 @@ GenerateFamily(&quot;All.otf.dfont&quot;,&quot;dfont&quot;,16,a)
 </div>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="GenerateFeatureFile">
 <code class="sig-name descname">GenerateFeatureFile</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="optional">[</span>, <em class="sig-param">lookup-name</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#GenerateFeatureFile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates an adobe feature file for the current font. If a lookup name is
 specified, then only data for that lookup will be output.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="GetAnchorPoints">
 <code class="sig-name descname">GetAnchorPoints</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#GetAnchorPoints" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return an array of arrays, one sub-array for each anchor point in the
@@ -1296,27 +1298,27 @@ type name of the point (mark, base, ligature, basemark, entry, exit), the x
 and y coordinates, and (for ligatures) the ligature component index.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="GetCvtAt">
 <code class="sig-name descname">GetCvtAt</code><span class="sig-paren">(</span><em class="sig-param">index</em><span class="sig-paren">)</span><a class="headerlink" href="#GetCvtAt" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the value in the cvt table at the given index.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="GetEnv">
 <code class="sig-name descname">GetEnv</code><span class="sig-paren">(</span><em class="sig-param">str</em><span class="sig-paren">)</span><a class="headerlink" href="#GetEnv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the value of the unix environment variable named by str. It can
 execute with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="GetFontBoundingBox">
 <code class="sig-name descname">GetFontBoundingBox</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#GetFontBoundingBox" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a 4 element array containing [minimum-x-value, minimum-y-value,
 maximum-x-value, maximum-y-value] of the entire font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="GetLookupInfo">
 <code class="sig-name descname">GetLookupInfo</code><span class="sig-paren">(</span><em class="sig-param">lookup-name</em><span class="sig-paren">)</span><a class="headerlink" href="#GetLookupInfo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an array whose entries are: [lookup-type, lookup-flags,
@@ -1325,32 +1327,32 @@ feature-script-lang-array] The lookup type is a string as described in
 in <a class="reference internal" href="#AddLookup" title="AddLookup"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">AddLookup()</span></code></a>.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="GetLookups">
 <code class="sig-name descname">GetLookups</code><span class="sig-paren">(</span><em class="sig-param">table-name</em><span class="sig-paren">)</span><a class="headerlink" href="#GetLookups" title="Permalink to this definition">¶</a></dt>
 <dd><p>The table name is either “GPOS” or “GSUB”. Returns an array of all lookup
 names in that table.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="GetLookupSubtables">
 <code class="sig-name descname">GetLookupSubtables</code><span class="sig-paren">(</span><em class="sig-param">lookup-name</em><span class="sig-paren">)</span><a class="headerlink" href="#GetLookupSubtables" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an array of all subtable names in that lookup.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="GetLookupOfSubtable">
 <code class="sig-name descname">GetLookupOfSubtable</code><span class="sig-paren">(</span><em class="sig-param">subtable-name</em><span class="sig-paren">)</span><a class="headerlink" href="#GetLookupOfSubtable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the name of the lookup containing this subtable.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="GetMaxpValue">
 <code class="sig-name descname">GetMaxpValue</code><span class="sig-paren">(</span><em class="sig-param">field-name</em><span class="sig-paren">)</span><a class="headerlink" href="#GetMaxpValue" title="Permalink to this definition">¶</a></dt>
 <dd><p>Field name can be the same set of tag strings as <a class="reference internal" href="#SetMaxpValue" title="SetMaxpValue"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">SetMaxpValue()</span></code></a>.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="GetOS2Value">
 <code class="sig-name descname">GetOS2Value</code><span class="sig-paren">(</span><em class="sig-param">field-name</em><span class="sig-paren">)</span><a class="headerlink" href="#GetOS2Value" title="Permalink to this definition">¶</a></dt>
 <dd><p>The argument takes the same set of tag strings as <a class="reference internal" href="#SetOS2Value" title="SetOS2Value"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">SetOS2Value()</span></code></a>.
@@ -1358,7 +1360,7 @@ names in that table.</p>
 others return integers.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="GetPosSub">
 <code class="sig-name descname">GetPosSub</code><span class="sig-paren">(</span><em class="sig-param">lookup-subtable-name</em><span class="sig-paren">)</span><a class="headerlink" href="#GetPosSub" title="Permalink to this definition">¶</a></dt>
 <dd><p>One glyph must be selected, this returns information about GPOS/GSUB features
@@ -1424,7 +1426,7 @@ be replaced.</p>
 </div>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="GetPref">
 <code class="sig-name descname">GetPref</code><span class="sig-paren">(</span><em class="sig-param">str</em><span class="sig-paren">)</span><a class="headerlink" href="#GetPref" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the value of the preference item whose name is contained in str. Only
@@ -1435,14 +1437,14 @@ numbers, these are meaningless outside the context of get/set Pref. It can
 execute with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="GetPrivateEntry">
 <code class="sig-name descname">GetPrivateEntry</code><span class="sig-paren">(</span><em class="sig-param">key</em><span class="sig-paren">)</span><a class="headerlink" href="#GetPrivateEntry" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the entry indexed by key in the private dictionary. All return values
 will be strings. If an entry does not exist a null string is returned.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="GetTeXParam">
 <code class="sig-name descname">GetTeXParam</code><span class="sig-paren">(</span><em class="sig-param">index</em><span class="sig-paren">)</span><a class="headerlink" href="#GetTeXParam" title="Permalink to this definition">¶</a></dt>
 <dd><p>If index == -1 then the tex font type will be returned (text==0, math==1,
@@ -1450,13 +1452,13 @@ math extended=2)</p>
 <p>Else index is used to index into the font’s tex params array.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="GetSubtableOfAnchor">
 <code class="sig-name descname">GetSubtableOfAnchor</code><span class="sig-paren">(</span><em class="sig-param">anchor-class-name</em><span class="sig-paren">)</span><a class="headerlink" href="#GetSubtableOfAnchor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the name of the lookup subtable containing this anchor class.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="GetTTFName">
 <code class="sig-name descname">GetTTFName</code><span class="sig-paren">(</span><em class="sig-param">lang</em>, <em class="sig-param">nameid</em><span class="sig-paren">)</span><a class="headerlink" href="#GetTTFName" title="Permalink to this definition">¶</a></dt>
 <dd><p>The lang and nameid arguments are as in <a class="reference internal" href="#SetTTFName" title="SetTTFName"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">SetTTFName()</span></code></a>. This returns
@@ -1464,7 +1466,7 @@ the current value as a utf8 encoded string. Combinations which are not
 present will be returned as “”.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="GlyphInfo">
 <code class="sig-name descname">GlyphInfo</code><span class="sig-paren">(</span><em class="sig-param">str</em><span class="sig-paren">)</span><a class="headerlink" href="#GlyphInfo" title="Permalink to this definition">¶</a></dt>
 <dt>
@@ -1556,25 +1558,25 @@ argument&gt;. The array is sorted.</p></li>
 </div>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="HasPreservedTable">
 <code class="sig-name descname">HasPreservedTable</code><span class="sig-paren">(</span><em class="sig-param">tag</em><span class="sig-paren">)</span><a class="headerlink" href="#HasPreservedTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns true if the font contains a preserved table with the given tag.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="HasPrivateEntry">
 <code class="sig-name descname">HasPrivateEntry</code><span class="sig-paren">(</span><em class="sig-param">key</em><span class="sig-paren">)</span><a class="headerlink" href="#HasPrivateEntry" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns whether key exists in the private dictionary.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="HasSpiro">
 <code class="sig-name descname">HasSpiro</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#HasSpiro" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns true if Raph Levien’s spiro package is available in FontForge.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="HFlip">
 <code class="sig-name descname">HFlip</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">about-x</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#HFlip" title="Permalink to this definition">¶</a></dt>
 <dd><p>All selected glyphs will be horizontally flipped about the vertical line
@@ -1582,7 +1584,7 @@ through x=about-x. If no argument is given then all selected glyphs will be
 flipped about their central point.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Import">
 <code class="sig-name descname">Import</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="optional">[</span>, <em class="sig-param">toback</em><span class="optional">[</span>, <em class="sig-param">flags</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Import" title="Permalink to this definition">¶</a></dt>
 <dd><p>Either imports a bitmap font into the database, or imports background
@@ -1638,7 +1640,7 @@ accuracy, in em-units, of stroked and simplified paths.</p>
 </div></blockquote>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="InFont">
 <code class="sig-name descname">InFont</code><span class="sig-paren">(</span><em class="sig-param">arg</em><span class="sig-paren">)</span><a class="headerlink" href="#InFont" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns whether the argument is in the font. The argument may be an integer
@@ -1647,14 +1649,14 @@ glyphs in the font. Otherwise if the argument is a unicode code point or a
 postscript glyph name, true is returned if that glyph is in the font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Inline">
 <code class="sig-name descname">Inline</code><span class="sig-paren">(</span><em class="sig-param">width</em>, <em class="sig-param">gap</em><span class="sig-paren">)</span><a class="headerlink" href="#Inline" title="Permalink to this definition">¶</a></dt>
 <dd><p>Produces an outline as in <a class="reference internal" href="#Outline" title="Outline"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Outline()</span></code></a>, and then shrinks the glyph so
 that it fits inside the outline. In other words, it produces an inlined glyph.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Int">
 <code class="sig-name descname">Int</code><span class="sig-paren">(</span><em class="sig-param">real</em><span class="sig-paren">)</span><a class="headerlink" href="#Int" title="Permalink to this definition">¶</a></dt>
 <dd><p>Uses standard C conversion from real to integer. It can execute with no
@@ -1662,7 +1664,7 @@ current font.</p>
 <p>See Also <a class="reference internal" href="#Ceil" title="Ceil"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Ceil()</span></code></a>, <a class="reference internal" href="#Round" title="Round"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Round()</span></code></a> and <a class="reference internal" href="#Floor" title="Floor"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Floor()</span></code></a>.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="InterpolateFonts">
 <code class="sig-name descname">InterpolateFonts</code><span class="sig-paren">(</span><em class="sig-param">percentage</em>, <em class="sig-param">other-font-name</em><span class="optional">[</span>, <em class="sig-param">flags</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#InterpolateFonts" title="Permalink to this definition">¶</a></dt>
 <dd><p>Interpolates a font which is percentage of the way from the current font to
@@ -1676,7 +1678,7 @@ the same as for Open.</p>
 </div>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="IsAlNum">
 <code class="sig-name descname">IsAlNum</code><span class="sig-paren">(</span><em class="sig-param">val</em><span class="sig-paren">)</span><a class="headerlink" href="#IsAlNum" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns whether val is an alpha-numberic character. Val may be either an
@@ -1685,7 +1687,7 @@ code points, the third looks at the first (utf8) character in the string. It
 can execute with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="IsAlpha">
 <code class="sig-name descname">IsAlpha</code><span class="sig-paren">(</span><em class="sig-param">val</em><span class="sig-paren">)</span><a class="headerlink" href="#IsAlpha" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns whether val is an alphabetic character. Val may be either an integer,
@@ -1694,7 +1696,7 @@ points, the third looks at the first (utf8) character in the string. It can
 execute with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="IsDigit">
 <code class="sig-name descname">IsDigit</code><span class="sig-paren">(</span><em class="sig-param">val</em><span class="sig-paren">)</span><a class="headerlink" href="#IsDigit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns whether val is a digit. Val may be either an integer, a unicode or a
@@ -1703,14 +1705,14 @@ looks at the first (utf8) character in the string. It can execute with no
 current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="IsFinite">
 <code class="sig-name descname">IsFinite</code><span class="sig-paren">(</span><em class="sig-param">real</em><span class="sig-paren">)</span><a class="headerlink" href="#IsFinite" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns whether the value is finite (not infinite and not a nan). It can
 execute with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="IsFraction">
 <code class="sig-name descname">IsFraction</code><span class="sig-paren">(</span><em class="sig-param">val</em><span class="sig-paren">)</span><a class="headerlink" href="#IsFraction" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return 1 if n is a unicode fraction (either a vulgar fraction or other
@@ -1718,7 +1720,7 @@ fraction) as described by www.unicode.org. Return 0 if there is no fraction
 for this value. It can execute with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="IsHexDigit">
 <code class="sig-name descname">IsHexDigit</code><span class="sig-paren">(</span><em class="sig-param">val</em><span class="sig-paren">)</span><a class="headerlink" href="#IsHexDigit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns whether val is a hex-digit. Val may be either an integer, a unicode
@@ -1727,7 +1729,7 @@ third looks at the first (utf8) character in the string. It can execute with
 no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="IsLigature">
 <code class="sig-name descname">IsLigature</code><span class="sig-paren">(</span><em class="sig-param">val</em><span class="sig-paren">)</span><a class="headerlink" href="#IsLigature" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return 1 if n is a ligature as described by www.unicode.org. Return 0 if
@@ -1735,7 +1737,7 @@ there is no unicode ligature for this value. It can execute with no current
 font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="IsLower">
 <code class="sig-name descname">IsLower</code><span class="sig-paren">(</span><em class="sig-param">val</em><span class="sig-paren">)</span><a class="headerlink" href="#IsLower" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns whether val is a lower case letter. Val may be either an integer, a
@@ -1744,13 +1746,13 @@ the third looks at the first (utf8) character in the string. It can execute
 with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="IsNan">
 <code class="sig-name descname">IsNan</code><span class="sig-paren">(</span><em class="sig-param">real</em><span class="sig-paren">)</span><a class="headerlink" href="#IsNan" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns whether the value is a nan. It can execute with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="IsOtherFraction">
 <code class="sig-name descname">IsOtherFraction</code><span class="sig-paren">(</span><em class="sig-param">val</em><span class="sig-paren">)</span><a class="headerlink" href="#IsOtherFraction" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return 1 if n is a unicode fraction (not defined as vulgar fraction) as
@@ -1758,7 +1760,7 @@ described by www.unicode.org. Return 0 if there is no fraction for this
 value. It can execute with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="IsSpace">
 <code class="sig-name descname">IsSpace</code><span class="sig-paren">(</span><em class="sig-param">val</em><span class="sig-paren">)</span><a class="headerlink" href="#IsSpace" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns whether val is a space. Val may be either an integer, a
@@ -1767,7 +1769,7 @@ the third looks at the first (utf8) character in the string. It can execute
 with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="IsUpper">
 <code class="sig-name descname">IsUpper</code><span class="sig-paren">(</span><em class="sig-param">val</em><span class="sig-paren">)</span><a class="headerlink" href="#IsUpper" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns whether val is an upper case letter. Val may be either an integer, a
@@ -1776,7 +1778,7 @@ the third looks at the first (utf8) character in the string. It can execute
 with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="IsVulgarFraction">
 <code class="sig-name descname">IsVulgarFraction</code><span class="sig-paren">(</span><em class="sig-param">val</em><span class="sig-paren">)</span><a class="headerlink" href="#IsVulgarFraction" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return 1 if n is a unicode vulgar fraction as described by www.unicode.org.
@@ -1784,7 +1786,7 @@ Return 0 if there is no fraction for this value. It can execute with no
 current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Italic">
 <code class="sig-name descname">Italic</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">angle</em><span class="optional">[</span><span class="optional">[</span>, <em class="sig-param">xscale</em><span class="optional">[</span>, <em class="sig-param">flags</em><span class="optional">[</span>, <em class="sig-param">serif</em><span class="optional">[</span>, <em class="sig-param">bearings</em><span class="optional">[</span>, <em class="sig-param">stems</em><span class="optional">[</span>, <em class="sig-param">counters</em><span class="optional">[</span>, <em class="sig-param">lcstems</em><span class="optional">[</span>, <em class="sig-param">lccounters</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Italic" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts the selected glyphs to italics, similar to the
@@ -1883,14 +1885,14 @@ amount specified for counters, above.</p>
 
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Join">
 <code class="sig-name descname">Join</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">fudge</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Join" title="Permalink to this definition">¶</a></dt>
 <dd><p>Joins open paths in selected glyphs. If fudge is specified then the endpoints
 only need to be within fudge em-units of each other to be merged.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="LoadEncodingFile">
 <code class="sig-name descname">LoadEncodingFile</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="optional">[</span>, <em class="sig-param">encname</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#LoadEncodingFile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reads an encoding file and stores it in FontForge’s list of possible
@@ -1900,14 +1902,14 @@ more info. When loading encodings in Unicode consortium format an encname has
 to be specified or the encoding will be ignored.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="LoadNamelist">
 <code class="sig-name descname">LoadNamelist</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="sig-paren">)</span><a class="headerlink" href="#LoadNamelist" title="Permalink to this definition">¶</a></dt>
 <dd><p>Will load the namelist stored in the given file. It can execute with no
 current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="LoadNamelistDir">
 <code class="sig-name descname">LoadNamelistDir</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">directory-name</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#LoadNamelistDir" title="Permalink to this definition">¶</a></dt>
 <dd><p>Searches the given directory for things that look like fontforge namelists
@@ -1915,7 +1917,7 @@ and loads them. If directory is omitted then it will load the default
 directory. It can execute with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="LoadPrefs">
 <code class="sig-name descname">LoadPrefs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#LoadPrefs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Loads the user’s preferences. This used to happen automatically at startup.
@@ -1923,7 +1925,7 @@ Now it happens automatically when the UI is started, but scripts must
 request. It can execute with no current font. it.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="LoadStringFromFile">
 <code class="sig-name descname">LoadStringFromFile</code><span class="sig-paren">(</span><em class="sig-param">&quot;filename&quot;</em><span class="sig-paren">)</span><a class="headerlink" href="#LoadStringFromFile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reads the entire file into a string. Returns a null string for a non-existant
@@ -1933,7 +1935,7 @@ itself, fontforge will think the string ends there. It can execute with no
 current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="LoadTableFromFile">
 <code class="sig-name descname">LoadTableFromFile</code><span class="sig-paren">(</span><em class="sig-param">tag</em>, <em class="sig-param">filename</em><span class="sig-paren">)</span><a class="headerlink" href="#LoadTableFromFile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Both arguments should be strings, the first should be a 4 letter table tag.
@@ -1941,27 +1943,27 @@ The file will be read and preserved in the font as the contents of the table
 with the specified tag. Don’t use a tag that ff thinks it understands!</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Log">
 <code class="sig-name descname">Log</code><span class="sig-paren">(</span><em class="sig-param">val</em><span class="sig-paren">)</span><a class="headerlink" href="#Log" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the natural log of val. It can execute with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="LookupStoreLigatureInAfm">
 <code class="sig-name descname">LookupStoreLigatureInAfm</code><span class="sig-paren">(</span><em class="sig-param">lookup-name</em>, <em class="sig-param">store-it</em><span class="sig-paren">)</span><a class="headerlink" href="#LookupStoreLigatureInAfm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets whether the data in this ligature lookup should be stored in an afm
 file.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="LookupSetFeatureList">
 <code class="sig-name descname">LookupSetFeatureList</code><span class="sig-paren">(</span><em class="sig-param">lookup-name</em>, <em class="sig-param">feature-script-lang-array</em><span class="sig-paren">)</span><a class="headerlink" href="#LookupSetFeatureList" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the feature list of indicated lookup. The feature-script-lang array is
 described at <a class="reference internal" href="#AddLookup" title="AddLookup"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">AddLookup()</span></code></a>.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="MergeFonts">
 <code class="sig-name descname">MergeFonts</code><span class="sig-paren">(</span><em class="sig-param">other-font-name</em><span class="optional">[</span>, <em class="sig-param">flags</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#MergeFonts" title="Permalink to this definition">¶</a></dt>
 <dd><p>Loads other-font-name, and extracts any glyphs from it which are not in the
@@ -1970,20 +1972,20 @@ same as that for Open. Currently the only relevant flag is to say that you do
 have a license to use a font with fstype=2.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="MergeFeature">
 <code class="sig-name descname">MergeFeature</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="sig-paren">)</span><a class="headerlink" href="#MergeFeature" title="Permalink to this definition">¶</a></dt>
 <dd><p>Loads Feature and lookup info out of a feature file or kerning info from
 either an afm or a tfm file and merges it into the current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="MergeKern">
 <code class="sig-name descname">MergeKern</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="sig-paren">)</span><a class="headerlink" href="#MergeKern" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deprecated name for <a class="reference internal" href="#MergeFeature" title="MergeFeature"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">MergeFeature()</span></code></a>.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="MergeLookups">
 <code class="sig-name descname">MergeLookups</code><span class="sig-paren">(</span><em class="sig-param">lookup-name1</em>, <em class="sig-param">lookup-name2</em><span class="sig-paren">)</span><a class="headerlink" href="#MergeLookups" title="Permalink to this definition">¶</a></dt>
 <dd><p>The lookups must be of the same type. All subtables from lookup-name2 will be
@@ -1991,7 +1993,7 @@ moved to lookup-name1, the features list of lookup-name2 will be merged with
 that of lookup-name1, and lookup-name2 will be removed.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="MergeLookupSubtables">
 <code class="sig-name descname">MergeLookupSubtables</code><span class="sig-paren">(</span><em class="sig-param">subtable-name1</em>, <em class="sig-param">subtable-name2</em><span class="sig-paren">)</span><a class="headerlink" href="#MergeLookupSubtables" title="Permalink to this definition">¶</a></dt>
 <dd><p>The subtables must be in the same lookup. Not all lookup types allow their
@@ -2000,7 +2002,7 @@ classes may not be (kerning pairs may be)). Any information bound to
 subtable2 will be bound to subtable1 and subtable2 will be removed.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="MMAxisBounds">
 <code class="sig-name descname">MMAxisBounds</code><span class="sig-paren">(</span><em class="sig-param">axis</em><span class="sig-paren">)</span><a class="headerlink" href="#MMAxisBounds" title="Permalink to this definition">¶</a></dt>
 <dd><p>Axis is an integer less than the number of axes in the mm font. Returns an
@@ -2011,13 +2013,13 @@ and ff doesn’t support real values).</p>
 true multiple master fonts).</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="MMAxisNames">
 <code class="sig-name descname">MMAxisNames</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MMAxisNames" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an array containing the names of all axes in a multi master set.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="MMBlendToNewFont">
 <code class="sig-name descname">MMBlendToNewFont</code><span class="sig-paren">(</span><em class="sig-param">weights</em><span class="sig-paren">)</span><a class="headerlink" href="#MMBlendToNewFont" title="Permalink to this definition">¶</a></dt>
 <dd><p>Weights is an array of integers, one for each axis. Each value should be
@@ -2026,7 +2028,7 @@ real numbers). This command creates a completely new font by blending the mm
 font and sets the current font to the new font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="MMChangeInstance">
 <code class="sig-name descname">MMChangeInstance</code><span class="sig-paren">(</span><em class="sig-param">instance</em><span class="sig-paren">)</span><a class="headerlink" href="#MMChangeInstance" title="Permalink to this definition">¶</a></dt>
 <dd><p>Where instance is either a font name or a small integer. If passed a string
@@ -2036,7 +2038,7 @@ one. If passed a small integer, then -1 indicates the weighted font and
 values between [0,$mmcount) represent that specific instance in the font set.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="MMChangeWeight">
 <code class="sig-name descname">MMChangeWeight</code><span class="sig-paren">(</span><em class="sig-param">weights</em><span class="sig-paren">)</span><a class="headerlink" href="#MMChangeWeight" title="Permalink to this definition">¶</a></dt>
 <dd><p>Weights is an array of integers, one for each axis. Each value should be
@@ -2045,26 +2047,26 @@ real numbers). This command changes the current multiple master font to have
 a different default weight, and sets that to be the current instance.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="MMInstanceNames">
 <code class="sig-name descname">MMInstanceNames</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MMInstanceNames" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an array containing the names of all instance fonts in a multi master
 set.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="MMWeightedName">
 <code class="sig-name descname">MMWeightedName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MMWeightedName" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the name of the weighted font in a multi master set.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Move">
 <code class="sig-name descname">Move</code><span class="sig-paren">(</span><em class="sig-param">delta-x</em>, <em class="sig-param">delta-y</em><span class="sig-paren">)</span><a class="headerlink" href="#Move" title="Permalink to this definition">¶</a></dt>
 <dd><p>All selected glyphs will have their points moved the given amount.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="MoveReference">
 <code class="sig-name descname">MoveReference</code><span class="sig-paren">(</span><em class="sig-param">delta-x,delta-y,[refname/ref-unicode]+</em><span class="sig-paren">)</span><a class="headerlink" href="#MoveReference" title="Permalink to this definition">¶</a></dt>
 <dd><p>References may be identified either by a string containing the name of the
@@ -2081,7 +2083,7 @@ by the specified offsets.</p>
 they currently are</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="MultipleEncodingsToReferences">
 <code class="sig-name descname">MultipleEncodingsToReferences</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MultipleEncodingsToReferences" title="Permalink to this definition">¶</a></dt>
 <dd><p>If any selected glyphs have multiple encodings then one of these encodings
@@ -2091,7 +2093,7 @@ effect of <a class="reference internal" href="#SameGlyphAs" title="SameGlyphAs">
 <p>MetaData, such as advanced typographic features, are not copied.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="NearlyHvCps">
 <code class="sig-name descname">NearlyHvCps</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">error</em><span class="optional">[</span>, <em class="sig-param">err-denom</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#NearlyHvCps" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks for control points which are almost, but not quite horzontal or
@@ -2107,7 +2109,7 @@ vertical (where almost means (say) that
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="NearlyHvLines">
 <code class="sig-name descname">NearlyHvLines</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">error</em><span class="optional">[</span>, <em class="sig-param">err-denom</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#NearlyHvLines" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks for lines which are almost, but not quite horzontal or vertical (where
@@ -2123,7 +2125,7 @@ where error is either:</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="NearlyLines">
 <code class="sig-name descname">NearlyLines</code><span class="sig-paren">(</span><em class="sig-param">error</em><span class="sig-paren">)</span><a class="headerlink" href="#NearlyLines" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks for splines that are nearly linear, and makes them so. A spline is
@@ -2131,20 +2133,20 @@ nearly linear if the maximum deviation of the spline from the line between
 the spline’s endpoints is less than error.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="NameFromUnicode">
 <code class="sig-name descname">NameFromUnicode</code><span class="sig-paren">(</span><em class="sig-param">uni</em><span class="optional">[</span>, <em class="sig-param">namelist</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#NameFromUnicode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a glyph name given a unicode code point. If a namelist is specified
 then the name will come from it. It can execute with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="New">
 <code class="sig-name descname">New</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#New" title="Permalink to this definition">¶</a></dt>
 <dd><p>This creates a new font. It can execute with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="NonLinearTransform">
 <code class="sig-name descname">NonLinearTransform</code><span class="sig-paren">(</span><em class="sig-param">x-expression</em>, <em class="sig-param">y-expression</em><span class="sig-paren">)</span><a class="headerlink" href="#NonLinearTransform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Takes two string arguments which must contain valid expressions of x and y
@@ -2173,7 +2175,7 @@ and transforms all selected glyphs using those expressions.</p>
 <code class="docutils literal notranslate"><span class="pre">configure-fontforge.h</span></code> and then rebuild FontForge.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Open">
 <code class="sig-name descname">Open</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="optional">[</span>, <em class="sig-param">flags</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Open" title="Permalink to this definition">¶</a></dt>
 <dd><p>This makes the font named by filename be the current font. If filename has
@@ -2204,7 +2206,7 @@ application using your OS.</p>
 </ul>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Ord">
 <code class="sig-name descname">Ord</code><span class="sig-paren">(</span><em class="sig-param">string</em><span class="optional">[</span>, <em class="sig-param">pos</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Ord" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an array of integers representing the bytes in the string. If pos is
@@ -2213,7 +2215,7 @@ will return the integer representing that byte in the string. It can execute
 with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Outline">
 <code class="sig-name descname">Outline</code><span class="sig-paren">(</span><em class="sig-param">width</em><span class="sig-paren">)</span><a class="headerlink" href="#Outline" title="Permalink to this definition">¶</a></dt>
 <dd><p>Strokes all selected glyphs with a stroke of the specified width (internal to
@@ -2221,34 +2223,34 @@ the glyphs). The bounding box of the glyph will not change. In other words it
 produces what the mac calls the “Outline Style”.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="OverlapIntersect">
 <code class="sig-name descname">OverlapIntersect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#OverlapIntersect" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes everything but the intersection.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt>
 <code class="sig-name descname">Paste Into</code></dt>
 <dd><p>Copies the clipboard into the current font (merging with what was there
 before)</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Paste">
 <code class="sig-name descname">Paste</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Paste" title="Permalink to this definition">¶</a></dt>
 <dd><p>Copies the clipboard into the selected glyphs of the current font (removing
 what was there before)</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="PasteWithOffset">
 <code class="sig-name descname">PasteWithOffset</code><span class="sig-paren">(</span><em class="sig-param">xoff</em>, <em class="sig-param">yoff</em><span class="sig-paren">)</span><a class="headerlink" href="#PasteWithOffset" title="Permalink to this definition">¶</a></dt>
 <dd><p>Translates the clipboard by xoff,yoff before doing a PasteInto(). Can be used
 to build accented glyphs.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="PositionReference">
 <code class="sig-name descname">PositionReference</code><span class="sig-paren">(</span><em class="sig-param">x,y,[refname/ref-unicode]+</em><span class="sig-paren">)</span><a class="headerlink" href="#PositionReference" title="Permalink to this definition">¶</a></dt>
 <dd><p>References may be identified either by a string containing the name of the
@@ -2265,7 +2267,7 @@ specified location.</p>
 circumflex is</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="PostNotice">
 <code class="sig-name descname">PostNotice</code><span class="sig-paren">(</span><em class="sig-param">str</em><span class="sig-paren">)</span><a class="headerlink" href="#PostNotice" title="Permalink to this definition">¶</a></dt>
 <dd><p>When run from the UI will put up a window displaying the string (the window
@@ -2274,13 +2276,13 @@ from the command line will write the string to stderr. It can execute with no
 current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Pow">
 <code class="sig-name descname">Pow</code><span class="sig-paren">(</span><em class="sig-param">val1</em>, <em class="sig-param">val2</em><span class="sig-paren">)</span><a class="headerlink" href="#Pow" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns val1:sup:<cite>val2</cite>. It can execute with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="PreloadCidmap">
 <code class="sig-name descname">PreloadCidmap</code><span class="sig-paren">(</span><em class="sig-param">filename</em>, <em class="sig-param">registry</em>, <em class="sig-param">ordering</em>, <em class="sig-param">supplement</em><span class="sig-paren">)</span><a class="headerlink" href="#PreloadCidmap" title="Permalink to this definition">¶</a></dt>
 <dd><p>Loads a user defined cidmap file for the specified ROS. All arguments except
@@ -2288,14 +2290,14 @@ the last should be strings while supplement should be an integer. This can
 execute without a font loaded.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Print">
 <code class="sig-name descname">Print</code><span class="sig-paren">(</span><em class="sig-param">arg1</em>, <em class="sig-param">arg2</em>, <em class="sig-param">arg3</em>, <em class="sig-param">...</em><span class="sig-paren">)</span><a class="headerlink" href="#Print" title="Permalink to this definition">¶</a></dt>
 <dd><p>This corresponds to no menu item. It will print all of its arguments to
 stdout. It can execute with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="PrintFont">
 <code class="sig-name descname">PrintFont</code><span class="sig-paren">(</span><em class="sig-param">type</em><span class="optional">[</span>, <em class="sig-param">pointsize</em><span class="optional">[</span>, <em class="sig-param">sample-text/filename</em><span class="optional">[</span>, <em class="sig-param">output-file</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#PrintFont" title="Permalink to this definition">¶</a></dt>
 <dd><p>Prints the current font according to the <a class="reference internal" href="#PrintSetup" title="PrintSetup"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">PrintSetup()</span></code></a>. The values
@@ -2319,7 +2321,7 @@ omitted argument will cause FontForge to use a default value.</p>
 then the fourth argument provides the filename of the output file.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="PrintSetup">
 <code class="sig-name descname">PrintSetup</code><span class="sig-paren">(</span><em class="sig-param">type</em><span class="optional">[</span>, <em class="sig-param">printer</em><span class="optional">[</span>, <em class="sig-param">width</em>, <em class="sig-param">height</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#PrintSetup" title="Permalink to this definition">¶</a></dt>
 <dd><p>Allows you to configure the print command. Type may be a value between 0 and
@@ -2342,7 +2344,7 @@ respectively. Units are in 1/72 inches (almost points), so 8.5x11” paper is
 612,792 and A4 paper is (about) 595,842.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="PrivateGuess">
 <code class="sig-name descname">PrivateGuess</code><span class="sig-paren">(</span><em class="sig-param">key</em><span class="sig-paren">)</span><a class="headerlink" href="#PrivateGuess" title="Permalink to this definition">¶</a></dt>
 <dd><p>key should be a string containing the name of a standard thing in the PS
@@ -2350,20 +2352,20 @@ Private dictionary that fontforge can guess a value for. “BlueValues” for
 example.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Quit">
 <code class="sig-name descname">Quit</code><span class="sig-paren">(</span><em class="sig-param">status</em><span class="sig-paren">)</span><a class="headerlink" href="#Quit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Causes FontForge to exit with the given status (no attempt is made to save
 unsaved files). This command can execute with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Rand">
 <code class="sig-name descname">Rand</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Rand" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns a random integer. It can execute with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="ReadOtherSubrsFile">
 <code class="sig-name descname">ReadOtherSubrsFile</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="sig-paren">)</span><a class="headerlink" href="#ReadOtherSubrsFile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reads new PostScript subroutines to be used in the OtherSubrs array of a
@@ -2402,13 +2404,13 @@ meaning.</p></li>
 <p>It can execute with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Real">
 <code class="sig-name descname">Real</code><span class="sig-paren">(</span><em class="sig-param">int</em><span class="sig-paren">)</span><a class="headerlink" href="#Real" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts an integer to a real number. It can execute with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Reencode">
 <code class="sig-name descname">Reencode</code><span class="sig-paren">(</span><em class="sig-param">encoding-name</em><span class="optional">[</span>, <em class="sig-param">force</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Reencode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reencodes the current font into the given encoding which may be:</p>
@@ -2437,39 +2439,39 @@ and then name it “fi”.</p>
 </div>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="RemoveAllKerns">
 <code class="sig-name descname">RemoveAllKerns</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#RemoveAllKerns" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes all kern pairs and classes from the current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="RemoveAllVKerns">
 <code class="sig-name descname">RemoveAllVKerns</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#RemoveAllVKerns" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes all vertical kern pairs and classes from the current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="RemoveAnchorClass">
 <code class="sig-name descname">RemoveAnchorClass</code><span class="sig-paren">(</span><em class="sig-param">name</em><span class="sig-paren">)</span><a class="headerlink" href="#RemoveAnchorClass" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes the named AnchorClass (and all associated points) from the font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="RemoveLookup">
 <code class="sig-name descname">RemoveLookup</code><span class="sig-paren">(</span><em class="sig-param">lookup-name</em><span class="optional">[</span>, <em class="sig-param">remove_acs</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#RemoveLookup" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove the lookup (and any subtables within it). remove_acs specifies to
 remove associated anchor classes and points.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="RemoveLookupSubtable">
 <code class="sig-name descname">RemoveLookupSubtable</code><span class="sig-paren">(</span><em class="sig-param">subtable-name</em><span class="optional">[</span>, <em class="sig-param">remove_acs</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#RemoveLookupSubtable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove the subtable. remove_acs specifies to remove associated anchor classes
 and points.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="RemovePosSub">
 <code class="sig-name descname">RemovePosSub</code><span class="sig-paren">(</span><em class="sig-param">subtable-name</em><span class="sig-paren">)</span><a class="headerlink" href="#RemovePosSub" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove any positionings or substitutions from the selected glyphs that are
@@ -2477,7 +2479,7 @@ controlled by the named subtable. If the subtable name is “*” then all are
 removed.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="RemoveDetachedGlyphs">
 <code class="sig-name descname">RemoveDetachedGlyphs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#RemoveDetachedGlyphs" title="Permalink to this definition">¶</a></dt>
 <dd><p>If this font contains any glyphs which do not have an encoding slot then
@@ -2485,32 +2487,32 @@ those glyphs will be removed from the font. In other words any glyph not
 displayed in the fontview will be removed.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="RemoveOverlap">
 <code class="sig-name descname">RemoveOverlap</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#RemoveOverlap" title="Permalink to this definition">¶</a></dt>
 <dd><p>Does the obvious.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="RemovePreservedTable">
 <code class="sig-name descname">RemovePreservedTable</code><span class="sig-paren">(</span><em class="sig-param">tag</em><span class="sig-paren">)</span><a class="headerlink" href="#RemovePreservedTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Searches for a preserved table with the given tag, and removes it from the
 font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="RenameGlyphs">
 <code class="sig-name descname">RenameGlyphs</code><span class="sig-paren">(</span><em class="sig-param">namelist-name</em><span class="sig-paren">)</span><a class="headerlink" href="#RenameGlyphs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Renames all the glyphs in the current font according to the namelist.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="ReplaceCharCounterMasks">
 <code class="sig-name descname">ReplaceCharCounterMasks</code><span class="sig-paren">(</span><em class="sig-param">array</em><span class="sig-paren">)</span><a class="headerlink" href="#ReplaceCharCounterMasks" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deprecated name for <a class="reference internal" href="#ReplaceGlyphCounterMasks" title="ReplaceGlyphCounterMasks"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">ReplaceGlyphCounterMasks()</span></code></a></p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="ReplaceGlyphCounterMasks">
 <code class="sig-name descname">ReplaceGlyphCounterMasks</code><span class="sig-paren">(</span><em class="sig-param">array</em><span class="sig-paren">)</span><a class="headerlink" href="#ReplaceGlyphCounterMasks" title="Permalink to this definition">¶</a></dt>
 <dd><p>This requires that there be exactly one glyph selected. It will create a set
@@ -2525,13 +2527,13 @@ corresponds to the first horizontal stem hint, Array[i][0]&amp;0x40 corresponds
 to the second, Array[i][1]&amp;0x80 corresponds to the eighth hint, etc.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="ReplaceCvtAt">
 <code class="sig-name descname">ReplaceCvtAt</code><span class="sig-paren">(</span><em class="sig-param">index</em>, <em class="sig-param">value</em><span class="sig-paren">)</span><a class="headerlink" href="#ReplaceCvtAt" title="Permalink to this definition">¶</a></dt>
 <dd><p>Change the cvt table at the given index to have the new value.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="ReplaceWithReference">
 <code class="sig-name descname">ReplaceWithReference</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">fudge</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#ReplaceWithReference" title="Permalink to this definition">¶</a></dt>
 <dd><p>Finds any glyph which contains an inline copy of one of the selected glyphs,
@@ -2544,19 +2546,19 @@ fudge (=arg1/arg2). Left over from the days when ff did not support real
 numbers.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Revert">
 <code class="sig-name descname">Revert</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Revert" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reverts the current font to the last version.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="RevertToBackup">
 <code class="sig-name descname">RevertToBackup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#RevertToBackup" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reverts the current font to a backup sfd file (if any)</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Rotate">
 <code class="sig-name descname">Rotate</code><span class="sig-paren">(</span><em class="sig-param">angle</em><span class="optional">[</span>, <em class="sig-param">ox</em>, <em class="sig-param">oy</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Rotate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Rotates all selected glyph the specified number of degrees. If the last two
@@ -2564,7 +2566,7 @@ args are specified they provide the origin of the rotation, otherwise the
 center of the glyph is used.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Round">
 <code class="sig-name descname">Round</code><span class="sig-paren">(</span><em class="sig-param">real</em><span class="sig-paren">)</span><a class="headerlink" href="#Round" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts a real number to an integer by rounding to the nearest integer. It
@@ -2572,7 +2574,7 @@ can execute with no current font.</p>
 <p>See Also <a class="reference internal" href="#Ceil" title="Ceil"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Ceil()</span></code></a>, <a class="reference internal" href="#Int" title="Int"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Int()</span></code></a> and <a class="reference internal" href="#Floor" title="Floor"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Floor()</span></code></a>.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="RoundToCluster">
 <code class="sig-name descname">RoundToCluster</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">within</em><span class="optional">[</span>, <em class="sig-param">max</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#RoundToCluster" title="Permalink to this definition">¶</a></dt>
 <dd><p>The first two provide a fraction that indicates a value within which similar
@@ -2587,7 +2589,7 @@ the center point it will go if there are a chain of points each within
 .1 of the next, and none is more than .5 from the center.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="RoundToInt">
 <code class="sig-name descname">RoundToInt</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">factor</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#RoundToInt" title="Permalink to this definition">¶</a></dt>
 <dd><p>Rounds all points/hints/reference-offsets to be integers. If the “factor”
@@ -2595,7 +2597,7 @@ argument is specified then it rounds like <code class="docutils literal notransl
 other words if you set factor to 100 then it will round to hundredths.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SameGlyphAs">
 <code class="sig-name descname">SameGlyphAs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SameGlyphAs" title="Permalink to this definition">¶</a></dt>
 <dd><p>If the clipboard contains a reference to a single glyph then this makes all
@@ -2607,7 +2609,7 @@ work out the unicode code point. But that will fail if a glyph has two
 unicode code points associated with it).</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Save">
 <code class="sig-name descname">Save</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">filename</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Save" title="Permalink to this definition">¶</a></dt>
 <dd><p>If no filename is specified then this saves the current font back into its
@@ -2618,7 +2620,7 @@ filename.</p>
 SplineFont Directory.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SavePrefs">
 <code class="sig-name descname">SavePrefs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SavePrefs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save the current state of preferences. This used to happen when SetPref was
@@ -2626,7 +2628,7 @@ called, now a script must request it explicitly. It can execute with no
 current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SaveTableToFile">
 <code class="sig-name descname">SaveTableToFile</code><span class="sig-paren">(</span><em class="sig-param">tag</em>, <em class="sig-param">filename</em><span class="sig-paren">)</span><a class="headerlink" href="#SaveTableToFile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Both arguments should be strings, the first should be a 4 letter table tag.
@@ -2634,7 +2636,7 @@ The list of preserved tables will be searched for a table with the given tag,
 and saved to the file.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Scale">
 <code class="sig-name descname">Scale</code><span class="sig-paren">(</span><em class="sig-param">factor[,yfactor][,ox,oy]</em><span class="sig-paren">)</span><a class="headerlink" href="#Scale" title="Permalink to this definition">¶</a></dt>
 <dd><p>All selected glyphs will be scaled (scale factors are in percent)</p>
@@ -2649,7 +2651,7 @@ center</p></li>
 </ul>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="ScaleToEm">
 <code class="sig-name descname">ScaleToEm</code><span class="sig-paren">(</span><em class="sig-param">em-size</em><span class="sig-paren">)</span><a class="headerlink" href="#ScaleToEm" title="Permalink to this definition">¶</a></dt>
 <dt>
@@ -2659,7 +2661,7 @@ in the same proportion to the new em (which is the sum of ascent and descent)
 value that it was to the old value.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Select">
 <code class="sig-name descname">Select</code><span class="sig-paren">(</span><em class="sig-param">arg1</em>, <em class="sig-param">arg2</em>, <em class="sig-param">...</em><span class="sig-paren">)</span><a class="headerlink" href="#Select" title="Permalink to this definition">¶</a></dt>
 <dd><p>This clears out the current selection, then for each pair of arguments it
@@ -2679,13 +2681,13 @@ psuedo-variable.</p></li>
 </ul>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SelectAll">
 <code class="sig-name descname">SelectAll</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SelectAll" title="Permalink to this definition">¶</a></dt>
 <dd><p>Selects all glyphs</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SelectAllInstancesOf">
 <code class="sig-name descname">SelectAllInstancesOf</code><span class="sig-paren">(</span><em class="sig-param">name1</em><span class="optional">[</span>, <em class="sig-param">...</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#SelectAllInstancesOf" title="Permalink to this definition">¶</a></dt>
 <dd><p>A glyph may be mapped to more than one encoding slot. This will select all
@@ -2693,7 +2695,7 @@ encoding slots which refer to the named glyph(s). The name may be either a
 string containing a glyph name, or a unicode code point.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SelectBitmap">
 <code class="sig-name descname">SelectBitmap</code><span class="sig-paren">(</span><em class="sig-param">size</em><span class="sig-paren">)</span><a class="headerlink" href="#SelectBitmap" title="Permalink to this definition">¶</a></dt>
 <dd><p>In a bitmap only font this selects which bitmap strike will be used for units
@@ -2704,7 +2706,7 @@ fonts then size should be set to (depth&lt;&lt;16)|pixel_size. A value of -1 for
 size deselects all bitmaps (units become em-units).</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SelectByPosSub">
 <code class="sig-name descname">SelectByPosSub</code><span class="sig-paren">(</span><em class="sig-param">lookup-subtable-name</em>, <em class="sig-param">search_type</em><span class="sig-paren">)</span><a class="headerlink" href="#SelectByPosSub" title="Permalink to this definition">¶</a></dt>
 <dd><p>Selects all glyphs affected by the lookup subtable.</p>
@@ -2716,52 +2718,52 @@ size deselects all bitmaps (units become em-units).</p>
 </ol>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SelectChanged">
 <code class="sig-name descname">SelectChanged</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">merge</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#SelectChanged" title="Permalink to this definition">¶</a></dt>
 <dd><p>Selects all changed glyphs. If merge is true, will or the current selection
 with the new one.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SelectFewer">
 <code class="sig-name descname">SelectFewer</code><span class="sig-paren">(</span><em class="sig-param">arg1</em>, <em class="sig-param">arg2</em>, <em class="sig-param">...</em><span class="sig-paren">)</span><a class="headerlink" href="#SelectFewer" title="Permalink to this definition">¶</a></dt>
 <dd><p>The same as in <a class="reference internal" href="#Select" title="Select"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Select()</span></code></a> except that it clears
 the selection on the indicated glyphs, so it reduces the current selection.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SelectFewerSingletons">
 <code class="sig-name descname">SelectFewerSingletons</code><span class="sig-paren">(</span><em class="sig-param">arg1</em>, <em class="sig-param">...</em><span class="sig-paren">)</span><a class="headerlink" href="#SelectFewerSingletons" title="Permalink to this definition">¶</a></dt>
 <dd><p>Same as <a class="reference internal" href="#SelectSingletons" title="SelectSingletons"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">SelectSingletons()</span></code></a> except it removes single glyphs from the
 current selection.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SelectGlyphsBoth">
 <code class="sig-name descname">SelectGlyphsBoth</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SelectGlyphsBoth" title="Permalink to this definition">¶</a></dt>
 <dd><p>Selects glyphs with both references and contours.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SelectGlyphsReferences">
 <code class="sig-name descname">SelectGlyphsReferences</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SelectGlyphsReferences" title="Permalink to this definition">¶</a></dt>
 <dd><p>Selects glyphs with only references.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SelectGlyphsSplines">
 <code class="sig-name descname">SelectGlyphsSplines</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SelectGlyphsSplines" title="Permalink to this definition">¶</a></dt>
 <dd><p>Selects glyphs with only contours.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SelectHintingNeeded">
 <code class="sig-name descname">SelectHintingNeeded</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">merge</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#SelectHintingNeeded" title="Permalink to this definition">¶</a></dt>
 <dd><p>Selects all glyphs which FontForge thinks need their hints updated.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SelectIf">
 <code class="sig-name descname">SelectIf</code><span class="sig-paren">(</span><em class="sig-param">arg1</em>, <em class="sig-param">arg2</em>, <em class="sig-param">...</em><span class="sig-paren">)</span><a class="headerlink" href="#SelectIf" title="Permalink to this definition">¶</a></dt>
 <dd><p>The same as Select() except that instead of signalling an error when a glyph
@@ -2775,96 +2777,96 @@ selected</p></li>
 </ul>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SelectInvert">
 <code class="sig-name descname">SelectInvert</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SelectInvert" title="Permalink to this definition">¶</a></dt>
 <dd><p>Inverts the selection.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SelectMore">
 <code class="sig-name descname">SelectMore</code><span class="sig-paren">(</span><em class="sig-param">arg1</em>, <em class="sig-param">arg2</em>, <em class="sig-param">...</em><span class="sig-paren">)</span><a class="headerlink" href="#SelectMore" title="Permalink to this definition">¶</a></dt>
 <dd><p>The same as in <a class="reference internal" href="#Select" title="Select"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Select()</span></code></a> except that it does not clear the selection
 initially, so it extends the current selection.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SelectMoreIf">
 <code class="sig-name descname">SelectMoreIf</code><span class="sig-paren">(</span><em class="sig-param">arg1</em>, <em class="sig-param">arg2</em>, <em class="sig-param">...</em><span class="sig-paren">)</span><a class="headerlink" href="#SelectMoreIf" title="Permalink to this definition">¶</a></dt>
 <dd><p>The same as in <a class="reference internal" href="#SelectMore" title="SelectMore"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">SelectMore()</span></code></a> except that it returns an error code if
 one of the glyph(s) does not exist.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SelectMoreSingletons">
 <code class="sig-name descname">SelectMoreSingletons</code><span class="sig-paren">(</span><em class="sig-param">arg1</em>, <em class="sig-param">...</em><span class="sig-paren">)</span><a class="headerlink" href="#SelectMoreSingletons" title="Permalink to this definition">¶</a></dt>
 <dd><p>Same as <a class="reference internal" href="#SelectSingletons" title="SelectSingletons"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">SelectSingletons()</span></code></a> except it adds single glyphs from the
 current selection.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SelectMoreSingletonsIf">
 <code class="sig-name descname">SelectMoreSingletonsIf</code><span class="sig-paren">(</span><em class="sig-param">arg1</em>, <em class="sig-param">...</em><span class="sig-paren">)</span><a class="headerlink" href="#SelectMoreSingletonsIf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Same as <a class="reference internal" href="#SelectMoreSingletons" title="SelectMoreSingletons"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">SelectMoreSingletons()</span></code></a> except it returns an error code if
 one of the glyph(s) does not exist.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SelectNone">
 <code class="sig-name descname">SelectNone</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SelectNone" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deselects all glyphs</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SelectSingletons">
 <code class="sig-name descname">SelectSingletons</code><span class="sig-paren">(</span><em class="sig-param">arg1</em>, <em class="sig-param">...</em><span class="sig-paren">)</span><a class="headerlink" href="#SelectSingletons" title="Permalink to this definition">¶</a></dt>
 <dd><p>Selects its arguments without looking for ranges.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SelectSingletonsIf">
 <code class="sig-name descname">SelectSingletonsIf</code><span class="sig-paren">(</span><em class="sig-param">arg1</em>, <em class="sig-param">...</em><span class="sig-paren">)</span><a class="headerlink" href="#SelectSingletonsIf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Selects its arguments without looking for ranges, and returns an error code
 if a gyph did not exist.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SelectWorthOutputting">
 <code class="sig-name descname">SelectWorthOutputting</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SelectWorthOutputting" title="Permalink to this definition">¶</a></dt>
 <dd><p>Selects all glyphs <a class="reference internal" href="#WorthOutputting" title="WorthOutputting"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">WorthOutputting()</span></code></a></p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SetCharCnt">
 <code class="sig-name descname">SetCharCnt</code><span class="sig-paren">(</span><em class="sig-param">cnt</em><span class="sig-paren">)</span><a class="headerlink" href="#SetCharCnt" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the number of encoding slots in the font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SetCharColor">
 <code class="sig-name descname">SetCharColor</code><span class="sig-paren">(</span><em class="sig-param">color</em><span class="sig-paren">)</span><a class="headerlink" href="#SetCharColor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deprecated name for <a class="reference internal" href="#SetGlyphColor" title="SetGlyphColor"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">SetGlyphColor()</span></code></a></p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SetCharComment">
 <code class="sig-name descname">SetCharComment</code><span class="sig-paren">(</span><em class="sig-param">comment</em><span class="sig-paren">)</span><a class="headerlink" href="#SetCharComment" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deprecated name for <a class="reference internal" href="#SetGlyphComment" title="SetGlyphComment"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">SetGlyphComment()</span></code></a></p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SetCharCounterMask">
 <code class="sig-name descname">SetCharCounterMask</code><span class="sig-paren">(</span><em class="sig-param">cg</em>, <em class="sig-param">hint-index</em>, <em class="sig-param">hint-index</em>, <em class="sig-param">...</em><span class="sig-paren">)</span><a class="headerlink" href="#SetCharCounterMask" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deprecated name for <a class="reference internal" href="#SetGlyphCounterMask" title="SetGlyphCounterMask"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">SetGlyphCounterMask()</span></code></a></p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SetCharName">
 <code class="sig-name descname">SetCharName</code><span class="sig-paren">(</span><em class="sig-param">name</em><span class="optional">[</span>, <em class="sig-param">set-from-name-flag</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#SetCharName" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deprecated name for <a class="reference internal" href="#SetGlyphName" title="SetGlyphName"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">SetGlyphName()</span></code></a></p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SetGasp">
 <code class="sig-name descname">SetGasp</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">ppem</em>, <em class="sig-param">flag</em><span class="optional">[</span>, <em class="sig-param">ppem2</em>, <em class="sig-param">flag</em><span class="optional">[</span>, <em class="sig-param">...</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#SetGasp" title="Permalink to this definition">¶</a></dt>
 <dd><p>With no arguments gives the font an empty gasp table.</p>
@@ -2884,7 +2886,7 @@ pixel size/flag value pairs (as above).</p>
 <p>On other values are currently documented.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SetGlyphColor">
 <code class="sig-name descname">SetGlyphColor</code><span class="sig-paren">(</span><em class="sig-param">color</em><span class="sig-paren">)</span><a class="headerlink" href="#SetGlyphColor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets any currently selected glyphs to have the given color (expressed as 24
@@ -2892,14 +2894,14 @@ bit rgb (0xff0000 is red) with the special value of -2 meaning the default
 color.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SetGlyphComment">
 <code class="sig-name descname">SetGlyphComment</code><span class="sig-paren">(</span><em class="sig-param">comment</em><span class="sig-paren">)</span><a class="headerlink" href="#SetGlyphComment" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the currently selected glyph to have the given comment. The comment is
 converted via the current encoding to unicode.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SetGlyphCounterMask">
 <code class="sig-name descname">SetGlyphCounterMask</code><span class="sig-paren">(</span><em class="sig-param">cg</em>, <em class="sig-param">hint-index</em>, <em class="sig-param">hint-index</em>, <em class="sig-param">...</em><span class="sig-paren">)</span><a class="headerlink" href="#SetGlyphCounterMask" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates or sets the counter mask at index cg to contain the hints listed.
@@ -2907,7 +2909,7 @@ Hint index 0 corresponds to the first hstem hint, index 1 to the second hstem
 hint, etc. vstem hints follow hstems.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SetGlyphName">
 <code class="sig-name descname">SetGlyphName</code><span class="sig-paren">(</span><em class="sig-param">name</em><span class="optional">[</span>, <em class="sig-param">set-from-name-flag</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#SetGlyphName" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the currently selected glyph to have the given name. If
@@ -2915,55 +2917,55 @@ set-from-name-flag is absent or is present and true then it will also set the
 unicode value and the ligature string to match the name.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SetFondName">
 <code class="sig-name descname">SetFondName</code><span class="sig-paren">(</span><em class="sig-param">fondname</em><span class="sig-paren">)</span><a class="headerlink" href="#SetFondName" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the FOND name of the font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SetFontHasVerticalMetrics">
 <code class="sig-name descname">SetFontHasVerticalMetrics</code><span class="sig-paren">(</span><em class="sig-param">flag</em><span class="sig-paren">)</span><a class="headerlink" href="#SetFontHasVerticalMetrics" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets whether the font has vertical metrics or not. A 0 value means it does
 not, any other value means it does. Returns the old setting.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SetFontNames">
 <code class="sig-name descname">SetFontNames</code><span class="sig-paren">(</span><em class="sig-param">fontname</em><span class="optional">[</span>, <em class="sig-param">family</em><span class="optional">[</span>, <em class="sig-param">fullname</em><span class="optional">[</span>, <em class="sig-param">weight</em><span class="optional">[</span>, <em class="sig-param">copyright-notice</em><span class="optional">[</span>, <em class="sig-param">fontversion</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#SetFontNames" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets various postscript names associated with a font. If a name is omitted
 (or is the empty string) it will not be changed.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SetFontOrder">
 <code class="sig-name descname">SetFontOrder</code><span class="sig-paren">(</span><em class="sig-param">order</em><span class="sig-paren">)</span><a class="headerlink" href="#SetFontOrder" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the font’s order. Order must be either 2 (quadratic) or 3 (cubic). It
 returns the old order.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SetGlyphChanged">
 <code class="sig-name descname">SetGlyphChanged</code><span class="sig-paren">(</span><em class="sig-param">flag</em><span class="sig-paren">)</span><a class="headerlink" href="#SetGlyphChanged" title="Permalink to this definition">¶</a></dt>
 <dd><p>If flag is 1 sets all selected glyphs to be changed, if flag is 0 sets them
 unchanged.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SetGlyphClass">
 <code class="sig-name descname">SetGlyphClass</code><span class="sig-paren">(</span><em class="sig-param">class-name</em><span class="sig-paren">)</span><a class="headerlink" href="#SetGlyphClass" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the class on all selected glyphs to be one of “automatic”, “none”,
 “base”, “ligature”, “mark” or “component”.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SetGlyphTeX">
 <code class="sig-name descname">SetGlyphTeX</code><span class="sig-paren">(</span><em class="sig-param">height</em>, <em class="sig-param">depth</em><span class="optional">[</span>, <em class="sig-param">subpos</em>, <em class="sig-param">suppos</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#SetGlyphTeX" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the tex_height and tex_depth fields of this glyph. And the subscript pos
 and superscript pos for math fonts.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SetItalicAngle">
 <code class="sig-name descname">SetItalicAngle</code><span class="sig-paren">(</span><em class="sig-param">angle</em><span class="optional">[</span>, <em class="sig-param">denom</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#SetItalicAngle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the postscript italic angle field appropriately. If denom is specified
@@ -2971,7 +2973,7 @@ then angle will be divided by denom before setting the italic angle field (a
 hack to get real values). The angle should be in degrees.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SetKern">
 <code class="sig-name descname">SetKern</code><span class="sig-paren">(</span><em class="sig-param">ch2</em>, <em class="sig-param">offset</em><span class="optional">[</span>, <em class="sig-param">lookup-subtable-name</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#SetKern" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the kern between any selected glyphs and the glyph ch2 to be offset. The
@@ -2980,7 +2982,7 @@ representing the kern offset. You can also specify a lookup-subtable-name in
 which to put the kerning pair.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SetLBearing">
 <code class="sig-name descname">SetLBearing</code><span class="sig-paren">(</span><em class="sig-param">lbearing</em><span class="optional">[</span>, <em class="sig-param">relative</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#SetLBearing" title="Permalink to this definition">¶</a></dt>
 <dd><p>If the second argument is absent or zero then the left bearing will be set to
@@ -2991,7 +2993,7 @@ be scaled by &lt;first argument&gt;/100.0 . In bitmap only fonts see the comment
 so that guides in the background etc will be adjusted with the rest of the glyph.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SetMacStyle">
 <code class="sig-name descname">SetMacStyle</code><span class="sig-paren">(</span><em class="sig-param">val</em><span class="sig-paren">)</span><a class="headerlink" href="#SetMacStyle" title="Permalink to this definition">¶</a></dt>
 <dt>
@@ -3037,7 +3039,7 @@ of bits expressing styles as defined on the mac</p>
 various style names, as “Bold Italic Condensed”</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SetMaxpValue">
 <code class="sig-name descname">SetMaxpValue</code><span class="sig-paren">(</span><em class="sig-param">field-name</em>, <em class="sig-param">value</em><span class="sig-paren">)</span><a class="headerlink" href="#SetMaxpValue" title="Permalink to this definition">¶</a></dt>
 <dd><p>The field-name must be a string and one of:
@@ -3045,7 +3047,7 @@ various style names, as “Bold Italic Condensed”</p>
 Value must be an integer.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SetOS2Value">
 <code class="sig-name descname">SetOS2Value</code><span class="sig-paren">(</span><em class="sig-param">field-name</em>, <em class="sig-param">field-value</em><span class="sig-paren">)</span><a class="headerlink" href="#SetOS2Value" title="Permalink to this definition">¶</a></dt>
 <dd><p>This sets one of the fields of the OS/2 table to the given value. The
@@ -3083,7 +3085,7 @@ argument is not a positive value less than 0x400, error flag is set.</p>
 character ASCII string, and <code class="docutils literal notranslate"><span class="pre">Panose</span></code> takes a 10 element integer array.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SetPanose">
 <code class="sig-name descname">SetPanose</code><span class="sig-paren">(</span><em class="sig-param">array</em><span class="sig-paren">)</span><a class="headerlink" href="#SetPanose" title="Permalink to this definition">¶</a></dt>
 <dt>
@@ -3095,7 +3097,7 @@ integers and sets all the values, or it takes two integer arguments and sets</p>
 </div>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SetPref">
 <code class="sig-name descname">SetPref</code><span class="sig-paren">(</span><em class="sig-param">str</em>, <em class="sig-param">val</em><span class="optional">[</span>, <em class="sig-param">val2</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#SetPref" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the value of the preference item whose name is contained in str. If the
@@ -3103,7 +3105,7 @@ preference item has a real type then a second argument may be passed and the
 value set will be val/val2. It can execute with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SetRBearing">
 <code class="sig-name descname">SetRBearing</code><span class="sig-paren">(</span><em class="sig-param">rbearing</em><span class="optional">[</span>, <em class="sig-param">relative</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#SetRBearing" title="Permalink to this definition">¶</a></dt>
 <dd><p>If the second argument is absent or zero then the right bearing will be set
@@ -3113,7 +3115,7 @@ bearing will be scaled by &lt;first argument&gt;/100.0 . In bitmap only fonts se
 the comment at <a class="reference internal" href="#SelectBitmap" title="SelectBitmap"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">SelectBitmap()</span></code></a> about units.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SetTeXParams">
 <code class="sig-name descname">SetTeXParams</code><span class="sig-paren">(</span><em class="sig-param">type,design-size,slant,space,stretch,shrink,xheight,quad,extraspace[...]</em><span class="sig-paren">)</span><a class="headerlink" href="#SetTeXParams" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the TeX (text) font parameters for the font.</p>
@@ -3128,7 +3130,7 @@ extension.</p>
 book). If type is 3 then 15 arguments are required.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SetTTFName">
 <code class="sig-name descname">SetTTFName</code><span class="sig-paren">(</span><em class="sig-param">lang</em>, <em class="sig-param">nameid</em>, <em class="sig-param">utf8-string</em><span class="sig-paren">)</span><a class="headerlink" href="#SetTTFName" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the indicated truetype name in the MS platform. Lang must be one of the
@@ -3143,7 +3145,7 @@ the value of that entry. A null string (“”) may be used to clear an entry.</
 </div>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SetUnicodeValue">
 <code class="sig-name descname">SetUnicodeValue</code><span class="sig-paren">(</span><em class="sig-param">uni</em><span class="optional">[</span>, <em class="sig-param">set-from-value-flag</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#SetUnicodeValue" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the currently selected glyph to have the given unicode value. If
@@ -3151,14 +3153,14 @@ set-from-value-flag is absent or is present and true then it will also set
 the name and the ligature string to match the value.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SetUniqueID">
 <code class="sig-name descname">SetUniqueID</code><span class="sig-paren">(</span><em class="sig-param">value</em><span class="sig-paren">)</span><a class="headerlink" href="#SetUniqueID" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the postscript uniqueid field as requested. If you give a value of 0
 then FontForge will pick a reasonable random number for you.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SetVKern">
 <code class="sig-name descname">SetVKern</code><span class="sig-paren">(</span><em class="sig-param">ch2</em>, <em class="sig-param">offset</em><span class="optional">[</span>, <em class="sig-param">lookup-subtable-name</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#SetVKern" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the kern between any selected glyphs and the glyph ch2 to be offset. The
@@ -3167,7 +3169,7 @@ representing the kern offset. You can also specify a lookup-subtable-name in
 which to put the kerning pair.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SetVWidth">
 <code class="sig-name descname">SetVWidth</code><span class="sig-paren">(</span><em class="sig-param">vertical-width</em><span class="optional">[</span>, <em class="sig-param">relative</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#SetVWidth" title="Permalink to this definition">¶</a></dt>
 <dd><p>If the second argument is absent or zero then the vertical width will be set
@@ -3177,7 +3179,7 @@ width will be scaled by &lt;first argument&gt;/100.0 . In bitmap only fonts see 
 comment at <a class="reference internal" href="#SelectBitmap" title="SelectBitmap"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">SelectBitmap()</span></code></a> about units.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SetWidth">
 <code class="sig-name descname">SetWidth</code><span class="sig-paren">(</span><em class="sig-param">width</em><span class="optional">[</span>, <em class="sig-param">relative</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#SetWidth" title="Permalink to this definition">¶</a></dt>
 <dd><p>If the second argument is absent or zero then the width will be set to the
@@ -3187,13 +3189,13 @@ scaled by &lt;first argument&gt;/100.0 . In bitmap only fonts see the comment at
 <a class="reference internal" href="#SelectBitmap" title="SelectBitmap"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">SelectBitmap()</span></code></a> about units.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Shadow">
 <code class="sig-name descname">Shadow</code><span class="sig-paren">(</span><em class="sig-param">angle</em>, <em class="sig-param">outline-width</em>, <em class="sig-param">shadow-width</em><span class="sig-paren">)</span><a class="headerlink" href="#Shadow" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts the selected glyphs into shadowed versions of themselves.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Simplify">
 <code class="sig-name descname">Simplify</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Simplify" title="Permalink to this definition">¶</a></dt>
 <dt>
@@ -3229,20 +3231,20 @@ specifies the maximum length for lines which may be merged (anything longer
 will not be merged).</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Sin">
 <code class="sig-name descname">Sin</code><span class="sig-paren">(</span><em class="sig-param">val</em><span class="sig-paren">)</span><a class="headerlink" href="#Sin" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the sine of val. It can execute with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SizeOf">
 <code class="sig-name descname">SizeOf</code><span class="sig-paren">(</span><em class="sig-param">arr</em><span class="sig-paren">)</span><a class="headerlink" href="#SizeOf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the number of elements in an array. It can execute with no current
 font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Skew">
 <code class="sig-name descname">Skew</code><span class="sig-paren">(</span><em class="sig-param">angle</em><span class="optional">[</span>, <em class="sig-param">ox</em>, <em class="sig-param">oy</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Skew" title="Permalink to this definition">¶</a></dt>
 <dt>
@@ -3250,7 +3252,7 @@ font.</p>
 <dd><p>All selected glyphs will be skewed by the given angle.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SmallCaps">
 <code class="sig-name descname">SmallCaps</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">v-scale</em><span class="optional">[</span>, <em class="sig-param">h-scale</em><span class="optional">[</span>, <em class="sig-param">stemw-scale</em><span class="optional">[</span>, <em class="sig-param">stemh-scale</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#SmallCaps" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create small capitals from the selected glyphs. The following optional
@@ -3284,7 +3286,7 @@ defaults to the value of stemw-scale.</p>
 
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SpiroVersion">
 <code class="sig-name descname">SpiroVersion</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SpiroVersion" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the version of LibSpiro available to FontForge.</p>
@@ -3298,13 +3300,13 @@ there is a limited method to estimate versions {‘0.0’..’0.5’}.</p>
 </ul>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Sqrt">
 <code class="sig-name descname">Sqrt</code><span class="sig-paren">(</span><em class="sig-param">val</em><span class="sig-paren">)</span><a class="headerlink" href="#Sqrt" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the square root. It can execute with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Strcasecmp">
 <code class="sig-name descname">Strcasecmp</code><span class="sig-paren">(</span><em class="sig-param">str1</em>, <em class="sig-param">str2</em><span class="sig-paren">)</span><a class="headerlink" href="#Strcasecmp" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compares the two strings ignoring case, returns zero if the two are equal, a
@@ -3317,7 +3319,7 @@ when applied to two strings.</p>
 </div>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Strcasestr">
 <code class="sig-name descname">Strcasestr</code><span class="sig-paren">(</span><em class="sig-param">haystack</em>, <em class="sig-param">needle</em><span class="sig-paren">)</span><a class="headerlink" href="#Strcasestr" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the index of the first occurrence of the string needle within the
@@ -3325,7 +3327,7 @@ string haystack ignoring case in the search (or -1 if not found). It can
 execute with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Strftime">
 <code class="sig-name descname">Strftime</code><span class="sig-paren">(</span><em class="sig-param">format</em><span class="optional">[</span>, <em class="sig-param">isgmt</em><span class="optional">[</span>, <em class="sig-param">locale</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Strftime" title="Permalink to this definition">¶</a></dt>
 <dd><p>Same as the c strftime routine. By default it formats the current time in
@@ -3334,7 +3336,7 @@ will format the argument acording to the current locale, but if a locale is
 specified it will be used.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="StrJoin">
 <code class="sig-name descname">StrJoin</code><span class="sig-paren">(</span><em class="sig-param">string-array</em>, <em class="sig-param">delimiter</em><span class="sig-paren">)</span><a class="headerlink" href="#StrJoin" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a single string made by concatenating all the strings in the array
@@ -3348,27 +3350,27 @@ together with the delimiter string added after each. So:</p>
 </div>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Strlen">
 <code class="sig-name descname">Strlen</code><span class="sig-paren">(</span><em class="sig-param">str</em><span class="sig-paren">)</span><a class="headerlink" href="#Strlen" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the length of the string. It can execute with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Strrstr">
 <code class="sig-name descname">Strrstr</code><span class="sig-paren">(</span><em class="sig-param">haystack</em>, <em class="sig-param">needle</em><span class="sig-paren">)</span><a class="headerlink" href="#Strrstr" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the index of the last occurrence of the string needle within the
 string haystack (or -1 if not found). It can execute with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Strskipint">
 <code class="sig-name descname">Strskipint</code><span class="sig-paren">(</span><em class="sig-param">str</em><span class="optional">[</span>, <em class="sig-param">base</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Strskipint" title="Permalink to this definition">¶</a></dt>
 <dd><p>Parses as much of str as possible and returns the offset to the first
 character that could not be parsed. It can execute with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="StrSplit">
 <code class="sig-name descname">StrSplit</code><span class="sig-paren">(</span><em class="sig-param">str</em>, <em class="sig-param">delimiter</em><span class="optional">[</span>, <em class="sig-param">max-cnt</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#StrSplit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Splits the string at every occurance of the delimiter and produces an array
@@ -3391,14 +3393,14 @@ array</p>
 </div>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Strstr">
 <code class="sig-name descname">Strstr</code><span class="sig-paren">(</span><em class="sig-param">haystack</em>, <em class="sig-param">needle</em><span class="sig-paren">)</span><a class="headerlink" href="#Strstr" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the index of the first occurrence of the string needle within the
 string haystack (or -1 if not found). It can execute with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Strsub">
 <code class="sig-name descname">Strsub</code><span class="sig-paren">(</span><em class="sig-param">str</em>, <em class="sig-param">start</em><span class="optional">[</span>, <em class="sig-param">end</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Strsub" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a substring of the string argument. The substring begins at position
@@ -3408,13 +3410,13 @@ omitted the end of the string will be used, the first position is position
 <code class="docutils literal notranslate"><span class="pre">Strsub(&quot;abcdef&quot;,2)</span> <span class="pre">==</span> <span class="pre">&quot;cdef&quot;</span></code>. It can execute with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Strtod">
 <code class="sig-name descname">Strtod</code><span class="sig-paren">(</span><em class="sig-param">str</em><span class="sig-paren">)</span><a class="headerlink" href="#Strtod" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts a string to a real number. It can execute with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Strtol">
 <code class="sig-name descname">Strtol</code><span class="sig-paren">(</span><em class="sig-param">str</em><span class="optional">[</span>, <em class="sig-param">base</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Strtol" title="Permalink to this definition">¶</a></dt>
 <dd><p>Parses as much of str as possible and returns the integer value it
@@ -3423,18 +3425,18 @@ conversion (it defaults to 10). Behavior is as for strtol(3). It can execute
 with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="SubstitutionPoints">
 <code class="sig-name descname">SubstitutionPoints</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SubstitutionPoints" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Tan">
 <code class="sig-name descname">Tan</code><span class="sig-paren">(</span><em class="sig-param">val</em><span class="sig-paren">)</span><a class="headerlink" href="#Tan" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the tangent of val. It can execute with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="ToLower">
 <code class="sig-name descname">ToLower</code><span class="sig-paren">(</span><em class="sig-param">val</em><span class="sig-paren">)</span><a class="headerlink" href="#ToLower" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns value converted to a lower case letter. Val may be either an integer,
@@ -3443,7 +3445,7 @@ points, in the third the entire string will be converted. It can execute with
 no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="ToMirror">
 <code class="sig-name descname">ToMirror</code><span class="sig-paren">(</span><em class="sig-param">val</em><span class="sig-paren">)</span><a class="headerlink" href="#ToMirror" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts value to a mirror form (used in r2l scripts where the latin open
@@ -3453,14 +3455,14 @@ in the third the entire string will be converted. It can execute with no
 current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="ToString">
 <code class="sig-name descname">ToString</code><span class="sig-paren">(</span><em class="sig-param">arg</em><span class="sig-paren">)</span><a class="headerlink" href="#ToString" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts its argument to a string. (the output is what the Print() command
 would print) It can execute with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="ToUpper">
 <code class="sig-name descname">ToUpper</code><span class="sig-paren">(</span><em class="sig-param">val</em><span class="sig-paren">)</span><a class="headerlink" href="#ToUpper" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns value converted to an upper case letter. Val may be either an
@@ -3469,7 +3471,7 @@ code points, in the third the entire string will be converted. It can execute
 with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Transform">
 <code class="sig-name descname">Transform</code><span class="sig-paren">(</span><em class="sig-param">t1</em>, <em class="sig-param">t2</em>, <em class="sig-param">t3</em>, <em class="sig-param">t4</em>, <em class="sig-param">t5</em>, <em class="sig-param">t6</em><span class="sig-paren">)</span><a class="headerlink" href="#Transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Each argument will be divided by 100. and then all selected glyphs will be
@@ -3489,7 +3491,7 @@ overcome that limitation since, but it seemed best to leave the behavior of
 the function as it was.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="TypeOf">
 <code class="sig-name descname">TypeOf</code><span class="sig-paren">(</span><em class="sig-param">any</em><span class="sig-paren">)</span><a class="headerlink" href="#TypeOf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a string naming the type of the argument:</p>
@@ -3508,7 +3510,7 @@ see it. It is included here for completeness)</p>
 <p>It can execute with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="ucFracChartGetCnt">
 <code class="sig-name descname">ucFracChartGetCnt</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ucFracChartGetCnt" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns total count of Fractions found in the Unicode chart as described by
@@ -3519,7 +3521,7 @@ www.unicode.org. It can execute with no current font.</p>
 </div>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="ucLigChartGetCnt">
 <code class="sig-name descname">ucLigChartGetCnt</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ucLigChartGetCnt" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns total count of Ligatures found in the Unicode chart as described by
@@ -3530,7 +3532,7 @@ www.unicode.org. It can execute with no current font.</p>
 </div>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="ucLigChartGetLoc">
 <code class="sig-name descname">ucLigChartGetLoc</code><span class="sig-paren">(</span><em class="sig-param">val</em><span class="sig-paren">)</span><a class="headerlink" href="#ucLigChartGetLoc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns n for FontForge internal table Unicode val=Ligature[n]. If val does
@@ -3541,7 +3543,7 @@ not exist in table, then return -1. Can execute with no current font.</p>
 </div>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="ucLigChartGetNxt">
 <code class="sig-name descname">ucLigChartGetNxt</code><span class="sig-paren">(</span><em class="sig-param">int</em><span class="sig-paren">)</span><a class="headerlink" href="#ucLigChartGetNxt" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns FontForge internal table Unicode Ligature[n]. Return -1 if n&lt;0 or
@@ -3552,14 +3554,14 @@ n&gt;=ucLigChartGetCnt(). It can execute with no current font.</p>
 </div>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="UCodePoint">
 <code class="sig-name descname">UCodePoint</code><span class="sig-paren">(</span><em class="sig-param">int</em><span class="sig-paren">)</span><a class="headerlink" href="#UCodePoint" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts the argument to a unicode code point (a special type used in several
 commands). It can execute with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="ucOFracChartGetCnt">
 <code class="sig-name descname">ucOFracChartGetCnt</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ucOFracChartGetCnt" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns total count of non-Vulgar Fractions found in the Unicode chart as
@@ -3570,7 +3572,7 @@ described by www.unicode.org. It can execute with no current font.</p>
 </div>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="ucOFracChartGetLoc">
 <code class="sig-name descname">ucOFracChartGetLoc</code><span class="sig-paren">(</span><em class="sig-param">val</em><span class="sig-paren">)</span><a class="headerlink" href="#ucOFracChartGetLoc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns n for FontForge internal table Unicode val=OtherFraction[n]. If val
@@ -3581,7 +3583,7 @@ does not exist in table, then return -1. Can execute with no current font.</p>
 </div>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="ucOFracChartGetNxt">
 <code class="sig-name descname">ucOFracChartGetNxt</code><span class="sig-paren">(</span><em class="sig-param">int</em><span class="sig-paren">)</span><a class="headerlink" href="#ucOFracChartGetNxt" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns FontForge internal table Unicode (non-vulgar) Fraction[n]. Return -1
@@ -3592,7 +3594,7 @@ if n&lt;0 or n&gt;=ucOFracChartGetCnt(). Can execute with no current font.</p>
 </div>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="ucVulChartGetCnt">
 <code class="sig-name descname">ucVulChartGetCnt</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ucVulChartGetCnt" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns total count of Vulgar Fractions found in the Unicode chart as
@@ -3603,7 +3605,7 @@ described by www.unicode.org. It can execute with no current font.</p>
 </div>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="ucVulChartGetLoc">
 <code class="sig-name descname">ucVulChartGetLoc</code><span class="sig-paren">(</span><em class="sig-param">val</em><span class="sig-paren">)</span><a class="headerlink" href="#ucVulChartGetLoc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns n for FontForge internal table Unicode val=VulgarFraction[n]. If val
@@ -3614,7 +3616,7 @@ does not exist in table, then return -1. Can execute with no current font.</p>
 </div>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="ucVulChartGetNxt">
 <code class="sig-name descname">ucVulChartGetNxt</code><span class="sig-paren">(</span><em class="sig-param">int</em><span class="sig-paren">)</span><a class="headerlink" href="#ucVulChartGetNxt" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns FontForge internal table Unicode Vulgar Fraction[n]. Returns -1 if
@@ -3625,7 +3627,7 @@ n&lt;0 or n&gt;=ucVulChartGetCnt(). Can execute with no current font.</p>
 </div>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="UnicodeAnnotationFromLib">
 <code class="sig-name descname">UnicodeAnnotationFromLib</code><span class="sig-paren">(</span><em class="sig-param">val</em><span class="sig-paren">)</span><a class="headerlink" href="#UnicodeAnnotationFromLib" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the Unicode Annotations for this value as described by
@@ -3634,7 +3636,7 @@ library available, then return empty string “”. It can execute with no
 current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="UnicodeBlockCountFromLib">
 <code class="sig-name descname">UnicodeBlockCountFromLib</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#UnicodeBlockCountFromLib" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the number of Unicode Blocks for this list as described by
@@ -3643,7 +3645,7 @@ www.unicode.org. Currently, the blocks are {0..233}, spanning unicode values
 execute with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="UnicodeBlockEndFromLib">
 <code class="sig-name descname">UnicodeBlockEndFromLib</code><span class="sig-paren">(</span><em class="sig-param">val</em><span class="sig-paren">)</span><a class="headerlink" href="#UnicodeBlockEndFromLib" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the Unicode Block end value as described by www.unicode.org.
@@ -3652,7 +3654,7 @@ Currently, the blocks are {0..233}, spanning unicode values
 -1. This can execute with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="UnicodeBlockNameFromLib">
 <code class="sig-name descname">UnicodeBlockNameFromLib</code><span class="sig-paren">(</span><em class="sig-param">val</em><span class="sig-paren">)</span><a class="headerlink" href="#UnicodeBlockNameFromLib" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the Unicode Block Name as described by www.unicode.org. Currently,
@@ -3661,7 +3663,7 @@ is no value, or no library available, then return empty string “”. This can
 execute with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="UnicodeBlockStartFromLib">
 <code class="sig-name descname">UnicodeBlockStartFromLib</code><span class="sig-paren">(</span><em class="sig-param">val</em><span class="sig-paren">)</span><a class="headerlink" href="#UnicodeBlockStartFromLib" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the Unicode Block start value as described by www.unicode.org.
@@ -3670,7 +3672,7 @@ Currently, the blocks are {0..233}, spanning unicode values
 -1. This can execute with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="UnicodeFromName">
 <code class="sig-name descname">UnicodeFromName</code><span class="sig-paren">(</span><em class="sig-param">name</em><span class="sig-paren">)</span><a class="headerlink" href="#UnicodeFromName" title="Permalink to this definition">¶</a></dt>
 <dd><p>Looks the string “name” up in FontForge’s database of commonly used glyph
@@ -3679,7 +3681,7 @@ found. This does <em>not</em> check the current font (if any). It can execute wi
 no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="UnicodeNameFromLib">
 <code class="sig-name descname">UnicodeNameFromLib</code><span class="sig-paren">(</span><em class="sig-param">val</em><span class="sig-paren">)</span><a class="headerlink" href="#UnicodeNameFromLib" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the Unicode Name for this value as described by www.unicode.org. If
@@ -3687,7 +3689,7 @@ there is no unicode name for this value, or no library available, then return
 empty string “”. It can execute with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="UnicodeNamesListVersion">
 <code class="sig-name descname">UnicodeNamesListVersion</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#UnicodeNamesListVersion" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the Unicode Nameslist Version (as described by www.unicode.org).
@@ -3700,7 +3702,7 @@ libuninameslist ver_0.3.20130501 or later, else it returns empty string “”.
 This can execute with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="UnicodeNames2GetCntFromLib">
 <code class="sig-name descname">UnicodeNames2GetCntFromLib</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#UnicodeNames2GetCntFromLib" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the Total Count of all Names that were corrected with a new name.
@@ -3709,7 +3711,7 @@ Unicode Nameslist version. If there is no libuninameslist ver 0.5 or later
 available, then return -1</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="UnicodeNames2GetNxtFromLib">
 <code class="sig-name descname">UnicodeNames2GetNxtFromLib</code><span class="sig-paren">(</span><em class="sig-param">val</em><span class="sig-paren">)</span><a class="headerlink" href="#UnicodeNames2GetNxtFromLib" title="Permalink to this definition">¶</a></dt>
 <dd><p>Errors and corrections happen, therefore names can be corrected in the next
@@ -3719,7 +3721,7 @@ in libuninameslist that was corrected to a new name. If there is no
 libuninameslist ver 0.5 or later, then return -1.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="UnicodeNames2NxtUniFromLib">
 <code class="sig-name descname">UnicodeNames2NxtUniFromLib</code><span class="sig-paren">(</span><em class="sig-param">val</em><span class="sig-paren">)</span><a class="headerlink" href="#UnicodeNames2NxtUniFromLib" title="Permalink to this definition">¶</a></dt>
 <dd><p>Errors and corrections happen, therefore names can be corrected in the next
@@ -3729,7 +3731,7 @@ The internal table of Unicode values is of size UnicodeNames2GetCntFromLib().
 If there is no libuninameslist ver 0.5 or later, then return -1.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="UnicodeNames2FrmTabFromLib">
 <code class="sig-name descname">UnicodeNames2FrmTabFromLib</code><span class="sig-paren">(</span><em class="sig-param">val</em><span class="sig-paren">)</span><a class="headerlink" href="#UnicodeNames2FrmTabFromLib" title="Permalink to this definition">¶</a></dt>
 <dd><p>Errors and corrections happen, therefore names can be corrected in the next
@@ -3739,7 +3741,7 @@ table of Unicode values is of size UnicodeNames2GetCntFromLib(). If there is
 no libuninameslist ver 0.5 or later, then return NULL.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="UnicodeNames2FromLib">
 <code class="sig-name descname">UnicodeNames2FromLib</code><span class="sig-paren">(</span><em class="sig-param">val</em><span class="sig-paren">)</span><a class="headerlink" href="#UnicodeNames2FromLib" title="Permalink to this definition">¶</a></dt>
 <dd><p>Errors and corrections happen, therefore names can be corrected in the next
@@ -3748,20 +3750,20 @@ the unicode value given. If there is no libuninameslist ver 0.5 or later,
 then return NULL.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="UnlinkReference">
 <code class="sig-name descname">UnlinkReference</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#UnlinkReference" title="Permalink to this definition">¶</a></dt>
 <dd><p>Unlinks all references within all selected glyphs</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Ucs4">
 <code class="sig-name descname">Ucs4</code><span class="sig-paren">(</span><em class="sig-param">str</em><span class="sig-paren">)</span><a class="headerlink" href="#Ucs4" title="Permalink to this definition">¶</a></dt>
 <dd><p>Takes a string in Utf8 encoding and returns an array of integers, one for
 each unicode character in the string.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Utf8">
 <code class="sig-name descname">Utf8</code><span class="sig-paren">(</span><em class="sig-param">int</em><span class="sig-paren">)</span><a class="headerlink" href="#Utf8" title="Permalink to this definition">¶</a></dt>
 <dd><p>Takes an integer [0,0x10ffff] and returns the utf8 string representing that
@@ -3770,7 +3772,7 @@ string containing all of those unicode code points. (it does not expect to
 get surrogates). It can execute with no current font.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Validate">
 <code class="sig-name descname">Validate</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">force</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Validate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Validates the font and returns a bitmask of errors. If the font passes it
@@ -3779,7 +3781,7 @@ will not be recalculated. If you pass a non-zero argument to the routine then
 it will force recalculation of each glyph – this can be slow.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="VFlip">
 <code class="sig-name descname">VFlip</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">about-y</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#VFlip" title="Permalink to this definition">¶</a></dt>
 <dd><p>All selected glyphs will be vertically flipped about the horizontal line
@@ -3787,7 +3789,7 @@ through y=about-y. If no argument is given then all selected glyphs will be
 flipped about their central point.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="VKernFromHKern">
 <code class="sig-name descname">VKernFromHKern</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#VKernFromHKern" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes all vertical kern pairs and classes from the current font, and then
@@ -3795,13 +3797,13 @@ generates new vertical kerning pairs by copying the horizontal kerning data
 for a pair of glyphs to the vertically rotated versions of those glyphs.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="Wireframe">
 <code class="sig-name descname">Wireframe</code><span class="sig-paren">(</span><em class="sig-param">angle</em>, <em class="sig-param">outline-width</em>, <em class="sig-param">shadow-width</em><span class="sig-paren">)</span><a class="headerlink" href="#Wireframe" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts the selected glyphs into wireframed versions of themselves.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="WorthOutputting">
 <code class="sig-name descname">WorthOutputting</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">arg</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#WorthOutputting" title="Permalink to this definition">¶</a></dt>
 <dd><p>If there is no argument then a single glyph should be selected and the
@@ -3810,7 +3812,7 @@ This returns true if the glyph contains any splines, references, images or
 has had its width set.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="ff function">
 <dt id="WriteStringToFile">
 <code class="sig-name descname">WriteStringToFile</code><span class="sig-paren">(</span><em class="sig-param">&quot;string&quot;</em>, <em class="sig-param">&quot;Filename&quot;</em><span class="optional">[</span>, <em class="sig-param">append</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#WriteStringToFile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates the file named “Filename” and writes the string to it. If the append
@@ -3896,7 +3898,7 @@ font.</p>
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.4</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
