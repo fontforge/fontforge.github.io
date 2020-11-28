@@ -20,14 +20,14 @@ The issues are now corrected. But files generated in the last three years may ha
 
 * If your font did not enter FontForge through TrueType/OpenType format and you set the underline position according to PostScript conventions, SFD originals and exports other than TrueType/OpenType files are likely to be okay. It may be necessary to regenerate TrueType/OpenType files.
 * If your font did not enter FontForge through TrueType/OpenType format, but you set the underline position according to test results with an exported TrueType/OpenType file, you may need to adjust your SFD or UFO originals and to regenerate any exported files, including OpenType files with CFF tables.
-* If your font entered FontForge through TrueType/OpenType format and you did not adjust the underline position. It is probably wrong in your SFD originals and all exported files.
+* If your font entered FontForge through TrueType/OpenType format and you did not adjust the underline position, it is probably wrong in your SFD originals and all exported files.
 
 ## Fixing Affected Files
 
 * First install the newest release of FontForge.
 * Open your SFD original.
 * If you know what the underline position ought to be in PostScript format, skip the next step.
-* If you have a TrueType/OpenType font that looks correct, import it into FontForge, and check the underline position (as indicated in the next step).
+* If you have a TrueType/OpenType font that looks correct, import it into FontForge, and check the underline position (Top menu >> Element >> Font Info >> General >> Underline Position).
 * Set the underline position in your original font (Top menu >> Element >> Font Info >> General >> Underline Position).
 * Save the original file (likely under a new name).
 * Regenerate all downstream files.
