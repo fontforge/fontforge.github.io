@@ -7,3 +7,7 @@ plugins:
 include:
   - _images
   - _static
+socialTitle: FontForge
+socialDescription: FontForge is a free and open-source outline font editor.
+socialImage: /assets/img/social-banner.png
+socialAuthor: '@fontforge'
