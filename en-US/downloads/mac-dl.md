@@ -76,7 +76,9 @@ To bring fontforge's windows to the font, click the XQuartz icon, or use Alt+Tab
 
 ## Problems?
 
-If you have any problems with installation or upgrading, create a [Github Issue](https://guides.github.com/features/issues/) to discuss with our community.
+If you have any problems with installation or upgrading, create a [Github Issue] to discuss with our community.
+
+[Github Issue]: https://github.com/fontforge/fontforge/issues/
 
 ## Other sources and versions
 
