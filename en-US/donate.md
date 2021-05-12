@@ -6,7 +6,7 @@ title: Fund New Features
 
 FontForge development is limited by the availability of volunteered time and talent. Contributing financially ensures faster development of new features and fixing of issues.
 
-FontForge can accept donations by PayPal. Note that as these are not routed through a 501(c)3 organization they are not tax deductible.
+FontForge can accept donations by PayPal. Note that, as these are not routed through a 501(c)3 organization, they are not tax deductible.
 
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <input type="hidden" name="cmd" value="_s-xclick">
