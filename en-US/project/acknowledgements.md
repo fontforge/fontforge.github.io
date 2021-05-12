@@ -9,6 +9,13 @@ This page exists to acknowledge everyone who's helped out with FontForge. Many t
 (Actually the list should be far longer than this,
 but as time goes on there are just too many people to thank.)
 
+Sponsors
+--------
+
+The [TeX Users Group](https://tug.org) sponsored a [variety of FontForge development
+projects](https://tug.org/fonts/librefontfund.html) over the years, and welcomes
+[new grant proposals](https://tug.org/tc/devfund/application.html).
+
 
 Sample Text
 -----------
