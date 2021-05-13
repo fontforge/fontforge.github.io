@@ -4,8 +4,7 @@ layout: default
 title: Download FontForge
 ---
 
-FontForge is available for <a href="/en-US/downloads/windows/">Windows</a>, <a href="/en-US/downloads/mac/">Mac</a> and
-<a href="/en-US/downloads/gnulinux/">GNU+Linux</a>.
+FontForge releases are available for <a href="/en-US/downloads/windows/">Windows</a>, <a href="/en-US/downloads/mac/">Mac</a> and <a href="/en-US/downloads/gnulinux/">GNU+Linux</a>. <a href="/en-US/downloads/dev/">Developer builds</a> are available.
 
 Uninstalling: [How to uninstall FontForge](/en-US/downloads/uninstalling/)
 
