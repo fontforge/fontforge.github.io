@@ -22,7 +22,7 @@ Without [XQuartz](http://xquartz.macosforge.org), FontForge will open a Dock ico
 
 Open Finder and look in your `/Applications/Utilities/` folder for the `XQuartz` app.
 
-If you don't have it then download and install: **[direct link to XQuartz-2.7.11.dmg](https://dl.bintray.com/xquartz/downloads/XQuartz-2.7.11.dmg)**
+If you don't have it then download and install: **[direct link to XQuartz-2.8.1.dmg](https://github.com/XQuartz/XQuartz/releases/download/XQuartz-2.8.1/XQuartz-2.8.1.dmg)**
 
 ![X11.app Preferences Window set correctly](../mac-xquarz-1-installer.png)
 
@@ -95,9 +95,9 @@ You can also install Development Snapshots, install using Package Managers or bu
 </a>
 
 <div class="collapse" id="collapseDev"><div class="well" markdown="1">
-New development versions are created whenever changes are made, and the latest is always available from <http://dl.bintray.com/fontforge/fontforge/>.
+See <a href="/en-US/downloads/dev">developer builds</a> for instructions.
 
-To install an update:
+Once downloaded, to install an update:
 
 1. Drag and drop the new FontForge.app into `/Applications` and replace it
 2. Start FontForge again
