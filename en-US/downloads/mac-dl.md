@@ -6,9 +6,9 @@ archive_extension: ".dmg"
 ---
 
 FontForge is a UNIX application, so it doesn't behave 100% like a normal Mac Application.
-OS X 10.12 or later is required.
+OS X 10.15 or later is required.
 
-Download and install [FontForge 2022-03-08](https://github.com/fontforge/fontforge/releases/download/20220308/FontForge-2022-03-08-582bd41.app.dmg)
+Download and install [FontForge 2022-03-08](https://github.com/fontforge/fontforge/releases/download/20220308/FontForge-2022-03-08-74e2eca.app.dmg)
 
 <a class="btn btn-primary btn-large default" data-toggle="collapse" href="#collapseOld" aria-expanded="false" aria-controls="collapseOld">
   For releases before 2019-03-17
