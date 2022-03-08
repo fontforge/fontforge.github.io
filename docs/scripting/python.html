@@ -4,16 +4,15 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Python Scripting &#8212; FontForge 20201107 documentation</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Python Scripting &#8212; FontForge 20220308 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -35,7 +34,7 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="python-scripting">
+  <section id="python-scripting">
 <h1>Python Scripting<a class="headerlink" href="#python-scripting" title="Permalink to this headline">¶</a></h1>
 <p>I assume you have a working knowledge of <a class="reference external" href="http://www.python.org/doc/">Python</a>.
 FontForge implements two Python modules – one great huge one called <a class="reference internal" href="python/fontforge.html#module-fontforge" title="fontforge: The primary module for interacting with FontForge"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fontforge</span></code></a>
@@ -44,7 +43,7 @@ time to write, and one tiny one called <a class="reference internal" href="pytho
 access to some useful transformations expressed as PostScript matrices.</p>
 <p>In python terms fontforge <em>embeds</em> python. It is possible to build
 fontforge so that it is also a <a class="reference internal" href="#python-extension"><span class="std std-ref">python extension</span></a>.</p>
-<div class="section" id="fontforge-modules">
+<section id="fontforge-modules">
 <h2>FontForge Modules<a class="headerlink" href="#fontforge-modules" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
@@ -66,8 +65,8 @@ fontforge so that it is also a <a class="reference internal" href="#python-exten
 <li class="toctree-l1"><a class="reference internal" href="python/psMat.html">psMat</a></li>
 </ul>
 </div>
-</div>
-<div class="section" id="command-line-convenience">
+</section>
+<section id="command-line-convenience">
 <h2>Command line convenience<a class="headerlink" href="#command-line-convenience" title="Permalink to this headline">¶</a></h2>
 <p>For convenience, Python commands given as a <code class="docutils literal notranslate"><span class="pre">-c</span></code> argument on the
 command line have the following code prepended:</p>
@@ -78,8 +77,8 @@ command line have the following code prepended:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fontforge</span> <span class="o">-</span><span class="n">c</span> <span class="s1">&#39;open(argv[1]).generate(argv[2])&#39;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="trivial-example">
+</section>
+<section id="trivial-example">
 <h2>Trivial example<a class="headerlink" href="#trivial-example" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fontforge</span>                                 <span class="c1">#Load the module</span>
 <span class="n">amb</span><span class="o">=</span><span class="n">fontforge</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;Ambrosia.sfd&quot;</span><span class="p">)</span>               <span class="c1">#Open a font</span>
@@ -95,8 +94,8 @@ command line have the following code prepended:</p>
 <span class="n">n</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;NewFont.sfd&quot;</span><span class="p">)</span>                            <span class="c1">#and save it.</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="fontforge-as-a-python-extension">
+</section>
+<section id="fontforge-as-a-python-extension">
 <span id="python-extension"></span><h2>FontForge as a python extension<a class="headerlink" href="#fontforge-as-a-python-extension" title="Permalink to this headline">¶</a></h2>
 <p>In addition to embedding Python, FontForge typically installs a Python
 module accessible to the system’s <code class="docutils literal notranslate"><span class="pre">python</span></code> executable, which can be
@@ -104,8 +103,8 @@ accessed using:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">fontforge</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -169,7 +168,7 @@ accessed using:</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -191,7 +190,7 @@ accessed using:</p>
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

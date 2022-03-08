@@ -4,16 +4,15 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>What on Earth Possessed me… &#8212; FontForge 20201107 documentation</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>What on Earth Possessed me… &#8212; FontForge 20220308 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -35,7 +34,7 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="what-on-earth-possessed-me">
+  <section id="what-on-earth-possessed-me">
 <h1>What on Earth Possessed me…<a class="headerlink" href="#what-on-earth-possessed-me" title="Permalink to this headline">¶</a></h1>
 <img alt="../_images/fftype300.svg" class="align-right" src="../_images/fftype300.svg" width="200px" /><blockquote class="epigraph">
 <div><div class="line-block">
@@ -66,7 +65,7 @@ Mons (on Mars). I used it to design my first bitmap font.</p>
 little program called Fontastic which allowed people to design their own ‘FONT’
 resources (mac bitmap fonts).</p>
 <p>Then a friend, Godfrey DiGiorgi, recommended that I buy a copy of Fontographer
-and design PostScript fonts. I was leary initially. How could a rasterizer match
+and design PostScript fonts. I was leery initially. How could a rasterizer match
 the quality of a hand crafted bitmap? But eventually I succumbed to the
 attractions of the cubic spline.</p>
 <p>In the meantime I had studied calligraphy, and once I had Fontographer began
@@ -275,7 +274,7 @@ good use of the PostScript concept of subroutines. In June of 2006 I did a
 substantial rewrite of the type2 output code and decreased the size of my output
 fonts considerably. My new comparison command was helpful in debugging.
 Nonetheless I introduced a number of bugs. Which got fixed, of course. But it
-made me leary of doing the same thing for type1 output. After all, Adobe doesn’t
+made me leery of doing the same thing for type1 output. After all, Adobe doesn’t
 even produce type1 fonts any more, so surely I don’t need to optimize them.
 Michael Zedler said otherwise, and after great effort on his part induced me (in
 October 2006) to make better use of subroutines in Type1 output also. No bugs
@@ -352,13 +351,13 @@ and then squash the glyph together so it was the same height it had been before.
 That basically worked. Still a few oddities, but basically functional.</p>
 <p>In July Michal Nowakowski gave me a patch which vastly improved the truetype
 auto instructor. I told him I’d only accept it if he would support it. After
-some initial grumbling he did so – and then proceded to make it even better!
+some initial grumbling he did so – and then proceeded to make it even better!
 Then about a week later Alexej Kryukov said he wanted to make the autoinstructor
 support diagonal stems, and the two of them started working together on this.</p>
 <p>At the Libre Graphics Meeting Dave demoed Raph Levien’s spiro splines and
 encouraged me to integrate them into fontforge. But Raph released under GPL and
 wasn’t willing to change, and I released under BSD and wasn’t willing to change.
-I got permision from Raph to repackage his spiro routines into a small shared
+I got permission from Raph to repackage his spiro routines into a small shared
 library (libspiro) which could be released separately from FontForge but to
 which FontForge could link. And we had Raph’s spiros in FontForge.</p>
 <p>I realized that no only could I stick python into fontforge, but if I did a
@@ -370,7 +369,7 @@ ugly – and less functional than my own widget set in the ways that mattered to
 me, so I had given up on it). Dave offered to fund development of a gtk
 fontforge UI, but only if I’d switch to GPL. I dislike GPL, it seems so
 restrictive to me, so I said I wouldn’t. Then I realized that I could rework my
-library until it was independant of widget set, and allow Dave to write a UI to
+library until it was independent of widget set, and allow Dave to write a UI to
 sit on top of it, not bound by the fontforge license. So I reworked the
 internals of fontforge to make them extensible, stripped the UI out of
 libfontforge. And started to work on a gtk based fontforge of my own.</p>
@@ -410,11 +409,11 @@ stems well when creating small caps, and that was just what he was doing with
 the autohinter. So he greatly improved the output.</p>
 <p>I was also intregued by italics. Converting a font to italics involves so many
 different things – the font is slanted, compressed, serifs change, letter forms
-change, … I studied exisiting fonts to see what I could learn and asked
-various real typographers. The consensis I heard from them was that I could
+change, … I studied existing fonts to see what I could learn and asked
+various real typographers. The consensus I heard from them was that I could
 never make a good italic font from a roman one mechanically and should not
 bother to try – it would just lead to people making bad italic fonts. Good
-advice, but I didn’t follow it. I thought it was a neat challange. And it was
+advice, but I didn’t follow it. I thought it was a neat challenge. And it was
 something Ikarus had done, so I wanted to do it too.</p>
 <p>In July a friend of mine, who is a mac user, said she wouldn’t even consider
 looking at fontforge on her mac unless it behaved more like a mac application.
@@ -455,7 +454,7 @@ I will get started working on converting to one and then run into some problem I
 can’t work around easily and give up and go back to my own. Well in 2008 I still
 don’t like gtk, but I have the fontview working in it. A start but probably not
 something I will continue.</p>
-</div>
+</section>
 
 
           </div>
@@ -513,7 +512,7 @@ something I will continue.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -535,7 +534,7 @@ something I will continue.</p>
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

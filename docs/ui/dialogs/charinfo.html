@@ -4,16 +4,15 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Glyph Info &#8212; FontForge 20201107 documentation</title>
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Glyph Info &#8212; FontForge 20220308 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -35,12 +34,12 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="glyph-info">
+  <section id="glyph-info">
 <span id="charinfo-character"></span><h1>Glyph Info<a class="headerlink" href="#glyph-info" title="Permalink to this headline">¶</a></h1>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="../../_images/charinfo.png" src="../../_images/charinfo.png" />
-</div>
-<div class="section" id="encoding-and-unicode-data">
+</figure>
+<section id="encoding-and-unicode-data">
 <h2>Encoding and Unicode data<a class="headerlink" href="#encoding-and-unicode-data" title="Permalink to this headline">¶</a></h2>
 <p>This dialog allows you to set the name and unicode encoding of a given glyph. If
 you know the name of the glyph then FontForge can tell you the encoding (if you
@@ -80,8 +79,8 @@ you wish to retain the references, but you wish it to be output without an
 overlap, simply check this box. Then when it comes time to save the font, ff
 will perform the unlink and then run remove overlap, save the font, and then
 restore the glyph to its original condition.</p>
-</div>
-<div class="section" id="glyph-comment">
+</section>
+<section id="glyph-comment">
 <span id="charinfo-comment"></span><h2>Glyph Comment<a class="headerlink" href="#glyph-comment" title="Permalink to this headline">¶</a></h2>
 <img alt="../../_images/charinfo-comment.png" class="align-right" src="../../_images/charinfo-comment.png" />
 <p>You can assign an arbitrary (unicode) comment to the glyph. Simply type any text
@@ -94,8 +93,8 @@ converted into various of Apple’s AAT tables, particularly ‘morx’). Lookup
 their subtables are described in some detail <a class="reference internal" href="../../index.html#overview-lookups"><span class="std std-ref">here</span></a>, and
 may be manipulated and created with the
 <a class="reference internal" href="fontinfo.html#fontinfo-lookups"><span class="std std-ref">Element-&gt;Font Info</span></a> command.</p>
-</div>
-<div class="section" id="simple-glyph-positioning">
+</section>
+<section id="simple-glyph-positioning">
 <span id="charinfo-position"></span><h2>Simple Glyph Positioning<a class="headerlink" href="#simple-glyph-positioning" title="Permalink to this headline">¶</a></h2>
 <p>The first of sub-dialogs is the alternate position pane which allows you to
 associate certain modifications to a glyph’s metrics with a feature in the GPOS
@@ -111,15 +110,15 @@ few of the possibilities open to them and FontForge generally hides unused
 columns – but if you want to see them just turn off [*] Hide Unused Columns.</p>
 <p>A new entry in the list may be created by pressing the &lt;New&gt; button and a popup
 menu will appear with all possible lookup subtables you could add data to.</p>
-</div>
-<div class="section" id="pair-wise-glyph-positioning-kerning-gpos">
+</section>
+<section id="pair-wise-glyph-positioning-kerning-gpos">
 <span id="charinfo-pairwise"></span><h2>Pair-wise Glyph Positioning (kerning) (GPOS)<a class="headerlink" href="#pair-wise-glyph-positioning-kerning-gpos" title="Permalink to this headline">¶</a></h2>
 <p>The pairwise positioning sub-dialog allows you to change the positions of two
 glyphs when they occur next to one another – better know as kerning. I think
 the <a class="reference internal" href="../mainviews/metricsview.html"><span class="doc">Metrics View</span></a> provides a better place to do kerning, but
 you can do it here if you wish.</p>
-</div>
-<div class="section" id="glyph-simple-substitution-gsub-morx">
+</section>
+<section id="glyph-simple-substitution-gsub-morx">
 <span id="charinfo-substitution"></span><h2>Glyph Simple Substitution (GSUB, morx)<a class="headerlink" href="#glyph-simple-substitution-gsub-morx" title="Permalink to this headline">¶</a></h2>
 <img alt="../../_images/charinfo-subs.png" class="align-right" src="../../_images/charinfo-subs.png" />
 <p>A simple substitution replaces one glyph with another. Here the glyph “one” has
@@ -127,8 +126,8 @@ a series of substitutions to various glyphs depending on what lookup subtable is
 invoked.</p>
 <div class="clearer docutils container">
 </div>
-</div>
-<div class="section" id="glyph-multiple-alternate-substitution">
+</section>
+<section id="glyph-multiple-alternate-substitution">
 <span id="charinfo-multiple"></span><h2>Glyph Multiple &amp; Alternate Substitution<a class="headerlink" href="#glyph-multiple-alternate-substitution" title="Permalink to this headline">¶</a></h2>
 <blockquote class="epigraph">
 <div><div class="line-block">
@@ -143,8 +142,8 @@ subtable each glyph is replaced by several other glyphs (sort of the reverse of
 a ligature), while in the alternate substitution sub-dialog each glyph is to be
 replaced by exactly one glyph from a list and the user is to be given a choice
 as to which glyph is to be chosen.</p>
-</div>
-<div class="section" id="glyph-ligature-substitution">
+</section>
+<section id="glyph-ligature-substitution">
 <span id="charinfo-ligature"></span><h2>Glyph Ligature Substitution<a class="headerlink" href="#glyph-ligature-substitution" title="Permalink to this headline">¶</a></h2>
 <img alt="../../_images/charinfo-lig.png" class="align-right" src="../../_images/charinfo-lig.png" />
 <p>The ligature pane allows you to tell FontForge that the current glyph is a
@@ -153,8 +152,8 @@ fill this in with the right default value, but not always. The value should be a
 list of postscript glyph names separated by spaces. If a glyph may be viewed as
 two different ligatures then they may both be specified in different lines. For
 example “ffi” may be viewed as a ligature of “f” “f” and “i” or of “ff” and “i”.</p>
-</div>
-<div class="section" id="counter-masks">
+</section>
+<section id="counter-masks">
 <span id="charinfo-countermasks"></span><h2>Counter Masks<a class="headerlink" href="#counter-masks" title="Permalink to this headline">¶</a></h2>
 <img alt="../../_images/newcountermask.png" src="../../_images/newcountermask.png" />
 <img alt="../../_images/charinfo-counters.png" src="../../_images/charinfo-counters.png" />
@@ -163,8 +162,8 @@ width of counters between stems. These are called counter mask hints.</p>
 <p>In Latin, Cyrillic, Greek fonts only glyphs like “m” are allowed to have
 counter masks, and only in very controlled conditions. See the description of
 <a class="reference internal" href="../../techref/hinting.html#hinting-counter"><span class="std std-ref">counter masks</span></a>.</p>
-</div>
-<div class="section" id="components">
+</section>
+<section id="components">
 <span id="charinfo-components"></span><h2>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h2>
 <img alt="../../_images/charinfo-counters.png" class="align-right" src="../../_images/charinfo-counters.png" />
 <p>Some glyphs (ligatures, accented glyphs, Hangul syllables, etc.) are built up
@@ -178,12 +177,12 @@ change this field directly (it changes when you change the unicode value or
 glyph name associated with this glyph).</p>
 <div class="clearer docutils container">
 </div>
-</div>
-<div class="section" id="tex-math">
+</section>
+<section id="tex-math">
 <span id="charinfo-tex"></span><h2>TeX &amp; Math<a class="headerlink" href="#tex-math" title="Permalink to this headline">¶</a></h2>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="../../_images/charinfo-tex.png" src="../../_images/charinfo-tex.png" />
-</div>
+</figure>
 <p>The TeX pane allows you to specify glyph specific information used in TeX tmf
 files. The height and depth fields are often the same as the glyph’s bounding
 box (if you don’t fill these in that’s what fontforge will use by default), but
@@ -202,15 +201,15 @@ this fact.</p>
 <p>The [Math Kerning] button brings up the
 <a class="reference internal" href="math.html#math-mathkern"><span class="std std-ref">Math Kerning dialog</span></a> which gives you fine control over the
 placement of subscripts and superscripts near the glyph.</p>
-</div>
-<div class="section" id="variants">
+</section>
+<section id="variants">
 <span id="charinfo-variants"></span><h2>Variants<a class="headerlink" href="#variants" title="Permalink to this headline">¶</a></h2>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="../../_images/charinfo-variants.png" src="../../_images/charinfo-variants.png" />
-</div>
+</figure>
 <p>There are two panes for variants, one for glyphs that get longer horizontally
 and one for glyphs that get longer vertically.</p>
-<p>In mathmatical typesetting the size of a parenthesis will depend on the vertical
+<p>In mathematical typesetting the size of a parenthesis will depend on the vertical
 size of the formula within that parenthesis. As formulae can be arbetarily
 complex they may be arbetarily tall, so there needs to be a way of making
 arbetarily big parentheses. This pane provides two mechanisms.</p>
@@ -219,8 +218,8 @@ the one before.</p>
 <p>Underneath you may specify a way of building really big parentheses by combining
 several component glyphs. See the description of this in the
 <a class="reference internal" href="math.html#math-glyphconstruction"><span class="std std-ref">MATH Info dialog</span></a> for more details.</p>
-</div>
-<div class="section" id="tile-size">
+</section>
+<section id="tile-size">
 <span id="charinfo-tilesize"></span><h2>Tile Size<a class="headerlink" href="#tile-size" title="Permalink to this headline">¶</a></h2>
 <img alt="../../_images/charinfo-tilesize.png" class="align-right" src="../../_images/charinfo-tilesize.png" />
 <p>This only applies when editing type3 fonts. Even then it is only meaningful if
@@ -242,8 +241,8 @@ example, you need to enter encodings for a range of glyphs).</p>
 <li><p><a class="reference internal" href="getinfo.html"><span class="doc">The get info dialogs</span></a></p></li>
 <li><p><a class="reference internal" href="math.html"><span class="doc">The MATH info dialog</span></a></p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -287,9 +286,9 @@ example, you need to enter encodings for a range of glyphs).</p>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../misc/HotKeys.html">Hot Keys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../misc/fontforge-themes.html">FontForge color schemes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">X Resource Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">Appearance Editor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../misc/xim.html">X Input Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">X Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">Changing FontForge’s UI Appearance</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../scripting/scripting.html">Scripting FontForge</a></li>
@@ -317,7 +316,7 @@ example, you need to enter encodings for a range of glyphs).</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -339,7 +338,7 @@ example, you need to enter encodings for a range of glyphs).</p>
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

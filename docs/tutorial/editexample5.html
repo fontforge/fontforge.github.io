@@ -4,16 +4,15 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>7. Metrics, spacing and kerning &#8212; FontForge 20201107 documentation</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>7. Metrics, spacing and kerning &#8212; FontForge 20220308 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -35,9 +34,9 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="metrics-spacing-and-kerning">
+  <section id="metrics-spacing-and-kerning">
 <h1><span class="section-number">7. </span>Metrics, spacing and kerning<a class="headerlink" href="#metrics-spacing-and-kerning" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="examining-and-controlling-metrics">
+<section id="examining-and-controlling-metrics">
 <h2><span class="section-number">7.1. </span>Examining and controlling metrics<a class="headerlink" href="#examining-and-controlling-metrics" title="Permalink to this headline">¶</a></h2>
 <img alt="../_images/sidebearings.png" class="align-right" src="../_images/sidebearings.png" />
 <p>After you have created the shapes of your glyphs you must next figure out the
@@ -75,7 +74,7 @@ widths to glyphs. These widths are not up to professional standards, but they
 are generally reasonable approximations.</p>
 <div class="clearer docutils container">
 </div>
-<div class="section" id="vertical-metrics">
+<section id="vertical-metrics">
 <h3><span class="section-number">7.1.1. </span>Vertical Metrics<a class="headerlink" href="#vertical-metrics" title="Permalink to this headline">¶</a></h3>
 <p>FontForge provides some support for the vertical metrics needed for CJK fonts.
 First you must tell FontForge that this font should contain vertical metrics, do
@@ -84,14 +83,14 @@ this with
 Then in each outline glyph enable VMetrics in the Layers palette.</p>
 <p>You should now see a vertical advance line somewhere underneath your glyph. You
 may drag this line just as you would the horizontal advance (width) line.</p>
-</div>
-<div class="section" id="setting-the-baseline-to-baseline-spacing-of-a-font">
+</section>
+<section id="setting-the-baseline-to-baseline-spacing-of-a-font">
 <h3><span class="section-number">7.1.2. </span>Setting the baseline to baseline spacing of a font.<a class="headerlink" href="#setting-the-baseline-to-baseline-spacing-of-a-font" title="Permalink to this headline">¶</a></h3>
 <p>You might imagine that there would be an easy way to set this seemingly
 important quantity. Unfortunately there is not.</p>
 <dl class="object">
-<dt>
-<code class="sig-name descname">In a PostScript Type1 font (or bare CFF font)</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">In</span> <span class="pre">a</span> <span class="pre">PostScript</span> <span class="pre">Type1</span> <span class="pre">font</span> <span class="pre">(or</span> <span class="pre">bare</span> <span class="pre">CFF</span> <span class="pre">font)</span></span></dt>
 <dd><p>There is no way to set this value.</p>
 <p>At all, ever.</p>
 <p>In traditional typography the inter-line spacing is 1em (which in FontForge
@@ -102,12 +101,12 @@ approach.</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">In a TrueType or OpenType font</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">In</span> <span class="pre">a</span> <span class="pre">TrueType</span> <span class="pre">or</span> <span class="pre">OpenType</span> <span class="pre">font</span></span></dt>
 <dd><p>Unfortunately this depends on the platform</p>
 <dl class="object">
-<dt>
-<code class="sig-name descname">Mac</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Mac</span></span></dt>
 <dd><p>On a mac the baseline to baseline spacing is determined again by the
 bounding box values of the font, specified in the ‘hhea’ table, possibly
 modified by a linegap (Which you can set in FontForge with
@@ -115,8 +114,8 @@ modified by a linegap (Which you can set in FontForge with
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">On Windows</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">On</span> <span class="pre">Windows</span></span></dt>
 <dd><p>According to the OpenType spec, the baseline to baseline distance is set
 by the values of Typographic Ascent and Descent of the ‘OS/2’ table. These
 can be set with <a class="reference internal" href="../ui/dialogs/fontinfo.html"><span class="doc">Element-&gt;FontInfo-&gt;OS/2</span></a>, but are usually
@@ -130,8 +129,8 @@ box as specified in the Win Ascent/Descent fields of the ‘OS/2’ table.</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">On linux/unix</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">On</span> <span class="pre">linux/unix</span></span></dt>
 <dd><p>I doubt there is any standard behavior. Unix apps will probably choose one
 of the above.</p>
 </dd></dl>
@@ -140,9 +139,9 @@ of the above.</p>
 
 <p>Typographically ept applications will allow users to adjust baseline to baseline
 spacing, so the default value may not be all that relevant.</p>
-</div>
-</div>
-<div class="section" id="kerning">
+</section>
+</section>
+<section id="kerning">
 <h2><span class="section-number">7.2. </span>Kerning<a class="headerlink" href="#kerning" title="Permalink to this headline">¶</a></h2>
 <p>If you are careful in setting the left and right side-bearings you can design
 your font so that the spacing looks nice in almost all cases. But there are
@@ -192,7 +191,7 @@ view myself because you can see more glyphs and so get a better feel for the
 <a class="reference internal" href="editexample4.html#editexample4-ligature"><span class="std std-ref">creating a ligature</span></a> than by kerning the letters)</p>
 <div class="clearer docutils container">
 </div>
-<div class="section" id="vertical-kerning">
+<section id="vertical-kerning">
 <h3><span class="section-number">7.2.1. </span>Vertical Kerning<a class="headerlink" href="#vertical-kerning" title="Permalink to this headline">¶</a></h3>
 <p>FontForge has equivalent support for vertical kerning. It can read and write
 vertical kerning information from and to truetype, opentype and svg fonts. It
@@ -202,9 +201,9 @@ will copy horizontal kerning information to the vertically rotated glyphs (That
 is, if the combination “A” “V” is horizontally kerned by -200, then “A.vert”
 “V.vert” should be vertically kerned by -200.</p>
 <p>(Vertical kerning is only available if the font has vertical metrics)</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -276,7 +275,7 @@ is, if the combination “A” “V” is horizontally kerned by -200, then “A
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -298,7 +297,7 @@ is, if the combination “A” “V” is horizontally kerned by -200, then “A
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

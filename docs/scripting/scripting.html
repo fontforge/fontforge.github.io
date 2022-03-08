@@ -4,21 +4,20 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Scripting FontForge &#8212; FontForge 20201107 documentation</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Scripting FontForge &#8212; FontForge 20220308 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Scripting functions" href="scripting-alpha.html" />
-    <link rel="prev" title="X Resources" href="../ui/misc/xres.html" />
+    <link rel="prev" title="Changing FontForge’s UI Appearance" href="../ui/misc/xres.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -35,7 +34,7 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="scripting-fontforge">
+  <section id="scripting-fontforge">
 <h1>Scripting FontForge<a class="headerlink" href="#scripting-fontforge" title="Permalink to this headline">¶</a></h1>
 <p>FontForge includes two interpreters so you can write scripts to modify fonts.
 One of these interpreters is <a class="reference internal" href="python.html"><span class="doc">python</span></a>, one is a legacy language I
@@ -123,7 +122,7 @@ means use the old interpreter)</p>
 </li>
 </ul>
 </div>
-<div class="section" id="invoking-scripts">
+<section id="invoking-scripts">
 <span id="scripting-starting"></span><h2>Invoking scripts<a class="headerlink" href="#invoking-scripts" title="Permalink to this headline">¶</a></h2>
 <p>If you start fontforge with a script on the command line it will not put up any
 windows and it will exit when the script is done. The script can be in a file,
@@ -166,8 +165,8 @@ executes them.</p>
 <p>You may set the environment variable <code class="docutils literal notranslate"><span class="pre">FONTFORGE_LANGUAGE</span></code> to either “py” (for
 python) or “ff” or “pe” (for native scripting) as another way to determne what
 interpreter to use.</p>
-</div>
-<div class="section" id="scripting-language">
+</section>
+<section id="scripting-language">
 <span id="id1"></span><h2>Scripting Language<a class="headerlink" href="#scripting-language" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -213,7 +212,7 @@ you need longer strings use the concatenation operator).</p></li>
 <li><p>Starting with “//” and proceeding to end of line</p></li>
 <li><p>Starting with “/<em>” and proceeding to “</em>/”</p></li>
 </ul>
-<div class="section" id="expressions">
+<section id="expressions">
 <span id="scripting-expressions"></span><h3>Expressions<a class="headerlink" href="#expressions" title="Permalink to this headline">¶</a></h3>
 <p>Expressions are similar to those in C, a few operators have been omitted, a few
 added from shell scripts. Operator precedence has been simplified slightly. So
@@ -235,7 +234,7 @@ scripts and are applied to strings</p>
 <p>If the first operand of + is a string then + will be treated as concatenation
 rather than addition. If the second operand is a number it will be converted to
 a string (decimal representation) and then concatenated. If the first operand of
-+ is an array then + will do array concatenation – if the second argment is
++ is an array then + will do array concatenation – if the second argument is
 also an array the two will be concatenated ([1,2] + [3,4] yields [1,2,3,4],
 while [1,2] + 3 yields [1,2,3]). Otherwise these are the normal arithmetric
 operations.</p>
@@ -327,49 +326,49 @@ order. The list starts with $firstfont.</p>
 <p>Similarly when working with cid keyed fonts, FontForge works in the “current sub
 font”, and most commands refer to this font. The CIDChangeSubFont() command can
 alter that.</p>
-</div>
-<div class="section" id="variables">
+</section>
+<section id="variables">
 <span id="scripting-variables"></span><h3>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h3>
 <p>All builtin variables begin with “$”, you may not create any variables that
 start with “$” yourself (though you may assign to (some) already existing ones)</p>
 <dl class="ff data">
-<dt id="0">
-<em class="property">$</em><code class="sig-name descname">0</code><a class="headerlink" href="#0" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object ff" id="0">
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">0</span></span><a class="headerlink" href="#0" title="Permalink to this definition">¶</a></dt>
 <dd><p>the current script filename</p>
 </dd></dl>
 
 <dl class="ff data">
-<dt id="1">
-<em class="property">$</em><code class="sig-name descname">1</code><a class="headerlink" href="#1" title="Permalink to this definition">¶</a></dt>
-<dt id="2">
-<em class="property">$</em><code class="sig-name descname">2</code><a class="headerlink" href="#2" title="Permalink to this definition">¶</a></dt>
-<dt id="n">
-<em class="property">$</em><code class="sig-name descname">n</code><a class="headerlink" href="#n" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object ff" id="1">
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">1</span></span><a class="headerlink" href="#1" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object ff" id="2">
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">2</span></span><a class="headerlink" href="#2" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object ff" id="n">
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">n</span></span><a class="headerlink" href="#n" title="Permalink to this definition">¶</a></dt>
 <dd><p>the first, second (…) argument to the script file</p>
 </dd></dl>
 
 <dl class="ff data">
-<dt id="argc">
-<em class="property">$</em><code class="sig-name descname">argc</code><a class="headerlink" href="#argc" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object ff" id="argc">
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">argc</span></span><a class="headerlink" href="#argc" title="Permalink to this definition">¶</a></dt>
 <dd><p>the number of arguments passed to the script file (this will always be
 at least 1 as $0 is always present)</p>
 </dd></dl>
 
 <dl class="ff data">
-<dt id="argv">
-<em class="property">$</em><code class="sig-name descname">argv</code><a class="headerlink" href="#argv" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object ff" id="argv">
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">argv</span></span><a class="headerlink" href="#argv" title="Permalink to this definition">¶</a></dt>
 <dd><p>allows you to access the array of all the arguments</p>
 </dd></dl>
 
 <dl class="ff data">
-<dt id="curfont">
-<em class="property">$</em><code class="sig-name descname">curfont</code><a class="headerlink" href="#curfont" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object ff" id="curfont">
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">curfont</span></span><a class="headerlink" href="#curfont" title="Permalink to this definition">¶</a></dt>
 <dd><p>the name of the filename in which the current font resides</p>
 </dd></dl>
 
 <dl class="ff data">
-<dt id="firstfont">
-<em class="property">$</em><code class="sig-name descname">firstfont</code><a class="headerlink" href="#firstfont" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object ff" id="firstfont">
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">firstfont</span></span><a class="headerlink" href="#firstfont" title="Permalink to this definition">¶</a></dt>
 <dd><p>the name of the filename of the font which is first on the font
 list (Can be used by <a class="reference internal" href="scripting-alpha.html#Open" title="Open"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Open()</span></code></a>), if there are no fonts loaded this
 returns an empty string. This can be used to determine if any font at all
@@ -377,198 +376,198 @@ is loaded into fontforge.</p>
 </dd></dl>
 
 <dl class="ff data">
-<dt id="nextfont">
-<em class="property">$</em><code class="sig-name descname">nextfont</code><a class="headerlink" href="#nextfont" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object ff" id="nextfont">
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">nextfont</span></span><a class="headerlink" href="#nextfont" title="Permalink to this definition">¶</a></dt>
 <dd><p>the name of the filename of the font which follows the current
 font on the list (or the empty string if the current font is the last one on the
 list)</p>
 </dd></dl>
 
 <dl class="ff data">
-<dt id="fontchanged">
-<em class="property">$</em><code class="sig-name descname">fontchanged</code><a class="headerlink" href="#fontchanged" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object ff" id="fontchanged">
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">fontchanged</span></span><a class="headerlink" href="#fontchanged" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns 1 if the current font has changed, 0 if it has not
 changed since it was read in (or saved).</p>
 </dd></dl>
 
 <dl class="ff data">
-<dt id="fontname">
-<em class="property">$</em><code class="sig-name descname">fontname</code><a class="headerlink" href="#fontname" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object ff" id="fontname">
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">fontname</span></span><a class="headerlink" href="#fontname" title="Permalink to this definition">¶</a></dt>
 <dd><p>the name contained in the postscript FontName field</p>
 </dd></dl>
 
 <dl class="ff data">
-<dt id="familyname">
-<em class="property">$</em><code class="sig-name descname">familyname</code><a class="headerlink" href="#familyname" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object ff" id="familyname">
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">familyname</span></span><a class="headerlink" href="#familyname" title="Permalink to this definition">¶</a></dt>
 <dd><p>the name contained in the postscript FamilyName field</p>
 </dd></dl>
 
 <dl class="ff data">
-<dt id="fullname">
-<em class="property">$</em><code class="sig-name descname">fullname</code><a class="headerlink" href="#fullname" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object ff" id="fullname">
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">fullname</span></span><a class="headerlink" href="#fullname" title="Permalink to this definition">¶</a></dt>
 <dd><p>the name contained in the postscript FullName field</p>
 </dd></dl>
 
 <dl class="ff data">
-<dt id="fondname">
-<em class="property">$</em><code class="sig-name descname">fondname</code><a class="headerlink" href="#fondname" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object ff" id="fondname">
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">fondname</span></span><a class="headerlink" href="#fondname" title="Permalink to this definition">¶</a></dt>
 <dd><p>if set this name indicates what FOND the current font should be
 put in under Generate Mac Family.</p>
 </dd></dl>
 
 <dl class="ff data">
-<dt id="weight">
-<em class="property">$</em><code class="sig-name descname">weight</code><a class="headerlink" href="#weight" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object ff" id="weight">
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">weight</span></span><a class="headerlink" href="#weight" title="Permalink to this definition">¶</a></dt>
 <dd><p>the name contained in the postscript Weight field</p>
 </dd></dl>
 
 <dl class="ff data">
-<dt id="copyright">
-<em class="property">$</em><code class="sig-name descname">copyright</code><a class="headerlink" href="#copyright" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object ff" id="copyright">
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">copyright</span></span><a class="headerlink" href="#copyright" title="Permalink to this definition">¶</a></dt>
 <dd><p>the name contained in the postscript Notice field</p>
 </dd></dl>
 
 <dl class="ff data">
-<dt id="filename">
-<em class="property">$</em><code class="sig-name descname">filename</code><a class="headerlink" href="#filename" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object ff" id="filename">
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">filename</span></span><a class="headerlink" href="#filename" title="Permalink to this definition">¶</a></dt>
 <dd><p>the name of the file containing the font.</p>
 </dd></dl>
 
 <dl class="ff data">
-<dt id="fontversion">
-<em class="property">$</em><code class="sig-name descname">fontversion</code><a class="headerlink" href="#fontversion" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object ff" id="fontversion">
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">fontversion</span></span><a class="headerlink" href="#fontversion" title="Permalink to this definition">¶</a></dt>
 <dd><p>the string containing the font’s version</p>
 </dd></dl>
 
 <dl class="ff data">
-<dt id="iscid">
-<em class="property">$</em><code class="sig-name descname">iscid</code><a class="headerlink" href="#iscid" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object ff" id="iscid">
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">iscid</span></span><a class="headerlink" href="#iscid" title="Permalink to this definition">¶</a></dt>
 <dd><p>1 if the current font is a cid keyed font, 0 if not</p>
 </dd></dl>
 
 <dl class="ff data">
-<dt id="cidfontname">
-<em class="property">$</em><code class="sig-name descname">cidfontname</code><a class="headerlink" href="#cidfontname" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object ff" id="cidfontname">
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">cidfontname</span></span><a class="headerlink" href="#cidfontname" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns the fontname of the top-level cid-keyed font (or the
 empty string if there is none)</p>
 <p>Can be used to detect if this is a cid keyed font.</p>
 </dd></dl>
 
 <dl class="ff data">
-<dt>
-<code class="sig-name descname">$cidfamilyname, $cidfullname, $cidweight, $cidcopyright</code></dt>
+<dt class="sig sig-object ff">
+<span class="sig-name descname"><span class="pre">$cidfamilyname,</span> <span class="pre">$cidfullname,</span> <span class="pre">$cidweight,</span> <span class="pre">$cidcopyright</span></span></dt>
 <dd><p>similar to <a class="reference internal" href="#cidfontname" title="cidfontname"><code class="xref ff ff-data docutils literal notranslate"><span class="pre">cidfontname</span></code></a></p>
 </dd></dl>
 
 <dl class="ff data">
-<dt id="mmcount">
-<em class="property">$</em><code class="sig-name descname">mmcount</code><a class="headerlink" href="#mmcount" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object ff" id="mmcount">
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">mmcount</span></span><a class="headerlink" href="#mmcount" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns 0 for non multiple master fonts, returns the number of
 instances in a multiple master font.</p>
 </dd></dl>
 
 <dl class="ff data">
-<dt id="italicangle">
-<em class="property">$</em><code class="sig-name descname">italicangle</code><a class="headerlink" href="#italicangle" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object ff" id="italicangle">
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">italicangle</span></span><a class="headerlink" href="#italicangle" title="Permalink to this definition">¶</a></dt>
 <dd><p>the value of the postscript italic angle field</p>
 </dd></dl>
 
 <dl class="ff data">
-<dt id="loadState">
-<em class="property">$</em><code class="sig-name descname">loadState</code><a class="headerlink" href="#loadState" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object ff" id="loadState">
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">loadState</span></span><a class="headerlink" href="#loadState" title="Permalink to this definition">¶</a></dt>
 <dd><p>a bitmask of non-fatal errors encountered when loading the font.</p>
 </dd></dl>
 
 <dl class="ff data">
-<dt id="privateState">
-<em class="property">$</em><code class="sig-name descname">privateState</code><a class="headerlink" href="#privateState" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object ff" id="privateState">
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">privateState</span></span><a class="headerlink" href="#privateState" title="Permalink to this definition">¶</a></dt>
 <dd><p>a bitmask of some errors in the PostScript Private dictionary
 (see <a class="reference internal" href="python/fontforge.html#fontforge.font.privateState" title="fontforge.font.privateState"><code class="xref py py-attr docutils literal notranslate"><span class="pre">fontforge.font.privateState</span></code></a> for more info).</p>
 </dd></dl>
 
 <dl class="ff data">
-<dt id="curcid">
-<em class="property">$</em><code class="sig-name descname">curcid</code><a class="headerlink" href="#curcid" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object ff" id="curcid">
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">curcid</span></span><a class="headerlink" href="#curcid" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns the fontname of the current font</p>
 </dd></dl>
 
 <dl class="ff data">
-<dt id="firstcid">
-<em class="property">$</em><code class="sig-name descname">firstcid</code><a class="headerlink" href="#firstcid" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object ff" id="firstcid">
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">firstcid</span></span><a class="headerlink" href="#firstcid" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns the fontname of the first font within this cid font</p>
 </dd></dl>
 
 <dl class="ff data">
-<dt id="nextcid">
-<em class="property">$</em><code class="sig-name descname">nextcid</code><a class="headerlink" href="#nextcid" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object ff" id="nextcid">
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">nextcid</span></span><a class="headerlink" href="#nextcid" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns the fontname of the next font within this cid font (or the
 empty string if the current sub-font is the last)</p>
 </dd></dl>
 
 <dl class="ff data">
-<dt id="macstyle">
-<em class="property">$</em><code class="sig-name descname">macstyle</code><a class="headerlink" href="#macstyle" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object ff" id="macstyle">
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">macstyle</span></span><a class="headerlink" href="#macstyle" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns the value of the macstyle field (a set of bits indicating
 whether the font is bold, italic, condensed, etc.)</p>
 </dd></dl>
 
 <dl class="ff data">
-<dt id="bitmaps">
-<em class="property">$</em><code class="sig-name descname">bitmaps</code><a class="headerlink" href="#bitmaps" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object ff" id="bitmaps">
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">bitmaps</span></span><a class="headerlink" href="#bitmaps" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns an array containing all bitmap pixelsizes generated for
 this font. (If the font database contains greymaps then they will be indicated
 in the array as <code class="docutils literal notranslate"><span class="pre">(&lt;BitmapDepth&gt;&lt;&lt;16)|&lt;PixelSize&gt;</span></code>)</p>
 </dd></dl>
 
 <dl class="ff data">
-<dt id="order">
-<em class="property">$</em><code class="sig-name descname">order</code><a class="headerlink" href="#order" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object ff" id="order">
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">order</span></span><a class="headerlink" href="#order" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns an integer containing either 2 (for truetype fonts) or 3 (for
 postscript fonts). This indicates whether the font uses quadratic or cubic
 splines.</p>
 </dd></dl>
 
 <dl class="ff data">
-<dt id="em">
-<em class="property">$</em><code class="sig-name descname">em</code><a class="headerlink" href="#em" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object ff" id="em">
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">em</span></span><a class="headerlink" href="#em" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns the number of em-units used by the font.</p>
 </dd></dl>
 
 <dl class="ff data">
-<dt id="ascent">
-<em class="property">$</em><code class="sig-name descname">ascent</code><a class="headerlink" href="#ascent" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object ff" id="ascent">
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">ascent</span></span><a class="headerlink" href="#ascent" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns the ascent of the font</p>
 </dd></dl>
 
 <dl class="ff data">
-<dt id="descent">
-<em class="property">$</em><code class="sig-name descname">descent</code><a class="headerlink" href="#descent" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object ff" id="descent">
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">descent</span></span><a class="headerlink" href="#descent" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns the descent of the font.</p>
 </dd></dl>
 
 <dl class="ff data">
-<dt id="selection">
-<em class="property">$</em><code class="sig-name descname">selection</code><a class="headerlink" href="#selection" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object ff" id="selection">
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">selection</span></span><a class="headerlink" href="#selection" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns an array containing one entry for each glyph in the
 current font indicating whether that glyph is selected or not (0=&gt;not,
 1=&gt;selected)</p>
 </dd></dl>
 
 <dl class="ff data">
-<dt id="panose">
-<em class="property">$</em><code class="sig-name descname">panose</code><a class="headerlink" href="#panose" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object ff" id="panose">
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">panose</span></span><a class="headerlink" href="#panose" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns an array containing the 10 panose values for the font.</p>
 </dd></dl>
 
 <dl class="ff data">
-<dt id="trace">
-<em class="property">$</em><code class="sig-name descname">trace</code><a class="headerlink" href="#trace" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object ff" id="trace">
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">trace</span></span><a class="headerlink" href="#trace" title="Permalink to this definition">¶</a></dt>
 <dd><p>if this is set to one then FontForge will trace each procedure call.</p>
 </dd></dl>
 
 <dl class="ff data">
-<dt id="version">
-<em class="property">$</em><code class="sig-name descname">version</code><a class="headerlink" href="#version" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object ff" id="version">
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">version</span></span><a class="headerlink" href="#version" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>returns a string containing the current version of fontforge. This</dt><dd><p>should look something like “20050817”.</p>
 </dd>
@@ -576,13 +575,13 @@ current font indicating whether that glyph is selected or not (0=&gt;not,
 </dd></dl>
 
 <dl class="ff data">
-<dt id="haspython">
-<em class="property">$</em><code class="sig-name descname">haspython</code><a class="headerlink" href="#haspython" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object ff" id="haspython">
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">haspython</span></span><a class="headerlink" href="#haspython" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns 1 if python scripting is available, 0 if it is not.</p>
 </dd></dl>
 
-</div>
-<div class="section" id="preferences">
+</section>
+<section id="preferences">
 <span id="scripting-preference"></span><h3>Preferences<a class="headerlink" href="#preferences" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">$&lt;Preference</span> <span class="pre">Item&gt;</span></code> (for example <code class="docutils literal notranslate"><span class="pre">$AutoHint</span></code>) allows you to examine the
@@ -627,11 +626,11 @@ information.</p>
 <li><p><a class="reference internal" href="#scripting-misc"><span class="std std-ref">Miscellaneous</span></a></p></li>
 <li><p><a class="reference internal" href="#scripting-deprecated"><span class="std std-ref">Deprecated Names</span></a></p></li>
 </ul>
-</div>
-<div class="section" id="built-in-procedures-in-alphabetic-order">
+</section>
+<section id="built-in-procedures-in-alphabetic-order">
 <span id="scripting-alpha"></span><h3>Built-in procedures in alphabetic order<a class="headerlink" href="#built-in-procedures-in-alphabetic-order" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="built-in-procedures-that-do-not-require-a-loaded-font">
+</section>
+<section id="built-in-procedures-that-do-not-require-a-loaded-font">
 <span id="scripting-no-font"></span><h3>Built-in procedures that do not require a loaded font<a class="headerlink" href="#built-in-procedures-that-do-not-require-a-loaded-font" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#Array" title="Array"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Array()</span></code></a></p></li>
@@ -653,15 +652,11 @@ information.</p>
 <li><p><a class="reference internal" href="scripting-alpha.html#IsAlpha" title="IsAlpha"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">IsAlpha()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#IsDigit" title="IsDigit"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">IsDigit()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#IsFinite" title="IsFinite"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">IsFinite()</span></code></a></p></li>
-<li><p><a class="reference internal" href="scripting-alpha.html#IsFraction" title="IsFraction"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">IsFraction()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#IsHexDigit" title="IsHexDigit"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">IsHexDigit()</span></code></a></p></li>
-<li><p><a class="reference internal" href="scripting-alpha.html#IsLigature" title="IsLigature"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">IsLigature()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#IsLower" title="IsLower"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">IsLower()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#IsNan" title="IsNan"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">IsNan()</span></code></a></p></li>
-<li><p><a class="reference internal" href="scripting-alpha.html#IsOtherFraction" title="IsOtherFraction"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">IsOtherFraction()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#IsSpace" title="IsSpace"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">IsSpace()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#IsUpper" title="IsUpper"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">IsUpper()</span></code></a></p></li>
-<li><p><a class="reference internal" href="scripting-alpha.html#IsVulgarFraction" title="IsVulgarFraction"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">IsVulgarFraction()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#LoadEncodingFile" title="LoadEncodingFile"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">LoadEncodingFile()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#LoadNamelist" title="LoadNamelist"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">LoadNamelist()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#LoadNamelistDir" title="LoadNamelistDir"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">LoadNamelistDir()</span></code></a></p></li>
@@ -709,8 +704,8 @@ information.</p>
 <li><p><a class="reference internal" href="scripting-alpha.html#Utf8" title="Utf8"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Utf8()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#WriteStringToFile" title="WriteStringToFile"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">WriteStringToFile()</span></code></a></p></li>
 </ul>
-</div>
-<div class="section" id="built-in-procedures-that-act-like-the-file-menu">
+</section>
+<section id="built-in-procedures-that-act-like-the-file-menu">
 <span id="scripting-file-menu"></span><h3>Built-in procedures that act like the File Menu<a class="headerlink" href="#built-in-procedures-that-act-like-the-file-menu" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#Close" title="Close"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Close()</span></code></a></p></li>
@@ -730,8 +725,8 @@ information.</p>
 <li><p><a class="reference internal" href="scripting-alpha.html#RevertToBackup" title="RevertToBackup"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">RevertToBackup()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#Save" title="Save"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Save()</span></code></a></p></li>
 </ul>
-</div>
-<div class="section" id="file-manipulation">
+</section>
+<section id="file-manipulation">
 <span id="scripting-files"></span><h3>File Manipulation<a class="headerlink" href="#file-manipulation" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#FileAccess" title="FileAccess"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">FileAccess()</span></code></a></p></li>
@@ -739,8 +734,8 @@ information.</p>
 <li><p><a class="reference internal" href="scripting-alpha.html#LoadStringFromFile" title="LoadStringFromFile"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">LoadStringFromFile()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#WriteStringToFile" title="WriteStringToFile"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">WriteStringToFile()</span></code></a></p></li>
 </ul>
-</div>
-<div class="section" id="built-in-procedures-that-act-like-the-edit-menu">
+</section>
+<section id="built-in-procedures-that-act-like-the-edit-menu">
 <span id="scripting-edit-menu"></span><h3>Built-in procedures that act like the Edit Menu<a class="headerlink" href="#built-in-procedures-that-act-like-the-edit-menu" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#Clear" title="Clear"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Clear()</span></code></a></p></li>
@@ -763,8 +758,8 @@ information.</p>
 <li><p><a class="reference internal" href="scripting-alpha.html#SameGlyphAs" title="SameGlyphAs"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">SameGlyphAs()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#UnlinkReference" title="UnlinkReference"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">UnlinkReference()</span></code></a></p></li>
 </ul>
-</div>
-<div class="section" id="built-in-procedures-that-act-like-the-select-menu">
+</section>
+<section id="built-in-procedures-that-act-like-the-select-menu">
 <span id="scripting-select-menu"></span><h3>Built-in procedures that act like the Select Menu<a class="headerlink" href="#built-in-procedures-that-act-like-the-select-menu" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#Select" title="Select"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Select()</span></code></a></p></li>
@@ -790,14 +785,16 @@ information.</p>
 <li><p><a class="reference internal" href="scripting-alpha.html#SelectSingletonsIf" title="SelectSingletonsIf"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">SelectSingletonsIf()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#SelectWorthOutputting" title="SelectWorthOutputting"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">SelectWorthOutputting()</span></code></a></p></li>
 </ul>
-</div>
-<div class="section" id="built-in-procedures-that-act-like-the-element-menu">
+</section>
+<section id="built-in-procedures-that-act-like-the-element-menu">
 <span id="scripting-element-menu"></span><h3>Built-in procedures that act like the Element Menu<a class="headerlink" href="#built-in-procedures-that-act-like-the-element-menu" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#AddAccent" title="AddAccent"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">AddAccent()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#AddExtrema" title="AddExtrema"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">AddExtrema()</span></code></a></p></li>
+<li><p><a class="reference internal" href="scripting-alpha.html#AddInflections" title="AddInflections"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">AddInflections()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#ApplySubstitution" title="ApplySubstitution"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">ApplySubstitution()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#AutoTrace" title="AutoTrace"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">AutoTrace()</span></code></a></p></li>
+<li><p><a class="reference internal" href="scripting-alpha.html#Balance" title="Balance"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Balance()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#BitmapsAvail" title="BitmapsAvail"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">BitmapsAvail()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#BitmapsRegen" title="BitmapsRegen"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">BitmapsRegen()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#BuildAccented" title="BuildAccented"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">BuildAccented()</span></code></a></p></li>
@@ -813,6 +810,7 @@ information.</p>
 <li><p><a class="reference internal" href="scripting-alpha.html#DefaultUseMyMetrics" title="DefaultUseMyMetrics"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">DefaultUseMyMetrics()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#ExpandStroke" title="ExpandStroke"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">ExpandStroke()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#FindIntersections" title="FindIntersections"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">FindIntersections()</span></code></a></p></li>
+<li><p><a class="reference internal" href="scripting-alpha.html#Harmonize" title="Harmonize"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Harmonize()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#HFlip" title="HFlip"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">HFlip()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#Inline" title="Inline"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Inline()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#InterpolateFonts" title="InterpolateFonts"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">InterpolateFonts()</span></code></a></p></li>
@@ -841,8 +839,8 @@ information.</p>
 <li><p><a class="reference internal" href="scripting-alpha.html#VFlip" title="VFlip"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">VFlip()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#Wireframe" title="Wireframe"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Wireframe()</span></code></a></p></li>
 </ul>
-</div>
-<div class="section" id="font-info">
+</section>
+<section id="font-info">
 <span id="scripting-font-info"></span><h3>Font Info<a class="headerlink" href="#font-info" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#AddSizeFeature" title="AddSizeFeature"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">AddSizeFeature()</span></code></a></p></li>
@@ -871,8 +869,8 @@ information.</p>
 <li><p><a class="reference internal" href="scripting-alpha.html#SetUniqueID" title="SetUniqueID"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">SetUniqueID()</span></code></a></p></li>
 <li><p>Some items (such as the font name) may be retrieved via built-in variables.</p></li>
 </ul>
-</div>
-<div class="section" id="glyph-info">
+</section>
+<section id="glyph-info">
 <span id="scripting-glyph-info"></span><h3>Glyph Info<a class="headerlink" href="#glyph-info" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#DrawsSomething" title="DrawsSomething"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">DrawsSomething()</span></code></a></p></li>
@@ -887,8 +885,8 @@ information.</p>
 <li><p><a class="reference internal" href="scripting-alpha.html#SetGlyphTeX" title="SetGlyphTeX"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">SetGlyphTeX()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#WorthOutputting" title="WorthOutputting"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">WorthOutputting()</span></code></a></p></li>
 </ul>
-</div>
-<div class="section" id="built-in-procedures-that-handle-advanced-typography">
+</section>
+<section id="built-in-procedures-that-handle-advanced-typography">
 <span id="scripting-att"></span><h3>Built-in procedures that handle Advanced Typography<a class="headerlink" href="#built-in-procedures-that-handle-advanced-typography" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#AddAnchorClass" title="AddAnchorClass"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">AddAnchorClass()</span></code></a></p></li>
@@ -920,8 +918,8 @@ information.</p>
 <li><p><a class="reference internal" href="scripting-alpha.html#RemovePreservedTable" title="RemovePreservedTable"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">RemovePreservedTable()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#SaveTableToFile" title="SaveTableToFile"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">SaveTableToFile()</span></code></a></p></li>
 </ul>
-</div>
-<div class="section" id="built-in-procedures-that-act-like-the-encoding-menu">
+</section>
+<section id="built-in-procedures-that-act-like-the-encoding-menu">
 <span id="scripting-encoding-menu"></span><h3>Built-in procedures that act like the Encoding Menu<a class="headerlink" href="#built-in-procedures-that-act-like-the-encoding-menu" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#CharCnt" title="CharCnt"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">CharCnt()</span></code></a></p></li>
@@ -935,8 +933,8 @@ information.</p>
 <li><p><a class="reference internal" href="scripting-alpha.html#SameGlyphAs" title="SameGlyphAs"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">SameGlyphAs()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#SetCharCnt" title="SetCharCnt"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">SetCharCnt()</span></code></a></p></li>
 </ul>
-</div>
-<div class="section" id="built-in-procedures-that-act-like-the-hint-menu">
+</section>
+<section id="built-in-procedures-that-act-like-the-hint-menu">
 <span id="scripting-hint-menu"></span><h3>Built-in procedures that act like the Hint Menu<a class="headerlink" href="#built-in-procedures-that-act-like-the-hint-menu" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#AddDHint" title="AddDHint"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">AddDHint()</span></code></a></p></li>
@@ -962,8 +960,8 @@ information.</p>
 <li><p><a class="reference internal" href="scripting-alpha.html#SetGlyphCounterMask" title="SetGlyphCounterMask"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">SetGlyphCounterMask()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#SubstitutionPoints" title="SubstitutionPoints"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">SubstitutionPoints()</span></code></a></p></li>
 </ul>
-</div>
-<div class="section" id="built-in-procedures-that-act-like-the-metrics-menu">
+</section>
+<section id="built-in-procedures-that-act-like-the-metrics-menu">
 <span id="scripting-metrics-menu"></span><h3>Built-in procedures that act like the Metrics Menu<a class="headerlink" href="#built-in-procedures-that-act-like-the-metrics-menu" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#AutoKern" title="AutoKern"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">AutoKern()</span></code></a></p></li>
@@ -979,8 +977,8 @@ information.</p>
 <li><p><a class="reference internal" href="scripting-alpha.html#SetWidth" title="SetWidth"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">SetWidth()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#VKernFromHKern" title="VKernFromHKern"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">VKernFromHKern()</span></code></a></p></li>
 </ul>
-</div>
-<div class="section" id="multiple-master-routines">
+</section>
+<section id="multiple-master-routines">
 <span id="scripting-mm"></span><h3>Multiple master routines<a class="headerlink" href="#multiple-master-routines" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#MMAxisBounds" title="MMAxisBounds"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">MMAxisBounds()</span></code></a></p></li>
@@ -991,8 +989,8 @@ information.</p>
 <li><p><a class="reference internal" href="scripting-alpha.html#MMInstanceNames" title="MMInstanceNames"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">MMInstanceNames()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#MMWeightedName" title="MMWeightedName"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">MMWeightedName()</span></code></a></p></li>
 </ul>
-</div>
-<div class="section" id="cid-routines">
+</section>
+<section id="cid-routines">
 <span id="scripting-cid"></span><h3>CID routines<a class="headerlink" href="#cid-routines" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#CIDChangeSubFont" title="CIDChangeSubFont"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">CIDChangeSubFont()</span></code></a></p></li>
@@ -1003,8 +1001,8 @@ information.</p>
 <li><p><a class="reference internal" href="scripting-alpha.html#ConvertByCMap" title="ConvertByCMap"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">ConvertByCMap()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#PreloadCidmap" title="PreloadCidmap"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">PreloadCidmap()</span></code></a></p></li>
 </ul>
-</div>
-<div class="section" id="user-interaction">
+</section>
+<section id="user-interaction">
 <span id="scripting-user"></span><h3>User Interaction<a class="headerlink" href="#user-interaction" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#AskUser" title="AskUser"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">AskUser()</span></code></a></p></li>
@@ -1012,8 +1010,8 @@ information.</p>
 <li><p><a class="reference internal" href="scripting-alpha.html#PostNotice" title="PostNotice"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">PostNotice()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#Print" title="Print"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Print()</span></code></a></p></li>
 </ul>
-</div>
-<div class="section" id="scripting-prefs">
+</section>
+<section id="scripting-prefs">
 <span id="id2"></span><h3>Preferences<a class="headerlink" href="#scripting-prefs" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#DefaultOtherSubrs" title="DefaultOtherSubrs"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">DefaultOtherSubrs()</span></code></a></p></li>
@@ -1028,8 +1026,8 @@ information.</p>
 <li><p>It it also possible to get the value of a preference item by preceding its name
 with a dollar sign.</p></li>
 </ul>
-</div>
-<div class="section" id="math">
+</section>
+<section id="math">
 <span id="scripting-math"></span><h3>Math<a class="headerlink" href="#math" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#ATan2" title="ATan2"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">ATan2()</span></code></a></p></li>
@@ -1056,8 +1054,8 @@ with a dollar sign.</p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#ToString" title="ToString"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">ToString()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#UCodePoint" title="UCodePoint"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">UCodePoint()</span></code></a></p></li>
 </ul>
-</div>
-<div class="section" id="unicode">
+</section>
+<section id="unicode">
 <span id="scripting-unicode"></span><h3>Unicode<a class="headerlink" href="#unicode" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#NameFromUnicode" title="NameFromUnicode"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">NameFromUnicode()</span></code></a></p></li>
@@ -1066,8 +1064,8 @@ with a dollar sign.</p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#Ucs4" title="Ucs4"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Ucs4()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#Utf8" title="Utf8"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Utf8()</span></code></a></p></li>
 </ul>
-</div>
-<div class="section" id="string-manipulation">
+</section>
+<section id="string-manipulation">
 <span id="scripting-strings"></span><h3>String manipulation<a class="headerlink" href="#string-manipulation" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#Chr" title="Chr"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Chr()</span></code></a></p></li>
@@ -1091,41 +1089,37 @@ with a dollar sign.</p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#Ucs4" title="Ucs4"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Ucs4()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#Utf8" title="Utf8"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Utf8()</span></code></a></p></li>
 </ul>
-</div>
-<div class="section" id="character-manipulation">
+</section>
+<section id="character-manipulation">
 <span id="scripting-character"></span><h3>Character Manipulation<a class="headerlink" href="#character-manipulation" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#IsAlNum" title="IsAlNum"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">IsAlNum()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#IsAlpha" title="IsAlpha"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">IsAlpha()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#IsDigit" title="IsDigit"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">IsDigit()</span></code></a></p></li>
-<li><p><a class="reference internal" href="scripting-alpha.html#IsFraction" title="IsFraction"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">IsFraction()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#IsHexDigit" title="IsHexDigit"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">IsHexDigit()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#IsLower" title="IsLower"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">IsLower()</span></code></a></p></li>
-<li><p><a class="reference internal" href="scripting-alpha.html#IsLigature" title="IsLigature"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">IsLigature()</span></code></a></p></li>
-<li><p><a class="reference internal" href="scripting-alpha.html#IsOtherFraction" title="IsOtherFraction"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">IsOtherFraction()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#IsSpace" title="IsSpace"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">IsSpace()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#IsUpper" title="IsUpper"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">IsUpper()</span></code></a></p></li>
-<li><p><a class="reference internal" href="scripting-alpha.html#IsVulgarFraction" title="IsVulgarFraction"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">IsVulgarFraction()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#ToLower" title="ToLower"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">ToLower()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#ToMirror" title="ToMirror"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">ToMirror()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#ToUpper" title="ToUpper"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">ToUpper()</span></code></a></p></li>
 </ul>
-</div>
-<div class="section" id="arrays">
+</section>
+<section id="arrays">
 <span id="scripting-arrays"></span><h3>Arrays<a class="headerlink" href="#arrays" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#Array" title="Array"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Array()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#SizeOf" title="SizeOf"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">SizeOf()</span></code></a></p></li>
 </ul>
-</div>
-<div class="section" id="miscellaneous">
+</section>
+<section id="miscellaneous">
 <span id="scripting-misc"></span><h3>Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#InFont" title="InFont"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">InFont()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#TypeOf" title="TypeOf"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">TypeOf()</span></code></a></p></li>
 </ul>
-</div>
-<div class="section" id="deprecated-names">
+</section>
+<section id="deprecated-names">
 <span id="scripting-deprecated"></span><h3>Deprecated Names<a class="headerlink" href="#deprecated-names" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#ClearGlyphCounterMasks" title="ClearGlyphCounterMasks"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">ClearGlyphCounterMasks()</span></code></a></p></li>
@@ -1137,9 +1131,9 @@ with a dollar sign.</p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#SetGlyphName" title="SetGlyphName"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">SetGlyphName()</span></code></a></p></li>
 </ul>
 <hr class="docutils" />
-</div>
-</div>
-<div class="section" id="examples">
+</section>
+</section>
+<section id="examples">
 <span id="scripting-example"></span><h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/fontforge/fontforge/tree/master/test">FontForge’s testsuite in the test subdirectory</a>
@@ -1152,7 +1146,7 @@ with a dollar sign.</p></li>
 </li>
 <li><p><a class="reference internal" href="../tutorial/scripting-tutorial.html"><span class="doc">the scripting tutorial</span></a></p></li>
 </ul>
-<div class="section" id="example-1">
+<section id="example-1">
 <h3>Example 1:<a class="headerlink" href="#example-1" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Set the color of all selected glyphs to be yellow</span>
 <span class="c1">#designed to be run within an interactive fontforge session.</span>
@@ -1161,8 +1155,8 @@ with a dollar sign.</p></li>
 <span class="n">endloop</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="example-2">
+</section>
+<section id="example-2">
 <h3>Example 2:<a class="headerlink" href="#example-2" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/usr/local/bin/fontforge
 #This is the sfddiff script which compares two fonts
@@ -1239,8 +1233,8 @@ if ( outfile!=&quot;&quot; )
 endif
 </pre></div>
 </div>
-</div>
-<div class="section" id="example-3">
+</section>
+<section id="example-3">
 <h3>Example 3:<a class="headerlink" href="#example-3" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/usr/local/bin/fontforge
 #Take a Latin font and apply some simple transformations to it
@@ -1319,9 +1313,9 @@ Save($1:r+&quot;-koi8-r.sfd&quot;);
 Quit(0);
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="the-execute-script-dialog">
+</section>
+</section>
+<section id="the-execute-script-dialog">
 <span id="scripting-execute"></span><h2>The Execute Script dialog<a class="headerlink" href="#the-execute-script-dialog" title="Permalink to this headline">¶</a></h2>
 <p>This dialog allows you to type a script directly in to FontForge and then run
 it. Of course the most common case is that you’ll have a script file somewhere
@@ -1336,8 +1330,8 @@ to text to invoke it will be placed in the text area.</p>
 have invoked fontforge from a window manager’s menu stdout will often be bound
 to /dev/null and not useful. Try starting fontforge from the command line
 instead.</p>
-</div>
-<div class="section" id="the-scripts-menu">
+</section>
+<section id="the-scripts-menu">
 <span id="scripting-menu"></span><h2>The Scripts Menu<a class="headerlink" href="#the-scripts-menu" title="Permalink to this headline">¶</a></h2>
 <p>You can use the preference dialog to create a list of frequently used scripts.
 Invoke <a class="reference internal" href="../ui/dialogs/prefs.html#prefs-scripts"><span class="std std-ref">File-&gt;Preferences</span></a> and select the Scripts tag. In
@@ -1349,8 +1343,8 @@ view, either directly from the menu
 script you added will be invoked by Cnt-Alt-1, then second by Cnt-Alt-2, and the
 tenth by Cnt-Alt-0.</p>
 <p>The current font of the script will be set to whatever font you invoked it from.</p>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -1427,7 +1421,7 @@ tenth by Cnt-Alt-0.</p>
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="../ui/misc/xres.html" title="previous chapter">X Resources</a></li>
+      <li>Previous: <a href="../ui/misc/xres.html" title="previous chapter">Changing FontForge’s UI Appearance</a></li>
       <li>Next: <a href="scripting-alpha.html" title="next chapter">Scripting functions</a></li>
   </ul></li>
 </ul>
@@ -1436,7 +1430,7 @@ tenth by Cnt-Alt-0.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -1458,7 +1452,7 @@ tenth by Cnt-Alt-0.</p>
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

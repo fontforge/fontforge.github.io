@@ -4,16 +4,15 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>X Resource Editor &#8212; FontForge 20201107 documentation</title>
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Appearance Editor &#8212; FontForge 20220308 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -35,15 +34,17 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="x-resource-editor">
-<h1>X Resource Editor<a class="headerlink" href="#x-resource-editor" title="Permalink to this headline">¶</a></h1>
+  <section id="appearance-editor">
+<h1>Appearance Editor<a class="headerlink" href="#appearance-editor" title="Permalink to this headline">¶</a></h1>
 <img alt="../../_images/resedit.png" src="../../_images/resedit.png" />
-<p>This dialog allows you to control the look and feel of FontForge. You can
-control (most of) the same resources described in the
-<a class="reference internal" href="xres.html"><span class="doc">X Resource page</span></a>, but in (I hope) a more convenient format. Some
-changes will be reflected instantly, other changes require refreshing the
-screen, other changes require invoking a new dialog, and some changes you must
-save the resources and restart fontforge.</p>
+<p>This dialog allows you to control the look and feel of FontForge.</p>
+<p>Almost all of the controls are explained in more detail in mouse hover tooltips
+but the full list of parameters is also in <a class="reference internal" href="xres.html"><span class="doc">this document</span></a>. Its
+section on <a class="reference internal" href="xres.html#xres-font"><span class="std std-ref">specifying fonts</span></a> is worth reviewing as there are
+now new options.</p>
+<p>Some changes made in the editor will be reflected instantly, other changes
+require refreshing the screen, other changes require invoking a new dialog, and
+some changes you must save the changes and restart fontforge.</p>
 <p>To the left of the dialog is a list of all fontforge’s controls (and some other
 stuff). Every control is drawn within a box, and the box specifies a background,
 border, shape, size… Many controls have an associated font. Most controls
@@ -59,21 +60,21 @@ generally an enabled and disabled version.</p>
 <p>Beneath this are the actual data. First the data describing the box. There are a
 series of flags</p>
 <dl class="object">
-<dt>
-<code class="sig-name descname">Outline Inner Border</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Outline</span> <span class="pre">Inner</span> <span class="pre">Border</span></span></dt>
 <dd><p>A line (in the text color) will be drawn on the inside of the border to make
 it more distinct.</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">Outline Outer Border</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Outline</span> <span class="pre">Outer</span> <span class="pre">Border</span></span></dt>
 <dd><p>A line will be drawn on the outside of the border.</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">Show Active Border</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Show</span> <span class="pre">Active</span> <span class="pre">Border</span></span></dt>
 <dd><p>Not all controls display this, and there are some differences among controls
 about when one is active, but basically if the focus or mouse cursor is in
 the control, then a special border (drawn with the active border color) is
@@ -82,22 +83,22 @@ Inner Border” if both be specified.</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">Despressed Background</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Despressed</span> <span class="pre">Background</span></span></dt>
 <dd><p>If selected (and the control supports it – buttons do) then when the mouse
 is depressed in the control the background of the control changes color.</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">Outline Default Button</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Outline</span> <span class="pre">Default</span> <span class="pre">Button</span></span></dt>
 <dd><p>If the current control is a default button, then a special border is drawn
 well outside the normal border to indicate that it is.</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">Background Gradient</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Background</span> <span class="pre">Gradient</span></span></dt>
 <dd><p>If set then the background is drawn as a reflected gradient with the normal
 background color drawn in the center (vertically) of the control and the
 background gradient color drawn at the top and bottom edges (like the [OK]
@@ -128,15 +129,15 @@ the control – actually half the smaller dimension of the control).</p>
 bold), a point size, and a comma separated list of font family names. Changing
 the font will not have any obvious effect until you restart the dialog.</p>
 <p>That specifies the standard box used to draw each control. Some controls have
-additional resources. The Button control above contains an additional boolean
-resource which (if set) will cause the text of the button to shift slightly
-right when the button is pressed. (This is another of those resources where you
+additional parameters. The Button control above contains an additional boolean
+parameter which (if set) will cause the text of the button to shift slightly
+right when the button is pressed. (This is another of those parameters where you
 must restart the dialog to see it take effect).</p>
-<p>If you press the [OK] button then your current resource settings will be used in
+<p>If you press the [OK] button then your current settings will be used in
 subsequent dialogs created by FontForge – but any changes you make will vanish
 when you exit. If you press the [Save] button then your changes will be saved to
 disk, and (optionally) used the next time you start fontforge.</p>
-</div>
+</section>
 
 
           </div>
@@ -163,9 +164,9 @@ disk, and (optionally) used the next time you start fontforge.</p>
 <li class="toctree-l2"><a class="reference internal" href="../dialogs.html">Dialogs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="HotKeys.html">Hot Keys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fontforge-themes.html">FontForge color schemes</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">X Resource Editor</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Appearance Editor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xim.html">X Input Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="xres.html">X Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xres.html">Changing FontForge’s UI Appearance</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../scripting/scripting.html">Scripting FontForge</a></li>
@@ -191,7 +192,7 @@ disk, and (optionally) used the next time you start fontforge.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -213,7 +214,7 @@ disk, and (optionally) used the next time you start fontforge.</p>
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

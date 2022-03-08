@@ -4,16 +4,15 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Generate Font Dialog &#8212; FontForge 20201107 documentation</title>
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Generate Font Dialog &#8212; FontForge 20220308 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -35,7 +34,7 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="generate-font-dialog">
+  <section id="generate-font-dialog">
 <h1>Generate Font Dialog<a class="headerlink" href="#generate-font-dialog" title="Permalink to this headline">¶</a></h1>
 <img alt="../../_images/generate.png" class="align-right" src="../../_images/generate.png" />
 <p>This generates font files, both outline and bitmap. You may choose not to
@@ -226,7 +225,7 @@ but it may be helpful for applications which don’t support ‘GPOS’ kerning.
 an OpenType icon if it contains a ‘DSIG’ table. FontForge can’t generate a
 useful ‘DSIG’ table, but it can generate a useless, empty and valid one.</p></li>
 <li><p>[] Save Comments – I have added my own table
-(‘<a class="reference internal" href="../../techref/non-standard.html#non-standard-pfed"><span class="std std-ref">PfEd</span></a>’) in the truetype format in which I can store
+(’<a class="reference internal" href="../../techref/non-standard.html#non-standard-pfed"><span class="std std-ref">PfEd</span></a>’) in the truetype format in which I can store
 whatever data I want. Checking this box saves all the glyph comments into the
 output file.</p></li>
 <li><p>[] Save Colors – Save the glyph colors in the ‘<a class="reference internal" href="../../techref/non-standard.html#non-standard-pfed"><span class="std std-ref">PfEd</span></a>’
@@ -305,7 +304,7 @@ machine). This is the kind of kerning available in the original truetype spec
 (from which both Apple and OpenType have diverged, but which both still
 support).</p>
 <hr class="docutils" />
-<div class="section" id="generate-mac-family">
+<section id="generate-mac-family">
 <span id="id1"></span><h2>Generate Mac Family<a class="headerlink" href="#generate-mac-family" title="Permalink to this headline">¶</a></h2>
 <img alt="../../_images/GenerateFamily.png" class="align-right" src="../../_images/GenerateFamily.png" />
 <p>This brings up a dialog very similar to the generate fonts dialog above, but
@@ -326,8 +325,8 @@ toward <a class="reference internal" href="#generate-generatettc"><span class="s
 <p>For information on creating mac font families beyond the capabilities of this
 dialog look at the <a class="reference internal" href="../../faq.html#faq-how-family"><span class="std std-ref">FAQ</span></a>.</p>
 <hr class="docutils" />
-</div>
-<div class="section" id="generate-ttc">
+</section>
+<section id="generate-ttc">
 <span id="generate-generatettc"></span><h2>Generate TTC<a class="headerlink" href="#generate-ttc" title="Permalink to this headline">¶</a></h2>
 <img alt="../../_images/GenerateTTC.png" class="align-right" src="../../_images/GenerateTTC.png" />
 <p>A TrueType Collection file can contain many fonts. They need not be all in the
@@ -360,21 +359,21 @@ if:</p>
 <li><p>(or something else goes wrong)</p></li>
 </ul>
 <hr class="docutils" />
-</div>
-<div class="section" id="svg-fonts">
+</section>
+<section id="svg-fonts">
 <span id="generate-svg"></span><h2>SVG fonts<a class="headerlink" href="#svg-fonts" title="Permalink to this headline">¶</a></h2>
 <p>SVG (Scalable Vector Graphics) fonts, come in two forms, one corresponds roughly
 to a PostScript Type1 font, and one to a PostScript Type 3 font.</p>
 <p>In the first format a set of contours is specified for each glyph. There is no
-indication given whether the font should be stroked or filled – that informaton
+indication given whether the font should be stroked or filled – that information
 will have inherited from the graphical environment when the font is used on
 text.</p>
 <p>In the second format each glyph may contain the stroke and fill commands needed
 to draw it.</p>
 <p>FontForge usually generates the first format, but for multi layered or stroked
 fonts it will generate the second format.</p>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -416,9 +415,9 @@ fonts it will generate the second format.</p>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../misc/HotKeys.html">Hot Keys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../misc/fontforge-themes.html">FontForge color schemes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">X Resource Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">Appearance Editor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../misc/xim.html">X Input Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">X Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">Changing FontForge’s UI Appearance</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../scripting/scripting.html">Scripting FontForge</a></li>
@@ -446,7 +445,7 @@ fonts it will generate the second format.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -468,7 +467,7 @@ fonts it will generate the second format.</p>
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

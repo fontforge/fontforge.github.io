@@ -4,16 +4,16 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>9. Conditional Features &#8212; FontForge 20201107 documentation</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>9. Conditional Features &#8212; FontForge 20220308 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -35,7 +35,7 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="conditional-features">
+  <section id="conditional-features">
 <h1><span class="section-number">9. </span>Conditional Features<a class="headerlink" href="#conditional-features" title="Permalink to this headline">¶</a></h1>
 <p>OpenType and Apple fonts both provide contextual features. These are features
 which only take place in a given context and are essential for typesetting Indic
@@ -55,7 +55,7 @@ letters join near the baseline. Thus we need two variants for each glyph, one
 that joins (on the left) at the baseline (the default variant) and one which
 joins at the x-height. Let us call this second set of letters the “high” letters
 and name them “a.high,” “b.high” and so forth.</p>
-<div class="section" id="opentype-example">
+<section id="opentype-example">
 <h2><span class="section-number">9.1. </span>OpenType Example<a class="headerlink" href="#opentype-example" title="Permalink to this headline">¶</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -134,8 +134,8 @@ active to lookahead), and one to add a new lookup reference.</p>
 even more confusing software may support them for some scripts and not for
 others.</p>
 </div>
-</div>
-<div class="section" id="apple-advanced-typography">
+</section>
+<section id="apple-advanced-typography">
 <span id="editexample6-5-apple"></span><h2><span class="section-number">9.2. </span>Apple advanced typography<a class="headerlink" href="#apple-advanced-typography" title="Permalink to this headline">¶</a></h2>
 <p>Apple specifies a context with a finite state machine, which is essentially a
 tiny program that looks at the glyph stream and decides what substitutions to
@@ -181,14 +181,14 @@ to the current glyph.</p>
 through the transitions of the state machine.</p>
 <p>Pressing [OK] many times will extract you from this chain of dialogs and add a
 new state machine to your font.</p>
-</div>
-<div class="section" id="opentype-greek-ligatures">
+</section>
+<section id="opentype-greek-ligatures">
 <span id="editexample6-5-greek"></span><h2><span class="section-number">9.3. </span>OpenType, Greek ligatures<a class="headerlink" href="#opentype-greek-ligatures" title="Permalink to this headline">¶</a></h2>
 <p>Greek has a character (U+03D7) which is equivalent to the Latin ampersand. Just
 as the ampersand is (originally) a ligature of “E” and “t”, so U+03D7 is a
 ligature of “kappa” and “iota”. However this ligature should only be used if
 “kappa” and “iota” make up a word unto themselves, it should not be used for
-more normal occurances of the two within a longer word.</p>
+more normal occurrences of the two within a longer word.</p>
 <img alt="../_images/kappa_iota-lookup.png" class="align-right" src="../_images/kappa_iota-lookup.png" />
 <p>So the first thing to do is create the ligature itself. Add the glyph for
 U+03D7, and then create a ligature lookup and subtable (with
@@ -344,8 +344,8 @@ accepted.</p>
 <a class="reference internal" href="../ui/mainviews/metricsview.html"><span class="doc">metrics view</span></a>.</p>
 <img alt="../_images/metrics-kappa_iota.png" src="../_images/metrics-kappa_iota.png" />
 <p>(This example was provided by Apostolos Syropoulos)</p>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -411,7 +411,7 @@ accepted.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -433,7 +433,7 @@ accepted.</p>
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

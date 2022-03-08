@@ -4,16 +4,15 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Insert Text Dialog &#8212; FontForge 20201107 documentation</title>
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Insert Text Dialog &#8212; FontForge 20220308 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -35,7 +34,7 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="insert-text-dialog">
+  <section id="insert-text-dialog">
 <h1>Insert Text Dialog<a class="headerlink" href="#insert-text-dialog" title="Permalink to this headline">¶</a></h1>
 <img alt="../../_images/InsertTxtDlg.png" class="align-right" src="../../_images/InsertTxtDlg.png" />
 <p>Generally when designing a font you will not want to use this dialog. What is
@@ -69,31 +68,37 @@ value in “Offset text from path”</p>
 <p>Finally FontForge has two modes for binding text. Either it will use the place
 where the center of the glyph aligns on the path and rotate the entire glyph
 appropriately for that point, or it will distort each bit of the glyph as is
-appropriate for where that bit aligns on the path. In the first aproach the
+appropriate for where that bit aligns on the path. In the first approach the
 letters are cleaner individually but the text as a whole is more jagged.</p>
 <div class="flex-container">
 <div class="flex-row">
 <div class="flex-col">
-<div class="figure align-default" id="id1">
+<figure class="align-default" id="id1">
 <img alt="../../_images/PathToBind.png" src="../../_images/PathToBind.png" />
-<p class="caption"><span class="caption-text">path</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">path</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 </div>
 <div class="flex-col">
-<div class="figure align-default" id="id2">
+<figure class="align-default" id="id2">
 <img alt="../../_images/TextBoundUnitaryGlyph.png" src="../../_images/TextBoundUnitaryGlyph.png" />
-<p class="caption"><span class="caption-text">Glyphs bound as a unit</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Glyphs bound as a unit</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 </div>
 <div class="flex-col">
-<div class="figure align-default" id="id3">
+<figure class="align-default" id="id3">
 <img alt="../../_images/TextBoundDistortedGlyphs.png" src="../../_images/TextBoundDistortedGlyphs.png" />
-<p class="caption"><span class="caption-text">Glyphs distorted by binding</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<figcaption>
+<p><span class="caption-text">Glyphs distorted by binding</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
 
 
           </div>
@@ -136,9 +141,9 @@ letters are cleaner individually but the text as a whole is more jagged.</p>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../misc/HotKeys.html">Hot Keys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../misc/fontforge-themes.html">FontForge color schemes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">X Resource Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">Appearance Editor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../misc/xim.html">X Input Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">X Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">Changing FontForge’s UI Appearance</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../scripting/scripting.html">Scripting FontForge</a></li>
@@ -166,7 +171,7 @@ letters are cleaner individually but the text as a whole is more jagged.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -188,7 +193,7 @@ letters are cleaner individually but the text as a whole is more jagged.</p>
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

@@ -4,16 +4,15 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tile Path &#8212; FontForge 20201107 documentation</title>
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Tile Path &#8212; FontForge 20220308 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -35,38 +34,44 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="tile-path">
+  <section id="tile-path">
 <h1>Tile Path<a class="headerlink" href="#tile-path" title="Permalink to this headline">¶</a></h1>
-<p>The Tile Path command may be used to apply a repetative decoration to a font.
+<p>The Tile Path command may be used to apply a repetitive decoration to a font.
 You invoke the command on a glyph (or set of glyphs), then design your tile(s).
 All selected paths in the glyph will be replaced by the tile fit to the curve.</p>
 <p>Consider the following:</p>
 <div class="flex-container">
 <div class="flex-row">
 <div class="flex-col">
-<div class="figure align-default" id="id1">
+<figure class="align-default" id="id1">
 <img alt="../../_images/tilepath-selection.png" src="../../_images/tilepath-selection.png" />
-<p class="caption"><span class="caption-text">The tile</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">The tile</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 </div>
 <div class="flex-col">
-<div class="figure align-default" id="id2">
+<figure class="align-default" id="id2">
 <img alt="../../_images/tilepath-orig.png" src="../../_images/tilepath-orig.png" />
-<p class="caption"><span class="caption-text">Two paths to be tiled.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Two paths to be tiled.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 </div>
 <div class="flex-col">
-<div class="figure align-default" id="id3">
+<figure class="align-default" id="id3">
 <img alt="../../_images/tilepath-final.png" src="../../_images/tilepath-final.png" />
-<p class="caption"><span class="caption-text">The result.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">The result.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
 <p>The tile has been replicated (and warped) to follow the original contours.</p>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="../../_images/TilePath.png" src="../../_images/TilePath.png" />
-</div>
+</figure>
 <p>As you can see above there are several different tiles you can specify. You must
 specify the tile called Medial; you may specify the other three. There meanings
 are:</p>
@@ -83,9 +88,9 @@ example above it would be nice if the ends of open contours were automatically
 closed, so the first and final tiles might look just like the medial tile except
 with their respective edges closed, while the isolated tile would have both
 edges closed.</p>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="../../_images/TilePath2.png" src="../../_images/TilePath2.png" />
-</div>
+</figure>
 <p>The Tile Path dialog gives you several choices to control how the tile is
 placed. The tile can be either centered on the path, or be tangent to the left
 edge of the path (for a clockwise path, the left edge is outside the path), or
@@ -94,22 +99,28 @@ path).</p>
 <div class="flex-container">
 <div class="flex-row">
 <div class="flex-col">
-<div class="figure align-default" id="id4">
+<figure class="align-default" id="id4">
 <img alt="../../_images/tilepath-left.png" src="../../_images/tilepath-left.png" />
-<p class="caption"><span class="caption-text">left (outside)</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">left (outside)</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 </div>
 <div class="flex-col">
-<div class="figure align-default" id="id5">
+<figure class="align-default" id="id5">
 <img alt="../../_images/tilepath-center.png" src="../../_images/tilepath-center.png" />
-<p class="caption"><span class="caption-text">center</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">center</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 </div>
 <div class="flex-col">
-<div class="figure align-default" id="id6">
+<figure class="align-default" id="id6">
 <img alt="../../_images/tilepath-right.png" src="../../_images/tilepath-right.png" />
-<p class="caption"><span class="caption-text">right (inside)</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">right (inside)</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
@@ -121,27 +132,33 @@ one tile and it will be scaled to be as long as the path.</p>
 <div class="flex-container">
 <div class="flex-row">
 <div class="flex-col">
-<div class="figure align-default" id="id7">
+<figure class="align-default" id="id7">
 <img alt="../../_images/tilepath-tile.png" src="../../_images/tilepath-tile.png" />
-<p class="caption"><span class="caption-text">tile</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">tile</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 </div>
 <div class="flex-col">
-<div class="figure align-default" id="id8">
+<figure class="align-default" id="id8">
 <img alt="../../_images/tilepath-ts.png" src="../../_images/tilepath-ts.png" />
-<p class="caption"><span class="caption-text">tile &amp; scale</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">tile &amp; scale</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 </div>
 <div class="flex-col">
-<div class="figure align-default" id="id9">
+<figure class="align-default" id="id9">
 <img alt="../../_images/tilepath-scale.png" src="../../_images/tilepath-scale.png" />
-<p class="caption"><span class="caption-text">scale</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">scale</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="tile-pattern">
+<section id="tile-pattern">
 <span id="tilepath-pattern"></span><h2>Tile Pattern<a class="headerlink" href="#tile-pattern" title="Permalink to this headline">¶</a></h2>
 <img alt="../../_images/TilePattern.png" class="align-right" src="../../_images/TilePattern.png" />
 <p>The Tile Pattern dialog allows you to design a pattern which will be tiled (both
@@ -156,8 +173,8 @@ apply other transformations to distort it into a non-rectangular shape, or use
 the <span class="menuselection">Element ‣ Overlap ‣ Intersect</span> command to clip it to
 some contour. Thus you can simulate some of the capabilities of a true pattern
 tile as is available in a type3 font.</p>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -200,9 +217,9 @@ tile as is available in a type3 font.</p>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../misc/HotKeys.html">Hot Keys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../misc/fontforge-themes.html">FontForge color schemes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">X Resource Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">Appearance Editor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../misc/xim.html">X Input Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">X Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">Changing FontForge’s UI Appearance</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../scripting/scripting.html">Scripting FontForge</a></li>
@@ -230,7 +247,7 @@ tile as is available in a type3 font.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -252,7 +269,7 @@ tile as is available in a type3 font.</p>
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
