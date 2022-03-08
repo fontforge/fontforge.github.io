@@ -4,16 +4,16 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Transform Dialog &#8212; FontForge 20201107 documentation</title>
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Transform Dialog &#8212; FontForge 20220308 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -35,11 +35,11 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="transform-dialog">
+  <section id="transform-dialog">
 <h1>Transform Dialog<a class="headerlink" href="#transform-dialog" title="Permalink to this headline">¶</a></h1>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="../../_images/transform.png" src="../../_images/transform.png" />
-</div>
+</figure>
 <p>This dialog is available in the font, outline and metrics views. In the font
 view it applies to all selected glyphs. In the outline view if there is a
 selection then it applies to that. if there is no selection then it applies to
@@ -49,39 +49,39 @@ origin, the center of the selection (or of the glyph as a whole if there is no
 selection), or the location of the last point on which you clicked the mouse.</p>
 <p>You may apply several different transformations at once:</p>
 <dl class="object">
-<dt>
-<code class="sig-name descname">Do Nothing</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Do</span> <span class="pre">Nothing</span></span></dt>
 <dd><p>A very simple transformation.</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">Move</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Move</span></span></dt>
 <dd><p>You may move the selection an arbitrary amount in the x and y directions</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">Rotate</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Rotate</span></span></dt>
 <dd><p>You may rotate the selection an arbitrary number of degrees.</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">Scale</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Scale</span></span></dt>
 <dd><p>You may scale the two coordinates differently</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">Scale Uniformly</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Scale</span> <span class="pre">Uniformly</span></span></dt>
 <dd><p>You may scale the two coordinates the same amount (which can of course be
 done above, but it’s slightly easier only to set one number).</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">Flip</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Flip</span></span></dt>
 <dd><p>You may flip either horizontally or vertically</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -91,15 +91,15 @@ done above, but it’s slightly easier only to set one number).</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">Skew</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Skew</span></span></dt>
 <dd><p>You may skew the selection a certain number of degrees (to create an oblique
 font for example).</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">Rotate 3D Around...</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Rotate</span> <span class="pre">3D</span> <span class="pre">Around...</span></span></dt>
 <dd><p>You may do a three dimensional rotation of the glyph around either the X axis
 or the Y axis. This operation is immediately followed by a projection of the
 result back into the xy-plane (A rotation around the Z axis is a normal
@@ -110,22 +110,22 @@ options here).</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">Move by Ruler</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Move</span> <span class="pre">by</span> <span class="pre">Ruler</span></span></dt>
 <dd><p>Fill in the amount to move from the x and y offsets of the last measurements
 made with the <a class="reference internal" href="../mainviews/charview.html#charview-ruler"><span class="std std-ref">ruler tool</span></a>.</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">Rotate by Ruler</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Rotate</span> <span class="pre">by</span> <span class="pre">Ruler</span></span></dt>
 <dd><p>Fill in the rotation angle from the angle of the last measurements made with
 the <a class="reference internal" href="../mainviews/charview.html#charview-ruler"><span class="std std-ref">ruler tool</span></a>.</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">Skew by Ruler</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Skew</span> <span class="pre">by</span> <span class="pre">Ruler</span></span></dt>
 <dd><p>Fill in the skew angle from the angle of the last measurements made with the
 <a class="reference internal" href="../mainviews/charview.html#charview-ruler"><span class="std std-ref">ruler tool</span></a>.</p>
 </dd></dl>
@@ -148,7 +148,7 @@ foreground.</p>
 everything will be rounded to an integer value.</p>
 <p>Transformations in the Outline glyph view are not applied to any bitmaps. (Nor
 are transformations in the bitmap window mapped back to the outline).</p>
-<div class="section" id="non-linear-transformations">
+<section id="non-linear-transformations">
 <span id="transform-non-linear"></span><h2>Non-Linear Transformations<a class="headerlink" href="#non-linear-transformations" title="Permalink to this headline">¶</a></h2>
 <img alt="../../_images/non-linear.png" class="align-right" src="../../_images/non-linear.png" />
 <p>Non-linear transformations are defined by providing two expressions, one of
@@ -157,7 +157,7 @@ the y coordinate. In the example at right:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}x' &amp;= 5x^2 + x + 3\sin(y) \\
 y' &amp;= y\end{split}\]</div>
-<p>Expressions may be made up of the usual C operators: “+”, “-“, “*”, “/”, “%”,
+<p>Expressions may be made up of the usual C operators: “+”, “-”, “*”, “/”, “%”,
 “!”, “==”, “&lt;”, “&gt;”, “&lt;=”, “&gt;=”, “!=”, “&amp;&amp;”, “||” and “? :” as well as “^” which
 means “raise to the power of”. They may also contain the standard functions:
 “log”, “exp”, “sqrt”, “sin”, “cos”, “tan”, “atan2”, “abs”, “rint”, “floor”,
@@ -165,8 +165,8 @@ means “raise to the power of”. They may also contain the standard functions:
 <p>Note: In non-linear transformations the result is only an approximation to the
 correct result (A linear transformation will transform a cubic spline to another
 cubic spline. A non-linear transformation may not).</p>
-</div>
-<div class="section" id="point-of-view-projection">
+</section>
+<section id="point-of-view-projection">
 <span id="transform-pov"></span><h2>Point of View Projection<a class="headerlink" href="#point-of-view-projection" title="Permalink to this headline">¶</a></h2>
 <img alt="../../_images/PoV.png" class="align-right" src="../../_images/PoV.png" />
 <p>I have a hard time describing this. There are three different coordinate systems
@@ -192,8 +192,8 @@ origin), and allows you to change in what direction the vanishing point will lie
 fields (Note: It cannot figure out meta information like “Center of Selection”,
 so whenever the eye is positioned with this value, it just assumes a value of 0
 for that coordinate.</p>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -236,9 +236,9 @@ for that coordinate.</p>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../misc/HotKeys.html">Hot Keys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../misc/fontforge-themes.html">FontForge color schemes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">X Resource Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">Appearance Editor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../misc/xim.html">X Input Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">X Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">Changing FontForge’s UI Appearance</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../scripting/scripting.html">Scripting FontForge</a></li>
@@ -266,7 +266,7 @@ for that coordinate.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -288,7 +288,7 @@ for that coordinate.</p>
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

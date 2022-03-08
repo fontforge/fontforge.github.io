@@ -4,16 +4,15 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Non-BMP Unicode bitmap fonts supported by FontForge &#8212; FontForge 20201107 documentation</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Non-BMP Unicode bitmap fonts supported by FontForge &#8212; FontForge 20220308 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -35,7 +34,7 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="non-bmp-unicode-bitmap-fonts-supported-by-fontforge">
+  <section id="non-bmp-unicode-bitmap-fonts-supported-by-fontforge">
 <h1>Non-BMP Unicode bitmap fonts supported by FontForge<a class="headerlink" href="#non-bmp-unicode-bitmap-fonts-supported-by-fontforge" title="Permalink to this headline">¶</a></h1>
 <p>Ironically, FontForge is stuck in the dark ages when it comes to using fonts. It
 should be using libXft and gtk to get full unicode support.</p>
@@ -44,7 +43,7 @@ consortium isn’t interested in extending beyond BMP (since libXft/gtk do this
 well and there is no point in redoing that for an obsolete interface).</p>
 <p>But I’d like to draw non-BMP characters at least in my font view.</p>
 <p>To this end I have made FontForge recognize some non-standard encodings:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-*-*-*-*-*--*-*-*-*-*-*-</span><span class="n">UnicodePlane</span><span class="o">-</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="o">...</span><span class="mi">16</span><span class="p">}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-*-*-*-*-*--*-*-*-*-*-*-</span><span class="n">UnicodePlane</span><span class="o">-</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="o">..</span><span class="mf">.16</span><span class="p">}</span>
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">fontforge</span><span class="o">-</span><span class="n">planeone</span><span class="o">-</span><span class="n">medium</span><span class="o">-</span><span class="n">r</span><span class="o">-</span><span class="n">normal</span><span class="o">--</span><span class="mi">13</span><span class="o">-</span><span class="mi">120</span><span class="o">-</span><span class="mi">75</span><span class="o">-</span><span class="mi">75</span><span class="o">-</span><span class="n">p</span><span class="o">-</span><span class="mi">101</span><span class="o">-</span><span class="n">unicodeplane</span><span class="o">-</span><span class="mi">1</span>
@@ -66,7 +65,7 @@ for planes 2&amp;14) I’ll try and coordinate that process.</p>
 <p>The sfd file is encoded with a “full unicode” encoding. The program toplane.c
 will take a bdf containing one Unicode plane, figure out which plane it is, and
 reencode the font with the appropriate UnicodePlane mapping.</p>
-</div>
+</section>
 
 
           </div>
@@ -124,7 +123,7 @@ reencode the font with the appropriate UnicodePlane mapping.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -146,7 +145,7 @@ reencode the font with the appropriate UnicodePlane mapping.</p>
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

@@ -4,16 +4,15 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Manipulating OpenType Lookups &#8212; FontForge 20201107 documentation</title>
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Manipulating OpenType Lookups &#8212; FontForge 20220308 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -35,11 +34,11 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="manipulating-opentype-lookups">
+  <section id="manipulating-opentype-lookups">
 <h1>Manipulating OpenType Lookups<a class="headerlink" href="#manipulating-opentype-lookups" title="Permalink to this headline">¶</a></h1>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="../../_images/fontinfo-lookups.png" src="../../_images/fontinfo-lookups.png" />
-</div>
+</figure>
 <blockquote class="epigraph">
 <div><p>“The question is,” said Humpty Dumpty, “which is to be master –” <em>(you or
 the word)</em></p>
@@ -62,7 +61,7 @@ This is the same order in which they will be applied. All lookups in the GSUB
 table will be applied before any lookups in the GPOS table.</p>
 <p>There are buttons on the side for reordering the lookups. Up, Down, Top, Bottom
 should be obvious. You can also drag and drop lookups to reorder them. The
-[Sort] button will sort lookups depending on the cannonical order of the
+[Sort] button will sort lookups depending on the canonical order of the
 features attached to them. This will not always be the desired ordering, but it
 is a place to start.</p>
 <p>Lookups are applied in the order listed here. Which lookups will be applied
@@ -211,16 +210,20 @@ format of the dialog will depend on the lookup type.</p>
 <div class="flex-container" id="lookups-basic-subs">
 <div class="flex-row">
 <div class="flex-col">
-<div class="figure align-default" id="id1">
+<figure class="align-default" id="id1">
 <img alt="GSUB single glyph substitution" src="../../_images/subtable-gsub-single.png" />
-<p class="caption"><span class="caption-text">GSUB single glyph substitution dialog</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">GSUB single glyph substitution dialog</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 </div>
 <div class="flex-col">
-<div class="figure align-default" id="id2">
+<figure class="align-default" id="id2">
 <img alt="../../_images/subtable-gsub-ligature.png" src="../../_images/subtable-gsub-ligature.png" />
-<p class="caption"><span class="caption-text">GSUB ligature substitution dialog</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">GSUB ligature substitution dialog</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
@@ -255,13 +258,13 @@ composed characters like “Egrave” will be ordered closer to “E” than to 
 If [] By Scripts is checked then glyphs of one script system will be grouped
 together no matter how they are ordered alphabetically or unicodally, thus “A”
 would be grouped with “B” and not with “Alpha”.</p>
-<div class="section" id="contextual-substitutions">
+<section id="contextual-substitutions">
 <span id="lookups-contextual-subs"></span><h2>Contextual substitutions<a class="headerlink" href="#contextual-substitutions" title="Permalink to this headline">¶</a></h2>
 <p>The contextual substitution dialog is quite complicated and is discussed in its
 <a class="reference internal" href="contextchain.html"><span class="doc">own section</span></a>. These lookups can only live in an OpenType
 font, not in an Apple Advanced Typography font.</p>
-</div>
-<div class="section" id="substitution-by-state-machine">
+</section>
+<section id="substitution-by-state-machine">
 <span id="lookups-sm-subs"></span><h2>Substitution by State Machine<a class="headerlink" href="#substitution-by-state-machine" title="Permalink to this headline">¶</a></h2>
 <p>The state machine substitution dialog is quite complicated and is discussed in
 its <a class="reference internal" href="statemachine.html"><span class="doc">own section</span></a>. These lookups can only live in an Apple
@@ -303,10 +306,10 @@ right, so the adjustment column would remain after checking the checkbox).</p>
 <p>Often all the adjustments in a subtable will be the same (the ones here are) so
 the [*] Default new entries to first check box will give all new entries the
 same value as the first line.</p>
-</div>
-<div class="section" id="pair-positioning-kerning">
+</section>
+<section id="pair-positioning-kerning">
 <span id="lookups-pair"></span><h2>Pair Positioning (kerning)<a class="headerlink" href="#pair-positioning-kerning" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="kerning-format-dialog">
+<section id="kerning-format-dialog">
 <h3>Kerning format dialog<a class="headerlink" href="#kerning-format-dialog" title="Permalink to this headline">¶</a></h3>
 <img alt="../../_images/kerningformat.png" class="align-right" src="../../_images/kerningformat.png" />
 <p>When you create a kerning subtable you will first be asked whether you want to
@@ -348,12 +351,12 @@ on the right side of a kerning pair. (Of course there are exceptions:
 “FontForge” uses an internal capital, but that is rare and if you want to save
 space in your font tables you can ignore it). Similarly the closing quote
 character will almost never be on the left side of a kerning pair.</p>
-</div>
-<div class="section" id="kerning-pairs">
+</section>
+<section id="kerning-pairs">
 <h3>Kerning pairs<a class="headerlink" href="#kerning-pairs" title="Permalink to this headline">¶</a></h3>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="../../_images/subtable-gpos-kernpair.png" src="../../_images/subtable-gpos-kernpair.png" />
-</div>
+</figure>
 <p>The kerning class dialog is described in its
 <a class="reference internal" href="../mainviews/metricsview.html#metricsview-kernclass"><span class="std std-ref">own section</span></a>, while the kerning pair subtable
 dialog is described below.</p>
@@ -382,8 +385,8 @@ request to see that rasterization magnified (Note: This is different from just
 rasterizing at twice the pixelsize, each pixel will be twice as big and the
 effects of rounding errors will be more obvious). Magnification is probably only
 useful if you are working on device tables for screen pixelsizes.</p>
-</div>
-<div class="section" id="undo-system-interaction">
+</section>
+<section id="undo-system-interaction">
 <span id="lookups-lookups-undoes"></span><h3>Undo System Interaction<a class="headerlink" href="#undo-system-interaction" title="Permalink to this headline">¶</a></h3>
 <p>Changes made to kerning pairs are tracked by a font level undo system. If you
 have made no changes to the lookup then no new undo record will be created. The
@@ -401,9 +404,9 @@ remembered by the undo system so that the kerning table can be restored to how
 it was before your performed this last round of edits.</p>
 <p>To undo the changes you have made in a round, select the Undo Font Level menu
 option from the edit menu in the font view window.</p>
-</div>
-</div>
-<div class="section" id="anchor-positioning">
+</section>
+</section>
+<section id="anchor-positioning">
 <span id="lookups-anchor"></span><h2>Anchor Positioning<a class="headerlink" href="#anchor-positioning" title="Permalink to this headline">¶</a></h2>
 <img alt="../../_images/subtable-gpos-anchor.png" class="align-left" src="../../_images/subtable-gpos-anchor.png" />
 <p>Marks (diacritical accents, vowel marks, etc.) may be attached to base glyphs
@@ -430,20 +433,20 @@ panes show all possible mark attachments.</p>
 <p>You may adjust the pixelsize of the display and the magnification factor (again
 the magnification factor is most useful if you are looking at small pixelsizes.</p>
 <p>You may provide device table adjustments for each pixelsize.</p>
-<div class="section" id="contextual-positioning">
+<section id="contextual-positioning">
 <span id="lookups-contextual-pos"></span><h3>Contextual Positioning<a class="headerlink" href="#contextual-positioning" title="Permalink to this headline">¶</a></h3>
 <p>The contextual substitution dialog is quite complicated and is discussed in its
 <a class="reference internal" href="contextchain.html"><span class="doc">own section</span></a>. These lookups can only live in an OpenType
 font, not in an Apple Advanced Typography font.</p>
-</div>
-<div class="section" id="kerning-by-state-machine">
+</section>
+<section id="kerning-by-state-machine">
 <span id="lookups-sm-kern"></span><h3>Kerning by State Machine<a class="headerlink" href="#kerning-by-state-machine" title="Permalink to this headline">¶</a></h3>
 <p>The state machine substitution dialog is quite complicated and is discussed in
 its <a class="reference internal" href="statemachine.html"><span class="doc">own section</span></a>. These lookups can only live in an Apple
 Advanced Typography font.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -485,9 +488,9 @@ Advanced Typography font.</p>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../misc/HotKeys.html">Hot Keys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../misc/fontforge-themes.html">FontForge color schemes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">X Resource Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">Appearance Editor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../misc/xim.html">X Input Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">X Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">Changing FontForge’s UI Appearance</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../scripting/scripting.html">Scripting FontForge</a></li>
@@ -515,7 +518,7 @@ Advanced Typography font.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -537,7 +540,7 @@ Advanced Typography font.</p>
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

@@ -4,16 +4,15 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Font Validation window &#8212; FontForge 20201107 documentation</title>
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Font Validation window &#8212; FontForge 20220308 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -35,7 +34,7 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="font-validation-window">
+  <section id="font-validation-window">
 <h1>Font Validation window<a class="headerlink" href="#font-validation-window" title="Permalink to this headline">¶</a></h1>
 <img alt="../../_images/validation.png" class="align-right" src="../../_images/validation.png" />
 <p>Both PostScript and TrueType impose some restrictions on the data that define a
@@ -47,7 +46,7 @@ always quick) to insure that you are not breaking any rules.</p>
 <li><p>All paths must be drawn in a consistent direction. Clockwise for external paths,
 anti-clockwise for internal paths. (Actually PostScript requires the exact
 opposite, but FontForge reverses PostScript contours when it loads them so that
-everything is consistant internally – and reverses them again when it saves
+everything is consistent internally – and reverses them again when it saves
 them, of course).</p></li>
 <li><p>There may be no flipped references (this is a special case of the above, a
 flipped reference will have its contours drawn in the wrong direction).</p></li>
@@ -115,7 +114,7 @@ fontforge screws up this option is present)</p></li>
 they can’t.</p>
 <ul>
 <li><p>If a glyph contains a reference which is drawn in the wrong direction then you
-can’t fix it in the refering glyph.</p></li>
+can’t fix it in the referring glyph.</p></li>
 <li><p>If a glyph contains two references which intersect one another, then Remove
 Overlap can’t fix them. You must inline the references before you can correct
 them.</p></li>
@@ -144,7 +143,7 @@ will reverse the operation and leave you with the original references.</p>
 that meet certain criteria) which will set this flag for the relevant glyph(s).
 Once this flag is set FontForge will no longer report that the glyph
 self-intersects.</p>
-</div>
+</section>
 
 
           </div>
@@ -182,9 +181,9 @@ self-intersects.</p>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../misc/HotKeys.html">Hot Keys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../misc/fontforge-themes.html">FontForge color schemes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">X Resource Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">Appearance Editor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../misc/xim.html">X Input Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">X Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">Changing FontForge’s UI Appearance</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../scripting/scripting.html">Scripting FontForge</a></li>
@@ -212,7 +211,7 @@ self-intersects.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -234,7 +233,7 @@ self-intersects.</p>
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

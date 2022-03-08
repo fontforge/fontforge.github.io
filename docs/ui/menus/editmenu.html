@@ -4,16 +4,15 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Edit Menu &#8212; FontForge 20201107 documentation</title>
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>The Edit Menu &#8212; FontForge 20220308 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -35,11 +34,11 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="the-edit-menu">
+  <section id="the-edit-menu">
 <h1>The Edit Menu<a class="headerlink" href="#the-edit-menu" title="Permalink to this headline">¶</a></h1>
 <span class="target" id="editmenu-undo"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Undo</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Undo</span></span></dt>
 <dd><p>In the outline view and the bitmap view this will undo the last command. The
 number of commands that may be undone for any glyph is controlled by the
 <a class="reference internal" href="../dialogs/prefs.html#prefs-undodepth"><span class="std std-ref">UndoDepth</span></a> preference item.</p>
@@ -48,8 +47,8 @@ the last operation on all selected glyphs.</p>
 </dd></dl>
 
 <span class="target" id="editmenu-redo"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Redo</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Redo</span></span></dt>
 <dd><p>In the outline view and the bitmap view this will redo the last command
 undone. Up to twelve commands may be redone (after that they get thrown away)</p>
 <p>In the font and metrics views, this does NOT undo the last command. It undoes
@@ -57,8 +56,8 @@ the last operation on all selected glyphs.</p>
 </dd></dl>
 
 <span class="target" id="editmenu-cut"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Cut</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Cut</span></span></dt>
 <dd><p>In the font view this command puts the foreground of all selected glyphs into
 the clipboard and then deletes them. Depending on the setting of
 <a class="reference internal" href="#editmenu-from"><span class="std std-ref">Copy From</span></a> it will either refer all glyphs (bitmap and
@@ -73,8 +72,8 @@ delete it. If there is no selection nothing happens.</p>
 </dd></dl>
 
 <span class="target" id="editmenu-copy"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Copy</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Copy</span></span></dt>
 <dd><p>In the font view this command puts the foreground and hints of all selected
 glyphs into the clipboard. Depending on the setting of
 <a class="reference internal" href="#editmenu-from"><span class="std std-ref">Copy From</span></a> it will either copy all glyphs (bitmap and
@@ -98,8 +97,8 @@ section on <a class="reference internal" href="../../techref/selections.html"><s
 </dd></dl>
 
 <span class="target" id="editmenu-reference"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Copy Reference</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Copy</span> <span class="pre">Reference</span></span></dt>
 <dd><p>In the font view this command puts a reference to all selected glyphs into
 the clipboard.</p>
 <p>In the Outline and Bitmap Views this will copy a reference to the current
@@ -107,8 +106,8 @@ glyph into the clipboard (only available in foreground mode).</p>
 </dd></dl>
 
 <span class="target" id="editmenu-copylookup"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Copy Lookup Data</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Copy</span> <span class="pre">Lookup</span> <span class="pre">Data</span></span></dt>
 <dd><p>Copies lookup data (substitutions, ligatures, kerning, anchor points, etc)
 from the selected glyphs. This command does not work quite as expected:</p>
 <ul class="simple">
@@ -121,8 +120,8 @@ lookups should be copied.</p></li>
 </dd></dl>
 
 <span class="target" id="editmenu-width"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Copy Width</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Copy</span> <span class="pre">Width</span></span></dt>
 <dd><p>In the Font View this command copies the widths of all selected glyphs and
 stores them in the clipboard.</p>
 <p>In the Outline View this command copies the width of the current glyph and
@@ -131,8 +130,8 @@ stores it in the clipboard.</p>
 </dd></dl>
 
 <span class="target" id="editmenu-vwidth"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Copy VWidth</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Copy</span> <span class="pre">VWidth</span></span></dt>
 <dd><p>In the Font View this command copies the vertical widths of all selected
 glyphs and stores them in the clipboard.</p>
 <p>In the Outline View this command copies the vertical width of the current
@@ -141,8 +140,8 @@ glyph and stores it in the clipboard.</p>
 </dd></dl>
 
 <span class="target" id="editmenu-lbearing"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Copy LBearing</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Copy</span> <span class="pre">LBearing</span></span></dt>
 <dd><p>In the Font View this command copies the left side bearings of all selected
 glyphs and stores them in the clipboard.</p>
 <p>In the Outline View this command copies the left side bearing of the current
@@ -151,8 +150,8 @@ glyph and stores it in the clipboard.</p>
 </dd></dl>
 
 <span class="target" id="editmenu-rbearing"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Copy RBearing</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Copy</span> <span class="pre">RBearing</span></span></dt>
 <dd><p>In the Font View this command copies the right side bearings of all selected
 glyphs and stores them in the clipboard.</p>
 <p>In the Outline View this command copies the right side bearing of the current
@@ -161,16 +160,16 @@ glyph and stores it in the clipboard.</p>
 </dd></dl>
 
 <span class="target" id="editmenu-copygridfit"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Copy Grid Fit</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Copy</span> <span class="pre">Grid</span> <span class="pre">Fit</span></span></dt>
 <dd><p>Only available in the outline glyph view and only if
 <a class="reference internal" href="viewmenu.html#viewmenu-showgridfit"><span class="std std-ref">View-&gt;Show Grid Fit</span></a> is selected. This will
 place a copy of the grid fit version of the glyph into the clipboard.</p>
 </dd></dl>
 
 <span class="target" id="editmenu-paste"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Paste</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Paste</span></span></dt>
 <dd><p>In the Font View this command will paste whatever is in the clipboard into
 the foregrounds of all selected glyphs (exception: if the clipboard contains
 an image it will usually not go into the foreground), clearing out whatever
@@ -198,14 +197,14 @@ the contents of the clipboard into a new floating selection.</p>
 to Paste the following selection types (the bitmap view does not currently
 respond to external clipboards):</p>
 <dl class="object">
-<dt>
-<code class="sig-name descname">&quot;image/png&quot;, &quot;image/bmp&quot;</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">&quot;image/png&quot;,</span> <span class="pre">&quot;image/bmp&quot;</span></span></dt>
 <dd><p>background images</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">&quot;image/eps&quot;, &quot;image/ps&quot;, &quot;image/svg&quot;</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">&quot;image/eps&quot;,</span> <span class="pre">&quot;image/ps&quot;,</span> <span class="pre">&quot;image/svg&quot;</span></span></dt>
 <dd><p>as spline data</p>
 </dd></dl>
 
@@ -213,15 +212,15 @@ respond to external clipboards):</p>
 </dd></dl>
 
 <span class="target" id="editmenu-pasteinto"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Paste Into</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Paste</span> <span class="pre">Into</span></span></dt>
 <dd><p>Only available in the fontview. Just like Paste, except it does not clear the
 contents of the glyph before adding to it.</p>
 </dd></dl>
 
 <span class="target" id="editmenu-pasteafter"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Paste After</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Paste</span> <span class="pre">After</span></span></dt>
 <dd><p>Only available in the fontview. Pastes the contents of the clipboard into the
 selected glyph, shifts it over by the advance width, and then adds the
 advance width of the glyph in the clip to this glyph. Essentially this makes
@@ -231,8 +230,8 @@ will be added on the left).</p>
 </dd></dl>
 
 <span class="target" id="editmenu-sameglyphas"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Same Glyph As</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Same</span> <span class="pre">Glyph</span> <span class="pre">As</span></span></dt>
 <dd><p>Only available in the fontview. If the clipboard contains a single reference
 to a glyph then applying this command makes all selected encoding points
 refer to that same glyph. (For example the non-breaking-space glyph (U+00A0)
@@ -247,22 +246,22 @@ unicode code points associated with it).</p>
 </dd></dl>
 
 <span class="target" id="editmenu-clear"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Clear</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Clear</span></span></dt>
 <dd><p>Similar to <a class="reference internal" href="#editmenu-cut"><span class="std std-ref">Cut</span></a> except it does not copy anything to the
 clipboard.</p>
 </dd></dl>
 
 <span class="target" id="editmenu-background"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Clear Background</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Clear</span> <span class="pre">Background</span></span></dt>
 <dd><p>Only in the font view. This command clears the backgrounds of all selected
 glyphs.</p>
 </dd></dl>
 
 <span class="target" id="editmenu-merge"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Merge</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Merge</span></span></dt>
 <dd><p>This command is only available in the Outline View. If a point on a path is
 selected, the merge command will remove that point from the path and join the
 two points around the removed one with a new spline which approximates the
@@ -272,8 +271,8 @@ slopes (unless both are corner points).</p>
 </dd></dl>
 
 <span class="target" id="editmenu-join"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Join</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Join</span></span></dt>
 <dd><p>This command is not available in the bitmap view. It looks for any paths with
 endpoints as the endpoints of other paths and then join those two paths. Also
 if the endpoint of a path is the same as the start point it will make that
@@ -284,16 +283,16 @@ selected points on them it will only attempt to join those paths.</p>
 </dd></dl>
 
 <span class="target" id="editmenu-copyfg"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Copy Fg To Bg</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Copy</span> <span class="pre">Fg</span> <span class="pre">To</span> <span class="pre">Bg</span></span></dt>
 <dd><p>This command is only available in the Outline and Font Views. It cleans out
 all the splines in the background layer and replaces them with a copy of all
 the splines in the foreground layer. Note: Any background images remain.</p>
 </dd></dl>
 
 <span class="target" id="editmenu-copyl2l"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Copy Layer To Layer</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Copy</span> <span class="pre">Layer</span> <span class="pre">To</span> <span class="pre">Layer</span></span></dt>
 <dd><p>This command is only available in the Outline and Font Views. It brings up a
 dialog which lets you select a base layer to copy from and another layer to
 copy to. You may also choose to clear the destination layer, or to append to
@@ -302,12 +301,12 @@ but not images) to the destination layer.</p>
 </dd></dl>
 
 <span class="target" id="editmenu-select"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Select</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Select</span></span></dt>
 <dd><p>In the outline view there is a select menu, other views just have Select All.</p>
 <span class="target" id="editmenu-all"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Select All</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Select</span> <span class="pre">All</span></span></dt>
 <dd><p>In the outline view it selects all points, all references (all images if
 the background is active) and the width line (and the vertical width line
 if that is enabled). In the fontview it selects all glyphs. In the bitmap
@@ -315,105 +314,105 @@ view it selects the current bitmap region.</p>
 </dd></dl>
 
 <span class="target" id="editmenu-invert"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Invert Selection</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Invert</span> <span class="pre">Selection</span></span></dt>
 <dd><p>Selects anything not selected, and deselects everything selected.</p>
 </dd></dl>
 
 <span class="target" id="editmenu-deselect"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Deselect All</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Deselect</span> <span class="pre">All</span></span></dt>
 <dd><p>Deselects anything selected</p>
 </dd></dl>
 
 <span class="target" id="editmenu-firstpt"></span><dl class="object">
-<dt>
-<code class="sig-name descname">First Point</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">First</span> <span class="pre">Point</span></span></dt>
 <dd><p>Deselects everything and then selects the first point on the first path of
 the glyph.</p>
 </dd></dl>
 
 <span class="target" id="editmenu-nextcontour"></span><dl class="object">
-<dt>
-<code class="sig-name descname">First Point, Next Contour</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">First</span> <span class="pre">Point,</span> <span class="pre">Next</span> <span class="pre">Contour</span></span></dt>
 <dd><p>Deselects everything and then selects the first point on the next contour.
 (If the last contour is selected then deselects everything).</p>
 </dd></dl>
 
 <span class="target" id="editmenu-nextp"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Next Point</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Next</span> <span class="pre">Point</span></span></dt>
 <dd><p>Deselects the current point and selects the next point.</p>
 </dd></dl>
 
 <span class="target" id="editmenu-prevp"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Prev Point</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Prev</span> <span class="pre">Point</span></span></dt>
 <dd><p>Deselects the current point and selects the previous point</p>
 </dd></dl>
 
 <span class="target" id="editmenu-nextcp"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Next Control Point</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Next</span> <span class="pre">Control</span> <span class="pre">Point</span></span></dt>
 <dd><p>Selects the “Next Control Point” of the current point.</p>
 </dd></dl>
 
 <span class="target" id="editmenu-prevcp"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Prev Control Point</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Prev</span> <span class="pre">Control</span> <span class="pre">Point</span></span></dt>
 <dd><p>Selects the “Prev Control Point” of the current point.</p>
 </dd></dl>
 
 <span class="target" id="editmenu-pointat"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Point At</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Point</span> <span class="pre">At</span></span></dt>
 <dd><p>Allows the user to enter an X,Y coordinate and selects the point at that
 location.</p>
 </dd></dl>
 
 <span class="target" id="editmenu-contours"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Points on Selected Contours</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Points</span> <span class="pre">on</span> <span class="pre">Selected</span> <span class="pre">Contours</span></span></dt>
 <dd><p>If a contour contains any selected points, then select all points on the
 contour.</p>
 </dd></dl>
 
 <span class="target" id="editmenu-selectpoints"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Select All Points &amp; Refs</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Select</span> <span class="pre">All</span> <span class="pre">Points</span> <span class="pre">&amp;</span> <span class="pre">Refs</span></span></dt>
 <dd><p>Just like select all, but it doesn’t select anchor points or the width
 lines.</p>
 </dd></dl>
 
 <span class="target" id="editmenu-selectanchors"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Select Anchors</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Select</span> <span class="pre">Anchors</span></span></dt>
 <dd><p>Select all the Anchor points in the glyph.</p>
 </dd></dl>
 
 <span class="target" id="editmenu-selwidth"></span><dl class="object">
-<dt>
-<code class="sig-name descname">(De)Select Width</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">(De)Select</span> <span class="pre">Width</span></span></dt>
 <dd><p>Toggles whether the width line is selected.</p>
 </dd></dl>
 
 <span class="target" id="editmenu-selvwidth"></span><dl class="object">
-<dt>
-<code class="sig-name descname">(De)Select VWidth</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">(De)Select</span> <span class="pre">VWidth</span></span></dt>
 <dd><p>(if vertical metrics are enabled) Toggles whether the vertical width line
 is selected.</p>
 </dd></dl>
 
 <span class="target" id="editmenu-selhm"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Select Points Affected by Current HintMask</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Select</span> <span class="pre">Points</span> <span class="pre">Affected</span> <span class="pre">by</span> <span class="pre">Current</span> <span class="pre">HintMask</span></span></dt>
 <dd><p>if a single point with a hintmask is selected, then this command selects
 all points affected by that hintmask.</p>
 </dd></dl>
 
 <span class="target" id="editmenu-color"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Select by Color&gt;</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Select</span> <span class="pre">by</span> <span class="pre">Color&gt;</span></span></dt>
 <dd><p>Only in the font view. Displays a submenu containing a list of colors and
 allows you to select all glyphs which you have set to that color with the
 Char Info dlg. Normally the selection is cleared before setting the
@@ -422,8 +421,8 @@ extended to the colored glyphs.</p>
 </dd></dl>
 
 <span class="target" id="editmenu-selectname"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Select by Wildcard...</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Select</span> <span class="pre">by</span> <span class="pre">Wildcard...</span></span></dt>
 <dd><p>Select all glyphs that match the wildcard pattern specified. A glyph may
 also be mapped to more than one encoding slot. Select all encoding slots
 that refer to the named glyph. I think this is primarily useful for
@@ -431,8 +430,8 @@ detaching .notdef.</p>
 </dd></dl>
 
 <span class="target" id="editmenu-selectscript"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Select by Script...</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Select</span> <span class="pre">by</span> <span class="pre">Script...</span></span></dt>
 <dd><p>Allows you to specify an OpenType script tag and then ff will select all
 glyphs which have that script.</p>
 </dd></dl>
@@ -449,30 +448,30 @@ command will be removed from the selection.</p>
 <p>If you hold down both keys, then only glyphs specified in both the command
 and the old selection will be selected. (a logical and operation)</p>
 <span class="target" id="editmenu-selworth"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Glyphs worth outputting</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Glyphs</span> <span class="pre">worth</span> <span class="pre">outputting</span></span></dt>
 <dd><p>Generally this means that either the glyph’s width has been set, or that
 in one of its foreground layers there is some data – a contour or a
 reference.</p>
 </dd></dl>
 
 <span class="target" id="editmenu-selrefs"></span><dl class="object">
-<dt>
-<code class="sig-name descname">with only references</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">with</span> <span class="pre">only</span> <span class="pre">references</span></span></dt>
 <dd><p>Select all glyphs which contain at least one reference (in the active
 layer) and no contours.</p>
 </dd></dl>
 
 <span class="target" id="editmenu-selsplines"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Glyphs with only Splines</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Glyphs</span> <span class="pre">with</span> <span class="pre">only</span> <span class="pre">Splines</span></span></dt>
 <dd><p>Select all glyphs which contain at least one contour (in the active layer)
 and no references.</p>
 </dd></dl>
 
 <span class="target" id="editmenu-selboth"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Glyphs with both</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Glyphs</span> <span class="pre">with</span> <span class="pre">both</span></span></dt>
 <dd><p>Select all glyphs in the active layer with both contours and references.
 This is something which cannot be expressed in a TrueType font, and
 fontforge has various tricks for dealing with it, but it might be
@@ -480,27 +479,27 @@ something you’d like to fix up.</p>
 </dd></dl>
 
 <span class="target" id="editmenu-selwhite"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Whitespace Glyphs</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Whitespace</span> <span class="pre">Glyphs</span></span></dt>
 <dd><p>Select all glyphs which contain neither references nor contours (but which
 have had their widths set).</p>
 </dd></dl>
 
 <span class="target" id="editmenu-selchanged"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Changed</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Changed</span></span></dt>
 <dd><p>Selects all changed glyphs</p>
 </dd></dl>
 
 <span class="target" id="editmenu-selhinting"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Hinting Needed</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Hinting</span> <span class="pre">Needed</span></span></dt>
 <dd><p>Selects all glyphs which FontForge thinks need to be hinted.</p>
 </dd></dl>
 
 <span class="target" id="editmenu-selautohintable"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Autohintable</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Autohintable</span></span></dt>
 <dd><p>Selects all glyphs which FontForge thinks can be autohinted – ie. all
 glyphs not marked <a class="reference internal" href="hintsmenu.html#hintsmenu-dontautohint"><span class="std std-ref">Hints-&gt;Don’t Autohint</span></a>
 (this does not check whether ff thinks the glyphs in question NEED to be
@@ -508,8 +507,8 @@ autohinted)</p>
 </dd></dl>
 
 <span class="target" id="editmenu-selectbyatt"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Select By Lookup Subtable...</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Select</span> <span class="pre">By</span> <span class="pre">Lookup</span> <span class="pre">Subtable...</span></span></dt>
 <dd><p>Only in the font view. Brings up a <a class="reference internal" href="../dialogs/selectbyatt.html"><span class="doc">dlg</span></a> which allows
 you to select various glyphs depending on various advanced typographic
 features.</p>
@@ -518,15 +517,15 @@ features.</p>
 </dd></dl>
 
 <span class="target" id="editmenu-find"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Find / Replace</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Find</span> <span class="pre">/</span> <span class="pre">Replace</span></span></dt>
 <dd><p>Only in the font view, this brings up a <a class="reference internal" href="../dialogs/search.html"><span class="doc">dialog</span></a> that allows
 you to find patterns within glyphs and replace them with other patterns.</p>
 </dd></dl>
 
 <span class="target" id="editmenu-replaceref"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Replace With Reference</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Replace</span> <span class="pre">With</span> <span class="pre">Reference</span></span></dt>
 <dd><p>Only in the font view, this command will search the font finding any glyph
 which contains an inline copy of one of the selected glyphs, and converts
 that copy into a reference to the appropriate glyph. In other words it finds
@@ -546,41 +545,41 @@ changed by the command.</p>
 </dd></dl>
 
 <span class="target" id="editmenu-unlink"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Unlink Reference</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Unlink</span> <span class="pre">Reference</span></span></dt>
 <dd><p>This will remove a referenced glyph and replace it with the splines and
 points (or bitmap raster) that make it up.</p>
 </dd></dl>
 
 <span class="target" id="editmenu-from"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Copy From</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Copy</span> <span class="pre">From</span></span></dt>
 <dd><p>Only available in the Font View.</p>
 <span class="target" id="editmenu-fonts"></span><dl class="object">
-<dt>
-<code class="sig-name descname">All Fonts</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">All</span> <span class="pre">Fonts</span></span></dt>
 <dd><p>If this is set then Copy (and Cut and Clear) will copy from the outline
 font and from all the bitmap fonts</p>
 </dd></dl>
 
 <span class="target" id="editmenu-displayed"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Displayed Font</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Displayed</span> <span class="pre">Font</span></span></dt>
 <dd><p>If this is set then Copy will only copy from the font currently being
 displayed.</p>
 </dd></dl>
 
 <span class="target" id="editmenu-charname"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Char Metadata</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Char</span> <span class="pre">Metadata</span></span></dt>
 <dd><p>Normally Copy does not copy the metadata (name, unicode encoding, comment,
 ligature info) associated with a glyph, but if this is checked then it
 will.</p>
 </dd></dl>
 
 <span class="target" id="editmenu-ttinstr"></span><dl class="object">
-<dt>
-<code class="sig-name descname">TrueType Instructions</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">TrueType</span> <span class="pre">Instructions</span></span></dt>
 <dd><p>Controls whether truetype instructions should be copied with a glyph. If
 copying glyphs from one font to another it may not be appropriate to copy
 the truetype instructions (which may depend on subroutines or values in
@@ -593,8 +592,8 @@ the ‘fpgm’, ‘prep’ and ‘cvt ‘ tables).</p>
 </dd></dl>
 
 <span class="target" id="editmenu-remove-undoes"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Remove Undoes</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Remove</span> <span class="pre">Undoes</span></span></dt>
 <dd><p>Not available in the Metrics View. This allows you to free up some of the
 memory FontForge is currently squandering on keeping track of Undoes (and
 Redoes). Obviously this command cannot be undone.</p>
@@ -607,7 +606,7 @@ outline and bitmap, background and foreground.</p></li>
 </ul>
 </dd></dl>
 
-</div>
+</section>
 
 
           </div>
@@ -649,9 +648,9 @@ outline and bitmap, background and foreground.</p></li>
 <li class="toctree-l2"><a class="reference internal" href="../dialogs.html">Dialogs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../misc/HotKeys.html">Hot Keys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../misc/fontforge-themes.html">FontForge color schemes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">X Resource Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">Appearance Editor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../misc/xim.html">X Input Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">X Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">Changing FontForge’s UI Appearance</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../scripting/scripting.html">Scripting FontForge</a></li>
@@ -679,7 +678,7 @@ outline and bitmap, background and foreground.</p></li>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -701,7 +700,7 @@ outline and bitmap, background and foreground.</p></li>
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

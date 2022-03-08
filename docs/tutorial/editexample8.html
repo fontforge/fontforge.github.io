@@ -4,16 +4,15 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>11. Working with Bitmap Fonts &#8212; FontForge 20201107 documentation</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>11. Working with Bitmap Fonts &#8212; FontForge 20220308 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -35,9 +34,9 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="working-with-bitmap-fonts">
+  <section id="working-with-bitmap-fonts">
 <h1><span class="section-number">11. </span>Working with Bitmap Fonts<a class="headerlink" href="#working-with-bitmap-fonts" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="opening-importing-bitmap-strikes">
+<section id="opening-importing-bitmap-strikes">
 <h2><span class="section-number">11.1. </span>Opening &amp; Importing Bitmap strikes<a class="headerlink" href="#opening-importing-bitmap-strikes" title="Permalink to this headline">¶</a></h2>
 <p>FontForge is primarily an outline font editor, but it does have some facility
 for editing bitmap (and greymap, or anti-aliased) fonts. A useful term here is a
@@ -81,8 +80,8 @@ will be loaded into the background of the outline font whence you can
 <a class="reference internal" href="../ui/menus/elementmenu.html#elementmenu-autotrace"><span class="std std-ref">Element-&gt;Autotrace</span></a> it to provide an outline font
 from a bitmap. Be warned: This produces fairly bad results unless you have a
 large (100+ pixel) font to trace.</p>
-</div>
-<div class="section" id="creating-bitmap-strikes">
+</section>
+<section id="creating-bitmap-strikes">
 <h2><span class="section-number">11.2. </span>Creating Bitmap strikes<a class="headerlink" href="#creating-bitmap-strikes" title="Permalink to this headline">¶</a></h2>
 <img alt="../_images/bitmapsavail.png" class="align-right" src="../_images/bitmapsavail.png" />
 <p>If you want to add a bitmap strike with a given pixel size to a font then use
@@ -102,8 +101,8 @@ ugly, but it may be better than nothing.</p>
 the bottom of the dialog. If you turn this off, then the rasterization process
 described above will not happen, and any new strikes will be created containing
 no glyphs (you can add glyphs later, of course).</p>
-</div>
-<div class="section" id="bitmap-properties">
+</section>
+<section id="bitmap-properties">
 <h2><span class="section-number">11.3. </span>Bitmap Properties<a class="headerlink" href="#bitmap-properties" title="Permalink to this headline">¶</a></h2>
 <p>In the old days of bdf and pcf fonts on X11 each font had a set of properties
 attached to it. It is not clear to me whether these properties are still useful
@@ -113,8 +112,8 @@ own set of properties. FontForge will generate them automatically when you
 create a strike (and will retain them when it reads in a font that has them).
 You may override the current values with the
 <a class="reference internal" href="../ui/menus/elementmenu.html#elementmenu-bdf-info"><span class="std std-ref">Element-Bdf Info</span></a> dialog.</p>
-</div>
-<div class="section" id="creating-a-new-bitmap-only-font">
+</section>
+<section id="creating-a-new-bitmap-only-font">
 <h2><span class="section-number">11.4. </span>Creating a new bitmap only font<a class="headerlink" href="#creating-a-new-bitmap-only-font" title="Permalink to this headline">¶</a></h2>
 <p>If you want to create a new font with no outlines, only bitmap strikes, you
 would use <a class="reference internal" href="../ui/menus/filemenu.html#filemenu-new"><span class="std std-ref">File-&gt;New</span></a> to create a new font, and then
@@ -124,8 +123,8 @@ become a bitmap only font.</p>
 <p>Apple has a bitmap only version of the sfnt file format, and X11 does too. Of
 course the two formats are slightly different. Windows has no support for a
 bitmap only sfnt format.</p>
-</div>
-<div class="section" id="bitmaps-in-the-font-view">
+</section>
+<section id="bitmaps-in-the-font-view">
 <h2><span class="section-number">11.5. </span>Bitmaps in the Font View<a class="headerlink" href="#bitmaps-in-the-font-view" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference internal" href="../ui/menus/viewmenu.html#viewmenu-bitmaps"><span class="std std-ref">View</span></a> menu of the Font View (and the Metrics View)
 contains a list of all bitmap strikes in the font. You may select which one will
@@ -146,8 +145,8 @@ character, then FontForge will bring up a
 current strike (rather than opening an outline editing window). If the character
 does not have a matching glyph in the current strike FontForge will create one
 by rasterizing the outline version of the font.</p>
-</div>
-<div class="section" id="editing-bitmaps">
+</section>
+<section id="editing-bitmaps">
 <h2><span class="section-number">11.6. </span>Editing Bitmaps<a class="headerlink" href="#editing-bitmaps" title="Permalink to this headline">¶</a></h2>
 <img alt="../_images/BitmapView.png" class="align-left" src="../_images/BitmapView.png" />
 <p>The bitmap editing window should be fairly self explanatory. The window is a
@@ -160,8 +159,8 @@ points.</p>
 <p>Editing an anti-aliased greymap has the added complexity that you need to select
 a color (actually a level of greyness) to be applied with the pencil. There will
 be an additional palette with all possible greys for this.</p>
-</div>
-<div class="section" id="sparse-bitmap-strikes">
+</section>
+<section id="sparse-bitmap-strikes">
 <h2><span class="section-number">11.7. </span>Sparse Bitmap Strikes<a class="headerlink" href="#sparse-bitmap-strikes" title="Permalink to this headline">¶</a></h2>
 <p>Sometimes you don’t need a complete set of bitmap glyphs in a strike. Perhaps
 the rasterizer does a good job for all glyphs except one. Then you can create an
@@ -173,8 +172,8 @@ care about and say
 <p>Alternately you could create a fully rasterized strike and then select the
 glyphs you don’t need and say
 <a class="reference internal" href="../ui/menus/elementmenu.html#elementmenu-removebitmaps"><span class="std std-ref">Element-&gt;Remove Bitmap Glyphs</span></a>.</p>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -244,7 +243,7 @@ glyphs you don’t need and say
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -266,7 +265,7 @@ glyphs you don’t need and say
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

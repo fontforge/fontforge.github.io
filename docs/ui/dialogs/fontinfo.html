@@ -4,16 +4,15 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Font Info &#8212; FontForge 20201107 documentation</title>
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Font Info &#8212; FontForge 20220308 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -35,13 +34,13 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="font-info">
+  <section id="font-info">
 <h1>Font Info<a class="headerlink" href="#font-info" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 </div>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="../../_images/fontinfo.png" src="../../_images/fontinfo.png" />
-</div>
+</figure>
 <p>The Font Info dialog is available from all views. It allows you to name your
 font and various other useful bits of information. In a
 <a class="reference internal" href="../mainviews/fontview.html#fontview-cid"><span class="std std-ref">CID keyed font</span></a>, things are more complex. Each CID keyed
@@ -49,7 +48,7 @@ font is composed of man sub-fonts; this command works on the current sub-font
 while there is a <a class="reference internal" href="../menus/cidmenu.html#cidmenu-fontinfo"><span class="std std-ref">separate command</span></a> to access the
 information for the font as a whole – that dialog looks the same. The dialog is
 composed of many different sub dialogs.</p>
-<div class="section" id="names">
+<section id="names">
 <span id="fontinfo-names"></span><h2>Names<a class="headerlink" href="#names" title="Permalink to this headline">¶</a></h2>
 <p>PostScript fonts have several different names, but basically there are two
 important ones: the family name (like Times) and the fontname (which is the
@@ -75,12 +74,12 @@ wish to attach a version string to the fontname, or abbreviate it, etc. The
 <p>Many of these names are similar to the english names of the
 <a class="reference internal" href="#fontinfo-ttf-names"><span class="std std-ref">TTF Names</span></a> section. If nothing is specified in that
 section then the names specified here will be used by default in ttf files.</p>
-</div>
-<div class="section" id="general">
+</section>
+<section id="general">
 <span id="fontinfo-ps-general"></span><h2>General<a class="headerlink" href="#general" title="Permalink to this headline">¶</a></h2>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="../../_images/fontinfo-general.png" src="../../_images/fontinfo-general.png" />
-</div>
+</figure>
 <p>This sub dialog contains a rather random collection of settings.</p>
 <p>The Ascent and Descent are (in this current definition) Macintosh concepts
 rather than PostScript, their sum, however, provides the size of the em-square
@@ -116,12 +115,12 @@ character may map to very different chinese or japanese glyphs). To handle this
 FontForge has the concept of “Interpretation”.</p>
 <p>When you create a new glyph in a font, fontforge will assign it a name based on
 the current <a class="reference internal" href="../menus/encodingmenu.html#encodingmenu-namelist"><span class="std std-ref">namelist</span></a>.</p>
-</div>
-<div class="section" id="layers">
+</section>
+<section id="layers">
 <span id="fontinfo-layers"></span><h2>Layers<a class="headerlink" href="#layers" title="Permalink to this headline">¶</a></h2>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="../../_images/fontinfo-layers.png" src="../../_images/fontinfo-layers.png" />
-</div>
+</figure>
 <p>You may control how many and what types of layers are available in your font.</p>
 <p>Fonts may be either outlined, stroked, or type3. You may choose which kind of
 font you want.</p>
@@ -143,8 +142,8 @@ that.</p>
 Background layers can hold images. Pasting into an empty glyph in a background
 layer will not set the width. Splines in background layers do not make a glyph
 worth outputting.</p>
-</div>
-<div class="section" id="postscript-unique-id">
+</section>
+<section id="postscript-unique-id">
 <span id="fontinfo-psuid"></span><h2>PostScript Unique ID<a class="headerlink" href="#postscript-unique-id" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -166,8 +165,8 @@ the allowable range. If you want your font to have no unique id then give this
 the value of -1. If you have talked to Adobe and been assigned a real UniqueID
 then you may use this field, otherwise leave it blank. (The UniqueID field is
 only meaningful in PostScript fonts)</p>
-</div>
-<div class="section" id="private-font-wide-postscript-hinting">
+</section>
+<section id="private-font-wide-postscript-hinting">
 <span id="fontinfo-private"></span><h2>Private – <span class="small">(font-wide postscript hinting)</span><a class="headerlink" href="#private-font-wide-postscript-hinting" title="Permalink to this headline">¶</a></h2>
 <img alt="../../_images/fontinfo-private.png" class="align-right" src="../../_images/fontinfo-private.png" />
 <p>This sub-dialog shows most entries in the font’s Private dictionary. The
@@ -210,8 +209,8 @@ different from True Type’s UniqueID. They perform the same function but are
 formatted differently).</p>
 <p>Some of these entries are only meaningful for PostScript fonts, others will be
 used by the truetype autoinstructor.</p>
-</div>
-<div class="section" id="os-2">
+</section>
+<section id="os-2">
 <span id="fontinfo-ttf-values"></span><h2>OS/2<a class="headerlink" href="#os-2" title="Permalink to this headline">¶</a></h2>
 <img alt="../../_images/fontinfo-ttfvals.png" class="align-right" src="../../_images/fontinfo-ttfvals.png" />
 <p>This sub dialog contains settings important for Windows platforms, most of these
@@ -242,7 +241,7 @@ the font.</p>
 <p>These entries are only meaningful in TrueType and OpenType fonts (though the
 Embeddable entry (generally called FSType) will be set on CID keyed fonts even
 if they are not in an OpenType wrapper.</p>
-<div class="section" id="gsub-morx-ordering">
+<section id="gsub-morx-ordering">
 <span id="fontinfo-order"></span><h3>GSUB/morx Ordering<a class="headerlink" href="#gsub-morx-ordering" title="Permalink to this headline">¶</a></h3>
 <img alt="../../_images/GSUB-Order.png" class="align-right" src="../../_images/GSUB-Order.png" />
 <p>This dialog allows you to control the order features in which are to be executed
@@ -256,12 +255,12 @@ the top of the list are executed first, things at the bottom last.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Although the OpenType spec claims that the execution of features (actually
-lookups) will be ordered by their appearence in the lookup table, MicroSoft
+lookups) will be ordered by their appearance in the lookup table, MicroSoft
 claims that they will apply features in the order that they think best. So
 the order specified in the font may be ignored.</p>
 </div>
-</div>
-<div class="section" id="os-2-metrics">
+</section>
+<section id="os-2-metrics">
 <span id="fontinfo-ttf-metrics"></span><h3>OS/2 Metrics<a class="headerlink" href="#os-2-metrics" title="Permalink to this headline">¶</a></h3>
 <img alt="../../_images/fontinfo-ttfmetrics.png" class="align-right" src="../../_images/fontinfo-ttfmetrics.png" />
 <p>The Windows Ascent and Descent fields are badly defined in the OpenType spec,
@@ -309,8 +308,8 @@ text).</p>
 <p><a class="reference internal" href="../../faq.html#faq-linespace"><span class="std std-ref">See the FAQ</span></a> for a discussion on the complexities involved
 in setting the line spacing. <a class="reference internal" href="baseline.html"><span class="doc">The ‘BASE’ table</span></a> provides a more
 precise method for setting line spacing.</p>
-</div>
-<div class="section" id="os-2-sub-superscripts">
+</section>
+<section id="os-2-sub-superscripts">
 <span id="fontinfo-ttf-subsuper"></span><h3>OS/2 Sub/Superscripts<a class="headerlink" href="#os-2-sub-superscripts" title="Permalink to this headline">¶</a></h3>
 <img alt="../../_images/fontinfo-subsup.png" class="align-right" src="../../_images/fontinfo-subsup.png" />
 <p>The OS/2 table also contain information on scaling and positioning subscripts
@@ -322,8 +321,8 @@ control of these values, turn off the checkbox and the text fields will be
 enabled for you to change.</p>
 <div class="clearer docutils container">
 </div>
-</div>
-<div class="section" id="panose">
+</section>
+<section id="panose">
 <span id="fontinfo-panose"></span><h3>PANOSE<a class="headerlink" href="#panose" title="Permalink to this headline">¶</a></h3>
 <img alt="../../_images/fontinfo-panose.png" class="align-right" src="../../_images/fontinfo-panose.png" />
 <p>This sub-dialog allows you to describe your font in 10 different dimensions. The
@@ -341,12 +340,12 @@ manually.</p>
 <p>These entries are only meaningful for TrueType, OpenType and SVG fonts.</p>
 <div class="clearer docutils container">
 </div>
-</div>
-<div class="section" id="charsets">
+</section>
+<section id="charsets">
 <span id="fontinfo-charsets"></span><h3>Charsets<a class="headerlink" href="#charsets" title="Permalink to this headline">¶</a></h3>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="../../_images/fontinfo-charsets.png" src="../../_images/fontinfo-charsets.png" />
-</div>
+</figure>
 <p>The OS/2 table contains two fields which give some information about the
 characters in the font. Windows is very picky about using fonts if the proper
 code page bits are not set. If you leave the [*] Default checkboxes set then
@@ -354,13 +353,13 @@ FontForge will generate reasonable values when the font is output. Sometimes you
 need to override that behavior if you wish Windows to use a font with an
 incomplete code page.</p>
 <p>These entries are only meaningful for TrueType, and OpenType fonts.</p>
-</div>
-</div>
-<div class="section" id="ttf-names">
+</section>
+</section>
+<section id="ttf-names">
 <span id="fontinfo-ttf-names"></span><h2>TTF Names<a class="headerlink" href="#ttf-names" title="Permalink to this headline">¶</a></h2>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="../../_images/fontinfo-ttfname.png" src="../../_images/fontinfo-ttfname.png" />
-</div>
+</figure>
 <p>TrueType (and OpenType) fonts are allowed to have different names in different
 languages. So a French user might see CaslonItalic displayed as CaslonItalique
 in a font menu, while a German user might see CaslonKursive. There are about 20
@@ -402,33 +401,33 @@ will be given the standard language popup and it will create a new string for
 you.</p>
 <p>The various strings and a brief description of their meanings are:</p>
 <dl class="object">
-<dt>
-<code class="sig-name descname">Copyright</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Copyright</span></span></dt>
 <dd><p>Allows you to specify the copyright message</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">Family</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Family</span></span></dt>
 <dd><p>The font’s family name</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">Styles (SubFamily)</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Styles</span> <span class="pre">(SubFamily)</span></span></dt>
 <dd><p>This should (in English) have values like “BoldItalicCondensed”. This is the
 most likely string to change in different languages.</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">Fullname</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Fullname</span></span></dt>
 <dd><p>The concatenation of the Family name and the Styles name</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">UniqueID</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">UniqueID</span></span></dt>
 <dd><p>This is a string that uniquely identifies the font in a human readable
 fashion. Its format is quite different from postscript’s UniqueID and
 FontForge will create an appropriate string if you don’t specify one (rather
@@ -436,58 +435,58 @@ than copying from postscript).</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">Version</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Version</span></span></dt>
 <dd><p>A string containing the version number of the font.</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">PostScript Name</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">PostScript</span> <span class="pre">Name</span></span></dt>
 <dd><p>(FontForge will not let you set this directly. It will be set automatically
 to the postscript fontname, only one instance of this tag is allowed in the
 font and it must be ASCII)</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">Trademark</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Trademark</span></span></dt>
 <dd><p>A string containing any trademark information for the font.</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">Manufacturer</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Manufacturer</span></span></dt>
 <dd><p>The name of the company that distributes the font.</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">Designer</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Designer</span></span></dt>
 <dd><p>The name of the person who designed the font.</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">Descriptor</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Descriptor</span></span></dt>
 <dd><p>A description of the font and its characteristics.</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">VendorURL</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">VendorURL</span></span></dt>
 <dd><p>An URL pointing to the font’s vendor.</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">DesignerURL</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">DesignerURL</span></span></dt>
 <dd><p>An URL (often an e-mail address) pointing to the font’s designer</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">License</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">License</span></span></dt>
 <dd><p>A string describing the license terms under which the font is marketed.</p>
 <p>If you want to use the
 <a class="reference external" href="http://scripts.sil.org/OFL/">SIL Open Font License</a>, there is a button at
@@ -496,14 +495,14 @@ type it in).</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">License URL</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">License</span> <span class="pre">URL</span></span></dt>
 <dd><p>An URL pointing to a page describing the terms of the license</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">Preferred Family</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Preferred</span> <span class="pre">Family</span></span></dt>
 <dd><p>This is to get around a quirk of windows where only four Style names are
 allowed per family, so font families with more than four styles would get
 different family names above, but the preferred family name would be the
@@ -511,20 +510,20 @@ same. This should only be specified if it differs from the family</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">Preferred Style</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Preferred</span> <span class="pre">Style</span></span></dt>
 <dd><p>This is similar to the above, except it applies to the style.</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">Compatible Full</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Compatible</span> <span class="pre">Full</span></span></dt>
 <dd><p>This is to get around a quirk on the Mac.</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">Sample Text</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Sample</span> <span class="pre">Text</span></span></dt>
 <dd><p>Whatever.</p>
 </dd></dl>
 
@@ -546,22 +545,22 @@ won’t always work.</p>
 appropriate strings FontForge will default to “GrasItalique” for French,
 “FettKursiv” for German, “NigritaCursiva” for Spanish, etc.</p>
 <p>These names are only meaningful for TrueType and OpenType fonts.</p>
-</div>
-<div class="section" id="styleset-names">
+</section>
+<section id="styleset-names">
 <span id="fontinfo-ssnames"></span><h2>StyleSet Names<a class="headerlink" href="#styleset-names" title="Permalink to this headline">¶</a></h2>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="../../_images/fontinfo-ssnames.png" src="../../_images/fontinfo-ssnames.png" />
-</div>
+</figure>
 <p>The OpenType features ‘ss01’-‘ss20’ are magic, and you are allowed to provide
 more interesting names for them than the default “Style Set 01”… This table
 allows you to assign names, in various languages to the various features. It is
 very similar to, though less complicated than, the previous pane.</p>
-</div>
-<div class="section" id="grid-fit-gasp-table">
+</section>
+<section id="grid-fit-gasp-table">
 <span id="fontinfo-gasp"></span><h2>Grid Fit (‘gasp’ table)<a class="headerlink" href="#grid-fit-gasp-table" title="Permalink to this headline">¶</a></h2>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="../../_images/fontinfo-gasp.png" src="../../_images/fontinfo-gasp.png" />
-</div>
+</figure>
 <p>The TrueType ‘gasp’ table gives you control over whether the rasterizer should
 do grid-fitting or anti-aliasing at any given pixel size. Note that this table
 only applies to <em>TrueType</em> fonts, it does not apply to Type2 PostScript (fonts
@@ -585,10 +584,10 @@ anti-alias applied</p></li>
 <li><p>All pixel sizes between 9 and 16 (inclusive) will be grid-fit but not
 anti-aliased.</p></li>
 <li><p>All pixel sizes above 16 will be both grid-fit and anti-aliased, and will have
-Cleartype Symetric Smoothing done.</p></li>
+Cleartype Symmetric Smoothing done.</p></li>
 </ul>
-</div>
-<div class="section" id="tex">
+</section>
+<section id="tex">
 <span id="fontinfo-tex"></span><h2>TeX<a class="headerlink" href="#tex" title="Permalink to this headline">¶</a></h2>
 <img alt="../../_images/fontinfo-tex.png" class="align-right" src="../../_images/fontinfo-tex.png" />
 <p>This allows you to set the TeX font parameters (which are described in Appendix
@@ -606,13 +605,13 @@ unreasonable</p>
 </div>
 <p>These values are stored in tfm files (should you generate a tfm file with your
 font).</p>
-</div>
-<div class="section" id="size">
+</section>
+<section id="size">
 <span id="fontinfo-size"></span><h2>Size<a class="headerlink" href="#size" title="Permalink to this headline">¶</a></h2>
 <img alt="../../_images/fontinfo-size.png" class="align-right" src="../../_images/fontinfo-size.png" />
 <p>This allows you to set the design size of a font, the design range, and provide
 a style name for this class of font.</p>
-<p>In tradtional typography every point size of a given font would be slightly
+<p>In traditional typography every point size of a given font would be slightly
 different – generally small point sizes would have proportionally more
 white-space around the glyph and wider stems inside the glyph. This made small
 point sizes more readable than they would otherwise be. Conversely large
@@ -658,8 +657,8 @@ just instances of it. So the Style Name of all four fonts above should be
 is specified, in the other all the fields must be specified. This means that if
 you want to supply a design range you are also required to provide a style id
 and name.</p>
-</div>
-<div class="section" id="comment">
+</section>
+<section id="comment">
 <span id="fontinfo-comment"></span><h2>Comment<a class="headerlink" href="#comment" title="Permalink to this headline">¶</a></h2>
 <img alt="../../_images/fontinfo-comment.png" class="align-right" src="../../_images/fontinfo-comment.png" />
 <p>This allows you to keep track of arbitrary comments inside your font database.
@@ -670,21 +669,23 @@ format makes use of it. This is primarily to be used inside FontForge. The
 comment should be in ASCII.</p>
 <div class="clearer docutils container">
 </div>
-</div>
-<div class="section" id="fontlog">
+</section>
+<section id="fontlog">
 <span id="fontinfo-fontlog"></span><h2>FONTLOG<a class="headerlink" href="#fontlog" title="Permalink to this headline">¶</a></h2>
 <p>This has the same interface as the Comment above. The FONTLOG is an idea stolen
 from the Open Font License. It is description of the font and a log of changes
 made to it over time and includes some more information about the font as well
 (see the <a class="reference external" href="http://scripts.sil.org/OFL-FAQ_web">OFL FAQ)</a>. This pane allows you
 to store this information within the font itself where it won’t get lost.</p>
-</div>
-<div class="section" id="mark-classes-mark-sets">
+</section>
+<section id="mark-classes-mark-sets">
 <span id="fontinfo-markclass-marksets"></span><h2>Mark Classes &amp; Mark Sets<a class="headerlink" href="#mark-classes-mark-sets" title="Permalink to this headline">¶</a></h2>
-<div class="figure align-default" id="id1">
+<figure class="align-default" id="id1">
 <img alt="../../_images/fontinfo-markclasses.png" src="../../_images/fontinfo-markclasses.png" />
-<p class="caption"><span class="caption-text">Font Info Mark Classes</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Font Info Mark Classes</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 <p>The various marks in your font may be divided into classes or sets. As I write
 (spring 2009) there is essentially no support for mark sets, but that will
 change (Both Adobe and MicroSoft say their next releases will support it).</p>
@@ -706,13 +707,15 @@ stored more compactly in the font file (a slight advantage).</p>
 <a class="reference internal" href="#fontinfo-lookups"><span class="std std-ref">Lookup</span></a> pane.</p>
 <p>The Mark Set pane looks almost exactly like the Mark Class pane, and functions
 similarly. From these panes you may add new classes, or edit old ones.</p>
-</div>
-<div class="section" id="lookups">
+</section>
+<section id="lookups">
 <span id="fontinfo-lookups"></span><h2>Lookups<a class="headerlink" href="#lookups" title="Permalink to this headline">¶</a></h2>
-<div class="figure align-default" id="id2">
+<figure class="align-default" id="id2">
 <img alt="../../_images/fontinfo-lookups.png" src="../../_images/fontinfo-lookups.png" />
-<p class="caption"><span class="caption-text">Font Info Anchors</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Font Info Anchors</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 <p>This pane is so complex that it merits its <a class="reference internal" href="lookups.html"><span class="doc">own section</span></a>.</p>
 <p>Briefly, lookups contain the data to do the work needed for complex typography.
 There are two main classes of lookups, those which substitute glyphs (ligatures
@@ -735,52 +738,54 @@ one font to another (by dragging them into the other font’s
 <p>There is a popup menu, available by right clicking on an entry, which provides
 these functions as well as:</p>
 <dl class="object">
-<dt>
-<code class="sig-name descname">Save Lookup</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Save</span> <span class="pre">Lookup</span></span></dt>
 <dd><p>Saves the currently selected lookup to an
 <a class="reference internal" href="../../techref/featurefile.html"><span class="doc">Adobe Feature File</span></a> of its very own.</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">Add 'aalt' features</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Add</span> <span class="pre">'aalt'</span> <span class="pre">features</span></span></dt>
 <dd><p>FontForge can automagically generate an ‘aalt’ feature consisting of every
 single and alternate substitution of each glyph.</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">Add 'DFLT' script</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Add</span> <span class="pre">'DFLT'</span> <span class="pre">script</span></span></dt>
 <dd><p>Add the DFLT script to all selected lookups</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">Add language to script</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Add</span> <span class="pre">language</span> <span class="pre">to</span> <span class="pre">script</span></span></dt>
 <dd><p>Add the specified language to the specified script in all selected lookups.</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">Remove Language from script</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Remove</span> <span class="pre">Language</span> <span class="pre">from</span> <span class="pre">script</span></span></dt>
 <dd><p>Removes the specified language from the specified script in all selected
 lookups.</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">Save Feature File</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Save</span> <span class="pre">Feature</span> <span class="pre">File</span></span></dt>
 <dd><p>Saves all lookups (both GSUB and GPOS) to an
 <a class="reference internal" href="../../techref/featurefile.html"><span class="doc">Adobe Feature File</span></a>.</p>
 </dd></dl>
 
-</div>
-<div class="section" id="woff-web-open-font-format">
+</section>
+<section id="woff-web-open-font-format">
 <span id="fontinfo-woff"></span><h2>WOFF (Web Open Font Format)<a class="headerlink" href="#woff-web-open-font-format" title="Permalink to this headline">¶</a></h2>
-<div class="figure align-default" id="id3">
+<figure class="align-default" id="id3">
 <img alt="../../_images/fontinfo-woff.png" src="../../_images/fontinfo-woff.png" />
-<p class="caption"><span class="caption-text">Font Info WOFF</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Font Info WOFF</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 <p>This sub-dialog allows you to specify additional information which may be stored
 in a woff file. A woff file is very similar to a standard sfnt except that its
 tables are compressed, and it has a few additional data fields. It has version
@@ -790,8 +795,8 @@ font version information available to it.</p>
 <p>It also has a metadata string. This is a small xml document (which ff does not
 currently parse), stored in utf8. Its internal format is specified in
 <a class="reference external" href="http://people.mozilla.com/~jkew/woff/woff-2009-09-16.html">a document from Mozilla</a>.</p>
-</div>
-<div class="section" id="mac-style-fond">
+</section>
+<section id="mac-style-fond">
 <span id="fontinfo-mac-style"></span><h2>Mac Style &amp; FOND<a class="headerlink" href="#mac-style-fond" title="Permalink to this headline">¶</a></h2>
 <img alt="Font Info Mac Styles" class="align-right" src="../../_images/fontinfo-macstyle.png" />
 <p>This sub-dialog allows you to set the mac style of your font. Normally FontForge
@@ -809,8 +814,8 @@ file), but is most important in creating mac font families.</p>
 <p id="fontinfo-fondname">The FOND name is only used for generating mac families. It is a grouping level
 underneath the family level. See the <a class="reference internal" href="../../faq.html#faq-how-family"><span class="std std-ref">FAQ</span></a> for a
 discussion on when to use this.</p>
-</div>
-<div class="section" id="mac-features">
+</section>
+<section id="mac-features">
 <span id="fontinfo-mac-features"></span><h2>Mac Features<a class="headerlink" href="#mac-features" title="Permalink to this headline">¶</a></h2>
 <img alt="Font Info Mac Features" class="align-right" src="../../_images/fontinfo-macfeat.png" />
 <p>This sub-dialog allows you to create and remove Mac features from your font.
@@ -819,20 +824,20 @@ This will override the Mac features specified in the
 give a more appropriate but local name to a certain feature setting).</p>
 <div class="clearer docutils container">
 </div>
-</div>
-<div class="section" id="dates">
+</section>
+<section id="dates">
 <span id="fontinfo-dates"></span><h2>Dates<a class="headerlink" href="#dates" title="Permalink to this headline">¶</a></h2>
 <p>Displays what fontforge thinks is the create date and modification date of the
 font data. FontForge started retaining those dates in August of 2006, any prior
 dates are conjectural and based on a best guess – usually from the modification
-time of the sfd file. When loading a font from somthing other than an sfd file,
+time of the sfd file. When loading a font from something other than an sfd file,
 FontForge will again make the best guess it can.</p>
-</div>
-<div class="section" id="unicode-ranges">
+</section>
+<section id="unicode-ranges">
 <span id="fontinfo-unicode"></span><h2>Unicode Ranges<a class="headerlink" href="#unicode-ranges" title="Permalink to this headline">¶</a></h2>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="../../_images/fontinfo-unicode.png" src="../../_images/fontinfo-unicode.png" />
-</div>
+</figure>
 <p>Displays information about the various unicode character ranges included in the
 font.</p>
 <p>If you click on a range, the font view will select all characters in that range
@@ -845,8 +850,8 @@ defined in the font within that range, and scroll to one of them.</p>
 <li><p><a class="reference internal" href="getinfo.html"><span class="doc">The get info dialogs</span></a></p></li>
 <li><p><a class="reference internal" href="contextchain.html"><span class="doc">The contextual / chaining dialog</span></a></p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -890,9 +895,9 @@ defined in the font within that range, and scroll to one of them.</p>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../misc/HotKeys.html">Hot Keys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../misc/fontforge-themes.html">FontForge color schemes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">X Resource Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">Appearance Editor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../misc/xim.html">X Input Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">X Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">Changing FontForge’s UI Appearance</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../scripting/scripting.html">Scripting FontForge</a></li>
@@ -920,7 +925,7 @@ defined in the font within that range, and scroll to one of them.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -942,7 +947,7 @@ defined in the font within that range, and scroll to one of them.</p>
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

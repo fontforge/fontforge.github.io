@@ -4,16 +4,16 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Get Info &#8212; FontForge 20201107 documentation</title>
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Get Info &#8212; FontForge 20220308 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -35,7 +35,7 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="get-info">
+  <section id="get-info">
 <h1>Get Info<a class="headerlink" href="#get-info" title="Permalink to this headline">¶</a></h1>
 <p>In the Outline View the Get Info command can generate one of four different
 dialogs depending on what is selected. If a single thing is selected, and that
@@ -45,7 +45,7 @@ up, if it is a reference then the
 background image then the <a class="reference internal" href="#getinfo-image"><span class="std std-ref">image dialog</span></a> is brought up. If
 it is an anchor point then the <a class="reference internal" href="#getinfo-anchors"><span class="std std-ref">anchor point</span></a> dialog is
 brought up.</p>
-<div class="section" id="point-info">
+<section id="point-info">
 <span id="getinfo-point"></span><h2>Point Info<a class="headerlink" href="#point-info" title="Permalink to this headline">¶</a></h2>
 <img alt="../../_images/pointinfo.png" class="align-right" src="../../_images/pointinfo.png" />
 <p>This shows information about the current point. The Base position is where the
@@ -82,7 +82,7 @@ control points and let the base point continue to be interpolated. The &lt;&gt; 
 and &lt;&gt;Interpolated radio buttons control which view is active.</p>
 <p>Pressing &lt;&gt; Interpolated may move the point to position it correctly for
 interpolation.</p>
-<div class="section" id="hint-mask">
+<section id="hint-mask">
 <span id="getinfo-hintmask"></span><h3>Hint Mask<a class="headerlink" href="#hint-mask" title="Permalink to this headline">¶</a></h3>
 <img alt="../../_images/charwithhintmask.png" src="../../_images/charwithhintmask.png" />
 <img alt="../../_images/hintmaskinfo.png" src="../../_images/hintmaskinfo.png" />
@@ -101,15 +101,15 @@ rule, so I have made this a warning rather than an error.</p>
 <p>Sadly the direction in which hintmasks apply is backwards from what you would
 expect (the hintmask applies to this point an all previous points on the
 contour, rather than all subsequent ones).</p>
-<div class="section" id="active-hints">
+<section id="active-hints">
 <h4>Active Hints<a class="headerlink" href="#active-hints" title="Permalink to this headline">¶</a></h4>
 <p>This looks just like the hint mask, except you cannot change anything it in. It
 shows you what hints are currently selected at this point. If a point has a hint
 mask then the two will be identical.</p>
-</div>
-</div>
-</div>
-<div class="section" id="spiro-point-info">
+</section>
+</section>
+</section>
+<section id="spiro-point-info">
 <span id="getinfo-spiro"></span><h2>Spiro Point Info<a class="headerlink" href="#spiro-point-info" title="Permalink to this headline">¶</a></h2>
 <img alt="../../_images/spiropointinfo.png" class="align-right" src="../../_images/spiropointinfo.png" />
 <p>If you are editing in spiro (clothoid) mode rather than Bezier mode, then there
@@ -117,8 +117,8 @@ are no control points and the get info dialog is much simpler. Just the location
 of the point and the point type.</p>
 <div class="clearer docutils container">
 </div>
-</div>
-<div class="section" id="anchor-points-info">
+</section>
+<section id="anchor-points-info">
 <span id="getinfo-anchors"></span><h2>Anchor Points Info<a class="headerlink" href="#anchor-points-info" title="Permalink to this headline">¶</a></h2>
 <img alt="../../_images/agetinfo.png" class="align-right" src="../../_images/agetinfo.png" />
 <p>This dialog shows the selected <a class="reference internal" href="../../index.html#overview-anchors"><span class="std std-ref">anchor point</span></a> with the
@@ -133,8 +133,8 @@ grid fit it properly with the current rasterization.</p>
 <a class="reference internal" href="../menus/pointmenu.html#pointmenu-addanchor"><span class="std std-ref">Point-&gt;Add Anchor</span></a> command.</p>
 <div class="clearer docutils container">
 </div>
-</div>
-<div class="section" id="reference-info">
+</section>
+<section id="reference-info">
 <span id="getinfo-getreferenceinfo"></span><h2>Reference Info<a class="headerlink" href="#reference-info" title="Permalink to this headline">¶</a></h2>
 <img alt="../../_images/rgetinfo.png" class="align-right" src="../../_images/rgetinfo.png" />
 <p>This dialog shows the name of the selected reference, its encoding in the font
@@ -142,7 +142,7 @@ and its postscript transformation matrix. You may alter the transformation
 matrix if you desire.</p>
 <div class="clearer docutils container">
 </div>
-<p>The transformation matrix maps points in the glyph being refered to into their
+<p>The transformation matrix maps points in the glyph being referred to into their
 location in the current glyph:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}x_{\mathrm{current}} &amp;= TM_{1,1}\cdot x_{\mathrm{ref}} + TM_{2,1}\cdot y_{\mathrm{ref}} + TM_{3,1} \\
@@ -159,7 +159,7 @@ reference’s instructions will still be useful in the composite.</p>
 the base character, and one in the reference itself. In the example at right,
 the reference to “acute” will be moved until point 12 in “acute” is at the same
 place as point 33 in the base glyph. The glory of this method is that the
-truetype instructions assocated with the glyphs can move these points around to
+truetype instructions associated with the glyphs can move these points around to
 an appropriate location for the current pixelsize.</p>
 <p>Points in a composite glyph are numbered by counting the points of the first
 component, adding 4 (for the 4 phantom (metric) points), then counting the
@@ -173,8 +173,8 @@ may use <a class="reference internal" href="../menus/elementmenu.html#elementmen
 location and size of the reference.</p>
 <p>The [Show] button will open a glyph outline view showing the glyph being
 referred to.</p>
-</div>
-<div class="section" id="image-info">
+</section>
+<section id="image-info">
 <span id="getinfo-image"></span><h2>Image Info<a class="headerlink" href="#image-info" title="Permalink to this headline">¶</a></h2>
 <p>This dialog gives the offset to the lower left corner of the image and the scale
 factors applied to the image. Currently you may not alter anything here, it is
@@ -184,8 +184,8 @@ purely informational.</p>
 <li><p><a class="reference internal" href="fontinfo.html"><span class="doc">The font info dialog</span></a></p></li>
 <li><p><a class="reference internal" href="charinfo.html"><span class="doc">The glyph info dialog</span></a></p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -229,9 +229,9 @@ purely informational.</p>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../misc/HotKeys.html">Hot Keys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../misc/fontforge-themes.html">FontForge color schemes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">X Resource Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">Appearance Editor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../misc/xim.html">X Input Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">X Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">Changing FontForge’s UI Appearance</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../scripting/scripting.html">Scripting FontForge</a></li>
@@ -259,7 +259,7 @@ purely informational.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -281,7 +281,7 @@ purely informational.</p>
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

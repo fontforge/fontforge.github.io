@@ -1,0 +1,294 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>The askMulti Dialog &#8212; FontForge 20220308 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/fftype16.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Caveats about References" href="ref-caveats.html" />
+    <link rel="prev" title="Bézier Splines" href="bezier.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="the-askmulti-dialog">
+<h1>The <cite>askMulti</cite> Dialog<a class="headerlink" href="#the-askmulti-dialog" title="Permalink to this headline">¶</a></h1>
+<p>When called in a UI-enabled environment the Python
+<a class="reference internal" href="../scripting/python/fontforge.html#fontforge.askMulti" title="fontforge.askMulti"><code class="xref py py-func docutils literal notranslate"><span class="pre">fontforge.askMulti()</span></code></a> method raises a modal dialog that prompts the
+user to answer one or more questions, potentially organized into “categories”
+displayed in separate tabs. It takes two parameters, <code class="docutils literal notranslate"><span class="pre">title</span></code> and <code class="docutils literal notranslate"><span class="pre">specification</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">title</span></code> parameter should be a string that will be displayed in the dialog
+window title bar.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">specification</span></code> paramter is either a Python list or dictionary object
+specifying the questions. This is explained below.</p>
+<section id="questions">
+<h2>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h2>
+<p>There are four question types, corresponding to the single-question
+<a class="reference internal" href="../scripting/python/fontforge.html#fontforge.askString" title="fontforge.askString"><code class="xref py py-func docutils literal notranslate"><span class="pre">fontforge.askString()</span></code></a>, <a class="reference internal" href="../scripting/python/fontforge.html#fontforge.askChoices" title="fontforge.askChoices"><code class="xref py py-func docutils literal notranslate"><span class="pre">fontforge.askChoices()</span></code></a>,
+<a class="reference internal" href="../scripting/python/fontforge.html#fontforge.openFilename" title="fontforge.openFilename"><code class="xref py py-func docutils literal notranslate"><span class="pre">fontforge.openFilename()</span></code></a>, and <a class="reference internal" href="../scripting/python/fontforge.html#fontforge.saveFilename" title="fontforge.saveFilename"><code class="xref py py-func docutils literal notranslate"><span class="pre">fontforge.saveFilename()</span></code></a>
+dialog methods. Each individual question is specified as a dictionary.</p>
+<p>All question types use the keys <code class="docutils literal notranslate"><span class="pre">type</span></code>, <code class="docutils literal notranslate"><span class="pre">question``</span></code>, <code class="docutils literal notranslate"><span class="pre">tag</span></code> and <code class="docutils literal notranslate"><span class="pre">align</span></code>. The
+<code class="docutils literal notranslate"><span class="pre">type</span></code> value specifies the type of question as outlined below.</p>
+<p>The value corresponding to <code class="docutils literal notranslate"><span class="pre">question</span></code> is the label string, which is displayed
+before the answer field. This key must be present but the value can be <code class="docutils literal notranslate"><span class="pre">None</span></code>
+if no label is needed.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">tag</span></code> is optional but either it or <code class="docutils literal notranslate"><span class="pre">question</span></code> must have a value. When
+present its value will be used as the key corresponding to this question in the
+result dictionary returned by the method. Otherwise the <code class="docutils literal notranslate"><span class="pre">question</span></code> value
+will be used. The <code class="docutils literal notranslate"><span class="pre">tag</span></code> value can be any “hashable” type—that is, any type
+that can serve as a key in a Python dictionary.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">align</span></code> value must be boolean-evaluable (ideally <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>).
+It indicates whether, when the dialog is being laid out, the label for this
+question should be aligned with the other labels of the same category. When
+absent the default is <code class="docutils literal notranslate"><span class="pre">True</span></code>. (This has no effect when the <code class="docutils literal notranslate"><span class="pre">question</span></code> value
+is <code class="docutils literal notranslate"><span class="pre">None</span></code>, so if you want an aligned, empty label use a space as the
+<code class="docutils literal notranslate"><span class="pre">question</span></code> value.)</p>
+<section id="string-questions">
+<h3>String Questions<a class="headerlink" href="#string-questions" title="Permalink to this headline">¶</a></h3>
+<p>A string question displays the label followed by a text entry field.  Its
+<code class="docutils literal notranslate"><span class="pre">type</span></code> value must be “string”.</p>
+<p>The only additional key for a string question is <code class="docutils literal notranslate"><span class="pre">default</span></code>, which is optional.
+When the key present its value, which must be a string, will be the initial
+value of the answer entry field. An example dictionary is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;string&#39;</span><span class="p">,</span> <span class="s1">&#39;question&#39;</span><span class="p">:</span> <span class="s1">&#39;Number of contours:&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;tag&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="s1">&#39;4&#39;</span> <span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="choice-questions">
+<h3>Choice Questions<a class="headerlink" href="#choice-questions" title="Permalink to this headline">¶</a></h3>
+<p>Choice questions ask the user to pick a subset of given answers. Its <code class="docutils literal notranslate"><span class="pre">type</span></code>
+value must be “choice”. This question type has three additional dictionary
+keys: <code class="docutils literal notranslate"><span class="pre">answers</span></code>, <code class="docutils literal notranslate"><span class="pre">multiple</span></code>, and <code class="docutils literal notranslate"><span class="pre">checks</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">answers</span></code> value must be a Python list of potential answers, each of which is
+its own small dictionary. The keys to an answer dictionary are <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">tag</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">default</span></code>. The value of <code class="docutils literal notranslate"><span class="pre">name</span></code> must be the string the user will choose among.
+The value of <code class="docutils literal notranslate"><span class="pre">tag</span></code>, when present, will be used to report the answer in the
+result dictionary—when not present the <code class="docutils literal notranslate"><span class="pre">name</span></code> string will be used. Unlike the
+question <code class="docutils literal notranslate"><span class="pre">tag</span></code> an answer <code class="docutils literal notranslate"><span class="pre">tag</span></code> value can be of any type whatsoever. The <code class="docutils literal notranslate"><span class="pre">default</span></code>
+key is an optional key that must have a boolean-evaluable value. When <code class="docutils literal notranslate"><span class="pre">True</span></code>
+the answer is selected when the dialog is presented.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">multiple</span></code> value must be boolean-evaluable; when the key is absent the
+default is <code class="docutils literal notranslate"><span class="pre">False</span></code>. It indicates whether the user must choose exactly one
+answer or can choose multiple or, potentially, no answers. When <code class="docutils literal notranslate"><span class="pre">multiple</span></code> is
+false there must be at most one answer for which <code class="docutils literal notranslate"><span class="pre">default</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">checks</span></code> value must also be boolean-evaluable and its default is also
+<code class="docutils literal notranslate"><span class="pre">False</span></code>. By default a choice question is presented as in the
+<a class="reference internal" href="../scripting/python/fontforge.html#fontforge.askChoices" title="fontforge.askChoices"><code class="xref py py-func docutils literal notranslate"><span class="pre">fontforge.askChoices()</span></code></a> dialog, with a (potentially) scrolling
+vertical list similar to pop-up menu. When <code class="docutils literal notranslate"><span class="pre">checks</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">multiple</span></code>
+is <code class="docutils literal notranslate"><span class="pre">False</span></code> the answers are presented as radio buttons. When <code class="docutils literal notranslate"><span class="pre">checks</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>
+and <code class="docutils literal notranslate"><span class="pre">multiple</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> the answers are presented as checkboxes. Radio
+buttons and checkboxes allow better keyboard-based selection (see the
+mnemonics section) and may have other advantages.</p>
+<p>An example choice question dictionary is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;choice&#39;</span><span class="p">,</span> <span class="s1">&#39;question&#39;</span><span class="p">:</span> <span class="s1">&#39;What direction:&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;tag&#39;</span><span class="p">:</span> <span class="s1">&#39;direction&#39;</span><span class="p">,</span> <span class="s1">&#39;checks&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+  <span class="s1">&#39;answers&#39;</span><span class="p">:</span> <span class="p">[</span> <span class="p">{</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Clockwise&#39;</span><span class="p">,</span> <span class="s1">&#39;tag&#39;</span><span class="p">:</span> <span class="s1">&#39;cw&#39;</span><span class="p">,</span> <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="kc">True</span> <span class="p">},</span>
+               <span class="p">{</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Counter-Clockwise&#39;</span><span class="p">,</span> <span class="s1">&#39;tag&#39;</span><span class="p">:</span> <span class="s1">&#39;ccw&#39;</span> <span class="p">}</span> <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="pathname-questions">
+<h3>Pathname Questions<a class="headerlink" href="#pathname-questions" title="Permalink to this headline">¶</a></h3>
+<p>The open pathname and save pathname questions have the respective type values
+“openpath” and “savepath”. These differ from the
+<a class="reference internal" href="../scripting/python/fontforge.html#fontforge.openFilename" title="fontforge.openFilename"><code class="xref py py-func docutils literal notranslate"><span class="pre">fontforge.openFilename()</span></code></a> and <a class="reference internal" href="../scripting/python/fontforge.html#fontforge.saveFilename" title="fontforge.saveFilename"><code class="xref py py-func docutils literal notranslate"><span class="pre">fontforge.saveFilename()</span></code></a>
+methods in that they do not raise a file browser directly. Instead they display
+an entry field, similar to a string question, followed by a button to raise a
+browser, similar to the path-specifying entries in :doc:<code class="docutils literal notranslate"><span class="pre">the</span> <span class="pre">preferences</span> <span class="pre">dialog</span>
+<span class="pre">&lt;/ui/dialogs/prefs&gt;</span></code>. Each also has an optional <code class="docutils literal notranslate"><span class="pre">default</span></code> key for an initial
+pathname value, and an optional <code class="docutils literal notranslate"><span class="pre">filter</span></code> key to specify a file filter. Both
+must be strings. An example dictionary is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;openpath&#39;</span><span class="p">,</span> <span class="s1">&#39;question&#39;</span><span class="p">:</span> <span class="s1">&#39;Glif file:&#39;</span><span class="p">,</span> <span class="s1">&#39;tag&#39;</span><span class="p">:</span> <span class="s1">&#39;file&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="s1">&#39;input.glif&#39;</span><span class="p">,</span> <span class="s1">&#39;filter&#39;</span><span class="p">:</span> <span class="s1">&#39;*.glif&#39;</span> <span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="categories">
+<h2>Categories<a class="headerlink" href="#categories" title="Permalink to this headline">¶</a></h2>
+<p>Questions are organized into categories. A category is a dictionary with
+two keys: <code class="docutils literal notranslate"><span class="pre">category</span></code> and <code class="docutils literal notranslate"><span class="pre">questions</span></code>. The value of <code class="docutils literal notranslate"><span class="pre">category</span></code> should be a
+either string to display to the user or <code class="docutils literal notranslate"><span class="pre">None</span></code> if no label is needed.
+The value of <code class="docutils literal notranslate"><span class="pre">questions</span></code> must be a list of question dictionaries, as
+described above. A category containing the dictionaries above looks like:</p>
+<figure class="align-default">
+<img alt="Example ``askMulti`` dialog" src="../_images/multi_example.png" />
+</figure>
+</section>
+<section id="the-specification">
+<h2>The Specification<a class="headerlink" href="#the-specification" title="Permalink to this headline">¶</a></h2>
+<p>The specification passed as the <code class="docutils literal notranslate"><span class="pre">spec</span></code> parameter can be any of:</p>
+<ul class="simple">
+<li><p>A question dictionary</p></li>
+<li><p>A list of question dictionaries</p></li>
+<li><p>A category dictionary</p></li>
+<li><p>A list of category dictionaries</p></li>
+</ul>
+<p>In the last case each category will be given its own tab, with the
+category names selectable on the left side of the dialog. (Whenever
+there is only one category there is no list, even when the category
+has a name.)</p>
+</section>
+<section id="the-return-value">
+<h2>The Return Value<a class="headerlink" href="#the-return-value" title="Permalink to this headline">¶</a></h2>
+<p>When the user cancels the dialog, either with the “Cancel” button or
+by closing the window, the <code class="docutils literal notranslate"><span class="pre">askMulti</span></code> method returns None. Otherwise
+it returns a Python dictionary of results, one for each question. The
+key will be the <code class="docutils literal notranslate"><span class="pre">tag</span></code> value or, if none was present, the <code class="docutils literal notranslate"><span class="pre">question</span></code>
+string. For all question types other than “choice” the value is a
+string. For a choice question where <code class="docutils literal notranslate"><span class="pre">multiple</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code> the value
+is the <code class="docutils literal notranslate"><span class="pre">tag</span></code> or <code class="docutils literal notranslate"><span class="pre">name</span></code> of the answer. For a <code class="docutils literal notranslate"><span class="pre">multiple</span></code> choice question
+the value is a tuple of <code class="docutils literal notranslate"><span class="pre">tag</span></code> or <code class="docutils literal notranslate"><span class="pre">name</span></code> values. The tuple may be
+empty.</p>
+<p>A result dictionary for the collection above could be:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="mi">3</span><span class="p">:</span> <span class="s1">&#39;20&#39;</span><span class="p">,</span> <span class="s1">&#39;direction&#39;</span><span class="p">:</span> <span class="s1">&#39;ccw&#39;</span><span class="p">,</span> <span class="s1">&#39;file&#39;</span><span class="p">:</span> <span class="s1">&#39;/tmp/in.glif&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>When the specification is invalid the method will throw a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>
+or <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> exception with information about the problem.</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">FontForge</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ui.html">FontForge’s User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/scripting.html">Scripting FontForge</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../techref.html">Technical References</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gposgsub.html">Advanced Typography Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AA-Comparison.html">Anti-Alias Comparison</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autotrace.html">Autotracing bitmaps in FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accented.html">Building Accented and other Composite Glyphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bezier.html">Bézier Splines </a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">The <cite>askMulti</cite> Dialog</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#questions">Questions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#string-questions">String Questions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#choice-questions">Choice Questions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pathname-questions">Pathname Questions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#categories">Categories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-specification">The Specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-return-value">The Return Value</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ref-caveats.html">Caveats about References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfdchangelog.html">Changes to the sfd format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cidmapformat.html">Cidmap files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cliargs.html">Command Line Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="splinefont.html">Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SuggestDeltas.html">Delta Instruction Suggestions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stroke.html">Expand Stroke Facility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyextend.html">Extending FontForge With Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BDFGrey.html">Extensions to Adobe’s BDF  for greymap fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PfaEdit-TeX.html">FontForge and TeX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pfaeditmath.html">FontForge’s math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hinting.html">Hinting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macformats.html">Macintosh font formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="featurefile.html">Major differences between FontForge’s and Adobe’s interpretation of feature files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="non-standard.html">Non standard extensions used FontForge in True/Open Type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="palmfonts.html">Palm fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins.html">Using FontForge Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bitmaponlysfnt.html">Several formats for bitmap only sfnts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sfdformat.html">Spline Font Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pcf-format.html">The X11 PCF bitmap font file format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TrueOpenTables.html">TrueType and OpenType tables supported by FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corpchar.html">Unicode Corporate Characters used by FontForge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UniqueID.html">UniqueID and XUID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selections.html">X Selections and the X Clipboard</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../fontutils.html">Utilities for examining fonts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices.html">Appendices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Typographical glossary</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../techref.html">Technical References</a><ul>
+      <li>Previous: <a href="bezier.html" title="previous chapter">Bézier Splines </a></li>
+      <li>Next: <a href="ref-caveats.html" title="next chapter">Caveats about References</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

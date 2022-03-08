@@ -4,20 +4,19 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Palm fonts &#8212; FontForge 20201107 documentation</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Palm fonts &#8212; FontForge 20220308 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Several formats for bitmap only sfnts" href="bitmaponlysfnt.html" />
+    <link rel="next" title="Using FontForge Plugins" href="plugins.html" />
     <link rel="prev" title="Non standard extensions used FontForge in True/Open Type" href="non-standard.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -35,7 +34,7 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="palm-fonts">
+  <section id="palm-fonts">
 <h1>Palm fonts<a class="headerlink" href="#palm-fonts" title="Permalink to this headline">¶</a></h1>
 <p>Fonts on the palm pilot are rather limited. Each strike is stored in its own
 record of a database with no name or indication of whether it is connected to
@@ -83,7 +82,7 @@ format used for the script Generate command.</p>
 <p>Note: You must include the low-density strike. This strike defines the metrics
 for all the others. However you may generate a font which does not include this
 strike (the second choice in the list above).</p>
-</div>
+</section>
 
 
           </div>
@@ -112,6 +111,7 @@ strike (the second choice in the list above).</p>
 <li class="toctree-l2"><a class="reference internal" href="autotrace.html">Autotracing bitmaps in FontForge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="accented.html">Building Accented and other Composite Glyphs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bezier.html">Bézier Splines </a></li>
+<li class="toctree-l2"><a class="reference internal" href="askmulti.html">The <cite>askMulti</cite> Dialog</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ref-caveats.html">Caveats about References</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sfdchangelog.html">Changes to the sfd format</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cidmapformat.html">Cidmap files</a></li>
@@ -119,6 +119,7 @@ strike (the second choice in the list above).</p>
 <li class="toctree-l2"><a class="reference internal" href="splinefont.html">Data Types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="SuggestDeltas.html">Delta Instruction Suggestions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="stroke.html">Expand Stroke Facility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyextend.html">Extending FontForge With Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="BDFGrey.html">Extensions to Adobe’s BDF  for greymap fonts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="PfaEdit-TeX.html">FontForge and TeX</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pfaeditmath.html">FontForge’s math</a></li>
@@ -127,6 +128,7 @@ strike (the second choice in the list above).</p>
 <li class="toctree-l2"><a class="reference internal" href="featurefile.html">Major differences between FontForge’s and Adobe’s interpretation of feature files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="non-standard.html">Non standard extensions used FontForge in True/Open Type</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Palm fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins.html">Using FontForge Plugins</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bitmaponlysfnt.html">Several formats for bitmap only sfnts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sfdformat.html">Spline Font Database</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pcf-format.html">The X11 PCF bitmap font file format</a></li>
@@ -148,7 +150,7 @@ strike (the second choice in the list above).</p>
   <li><a href="../index.html">Documentation overview</a><ul>
   <li><a href="../techref.html">Technical References</a><ul>
       <li>Previous: <a href="non-standard.html" title="previous chapter">Non standard extensions used FontForge in True/Open Type</a></li>
-      <li>Next: <a href="bitmaponlysfnt.html" title="next chapter">Several formats for bitmap only sfnts</a></li>
+      <li>Next: <a href="plugins.html" title="next chapter">Using FontForge Plugins</a></li>
   </ul></li>
   </ul></li>
 </ul>
@@ -157,7 +159,7 @@ strike (the second choice in the list above).</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -179,7 +181,7 @@ strike (the second choice in the list above).</p>
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

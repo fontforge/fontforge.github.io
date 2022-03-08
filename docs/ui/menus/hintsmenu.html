@@ -4,16 +4,15 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Hints Menu &#8212; FontForge 20201107 documentation</title>
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>The Hints Menu &#8212; FontForge 20220308 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -35,12 +34,12 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="the-hints-menu">
+  <section id="the-hints-menu">
 <h1>The Hints Menu<a class="headerlink" href="#the-hints-menu" title="Permalink to this headline">¶</a></h1>
 <p>This menu is only present in the outline glyph view and the font view.</p>
 <span class="target" id="hintsmenu-autohint"></span><dl class="object">
-<dt>
-<code class="sig-name descname">AutoHint</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">AutoHint</span></span></dt>
 <dd><p>The Auto Hint command causes FontForge to throw away any existing hints for
 the glyph and guess an new ones. In the outline view this operates on the
 current glyph, in the font view it operates on all selected glyphs.</p>
@@ -55,23 +54,23 @@ enabled.</p>
 </dd></dl>
 
 <span class="target" id="hintsmenu-substitutionpt"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Hint Substitution Pts</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Hint</span> <span class="pre">Substitution</span> <span class="pre">Pts</span></span></dt>
 <dd><p>In the font view this figures substitution points for all selected glyphs. In
 the outline glyph view, this figures substitution points for the current
 glyph using the current hint set.</p>
 </dd></dl>
 
 <span class="target" id="hintsmenu-counter"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Auto Counter</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Auto</span> <span class="pre">Counter</span></span></dt>
 <dd><p>Attempt to figure out counter groups for the selected glyphs (font view) or
 the current glyph (outline glyph view).</p>
 </dd></dl>
 
 <span class="target" id="hintsmenu-dontautohint"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Don't AutoHint</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Don't</span> <span class="pre">AutoHint</span></span></dt>
 <dd><p>Tells FontForge not to do any implicit hinting on the selected glyphs.
 (FontForge will normally perform an autohint on a glyph if the glyph’s
 contours have changed since it was last hinted and the user has not
@@ -83,8 +82,8 @@ currently on the menu entry will be checked.</p>
 </dd></dl>
 
 <span class="target" id="hintsmenu-autoinstr"></span><dl class="object">
-<dt>
-<code class="sig-name descname">AutoInstr</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">AutoInstr</span></span></dt>
 <dd><p>The Auto Instr command is only available in quadratic fonts and is used to
 generate truetype instructions. It is designed to produce instructions based
 on PostScript information, so please insure that all glyphs are correctly
@@ -98,8 +97,8 @@ hint preference item is turned on
 </dd></dl>
 
 <span class="target" id="hintsmenu-editinstrs"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Edit Instructions...</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Edit</span> <span class="pre">Instructions...</span></span></dt>
 <dd><p>Only available in the outline and font views, and only in quadratic fonts.
 <a class="reference internal" href="../dialogs/ttfinstrs.html"><span class="doc">This dialog</span></a> shows any truetype instructions associated
 with this glyph, and allows you to edit them.</p>
@@ -117,8 +116,8 @@ will now contain only references).</p></li>
 </dd></dl>
 
 <span class="target" id="hintsmenu-debug"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Debug...</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Debug...</span></span></dt>
 <dd><p>Only available in the outline view, and only if you have linked with a
 version of freetype with the bytecode interpreter and only in quadratic
 fonts. This allows you to
@@ -126,24 +125,24 @@ fonts. This allows you to
 </dd></dl>
 
 <span class="target" id="hintsmenu-editfpgm"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Edit fpgm...</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Edit</span> <span class="pre">fpgm...</span></span></dt>
 <dd><p>Only available in the font view, and only in quadratic fonts.
 <a class="reference internal" href="../dialogs/ttfinstrs.html"><span class="doc">This dialog</span></a> shows any truetype instructions in the ‘fpgm’
 table, and allows you to edit them.</p>
 </dd></dl>
 
 <span class="target" id="hintsmenu-editprep"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Edit prep...</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Edit</span> <span class="pre">prep...</span></span></dt>
 <dd><p>Only available in the font view, and only in quadratic fonts.
 <a class="reference internal" href="../dialogs/ttfinstrs.html"><span class="doc">This dialog</span></a> shows any truetype instructions in the ‘prep’
 table, and allows you to edit them.</p>
 </dd></dl>
 
 <span class="target" id="hintsmenu-editcvt"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Edit cvt...</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Edit</span> <span class="pre">cvt...</span></span></dt>
 <dd><p>Only available in the font view, and only in quadratic fonts.
 <a class="reference internal" href="../dialogs/ttfinstrs.html#ttfinstrs-cvt"><span class="std std-ref">This dialog</span></a> shows the initial values in the ‘cvt ‘
 table, and allows you to edit them. You can also add a brief comment to
@@ -151,15 +150,15 @@ describe what each entry is used for.</p>
 </dd></dl>
 
 <span class="target" id="hintsmenu-deltas"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Suggest Deltas...</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Suggest</span> <span class="pre">Deltas...</span></span></dt>
 <dd><p>Brings up a <a class="reference internal" href="../../techref/SuggestDeltas.html"><span class="doc">dialog</span></a> which will help you search for
 places where truetype delta instructions might be useful.</p>
 </dd></dl>
 
 <span class="target" id="hintsmenu-rmtables"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Remove Instr Tables</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Remove</span> <span class="pre">Instr</span> <span class="pre">Tables</span></span></dt>
 <dd><p>If the font contains a ‘fpgm’, ‘prep’, ‘cvt ‘ or ‘maxp’ table, then this
 command will remove them. This should be done in conjunction with
 <a class="reference internal" href="#"><span class="doc">Hints-&gt;Clear Instructions</span></a>, otherwise any remaining
@@ -167,106 +166,106 @@ instructed glyphs will fail to work.</p>
 </dd></dl>
 
 <span class="target" id="hintsmenu-clearhints"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Clear Hints</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Clear</span> <span class="pre">Hints</span></span></dt>
 <dd><p>Clears all hints in all selected glyphs.</p>
 </dd></dl>
 
 <span class="target" id="hintsmenu-clearinstrs"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Clear Instructions</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Clear</span> <span class="pre">Instructions</span></span></dt>
 <dd><p>Clears any truetype instructions associated with the selected glyphs.</p>
 </dd></dl>
 
 <span class="target" id="hintsmenu-clear"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Clear HStem</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Clear</span> <span class="pre">HStem</span></span></dt>
 <dd><p>Removes all Horizontal Stem hints from the current glyph.</p>
 </dd></dl>
 
 <span class="target" id="hintsmenu-clearv"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Clear VStem</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Clear</span> <span class="pre">VStem</span></span></dt>
 <dd><p>Removes all Vertical Stem hints.</p>
 </dd></dl>
 
 <span class="target" id="hintsmenu-cleard"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Clear DStem</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Clear</span> <span class="pre">DStem</span></span></dt>
 <dd><p>Removes all Diagonal Stem hints.</p>
 </dd></dl>
 
 <span class="target" id="hintsmenu-hhint"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Add HHint</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Add</span> <span class="pre">HHint</span></span></dt>
 <dd><p>If there are two points selected (exactly two) and if they have different y
 positions, then this will create a Horizontal Stem Hint starting at the lower
 one of the two going up to the upper one.</p>
 </dd></dl>
 
 <span class="target" id="hintsmenu-vhint"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Add VHint</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Add</span> <span class="pre">VHint</span></span></dt>
 <dd><p>If there are two points selected (exactly two) and if they have different x
 positions, then this will create a Vertical Stem Hint starting at the
 leftmost one of the two going right to the rightmost one.</p>
 </dd></dl>
 
 <span class="target" id="hintsmenu-dhint"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Add DHint</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Add</span> <span class="pre">DHint</span></span></dt>
 <dd><p>If there are exactly 4 points selected and they can describe a diagonal stem
 hint then this menu item will be active and will add it.</p>
 </dd></dl>
 
 <span class="target" id="hintsmenu-create"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Create HHint</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Create</span> <span class="pre">HHint</span></span></dt>
 <dd><p>Brings up a dialog allowing you to specify exactly where and how wide you
 want a Horizontal Stem Hint.</p>
 </dd></dl>
 
 <span class="target" id="hintsmenu-createv"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Create VHint</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Create</span> <span class="pre">VHint</span></span></dt>
 <dd><p>Brings up a dialog allowing you to specify exactly where and how wide you
 want a Vertical Stem Hint.</p>
 </dd></dl>
 
 <span class="target" id="hintsmenu-review"></span><dl class="object">
-<dt>
-<code class="sig-name descname">Review Hints</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Review</span> <span class="pre">Hints</span></span></dt>
 <dd><img alt="../../_images/ReviewHints.png" class="align-right" src="../../_images/ReviewHints.png" />
 <p>Brings up a dialog allowing you to examine (and modify) all
 horizontal/vertical stem hints (not diagonal). The currently active hint is
 picked out in either dark blue or dark green.</p>
 </dd></dl>
 
-<div class="section" id="the-histograms-submenu">
+<section id="the-histograms-submenu">
 <span id="hintsmenu-histogram"></span><h2>The Histograms SubMenu<a class="headerlink" href="#the-histograms-submenu" title="Permalink to this headline">¶</a></h2>
 <span class="target" id="hintsmenu-hstem-hist"></span><dl class="object">
-<dt>
-<code class="sig-name descname">HStem</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">HStem</span></span></dt>
 <dd><p>Brings up a <a class="reference internal" href="../dialogs/histogram.html"><span class="doc">dialog</span></a> displaying a histogram of the
 horizontal stem widths of all selected glyphs.</p>
 </dd></dl>
 
 <span class="target" id="hintsmenu-vstem-hist"></span><dl class="object">
-<dt>
-<code class="sig-name descname">VStem</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">VStem</span></span></dt>
 <dd><p>Brings up a <a class="reference internal" href="../dialogs/histogram.html"><span class="doc">dialog</span></a> displaying a histogram of the vertical
 stem widths of all selected glyphs.</p>
 </dd></dl>
 
 <span class="target" id="hintsmenu-blue-hist"></span><dl class="object">
-<dt>
-<code class="sig-name descname">BlueValues</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">BlueValues</span></span></dt>
 <dd><p>Brings up a <a class="reference internal" href="../dialogs/histogram.html"><span class="doc">dialog</span></a> displaying a histogram of the vertical
 maxima and minima of all selected glyphs.</p>
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -311,9 +310,9 @@ maxima and minima of all selected glyphs.</p>
 <li class="toctree-l2"><a class="reference internal" href="../dialogs.html">Dialogs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../misc/HotKeys.html">Hot Keys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../misc/fontforge-themes.html">FontForge color schemes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">X Resource Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">Appearance Editor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../misc/xim.html">X Input Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">X Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">Changing FontForge’s UI Appearance</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../scripting/scripting.html">Scripting FontForge</a></li>
@@ -341,7 +340,7 @@ maxima and minima of all selected glyphs.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -363,7 +362,7 @@ maxima and minima of all selected glyphs.</p>
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

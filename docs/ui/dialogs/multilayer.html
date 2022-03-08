@@ -4,16 +4,15 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Multi Layered Editing of Type3 and SVG fonts &#8212; FontForge 20201107 documentation</title>
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Multi Layered Editing of Type3 and SVG fonts &#8212; FontForge 20220308 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -35,7 +34,7 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="multi-layered-editing-of-type3-and-svg-fonts">
+  <section id="multi-layered-editing-of-type3-and-svg-fonts">
 <h1>Multi Layered Editing of Type3 and SVG fonts<a class="headerlink" href="#multi-layered-editing-of-type3-and-svg-fonts" title="Permalink to this headline">¶</a></h1>
 <p>When loading a type3 font (or an svg font organized in a similar fashion)
 FontForge will retain information on each stroke and fill command. Each command
@@ -44,7 +43,7 @@ is placed in a separate layer and may be edited in isolation.</p>
 <span class="menuselection">Element ‣ Font Info ‣ Layers</span>, then setting the splines
 option to <strong>All layers cubic</strong> and the font type option to <strong>Type3 Multi Layered
 Font</strong>.</p>
-<div class="section" id="multi-layered-editing-in-the-outline-view">
+<section id="multi-layered-editing-in-the-outline-view">
 <h2>Multi Layered editing in the outline view<a class="headerlink" href="#multi-layered-editing-in-the-outline-view" title="Permalink to this headline">¶</a></h2>
 <img alt="../../_images/charview-multilayer.png" class="align-right" src="../../_images/charview-multilayer.png" />
 <p>In the image at left we have a glyph drawn by stroking two paths. One layer
@@ -66,51 +65,51 @@ earlier will be overwritten by Regions drawn later.</p>
 <a class="reference internal" href="#multilayer-layer"><span class="std std-ref">Layer Info dialog</span></a>.</p>
 <p>Clicking with the right button brings up the layer menu which contains:</p>
 <dl class="object">
-<dt>
-<code class="sig-name descname">Layer Info...</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Layer</span> <span class="pre">Info...</span></span></dt>
 <dd><p>Brings up the <a class="reference internal" href="#multilayer-layer"><span class="std std-ref">Layer Info</span></a> dialog on the current
 layer (same as double clicking)</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">New Layer...</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">New</span> <span class="pre">Layer...</span></span></dt>
 <dd><p>Creates a new layer and brings up the <a class="reference internal" href="#multilayer-layer"><span class="std std-ref">Layer Info</span></a>
 dialog to describe it. (the new layer will appear at the bottom of the layer
 list and will be drawn last)</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">Del Layer</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Del</span> <span class="pre">Layer</span></span></dt>
 <dd><p>Deletes the current layer (you may not delete the last layer in a glyph)</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">First</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">First</span></span></dt>
 <dd><p>Make the current layer the first one to be drawn.</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">Earlier</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Earlier</span></span></dt>
 <dd><p>Make the current layer be drawn earlier. (swaps it with the layer above it)</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">Later</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Later</span></span></dt>
 <dd><p>Makes the current layer be drawn later. (swaps it with the layer below it)</p>
 </dd></dl>
 
 <dl class="object">
-<dt>
-<code class="sig-name descname">Last</code></dt>
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">Last</span></span></dt>
 <dd><p>Makes the current layer be drawn last.</p>
 </dd></dl>
 
-<div class="section" id="images">
+<section id="images">
 <h3>Images<a class="headerlink" href="#images" title="Permalink to this headline">¶</a></h3>
 <p>Images are allowed in Type3 fonts. You can use the
 <a class="reference internal" href="../menus/filemenu.html#filemenu-import"><span class="std std-ref">File-&gt;Import</span></a> command to load an image into any of the
@@ -120,8 +119,8 @@ be drawn with the fill color), otherwise (and always in SVG) the image will be
 drawn with the colors specified in the image (Transparent images are not
 supported here).</p>
 <p>FontForge will not skew, flip or rotate images.</p>
-</div>
-<div class="section" id="clipping-path">
+</section>
+<section id="clipping-path">
 <span id="multilayer-clippath"></span><h3>Clipping Path<a class="headerlink" href="#clipping-path" title="Permalink to this headline">¶</a></h3>
 <p>Each layer in a Type 3 font may have its own clipping path. A clipping path is a
 contour (or set of contours) and only things inside the clipping path will be
@@ -136,9 +135,9 @@ region of the A within the star will be drawn.</p>
 <a class="reference internal" href="../menus/pointmenu.html#pointmenu-clippath"><span class="std std-ref">Points-&gt;Make Clip Path</span></a> command. The clipping path
 will be set to any selected contour(s) in the image. If no contour is selected
 then there will be no clipping path.</p>
-</div>
-</div>
-<div class="section" id="the-layer-info-dialog">
+</section>
+</section>
+<section id="the-layer-info-dialog">
 <span id="multilayer-layer"></span><h2>The Layer Info dialog<a class="headerlink" href="#the-layer-info-dialog" title="Permalink to this headline">¶</a></h2>
 <img alt="../../_images/layerdlg.png" class="align-right" src="../../_images/layerdlg.png" />
 <p>This dialog describes various attributes of the way the splines (or images) in
@@ -160,7 +159,7 @@ giving a transformation matrix here.</p>
 <p>A line may be dashed. Dash patterns are specified as a list of numbers, the
 first number in the list will draw a line segment at most that many em-units,
 the next number will skip that many em-units, the third will be drawn, and so
-on. After then entire list has been used, it will start again at the begining.
+on. After then entire list has been used, it will start again at the beginning.
 If the list has an odd number of elements, then this time through the first
 entry indicates that many units should be skipped. So “10” would mean a line
 which alternates being drawn every 10 units, while “20 10” would draw 20 units,
@@ -170,7 +169,7 @@ join non-tangent path-segments (<code class="docutils literal notranslate"><span
 <p>In an additional level of complexity a contour need not be filled (or stroked)
 with a constant color, you can provide a repeating pattern, or a gradual change
 from one color to another (a gradient).</p>
-<div class="section" id="gradients">
+<section id="gradients">
 <h3>Gradients<a class="headerlink" href="#gradients" title="Permalink to this headline">¶</a></h3>
 <img alt="../../_images/GradientDlg.png" class="align-right" src="../../_images/GradientDlg.png" />
 <p>FontForge supports two kinds of gradients, linear gradients and radial
@@ -195,8 +194,8 @@ until the final radius (and final color) is attained.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="patterns">
+</section>
+<section id="patterns">
 <span id="multilayer-patterns"></span><h3>Patterns<a class="headerlink" href="#patterns" title="Permalink to this headline">¶</a></h3>
 <img alt="../../_images/TilePatternDlg.png" class="align-right" src="../../_images/TilePatternDlg.png" />
 <p>A contour may also be filled or stroked with a tiled pattern. That is a pattern
@@ -217,9 +216,9 @@ transformations as described in the dialog.</p>
 color (rounding everything to a shade of grey), and its stroking algorithm is
 quite poor (it does not rasterize dashes), it does not support the full
 complexity of radial gradients…</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -262,9 +261,9 @@ complexity of radial gradients…</p>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../misc/HotKeys.html">Hot Keys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../misc/fontforge-themes.html">FontForge color schemes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">X Resource Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/resedit.html">Appearance Editor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../misc/xim.html">X Input Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">X Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/xres.html">Changing FontForge’s UI Appearance</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../scripting/scripting.html">Scripting FontForge</a></li>
@@ -292,7 +291,7 @@ complexity of radial gradients…</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -314,7 +313,7 @@ complexity of radial gradients…</p>
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
