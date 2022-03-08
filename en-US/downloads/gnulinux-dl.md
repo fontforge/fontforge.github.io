@@ -11,7 +11,7 @@ Most GNU+Linux distributions have packages for FontForge, but these are often qu
 
 AppImage is a binary format that has improved to the point where it is generally usable by all GNU+Linux users.
 
-With each release, we compile an AppImage. The latest is [2020-11-07](https://github.com/fontforge/fontforge/releases/download/20201107/FontForge-2020-11-07-21ad4a1-x86_64.AppImage).
+With each release, we compile an AppImage. The latest is [2022-03-08](https://github.com/fontforge/fontforge/releases/download/20220308/FontForge-2022-03-08-582bd41-x86_64.AppImage).
 
 We recommend all users use this method to get the latest release if their distribution has not yet provided it. The Ubuntu PPA, and similar distribution-specific build platforms that put the onus on us, are deprecated and not to be used.
 
