@@ -14,7 +14,7 @@ See the [`CONTRIBUTING.md`](https://github.com/fontforge/fontforge/blob/master/C
 
 ## Compiling From Source
 
-See the [`INSTALL-git.md`](https://github.com/fontforge/fontforge/blob/master/INSTALL-git.md) file in the source code tree
+See the [`INSTALL.md`](https://github.com/fontforge/fontforge/blob/master/INSTALL.md) file in the source code tree
 
 ## Technical Bulletins
 
