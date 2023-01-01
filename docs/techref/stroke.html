@@ -1,18 +1,17 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Expand Stroke Facility &#8212; FontForge 20220308 documentation</title>
+    <title>Expand Stroke Facility &#8212; FontForge 20230101 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <link rel="shortcut icon" href="../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -35,7 +34,7 @@
           <div class="body" role="main">
             
   <section id="expand-stroke-facility">
-<h1>Expand Stroke Facility<a class="headerlink" href="#expand-stroke-facility" title="Permalink to this headline">¶</a></h1>
+<h1>Expand Stroke Facility<a class="headerlink" href="#expand-stroke-facility" title="Permalink to this heading">¶</a></h1>
 <p>The Expand Stroke facility traces a closed, convex contour (referred to as the
 “nib”) along a “source” contour, producing a new contour or contours that
 enclose the area the nib “passed over”. When the source contour is open the
@@ -81,7 +80,7 @@ contours, or that can aid in debugging potential problems.</p>
 user may encounter using the system and some potential work-arounds. Please read
 this section prior to filing a GitHub issue.</p>
 <section id="offsetting">
-<span id="stroke-offsetting"></span><h2>Offsetting<a class="headerlink" href="#offsetting" title="Permalink to this headline">¶</a></h2>
+<span id="stroke-offsetting"></span><h2>Offsetting<a class="headerlink" href="#offsetting" title="Permalink to this heading">¶</a></h2>
 <p>Tracing a contour with a circular nib of radius <em>r</em> is equivalent to
 “offsetting”-creating parallel contours on each side at distance <em>r</em> for a total
 line thickness of <em>2r</em> (source contour shown in green):</p>
@@ -118,7 +117,7 @@ where the angle changes:</p>
 </figcaption>
 </figure>
 <section id="caps">
-<span id="stroke-cap"></span><h3>Caps<a class="headerlink" href="#caps" title="Permalink to this headline">¶</a></h3>
+<span id="stroke-cap"></span><h3>Caps<a class="headerlink" href="#caps" title="Permalink to this heading">¶</a></h3>
 <p>The line that closes the gap between the offset lines traced to the end of of an
 open source contour is called a “cap”. PostScript and SVG specify three cap
 styles that are really two styles: “Round” and “Butt”/”Square”. A Round cap
@@ -147,7 +146,7 @@ units.</p>
 </figure>
 </section>
 <section id="joins">
-<span id="stroke-join"></span><h3>Joins<a class="headerlink" href="#joins" title="Permalink to this headline">¶</a></h3>
+<span id="stroke-join"></span><h3>Joins<a class="headerlink" href="#joins" title="Permalink to this heading">¶</a></h3>
 <p>When the source contour has a “corner” point with an angle change there will be
 one angle of less than 180 degrees and one greater than 180 degrees. The offset
 lines on the side with the smaller angle will intersect, and the easy solution
@@ -208,7 +207,7 @@ those of the Miter Clip style.</p>
 </section>
 </section>
 <section id="calligraphic-and-other-convex-nibs">
-<span id="stroke-nibs"></span><h2>Calligraphic and Other Convex Nibs<a class="headerlink" href="#calligraphic-and-other-convex-nibs" title="Permalink to this headline">¶</a></h2>
+<span id="stroke-nibs"></span><h2>Calligraphic and Other Convex Nibs<a class="headerlink" href="#calligraphic-and-other-convex-nibs" title="Permalink to this heading">¶</a></h2>
 <p>In addition to circular nibs the Expand Stroke facility also has parameterized
 support for “Calligraphic” (rectangular) and Elliptical nibs. These nibs are
 described by Width and Height (called the Major and Minor Axes in the case of an
@@ -219,7 +218,7 @@ ellipse) and a rotation Angle:</p>
 </figcaption>
 </figure>
 <section id="general-convex-nibs">
-<h3>General convex nibs<a class="headerlink" href="#general-convex-nibs" title="Permalink to this headline">¶</a></h3>
+<h3>General convex nibs<a class="headerlink" href="#general-convex-nibs" title="Permalink to this heading">¶</a></h3>
 <p>In contrast with the parameterized nibs, the shape of a Convex nib is specified
 as a contour which can be edited interactively in the area at the top of the
 dialog, created elsewhere and then pasted into that area, or set via the Python
@@ -280,7 +279,7 @@ from the origin will cause the output to be offset by that amount:</p>
 </figure>
 </section>
 <section id="caps-and-joins-with-other-nibs">
-<h3>Caps and Joins With Other Nibs<a class="headerlink" href="#caps-and-joins-with-other-nibs" title="Permalink to this headline">¶</a></h3>
+<h3>Caps and Joins With Other Nibs<a class="headerlink" href="#caps-and-joins-with-other-nibs" title="Permalink to this heading">¶</a></h3>
 <p>Earlier versions of FontForge only provided cap and join options for circular
 and elliptical nibs (and some of the latter were misleadingly named). For other
 nibs it automatically closed the cap and join edges with the nib
@@ -362,7 +361,7 @@ relative units) and more oblong nibs the SVG 2 clipping algorithm may fail. The
 <a class="reference internal" href="#stroke-arcsclip"><span class="std std-ref">Arcs Clip Parameter</span></a> section has more information.</p>
 </section>
 <section id="multi-nibs-and-pseudo-concavity">
-<h3>Multi-Nibs and “Pseudo-Concavity”<a class="headerlink" href="#multi-nibs-and-pseudo-concavity" title="Permalink to this headline">¶</a></h3>
+<h3>Multi-Nibs and “Pseudo-Concavity”<a class="headerlink" href="#multi-nibs-and-pseudo-concavity" title="Permalink to this heading">¶</a></h3>
 <p>Although a nib will typically consist of a single convex contour, the nib
 <code class="docutils literal notranslate"><span class="pre">foreground</span></code> layer can contain multiple contours as long as each conforms to
 the shape rules. Each source contour will be traced with each nib contour and
@@ -374,12 +373,12 @@ rather than just “touch”.</p>
 </section>
 </section>
 <section id="other-parameters">
-<span id="stroke-parameters"></span><h2>Other Parameters<a class="headerlink" href="#other-parameters" title="Permalink to this headline">¶</a></h2>
+<span id="stroke-parameters"></span><h2>Other Parameters<a class="headerlink" href="#other-parameters" title="Permalink to this heading">¶</a></h2>
 <p>The remaining Expand Stroke parameters have default values that work well for
 most cases, but you may need or want to change them in more unusual cases or
 when you encounter problems.</p>
 <section id="accuracy-target">
-<h3>Accuracy Target<a class="headerlink" href="#accuracy-target" title="Permalink to this headline">¶</a></h3>
+<h3>Accuracy Target<a class="headerlink" href="#accuracy-target" title="Permalink to this heading">¶</a></h3>
 <p>The “Accuracy Target” is specified in em-units and influences the geometric
 accuracy of the output. The algorithms generally “try” to be at least as
 accurate as the target but there can be exceptions. The default of 0.25 is a
@@ -394,7 +393,7 @@ fewer points/splines in the output.</p>
 </figure>
 </section>
 <section id="remove-overlap">
-<h3>Remove Overlap<a class="headerlink" href="#remove-overlap" title="Permalink to this headline">¶</a></h3>
+<h3>Remove Overlap<a class="headerlink" href="#remove-overlap" title="Permalink to this heading">¶</a></h3>
 <p>The core algorithm of Expand Stroke calculates the “generalized offset curves”
 of the source contour and the nib. Its output can therefore include
 <a class="reference internal" href="#stroke-cusps"><span class="std std-ref">“cusps”</span></a> and other artifacts of offsetting. These are
@@ -415,7 +414,7 @@ output without having to wait for a software fix.)</p>
 </figure>
 </section>
 <section id="external-only-and-internal-only">
-<h3>External Only and Internal Only<a class="headerlink" href="#external-only-and-internal-only" title="Permalink to this headline">¶</a></h3>
+<h3>External Only and Internal Only<a class="headerlink" href="#external-only-and-internal-only" title="Permalink to this heading">¶</a></h3>
 <p>As noted above a closed source contour will typically yield a larger contour
 enclosing a smaller one. The External Only and Internal Only options allow the
 user to choose one of the two contours produced in this way. However, the
@@ -439,7 +438,7 @@ Change Weight facility uses Expand Stroke with these options.)</p>
 </figure>
 </section>
 <section id="add-extrema-and-simplify">
-<h3>Add Extrema and Simplify<a class="headerlink" href="#add-extrema-and-simplify" title="Permalink to this headline">¶</a></h3>
+<h3>Add Extrema and Simplify<a class="headerlink" href="#add-extrema-and-simplify" title="Permalink to this heading">¶</a></h3>
 <p>It is normally desirable to avoid mid-spline extrema and to remove unneeded
 on-curve points and (in the case of straight lines) unneeded control points.
 Therefore Expand Stroke normally runs FontForge’s Add Extrema and Simplify
@@ -450,7 +449,7 @@ Simplify error parameter, but the other parameters are hard-coded and may change
 over time.</p>
 </section>
 <section id="arcs-clip-algorithm">
-<span id="stroke-arcsclip"></span><h3>Arcs Clip Algorithm<a class="headerlink" href="#arcs-clip-algorithm" title="Permalink to this headline">¶</a></h3>
+<span id="stroke-arcsclip"></span><h3>Arcs Clip Algorithm<a class="headerlink" href="#arcs-clip-algorithm" title="Permalink to this heading">¶</a></h3>
 <p>The SVG 2 specification clips an Arcs join perpendicular to a circle through the
 source contour knot (where the angle changes, requiring the join) and the
 intersection of the arcs. This approach works well for roughly-round nibs at any
@@ -466,14 +465,14 @@ many cases but is not foolproof.</p>
 </section>
 </section>
 <section id="troubleshooting">
-<span id="stroke-troubleshooting"></span><h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
+<span id="stroke-troubleshooting"></span><h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this heading">¶</a></h2>
 <p>There are some known problems with and limitations of the Expand Stroke system.
 Many of these have simple workarounds, others may be easiest to address by
 editing the output contours. One advantage of the new system over the old is
 that it will almost always provide accurate contour edges if the additional
 processing steps (Remove Overlap, Simplify, etc.) are disabled.</p>
 <section id="general-guidance">
-<span id="stroke-gentrouble"></span><h3>General Guidance<a class="headerlink" href="#general-guidance" title="Permalink to this headline">¶</a></h3>
+<span id="stroke-gentrouble"></span><h3>General Guidance<a class="headerlink" href="#general-guidance" title="Permalink to this heading">¶</a></h3>
 <p>If the system produces unexpected or bad looking contours that are still roughly
 right a good first step is to try disabling Simplify and Add Extrema. These
 algorithms occasionally produce inaccurate output and both can be run
@@ -490,7 +489,7 @@ an “outline background”, can result in undesirable artifacts that Remove Ove
 difficult to identify algorithmically they are easy to delete by hand.</p>
 </section>
 <section id="cusps-and-inverted-curvature">
-<span id="stroke-cusps"></span><h3>Cusps and Inverted Curvature<a class="headerlink" href="#cusps-and-inverted-curvature" title="Permalink to this headline">¶</a></h3>
+<span id="stroke-cusps"></span><h3>Cusps and Inverted Curvature<a class="headerlink" href="#cusps-and-inverted-curvature" title="Permalink to this heading">¶</a></h3>
 <p>Where the curvature of the “tracing” point on the nib is less than the curvature
 of the source contour, the curvature of the output contour inverts. The
 transition point where the two curvatures are equal is called a “cusp” and that
@@ -535,7 +534,7 @@ cap problem pictured above just reused Simplify on that part of the contour with
 a larger error parameter to smooth out the distortion.</p>
 </section>
 <section id="bevel-caps-and-flat-nibs">
-<span id="stroke-bevelcaps"></span><h3>Bevel Caps and Flat Nibs<a class="headerlink" href="#bevel-caps-and-flat-nibs" title="Permalink to this headline">¶</a></h3>
+<span id="stroke-bevelcaps"></span><h3>Bevel Caps and Flat Nibs<a class="headerlink" href="#bevel-caps-and-flat-nibs" title="Permalink to this heading">¶</a></h3>
 <p>As noted above, Bevel caps were included as the simplest cap choice in some
 situations. A Bevel cap just joins the ends of each offset contour - wherever
 the two sides of the nib leave them - with a straight line. This can yield
@@ -661,7 +660,7 @@ Although these results are unusual and probably undesirable they are not
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -678,7 +677,7 @@ Although these results are unusual and probably undesirable they are not
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.0.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

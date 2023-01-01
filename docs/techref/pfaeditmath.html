@@ -1,18 +1,17 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>FontForge’s math &#8212; FontForge 20220308 documentation</title>
+    <title>FontForge’s math &#8212; FontForge 20230101 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -36,7 +35,7 @@
           <div class="body" role="main">
             
   <section id="fontforge-s-math">
-<h1>FontForge’s math<a class="headerlink" href="#fontforge-s-math" title="Permalink to this headline">¶</a></h1>
+<h1>FontForge’s math<a class="headerlink" href="#fontforge-s-math" title="Permalink to this heading">¶</a></h1>
 <p>Being a brief description of the mathematics underlying various of FontForge’s
 commands</p>
 <p>It is presumed that you understand about parameterized splines, if not look at
@@ -56,7 +55,7 @@ the description of <a class="reference internal" href="bezier.html"><span class=
 </ul>
 <hr class="docutils" />
 <section id="linear-transformations">
-<span id="pfaeditmath-linear"></span><h2>Linear Transformations<a class="headerlink" href="#linear-transformations" title="Permalink to this headline">¶</a></h2>
+<span id="pfaeditmath-linear"></span><h2>Linear Transformations<a class="headerlink" href="#linear-transformations" title="Permalink to this heading">¶</a></h2>
 <p>A linear transformation is one where the spline described by transforming the
 end and control points will match the transformed spline. This includes most of
 the common transformations you might wish:</p>
@@ -79,7 +78,7 @@ y' &amp;= y\end{split}\]</div>
 <hr class="docutils" />
 </section>
 <section id="finding-maxima-and-minima-of-a-spline">
-<span id="pfaeditmath-maxima"></span><h2>Finding maxima and minima of a spline<a class="headerlink" href="#finding-maxima-and-minima-of-a-spline" title="Permalink to this headline">¶</a></h2>
+<span id="pfaeditmath-maxima"></span><h2>Finding maxima and minima of a spline<a class="headerlink" href="#finding-maxima-and-minima-of-a-spline" title="Permalink to this heading">¶</a></h2>
 <p>The maximum or minimum of a spline (along either the x or y axes) may be found
 by taking the first derivative of that spline with respect to t. So if we have a
 spline</p>
@@ -96,7 +95,7 @@ y &amp;= a_y t^3 + b_y t^2 + c_y t + d_y\end{split}\]</div>
 <hr class="docutils" />
 </section>
 <section id="finding-points-of-inflection-of-a-spline">
-<span id="pfaeditmath-poi"></span><h2>Finding points of inflection of a spline<a class="headerlink" href="#finding-points-of-inflection-of-a-spline" title="Permalink to this headline">¶</a></h2>
+<span id="pfaeditmath-poi"></span><h2>Finding points of inflection of a spline<a class="headerlink" href="#finding-points-of-inflection-of-a-spline" title="Permalink to this heading">¶</a></h2>
 <p>A point of inflection occurs when <span class="math notranslate nohighlight">\(\frac{\mathrm{d}^2y}{\mathrm{d}x^2} = 0\)</span>
 (or infinity).</p>
 <p>Unfortunately this does not mean that <span class="math notranslate nohighlight">\(\frac{\mathrm{d}^2y}{\mathrm{d}t^2} = 0\)</span>
@@ -124,10 +123,10 @@ or <span class="math notranslate nohighlight">\(\frac{\mathrm{d}^2x}{\mathrm{d}t
 <hr class="docutils" />
 </section>
 <section id="rasterizing-a-glyph">
-<span id="pfaeditmath-rasterizing"></span><h2>Rasterizing a glyph<a class="headerlink" href="#rasterizing-a-glyph" title="Permalink to this headline">¶</a></h2>
+<span id="pfaeditmath-rasterizing"></span><h2>Rasterizing a glyph<a class="headerlink" href="#rasterizing-a-glyph" title="Permalink to this heading">¶</a></h2>
 </section>
 <section id="approximating-a-spline">
-<span id="pfaeditmath-approximating"></span><h2>Approximating a spline<a class="headerlink" href="#approximating-a-spline" title="Permalink to this headline">¶</a></h2>
+<span id="pfaeditmath-approximating"></span><h2>Approximating a spline<a class="headerlink" href="#approximating-a-spline" title="Permalink to this heading">¶</a></h2>
 <p>Many of FontForge’s commands need to fit a spline to a series of points. The
 most obvious of these are the <span class="menuselection">Edit ‣ Merge</span>, and
 <span class="menuselection">Element ‣ Simplify</span> commands, but many others rely on the same
@@ -137,7 +136,7 @@ spline that approximates the original two:</p>
 <p><img alt="mergepre" src="../_images/mergepre.png" /> –&gt; <img alt="mergepost" src="../_images/mergepost.png" /></p>
 <p>FontForge uses a least squares approximation to determine the new spline. It
 calculates the locations of several points along the old splines, and then it
-guesses <a class="footnote-reference brackets" href="#f1" id="id1">1</a> at t values for those points.</p>
+guesses <a class="footnote-reference brackets" href="#f1" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> at t values for those points.</p>
 <p>Now a cubic <a class="reference internal" href="bezier.html"><span class="doc">Bézier</span></a> spline is determined by its two end points
 (<span class="math notranslate nohighlight">\(P_0\)</span> and <span class="math notranslate nohighlight">\(P_1\)</span>) and two control points (<span class="math notranslate nohighlight">\(CP_0\)</span> and <span class="math notranslate nohighlight">\(CP_1\)</span>),
 which specify the slope at those end points). Here we know the end points, so
@@ -219,7 +218,7 @@ becomes very messy, with lots of terms, but the concepts are simple.</p>
 <p>Thus we know where the control points are. We know where the end points are. We
 have our spline.</p>
 <section id="why-that-didn-t-quite-work">
-<h3>Why that didn’t (quite) work<a class="headerlink" href="#why-that-didn-t-quite-work" title="Permalink to this headline">¶</a></h3>
+<h3>Why that didn’t (quite) work<a class="headerlink" href="#why-that-didn-t-quite-work" title="Permalink to this heading">¶</a></h3>
 <p>The above matrix yields a curve which is a good approximation to the original
 two. But it has one flaw: There is no constraint placed on the slopes, and
 (surprisingly) the slopes at the end-points of the above method are not close
@@ -283,16 +282,17 @@ One interesting thing here is that the x and y terms do not separate but must
 be summed together.</p>
 </section>
 <section id="singular-matrices">
-<h3>Singular matrices<a class="headerlink" href="#singular-matrices" title="Permalink to this headline">¶</a></h3>
+<h3>Singular matrices<a class="headerlink" href="#singular-matrices" title="Permalink to this heading">¶</a></h3>
 <p>Very occasionally, a singular matrix will pop out of these equations. Then what
 I do is calculate the slope vectors at the endpoints and then try many
 reasonable lengths for those vectors and see which yields the best approximation
 to the original curve (this gives us our new control points).</p>
 <p>This is very, very slow.</p>
 <hr class="docutils" />
-<dl class="footnote brackets">
-<dt class="label" id="f1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>Guessing values for t</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="f1" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Guessing values for t</p>
 <p>FontForge approximates the lengths of the two splines being merged. If
 <span class="math notranslate nohighlight">\(\mathrm{Point}_i = \mathrm{Spline1}(old-t_i)\)</span>, then we approximate
 <span class="math notranslate nohighlight">\(t_i\)</span> by</p>
@@ -308,13 +308,13 @@ to the original curve (this gives us our new control points).</p>
            {\mathrm{len}(\mathrm{spline1}) + \mathrm{len}(\mathrm{spline2})}\]</div>
 <p>That is we do a linear interpolation of t based on the relative lengths of the
 two splines.</p>
-</dd>
-</dl>
+</aside>
+</aside>
 <hr class="docutils" />
 </section>
 </section>
 <section id="calculating-the-outline-of-a-stroked-path">
-<span id="pfaeditmath-stroke"></span><h2>Calculating the outline of a stroked path<a class="headerlink" href="#calculating-the-outline-of-a-stroked-path" title="Permalink to this headline">¶</a></h2>
+<span id="pfaeditmath-stroke"></span><h2>Calculating the outline of a stroked path<a class="headerlink" href="#calculating-the-outline-of-a-stroked-path" title="Permalink to this heading">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>While some of this section is still accurate, most of it describes an
@@ -322,7 +322,7 @@ earlier version of the Expand Stroke facility. See <a class="reference internal"
 for an up-to-date description of the current algorithm.</p>
 </div>
 <section id="a-circular-pen">
-<h3>A circular pen<a class="headerlink" href="#a-circular-pen" title="Permalink to this headline">¶</a></h3>
+<h3>A circular pen<a class="headerlink" href="#a-circular-pen" title="Permalink to this heading">¶</a></h3>
 <p>PostScript supports several variants on the theme of a circular pen, and
 FontForge tries to emulate them all. Basically PostScript “stroke”s a path at a
 certain width by:</p>
@@ -373,7 +373,7 @@ outside). Unless there are places where the curve doubles back on itself, then
 when can get arbitrarily many closed contours.</p>
 </section>
 <section id="an-elliptical-pen">
-<h3>An elliptical pen<a class="headerlink" href="#an-elliptical-pen" title="Permalink to this headline">¶</a></h3>
+<h3>An elliptical pen<a class="headerlink" href="#an-elliptical-pen" title="Permalink to this heading">¶</a></h3>
 <p>This is really just the same as a circular pen. Let us say we want an ellipse
 which is twice as wide as it is high. Then before stroking the path, let’s scale
 it to 50% in the horizontal direction, then stroke it with a circular pen, and
@@ -383,7 +383,7 @@ elliptical pen.</p>
 more complicated transformation which involves both rotation and scaling.</p>
 </section>
 <section id="a-rectangular-pen-a-calligraphic-pen">
-<h3>A rectangular pen (a calligraphic pen)<a class="headerlink" href="#a-rectangular-pen-a-calligraphic-pen" title="Permalink to this headline">¶</a></h3>
+<h3>A rectangular pen (a calligraphic pen)<a class="headerlink" href="#a-rectangular-pen-a-calligraphic-pen" title="Permalink to this heading">¶</a></h3>
 <p>Things are subtly different between a rectangular pen and a circular pen. We can
 no longer just find the points which are a given distance away and normal to the
 curve. Except where the spline is parallel to one edge of the pen, a the outer
@@ -400,18 +400,18 @@ pen, then on the outside path we draw a copy of that edge of of the pen, and on
 the inside edge we calculate a join as above.</p>
 </section>
 <section id="an-arbitrary-convex-polygonal-pen">
-<h3>An arbitrary convex polygonal pen<a class="headerlink" href="#an-arbitrary-convex-polygonal-pen" title="Permalink to this headline">¶</a></h3>
+<h3>An arbitrary convex polygonal pen<a class="headerlink" href="#an-arbitrary-convex-polygonal-pen" title="Permalink to this heading">¶</a></h3>
 <p>The same method which works for a rectangle can be extended without too much
 difficulty to any convex polygon. (MetaFont fonts can be drawn with such a pen.
 I don’t know if any are)</p>
 </section>
 <section id="a-pen-of-variable-width">
-<h3>A pen of variable width<a class="headerlink" href="#a-pen-of-variable-width" title="Permalink to this headline">¶</a></h3>
+<h3>A pen of variable width<a class="headerlink" href="#a-pen-of-variable-width" title="Permalink to this heading">¶</a></h3>
 <p>FontForge does not currently support this (some of the assumptions behind this
 algorithm are broken if the pen changes shape too rapidly).</p>
 </section>
 <section id="a-pen-at-a-varying-angle">
-<h3>A pen at a varying angle<a class="headerlink" href="#a-pen-at-a-varying-angle" title="Permalink to this headline">¶</a></h3>
+<h3>A pen at a varying angle<a class="headerlink" href="#a-pen-at-a-varying-angle" title="Permalink to this heading">¶</a></h3>
 <p>FontForge does not support this.</p>
 </section>
 </section>
@@ -517,7 +517,7 @@ algorithm are broken if the pen changes shape too rapidly).</p>
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -534,7 +534,7 @@ algorithm are broken if the pen changes shape too rapidly).</p>
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.0.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

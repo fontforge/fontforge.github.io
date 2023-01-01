@@ -1,18 +1,17 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>FontForge Documentation &#8212; FontForge 20220308 documentation</title>
+    <title>FontForge Documentation &#8212; FontForge 20230101 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <link rel="shortcut icon" href="_static/fftype16.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -34,7 +33,7 @@
           <div class="body" role="main">
             
   <section id="fontforge-documentation">
-<h1>FontForge Documentation<a class="headerlink" href="#fontforge-documentation" title="Permalink to this headline">¶</a></h1>
+<h1>FontForge Documentation<a class="headerlink" href="#fontforge-documentation" title="Permalink to this heading">¶</a></h1>
 <p>FontForge allows you to create and modify postscript, truetype and opentype
 fonts. You can save fonts in many different outline formats, and generate
 bitmaps.</p>
@@ -59,7 +58,7 @@ kind.</p>
 <div class="toctree-wrapper compound">
 </div>
 <section id="indices-and-tables">
-<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h2>
+<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
 <li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
@@ -67,7 +66,7 @@ kind.</p>
 </ul>
 </section>
 <section id="er-what-is-a-font-editor">
-<h2>Er… What is a font editor?<a class="headerlink" href="#er-what-is-a-font-editor" title="Permalink to this headline">¶</a></h2>
+<h2>Er… What is a font editor?<a class="headerlink" href="#er-what-is-a-font-editor" title="Permalink to this heading">¶</a></h2>
 <p>A font editor is a program designed to create and modify fonts.</p>
 <p>The most obvious aspect is that it is a drawing program like FreeHand, Inkscape
 or Illustrator which lets you draw the outlines of your letters. Unlike other
@@ -83,7 +82,7 @@ the metadata about how those pictures fit together, and will turn that bundle of
 stuff into a font that your computer can use to display text.</p>
 </section>
 <section id="introductory-concepts-fonts-splines-lines-points-paths-and-the-em-unit">
-<span id="overview-intro"></span><h2>Introductory concepts: Fonts, Splines, Lines, Points, Paths and the em-unit<a class="headerlink" href="#introductory-concepts-fonts-splines-lines-points-paths-and-the-em-unit" title="Permalink to this headline">¶</a></h2>
+<span id="overview-intro"></span><h2>Introductory concepts: Fonts, Splines, Lines, Points, Paths and the em-unit<a class="headerlink" href="#introductory-concepts-fonts-splines-lines-points-paths-and-the-em-unit" title="Permalink to this heading">¶</a></h2>
 <p>Most simply a font is a collection of glyphs. But computer fonts must contain
 more than this, at the least they must also contain information on how to map an
 input string of bytes into an output display of visual glyphs. This mapping is
@@ -94,7 +93,7 @@ ligature of “f” and “i” should be used instead. Fonts for latin letters
 generally do not require such rules (but can be enhanced by them), fonts for
 other scripts like arabic require them.</p>
 <section id="what-s-the-difference-between-a-character-and-a-glyph">
-<h3>What’s the difference between a character and a glyph?<a class="headerlink" href="#what-s-the-difference-between-a-character-and-a-glyph" title="Permalink to this headline">¶</a></h3>
+<h3>What’s the difference between a character and a glyph?<a class="headerlink" href="#what-s-the-difference-between-a-character-and-a-glyph" title="Permalink to this heading">¶</a></h3>
 <p>A character is a concept and a glyph is a reification of that concept. The
 letter “A” is a character, while <img alt="As" src="_images/As.png" /> are all glyphs that represent an “A”.
 In latin fonts there is often a single glyph for every character and a single
@@ -106,7 +105,7 @@ the appropriate glyph being determined by the letters around it. Here are four
 forms of the arabic character “seen” <img alt="arabic-seen" src="_images/arabic-seen.png" />.</p>
 </section>
 <section id="what-is-an-outline-font-what-is-a-bitmap-font">
-<h3>What is an outline font? What is a bitmap font?<a class="headerlink" href="#what-is-an-outline-font-what-is-a-bitmap-font" title="Permalink to this headline">¶</a></h3>
+<h3>What is an outline font? What is a bitmap font?<a class="headerlink" href="#what-is-an-outline-font-what-is-a-bitmap-font" title="Permalink to this heading">¶</a></h3>
 <p>Each glyph in a font has a shape and there are various ways of describing that
 shape on a computer. PostScript and truetype fonts generally describe the
 outline of the shape and then color in the interior of that outline, this
@@ -250,7 +249,7 @@ and the font has 1000 units to the em. Suppose a someone displays that dash at
 points. On a 72 dot per inch screen where a pixel is almost exactly one point,
 the dash will be 6 pixels long.</p>
 <img alt="_images/sidebearings.png" class="align-right" src="_images/sidebearings.png" />
-<p>Every glyph has its own coördinate system. The font’s
+<p>Every glyph has its own coordinate system. The font’s
 <a class="reference internal" href="#overview-baseline"><span class="std std-ref">baseline</span></a> (the line upon which most latin glyphs will
 rest) is 0 in the vertical direction. The horizontal origin is where the glyph
 will start being drawn (what is “drawn” will usually be empty space for a short
@@ -288,7 +287,7 @@ font will be drawn.</p>
 </section>
 </section>
 <section id="truetype-vs-postscript-vs-opentype-vs-svg-fonts">
-<span id="overview-pt"></span><h2>TrueType vs. PostScript vs OpenType vs SVG fonts<a class="headerlink" href="#truetype-vs-postscript-vs-opentype-vs-svg-fonts" title="Permalink to this headline">¶</a></h2>
+<span id="overview-pt"></span><h2>TrueType vs. PostScript vs OpenType vs SVG fonts<a class="headerlink" href="#truetype-vs-postscript-vs-opentype-vs-svg-fonts" title="Permalink to this heading">¶</a></h2>
 <p>FontForge can produce many font types. What’s the difference?</p>
 <p>PostScript is based on a <a class="reference internal" href="techref/bezier.html"><span class="doc">cubic spline</span></a> technology, while TrueType
 is based on a <a class="reference internal" href="techref/bezier.html"><span class="doc">quadratic</span></a> technology. Cubic splines are generally
@@ -302,7 +301,7 @@ converted to the appropriate format when a font is generated.</p>
 drawing nice images at small pointsizes. PostScript calls this “Hinting”, while
 TrueType calls it “Instructing” a font.</p>
 <section id="what-s-opentype">
-<h3>What’s OpenType?<a class="headerlink" href="#what-s-opentype" title="Permalink to this headline">¶</a></h3>
+<h3>What’s OpenType?<a class="headerlink" href="#what-s-opentype" title="Permalink to this heading">¶</a></h3>
 <p>Unfortunately the word “OpenType” has come to have several meanings.</p>
 <p>The first meaning describes the glyph (and spline) format of the font. In this
 sense Open Type is just a postscript font put into a truetype file format –
@@ -324,7 +323,7 @@ To include OpenType typography tables you would press the <code class="docutils 
 and select the <code class="docutils literal notranslate"><span class="pre">[]</span> <span class="pre">OpenType</span></code> check box.</p>
 </section>
 <section id="what-s-svg">
-<h3>What’s SVG?<a class="headerlink" href="#what-s-svg" title="Permalink to this headline">¶</a></h3>
+<h3>What’s SVG?<a class="headerlink" href="#what-s-svg" title="Permalink to this heading">¶</a></h3>
 <p>SVG (Scalable Vector Graphics) provides a relatively new font format, written in
 an xml dialect. SVG fonts can be either cubic or quadratic (or can use both, but
 FontForge is limited and will force a font to be either all cubic or all
@@ -332,7 +331,7 @@ quadratic). SVG allows for two different types of fonts, one corresponds roughly
 to PostScript Type1 fonts, and the other, roughly to PostScript Type3 fonts.</p>
 </section>
 <section id="what-are-type3-fonts">
-<h3>What are Type3 fonts?<a class="headerlink" href="#what-are-type3-fonts" title="Permalink to this headline">¶</a></h3>
+<h3>What are Type3 fonts?<a class="headerlink" href="#what-are-type3-fonts" title="Permalink to this heading">¶</a></h3>
 <p>Back in the early days of PostScript, the Type1 format was proprietary, only
 Adobe could make Type1 fonts, but anyone could make Type3 fonts. Type3 fonts
 were unhinted, but could include any postscript command and so could produce a
@@ -341,22 +340,22 @@ scaled images, etc.). Most of the time these extensions are unnecessary, and the
 disadvantage of being unhinted is onerous – but sometimes you want to play.</p>
 </section>
 <section id="what-are-type1-fonts">
-<h3>What are Type1 fonts?<a class="headerlink" href="#what-are-type1-fonts" title="Permalink to this headline">¶</a></h3>
+<h3>What are Type1 fonts?<a class="headerlink" href="#what-are-type1-fonts" title="Permalink to this heading">¶</a></h3>
 <p>These were the standard stand-alone PostScript fonts of the ’80s and ’90s.</p>
 </section>
 <section id="what-are-type2-fonts">
-<h3>What are Type2 fonts?<a class="headerlink" href="#what-are-type2-fonts" title="Permalink to this headline">¶</a></h3>
+<h3>What are Type2 fonts?<a class="headerlink" href="#what-are-type2-fonts" title="Permalink to this heading">¶</a></h3>
 <p>These use a slightly different internal format (a more compact one) to express
 the same information as type1. This is the format that lives inside a CFF font
 which lives inside an OpenType font.</p>
 </section>
 <section id="what-are-cff-fonts">
-<h3>What are CFF fonts?<a class="headerlink" href="#what-are-cff-fonts" title="Permalink to this headline">¶</a></h3>
+<h3>What are CFF fonts?<a class="headerlink" href="#what-are-cff-fonts" title="Permalink to this heading">¶</a></h3>
 <p>This is the font format that is designed to store PostScript Type2 information.
 It is most commonly found inside an OpenType (PostScript) font.</p>
 </section>
 <section id="what-is-apple-advanced-typography">
-<h3>What is Apple Advanced Typography?<a class="headerlink" href="#what-is-apple-advanced-typography" title="Permalink to this headline">¶</a></h3>
+<h3>What is Apple Advanced Typography?<a class="headerlink" href="#what-is-apple-advanced-typography" title="Permalink to this heading">¶</a></h3>
 <p>This is another way of specifying typographic information (like ligatures,
 kerning, glyph substitutions). It appeared before OpenType and is only used on
 Apple computers. It is based on state machines and is a little harder to work
@@ -364,7 +363,7 @@ with than OpenType.</p>
 </section>
 </section>
 <section id="hints">
-<span id="overview-hints"></span><h2>Hints<a class="headerlink" href="#hints" title="Permalink to this headline">¶</a></h2>
+<span id="overview-hints"></span><h2>Hints<a class="headerlink" href="#hints" title="Permalink to this heading">¶</a></h2>
 <p>At small pixel sizes, the process of drawing the interior of an outline font is
 quite difficult to do well. PostScript and TrueType have different approaches to
 the problem of providing extra information to the rasterizer about how to draw
@@ -467,7 +466,7 @@ provided no significant change has happened to a glyph.</p>
 fonts in mind.</p>
 </section>
 <section id="references">
-<span id="overview-references"></span><h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<span id="overview-references"></span><h2>References<a class="headerlink" href="#references" title="Permalink to this heading">¶</a></h2>
 <p>In addition to a set of outlines (splines) glyphs may be built out of references
 to other glyphs. This is especially handy for the accented glyphs, “à” can be
 made up of a reference to the “a” glyph and another reference to the
@@ -507,7 +506,7 @@ FontForge will clean up the glyph (generally by unlinking references) so that it
 can be output in the current format.</p>
 </section>
 <section id="layers">
-<span id="overview-layers"></span><h2>Layers<a class="headerlink" href="#layers" title="Permalink to this headline">¶</a></h2>
+<span id="overview-layers"></span><h2>Layers<a class="headerlink" href="#layers" title="Permalink to this heading">¶</a></h2>
 <p>A font may have several layers. When FontForge creates a new font it will have 2
 real layers (the foreground and background layers) and a sort of half-layer for
 guidelines which is shared by all glyphs. In normal fonts all glyphs have the
@@ -540,7 +539,7 @@ sfnt (TrueType / OpenType font) with the
 <a class="reference internal" href="ui/dialogs/generate.html#generate-options"><span class="std std-ref">[]Layers checkbox of the PfaEdit table of the [Options]</span></a>
 dialog.</p>
 <section id="type3-fonts">
-<span id="overview-type3"></span><h3>Type3 Fonts<a class="headerlink" href="#type3-fonts" title="Permalink to this headline">¶</a></h3>
+<span id="overview-type3"></span><h3>Type3 Fonts<a class="headerlink" href="#type3-fonts" title="Permalink to this heading">¶</a></h3>
 <p>Most people aren’t interested in editing
 <a class="reference internal" href="ui/dialogs/multilayer.html"><span class="doc">Type3 PostScript fonts</span></a> (nor the equivalent SVG font), but if
 you want to, FontForge can. Here each layer represents a different drawing
@@ -550,7 +549,7 @@ font-wide, each glyph has its own set of layers (which are not named). You can
 of the outline view.</p>
 </section>
 <section id="guidelines">
-<h3>Guidelines<a class="headerlink" href="#guidelines" title="Permalink to this headline">¶</a></h3>
+<h3>Guidelines<a class="headerlink" href="#guidelines" title="Permalink to this heading">¶</a></h3>
 <p>In FontForge guidelines live in their own mini-layer (it isn’t a full layer
 because all glyphs share the same set of guidelines rather than having an
 individual layer for each glyph). It can be edited just like any other layer and
@@ -559,7 +558,7 @@ horizontal and vertical guidelines from the edges of the outline glyph view.</p>
 </section>
 </section>
 <section id="scripts">
-<span id="overview-scripts"></span><h2>Scripts<a class="headerlink" href="#scripts" title="Permalink to this headline">¶</a></h2>
+<span id="overview-scripts"></span><h2>Scripts<a class="headerlink" href="#scripts" title="Permalink to this heading">¶</a></h2>
 <p>A script is a collection of letter shapes and rules for putting letters
 together. For instance the latin script consists of the letters A-Z, written
 left to right, along with a transformation from upper to lower case, a few
@@ -569,7 +568,7 @@ initial, medial, final and isolated forms, many ligatures and rules for placing
 vowel marks.</p>
 </section>
 <section id="glyph-names-namelists">
-<span id="overview-glyph-names"></span><h2>Glyph names &amp; Namelists<a class="headerlink" href="#glyph-names-namelists" title="Permalink to this headline">¶</a></h2>
+<span id="overview-glyph-names"></span><h2>Glyph names &amp; Namelists<a class="headerlink" href="#glyph-names-namelists" title="Permalink to this heading">¶</a></h2>
 <p>Within fontforge every glyph will have a name. Generally the glyph name will be
 something that provides information about what the glyph looks like so the name
 for the glyph representing “9” is “nine”. Adobe has established a
@@ -603,7 +602,7 @@ to keep non-ASCII names within fontforge (and rename glyphs to adobe’s standar
 names before generating a font).</p>
 </section>
 <section id="lookups-features-scripts-and-languages">
-<span id="overview-lookups"></span><h2>Lookups, Features, Scripts and Languages<a class="headerlink" href="#lookups-features-scripts-and-languages" title="Permalink to this headline">¶</a></h2>
+<span id="overview-lookups"></span><h2>Lookups, Features, Scripts and Languages<a class="headerlink" href="#lookups-features-scripts-and-languages" title="Permalink to this heading">¶</a></h2>
 <p>OpenType (and Apple Advanced Typography) allow various transformations to be
 applied to the input glyph stream to produce an output glyph stream. These
 transformations might include forming ligatures, kerning glyphs closer to each
@@ -625,12 +624,6 @@ complicated, and each language within a script will have it’s own set of
 features. In the example above we might assign scripts, languages, features and
 lookups thusly:</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 11%" />
-<col style="width: 14%" />
-<col style="width: 30%" />
-<col style="width: 46%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Script</p></th>
 <th class="head"><p>Language</p></th>
@@ -651,7 +644,7 @@ lookups thusly:</p>
 </tr>
 <tr class="row-odd"><td><p>Turkish</p></td>
 <td><p>liga</p></td>
-<td><p>lookup for ff, fl and ffl <a class="footnote-reference brackets" href="#f1" id="id1">1</a></p></td>
+<td><p>lookup for ff, fl and ffl <a class="footnote-reference brackets" href="#f1" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
 </tr>
 <tr class="row-even"><td rowspan="3"><p>German</p></td>
 <td rowspan="3"><p>liga</p></td>
@@ -659,23 +652,25 @@ lookups thusly:</p>
 </tr>
 <tr class="row-odd"><td><p>lookup for fi and ffi</p></td>
 </tr>
-<tr class="row-even"><td><p>lookup for ct and st <a class="footnote-reference brackets" href="#f2" id="id2">2</a></p></td>
+<tr class="row-even"><td><p>lookup for ct and st <a class="footnote-reference brackets" href="#f2" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p></td>
 </tr>
 </tbody>
 </table>
-<dl class="footnote brackets">
-<dt class="label" id="f1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>Lookups may be shared, so this can be the same lookup as above
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="f1" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Lookups may be shared, so this can be the same lookup as above
 (Turkish distinguishes between i and dotlessi and fi ligatures hide
 this distinction.)</p>
-</dd>
-<dt class="label" id="f2"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
-<dd><p>Lookups may even be shared by a different feature type, so for English
+</aside>
+<aside class="footnote brackets" id="f2" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>Lookups may even be shared by a different feature type, so for English
 and Spanish ct might count as a discretionary ligature, one rarely used,
 while in German it mght be more common and be part of the standard
 ligature set.</p>
-</dd>
-</dl>
+</aside>
+</aside>
 <p>The default language means any language in the script which is not specifically
 named. So in the above example the default language would be any language except
 Turkish and German that might use the latin script.</p>
@@ -686,12 +681,6 @@ proportional digits, or to superscripts…) you should attach those lookups to
 features in all scripts (and languages) that could use them, and to the default
 script (just in case).</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 13%" />
-<col style="width: 16%" />
-<col style="width: 15%" />
-<col style="width: 56%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Script</p></th>
 <th class="head"><p>Language</p></th>
@@ -761,7 +750,7 @@ glyph substitution data and kerning data.</p>
 <p>Lookups may be specified with the <a class="reference internal" href="ui/dialogs/fontinfo.html#fontinfo-lookups"><span class="std std-ref">Element-&gt;Font Info</span></a>
 dialog</p>
 <section id="lookup-subtables">
-<h3>Lookup subtables<a class="headerlink" href="#lookup-subtables" title="Permalink to this headline">¶</a></h3>
+<h3>Lookup subtables<a class="headerlink" href="#lookup-subtables" title="Permalink to this heading">¶</a></h3>
 <p>I talk above about lookups as if they were simple things. Unfortunately they
 aren’t. Each lookup is composed of “Subtables” which actually do the work.</p>
 <p>A lookup may contain several subtables. Most contain exactly one. (If a lookup
@@ -776,7 +765,7 @@ kerning, and then another subtable providing exceptions to that on a glyph by
 glyph basis.</p>
 </section>
 <section id="how-lookups-are-applied">
-<h3>How lookups are applied<a class="headerlink" href="#how-lookups-are-applied" title="Permalink to this headline">¶</a></h3>
+<h3>How lookups are applied<a class="headerlink" href="#how-lookups-are-applied" title="Permalink to this heading">¶</a></h3>
 <p>When a word processor deals with text, it will figure out what script is in use
 in the text. Somehow it will figure out what the language is (maybe it will just
 assume the “DFLT” language, maybe the user told it the text was in French, maybe
@@ -812,7 +801,7 @@ combinations which aren’t special cases, then the first subtable will fail, an
 the second will be applied.</p>
 </section>
 <section id="gpos-and-gsub">
-<h3>GPOS and GSUB<a class="headerlink" href="#gpos-and-gsub" title="Permalink to this headline">¶</a></h3>
+<h3>GPOS and GSUB<a class="headerlink" href="#gpos-and-gsub" title="Permalink to this heading">¶</a></h3>
 <p>Up till now I have spoken as there were one list of lookups. That was a
 simplification. There are two broad classes of lookup, and two lists. There are
 those involved in manipulating the glyphs themselves (glyph substitution,
@@ -824,7 +813,7 @@ will be processed before any positioning lookups are attempted.</p>
 </section>
 </section>
 <section id="anchor-points-and-classes">
-<span id="overview-anchors"></span><h2>Anchor Points and Classes<a class="headerlink" href="#anchor-points-and-classes" title="Permalink to this headline">¶</a></h2>
+<span id="overview-anchors"></span><h2>Anchor Points and Classes<a class="headerlink" href="#anchor-points-and-classes" title="Permalink to this heading">¶</a></h2>
 <p>Anchor points allow fine control of the positioning of two (or several) glyphs.
 There are several different styles of attachment based on anchors: cursive, mark
 to base, mark to ligature and mark to mark positioning. The first style is used
@@ -915,7 +904,7 @@ is, and position macron so that its TopMark anchor point is where
 <p>Anchor points may be selected, dragged, transformed, cut, copied and pasted.</p>
 </section>
 <section id="baselines">
-<span id="overview-baseline"></span><h2>Baselines<a class="headerlink" href="#baselines" title="Permalink to this headline">¶</a></h2>
+<span id="overview-baseline"></span><h2>Baselines<a class="headerlink" href="#baselines" title="Permalink to this heading">¶</a></h2>
 <p>To a user of the latin alphabet it makes sense for the vertical origin of a
 glyph to be the baseline on which most letters rest <img alt="latinBaseline" src="_images/latinBaseline.png" />. This means
 that if you change the pointsize of a glyph it will still line up properly
@@ -945,7 +934,7 @@ reasonably:</p>
 (or each glyph) should be aligned with respect to other baselines.</p>
 </section>
 <section id="font-view">
-<span id="overview-fontview"></span><h2>Font View<a class="headerlink" href="#font-view" title="Permalink to this headline">¶</a></h2>
+<span id="overview-fontview"></span><h2>Font View<a class="headerlink" href="#font-view" title="Permalink to this heading">¶</a></h2>
 <p>The <a class="reference internal" href="ui/mainviews/fontview.html"><span class="doc">font view</span></a> displays all the glyphs in the font (or all that
 will fit in the window). Every line has two parts, at the top is a label, often
 small clear letters, underneath that, somewhat larger is a 24 pixel
@@ -964,7 +953,7 @@ them, or to cut and paste them.</p>
 <img alt="_images/fontview-cid.png" src="_images/fontview-cid.png" />
 </section>
 <section id="outline-glyph-view">
-<span id="overview-charview"></span><h2>Outline Glyph View<a class="headerlink" href="#outline-glyph-view" title="Permalink to this headline">¶</a></h2>
+<span id="overview-charview"></span><h2>Outline Glyph View<a class="headerlink" href="#outline-glyph-view" title="Permalink to this heading">¶</a></h2>
 <p>The <a class="reference internal" href="ui/mainviews/charview.html"><span class="doc">outline view</span></a> is probably the most complex view in
 FontForge. This is where you actually edit the splines
 (<a class="reference internal" href="techref/bezier.html"><span class="doc">Bézier splines</span></a>) that make up your glyphs.</p>
@@ -983,7 +972,7 @@ layers (foreground, background, grid, hints) are visible and editable.</p>
 <img alt="_images/charview2.png" src="_images/charview2.png" />
 </section>
 <section id="bitmap-view">
-<span id="overview-bitmapview"></span><h2>Bitmap View<a class="headerlink" href="#bitmap-view" title="Permalink to this headline">¶</a></h2>
+<span id="overview-bitmapview"></span><h2>Bitmap View<a class="headerlink" href="#bitmap-view" title="Permalink to this heading">¶</a></h2>
 <p>The <a class="reference internal" href="ui/mainviews/bitmapview.html"><span class="doc">bitmap view</span></a> is similar to the outline view above. It
 also has a tools and layer palette.</p>
 <p>This allows you to edit bitmap versions of the outline glyphs you create above.</p>
@@ -994,7 +983,7 @@ by hand. In the upper left corner is a full sized image of your bitmap glyph.</p
 <img alt="_images/BitmapView.png" src="_images/BitmapView.png" />
 </section>
 <section id="metrics-view">
-<span id="overview-metricsview"></span><h2>Metrics View<a class="headerlink" href="#metrics-view" title="Permalink to this headline">¶</a></h2>
+<span id="overview-metricsview"></span><h2>Metrics View<a class="headerlink" href="#metrics-view" title="Permalink to this heading">¶</a></h2>
 <p>The <a class="reference internal" href="ui/mainviews/metricsview.html"><span class="doc">metrics view</span></a> allows you to see how the glyphs look
 together.</p>
 <p>You can change the width and left/right bearings of a glyph, either by dragging
@@ -1071,7 +1060,7 @@ see things arranged vertically.</p>
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -1088,7 +1077,7 @@ see things arranged vertically.</p>
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.0.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

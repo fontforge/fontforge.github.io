@@ -1,18 +1,17 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Scripting FontForge &#8212; FontForge 20220308 documentation</title>
+    <title>Scripting FontForge &#8212; FontForge 20230101 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <link rel="shortcut icon" href="../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -35,7 +34,7 @@
           <div class="body" role="main">
             
   <section id="scripting-fontforge">
-<h1>Scripting FontForge<a class="headerlink" href="#scripting-fontforge" title="Permalink to this headline">¶</a></h1>
+<h1>Scripting FontForge<a class="headerlink" href="#scripting-fontforge" title="Permalink to this heading">¶</a></h1>
 <p>FontForge includes two interpreters so you can write scripts to modify fonts.
 One of these interpreters is <a class="reference internal" href="python.html"><span class="doc">python</span></a>, one is a legacy language I
 came up with. FontForge may be configured with either or both of these. If
@@ -48,21 +47,596 @@ means use the old interpreter)</p>
 <li class="toctree-l1"><a class="reference internal" href="python.html">Python Scripting</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="python.html#fontforge-modules">FontForge Modules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html">fontforge</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="python/fontforge.html#module-attributes">Module attributes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="python/fontforge.html#module-functions">Module functions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="python/fontforge.html#user-interface-module-functions">User Interface Module Functions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="python/fontforge.html#point">Point</a></li>
-<li class="toctree-l4"><a class="reference internal" href="python/fontforge.html#contour">Contour</a></li>
-<li class="toctree-l4"><a class="reference internal" href="python/fontforge.html#layer">Layer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="python/fontforge.html#glyph-pen">Glyph Pen</a></li>
-<li class="toctree-l4"><a class="reference internal" href="python/fontforge.html#glyph">Glyph</a></li>
-<li class="toctree-l4"><a class="reference internal" href="python/fontforge.html#selection">Selection</a></li>
-<li class="toctree-l4"><a class="reference internal" href="python/fontforge.html#private">Private</a></li>
-<li class="toctree-l4"><a class="reference internal" href="python/fontforge.html#math">Math</a></li>
-<li class="toctree-l4"><a class="reference internal" href="python/fontforge.html#font">Font</a></li>
+<li class="toctree-l4"><a class="reference internal" href="python/fontforge.html#module-attributes">Module attributes</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.hooks"><code class="docutils literal notranslate"><span class="pre">hooks</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.splineCorner"><code class="docutils literal notranslate"><span class="pre">splineCorner</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.splineCurve"><code class="docutils literal notranslate"><span class="pre">splineCurve</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.splineHVCurve"><code class="docutils literal notranslate"><span class="pre">splineHVCurve</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.splineTangent"><code class="docutils literal notranslate"><span class="pre">splineTangent</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.fontforge.spiroG4"><code class="docutils literal notranslate"><span class="pre">fontforge.spiroG4</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.fontforge.spiroG2"><code class="docutils literal notranslate"><span class="pre">fontforge.spiroG2</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.fontforge.spiroCorner"><code class="docutils literal notranslate"><span class="pre">fontforge.spiroCorner</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.fontforge.spiroLeft"><code class="docutils literal notranslate"><span class="pre">fontforge.spiroLeft</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.fontforge.spiroRight"><code class="docutils literal notranslate"><span class="pre">fontforge.spiroRight</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.fontforge.spiroOpen"><code class="docutils literal notranslate"><span class="pre">fontforge.spiroOpen</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.fontforge.unspecifiedMathValue"><code class="docutils literal notranslate"><span class="pre">fontforge.unspecifiedMathValue</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="python/psMat.html">psMat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="python/fontforge.html#module-functions">Module functions</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.getPrefs"><code class="docutils literal notranslate"><span class="pre">getPrefs()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.setPrefs"><code class="docutils literal notranslate"><span class="pre">setPrefs()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.hasSpiro"><code class="docutils literal notranslate"><span class="pre">hasSpiro()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.savePrefs"><code class="docutils literal notranslate"><span class="pre">savePrefs()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.loadPrefs"><code class="docutils literal notranslate"><span class="pre">loadPrefs()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.defaultOtherSubrs"><code class="docutils literal notranslate"><span class="pre">defaultOtherSubrs()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.readOtherSubrsFile"><code class="docutils literal notranslate"><span class="pre">readOtherSubrsFile()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.loadEncodingFile"><code class="docutils literal notranslate"><span class="pre">loadEncodingFile()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.loadNamelist"><code class="docutils literal notranslate"><span class="pre">loadNamelist()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.loadNamelistDir"><code class="docutils literal notranslate"><span class="pre">loadNamelistDir()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.preloadCidmap"><code class="docutils literal notranslate"><span class="pre">preloadCidmap()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.printSetup"><code class="docutils literal notranslate"><span class="pre">printSetup()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.nameFromUnicode"><code class="docutils literal notranslate"><span class="pre">nameFromUnicode()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.UnicodeAnnotationFromLib"><code class="docutils literal notranslate"><span class="pre">UnicodeAnnotationFromLib()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.UnicodeBlockCountFromLib"><code class="docutils literal notranslate"><span class="pre">UnicodeBlockCountFromLib()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.UnicodeBlockEndFromLib"><code class="docutils literal notranslate"><span class="pre">UnicodeBlockEndFromLib()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.UnicodeBlockNameFromLib"><code class="docutils literal notranslate"><span class="pre">UnicodeBlockNameFromLib()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.UnicodeBlockStartFromLib"><code class="docutils literal notranslate"><span class="pre">UnicodeBlockStartFromLib()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.unicodeFromName"><code class="docutils literal notranslate"><span class="pre">unicodeFromName()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.UnicodeNameFromLib"><code class="docutils literal notranslate"><span class="pre">UnicodeNameFromLib()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.UnicodeNamesListVersion"><code class="docutils literal notranslate"><span class="pre">UnicodeNamesListVersion()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.UnicodeNames2FromLib"><code class="docutils literal notranslate"><span class="pre">UnicodeNames2FromLib()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.scriptFromUnicode"><code class="docutils literal notranslate"><span class="pre">scriptFromUnicode()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.SpiroVersion"><code class="docutils literal notranslate"><span class="pre">SpiroVersion()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.version"><code class="docutils literal notranslate"><span class="pre">version()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.loadPlugins"><code class="docutils literal notranslate"><span class="pre">loadPlugins()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.getPluginInfo"><code class="docutils literal notranslate"><span class="pre">getPluginInfo()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.configurePlugins"><code class="docutils literal notranslate"><span class="pre">configurePlugins()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.runInitScripts"><code class="docutils literal notranslate"><span class="pre">runInitScripts()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.scriptPath"><code class="docutils literal notranslate"><span class="pre">scriptPath()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.fonts"><code class="docutils literal notranslate"><span class="pre">fonts()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.activeFont"><code class="docutils literal notranslate"><span class="pre">activeFont()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.activeGlyph"><code class="docutils literal notranslate"><span class="pre">activeGlyph()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.activeLayer"><code class="docutils literal notranslate"><span class="pre">activeLayer()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.fontsInFile"><code class="docutils literal notranslate"><span class="pre">fontsInFile()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.open"><code class="docutils literal notranslate"><span class="pre">open()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.parseTTInstrs"><code class="docutils literal notranslate"><span class="pre">parseTTInstrs()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.unParseTTInstrs"><code class="docutils literal notranslate"><span class="pre">unParseTTInstrs()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.unitShape"><code class="docutils literal notranslate"><span class="pre">unitShape()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.registerGlyphSeparationHook"><code class="docutils literal notranslate"><span class="pre">registerGlyphSeparationHook()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="python/fontforge.html#user-interface-module-functions">User Interface Module Functions</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.hasUserInterface"><code class="docutils literal notranslate"><span class="pre">hasUserInterface()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.registerMenuItem"><code class="docutils literal notranslate"><span class="pre">registerMenuItem()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.registerImportExport"><code class="docutils literal notranslate"><span class="pre">registerImportExport()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.logWarning"><code class="docutils literal notranslate"><span class="pre">logWarning()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.postError"><code class="docutils literal notranslate"><span class="pre">postError()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.postNotice"><code class="docutils literal notranslate"><span class="pre">postNotice()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.openFilename"><code class="docutils literal notranslate"><span class="pre">openFilename()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.saveFilename"><code class="docutils literal notranslate"><span class="pre">saveFilename()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.ask"><code class="docutils literal notranslate"><span class="pre">ask()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.askChoices"><code class="docutils literal notranslate"><span class="pre">askChoices()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.askString"><code class="docutils literal notranslate"><span class="pre">askString()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.askMulti"><code class="docutils literal notranslate"><span class="pre">askMulti()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="python/fontforge.html#point">Point</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.point"><code class="docutils literal notranslate"><span class="pre">point</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.point.x"><code class="docutils literal notranslate"><span class="pre">point.x</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.point.y"><code class="docutils literal notranslate"><span class="pre">point.y</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.point.on_curve"><code class="docutils literal notranslate"><span class="pre">point.on_curve</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.point.selected"><code class="docutils literal notranslate"><span class="pre">point.selected</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.point.type"><code class="docutils literal notranslate"><span class="pre">point.type</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.point.interpolated"><code class="docutils literal notranslate"><span class="pre">point.interpolated</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.point.name"><code class="docutils literal notranslate"><span class="pre">point.name</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.point.dup"><code class="docutils literal notranslate"><span class="pre">point.dup()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.point.transform"><code class="docutils literal notranslate"><span class="pre">point.transform()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.point.__reduce__"><code class="docutils literal notranslate"><span class="pre">point.__reduce__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="python/fontforge.html#contour">Contour</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.contour"><code class="docutils literal notranslate"><span class="pre">contour</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.contour.is_quadratic"><code class="docutils literal notranslate"><span class="pre">contour.is_quadratic</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.contour.closed"><code class="docutils literal notranslate"><span class="pre">contour.closed</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.contour.name"><code class="docutils literal notranslate"><span class="pre">contour.name</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.contour.spiros"><code class="docutils literal notranslate"><span class="pre">contour.spiros</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.contour.dup"><code class="docutils literal notranslate"><span class="pre">contour.dup()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.contour.isEmpty"><code class="docutils literal notranslate"><span class="pre">contour.isEmpty()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.contour.boundingBox"><code class="docutils literal notranslate"><span class="pre">contour.boundingBox()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.contour.getSplineAfterPoint"><code class="docutils literal notranslate"><span class="pre">contour.getSplineAfterPoint()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.contour.draw"><code class="docutils literal notranslate"><span class="pre">contour.draw()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.contour.__reduce__"><code class="docutils literal notranslate"><span class="pre">contour.__reduce__()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.contour.__iter__"><code class="docutils literal notranslate"><span class="pre">contour.__iter__()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.contour.moveTo"><code class="docutils literal notranslate"><span class="pre">contour.moveTo()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.contour.lineTo"><code class="docutils literal notranslate"><span class="pre">contour.lineTo()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.contour.cubicTo"><code class="docutils literal notranslate"><span class="pre">contour.cubicTo()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.contour.quadraticTo"><code class="docutils literal notranslate"><span class="pre">contour.quadraticTo()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.contour.insertPoint"><code class="docutils literal notranslate"><span class="pre">contour.insertPoint()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.contour.makeFirst"><code class="docutils literal notranslate"><span class="pre">contour.makeFirst()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.contour.isClockwise"><code class="docutils literal notranslate"><span class="pre">contour.isClockwise()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.contour.reverseDirection"><code class="docutils literal notranslate"><span class="pre">contour.reverseDirection()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.contour.similar"><code class="docutils literal notranslate"><span class="pre">contour.similar()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.contour.xBoundsAtY"><code class="docutils literal notranslate"><span class="pre">contour.xBoundsAtY()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.contour.yBoundsAtX"><code class="docutils literal notranslate"><span class="pre">contour.yBoundsAtX()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.contour.addExtrema"><code class="docutils literal notranslate"><span class="pre">contour.addExtrema()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.contour.cluster"><code class="docutils literal notranslate"><span class="pre">contour.cluster()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.contour.merge"><code class="docutils literal notranslate"><span class="pre">contour.merge()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.contour.round"><code class="docutils literal notranslate"><span class="pre">contour.round()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.contour.selfIntersects"><code class="docutils literal notranslate"><span class="pre">contour.selfIntersects()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.contour.simplify"><code class="docutils literal notranslate"><span class="pre">contour.simplify()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.contour.transform"><code class="docutils literal notranslate"><span class="pre">contour.transform()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.contour.addInflections"><code class="docutils literal notranslate"><span class="pre">contour.addInflections()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.contour.balance"><code class="docutils literal notranslate"><span class="pre">contour.balance()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.contour.harmonize"><code class="docutils literal notranslate"><span class="pre">contour.harmonize()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="python/fontforge.html#layer">Layer</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.layer"><code class="docutils literal notranslate"><span class="pre">layer</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.layer.is_quadratic"><code class="docutils literal notranslate"><span class="pre">layer.is_quadratic()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.layer.__iter__"><code class="docutils literal notranslate"><span class="pre">layer.__iter__()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.layer.__reduce__"><code class="docutils literal notranslate"><span class="pre">layer.__reduce__()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.layer.dup"><code class="docutils literal notranslate"><span class="pre">layer.dup()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.layer.isEmpty"><code class="docutils literal notranslate"><span class="pre">layer.isEmpty()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.layer.addExtrema"><code class="docutils literal notranslate"><span class="pre">layer.addExtrema()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.layer.cluster"><code class="docutils literal notranslate"><span class="pre">layer.cluster()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.layer.correctDirection"><code class="docutils literal notranslate"><span class="pre">layer.correctDirection()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.layer.export"><code class="docutils literal notranslate"><span class="pre">layer.export()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.layer.exclude"><code class="docutils literal notranslate"><span class="pre">layer.exclude()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.layer.intersect"><code class="docutils literal notranslate"><span class="pre">layer.intersect()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.layer.removeOverlap"><code class="docutils literal notranslate"><span class="pre">layer.removeOverlap()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.layer.interpolateNewLayer"><code class="docutils literal notranslate"><span class="pre">layer.interpolateNewLayer()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.layer.round"><code class="docutils literal notranslate"><span class="pre">layer.round()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.layer.selfIntersects"><code class="docutils literal notranslate"><span class="pre">layer.selfIntersects()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.layer.similar"><code class="docutils literal notranslate"><span class="pre">layer.similar()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.layer.simplify"><code class="docutils literal notranslate"><span class="pre">layer.simplify()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.layer.stemControl"><code class="docutils literal notranslate"><span class="pre">layer.stemControl()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.layer.stroke"><code class="docutils literal notranslate"><span class="pre">layer.stroke()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.layer.transform"><code class="docutils literal notranslate"><span class="pre">layer.transform()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.layer.nltransform"><code class="docutils literal notranslate"><span class="pre">layer.nltransform()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.layer.boundingBox"><code class="docutils literal notranslate"><span class="pre">layer.boundingBox()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.layer.xBoundsAtY"><code class="docutils literal notranslate"><span class="pre">layer.xBoundsAtY()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.layer.yBoundsAtX"><code class="docutils literal notranslate"><span class="pre">layer.yBoundsAtX()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.layer.draw"><code class="docutils literal notranslate"><span class="pre">layer.draw()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.layer.addInflections"><code class="docutils literal notranslate"><span class="pre">layer.addInflections()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.layer.balance"><code class="docutils literal notranslate"><span class="pre">layer.balance()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.layer.harmonize"><code class="docutils literal notranslate"><span class="pre">layer.harmonize()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="python/fontforge.html#glyph-pen">Glyph Pen</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.glyphPen"><code class="docutils literal notranslate"><span class="pre">glyphPen</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyphPen.moveTo"><code class="docutils literal notranslate"><span class="pre">glyphPen.moveTo()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyphPen.lineTo"><code class="docutils literal notranslate"><span class="pre">glyphPen.lineTo()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyphPen.curveTo"><code class="docutils literal notranslate"><span class="pre">glyphPen.curveTo()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyphPen.qCurveTo"><code class="docutils literal notranslate"><span class="pre">glyphPen.qCurveTo()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyphPen.closePath"><code class="docutils literal notranslate"><span class="pre">glyphPen.closePath()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyphPen.endPath"><code class="docutils literal notranslate"><span class="pre">glyphPen.endPath()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyphPen.addComponent"><code class="docutils literal notranslate"><span class="pre">glyphPen.addComponent()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="python/fontforge.html#glyph">Glyph</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.glyph"><code class="docutils literal notranslate"><span class="pre">glyph</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.activeLayer"><code class="docutils literal notranslate"><span class="pre">glyph.activeLayer</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.altuni"><code class="docutils literal notranslate"><span class="pre">glyph.altuni</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.anchorPoints"><code class="docutils literal notranslate"><span class="pre">glyph.anchorPoints</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.anchorPointsWithSel"><code class="docutils literal notranslate"><span class="pre">glyph.anchorPointsWithSel</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.background"><code class="docutils literal notranslate"><span class="pre">glyph.background</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.changed"><code class="docutils literal notranslate"><span class="pre">glyph.changed</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.color"><code class="docutils literal notranslate"><span class="pre">glyph.color</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.comment"><code class="docutils literal notranslate"><span class="pre">glyph.comment</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.dhints"><code class="docutils literal notranslate"><span class="pre">glyph.dhints</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.encoding"><code class="docutils literal notranslate"><span class="pre">glyph.encoding</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.font"><code class="docutils literal notranslate"><span class="pre">glyph.font</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.foreground"><code class="docutils literal notranslate"><span class="pre">glyph.foreground</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.glyphclass"><code class="docutils literal notranslate"><span class="pre">glyph.glyphclass</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.glyphname"><code class="docutils literal notranslate"><span class="pre">glyph.glyphname</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.hhints"><code class="docutils literal notranslate"><span class="pre">glyph.hhints</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.horizontalComponents"><code class="docutils literal notranslate"><span class="pre">glyph.horizontalComponents</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.horizontalComponentItalicCorrection"><code class="docutils literal notranslate"><span class="pre">glyph.horizontalComponentItalicCorrection</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.horizontalVariants"><code class="docutils literal notranslate"><span class="pre">glyph.horizontalVariants</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.isExtendedShape"><code class="docutils literal notranslate"><span class="pre">glyph.isExtendedShape</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.italicCorrection"><code class="docutils literal notranslate"><span class="pre">glyph.italicCorrection</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.layer_cnt"><code class="docutils literal notranslate"><span class="pre">glyph.layer_cnt</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.layers"><code class="docutils literal notranslate"><span class="pre">glyph.layers</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.layerrefs"><code class="docutils literal notranslate"><span class="pre">glyph.layerrefs</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.lcarets"><code class="docutils literal notranslate"><span class="pre">glyph.lcarets</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.left_side_bearing"><code class="docutils literal notranslate"><span class="pre">glyph.left_side_bearing</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.manualHints"><code class="docutils literal notranslate"><span class="pre">glyph.manualHints</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.originalgid"><code class="docutils literal notranslate"><span class="pre">glyph.originalgid</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.persistent"><code class="docutils literal notranslate"><span class="pre">glyph.persistent</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.references"><code class="docutils literal notranslate"><span class="pre">glyph.references</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.right_side_bearing"><code class="docutils literal notranslate"><span class="pre">glyph.right_side_bearing</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.script"><code class="docutils literal notranslate"><span class="pre">glyph.script</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.temporary"><code class="docutils literal notranslate"><span class="pre">glyph.temporary</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.texheight"><code class="docutils literal notranslate"><span class="pre">glyph.texheight</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.texdepth"><code class="docutils literal notranslate"><span class="pre">glyph.texdepth</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.topaccent"><code class="docutils literal notranslate"><span class="pre">glyph.topaccent</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.ttinstrs"><code class="docutils literal notranslate"><span class="pre">glyph.ttinstrs</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.unicode"><code class="docutils literal notranslate"><span class="pre">glyph.unicode</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.unlinkRmOvrlpSave"><code class="docutils literal notranslate"><span class="pre">glyph.unlinkRmOvrlpSave</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.user_decomp"><code class="docutils literal notranslate"><span class="pre">glyph.user_decomp</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.userdata"><code class="docutils literal notranslate"><span class="pre">glyph.userdata</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.vhints"><code class="docutils literal notranslate"><span class="pre">glyph.vhints</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.validation_state"><code class="docutils literal notranslate"><span class="pre">glyph.validation_state</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.verticalComponents"><code class="docutils literal notranslate"><span class="pre">glyph.verticalComponents</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.verticalComponentItalicCorrection"><code class="docutils literal notranslate"><span class="pre">glyph.verticalComponentItalicCorrection</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.verticalVariants"><code class="docutils literal notranslate"><span class="pre">glyph.verticalVariants</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.width"><code class="docutils literal notranslate"><span class="pre">glyph.width</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.vwidth"><code class="docutils literal notranslate"><span class="pre">glyph.vwidth</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.addAnchorPoint"><code class="docutils literal notranslate"><span class="pre">glyph.addAnchorPoint()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.addExtrema"><code class="docutils literal notranslate"><span class="pre">glyph.addExtrema()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.addReference"><code class="docutils literal notranslate"><span class="pre">glyph.addReference()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.addHint"><code class="docutils literal notranslate"><span class="pre">glyph.addHint()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.addPosSub"><code class="docutils literal notranslate"><span class="pre">glyph.addPosSub()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.appendAccent"><code class="docutils literal notranslate"><span class="pre">glyph.appendAccent()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.autoHint"><code class="docutils literal notranslate"><span class="pre">glyph.autoHint()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.autoInstr"><code class="docutils literal notranslate"><span class="pre">glyph.autoInstr()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.autoTrace"><code class="docutils literal notranslate"><span class="pre">glyph.autoTrace()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.boundingBox"><code class="docutils literal notranslate"><span class="pre">glyph.boundingBox()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.build"><code class="docutils literal notranslate"><span class="pre">glyph.build()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.canonicalContours"><code class="docutils literal notranslate"><span class="pre">glyph.canonicalContours()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.canonicalStart"><code class="docutils literal notranslate"><span class="pre">glyph.canonicalStart()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.changeWeight"><code class="docutils literal notranslate"><span class="pre">glyph.changeWeight()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.condenseExtend"><code class="docutils literal notranslate"><span class="pre">glyph.condenseExtend()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.clear"><code class="docutils literal notranslate"><span class="pre">glyph.clear()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.cluster"><code class="docutils literal notranslate"><span class="pre">glyph.cluster()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.correctDirection"><code class="docutils literal notranslate"><span class="pre">glyph.correctDirection()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.doUndoLayer"><code class="docutils literal notranslate"><span class="pre">glyph.doUndoLayer()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.exclude"><code class="docutils literal notranslate"><span class="pre">glyph.exclude()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.export"><code class="docutils literal notranslate"><span class="pre">glyph.export()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.genericGlyphChange"><code class="docutils literal notranslate"><span class="pre">glyph.genericGlyphChange()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.getPosSub"><code class="docutils literal notranslate"><span class="pre">glyph.getPosSub()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.importOutlines"><code class="docutils literal notranslate"><span class="pre">glyph.importOutlines()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.intersect"><code class="docutils literal notranslate"><span class="pre">glyph.intersect()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.isWorthOutputting"><code class="docutils literal notranslate"><span class="pre">glyph.isWorthOutputting()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.preserveLayerAsUndo"><code class="docutils literal notranslate"><span class="pre">glyph.preserveLayerAsUndo()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.removeOverlap"><code class="docutils literal notranslate"><span class="pre">glyph.removeOverlap()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.removePosSub"><code class="docutils literal notranslate"><span class="pre">glyph.removePosSub()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.round"><code class="docutils literal notranslate"><span class="pre">glyph.round()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.selfIntersects"><code class="docutils literal notranslate"><span class="pre">glyph.selfIntersects()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.setLayer"><code class="docutils literal notranslate"><span class="pre">glyph.setLayer()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.simplify"><code class="docutils literal notranslate"><span class="pre">glyph.simplify()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.stroke"><code class="docutils literal notranslate"><span class="pre">glyph.stroke()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.transform"><code class="docutils literal notranslate"><span class="pre">glyph.transform()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.nltransform"><code class="docutils literal notranslate"><span class="pre">glyph.nltransform()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.unlinkRef"><code class="docutils literal notranslate"><span class="pre">glyph.unlinkRef()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.unlinkThisGlyph"><code class="docutils literal notranslate"><span class="pre">glyph.unlinkThisGlyph()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.useRefsMetrics"><code class="docutils literal notranslate"><span class="pre">glyph.useRefsMetrics()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.validate"><code class="docutils literal notranslate"><span class="pre">glyph.validate()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.draw"><code class="docutils literal notranslate"><span class="pre">glyph.draw()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.glyphPen"><code class="docutils literal notranslate"><span class="pre">glyph.glyphPen()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.addInflections"><code class="docutils literal notranslate"><span class="pre">glyph.addInflections()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.balance"><code class="docutils literal notranslate"><span class="pre">glyph.balance()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.harmonize"><code class="docutils literal notranslate"><span class="pre">glyph.harmonize()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.mathKern.bottomLeft"><code class="docutils literal notranslate"><span class="pre">glyph.mathKern.bottomLeft</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.mathKern.bottomRight"><code class="docutils literal notranslate"><span class="pre">glyph.mathKern.bottomRight</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.mathKern.topLeft"><code class="docutils literal notranslate"><span class="pre">glyph.mathKern.topLeft</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.glyph.mathKern.topRight"><code class="docutils literal notranslate"><span class="pre">glyph.mathKern.topRight</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="python/fontforge.html#selection">Selection</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.selection"><code class="docutils literal notranslate"><span class="pre">selection</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.selection.byGlyphs"><code class="docutils literal notranslate"><span class="pre">selection.byGlyphs</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.selection.__iter__"><code class="docutils literal notranslate"><span class="pre">selection.__iter__()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.selection.all"><code class="docutils literal notranslate"><span class="pre">selection.all()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.selection.none"><code class="docutils literal notranslate"><span class="pre">selection.none()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.selection.changed"><code class="docutils literal notranslate"><span class="pre">selection.changed()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.selection.invert"><code class="docutils literal notranslate"><span class="pre">selection.invert()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.selection.select"><code class="docutils literal notranslate"><span class="pre">selection.select()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="python/fontforge.html#private">Private</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.private"><code class="docutils literal notranslate"><span class="pre">private</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.private.__iter__"><code class="docutils literal notranslate"><span class="pre">private.__iter__()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.private.guess"><code class="docutils literal notranslate"><span class="pre">private.guess()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="python/fontforge.html#math">Math</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.ScriptPercentScaleDown"><code class="docutils literal notranslate"><span class="pre">math.ScriptPercentScaleDown</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.ScriptScriptPercentScaleDown"><code class="docutils literal notranslate"><span class="pre">math.ScriptScriptPercentScaleDown</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.DelimitedSubFormulaMinHeight"><code class="docutils literal notranslate"><span class="pre">math.DelimitedSubFormulaMinHeight</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.DisplayOperatorMinHeight"><code class="docutils literal notranslate"><span class="pre">math.DisplayOperatorMinHeight</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.MathLeading"><code class="docutils literal notranslate"><span class="pre">math.MathLeading</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.AxisHeight"><code class="docutils literal notranslate"><span class="pre">math.AxisHeight</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.AccentBaseHeight"><code class="docutils literal notranslate"><span class="pre">math.AccentBaseHeight</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.FlattenedAccentBaseHeight"><code class="docutils literal notranslate"><span class="pre">math.FlattenedAccentBaseHeight</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.SubscriptShiftDown"><code class="docutils literal notranslate"><span class="pre">math.SubscriptShiftDown</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.SubscriptTopMax"><code class="docutils literal notranslate"><span class="pre">math.SubscriptTopMax</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.SubscriptBaselineDropMin"><code class="docutils literal notranslate"><span class="pre">math.SubscriptBaselineDropMin</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.SuperscriptShiftUp"><code class="docutils literal notranslate"><span class="pre">math.SuperscriptShiftUp</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.SuperscriptShiftUpCramped"><code class="docutils literal notranslate"><span class="pre">math.SuperscriptShiftUpCramped</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.SuperscriptBottomMin"><code class="docutils literal notranslate"><span class="pre">math.SuperscriptBottomMin</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.SuperscriptBaselineDropMax"><code class="docutils literal notranslate"><span class="pre">math.SuperscriptBaselineDropMax</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.SubSuperscriptGapMin"><code class="docutils literal notranslate"><span class="pre">math.SubSuperscriptGapMin</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.SuperscriptBottomMaxWithSubscript"><code class="docutils literal notranslate"><span class="pre">math.SuperscriptBottomMaxWithSubscript</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.SpaceAfterScript"><code class="docutils literal notranslate"><span class="pre">math.SpaceAfterScript</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.UpperLimitGapMin"><code class="docutils literal notranslate"><span class="pre">math.UpperLimitGapMin</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.UpperLimitBaselineRiseMin"><code class="docutils literal notranslate"><span class="pre">math.UpperLimitBaselineRiseMin</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.LowerLimitGapMin"><code class="docutils literal notranslate"><span class="pre">math.LowerLimitGapMin</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.LowerLimitBaselineDropMin"><code class="docutils literal notranslate"><span class="pre">math.LowerLimitBaselineDropMin</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.StackTopShiftUp"><code class="docutils literal notranslate"><span class="pre">math.StackTopShiftUp</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.StackTopDisplayStyleShiftUp"><code class="docutils literal notranslate"><span class="pre">math.StackTopDisplayStyleShiftUp</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.StackBottomShiftDown"><code class="docutils literal notranslate"><span class="pre">math.StackBottomShiftDown</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.StackBottomDisplayStyleShiftDown"><code class="docutils literal notranslate"><span class="pre">math.StackBottomDisplayStyleShiftDown</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.StackGapMin"><code class="docutils literal notranslate"><span class="pre">math.StackGapMin</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.StackDisplayStyleGapMin"><code class="docutils literal notranslate"><span class="pre">math.StackDisplayStyleGapMin</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.StretchStackTopShiftUp"><code class="docutils literal notranslate"><span class="pre">math.StretchStackTopShiftUp</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.StretchStackBottomShiftDown"><code class="docutils literal notranslate"><span class="pre">math.StretchStackBottomShiftDown</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.StretchStackGapAboveMin"><code class="docutils literal notranslate"><span class="pre">math.StretchStackGapAboveMin</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.StretchStackGapBelowMin"><code class="docutils literal notranslate"><span class="pre">math.StretchStackGapBelowMin</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.FractionNumeratorShiftUp"><code class="docutils literal notranslate"><span class="pre">math.FractionNumeratorShiftUp</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.FractionNumeratorDisplayStyleShiftUp"><code class="docutils literal notranslate"><span class="pre">math.FractionNumeratorDisplayStyleShiftUp</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.FractionDenominatorShiftDown"><code class="docutils literal notranslate"><span class="pre">math.FractionDenominatorShiftDown</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.FractionDenominatorDisplayStyleShiftDown"><code class="docutils literal notranslate"><span class="pre">math.FractionDenominatorDisplayStyleShiftDown</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.FractionNumeratorGapMin"><code class="docutils literal notranslate"><span class="pre">math.FractionNumeratorGapMin</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.FractionNumeratorDisplayStyleGapMin"><code class="docutils literal notranslate"><span class="pre">math.FractionNumeratorDisplayStyleGapMin</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.FractionRuleThickness"><code class="docutils literal notranslate"><span class="pre">math.FractionRuleThickness</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.FractionDenominatorGapMin"><code class="docutils literal notranslate"><span class="pre">math.FractionDenominatorGapMin</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.FractionDenominatorDisplayStyleGapMin"><code class="docutils literal notranslate"><span class="pre">math.FractionDenominatorDisplayStyleGapMin</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.SkewedFractionHorizontalGap"><code class="docutils literal notranslate"><span class="pre">math.SkewedFractionHorizontalGap</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.SkewedFractionVerticalGap"><code class="docutils literal notranslate"><span class="pre">math.SkewedFractionVerticalGap</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.OverbarVerticalGap"><code class="docutils literal notranslate"><span class="pre">math.OverbarVerticalGap</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.OverbarRuleThickness"><code class="docutils literal notranslate"><span class="pre">math.OverbarRuleThickness</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.OverbarExtraAscender"><code class="docutils literal notranslate"><span class="pre">math.OverbarExtraAscender</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.UnderbarVerticalGap"><code class="docutils literal notranslate"><span class="pre">math.UnderbarVerticalGap</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.UnderbarRuleThickness"><code class="docutils literal notranslate"><span class="pre">math.UnderbarRuleThickness</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.UnderbarExtraDescender"><code class="docutils literal notranslate"><span class="pre">math.UnderbarExtraDescender</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.RadicalVerticalGap"><code class="docutils literal notranslate"><span class="pre">math.RadicalVerticalGap</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.RadicalDisplayStyleVerticalGap"><code class="docutils literal notranslate"><span class="pre">math.RadicalDisplayStyleVerticalGap</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.RadicalRuleThickness"><code class="docutils literal notranslate"><span class="pre">math.RadicalRuleThickness</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.RadicalExtraAscender"><code class="docutils literal notranslate"><span class="pre">math.RadicalExtraAscender</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.RadicalKernBeforeDegree"><code class="docutils literal notranslate"><span class="pre">math.RadicalKernBeforeDegree</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.RadicalKernAfterDegree"><code class="docutils literal notranslate"><span class="pre">math.RadicalKernAfterDegree</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.RadicalDegreeBottomRaisePercent"><code class="docutils literal notranslate"><span class="pre">math.RadicalDegreeBottomRaisePercent</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.MinConnectorOverlap"><code class="docutils literal notranslate"><span class="pre">math.MinConnectorOverlap</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.exists"><code class="docutils literal notranslate"><span class="pre">math.exists()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.clear"><code class="docutils literal notranslate"><span class="pre">math.clear()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="python/fontforge.html#font">Font</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.font"><code class="docutils literal notranslate"><span class="pre">font</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.activeLayer"><code class="docutils literal notranslate"><span class="pre">font.activeLayer</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.ascent"><code class="docutils literal notranslate"><span class="pre">font.ascent</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.bitmapSizes"><code class="docutils literal notranslate"><span class="pre">font.bitmapSizes</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.capHeight"><code class="docutils literal notranslate"><span class="pre">font.capHeight</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.changed"><code class="docutils literal notranslate"><span class="pre">font.changed</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.cidcopyright"><code class="docutils literal notranslate"><span class="pre">font.cidcopyright</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.cidfamilyname"><code class="docutils literal notranslate"><span class="pre">font.cidfamilyname</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.cidfontname"><code class="docutils literal notranslate"><span class="pre">font.cidfontname</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.cidfullname"><code class="docutils literal notranslate"><span class="pre">font.cidfullname</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.cidordering"><code class="docutils literal notranslate"><span class="pre">font.cidordering</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.cidregistry"><code class="docutils literal notranslate"><span class="pre">font.cidregistry</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.cidsubfont"><code class="docutils literal notranslate"><span class="pre">font.cidsubfont</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.cidsubfontcnt"><code class="docutils literal notranslate"><span class="pre">font.cidsubfontcnt</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.cidsubfontnames"><code class="docutils literal notranslate"><span class="pre">font.cidsubfontnames</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.cidsupplement"><code class="docutils literal notranslate"><span class="pre">font.cidsupplement</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.cidversion"><code class="docutils literal notranslate"><span class="pre">font.cidversion</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.cidweight"><code class="docutils literal notranslate"><span class="pre">font.cidweight</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.comment"><code class="docutils literal notranslate"><span class="pre">font.comment</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.copyright"><code class="docutils literal notranslate"><span class="pre">font.copyright</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.cvt"><code class="docutils literal notranslate"><span class="pre">font.cvt</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.default_base_filename"><code class="docutils literal notranslate"><span class="pre">font.default_base_filename</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.descent"><code class="docutils literal notranslate"><span class="pre">font.descent</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.design_size"><code class="docutils literal notranslate"><span class="pre">font.design_size</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.em"><code class="docutils literal notranslate"><span class="pre">font.em</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.encoding"><code class="docutils literal notranslate"><span class="pre">font.encoding</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.familyname"><code class="docutils literal notranslate"><span class="pre">font.familyname</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.fondname"><code class="docutils literal notranslate"><span class="pre">font.fondname</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.fontlog"><code class="docutils literal notranslate"><span class="pre">font.fontlog</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.fontname"><code class="docutils literal notranslate"><span class="pre">font.fontname</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.fullname"><code class="docutils literal notranslate"><span class="pre">font.fullname</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.gasp"><code class="docutils literal notranslate"><span class="pre">font.gasp</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.gasp_version"><code class="docutils literal notranslate"><span class="pre">font.gasp_version</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.gpos_lookups"><code class="docutils literal notranslate"><span class="pre">font.gpos_lookups</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.gsub_lookups"><code class="docutils literal notranslate"><span class="pre">font.gsub_lookups</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.guide"><code class="docutils literal notranslate"><span class="pre">font.guide</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.hasvmetrics"><code class="docutils literal notranslate"><span class="pre">font.hasvmetrics</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.head_optimized_for_cleartype"><code class="docutils literal notranslate"><span class="pre">font.head_optimized_for_cleartype</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.hhea_ascent"><code class="docutils literal notranslate"><span class="pre">font.hhea_ascent</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.hhea_ascent_add"><code class="docutils literal notranslate"><span class="pre">font.hhea_ascent_add</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.hhea_descent"><code class="docutils literal notranslate"><span class="pre">font.hhea_descent</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.hhea_descent_add"><code class="docutils literal notranslate"><span class="pre">font.hhea_descent_add</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.hhea_linegap"><code class="docutils literal notranslate"><span class="pre">font.hhea_linegap</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.horizontalBaseline"><code class="docutils literal notranslate"><span class="pre">font.horizontalBaseline</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.is_cid"><code class="docutils literal notranslate"><span class="pre">font.is_cid</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.is_quadratic"><code class="docutils literal notranslate"><span class="pre">font.is_quadratic</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.isnew"><code class="docutils literal notranslate"><span class="pre">font.isnew</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.italicangle"><code class="docutils literal notranslate"><span class="pre">font.italicangle</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.macstyle"><code class="docutils literal notranslate"><span class="pre">font.macstyle</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.layer_cnt"><code class="docutils literal notranslate"><span class="pre">font.layer_cnt</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.layers"><code class="docutils literal notranslate"><span class="pre">font.layers</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.loadState"><code class="docutils literal notranslate"><span class="pre">font.loadState</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.maxp_FDEFs"><code class="docutils literal notranslate"><span class="pre">font.maxp_FDEFs</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.maxp_IDEFs"><code class="docutils literal notranslate"><span class="pre">font.maxp_IDEFs</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.maxp_maxStackDepth"><code class="docutils literal notranslate"><span class="pre">font.maxp_maxStackDepth</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.maxp_storageCnt"><code class="docutils literal notranslate"><span class="pre">font.maxp_storageCnt</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.maxp_twilightPtCnt"><code class="docutils literal notranslate"><span class="pre">font.maxp_twilightPtCnt</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.maxp_zones"><code class="docutils literal notranslate"><span class="pre">font.maxp_zones</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.multilayer"><code class="docutils literal notranslate"><span class="pre">font.multilayer</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.onlybitmaps"><code class="docutils literal notranslate"><span class="pre">font.onlybitmaps</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_codepages"><code class="docutils literal notranslate"><span class="pre">font.os2_codepages</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_family_class"><code class="docutils literal notranslate"><span class="pre">font.os2_family_class</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_fstype"><code class="docutils literal notranslate"><span class="pre">font.os2_fstype</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_stylemap"><code class="docutils literal notranslate"><span class="pre">font.os2_stylemap</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_panose"><code class="docutils literal notranslate"><span class="pre">font.os2_panose</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_strikeypos"><code class="docutils literal notranslate"><span class="pre">font.os2_strikeypos</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_strikeysize"><code class="docutils literal notranslate"><span class="pre">font.os2_strikeysize</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_subxoff"><code class="docutils literal notranslate"><span class="pre">font.os2_subxoff</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_subxsize"><code class="docutils literal notranslate"><span class="pre">font.os2_subxsize</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_subyoff"><code class="docutils literal notranslate"><span class="pre">font.os2_subyoff</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_subysize"><code class="docutils literal notranslate"><span class="pre">font.os2_subysize</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_supxoff"><code class="docutils literal notranslate"><span class="pre">font.os2_supxoff</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_supxsize"><code class="docutils literal notranslate"><span class="pre">font.os2_supxsize</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_supyoff"><code class="docutils literal notranslate"><span class="pre">font.os2_supyoff</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_supysize"><code class="docutils literal notranslate"><span class="pre">font.os2_supysize</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_typoascent"><code class="docutils literal notranslate"><span class="pre">font.os2_typoascent</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_typoascent_add"><code class="docutils literal notranslate"><span class="pre">font.os2_typoascent_add</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_typodescent"><code class="docutils literal notranslate"><span class="pre">font.os2_typodescent</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_typodescent_add"><code class="docutils literal notranslate"><span class="pre">font.os2_typodescent_add</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_typolinegap"><code class="docutils literal notranslate"><span class="pre">font.os2_typolinegap</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_use_typo_metrics"><code class="docutils literal notranslate"><span class="pre">font.os2_use_typo_metrics</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_unicoderanges"><code class="docutils literal notranslate"><span class="pre">font.os2_unicoderanges</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_vendor"><code class="docutils literal notranslate"><span class="pre">font.os2_vendor</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_version"><code class="docutils literal notranslate"><span class="pre">font.os2_version</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_weight"><code class="docutils literal notranslate"><span class="pre">font.os2_weight</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_weight_width_slope_only"><code class="docutils literal notranslate"><span class="pre">font.os2_weight_width_slope_only</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_width"><code class="docutils literal notranslate"><span class="pre">font.os2_width</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_winascent"><code class="docutils literal notranslate"><span class="pre">font.os2_winascent</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_winascent_add"><code class="docutils literal notranslate"><span class="pre">font.os2_winascent_add</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_windescent"><code class="docutils literal notranslate"><span class="pre">font.os2_windescent</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_windescent_add"><code class="docutils literal notranslate"><span class="pre">font.os2_windescent_add</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.path"><code class="docutils literal notranslate"><span class="pre">font.path</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.persistent"><code class="docutils literal notranslate"><span class="pre">font.persistent</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.math"><code class="docutils literal notranslate"><span class="pre">font.math</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.private"><code class="docutils literal notranslate"><span class="pre">font.private</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.privateState"><code class="docutils literal notranslate"><span class="pre">font.privateState</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.selection"><code class="docutils literal notranslate"><span class="pre">font.selection</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.sfd_path"><code class="docutils literal notranslate"><span class="pre">font.sfd_path</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.sfnt_names"><code class="docutils literal notranslate"><span class="pre">font.sfnt_names</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.sfntRevision"><code class="docutils literal notranslate"><span class="pre">font.sfntRevision</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.size_feature"><code class="docutils literal notranslate"><span class="pre">font.size_feature</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.strokedfont"><code class="docutils literal notranslate"><span class="pre">font.strokedfont</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.strokewidth"><code class="docutils literal notranslate"><span class="pre">font.strokewidth</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.temporary"><code class="docutils literal notranslate"><span class="pre">font.temporary</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.texparameters"><code class="docutils literal notranslate"><span class="pre">font.texparameters</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.uniqueid"><code class="docutils literal notranslate"><span class="pre">font.uniqueid</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.upos"><code class="docutils literal notranslate"><span class="pre">font.upos</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.userdata"><code class="docutils literal notranslate"><span class="pre">font.userdata</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.uwidth"><code class="docutils literal notranslate"><span class="pre">font.uwidth</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.version"><code class="docutils literal notranslate"><span class="pre">font.version</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.verticalBaseline"><code class="docutils literal notranslate"><span class="pre">font.verticalBaseline</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.vertical_origin"><code class="docutils literal notranslate"><span class="pre">font.vertical_origin</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.vhea_linegap"><code class="docutils literal notranslate"><span class="pre">font.vhea_linegap</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.weight"><code class="docutils literal notranslate"><span class="pre">font.weight</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.woffMajor"><code class="docutils literal notranslate"><span class="pre">font.woffMajor</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.woffMinor"><code class="docutils literal notranslate"><span class="pre">font.woffMinor</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.woffMetadata"><code class="docutils literal notranslate"><span class="pre">font.woffMetadata</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.xHeight"><code class="docutils literal notranslate"><span class="pre">font.xHeight</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.__iter__"><code class="docutils literal notranslate"><span class="pre">font.__iter__()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.__contains__"><code class="docutils literal notranslate"><span class="pre">font.__contains__()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.__len__"><code class="docutils literal notranslate"><span class="pre">font.__len__()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.__getitem__"><code class="docutils literal notranslate"><span class="pre">font.__getitem__()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.addAnchorClass"><code class="docutils literal notranslate"><span class="pre">font.addAnchorClass()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.addKerningClass"><code class="docutils literal notranslate"><span class="pre">font.addKerningClass()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.addLookup"><code class="docutils literal notranslate"><span class="pre">font.addLookup()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.addLookupSubtable"><code class="docutils literal notranslate"><span class="pre">font.addLookupSubtable()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.addContextualSubtable"><code class="docutils literal notranslate"><span class="pre">font.addContextualSubtable()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.addSmallCaps"><code class="docutils literal notranslate"><span class="pre">font.addSmallCaps()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.alterKerningClass"><code class="docutils literal notranslate"><span class="pre">font.alterKerningClass()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.autoKern"><code class="docutils literal notranslate"><span class="pre">font.autoKern()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.appendSFNTName"><code class="docutils literal notranslate"><span class="pre">font.appendSFNTName()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.buildOrReplaceAALTFeatures"><code class="docutils literal notranslate"><span class="pre">font.buildOrReplaceAALTFeatures()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.cidConvertByCMap"><code class="docutils literal notranslate"><span class="pre">font.cidConvertByCMap()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.cidConvertTo"><code class="docutils literal notranslate"><span class="pre">font.cidConvertTo()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.cidFlatten"><code class="docutils literal notranslate"><span class="pre">font.cidFlatten()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.cidFlattenByCMap"><code class="docutils literal notranslate"><span class="pre">font.cidFlattenByCMap()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.cidInsertBlankSubFont"><code class="docutils literal notranslate"><span class="pre">font.cidInsertBlankSubFont()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.cidRemoveSubFont"><code class="docutils literal notranslate"><span class="pre">font.cidRemoveSubFont()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.close"><code class="docutils literal notranslate"><span class="pre">font.close()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.compareFonts"><code class="docutils literal notranslate"><span class="pre">font.compareFonts()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.createChar"><code class="docutils literal notranslate"><span class="pre">font.createChar()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.createInterpolatedGlyph"><code class="docutils literal notranslate"><span class="pre">font.createInterpolatedGlyph()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.createMappedChar"><code class="docutils literal notranslate"><span class="pre">font.createMappedChar()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.find"><code class="docutils literal notranslate"><span class="pre">font.find()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.findEncodingSlot"><code class="docutils literal notranslate"><span class="pre">font.findEncodingSlot()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.glyphs"><code class="docutils literal notranslate"><span class="pre">font.glyphs()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.generate"><code class="docutils literal notranslate"><span class="pre">font.generate()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.generateTtc"><code class="docutils literal notranslate"><span class="pre">font.generateTtc()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.generateFeatureFile"><code class="docutils literal notranslate"><span class="pre">font.generateFeatureFile()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.genericGlyphChange"><code class="docutils literal notranslate"><span class="pre">font.genericGlyphChange()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.getKerningClass"><code class="docutils literal notranslate"><span class="pre">font.getKerningClass()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.getLookupInfo"><code class="docutils literal notranslate"><span class="pre">font.getLookupInfo()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.getLookupSubtables"><code class="docutils literal notranslate"><span class="pre">font.getLookupSubtables()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.getLookupSubtableAnchorClasses"><code class="docutils literal notranslate"><span class="pre">font.getLookupSubtableAnchorClasses()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.getLookupOfSubtable"><code class="docutils literal notranslate"><span class="pre">font.getLookupOfSubtable()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.getSubtableOfAnchor"><code class="docutils literal notranslate"><span class="pre">font.getSubtableOfAnchor()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.importBitmaps"><code class="docutils literal notranslate"><span class="pre">font.importBitmaps()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.importLookups"><code class="docutils literal notranslate"><span class="pre">font.importLookups()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.interpolateFonts"><code class="docutils literal notranslate"><span class="pre">font.interpolateFonts()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.isKerningClass"><code class="docutils literal notranslate"><span class="pre">font.isKerningClass()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.isVerticalKerning"><code class="docutils literal notranslate"><span class="pre">font.isVerticalKerning()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.italicize"><code class="docutils literal notranslate"><span class="pre">font.italicize()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.lookupSetFeatureList"><code class="docutils literal notranslate"><span class="pre">font.lookupSetFeatureList()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.lookupSetFlags"><code class="docutils literal notranslate"><span class="pre">font.lookupSetFlags()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.lookupSetStoreLigatureInAfm"><code class="docutils literal notranslate"><span class="pre">font.lookupSetStoreLigatureInAfm()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.mergeFonts"><code class="docutils literal notranslate"><span class="pre">font.mergeFonts()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.mergeFeature"><code class="docutils literal notranslate"><span class="pre">font.mergeFeature()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.mergeKern"><code class="docutils literal notranslate"><span class="pre">font.mergeKern()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.mergeLookups"><code class="docutils literal notranslate"><span class="pre">font.mergeLookups()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.mergeLookupSubtables"><code class="docutils literal notranslate"><span class="pre">font.mergeLookupSubtables()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.printSample"><code class="docutils literal notranslate"><span class="pre">font.printSample()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.randomText"><code class="docutils literal notranslate"><span class="pre">font.randomText()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.regenBitmaps"><code class="docutils literal notranslate"><span class="pre">font.regenBitmaps()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.removeAnchorClass"><code class="docutils literal notranslate"><span class="pre">font.removeAnchorClass()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.removeLookup"><code class="docutils literal notranslate"><span class="pre">font.removeLookup()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.removeLookupSubtable"><code class="docutils literal notranslate"><span class="pre">font.removeLookupSubtable()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.removeGlyph"><code class="docutils literal notranslate"><span class="pre">font.removeGlyph()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.replaceAll"><code class="docutils literal notranslate"><span class="pre">font.replaceAll()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.revert"><code class="docutils literal notranslate"><span class="pre">font.revert()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.revertFromBackup"><code class="docutils literal notranslate"><span class="pre">font.revertFromBackup()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.save"><code class="docutils literal notranslate"><span class="pre">font.save()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.saveNamelist"><code class="docutils literal notranslate"><span class="pre">font.saveNamelist()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.getTableData"><code class="docutils literal notranslate"><span class="pre">font.getTableData()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.setTableData"><code class="docutils literal notranslate"><span class="pre">font.setTableData()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.validate"><code class="docutils literal notranslate"><span class="pre">font.validate()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.addExtrema"><code class="docutils literal notranslate"><span class="pre">font.addExtrema()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.addInflections"><code class="docutils literal notranslate"><span class="pre">font.addInflections()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.autoHint"><code class="docutils literal notranslate"><span class="pre">font.autoHint()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.autoInstr"><code class="docutils literal notranslate"><span class="pre">font.autoInstr()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.autoWidth"><code class="docutils literal notranslate"><span class="pre">font.autoWidth()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.autoTrace"><code class="docutils literal notranslate"><span class="pre">font.autoTrace()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.build"><code class="docutils literal notranslate"><span class="pre">font.build()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.canonicalContours"><code class="docutils literal notranslate"><span class="pre">font.canonicalContours()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.canonicalStart"><code class="docutils literal notranslate"><span class="pre">font.canonicalStart()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.changeWeight"><code class="docutils literal notranslate"><span class="pre">font.changeWeight()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.condenseExtend"><code class="docutils literal notranslate"><span class="pre">font.condenseExtend()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.clear"><code class="docutils literal notranslate"><span class="pre">font.clear()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.cluster"><code class="docutils literal notranslate"><span class="pre">font.cluster()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.copy"><code class="docutils literal notranslate"><span class="pre">font.copy()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.copyReference"><code class="docutils literal notranslate"><span class="pre">font.copyReference()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.correctDirection"><code class="docutils literal notranslate"><span class="pre">font.correctDirection()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.correctReferences"><code class="docutils literal notranslate"><span class="pre">font.correctReferences()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.cut"><code class="docutils literal notranslate"><span class="pre">font.cut()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.paste"><code class="docutils literal notranslate"><span class="pre">font.paste()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.intersect"><code class="docutils literal notranslate"><span class="pre">font.intersect()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.pasteInto"><code class="docutils literal notranslate"><span class="pre">font.pasteInto()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.removeOverlap"><code class="docutils literal notranslate"><span class="pre">font.removeOverlap()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.replaceWithReference"><code class="docutils literal notranslate"><span class="pre">font.replaceWithReference()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.round"><code class="docutils literal notranslate"><span class="pre">font.round()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.simplify"><code class="docutils literal notranslate"><span class="pre">font.simplify()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.stroke"><code class="docutils literal notranslate"><span class="pre">font.stroke()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.transform"><code class="docutils literal notranslate"><span class="pre">font.transform()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.nltransform"><code class="docutils literal notranslate"><span class="pre">font.nltransform()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.unlinkReferences"><code class="docutils literal notranslate"><span class="pre">font.unlinkReferences()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="python/psMat.html">psMat</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="python/psMat.html#psMat.identity"><code class="docutils literal notranslate"><span class="pre">identity()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python/psMat.html#psMat.compose"><code class="docutils literal notranslate"><span class="pre">compose()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python/psMat.html#psMat.inverse"><code class="docutils literal notranslate"><span class="pre">inverse()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python/psMat.html#psMat.rotate"><code class="docutils literal notranslate"><span class="pre">rotate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python/psMat.html#psMat.scale"><code class="docutils literal notranslate"><span class="pre">scale()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python/psMat.html#psMat.skew"><code class="docutils literal notranslate"><span class="pre">skew()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="python/psMat.html#psMat.translate"><code class="docutils literal notranslate"><span class="pre">translate()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="python.html#command-line-convenience">Command line convenience</a></li>
@@ -72,7 +646,7 @@ means use the old interpreter)</p>
 </li>
 </ul>
 </div>
-<div class="contents topic" id="contents">
+<nav class="contents" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#scripting-fontforge" id="id3">Scripting FontForge</a></p>
@@ -121,9 +695,9 @@ means use the old interpreter)</p>
 </ul>
 </li>
 </ul>
-</div>
+</nav>
 <section id="invoking-scripts">
-<span id="scripting-starting"></span><h2>Invoking scripts<a class="headerlink" href="#invoking-scripts" title="Permalink to this headline">¶</a></h2>
+<span id="scripting-starting"></span><h2>Invoking scripts<a class="headerlink" href="#invoking-scripts" title="Permalink to this heading">¶</a></h2>
 <p>If you start fontforge with a script on the command line it will not put up any
 windows and it will exit when the script is done. The script can be in a file,
 or just a string presented as an argument. You may need to specify which
@@ -167,7 +741,7 @@ python) or “ff” or “pe” (for native scripting) as another way to determn
 interpreter to use.</p>
 </section>
 <section id="scripting-language">
-<span id="id1"></span><h2>Scripting Language<a class="headerlink" href="#scripting-language" title="Permalink to this headline">¶</a></h2>
+<span id="id1"></span><h2>Scripting Language<a class="headerlink" href="#scripting-language" title="Permalink to this heading">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This section covers FontForge’s native scripting functionality.</p>
@@ -213,7 +787,7 @@ you need longer strings use the concatenation operator).</p></li>
 <li><p>Starting with “/<em>” and proceeding to “</em>/”</p></li>
 </ul>
 <section id="expressions">
-<span id="scripting-expressions"></span><h3>Expressions<a class="headerlink" href="#expressions" title="Permalink to this headline">¶</a></h3>
+<span id="scripting-expressions"></span><h3>Expressions<a class="headerlink" href="#expressions" title="Permalink to this heading">¶</a></h3>
 <p>Expressions are similar to those in C, a few operators have been omitted, a few
 added from shell scripts. Operator precedence has been simplified slightly. So
 operators (and their precedences) are:</p>
@@ -328,7 +902,7 @@ font”, and most commands refer to this font. The CIDChangeSubFont() command ca
 alter that.</p>
 </section>
 <section id="variables">
-<span id="scripting-variables"></span><h3>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h3>
+<span id="scripting-variables"></span><h3>Variables<a class="headerlink" href="#variables" title="Permalink to this heading">¶</a></h3>
 <p>All builtin variables begin with “$”, you may not create any variables that
 start with “$” yourself (though you may assign to (some) already existing ones)</p>
 <dl class="ff data">
@@ -582,7 +1156,7 @@ current font indicating whether that glyph is selected or not (0=&gt;not,
 
 </section>
 <section id="preferences">
-<span id="scripting-preference"></span><h3>Preferences<a class="headerlink" href="#preferences" title="Permalink to this headline">¶</a></h3>
+<span id="scripting-preference"></span><h3>Preferences<a class="headerlink" href="#preferences" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">$&lt;Preference</span> <span class="pre">Item&gt;</span></code> (for example <code class="docutils literal notranslate"><span class="pre">$AutoHint</span></code>) allows you to examine the
 value of that preference item (to set it use
@@ -628,10 +1202,10 @@ information.</p>
 </ul>
 </section>
 <section id="built-in-procedures-in-alphabetic-order">
-<span id="scripting-alpha"></span><h3>Built-in procedures in alphabetic order<a class="headerlink" href="#built-in-procedures-in-alphabetic-order" title="Permalink to this headline">¶</a></h3>
+<span id="scripting-alpha"></span><h3>Built-in procedures in alphabetic order<a class="headerlink" href="#built-in-procedures-in-alphabetic-order" title="Permalink to this heading">¶</a></h3>
 </section>
 <section id="built-in-procedures-that-do-not-require-a-loaded-font">
-<span id="scripting-no-font"></span><h3>Built-in procedures that do not require a loaded font<a class="headerlink" href="#built-in-procedures-that-do-not-require-a-loaded-font" title="Permalink to this headline">¶</a></h3>
+<span id="scripting-no-font"></span><h3>Built-in procedures that do not require a loaded font<a class="headerlink" href="#built-in-procedures-that-do-not-require-a-loaded-font" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#Array" title="Array"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Array()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#AskUser" title="AskUser"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">AskUser()</span></code></a></p></li>
@@ -706,7 +1280,7 @@ information.</p>
 </ul>
 </section>
 <section id="built-in-procedures-that-act-like-the-file-menu">
-<span id="scripting-file-menu"></span><h3>Built-in procedures that act like the File Menu<a class="headerlink" href="#built-in-procedures-that-act-like-the-file-menu" title="Permalink to this headline">¶</a></h3>
+<span id="scripting-file-menu"></span><h3>Built-in procedures that act like the File Menu<a class="headerlink" href="#built-in-procedures-that-act-like-the-file-menu" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#Close" title="Close"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Close()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#Export" title="Export"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Export()</span></code></a></p></li>
@@ -727,7 +1301,7 @@ information.</p>
 </ul>
 </section>
 <section id="file-manipulation">
-<span id="scripting-files"></span><h3>File Manipulation<a class="headerlink" href="#file-manipulation" title="Permalink to this headline">¶</a></h3>
+<span id="scripting-files"></span><h3>File Manipulation<a class="headerlink" href="#file-manipulation" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#FileAccess" title="FileAccess"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">FileAccess()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#FontImage" title="FontImage"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">FontImage()</span></code></a></p></li>
@@ -736,7 +1310,7 @@ information.</p>
 </ul>
 </section>
 <section id="built-in-procedures-that-act-like-the-edit-menu">
-<span id="scripting-edit-menu"></span><h3>Built-in procedures that act like the Edit Menu<a class="headerlink" href="#built-in-procedures-that-act-like-the-edit-menu" title="Permalink to this headline">¶</a></h3>
+<span id="scripting-edit-menu"></span><h3>Built-in procedures that act like the Edit Menu<a class="headerlink" href="#built-in-procedures-that-act-like-the-edit-menu" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#Clear" title="Clear"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Clear()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#ClearBackground" title="ClearBackground"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">ClearBackground()</span></code></a></p></li>
@@ -760,7 +1334,7 @@ information.</p>
 </ul>
 </section>
 <section id="built-in-procedures-that-act-like-the-select-menu">
-<span id="scripting-select-menu"></span><h3>Built-in procedures that act like the Select Menu<a class="headerlink" href="#built-in-procedures-that-act-like-the-select-menu" title="Permalink to this headline">¶</a></h3>
+<span id="scripting-select-menu"></span><h3>Built-in procedures that act like the Select Menu<a class="headerlink" href="#built-in-procedures-that-act-like-the-select-menu" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#Select" title="Select"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Select()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#SelectAll" title="SelectAll"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">SelectAll()</span></code></a></p></li>
@@ -787,7 +1361,7 @@ information.</p>
 </ul>
 </section>
 <section id="built-in-procedures-that-act-like-the-element-menu">
-<span id="scripting-element-menu"></span><h3>Built-in procedures that act like the Element Menu<a class="headerlink" href="#built-in-procedures-that-act-like-the-element-menu" title="Permalink to this headline">¶</a></h3>
+<span id="scripting-element-menu"></span><h3>Built-in procedures that act like the Element Menu<a class="headerlink" href="#built-in-procedures-that-act-like-the-element-menu" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#AddAccent" title="AddAccent"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">AddAccent()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#AddExtrema" title="AddExtrema"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">AddExtrema()</span></code></a></p></li>
@@ -841,7 +1415,7 @@ information.</p>
 </ul>
 </section>
 <section id="font-info">
-<span id="scripting-font-info"></span><h3>Font Info<a class="headerlink" href="#font-info" title="Permalink to this headline">¶</a></h3>
+<span id="scripting-font-info"></span><h3>Font Info<a class="headerlink" href="#font-info" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#AddSizeFeature" title="AddSizeFeature"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">AddSizeFeature()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#ChangePrivateEntry" title="ChangePrivateEntry"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">ChangePrivateEntry()</span></code></a></p></li>
@@ -871,7 +1445,7 @@ information.</p>
 </ul>
 </section>
 <section id="glyph-info">
-<span id="scripting-glyph-info"></span><h3>Glyph Info<a class="headerlink" href="#glyph-info" title="Permalink to this headline">¶</a></h3>
+<span id="scripting-glyph-info"></span><h3>Glyph Info<a class="headerlink" href="#glyph-info" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#DrawsSomething" title="DrawsSomething"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">DrawsSomething()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#GetPosSub" title="GetPosSub"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">GetPosSub()</span></code></a></p></li>
@@ -887,7 +1461,7 @@ information.</p>
 </ul>
 </section>
 <section id="built-in-procedures-that-handle-advanced-typography">
-<span id="scripting-att"></span><h3>Built-in procedures that handle Advanced Typography<a class="headerlink" href="#built-in-procedures-that-handle-advanced-typography" title="Permalink to this headline">¶</a></h3>
+<span id="scripting-att"></span><h3>Built-in procedures that handle Advanced Typography<a class="headerlink" href="#built-in-procedures-that-handle-advanced-typography" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#AddAnchorClass" title="AddAnchorClass"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">AddAnchorClass()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#AddAnchorPoint" title="AddAnchorPoint"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">AddAnchorPoint()</span></code></a></p></li>
@@ -920,7 +1494,7 @@ information.</p>
 </ul>
 </section>
 <section id="built-in-procedures-that-act-like-the-encoding-menu">
-<span id="scripting-encoding-menu"></span><h3>Built-in procedures that act like the Encoding Menu<a class="headerlink" href="#built-in-procedures-that-act-like-the-encoding-menu" title="Permalink to this headline">¶</a></h3>
+<span id="scripting-encoding-menu"></span><h3>Built-in procedures that act like the Encoding Menu<a class="headerlink" href="#built-in-procedures-that-act-like-the-encoding-menu" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#CharCnt" title="CharCnt"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">CharCnt()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#DetachGlyphs" title="DetachGlyphs"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">DetachGlyphs()</span></code></a></p></li>
@@ -935,7 +1509,7 @@ information.</p>
 </ul>
 </section>
 <section id="built-in-procedures-that-act-like-the-hint-menu">
-<span id="scripting-hint-menu"></span><h3>Built-in procedures that act like the Hint Menu<a class="headerlink" href="#built-in-procedures-that-act-like-the-hint-menu" title="Permalink to this headline">¶</a></h3>
+<span id="scripting-hint-menu"></span><h3>Built-in procedures that act like the Hint Menu<a class="headerlink" href="#built-in-procedures-that-act-like-the-hint-menu" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#AddDHint" title="AddDHint"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">AddDHint()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#AddHHint" title="AddHHint"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">AddHHint()</span></code></a></p></li>
@@ -962,7 +1536,7 @@ information.</p>
 </ul>
 </section>
 <section id="built-in-procedures-that-act-like-the-metrics-menu">
-<span id="scripting-metrics-menu"></span><h3>Built-in procedures that act like the Metrics Menu<a class="headerlink" href="#built-in-procedures-that-act-like-the-metrics-menu" title="Permalink to this headline">¶</a></h3>
+<span id="scripting-metrics-menu"></span><h3>Built-in procedures that act like the Metrics Menu<a class="headerlink" href="#built-in-procedures-that-act-like-the-metrics-menu" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#AutoKern" title="AutoKern"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">AutoKern()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#AutoWidth" title="AutoWidth"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">AutoWidth()</span></code></a></p></li>
@@ -979,7 +1553,7 @@ information.</p>
 </ul>
 </section>
 <section id="multiple-master-routines">
-<span id="scripting-mm"></span><h3>Multiple master routines<a class="headerlink" href="#multiple-master-routines" title="Permalink to this headline">¶</a></h3>
+<span id="scripting-mm"></span><h3>Multiple master routines<a class="headerlink" href="#multiple-master-routines" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#MMAxisBounds" title="MMAxisBounds"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">MMAxisBounds()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#MMAxisNames" title="MMAxisNames"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">MMAxisNames()</span></code></a></p></li>
@@ -991,7 +1565,7 @@ information.</p>
 </ul>
 </section>
 <section id="cid-routines">
-<span id="scripting-cid"></span><h3>CID routines<a class="headerlink" href="#cid-routines" title="Permalink to this headline">¶</a></h3>
+<span id="scripting-cid"></span><h3>CID routines<a class="headerlink" href="#cid-routines" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#CIDChangeSubFont" title="CIDChangeSubFont"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">CIDChangeSubFont()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#CIDFlatten" title="CIDFlatten"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">CIDFlatten()</span></code></a></p></li>
@@ -1003,7 +1577,7 @@ information.</p>
 </ul>
 </section>
 <section id="user-interaction">
-<span id="scripting-user"></span><h3>User Interaction<a class="headerlink" href="#user-interaction" title="Permalink to this headline">¶</a></h3>
+<span id="scripting-user"></span><h3>User Interaction<a class="headerlink" href="#user-interaction" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#AskUser" title="AskUser"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">AskUser()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#Error" title="Error"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Error()</span></code></a></p></li>
@@ -1012,7 +1586,7 @@ information.</p>
 </ul>
 </section>
 <section id="scripting-prefs">
-<span id="id2"></span><h3>Preferences<a class="headerlink" href="#scripting-prefs" title="Permalink to this headline">¶</a></h3>
+<span id="id2"></span><h3>Preferences<a class="headerlink" href="#scripting-prefs" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#DefaultOtherSubrs" title="DefaultOtherSubrs"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">DefaultOtherSubrs()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#GetPref" title="GetPref"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">GetPref()</span></code></a></p></li>
@@ -1028,7 +1602,7 @@ with a dollar sign.</p></li>
 </ul>
 </section>
 <section id="math">
-<span id="scripting-math"></span><h3>Math<a class="headerlink" href="#math" title="Permalink to this headline">¶</a></h3>
+<span id="scripting-math"></span><h3>Math<a class="headerlink" href="#math" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#ATan2" title="ATan2"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">ATan2()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#Ceil" title="Ceil"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Ceil()</span></code></a></p></li>
@@ -1056,7 +1630,7 @@ with a dollar sign.</p></li>
 </ul>
 </section>
 <section id="unicode">
-<span id="scripting-unicode"></span><h3>Unicode<a class="headerlink" href="#unicode" title="Permalink to this headline">¶</a></h3>
+<span id="scripting-unicode"></span><h3>Unicode<a class="headerlink" href="#unicode" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#NameFromUnicode" title="NameFromUnicode"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">NameFromUnicode()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#UCodePoint" title="UCodePoint"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">UCodePoint()</span></code></a></p></li>
@@ -1066,7 +1640,7 @@ with a dollar sign.</p></li>
 </ul>
 </section>
 <section id="string-manipulation">
-<span id="scripting-strings"></span><h3>String manipulation<a class="headerlink" href="#string-manipulation" title="Permalink to this headline">¶</a></h3>
+<span id="scripting-strings"></span><h3>String manipulation<a class="headerlink" href="#string-manipulation" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#Chr" title="Chr"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Chr()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#GetEnv" title="GetEnv"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">GetEnv()</span></code></a></p></li>
@@ -1091,7 +1665,7 @@ with a dollar sign.</p></li>
 </ul>
 </section>
 <section id="character-manipulation">
-<span id="scripting-character"></span><h3>Character Manipulation<a class="headerlink" href="#character-manipulation" title="Permalink to this headline">¶</a></h3>
+<span id="scripting-character"></span><h3>Character Manipulation<a class="headerlink" href="#character-manipulation" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#IsAlNum" title="IsAlNum"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">IsAlNum()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#IsAlpha" title="IsAlpha"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">IsAlpha()</span></code></a></p></li>
@@ -1106,21 +1680,21 @@ with a dollar sign.</p></li>
 </ul>
 </section>
 <section id="arrays">
-<span id="scripting-arrays"></span><h3>Arrays<a class="headerlink" href="#arrays" title="Permalink to this headline">¶</a></h3>
+<span id="scripting-arrays"></span><h3>Arrays<a class="headerlink" href="#arrays" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#Array" title="Array"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Array()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#SizeOf" title="SizeOf"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">SizeOf()</span></code></a></p></li>
 </ul>
 </section>
 <section id="miscellaneous">
-<span id="scripting-misc"></span><h3>Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permalink to this headline">¶</a></h3>
+<span id="scripting-misc"></span><h3>Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#InFont" title="InFont"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">InFont()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#TypeOf" title="TypeOf"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">TypeOf()</span></code></a></p></li>
 </ul>
 </section>
 <section id="deprecated-names">
-<span id="scripting-deprecated"></span><h3>Deprecated Names<a class="headerlink" href="#deprecated-names" title="Permalink to this headline">¶</a></h3>
+<span id="scripting-deprecated"></span><h3>Deprecated Names<a class="headerlink" href="#deprecated-names" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#ClearGlyphCounterMasks" title="ClearGlyphCounterMasks"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">ClearGlyphCounterMasks()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#GlyphInfo" title="GlyphInfo"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">GlyphInfo()</span></code></a></p></li>
@@ -1134,9 +1708,9 @@ with a dollar sign.</p></li>
 </section>
 </section>
 <section id="examples">
-<span id="scripting-example"></span><h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<span id="scripting-example"></span><h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/fontforge/fontforge/tree/master/test">FontForge’s testsuite in the test subdirectory</a>
+<li><p><a class="reference external" href="https://github.com/fontforge/fontforge/tree/master/tests">FontForge’s testsuite in the test subdirectory</a>
 (such as it is)</p></li>
 <li><p><a class="reference external" href="https://github.com/fontforge/fontforge/tree/master/pycontrib">Directory of donated scripts</a></p></li>
 <li><p>Scripts used in other projects</p>
@@ -1147,7 +1721,7 @@ with a dollar sign.</p></li>
 <li><p><a class="reference internal" href="../tutorial/scripting-tutorial.html"><span class="doc">the scripting tutorial</span></a></p></li>
 </ul>
 <section id="example-1">
-<h3>Example 1:<a class="headerlink" href="#example-1" title="Permalink to this headline">¶</a></h3>
+<h3>Example 1:<a class="headerlink" href="#example-1" title="Permalink to this heading">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Set the color of all selected glyphs to be yellow</span>
 <span class="c1">#designed to be run within an interactive fontforge session.</span>
 <span class="n">foreach</span>
@@ -1157,7 +1731,7 @@ with a dollar sign.</p></li>
 </div>
 </section>
 <section id="example-2">
-<h3>Example 2:<a class="headerlink" href="#example-2" title="Permalink to this headline">¶</a></h3>
+<h3>Example 2:<a class="headerlink" href="#example-2" title="Permalink to this heading">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/usr/local/bin/fontforge
 #This is the sfddiff script which compares two fonts
 
@@ -1235,7 +1809,7 @@ endif
 </div>
 </section>
 <section id="example-3">
-<h3>Example 3:<a class="headerlink" href="#example-3" title="Permalink to this headline">¶</a></h3>
+<h3>Example 3:<a class="headerlink" href="#example-3" title="Permalink to this heading">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/usr/local/bin/fontforge
 #Take a Latin font and apply some simple transformations to it
 #prior to adding cyrillic letters.
@@ -1316,7 +1890,7 @@ Quit(0);
 </section>
 </section>
 <section id="the-execute-script-dialog">
-<span id="scripting-execute"></span><h2>The Execute Script dialog<a class="headerlink" href="#the-execute-script-dialog" title="Permalink to this headline">¶</a></h2>
+<span id="scripting-execute"></span><h2>The Execute Script dialog<a class="headerlink" href="#the-execute-script-dialog" title="Permalink to this heading">¶</a></h2>
 <p>This dialog allows you to type a script directly in to FontForge and then run
 it. Of course the most common case is that you’ll have a script file somewhere
 that you want to execute, so there’s a button [Call] down at the bottom of the
@@ -1332,7 +1906,7 @@ to /dev/null and not useful. Try starting fontforge from the command line
 instead.</p>
 </section>
 <section id="the-scripts-menu">
-<span id="scripting-menu"></span><h2>The Scripts Menu<a class="headerlink" href="#the-scripts-menu" title="Permalink to this headline">¶</a></h2>
+<span id="scripting-menu"></span><h2>The Scripts Menu<a class="headerlink" href="#the-scripts-menu" title="Permalink to this heading">¶</a></h2>
 <p>You can use the preference dialog to create a list of frequently used scripts.
 Invoke <a class="reference internal" href="../ui/dialogs/prefs.html#prefs-scripts"><span class="std std-ref">File-&gt;Preferences</span></a> and select the Scripts tag. In
 this dialog are ten possible entries, each one should have a name (to be
@@ -1435,7 +2009,7 @@ tenth by Cnt-Alt-0.</p>
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -1452,7 +2026,7 @@ tenth by Cnt-Alt-0.</p>
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.0.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

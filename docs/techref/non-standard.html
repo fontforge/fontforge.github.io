@@ -1,18 +1,17 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Non standard extensions used FontForge in True/Open Type &#8212; FontForge 20220308 documentation</title>
+    <title>Non standard extensions used FontForge in True/Open Type &#8212; FontForge 20230101 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <link rel="shortcut icon" href="../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -35,9 +34,9 @@
           <div class="body" role="main">
             
   <section id="non-standard-extensions-used-fontforge-in-true-open-type">
-<h1>Non standard extensions used FontForge in True/Open Type<a class="headerlink" href="#non-standard-extensions-used-fontforge-in-true-open-type" title="Permalink to this headline">¶</a></h1>
+<h1>Non standard extensions used FontForge in True/Open Type<a class="headerlink" href="#non-standard-extensions-used-fontforge-in-true-open-type" title="Permalink to this heading">¶</a></h1>
 <section id="non-standard-feature-tags">
-<h2>Non standard feature tags<a class="headerlink" href="#non-standard-feature-tags" title="Permalink to this headline">¶</a></h2>
+<h2>Non standard feature tags<a class="headerlink" href="#non-standard-feature-tags" title="Permalink to this heading">¶</a></h2>
 <p>Internal</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">REQ'</span></code> – tag used for required features</p></li>
@@ -55,7 +54,7 @@ it, but I believe the idea died.</p>
 </ul>
 </section>
 <section id="non-standard-tables">
-<h2>Non standard tables.<a class="headerlink" href="#non-standard-tables" title="Permalink to this headline">¶</a></h2>
+<h2>Non standard tables.<a class="headerlink" href="#non-standard-tables" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="#non-standard-pfed"><span class="std std-ref">‘PfEd’ the FontForge extensions table</span></a></p></li>
 <li><p><a class="reference internal" href="#non-standard-tex"><span class="std std-ref">‘TeX ‘ the TeX metrics table</span></a></p></li>
@@ -72,16 +71,16 @@ it, but I believe the idea died.</p>
 </ul>
 </section>
 <section id="pfed-the-fontforge-extensions-table">
-<span id="non-standard-pfed"></span><h2>‘PfEd’ – the FontForge extensions table<a class="headerlink" href="#pfed-the-fontforge-extensions-table" title="Permalink to this headline">¶</a></h2>
+<span id="non-standard-pfed"></span><h2>‘PfEd’ – the FontForge extensions table<a class="headerlink" href="#pfed-the-fontforge-extensions-table" title="Permalink to this heading">¶</a></h2>
 <p>(the name is ‘PfEd’ for historical reasons)</p>
 <blockquote>
 <div><p>The table begins with a table header containing a version number and a count
 of sub-tables</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 15%" />
-<col style="width: 15%" />
-<col style="width: 70%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 70.0%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>uint32</p></td>
@@ -96,11 +95,11 @@ of sub-tables</p>
 </table>
 <p>This is followed by a table of contents, there will be count replications of
 the following structure (ie. a tag and offset for each sub-table</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 15%" />
-<col style="width: 15%" />
-<col style="width: 70%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 70.0%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>uint32</p></td>
@@ -134,15 +133,10 @@ GSUB lookups</p></li>
 </ul>
 </div></blockquote>
 <section id="colr-the-per-glyph-color-sub-table">
-<span id="non-standard-colr"></span><h3>‘colr’ – the per-glyph color sub-table<a class="headerlink" href="#colr-the-per-glyph-color-sub-table" title="Permalink to this headline">¶</a></h3>
+<span id="non-standard-colr"></span><h3>‘colr’ – the per-glyph color sub-table<a class="headerlink" href="#colr-the-per-glyph-color-sub-table" title="Permalink to this heading">¶</a></h3>
 <blockquote>
 <div><p>The sub-table header begins with a version number, and a count of ranges</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>uint16</p></td>
 <td><p>version</p></td>
@@ -156,11 +150,6 @@ GSUB lookups</p></li>
 </table>
 <p>After this will be &lt;count&gt; instances of the following structure</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>uint16</p></td>
 <td><p>starting glyph index</p></td>
@@ -179,15 +168,10 @@ GSUB lookups</p></li>
 </div></blockquote>
 </section>
 <section id="cmnt-the-per-glyph-comment-sub-table">
-<span id="non-standard-cmnt"></span><h3>‘cmnt’ – the per-glyph comment sub-table<a class="headerlink" href="#cmnt-the-per-glyph-comment-sub-table" title="Permalink to this headline">¶</a></h3>
+<span id="non-standard-cmnt"></span><h3>‘cmnt’ – the per-glyph comment sub-table<a class="headerlink" href="#cmnt-the-per-glyph-comment-sub-table" title="Permalink to this heading">¶</a></h3>
 <blockquote>
 <div><p>The sub-table header begins with a version number, and a count of ranges</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>uint16</p></td>
 <td><p>version</p></td>
@@ -201,11 +185,6 @@ GSUB lookups</p></li>
 </table>
 <p>After this will be &lt;count&gt; instances of the following structure</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>uint16</p></td>
 <td><p>starting glyph index</p></td>
@@ -226,11 +205,6 @@ array, so one element for each glyph index mentioned in the range structure
 above, with one left over which allows readers to compute the length of the
 last string.</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>uint32</p></td>
 <td><p>offset</p></td>
@@ -249,14 +223,14 @@ next string.</p>
 </div></blockquote>
 </section>
 <section id="fcmt-the-font-comment-and-fontlog-sub-table">
-<span id="non-standard-fcmt"></span><h3>‘fcmt’ – the font comment (and FONTLOG) sub-table<a class="headerlink" href="#fcmt-the-font-comment-and-fontlog-sub-table" title="Permalink to this headline">¶</a></h3>
+<span id="non-standard-fcmt"></span><h3>‘fcmt’ – the font comment (and FONTLOG) sub-table<a class="headerlink" href="#fcmt-the-font-comment-and-fontlog-sub-table" title="Permalink to this heading">¶</a></h3>
 <blockquote>
 <div><p>The sub-table header begins with a version number, and a count of ranges</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 15%" />
-<col style="width: 15%" />
-<col style="width: 70%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 70.0%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>uint16</p></td>
@@ -274,15 +248,15 @@ version 1 it is followed by &lt;length&gt; bytes in utf8 encoding.</p>
 </div></blockquote>
 </section>
 <section id="cvtc-the-cvt-comments-sub-table">
-<span id="non-standard-cvtc"></span><h3>‘cvtc’ – the cvt comments sub-table<a class="headerlink" href="#cvtc-the-cvt-comments-sub-table" title="Permalink to this headline">¶</a></h3>
+<span id="non-standard-cvtc"></span><h3>‘cvtc’ – the cvt comments sub-table<a class="headerlink" href="#cvtc-the-cvt-comments-sub-table" title="Permalink to this heading">¶</a></h3>
 <blockquote>
 <div><p>The sub-table header begins with a version number, and a count of cvt entries
 which might have comments</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 15%" />
-<col style="width: 15%" />
-<col style="width: 70%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 70.0%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>uint16</p></td>
@@ -306,14 +280,14 @@ cvt entry has no comment</p></td>
 </div></blockquote>
 </section>
 <section id="gpos-gsub-lookup-names">
-<span id="non-standard-gpos"></span><h3>‘GPOS/GSUB’ – lookup names<a class="headerlink" href="#gpos-gsub-lookup-names" title="Permalink to this headline">¶</a></h3>
+<span id="non-standard-gpos"></span><h3>‘GPOS/GSUB’ – lookup names<a class="headerlink" href="#gpos-gsub-lookup-names" title="Permalink to this heading">¶</a></h3>
 <blockquote>
 <div><p>The sub-table header begins with a version number, and a count of ranges</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 60%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 60.0%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>uint16</p></td>
@@ -328,11 +302,11 @@ cvt entry has no comment</p></td>
 </table>
 <p>Then there will be an array of count elements (one for each lookup, ordered
 as the lookups are in the GPOS or GSUB table)</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 60%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 60.0%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>uint16</p></td>
@@ -348,11 +322,11 @@ as the lookups are in the GPOS or GSUB table)</p>
 <p>These offsets are based on the start of the subtable. The name offset points
 to a NUL terminated UTF-8 encoded string. The subtable offset points to the
 following structure:</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 60%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 60.0%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>uint16</p></td>
@@ -363,11 +337,11 @@ following structure:</p>
 </table>
 <p>Then there will be an array of count elements (one for each subtable, ordered
 as the subtables are in the lookup of the GPOS or GSUB table)</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 60%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 60.0%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>uint16</p></td>
@@ -384,11 +358,11 @@ as the subtables are in the lookup of the GPOS or GSUB table)</p>
 points to a NUL terminated UTF-8 encoded string. The anchor offset may be 0
 if this subtable doesn’t have any anchor classes, otherwise it points to the
 following structure:</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 60%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 60.0%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>uint16</p></td>
@@ -398,11 +372,11 @@ following structure:</p>
 </tbody>
 </table>
 <p>Then there will be an array of count elements (one for each anchor class)</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 60%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 60.0%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>uint16</p></td>
@@ -414,14 +388,14 @@ following structure:</p>
 </div></blockquote>
 </section>
 <section id="guid-guidelines">
-<span id="non-standard-guid"></span><h3>‘guid’ – guidelines<a class="headerlink" href="#guid-guidelines" title="Permalink to this headline">¶</a></h3>
+<span id="non-standard-guid"></span><h3>‘guid’ – guidelines<a class="headerlink" href="#guid-guidelines" title="Permalink to this heading">¶</a></h3>
 <blockquote>
 <div><p>The sub-table header begins with a version number, and a count of ranges</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 15%" />
-<col style="width: 15%" />
-<col style="width: 70%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 70.0%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>uint16</p></td>
@@ -455,11 +429,11 @@ most apps seem to have a simpler guideline layer than ff does.</p>
 <p>This table is followed by two arrays, one for vertical guidelines, one for
 horizontal guides. Both arrays have the same element type (except that the
 position is for a different coordinate in the horizontal/vertical cases)</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 15%" />
-<col style="width: 15%" />
-<col style="width: 70%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 70.0%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>int16</p></td>
@@ -481,11 +455,11 @@ glyph
 “””””</p>
 <blockquote>
 <div><p>The sub-table header begins with a version number, and a count of ranges</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 15%" />
-<col style="width: 15%" />
-<col style="width: 70%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 70.0%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>uint16</p></td>
@@ -503,11 +477,11 @@ glyph
 </tbody>
 </table>
 <p>This is followed by an array of structures describing each contour</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 15%" />
-<col style="width: 15%" />
-<col style="width: 70%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 70.0%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>uint16</p></td>
@@ -523,11 +497,11 @@ contour is unnamed)</p></td>
 </table>
 <p>All offsets from the start of the glyph-layer structure.</p>
 <p>This is followed by an array of structures describing each reference</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 15%" />
-<col style="width: 15%" />
-<col style="width: 70%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 70.0%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>fixed16.16</p></td>
@@ -553,10 +527,10 @@ bytes (‘v’, ‘o’, ‘c’, ‘[’ and ‘]’), no modifier is applied t
 commands, their data are always 2 coordinates in fixed notation.</p>
 <p>The low order two bits of the command (except for the spiro and close
 commands) specify the data format:</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 15%" />
-<col style="width: 85%" />
+<col style="width: 15.0%" />
+<col style="width: 85.0%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>0</p></td>
@@ -578,10 +552,10 @@ coordinates (or for big ones)</p></td>
 by its data. The data are relative to the last point specified (except for
 moveto, which is absolute, there being on previous point).</p>
 <p>The verb may be one of the following:</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 15%" />
-<col style="width: 85%" />
+<col style="width: 15.0%" />
+<col style="width: 85.0%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>0</p></td>
@@ -643,12 +617,12 @@ terse descriptions make no sense look there for a more complete description.</p>
 <p class="rubric">examples</p>
 <p>suppose we want to draw a box (0,0)-&gt;(0,200)-&gt;(200,200)-&gt;(200,0)-&gt;(0,0). Then
 the glyph-layer would look like:</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 10%" />
-<col style="width: 15%" />
-<col style="width: 10%" />
-<col style="width: 65%" />
+<col style="width: 10.0%" />
+<col style="width: 15.0%" />
+<col style="width: 10.0%" />
+<col style="width: 65.0%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>Header</p></td>
@@ -705,13 +679,13 @@ move from 200 to 0, so the relative change is -200</p></td>
 </div></blockquote>
 </section>
 <section id="layr-background-layer-data">
-<span id="non-standard-layr"></span><h3>‘layr’ – Background layer data<a class="headerlink" href="#layr-background-layer-data" title="Permalink to this headline">¶</a></h3>
+<span id="non-standard-layr"></span><h3>‘layr’ – Background layer data<a class="headerlink" href="#layr-background-layer-data" title="Permalink to this heading">¶</a></h3>
 <blockquote>
-<div><table class="colwidths-given docutils align-default">
+<div><table class="docutils align-default">
 <colgroup>
-<col style="width: 15%" />
-<col style="width: 15%" />
-<col style="width: 70%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 70.0%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>uint16</p></td>
@@ -725,11 +699,11 @@ move from 200 to 0, so the relative change is -200</p></td>
 </tbody>
 </table>
 <p>This is followed by an array of structures describing each layer</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 15%" />
-<col style="width: 15%" />
-<col style="width: 70%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 70.0%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>uint16</p></td>
@@ -754,11 +728,11 @@ defined</p>
 <p>The layer data is a block of ranges specifying which glyphs (by GID) have
 data for this layer. (the type field is present so that applications can
 ignore layers which they do not support).</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 15%" />
-<col style="width: 15%" />
-<col style="width: 70%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 70.0%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>uint16</p></td>
@@ -768,11 +742,11 @@ ignore layers which they do not support).</p>
 </tbody>
 </table>
 <p>This is followed by an array of structures one for each range:</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 15%" />
-<col style="width: 15%" />
-<col style="width: 70%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 70.0%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>uint16</p></td>
@@ -796,15 +770,15 @@ array may be 0. These offsets in turn point to a
 </section>
 </section>
 <section id="tex-the-tex-metrics-table">
-<span id="non-standard-tex"></span><h2>‘TeX ‘ – the TeX metrics table<a class="headerlink" href="#tex-the-tex-metrics-table" title="Permalink to this headline">¶</a></h2>
+<span id="non-standard-tex"></span><h2>‘TeX ‘ – the TeX metrics table<a class="headerlink" href="#tex-the-tex-metrics-table" title="Permalink to this heading">¶</a></h2>
 <blockquote>
 <div><p>The table begins with a table header containing a version number and a count
 of sub-tables</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 15%" />
-<col style="width: 15%" />
-<col style="width: 70%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 70.0%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>uint32</p></td>
@@ -819,11 +793,11 @@ of sub-tables</p>
 </table>
 <p>This is followed by a table of contents, there will be count replications of
 the following structure (ie. a tag and offset for each sub-table</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 15%" />
-<col style="width: 15%" />
-<col style="width: 70%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 70.0%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>uint32</p></td>
@@ -847,15 +821,10 @@ overshoot))</p></li>
 </ul>
 </div></blockquote>
 <section id="htdp-the-per-glyph-height-depth-sub-table">
-<span id="non-standard-htdp"></span><h3>‘htdp’ – the per-glyph height/depth sub-table<a class="headerlink" href="#htdp-the-per-glyph-height-depth-sub-table" title="Permalink to this headline">¶</a></h3>
+<span id="non-standard-htdp"></span><h3>‘htdp’ – the per-glyph height/depth sub-table<a class="headerlink" href="#htdp-the-per-glyph-height-depth-sub-table" title="Permalink to this heading">¶</a></h3>
 <blockquote>
 <div><p>The sub-table header begins with a version number, and a count of glyphs</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>uint16</p></td>
 <td><p>version</p></td>
@@ -869,11 +838,6 @@ overshoot))</p></li>
 </table>
 <p>After this will be &lt;count&gt; instances of the following structure</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>uint16</p></td>
 <td><p>height</p></td>
@@ -890,16 +854,11 @@ overshoot))</p></li>
 because em-units make more sense in a sfnt and take up less space.</p>
 </section>
 <section id="sbsp-the-per-glyph-sub-super-script-sub-table">
-<span id="non-standard-sbsp"></span><h3>‘sbsp’ – the per-glyph sub/super-script sub-table<a class="headerlink" href="#sbsp-the-per-glyph-sub-super-script-sub-table" title="Permalink to this headline">¶</a></h3>
+<span id="non-standard-sbsp"></span><h3>‘sbsp’ – the per-glyph sub/super-script sub-table<a class="headerlink" href="#sbsp-the-per-glyph-sub-super-script-sub-table" title="Permalink to this heading">¶</a></h3>
 <blockquote>
 <div><p>This sub-table has essentially the same format as the previous one. The
 sub-table header begins with a version number, and a count of glyphs</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>uint16</p></td>
 <td><p>version</p></td>
@@ -913,11 +872,6 @@ sub-table header begins with a version number, and a count of glyphs</p>
 </table>
 <p>After this will be &lt;count&gt; instances of the following structure</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>uint16</p></td>
 <td><p>subscript offset</p></td>
@@ -934,14 +888,14 @@ sub-table header begins with a version number, and a count of glyphs</p>
 because em-units make more sense in a sfnt and take up less space.</p>
 </section>
 <section id="ftpm-the-font-parameter-font-dimensions-sub-table">
-<span id="non-standard-ftpm"></span><h3>‘ftpm’ – the font parameter (font dimensions) sub-table<a class="headerlink" href="#ftpm-the-font-parameter-font-dimensions-sub-table" title="Permalink to this headline">¶</a></h3>
+<span id="non-standard-ftpm"></span><h3>‘ftpm’ – the font parameter (font dimensions) sub-table<a class="headerlink" href="#ftpm-the-font-parameter-font-dimensions-sub-table" title="Permalink to this heading">¶</a></h3>
 <blockquote>
 <div><p>The sub-table header begins with a version number, and a count of parameters</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 15%" />
-<col style="width: 15%" />
-<col style="width: 70%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 70.0%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>uint16</p></td>
@@ -956,11 +910,6 @@ because em-units make more sense in a sfnt and take up less space.</p>
 </table>
 <p>And this is followed by &lt;count&gt; instances of the following structure:</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>uint32</p></td>
 <td><p>tag</p></td>
@@ -977,11 +926,6 @@ is not constrained by the spec and the <code class="docutils literal notranslate
 not be converted to em-units.</p>
 <p>I have defined the following 4-letter parameter tags</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Tag</p></th>
 <th class="head"><p>Meaning</p></th>
@@ -1111,15 +1055,15 @@ not be converted to em-units.</p>
 </section>
 </section>
 <section id="bdf-the-bdf-properties-table">
-<span id="non-standard-bdf"></span><h2>‘BDF ‘ – the BDF properties table<a class="headerlink" href="#bdf-the-bdf-properties-table" title="Permalink to this headline">¶</a></h2>
+<span id="non-standard-bdf"></span><h2>‘BDF ‘ – the BDF properties table<a class="headerlink" href="#bdf-the-bdf-properties-table" title="Permalink to this heading">¶</a></h2>
 <blockquote>
 <div><p>The table begins with a table header containing a version number and a count
 of strikes</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 15%" />
-<col style="width: 15%" />
-<col style="width: 70%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 70.0%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>uint16</p></td>
@@ -1139,11 +1083,6 @@ of strikes</p>
 <p>This is followed by an entry for each strike identifying how many properties
 that strike has.</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>uint16</p></td>
 <td><p>ppem</p></td>
@@ -1158,11 +1097,11 @@ that strike has.</p>
 <p>Then there will be the properties, first there with be property-count[1]
 properties from the first strike, then property-count[2] properties for the
 second, etc. Each property looks like:</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 15%" />
-<col style="width: 15%" />
-<col style="width: 70%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 70.0%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>uint32</p></td>
@@ -1190,7 +1129,7 @@ second, etc. Each property looks like:</p>
 </div></blockquote>
 </section>
 <section id="fftm-the-fontforge-time-stamp-table">
-<span id="non-standard-fftm"></span><h2>‘FFTM’ the FontForge time stamp table<a class="headerlink" href="#fftm-the-fontforge-time-stamp-table" title="Permalink to this headline">¶</a></h2>
+<span id="non-standard-fftm"></span><h2>‘FFTM’ the FontForge time stamp table<a class="headerlink" href="#fftm-the-fontforge-time-stamp-table" title="Permalink to this heading">¶</a></h2>
 <blockquote>
 <div><p>The table begins with a table header containing a version number and is
 followed by a series of timestamps (same format as the timestamps in the head
@@ -1203,11 +1142,11 @@ contain the dates for the font file and not the font. The times in this table
 are specifically the creation time of the font (the sfd file), while the
 times in the ‘head’ table contain the creation time of the truetype or
 opentype font file.</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 15%" />
-<col style="width: 15%" />
-<col style="width: 70%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 70.0%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>uint32</p></td>
@@ -1341,7 +1280,7 @@ opentype font file.</p>
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -1358,7 +1297,7 @@ opentype font file.</p>
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.0.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

@@ -1,18 +1,17 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Get Info &#8212; FontForge 20220308 documentation</title>
+    <title>Get Info &#8212; FontForge 20230101 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -36,7 +35,7 @@
           <div class="body" role="main">
             
   <section id="get-info">
-<h1>Get Info<a class="headerlink" href="#get-info" title="Permalink to this headline">¶</a></h1>
+<h1>Get Info<a class="headerlink" href="#get-info" title="Permalink to this heading">¶</a></h1>
 <p>In the Outline View the Get Info command can generate one of four different
 dialogs depending on what is selected. If a single thing is selected, and that
 thing is a point then the <a class="reference internal" href="#getinfo-point"><span class="std std-ref">point info</span></a> dialog is brought
@@ -46,7 +45,7 @@ background image then the <a class="reference internal" href="#getinfo-image"><s
 it is an anchor point then the <a class="reference internal" href="#getinfo-anchors"><span class="std std-ref">anchor point</span></a> dialog is
 brought up.</p>
 <section id="point-info">
-<span id="getinfo-point"></span><h2>Point Info<a class="headerlink" href="#point-info" title="Permalink to this headline">¶</a></h2>
+<span id="getinfo-point"></span><h2>Point Info<a class="headerlink" href="#point-info" title="Permalink to this heading">¶</a></h2>
 <img alt="../../_images/pointinfo.png" class="align-right" src="../../_images/pointinfo.png" />
 <p>This shows information about the current point. The Base position is where the
 point itself is.</p>
@@ -83,7 +82,7 @@ and &lt;&gt;Interpolated radio buttons control which view is active.</p>
 <p>Pressing &lt;&gt; Interpolated may move the point to position it correctly for
 interpolation.</p>
 <section id="hint-mask">
-<span id="getinfo-hintmask"></span><h3>Hint Mask<a class="headerlink" href="#hint-mask" title="Permalink to this headline">¶</a></h3>
+<span id="getinfo-hintmask"></span><h3>Hint Mask<a class="headerlink" href="#hint-mask" title="Permalink to this heading">¶</a></h3>
 <img alt="../../_images/charwithhintmask.png" src="../../_images/charwithhintmask.png" />
 <img alt="../../_images/hintmaskinfo.png" src="../../_images/hintmaskinfo.png" />
 <p>If you want to control what hints are active at a given point (and at all
@@ -102,7 +101,7 @@ rule, so I have made this a warning rather than an error.</p>
 expect (the hintmask applies to this point an all previous points on the
 contour, rather than all subsequent ones).</p>
 <section id="active-hints">
-<h4>Active Hints<a class="headerlink" href="#active-hints" title="Permalink to this headline">¶</a></h4>
+<h4>Active Hints<a class="headerlink" href="#active-hints" title="Permalink to this heading">¶</a></h4>
 <p>This looks just like the hint mask, except you cannot change anything it in. It
 shows you what hints are currently selected at this point. If a point has a hint
 mask then the two will be identical.</p>
@@ -110,7 +109,7 @@ mask then the two will be identical.</p>
 </section>
 </section>
 <section id="spiro-point-info">
-<span id="getinfo-spiro"></span><h2>Spiro Point Info<a class="headerlink" href="#spiro-point-info" title="Permalink to this headline">¶</a></h2>
+<span id="getinfo-spiro"></span><h2>Spiro Point Info<a class="headerlink" href="#spiro-point-info" title="Permalink to this heading">¶</a></h2>
 <img alt="../../_images/spiropointinfo.png" class="align-right" src="../../_images/spiropointinfo.png" />
 <p>If you are editing in spiro (clothoid) mode rather than Bezier mode, then there
 are no control points and the get info dialog is much simpler. Just the location
@@ -119,7 +118,7 @@ of the point and the point type.</p>
 </div>
 </section>
 <section id="anchor-points-info">
-<span id="getinfo-anchors"></span><h2>Anchor Points Info<a class="headerlink" href="#anchor-points-info" title="Permalink to this headline">¶</a></h2>
+<span id="getinfo-anchors"></span><h2>Anchor Points Info<a class="headerlink" href="#anchor-points-info" title="Permalink to this heading">¶</a></h2>
 <img alt="../../_images/agetinfo.png" class="align-right" src="../../_images/agetinfo.png" />
 <p>This dialog shows the selected <a class="reference internal" href="../../index.html#overview-anchors"><span class="std std-ref">anchor point</span></a> with the
 anchor class, location, type and (for ligatures) the ligature index. You may
@@ -135,7 +134,7 @@ grid fit it properly with the current rasterization.</p>
 </div>
 </section>
 <section id="reference-info">
-<span id="getinfo-getreferenceinfo"></span><h2>Reference Info<a class="headerlink" href="#reference-info" title="Permalink to this headline">¶</a></h2>
+<span id="getinfo-getreferenceinfo"></span><h2>Reference Info<a class="headerlink" href="#reference-info" title="Permalink to this heading">¶</a></h2>
 <img alt="../../_images/rgetinfo.png" class="align-right" src="../../_images/rgetinfo.png" />
 <p>This dialog shows the name of the selected reference, its encoding in the font
 and its postscript transformation matrix. You may alter the transformation
@@ -175,7 +174,7 @@ location and size of the reference.</p>
 referred to.</p>
 </section>
 <section id="image-info">
-<span id="getinfo-image"></span><h2>Image Info<a class="headerlink" href="#image-info" title="Permalink to this headline">¶</a></h2>
+<span id="getinfo-image"></span><h2>Image Info<a class="headerlink" href="#image-info" title="Permalink to this heading">¶</a></h2>
 <p>This dialog gives the offset to the lower left corner of the image and the scale
 factors applied to the image. Currently you may not alter anything here, it is
 purely informational.</p>
@@ -264,7 +263,7 @@ purely informational.</p>
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -281,7 +280,7 @@ purely informational.</p>
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.0.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
