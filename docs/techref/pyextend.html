@@ -1,18 +1,17 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Extending FontForge With Python &#8212; FontForge 20220308 documentation</title>
+    <title>Extending FontForge With Python &#8212; FontForge 20230101 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <link rel="shortcut icon" href="../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -35,7 +34,7 @@
           <div class="body" role="main">
             
   <section id="extending-fontforge-with-python">
-<h1>Extending FontForge With Python<a class="headerlink" href="#extending-fontforge-with-python" title="Permalink to this headline">¶</a></h1>
+<h1>Extending FontForge With Python<a class="headerlink" href="#extending-fontforge-with-python" title="Permalink to this heading">¶</a></h1>
 <p>FontForge includes an extensive <a class="reference internal" href="../scripting/python.html"><span class="doc">Python API</span></a> which is
 most often used in scripts to alter and generate font files. However, this API
 also provides ways of extending the functionality of the FontForge program,
@@ -43,13 +42,13 @@ including the user interface. Most of these are documented in the <a class="refe
 Interface Module Functions</span></a> section of the Python
 documentation.</p>
 <section id="modifying-points-and-contours-references-and-anchor-points">
-<h2>Modifying Points and Contours, References, and Anchor Points<a class="headerlink" href="#modifying-points-and-contours-references-and-anchor-points" title="Permalink to this headline">¶</a></h2>
+<h2>Modifying Points and Contours, References, and Anchor Points<a class="headerlink" href="#modifying-points-and-contours-references-and-anchor-points" title="Permalink to this heading">¶</a></h2>
 <p>Given that points and contours are basis of vector font data many extensions
 will want to modify them. There is one misleading aspect of the “layer” API
 that must be clarified in order to do so. It is also important to be aware
 of layers and how they relate to the FontForge user interface.</p>
 <section id="the-basics">
-<h3>The Basics<a class="headerlink" href="#the-basics" title="Permalink to this headline">¶</a></h3>
+<h3>The Basics<a class="headerlink" href="#the-basics" title="Permalink to this heading">¶</a></h3>
 <p>A <code class="docutils literal notranslate"><span class="pre">point</span></code> is (typically) an element of a <code class="docutils literal notranslate"><span class="pre">contour</span></code> and a <code class="docutils literal notranslate"><span class="pre">contour</span></code> is
 (typically) an element of a <code class="docutils literal notranslate"><span class="pre">layer</span></code>. Confusingly, however, there are really
 two meanings of the term “layer” in the FontForge Python API. One is the
@@ -87,7 +86,7 @@ as they are copied back.:</p>
 </div>
 </section>
 <section id="layer-awareness-and-undo-preservation">
-<h3>Layer Awareness and Undo Preservation<a class="headerlink" href="#layer-awareness-and-undo-preservation" title="Permalink to this headline">¶</a></h3>
+<h3>Layer Awareness and Undo Preservation<a class="headerlink" href="#layer-awareness-and-undo-preservation" title="Permalink to this heading">¶</a></h3>
 <p>The author of a “top-down” script for modifying a font will typically know what
 layer to modify—most often <code class="docutils literal notranslate"><span class="pre">glyph.foreground</span></code> (which is also identified as
 “0” or “Fore”). A script that extends the FontForge UI with a new menu option
@@ -112,7 +111,7 @@ the previous layer to the Undo/Redo state. By calling
 change with “Edit -&gt; Undo”.</p>
 </section>
 <section id="references">
-<h3>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h3>
+<h3>References<a class="headerlink" href="#references" title="Permalink to this heading">¶</a></h3>
 <p>The reference API is similar to the layer API, with the same caveats. You can
 get the list of references for the current UI layer with <code class="docutils literal notranslate"><span class="pre">rl</span> <span class="pre">=</span>
 <span class="pre">g.layerrefs[g.activeLayer]</span></code> (where <code class="docutils literal notranslate"><span class="pre">g</span></code> is a <code class="docutils literal notranslate"><span class="pre">fontforge.glyph</span></code> object).  To
@@ -138,7 +137,7 @@ transformation matrix and selection status tuple elements are optional (with
 respective defaults of the identity matrix and <code class="docutils literal notranslate"><span class="pre">False</span></code>).</p>
 </section>
 <section id="anchor-points">
-<h3>Anchor Points<a class="headerlink" href="#anchor-points" title="Permalink to this headline">¶</a></h3>
+<h3>Anchor Points<a class="headerlink" href="#anchor-points" title="Permalink to this heading">¶</a></h3>
 <p>In contrast with points and references, all anchor points are considered part
 of the foreground layer. They can be accessed and edited through the
 <code class="docutils literal notranslate"><span class="pre">glyph.anchorPointsWithSel</span></code> property. When editing the list care must be
@@ -147,14 +146,14 @@ taken to construct the tuples so that the name, type, position, selection and
 </section>
 </section>
 <section id="adding-a-menu-item">
-<span id="fontforge-plugin-menu"></span><h2>Adding a Menu Item<a class="headerlink" href="#adding-a-menu-item" title="Permalink to this headline">¶</a></h2>
+<span id="fontforge-plugin-menu"></span><h2>Adding a Menu Item<a class="headerlink" href="#adding-a-menu-item" title="Permalink to this heading">¶</a></h2>
 <p>The functions <code class="docutils literal notranslate"><span class="pre">shiftBy15()</span></code> and <code class="docutils literal notranslate"><span class="pre">shiftRefsBy15()</span></code> above were written to
 be added as menu items using <a class="reference internal" href="../scripting/python/fontforge.html#fontforge.registerMenuItem" title="fontforge.registerMenuItem"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fontforge.registerMenuItem()</span></code></a>.  This is
 the most common form of FontForge UI extension and we recommend familiarizing
 (or re-familiarizing) yourself with the documentation as the API has recently
 been enhanced.</p>
 <section id="selection-state">
-<h3>Selection State<a class="headerlink" href="#selection-state" title="Permalink to this headline">¶</a></h3>
+<h3>Selection State<a class="headerlink" href="#selection-state" title="Permalink to this heading">¶</a></h3>
 <p>In the case of many menu items, probably most of them, the user should have
 some “input” into how one applies in a given situation. Sometimes this is a
 reason to raise a dialog asking the user for input, but in the majority of
@@ -199,7 +198,7 @@ those of a glyph-level tool, so that a user learns whey they do and do not
 apply.</p>
 </section>
 <section id="enable-functions">
-<h3>Enable Functions<a class="headerlink" href="#enable-functions" title="Permalink to this headline">¶</a></h3>
+<h3>Enable Functions<a class="headerlink" href="#enable-functions" title="Permalink to this heading">¶</a></h3>
 <p>Some menu items, such as one that adds a new point in a CharView, may always be
 “applicable”. Others can only do something sensible if the character (or font)
 has certain features, such as at least one point or reference, or if certain
@@ -217,7 +216,7 @@ one reference, so it’s enable function could be:</p>
 <p>See the next section for an example of how to register this function.</p>
 </section>
 <section id="hotkeys-and-mnemonics">
-<h3>Hotkeys and Mnemonics<a class="headerlink" href="#hotkeys-and-mnemonics" title="Permalink to this headline">¶</a></h3>
+<h3>Hotkeys and Mnemonics<a class="headerlink" href="#hotkeys-and-mnemonics" title="Permalink to this heading">¶</a></h3>
 <p>A menu item can have both a Hotkey and a Mnemonic. These are two different means
 of picking a menu item using the keyboard.</p>
 <p>A Hotkey is a single key combination, usually including modifiers like Control,
@@ -250,7 +249,7 @@ in use. Because lower menu levels will typically have entries for one plugin
 or script you can count on getting the mnemonic you specify.</p>
 </section>
 <section id="best-practices">
-<h3>Best Practices<a class="headerlink" href="#best-practices" title="Permalink to this headline">¶</a></h3>
+<h3>Best Practices<a class="headerlink" href="#best-practices" title="Permalink to this heading">¶</a></h3>
 <p>In addition to the advice above, we recommend that a plugin put all of its
 added menu items into or under a single sub-menu of “Tools”. A user may have
 many plugins installed or have their own init scripts so a single plugin should
@@ -258,7 +257,7 @@ avoid taking up a lot of space.</p>
 </section>
 </section>
 <section id="storing-per-font-and-per-glyph-information">
-<h2>Storing Per-Font and Per-Glyph Information<a class="headerlink" href="#storing-per-font-and-per-glyph-information" title="Permalink to this headline">¶</a></h2>
+<h2>Storing Per-Font and Per-Glyph Information<a class="headerlink" href="#storing-per-font-and-per-glyph-information" title="Permalink to this heading">¶</a></h2>
 <p>The FontForge SFD file format and python API includes
 <a class="reference internal" href="../scripting/python/fontforge.html#fontforge.font.persistent" title="fontforge.font.persistent"><code class="xref py py-attr docutils literal notranslate"><span class="pre">fontforge.font.persistent</span></code></a> for storing per-font information and
 <a class="reference internal" href="../scripting/python/fontforge.html#fontforge.glyph.persistent" title="fontforge.glyph.persistent"><code class="xref py py-attr docutils literal notranslate"><span class="pre">fontforge.glyph.persistent</span></code></a> for storing per-glyph information.
@@ -279,7 +278,7 @@ the value. If they give permission you can create a dictionary as in step
 </ol>
 </section>
 <section id="writing-a-fontforge-plugin">
-<span id="fontforge-plugin-api"></span><h2>Writing a FontForge Plugin<a class="headerlink" href="#writing-a-fontforge-plugin" title="Permalink to this headline">¶</a></h2>
+<span id="fontforge-plugin-api"></span><h2>Writing a FontForge Plugin<a class="headerlink" href="#writing-a-fontforge-plugin" title="Permalink to this heading">¶</a></h2>
 <p>Even when you eventually plan on writing a FontForge Python plugin it will
 generally be easiest to start by writing an “Init Script”. This is a script
 that, when placed in one of the directories listed by the
@@ -459,7 +458,7 @@ If there are no errors the package archive will be added to the <code class="doc
 subdirectory (which will be created if necessary). This package can be
 installed directly with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">[name]</span></code> or <a class="reference external" href="https://realpython.com/pypi-publish-python-package/#publishing-to-pypi">published on PyPI</a>.</p>
 <section id="marking-dependencies">
-<h3>Marking Dependencies<a class="headerlink" href="#marking-dependencies" title="Permalink to this headline">¶</a></h3>
+<h3>Marking Dependencies<a class="headerlink" href="#marking-dependencies" title="Permalink to this heading">¶</a></h3>
 <p>A simple plugin may have no dependencies beyond FontForge itself, and because
 only FontForge will attempt to discover and load plugins it is not necessary
 to mark that dependency. Other plugins may import numerical processing modules
@@ -488,7 +487,7 @@ embedded Python environment that is not capable of compiling packages, so
 has such dependencies.</p>
 </section>
 <section id="the-configuration-system">
-<h3>The Configuration System<a class="headerlink" href="#the-configuration-system" title="Permalink to this headline">¶</a></h3>
+<h3>The Configuration System<a class="headerlink" href="#the-configuration-system" title="Permalink to this heading">¶</a></h3>
 <p>The plugin API offers an optional convention for setting and storing plugin-
 specific parameters. It has two parts:</p>
 <ol class="arabic">
@@ -620,7 +619,7 @@ dialog to ask for the file so that it can be copied into the appropriate locatio
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -637,7 +636,7 @@ dialog to ask for the file so that it can be copied into the appropriate locatio
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.0.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

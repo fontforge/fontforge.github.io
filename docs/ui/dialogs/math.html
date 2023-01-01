@@ -1,18 +1,17 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Math typesetting information &#8212; FontForge 20220308 documentation</title>
+    <title>Math typesetting information &#8212; FontForge 20230101 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <link rel="shortcut icon" href="../../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -35,13 +34,13 @@
           <div class="body" role="main">
             
   <section id="math-typesetting-information">
-<h1>Math typesetting information<a class="headerlink" href="#math-typesetting-information" title="Permalink to this headline">¶</a></h1>
+<h1>Math typesetting information<a class="headerlink" href="#math-typesetting-information" title="Permalink to this heading">¶</a></h1>
 <p>In summer of 2007 (as I write) MicroSoft is proposing an extension to OpenType
 which will allow fonts to contain information useful for mathematical
 typesetting. The information all lives in a new <code class="docutils literal notranslate"><span class="pre">'MATH'</span></code> table. FontForge now
 allows you to perform basic editing on this table.</p>
 <section id="constants">
-<h2>Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
+<h2>Constants<a class="headerlink" href="#constants" title="Permalink to this heading">¶</a></h2>
 <figure class="align-default">
 <img alt="../../_images/MATH-Constants.png" src="../../_images/MATH-Constants.png" />
 </figure>
@@ -69,11 +68,11 @@ up by one pixel).</p>
 are missing you just need to reconfigure and rebuild it.</p>
 </section>
 <section id="glyph-specific-information">
-<h2>Glyph specific information<a class="headerlink" href="#glyph-specific-information" title="Permalink to this headline">¶</a></h2>
+<h2>Glyph specific information<a class="headerlink" href="#glyph-specific-information" title="Permalink to this heading">¶</a></h2>
 <p>In addition to the constants there are various bits of data that potentially
 pertain to each glyph.</p>
 <section id="extended-shapes">
-<h3>Extended Shapes<a class="headerlink" href="#extended-shapes" title="Permalink to this headline">¶</a></h3>
+<h3>Extended Shapes<a class="headerlink" href="#extended-shapes" title="Permalink to this heading">¶</a></h3>
 <img alt="../../_images/MATH-Exten.png" class="align-right" src="../../_images/MATH-Exten.png" />
 <p>The simplest of these per-glyph data is a flag which indicates whether a glyph
 is an extended shape. Extended shapes tend to be taller than normal characters
@@ -83,7 +82,7 @@ this glyph is an extended shape (you may add additional glyphs at the bottom of
 the list, order is irrelevant here).</p>
 </section>
 <section id="italic-correction">
-<span id="math-italic"></span><h3>Italic Correction<a class="headerlink" href="#italic-correction" title="Permalink to this headline">¶</a></h3>
+<span id="math-italic"></span><h3>Italic Correction<a class="headerlink" href="#italic-correction" title="Permalink to this heading">¶</a></h3>
 <figure class="align-default">
 <img alt="../../_images/MATH-Italic.png" src="../../_images/MATH-Italic.png" />
 </figure>
@@ -99,7 +98,7 @@ corrected advance width.</p>
 <p>Here again you are allowed to specify a device table to adjust the correction.</p>
 </section>
 <section id="top-accent-attachment">
-<span id="math-topaccent"></span><h3>Top Accent Attachment<a class="headerlink" href="#top-accent-attachment" title="Permalink to this headline">¶</a></h3>
+<span id="math-topaccent"></span><h3>Top Accent Attachment<a class="headerlink" href="#top-accent-attachment" title="Permalink to this heading">¶</a></h3>
 <figure class="align-default">
 <img alt="../../_images/MATH-TopAccent.png" src="../../_images/MATH-TopAccent.png" />
 </figure>
@@ -116,7 +115,7 @@ lines match up.</p>
 sizes.</p>
 </section>
 <section id="math-kerning">
-<span id="math-mathkern"></span><h3>Math Kerning<a class="headerlink" href="#math-kerning" title="Permalink to this headline">¶</a></h3>
+<span id="math-mathkern"></span><h3>Math Kerning<a class="headerlink" href="#math-kerning" title="Permalink to this heading">¶</a></h3>
 <img alt="../../_images/MATH-MathKern.png" class="align-right" src="../../_images/MATH-MathKern.png" />
 <p>This subtable is used when positioning subscripts and superscripts at various
 corners of a glyph. A glyph may have a superscript attached to either its top
@@ -154,7 +153,7 @@ I let the user move a point around), but have no fears, that guessed at value
 will never show up in the MATH table itself.</p>
 </section>
 <section id="vertical-and-horizontal-glyph-variants">
-<span id="math-variants"></span><h3>Vertical and Horizontal Glyph Variants<a class="headerlink" href="#vertical-and-horizontal-glyph-variants" title="Permalink to this headline">¶</a></h3>
+<span id="math-variants"></span><h3>Vertical and Horizontal Glyph Variants<a class="headerlink" href="#vertical-and-horizontal-glyph-variants" title="Permalink to this heading">¶</a></h3>
 <figure class="align-default">
 <img alt="../../_images/MATH-VertVariants.png" src="../../_images/MATH-VertVariants.png" />
 </figure>
@@ -171,7 +170,7 @@ then a list of variants in increasing sizes.</p>
 axis.</p>
 </section>
 <section id="vertical-and-horizontal-glyph-construction">
-<span id="math-glyphconstruction"></span><h3>Vertical and Horizontal Glyph Construction<a class="headerlink" href="#vertical-and-horizontal-glyph-construction" title="Permalink to this headline">¶</a></h3>
+<span id="math-glyphconstruction"></span><h3>Vertical and Horizontal Glyph Construction<a class="headerlink" href="#vertical-and-horizontal-glyph-construction" title="Permalink to this heading">¶</a></h3>
 <figure class="align-default">
 <img alt="../../_images/MATH-GlyphConstruction.png" src="../../_images/MATH-GlyphConstruction.png" />
 </figure>
@@ -279,7 +278,7 @@ spec, and Apostolos Syropoulos who provided me with a test font containing a
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -296,7 +295,7 @@ spec, and Apostolos Syropoulos who provided me with a test font containing a
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.0.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

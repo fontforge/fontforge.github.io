@@ -1,18 +1,17 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Outline Glyph View &#8212; FontForge 20220308 documentation</title>
+    <title>Outline Glyph View &#8212; FontForge 20230101 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -36,7 +35,7 @@
           <div class="body" role="main">
             
   <section id="outline-glyph-view">
-<h1>Outline Glyph View<a class="headerlink" href="#outline-glyph-view" title="Permalink to this headline">¶</a></h1>
+<h1>Outline Glyph View<a class="headerlink" href="#outline-glyph-view" title="Permalink to this heading">¶</a></h1>
 <img alt="../../_images/charview2.png" src="../../_images/charview2.png" />
 <p>The outline glyph view is the window in which most editing happens.</p>
 <p>At the top of the window, underneath the menu bar is an information line. The
@@ -107,11 +106,11 @@ references by point matching then editing this glyph may reposition those
 references.</p>
 </div>
 <section id="layers">
-<span id="charview-layers"></span><h2>Layers<a class="headerlink" href="#layers" title="Permalink to this headline">¶</a></h2>
+<span id="charview-layers"></span><h2>Layers<a class="headerlink" href="#layers" title="Permalink to this heading">¶</a></h2>
 <img alt="../../_images/layers.png" class="align-left" src="../../_images/layers.png" />
 <p>There are several drawing layers in the outline view. Each layer has an “eye
 box” (indicating whether it is visible or not), curve type (“C” for cubic,
-“Q”for quadratic, ” ” for Guide layer, which is always cubic), mode (“#” for
+“Q”for quadratic, “ “ for Guide layer, which is always cubic), mode (“#” for
 Guide layer, “B” for background layers, “F” for foreground layers) and a name.</p>
 <p>The first layer is a set of guide lines/splines. These are common to all glyphs
 in the font. A few lines are provided for you (the x=0 line, the ascent, descent
@@ -142,7 +141,7 @@ right mouse button: a pop-up menu will appear, allowing for some additional
 operations, like moving contents between layers.</p>
 </section>
 <section id="tools">
-<span id="charview-tools"></span><h2>Tools<a class="headerlink" href="#tools" title="Permalink to this headline">¶</a></h2>
+<span id="charview-tools"></span><h2>Tools<a class="headerlink" href="#tools" title="Permalink to this heading">¶</a></h2>
 <img alt="../../_images/tools.png" class="align-left" src="../../_images/tools.png" />
 <p>There are 19 different editing tools, a mode button which alters the behavior of
 5 of them, and two others (rectangle/ellipse and polygon/star) which come in two
@@ -157,7 +156,7 @@ Option and Command keys are usually bound to making a one button mouse look like
 a three button mouse. So on the mac fontforge uses the caps-lock key rather than
 alt/meta.</p>
 <section id="the-pointer-tool">
-<h3>The pointer tool<a class="headerlink" href="#the-pointer-tool" title="Permalink to this headline">¶</a></h3>
+<h3>The pointer tool<a class="headerlink" href="#the-pointer-tool" title="Permalink to this heading">¶</a></h3>
 <img alt="../../_images/cvarrowicon.png" class="align-left" src="../../_images/cvarrowicon.png" />
 <p id="charview-pointer">This tool is used for selecting points, images and referenced glyphs. It can
 also move these and scale images and referenced glyphs.</p>
@@ -250,7 +249,7 @@ it, depressing the button and dragging the line around. See the description on
 description.</p>
 </section>
 <section id="the-magnifying-tool">
-<h3>The magnifying tool<a class="headerlink" href="#the-magnifying-tool" title="Permalink to this headline">¶</a></h3>
+<h3>The magnifying tool<a class="headerlink" href="#the-magnifying-tool" title="Permalink to this heading">¶</a></h3>
 <img alt="../../_images/cvmagicon.png" class="align-left" src="../../_images/cvmagicon.png" />
 <p id="charview-magnify">Clicking with the magnifying tool will magnify the view and center it around the
 point you clicked on. Holding down the
@@ -264,12 +263,12 @@ shift and scale the view so that your rectangle just fits into the window.</p>
 scroll wheel causes it to magnify or minify the window.</p>
 </section>
 <section id="the-scroll-tool">
-<span id="charview-scroll"></span><h3>The scroll tool<a class="headerlink" href="#the-scroll-tool" title="Permalink to this headline">¶</a></h3>
+<span id="charview-scroll"></span><h3>The scroll tool<a class="headerlink" href="#the-scroll-tool" title="Permalink to this heading">¶</a></h3>
 <img alt="../../_images/cvhandicon.png" class="align-left" src="../../_images/cvhandicon.png" />
 <p>You can use this tool to scroll the window without using the scroll bars.</p>
 </section>
 <section id="the-freehand-tool">
-<span id="charview-freehand"></span><h3>The freehand tool<a class="headerlink" href="#the-freehand-tool" title="Permalink to this headline">¶</a></h3>
+<span id="charview-freehand"></span><h3>The freehand tool<a class="headerlink" href="#the-freehand-tool" title="Permalink to this heading">¶</a></h3>
 <img alt="../../_images/cvfreehandicon.png" class="align-left" src="../../_images/cvfreehandicon.png" />
 <img alt="../../_images/freehandctl.png" class="align-right" src="../../_images/freehandctl.png" />
 <p>You can use this tool to draw a random curve which FontForge will then attempt
@@ -282,7 +281,7 @@ slightly more control over the results, as you can have it not expand the stroke
 you draw (ie. leave a single trace.)</p>
 </section>
 <section id="tools-for-adding-curved-corner-and-tangent-points">
-<span id="charview-add-point"></span><h3>Tools for adding curved, corner and tangent points.<a class="headerlink" href="#tools-for-adding-curved-corner-and-tangent-points" title="Permalink to this headline">¶</a></h3>
+<span id="charview-add-point"></span><h3>Tools for adding curved, corner and tangent points.<a class="headerlink" href="#tools-for-adding-curved-corner-and-tangent-points" title="Permalink to this heading">¶</a></h3>
 <img alt="../../_images/cvcurveicon.png" src="../../_images/cvcurveicon.png" />
 <img alt="../../_images/cvhvcurveicon.png" src="../../_images/cvhvcurveicon.png" />
 <img alt="../../_images/cvcornericon.png" src="../../_images/cvcornericon.png" />
@@ -317,7 +316,7 @@ line).</p></li>
 </ul>
 </section>
 <section id="the-pen-tool">
-<span id="charview-pen"></span><h3>The pen tool<a class="headerlink" href="#the-pen-tool" title="Permalink to this headline">¶</a></h3>
+<span id="charview-pen"></span><h3>The pen tool<a class="headerlink" href="#the-pen-tool" title="Permalink to this heading">¶</a></h3>
 <img alt="../../_images/cvpenicon.png" class="align-left" src="../../_images/cvpenicon.png" />
 <p>This tool behaves differently in cubic and quadratic editing. In many ways it is
 similar to the tools above as it adds a point to the current spline.</p>
@@ -330,7 +329,7 @@ point and the current location (which becomes the next control point).</p>
 editing looks like quadratic and vice versa.</p>
 </section>
 <section id="tools-for-adding-spiro-control-points">
-<span id="charview-spiro-add-points"></span><h3>Tools for adding spiro control points<a class="headerlink" href="#tools-for-adding-spiro-control-points" title="Permalink to this headline">¶</a></h3>
+<span id="charview-spiro-add-points"></span><h3>Tools for adding spiro control points<a class="headerlink" href="#tools-for-adding-spiro-control-points" title="Permalink to this heading">¶</a></h3>
 <img alt="../../_images/cvspiroG4icon.png" src="../../_images/cvspiroG4icon.png" />
 <img alt="../../_images/cvspiroG2icon.png" src="../../_images/cvspiroG2icon.png" />
 <img alt="../../_images/cvspirocornericon.png" src="../../_images/cvspirocornericon.png" />
@@ -360,13 +359,13 @@ to a curve (where the curve is on the next side of the constraint point)</p>
 clothoid splines which provide constant curvature across points.</p>
 </section>
 <section id="spiro-mode">
-<span id="charview-spiro-mode"></span><h3>Spiro mode<a class="headerlink" href="#spiro-mode" title="Permalink to this headline">¶</a></h3>
+<span id="charview-spiro-mode"></span><h3>Spiro mode<a class="headerlink" href="#spiro-mode" title="Permalink to this heading">¶</a></h3>
 <img alt="../../_images/cvspiromodeicon.png" class="align-left" src="../../_images/cvspiromodeicon.png" />
 <p>This button toggles between editing contours using Bézier control points, or
 between using spiro (clothoid) control points.</p>
 </section>
 <section id="the-knife-tool">
-<span id="charview-knife"></span><h3>The knife tool<a class="headerlink" href="#the-knife-tool" title="Permalink to this headline">¶</a></h3>
+<span id="charview-knife"></span><h3>The knife tool<a class="headerlink" href="#the-knife-tool" title="Permalink to this heading">¶</a></h3>
 <img alt="../../_images/cvknifeicon.png" class="align-left" src="../../_images/cvknifeicon.png" />
 <p>This tool is used to cut splines. As you drag it across the view fontforge draws
 a line showing where the cut will happen. When you release, every spline you
@@ -376,7 +375,7 @@ connecting to the two new end points. These endpoints are not joined, so the
 spline is now open (or if it were previously open, it is now cut in two).</p>
 </section>
 <section id="the-ruler-tool">
-<span id="charview-ruler"></span><h3>The ruler tool<a class="headerlink" href="#the-ruler-tool" title="Permalink to this headline">¶</a></h3>
+<span id="charview-ruler"></span><h3>The ruler tool<a class="headerlink" href="#the-ruler-tool" title="Permalink to this heading">¶</a></h3>
 <img alt="../../_images/cvrulericon.png" class="align-left" src="../../_images/cvrulericon.png" />
 <img alt="../../_images/ruler.png" class="align-right" src="../../_images/ruler.png" />
 <p>This tool tells you the current position of the mouse. If the mouse is near the
@@ -399,7 +398,7 @@ is also shown directly on the canvas.</p>
 then information will only be shown when the mouse is depressed.</p>
 </section>
 <section id="the-scale-tool">
-<span id="charview-scale"></span><h3>The scale tool<a class="headerlink" href="#the-scale-tool" title="Permalink to this headline">¶</a></h3>
+<span id="charview-scale"></span><h3>The scale tool<a class="headerlink" href="#the-scale-tool" title="Permalink to this heading">¶</a></h3>
 <img alt="../../_images/cvscaleicon.png" class="align-left" src="../../_images/cvscaleicon.png" />
 <p>This tool allows you to scale the selection by eye rather than by a set amount
 (if there is no selection then everything in the current layer will be scaled).
@@ -411,7 +410,7 @@ hold down the shift key.</p>
 option selected.</p>
 </section>
 <section id="the-flip-tool">
-<span id="charview-flip"></span><h3>The flip tool<a class="headerlink" href="#the-flip-tool" title="Permalink to this headline">¶</a></h3>
+<span id="charview-flip"></span><h3>The flip tool<a class="headerlink" href="#the-flip-tool" title="Permalink to this heading">¶</a></h3>
 <img alt="../../_images/cvflipicon.png" class="align-left" src="../../_images/cvflipicon.png" />
 <p>This tool allows you to flip the selection either horizontally or vertically.
 Again the point at which you press the mouse is the origin of the
@@ -425,21 +424,21 @@ option selected.</p>
 </div>
 </section>
 <section id="the-rotate-tool">
-<span id="charview-rotate"></span><h3>The rotate tool<a class="headerlink" href="#the-rotate-tool" title="Permalink to this headline">¶</a></h3>
+<span id="charview-rotate"></span><h3>The rotate tool<a class="headerlink" href="#the-rotate-tool" title="Permalink to this heading">¶</a></h3>
 <img alt="../../_images/cvrotateicon.png" class="align-left" src="../../_images/cvrotateicon.png" />
 <p>This tools allows you to rotate the selection freely.</p>
 <p>Double clicking on this will bring up the transform dialog with the “Rotate…”
 option selected.</p>
 </section>
 <section id="the-skew-tool">
-<span id="charview-skew"></span><h3>The skew tool<a class="headerlink" href="#the-skew-tool" title="Permalink to this headline">¶</a></h3>
+<span id="charview-skew"></span><h3>The skew tool<a class="headerlink" href="#the-skew-tool" title="Permalink to this heading">¶</a></h3>
 <img alt="../../_images/cvskewicon.png" class="align-left" src="../../_images/cvskewicon.png" />
 <p>This tool allows you to skew the selection.</p>
 <p>Double clicking on this will bring up the transform dialog with the “Skew…”
 option selected.</p>
 </section>
 <section id="the-rotate-3d-tool">
-<span id="charview-rotate3d"></span><h3>The rotate 3D tool<a class="headerlink" href="#the-rotate-3d-tool" title="Permalink to this headline">¶</a></h3>
+<span id="charview-rotate3d"></span><h3>The rotate 3D tool<a class="headerlink" href="#the-rotate-3d-tool" title="Permalink to this heading">¶</a></h3>
 <img alt="../../_images/cvrotate3dicon.png" class="align-left" src="../../_images/cvrotate3dicon.png" />
 <p>This tool allows you to rotate the selection in the third dimension and project
 the result back onto the x-y plane. An imaginary line is drawn from the point
@@ -450,7 +449,7 @@ rotation.</p>
 3D…” option selected.</p>
 </section>
 <section id="the-perspective-tool">
-<span id="charview-perspective"></span><h3>The perspective tool<a class="headerlink" href="#the-perspective-tool" title="Permalink to this headline">¶</a></h3>
+<span id="charview-perspective"></span><h3>The perspective tool<a class="headerlink" href="#the-perspective-tool" title="Permalink to this heading">¶</a></h3>
 <img alt="../../_images/Eperspective.png" class="align-right" src="../../_images/Eperspective.png" />
 <img alt="../../_images/cvperspectiveicon.png" class="align-left" src="../../_images/cvperspectiveicon.png" />
 <p>This tool allows you to apply a perspective transformation to the selection
@@ -467,7 +466,7 @@ parallel to it are scaled as:</p>
 y' &amp;= y\end{split}\]</div>
 </section>
 <section id="the-rectangle-ellipse-tools">
-<span id="charview-rectangle"></span><h3>The rectangle/ellipse tools<a class="headerlink" href="#the-rectangle-ellipse-tools" title="Permalink to this headline">¶</a></h3>
+<span id="charview-rectangle"></span><h3>The rectangle/ellipse tools<a class="headerlink" href="#the-rectangle-ellipse-tools" title="Permalink to this heading">¶</a></h3>
 <img alt="../../_images/cvrecticon.png" src="../../_images/cvrecticon.png" />
 <img alt="../../_images/cvellipseicon.png" src="../../_images/cvellipseicon.png" />
 <p>By default this produces a rectangle, single-clicking on the tool palette will
@@ -485,7 +484,7 @@ rectangle/ellipse should be placed, how big it should be, and whether it should
 be rotated.</p>
 </section>
 <section id="the-polygon-star-tools">
-<h3>The polygon/star tools<a class="headerlink" href="#the-polygon-star-tools" title="Permalink to this headline">¶</a></h3>
+<h3>The polygon/star tools<a class="headerlink" href="#the-polygon-star-tools" title="Permalink to this heading">¶</a></h3>
 <img alt="../../_images/cvpolyicon.png" src="../../_images/cvpolyicon.png" />
 <img alt="../../_images/cvstaricon.png" src="../../_images/cvstaricon.png" />
 <p>By default this draws a regular polygon, but by double clicking on the button in
@@ -504,7 +503,7 @@ non-regular star, but it might look nicer).</p>
 </section>
 </section>
 <section id="vertical-view">
-<span id="charview-vertical"></span><h2>Vertical View<a class="headerlink" href="#vertical-view" title="Permalink to this headline">¶</a></h2>
+<span id="charview-vertical"></span><h2>Vertical View<a class="headerlink" href="#vertical-view" title="Permalink to this heading">¶</a></h2>
 <img alt="../../_images/charview-vert.png" class="align-right" src="../../_images/charview-vert.png" />
 <p>In this view the vertical metrics of the glyph are shown. You can change the
 vertical advance just as you changed the glyph’s width (by selecting the pointer
@@ -513,7 +512,7 @@ tool and dragging the vertical advance line up or down).</p>
 </div>
 </section>
 <section id="grid-fit-view">
-<span id="charview-gridfit"></span><h2>Grid Fit View<a class="headerlink" href="#grid-fit-view" title="Permalink to this headline">¶</a></h2>
+<span id="charview-gridfit"></span><h2>Grid Fit View<a class="headerlink" href="#grid-fit-view" title="Permalink to this heading">¶</a></h2>
 <img alt="../../_images/GridFit.png" class="align-right" src="../../_images/GridFit.png" />
 <p>If you have the freetype library, then you can see the results of rasterizing
 your glyph. If you have freetype’s bytecode interpreter enabled you can also see
@@ -527,7 +526,7 @@ performed (the example at right is 12pt on a 72dpi screen).</p>
 <img alt="../../_images/ShowGridFit.png" src="../../_images/ShowGridFit.png" />
 </section>
 <section id="the-debugging-view">
-<span id="charview-debugging"></span><h2>The Debugging View<a class="headerlink" href="#the-debugging-view" title="Permalink to this headline">¶</a></h2>
+<span id="charview-debugging"></span><h2>The Debugging View<a class="headerlink" href="#the-debugging-view" title="Permalink to this heading">¶</a></h2>
 <img alt="../../_images/cvdebug.png" src="../../_images/cvdebug.png" />
 <blockquote class="epigraph">
 <div><p>“I told you butter wouldn’t suit the works!” he added, looking angrily at the
@@ -690,7 +689,7 @@ different values for the point size and resolution. This dlg can also control
 whether the fpgm and prep tables are debugged. Usually debugging will start
 when execution reaches the instructions associated with this glyph.</p>
 <section id="debugging-composite-glyphs">
-<h3>Debugging composite glyphs<a class="headerlink" href="#debugging-composite-glyphs" title="Permalink to this headline">¶</a></h3>
+<h3>Debugging composite glyphs<a class="headerlink" href="#debugging-composite-glyphs" title="Permalink to this heading">¶</a></h3>
 <p>FontForge is not as friendly when debugging composite glyphs as it should be –
 this is influenced by the way truetype works. Suppose you want to debug the
 “Atilde” glyph.</p>
@@ -724,7 +723,7 @@ the entire glyph has been loaded.</p></li>
 </section>
 </section>
 <section id="multiple-master-view">
-<span id="charview-mm"></span><h2>Multiple Master View<a class="headerlink" href="#multiple-master-view" title="Permalink to this headline">¶</a></h2>
+<span id="charview-mm"></span><h2>Multiple Master View<a class="headerlink" href="#multiple-master-view" title="Permalink to this heading">¶</a></h2>
 <p>In a multiple master font the <a class="reference internal" href="../menus/mmmenu.html#mmmenu-outline-char"><span class="std std-ref">MM</span></a> menu gives you
 control over which style of the font you are editing. It will also allow you to
 display any (or all) of the other styles in the background. Although the menu is
@@ -732,7 +731,7 @@ called “MM” it applies equally to Apple’s distortable fonts (”*var” fo
 Skia).</p>
 </section>
 <section id="multiple-layer-editing">
-<span id="charview-multilayer"></span><h2>Multiple Layer Editing<a class="headerlink" href="#multiple-layer-editing" title="Permalink to this headline">¶</a></h2>
+<span id="charview-multilayer"></span><h2>Multiple Layer Editing<a class="headerlink" href="#multiple-layer-editing" title="Permalink to this heading">¶</a></h2>
 <img alt="../../_images/charview-multilayer.png" class="align-right" src="../../_images/charview-multilayer.png" />
 <p>If you wish to <a class="reference internal" href="../dialogs/multilayer.html"><span class="doc">edit type3 fonts</span></a>, FontForge can display a
 glyph broken down into a series of strokes and fills and allow you to edit each
@@ -815,7 +814,7 @@ one.</p>
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -832,7 +831,7 @@ one.</p>
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.0.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

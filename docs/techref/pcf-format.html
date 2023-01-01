@@ -1,18 +1,17 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>The X11 PCF bitmap font file format &#8212; FontForge 20220308 documentation</title>
+    <title>The X11 PCF bitmap font file format &#8212; FontForge 20230101 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <link rel="shortcut icon" href="../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -35,7 +34,7 @@
           <div class="body" role="main">
             
   <section id="the-x11-pcf-bitmap-font-file-format">
-<h1>The X11 PCF bitmap font file format<a class="headerlink" href="#the-x11-pcf-bitmap-font-file-format" title="Permalink to this headline">¶</a></h1>
+<h1>The X11 PCF bitmap font file format<a class="headerlink" href="#the-x11-pcf-bitmap-font-file-format" title="Permalink to this heading">¶</a></h1>
 <p>This file is based on the
 <a class="reference external" href="http://ftp.x.org/pub/R6.4/xc/lib/font/bitmap/">X11 sources</a>. If something
 here disagrees with what is found in the sources, my statement is incorrect. The
@@ -44,7 +43,7 @@ sources are definitive.</p>
 bitmap font used by the XServer. It consists of a file header followed by a
 series of tables, with the header containing pointers to all the tables.</p>
 <section id="file-header">
-<h2>File Header<a class="headerlink" href="#file-header" title="Permalink to this headline">¶</a></h2>
+<h2>File Header<a class="headerlink" href="#file-header" title="Permalink to this heading">¶</a></h2>
 <p>The file header contains 32 bit integers stored with the least significant byte
 first.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span><span class="w"> </span><span class="n">header</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span><span class="w">                  </span><span class="cm">/* always &quot;\1fcp&quot; */</span><span class="w"></span>
@@ -90,7 +89,7 @@ can be altered by adding one of the mask bits above.</p>
 <p>All tables begin on a 32bit boundary (and will be padded with zeroes).</p>
 </section>
 <section id="properties-table">
-<h2>Properties Table<a class="headerlink" href="#properties-table" title="Permalink to this headline">¶</a></h2>
+<h2>Properties Table<a class="headerlink" href="#properties-table" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">lsbint32</span><span class="w"> </span><span class="n">format</span><span class="p">;</span><span class="w">                 </span><span class="cm">/* Always stored with least significant byte first! */</span><span class="w"></span>
 <span class="n">int32</span><span class="w"> </span><span class="n">nprops</span><span class="p">;</span><span class="w">                   </span><span class="cm">/* Stored in whatever byte order is specified in the format */</span><span class="w"></span>
 <span class="k">struct</span><span class="w"> </span><span class="nc">props</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -114,7 +113,7 @@ fonts).</p>
 <p>To find the name of a property: <code class="docutils literal notranslate"><span class="pre">strings</span> <span class="pre">+</span> <span class="pre">props[i].name_offset</span></code></p>
 </section>
 <section id="metrics-data">
-<span id="pcf-format-metricsdata"></span><h2>Metrics Data<a class="headerlink" href="#metrics-data" title="Permalink to this headline">¶</a></h2>
+<span id="pcf-format-metricsdata"></span><h2>Metrics Data<a class="headerlink" href="#metrics-data" title="Permalink to this heading">¶</a></h2>
 <p>Several of the tables (PCF_METRICS, PCF_INK_METRICS, and within the accelerator
 tables) contain metrics data which may be in either compressed
 (PCF_COMPRESSED_METRICS) or uncompressed (DEFAULT) formats. The compressed
@@ -142,7 +141,7 @@ value will be <code class="docutils literal notranslate"><span class="pre">(getc
 <p>This provides the data needed for an XCharStruct.</p>
 </section>
 <section id="accelerator-tables">
-<h2>Accelerator Tables<a class="headerlink" href="#accelerator-tables" title="Permalink to this headline">¶</a></h2>
+<h2>Accelerator Tables<a class="headerlink" href="#accelerator-tables" title="Permalink to this heading">¶</a></h2>
 <p>These data provide various bits of information about the font as a whole. This
 data structure is used by two tables PCF_ACCELERATORS and PCF_BDF_ACCELERATORS.
 The tables may either be in DEFAULT format or in PCF_ACCEL_W_INKBOUNDS (in which
@@ -180,7 +179,7 @@ characters in the font (while the simple Accelerator table includes all glyphs),
 therefore the BDF Accelerators are more accurate.</p>
 </section>
 <section id="metrics-tables">
-<h2>Metrics Tables<a class="headerlink" href="#metrics-tables" title="Permalink to this headline">¶</a></h2>
+<h2>Metrics Tables<a class="headerlink" href="#metrics-tables" title="Permalink to this heading">¶</a></h2>
 <p>There are two different metrics tables, PCF_METRICS and PCF_INK_METRICS, the
 former contains the size of the stored bitmaps, while the latter contains the
 minimum bounding box. The two may contain the same data, but many CJK fonts pad
@@ -199,7 +198,7 @@ DEFAULT or PCF_COMPRESSED_METRICS (see the section on
 </div>
 </section>
 <section id="the-bitmap-table">
-<h2>The Bitmap Table<a class="headerlink" href="#the-bitmap-table" title="Permalink to this headline">¶</a></h2>
+<h2>The Bitmap Table<a class="headerlink" href="#the-bitmap-table" title="Permalink to this heading">¶</a></h2>
 <p>The bitmap table has type PCF_BITMAPS. Its format must be PCF_DEFAULT.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">lsbint32</span><span class="w"> </span><span class="n">format</span><span class="p">;</span><span class="w">                 </span><span class="cm">/* Always stored with least significant byte first! */</span><span class="w"></span>
 <span class="n">int32</span><span class="w"> </span><span class="n">glyph_count</span><span class="p">;</span><span class="w">              </span><span class="cm">/* byte ordering depends on format, should be the same as the metrics count */</span><span class="w"></span>
@@ -217,7 +216,7 @@ DEFAULT or PCF_COMPRESSED_METRICS (see the section on
 </div>
 </section>
 <section id="the-encoding-table">
-<h2>The Encoding Table<a class="headerlink" href="#the-encoding-table" title="Permalink to this headline">¶</a></h2>
+<h2>The Encoding Table<a class="headerlink" href="#the-encoding-table" title="Permalink to this heading">¶</a></h2>
 <p>The encoding table has type PCF_BDF_ENCODINGS. Its format must be PCF_DEFAULT.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">lsbint32</span><span class="w"> </span><span class="n">format</span><span class="p">;</span><span class="w">                 </span><span class="cm">/* Always stored with least significant byte first! */</span><span class="w"></span>
 <span class="n">int16</span><span class="w"> </span><span class="n">min_char_or_byte2</span><span class="p">;</span><span class="w">        </span><span class="cm">/* As in XFontStruct */</span><span class="w"></span>
@@ -243,7 +242,7 @@ enc2-min_char_or_byte2].</p>
 glyphs.</p>
 </section>
 <section id="the-scalable-widths-table">
-<h2>The Scalable Widths Table<a class="headerlink" href="#the-scalable-widths-table" title="Permalink to this headline">¶</a></h2>
+<h2>The Scalable Widths Table<a class="headerlink" href="#the-scalable-widths-table" title="Permalink to this heading">¶</a></h2>
 <p>The encoding table has type PCF_SWIDTHS. Its format must be PCF_DEFAULT.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">lsbint32</span><span class="w"> </span><span class="n">format</span><span class="p">;</span><span class="w">                 </span><span class="cm">/* Always stored with least significant byte first! */</span><span class="w"></span>
 <span class="n">int32</span><span class="w"> </span><span class="n">glyph_count</span><span class="p">;</span><span class="w">              </span><span class="cm">/* byte ordering depends on format, should be the same as the metrics count */</span><span class="w"></span>
@@ -254,7 +253,7 @@ glyphs.</p>
 character in em-units (1/1000ths of an em).</p>
 </section>
 <section id="the-glyph-names-table">
-<h2>The Glyph Names Table<a class="headerlink" href="#the-glyph-names-table" title="Permalink to this headline">¶</a></h2>
+<h2>The Glyph Names Table<a class="headerlink" href="#the-glyph-names-table" title="Permalink to this heading">¶</a></h2>
 <p>The encoding table has type PCF_GLYPH_NAMES. Its format must be PCF_DEFAULT.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">lsbint32</span><span class="w"> </span><span class="n">format</span><span class="p">;</span><span class="w">                 </span><span class="cm">/* Always stored with least significant byte first! */</span><span class="w"></span>
 <span class="n">int32</span><span class="w"> </span><span class="n">glyph_count</span><span class="p">;</span><span class="w">              </span><span class="cm">/* byte ordering depends on format, should be the same as the metrics count */</span><span class="w"></span>
@@ -364,7 +363,7 @@ character in em-units (1/1000ths of an em).</p>
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -381,7 +380,7 @@ character in em-units (1/1000ths of an em).</p>
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.0.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

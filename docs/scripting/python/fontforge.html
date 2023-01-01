@@ -1,18 +1,17 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>fontforge &#8212; FontForge 20220308 documentation</title>
+    <title>fontforge &#8212; FontForge 20230101 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <link rel="shortcut icon" href="../../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -35,9 +34,9 @@
           <div class="body" role="main">
             
   <section id="module-fontforge">
-<span id="fontforge"></span><h1>fontforge<a class="headerlink" href="#module-fontforge" title="Permalink to this headline">¶</a></h1>
+<span id="fontforge"></span><h1>fontforge<a class="headerlink" href="#module-fontforge" title="Permalink to this heading">¶</a></h1>
 <section id="module-attributes">
-<h2>Module attributes<a class="headerlink" href="#module-attributes" title="Permalink to this headline">¶</a></h2>
+<h2>Module attributes<a class="headerlink" href="#module-attributes" title="Permalink to this heading">¶</a></h2>
 <dl class="py data">
 <dt class="sig sig-object py" id="fontforge.hooks">
 <span class="sig-prename descclassname"><span class="pre">fontforge.</span></span><span class="sig-name descname"><span class="pre">hooks</span></span><a class="headerlink" href="#fontforge.hooks" title="Permalink to this definition">¶</a></dt>
@@ -138,7 +137,7 @@ describes an open contour.</p>
 
 </section>
 <section id="module-functions">
-<h2>Module functions<a class="headerlink" href="#module-functions" title="Permalink to this headline">¶</a></h2>
+<h2>Module functions<a class="headerlink" href="#module-functions" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="fontforge.getPrefs">
 <span class="sig-prename descclassname"><span class="pre">fontforge.</span></span><span class="sig-name descname"><span class="pre">getPrefs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pref_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontforge.getPrefs" title="Permalink to this definition">¶</a></dt>
@@ -601,7 +600,7 @@ features). For more information see its own section.</p>
 
 </section>
 <section id="user-interface-module-functions">
-<span id="fontforge-ui-functions"></span><h2>User Interface Module Functions<a class="headerlink" href="#user-interface-module-functions" title="Permalink to this headline">¶</a></h2>
+<span id="fontforge-ui-functions"></span><h2>User Interface Module Functions<a class="headerlink" href="#user-interface-module-functions" title="Permalink to this heading">¶</a></h2>
 <p>Users may define scripts to be run when menu items are invoked. Some of these
 scripts will want to ask users questions, so this section provides routines to
 determine if FontForge has a user interface, a command to add menu items, and
@@ -979,7 +978,7 @@ or <code class="docutils literal notranslate"><span class="pre">None</span></cod
 
 </section>
 <section id="point">
-<h2>Point<a class="headerlink" href="#point" title="Permalink to this headline">¶</a></h2>
+<h2>Point<a class="headerlink" href="#point" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="fontforge.point">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">fontforge.</span></span><span class="sig-name descname"><span class="pre">point</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_curve</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selected</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#fontforge.point" title="Permalink to this definition">¶</a></dt>
@@ -1074,7 +1073,7 @@ useful for anything else.</p>
 
 </section>
 <section id="contour">
-<h2>Contour<a class="headerlink" href="#contour" title="Permalink to this headline">¶</a></h2>
+<h2>Contour<a class="headerlink" href="#contour" title="Permalink to this heading">¶</a></h2>
 <p>A contour is a collection of points. A contour may be either based on cubic or
 quadratic splines.</p>
 <p>If based on cubic splines there should be either 0 or 2 off-curve points
@@ -1497,7 +1496,7 @@ its adjacent control points such that the adjacent curvatures become equal.</p>
 
 </section>
 <section id="layer">
-<h2>Layer<a class="headerlink" href="#layer" title="Permalink to this headline">¶</a></h2>
+<h2>Layer<a class="headerlink" href="#layer" title="Permalink to this heading">¶</a></h2>
 <p>A layer is a collection of contours. All the contours must be the same order
 (all quadratic or all cubic). Currently layers do not contain references.</p>
 <p>Layers may be compared to see if their contours are similar.</p>
@@ -1868,7 +1867,7 @@ the number of contours constant) or use <code class="docutils literal notranslat
 
 </section>
 <section id="glyph-pen">
-<h2>Glyph Pen<a class="headerlink" href="#glyph-pen" title="Permalink to this headline">¶</a></h2>
+<h2>Glyph Pen<a class="headerlink" href="#glyph-pen" title="Permalink to this heading">¶</a></h2>
 <p>This implements the <a class="reference external" href="http://robofab.org/objects/pens.html">Pen Protocol</a> to
 draw a FontForge <a class="reference internal" href="#fontforge.glyph" title="fontforge.glyph"><code class="xref py py-class docutils literal notranslate"><span class="pre">glyph</span></code></a>. You create a <a class="reference internal" href="#fontforge.glyphPen" title="fontforge.glyphPen"><code class="xref py py-class docutils literal notranslate"><span class="pre">glyphPen</span></code></a> with
 <a class="reference internal" href="#fontforge.glyph.glyphPen" title="fontforge.glyph.glyphPen"><code class="xref py py-meth docutils literal notranslate"><span class="pre">glyph.glyphPen()</span></code></a>. You then draw into it with the operators below.</p>
@@ -1964,7 +1963,7 @@ UI and related API calls.</p>
 
 </section>
 <section id="glyph">
-<h2>Glyph<a class="headerlink" href="#glyph" title="Permalink to this headline">¶</a></h2>
+<h2>Glyph<a class="headerlink" href="#glyph" title="Permalink to this heading">¶</a></h2>
 <p>The glyph type refers to a <a class="reference internal" href="#fontforge.glyph" title="fontforge.glyph"><code class="xref py py-class docutils literal notranslate"><span class="pre">glyph</span></code></a> object. It has no independent life
 of its own, it always lives within a font. It has all the things you expect to
 be associated with a glyph: a glyph name, a unicode encoding, a drawing layer,
@@ -3408,7 +3407,7 @@ optional keyword argument, <code class="docutils literal notranslate"><span clas
 
 </section>
 <section id="selection">
-<h2>Selection<a class="headerlink" href="#selection" title="Permalink to this headline">¶</a></h2>
+<h2>Selection<a class="headerlink" href="#selection" title="Permalink to this heading">¶</a></h2>
 <p>This represents a font’s selection. You may index it with an encoding value (in
 the encoding ISO-646-US (ASCII) the character “A” has encoding index 65), or
 with a glyph’s name, or with a string like <code class="docutils literal notranslate"><span class="pre">&quot;uXXXXX&quot;</span></code> where <code class="docutils literal notranslate"><span class="pre">XXXXX</span></code>
@@ -3533,7 +3532,7 @@ either “more” or “less”) then the selection will be cleared. So
 
 </section>
 <section id="private">
-<h2>Private<a class="headerlink" href="#private" title="Permalink to this headline">¶</a></h2>
+<h2>Private<a class="headerlink" href="#private" title="Permalink to this heading">¶</a></h2>
 <p>This represents a font’s postscript private dictionary. You may index it with
 one of the standard names of things that live in the private dictionary.</p>
 <p>This type may not be pickled.</p>
@@ -3557,7 +3556,7 @@ can’t make a guess it will simply ignore the request.</p>
 
 </section>
 <section id="math">
-<h2>Math<a class="headerlink" href="#math" title="Permalink to this headline">¶</a></h2>
+<h2>Math<a class="headerlink" href="#math" title="Permalink to this heading">¶</a></h2>
 <p>This represents a font’s math constant table. Not all fonts have math tables,
 and checking this field will not create the underlying object, but examining or
 assigning to its members will create it.</p>
@@ -3955,7 +3954,7 @@ such a table.</p>
 
 </section>
 <section id="font">
-<h2>Font<a class="headerlink" href="#font" title="Permalink to this headline">¶</a></h2>
+<h2>Font<a class="headerlink" href="#font" title="Permalink to this heading">¶</a></h2>
 <p>The font type refers to a fontforge <a class="reference internal" href="#fontforge.font" title="fontforge.font"><code class="xref py py-class docutils literal notranslate"><span class="pre">font</span></code></a> object. It generally contains
 a list of <a class="reference internal" href="#fontforge.glyph" title="fontforge.glyph"><code class="xref py py-class docutils literal notranslate"><span class="pre">glyphs</span></code></a>, an encoding to order those glyphs,
 a fontname, a list of GPOS/GSUB lookups and many other things.</p>
@@ -5959,9 +5958,12 @@ described at <a class="reference internal" href="#fontforge.font.addLookup" titl
 
 <dl class="py method">
 <dt class="sig sig-object py" id="fontforge.font.mergeFeature">
-<span class="sig-prename descclassname"><span class="pre">font.</span></span><span class="sig-name descname"><span class="pre">mergeFeature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontforge.font.mergeFeature" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">font.</span></span><span class="sig-name descname"><span class="pre">mergeFeature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boolean</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontforge.font.mergeFeature" title="Permalink to this definition">¶</a></dt>
 <dd><p>Merge feature and lookup information from an adobe feature file, or metrics
-information from the (afm,tfm,etc) file into the current font.</p>
+information from the (afm, tfm, etc) file into the current font. The
+optional boolean will try to skip invalid feature lookups containing
+replacement glyphs which do not exist in the font, which can help in reusing
+large feature files.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -6452,8 +6454,46 @@ information.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="fontforge.font.transform">
-<span class="sig-prename descclassname"><span class="pre">font.</span></span><span class="sig-name descname"><span class="pre">transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">matrix</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontforge.font.transform" title="Permalink to this definition">¶</a></dt>
-<dd><p>Transforms all selected glyphs by the matrix.</p>
+<span class="sig-prename descclassname"><span class="pre">font.</span></span><span class="sig-name descname"><span class="pre">transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">matrix</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#fontforge.font.transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transforms all selected glyphs by the matrix. The optional flags argument
+should be a tuple containing any of the following strings:</p>
+<dl class="object">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">activeLayer</span></span></dt>
+<dd><p>Transform <a class="reference internal" href="#fontforge.font.activeLayer" title="fontforge.font.activeLayer"><code class="xref py py-attr docutils literal notranslate"><span class="pre">font.activeLayer</span></code></a> only. (By default all layers are
+transformed.)</p>
+</dd></dl>
+
+<dl class="object">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">guide</span></span></dt>
+<dd><p>Also transform <a class="reference internal" href="#fontforge.font.guide" title="fontforge.font.guide"><code class="xref py py-attr docutils literal notranslate"><span class="pre">font.guide</span></code></a> layer.</p>
+</dd></dl>
+
+<dl class="object">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">noWidth</span></span></dt>
+<dd><p>Do not change <a class="reference internal" href="#fontforge.glyph.width" title="fontforge.glyph.width"><code class="xref py py-attr docutils literal notranslate"><span class="pre">glyph.width</span></code></a>.</p>
+</dd></dl>
+
+<dl class="object">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">round</span></span></dt>
+<dd><p>Round to int after the transformation is done.</p>
+</dd></dl>
+
+<dl class="object">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">simplePos</span></span></dt>
+<dd><p>Also transform simple positioning features and kern pairs.</p>
+</dd></dl>
+
+<dl class="object">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">kernClasses</span></span></dt>
+<dd><p>Also transform kerning classes.</p>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py method">
@@ -6544,7 +6584,7 @@ for the expressions is explained in the
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -6561,7 +6601,7 @@ for the expressions is explained in the
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.0.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
