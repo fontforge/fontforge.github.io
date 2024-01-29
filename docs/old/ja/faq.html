@@ -621,7 +621,7 @@
 	      ラインスペーシングは&lsquo;hhea&rsquo;テーブルのアセンダとディセンダの値によって設定されます。これは、裏を返せばフォントのバウンディングボックスの値に設定されるということです。これは賢い選択ではありません。
 	    <LI>
 <!--	      On windows<BR>
-	      Line spacing is supposed to be set to the Typo Ascent/Typo Desent values
+	      Line spacing is supposed to be set to the Typo Ascent/Typo Descent values
 	      specified in the OS/2 table. And these in turn are supposed to sum to the
 	      emsize. (FontForge sets these values to the ascent/descent values you specify
 	      for your font). Unfortunately most windows applications don't follow this
@@ -635,7 +635,7 @@
 <!--	      (The clipping region should be bigger than the bounding box if a GPOS lookup
 	      could move a glyph so that it extended beyond the bounding box (mark to base
 	      is likely to cause problems). I'm not sure how this applies to cursive
-	      positioning in Urdu where GPOS lookups can make lines arbetrarily tall) -->
+	      positioning in Urdu where GPOS lookups can make lines arbitrarily tall) -->
 	      (GPOS の位置指定によってグリフがバウンディングボックスからはみ出る位置に移動する場合は、クリッピング領域はバウンディングボックスよりも大きくする必要があります (マークから基底文字への参照が問題を起こすようです)。GPOS によって行がいくらでも高くなる可能性があるウルドゥー語の筆記体ではこれがどのように当てはまるのかについてはよく分かりません)
 	    <LI>
 <!--	      On linux<BR>
@@ -717,7 +717,7 @@
 	  (ラテンアルファベットのような) たかだか数百個の単純なグリフを含む用字系にのみ興味があるならば、192MB で十分すぎるでしょう。
 	<LI>
 <!--	  If you are doing serious editing of CJK fonts then 512Mb is on the low end
-	  of useablity. -->
+	  of usability. -->
 	  CJK フォントの本格的に編集を行うなら、512MB が使いものになる最低限の容量でしょう。
       </UL>
       <P>

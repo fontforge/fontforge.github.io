@@ -174,7 +174,7 @@ determines the point size)</p>
 <section id="random-questions">
 <h2>Random questions<a class="headerlink" href="#random-questions" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference internal" href="#faq-background"><span class="std std-ref">FontForge’s grey background distesses me. How do I change it?</span></a></p></li>
+<li><p><a class="reference internal" href="#faq-background"><span class="std std-ref">FontForge’s grey background distresses me. How do I change it?</span></a></p></li>
 <li><p><a class="reference internal" href="#faq-fontsize"><span class="std std-ref">The fonts FontForge uses in its GUI are too small (too big) how do I change them?</span></a></p></li>
 <li><p><a class="reference internal" href="#faq-monospace"><span class="std std-ref">How do I mark a font as monospaced?</span></a></p></li>
 <li><p><a class="reference internal" href="#faq-new-encoding"><span class="std std-ref">How do I tell fontforge about a new encoding?</span></a></p></li>
@@ -443,7 +443,7 @@ continues to work.</p>
 </div>
 <p class="attribution">—<em>The Lady’s not for Burning</em> – Christopher Fry</p>
 </div></blockquote>
-<p>Mostly because I don’t thnk that way. I don’t plan things out, I have a vague
+<p>Mostly because I don’t think that way. I don’t plan things out, I have a vague
 idea where I want to go and I explore in that direction.</p>
 <p>Consider python scripting. I decided to add python to fontforge. I found that
 meant it became easier to design a mechanism so users could create their own
@@ -584,7 +584,7 @@ good choice. You can control these values from
 <a class="reference internal" href="ui/dialogs/fontinfo.html#fontinfo-ttf-metrics"><span class="std std-ref">Element-&gt;Font Info-&gt;OS/2-&gt;Metrics</span></a>.</p>
 </li>
 <li><p>On windows</p>
-<p>Line spacing is supposed to be set to the Typo Ascent/Typo Desent values
+<p>Line spacing is supposed to be set to the Typo Ascent/Typo Descent values
 specified in the OS/2 table. And these in turn are supposed to sum to the
 emsize. (FontForge sets these values to the ascent/descent values you specify
 for your font). Unfortunately most windows applications don’t follow this
@@ -596,7 +596,7 @@ from <a class="reference internal" href="ui/dialogs/fontinfo.html#fontinfo-ttf-m
 <p>(The clipping region should be bigger than the bounding box if a GPOS lookup
 could move a glyph so that it extended beyond the bounding box (mark to base
 is likely to cause problems). I’m not sure how this applies to cursive
-positioning in Urdu where GPOS lookups can make lines arbetrarily tall)</p>
+positioning in Urdu where GPOS lookups can make lines arbitrarily tall)</p>
 <p>MicroSoft has added a redundant bit to the OS/2 table, which essentially
 tells applications they should follow the standard and use the Typographic
 linespacing fields. This bit is called UseTypoMetrics in OpenType, and in
@@ -675,7 +675,7 @@ memory (though screen real estate can be a problem too)</p>
 <li><p>If you are interested in scripts with no more than few hundred simple glyphs
 (like the latin alphabet) then 192Mb is more than enough.</p></li>
 <li><p>If you are doing serious editing of CJK fonts then 512Mb is on the low end of
-useablity.</p></li>
+usability.</p></li>
 </ul>
 <p>FontForge requires a color (or grey-scale) monitor – black &amp; white will not
 suffice.</p>
