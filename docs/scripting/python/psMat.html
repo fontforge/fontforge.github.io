@@ -33,36 +33,36 @@
           <div class="body" role="main">
             
   <section id="module-psMat">
-<span id="psmat"></span><h1>psMat<a class="headerlink" href="#module-psMat" title="Permalink to this heading">¶</a></h1>
+<span id="psmat"></span><h1>psMat<a class="headerlink" href="#module-psMat" title="Link to this heading">¶</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="psMat.identity">
-<span class="sig-prename descclassname"><span class="pre">psMat.</span></span><span class="sig-name descname"><span class="pre">identity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psMat.identity" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">psMat.</span></span><span class="sig-name descname"><span class="pre">identity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psMat.identity" title="Link to this definition">¶</a></dt>
 <dd><p>returns an identity matrix as a 6 element tuple</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="psMat.compose">
-<span class="sig-prename descclassname"><span class="pre">psMat.</span></span><span class="sig-name descname"><span class="pre">compose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mat1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mat2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psMat.compose" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">psMat.</span></span><span class="sig-name descname"><span class="pre">compose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mat1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mat2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psMat.compose" title="Link to this definition">¶</a></dt>
 <dd><p>returns a matrix which is the composition of the two input transformations</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="psMat.inverse">
-<span class="sig-prename descclassname"><span class="pre">psMat.</span></span><span class="sig-name descname"><span class="pre">inverse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mat</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psMat.inverse" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">psMat.</span></span><span class="sig-name descname"><span class="pre">inverse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mat</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psMat.inverse" title="Link to this definition">¶</a></dt>
 <dd><p>returns a matrix which is the inverse of the input transformation.
 (Note: There will not always be an inverse)</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="psMat.rotate">
-<span class="sig-prename descclassname"><span class="pre">psMat.</span></span><span class="sig-name descname"><span class="pre">rotate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psMat.rotate" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">psMat.</span></span><span class="sig-name descname"><span class="pre">rotate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psMat.rotate" title="Link to this definition">¶</a></dt>
 <dd><p>returns a matrix which will rotate by <code class="docutils literal notranslate"><span class="pre">theta</span></code>. <code class="docutils literal notranslate"><span class="pre">theta</span></code> is expressed
 in radians</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="psMat.scale">
-<span class="sig-prename descclassname"><span class="pre">psMat.</span></span><span class="sig-name descname"><span class="pre">scale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#psMat.scale" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">psMat.</span></span><span class="sig-name descname"><span class="pre">scale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#psMat.scale" title="Link to this definition">¶</a></dt>
 <dd><p>returns a matrix which will scale by <code class="docutils literal notranslate"><span class="pre">x</span></code> in the horizontal direction and
 <code class="docutils literal notranslate"><span class="pre">y</span></code> in the vertical. If <code class="docutils literal notranslate"><span class="pre">y</span></code> is omitted, it will scale by the same
 amount (<code class="docutils literal notranslate"><span class="pre">x</span></code>) in both directions</p>
@@ -70,14 +70,14 @@ amount (<code class="docutils literal notranslate"><span class="pre">x</span></c
 
 <dl class="py function">
 <dt class="sig sig-object py" id="psMat.skew">
-<span class="sig-prename descclassname"><span class="pre">psMat.</span></span><span class="sig-name descname"><span class="pre">skew</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psMat.skew" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">psMat.</span></span><span class="sig-name descname"><span class="pre">skew</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psMat.skew" title="Link to this definition">¶</a></dt>
 <dd><p>returns a matrix which will skew by <code class="docutils literal notranslate"><span class="pre">theta</span></code> (to produce an oblique font).
 <code class="docutils literal notranslate"><span class="pre">theta</span></code> is expressed in radians</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="psMat.translate">
-<span class="sig-prename descclassname"><span class="pre">psMat.</span></span><span class="sig-name descname"><span class="pre">translate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psMat.translate" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">psMat.</span></span><span class="sig-name descname"><span class="pre">translate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psMat.translate" title="Link to this definition">¶</a></dt>
 <dd><p>returns a matrix which will translate by <code class="docutils literal notranslate"><span class="pre">x</span></code> in the horizontal direction
 and <code class="docutils literal notranslate"><span class="pre">y</span></code> in the vertical</p>
 </dd></dl>

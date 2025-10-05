@@ -33,7 +33,7 @@
           <div class="body" role="main">
             
   <section id="hinting">
-<h1>Hinting<a class="headerlink" href="#hinting" title="Permalink to this heading">¶</a></h1>
+<h1>Hinting<a class="headerlink" href="#hinting" title="Link to this heading">¶</a></h1>
 <p>PostScript originally required that hints should not overlap. Now it requires
 that any active set of hints be non-overlapping, but it allows you to change
 sets as you move through the glyph.</p>
@@ -59,7 +59,7 @@ by using the Counters pane of the <span class="menuselection">Element ‣ Char I
 <p>Counters spaces appear between vertical stems too, and in this case FontForge
 would output one counter group for the vertical stems.</p>
 <section id="serifs">
-<h2>Serifs<a class="headerlink" href="#serifs" title="Permalink to this heading">¶</a></h2>
+<h2>Serifs<a class="headerlink" href="#serifs" title="Link to this heading">¶</a></h2>
 <img alt="../_images/serif.png" class="align-right" src="../_images/serif.png" />
 <p>One of the major advantages of hint substitution is that it allows certain
 standard serif situations to be described. In the example at right, the serif
@@ -75,7 +75,7 @@ But doing so would require overlapping hints, active at the same time.
 <span class="small">I think</span></p>
 </section>
 <section id="automatic-hinting">
-<h2>Automatic Hinting<a class="headerlink" href="#automatic-hinting" title="Permalink to this heading">¶</a></h2>
+<h2>Automatic Hinting<a class="headerlink" href="#automatic-hinting" title="Link to this heading">¶</a></h2>
 <p>FontForge’s AutoHint command can be used to figure out horizontal and vertical
 stem hints. It will also find hint substitution points (if any are needed), and
 will check for the simple counter description allowed by OpenType for non-Asian
@@ -90,7 +90,7 @@ regenerate them.</p>
 individual glyph with the <span class="menuselection">Hints ‣ Don’t AutoHint</span> command.</p>
 </section>
 <section id="manual-hinting">
-<h2>Manual Hinting<a class="headerlink" href="#manual-hinting" title="Permalink to this heading">¶</a></h2>
+<h2>Manual Hinting<a class="headerlink" href="#manual-hinting" title="Link to this heading">¶</a></h2>
 <p>I hope that the FontForge’s autohint command will be good enough that manual
 efforts will not be needed. But hopes like this are rarely fulfilled.</p>
 <p>The AutoHint command should find all stems in a glyph. Some of them it deems to
@@ -127,7 +127,7 @@ automatic hinting attempts.</p>
 </ul>
 <p>These do not set the “Don’t AutoHint” bit.</p>
 <section id="manual-hint-substitution-points">
-<h3>Manual Hint Substitution Points<a class="headerlink" href="#manual-hint-substitution-points" title="Permalink to this heading">¶</a></h3>
+<h3>Manual Hint Substitution Points<a class="headerlink" href="#manual-hint-substitution-points" title="Link to this heading">¶</a></h3>
 <p>FontForge’s <span class="menuselection">Hints ‣ Hint Substitution Pts</span> command will
 automatically figure out where hint substitution should occur, but if this isn’t
 good enough you may do it manually with the
@@ -156,7 +156,7 @@ them have circles drawn around them.</p>
 <p>Remember to hold the control key down when making disjoint selections.</p>
 </section>
 <section id="manual-counter-groups">
-<span id="hinting-counter"></span><h3>Manual Counter Groups<a class="headerlink" href="#manual-counter-groups" title="Permalink to this heading">¶</a></h3>
+<span id="hinting-counter"></span><h3>Manual Counter Groups<a class="headerlink" href="#manual-counter-groups" title="Link to this heading">¶</a></h3>
 <p>FontForge also has a <span class="menuselection">Hints ‣ Auto Counter</span> command which tries
 to figure out what stems form a counter group.</p>
 <p>Again you can do this manually, with the <a class="reference internal" href="../ui/dialogs/charinfo.html#charinfo-countermasks"><span class="std std-ref">Counter</span></a>
@@ -165,7 +165,7 @@ counter group you are presented with a dialog very similar to the one above in
 which you must select a set of hints that bound a set of counters.</p>
 </section>
 <section id="the-private-dictionary">
-<h3>The Private dictionary<a class="headerlink" href="#the-private-dictionary" title="Permalink to this heading">¶</a></h3>
+<h3>The Private dictionary<a class="headerlink" href="#the-private-dictionary" title="Link to this heading">¶</a></h3>
 <p>This contains font-wide hinting information. Things like: The standard width of a
 stem in the font (StdVW, StdHW), The standard height of capitals and lower case
 letters (BlueValues, OtherBlues), and so forth. These live in the PostScript
@@ -178,7 +178,7 @@ BlueValues, just as the BlueValues depend on the hints:-).</p>
 </section>
 </section>
 <section id="hints-and-previously-existing-fonts">
-<h2>Hints and previously existing fonts.<a class="headerlink" href="#hints-and-previously-existing-fonts" title="Permalink to this heading">¶</a></h2>
+<h2>Hints and previously existing fonts.<a class="headerlink" href="#hints-and-previously-existing-fonts" title="Link to this heading">¶</a></h2>
 <p>FontForge will not be able to convert TrueType instructions into PostScript
 hints when it reads a TrueType font (the format is too complex, there are too
 many possibilities, instead FontForge stores all the truetype instructions and
@@ -189,7 +189,7 @@ of hint substitution points. It will not read counter hints though.</p>
 hint substitution points and the counter hints.</p>
 </section>
 <section id="hinting-and-truetype">
-<h2>Hinting and TrueType<a class="headerlink" href="#hinting-and-truetype" title="Permalink to this heading">¶</a></h2>
+<h2>Hinting and TrueType<a class="headerlink" href="#hinting-and-truetype" title="Link to this heading">¶</a></h2>
 <p>FontForge can auto-instruct a truetype font
 (<span class="menuselection">Hints ‣ AutoInstr</span>). FontForge also allows you the somewhat
 arcane practice of editing glyph instruction programs directly
@@ -202,7 +202,7 @@ autohinter do this for you
 <p>Please look at the <a class="reference internal" href="../ui/dialogs/ttfinstrs.html"><span class="doc">page on instructing fonts</span></a>.</p>
 </section>
 <section id="hint-questions">
-<h2>Hint questions:<a class="headerlink" href="#hint-questions" title="Permalink to this heading">¶</a></h2>
+<h2>Hint questions:<a class="headerlink" href="#hint-questions" title="Link to this heading">¶</a></h2>
 <p>I find the hint documentation inadequate for me to do a good job at hinting.</p>
 <ul>
 <li><p>Section 2.4 of

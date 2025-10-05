@@ -33,7 +33,7 @@
           <div class="body" role="main">
             
   <section id="python-scripting">
-<h1>Python Scripting<a class="headerlink" href="#python-scripting" title="Permalink to this heading">¶</a></h1>
+<h1>Python Scripting<a class="headerlink" href="#python-scripting" title="Link to this heading">¶</a></h1>
 <p>I assume you have a working knowledge of <a class="reference external" href="http://www.python.org/doc/">Python</a>.
 FontForge implements two Python modules – one great huge one called <a class="reference internal" href="python/fontforge.html#module-fontforge" title="fontforge: The primary module for interacting with FontForge"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fontforge</span></code></a>
 which provides access to as much of FontForge’s functionality as I’ve had
@@ -42,7 +42,7 @@ access to some useful transformations expressed as PostScript matrices.</p>
 <p>In python terms fontforge <em>embeds</em> python. It is possible to build
 fontforge so that it is also a <a class="reference internal" href="#python-extension"><span class="std std-ref">python extension</span></a>.</p>
 <section id="fontforge-modules">
-<h2>FontForge Modules<a class="headerlink" href="#fontforge-modules" title="Permalink to this heading">¶</a></h2>
+<h2>FontForge Modules<a class="headerlink" href="#fontforge-modules" title="Link to this heading">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="python/fontforge.html">fontforge</a><ul>
@@ -284,7 +284,7 @@ fontforge so that it is also a <a class="reference internal" href="#python-exten
 </div>
 </section>
 <section id="command-line-convenience">
-<h2>Command line convenience<a class="headerlink" href="#command-line-convenience" title="Permalink to this heading">¶</a></h2>
+<h2>Command line convenience<a class="headerlink" href="#command-line-convenience" title="Link to this heading">¶</a></h2>
 <p>For convenience, Python commands given as a <code class="docutils literal notranslate"><span class="pre">-c</span></code> argument on the
 command line have the following code prepended:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">argv</span><span class="p">;</span> <span class="kn">from</span> <span class="nn">fontforge</span> <span class="kn">import</span> <span class="o">*</span>
@@ -296,7 +296,7 @@ command line have the following code prepended:</p>
 </div>
 </section>
 <section id="trivial-example">
-<h2>Trivial example<a class="headerlink" href="#trivial-example" title="Permalink to this heading">¶</a></h2>
+<h2>Trivial example<a class="headerlink" href="#trivial-example" title="Link to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fontforge</span>                                 <span class="c1">#Load the module</span>
 <span class="n">amb</span><span class="o">=</span><span class="n">fontforge</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;Ambrosia.sfd&quot;</span><span class="p">)</span>               <span class="c1">#Open a font</span>
 <span class="n">amb</span><span class="o">.</span><span class="n">selection</span><span class="o">.</span><span class="n">select</span><span class="p">((</span><span class="s2">&quot;ranges&quot;</span><span class="p">,</span><span class="kc">None</span><span class="p">),</span><span class="s2">&quot;A&quot;</span><span class="p">,</span><span class="s2">&quot;Z&quot;</span><span class="p">)</span>    <span class="c1">#select A-Z</span>
@@ -313,7 +313,7 @@ command line have the following code prepended:</p>
 </div>
 </section>
 <section id="fontforge-as-a-python-extension">
-<span id="python-extension"></span><h2>FontForge as a python extension<a class="headerlink" href="#fontforge-as-a-python-extension" title="Permalink to this heading">¶</a></h2>
+<span id="python-extension"></span><h2>FontForge as a python extension<a class="headerlink" href="#fontforge-as-a-python-extension" title="Link to this heading">¶</a></h2>
 <p>In addition to embedding Python, FontForge typically installs a Python
 module accessible to the system’s <code class="docutils literal notranslate"><span class="pre">python</span></code> executable, which can be
 accessed using:</p>

@@ -33,7 +33,7 @@
           <div class="body" role="main">
             
   <section id="the-askmulti-dialog">
-<h1>The <cite>askMulti</cite> Dialog<a class="headerlink" href="#the-askmulti-dialog" title="Permalink to this heading">¶</a></h1>
+<h1>The <cite>askMulti</cite> Dialog<a class="headerlink" href="#the-askmulti-dialog" title="Link to this heading">¶</a></h1>
 <p>When called in a UI-enabled environment the Python
 <a class="reference internal" href="../scripting/python/fontforge.html#fontforge.askMulti" title="fontforge.askMulti"><code class="xref py py-func docutils literal notranslate"><span class="pre">fontforge.askMulti()</span></code></a> method raises a modal dialog that prompts the
 user to answer one or more questions, potentially organized into “categories”
@@ -43,7 +43,7 @@ window title bar.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">specification</span></code> paramter is either a Python list or dictionary object
 specifying the questions. This is explained below.</p>
 <section id="questions">
-<h2>Questions<a class="headerlink" href="#questions" title="Permalink to this heading">¶</a></h2>
+<h2>Questions<a class="headerlink" href="#questions" title="Link to this heading">¶</a></h2>
 <p>There are four question types, corresponding to the single-question
 <a class="reference internal" href="../scripting/python/fontforge.html#fontforge.askString" title="fontforge.askString"><code class="xref py py-func docutils literal notranslate"><span class="pre">fontforge.askString()</span></code></a>, <a class="reference internal" href="../scripting/python/fontforge.html#fontforge.askChoices" title="fontforge.askChoices"><code class="xref py py-func docutils literal notranslate"><span class="pre">fontforge.askChoices()</span></code></a>,
 <a class="reference internal" href="../scripting/python/fontforge.html#fontforge.openFilename" title="fontforge.openFilename"><code class="xref py py-func docutils literal notranslate"><span class="pre">fontforge.openFilename()</span></code></a>, and <a class="reference internal" href="../scripting/python/fontforge.html#fontforge.saveFilename" title="fontforge.saveFilename"><code class="xref py py-func docutils literal notranslate"><span class="pre">fontforge.saveFilename()</span></code></a>
@@ -65,7 +65,7 @@ absent the default is <code class="docutils literal notranslate"><span class="pr
 is <code class="docutils literal notranslate"><span class="pre">None</span></code>, so if you want an aligned, empty label use a space as the
 <code class="docutils literal notranslate"><span class="pre">question</span></code> value.)</p>
 <section id="string-questions">
-<h3>String Questions<a class="headerlink" href="#string-questions" title="Permalink to this heading">¶</a></h3>
+<h3>String Questions<a class="headerlink" href="#string-questions" title="Link to this heading">¶</a></h3>
 <p>A string question displays the label followed by a text entry field.  Its
 <code class="docutils literal notranslate"><span class="pre">type</span></code> value must be “string”.</p>
 <p>The only additional key for a string question is <code class="docutils literal notranslate"><span class="pre">default</span></code>, which is optional.
@@ -77,7 +77,7 @@ value of the answer entry field. An example dictionary is:</p>
 </div>
 </section>
 <section id="choice-questions">
-<h3>Choice Questions<a class="headerlink" href="#choice-questions" title="Permalink to this heading">¶</a></h3>
+<h3>Choice Questions<a class="headerlink" href="#choice-questions" title="Link to this heading">¶</a></h3>
 <p>Choice questions ask the user to pick a subset of given answers. Its <code class="docutils literal notranslate"><span class="pre">type</span></code>
 value must be “choice”. This question type has three additional dictionary
 keys: <code class="docutils literal notranslate"><span class="pre">answers</span></code>, <code class="docutils literal notranslate"><span class="pre">multiple</span></code>, and <code class="docutils literal notranslate"><span class="pre">checks</span></code>.</p>
@@ -111,7 +111,7 @@ mnemonics section) and may have other advantages.</p>
 </div>
 </section>
 <section id="pathname-questions">
-<h3>Pathname Questions<a class="headerlink" href="#pathname-questions" title="Permalink to this heading">¶</a></h3>
+<h3>Pathname Questions<a class="headerlink" href="#pathname-questions" title="Link to this heading">¶</a></h3>
 <p>The open pathname and save pathname questions have the respective type values
 “openpath” and “savepath”. These differ from the
 <a class="reference internal" href="../scripting/python/fontforge.html#fontforge.openFilename" title="fontforge.openFilename"><code class="xref py py-func docutils literal notranslate"><span class="pre">fontforge.openFilename()</span></code></a> and <a class="reference internal" href="../scripting/python/fontforge.html#fontforge.saveFilename" title="fontforge.saveFilename"><code class="xref py py-func docutils literal notranslate"><span class="pre">fontforge.saveFilename()</span></code></a>
@@ -128,7 +128,7 @@ must be strings. An example dictionary is:</p>
 </section>
 </section>
 <section id="categories">
-<h2>Categories<a class="headerlink" href="#categories" title="Permalink to this heading">¶</a></h2>
+<h2>Categories<a class="headerlink" href="#categories" title="Link to this heading">¶</a></h2>
 <p>Questions are organized into categories. A category is a dictionary with
 two keys: <code class="docutils literal notranslate"><span class="pre">category</span></code> and <code class="docutils literal notranslate"><span class="pre">questions</span></code>. The value of <code class="docutils literal notranslate"><span class="pre">category</span></code> should be a
 either string to display to the user or <code class="docutils literal notranslate"><span class="pre">None</span></code> if no label is needed.
@@ -139,7 +139,7 @@ described above. A category containing the dictionaries above looks like:</p>
 </figure>
 </section>
 <section id="the-specification">
-<h2>The Specification<a class="headerlink" href="#the-specification" title="Permalink to this heading">¶</a></h2>
+<h2>The Specification<a class="headerlink" href="#the-specification" title="Link to this heading">¶</a></h2>
 <p>The specification passed as the <code class="docutils literal notranslate"><span class="pre">spec</span></code> parameter can be any of:</p>
 <ul class="simple">
 <li><p>A question dictionary</p></li>
@@ -153,7 +153,7 @@ there is only one category there is no list, even when the category
 has a name.)</p>
 </section>
 <section id="the-return-value">
-<h2>The Return Value<a class="headerlink" href="#the-return-value" title="Permalink to this heading">¶</a></h2>
+<h2>The Return Value<a class="headerlink" href="#the-return-value" title="Link to this heading">¶</a></h2>
 <p>When the user cancels the dialog, either with the “Cancel” button or
 by closing the window, the <code class="docutils literal notranslate"><span class="pre">askMulti</span></code> method returns None. Otherwise
 it returns a Python dictionary of results, one for each question. The

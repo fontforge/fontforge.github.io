@@ -33,7 +33,7 @@
           <div class="body" role="main">
             
   <section id="fontforge-scripting-tutorial">
-<h1><span class="section-number">12. </span>FontForge Scripting Tutorial<a class="headerlink" href="#fontforge-scripting-tutorial" title="Permalink to this heading">¶</a></h1>
+<h1><span class="section-number">12. </span>FontForge Scripting Tutorial<a class="headerlink" href="#fontforge-scripting-tutorial" title="Link to this heading">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>FontForge now provides python scripting. If you are familiar with python
@@ -44,7 +44,7 @@ additions to python are documented <a class="reference internal" href="../script
 <p>I try to keep things at a fairly elementary level, but this is <em>not</em> an attempt
 to teach programming.</p>
 <section id="a-simple-example">
-<h2><span class="section-number">12.1. </span>A simple example<a class="headerlink" href="#a-simple-example" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">12.1. </span>A simple example<a class="headerlink" href="#a-simple-example" title="Link to this heading">¶</a></h2>
 <p>Suppose you have a Type1 PostScript font (a pfb/afm combination) and you would
 like to convert it into a TrueType font. What would a script look like that
 could do this?</p>
@@ -53,7 +53,7 @@ could do this?</p>
 <a class="reference internal" href="../ui/menus/filemenu.html#filemenu-generate"><span class="std std-ref">File-&gt;Generate</span></a> a truetype font. You do essentially
 the same thing when writing a script:</p>
 <section id="initial-solution">
-<h3><span class="section-number">12.1.1. </span>Initial Solution<a class="headerlink" href="#initial-solution" title="Permalink to this heading">¶</a></h3>
+<h3><span class="section-number">12.1.1. </span>Initial Solution<a class="headerlink" href="#initial-solution" title="Link to this heading">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Open($1)
 Generate($1:r + &quot;.ttf&quot;)
 </pre></div>
@@ -72,7 +72,7 @@ on the extension of the filename you give it. Here we give it an extension of
 will do this automagically if it is in the same directory as the pfb.</p>
 </section>
 <section id="real-world-considerations">
-<h3><span class="section-number">12.1.2. </span>Real World Considerations<a class="headerlink" href="#real-world-considerations" title="Permalink to this heading">¶</a></h3>
+<h3><span class="section-number">12.1.2. </span>Real World Considerations<a class="headerlink" href="#real-world-considerations" title="Link to this heading">¶</a></h3>
 <p>So that’s what the script looks like. To be useful it should probably live in a
 file of its own. So create a file called “convert.pe” and store the above script
 in it.</p>
@@ -91,7 +91,7 @@ Generate($1:r + &quot;.ttf&quot;)
 shell, as we will see in the next section.</p>
 </section>
 <section id="invoking-a-script-and-passing-it-arguments">
-<span id="scripting-tutorial-invoking"></span><h3><span class="section-number">12.1.3. </span>Invoking a script and passing it arguments<a class="headerlink" href="#invoking-a-script-and-passing-it-arguments" title="Permalink to this heading">¶</a></h3>
+<span id="scripting-tutorial-invoking"></span><h3><span class="section-number">12.1.3. </span>Invoking a script and passing it arguments<a class="headerlink" href="#invoking-a-script-and-passing-it-arguments" title="Link to this heading">¶</a></h3>
 <p>Ok, now we’ve got basic script. How do we use it?</p>
 <p>Well we can pass it to FontForge directly by typing</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ fontforge -script convert.pe foo.pfb
@@ -104,7 +104,7 @@ shell, as we will see in the next section.</p>
 <p>And the shell knows to call fontforge to process the script.</p>
 </section>
 <section id="using-loops">
-<h3><span class="section-number">12.1.4. </span>Using loops<a class="headerlink" href="#using-loops" title="Permalink to this heading">¶</a></h3>
+<h3><span class="section-number">12.1.4. </span>Using loops<a class="headerlink" href="#using-loops" title="Link to this heading">¶</a></h3>
 <p>That’s all well and good, but if you have lots of fonts to convert this might
 get tedious. So let’s change our script so it will take lots of filenames which
 we can then process one at a time.</p>
@@ -138,7 +138,7 @@ going.</p>
 <p>Or something similar.</p>
 </section>
 <section id="complexities">
-<h3><span class="section-number">12.1.5. </span>Complexities<a class="headerlink" href="#complexities" title="Permalink to this heading">¶</a></h3>
+<h3><span class="section-number">12.1.5. </span>Complexities<a class="headerlink" href="#complexities" title="Link to this heading">¶</a></h3>
 <p>Now suppose that you wanted a script that could convert a truetype font to an
 opentype font as well as a type1 font to a truetype. Well let’s make our script
 even more complex:</p>
@@ -240,9 +240,9 @@ integral (or in some cases half-integral) coordinates for points.</p>
 </section>
 </section>
 <section id="other-examples">
-<h2><span class="section-number">12.2. </span>Other Examples<a class="headerlink" href="#other-examples" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">12.2. </span>Other Examples<a class="headerlink" href="#other-examples" title="Link to this heading">¶</a></h2>
 <section id="adding-accented-characters">
-<h3><span class="section-number">12.2.1. </span>Adding Accented Characters<a class="headerlink" href="#adding-accented-characters" title="Permalink to this heading">¶</a></h3>
+<h3><span class="section-number">12.2.1. </span>Adding Accented Characters<a class="headerlink" href="#adding-accented-characters" title="Link to this heading">¶</a></h3>
 <p>Very few Type1 fonts have the full unicode range of accented characters. With
 FontForge it is fairly easy to load a Type1 font, add as many possible accented
 characters as the font permits (If the font does not contain ogonek, then FF
@@ -258,7 +258,7 @@ Generate($1:r + &quot;.otf&quot;)
 </div>
 </section>
 <section id="merging-a-type1-and-type1-expert-font-and-creating-appropriate-gsub-tables">
-<h3><span class="section-number">12.2.2. </span>Merging a type1 and type1 expert font and creating appropriate GSUB tables.<a class="headerlink" href="#merging-a-type1-and-type1-expert-font-and-creating-appropriate-gsub-tables" title="Permalink to this heading">¶</a></h3>
+<h3><span class="section-number">12.2.2. </span>Merging a type1 and type1 expert font and creating appropriate GSUB tables.<a class="headerlink" href="#merging-a-type1-and-type1-expert-font-and-creating-appropriate-gsub-tables" title="Link to this heading">¶</a></h3>
 <p>Adobe used to ship font packs containing a normal font and an “expert” font
 which included small caps, lower case numbers, etc. Now-a-days that should all
 be stuffed into one otf font with appropriate GSUB entries linking the glyphs.</p>
@@ -272,7 +272,7 @@ DefaultATT(&quot;*&quot;)
 </div>
 </section>
 <section id="more-examples">
-<h3><span class="section-number">12.2.3. </span>More examples<a class="headerlink" href="#more-examples" title="Permalink to this heading">¶</a></h3>
+<h3><span class="section-number">12.2.3. </span>More examples<a class="headerlink" href="#more-examples" title="Link to this heading">¶</a></h3>
 <p>See the <a class="reference internal" href="../scripting/scripting.html#scripting-example"><span class="std std-ref">page on scripting</span></a>.</p>
 </section>
 </section>
