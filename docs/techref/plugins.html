@@ -1,18 +1,17 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Using FontForge Plugins &#8212; FontForge 20230101 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <link rel="shortcut icon" href="../_static/fftype16.png"/>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=cb25574f" />
+    <script src="../_static/documentation_options.js?v=00357e79"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="icon" href="../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Several formats for bitmap only sfnts" href="bitmaponlysfnt.html" />
@@ -34,7 +33,7 @@
           <div class="body" role="main">
             
   <section id="using-fontforge-plugins">
-<h1>Using FontForge Plugins<a class="headerlink" href="#using-fontforge-plugins" title="Permalink to this heading">¶</a></h1>
+<h1>Using FontForge Plugins<a class="headerlink" href="#using-fontforge-plugins" title="Link to this heading">¶</a></h1>
 <p>A FontForge plugin is a Python package that contains code to enhance
 the FontForge application in some way, most often by adding one or more
 entries to the Font View or Char View <a class="reference internal" href="../ui/menus/toolsmenu.html"><span class="doc">Tools menu</span></a>.
@@ -43,7 +42,7 @@ Using a plugin is as easy as installing the package (often with
 the plugin. Almost any plugin of general interest will be listed in
 the <a class="reference external" href="https:pypi.org/search/?q=%22FontForge_plugin%22">PyPI package database</a>.</p>
 <section id="plugin-preferences">
-<h2>Plugin Preferences<a class="headerlink" href="#plugin-preferences" title="Permalink to this heading">¶</a></h2>
+<h2>Plugin Preferences<a class="headerlink" href="#plugin-preferences" title="Link to this heading">¶</a></h2>
 <p>Two FontForge preference values affect the behavior of plugins. The first is
 “UsePlugins” in the “Preferences …” dialog (under <a class="reference internal" href="../ui/menus/filemenu.html"><span class="doc">the File menu</span></a>), which is On by default. Turning this Off, temporarily
 or permanently, will keep FontForge from attempting to discover and load
@@ -62,7 +61,7 @@ you will depend on the degree of control you have over what packages are
 installed in your python path.</p>
 </section>
 <section id="enabling-and-disabling-plugins">
-<h2>Enabling and Disabling Plugins<a class="headerlink" href="#enabling-and-disabling-plugins" title="Permalink to this heading">¶</a></h2>
+<h2>Enabling and Disabling Plugins<a class="headerlink" href="#enabling-and-disabling-plugins" title="Link to this heading">¶</a></h2>
 <p>The “Configure Plugins…” dialog allows you to Enable or Disable individual
 plugins and also Delete entries for once-discovered plugins that are no
 longer found. You can also “reorder” plugins—changing the load order and
@@ -76,7 +75,7 @@ package.</p>
 and the process of setting them will vary by plugin.</p>
 </section>
 <section id="loading-plugins-for-scripts">
-<h2>Loading Plugins For Scripts<a class="headerlink" href="#loading-plugins-for-scripts" title="Permalink to this heading">¶</a></h2>
+<h2>Loading Plugins For Scripts<a class="headerlink" href="#loading-plugins-for-scripts" title="Link to this heading">¶</a></h2>
 <p>When a script is run with FontForge directly using the <code class="docutils literal notranslate"><span class="pre">-script</span></code> flag each
 enabled and discovered plugin will be loaded before control is passed off to
 the script (unless the <code class="docutils literal notranslate"><span class="pre">-skippyplug</span></code> flag is also specified).
@@ -88,7 +87,7 @@ new font export format) you must load the plugins explicitly by calling
 loaded should be harmless.</p>
 </section>
 <section id="troubleshooting">
-<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this heading">¶</a></h2>
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">¶</a></h2>
 <p>The FontForge project has no control over who can make a plugin. At
 some point you may install one that causes problems, potentially even
 preventing you from successfully running FontForge. One work-around for
@@ -206,7 +205,7 @@ that is not discovered.</p>
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.0.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

@@ -1,18 +1,17 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>sfddiff &#8212; FontForge 20230101 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <link rel="shortcut icon" href="../_static/fftype16.png"/>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=cb25574f" />
+    <script src="../_static/documentation_options.js?v=00357e79"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="icon" href="../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Frequently Asked Questions" href="../faq.html" />
@@ -34,7 +33,7 @@
           <div class="body" role="main">
             
   <section id="sfddiff">
-<h1>sfddiff<a class="headerlink" href="#sfddiff" title="Permalink to this heading">¶</a></h1>
+<h1>sfddiff<a class="headerlink" href="#sfddiff" title="Link to this heading">¶</a></h1>
 <p>A program for comparing fonts</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sfddiff</span> <span class="p">[</span><span class="o">-</span><span class="n">merge</span> <span class="n">outfile</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">ignorehints</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">ignorenames</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">ignoregpos</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">ignoregsub</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">ignorebitmaps</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">exact</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">warn</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">version</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">help</span><span class="p">]</span> <span class="n">fontfile1</span> <span class="n">fontfile2</span>
 </pre></div>
@@ -60,7 +59,7 @@ different.</p></li>
 </ol>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-sfddiff-merge">
-<span class="sig-name descname"><span class="pre">-merge</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;output&gt;</span></span><a class="headerlink" href="#cmdoption-sfddiff-merge" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">-merge</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;output&gt;</span></span><a class="headerlink" href="#cmdoption-sfddiff-merge" title="Link to this definition">¶</a></dt>
 <dd><p>If this flag is specified the following argument should be the name of an
 output file into which sfddiff will store a merged version of the two fonts.</p>
 <p>This will contain everything from fontfile1 as well as any characters present in
@@ -71,30 +70,30 @@ fontfile2 (sadly references can not be placed in the background).</p>
 
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-sfddiff-ignorehints">
-<span class="sig-name descname"><span class="pre">-ignorehints</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-sfddiff-ignorehints" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">-ignorehints</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-sfddiff-ignorehints" title="Link to this definition">¶</a></dt>
 <dd><p>If specified, then no hint differences will be reported.</p>
 </dd></dl>
 
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-sfddiff-help">
-<span class="sig-name descname"><span class="pre">-help</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-sfddiff-help" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">-help</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-sfddiff-help" title="Link to this definition">¶</a></dt>
 <dd><p>Provides a mini description and will list the available options.</p>
 </dd></dl>
 
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-sfddiff-usage">
-<span class="sig-name descname"><span class="pre">-usage</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-sfddiff-usage" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">-usage</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-sfddiff-usage" title="Link to this definition">¶</a></dt>
 <dd><p>Lists the available options.</p>
 </dd></dl>
 
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-sfddiff-version">
-<span class="sig-name descname"><span class="pre">-version</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-sfddiff-version" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">-version</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-sfddiff-version" title="Link to this definition">¶</a></dt>
 <dd><p>Displays the current version of <em>sfddiff</em>.</p>
 </dd></dl>
 
 <section id="see-also">
-<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading">¶</a></h2>
+<h2>See Also<a class="headerlink" href="#see-also" title="Link to this heading">¶</a></h2>
 <p><a class="reference internal" href="../index.html"><span class="doc">fontforge</span></a></p>
 </section>
 </section>
@@ -177,7 +176,7 @@ fontfile2 (sadly references can not be placed in the background).</p>
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.0.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

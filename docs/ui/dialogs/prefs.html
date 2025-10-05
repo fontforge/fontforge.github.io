@@ -1,18 +1,17 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Preferences Dialog &#8212; FontForge 20230101 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
-    <link rel="shortcut icon" href="../../_static/fftype16.png"/>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=cb25574f" />
+    <script src="../../_static/documentation_options.js?v=00357e79"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="icon" href="../../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Font Info" href="fontinfo.html" />
@@ -34,9 +33,9 @@
           <div class="body" role="main">
             
   <section id="preferences-dialog">
-<h1>Preferences Dialog<a class="headerlink" href="#preferences-dialog" title="Permalink to this heading">¶</a></h1>
+<h1>Preferences Dialog<a class="headerlink" href="#preferences-dialog" title="Link to this heading">¶</a></h1>
 <section id="configuration-files">
-<h2>Configuration Files<a class="headerlink" href="#configuration-files" title="Permalink to this heading">¶</a></h2>
+<h2>Configuration Files<a class="headerlink" href="#configuration-files" title="Link to this heading">¶</a></h2>
 <p>FontForge will load its preferences from multiple places, and the last
 definition of any preference will win. First, system defaults are loaded from
 your system wide $sharedir/fontforge/prefs. On a typical installation this might
@@ -52,11 +51,11 @@ with settings you wish for everybody to start with and replace the default prefs
 file in the distribution with your own personal preferences.</p>
 </section>
 <section id="the-preferences-window">
-<h2>The Preferences Window…<a class="headerlink" href="#the-preferences-window" title="Permalink to this heading">¶</a></h2>
+<h2>The Preferences Window…<a class="headerlink" href="#the-preferences-window" title="Link to this heading">¶</a></h2>
 <figure class="align-default">
 <img alt="../../_images/prefs-generic.png" src="../../_images/prefs-generic.png" />
 </figure>
-<span class="target" id="prefs-resourcefile"></span><dl class="object">
+<dl class="object" id="prefs-resourcefile">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">ResourceFile</span></span></dt>
 <dd><p>(For historical reasons) this is the name of the file containing appearance
@@ -66,21 +65,21 @@ just use the <a class="reference internal" href="../misc/resedit.html"><span cla
 this file.</p>
 </dd></dl>
 
-<span class="target" id="prefs-helpdir"></span><dl class="object">
+<dl class="object" id="prefs-helpdir">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">HelpDir</span></span></dt>
 <dd><p>FontForge will search this directory for help files when the user presses
 [F1].</p>
 </dd></dl>
 
-<span class="target" id="prefs-othersubrsfile"></span><dl class="object">
+<dl class="object" id="prefs-othersubrsfile">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">OtherSubrsFile</span></span></dt>
 <dd><p>Allows you to redefine the OtherSubrs routines used in type1 fonts. The file
 format is described at the scripting command <a class="reference internal" href="../../scripting/scripting-alpha.html#ReadOtherSubrsFile" title="ReadOtherSubrsFile"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">ReadOtherSubrsFile</span></code></a>.</p>
 </dd></dl>
 
-<span class="target" id="prefs-freetypeinfontview"></span><dl class="object">
+<dl class="object" id="prefs-freetypeinfontview">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">FreeTypeInFontView</span></span></dt>
 <dd><p>Normally FontForge will use the freetype library to generate glyphs for
@@ -89,7 +88,7 @@ using FontForge’s built-in rasterizer. This preference item allows you to
 control whether to use freetype or FontForge’s own rasterizer.</p>
 </dd></dl>
 
-<span class="target" id="prefs-freetypeaafillinoutlineview"></span><dl class="object">
+<dl class="object" id="prefs-freetypeaafillinoutlineview">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">FreeTypeAAFillInOutlineView</span></span></dt>
 <dd><p>In the <a class="reference internal" href="../mainviews/charview.html"><span class="doc">outline glyph view</span></a>, FontForge can generate glyph
@@ -103,15 +102,6 @@ RAM.</p>
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">SplashScreen</span></span></dt>
 <dd><p>Controls whether a splash screen is displayed on start up.</p>
-</dd></dl>
-
-<dl class="object">
-<dt class="sig sig-object">
-<span class="sig-name descname"><span class="pre">UseCairoDrawing</span></span></dt>
-<dd><p>FontForge can use its own drawing routines, or rely on Cairo library in the
-<a class="reference internal" href="../mainviews/charview.html"><span class="doc">outline glyph view</span></a>. Using Cairo is slower, but gives smooth
-curves, and subpixel display precision. New setting applies only to windows
-created afterwards.</p>
 </dd></dl>
 
 <dl class="object">
@@ -130,13 +120,13 @@ as binary file or try to use an SFD format file as a binary font file.</p>
 <figure class="align-default">
 <img alt="../../_images/prefs-newfont.png" src="../../_images/prefs-newfont.png" />
 </figure>
-<span class="target" id="prefs-newcharset"></span><dl class="object">
+<dl class="object" id="prefs-newcharset">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">NewCharset</span></span></dt>
 <dd><p>The default encoding used to create new fonts. Normally this is ISO 8859-1.</p>
 </dd></dl>
 
-<span class="target" id="prefs-newemsize"></span><dl class="object">
+<dl class="object" id="prefs-newemsize">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">NewEmSize</span></span></dt>
 <dd><p>Specifies the default number of em-units in the em-square. For PostScript
@@ -144,7 +134,7 @@ fonts this should be 1000, for truetype fonts it should be a power of two
 (often 512, 1024 or 2048 will be used).</p>
 </dd></dl>
 
-<span class="target" id="prefs-newfontsquadratic"></span><dl class="object">
+<dl class="object" id="prefs-newfontsquadratic">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">NewFontsQuadratic</span></span></dt>
 <dd><p>Splines in fonts may be either in quadratic or cubic format. TrueType fonts
@@ -155,7 +145,7 @@ be no problem if this is set incorrectly, but setting it correctly for your
 font means you get a clearer idea of what the outlines will look like.</p>
 </dd></dl>
 
-<span class="target" id="prefs-loadedfontsasnew"></span><dl class="object">
+<dl class="object" id="prefs-loadedfontsasnew">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">LoadedFontsAsNew</span></span></dt>
 <dd><p>When FontForge reads in a font it will generally keep the splines in the
@@ -167,7 +157,7 @@ same file format as that specified by NewFontsQuadratic above.</p>
 <figure class="align-default">
 <img alt="../../_images/prefs-openfont.png" src="../../_images/prefs-openfont.png" />
 </figure>
-<span class="target" id="prefs-prefercjkencoding"></span><dl class="object">
+<dl class="object" id="prefs-prefercjkencoding">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">PreferCJKEncoding</span></span></dt>
 <dd><p>This controls the loading of truetype and opentype fonts. If a font contains
@@ -182,7 +172,7 @@ you to pick which one FontForge will choose to decode.</p>
 encoding s/he would like to use.</p>
 </dd></dl>
 
-<span class="target" id="prefs-preservetables"></span><dl class="object">
+<dl class="object" id="prefs-preservetables">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">PreserveTables</span></span></dt>
 <dd><p>A string containing a list of 4 letter table tags separated by commas. When
@@ -210,7 +200,7 @@ compact or not).</p>
 <figure class="align-default">
 <img alt="../../_images/prefs-navigation.png" src="../../_images/prefs-navigation.png" />
 </figure>
-<span class="target" id="prefs-glyphautogoto"></span><dl class="object">
+<dl class="object" id="prefs-glyphautogoto">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">GlyphAutoGoto</span></span></dt>
 <dd><p>In the glyph window this controls how ff behaves when the user types a normal
@@ -231,28 +221,28 @@ create a new <a class="reference internal" href="../mainviews/charview.html"><sp
 <figure class="align-default">
 <img alt="../../_images/prefs-editing.png" src="../../_images/prefs-editing.png" />
 </figure>
-<span class="target" id="prefs-italicconstrained"></span><dl class="object">
+<dl class="object" id="prefs-italicconstrained">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">ItalicConstrained</span></span></dt>
 <dd><p>Whether constrained motion in the glyph view should allow motion parallel to
 the italic angle as well as horizontal and vertical.</p>
 </dd></dl>
 
-<span class="target" id="prefs-arrowmovesize"></span><dl class="object">
+<dl class="object" id="prefs-arrowmovesize">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">ArrowMoveSize</span></span></dt>
 <dd><p>The number of em-units an arrow key will move a selected point in the glyph
 view.</p>
 </dd></dl>
 
-<span class="target" id="prefs-arrowaccelfactor"></span><dl class="object">
+<dl class="object" id="prefs-arrowaccelfactor">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">ArrowAccelFactor</span></span></dt>
 <dd><p>When holding down the Alt (Meta) key, the arrow keys will move faster. This
 preference item says how much faster.</p>
 </dd></dl>
 
-<span class="target" id="prefs-drawopenpathswithhighlight"></span><dl class="object">
+<dl class="object" id="prefs-drawopenpathswithhighlight">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">DrawOpenPathsWithHighlight</span></span></dt>
 <dd><p>When drawing a foreground layer, render the outline of open paths in a
@@ -264,7 +254,7 @@ this see the Outline View 2 section of the X Resource Editor available
 through the File menu.</p>
 </dd></dl>
 
-<span class="target" id="prefs-snapdistance"></span><dl class="object">
+<dl class="object" id="prefs-snapdistance">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">SnapDistance</span></span></dt>
 <dd><p>The maximum distance at which pointer motion in the glyph view will be
@@ -280,7 +270,7 @@ nearest integral value. This is useful in editing TrueType (or PostScript if
 you wish to save space in the font file).</p>
 </dd></dl>
 
-<span class="target" id="prefs-joinsnap"></span><dl class="object">
+<dl class="object" id="prefs-joinsnap">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">JoinSnap</span></span></dt>
 <dd><p>The maximum distance between the endpoints of two splines before they will
@@ -288,7 +278,7 @@ join with the <span class="menuselection">Edit ‣ Join</span> command. This is 
 pixels in the char view and em-units elsewhere.</p>
 </dd></dl>
 
-<span class="target" id="prefs-stopatjoin"></span><dl class="object">
+<dl class="object" id="prefs-stopatjoin">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">StopAtJoin</span></span></dt>
 <dd><p>When dragging points in the outline view, if the end point of one open
@@ -299,7 +289,7 @@ mouse movements (it pretends that you released the mouse button). This is
 useful if you hand jitters a little on the mouse.</p>
 </dd></dl>
 
-<span class="target" id="prefs-copymetadata"></span><dl class="object">
+<dl class="object" id="prefs-copymetadata">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">CopyMetaData</span></span></dt>
 <dd><p>Controls the behavior of <span class="menuselection">Edit ‣ Copy</span> from the fontview.
@@ -307,14 +297,14 @@ Normally Copy does not copy a glyph’s metadata (name, encoding, etc.) but if
 this is set then it will.</p>
 </dd></dl>
 
-<span class="target" id="prefs-undodepth"></span><dl class="object">
+<dl class="object" id="prefs-undodepth">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">UndoDepth</span></span></dt>
 <dd><p>Controls the maximum number of Undoes that may be retained in a glyph. (In
 some rare occasions an Undo will be stored even if this depth is 0)</p>
 </dd></dl>
 
-<span class="target" id="prefs-updateflex"></span><dl class="object">
+<dl class="object" id="prefs-updateflex">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">UpdateFlex</span></span></dt>
 <dd><p>Figure out what points will be part of flex hints after every change to a
@@ -335,7 +325,7 @@ for each new kerning subtable.</p>
 <figure class="align-default">
 <img alt="../../_images/prefs-sync.png" src="../../_images/prefs-sync.png" />
 </figure>
-<span class="target" id="prefs-autowidthsync"></span><dl class="object">
+<dl class="object" id="prefs-autowidthsync">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">AutoWidthSync</span></span></dt>
 <dd><p>Whether you want the widths of accented glyphs to track the width of the base
@@ -343,7 +333,7 @@ glyph (so if you modify the width of A then the width of À will automagically
 change, if À is built as a reference to A and a reference to grave)</p>
 </dd></dl>
 
-<span class="target" id="prefs-autolbearingsync"></span><dl class="object">
+<dl class="object" id="prefs-autolbearingsync">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">AutoLBearingSync</span></span></dt>
 <dd><p>Whether you want left side bearings of accented glyphs to track the left side
@@ -354,7 +344,7 @@ also be shifted left)</p>
 <figure class="align-default">
 <img alt="../../_images/prefs-tt.png" src="../../_images/prefs-tt.png" />
 </figure>
-<span class="target" id="prefs-clearinstrsbigchanges"></span><dl class="object">
+<dl class="object" id="prefs-clearinstrsbigchanges">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">Clear</span> <span class="pre">Instructions</span> <span class="pre">on</span> <span class="pre">Big</span> <span class="pre">Changes</span></span></dt>
 <dd><p>TrueType instructions refer to points by number. So if you do any editing
@@ -384,7 +374,7 @@ subroutines which do not hold in the new font).</p>
 <figure class="align-default">
 <img alt="../../_images/prefs-accent.png" src="../../_images/prefs-accent.png" />
 </figure>
-<span class="target" id="prefs-accentoffsetpercent"></span><dl class="object">
+<dl class="object" id="prefs-accentoffsetpercent">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">AccentOffsetPercent</span></span></dt>
 <dd><p>The amount of space (as a percentage of the em-square) that should be placed
@@ -392,14 +382,14 @@ between an accent and the glyph below it by the Build Accented Character
 command.</p>
 </dd></dl>
 
-<span class="target" id="prefs-accentcenterlowest"></span><dl class="object">
+<dl class="object" id="prefs-accentcenterlowest">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">AccentCenterLowest</span></span></dt>
 <dd><p>Whether accents should be positioned over letters based on the center of the
 accent, or on the center of the bottom of the accent.</p>
 </dd></dl>
 
-<span class="target" id="prefs-charcenterhighest"></span><dl class="object">
+<dl class="object" id="prefs-charcenterhighest">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">CharCenterHighest</span></span></dt>
 <dd><p>Whether accents should be positioned over letters based on the center of of
@@ -416,14 +406,14 @@ the letter, or on the center of the top of the letter.</p>
 <figure class="align-default">
 <img alt="../../_images/prefs-apps.png" src="../../_images/prefs-apps.png" />
 </figure>
-<span class="target" id="prefs-preferpotrace"></span><dl class="object">
+<dl class="object" id="prefs-preferpotrace">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">PreferPotrace</span></span></dt>
 <dd><p>If you system has both potrace and autotrace installed this allows you to
 specify which you’d prefer FontForge to use for autotracing.</p>
 </dd></dl>
 
-<span class="target" id="prefs-autotraceargs"></span><dl class="object">
+<dl class="object" id="prefs-autotraceargs">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">AutotraceArgs</span></span></dt>
 <dd><p>This allows you to specify any arguments you want passed to the autotrace
@@ -431,21 +421,21 @@ program. Don’t try to pass something that will change the input or output
 format or set input or output files.</p>
 </dd></dl>
 
-<span class="target" id="prefs-autotraceask"></span><dl class="object">
+<dl class="object" id="prefs-autotraceask">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">AutotraceAsk</span></span></dt>
 <dd><p>If this is set then each time autotrace is invoked it will ask you for
 arguments.</p>
 </dd></dl>
 
-<span class="target" id="prefs-mfargs"></span><dl class="object">
+<dl class="object" id="prefs-mfargs">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">MfArgs</span></span></dt>
 <dd><p>This is the command passed to the mf (MetaFont) program which controls
 conversion of .mf files into bitmaps.</p>
 </dd></dl>
 
-<span class="target" id="prefs-mfclearbg"></span><dl class="object">
+<dl class="object" id="prefs-mfclearbg">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">MfClearBg</span></span></dt>
 <dd><p>Loading a .mf font is a multi step process, first a bitmap font is generated,
@@ -455,7 +445,7 @@ may not want them after they have been autotraced. Selecting this entry will
 remove those bitmaps from the font after they have been used.</p>
 </dd></dl>
 
-<span class="target" id="prefs-mfshowerr"></span><dl class="object">
+<dl class="object" id="prefs-mfshowerr">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">MfShowErr</span></span></dt>
 <dd><p>The mf program generates a fair amount of verbiage even when it is working
@@ -468,20 +458,20 @@ so.</p>
 <figure class="align-default">
 <img alt="../../_images/prefs-font.png" src="../../_images/prefs-font.png" />
 </figure>
-<span class="target" id="prefs-foundryname"></span><dl class="object">
+<dl class="object" id="prefs-foundryname">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">Foundry</span> <span class="pre">Name</span></span></dt>
 <dd><p>Used in generating bdf files (part of the X Windows font naming convention).</p>
 </dd></dl>
 
-<span class="target" id="prefs-ttffoundry"></span><dl class="object">
+<dl class="object" id="prefs-ttffoundry">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">TTF</span> <span class="pre">Foundry</span></span></dt>
 <dd><p>Similar to the above except that it is used inside ttf files (the achVendID
 field of the OS/2 table) and is limited to 4 characters.</p>
 </dd></dl>
 
-<span class="target" id="prefs-newfontnamelist"></span><dl class="object">
+<dl class="object" id="prefs-newfontnamelist">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">NewFontNameList</span></span></dt>
 <dd><p>Specifies the namelist that will be attached to any new font. This list will
@@ -522,7 +512,7 @@ character itself may be appended to the name to make things easier.</p>
 <figure class="align-default">
 <img alt="../../_images/prefs-generate.png" src="../../_images/prefs-generate.png" />
 </figure>
-<span class="target" id="prefs-askbdfresolution"></span><dl class="object">
+<dl class="object" id="prefs-askbdfresolution">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">AskBDFResolution</span></span></dt>
 <dd><p>Normally FontForge will guess at what screen resolution you intend based on
@@ -532,7 +522,7 @@ desires. Setting this will give you more control, but you have to click
 through another dlg.</p>
 </dd></dl>
 
-<span class="target" id="prefs-autohint"></span><dl class="object">
+<dl class="object" id="prefs-autohint">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">AutoHint</span></span></dt>
 <dd><p>Whether glyphs should be automagically hinted before a font is generated or
@@ -633,7 +623,7 @@ that proper shapes are more important than proper scaling of advance widths.</p>
 <figure class="align-default">
 <img alt="../../_images/prefs-opentype.png" src="../../_images/prefs-opentype.png" />
 </figure>
-<span class="target" id="prefs-usenewindicscripts"></span><dl class="object">
+<dl class="object" id="prefs-usenewindicscripts">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">UseNewIndicScripts</span></span></dt>
 <dd><p>MS has changed the way it handles indic scripts and has created a parallel
@@ -707,7 +697,7 @@ you may add the mappings.</p>
 code and a 4 character opentype tag.</p>
 </section>
 <section id="other-ways-of-configuring">
-<h2>Other ways of configuring<a class="headerlink" href="#other-ways-of-configuring" title="Permalink to this heading">¶</a></h2>
+<h2>Other ways of configuring<a class="headerlink" href="#other-ways-of-configuring" title="Link to this heading">¶</a></h2>
 <p>A number of things that might be controlled from a preference window are
 controlled by</p>
 <ul class="simple">
@@ -809,7 +799,7 @@ controlled by</p>
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.0.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

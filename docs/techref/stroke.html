@@ -1,18 +1,17 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Expand Stroke Facility &#8212; FontForge 20230101 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <link rel="shortcut icon" href="../_static/fftype16.png"/>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=cb25574f" />
+    <script src="../_static/documentation_options.js?v=00357e79"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="icon" href="../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Extending FontForge With Python" href="pyextend.html" />
@@ -34,7 +33,7 @@
           <div class="body" role="main">
             
   <section id="expand-stroke-facility">
-<h1>Expand Stroke Facility<a class="headerlink" href="#expand-stroke-facility" title="Permalink to this heading">¶</a></h1>
+<h1>Expand Stroke Facility<a class="headerlink" href="#expand-stroke-facility" title="Link to this heading">¶</a></h1>
 <p>The Expand Stroke facility traces a closed, convex contour (referred to as the
 “nib”) along a “source” contour, producing a new contour or contours that
 enclose the area the nib “passed over”. When the source contour is open the
@@ -42,14 +41,14 @@ result is usually a single closed contour, and when the source contour is closed
 the result is usually two closed contours:</p>
 <figure class="align-default" id="id1">
 <img alt="../_images/typical.svg" src="../_images/typical.svg" /><figcaption>
-<p><span class="caption-text">Typical Examples</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Typical Examples</span><a class="headerlink" href="#id1" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>There are exceptions when the geometry of the nib and the source contour
 interact:</p>
 <figure class="align-default" id="id2">
 <img alt="../_images/exceptional.svg" src="../_images/exceptional.svg" /><figcaption>
-<p><span class="caption-text">Unusual Examples</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Unusual Examples</span><a class="headerlink" href="#id2" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>The “Expand Stroke…” dialog in the “Element” menu of a font view or outline
@@ -80,13 +79,13 @@ contours, or that can aid in debugging potential problems.</p>
 user may encounter using the system and some potential work-arounds. Please read
 this section prior to filing a GitHub issue.</p>
 <section id="offsetting">
-<span id="stroke-offsetting"></span><h2>Offsetting<a class="headerlink" href="#offsetting" title="Permalink to this heading">¶</a></h2>
+<span id="stroke-offsetting"></span><h2>Offsetting<a class="headerlink" href="#offsetting" title="Link to this heading">¶</a></h2>
 <p>Tracing a contour with a circular nib of radius <em>r</em> is equivalent to
 “offsetting”-creating parallel contours on each side at distance <em>r</em> for a total
 line thickness of <em>2r</em> (source contour shown in green):</p>
 <figure class="align-default" id="id3">
 <img alt="../_images/offsets.svg" src="../_images/offsets.svg" /><figcaption>
-<p><span class="caption-text">Offset Curves</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Offset Curves</span><a class="headerlink" href="#id3" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>In FontForge you specify a circular nib in the UI dialog by choosing the
@@ -106,18 +105,18 @@ necessarily connect. They will all connect in the case of a source contour that
 is closed and has only “smooth” points:</p>
 <figure class="align-default" id="id4">
 <img alt="../_images/offset_smooth.svg" src="../_images/offset_smooth.svg" /><figcaption>
-<p><span class="caption-text">Offsets of a smooth contour</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Offsets of a smooth contour</span><a class="headerlink" href="#id4" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>They will not connect where the source contour is open or has “corner” points
 where the angle changes:</p>
 <figure class="align-default" id="id5">
 <img alt="../_images/offset_other.svg" src="../_images/offset_other.svg" /><figcaption>
-<p><span class="caption-text">Offsets of angled and open contour</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Offsets of angled and open contour</span><a class="headerlink" href="#id5" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <section id="caps">
-<span id="stroke-cap"></span><h3>Caps<a class="headerlink" href="#caps" title="Permalink to this heading">¶</a></h3>
+<span id="stroke-cap"></span><h3>Caps<a class="headerlink" href="#caps" title="Link to this heading">¶</a></h3>
 <p>The line that closes the gap between the offset lines traced to the end of of an
 open source contour is called a “cap”. PostScript and SVG specify three cap
 styles that are really two styles: “Round” and “Butt”/”Square”. A Round cap
@@ -128,7 +127,7 @@ and “Round” are both equivalent to PS/SVG “Round”, and the options “Bu
 with other nib shapes.)</p>
 <figure class="align-default" id="id6">
 <img alt="../_images/caps.svg" src="../_images/caps.svg" /><figcaption>
-<p><span class="caption-text">Butt and Round Caps</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Butt and Round Caps</span><a class="headerlink" href="#id6" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>A PS/SVG “Square” cap is a Butt cap extended by the length of the offset radius,
@@ -141,19 +140,19 @@ therefore equivalent to a Butt cap with “Extend Cap” set to 0.5 in stroke-wi
 units.</p>
 <figure class="align-default" id="id7">
 <img alt="../_images/extend_cap.svg" src="../_images/extend_cap.svg" /><figcaption>
-<p><span class="caption-text">Extend Cap Examples</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Extend Cap Examples</span><a class="headerlink" href="#id7" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="joins">
-<span id="stroke-join"></span><h3>Joins<a class="headerlink" href="#joins" title="Permalink to this heading">¶</a></h3>
+<span id="stroke-join"></span><h3>Joins<a class="headerlink" href="#joins" title="Link to this heading">¶</a></h3>
 <p>When the source contour has a “corner” point with an angle change there will be
 one angle of less than 180 degrees and one greater than 180 degrees. The offset
 lines on the side with the smaller angle will intersect, and the easy solution
 is to trim off the parts of the line past the intersection:</p>
 <figure class="align-default" id="id8">
 <img alt="../_images/join_trimmed.svg" src="../_images/join_trimmed.svg" /><figcaption>
-<p><span class="caption-text">Offset Trimmed At Join</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Offset Trimmed At Join</span><a class="headerlink" href="#id8" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>The offset lines at the larger “reflex” angle do not meet. The line closing the
@@ -172,7 +171,7 @@ the offset lines with an arc of the offset radius. FontForge’s “Round” joi
 option is also equivalent when using a circular nib:</p>
 <figure class="align-default" id="id9">
 <img alt="../_images/joins.svg" src="../_images/joins.svg" /><figcaption>
-<p><span class="caption-text">Join Examples</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Join Examples</span><a class="headerlink" href="#id9" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>The difference between Miter and Miter Clip is in how “long” joins are handled.
@@ -188,7 +187,7 @@ join, while with the Miter Clip such a join is clipped at the join limit by a
 line parallel to the Bevel line:</p>
 <figure class="align-default" id="id10">
 <img alt="../_images/miters.svg" src="../_images/miters.svg" /><figcaption>
-<p><span class="caption-text">Miter and Miter Clip</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Miter and Miter Clip</span><a class="headerlink" href="#id10" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>Note, however, that the term “limit” is also somewhat misleading, in that a
@@ -207,18 +206,18 @@ those of the Miter Clip style.</p>
 </section>
 </section>
 <section id="calligraphic-and-other-convex-nibs">
-<span id="stroke-nibs"></span><h2>Calligraphic and Other Convex Nibs<a class="headerlink" href="#calligraphic-and-other-convex-nibs" title="Permalink to this heading">¶</a></h2>
+<span id="stroke-nibs"></span><h2>Calligraphic and Other Convex Nibs<a class="headerlink" href="#calligraphic-and-other-convex-nibs" title="Link to this heading">¶</a></h2>
 <p>In addition to circular nibs the Expand Stroke facility also has parameterized
 support for “Calligraphic” (rectangular) and Elliptical nibs. These nibs are
 described by Width and Height (called the Major and Minor Axes in the case of an
 ellipse) and a rotation Angle:</p>
 <figure class="align-default" id="id11">
 <img alt="../_images/paramnibs.svg" src="../_images/paramnibs.svg" /><figcaption>
-<p><span class="caption-text">Calligraphic and Elliptical Nibs</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Calligraphic and Elliptical Nibs</span><a class="headerlink" href="#id11" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <section id="general-convex-nibs">
-<h3>General convex nibs<a class="headerlink" href="#general-convex-nibs" title="Permalink to this heading">¶</a></h3>
+<h3>General convex nibs<a class="headerlink" href="#general-convex-nibs" title="Link to this heading">¶</a></h3>
 <p>In contrast with the parameterized nibs, the shape of a Convex nib is specified
 as a contour which can be edited interactively in the area at the top of the
 dialog, created elsewhere and then pasted into that area, or set via the Python
@@ -247,7 +246,7 @@ points/edges, where all interior angles at the points are less than 180 degrees.
 These points must be in the form of a closed, <em>clockwise</em> contour:</p>
 <figure class="align-default" id="id12">
 <img alt="../_images/convexpoly.svg" src="../_images/convexpoly.svg" /><figcaption>
-<p><span class="caption-text">Convex Polygons and Exceptions</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Convex Polygons and Exceptions</span><a class="headerlink" href="#id12" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>The second group of rules restrict the relative positions of the control points:</p>
@@ -265,7 +264,7 @@ point <em>line</em>.</p></li>
 control point can be positioned given the positions of the other points:</p>
 <figure class="align-default" id="id13">
 <img alt="../_images/convexcontrol.svg" src="../_images/convexcontrol.svg" /><figcaption>
-<p><span class="caption-text">Control Point Rules for Convex Shapes</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Control Point Rules for Convex Shapes</span><a class="headerlink" href="#id13" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>Aside from the shape, the position of a convex nib relative to the origin has an
@@ -274,12 +273,12 @@ which leaves the output in the “same place” as the source contour. A nib off
 from the origin will cause the output to be offset by that amount:</p>
 <figure class="align-default" id="id14">
 <img alt="../_images/uncentered.svg" src="../_images/uncentered.svg" /><figcaption>
-<p><span class="caption-text">Centered and Uncentered Convex Nib Output</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Centered and Uncentered Convex Nib Output</span><a class="headerlink" href="#id14" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="caps-and-joins-with-other-nibs">
-<h3>Caps and Joins With Other Nibs<a class="headerlink" href="#caps-and-joins-with-other-nibs" title="Permalink to this heading">¶</a></h3>
+<h3>Caps and Joins With Other Nibs<a class="headerlink" href="#caps-and-joins-with-other-nibs" title="Link to this heading">¶</a></h3>
 <p>Earlier versions of FontForge only provided cap and join options for circular
 and elliptical nibs (and some of the latter were misleadingly named). For other
 nibs it automatically closed the cap and join edges with the nib
@@ -288,7 +287,7 @@ options produce the shape that would be created by inking and tracing the nib on
 paper, “Nib” is a good default choice:</p>
 <figure class="align-default" id="id15">
 <img alt="../_images/nibnib.svg" src="../_images/nibnib.svg" /><figcaption>
-<p><span class="caption-text">Calligraphic nib with Nib Cap and Join</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Calligraphic nib with Nib Cap and Join</span><a class="headerlink" href="#id15" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>The other cap and join options now also work with all nibs. Although some
@@ -301,7 +300,7 @@ for other nibs. The difference lead to unexpected results with Bevel and clipped
 Miter Clip joins, although both are constructed according to the same rules.</p>
 <figure class="align-default" id="id16">
 <img alt="../_images/customjoinbevel.svg" src="../_images/customjoinbevel.svg" /><figcaption>
-<p><span class="caption-text">Join Bevel Angle of Custom Nib</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Join Bevel Angle of Custom Nib</span><a class="headerlink" href="#id16" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>For similar reasons it is often impossible to close an arbitrary join with a
@@ -310,7 +309,7 @@ will instead choose the smooth arc of the least eccentric compatible ellipse
 (which might still be noticeably eccentric).</p>
 <figure class="align-default" id="id17">
 <img alt="../_images/customround.svg" src="../_images/customround.svg" /><figcaption>
-<p><span class="caption-text">Round Join of Custom Nib</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Round Join of Custom Nib</span><a class="headerlink" href="#id17" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>No matter what nib you use, at the end of any open contour the tangent angle of
@@ -324,7 +323,7 @@ may be useful to see where the trace lines end in a given case or as the
 simplest option for later editing stages.)</p>
 <figure class="align-default" id="id18">
 <img alt="../_images/customcapbevel.svg" src="../_images/customcapbevel.svg" /><figcaption>
-<p><span class="caption-text">Cap Angle of Custom Nib</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Cap Angle of Custom Nib</span><a class="headerlink" href="#id18" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>FontForge will not trim a trace line to make a Butt or Round cap; instead it
@@ -337,7 +336,7 @@ some value-the particular amount depends on the nib and the source contours-all
 cap distances will be the same.</p>
 <figure class="align-default" id="id19">
 <img alt="../_images/extendcapfix.svg" src="../_images/extendcapfix.svg" /><figcaption>
-<p><span class="caption-text">Standardizing Cap Length with Extend Cap</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Standardizing Cap Length with Extend Cap</span><a class="headerlink" href="#id19" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>With a circular nib the em-unit and nib-span ways of specifying a Join Limit or
@@ -352,7 +351,7 @@ using Width/Span-relative values the result will tend to scale with the stroke
 width at the join or cap.</p>
 <figure class="align-default" id="id20">
 <img alt="../_images/extendcapdiff.svg" src="../_images/extendcapdiff.svg" /><figcaption>
-<p><span class="caption-text">Relative and Length-based Extend Cap with Custom Nibs</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Relative and Length-based Extend Cap with Custom Nibs</span><a class="headerlink" href="#id20" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>Unclipped, the Arcs join style should work the same way for other nibs as it
@@ -361,7 +360,7 @@ relative units) and more oblong nibs the SVG 2 clipping algorithm may fail. The
 <a class="reference internal" href="#stroke-arcsclip"><span class="std std-ref">Arcs Clip Parameter</span></a> section has more information.</p>
 </section>
 <section id="multi-nibs-and-pseudo-concavity">
-<h3>Multi-Nibs and “Pseudo-Concavity”<a class="headerlink" href="#multi-nibs-and-pseudo-concavity" title="Permalink to this heading">¶</a></h3>
+<h3>Multi-Nibs and “Pseudo-Concavity”<a class="headerlink" href="#multi-nibs-and-pseudo-concavity" title="Link to this heading">¶</a></h3>
 <p>Although a nib will typically consist of a single convex contour, the nib
 <code class="docutils literal notranslate"><span class="pre">foreground</span></code> layer can contain multiple contours as long as each conforms to
 the shape rules. Each source contour will be traced with each nib contour and
@@ -373,12 +372,12 @@ rather than just “touch”.</p>
 </section>
 </section>
 <section id="other-parameters">
-<span id="stroke-parameters"></span><h2>Other Parameters<a class="headerlink" href="#other-parameters" title="Permalink to this heading">¶</a></h2>
+<span id="stroke-parameters"></span><h2>Other Parameters<a class="headerlink" href="#other-parameters" title="Link to this heading">¶</a></h2>
 <p>The remaining Expand Stroke parameters have default values that work well for
 most cases, but you may need or want to change them in more unusual cases or
 when you encounter problems.</p>
 <section id="accuracy-target">
-<h3>Accuracy Target<a class="headerlink" href="#accuracy-target" title="Permalink to this heading">¶</a></h3>
+<h3>Accuracy Target<a class="headerlink" href="#accuracy-target" title="Link to this heading">¶</a></h3>
 <p>The “Accuracy Target” is specified in em-units and influences the geometric
 accuracy of the output. The algorithms generally “try” to be at least as
 accurate as the target but there can be exceptions. The default of 0.25 is a
@@ -388,12 +387,12 @@ algorithms are generally fast, the benefit of lower accuracy is not speed but
 fewer points/splines in the output.</p>
 <figure class="align-default" id="id21">
 <img alt="../_images/accuracytarget.svg" src="../_images/accuracytarget.svg" /><figcaption>
-<p><span class="caption-text">Outputs with Different Accuracy Targets</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Outputs with Different Accuracy Targets</span><a class="headerlink" href="#id21" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="remove-overlap">
-<h3>Remove Overlap<a class="headerlink" href="#remove-overlap" title="Permalink to this heading">¶</a></h3>
+<h3>Remove Overlap<a class="headerlink" href="#remove-overlap" title="Link to this heading">¶</a></h3>
 <p>The core algorithm of Expand Stroke calculates the “generalized offset curves”
 of the source contour and the nib. Its output can therefore include
 <a class="reference internal" href="#stroke-cusps"><span class="std std-ref">“cusps”</span></a> and other artifacts of offsetting. These are
@@ -409,12 +408,12 @@ problem area by hand and then run Remove Overlap on the rest, and get your
 output without having to wait for a software fix.)</p>
 <figure class="align-default" id="id22">
 <img alt="../_images/removeoverlap.svg" src="../_images/removeoverlap.svg" /><figcaption>
-<p><span class="caption-text">Outputs with Different Remove Overlap Settings</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Outputs with Different Remove Overlap Settings</span><a class="headerlink" href="#id22" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="external-only-and-internal-only">
-<h3>External Only and Internal Only<a class="headerlink" href="#external-only-and-internal-only" title="Permalink to this heading">¶</a></h3>
+<h3>External Only and Internal Only<a class="headerlink" href="#external-only-and-internal-only" title="Link to this heading">¶</a></h3>
 <p>As noted above a closed source contour will typically yield a larger contour
 enclosing a smaller one. The External Only and Internal Only options allow the
 user to choose one of the two contours produced in this way. However, the
@@ -433,12 +432,12 @@ weight by <em>2r</em>, assuming it is thicker than that at all points. (FontForg
 Change Weight facility uses Expand Stroke with these options.)</p>
 <figure class="align-default" id="id23">
 <img alt="../_images/intext.svg" src="../_images/intext.svg" /><figcaption>
-<p><span class="caption-text">Example of External Only and External Only</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Example of External Only and External Only</span><a class="headerlink" href="#id23" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="add-extrema-and-simplify">
-<h3>Add Extrema and Simplify<a class="headerlink" href="#add-extrema-and-simplify" title="Permalink to this heading">¶</a></h3>
+<h3>Add Extrema and Simplify<a class="headerlink" href="#add-extrema-and-simplify" title="Link to this heading">¶</a></h3>
 <p>It is normally desirable to avoid mid-spline extrema and to remove unneeded
 on-curve points and (in the case of straight lines) unneeded control points.
 Therefore Expand Stroke normally runs FontForge’s Add Extrema and Simplify
@@ -449,7 +448,7 @@ Simplify error parameter, but the other parameters are hard-coded and may change
 over time.</p>
 </section>
 <section id="arcs-clip-algorithm">
-<span id="stroke-arcsclip"></span><h3>Arcs Clip Algorithm<a class="headerlink" href="#arcs-clip-algorithm" title="Permalink to this heading">¶</a></h3>
+<span id="stroke-arcsclip"></span><h3>Arcs Clip Algorithm<a class="headerlink" href="#arcs-clip-algorithm" title="Link to this heading">¶</a></h3>
 <p>The SVG 2 specification clips an Arcs join perpendicular to a circle through the
 source contour knot (where the angle changes, requiring the join) and the
 intersection of the arcs. This approach works well for roughly-round nibs at any
@@ -465,14 +464,14 @@ many cases but is not foolproof.</p>
 </section>
 </section>
 <section id="troubleshooting">
-<span id="stroke-troubleshooting"></span><h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this heading">¶</a></h2>
+<span id="stroke-troubleshooting"></span><h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">¶</a></h2>
 <p>There are some known problems with and limitations of the Expand Stroke system.
 Many of these have simple workarounds, others may be easiest to address by
 editing the output contours. One advantage of the new system over the old is
 that it will almost always provide accurate contour edges if the additional
 processing steps (Remove Overlap, Simplify, etc.) are disabled.</p>
 <section id="general-guidance">
-<span id="stroke-gentrouble"></span><h3>General Guidance<a class="headerlink" href="#general-guidance" title="Permalink to this heading">¶</a></h3>
+<span id="stroke-gentrouble"></span><h3>General Guidance<a class="headerlink" href="#general-guidance" title="Link to this heading">¶</a></h3>
 <p>If the system produces unexpected or bad looking contours that are still roughly
 right a good first step is to try disabling Simplify and Add Extrema. These
 algorithms occasionally produce inaccurate output and both can be run
@@ -489,7 +488,7 @@ an “outline background”, can result in undesirable artifacts that Remove Ove
 difficult to identify algorithmically they are easy to delete by hand.</p>
 </section>
 <section id="cusps-and-inverted-curvature">
-<span id="stroke-cusps"></span><h3>Cusps and Inverted Curvature<a class="headerlink" href="#cusps-and-inverted-curvature" title="Permalink to this heading">¶</a></h3>
+<span id="stroke-cusps"></span><h3>Cusps and Inverted Curvature<a class="headerlink" href="#cusps-and-inverted-curvature" title="Link to this heading">¶</a></h3>
 <p>Where the curvature of the “tracing” point on the nib is less than the curvature
 of the source contour, the curvature of the output contour inverts. The
 transition point where the two curvatures are equal is called a “cusp” and that
@@ -499,7 +498,7 @@ eliminated by Remove Overlap, but when set to “None” a traced cusp will look
 something like the contour portion on the right:</p>
 <figure class="align-default" id="id24">
 <img alt="../_images/cusps.svg" src="../_images/cusps.svg" /><figcaption>
-<p><span class="caption-text">Cusp and Inverted Curvature</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Cusp and Inverted Curvature</span><a class="headerlink" href="#id24" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>A cusp can appear in the final, non-overlapping output of the algorithm in
@@ -507,7 +506,7 @@ certain unusual cases, such as a sharp turn in an open contour just before a
 Butt cap:</p>
 <figure class="align-default" id="id25">
 <img alt="../_images/buttcusp.svg" src="../_images/buttcusp.svg" /><figcaption>
-<p><span class="caption-text">Visible Cusp Near a Butt Cap</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Visible Cusp Near a Butt Cap</span><a class="headerlink" href="#id25" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>The usual remedy for this problem is a different choice of source contour shape
@@ -518,7 +517,7 @@ barely visible on the lower-left of the output contour on the right, is shown
 magnified in the center:</p>
 <figure class="align-default" id="id26">
 <img alt="../_images/roundcusp.svg" src="../_images/roundcusp.svg" /><figcaption>
-<p><span class="caption-text">Visible Cusp Portion Near a Round Cap</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Visible Cusp Portion Near a Round Cap</span><a class="headerlink" href="#id26" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>This output contour was produced without Simplify, which removes most but not
@@ -534,7 +533,7 @@ cap problem pictured above just reused Simplify on that part of the contour with
 a larger error parameter to smooth out the distortion.</p>
 </section>
 <section id="bevel-caps-and-flat-nibs">
-<span id="stroke-bevelcaps"></span><h3>Bevel Caps and Flat Nibs<a class="headerlink" href="#bevel-caps-and-flat-nibs" title="Permalink to this heading">¶</a></h3>
+<span id="stroke-bevelcaps"></span><h3>Bevel Caps and Flat Nibs<a class="headerlink" href="#bevel-caps-and-flat-nibs" title="Link to this heading">¶</a></h3>
 <p>As noted above, Bevel caps were included as the simplest cap choice in some
 situations. A Bevel cap just joins the ends of each offset contour - wherever
 the two sides of the nib leave them - with a straight line. This can yield
@@ -542,7 +541,7 @@ counter-intuitive results in some cases, particularly with nibs that have flat
 edges such as Calligraphic nibs:</p>
 <figure class="align-default" id="id27">
 <img alt="../_images/bevelcap.svg" src="../_images/bevelcap.svg" /><figcaption>
-<p><span class="caption-text">A Bevel Cap Produced by a Nib Line</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">A Bevel Cap Produced by a Nib Line</span><a class="headerlink" href="#id27" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>Both the jutting portion at the bottom left and the strange triangle structure
@@ -677,7 +676,7 @@ Although these results are unusual and probably undesirable they are not
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.0.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

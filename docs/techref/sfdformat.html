@@ -1,18 +1,17 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Spline Font Database &#8212; FontForge 20230101 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <link rel="shortcut icon" href="../_static/fftype16.png"/>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=cb25574f" />
+    <script src="../_static/documentation_options.js?v=00357e79"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="icon" href="../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="The X11 PCF bitmap font file format" href="pcf-format.html" />
@@ -34,7 +33,7 @@
           <div class="body" role="main">
             
   <section id="spline-font-database">
-<h1>Spline Font Database<a class="headerlink" href="#spline-font-database" title="Permalink to this heading">¶</a></h1>
+<h1>Spline Font Database<a class="headerlink" href="#spline-font-database" title="Link to this heading">¶</a></h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This page is often out of date. I thought it was a correct on 16 Feb 2011. A
@@ -104,7 +103,7 @@ Bad things will probably happen if the lookup subtable isn’t in the font.</p><
 wrong glyph.</p></li>
 </ul>
 <section id="font-header">
-<span id="sfdformat-font-header"></span><h2>Font Header<a class="headerlink" href="#font-header" title="Permalink to this heading">¶</a></h2>
+<span id="sfdformat-font-header"></span><h2>Font Header<a class="headerlink" href="#font-header" title="Link to this heading">¶</a></h2>
 <p>Here is an example of what the first few lines look like:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SplineFontDB</span><span class="p">:</span> <span class="mf">3.0</span>
 <span class="n">FontName</span><span class="p">:</span> <span class="n">Ambrosia</span>
@@ -825,7 +824,7 @@ the (English) MATH Info dialog.</p>
 </div>
 </section>
 <section id="outline-character-data">
-<span id="sfdformat-outline-char-data"></span><h2>Outline Character Data<a class="headerlink" href="#outline-character-data" title="Permalink to this heading">¶</a></h2>
+<span id="sfdformat-outline-char-data"></span><h2>Outline Character Data<a class="headerlink" href="#outline-character-data" title="Link to this heading">¶</a></h2>
 <p>Then for non-CID fonts you should find a line like:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">BeginChars</span><span class="p">:</span> <span class="mi">285</span> <span class="mi">253</span>
 </pre></div>
@@ -1302,7 +1301,7 @@ bitmask, see the python docs for the bits’ meanings, there can be one of these
 for every layer), and a flag that the glyph should have its references unlinked
 and remove overlap run before the font is saved.</p>
 <section id="tex-math-data">
-<h3>TeX &amp; MATH data<a class="headerlink" href="#tex-math-data" title="Permalink to this heading">¶</a></h3>
+<h3>TeX &amp; MATH data<a class="headerlink" href="#tex-math-data" title="Link to this heading">¶</a></h3>
 <p>A line like</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TEX</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">425</span>
 </pre></div>
@@ -1334,7 +1333,7 @@ then the height, kerning pairs for each. Device tables are permitted and may
 follow directly after either the height or the kerning value.</p>
 </section>
 <section id="outline-character-extensions-for-multilayered-fonts-type3">
-<h3>Outline character extensions for multilayered fonts (type3)<a class="headerlink" href="#outline-character-extensions-for-multilayered-fonts-type3" title="Permalink to this heading">¶</a></h3>
+<h3>Outline character extensions for multilayered fonts (type3)<a class="headerlink" href="#outline-character-extensions-for-multilayered-fonts-type3" title="Link to this heading">¶</a></h3>
 <p>Instead of having a single “Fore”ground layer, multilayered type3 fonts have
 (potentially) several layers, each one introduced by a Layer line which
 specifies things like filling and stroking info for this layer. Then within each
@@ -1420,7 +1419,7 @@ which indicates the that contour is part of the cliping path of the glyph.</p>
 </section>
 </section>
 <section id="bitmap-fonts">
-<span id="sfdformat-bitmap-fonts"></span><h2>Bitmap Fonts<a class="headerlink" href="#bitmap-fonts" title="Permalink to this heading">¶</a></h2>
+<span id="sfdformat-bitmap-fonts"></span><h2>Bitmap Fonts<a class="headerlink" href="#bitmap-fonts" title="Link to this heading">¶</a></h2>
 <p>After all the outline characters have been described there is an EndChars entry
 and then follow any bitmap fonts:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">EndChars</span>
@@ -1477,7 +1476,7 @@ of the reference in the composite glyph.</p>
 </pre></div>
 </div>
 <section id="cid-keyed-fonts">
-<span id="sfdformat-cid-keyed-fonts"></span><h3>CID keyed fonts<a class="headerlink" href="#cid-keyed-fonts" title="Permalink to this heading">¶</a></h3>
+<span id="sfdformat-cid-keyed-fonts"></span><h3>CID keyed fonts<a class="headerlink" href="#cid-keyed-fonts" title="Link to this heading">¶</a></h3>
 <p>A CID font is saved slightly differently. It begins with the normal font header
 which contains the information in the top level CID font dictionary. As
 mentioned above this will include special keys that specify the CID charset
@@ -1493,7 +1492,7 @@ subfonts (dumped out just like normal fonts) and their characters. Only the top
 level font will contain any bitmap characters, anchor classes, etc.</p>
 </section>
 <section id="multiple-master-fonts">
-<span id="sfdformat-multiple-master-fonts"></span><h3>Multiple Master fonts<a class="headerlink" href="#multiple-master-fonts" title="Permalink to this heading">¶</a></h3>
+<span id="sfdformat-multiple-master-fonts"></span><h3>Multiple Master fonts<a class="headerlink" href="#multiple-master-fonts" title="Link to this heading">¶</a></h3>
 <p>Multiple master fonts start with a different style of file header, and are
 followed by a set of sub fonts. If the mm font has 4 instances then there will
 be 5 subfonts (one for each instance, and one for the blended font). The font
@@ -1574,7 +1573,7 @@ space to be given names, here the point Weight=3.2, Width=1 is named “Black”
 </section>
 </section>
 <section id="splinefont-directories">
-<span id="sfdformat-sfdir"></span><h2>SplineFont Directories<a class="headerlink" href="#splinefont-directories" title="Permalink to this heading">¶</a></h2>
+<span id="sfdformat-sfdir"></span><h2>SplineFont Directories<a class="headerlink" href="#splinefont-directories" title="Link to this heading">¶</a></h2>
 <p>In late 2006 some people wanted a font format where each glyph was stored in a
 single file (to give version control systems a finer granularity and reduce the
 amount of stuff to download after changes). I have extended the format slightly
@@ -1603,7 +1602,7 @@ file and its own set of glyph files.</p></li>
 </ul>
 </section>
 <section id="autosave-format">
-<span id="sfdformat-autosave-format"></span><h2>Autosave Format<a class="headerlink" href="#autosave-format" title="Permalink to this heading">¶</a></h2>
+<span id="sfdformat-autosave-format"></span><h2>Autosave Format<a class="headerlink" href="#autosave-format" title="Link to this heading">¶</a></h2>
 <p><a class="reference internal" href="../appendices/errrecovery.html"><span class="doc">Error recovery</span></a> files are saved in ~/.FontForge/autosave,
 they have quite random looking names and end in .asfd. They look very similar to
 .sfd files above.</p>
@@ -1621,7 +1620,7 @@ format described above).</p>
 <p>Bitmaps are not preserved. Grid changes are not preserved.</p>
 <p class="rubric">Footnotes</p>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="sfdext" role="note">
+<aside class="footnote brackets" id="sfdext" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
 <p><strong>The SFD extension</strong></p>
 <p>Yes, I know it stands for sub-file directory on the dear old PDP-10s.</p>
@@ -1629,7 +1628,7 @@ format described above).</p>
 else remembers them…</p>
 <p>Oh, it’s also used by TeX for Sub Font Definition files (see ttf2afm).</p>
 </aside>
-<aside class="footnote brackets" id="ascii85" role="note">
+<aside class="footnote brackets" id="ascii85" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
 <span class="backrefs">(<a role="doc-backlink" href="#id2">1</a>,<a role="doc-backlink" href="#id3">2</a>,<a role="doc-backlink" href="#id4">3</a>)</span>
 <p><strong>ASCII85Encode</strong></p>
@@ -1771,7 +1770,7 @@ special case for all zeros), and output <em>n+1</em> of the c<sub>i</sub> bytes.
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.0.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

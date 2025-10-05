@@ -1,18 +1,17 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>FontForge and TeX &#8212; FontForge 20230101 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <link rel="shortcut icon" href="../_static/fftype16.png"/>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=cb25574f" />
+    <script src="../_static/documentation_options.js?v=00357e79"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="icon" href="../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="FontForge’s math" href="pfaeditmath.html" />
@@ -34,7 +33,7 @@
           <div class="body" role="main">
             
   <section id="fontforge-and-tex">
-<span id="pfaedit-tex-tex"></span><h1>FontForge and TeX<a class="headerlink" href="#fontforge-and-tex" title="Permalink to this heading">¶</a></h1>
+<span id="pfaedit-tex-tex"></span><h1>FontForge and TeX<a class="headerlink" href="#fontforge-and-tex" title="Link to this heading">¶</a></h1>
 <p>FontForge has a number of features built in to it to deal with TeX.</p>
 <p>It can read “pk” and “gf” bitmap files and
 <a class="reference internal" href="../ui/menus/elementmenu.html#elementmenu-autotrace"><span class="std std-ref">autotrace</span></a> them to generate outline fonts. It can
@@ -51,7 +50,7 @@ type-1 fonts based on those two.</p>
 <a class="reference internal" href="non-standard.html"><span class="doc">SFNT table ‘TeX</span></a> ‘ for storing TeX specific information in
 True/OpenType files.</p>
 <section id="generating-a-tfm-file-and-an-enc-file">
-<h2>Generating a tfm file (and an enc file).<a class="headerlink" href="#generating-a-tfm-file-and-an-enc-file" title="Permalink to this heading">¶</a></h2>
+<h2>Generating a tfm file (and an enc file).<a class="headerlink" href="#generating-a-tfm-file-and-an-enc-file" title="Link to this heading">¶</a></h2>
 <p>Before you generate a tfm file you should perform some of the following</p>
 <dl class="object">
 <dt class="sig sig-object">
@@ -59,7 +58,7 @@ True/OpenType files.</p>
 <dd><p>Do this with <span class="menuselection">Element ‣ Font Info ‣ TeX</span>.</p>
 </dd></dl>
 
-<span class="target" id="pfaedit-tex-italic"></span><dl class="object">
+<dl class="object" id="pfaedit-tex-italic">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">Optionally</span> <span class="pre">set</span> <span class="pre">Italic</span> <span class="pre">Correction</span> <span class="pre">values</span> <span class="pre">for</span> <span class="pre">glyphs</span></span></dt>
 <dd><p>(FontForge will generate default values for italic fonts, so you only need do
@@ -73,7 +72,7 @@ this if FontForge gets it wrong).</p>
 </ul>
 </dd></dl>
 
-<span class="target" id="pfaedit-tex-charlist"></span><dl class="object">
+<dl class="object" id="pfaedit-tex-charlist">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">Optionally</span> <span class="pre">set</span> <span class="pre">any</span> <span class="pre">glyphlists</span></span></dt>
 <dd><ul>
@@ -90,7 +89,7 @@ lparen.biggest”</p>
 </ul>
 </dd></dl>
 
-<span class="target" id="pfaedit-tex-extension"></span><dl class="object">
+<dl class="object" id="pfaedit-tex-extension">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">Optionally</span> <span class="pre">set</span> <span class="pre">any</span> <span class="pre">extension</span> <span class="pre">glyphs.</span></span></dt>
 <dd><ul>
@@ -118,7 +117,7 @@ Tfm &amp; Enc check box.</p>
 <p>I’m not sure what you <em>do</em> with these files yet, but this should create them.</p>
 </section>
 <section id="installing-a-type1-pfb-postscript-font-for-tex">
-<span id="pfaedit-tex-tex-install"></span><h2>Installing a type1 (pfb) postscript font for TeX<a class="headerlink" href="#installing-a-type1-pfb-postscript-font-for-tex" title="Permalink to this heading">¶</a></h2>
+<span id="pfaedit-tex-tex-install"></span><h2>Installing a type1 (pfb) postscript font for TeX<a class="headerlink" href="#installing-a-type1-pfb-postscript-font-for-tex" title="Link to this heading">¶</a></h2>
 <p>I am a novice TeX/LaTeX user so my comments should be taken with a grain of
 salt. I did manage to get this process to work on my own system.</p>
 <p>Installing a PostScript font for TeX is more complicated than one would hope
@@ -226,62 +225,62 @@ Base Encoding (this was to make sure I had all the characters I needed)</p></li>
 <span class="nv">LOCALTEXMF</span><span class="o">=</span>/usr/local/share/texmf
 
 <span class="c1"># remove any old files that might be lying around and might confuse us later on</span>
-csh -c <span class="s2">&quot;rm fi.tex *.mtx *.pl *.vpl&quot;</span>
+csh<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;rm fi.tex *.mtx *.pl *.vpl&quot;</span>
 
 <span class="c1"># create a little script to get TeX to create various useful files it needs</span>
-<span class="nb">echo</span> <span class="s2">&quot;\\input fontinst.sty&quot;</span> &gt;fi.tex
-<span class="nb">echo</span> <span class="s2">&quot;\\latinfamily{</span><span class="nv">$BASE</span><span class="s2">}{}&quot;</span> &gt;&gt;fi.tex
-<span class="nb">echo</span> <span class="s2">&quot;\\bye&quot;</span> &gt;&gt;fi.tex
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;\\input fontinst.sty&quot;</span><span class="w"> </span>&gt;fi.tex
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;\\latinfamily{</span><span class="nv">$BASE</span><span class="s2">}{}&quot;</span><span class="w"> </span>&gt;&gt;fi.tex
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;\\bye&quot;</span><span class="w"> </span>&gt;&gt;fi.tex
 
 <span class="c1">#execute that script</span>
-tex <span class="k">fi</span>
+tex<span class="w"> </span><span class="k">fi</span>
 
 <span class="c1"># But we need to do a bit more processing on some of those files</span>
-<span class="k">for</span> file <span class="k">in</span> *.pl <span class="p">;</span> <span class="k">do</span>
-pltotf <span class="nv">$file</span>
+<span class="k">for</span><span class="w"> </span>file<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.pl<span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+pltotf<span class="w"> </span><span class="nv">$file</span>
 <span class="k">done</span>
-<span class="k">for</span> file <span class="k">in</span> *.vpl <span class="p">;</span> <span class="k">do</span>
-vptovf <span class="nv">$file</span>
+<span class="k">for</span><span class="w"> </span>file<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.vpl<span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+vptovf<span class="w"> </span><span class="nv">$file</span>
 <span class="k">done</span>
 
 <span class="c1"># Get rid of stuff we don&#39;t need any more</span>
-rm <span class="k">fi</span>.tex *.mtx *.pl *.vpl
+rm<span class="w"> </span><span class="k">fi</span>.tex<span class="w"> </span>*.mtx<span class="w"> </span>*.pl<span class="w"> </span>*.vpl
 
 <span class="c1"># create the directories we need for the various components</span>
-mkdir -p <span class="nv">$LOCALTEXMF</span>/fonts/type1/<span class="nv">$VENDOR</span>/<span class="nv">$PACKAGE</span> <span class="se">\</span>
-        <span class="nv">$LOCALTEXMF</span>/fonts/afm/<span class="nv">$VENDOR</span>/<span class="nv">$PACKAGE</span> <span class="se">\</span>
-        <span class="nv">$LOCALTEXMF</span>/fonts/tfm/<span class="nv">$VENDOR</span>/<span class="nv">$PACKAGE</span> <span class="se">\</span>
-        <span class="nv">$LOCALTEXMF</span>/fonts/vf/<span class="nv">$VENDOR</span>/<span class="nv">$PACKAGE</span> <span class="se">\</span>
-        <span class="nv">$LOCALTEXMF</span>/tex/latex/<span class="nv">$VENDOR</span>/<span class="nv">$PACKAGE</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$LOCALTEXMF</span>/fonts/type1/<span class="nv">$VENDOR</span>/<span class="nv">$PACKAGE</span><span class="w"> </span><span class="se">\</span>
+<span class="w">        </span><span class="nv">$LOCALTEXMF</span>/fonts/afm/<span class="nv">$VENDOR</span>/<span class="nv">$PACKAGE</span><span class="w"> </span><span class="se">\</span>
+<span class="w">        </span><span class="nv">$LOCALTEXMF</span>/fonts/tfm/<span class="nv">$VENDOR</span>/<span class="nv">$PACKAGE</span><span class="w"> </span><span class="se">\</span>
+<span class="w">        </span><span class="nv">$LOCALTEXMF</span>/fonts/vf/<span class="nv">$VENDOR</span>/<span class="nv">$PACKAGE</span><span class="w"> </span><span class="se">\</span>
+<span class="w">        </span><span class="nv">$LOCALTEXMF</span>/tex/latex/<span class="nv">$VENDOR</span>/<span class="nv">$PACKAGE</span>
 
 <span class="c1"># move everything into its expected directory</span>
-cp <span class="nv">$BASE</span>*.pfb <span class="nv">$LOCALTEXMF</span>/fonts/type1/<span class="nv">$VENDOR</span>/<span class="nv">$PACKAGE</span>
-cp <span class="nv">$BASE</span>*.afm <span class="nv">$LOCALTEXMF</span>/fonts/afm/<span class="nv">$VENDOR</span>/<span class="nv">$PACKAGE</span>
-mv <span class="nv">$BASE</span>*.tfm <span class="nv">$LOCALTEXMF</span>/fonts/tfm/<span class="nv">$VENDOR</span>/<span class="nv">$PACKAGE</span>
-mv <span class="nv">$BASE</span>*.vf <span class="nv">$LOCALTEXMF</span>/fonts/vf/<span class="nv">$VENDOR</span>/<span class="nv">$PACKAGE</span>
-mv *<span class="nv">$BASE</span>*.fd <span class="nv">$LOCALTEXMF</span>/tex/latex/<span class="nv">$VENDOR</span>/<span class="nv">$PACKAGE</span>
+cp<span class="w"> </span><span class="nv">$BASE</span>*.pfb<span class="w"> </span><span class="nv">$LOCALTEXMF</span>/fonts/type1/<span class="nv">$VENDOR</span>/<span class="nv">$PACKAGE</span>
+cp<span class="w"> </span><span class="nv">$BASE</span>*.afm<span class="w"> </span><span class="nv">$LOCALTEXMF</span>/fonts/afm/<span class="nv">$VENDOR</span>/<span class="nv">$PACKAGE</span>
+mv<span class="w"> </span><span class="nv">$BASE</span>*.tfm<span class="w"> </span><span class="nv">$LOCALTEXMF</span>/fonts/tfm/<span class="nv">$VENDOR</span>/<span class="nv">$PACKAGE</span>
+mv<span class="w"> </span><span class="nv">$BASE</span>*.vf<span class="w"> </span><span class="nv">$LOCALTEXMF</span>/fonts/vf/<span class="nv">$VENDOR</span>/<span class="nv">$PACKAGE</span>
+mv<span class="w"> </span>*<span class="nv">$BASE</span>*.fd<span class="w"> </span><span class="nv">$LOCALTEXMF</span>/tex/latex/<span class="nv">$VENDOR</span>/<span class="nv">$PACKAGE</span>
 
 <span class="c1"># finally create the LaTeX package for this font (and put it in the right place)</span>
-<span class="nb">echo</span> <span class="s2">&quot;\\ProvidesPackage{</span><span class="nv">$PACKAGE</span><span class="s2">}&quot;</span> &gt; <span class="nv">$LOCALTEXMF</span>/tex/latex/<span class="nv">$VENDOR</span>/<span class="nv">$PACKAGE</span>/<span class="nv">$PACKAGE</span>.sty
-<span class="nb">echo</span> <span class="s2">&quot;\\renewcommand{\\rmdefault}{</span><span class="nv">$BASE</span><span class="s2">}&quot;</span> &gt;&gt; <span class="nv">$LOCALTEXMF</span>/tex/latex/<span class="nv">$VENDOR</span>/<span class="nv">$PACKAGE</span>/<span class="nv">$PACKAGE</span>.sty
-<span class="nb">echo</span> <span class="s2">&quot;\\endinput&quot;</span> &gt;&gt; <span class="nv">$LOCALTEXMF</span>/tex/latex/<span class="nv">$VENDOR</span>/<span class="nv">$PACKAGE</span>/<span class="nv">$PACKAGE</span>.sty
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;\\ProvidesPackage{</span><span class="nv">$PACKAGE</span><span class="s2">}&quot;</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$LOCALTEXMF</span>/tex/latex/<span class="nv">$VENDOR</span>/<span class="nv">$PACKAGE</span>/<span class="nv">$PACKAGE</span>.sty
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;\\renewcommand{\\rmdefault}{</span><span class="nv">$BASE</span><span class="s2">}&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$LOCALTEXMF</span>/tex/latex/<span class="nv">$VENDOR</span>/<span class="nv">$PACKAGE</span>/<span class="nv">$PACKAGE</span>.sty
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;\\endinput&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$LOCALTEXMF</span>/tex/latex/<span class="nv">$VENDOR</span>/<span class="nv">$PACKAGE</span>/<span class="nv">$PACKAGE</span>.sty
 
 <span class="c1"># but updating the map files required a bit more knowledge than this script has</span>
 <span class="c1"># so I left that to be done by hand</span>
-<span class="nb">echo</span> <span class="s2">&quot;*********************************************************************&quot;</span>
-<span class="nb">echo</span> You need to create your own map files
-<span class="nb">echo</span> One should be called <span class="nv">$LOCALTEXMF</span>/dvips/config/<span class="nv">$BASE</span>.map and should
-<span class="nb">echo</span> <span class="s2">&quot; contain a line for each file in the family. One might look like this:&quot;</span>
-<span class="nb">echo</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">BASE</span><span class="si">}</span><span class="s2">r8a </span><span class="nv">$PACKAGE</span><span class="s2">-Regular \&quot;TexBase1Encoding ReEncodeFont\&quot; &lt;8r.enc &lt;</span><span class="si">${</span><span class="nv">BASE</span><span class="si">}</span><span class="s2">r8a.pfb&quot;</span>
-<span class="nb">echo</span> Then change the config.ps file by looking <span class="k">for</span> the location defining the
-<span class="nb">echo</span> <span class="s2">&quot; standard map file and adding:&quot;</span>
-<span class="nb">echo</span> <span class="s2">&quot;p +</span><span class="nv">$BASE</span><span class="s2">.map&quot;</span>
-<span class="nb">echo</span> <span class="s2">&quot; after it.&quot;</span>
-<span class="nb">echo</span> Then go to <span class="nv">$LOCALTEXMF</span>/pdftex/config/
-<span class="nb">echo</span> Make a copy <span class="s2">&quot;(or a link)&quot;</span> of <span class="nv">$LOCALTEXMF</span>/dvips/config/<span class="nv">$BASE</span>.map
-<span class="nb">echo</span> and edit pdftex.cfg and insert
-<span class="nb">echo</span> <span class="s2">&quot;p +</span><span class="nv">$BASE</span><span class="s2">.map&quot;</span>
-<span class="nb">echo</span> at the appropriate place <span class="k">in</span> it too.
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;*********************************************************************&quot;</span>
+<span class="nb">echo</span><span class="w"> </span>You<span class="w"> </span>need<span class="w"> </span>to<span class="w"> </span>create<span class="w"> </span>your<span class="w"> </span>own<span class="w"> </span>map<span class="w"> </span>files
+<span class="nb">echo</span><span class="w"> </span>One<span class="w"> </span>should<span class="w"> </span>be<span class="w"> </span>called<span class="w"> </span><span class="nv">$LOCALTEXMF</span>/dvips/config/<span class="nv">$BASE</span>.map<span class="w"> </span>and<span class="w"> </span>should
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot; contain a line for each file in the family. One might look like this:&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">BASE</span><span class="si">}</span><span class="s2">r8a </span><span class="nv">$PACKAGE</span><span class="s2">-Regular \&quot;TexBase1Encoding ReEncodeFont\&quot; &lt;8r.enc &lt;</span><span class="si">${</span><span class="nv">BASE</span><span class="si">}</span><span class="s2">r8a.pfb&quot;</span>
+<span class="nb">echo</span><span class="w"> </span>Then<span class="w"> </span>change<span class="w"> </span>the<span class="w"> </span>config.ps<span class="w"> </span>file<span class="w"> </span>by<span class="w"> </span>looking<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>location<span class="w"> </span>defining<span class="w"> </span>the
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot; standard map file and adding:&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;p +</span><span class="nv">$BASE</span><span class="s2">.map&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot; after it.&quot;</span>
+<span class="nb">echo</span><span class="w"> </span>Then<span class="w"> </span>go<span class="w"> </span>to<span class="w"> </span><span class="nv">$LOCALTEXMF</span>/pdftex/config/
+<span class="nb">echo</span><span class="w"> </span>Make<span class="w"> </span>a<span class="w"> </span>copy<span class="w"> </span><span class="s2">&quot;(or a link)&quot;</span><span class="w"> </span>of<span class="w"> </span><span class="nv">$LOCALTEXMF</span>/dvips/config/<span class="nv">$BASE</span>.map
+<span class="nb">echo</span><span class="w"> </span>and<span class="w"> </span>edit<span class="w"> </span>pdftex.cfg<span class="w"> </span>and<span class="w"> </span>insert
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;p +</span><span class="nv">$BASE</span><span class="s2">.map&quot;</span>
+<span class="nb">echo</span><span class="w"> </span>at<span class="w"> </span>the<span class="w"> </span>appropriate<span class="w"> </span>place<span class="w"> </span><span class="k">in</span><span class="w"> </span>it<span class="w"> </span>too.
 </pre></div>
 </div>
 </li>
@@ -390,7 +389,7 @@ mv *<span class="nv">$BASE</span>*.fd <span class="nv">$LOCALTEXMF</span>/tex/la
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.0.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

@@ -1,18 +1,17 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Scripting FontForge &#8212; FontForge 20230101 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <link rel="shortcut icon" href="../_static/fftype16.png"/>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=cb25574f" />
+    <script src="../_static/documentation_options.js?v=00357e79"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="icon" href="../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Scripting functions" href="scripting-alpha.html" />
@@ -34,7 +33,7 @@
           <div class="body" role="main">
             
   <section id="scripting-fontforge">
-<h1>Scripting FontForge<a class="headerlink" href="#scripting-fontforge" title="Permalink to this heading">¶</a></h1>
+<h1>Scripting FontForge<a class="headerlink" href="#scripting-fontforge" title="Link to this heading">¶</a></h1>
 <p>FontForge includes two interpreters so you can write scripts to modify fonts.
 One of these interpreters is <a class="reference internal" href="python.html"><span class="doc">python</span></a>, one is a legacy language I
 came up with. FontForge may be configured with either or both of these. If
@@ -350,56 +349,107 @@ means use the old interpreter)</p>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.DelimitedSubFormulaMinHeight"><code class="docutils literal notranslate"><span class="pre">math.DelimitedSubFormulaMinHeight</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.DisplayOperatorMinHeight"><code class="docutils literal notranslate"><span class="pre">math.DisplayOperatorMinHeight</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.MathLeading"><code class="docutils literal notranslate"><span class="pre">math.MathLeading</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.MathLeadingDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.MathLeadingDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.AxisHeight"><code class="docutils literal notranslate"><span class="pre">math.AxisHeight</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.AxisHeightDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.AxisHeightDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.AccentBaseHeight"><code class="docutils literal notranslate"><span class="pre">math.AccentBaseHeight</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.AccentBaseHeightDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.AccentBaseHeightDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.FlattenedAccentBaseHeight"><code class="docutils literal notranslate"><span class="pre">math.FlattenedAccentBaseHeight</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.FlattenedAccentBaseHeightDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.FlattenedAccentBaseHeightDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.SubscriptShiftDown"><code class="docutils literal notranslate"><span class="pre">math.SubscriptShiftDown</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.SubscriptShiftDownDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.SubscriptShiftDownDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.SubscriptTopMax"><code class="docutils literal notranslate"><span class="pre">math.SubscriptTopMax</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.SubscriptTopMaxDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.SubscriptTopMaxDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.SubscriptBaselineDropMin"><code class="docutils literal notranslate"><span class="pre">math.SubscriptBaselineDropMin</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.SubscriptBaselineDropMinDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.SubscriptBaselineDropMinDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.SuperscriptShiftUp"><code class="docutils literal notranslate"><span class="pre">math.SuperscriptShiftUp</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.SuperscriptShiftUpDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.SuperscriptShiftUpDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.SuperscriptShiftUpCramped"><code class="docutils literal notranslate"><span class="pre">math.SuperscriptShiftUpCramped</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.SuperscriptShiftUpCrampedDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.SuperscriptShiftUpCrampedDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.SuperscriptBottomMin"><code class="docutils literal notranslate"><span class="pre">math.SuperscriptBottomMin</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.SuperscriptBottomMinDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.SuperscriptBottomMinDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.SuperscriptBaselineDropMax"><code class="docutils literal notranslate"><span class="pre">math.SuperscriptBaselineDropMax</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.SuperscriptBaselineDropMaxDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.SuperscriptBaselineDropMaxDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.SubSuperscriptGapMin"><code class="docutils literal notranslate"><span class="pre">math.SubSuperscriptGapMin</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.SubSuperscriptGapMinDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.SubSuperscriptGapMinDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.SuperscriptBottomMaxWithSubscript"><code class="docutils literal notranslate"><span class="pre">math.SuperscriptBottomMaxWithSubscript</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.SuperscriptBottomMaxWithSubscriptDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.SuperscriptBottomMaxWithSubscriptDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.SpaceAfterScript"><code class="docutils literal notranslate"><span class="pre">math.SpaceAfterScript</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.SpaceAfterScriptDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.SpaceAfterScriptDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.UpperLimitGapMin"><code class="docutils literal notranslate"><span class="pre">math.UpperLimitGapMin</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.UpperLimitGapMinDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.UpperLimitGapMinDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.UpperLimitBaselineRiseMin"><code class="docutils literal notranslate"><span class="pre">math.UpperLimitBaselineRiseMin</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.UpperLimitBaselineRiseMinDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.UpperLimitBaselineRiseMinDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.LowerLimitGapMin"><code class="docutils literal notranslate"><span class="pre">math.LowerLimitGapMin</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.LowerLimitGapMinDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.LowerLimitGapMinDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.LowerLimitBaselineDropMin"><code class="docutils literal notranslate"><span class="pre">math.LowerLimitBaselineDropMin</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.LowerLimitBaselineDropMinDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.LowerLimitBaselineDropMinDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.StackTopShiftUp"><code class="docutils literal notranslate"><span class="pre">math.StackTopShiftUp</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.StackTopShiftUpDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.StackTopShiftUpDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.StackTopDisplayStyleShiftUp"><code class="docutils literal notranslate"><span class="pre">math.StackTopDisplayStyleShiftUp</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.StackTopDisplayStyleShiftUpDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.StackTopDisplayStyleShiftUpDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.StackBottomShiftDown"><code class="docutils literal notranslate"><span class="pre">math.StackBottomShiftDown</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.StackBottomShiftDownDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.StackBottomShiftDownDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.StackBottomDisplayStyleShiftDown"><code class="docutils literal notranslate"><span class="pre">math.StackBottomDisplayStyleShiftDown</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.StackBottomDisplayStyleShiftDownDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.StackBottomDisplayStyleShiftDownDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.StackGapMin"><code class="docutils literal notranslate"><span class="pre">math.StackGapMin</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.StackGapMinDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.StackGapMinDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.StackDisplayStyleGapMin"><code class="docutils literal notranslate"><span class="pre">math.StackDisplayStyleGapMin</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.StackDisplayStyleGapMinDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.StackDisplayStyleGapMinDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.StretchStackTopShiftUp"><code class="docutils literal notranslate"><span class="pre">math.StretchStackTopShiftUp</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.StretchStackTopShiftUpDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.StretchStackTopShiftUpDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.StretchStackBottomShiftDown"><code class="docutils literal notranslate"><span class="pre">math.StretchStackBottomShiftDown</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.StretchStackBottomShiftDownDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.StretchStackBottomShiftDownDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.StretchStackGapAboveMin"><code class="docutils literal notranslate"><span class="pre">math.StretchStackGapAboveMin</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.StretchStackGapAboveMinDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.StretchStackGapAboveMinDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.StretchStackGapBelowMin"><code class="docutils literal notranslate"><span class="pre">math.StretchStackGapBelowMin</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.StretchStackGapBelowMinDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.StretchStackGapBelowMinDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.FractionNumeratorShiftUp"><code class="docutils literal notranslate"><span class="pre">math.FractionNumeratorShiftUp</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.FractionNumeratorShiftUpDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.FractionNumeratorShiftUpDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.FractionNumeratorDisplayStyleShiftUp"><code class="docutils literal notranslate"><span class="pre">math.FractionNumeratorDisplayStyleShiftUp</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.FractionNumeratorDisplayStyleShiftUpDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.FractionNumeratorDisplayStyleShiftUpDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.FractionDenominatorShiftDown"><code class="docutils literal notranslate"><span class="pre">math.FractionDenominatorShiftDown</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.FractionDenominatorShiftDownDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.FractionDenominatorShiftDownDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.FractionDenominatorDisplayStyleShiftDown"><code class="docutils literal notranslate"><span class="pre">math.FractionDenominatorDisplayStyleShiftDown</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.FractionDenominatorDisplayStyleShiftDownDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.FractionDenominatorDisplayStyleShiftDownDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.FractionNumeratorGapMin"><code class="docutils literal notranslate"><span class="pre">math.FractionNumeratorGapMin</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.FractionNumeratorGapMinDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.FractionNumeratorGapMinDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.FractionNumeratorDisplayStyleGapMin"><code class="docutils literal notranslate"><span class="pre">math.FractionNumeratorDisplayStyleGapMin</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.FractionNumeratorDisplayStyleGapMinDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.FractionNumeratorDisplayStyleGapMinDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.FractionRuleThickness"><code class="docutils literal notranslate"><span class="pre">math.FractionRuleThickness</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.FractionRuleThicknessDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.FractionRuleThicknessDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.FractionDenominatorGapMin"><code class="docutils literal notranslate"><span class="pre">math.FractionDenominatorGapMin</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.FractionDenominatorGapMinDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.FractionDenominatorGapMinDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.FractionDenominatorDisplayStyleGapMin"><code class="docutils literal notranslate"><span class="pre">math.FractionDenominatorDisplayStyleGapMin</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.FractionDenominatorDisplayStyleGapMinDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.FractionDenominatorDisplayStyleGapMinDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.SkewedFractionHorizontalGap"><code class="docutils literal notranslate"><span class="pre">math.SkewedFractionHorizontalGap</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.SkewedFractionHorizontalGapDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.SkewedFractionHorizontalGapDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.SkewedFractionVerticalGap"><code class="docutils literal notranslate"><span class="pre">math.SkewedFractionVerticalGap</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.SkewedFractionVerticalGapDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.SkewedFractionVerticalGapDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.OverbarVerticalGap"><code class="docutils literal notranslate"><span class="pre">math.OverbarVerticalGap</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.OverbarVerticalGapDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.OverbarVerticalGapDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.OverbarRuleThickness"><code class="docutils literal notranslate"><span class="pre">math.OverbarRuleThickness</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.OverbarRuleThicknessDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.OverbarRuleThicknessDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.OverbarExtraAscender"><code class="docutils literal notranslate"><span class="pre">math.OverbarExtraAscender</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.OverbarExtraAscenderDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.OverbarExtraAscenderDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.UnderbarVerticalGap"><code class="docutils literal notranslate"><span class="pre">math.UnderbarVerticalGap</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.UnderbarVerticalGapDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.UnderbarVerticalGapDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.UnderbarRuleThickness"><code class="docutils literal notranslate"><span class="pre">math.UnderbarRuleThickness</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.UnderbarRuleThicknessDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.UnderbarRuleThicknessDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.UnderbarExtraDescender"><code class="docutils literal notranslate"><span class="pre">math.UnderbarExtraDescender</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.UnderbarExtraDescenderDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.UnderbarExtraDescenderDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.RadicalVerticalGap"><code class="docutils literal notranslate"><span class="pre">math.RadicalVerticalGap</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.RadicalVerticalGapDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.RadicalVerticalGapDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.RadicalDisplayStyleVerticalGap"><code class="docutils literal notranslate"><span class="pre">math.RadicalDisplayStyleVerticalGap</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.RadicalDisplayStyleVerticalGapDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.RadicalDisplayStyleVerticalGapDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.RadicalRuleThickness"><code class="docutils literal notranslate"><span class="pre">math.RadicalRuleThickness</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.RadicalRuleThicknessDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.RadicalRuleThicknessDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.RadicalExtraAscender"><code class="docutils literal notranslate"><span class="pre">math.RadicalExtraAscender</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.RadicalExtraAscenderDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.RadicalExtraAscenderDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.RadicalKernBeforeDegree"><code class="docutils literal notranslate"><span class="pre">math.RadicalKernBeforeDegree</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.RadicalKernBeforeDegreeDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.RadicalKernBeforeDegreeDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.RadicalKernAfterDegree"><code class="docutils literal notranslate"><span class="pre">math.RadicalKernAfterDegree</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.RadicalKernAfterDegreeDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.RadicalKernAfterDegreeDeviceTable</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.RadicalDegreeBottomRaisePercent"><code class="docutils literal notranslate"><span class="pre">math.RadicalDegreeBottomRaisePercent</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.MinConnectorOverlap"><code class="docutils literal notranslate"><span class="pre">math.MinConnectorOverlap</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="python/fontforge.html#fontforge.math.exists"><code class="docutils literal notranslate"><span class="pre">math.exists()</span></code></a></li>
@@ -467,13 +517,14 @@ means use the old interpreter)</p>
 <li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.maxp_zones"><code class="docutils literal notranslate"><span class="pre">font.maxp_zones</span></code></a></li>
 <li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.multilayer"><code class="docutils literal notranslate"><span class="pre">font.multilayer</span></code></a></li>
 <li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.onlybitmaps"><code class="docutils literal notranslate"><span class="pre">font.onlybitmaps</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_capheight"><code class="docutils literal notranslate"><span class="pre">font.os2_capheight</span></code></a></li>
 <li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_codepages"><code class="docutils literal notranslate"><span class="pre">font.os2_codepages</span></code></a></li>
 <li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_family_class"><code class="docutils literal notranslate"><span class="pre">font.os2_family_class</span></code></a></li>
 <li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_fstype"><code class="docutils literal notranslate"><span class="pre">font.os2_fstype</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_stylemap"><code class="docutils literal notranslate"><span class="pre">font.os2_stylemap</span></code></a></li>
 <li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_panose"><code class="docutils literal notranslate"><span class="pre">font.os2_panose</span></code></a></li>
 <li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_strikeypos"><code class="docutils literal notranslate"><span class="pre">font.os2_strikeypos</span></code></a></li>
 <li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_strikeysize"><code class="docutils literal notranslate"><span class="pre">font.os2_strikeysize</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_stylemap"><code class="docutils literal notranslate"><span class="pre">font.os2_stylemap</span></code></a></li>
 <li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_subxoff"><code class="docutils literal notranslate"><span class="pre">font.os2_subxoff</span></code></a></li>
 <li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_subxsize"><code class="docutils literal notranslate"><span class="pre">font.os2_subxsize</span></code></a></li>
 <li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_subyoff"><code class="docutils literal notranslate"><span class="pre">font.os2_subyoff</span></code></a></li>
@@ -487,8 +538,8 @@ means use the old interpreter)</p>
 <li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_typodescent"><code class="docutils literal notranslate"><span class="pre">font.os2_typodescent</span></code></a></li>
 <li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_typodescent_add"><code class="docutils literal notranslate"><span class="pre">font.os2_typodescent_add</span></code></a></li>
 <li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_typolinegap"><code class="docutils literal notranslate"><span class="pre">font.os2_typolinegap</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_use_typo_metrics"><code class="docutils literal notranslate"><span class="pre">font.os2_use_typo_metrics</span></code></a></li>
 <li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_unicoderanges"><code class="docutils literal notranslate"><span class="pre">font.os2_unicoderanges</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_use_typo_metrics"><code class="docutils literal notranslate"><span class="pre">font.os2_use_typo_metrics</span></code></a></li>
 <li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_vendor"><code class="docutils literal notranslate"><span class="pre">font.os2_vendor</span></code></a></li>
 <li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_version"><code class="docutils literal notranslate"><span class="pre">font.os2_version</span></code></a></li>
 <li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_weight"><code class="docutils literal notranslate"><span class="pre">font.os2_weight</span></code></a></li>
@@ -498,6 +549,7 @@ means use the old interpreter)</p>
 <li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_winascent_add"><code class="docutils literal notranslate"><span class="pre">font.os2_winascent_add</span></code></a></li>
 <li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_windescent"><code class="docutils literal notranslate"><span class="pre">font.os2_windescent</span></code></a></li>
 <li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_windescent_add"><code class="docutils literal notranslate"><span class="pre">font.os2_windescent_add</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.os2_xheight"><code class="docutils literal notranslate"><span class="pre">font.os2_xheight</span></code></a></li>
 <li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.path"><code class="docutils literal notranslate"><span class="pre">font.path</span></code></a></li>
 <li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.persistent"><code class="docutils literal notranslate"><span class="pre">font.persistent</span></code></a></li>
 <li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.math"><code class="docutils literal notranslate"><span class="pre">font.math</span></code></a></li>
@@ -510,6 +562,7 @@ means use the old interpreter)</p>
 <li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.size_feature"><code class="docutils literal notranslate"><span class="pre">font.size_feature</span></code></a></li>
 <li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.strokedfont"><code class="docutils literal notranslate"><span class="pre">font.strokedfont</span></code></a></li>
 <li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.strokewidth"><code class="docutils literal notranslate"><span class="pre">font.strokewidth</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.style_set_names"><code class="docutils literal notranslate"><span class="pre">font.style_set_names</span></code></a></li>
 <li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.temporary"><code class="docutils literal notranslate"><span class="pre">font.temporary</span></code></a></li>
 <li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.texparameters"><code class="docutils literal notranslate"><span class="pre">font.texparameters</span></code></a></li>
 <li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.uniqueid"><code class="docutils literal notranslate"><span class="pre">font.uniqueid</span></code></a></li>
@@ -579,6 +632,7 @@ means use the old interpreter)</p>
 <li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.mergeLookupSubtables"><code class="docutils literal notranslate"><span class="pre">font.mergeLookupSubtables()</span></code></a></li>
 <li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.printSample"><code class="docutils literal notranslate"><span class="pre">font.printSample()</span></code></a></li>
 <li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.randomText"><code class="docutils literal notranslate"><span class="pre">font.randomText()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.reencode"><code class="docutils literal notranslate"><span class="pre">font.reencode()</span></code></a></li>
 <li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.regenBitmaps"><code class="docutils literal notranslate"><span class="pre">font.regenBitmaps()</span></code></a></li>
 <li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.removeAnchorClass"><code class="docutils literal notranslate"><span class="pre">font.removeAnchorClass()</span></code></a></li>
 <li class="toctree-l6"><a class="reference internal" href="python/fontforge.html#fontforge.font.removeLookup"><code class="docutils literal notranslate"><span class="pre">font.removeLookup()</span></code></a></li>
@@ -697,7 +751,7 @@ means use the old interpreter)</p>
 </ul>
 </nav>
 <section id="invoking-scripts">
-<span id="scripting-starting"></span><h2>Invoking scripts<a class="headerlink" href="#invoking-scripts" title="Permalink to this heading">¶</a></h2>
+<span id="scripting-starting"></span><h2>Invoking scripts<a class="headerlink" href="#invoking-scripts" title="Link to this heading">¶</a></h2>
 <p>If you start fontforge with a script on the command line it will not put up any
 windows and it will exit when the script is done. The script can be in a file,
 or just a string presented as an argument. You may need to specify which
@@ -741,7 +795,7 @@ python) or “ff” or “pe” (for native scripting) as another way to determn
 interpreter to use.</p>
 </section>
 <section id="scripting-language">
-<span id="id1"></span><h2>Scripting Language<a class="headerlink" href="#scripting-language" title="Permalink to this heading">¶</a></h2>
+<span id="id1"></span><h2>Scripting Language<a class="headerlink" href="#scripting-language" title="Link to this heading">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This section covers FontForge’s native scripting functionality.</p>
@@ -787,7 +841,7 @@ you need longer strings use the concatenation operator).</p></li>
 <li><p>Starting with “/<em>” and proceeding to “</em>/”</p></li>
 </ul>
 <section id="expressions">
-<span id="scripting-expressions"></span><h3>Expressions<a class="headerlink" href="#expressions" title="Permalink to this heading">¶</a></h3>
+<span id="scripting-expressions"></span><h3>Expressions<a class="headerlink" href="#expressions" title="Link to this heading">¶</a></h3>
 <p>Expressions are similar to those in C, a few operators have been omitted, a few
 added from shell scripts. Operator precedence has been simplified slightly. So
 operators (and their precedences) are:</p>
@@ -902,47 +956,47 @@ font”, and most commands refer to this font. The CIDChangeSubFont() command ca
 alter that.</p>
 </section>
 <section id="variables">
-<span id="scripting-variables"></span><h3>Variables<a class="headerlink" href="#variables" title="Permalink to this heading">¶</a></h3>
+<span id="scripting-variables"></span><h3>Variables<a class="headerlink" href="#variables" title="Link to this heading">¶</a></h3>
 <p>All builtin variables begin with “$”, you may not create any variables that
 start with “$” yourself (though you may assign to (some) already existing ones)</p>
 <dl class="ff data">
 <dt class="sig sig-object ff" id="0">
-<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">0</span></span><a class="headerlink" href="#0" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">0</span></span><a class="headerlink" href="#0" title="Link to this definition">¶</a></dt>
 <dd><p>the current script filename</p>
 </dd></dl>
 
 <dl class="ff data">
 <dt class="sig sig-object ff" id="1">
-<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">1</span></span><a class="headerlink" href="#1" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">1</span></span><a class="headerlink" href="#1" title="Link to this definition">¶</a></dt>
 <dt class="sig sig-object ff" id="2">
-<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">2</span></span><a class="headerlink" href="#2" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">2</span></span><a class="headerlink" href="#2" title="Link to this definition">¶</a></dt>
 <dt class="sig sig-object ff" id="n">
-<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">n</span></span><a class="headerlink" href="#n" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">n</span></span><a class="headerlink" href="#n" title="Link to this definition">¶</a></dt>
 <dd><p>the first, second (…) argument to the script file</p>
 </dd></dl>
 
 <dl class="ff data">
 <dt class="sig sig-object ff" id="argc">
-<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">argc</span></span><a class="headerlink" href="#argc" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">argc</span></span><a class="headerlink" href="#argc" title="Link to this definition">¶</a></dt>
 <dd><p>the number of arguments passed to the script file (this will always be
 at least 1 as $0 is always present)</p>
 </dd></dl>
 
 <dl class="ff data">
 <dt class="sig sig-object ff" id="argv">
-<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">argv</span></span><a class="headerlink" href="#argv" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">argv</span></span><a class="headerlink" href="#argv" title="Link to this definition">¶</a></dt>
 <dd><p>allows you to access the array of all the arguments</p>
 </dd></dl>
 
 <dl class="ff data">
 <dt class="sig sig-object ff" id="curfont">
-<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">curfont</span></span><a class="headerlink" href="#curfont" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">curfont</span></span><a class="headerlink" href="#curfont" title="Link to this definition">¶</a></dt>
 <dd><p>the name of the filename in which the current font resides</p>
 </dd></dl>
 
 <dl class="ff data">
 <dt class="sig sig-object ff" id="firstfont">
-<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">firstfont</span></span><a class="headerlink" href="#firstfont" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">firstfont</span></span><a class="headerlink" href="#firstfont" title="Link to this definition">¶</a></dt>
 <dd><p>the name of the filename of the font which is first on the font
 list (Can be used by <a class="reference internal" href="scripting-alpha.html#Open" title="Open"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Open()</span></code></a>), if there are no fonts loaded this
 returns an empty string. This can be used to determine if any font at all
@@ -951,7 +1005,7 @@ is loaded into fontforge.</p>
 
 <dl class="ff data">
 <dt class="sig sig-object ff" id="nextfont">
-<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">nextfont</span></span><a class="headerlink" href="#nextfont" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">nextfont</span></span><a class="headerlink" href="#nextfont" title="Link to this definition">¶</a></dt>
 <dd><p>the name of the filename of the font which follows the current
 font on the list (or the empty string if the current font is the last one on the
 list)</p>
@@ -959,69 +1013,69 @@ list)</p>
 
 <dl class="ff data">
 <dt class="sig sig-object ff" id="fontchanged">
-<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">fontchanged</span></span><a class="headerlink" href="#fontchanged" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">fontchanged</span></span><a class="headerlink" href="#fontchanged" title="Link to this definition">¶</a></dt>
 <dd><p>returns 1 if the current font has changed, 0 if it has not
 changed since it was read in (or saved).</p>
 </dd></dl>
 
 <dl class="ff data">
 <dt class="sig sig-object ff" id="fontname">
-<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">fontname</span></span><a class="headerlink" href="#fontname" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">fontname</span></span><a class="headerlink" href="#fontname" title="Link to this definition">¶</a></dt>
 <dd><p>the name contained in the postscript FontName field</p>
 </dd></dl>
 
 <dl class="ff data">
 <dt class="sig sig-object ff" id="familyname">
-<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">familyname</span></span><a class="headerlink" href="#familyname" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">familyname</span></span><a class="headerlink" href="#familyname" title="Link to this definition">¶</a></dt>
 <dd><p>the name contained in the postscript FamilyName field</p>
 </dd></dl>
 
 <dl class="ff data">
 <dt class="sig sig-object ff" id="fullname">
-<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">fullname</span></span><a class="headerlink" href="#fullname" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">fullname</span></span><a class="headerlink" href="#fullname" title="Link to this definition">¶</a></dt>
 <dd><p>the name contained in the postscript FullName field</p>
 </dd></dl>
 
 <dl class="ff data">
 <dt class="sig sig-object ff" id="fondname">
-<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">fondname</span></span><a class="headerlink" href="#fondname" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">fondname</span></span><a class="headerlink" href="#fondname" title="Link to this definition">¶</a></dt>
 <dd><p>if set this name indicates what FOND the current font should be
 put in under Generate Mac Family.</p>
 </dd></dl>
 
 <dl class="ff data">
 <dt class="sig sig-object ff" id="weight">
-<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">weight</span></span><a class="headerlink" href="#weight" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">weight</span></span><a class="headerlink" href="#weight" title="Link to this definition">¶</a></dt>
 <dd><p>the name contained in the postscript Weight field</p>
 </dd></dl>
 
 <dl class="ff data">
 <dt class="sig sig-object ff" id="copyright">
-<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">copyright</span></span><a class="headerlink" href="#copyright" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">copyright</span></span><a class="headerlink" href="#copyright" title="Link to this definition">¶</a></dt>
 <dd><p>the name contained in the postscript Notice field</p>
 </dd></dl>
 
 <dl class="ff data">
 <dt class="sig sig-object ff" id="filename">
-<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">filename</span></span><a class="headerlink" href="#filename" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">filename</span></span><a class="headerlink" href="#filename" title="Link to this definition">¶</a></dt>
 <dd><p>the name of the file containing the font.</p>
 </dd></dl>
 
 <dl class="ff data">
 <dt class="sig sig-object ff" id="fontversion">
-<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">fontversion</span></span><a class="headerlink" href="#fontversion" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">fontversion</span></span><a class="headerlink" href="#fontversion" title="Link to this definition">¶</a></dt>
 <dd><p>the string containing the font’s version</p>
 </dd></dl>
 
 <dl class="ff data">
 <dt class="sig sig-object ff" id="iscid">
-<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">iscid</span></span><a class="headerlink" href="#iscid" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">iscid</span></span><a class="headerlink" href="#iscid" title="Link to this definition">¶</a></dt>
 <dd><p>1 if the current font is a cid keyed font, 0 if not</p>
 </dd></dl>
 
 <dl class="ff data">
 <dt class="sig sig-object ff" id="cidfontname">
-<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">cidfontname</span></span><a class="headerlink" href="#cidfontname" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">cidfontname</span></span><a class="headerlink" href="#cidfontname" title="Link to this definition">¶</a></dt>
 <dd><p>returns the fontname of the top-level cid-keyed font (or the
 empty string if there is none)</p>
 <p>Can be used to detect if this is a cid keyed font.</p>
@@ -1035,59 +1089,59 @@ empty string if there is none)</p>
 
 <dl class="ff data">
 <dt class="sig sig-object ff" id="mmcount">
-<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">mmcount</span></span><a class="headerlink" href="#mmcount" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">mmcount</span></span><a class="headerlink" href="#mmcount" title="Link to this definition">¶</a></dt>
 <dd><p>returns 0 for non multiple master fonts, returns the number of
 instances in a multiple master font.</p>
 </dd></dl>
 
 <dl class="ff data">
 <dt class="sig sig-object ff" id="italicangle">
-<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">italicangle</span></span><a class="headerlink" href="#italicangle" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">italicangle</span></span><a class="headerlink" href="#italicangle" title="Link to this definition">¶</a></dt>
 <dd><p>the value of the postscript italic angle field</p>
 </dd></dl>
 
 <dl class="ff data">
 <dt class="sig sig-object ff" id="loadState">
-<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">loadState</span></span><a class="headerlink" href="#loadState" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">loadState</span></span><a class="headerlink" href="#loadState" title="Link to this definition">¶</a></dt>
 <dd><p>a bitmask of non-fatal errors encountered when loading the font.</p>
 </dd></dl>
 
 <dl class="ff data">
 <dt class="sig sig-object ff" id="privateState">
-<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">privateState</span></span><a class="headerlink" href="#privateState" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">privateState</span></span><a class="headerlink" href="#privateState" title="Link to this definition">¶</a></dt>
 <dd><p>a bitmask of some errors in the PostScript Private dictionary
 (see <a class="reference internal" href="python/fontforge.html#fontforge.font.privateState" title="fontforge.font.privateState"><code class="xref py py-attr docutils literal notranslate"><span class="pre">fontforge.font.privateState</span></code></a> for more info).</p>
 </dd></dl>
 
 <dl class="ff data">
 <dt class="sig sig-object ff" id="curcid">
-<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">curcid</span></span><a class="headerlink" href="#curcid" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">curcid</span></span><a class="headerlink" href="#curcid" title="Link to this definition">¶</a></dt>
 <dd><p>returns the fontname of the current font</p>
 </dd></dl>
 
 <dl class="ff data">
 <dt class="sig sig-object ff" id="firstcid">
-<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">firstcid</span></span><a class="headerlink" href="#firstcid" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">firstcid</span></span><a class="headerlink" href="#firstcid" title="Link to this definition">¶</a></dt>
 <dd><p>returns the fontname of the first font within this cid font</p>
 </dd></dl>
 
 <dl class="ff data">
 <dt class="sig sig-object ff" id="nextcid">
-<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">nextcid</span></span><a class="headerlink" href="#nextcid" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">nextcid</span></span><a class="headerlink" href="#nextcid" title="Link to this definition">¶</a></dt>
 <dd><p>returns the fontname of the next font within this cid font (or the
 empty string if the current sub-font is the last)</p>
 </dd></dl>
 
 <dl class="ff data">
 <dt class="sig sig-object ff" id="macstyle">
-<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">macstyle</span></span><a class="headerlink" href="#macstyle" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">macstyle</span></span><a class="headerlink" href="#macstyle" title="Link to this definition">¶</a></dt>
 <dd><p>returns the value of the macstyle field (a set of bits indicating
 whether the font is bold, italic, condensed, etc.)</p>
 </dd></dl>
 
 <dl class="ff data">
 <dt class="sig sig-object ff" id="bitmaps">
-<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">bitmaps</span></span><a class="headerlink" href="#bitmaps" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">bitmaps</span></span><a class="headerlink" href="#bitmaps" title="Link to this definition">¶</a></dt>
 <dd><p>returns an array containing all bitmap pixelsizes generated for
 this font. (If the font database contains greymaps then they will be indicated
 in the array as <code class="docutils literal notranslate"><span class="pre">(&lt;BitmapDepth&gt;&lt;&lt;16)|&lt;PixelSize&gt;</span></code>)</p>
@@ -1095,7 +1149,7 @@ in the array as <code class="docutils literal notranslate"><span class="pre">(&l
 
 <dl class="ff data">
 <dt class="sig sig-object ff" id="order">
-<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">order</span></span><a class="headerlink" href="#order" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">order</span></span><a class="headerlink" href="#order" title="Link to this definition">¶</a></dt>
 <dd><p>returns an integer containing either 2 (for truetype fonts) or 3 (for
 postscript fonts). This indicates whether the font uses quadratic or cubic
 splines.</p>
@@ -1103,25 +1157,25 @@ splines.</p>
 
 <dl class="ff data">
 <dt class="sig sig-object ff" id="em">
-<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">em</span></span><a class="headerlink" href="#em" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">em</span></span><a class="headerlink" href="#em" title="Link to this definition">¶</a></dt>
 <dd><p>returns the number of em-units used by the font.</p>
 </dd></dl>
 
 <dl class="ff data">
 <dt class="sig sig-object ff" id="ascent">
-<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">ascent</span></span><a class="headerlink" href="#ascent" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">ascent</span></span><a class="headerlink" href="#ascent" title="Link to this definition">¶</a></dt>
 <dd><p>returns the ascent of the font</p>
 </dd></dl>
 
 <dl class="ff data">
 <dt class="sig sig-object ff" id="descent">
-<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">descent</span></span><a class="headerlink" href="#descent" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">descent</span></span><a class="headerlink" href="#descent" title="Link to this definition">¶</a></dt>
 <dd><p>returns the descent of the font.</p>
 </dd></dl>
 
 <dl class="ff data">
 <dt class="sig sig-object ff" id="selection">
-<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">selection</span></span><a class="headerlink" href="#selection" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">selection</span></span><a class="headerlink" href="#selection" title="Link to this definition">¶</a></dt>
 <dd><p>returns an array containing one entry for each glyph in the
 current font indicating whether that glyph is selected or not (0=&gt;not,
 1=&gt;selected)</p>
@@ -1129,19 +1183,19 @@ current font indicating whether that glyph is selected or not (0=&gt;not,
 
 <dl class="ff data">
 <dt class="sig sig-object ff" id="panose">
-<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">panose</span></span><a class="headerlink" href="#panose" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">panose</span></span><a class="headerlink" href="#panose" title="Link to this definition">¶</a></dt>
 <dd><p>returns an array containing the 10 panose values for the font.</p>
 </dd></dl>
 
 <dl class="ff data">
 <dt class="sig sig-object ff" id="trace">
-<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">trace</span></span><a class="headerlink" href="#trace" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">trace</span></span><a class="headerlink" href="#trace" title="Link to this definition">¶</a></dt>
 <dd><p>if this is set to one then FontForge will trace each procedure call.</p>
 </dd></dl>
 
 <dl class="ff data">
 <dt class="sig sig-object ff" id="version">
-<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">version</span></span><a class="headerlink" href="#version" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">version</span></span><a class="headerlink" href="#version" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>returns a string containing the current version of fontforge. This</dt><dd><p>should look something like “20050817”.</p>
 </dd>
@@ -1150,13 +1204,13 @@ current font indicating whether that glyph is selected or not (0=&gt;not,
 
 <dl class="ff data">
 <dt class="sig sig-object ff" id="haspython">
-<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">haspython</span></span><a class="headerlink" href="#haspython" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">$</span></em><span class="sig-name descname"><span class="pre">haspython</span></span><a class="headerlink" href="#haspython" title="Link to this definition">¶</a></dt>
 <dd><p>returns 1 if python scripting is available, 0 if it is not.</p>
 </dd></dl>
 
 </section>
 <section id="preferences">
-<span id="scripting-preference"></span><h3>Preferences<a class="headerlink" href="#preferences" title="Permalink to this heading">¶</a></h3>
+<span id="scripting-preference"></span><h3>Preferences<a class="headerlink" href="#preferences" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">$&lt;Preference</span> <span class="pre">Item&gt;</span></code> (for example <code class="docutils literal notranslate"><span class="pre">$AutoHint</span></code>) allows you to examine the
 value of that preference item (to set it use
@@ -1202,10 +1256,10 @@ information.</p>
 </ul>
 </section>
 <section id="built-in-procedures-in-alphabetic-order">
-<span id="scripting-alpha"></span><h3>Built-in procedures in alphabetic order<a class="headerlink" href="#built-in-procedures-in-alphabetic-order" title="Permalink to this heading">¶</a></h3>
+<span id="scripting-alpha"></span><h3>Built-in procedures in alphabetic order<a class="headerlink" href="#built-in-procedures-in-alphabetic-order" title="Link to this heading">¶</a></h3>
 </section>
 <section id="built-in-procedures-that-do-not-require-a-loaded-font">
-<span id="scripting-no-font"></span><h3>Built-in procedures that do not require a loaded font<a class="headerlink" href="#built-in-procedures-that-do-not-require-a-loaded-font" title="Permalink to this heading">¶</a></h3>
+<span id="scripting-no-font"></span><h3>Built-in procedures that do not require a loaded font<a class="headerlink" href="#built-in-procedures-that-do-not-require-a-loaded-font" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#Array" title="Array"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Array()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#AskUser" title="AskUser"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">AskUser()</span></code></a></p></li>
@@ -1280,7 +1334,7 @@ information.</p>
 </ul>
 </section>
 <section id="built-in-procedures-that-act-like-the-file-menu">
-<span id="scripting-file-menu"></span><h3>Built-in procedures that act like the File Menu<a class="headerlink" href="#built-in-procedures-that-act-like-the-file-menu" title="Permalink to this heading">¶</a></h3>
+<span id="scripting-file-menu"></span><h3>Built-in procedures that act like the File Menu<a class="headerlink" href="#built-in-procedures-that-act-like-the-file-menu" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#Close" title="Close"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Close()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#Export" title="Export"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Export()</span></code></a></p></li>
@@ -1301,7 +1355,7 @@ information.</p>
 </ul>
 </section>
 <section id="file-manipulation">
-<span id="scripting-files"></span><h3>File Manipulation<a class="headerlink" href="#file-manipulation" title="Permalink to this heading">¶</a></h3>
+<span id="scripting-files"></span><h3>File Manipulation<a class="headerlink" href="#file-manipulation" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#FileAccess" title="FileAccess"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">FileAccess()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#FontImage" title="FontImage"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">FontImage()</span></code></a></p></li>
@@ -1310,7 +1364,7 @@ information.</p>
 </ul>
 </section>
 <section id="built-in-procedures-that-act-like-the-edit-menu">
-<span id="scripting-edit-menu"></span><h3>Built-in procedures that act like the Edit Menu<a class="headerlink" href="#built-in-procedures-that-act-like-the-edit-menu" title="Permalink to this heading">¶</a></h3>
+<span id="scripting-edit-menu"></span><h3>Built-in procedures that act like the Edit Menu<a class="headerlink" href="#built-in-procedures-that-act-like-the-edit-menu" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#Clear" title="Clear"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Clear()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#ClearBackground" title="ClearBackground"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">ClearBackground()</span></code></a></p></li>
@@ -1334,7 +1388,7 @@ information.</p>
 </ul>
 </section>
 <section id="built-in-procedures-that-act-like-the-select-menu">
-<span id="scripting-select-menu"></span><h3>Built-in procedures that act like the Select Menu<a class="headerlink" href="#built-in-procedures-that-act-like-the-select-menu" title="Permalink to this heading">¶</a></h3>
+<span id="scripting-select-menu"></span><h3>Built-in procedures that act like the Select Menu<a class="headerlink" href="#built-in-procedures-that-act-like-the-select-menu" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#Select" title="Select"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Select()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#SelectAll" title="SelectAll"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">SelectAll()</span></code></a></p></li>
@@ -1361,7 +1415,7 @@ information.</p>
 </ul>
 </section>
 <section id="built-in-procedures-that-act-like-the-element-menu">
-<span id="scripting-element-menu"></span><h3>Built-in procedures that act like the Element Menu<a class="headerlink" href="#built-in-procedures-that-act-like-the-element-menu" title="Permalink to this heading">¶</a></h3>
+<span id="scripting-element-menu"></span><h3>Built-in procedures that act like the Element Menu<a class="headerlink" href="#built-in-procedures-that-act-like-the-element-menu" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#AddAccent" title="AddAccent"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">AddAccent()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#AddExtrema" title="AddExtrema"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">AddExtrema()</span></code></a></p></li>
@@ -1415,7 +1469,7 @@ information.</p>
 </ul>
 </section>
 <section id="font-info">
-<span id="scripting-font-info"></span><h3>Font Info<a class="headerlink" href="#font-info" title="Permalink to this heading">¶</a></h3>
+<span id="scripting-font-info"></span><h3>Font Info<a class="headerlink" href="#font-info" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#AddSizeFeature" title="AddSizeFeature"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">AddSizeFeature()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#ChangePrivateEntry" title="ChangePrivateEntry"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">ChangePrivateEntry()</span></code></a></p></li>
@@ -1445,7 +1499,7 @@ information.</p>
 </ul>
 </section>
 <section id="glyph-info">
-<span id="scripting-glyph-info"></span><h3>Glyph Info<a class="headerlink" href="#glyph-info" title="Permalink to this heading">¶</a></h3>
+<span id="scripting-glyph-info"></span><h3>Glyph Info<a class="headerlink" href="#glyph-info" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#DrawsSomething" title="DrawsSomething"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">DrawsSomething()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#GetPosSub" title="GetPosSub"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">GetPosSub()</span></code></a></p></li>
@@ -1461,7 +1515,7 @@ information.</p>
 </ul>
 </section>
 <section id="built-in-procedures-that-handle-advanced-typography">
-<span id="scripting-att"></span><h3>Built-in procedures that handle Advanced Typography<a class="headerlink" href="#built-in-procedures-that-handle-advanced-typography" title="Permalink to this heading">¶</a></h3>
+<span id="scripting-att"></span><h3>Built-in procedures that handle Advanced Typography<a class="headerlink" href="#built-in-procedures-that-handle-advanced-typography" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#AddAnchorClass" title="AddAnchorClass"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">AddAnchorClass()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#AddAnchorPoint" title="AddAnchorPoint"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">AddAnchorPoint()</span></code></a></p></li>
@@ -1494,7 +1548,7 @@ information.</p>
 </ul>
 </section>
 <section id="built-in-procedures-that-act-like-the-encoding-menu">
-<span id="scripting-encoding-menu"></span><h3>Built-in procedures that act like the Encoding Menu<a class="headerlink" href="#built-in-procedures-that-act-like-the-encoding-menu" title="Permalink to this heading">¶</a></h3>
+<span id="scripting-encoding-menu"></span><h3>Built-in procedures that act like the Encoding Menu<a class="headerlink" href="#built-in-procedures-that-act-like-the-encoding-menu" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#CharCnt" title="CharCnt"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">CharCnt()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#DetachGlyphs" title="DetachGlyphs"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">DetachGlyphs()</span></code></a></p></li>
@@ -1509,7 +1563,7 @@ information.</p>
 </ul>
 </section>
 <section id="built-in-procedures-that-act-like-the-hint-menu">
-<span id="scripting-hint-menu"></span><h3>Built-in procedures that act like the Hint Menu<a class="headerlink" href="#built-in-procedures-that-act-like-the-hint-menu" title="Permalink to this heading">¶</a></h3>
+<span id="scripting-hint-menu"></span><h3>Built-in procedures that act like the Hint Menu<a class="headerlink" href="#built-in-procedures-that-act-like-the-hint-menu" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#AddDHint" title="AddDHint"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">AddDHint()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#AddHHint" title="AddHHint"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">AddHHint()</span></code></a></p></li>
@@ -1536,7 +1590,7 @@ information.</p>
 </ul>
 </section>
 <section id="built-in-procedures-that-act-like-the-metrics-menu">
-<span id="scripting-metrics-menu"></span><h3>Built-in procedures that act like the Metrics Menu<a class="headerlink" href="#built-in-procedures-that-act-like-the-metrics-menu" title="Permalink to this heading">¶</a></h3>
+<span id="scripting-metrics-menu"></span><h3>Built-in procedures that act like the Metrics Menu<a class="headerlink" href="#built-in-procedures-that-act-like-the-metrics-menu" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#AutoKern" title="AutoKern"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">AutoKern()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#AutoWidth" title="AutoWidth"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">AutoWidth()</span></code></a></p></li>
@@ -1553,7 +1607,7 @@ information.</p>
 </ul>
 </section>
 <section id="multiple-master-routines">
-<span id="scripting-mm"></span><h3>Multiple master routines<a class="headerlink" href="#multiple-master-routines" title="Permalink to this heading">¶</a></h3>
+<span id="scripting-mm"></span><h3>Multiple master routines<a class="headerlink" href="#multiple-master-routines" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#MMAxisBounds" title="MMAxisBounds"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">MMAxisBounds()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#MMAxisNames" title="MMAxisNames"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">MMAxisNames()</span></code></a></p></li>
@@ -1565,7 +1619,7 @@ information.</p>
 </ul>
 </section>
 <section id="cid-routines">
-<span id="scripting-cid"></span><h3>CID routines<a class="headerlink" href="#cid-routines" title="Permalink to this heading">¶</a></h3>
+<span id="scripting-cid"></span><h3>CID routines<a class="headerlink" href="#cid-routines" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#CIDChangeSubFont" title="CIDChangeSubFont"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">CIDChangeSubFont()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#CIDFlatten" title="CIDFlatten"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">CIDFlatten()</span></code></a></p></li>
@@ -1577,7 +1631,7 @@ information.</p>
 </ul>
 </section>
 <section id="user-interaction">
-<span id="scripting-user"></span><h3>User Interaction<a class="headerlink" href="#user-interaction" title="Permalink to this heading">¶</a></h3>
+<span id="scripting-user"></span><h3>User Interaction<a class="headerlink" href="#user-interaction" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#AskUser" title="AskUser"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">AskUser()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#Error" title="Error"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Error()</span></code></a></p></li>
@@ -1586,7 +1640,7 @@ information.</p>
 </ul>
 </section>
 <section id="scripting-prefs">
-<span id="id2"></span><h3>Preferences<a class="headerlink" href="#scripting-prefs" title="Permalink to this heading">¶</a></h3>
+<span id="id2"></span><h3>Preferences<a class="headerlink" href="#scripting-prefs" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#DefaultOtherSubrs" title="DefaultOtherSubrs"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">DefaultOtherSubrs()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#GetPref" title="GetPref"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">GetPref()</span></code></a></p></li>
@@ -1602,7 +1656,7 @@ with a dollar sign.</p></li>
 </ul>
 </section>
 <section id="math">
-<span id="scripting-math"></span><h3>Math<a class="headerlink" href="#math" title="Permalink to this heading">¶</a></h3>
+<span id="scripting-math"></span><h3>Math<a class="headerlink" href="#math" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#ATan2" title="ATan2"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">ATan2()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#Ceil" title="Ceil"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Ceil()</span></code></a></p></li>
@@ -1630,7 +1684,7 @@ with a dollar sign.</p></li>
 </ul>
 </section>
 <section id="unicode">
-<span id="scripting-unicode"></span><h3>Unicode<a class="headerlink" href="#unicode" title="Permalink to this heading">¶</a></h3>
+<span id="scripting-unicode"></span><h3>Unicode<a class="headerlink" href="#unicode" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#NameFromUnicode" title="NameFromUnicode"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">NameFromUnicode()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#UCodePoint" title="UCodePoint"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">UCodePoint()</span></code></a></p></li>
@@ -1640,7 +1694,7 @@ with a dollar sign.</p></li>
 </ul>
 </section>
 <section id="string-manipulation">
-<span id="scripting-strings"></span><h3>String manipulation<a class="headerlink" href="#string-manipulation" title="Permalink to this heading">¶</a></h3>
+<span id="scripting-strings"></span><h3>String manipulation<a class="headerlink" href="#string-manipulation" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#Chr" title="Chr"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Chr()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#GetEnv" title="GetEnv"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">GetEnv()</span></code></a></p></li>
@@ -1665,7 +1719,7 @@ with a dollar sign.</p></li>
 </ul>
 </section>
 <section id="character-manipulation">
-<span id="scripting-character"></span><h3>Character Manipulation<a class="headerlink" href="#character-manipulation" title="Permalink to this heading">¶</a></h3>
+<span id="scripting-character"></span><h3>Character Manipulation<a class="headerlink" href="#character-manipulation" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#IsAlNum" title="IsAlNum"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">IsAlNum()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#IsAlpha" title="IsAlpha"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">IsAlpha()</span></code></a></p></li>
@@ -1680,21 +1734,21 @@ with a dollar sign.</p></li>
 </ul>
 </section>
 <section id="arrays">
-<span id="scripting-arrays"></span><h3>Arrays<a class="headerlink" href="#arrays" title="Permalink to this heading">¶</a></h3>
+<span id="scripting-arrays"></span><h3>Arrays<a class="headerlink" href="#arrays" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#Array" title="Array"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">Array()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#SizeOf" title="SizeOf"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">SizeOf()</span></code></a></p></li>
 </ul>
 </section>
 <section id="miscellaneous">
-<span id="scripting-misc"></span><h3>Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permalink to this heading">¶</a></h3>
+<span id="scripting-misc"></span><h3>Miscellaneous<a class="headerlink" href="#miscellaneous" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#InFont" title="InFont"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">InFont()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#TypeOf" title="TypeOf"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">TypeOf()</span></code></a></p></li>
 </ul>
 </section>
 <section id="deprecated-names">
-<span id="scripting-deprecated"></span><h3>Deprecated Names<a class="headerlink" href="#deprecated-names" title="Permalink to this heading">¶</a></h3>
+<span id="scripting-deprecated"></span><h3>Deprecated Names<a class="headerlink" href="#deprecated-names" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="scripting-alpha.html#ClearGlyphCounterMasks" title="ClearGlyphCounterMasks"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">ClearGlyphCounterMasks()</span></code></a></p></li>
 <li><p><a class="reference internal" href="scripting-alpha.html#GlyphInfo" title="GlyphInfo"><code class="xref ff ff-func docutils literal notranslate"><span class="pre">GlyphInfo()</span></code></a></p></li>
@@ -1708,7 +1762,7 @@ with a dollar sign.</p></li>
 </section>
 </section>
 <section id="examples">
-<span id="scripting-example"></span><h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
+<span id="scripting-example"></span><h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/fontforge/fontforge/tree/master/tests">FontForge’s testsuite in the test subdirectory</a>
 (such as it is)</p></li>
@@ -1721,7 +1775,7 @@ with a dollar sign.</p></li>
 <li><p><a class="reference internal" href="../tutorial/scripting-tutorial.html"><span class="doc">the scripting tutorial</span></a></p></li>
 </ul>
 <section id="example-1">
-<h3>Example 1:<a class="headerlink" href="#example-1" title="Permalink to this heading">¶</a></h3>
+<h3>Example 1:<a class="headerlink" href="#example-1" title="Link to this heading">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Set the color of all selected glyphs to be yellow</span>
 <span class="c1">#designed to be run within an interactive fontforge session.</span>
 <span class="n">foreach</span>
@@ -1731,7 +1785,7 @@ with a dollar sign.</p></li>
 </div>
 </section>
 <section id="example-2">
-<h3>Example 2:<a class="headerlink" href="#example-2" title="Permalink to this heading">¶</a></h3>
+<h3>Example 2:<a class="headerlink" href="#example-2" title="Link to this heading">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/usr/local/bin/fontforge
 #This is the sfddiff script which compares two fonts
 
@@ -1809,7 +1863,7 @@ endif
 </div>
 </section>
 <section id="example-3">
-<h3>Example 3:<a class="headerlink" href="#example-3" title="Permalink to this heading">¶</a></h3>
+<h3>Example 3:<a class="headerlink" href="#example-3" title="Link to this heading">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/usr/local/bin/fontforge
 #Take a Latin font and apply some simple transformations to it
 #prior to adding cyrillic letters.
@@ -1890,7 +1944,7 @@ Quit(0);
 </section>
 </section>
 <section id="the-execute-script-dialog">
-<span id="scripting-execute"></span><h2>The Execute Script dialog<a class="headerlink" href="#the-execute-script-dialog" title="Permalink to this heading">¶</a></h2>
+<span id="scripting-execute"></span><h2>The Execute Script dialog<a class="headerlink" href="#the-execute-script-dialog" title="Link to this heading">¶</a></h2>
 <p>This dialog allows you to type a script directly in to FontForge and then run
 it. Of course the most common case is that you’ll have a script file somewhere
 that you want to execute, so there’s a button [Call] down at the bottom of the
@@ -1906,7 +1960,7 @@ to /dev/null and not useful. Try starting fontforge from the command line
 instead.</p>
 </section>
 <section id="the-scripts-menu">
-<span id="scripting-menu"></span><h2>The Scripts Menu<a class="headerlink" href="#the-scripts-menu" title="Permalink to this heading">¶</a></h2>
+<span id="scripting-menu"></span><h2>The Scripts Menu<a class="headerlink" href="#the-scripts-menu" title="Link to this heading">¶</a></h2>
 <p>You can use the preference dialog to create a list of frequently used scripts.
 Invoke <a class="reference internal" href="../ui/dialogs/prefs.html#prefs-scripts"><span class="std std-ref">File-&gt;Preferences</span></a> and select the Scripts tag. In
 this dialog are ten possible entries, each one should have a name (to be
@@ -2026,7 +2080,7 @@ tenth by Cnt-Alt-0.</p>
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.0.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

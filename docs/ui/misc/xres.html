@@ -1,18 +1,17 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Changing FontForge’s UI Appearance &#8212; FontForge 20230101 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
-    <link rel="shortcut icon" href="../../_static/fftype16.png"/>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=cb25574f" />
+    <script src="../../_static/documentation_options.js?v=00357e79"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="icon" href="../../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Scripting FontForge" href="../../scripting/scripting.html" />
@@ -34,7 +33,7 @@
           <div class="body" role="main">
             
   <section id="changing-fontforge-s-ui-appearance">
-<h1>Changing FontForge’s UI Appearance<a class="headerlink" href="#changing-fontforge-s-ui-appearance" title="Permalink to this heading">¶</a></h1>
+<h1>Changing FontForge’s UI Appearance<a class="headerlink" href="#changing-fontforge-s-ui-appearance" title="Link to this heading">¶</a></h1>
 <p>FontForge has an extensive appearance editor that evolved out of the X resource
 system but now bears little relation to it beyond its file format.  As of 2021
 every parameter is represented in the editor and almost all have a tooltip
@@ -42,29 +41,29 @@ similar to the explanations below. The editor is therefore the primary source
 of information about the parameters and this document is mostly useful for its
 explanation of the new font specification system.</p>
 <section id="fonts">
-<span id="xres-font"></span><h2>Fonts<a class="headerlink" href="#fonts" title="Permalink to this heading">¶</a></h2>
+<span id="xres-font"></span><h2>Fonts<a class="headerlink" href="#fonts" title="Link to this heading">¶</a></h2>
 <p>A font specification consists of a <em>size</em> directive, one or more <em>style</em>
 directives a <em>weight</em> directive, an explicit or implicit <em>family list</em>, and/or
 a reference font name.</p>
 <section id="explicit-size-directives">
-<h3>Explicit Size Directives<a class="headerlink" href="#explicit-size-directives" title="Permalink to this heading">¶</a></h3>
+<h3>Explicit Size Directives<a class="headerlink" href="#explicit-size-directives" title="Link to this heading">¶</a></h3>
 <p>An explicit size directive is either an integer followed by “pt” for a point
 size (as in “10pt”) or an integer followed by “px” for a pixel size (as in
 “12px”).</p>
 </section>
 <section id="style-directives">
-<h3>Style Directives<a class="headerlink" href="#style-directives" title="Permalink to this heading">¶</a></h3>
+<h3>Style Directives<a class="headerlink" href="#style-directives" title="Link to this heading">¶</a></h3>
 <p>A style directive is one or more of “italic”, “oblique”, “small-caps”,
 “extended”, and “condensed”.</p>
 </section>
 <section id="weight-directives">
-<h3>Weight Directives<a class="headerlink" href="#weight-directives" title="Permalink to this heading">¶</a></h3>
+<h3>Weight Directives<a class="headerlink" href="#weight-directives" title="Link to this heading">¶</a></h3>
 <p>A weight directive is either one of the strings “normal”, “light”, or “bold” or
 an integer multiple of 100, where 400 is equivalent to “normal” and 700 is
 equivalent to “bold”.</p>
 </section>
 <section id="family-lists">
-<h3>Family Lists<a class="headerlink" href="#family-lists" title="Permalink to this heading">¶</a></h3>
+<h3>Family Lists<a class="headerlink" href="#family-lists" title="Link to this heading">¶</a></h3>
 <p>A family list is a comma-separated list of families, where a given family name
 can contain spaces. When present a family list must come last in the specification,
 whereas other directives can occur in any order.</p>
@@ -73,7 +72,7 @@ whereas other directives can occur in any order.</p>
 used as fallbacks for missing glyphs.</p>
 </section>
 <section id="reference-font-names">
-<h3>Reference Font Names<a class="headerlink" href="#reference-font-names" title="Permalink to this heading">¶</a></h3>
+<h3>Reference Font Names<a class="headerlink" href="#reference-font-names" title="Link to this heading">¶</a></h3>
 <p>Instead of specifying a font from scratch you can do so in relation to a
 reference font, given by the name of the resource preceded by a caret. The
 primary fonts to reference are “View.DefaultFont”, “View.LabelFont”,
@@ -98,7 +97,7 @@ glitches but for the most part it works at lower point sizes (less than 17).</p>
 </section>
 </section>
 <section id="other-info">
-<h2>Other Info<a class="headerlink" href="#other-info" title="Permalink to this heading">¶</a></h2>
+<h2>Other Info<a class="headerlink" href="#other-info" title="Link to this heading">¶</a></h2>
 <p>By default FontForge loads the system configuration file. You can change this
 behavior by adding a custom file in your preferences, which happens
 automatically when you choose Save As” in the <a class="reference internal" href="resedit.html"><span class="doc">File-&gt;Appearance Editor</span></a> and keep the button checked.  Also see
@@ -108,9 +107,9 @@ is opened, and some on the next restart of the program. It is therefore best to
 restart after each significant change.</p>
 </section>
 <section id="the-directives">
-<h2>The Directives<a class="headerlink" href="#the-directives" title="Permalink to this heading">¶</a></h2>
+<h2>The Directives<a class="headerlink" href="#the-directives" title="Link to this heading">¶</a></h2>
 <section id="view">
-<h3>View<a class="headerlink" href="#view" title="Permalink to this heading">¶</a></h3>
+<h3>View<a class="headerlink" href="#view" title="Link to this heading">¶</a></h3>
 <dl class="object">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">fontforge.View.DefaultFont</span></span></dt>
@@ -141,7 +140,7 @@ bitmap view and metrics view.</p>
 
 </section>
 <section id="font-view">
-<h3>Font View<a class="headerlink" href="#font-view" title="Permalink to this heading">¶</a></h3>
+<h3>Font View<a class="headerlink" href="#font-view" title="Link to this heading">¶</a></h3>
 <dl class="object">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">fontforge.FontView.GlyphFGColor</span></span></dt>
@@ -256,7 +255,7 @@ FontView menu bar and the glyph array.</p>
 
 </section>
 <section id="outline-points">
-<h3>Outline Points<a class="headerlink" href="#outline-points" title="Permalink to this heading">¶</a></h3>
+<h3>Outline Points<a class="headerlink" href="#outline-points" title="Link to this heading">¶</a></h3>
 <dl class="object">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">fontforge.CharView.PointColor</span></span></dt>
@@ -347,7 +346,7 @@ horizontal or vertical.</p>
 
 </section>
 <section id="outline-lines-fills">
-<h3>Outline Lines/Fills<a class="headerlink" href="#outline-lines-fills" title="Permalink to this heading">¶</a></h3>
+<h3>Outline Lines/Fills<a class="headerlink" href="#outline-lines-fills" title="Link to this heading">¶</a></h3>
 <dl class="object">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">fontforge.CharView.ForegroundOutlineColor</span></span></dt>
@@ -494,7 +493,7 @@ corresponding to the mouse position.</p>
 
 </section>
 <section id="outline-tools">
-<h3>Outline Tools<a class="headerlink" href="#outline-tools" title="Permalink to this heading">¶</a></h3>
+<h3>Outline Tools<a class="headerlink" href="#outline-tools" title="Link to this heading">¶</a></h3>
 <dl class="object">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">fontforge.CharView.TraceColor</span></span></dt>
@@ -581,7 +580,7 @@ spline</p>
 
 </section>
 <section id="outline-hints">
-<h3>Outline Hints<a class="headerlink" href="#outline-hints" title="Permalink to this heading">¶</a></h3>
+<h3>Outline Hints<a class="headerlink" href="#outline-hints" title="Link to this heading">¶</a></h3>
 <dl class="object">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">fontforge.CharView.BlueValuesStippledCol</span></span></dt>
@@ -664,7 +663,7 @@ review hints dlg.</p>
 
 </section>
 <section id="outline-raster">
-<h3>Outline Raster<a class="headerlink" href="#outline-raster" title="Permalink to this heading">¶</a></h3>
+<h3>Outline Raster<a class="headerlink" href="#outline-raster" title="Link to this heading">¶</a></h3>
 <dl class="object">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">fontforge.CharView.GridFitOutlineColor</span></span></dt>
@@ -725,7 +724,7 @@ Other pixels will be interpolated between this and the background.</p>
 
 </section>
 <section id="palettes">
-<h3>Palettes<a class="headerlink" href="#palettes" title="Permalink to this heading">¶</a></h3>
+<h3>Palettes<a class="headerlink" href="#palettes" title="Link to this heading">¶</a></h3>
 <dl class="object">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">fontforge.CharView.CVPaletteForegroundColor</span></span></dt>
@@ -770,7 +769,7 @@ Other pixels will be interpolated between this and the background.</p>
 
 </section>
 <section id="bitmap-view">
-<h3>Bitmap View<a class="headerlink" href="#bitmap-view" title="Permalink to this heading">¶</a></h3>
+<h3>Bitmap View<a class="headerlink" href="#bitmap-view" title="Link to this heading">¶</a></h3>
 <dl class="object">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">fontforge.BitmapView.BitmapColor</span></span></dt>
@@ -845,7 +844,7 @@ Other pixels will be interpolated between this and the background.</p>
 
 </section>
 <section id="metrics-view">
-<h3>Metrics View<a class="headerlink" href="#metrics-view" title="Permalink to this heading">¶</a></h3>
+<h3>Metrics View<a class="headerlink" href="#metrics-view" title="Link to this heading">¶</a></h3>
 <dl class="object">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">fontforge.MetricsView.Font</span></span></dt>
@@ -900,7 +899,7 @@ moved to change a glyph’s right side bearing (or bottom side bearing).</p>
 
 </section>
 <section id="misc-windows">
-<h3>Misc Windows<a class="headerlink" href="#misc-windows" title="Permalink to this heading">¶</a></h3>
+<h3>Misc Windows<a class="headerlink" href="#misc-windows" title="Link to this heading">¶</a></h3>
 <dl class="object">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">fontforge.BDFProperties.Font</span></span></dt>
@@ -1000,7 +999,7 @@ the combinations</p>
 
 </section>
 <section id="misc-windows-2">
-<h3>Misc Windows 2<a class="headerlink" href="#misc-windows-2" title="Permalink to this heading">¶</a></h3>
+<h3>Misc Windows 2<a class="headerlink" href="#misc-windows-2" title="Link to this heading">¶</a></h3>
 <dl class="object">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">fontforge.Prefs.MonoFont</span></span></dt>
@@ -1082,7 +1081,7 @@ the combinations</p>
 
 </section>
 <section id="splash-screen">
-<h3>Splash Screen<a class="headerlink" href="#splash-screen" title="Permalink to this heading">¶</a></h3>
+<h3>Splash Screen<a class="headerlink" href="#splash-screen" title="Link to this heading">¶</a></h3>
 <dl class="object">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">fontforge.Splash.Foreground</span></span></dt>
@@ -1121,7 +1120,7 @@ the combinations</p>
 
 </section>
 <section id="sftextarea">
-<h3>SFTextArea<a class="headerlink" href="#sftextarea" title="Permalink to this heading">¶</a></h3>
+<h3>SFTextArea<a class="headerlink" href="#sftextarea" title="Link to this heading">¶</a></h3>
 <dl class="object">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">fontforge.SFTextArea.Box.ActiveInner</span></span></dt>
@@ -1142,7 +1141,7 @@ don’t think this ever gets used.</p>
 
 </section>
 <section id="gdraw">
-<h3>GDraw<a class="headerlink" href="#gdraw" title="Permalink to this heading">¶</a></h3>
+<h3>GDraw<a class="headerlink" href="#gdraw" title="Link to this heading">¶</a></h3>
 <dl class="object">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">Gdraw.Background</span></span></dt>
@@ -1222,7 +1221,7 @@ set then the command key will be mapped to the control key internally.</p>
 
 </section>
 <section id="gdraw-x-backend-only">
-<h3>GDraw (X backend only)<a class="headerlink" href="#gdraw-x-backend-only" title="Permalink to this heading">¶</a></h3>
+<h3>GDraw (X backend only)<a class="headerlink" href="#gdraw-x-backend-only" title="Link to this heading">¶</a></h3>
 <p>These are not included in the appearance editor and need to be set
 some other way, perhaps through the normal X Resources system.</p>
 <dl class="object">
@@ -1243,7 +1242,7 @@ desired depth it will use the default depth.</p>
 if the depth argument is specified too).</p>
 </dd></dl>
 
-<span class="target" id="xres-colormap"></span><dl class="object">
+<dl class="object" id="xres-colormap">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">Gdraw.Colormap</span></span></dt>
 <dd><p>An string (“Current”, “Copy”, “Private”)</p>
@@ -1261,7 +1260,7 @@ as it wants them. It will almost certainly not match the shared colormap.</p></l
 </ul>
 </dd></dl>
 
-<span class="target" id="xres-keyboard"></span><dl class="object">
+<dl class="object" id="xres-keyboard">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">Gdraw.Keyboard</span></span></dt>
 <dd><p>ibm | mac | sun | ppc | 0 | 1 | 2 | 3</p>
@@ -1288,7 +1287,7 @@ labels.</p>
 
 </section>
 <section id="popup">
-<h3>Popup<a class="headerlink" href="#popup" title="Permalink to this heading">¶</a></h3>
+<h3>Popup<a class="headerlink" href="#popup" title="Link to this heading">¶</a></h3>
 <dl class="object">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">Gdraw.GGadget.Popup.Font</span></span></dt>
@@ -1327,7 +1326,7 @@ message pops up.</p>
 
 </section>
 <section id="progress">
-<h3>Progress<a class="headerlink" href="#progress" title="Permalink to this heading">¶</a></h3>
+<h3>Progress<a class="headerlink" href="#progress" title="Link to this heading">¶</a></h3>
 <dl class="object">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">Gdraw.GGadget.Progress.Font</span></span></dt>
@@ -1358,8 +1357,8 @@ message pops up.</p>
 
 </section>
 <section id="ggadget">
-<h3>GGadget<a class="headerlink" href="#ggadget" title="Permalink to this heading">¶</a></h3>
-<span class="target" id="xres-ggadgetbox"></span><dl class="object">
+<h3>GGadget<a class="headerlink" href="#ggadget" title="Link to this heading">¶</a></h3>
+<dl class="object" id="xres-ggadgetbox">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">Gdraw.GGadget...</span></span></dt>
 <dd><p>Every ggadget in enclosed in a box. No gadget is actually a GGadget, but
@@ -1545,7 +1544,7 @@ of the gadget, and Background as the end point in the center of it.</p>
 
 </section>
 <section id="ggadget-2">
-<h3>GGadget 2<a class="headerlink" href="#ggadget-2" title="Permalink to this heading">¶</a></h3>
+<h3>GGadget 2<a class="headerlink" href="#ggadget-2" title="Link to this heading">¶</a></h3>
 <dl class="object">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">Gdraw.GGadget.Skip</span></span></dt>
@@ -1590,7 +1589,7 @@ and those used in various gadgets listed below.</p>
 
 </section>
 <section id="the-gadgets">
-<h3>The Gadgets<a class="headerlink" href="#the-gadgets" title="Permalink to this heading">¶</a></h3>
+<h3>The Gadgets<a class="headerlink" href="#the-gadgets" title="Link to this heading">¶</a></h3>
 <dl class="object">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">Gdraw.GListMark...</span> <span class="pre">controls</span> <span class="pre">the</span> <span class="pre">shape</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">mark</span> <span class="pre">used</span> <span class="pre">to</span> <span class="pre">show</span> <span class="pre">the</span> <span class="pre">menu</span> <span class="pre">of</span> <span class="pre">a</span> <span class="pre">combo</span> <span class="pre">box.</span></span></dt>
@@ -1797,14 +1796,14 @@ False elsewhere.</p>
 <tr class="row-odd"><td><figure class="align-default" id="id1">
 <img alt="../../_images/MenuWithMacIcons.png" src="../../_images/MenuWithMacIcons.png" />
 <figcaption>
-<p><span class="caption-text">True</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">True</span><a class="headerlink" href="#id1" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 </td>
 <td><figure class="align-default" id="id2">
 <img alt="../../_images/MenuWithoutMacIcons.png" src="../../_images/MenuWithoutMacIcons.png" />
 <figcaption>
-<p><span class="caption-text">False</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">False</span><a class="headerlink" href="#id2" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 </td>
@@ -2010,7 +2009,7 @@ entry).</p>
 <span class="sig-name descname"><span class="pre">...</span></span></dt>
 <dd></dd></dl>
 
-<span class="target" id="xres-deprecated"></span><dl class="object">
+<dl class="object" id="xres-deprecated">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">Deprecated</span></span></dt>
 <dd><p>The following resources are deprecated and will be silently ignored.</p>
@@ -2029,7 +2028,7 @@ entry).</p>
 </ul>
 </dd></dl>
 
-<span class="target" id="xres-color"></span><dl class="object">
+<dl class="object" id="xres-color">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">Colors</span></span></dt>
 <dd><p>Colors may be specified as:</p>
@@ -2082,7 +2081,7 @@ fuchsia, silver)</p></li>
 </section>
 </section>
 <section id="keyboards-and-mice">
-<span id="xres-keyboards"></span><h2>Keyboards and Mice.<a class="headerlink" href="#keyboards-and-mice" title="Permalink to this heading">¶</a></h2>
+<span id="xres-keyboards"></span><h2>Keyboards and Mice.<a class="headerlink" href="#keyboards-and-mice" title="Link to this heading">¶</a></h2>
 <p>FontForge assumes that your keyboard has a control key and some equivalent of a
 meta key. FontForge works best with a three button mouse.</p>
 <p>Almost all keyboards now-a-days will have the needed modifier keys, but which
@@ -2215,7 +2214,7 @@ on it) while depressing either mouse button.</p>
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.0.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

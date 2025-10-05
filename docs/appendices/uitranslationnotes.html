@@ -1,18 +1,17 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>User Interface Translation Notes &#8212; FontForge 20230101 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <link rel="shortcut icon" href="../_static/fftype16.png"/>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=cb25574f" />
+    <script src="../_static/documentation_options.js?v=00357e79"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="icon" href="../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Font Styles in various languages" href="fontstyles.html" />
@@ -34,7 +33,7 @@
           <div class="body" role="main">
             
   <section id="user-interface-translation-notes">
-<h1>User Interface Translation Notes<a class="headerlink" href="#user-interface-translation-notes" title="Permalink to this heading">¶</a></h1>
+<h1>User Interface Translation Notes<a class="headerlink" href="#user-interface-translation-notes" title="Link to this heading">¶</a></h1>
 <blockquote>
 <div><div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -74,7 +73,7 @@ UI.</p>
 </ul>
 </nav>
 <section id="obtaining-the-strings">
-<span id="uitranslationnotes-obtaining"></span><h2>Obtaining the strings<a class="headerlink" href="#obtaining-the-strings" title="Permalink to this heading">¶</a></h2>
+<span id="uitranslationnotes-obtaining"></span><h2>Obtaining the strings<a class="headerlink" href="#obtaining-the-strings" title="Link to this heading">¶</a></h2>
 <blockquote class="epigraph">
 <div><div class="line-block">
 <div class="line"><strong>CHAPLAIN:</strong>…legal matters and so forth</div>
@@ -90,7 +89,7 @@ FontForge’s case it is called “FontForge.pot”.</p>
 <a class="reference external" href="https://crowdin.com/project/fontforge">current version of this file from here.</a></p>
 </section>
 <section id="creating-and-modifying-a-po-file">
-<span id="uitranslationnotes-modifying"></span><h2>Creating and Modifying a “po” file<a class="headerlink" href="#creating-and-modifying-a-po-file" title="Permalink to this heading">¶</a></h2>
+<span id="uitranslationnotes-modifying"></span><h2>Creating and Modifying a “po” file<a class="headerlink" href="#creating-and-modifying-a-po-file" title="Link to this heading">¶</a></h2>
 <blockquote class="epigraph">
 <div><div class="line-block">
 <div class="line">The Bellman looked uffish, and wrinkled his brow,</div>
@@ -258,7 +257,7 @@ plural it has a slightly different form in the po file</p>
 <p>Obviously, in a language with three forms there would be additional
 <code class="docutils literal notranslate"><span class="pre">msgstr[n]</span></code> entries.</p>
 <section id="updating-an-already-existing-po-file">
-<span id="uitranslationnotes-updating"></span><h3>Updating an already existing “po” file<a class="headerlink" href="#updating-an-already-existing-po-file" title="Permalink to this heading">¶</a></h3>
+<span id="uitranslationnotes-updating"></span><h3>Updating an already existing “po” file<a class="headerlink" href="#updating-an-already-existing-po-file" title="Link to this heading">¶</a></h3>
 <p>After a few months, you will probably find that I’ve added some additional
 strings to FontForge, and you may want to update your original po file.</p>
 <p>Once again you <a class="reference internal" href="#uitranslationnotes-obtaining"><span class="std std-ref">grab a current “pot” file</span></a>
@@ -273,7 +272,7 @@ correct, some are very strange, so you will want to examine the guessed strings
 checking these easy).</p>
 </section>
 <section id="testing-a-po-file">
-<span id="uitranslationnotes-testing"></span><h3>Testing a “po” file<a class="headerlink" href="#testing-a-po-file" title="Permalink to this heading">¶</a></h3>
+<span id="uitranslationnotes-testing"></span><h3>Testing a “po” file<a class="headerlink" href="#testing-a-po-file" title="Link to this heading">¶</a></h3>
 <p>Once you have completed your po file you will want to test it.</p>
 <ol class="arabic">
 <li><p>If you have a copy of the fontforge source distribution you can test it by</p>
@@ -323,7 +322,7 @@ $ fontforge -new
 </section>
 </section>
 <section id="still-more-strings-to-translate">
-<span id="uitranslationnotes-more"></span><h2>Still more strings to translate!<a class="headerlink" href="#still-more-strings-to-translate" title="Permalink to this heading">¶</a></h2>
+<span id="uitranslationnotes-more"></span><h2>Still more strings to translate!<a class="headerlink" href="#still-more-strings-to-translate" title="Link to this heading">¶</a></h2>
 <p>FontForge has some strings that do not fit into the standard gettext mechanism.
 These are strings for which fontforge wants to know all translations at all
 times. For exampe the truetype ‘name’ table encourages designers to provide a
@@ -484,7 +483,7 @@ collected the <a class="reference internal" href="OFL-Unofficial.html"><span cla
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.0.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

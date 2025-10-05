@@ -1,18 +1,17 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Encoding Menu &#8212; FontForge 20230101 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
-    <link rel="shortcut icon" href="../../_static/fftype16.png"/>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=cb25574f" />
+    <script src="../../_static/documentation_options.js?v=00357e79"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="icon" href="../../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="The View Menu" href="viewmenu.html" />
@@ -34,9 +33,9 @@
           <div class="body" role="main">
             
   <section id="encoding-menu">
-<h1>Encoding Menu<a class="headerlink" href="#encoding-menu" title="Permalink to this heading">¶</a></h1>
+<h1>Encoding Menu<a class="headerlink" href="#encoding-menu" title="Link to this heading">¶</a></h1>
 <p>The Encoding menu is only found in the font view.</p>
-<span class="target" id="encodingmenu-reencode"></span><dl class="object">
+<dl class="object" id="encodingmenu-reencode">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">Reencode</span></span></dt>
 <dd><p>Has an attached sub-menu of standard and user defined encodings. The font’s
@@ -57,7 +56,7 @@ has unicode value U+0041) our glyph will still be mapped to slot 65, but in
 addition its name will be changed to “A”.</p>
 </dd></dl>
 
-<span class="target" id="encodingmenu-compact"></span><dl class="object">
+<dl class="object" id="encodingmenu-compact">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">Compact</span></span></dt>
 <dd><p>Remove any holes from the encoding so all the glyphs get smushed together. If
@@ -65,7 +64,7 @@ the font is already compact, then selecting this again will restore the
 original.</p>
 </dd></dl>
 
-<span class="target" id="encodingmenu-force"></span><dl class="object">
+<dl class="object" id="encodingmenu-force">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">Force</span> <span class="pre">Encoding</span></span></dt>
 <dd><p>Has the same sub-menu as above. Here we assume that the glyphs of the font
@@ -75,21 +74,21 @@ all the glyphs to match what they should be if the indicated encoding were in
 force.</p>
 </dd></dl>
 
-<span class="target" id="encodingmenu-addslots"></span><dl class="object">
+<dl class="object" id="encodingmenu-addslots">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">Add</span> <span class="pre">Encoding</span> <span class="pre">Slots...</span></span></dt>
 <dd><p>Add some extra slots at the end of the font into which you can put unencoded
 glyphs (variant glyphs, etc.)</p>
 </dd></dl>
 
-<span class="target" id="encodingmenu-removeslots"></span><dl class="object">
+<dl class="object" id="encodingmenu-removeslots">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">Remove</span> <span class="pre">Unused</span> <span class="pre">Slots</span></span></dt>
 <dd><p>Removes any unused slots from the end of the font. It does not remove unused
 slots inside the font, that would screw up the encoding.</p>
 </dd></dl>
 
-<span class="target" id="encodingmenu-detach"></span><dl class="object">
+<dl class="object" id="encodingmenu-detach">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">Detach</span> <span class="pre">Glyphs</span></span></dt>
 <dd><p>Detaches any selected encoding slots from their currently associated glyphs.
@@ -98,76 +97,76 @@ just not encoded (If you reencode the font those glyphs will become visible
 again).</p>
 </dd></dl>
 
-<span class="target" id="encodingmenu-removeglyphs"></span><dl class="object">
+<dl class="object" id="encodingmenu-removeglyphs">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">Detach</span> <span class="pre">&amp;</span> <span class="pre">Remove</span> <span class="pre">Glyphs...</span></span></dt>
 <dd><p>Similar to the above except that any glyphs detached (which are not used
 elsewhere in the encoding) will be removed from the font.</p>
 </dd></dl>
 
-<span class="target" id="encodingmenu-addenc"></span><dl class="object">
+<dl class="object" id="encodingmenu-addenc">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">Add</span> <span class="pre">Encoding</span> <span class="pre">Name...</span></span></dt>
 <dd><p>Requests an encoding name from the user and searches for it in the iconv()
 database. It then adds that encoding to the menu.</p>
 </dd></dl>
 
-<span class="target" id="encodingmenu-load"></span><dl class="object">
+<dl class="object" id="encodingmenu-load">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">Load</span> <span class="pre">Encoding...</span></span></dt>
 <dd><p>Asks the user for a filename and attempts to load a user defined encoding
 from that file. (You can only load small encodings – one byte encodings)</p>
 </dd></dl>
 
-<span class="target" id="encodingmenu-make"></span><dl class="object">
+<dl class="object" id="encodingmenu-make">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">Make</span> <span class="pre">from</span> <span class="pre">Font...</span></span></dt>
 <dd><p>Allows you to name the font’s current encoding (if it isn’t already named),
 and add it to the encoding menu.</p>
 </dd></dl>
 
-<span class="target" id="encodingmenu-removeenc"></span><dl class="object">
+<dl class="object" id="encodingmenu-removeenc">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">Remove</span> <span class="pre">Encoding...</span></span></dt>
 <dd><p>Removes one of the user defined encodings from the menu.</p>
 </dd></dl>
 
-<span class="target" id="encodingmenu-display"></span><dl class="object">
+<dl class="object" id="encodingmenu-display">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">Display</span> <span class="pre">by</span> <span class="pre">Group...</span></span></dt>
 <dd><p>Allows you restrict the glyphs displayed in the font view to those in a user
 defined <a class="reference internal" href="../dialogs/groups.html"><span class="doc">group</span></a> (specified in the next command).</p>
 </dd></dl>
 
-<span class="target" id="encodingmenu-define"></span><dl class="object">
+<dl class="object" id="encodingmenu-define">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">Define</span> <span class="pre">Groups...</span></span></dt>
 <dd><p>Allows you to define <a class="reference internal" href="../dialogs/groups.html"><span class="doc">groups</span></a> of glyphs which (presumably) have
 some meaningful connection to each other.</p>
 </dd></dl>
 
-<span class="target" id="encodingmenu-savenl"></span><dl class="object">
+<dl class="object" id="encodingmenu-savenl">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">Save</span> <span class="pre">NameList</span> <span class="pre">of</span> <span class="pre">Font...</span></span></dt>
 <dd><p>Creates a <a class="reference internal" href="#encodingmenu-namelist"><span class="std std-ref">namelist</span></a> file mapping unicode to the
 glyph names of the current font.</p>
 </dd></dl>
 
-<span class="target" id="encodingmenu-loadnl"></span><dl class="object">
+<dl class="object" id="encodingmenu-loadnl">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">Load</span> <span class="pre">NameList...</span></span></dt>
 <dd><p>Loads a <a class="reference internal" href="#encodingmenu-namelist"><span class="std std-ref">namelist</span></a> file into fontforge and
 copies it so that fontforge will load it on start up in the future.</p>
 </dd></dl>
 
-<span class="target" id="encodingmenu-renameglyphs"></span><dl class="object">
+<dl class="object" id="encodingmenu-renameglyphs">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">Rename</span> <span class="pre">Glyphs...</span></span></dt>
 <dd><p>Allows you to specify a <a class="reference internal" href="#encodingmenu-namelist"><span class="std std-ref">namelist</span></a>. All glyphs
 in the current font will be renamed to match the scheme in the namelist.</p>
 </dd></dl>
 
-<span class="target" id="encodingmenu-nameglyphs"></span><dl class="object">
+<dl class="object" id="encodingmenu-nameglyphs">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">Create</span> <span class="pre">Named</span> <span class="pre">Glyphs...</span></span></dt>
 <dd><p>Allows you to specify a file containing a list of glyph names. FontForge will
@@ -178,7 +177,7 @@ if all your fonts contain small caps and you always want to have the names
 </dd></dl>
 
 <section id="general-notes-on-encodings">
-<span id="encodingmenu-general-encodings"></span><h2>General notes on encodings<a class="headerlink" href="#general-notes-on-encodings" title="Permalink to this heading">¶</a></h2>
+<span id="encodingmenu-general-encodings"></span><h2>General notes on encodings<a class="headerlink" href="#general-notes-on-encodings" title="Link to this heading">¶</a></h2>
 <p>Not all font formats support all encodings. SVG fonts will always be output in a
 unicode encoding, truetype fonts in either unicode or one of the CJK encodings,
 type1 fonts only support single byte encodings, etc.</p>
@@ -188,7 +187,7 @@ because there is none), but there is an entry
 Registry/Ordering information and allow you to change the supplement.</p>
 <hr class="docutils" />
 <section id="built-in-encodings">
-<span id="encodingmenu-encodings"></span><h3>Built in Encodings<a class="headerlink" href="#built-in-encodings" title="Permalink to this heading">¶</a></h3>
+<span id="encodingmenu-encodings"></span><h3>Built in Encodings<a class="headerlink" href="#built-in-encodings" title="Link to this heading">¶</a></h3>
 <p>FontForge knows about the following encodings by default:</p>
 <ul>
 <li><p>ISO-8859-1 (Latin1) – traditional encoding for western european characters.
@@ -256,7 +255,7 @@ bytes&lt;0x80, and GB 2312 EUC offset by 0x8080)</p></li>
 <hr class="docutils" />
 </section>
 <section id="user-defined-encodings">
-<span id="encodingmenu-user-def"></span><h3>User Defined Encodings<a class="headerlink" href="#user-defined-encodings" title="Permalink to this heading">¶</a></h3>
+<span id="encodingmenu-user-def"></span><h3>User Defined Encodings<a class="headerlink" href="#user-defined-encodings" title="Link to this heading">¶</a></h3>
 <p>You can also add new encodings to the set that FontForge knows about. There are
 three menu items that manipulate a set of user defined encodings. As always
 these specify both a character set and an encoding. The encoding has a maximum
@@ -336,7 +335,7 @@ characters of almost every other encoding.</p></li>
 </section>
 </section>
 <section id="namelists">
-<span id="encodingmenu-namelist"></span><h2>NameLists<a class="headerlink" href="#namelists" title="Permalink to this heading">¶</a></h2>
+<span id="encodingmenu-namelist"></span><h2>NameLists<a class="headerlink" href="#namelists" title="Link to this heading">¶</a></h2>
 <p>Adobe has established a standard glyph naming convention which provides
 intelligible names for many glyphs of unicode characters. And some
 unintelligible names too.</p>
@@ -525,7 +524,7 @@ List.</p>
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.0.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
