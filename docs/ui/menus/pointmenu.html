@@ -1,18 +1,17 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>The Point Menu &#8212; FontForge 20230101 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/documentation_options.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/sphinx_highlight.js"></script>
-    <link rel="shortcut icon" href="../../_static/fftype16.png"/>
+    <link rel="icon" href="../../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="The Element Menu" href="elementmenu.html" />
@@ -36,40 +35,40 @@
   <section id="the-point-menu">
 <h1>The Point Menu<a class="headerlink" href="#the-point-menu" title="Permalink to this heading">¶</a></h1>
 <p>This menu is only available in the Outline Character View.</p>
-<span class="target" id="pointmenu-curve"></span><dl class="object">
+<dl class="object" id="pointmenu-curve">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">Curve</span></span></dt>
 <dd><p>If all the selected points are Curve points then this entry will be checked.
 Selecting it will change all selected points to be Curve points.</p>
 </dd></dl>
 
-<span class="target" id="pointmenu-corner"></span><dl class="object">
+<dl class="object" id="pointmenu-corner">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">Corner</span></span></dt>
 <dd><p>If all the selected points are Corner points then this entry will be checked.
 Selecting it will change all selected points to be Corner points.</p>
 </dd></dl>
 
-<span class="target" id="pointmenu-tangent"></span><dl class="object">
+<dl class="object" id="pointmenu-tangent">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">Tangent</span></span></dt>
 <dd><p>If all the selected points are Tangent points then this entry will be
 checked. Selecting it will change all selected points to be Tangent points.</p>
 </dd></dl>
 
-<span class="target" id="pointmenu-make-first"></span><dl class="object">
+<dl class="object" id="pointmenu-make-first">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">Make</span> <span class="pre">First</span></span></dt>
 <dd><p>If exactly one point is selected and it is on a closed path and it is not the
 “first point” of that path, then it will become the first point.</p>
 </dd></dl>
 
-<span class="target" id="pointmenu-interpolated"></span><dl class="object">
+<dl class="object" id="pointmenu-interpolated">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">Can</span> <span class="pre">Be</span> <span class="pre">Interpolated</span></span></dt>
 <dd></dd></dl>
 
-<span class="target" id="pointmenu-notinterpolated"></span><dl class="object">
+<dl class="object" id="pointmenu-notinterpolated">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">Can't</span> <span class="pre">Be</span> <span class="pre">Interpolated</span></span></dt>
 <dd><p>When editing truetype curves, an on-curve point can be omitted from the point
@@ -80,7 +79,7 @@ be referred to in instructions (or reference point matching), so on rare
 occasions you will need to be able to turn off this interpolation.</p>
 </dd></dl>
 
-<span class="target" id="pointmenu-addanchor"></span><dl class="object">
+<dl class="object" id="pointmenu-addanchor">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">Add</span> <span class="pre">Anchor</span> <span class="pre">Point...</span></span></dt>
 <dd><img alt="../../_images/agetinfo.png" class="align-right" src="../../_images/agetinfo.png" />
@@ -90,14 +89,14 @@ The last click in the window provides a default location for the point.</p>
 <a class="reference internal" href="../dialogs/getinfo.html#getinfo-anchors"><span class="std std-ref">Element-&gt;Get Info command</span></a> for more info.</p>
 </dd></dl>
 
-<span class="target" id="pointmenu-acceptable"></span><dl class="object">
+<dl class="object" id="pointmenu-acceptable">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">Acceptable</span> <span class="pre">Extrema</span></span></dt>
 <dd><p>Tells the validator that it is OK for this spline to have extrema. You select
 a spline by selecting its two end-points.</p>
 </dd></dl>
 
-<span class="target" id="pointmenu-mkline"></span><dl class="object">
+<dl class="object" id="pointmenu-mkline">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">Make</span> <span class="pre">Line</span></span></dt>
 <dd><p>If two adjacent points are selected then make the spline between them into a
@@ -107,7 +106,7 @@ selected and has no adjacent selected points then make its control points be
 on top of the point</p>
 </dd></dl>
 
-<span class="target" id="pointmenu-makearc"></span><dl class="object">
+<dl class="object" id="pointmenu-makearc">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">Make</span> <span class="pre">Arc</span></span></dt>
 <dd><p>If two adjacent points are selected then make the spline between them into an
@@ -128,7 +127,7 @@ will place a copy of the full ellipse into the background layer – this was
 for debugging, but I thought it kind of cool so I left it in).</p>
 </dd></dl>
 
-<span class="target" id="pointmenu-insert"></span><dl class="object">
+<dl class="object" id="pointmenu-insert">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">Insert</span> <span class="pre">Point</span> <span class="pre">on</span> <span class="pre">Spline</span> <span class="pre">at...</span></span></dt>
 <dd><p>Select the two end-points of a spline, then bring up this dialog. You can
@@ -136,7 +135,7 @@ request that FontForge insert a point on the selected spline with either a
 given X or a given Y coordinate.</p>
 </dd></dl>
 
-<span class="target" id="pointmenu-centercp"></span><dl class="object">
+<dl class="object" id="pointmenu-centercp">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">Center</span> <span class="pre">Between</span> <span class="pre">Control</span> <span class="pre">Points</span></span></dt>
 <dd><p>In truetype, if an on-curve point is centered between its control points,
@@ -144,7 +143,7 @@ then that point may be omitted when written to the output file. This command
 allows you to create such a point more easily.</p>
 </dd></dl>
 
-<span class="target" id="pointmenu-namecontour"></span><dl class="object">
+<dl class="object" id="pointmenu-namecontour">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">Name</span> <span class="pre">Contour</span></span></dt>
 <dd><p>A contour may be named. This is designed for use in the Guide line (and
@@ -152,7 +151,7 @@ Background) layer. You can attach a mnemonic name to a guide line (like
 “X-Height” or “Cap-Height” or whatever strikes your fancy).</p>
 </dd></dl>
 
-<span class="target" id="pointmenu-clippath"></span><dl class="object">
+<dl class="object" id="pointmenu-clippath">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">Make</span> <span class="pre">Clip</span> <span class="pre">Path</span></span></dt>
 <dd><p>Only meaningful in Type3 fonts. For a more complete description see the
@@ -255,7 +254,7 @@ then there will be no clipping path.</p>
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.0.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

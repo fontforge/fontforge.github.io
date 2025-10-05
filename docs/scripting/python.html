@@ -1,18 +1,17 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Python Scripting &#8212; FontForge 20230101 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/documentation_options.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
-    <link rel="shortcut icon" href="../_static/fftype16.png"/>
+    <link rel="icon" href="../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="fontforge" href="python/fontforge.html" />
@@ -158,56 +157,107 @@ fontforge so that it is also a <a class="reference internal" href="#python-exten
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.DelimitedSubFormulaMinHeight"><code class="docutils literal notranslate"><span class="pre">math.DelimitedSubFormulaMinHeight</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.DisplayOperatorMinHeight"><code class="docutils literal notranslate"><span class="pre">math.DisplayOperatorMinHeight</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.MathLeading"><code class="docutils literal notranslate"><span class="pre">math.MathLeading</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.MathLeadingDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.MathLeadingDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.AxisHeight"><code class="docutils literal notranslate"><span class="pre">math.AxisHeight</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.AxisHeightDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.AxisHeightDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.AccentBaseHeight"><code class="docutils literal notranslate"><span class="pre">math.AccentBaseHeight</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.AccentBaseHeightDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.AccentBaseHeightDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.FlattenedAccentBaseHeight"><code class="docutils literal notranslate"><span class="pre">math.FlattenedAccentBaseHeight</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.FlattenedAccentBaseHeightDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.FlattenedAccentBaseHeightDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.SubscriptShiftDown"><code class="docutils literal notranslate"><span class="pre">math.SubscriptShiftDown</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.SubscriptShiftDownDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.SubscriptShiftDownDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.SubscriptTopMax"><code class="docutils literal notranslate"><span class="pre">math.SubscriptTopMax</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.SubscriptTopMaxDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.SubscriptTopMaxDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.SubscriptBaselineDropMin"><code class="docutils literal notranslate"><span class="pre">math.SubscriptBaselineDropMin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.SubscriptBaselineDropMinDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.SubscriptBaselineDropMinDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.SuperscriptShiftUp"><code class="docutils literal notranslate"><span class="pre">math.SuperscriptShiftUp</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.SuperscriptShiftUpDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.SuperscriptShiftUpDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.SuperscriptShiftUpCramped"><code class="docutils literal notranslate"><span class="pre">math.SuperscriptShiftUpCramped</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.SuperscriptShiftUpCrampedDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.SuperscriptShiftUpCrampedDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.SuperscriptBottomMin"><code class="docutils literal notranslate"><span class="pre">math.SuperscriptBottomMin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.SuperscriptBottomMinDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.SuperscriptBottomMinDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.SuperscriptBaselineDropMax"><code class="docutils literal notranslate"><span class="pre">math.SuperscriptBaselineDropMax</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.SuperscriptBaselineDropMaxDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.SuperscriptBaselineDropMaxDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.SubSuperscriptGapMin"><code class="docutils literal notranslate"><span class="pre">math.SubSuperscriptGapMin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.SubSuperscriptGapMinDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.SubSuperscriptGapMinDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.SuperscriptBottomMaxWithSubscript"><code class="docutils literal notranslate"><span class="pre">math.SuperscriptBottomMaxWithSubscript</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.SuperscriptBottomMaxWithSubscriptDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.SuperscriptBottomMaxWithSubscriptDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.SpaceAfterScript"><code class="docutils literal notranslate"><span class="pre">math.SpaceAfterScript</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.SpaceAfterScriptDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.SpaceAfterScriptDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.UpperLimitGapMin"><code class="docutils literal notranslate"><span class="pre">math.UpperLimitGapMin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.UpperLimitGapMinDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.UpperLimitGapMinDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.UpperLimitBaselineRiseMin"><code class="docutils literal notranslate"><span class="pre">math.UpperLimitBaselineRiseMin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.UpperLimitBaselineRiseMinDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.UpperLimitBaselineRiseMinDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.LowerLimitGapMin"><code class="docutils literal notranslate"><span class="pre">math.LowerLimitGapMin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.LowerLimitGapMinDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.LowerLimitGapMinDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.LowerLimitBaselineDropMin"><code class="docutils literal notranslate"><span class="pre">math.LowerLimitBaselineDropMin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.LowerLimitBaselineDropMinDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.LowerLimitBaselineDropMinDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.StackTopShiftUp"><code class="docutils literal notranslate"><span class="pre">math.StackTopShiftUp</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.StackTopShiftUpDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.StackTopShiftUpDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.StackTopDisplayStyleShiftUp"><code class="docutils literal notranslate"><span class="pre">math.StackTopDisplayStyleShiftUp</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.StackTopDisplayStyleShiftUpDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.StackTopDisplayStyleShiftUpDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.StackBottomShiftDown"><code class="docutils literal notranslate"><span class="pre">math.StackBottomShiftDown</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.StackBottomShiftDownDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.StackBottomShiftDownDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.StackBottomDisplayStyleShiftDown"><code class="docutils literal notranslate"><span class="pre">math.StackBottomDisplayStyleShiftDown</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.StackBottomDisplayStyleShiftDownDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.StackBottomDisplayStyleShiftDownDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.StackGapMin"><code class="docutils literal notranslate"><span class="pre">math.StackGapMin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.StackGapMinDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.StackGapMinDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.StackDisplayStyleGapMin"><code class="docutils literal notranslate"><span class="pre">math.StackDisplayStyleGapMin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.StackDisplayStyleGapMinDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.StackDisplayStyleGapMinDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.StretchStackTopShiftUp"><code class="docutils literal notranslate"><span class="pre">math.StretchStackTopShiftUp</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.StretchStackTopShiftUpDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.StretchStackTopShiftUpDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.StretchStackBottomShiftDown"><code class="docutils literal notranslate"><span class="pre">math.StretchStackBottomShiftDown</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.StretchStackBottomShiftDownDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.StretchStackBottomShiftDownDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.StretchStackGapAboveMin"><code class="docutils literal notranslate"><span class="pre">math.StretchStackGapAboveMin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.StretchStackGapAboveMinDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.StretchStackGapAboveMinDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.StretchStackGapBelowMin"><code class="docutils literal notranslate"><span class="pre">math.StretchStackGapBelowMin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.StretchStackGapBelowMinDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.StretchStackGapBelowMinDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.FractionNumeratorShiftUp"><code class="docutils literal notranslate"><span class="pre">math.FractionNumeratorShiftUp</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.FractionNumeratorShiftUpDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.FractionNumeratorShiftUpDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.FractionNumeratorDisplayStyleShiftUp"><code class="docutils literal notranslate"><span class="pre">math.FractionNumeratorDisplayStyleShiftUp</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.FractionNumeratorDisplayStyleShiftUpDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.FractionNumeratorDisplayStyleShiftUpDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.FractionDenominatorShiftDown"><code class="docutils literal notranslate"><span class="pre">math.FractionDenominatorShiftDown</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.FractionDenominatorShiftDownDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.FractionDenominatorShiftDownDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.FractionDenominatorDisplayStyleShiftDown"><code class="docutils literal notranslate"><span class="pre">math.FractionDenominatorDisplayStyleShiftDown</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.FractionDenominatorDisplayStyleShiftDownDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.FractionDenominatorDisplayStyleShiftDownDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.FractionNumeratorGapMin"><code class="docutils literal notranslate"><span class="pre">math.FractionNumeratorGapMin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.FractionNumeratorGapMinDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.FractionNumeratorGapMinDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.FractionNumeratorDisplayStyleGapMin"><code class="docutils literal notranslate"><span class="pre">math.FractionNumeratorDisplayStyleGapMin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.FractionNumeratorDisplayStyleGapMinDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.FractionNumeratorDisplayStyleGapMinDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.FractionRuleThickness"><code class="docutils literal notranslate"><span class="pre">math.FractionRuleThickness</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.FractionRuleThicknessDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.FractionRuleThicknessDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.FractionDenominatorGapMin"><code class="docutils literal notranslate"><span class="pre">math.FractionDenominatorGapMin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.FractionDenominatorGapMinDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.FractionDenominatorGapMinDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.FractionDenominatorDisplayStyleGapMin"><code class="docutils literal notranslate"><span class="pre">math.FractionDenominatorDisplayStyleGapMin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.FractionDenominatorDisplayStyleGapMinDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.FractionDenominatorDisplayStyleGapMinDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.SkewedFractionHorizontalGap"><code class="docutils literal notranslate"><span class="pre">math.SkewedFractionHorizontalGap</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.SkewedFractionHorizontalGapDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.SkewedFractionHorizontalGapDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.SkewedFractionVerticalGap"><code class="docutils literal notranslate"><span class="pre">math.SkewedFractionVerticalGap</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.SkewedFractionVerticalGapDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.SkewedFractionVerticalGapDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.OverbarVerticalGap"><code class="docutils literal notranslate"><span class="pre">math.OverbarVerticalGap</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.OverbarVerticalGapDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.OverbarVerticalGapDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.OverbarRuleThickness"><code class="docutils literal notranslate"><span class="pre">math.OverbarRuleThickness</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.OverbarRuleThicknessDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.OverbarRuleThicknessDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.OverbarExtraAscender"><code class="docutils literal notranslate"><span class="pre">math.OverbarExtraAscender</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.OverbarExtraAscenderDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.OverbarExtraAscenderDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.UnderbarVerticalGap"><code class="docutils literal notranslate"><span class="pre">math.UnderbarVerticalGap</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.UnderbarVerticalGapDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.UnderbarVerticalGapDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.UnderbarRuleThickness"><code class="docutils literal notranslate"><span class="pre">math.UnderbarRuleThickness</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.UnderbarRuleThicknessDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.UnderbarRuleThicknessDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.UnderbarExtraDescender"><code class="docutils literal notranslate"><span class="pre">math.UnderbarExtraDescender</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.UnderbarExtraDescenderDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.UnderbarExtraDescenderDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.RadicalVerticalGap"><code class="docutils literal notranslate"><span class="pre">math.RadicalVerticalGap</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.RadicalVerticalGapDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.RadicalVerticalGapDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.RadicalDisplayStyleVerticalGap"><code class="docutils literal notranslate"><span class="pre">math.RadicalDisplayStyleVerticalGap</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.RadicalDisplayStyleVerticalGapDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.RadicalDisplayStyleVerticalGapDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.RadicalRuleThickness"><code class="docutils literal notranslate"><span class="pre">math.RadicalRuleThickness</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.RadicalRuleThicknessDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.RadicalRuleThicknessDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.RadicalExtraAscender"><code class="docutils literal notranslate"><span class="pre">math.RadicalExtraAscender</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.RadicalExtraAscenderDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.RadicalExtraAscenderDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.RadicalKernBeforeDegree"><code class="docutils literal notranslate"><span class="pre">math.RadicalKernBeforeDegree</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.RadicalKernBeforeDegreeDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.RadicalKernBeforeDegreeDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.RadicalKernAfterDegree"><code class="docutils literal notranslate"><span class="pre">math.RadicalKernAfterDegree</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.RadicalKernAfterDegreeDeviceTable"><code class="docutils literal notranslate"><span class="pre">math.RadicalKernAfterDegreeDeviceTable</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.RadicalDegreeBottomRaisePercent"><code class="docutils literal notranslate"><span class="pre">math.RadicalDegreeBottomRaisePercent</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.MinConnectorOverlap"><code class="docutils literal notranslate"><span class="pre">math.MinConnectorOverlap</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="python/fontforge.html#fontforge.math.exists"><code class="docutils literal notranslate"><span class="pre">math.exists()</span></code></a></li>
@@ -357,7 +407,7 @@ accessed using:</p>
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.0.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

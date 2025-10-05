@@ -1,19 +1,18 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Scripting functions &#8212; FontForge 20230101 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/documentation_options.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <link rel="shortcut icon" href="../_static/fftype16.png"/>
+    <link rel="icon" href="../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Python Scripting" href="python.html" />
@@ -3238,8 +3237,12 @@ font.</p>
 <dl class="ff function">
 <dt class="sig sig-object ff" id="SmallCaps">
 <span class="sig-name descname"><span class="pre">SmallCaps</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="pre">v-scale</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">h-scale</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">stemw-scale</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">stemh-scale</span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#SmallCaps" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create small capitals from the selected glyphs. The following optional
-arguments are accepted:</p>
+<dd><p>Create small capitals from the selected glyphs.  When the function
+generates a new glyph from an (uppercase) letter it names it like
+the lowercase letter and appends “.sc”, e.g., “A” becomes “a.sc”.
+Anything not a letter, i.e., digits and symbols, gets the extension
+“.taboldstyle”.</p>
+<p>The following optional arguments are accepted:</p>
 <dl class="object">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">v-scale</span></span></dt>
@@ -3723,7 +3726,7 @@ font.</p>
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.0.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

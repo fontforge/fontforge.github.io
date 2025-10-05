@@ -1,18 +1,17 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>fontforge &#8212; FontForge 20230101 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/documentation_options.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/sphinx_highlight.js"></script>
-    <link rel="shortcut icon" href="../../_static/fftype16.png"/>
+    <link rel="icon" href="../../_static/fftype16.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="psMat" href="psMat.html" />
@@ -609,7 +608,7 @@ provide a mechanism for allowing people to define special purpose dialogs (for
 example they might want to ask more than one question in a dialog, and I don’t
 support that).</p>
 <p>When FontForge starts (if it’s a FontForge with python) it will look at the
-directories <code class="docutils literal notranslate"><span class="pre">$(PREFIX)/share/fontforge/python</span></code> and <code class="docutils literal notranslate"><span class="pre">~/.FontForge/python</span></code>
+directories <code class="docutils literal notranslate"><span class="pre">$(PREFIX)/share/fontforge/python</span></code> and <code class="docutils literal notranslate"><span class="pre">~/.config/fontforge/python</span></code>
 and attempt to run all files in those directories which end in <code class="docutils literal notranslate"><span class="pre">&quot;.py&quot;</span></code>.
 Presumably these files will allow people to customize the user interface to
 suit their needs.</p>
@@ -3565,7 +3564,14 @@ assigning to its members will create it.</p>
 <p>Any of the math constant names may be used as member names.</p>
 <p>(These names begin with capital letters, not Python’s conventions but Microsoft’s)</p>
 <p>These all take (16 bit) integer values.</p>
-<p>I do not currently provide python access to any associated device tables.</p>
+<p>Each <code class="docutils literal notranslate"><span class="pre">DeviceTable</span></code> property takes a dictionary with keys representing a font size
+in pixels and values representing the corresponding adjustment, e.g. <code class="docutils literal notranslate"><span class="pre">{9:</span> <span class="pre">-1,</span> <span class="pre">10:</span> <span class="pre">-1,</span> <span class="pre">12:</span> <span class="pre">-1}</span></code>.
+Setting <code class="docutils literal notranslate"><span class="pre">DeviceTable</span></code> property to <code class="docutils literal notranslate"><span class="pre">None</span></code> will delete it.</p>
+<p>Device table entries can also be queried and assigned by font size</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">font</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">MathLeadingDeviceTable</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">adj</span> <span class="o">=</span> <span class="n">font</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">MathLeadingDeviceTable</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span>
+</pre></div>
+</div>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.ScriptPercentScaleDown">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">ScriptPercentScaleDown</span></span><a class="headerlink" href="#fontforge.math.ScriptPercentScaleDown" title="Permalink to this definition">¶</a></dt>
@@ -3593,30 +3599,55 @@ assigning to its members will create it.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.MathLeading">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">MathLeading</span></span><a class="headerlink" href="#fontforge.math.MathLeading" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.MathLeadingDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">MathLeadingDeviceTable</span></span><a class="headerlink" href="#fontforge.math.MathLeadingDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>White space to be left between math formulae to ensure proper line spacing.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.AxisHeight">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">AxisHeight</span></span><a class="headerlink" href="#fontforge.math.AxisHeight" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.AxisHeightDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">AxisHeightDeviceTable</span></span><a class="headerlink" href="#fontforge.math.AxisHeightDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Axis height of the font</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.AccentBaseHeight">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">AccentBaseHeight</span></span><a class="headerlink" href="#fontforge.math.AccentBaseHeight" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.AccentBaseHeightDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">AccentBaseHeightDeviceTable</span></span><a class="headerlink" href="#fontforge.math.AccentBaseHeightDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Maximum (ink) height of accent base that does not require raising the accents.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.FlattenedAccentBaseHeight">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">FlattenedAccentBaseHeight</span></span><a class="headerlink" href="#fontforge.math.FlattenedAccentBaseHeight" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.FlattenedAccentBaseHeightDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">FlattenedAccentBaseHeightDeviceTable</span></span><a class="headerlink" href="#fontforge.math.FlattenedAccentBaseHeightDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Maximum (ink) height of accent base that does not require flattening the accents.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.SubscriptShiftDown">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">SubscriptShiftDown</span></span><a class="headerlink" href="#fontforge.math.SubscriptShiftDown" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.SubscriptShiftDownDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">SubscriptShiftDownDeviceTable</span></span><a class="headerlink" href="#fontforge.math.SubscriptShiftDownDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>The standard shift down applied to subscript elements. Positive for
 moving downward.</p>
 </dd></dl>
@@ -3624,6 +3655,11 @@ moving downward.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.SubscriptTopMax">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">SubscriptTopMax</span></span><a class="headerlink" href="#fontforge.math.SubscriptTopMax" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.SubscriptTopMaxDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">SubscriptTopMaxDeviceTable</span></span><a class="headerlink" href="#fontforge.math.SubscriptTopMaxDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Maximum height of the (ink) top of subscripts that does not require moving
 subscripts further down.</p>
 </dd></dl>
@@ -3631,6 +3667,11 @@ subscripts further down.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.SubscriptBaselineDropMin">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">SubscriptBaselineDropMin</span></span><a class="headerlink" href="#fontforge.math.SubscriptBaselineDropMin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.SubscriptBaselineDropMinDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">SubscriptBaselineDropMinDeviceTable</span></span><a class="headerlink" href="#fontforge.math.SubscriptBaselineDropMinDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Maximum allowed drop of the baseline of subscripts relative to the bottom of
 the base. Used for bases that are treated as a box or extended shape.
 Positive for subscript baseline dropped below base bottom.</p>
@@ -3639,18 +3680,33 @@ Positive for subscript baseline dropped below base bottom.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.SuperscriptShiftUp">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">SuperscriptShiftUp</span></span><a class="headerlink" href="#fontforge.math.SuperscriptShiftUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.SuperscriptShiftUpDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">SuperscriptShiftUpDeviceTable</span></span><a class="headerlink" href="#fontforge.math.SuperscriptShiftUpDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Standard shift up applied to superscript elements.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.SuperscriptShiftUpCramped">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">SuperscriptShiftUpCramped</span></span><a class="headerlink" href="#fontforge.math.SuperscriptShiftUpCramped" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.SuperscriptShiftUpCrampedDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">SuperscriptShiftUpCrampedDeviceTable</span></span><a class="headerlink" href="#fontforge.math.SuperscriptShiftUpCrampedDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Standard shift of superscript relative to base in cramped mode.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.SuperscriptBottomMin">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">SuperscriptBottomMin</span></span><a class="headerlink" href="#fontforge.math.SuperscriptBottomMin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.SuperscriptBottomMinDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">SuperscriptBottomMinDeviceTable</span></span><a class="headerlink" href="#fontforge.math.SuperscriptBottomMinDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Minimum allowed height of the bottom of superscripts that does not require
 moving them further up.</p>
 </dd></dl>
@@ -3658,6 +3714,11 @@ moving them further up.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.SuperscriptBaselineDropMax">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">SuperscriptBaselineDropMax</span></span><a class="headerlink" href="#fontforge.math.SuperscriptBaselineDropMax" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.SuperscriptBaselineDropMaxDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">SuperscriptBaselineDropMaxDeviceTable</span></span><a class="headerlink" href="#fontforge.math.SuperscriptBaselineDropMaxDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Maximum allowed drop of the baseline of superscripts relative to the top of
 the base. Used for bases that are treated as a box or extended shape.
 Positive for superscript baseline below base top.</p>
@@ -3666,12 +3727,22 @@ Positive for superscript baseline below base top.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.SubSuperscriptGapMin">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">SubSuperscriptGapMin</span></span><a class="headerlink" href="#fontforge.math.SubSuperscriptGapMin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.SubSuperscriptGapMinDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">SubSuperscriptGapMinDeviceTable</span></span><a class="headerlink" href="#fontforge.math.SubSuperscriptGapMinDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Minimum gap between the superscript and subscript ink.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.SuperscriptBottomMaxWithSubscript">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">SuperscriptBottomMaxWithSubscript</span></span><a class="headerlink" href="#fontforge.math.SuperscriptBottomMaxWithSubscript" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.SuperscriptBottomMaxWithSubscriptDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">SuperscriptBottomMaxWithSubscriptDeviceTable</span></span><a class="headerlink" href="#fontforge.math.SuperscriptBottomMaxWithSubscriptDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>The maximum level to which the (ink) bottom of superscript can be pushed to
 increase the gap between superscript and subscript, before subscript starts
 being moved down.</p>
@@ -3680,12 +3751,22 @@ being moved down.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.SpaceAfterScript">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">SpaceAfterScript</span></span><a class="headerlink" href="#fontforge.math.SpaceAfterScript" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.SpaceAfterScriptDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">SpaceAfterScriptDeviceTable</span></span><a class="headerlink" href="#fontforge.math.SpaceAfterScriptDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extra white space to be added after each sub/superscript.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.UpperLimitGapMin">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">UpperLimitGapMin</span></span><a class="headerlink" href="#fontforge.math.UpperLimitGapMin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.UpperLimitGapMinDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">UpperLimitGapMinDeviceTable</span></span><a class="headerlink" href="#fontforge.math.UpperLimitGapMinDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Minimum gap between the bottom of the upper limit, and the top of the base
 operator.</p>
 </dd></dl>
@@ -3693,6 +3774,11 @@ operator.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.UpperLimitBaselineRiseMin">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">UpperLimitBaselineRiseMin</span></span><a class="headerlink" href="#fontforge.math.UpperLimitBaselineRiseMin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.UpperLimitBaselineRiseMinDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">UpperLimitBaselineRiseMinDeviceTable</span></span><a class="headerlink" href="#fontforge.math.UpperLimitBaselineRiseMinDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Minimum distance between the baseline of an upper limit and the bottom of
 the base operator.</p>
 </dd></dl>
@@ -3700,6 +3786,11 @@ the base operator.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.LowerLimitGapMin">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">LowerLimitGapMin</span></span><a class="headerlink" href="#fontforge.math.LowerLimitGapMin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.LowerLimitGapMinDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">LowerLimitGapMinDeviceTable</span></span><a class="headerlink" href="#fontforge.math.LowerLimitGapMinDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Minimum gap between (ink) top of the lower limit, and (ink) bottom of the
 base operator.</p>
 </dd></dl>
@@ -3707,6 +3798,11 @@ base operator.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.LowerLimitBaselineDropMin">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">LowerLimitBaselineDropMin</span></span><a class="headerlink" href="#fontforge.math.LowerLimitBaselineDropMin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.LowerLimitBaselineDropMinDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">LowerLimitBaselineDropMinDeviceTable</span></span><a class="headerlink" href="#fontforge.math.LowerLimitBaselineDropMinDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Minimum distance between the baseline of the lower limit and bottom of the
 base operator.</p>
 </dd></dl>
@@ -3714,18 +3810,33 @@ base operator.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.StackTopShiftUp">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">StackTopShiftUp</span></span><a class="headerlink" href="#fontforge.math.StackTopShiftUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.StackTopShiftUpDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">StackTopShiftUpDeviceTable</span></span><a class="headerlink" href="#fontforge.math.StackTopShiftUpDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Standard shift up applied to the top element of a stack.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.StackTopDisplayStyleShiftUp">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">StackTopDisplayStyleShiftUp</span></span><a class="headerlink" href="#fontforge.math.StackTopDisplayStyleShiftUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.StackTopDisplayStyleShiftUpDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">StackTopDisplayStyleShiftUpDeviceTable</span></span><a class="headerlink" href="#fontforge.math.StackTopDisplayStyleShiftUpDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Standard shift up applied to the top element of a stack in display style.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.StackBottomShiftDown">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">StackBottomShiftDown</span></span><a class="headerlink" href="#fontforge.math.StackBottomShiftDown" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.StackBottomShiftDownDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">StackBottomShiftDownDeviceTable</span></span><a class="headerlink" href="#fontforge.math.StackBottomShiftDownDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Standard shift down applied to the bottom element of a stack. Positive
 values indicate downward motion.</p>
 </dd></dl>
@@ -3733,6 +3844,11 @@ values indicate downward motion.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.StackBottomDisplayStyleShiftDown">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">StackBottomDisplayStyleShiftDown</span></span><a class="headerlink" href="#fontforge.math.StackBottomDisplayStyleShiftDown" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.StackBottomDisplayStyleShiftDownDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">StackBottomDisplayStyleShiftDownDeviceTable</span></span><a class="headerlink" href="#fontforge.math.StackBottomDisplayStyleShiftDownDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Standard shift down applied to the bottom element of a stack in display
 style. Positive values indicate downward motion.</p>
 </dd></dl>
@@ -3740,6 +3856,11 @@ style. Positive values indicate downward motion.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.StackGapMin">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">StackGapMin</span></span><a class="headerlink" href="#fontforge.math.StackGapMin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.StackGapMinDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">StackGapMinDeviceTable</span></span><a class="headerlink" href="#fontforge.math.StackGapMinDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Minimum gap between bottom of the top element of a stack, and the top of
 the bottom element.</p>
 </dd></dl>
@@ -3747,6 +3868,11 @@ the bottom element.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.StackDisplayStyleGapMin">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">StackDisplayStyleGapMin</span></span><a class="headerlink" href="#fontforge.math.StackDisplayStyleGapMin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.StackDisplayStyleGapMinDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">StackDisplayStyleGapMinDeviceTable</span></span><a class="headerlink" href="#fontforge.math.StackDisplayStyleGapMinDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Minimum gap between bottom of the top element of a stack and the top of the
 bottom element in display style.</p>
 </dd></dl>
@@ -3754,12 +3880,22 @@ bottom element in display style.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.StretchStackTopShiftUp">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">StretchStackTopShiftUp</span></span><a class="headerlink" href="#fontforge.math.StretchStackTopShiftUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.StretchStackTopShiftUpDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">StretchStackTopShiftUpDeviceTable</span></span><a class="headerlink" href="#fontforge.math.StretchStackTopShiftUpDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Standard shift up applied to the top element of the stretch stack.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.StretchStackBottomShiftDown">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">StretchStackBottomShiftDown</span></span><a class="headerlink" href="#fontforge.math.StretchStackBottomShiftDown" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.StretchStackBottomShiftDownDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">StretchStackBottomShiftDownDeviceTable</span></span><a class="headerlink" href="#fontforge.math.StretchStackBottomShiftDownDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Standard shift down applied to the bottom element of the stretch stack.
 Positive values indicate
 downward motion.</p>
@@ -3768,6 +3904,11 @@ downward motion.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.StretchStackGapAboveMin">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">StretchStackGapAboveMin</span></span><a class="headerlink" href="#fontforge.math.StretchStackGapAboveMin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.StretchStackGapAboveMinDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">StretchStackGapAboveMinDeviceTable</span></span><a class="headerlink" href="#fontforge.math.StretchStackGapAboveMinDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Minimum gap between the ink of the stretched element and the ink bottom of
 the element above.</p>
 </dd></dl>
@@ -3775,6 +3916,11 @@ the element above.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.StretchStackGapBelowMin">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">StretchStackGapBelowMin</span></span><a class="headerlink" href="#fontforge.math.StretchStackGapBelowMin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.StretchStackGapBelowMinDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">StretchStackGapBelowMinDeviceTable</span></span><a class="headerlink" href="#fontforge.math.StretchStackGapBelowMinDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Minimum gap between the ink of the stretched element and the ink top of
 the element below.</p>
 </dd></dl>
@@ -3782,18 +3928,33 @@ the element below.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.FractionNumeratorShiftUp">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">FractionNumeratorShiftUp</span></span><a class="headerlink" href="#fontforge.math.FractionNumeratorShiftUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.FractionNumeratorShiftUpDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">FractionNumeratorShiftUpDeviceTable</span></span><a class="headerlink" href="#fontforge.math.FractionNumeratorShiftUpDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Standard shift up applied to the numerator.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.FractionNumeratorDisplayStyleShiftUp">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">FractionNumeratorDisplayStyleShiftUp</span></span><a class="headerlink" href="#fontforge.math.FractionNumeratorDisplayStyleShiftUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.FractionNumeratorDisplayStyleShiftUpDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">FractionNumeratorDisplayStyleShiftUpDeviceTable</span></span><a class="headerlink" href="#fontforge.math.FractionNumeratorDisplayStyleShiftUpDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Standard shift up applied to the numerator in display style.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.FractionDenominatorShiftDown">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">FractionDenominatorShiftDown</span></span><a class="headerlink" href="#fontforge.math.FractionDenominatorShiftDown" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.FractionDenominatorShiftDownDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">FractionDenominatorShiftDownDeviceTable</span></span><a class="headerlink" href="#fontforge.math.FractionDenominatorShiftDownDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Standard shift down applied to the denominator. Positive values indicate
 downward motion.</p>
 </dd></dl>
@@ -3801,6 +3962,11 @@ downward motion.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.FractionDenominatorDisplayStyleShiftDown">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">FractionDenominatorDisplayStyleShiftDown</span></span><a class="headerlink" href="#fontforge.math.FractionDenominatorDisplayStyleShiftDown" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.FractionDenominatorDisplayStyleShiftDownDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">FractionDenominatorDisplayStyleShiftDownDeviceTable</span></span><a class="headerlink" href="#fontforge.math.FractionDenominatorDisplayStyleShiftDownDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Standard shift down applied to the denominator in display style. Positive
 values indicate downward motion.</p>
 </dd></dl>
@@ -3808,6 +3974,11 @@ values indicate downward motion.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.FractionNumeratorGapMin">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">FractionNumeratorGapMin</span></span><a class="headerlink" href="#fontforge.math.FractionNumeratorGapMin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.FractionNumeratorGapMinDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">FractionNumeratorGapMinDeviceTable</span></span><a class="headerlink" href="#fontforge.math.FractionNumeratorGapMinDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Minimum tolerated gap between the ink bottom of the numerator and the ink of
 the fraction bar.</p>
 </dd></dl>
@@ -3815,6 +3986,11 @@ the fraction bar.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.FractionNumeratorDisplayStyleGapMin">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">FractionNumeratorDisplayStyleGapMin</span></span><a class="headerlink" href="#fontforge.math.FractionNumeratorDisplayStyleGapMin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.FractionNumeratorDisplayStyleGapMinDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">FractionNumeratorDisplayStyleGapMinDeviceTable</span></span><a class="headerlink" href="#fontforge.math.FractionNumeratorDisplayStyleGapMinDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Minimum tolerated gap between the ink bottom of the numerator and the ink of
 the fraction bar in display style.</p>
 </dd></dl>
@@ -3822,12 +3998,22 @@ the fraction bar in display style.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.FractionRuleThickness">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">FractionRuleThickness</span></span><a class="headerlink" href="#fontforge.math.FractionRuleThickness" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.FractionRuleThicknessDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">FractionRuleThicknessDeviceTable</span></span><a class="headerlink" href="#fontforge.math.FractionRuleThicknessDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Thickness of the fraction bar.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.FractionDenominatorGapMin">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">FractionDenominatorGapMin</span></span><a class="headerlink" href="#fontforge.math.FractionDenominatorGapMin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.FractionDenominatorGapMinDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">FractionDenominatorGapMinDeviceTable</span></span><a class="headerlink" href="#fontforge.math.FractionDenominatorGapMinDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Minimum tolerated gap between the ink top of the denominator and the ink of
 the fraction bar.</p>
 </dd></dl>
@@ -3835,6 +4021,11 @@ the fraction bar.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.FractionDenominatorDisplayStyleGapMin">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">FractionDenominatorDisplayStyleGapMin</span></span><a class="headerlink" href="#fontforge.math.FractionDenominatorDisplayStyleGapMin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.FractionDenominatorDisplayStyleGapMinDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">FractionDenominatorDisplayStyleGapMinDeviceTable</span></span><a class="headerlink" href="#fontforge.math.FractionDenominatorDisplayStyleGapMinDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Minimum tolerated gap between the ink top of the denominator and the ink of
 the fraction bar in display style.</p>
 </dd></dl>
@@ -3842,12 +4033,22 @@ the fraction bar in display style.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.SkewedFractionHorizontalGap">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">SkewedFractionHorizontalGap</span></span><a class="headerlink" href="#fontforge.math.SkewedFractionHorizontalGap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.SkewedFractionHorizontalGapDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">SkewedFractionHorizontalGapDeviceTable</span></span><a class="headerlink" href="#fontforge.math.SkewedFractionHorizontalGapDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Horizontal distance between the top and bottom elements of a skewed fraction.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.SkewedFractionVerticalGap">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">SkewedFractionVerticalGap</span></span><a class="headerlink" href="#fontforge.math.SkewedFractionVerticalGap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.SkewedFractionVerticalGapDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">SkewedFractionVerticalGapDeviceTable</span></span><a class="headerlink" href="#fontforge.math.SkewedFractionVerticalGapDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Vertical distance between the ink of the top and bottom elements of a skewed
 fraction.</p>
 </dd></dl>
@@ -3855,48 +4056,88 @@ fraction.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.OverbarVerticalGap">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">OverbarVerticalGap</span></span><a class="headerlink" href="#fontforge.math.OverbarVerticalGap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.OverbarVerticalGapDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">OverbarVerticalGapDeviceTable</span></span><a class="headerlink" href="#fontforge.math.OverbarVerticalGapDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Distance between the overbar and the ink top of the base.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.OverbarRuleThickness">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">OverbarRuleThickness</span></span><a class="headerlink" href="#fontforge.math.OverbarRuleThickness" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.OverbarRuleThicknessDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">OverbarRuleThicknessDeviceTable</span></span><a class="headerlink" href="#fontforge.math.OverbarRuleThicknessDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Thickness of the overbar.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.OverbarExtraAscender">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">OverbarExtraAscender</span></span><a class="headerlink" href="#fontforge.math.OverbarExtraAscender" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.OverbarExtraAscenderDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">OverbarExtraAscenderDeviceTable</span></span><a class="headerlink" href="#fontforge.math.OverbarExtraAscenderDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extra white space reserved above the overbar.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.UnderbarVerticalGap">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">UnderbarVerticalGap</span></span><a class="headerlink" href="#fontforge.math.UnderbarVerticalGap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.UnderbarVerticalGapDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">UnderbarVerticalGapDeviceTable</span></span><a class="headerlink" href="#fontforge.math.UnderbarVerticalGapDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Distance between underbar and the (ink) bottom of the base.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.UnderbarRuleThickness">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">UnderbarRuleThickness</span></span><a class="headerlink" href="#fontforge.math.UnderbarRuleThickness" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.UnderbarRuleThicknessDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">UnderbarRuleThicknessDeviceTable</span></span><a class="headerlink" href="#fontforge.math.UnderbarRuleThicknessDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Thickness of the underbar.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.UnderbarExtraDescender">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">UnderbarExtraDescender</span></span><a class="headerlink" href="#fontforge.math.UnderbarExtraDescender" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.UnderbarExtraDescenderDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">UnderbarExtraDescenderDeviceTable</span></span><a class="headerlink" href="#fontforge.math.UnderbarExtraDescenderDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extra white space reserved below the underbar.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.RadicalVerticalGap">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">RadicalVerticalGap</span></span><a class="headerlink" href="#fontforge.math.RadicalVerticalGap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.RadicalVerticalGapDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">RadicalVerticalGapDeviceTable</span></span><a class="headerlink" href="#fontforge.math.RadicalVerticalGapDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Space between the ink to of the expression and the bar over it.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.RadicalDisplayStyleVerticalGap">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">RadicalDisplayStyleVerticalGap</span></span><a class="headerlink" href="#fontforge.math.RadicalDisplayStyleVerticalGap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.RadicalDisplayStyleVerticalGapDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">RadicalDisplayStyleVerticalGapDeviceTable</span></span><a class="headerlink" href="#fontforge.math.RadicalDisplayStyleVerticalGapDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Space between the ink top of the expression and the bar over it in display
 style.</p>
 </dd></dl>
@@ -3904,24 +4145,44 @@ style.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.RadicalRuleThickness">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">RadicalRuleThickness</span></span><a class="headerlink" href="#fontforge.math.RadicalRuleThickness" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.RadicalRuleThicknessDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">RadicalRuleThicknessDeviceTable</span></span><a class="headerlink" href="#fontforge.math.RadicalRuleThicknessDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Thickness of the radical rule in designed or constructed radical signs.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.RadicalExtraAscender">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">RadicalExtraAscender</span></span><a class="headerlink" href="#fontforge.math.RadicalExtraAscender" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.RadicalExtraAscenderDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">RadicalExtraAscenderDeviceTable</span></span><a class="headerlink" href="#fontforge.math.RadicalExtraAscenderDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extra white space reserved above the radical.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.RadicalKernBeforeDegree">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">RadicalKernBeforeDegree</span></span><a class="headerlink" href="#fontforge.math.RadicalKernBeforeDegree" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.RadicalKernBeforeDegreeDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">RadicalKernBeforeDegreeDeviceTable</span></span><a class="headerlink" href="#fontforge.math.RadicalKernBeforeDegreeDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extra horizontal kern before the degree of a radical if such be present.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.math.RadicalKernAfterDegree">
 <span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">RadicalKernAfterDegree</span></span><a class="headerlink" href="#fontforge.math.RadicalKernAfterDegree" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.math.RadicalKernAfterDegreeDeviceTable">
+<span class="sig-prename descclassname"><span class="pre">math.</span></span><span class="sig-name descname"><span class="pre">RadicalKernAfterDegreeDeviceTable</span></span><a class="headerlink" href="#fontforge.math.RadicalKernAfterDegreeDeviceTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Negative horizontal kern after the degree of a radical if such be present.</p>
 </dd></dl>
 
@@ -4529,6 +4790,11 @@ reject OT-CFF fonts with a version number of 1</p>
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.font.os2_capheight">
+<span class="sig-prename descclassname"><span class="pre">font.</span></span><span class="sig-name descname"><span class="pre">os2_capheight</span></span><a class="headerlink" href="#fontforge.font.os2_capheight" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.font.os2_codepages">
 <span class="sig-prename descclassname"><span class="pre">font.</span></span><span class="sig-name descname"><span class="pre">os2_codepages</span></span><a class="headerlink" href="#fontforge.font.os2_codepages" title="Permalink to this definition">¶</a></dt>
 <dd><p>A 2 element tuple containing the OS/2 Codepages field</p>
@@ -4545,12 +4811,6 @@ reject OT-CFF fonts with a version number of 1</p>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="fontforge.font.os2_stylemap">
-<span class="sig-prename descclassname"><span class="pre">font.</span></span><span class="sig-name descname"><span class="pre">os2_stylemap</span></span><a class="headerlink" href="#fontforge.font.os2_stylemap" title="Permalink to this definition">¶</a></dt>
-<dd><p>Write access to fsSelection, keep in sync with <a class="reference internal" href="#fontforge.font.macstyle" title="fontforge.font.macstyle"><code class="xref py py-attr docutils literal notranslate"><span class="pre">font.macstyle</span></code></a></p>
-</dd></dl>
-
-<dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.font.os2_panose">
 <span class="sig-prename descclassname"><span class="pre">font.</span></span><span class="sig-name descname"><span class="pre">os2_panose</span></span><a class="headerlink" href="#fontforge.font.os2_panose" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -4564,6 +4824,12 @@ reject OT-CFF fonts with a version number of 1</p>
 <dt class="sig sig-object py" id="fontforge.font.os2_strikeysize">
 <span class="sig-prename descclassname"><span class="pre">font.</span></span><span class="sig-name descname"><span class="pre">os2_strikeysize</span></span><a class="headerlink" href="#fontforge.font.os2_strikeysize" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.font.os2_stylemap">
+<span class="sig-prename descclassname"><span class="pre">font.</span></span><span class="sig-name descname"><span class="pre">os2_stylemap</span></span><a class="headerlink" href="#fontforge.font.os2_stylemap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write access to fsSelection, keep in sync with <a class="reference internal" href="#fontforge.font.macstyle" title="fontforge.font.macstyle"><code class="xref py py-attr docutils literal notranslate"><span class="pre">font.macstyle</span></code></a></p>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.font.os2_subxoff">
@@ -4631,15 +4897,15 @@ reject OT-CFF fonts with a version number of 1</p>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="fontforge.font.os2_use_typo_metrics">
-<span class="sig-prename descclassname"><span class="pre">font.</span></span><span class="sig-name descname"><span class="pre">os2_use_typo_metrics</span></span><a class="headerlink" href="#fontforge.font.os2_use_typo_metrics" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.font.os2_unicoderanges">
 <span class="sig-prename descclassname"><span class="pre">font.</span></span><span class="sig-name descname"><span class="pre">os2_unicoderanges</span></span><a class="headerlink" href="#fontforge.font.os2_unicoderanges" title="Permalink to this definition">¶</a></dt>
 <dd><p>A 4 element tuple containing the OS/2 Unicode Ranges field</p>
 </dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.font.os2_use_typo_metrics">
+<span class="sig-prename descclassname"><span class="pre">font.</span></span><span class="sig-name descname"><span class="pre">os2_use_typo_metrics</span></span><a class="headerlink" href="#fontforge.font.os2_use_typo_metrics" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.font.os2_vendor">
@@ -4684,6 +4950,11 @@ reject OT-CFF fonts with a version number of 1</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.font.os2_windescent_add">
 <span class="sig-prename descclassname"><span class="pre">font.</span></span><span class="sig-name descname"><span class="pre">os2_windescent_add</span></span><a class="headerlink" href="#fontforge.font.os2_windescent_add" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.font.os2_xheight">
+<span class="sig-prename descclassname"><span class="pre">font.</span></span><span class="sig-name descname"><span class="pre">os2_xheight</span></span><a class="headerlink" href="#fontforge.font.os2_xheight" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -4954,6 +5225,12 @@ the (english) name of the language/locale, or The string itself is in UTF-8.</p>
 <dt class="sig sig-object py" id="fontforge.font.strokewidth">
 <span class="sig-prename descclassname"><span class="pre">font.</span></span><span class="sig-name descname"><span class="pre">strokewidth</span></span><a class="headerlink" href="#fontforge.font.strokewidth" title="Permalink to this definition">¶</a></dt>
 <dd><p>the stroke width of a stroked font</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fontforge.font.style_set_names">
+<span class="sig-prename descclassname"><span class="pre">font.</span></span><span class="sig-name descname"><span class="pre">style_set_names</span></span><a class="headerlink" href="#fontforge.font.style_set_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>A tuple, each entry of which is a 3-element tuple containing the language name (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;English</span> <span class="pre">(US)&quot;</span></code>), the style set tag (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;ss01&quot;</span></code>) and the style set name.</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -6043,6 +6320,13 @@ specified it will use the letters in the script with equal frequencies.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="fontforge.font.reencode">
+<span class="sig-prename descclassname"><span class="pre">font.</span></span><span class="sig-name descname"><span class="pre">reencode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">encoding</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">force</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#fontforge.font.reencode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reencodes the current font into the given encoding. Optionally force
+reencoding.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="fontforge.font.regenBitmaps">
 <span class="sig-prename descclassname"><span class="pre">font.</span></span><span class="sig-name descname"><span class="pre">regenBitmaps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tuple_of_sizes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontforge.font.regenBitmaps" title="Permalink to this definition">¶</a></dt>
 <dd><p>A tuple with an entry for each bitmap strike to be regenerated
@@ -6601,7 +6885,7 @@ for the expressions is explained in the
       &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.0.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
