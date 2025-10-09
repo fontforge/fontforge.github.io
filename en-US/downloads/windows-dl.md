@@ -5,8 +5,8 @@ title: FontForge on Windows
 archive_extension: .exe
 ---
 
-<a class="btn btn-primary btn-large default" href="https://github.com/fontforge/fontforge/releases/download/20230101/FontForge-2023-01-01-Windows.exe">
-  Download 2023-01-01 Release Installer (.exe)
+<a class="btn btn-primary btn-large default" href="https://github.com/fontforge/fontforge/releases/download/20251009/FontForge-2025-10-09-Windows-x64.exe">
+  Download 2025-10-09 Release Installer (.exe)
 </a>
 
 1. Right click, select `Run as Administrative User`
