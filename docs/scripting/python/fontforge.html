@@ -5,10 +5,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>fontforge &#8212; FontForge 20230101 documentation</title>
+    <title>fontforge &#8212; FontForge 20251009 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=4f649999" />
     <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=cb25574f" />
-    <script src="../../_static/documentation_options.js?v=00357e79"></script>
+    <script src="../../_static/documentation_options.js?v=8a728459"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="icon" href="../../_static/fftype16.png"/>
@@ -351,7 +351,7 @@ like:</p>
 do not have a method to indicate version numbers, but there is a limited
 method to estimate versions {‘0.0’..’0.5’}. ‘0.0’ if FontForge has no LibSpiro
 available. ‘0.1’ if LibSpiro 20071029 is available. ‘0.2’ if LibSpiro 0.2 to
-0.5 is available. LibSpiro 0.6 and higher reports back it’s version available.</p>
+0.5 is available. LibSpiro 0.6 and higher reports back its version available.</p>
 </dd></dl>
 
 <dl class="py function">
@@ -686,7 +686,7 @@ keyword interface is explained in the <code class="docutils literal notranslate"
 <p>We also recommend reading the <a class="reference internal" href="../../techref/pyextend.html#fontforge-plugin-menu"><span class="std std-ref">Menu</span></a> section
 of <a class="reference internal" href="../../techref/pyextend.html"><span class="doc">Extending FontForge with Python</span></a></p>
 <p><strong>Note:</strong> The positional interface is forward-compatible with earlier
-verions of FontForge.</p>
+versions of FontForge.</p>
 <dl class="object">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">callback</span></span></dt>
@@ -701,8 +701,8 @@ The callback’s return value is ignored.</p>
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">enable</span></span></dt>
 <dd><p>When specified this function is called with the same arguments as <code class="docutils literal notranslate"><span class="pre">callback</span></code>
-right before the menu or submenu is diplayed. When it returns <code class="docutils literal notranslate"><span class="pre">True</span></code>
-the menu item will be enabled and when it returns``False`` it will be
+right before the menu or submenu is displayed. When it returns <code class="docutils literal notranslate"><span class="pre">True</span></code>
+the menu item will be enabled and when it returns <code class="docutils literal notranslate"><span class="pre">False</span></code> it will be
 disabled. (When <code class="docutils literal notranslate"><span class="pre">enable</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code> the menu item is always enabled.)</p>
 </dd></dl>
 
@@ -778,7 +778,7 @@ analogous to <code class="docutils literal notranslate"><span class="pre">name</
 <span class="pre">identifier_string)</span></code>, a two-tuple of <code class="docutils literal notranslate"><span class="pre">(english_name,</span>
 <span class="pre">identifier_string)</span></code>, or a string which is treated as the
 <code class="docutils literal notranslate"><span class="pre">localized_name</span></code>. Submenus can and should also specify a <em>mnemonic</em>.</p>
-<p>In the future the <code class="docutils literal notranslate"><span class="pre">identfier_string</span></code> will allow a whole submenu to be
+<p>In the future the <code class="docutils literal notranslate"><span class="pre">identifier_string</span></code> will allow a whole submenu to be
 moved to a different location in the menu hierarchy.</p>
 </dd></dl>
 
@@ -816,7 +816,7 @@ If the <code class="docutils literal notranslate"><span class="pre">submenu</spa
 presumably a way of specifying the splines in a given glyph.</p>
 <dl class="object">
 <dt class="sig sig-object">
-<span class="sig-name descname"><span class="pre">import-function</span></span></dt>
+<span class="sig-name descname"><span class="pre">import_function</span></span></dt>
 <dd><p>The function to call to import a file into a glyph. It will be called
 with: The data argument (specified below), A pointer to the glyph into
 which the import is to happen, A filename, A flag indicating whether the
@@ -826,7 +826,7 @@ be <code class="docutils literal notranslate"><span class="pre">None</span></cod
 
 <dl class="object">
 <dt class="sig sig-object">
-<span class="sig-name descname"><span class="pre">export-function</span></span></dt>
+<span class="sig-name descname"><span class="pre">export_function</span></span></dt>
 <dd><p>The function to call to export a glyph into a file. It will be called
 with: The data argument (see below), a pointer to the glyph, and a
 filename. This function may be <code class="docutils literal notranslate"><span class="pre">None</span></code>, in which case there is no export
@@ -837,8 +837,13 @@ method for this file type.</p>
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">data</span></span></dt>
 <dd><p>Anything you like (including <code class="docutils literal notranslate"><span class="pre">None</span></code>). It will be passed to the
-import/export routines and can provide them with context if they need that.
-name The name to be displayed in the user interface for this file type.
+import/export routines and can provide them with context if they need that.</p>
+</dd></dl>
+
+<dl class="object">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">name</span></span></dt>
+<dd><p>The name to be displayed in the user interface for this file type.
 This may just be the extension, or it might be something more informative.</p>
 </dd></dl>
 
@@ -851,7 +856,7 @@ export dialog to pick an extension for the generated filename.</p>
 
 <dl class="object">
 <dt class="sig sig-object">
-<span class="sig-name descname"><span class="pre">extension-list</span></span></dt>
+<span class="sig-name descname"><span class="pre">extension_list</span></span></dt>
 <dd><p>Some file types have more than one common extension (eps files are usually
 named “eps”, but I have also seen “ps” and “art” used). The import dialog
 needs to filter all possible filenames of this file type. This argument
@@ -916,7 +921,7 @@ posing the question with a list of buttons ranged underneath it – one for
 each answer.</p>
 <p>The first argument is the dialog’s title, the second is the question to be
 asked, the third is a tuple of strings – each string will become a button,
-the fourth and fifth arguments are option, the fourth is the index in the
+the fourth and fifth arguments are optional, the fourth is the index in the
 answer array that will be the default answer (the one invoked if the user
 presses the [Return] key), and the fifth is the answer invoked if the user
 presses the [Escape] key. If omitted the default answer will be the first,
@@ -934,7 +939,7 @@ It pops up a dialog posing the question with a scrollable list of choices –
 one for each answer.</p>
 <p>The first argument is the dialog’s title, the second is the question to be
 asked, the third is a tuple of strings – each string will become a button,
-the fourth and fifth arguments are option, the fourth is the index in the
+the fourth and fifth arguments are optional, the fourth is the index in the
 answer array that will be the default answer (the one invoked if the user
 presses the [Return] key). If omitted the default answer will be the first.</p>
 <p>The fifth argument means that multiple options can be selected. If true,
@@ -1143,7 +1148,7 @@ field takes on values (which are predefined constants in the
 </ul>
 <p>For more information on what these point types mean see
 <a class="reference external" href="https://www.levien.com/spiro/">Raph Levien’s work</a>.</p>
-<p>The flags argument is treated as a bitmap of which currently on one bit (0x1)
+<p>The flags argument is treated as a bitset of which currently only one bit (0x1)
 is defined. This indicates that this point is selected in the UI.</p>
 <p>When you assign a tuple of spiro control points to this member, the point
 list for the Bezier interpretation of the contour will change. And when you
@@ -1216,7 +1221,7 @@ initializer to this (keeping the number of points constant) or use
 <dl class="object">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">c[i:j]</span></span></dt>
-<dd><p>The contour containing points between i and j; i must be &gt;= j.
+<dd><p>The contour containing points between i and j; j must be &gt;= i.
 Alternatively, <code class="docutils literal notranslate"><span class="pre">c[j:i:-1]</span></code> returns those points in reverse order (larger
 strides are not supported).</p>
 </dd></dl>
@@ -1224,7 +1229,7 @@ strides are not supported).</p>
 <dl class="object">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">c[i:j]</span> <span class="pre">=</span> <span class="pre">d</span></span></dt>
-<dd><p>The points between i and j are replaced by those in d; i must be &gt;= j.
+<dd><p>The points between i and j are replaced by those in d; j must be &gt;= i.
 d can be a contour or a sequence of point initializer tuples, as in
 <code class="docutils literal notranslate"><span class="pre">[(1,1,False),(2,1)]</span></code>. If <code class="docutils literal notranslate"><span class="pre">c[j:i:-1]</span></code> is used instead the points of d
 are assigned in reverse order.</p>
@@ -1260,7 +1265,7 @@ contour c. p can also be a tuple of two numbers.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="fontforge.contour.lineTo">
 <span class="sig-prename descclassname"><span class="pre">contour.</span></span><span class="sig-name descname"><span class="pre">lineTo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#fontforge.contour.lineTo" title="Link to this definition">¶</a></dt>
-<dd><p>Adds an line to the contour. If the optional third argument is give, the
+<dd><p>Adds a line to the contour. If the optional third argument is given, the
 line will be added after the pos’th point, otherwise it will be at the end
 of the contour.</p>
 </dd></dl>
@@ -1268,8 +1273,8 @@ of the contour.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="fontforge.contour.cubicTo">
 <span class="sig-prename descclassname"><span class="pre">contour.</span></span><span class="sig-name descname"><span class="pre">cubicTo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(cp1x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cp1y)(cp2x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cp2y)(x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y)</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#fontforge.contour.cubicTo" title="Link to this definition">¶</a></dt>
-<dd><p>Adds a cubic curve to the contour. If the optional third argument is give,
-the line will be added after the pos’th point, otherwise it will be at the
+<dd><p>Adds a cubic curve to the contour. If the optional fourth argument is given,
+the curve will be added after the pos’th point, otherwise it will be at the
 end of the contour.</p>
 </dd></dl>
 
@@ -1277,14 +1282,14 @@ end of the contour.</p>
 <dt class="sig sig-object py" id="fontforge.contour.quadraticTo">
 <span class="sig-prename descclassname"><span class="pre">contour.</span></span><span class="sig-name descname"><span class="pre">quadraticTo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(cpx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cpy)(x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y)</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#fontforge.contour.quadraticTo" title="Link to this definition">¶</a></dt>
 <dd><p>Adds a quadratic curve to the contour. If the optional third argument is
-give, the line will be added after the pos’th point, otherwise it will be at
+given, the curve will be added after the pos’th point, otherwise it will be at
 the end of the contour.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="fontforge.contour.insertPoint">
 <span class="sig-prename descclassname"><span class="pre">contour.</span></span><span class="sig-name descname"><span class="pre">insertPoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#fontforge.contour.insertPoint" title="Link to this definition">¶</a></dt>
-<dd><p>Adds point to the contour. If the optional third argument is give, the line
+<dd><p>Adds a point to the contour. If the optional second argument is given, the point
 will be added after the pos’th point, otherwise it will be at the end of the
 contour. The point may be either a point or a point initializer tuple.</p>
 </dd></dl>
@@ -1374,7 +1379,7 @@ not on, an added extremum</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="fontforge.contour.merge">
 <span class="sig-prename descclassname"><span class="pre">contour.</span></span><span class="sig-name descname"><span class="pre">merge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontforge.contour.merge" title="Link to this definition">¶</a></dt>
-<dd><p>Removes the on-curve point a the given position and rearranges the other
+<dd><p>Removes the on-curve point at the given position and rearranges the other
 points to make the curve as similar to the original as possible. (pos may
 also be a tuple of positions, all of which will be removed)</p>
 <p>See also <a class="reference internal" href="#fontforge.contour.simplify" title="fontforge.contour.simplify"><code class="xref py py-meth docutils literal notranslate"><span class="pre">contour.simplify()</span></code></a>.</p>
@@ -1501,13 +1506,13 @@ its adjacent control points such that the adjacent curvatures become equal.</p>
 <p>Layers may be compared to see if their contours are similar.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="fontforge.layer">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">fontforge.</span></span><span class="sig-name descname"><span class="pre">layer</span></span><a class="headerlink" href="#fontforge.layer" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">fontforge.</span></span><span class="sig-name descname"><span class="pre">layer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">is_quadratic</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontforge.layer" title="Link to this definition">¶</a></dt>
 <dd><p>Creates a new layer</p>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py attribute">
 <dt class="sig sig-object py" id="fontforge.layer.is_quadratic">
-<span class="sig-prename descclassname"><span class="pre">layer.</span></span><span class="sig-name descname"><span class="pre">is_quadratic</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontforge.layer.is_quadratic" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">layer.</span></span><span class="sig-name descname"><span class="pre">is_quadratic</span></span><a class="headerlink" href="#fontforge.layer.is_quadratic" title="Link to this definition">¶</a></dt>
 <dd><p>Whether the contours should be interpreted as a set of quadratic cubic
 splines. Setting this value has the side effect of converting the contour
 list to the appropriate format.</p>
@@ -1896,7 +1901,7 @@ draw a FontForge <a class="reference internal" href="#fontforge.glyph" title="fo
 <dl class="py method">
 <dt class="sig sig-object py" id="fontforge.glyphPen.moveTo">
 <span class="sig-prename descclassname"><span class="pre">glyphPen.</span></span><span class="sig-name descname"><span class="pre">moveTo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontforge.glyphPen.moveTo" title="Link to this definition">¶</a></dt>
-<dd><p>With one exception this call begins every contor and creates an on curve
+<dd><p>With one exception this call begins every contour and creates an on curve
 point at <code class="docutils literal notranslate"><span class="pre">(x,y)</span></code> as the start point of that contour. This should be the
 first call after a pen has been created and the call that follows a
 <a class="reference internal" href="#fontforge.glyphPen.closePath" title="fontforge.glyphPen.closePath"><code class="xref py py-meth docutils literal notranslate"><span class="pre">glyphPen.closePath()</span></code></a>, <a class="reference internal" href="#fontforge.glyphPen.endPath" title="fontforge.glyphPen.endPath"><code class="xref py py-meth docutils literal notranslate"><span class="pre">glyphPen.endPath()</span></code></a>.</p>
@@ -1928,7 +1933,7 @@ FontForge allow you to draw a quadratic spline into a cubic font, nor vice versa
 different formats. It is used to express the TrueType idiom where an on-curve
 point mid-way between its control points may be omitted, leading to a run of
 off-curve points (with implied but unspecified on-curve points between them).</p>
-<p>The first format allows an arbetary number of off-curve points followed by
+<p>The first format allows an arbitrary number of off-curve points followed by
 one on-curve point.</p>
 <p>It is possible to have a contour which consists solely of off-curve points.
 When this happens the contour is NOT started with a <a class="reference internal" href="#fontforge.glyphPen.moveTo" title="fontforge.glyphPen.moveTo"><code class="xref py py-meth docutils literal notranslate"><span class="pre">glyphPen.moveTo()</span></code></a>,
@@ -1989,13 +1994,13 @@ an integer or a layer name to change the active layer.</p>
 <dt class="sig sig-object py" id="fontforge.glyph.altuni">
 <span class="sig-prename descclassname"><span class="pre">glyph.</span></span><span class="sig-name descname"><span class="pre">altuni</span></span><a class="headerlink" href="#fontforge.glyph.altuni" title="Link to this definition">¶</a></dt>
 <dd><p>Returns additional unicode code points for this glyph. For a primary code
-point, see <a class="reference internal" href="#fontforge.glyph.unicode" title="fontforge.glyph.unicode"><code class="xref py py-attr docutils literal notranslate"><span class="pre">glyph.unicode</span></code></a> .</p>
+point, see <a class="reference internal" href="#fontforge.glyph.unicode" title="fontforge.glyph.unicode"><code class="xref py py-attr docutils literal notranslate"><span class="pre">glyph.unicode</span></code></a>.</p>
 <p>Returns either None or a tuple of alternate encodings. Each alternate
 encoding is a tuple of</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">unicode</span><span class="o">-</span><span class="n">value</span><span class="p">,</span> <span class="n">variation</span><span class="o">-</span><span class="n">selector</span><span class="p">,</span> <span class="n">reserved</span><span class="o">-</span><span class="n">field</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The first is an unicode value of this alternate code point. The second is an
+<p>The first is a unicode value of this alternate code point. The second is an
 integer for variation selector and can be set to -1 if not used. The third
 is an empty field reserved for future use and currently must be set to zero.</p>
 <p><a class="reference internal" href="#fontforge.glyph.altuni" title="fontforge.glyph.altuni"><code class="xref py py-attr docutils literal notranslate"><span class="pre">glyph.altuni</span></code></a> can be set to None to clear all alternates, or to a
@@ -2263,7 +2268,7 @@ meaningless, but present).</p>
 <dt class="sig sig-object py" id="fontforge.glyph.persistent">
 <span class="sig-prename descclassname"><span class="pre">glyph.</span></span><span class="sig-name descname"><span class="pre">persistent</span></span><a class="headerlink" href="#fontforge.glyph.persistent" title="Link to this definition">¶</a></dt>
 <dd><p>Whatever you want (these data will be saved as a pickled object in the
-sfd file. It is your job to insure that whatever you put here can be pickled).
+sfd file. It is your job to ensure that whatever you put here can be pickled).
 See also the <a class="reference internal" href="#fontforge.glyph.temporary" title="fontforge.glyph.temporary"><code class="xref py py-attr docutils literal notranslate"><span class="pre">glyph.temporary</span></code></a> field.</p>
 </dd></dl>
 
@@ -3490,7 +3495,7 @@ can’t distinguish them from glyph names)</p>
 <dl class="object">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">encoding</span></span></dt>
-<dd><p>Interpret integer arguments as encoding indeces.</p>
+<dd><p>Interpret integer arguments as encoding indices.</p>
 </dd></dl>
 
 <dl class="object">
@@ -3543,13 +3548,13 @@ one of the standard names of things that live in the private dictionary.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="fontforge.private.__iter__">
 <span class="sig-prename descclassname"><span class="pre">private.</span></span><span class="sig-name descname"><span class="pre">__iter__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontforge.private.__iter__" title="Link to this definition">¶</a></dt>
-<dd><p>Returns an iterator for the dictionary which will return all entres.</p>
+<dd><p>Returns an iterator for the dictionary which will return all entries.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="fontforge.private.guess">
 <span class="sig-prename descclassname"><span class="pre">private.</span></span><span class="sig-name descname"><span class="pre">guess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontforge.private.guess" title="Link to this definition">¶</a></dt>
-<dd><p>Guess a value for this this entry in the private dictionary. If FontForge
+<dd><p>Guess a value for this entry in the private dictionary. If FontForge
 can’t make a guess it will simply ignore the request.</p>
 </dd></dl>
 
@@ -5191,7 +5196,7 @@ is documented to be a fixed 16.16 number (that is a 32 bit number with the
 binary point between bits 15 and 16).</p>
 <p>The field may be unset (in which case when the font is generated, FontForge
 will guess a default value from one of the version strings).</p>
-<p>The value returned with be <code class="docutils literal notranslate"><span class="pre">None</span></code> if the field is unset or a double.</p>
+<p>The value returned will be <code class="docutils literal notranslate"><span class="pre">None</span></code> if the field is unset or a double.</p>
 <p>You may set it to <code class="docutils literal notranslate"><span class="pre">None</span></code> which “unsets” it, or to a double value, or to an
 integer. The integer will be treated as a 32 bit integer and right shifted
 by 16 to get a 16.16 value).</p>
@@ -5212,7 +5217,7 @@ containing a single element: the point size for which the font was designed.
 <p>Otherwise FontForge returns a tuple containing five elements, the design
 size, the bottom of the design range, the top, the style id and a tuple of
 tuples. Each sub-tuple is a language/string pair. Language may be either
-the (english) name of the language/locale, or The string itself is in UTF-8.</p>
+the (english) name of the language/locale, or the string itself in UTF-8.</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -5337,7 +5342,7 @@ followed by 22 parameters. Font type is one of:</p>
 <dd><p>The major version number of a woff file, an integer.</p>
 <p>The field may be unset (in which case when the font is generated, FontForge
 will guess a default value from one of the version strings).</p>
-<p>The value returned with be <code class="docutils literal notranslate"><span class="pre">None</span></code> if the field is unset or an integer.</p>
+<p>The value returned will be <code class="docutils literal notranslate"><span class="pre">None</span></code> if the field is unset or an integer.</p>
 <p>You may set it to <code class="docutils literal notranslate"><span class="pre">None</span></code> which “unsets” it, or to an integer.</p>
 </dd></dl>
 
@@ -5347,7 +5352,7 @@ will guess a default value from one of the version strings).</p>
 <dd><p>The minor version number of a woff file, an integer.</p>
 <p>The field may be unset (in which case when the font is generated, FontForge
 will guess a default value from one of the version strings).</p>
-<p>The value returned with be <code class="docutils literal notranslate"><span class="pre">None</span></code> if the field is unset or an integer.</p>
+<p>The value returned will be <code class="docutils literal notranslate"><span class="pre">None</span></code> if the field is unset or an integer.</p>
 <p>You may set it to <code class="docutils literal notranslate"><span class="pre">None</span></code> which “unsets” it, or to an integer.</p>
 </dd></dl>
 
@@ -5409,7 +5414,7 @@ string then returns the glyph with that name. May not be assigned to.</p>
 <dt class="sig sig-object py">
 <span class="sig-prename descclassname"><span class="pre">font.</span></span><span class="sig-name descname"><span class="pre">addKerningClass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lookup_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_subtable_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">class_distance</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">onlyCloser</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">autokern</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">after</span></span></em><span class="optional">]</span><span class="sig-paren">)</span></dt>
 <dd><p>Creates a new subtable and a new kerning class in the named lookup. The
-classes arguments are tuples of tuples of glyph names (each sub-tuble of
+classes arguments are tuples of tuples of glyph names (each sub-tuple of
 glyph names is a kerning class). The offsets argument is a tuple of kerning
 offsets. There must be as many entries as</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">first</span><span class="o">-</span><span class="n">class</span><span class="p">)</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">second</span><span class="o">-</span><span class="n">class</span><span class="p">)</span>
@@ -5436,7 +5441,7 @@ right glyphs – but fontforge will probably find different classes).</p>
 <dt class="sig sig-object py" id="fontforge.font.addLookup">
 <span class="sig-prename descclassname"><span class="pre">font.</span></span><span class="sig-name descname"><span class="pre">addLookup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">new_lookup_name,</span> <span class="pre">type,</span> <span class="pre">flags,</span> <span class="pre">feature_script_lang_tuple[,</span> <span class="pre">after_lookup_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontforge.font.addLookup" title="Link to this definition">¶</a></dt>
 <dd><p>Creates a new lookup with the given name, type and flags. It will tag it
-with any indicated features. The type of one of</p>
+with any indicated features. The type is one of</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">gsub_single</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">gsub_multiple</span></code></p></li>
@@ -5475,7 +5480,7 @@ two element tuple. The first element is a 4 letter script tag and the second
 is a tuple of languages. Each entry in the language tuple is a four letter
 language. Example: <code class="docutils literal notranslate"><span class="pre">((&quot;liga&quot;,((&quot;latn&quot;,(&quot;dflt&quot;)),)),)</span></code></p>
 <p>The optional final argument allows you to specify the ordering of the lookup.
-If not specified the lookup will be come the first lookup in its table.</p>
+If not specified the lookup will become the first lookup in its table.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -5526,7 +5531,7 @@ of entries in <code class="docutils literal notranslate"><span class="pre">bclas
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">|</span></code> s divide between backtrack, match and lookahead sections. So
-this example would match it the current glyph were named <code class="docutils literal notranslate"><span class="pre">glyph-name3</span></code>
+this example would match if the current glyph were named <code class="docutils literal notranslate"><span class="pre">glyph-name3</span></code>
 and it were preceded by <code class="docutils literal notranslate"><span class="pre">glyph-name2</span></code> and that by <code class="docutils literal notranslate"><span class="pre">glyph-name1</span></code> and
 followed by <code class="docutils literal notranslate"><span class="pre">glyph-name4</span></code>. If the match were successful then the lookup
 named <code class="docutils literal notranslate"><span class="pre">lookup-name</span></code> would be applied. The <code class="docutils literal notranslate"><span class="pre">&#64;&lt;&gt;</span></code> are literal
@@ -5597,7 +5602,7 @@ I hope it shan’t be a severe limitation.</p>
 <dd><p>This function uses keyword parameters. None are required, if omitted a
 default value will be used (generally found by analyzing the font).</p>
 <p>For each selected letter, this function will create a corresponding small
-caps glyph. If you set the <code class="docutils literal notranslate"><span class="pre">symbol</span></code> keyword to <code class="docutils literal notranslate"><span class="pre">True</span></code> it will also
+caps glyph. If you set the <code class="docutils literal notranslate"><span class="pre">symbols</span></code> keyword to <code class="docutils literal notranslate"><span class="pre">True</span></code> it will also
 create small caps variants of digits and symbols.</p>
 <p>The outlines of the new glyph will be based on the outlines of the
 upper-case variant of the letter. These will then be scaled so that a glyph
@@ -5621,10 +5626,9 @@ maps attached to the original glyph.</p>
 <dt class="sig sig-object py" id="fontforge.font.alterKerningClass">
 <span class="sig-prename descclassname"><span class="pre">font.</span></span><span class="sig-name descname"><span class="pre">alterKerningClass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subtable_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">first_classes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">second_classes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offsets</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontforge.font.alterKerningClass" title="Link to this definition">¶</a></dt>
 <dd><p>Changes the kerning class in the named subtable. The classes arguments are
-tuples of tuples of glyph names (each sub-tuble of glyph names is a kerning
+tuples of tuples of glyph names (each sub-tuple of glyph names is a kerning
 class). The offsets argument is a tuple of kerning offsets. There must be as
-many entries as <code class="docutils literal notranslate"><span class="pre">len(first-class)*len(second-class)</span></code>. The optional after
-argument is used to specify the order of the subtable within the lookup.</p>
+many entries as <code class="docutils literal notranslate"><span class="pre">len(first-class)*len(second-class)</span></code>.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -5640,12 +5644,12 @@ all pairs that can be made with one glyph from the first list and the second
 from the second list.</p>
 <p>It will attempt to guess a good kerning value between the two glyphs – a
 value which will make the optical separation between the two appear to be
-<code class="docutils literal notranslate"><span class="pre">separation</span></code> em-units. If <code class="docutils literal notranslate"><span class="pre">minkern</span></code> is specified then and the (absolute
+<code class="docutils literal notranslate"><span class="pre">separation</span></code> em-units. If <code class="docutils literal notranslate"><span class="pre">minKern</span></code> is specified and the (absolute
 value of the) kerning correction is less than this number then no kerning
-pair will be generated. If <code class="docutils literal notranslate"><span class="pre">onlyCloser</span></code> is set true then only negative
-kerning offsets will be generated (only thing which move two glyphs closer
+pair will be generated. If <code class="docutils literal notranslate"><span class="pre">onlyCloser</span></code> is set to true then only negative
+kerning offsets will be generated (only thing which moves two glyphs closer
 together). If touch is set to 1 then the kerning offset will not be based on
-optical distance but on the closest approach between two the two glyphs.</p>
+optical distance but on the closest approach between the two glyphs.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -5663,14 +5667,14 @@ the numeric value of that item. The string itself is in UTF-8.</p>
 <span class="sig-prename descclassname"><span class="pre">font.</span></span><span class="sig-name descname"><span class="pre">buildOrReplaceAALTFeatures</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontforge.font.buildOrReplaceAALTFeatures" title="Link to this definition">¶</a></dt>
 <dd><p>Removes any existing AALT features (and any lookups solely controlled by such
 features) and creates new ones containing all possible single and alternate
-substutions available for each glyph.</p>
+substitutions available for each glyph.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="fontforge.font.cidConvertByCMap">
-<span class="sig-prename descclassname"><span class="pre">font.</span></span><span class="sig-name descname"><span class="pre">cidConvertByCMap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmap_filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontforge.font.cidConvertByCMap" title="Link to this definition">¶</a></dt>
-<dd><p>Converts a normal font into a CID-keyed font with one subfont using</p>
-<p>the CMAP to determine the mapping.</p>
+<dt class="sig sig-object py" id="fontforge.font.cidConvertByCmap">
+<span class="sig-prename descclassname"><span class="pre">font.</span></span><span class="sig-name descname"><span class="pre">cidConvertByCmap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmap_filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontforge.font.cidConvertByCmap" title="Link to this definition">¶</a></dt>
+<dd><p>Converts a normal font into a CID-keyed font with one subfont using
+the CMAP to determine the mapping.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -5715,7 +5719,7 @@ sub-font to be it.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="fontforge.font.compareFonts">
 <span class="sig-prename descclassname"><span class="pre">font.</span></span><span class="sig-name descname"><span class="pre">compareFonts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other_font</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags_tuple</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontforge.font.compareFonts" title="Link to this definition">¶</a></dt>
-<dd><p>This will compare the current font with the font in <code class="docutils literal notranslate"><span class="pre">other-font</span></code> (which
+<dd><p>This will compare the current font with the font in <code class="docutils literal notranslate"><span class="pre">other_font</span></code> (which
 must already have been opened). It will write the results to the
 <code class="docutils literal notranslate"><span class="pre">filename</span></code>, you may use “-” to send the output to stdout. The <code class="docutils literal notranslate"><span class="pre">flags</span></code>
 argument is a tuple of strings and controls what will be compared.</p>
@@ -5786,7 +5790,7 @@ the second font to the background of the glyph in the first</p>
 <span class="sig-name descname"><span class="pre">create-glyphs</span></span></dt>
 <dd><p>if a glyph exists in the second font but not the first, create that
 glyph in the first and add the outlines from the second into the
-backgroun layer</p>
+background layer</p>
 </dd></dl>
 
 </dd></dl>
@@ -5845,7 +5849,7 @@ returns an iterator which returns those glyphs.</p>
 <dd><p>Tests whether a glyph with this codepoint or name is in the font’s encoding
 and returns the encoding slot. If the glyph is not present it returns -1.</p>
 <p>(If a glyph with that name/unicode is in the font, but is not in the
-encoding, then an value beyond the end of the encoding will be returned).</p>
+encoding, then a value beyond the end of the encoding will be returned).</p>
 </dd></dl>
 
 <dl class="py method">
@@ -6093,7 +6097,7 @@ which is a tuple of 3-tuples, each 3-tuple specifying a zone with: Original
 location, original width, and final location.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>No default value is providedfor this argument you must figure out all the
+<p>No default value is provided for this argument you must figure out all the
 values yourself.</p>
 </div>
 <p>If <code class="docutils literal notranslate"><span class="pre">vCounterType</span></code> is the string “scaled”, then vertical counters, and the
@@ -6107,10 +6111,7 @@ top and bottom side bearings will all be scaled using the same rules, and
 <span class="sig-prename descclassname"><span class="pre">font.</span></span><span class="sig-name descname"><span class="pre">getKerningClass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subtable_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fontforge.font.getKerningClass" title="Link to this definition">¶</a></dt>
 <dd><p>Returns a tuple whose entries are: (first-classes, second-classes, offsets).
 The classes are themselves tuples of tuples of glyph names. The offsets will
-be a tuple of numeric kerning offsetss a tuple whose entries are:
-(first-classes, second-classes, offsets). The classes are themselves tuples
-of tuples of glyph names. The offsets will be a tuple of numeric kerning
-offsets.</p>
+be a tuple of numeric kerning offsets.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -6293,7 +6294,7 @@ subtable2 will be bound to subtable1 and subtable2 will be removed.</p>
 <dl class="object">
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">fontsample</span></span></dt>
-<dd><p>The third argument should contain a string which will be layed out
+<dd><p>The third argument should contain a string which will be laid out
 and displayed as well as FontForge can.</p>
 </dd></dl>
 
@@ -6301,7 +6302,7 @@ and displayed as well as FontForge can.</p>
 <dt class="sig sig-object">
 <span class="sig-name descname"><span class="pre">fontsampleinfile</span></span></dt>
 <dd><p>The third argument should contain the name of a file which contains
-text to be layed out and displayed.</p>
+text to be laid out and displayed.</p>
 </dd></dl>
 
 <p>If output is to a file (see <a class="reference internal" href="#fontforge.printSetup" title="fontforge.printSetup"><code class="xref py py-func docutils literal notranslate"><span class="pre">fontforge.printSetup()</span></code></a>) then the last
@@ -6582,7 +6583,7 @@ counter-clockwise in all selected glyphs.</p>
 <dt class="sig sig-object py" id="fontforge.font.correctReferences">
 <span class="sig-prename descclassname"><span class="pre">font.</span></span><span class="sig-name descname"><span class="pre">correctReferences</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fontforge.font.correctReferences" title="Link to this definition">¶</a></dt>
 <dd><p>Checks a font for glyphs with mixed contours and references (or references
-with transformation matrices which cannot be represented truetype (ie.
+with transformation matrices which cannot be represented in truetype (ie.
 scaling by 2 or more)). If a mixed case is discovered FontForge will take
 the contours out of the glyph, put them in a new glyph, and make a reference
 to the new glyph.</p>
@@ -6882,7 +6883,7 @@ for the expressions is explained in the
       <div class="clearer"></div>
     </div>
     <div class="footer">
-      &copy;2000-2012 by George Williams, 2012-2020 by FontForge authors.
+      &copy;2000-2012 by George Williams, 2012-2025 by FontForge authors.
       
       |
       Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
